@@ -452,7 +452,8 @@ SWIGINTERN void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/devel-api/visual-factory/visual-factory.h>
 #include <dali-toolkit/devel-api/visual-factory/transition-data.h>
 
-#include <dali-toolkit/devel-api/visuals/text-visual-properties.h>
+//this should be fixed after tizen branch being upgraded!
+//#include <dali-toolkit/devel-api/visuals/text-visual-properties.h>
 
 #include <dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h>
 
@@ -58158,7 +58159,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NUI_PRIMITIVE_VISUAL_LIGHT_POSITION_get() {
   return jresult;
 }
 
-
+/* this should be fixed after tizen branch being upgraded!
 SWIGEXPORT int SWIGSTDCALL CSharp_NUI_TEXT_get() {
   int jresult ;
   int result;
@@ -58391,7 +58392,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NUI_ENABLE_MARKUP_get() {
   jresult = (int)result; 
   return jresult;
 }
-
+*/
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_NUI_new_Builder() {
   void * jresult ;
@@ -69489,7 +69490,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NUI_ItemLayout_GetOrientation(void * jarg1) {
   return jresult;
 }
 
-
+/* this should be fixed after tizen branch being upgraded!
 SWIGEXPORT void SWIGSTDCALL CSharp_NUI_ItemLayout_SetLayoutProperties(void * jarg1, void * jarg2) {
   Dali::Toolkit::ItemLayout *arg1 = (Dali::Toolkit::ItemLayout *) 0 ;
   Dali::Property::Map *arg2 = 0 ;
@@ -69598,7 +69599,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NUI_ItemLayout_ResetLayoutChangedFlag(void * 
     }
   }
 }
-
+*/
 
 SWIGEXPORT void SWIGSTDCALL CSharp_NUI_ItemLayout_GetItemSize(void * jarg1, unsigned int jarg2, void * jarg3, void * jarg4) {
   Dali::Toolkit::ItemLayout *arg1 = (Dali::Toolkit::ItemLayout *) 0 ;
@@ -82465,7 +82466,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NUI_Popup_Property_POPUP_BACKGROUND_IMAGE_get(
   return jresult;
 }
 
-
+/* this should be fixed after tizen branch being upgraded!
 SWIGEXPORT int SWIGSTDCALL CSharp_NUI_Popup_Property_POPUP_BACKGROUND_BORDER_get() {
   int jresult ;
   int result;
@@ -82474,7 +82475,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NUI_Popup_Property_POPUP_BACKGROUND_BORDER_get
   jresult = (int)result; 
   return jresult;
 }
-
+*/
 
 SWIGEXPORT int SWIGSTDCALL CSharp_NUI_Popup_Property_TAIL_UP_IMAGE_get() {
   int jresult ;
@@ -84945,7 +84946,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_NUI_VisualBase_GetName(void * jarg1) {
   return jresult;
 }
 
-
+/* this should be fixed after tizen branch being upgraded!
 SWIGEXPORT void SWIGSTDCALL CSharp_NUI_VisualBase_SetTransformAndSize(void * jarg1, void * jarg2, void * jarg3) {
   Dali::Toolkit::Visual::Base *arg1 = (Dali::Toolkit::Visual::Base *) 0 ;
   Dali::Property::Map *arg2 = 0 ;
@@ -84982,7 +84983,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NUI_VisualBase_SetTransformAndSize(void * jar
     }
   }
 }
-
+*/
 
 SWIGEXPORT float SWIGSTDCALL CSharp_NUI_VisualBase_GetHeightForWidth(void * jarg1, float jarg2) {
   float jresult ;
@@ -85013,7 +85014,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_NUI_VisualBase_GetHeightForWidth(void * jarg
   return jresult;
 }
 
-
+/* this should be fixed after tizen branch being upgraded!
 SWIGEXPORT float SWIGSTDCALL CSharp_NUI_VisualBase_GetWidthForHeight(void * jarg1, float jarg2) {
   float jresult ;
   Dali::Toolkit::Visual::Base *arg1 = (Dali::Toolkit::Visual::Base *) 0 ;
@@ -85042,7 +85043,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_NUI_VisualBase_GetWidthForHeight(void * jarg
   jresult = result; 
   return jresult;
 }
-
+*/
 
 SWIGEXPORT void SWIGSTDCALL CSharp_NUI_VisualBase_GetNaturalSize(void * jarg1, void * jarg2) {
   Dali::Toolkit::Visual::Base *arg1 = (Dali::Toolkit::Visual::Base *) 0 ;

@@ -231,7 +231,8 @@ SWIGINTERN void SWIG_CSharpException(int code, const char *msg)
 #include <dali/dali.h>
 #include <dali-toolkit/dali-toolkit.h>
 
-#include <dali-toolkit/devel-api/controls/control-wrapper.h>
-#include <dali-toolkit/devel-api/controls/control-wrapper-impl.h>
+//this should be fixed after tizen branch being upgraded!
+//#include <dali-toolkit/devel-api/controls/control-wrapper.h>
+//#include <dali-toolkit/devel-api/controls/control-wrapper-impl.h>
 
 #endif // CSHARP_COMMON_H
