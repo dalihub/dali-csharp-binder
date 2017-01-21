@@ -1,6 +1,6 @@
 Name: dali-csharp-binder
-Version: 1.2.21
-Release: 20170110
+Version: 1.2.22
+Release: 20170121
 Summary: build dali csharp binder
 License: TO_BE_FILLED_IN
 Group: uifw/graphic
