@@ -207,5 +207,27 @@ private:
     void swig_init_callbacks();
 };
 
+class SwigDirector_ItemFactory : public Dali::Toolkit::ItemFactory, public Swig::Director {
+
+public:
+    SwigDirector_ItemFactory();
+    virtual ~SwigDirector_ItemFactory();
+    virtual unsigned int GetNumberOfItems();
+    virtual Dali::Actor NewItem(unsigned int itemId);
+    virtual void ItemReleased(unsigned int itemId, Dali::Actor actor);
+    virtual Dali::Toolkit::ItemFactory::Extension *GetExtension();
+
+    typedef unsigned int (SWIGSTDCALL* SWIG_Callback0_t)();
+    typedef void * (SWIGSTDCALL* SWIG_Callback1_t)(unsigned int);
+    typedef void (SWIGSTDCALL* SWIG_Callback2_t)(unsigned int, void *);
+    void swig_connect_director(SWIG_Callback0_t callbackGetNumberOfItems, SWIG_Callback1_t callbackNewItem, SWIG_Callback2_t callbackItemReleased);
+
+private:
+    SWIG_Callback0_t swig_callbackGetNumberOfItems;
+    SWIG_Callback1_t swig_callbackNewItem;
+    SWIG_Callback2_t swig_callbackItemReleased;
+    void swig_init_callbacks();
+};
+
 
 #endif
