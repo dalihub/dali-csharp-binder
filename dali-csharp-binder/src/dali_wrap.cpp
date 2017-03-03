@@ -9671,7 +9671,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Clamp__SWIG_4(void * jarg1, float jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Quaternion__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Rotation__SWIG_0() {
   void * jresult ;
   Dali::Quaternion *result = 0 ;
   
@@ -9697,73 +9697,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Quaternion__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Quaternion__SWIG_1(float jarg1, float jarg2, float jarg3, float jarg4) {
-  void * jresult ;
-  float arg1 ;
-  float arg2 ;
-  float arg3 ;
-  float arg4 ;
-  Dali::Quaternion *result = 0 ;
-  
-  arg1 = (float)jarg1; 
-  arg2 = (float)jarg2; 
-  arg3 = (float)jarg3; 
-  arg4 = (float)jarg4; 
-  {
-    try {
-      result = (Dali::Quaternion *)new Dali::Quaternion(arg1,arg2,arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Quaternion__SWIG_2(void * jarg1) {
-  void * jresult ;
-  Dali::Vector4 *arg1 = 0 ;
-  Dali::Quaternion *result = 0 ;
-  
-  arg1 = (Dali::Vector4 *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (Dali::Quaternion *)new Dali::Quaternion((Dali::Vector4 const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Quaternion__SWIG_3(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Rotation__SWIG_1(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Radian arg1 ;
   Dali::Vector3 *arg2 = 0 ;
@@ -9803,171 +9737,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Quaternion__SWIG_3(void * jarg1, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Quaternion__SWIG_4(void * jarg1, void * jarg2, void * jarg3) {
-  void * jresult ;
-  Dali::Radian arg1 ;
-  Dali::Radian arg2 ;
-  Dali::Radian arg3 ;
-  Dali::Radian *argp1 ;
-  Dali::Radian *argp2 ;
-  Dali::Radian *argp3 ;
-  Dali::Quaternion *result = 0 ;
-  
-  argp1 = (Dali::Radian *)jarg1; 
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
-    return 0;
-  }
-  arg1 = *argp1; 
-  argp2 = (Dali::Radian *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
-    return 0;
-  }
-  arg2 = *argp2; 
-  argp3 = (Dali::Radian *)jarg3; 
-  if (!argp3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
-    return 0;
-  }
-  arg3 = *argp3; 
-  {
-    try {
-      result = (Dali::Quaternion *)new Dali::Quaternion(arg1,arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Quaternion__SWIG_5(void * jarg1) {
-  void * jresult ;
-  Dali::Matrix *arg1 = 0 ;
-  Dali::Quaternion *result = 0 ;
-  
-  arg1 = (Dali::Matrix *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (Dali::Quaternion *)new Dali::Quaternion((Dali::Matrix const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Quaternion__SWIG_6(void * jarg1, void * jarg2, void * jarg3) {
-  void * jresult ;
-  Dali::Vector3 *arg1 = 0 ;
-  Dali::Vector3 *arg2 = 0 ;
-  Dali::Vector3 *arg3 = 0 ;
-  Dali::Quaternion *result = 0 ;
-  
-  arg1 = (Dali::Vector3 *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 const & type is null", 0);
-    return 0;
-  } 
-  arg2 = (Dali::Vector3 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 const & type is null", 0);
-    return 0;
-  } 
-  arg3 = (Dali::Vector3 *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (Dali::Quaternion *)new Dali::Quaternion((Dali::Vector3 const &)*arg1,(Dali::Vector3 const &)*arg2,(Dali::Vector3 const &)*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Quaternion__SWIG_7(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Vector3 *arg1 = 0 ;
-  Dali::Vector3 *arg2 = 0 ;
-  Dali::Quaternion *result = 0 ;
-  
-  arg1 = (Dali::Vector3 *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 const & type is null", 0);
-    return 0;
-  } 
-  arg2 = (Dali::Vector3 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (Dali::Quaternion *)new Dali::Quaternion((Dali::Vector3 const &)*arg1,(Dali::Vector3 const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Quaternion(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Rotation(void * jarg1) {
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   
   arg1 = (Dali::Quaternion *)jarg1; 
@@ -9991,7 +9761,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Quaternion(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_IDENTITY_get() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_IDENTITY_get() {
   void * jresult ;
   Dali::Quaternion *result = 0 ;
   
@@ -10001,7 +9771,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_IDENTITY_get() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Quaternion_IsIdentity(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rotation_IsIdentity(void * jarg1) {
   unsigned int jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   bool result;
@@ -10029,7 +9799,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Quaternion_IsIdentity(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Quaternion_ToAxisAngle(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rotation_GetAxisAngle(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
@@ -10069,111 +9839,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Quaternion_ToAxisAngle(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_AsVector(void * jarg1) {
-  void * jresult ;
-  Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
-  Dali::Vector4 *result = 0 ;
-  
-  arg1 = (Dali::Quaternion *)jarg1; 
-  {
-    try {
-      result = (Dali::Vector4 *) &((Dali::Quaternion const *)arg1)->AsVector();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Quaternion_SetEuler(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
-  Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
-  Dali::Radian arg2 ;
-  Dali::Radian arg3 ;
-  Dali::Radian arg4 ;
-  Dali::Radian *argp2 ;
-  Dali::Radian *argp3 ;
-  Dali::Radian *argp4 ;
-  
-  arg1 = (Dali::Quaternion *)jarg1; 
-  argp2 = (Dali::Radian *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
-    return ;
-  }
-  arg2 = *argp2; 
-  argp3 = (Dali::Radian *)jarg3; 
-  if (!argp3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
-    return ;
-  }
-  arg3 = *argp3; 
-  argp4 = (Dali::Radian *)jarg4; 
-  if (!argp4) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
-    return ;
-  }
-  arg4 = *argp4; 
-  {
-    try {
-      (arg1)->SetEuler(arg2,arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; 
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_EulerAngles(void * jarg1) {
-  void * jresult ;
-  Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
-  Dali::Vector4 result;
-  
-  arg1 = (Dali::Quaternion *)jarg1; 
-  {
-    try {
-      result = ((Dali::Quaternion const *)arg1)->EulerAngles();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = new Dali::Vector4((const Dali::Vector4 &)result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Add(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Add(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10207,7 +9873,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Add(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Subtract__SWIG_0(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Subtract__SWIG_0(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10241,7 +9907,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Subtract__SWIG_0(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Multiply__SWIG_0(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Multiply__SWIG_0(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10275,7 +9941,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Multiply__SWIG_0(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Multiply__SWIG_1(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Multiply__SWIG_1(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
@@ -10309,7 +9975,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Multiply__SWIG_1(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Divide__SWIG_0(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Divide__SWIG_0(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10343,7 +10009,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Divide__SWIG_0(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Multiply__SWIG_2(void * jarg1, float jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Multiply__SWIG_2(void * jarg1, float jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   float arg2 ;
@@ -10373,7 +10039,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Multiply__SWIG_2(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Divide__SWIG_1(void * jarg1, float jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Divide__SWIG_1(void * jarg1, float jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   float arg2 ;
@@ -10403,7 +10069,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Divide__SWIG_1(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Subtract__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Subtract__SWIG_1(void * jarg1) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion result;
@@ -10431,7 +10097,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Subtract__SWIG_1(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_AddAssign(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_AddAssign(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10465,7 +10131,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_AddAssign(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_SubtractAssign(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_SubtractAssign(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10499,7 +10165,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_SubtractAssign(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_MultiplyAssign__SWIG_0(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_MultiplyAssign__SWIG_0(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10533,7 +10199,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_MultiplyAssign__SWIG_0(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_MultiplyAssign__SWIG_1(void * jarg1, float jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_MultiplyAssign__SWIG_1(void * jarg1, float jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   float arg2 ;
@@ -10563,7 +10229,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_MultiplyAssign__SWIG_1(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_DivideAssign(void * jarg1, float jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_DivideAssign(void * jarg1, float jarg2) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   float arg2 ;
@@ -10593,7 +10259,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_DivideAssign(void * jarg1, 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Quaternion_EqualTo(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rotation_EqualTo(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10627,7 +10293,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Quaternion_EqualTo(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Quaternion_NotEqualTo(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rotation_NotEqualTo(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10661,7 +10327,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Quaternion_NotEqualTo(void * jar
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Quaternion_Length(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Rotation_Length(void * jarg1) {
   float jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   float result;
@@ -10689,7 +10355,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Quaternion_Length(void * jarg1) {
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Quaternion_LengthSquared(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Rotation_LengthSquared(void * jarg1) {
   float jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   float result;
@@ -10717,7 +10383,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Quaternion_LengthSquared(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Quaternion_Normalize(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rotation_Normalize(void * jarg1) {
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   
   arg1 = (Dali::Quaternion *)jarg1; 
@@ -10741,7 +10407,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Quaternion_Normalize(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Normalized(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Normalized(void * jarg1) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion result;
@@ -10769,7 +10435,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Normalized(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Quaternion_Conjugate(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rotation_Conjugate(void * jarg1) {
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   
   arg1 = (Dali::Quaternion *)jarg1; 
@@ -10793,7 +10459,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Quaternion_Conjugate(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Quaternion_Invert(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rotation_Invert(void * jarg1) {
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   
   arg1 = (Dali::Quaternion *)jarg1; 
@@ -10817,7 +10483,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Quaternion_Invert(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Log(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Log(void * jarg1) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion result;
@@ -10845,7 +10511,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Log(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Exp(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Exp(void * jarg1) {
   void * jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion result;
@@ -10873,7 +10539,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Exp(void * jarg1) {
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Quaternion_Dot(void * jarg1, void * jarg2) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Rotation_Dot(void * jarg1, void * jarg2) {
   float jresult ;
   Dali::Quaternion *arg1 = 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10911,7 +10577,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Quaternion_Dot(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Lerp(void * jarg1, void * jarg2, float jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Lerp(void * jarg1, void * jarg2, float jarg3) {
   void * jresult ;
   Dali::Quaternion *arg1 = 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10951,7 +10617,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Lerp(void * jarg1, void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Slerp(void * jarg1, void * jarg2, float jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Slerp(void * jarg1, void * jarg2, float jarg3) {
   void * jresult ;
   Dali::Quaternion *arg1 = 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -10991,7 +10657,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Slerp(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_SlerpNoInvert(void * jarg1, void * jarg2, float jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_SlerpNoInvert(void * jarg1, void * jarg2, float jarg3) {
   void * jresult ;
   Dali::Quaternion *arg1 = 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -11031,7 +10697,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_SlerpNoInvert(void * jarg1,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Squad(void * jarg1, void * jarg2, void * jarg3, void * jarg4, float jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Squad(void * jarg1, void * jarg2, void * jarg3, void * jarg4, float jarg5) {
   void * jresult ;
   Dali::Quaternion *arg1 = 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -11083,7 +10749,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Squad(void * jarg1, void * 
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Quaternion_AngleBetween(void * jarg1, void * jarg2) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Rotation_AngleBetween(void * jarg1, void * jarg2) {
   float jresult ;
   Dali::Quaternion *arg1 = 0 ;
   Dali::Quaternion *arg2 = 0 ;
@@ -11117,96 +10783,6 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Quaternion_AngleBetween(void * jarg1, v
     }
   }
   jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Rotate__SWIG_0(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
-  Dali::Vector4 *arg2 = 0 ;
-  Dali::Vector4 result;
-  
-  arg1 = (Dali::Quaternion *)jarg1; 
-  arg2 = (Dali::Vector4 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = ((Dali::Quaternion const *)arg1)->Rotate((Dali::Vector4 const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = new Dali::Vector4((const Dali::Vector4 &)result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_Rotate__SWIG_1(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
-  Dali::Vector3 *arg2 = 0 ;
-  Dali::Vector3 result;
-  
-  arg1 = (Dali::Quaternion *)jarg1; 
-  arg2 = (Dali::Vector3 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = ((Dali::Quaternion const *)arg1)->Rotate((Dali::Vector3 const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = new Dali::Vector3((const Dali::Vector3 &)result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Quaternion_mVector_set(void * jarg1, void * jarg2) {
-  Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
-  Dali::Vector4 *arg2 = (Dali::Vector4 *) 0 ;
-  
-  arg1 = (Dali::Quaternion *)jarg1; 
-  arg2 = (Dali::Vector4 *)jarg2; 
-  if (arg1) (arg1)->mVector = *arg2;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Quaternion_mVector_get(void * jarg1) {
-  void * jresult ;
-  Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
-  Dali::Vector4 *result = 0 ;
-  
-  arg1 = (Dali::Quaternion *)jarg1; 
-  result = (Dali::Vector4 *)& ((arg1)->mVector);
-  jresult = (void *)result; 
   return jresult;
 }
 
@@ -13004,6 +12580,278 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_9(void * jarg1, vo
   {
     try {
       result = (bool)Dali::operator ==((Dali::AngleAxis const &)*arg1,(Dali::AngleAxis const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NextPowerOfTwo(unsigned int jarg1) {
+  unsigned int jresult ;
+  unsigned int arg1 ;
+  unsigned int result;
+  
+  arg1 = (unsigned int)jarg1; 
+  {
+    try {
+      result = (unsigned int)Dali::NextPowerOfTwo(arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsPowerOfTwo(unsigned int jarg1) {
+  unsigned int jresult ;
+  unsigned int arg1 ;
+  bool result;
+  
+  arg1 = (unsigned int)jarg1; 
+  {
+    try {
+      result = (bool)Dali::IsPowerOfTwo(arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_GetRangedEpsilon(float jarg1, float jarg2) {
+  float jresult ;
+  float arg1 ;
+  float arg2 ;
+  float result;
+  
+  arg1 = (float)jarg1; 
+  arg2 = (float)jarg2; 
+  {
+    try {
+      result = (float)Dali::GetRangedEpsilon(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualsZero(float jarg1) {
+  unsigned int jresult ;
+  float arg1 ;
+  bool result;
+  
+  arg1 = (float)jarg1; 
+  {
+    try {
+      result = (bool)Dali::EqualsZero(arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Equals__SWIG_0(float jarg1, float jarg2) {
+  unsigned int jresult ;
+  float arg1 ;
+  float arg2 ;
+  bool result;
+  
+  arg1 = (float)jarg1; 
+  arg2 = (float)jarg2; 
+  {
+    try {
+      result = (bool)Dali::Equals(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Equals__SWIG_1(float jarg1, float jarg2, float jarg3) {
+  unsigned int jresult ;
+  float arg1 ;
+  float arg2 ;
+  float arg3 ;
+  bool result;
+  
+  arg1 = (float)jarg1; 
+  arg2 = (float)jarg2; 
+  arg3 = (float)jarg3; 
+  {
+    try {
+      result = (bool)Dali::Equals(arg1,arg2,arg3);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Round(float jarg1, int jarg2) {
+  float jresult ;
+  float arg1 ;
+  int arg2 ;
+  float result;
+  
+  arg1 = (float)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      result = (float)Dali::Round(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_WrapInDomain(float jarg1, float jarg2, float jarg3) {
+  float jresult ;
+  float arg1 ;
+  float arg2 ;
+  float arg3 ;
+  float result;
+  
+  arg1 = (float)jarg1; 
+  arg2 = (float)jarg2; 
+  arg3 = (float)jarg3; 
+  {
+    try {
+      result = (float)Dali::WrapInDomain(arg1,arg2,arg3);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ShortestDistanceInDomain(float jarg1, float jarg2, float jarg3, float jarg4) {
+  float jresult ;
+  float arg1 ;
+  float arg2 ;
+  float arg3 ;
+  float arg4 ;
+  float result;
+  
+  arg1 = (float)jarg1; 
+  arg2 = (float)jarg2; 
+  arg3 = (float)jarg3; 
+  arg4 = (float)jarg4; 
+  {
+    try {
+      result = (float)Dali::ShortestDistanceInDomain(arg1,arg2,arg3,arg4);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
@@ -41370,7 +41218,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BufferImage_Update__SWIG_0(void * jarg1)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BufferImage_Update__SWIG_1(void * jarg1, void * jarg2) {
   Dali::BufferImage *arg1 = (Dali::BufferImage *) 0 ;
-  Dali::RectArea arg2 ;
+  SwigValueWrapper< Dali::Rect< unsigned int > > arg2 ;
   Dali::RectArea *argp2 ;
   
   arg1 = (Dali::BufferImage *)jarg1; 
@@ -45230,601 +45078,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TouchPointContainer(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectDouble__SWIG_0() {
-  void * jresult ;
-  Dali::Rect< double > *result = 0 ;
-  
-  {
-    try {
-      result = (Dali::Rect< double > *)new Dali::Rect< double >();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectDouble__SWIG_1(double jarg1, double jarg2, double jarg3, double jarg4) {
-  void * jresult ;
-  double arg1 ;
-  double arg2 ;
-  double arg3 ;
-  double arg4 ;
-  Dali::Rect< double > *result = 0 ;
-  
-  arg1 = (double)jarg1; 
-  arg2 = (double)jarg2; 
-  arg3 = (double)jarg3; 
-  arg4 = (double)jarg4; 
-  {
-    try {
-      result = (Dali::Rect< double > *)new Dali::Rect< double >(arg1,arg2,arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectDouble__SWIG_2(void * jarg1) {
-  void * jresult ;
-  Dali::Rect< double > *arg1 = 0 ;
-  Dali::Rect< double > *result = 0 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< double > const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (Dali::Rect< double > *)new Dali::Rect< double >((Dali::Rect< double > const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RectDouble_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  Dali::Rect< double > *arg2 = 0 ;
-  Dali::Rect< double > *result = 0 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (Dali::Rect< double > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< double > const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (Dali::Rect< double > *) &(arg1)->operator =((Dali::Rect< double > const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectDouble_Set(void * jarg1, double jarg2, double jarg3, double jarg4, double jarg5) {
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double arg2 ;
-  double arg3 ;
-  double arg4 ;
-  double arg5 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (double)jarg2; 
-  arg3 = (double)jarg3; 
-  arg4 = (double)jarg4; 
-  arg5 = (double)jarg5; 
-  {
-    try {
-      (arg1)->Set(arg2,arg3,arg4,arg5);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; 
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectDouble_IsEmpty(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  bool result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  {
-    try {
-      result = (bool)((Dali::Rect< double > const *)arg1)->IsEmpty();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_Left(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  {
-    try {
-      result = (double)((Dali::Rect< double > const *)arg1)->Left();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_Right(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  {
-    try {
-      result = (double)((Dali::Rect< double > const *)arg1)->Right();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_Top(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  {
-    try {
-      result = (double)((Dali::Rect< double > const *)arg1)->Top();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_Bottom(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  {
-    try {
-      result = (double)((Dali::Rect< double > const *)arg1)->Bottom();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_Area(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  {
-    try {
-      result = (double)((Dali::Rect< double > const *)arg1)->Area();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectDouble_Intersects(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  Dali::Rect< double > *arg2 = 0 ;
-  bool result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (Dali::Rect< double > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< double > const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (bool)((Dali::Rect< double > const *)arg1)->Intersects((Dali::Rect< double > const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectDouble_Contains(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  Dali::Rect< double > *arg2 = 0 ;
-  bool result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (Dali::Rect< double > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< double > const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (bool)((Dali::Rect< double > const *)arg1)->Contains((Dali::Rect< double > const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectDouble_x_set(void * jarg1, double jarg2) {
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double arg2 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (double)jarg2; 
-  if (arg1) (arg1)->x = arg2;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_x_get(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  result = (double) ((arg1)->x);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectDouble_left_set(void * jarg1, double jarg2) {
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double arg2 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (double)jarg2; 
-  if (arg1) (arg1)->left = arg2;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_left_get(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  result = (double) ((arg1)->left);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectDouble_y_set(void * jarg1, double jarg2) {
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double arg2 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (double)jarg2; 
-  if (arg1) (arg1)->y = arg2;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_y_get(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  result = (double) ((arg1)->y);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectDouble_right_set(void * jarg1, double jarg2) {
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double arg2 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (double)jarg2; 
-  if (arg1) (arg1)->right = arg2;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_right_get(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  result = (double) ((arg1)->right);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectDouble_width_set(void * jarg1, double jarg2) {
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double arg2 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (double)jarg2; 
-  if (arg1) (arg1)->width = arg2;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_width_get(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  result = (double) ((arg1)->width);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectDouble_bottom_set(void * jarg1, double jarg2) {
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double arg2 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (double)jarg2; 
-  if (arg1) (arg1)->bottom = arg2;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_bottom_get(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  result = (double) ((arg1)->bottom);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectDouble_height_set(void * jarg1, double jarg2) {
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double arg2 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (double)jarg2; 
-  if (arg1) (arg1)->height = arg2;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_height_get(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  result = (double) ((arg1)->height);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectDouble_top_set(void * jarg1, double jarg2) {
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double arg2 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  arg2 = (double)jarg2; 
-  if (arg1) (arg1)->top = arg2;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_Dali_RectDouble_top_get(void * jarg1) {
-  double jresult ;
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  double result;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  result = (double) ((arg1)->top);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RectDouble(void * jarg1) {
-  Dali::Rect< double > *arg1 = (Dali::Rect< double > *) 0 ;
-  
-  arg1 = (Dali::Rect< double > *)jarg1; 
-  {
-    try {
-      delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; 
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectInteger__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Rectangle__SWIG_0() {
   void * jresult ;
   Dali::Rect< int > *result = 0 ;
   
@@ -45850,7 +45104,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectInteger__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectInteger__SWIG_1(int jarg1, int jarg2, int jarg3, int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Rectangle__SWIG_1(int jarg1, int jarg2, int jarg3, int jarg4) {
   void * jresult ;
   int arg1 ;
   int arg2 ;
@@ -45884,7 +45138,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectInteger__SWIG_1(int jarg1, int
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectInteger__SWIG_2(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Rectangle__SWIG_2(void * jarg1) {
   void * jresult ;
   Dali::Rect< int > *arg1 = 0 ;
   Dali::Rect< int > *result = 0 ;
@@ -45916,7 +45170,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectInteger__SWIG_2(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RectInteger_Assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rectangle_Assign(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   Dali::Rect< int > *arg2 = 0 ;
@@ -45950,7 +45204,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RectInteger_Assign(void * jarg1, void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_Set(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_Set(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -45982,7 +45236,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_Set(void * jarg1, int jarg2,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectInteger_IsEmpty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rectangle_IsEmpty(void * jarg1) {
   unsigned int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   bool result;
@@ -46010,7 +45264,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectInteger_IsEmpty(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_Left(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_Left(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46038,7 +45292,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_Left(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_Right(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_Right(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46066,7 +45320,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_Right(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_Top(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_Top(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46094,7 +45348,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_Top(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_Bottom(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_Bottom(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46122,7 +45376,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_Bottom(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_Area(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_Area(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46150,7 +45404,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_Area(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectInteger_Intersects(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rectangle_Intersects(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   Dali::Rect< int > *arg2 = 0 ;
@@ -46184,7 +45438,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectInteger_Intersects(void * ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectInteger_Contains(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rectangle_Contains(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   Dali::Rect< int > *arg2 = 0 ;
@@ -46218,7 +45472,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectInteger_Contains(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_x_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_x_set(void * jarg1, int jarg2) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int arg2 ;
   
@@ -46228,7 +45482,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_x_set(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_x_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_x_get(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46240,7 +45494,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_x_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_left_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_left_set(void * jarg1, int jarg2) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int arg2 ;
   
@@ -46250,7 +45504,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_left_set(void * jarg1, int j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_left_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_left_get(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46262,7 +45516,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_left_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_y_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_y_set(void * jarg1, int jarg2) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int arg2 ;
   
@@ -46272,7 +45526,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_y_set(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_y_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_y_get(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46284,7 +45538,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_y_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_right_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_right_set(void * jarg1, int jarg2) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int arg2 ;
   
@@ -46294,7 +45548,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_right_set(void * jarg1, int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_right_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_right_get(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46306,7 +45560,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_right_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_width_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_width_set(void * jarg1, int jarg2) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int arg2 ;
   
@@ -46316,7 +45570,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_width_set(void * jarg1, int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_width_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_width_get(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46328,7 +45582,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_width_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_bottom_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_bottom_set(void * jarg1, int jarg2) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int arg2 ;
   
@@ -46338,7 +45592,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_bottom_set(void * jarg1, int
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_bottom_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_bottom_get(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46350,7 +45604,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_bottom_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_height_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_height_set(void * jarg1, int jarg2) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int arg2 ;
   
@@ -46360,7 +45614,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_height_set(void * jarg1, int
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_height_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_height_get(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46372,7 +45626,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_height_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_top_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_top_set(void * jarg1, int jarg2) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int arg2 ;
   
@@ -46382,7 +45636,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectInteger_top_set(void * jarg1, int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_top_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_top_get(void * jarg1) {
   int jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   int result;
@@ -46394,7 +45648,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RectInteger_top_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RectInteger(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Rectangle(void * jarg1) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   
   arg1 = (Dali::Rect< int > *)jarg1; 
@@ -46418,601 +45672,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RectInteger(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectUnsignedInteger__SWIG_0() {
-  void * jresult ;
-  Dali::Rect< unsigned int > *result = 0 ;
-  
-  {
-    try {
-      result = (Dali::Rect< unsigned int > *)new Dali::Rect< unsigned int >();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectUnsignedInteger__SWIG_1(unsigned int jarg1, unsigned int jarg2, unsigned int jarg3, unsigned int jarg4) {
-  void * jresult ;
-  unsigned int arg1 ;
-  unsigned int arg2 ;
-  unsigned int arg3 ;
-  unsigned int arg4 ;
-  Dali::Rect< unsigned int > *result = 0 ;
-  
-  arg1 = (unsigned int)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  arg3 = (unsigned int)jarg3; 
-  arg4 = (unsigned int)jarg4; 
-  {
-    try {
-      result = (Dali::Rect< unsigned int > *)new Dali::Rect< unsigned int >(arg1,arg2,arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectUnsignedInteger__SWIG_2(void * jarg1) {
-  void * jresult ;
-  Dali::Rect< unsigned int > *arg1 = 0 ;
-  Dali::Rect< unsigned int > *result = 0 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< unsigned int > const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (Dali::Rect< unsigned int > *)new Dali::Rect< unsigned int >((Dali::Rect< unsigned int > const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  Dali::Rect< unsigned int > *arg2 = 0 ;
-  Dali::Rect< unsigned int > *result = 0 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (Dali::Rect< unsigned int > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< unsigned int > const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (Dali::Rect< unsigned int > *) &(arg1)->operator =((Dali::Rect< unsigned int > const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_Set(void * jarg1, unsigned int jarg2, unsigned int jarg3, unsigned int jarg4, unsigned int jarg5) {
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  unsigned int arg3 ;
-  unsigned int arg4 ;
-  unsigned int arg5 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  arg3 = (unsigned int)jarg3; 
-  arg4 = (unsigned int)jarg4; 
-  arg5 = (unsigned int)jarg5; 
-  {
-    try {
-      (arg1)->Set(arg2,arg3,arg4,arg5);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; 
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_IsEmpty(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  bool result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  {
-    try {
-      result = (bool)((Dali::Rect< unsigned int > const *)arg1)->IsEmpty();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_Left(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  {
-    try {
-      result = (unsigned int)((Dali::Rect< unsigned int > const *)arg1)->Left();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_Right(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  {
-    try {
-      result = (unsigned int)((Dali::Rect< unsigned int > const *)arg1)->Right();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_Top(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  {
-    try {
-      result = (unsigned int)((Dali::Rect< unsigned int > const *)arg1)->Top();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_Bottom(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  {
-    try {
-      result = (unsigned int)((Dali::Rect< unsigned int > const *)arg1)->Bottom();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_Area(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  {
-    try {
-      result = (unsigned int)((Dali::Rect< unsigned int > const *)arg1)->Area();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_Intersects(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  Dali::Rect< unsigned int > *arg2 = 0 ;
-  bool result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (Dali::Rect< unsigned int > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< unsigned int > const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (bool)((Dali::Rect< unsigned int > const *)arg1)->Intersects((Dali::Rect< unsigned int > const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_Contains(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  Dali::Rect< unsigned int > *arg2 = 0 ;
-  bool result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (Dali::Rect< unsigned int > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< unsigned int > const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (bool)((Dali::Rect< unsigned int > const *)arg1)->Contains((Dali::Rect< unsigned int > const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_x_set(void * jarg1, unsigned int jarg2) {
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  if (arg1) (arg1)->x = arg2;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_x_get(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  result = (unsigned int) ((arg1)->x);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_left_set(void * jarg1, unsigned int jarg2) {
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  if (arg1) (arg1)->left = arg2;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_left_get(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  result = (unsigned int) ((arg1)->left);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_y_set(void * jarg1, unsigned int jarg2) {
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  if (arg1) (arg1)->y = arg2;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_y_get(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  result = (unsigned int) ((arg1)->y);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_right_set(void * jarg1, unsigned int jarg2) {
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  if (arg1) (arg1)->right = arg2;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_right_get(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  result = (unsigned int) ((arg1)->right);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_width_set(void * jarg1, unsigned int jarg2) {
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  if (arg1) (arg1)->width = arg2;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_width_get(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  result = (unsigned int) ((arg1)->width);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_bottom_set(void * jarg1, unsigned int jarg2) {
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  if (arg1) (arg1)->bottom = arg2;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_bottom_get(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  result = (unsigned int) ((arg1)->bottom);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_height_set(void * jarg1, unsigned int jarg2) {
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  if (arg1) (arg1)->height = arg2;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_height_get(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  result = (unsigned int) ((arg1)->height);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_top_set(void * jarg1, unsigned int jarg2) {
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  if (arg1) (arg1)->top = arg2;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectUnsignedInteger_top_get(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  result = (unsigned int) ((arg1)->top);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RectUnsignedInteger(void * jarg1) {
-  Dali::Rect< unsigned int > *arg1 = (Dali::Rect< unsigned int > *) 0 ;
-  
-  arg1 = (Dali::Rect< unsigned int > *)jarg1; 
-  {
-    try {
-      delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; 
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectFloat__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PaddingType__SWIG_0() {
   void * jresult ;
   Dali::Rect< float > *result = 0 ;
   
@@ -47038,7 +45698,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectFloat__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectFloat__SWIG_1(float jarg1, float jarg2, float jarg3, float jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PaddingType__SWIG_1(float jarg1, float jarg2, float jarg3, float jarg4) {
   void * jresult ;
   float arg1 ;
   float arg2 ;
@@ -47072,7 +45732,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectFloat__SWIG_1(float jarg1, flo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectFloat__SWIG_2(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PaddingType__SWIG_2(void * jarg1) {
   void * jresult ;
   Dali::Rect< float > *arg1 = 0 ;
   Dali::Rect< float > *result = 0 ;
@@ -47104,7 +45764,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RectFloat__SWIG_2(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RectFloat_Assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PaddingType_Assign(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   Dali::Rect< float > *arg2 = 0 ;
@@ -47138,7 +45798,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RectFloat_Assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_Set(void * jarg1, float jarg2, float jarg3, float jarg4, float jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_Set(void * jarg1, float jarg2, float jarg3, float jarg4, float jarg5) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
   float arg3 ;
@@ -47170,243 +45830,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_Set(void * jarg1, float jarg2,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectFloat_IsEmpty(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
-  bool result;
-  
-  arg1 = (Dali::Rect< float > *)jarg1; 
-  {
-    try {
-      result = (bool)((Dali::Rect< float > const *)arg1)->IsEmpty();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_Left(void * jarg1) {
-  float jresult ;
-  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
-  float result;
-  
-  arg1 = (Dali::Rect< float > *)jarg1; 
-  {
-    try {
-      result = (float)((Dali::Rect< float > const *)arg1)->Left();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_Right(void * jarg1) {
-  float jresult ;
-  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
-  float result;
-  
-  arg1 = (Dali::Rect< float > *)jarg1; 
-  {
-    try {
-      result = (float)((Dali::Rect< float > const *)arg1)->Right();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_Top(void * jarg1) {
-  float jresult ;
-  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
-  float result;
-  
-  arg1 = (Dali::Rect< float > *)jarg1; 
-  {
-    try {
-      result = (float)((Dali::Rect< float > const *)arg1)->Top();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_Bottom(void * jarg1) {
-  float jresult ;
-  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
-  float result;
-  
-  arg1 = (Dali::Rect< float > *)jarg1; 
-  {
-    try {
-      result = (float)((Dali::Rect< float > const *)arg1)->Bottom();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_Area(void * jarg1) {
-  float jresult ;
-  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
-  float result;
-  
-  arg1 = (Dali::Rect< float > *)jarg1; 
-  {
-    try {
-      result = (float)((Dali::Rect< float > const *)arg1)->Area();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectFloat_Intersects(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
-  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
-  Dali::Rect< float > *arg2 = 0 ;
-  bool result;
-  
-  arg1 = (Dali::Rect< float > *)jarg1; 
-  arg2 = (Dali::Rect< float > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< float > const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (bool)((Dali::Rect< float > const *)arg1)->Intersects((Dali::Rect< float > const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RectFloat_Contains(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
-  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
-  Dali::Rect< float > *arg2 = 0 ;
-  bool result;
-  
-  arg1 = (Dali::Rect< float > *)jarg1; 
-  arg2 = (Dali::Rect< float > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< float > const & type is null", 0);
-    return 0;
-  } 
-  {
-    try {
-      result = (bool)((Dali::Rect< float > const *)arg1)->Contains((Dali::Rect< float > const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_x_set(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_x_set(void * jarg1, float jarg2) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
   
@@ -47416,7 +45840,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_x_set(void * jarg1, float jarg
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_x_get(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_x_get(void * jarg1) {
   float jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float result;
@@ -47428,7 +45852,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_x_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_left_set(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_left_set(void * jarg1, float jarg2) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
   
@@ -47438,7 +45862,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_left_set(void * jarg1, float j
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_left_get(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_left_get(void * jarg1) {
   float jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float result;
@@ -47450,7 +45874,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_left_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_y_set(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_y_set(void * jarg1, float jarg2) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
   
@@ -47460,7 +45884,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_y_set(void * jarg1, float jarg
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_y_get(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_y_get(void * jarg1) {
   float jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float result;
@@ -47472,7 +45896,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_y_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_right_set(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_right_set(void * jarg1, float jarg2) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
   
@@ -47482,7 +45906,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_right_set(void * jarg1, float 
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_right_get(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_right_get(void * jarg1) {
   float jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float result;
@@ -47494,7 +45918,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_right_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_width_set(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_width_set(void * jarg1, float jarg2) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
   
@@ -47504,7 +45928,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_width_set(void * jarg1, float 
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_width_get(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_width_get(void * jarg1) {
   float jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float result;
@@ -47516,7 +45940,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_width_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_bottom_set(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_bottom_set(void * jarg1, float jarg2) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
   
@@ -47526,7 +45950,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_bottom_set(void * jarg1, float
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_bottom_get(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_bottom_get(void * jarg1) {
   float jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float result;
@@ -47538,7 +45962,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_bottom_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_height_set(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_height_set(void * jarg1, float jarg2) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
   
@@ -47548,7 +45972,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_height_set(void * jarg1, float
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_height_get(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_height_get(void * jarg1) {
   float jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float result;
@@ -47560,7 +45984,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_height_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_top_set(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_top_set(void * jarg1, float jarg2) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
   
@@ -47570,7 +45994,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RectFloat_top_set(void * jarg1, float ja
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_top_get(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_top_get(void * jarg1) {
   float jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float result;
@@ -47582,7 +46006,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RectFloat_top_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RectFloat(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PaddingType(void * jarg1) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   
   arg1 = (Dali::Rect< float > *)jarg1; 
@@ -57555,32 +55979,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_BORDER_ONLY_get() {
   {
     try {
       result = (int)Dali::Toolkit::ImageVisual::Property::BORDER_ONLY;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_BATCHING_ENABLED_get() {
-  int jresult ;
-  int result;
-  
-  {
-    try {
-      result = (int)Dali::Toolkit::ImageVisual::Property::BATCHING_ENABLED;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
@@ -83524,8 +81922,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ProgressBar_Property_SECONDARY_PROGRESS_V
   int jresult ;
   int result;
   
-  //result = (int)Dali::Toolkit::ProgressBar::Property::SECONDARY_PROGRESS_VALUE;
-  //jresult = (int)result; 
+  result = (int)Dali::Toolkit::ProgressBar::Property::SECONDARY_PROGRESS_VALUE;
+  jresult = (int)result; 
   return jresult;
 }
 
@@ -83534,8 +81932,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ProgressBar_Property_INDETERMINATE_get() 
   int jresult ;
   int result;
   
-  //result = (int)Dali::Toolkit::ProgressBar::Property::INDETERMINATE;
-  //jresult = (int)result; 
+  result = (int)Dali::Toolkit::ProgressBar::Property::INDETERMINATE;
+  jresult = (int)result; 
   return jresult;
 }
 
@@ -83564,8 +81962,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ProgressBar_Property_SECONDARY_PROGRESS_V
   int jresult ;
   int result;
   
-  //result = (int)Dali::Toolkit::ProgressBar::Property::SECONDARY_PROGRESS_VISUAL;
-  //jresult = (int)result; 
+  result = (int)Dali::Toolkit::ProgressBar::Property::SECONDARY_PROGRESS_VISUAL;
+  jresult = (int)result; 
   return jresult;
 }
 
@@ -83574,8 +81972,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ProgressBar_Property_INDETERMINATE_VISUAL
   int jresult ;
   int result;
   
-  //result = (int)Dali::Toolkit::ProgressBar::Property::INDETERMINATE_VISUAL;
-  //jresult = (int)result; 
+  result = (int)Dali::Toolkit::ProgressBar::Property::INDETERMINATE_VISUAL;
+  jresult = (int)result; 
   return jresult;
 }
 
@@ -83584,8 +81982,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ProgressBar_Property_INDETERMINATE_VISUAL
   int jresult ;
   int result;
   
-  //result = (int)Dali::Toolkit::ProgressBar::Property::INDETERMINATE_VISUAL_ANIMATION;
-  //jresult = (int)result; 
+  result = (int)Dali::Toolkit::ProgressBar::Property::INDETERMINATE_VISUAL_ANIMATION;
+  jresult = (int)result; 
   return jresult;
 }
 
@@ -83594,8 +81992,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ProgressBar_Property_LABEL_VISUAL_get() {
   int jresult ;
   int result;
   
-  //result = (int)Dali::Toolkit::ProgressBar::Property::LABEL_VISUAL;
-  //jresult = (int)result; 
+  result = (int)Dali::Toolkit::ProgressBar::Property::LABEL_VISUAL;
+  jresult = (int)result; 
   return jresult;
 }
 
