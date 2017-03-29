@@ -7,7 +7,8 @@ dali_csharp_binder_src_files = \
   src/callbackbase_wrap.cpp \
   src/keyboard_focus_manager_wrap.cpp \
   src/devel-property-wrap.cpp \
-  src/view-wrapper-impl-wrap.cpp 
+  src/version-check.cpp \
+  src/view-wrapper-impl-wrap.cpp
 
 dali_csharp_binder_header_files = \
   src/common.h
