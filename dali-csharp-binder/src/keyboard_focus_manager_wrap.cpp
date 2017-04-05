@@ -667,12 +667,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Connect(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Disconnect(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Disconnect(void * jarg1, SWIG_CallbackKbPreFocusChange callbackOnKbPreFocusChange) {
+
+  swig_callbackOnKbPreFocusChange = callbackOnKbPreFocusChange;
+
   Dali::Signal< Dali::Actor (Dali::Actor,Dali::Actor,Dali::Toolkit::Control::KeyboardFocus::Direction) > *arg1 = (Dali::Signal< Dali::Actor (Dali::Actor,Dali::Actor,Dali::Toolkit::Control::KeyboardFocus::Direction) > *) 0 ;
   Dali::Actor (*arg2)(Dali::Actor,Dali::Actor,Dali::Toolkit::Control::KeyboardFocus::Direction) = (Dali::Actor (*)(Dali::Actor,Dali::Actor,Dali::Toolkit::Control::KeyboardFocus::Direction)) 0 ;
 
   arg1 = (Dali::Signal< Dali::Actor (Dali::Actor,Dali::Actor,Dali::Toolkit::Control::KeyboardFocus::Direction) > *)jarg1;
-  arg2 = (Dali::Actor (*)(Dali::Actor,Dali::Actor,Dali::Toolkit::Control::KeyboardFocus::Direction))jarg2;
+  arg2 = (Dali::Actor (*)(Dali::Actor,Dali::Actor,Dali::Toolkit::Control::KeyboardFocus::Direction))OnKbPreFocusChangeCallback;
   {
     try {
       Dali_Signal_Sl_Dali_Actor_Sp_Dali_Actor_Sc_Dali_Actor_Sc_Dali_Toolkit_Control_KeyboardFocus_Direction_SP__Sg__Disconnect(arg1,arg2);
@@ -691,7 +694,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Disconnect(void 
     }
   }
 }
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Emit(void * jarg1, void * jarg2, void * jarg3, int jarg4) {
   void * jresult ;
