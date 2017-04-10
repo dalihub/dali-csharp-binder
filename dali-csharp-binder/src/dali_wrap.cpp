@@ -1076,6 +1076,22 @@ SWIGINTERN void Dali_Signal_Sl_bool_Sp__SP__Sg__Disconnect(Dali::Signal< bool ()
 SWIGINTERN bool Dali_Signal_Sl_bool_Sp__SP__Sg__Emit(Dali::Signal< bool () > *self){
           return self->Emit();
       }
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_bool_SP__Sg__Empty(Dali::Signal< void (bool) > const *self){
+         return self->Empty();
+      }
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_bool_SP__Sg__GetConnectionCount(Dali::Signal< void (bool) > const *self){
+        return self->GetConnectionCount();
+      }
+SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Connect(Dali::Signal< void (bool) > *self,void (*func)(bool)){
+          self->Connect( func );
+      }
+SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Disconnect(Dali::Signal< void (bool) > *self,void (*func)(bool)){
+          self->Disconnect( func );
+      }
+SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Emit(Dali::Signal< void (bool) > *self,bool arg){
+          /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
+/*@SWIG@*/ self->Emit( arg );
+      }
 SWIGINTERN std::vector< unsigned int > *new_std_vector_Sl_unsigned_SS_int_Sg___SWIG_2(int capacity){
         std::vector< unsigned int >* pv = 0;
         if (capacity >= 0) {
@@ -1673,26 +1689,6 @@ SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Slider_Sc_int_SP__Sg__Discon
 SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Slider_Sc_int_SP__Sg__Emit(Dali::Signal< bool (Dali::Toolkit::Slider,int) > *self,Dali::Toolkit::Slider arg1,int arg2){
         return self->Emit( arg1, arg2 );
       }
-
-
-//manual merge 2017-03-31
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_bool_SP__Sg__Empty(Dali::Signal< void (bool) > const *self){
-         return self->Empty();
-      }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_bool_SP__Sg__GetConnectionCount(Dali::Signal< void (bool) > const *self){
-        return self->GetConnectionCount();
-      }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Connect(Dali::Signal< void (bool) > *self,void (*func)(bool)){
-          self->Connect( func );
-      }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Disconnect(Dali::Signal< void (bool) > *self,void (*func)(bool)){
-          self->Disconnect( func );
-      }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Emit(Dali::Signal< void (bool) > *self,bool arg){
-          /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
-/*@SWIG@*/ self->Emit( arg );
-      }
-
 
 
 /* ---------------------------------------------------
@@ -53849,34 +53845,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetNativeHandle(void * jarg1) {
     }
   }
   jresult = new Dali::Any((const Dali::Any &)result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_IndicatorVisibilityChangedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Window::IndicatorSignalType *result = 0 ;
-  
-  arg1 = (Dali::Window *)jarg1; 
-  {
-    try {
-      result = (Dali::Window::IndicatorSignalType *) &(arg1)->IndicatorVisibilityChangedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
   return jresult;
 }
 
