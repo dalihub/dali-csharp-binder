@@ -63190,42 +63190,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyInputFocusManager_RemoveFocus(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyInputFocusManager_IsKeyboardListener(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
-  Dali::Toolkit::KeyInputFocusManager *arg1 = (Dali::Toolkit::KeyInputFocusManager *) 0 ;
-  Dali::Toolkit::Control arg2 ;
-  Dali::Toolkit::Control *argp2 ;
-  bool result;
-  
-  arg1 = (Dali::Toolkit::KeyInputFocusManager *)jarg1; 
-  argp2 = (Dali::Toolkit::Control *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::Control", 0);
-    return 0;
-  }
-  arg2 = *argp2; 
-  {
-    try {
-      result = (bool)(arg1)->IsKeyboardListener(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_KeyInputFocusManager_KeyInputFocusChangedSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::KeyInputFocusManager *arg1 = (Dali::Toolkit::KeyInputFocusManager *) 0 ;
@@ -63235,34 +63199,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_KeyInputFocusManager_KeyInputFocusChan
   {
     try {
       result = (Dali::Toolkit::KeyInputFocusManager::KeyInputFocusChangedSignalType *) &(arg1)->KeyInputFocusChangedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
-      };
-    }
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_KeyInputFocusManager_UnhandledKeyEventSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::KeyInputFocusManager *arg1 = (Dali::Toolkit::KeyInputFocusManager *) 0 ;
-  Dali::Toolkit::KeyInputFocusManager::UnhandledKeyEventSignalType *result = 0 ;
-  
-  arg1 = (Dali::Toolkit::KeyInputFocusManager *)jarg1; 
-  {
-    try {
-      result = (Dali::Toolkit::KeyInputFocusManager::UnhandledKeyEventSignalType *) &(arg1)->UnhandledKeyEventSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
