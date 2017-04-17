@@ -1,5 +1,5 @@
 Name: dali-csharp-binder
-Version: 1.2.34
+Version: 1.2.35
 Release: 1
 Summary: build dali csharp binder
 License: Apache-2.0 and BSD-2-Clause and MIT
