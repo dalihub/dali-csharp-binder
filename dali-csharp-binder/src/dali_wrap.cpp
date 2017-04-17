@@ -422,6 +422,7 @@ SWIGINTERN void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali/dali.h>
 #include <dali-toolkit/dali-toolkit.h>
+#include <dali/devel-api/events/key-event-devel.h>
 
 #include <dali/devel-api/actors/actor-devel.h>
 
@@ -27278,6 +27279,71 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Key__SWIG_1(char * jarg1, char * j
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Key__SWIG_2(void * jarg1) {
+  void * jresult ;
+  Dali::KeyEvent *arg1 = 0 ;
+  Dali::KeyEvent *result = 0 ;
+  
+  arg1 = (Dali::KeyEvent *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent const & type is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (Dali::KeyEvent *)new Dali::KeyEvent((Dali::KeyEvent const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Key_Assign(void * jarg1, void * jarg2) {
+  void * jresult ;
+  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
+  Dali::KeyEvent *arg2 = 0 ;
+  Dali::KeyEvent *result = 0 ;
+  
+  arg1 = (Dali::KeyEvent *)jarg1; 
+  arg2 = (Dali::KeyEvent *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent const & type is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (Dali::KeyEvent *) &(arg1)->operator =((Dali::KeyEvent const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Key(void * jarg1) {
   Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
@@ -28400,6 +28466,137 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Wheel_timeStamp_get(void * jarg1
   return jresult;
 }
 
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_GetDeviceName(void * jarg1) {
+  char * jresult ;
+  Dali::KeyEvent *arg1 = 0 ;
+  std::string result;
+  
+  arg1 = (Dali::KeyEvent *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent const & type is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = Dali::DevelKeyEvent::GetDeviceName((Dali::KeyEvent const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetDeviceName(void * jarg1, char * jarg2) {
+  Dali::KeyEvent *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  
+  arg1 = (Dali::KeyEvent *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent & type is null", 0);
+    return ;
+  } 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  {
+    try {
+      Dali::DevelKeyEvent::SetDeviceName(*arg1,(std::string const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; 
+      };
+    }
+  }
+  
+  //argout typemap for const std::string&
+  
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceClass(void * jarg1) {
+  int jresult ;
+  Dali::KeyEvent *arg1 = 0 ;
+  Dali::DevelKeyEvent::DeviceClass::Type result;
+  
+  arg1 = (Dali::KeyEvent *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent const & type is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (Dali::DevelKeyEvent::DeviceClass::Type)Dali::DevelKeyEvent::GetDeviceClass((Dali::KeyEvent const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetDeviceClass(void * jarg1, int jarg2) {
+  Dali::KeyEvent *arg1 = 0 ;
+  Dali::DevelKeyEvent::DeviceClass::Type *arg2 = 0 ;
+  Dali::DevelKeyEvent::DeviceClass::Type temp2 ;
+  
+  arg1 = (Dali::KeyEvent *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent & type is null", 0);
+    return ;
+  } 
+  temp2 = (Dali::DevelKeyEvent::DeviceClass::Type)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      Dali::DevelKeyEvent::SetDeviceClass(*arg1,(enum Dali::DevelKeyEvent::DeviceClass::Type const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; 
+      };
+    }
+  }
+}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_PARENT_ORIGIN_get() {
   int jresult ;
