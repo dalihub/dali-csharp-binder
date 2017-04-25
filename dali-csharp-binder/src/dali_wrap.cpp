@@ -32559,6 +32559,38 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LowerBelow(void * jarg1, void * jarg2) {
   }
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VisibilityChangedSignal(void * jarg1) {
+  void * jresult ;
+  Dali::Actor arg1 ;
+  Dali::Actor *argp1 ;
+  Dali::DevelActor::VisibilityChangedSignalType *result = 0 ;
+  
+  argp1 = (Dali::Actor *)jarg1; 
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
+    return 0;
+  }
+  arg1 = *argp1; 
+  {
+    try {
+      result = (Dali::DevelActor::VisibilityChangedSignalType *) &Dali::DevelActor::VisibilityChangedSignal(arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Layer_Property_CLIPPING_ENABLE_get() {
   int jresult ;
