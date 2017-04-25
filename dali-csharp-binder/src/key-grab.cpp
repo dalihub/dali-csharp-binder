@@ -40,9 +40,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKeyTopmost(void * window, int daliKe
 
   {
     try {
-
-    ret = Dali::KeyGrab::GrabKeyTopmost(*_win, (Dali::KEY)daliKey);
-
+      ret = Dali::KeyGrab::GrabKeyTopmost(*_win, (Dali::KEY)daliKey);
     } catch (std::out_of_range& e) {
     {
       SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
@@ -72,9 +70,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKeyTopmost(void * window, int dali
 
   {
     try {
-
-    ret = Dali::KeyGrab::UngrabKeyTopmost(*_win, (Dali::KEY)daliKey);
-
+      ret = Dali::KeyGrab::UngrabKeyTopmost(*_win, (Dali::KEY)daliKey);
     } catch (std::out_of_range& e) {
     {
       SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
@@ -104,9 +100,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKey(void * window, int daliKey, int 
 
   {
     try {
-
-    ret = Dali::KeyGrab::GrabKey(*_win, (Dali::KEY)daliKey, (Dali::KeyGrab::KeyGrabMode)grabMode);
-
+      ret = Dali::KeyGrab::GrabKey(*_win, (Dali::KEY)daliKey, (Dali::KeyGrab::KeyGrabMode)grabMode);
     } catch (std::out_of_range& e) {
     {
       SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
@@ -136,9 +130,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKey(void * window, int daliKey)
 
   {
     try {
-
-    ret = Dali::KeyGrab::UngrabKey(*_win, (Dali::KEY)daliKey);
-
+      ret = Dali::KeyGrab::UngrabKey(*_win, (Dali::KEY)daliKey);
     } catch (std::out_of_range& e) {
     {
       SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
@@ -162,26 +154,24 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKey(void * window, int daliKey)
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetNativeWindowHandler( void* window )
 {
   Dali::Window *_win = (Dali::Window *)window;
-  void * ret;
+  void * ret = NULL;
 
   LOG("CSharp_Dali_GetNativeWindowHandler() [DP1] window=%d", window);
 
   {
     try {
-
-    ret = Dali::DevelWindow::GetNativeWindowHandler(*_win);
-
+      ret = Dali::DevelWindow::GetNativeWindowHandler(*_win);
     } catch (std::out_of_range& e) {
     {
-      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return NULL;
     };
     } catch (std::exception& e) {
     {
-      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return NULL;
     };
     } catch (...) {
     {
-      SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return false;
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return NULL;
     };
     }
   }
