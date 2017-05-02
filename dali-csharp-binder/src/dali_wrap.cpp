@@ -64009,36 +64009,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Button_Property_SELECTED_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Button_Property_UNSELECTED_STATE_IMAGE_get() {
-  int jresult ;
-  int result;
-  
-  result = (int)Dali::Toolkit::Button::Property::UNSELECTED_STATE_IMAGE;
-  jresult = (int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Button_Property_SELECTED_STATE_IMAGE_get() {
-  int jresult ;
-  int result;
-  
-  result = (int)Dali::Toolkit::Button::Property::SELECTED_STATE_IMAGE;
-  jresult = (int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Button_Property_DISABLED_STATE_IMAGE_get() {
-  int jresult ;
-  int result;
-  
-  result = (int)Dali::Toolkit::Button::Property::DISABLED_STATE_IMAGE;
-  jresult = (int)result; 
-  return jresult;
-}
-
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Button_Property_UNSELECTED_COLOR_get() {
   int jresult ;
   int result;
