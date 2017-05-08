@@ -1,0 +1,18 @@
+#
+# Add source files here
+#
+
+dali_csharp_binder_src_files = \
+  src/dali_wrap.cpp \
+  src/callbackbase_wrap.cpp \
+  src/keyboard_focus_manager_wrap.cpp \
+  src/devel-property-wrap.cpp \
+  src/version-check.cpp \
+  src/view-wrapper-impl-wrap.cpp \
+  src/event-thread-callback-wrap.cpp \
+  src/key-grab.cpp \
+  src/manual-bindings-all.cpp
+
+dali_csharp_binder_header_files = \
+  src/common.h
+
