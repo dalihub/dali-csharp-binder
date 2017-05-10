@@ -27,6 +27,9 @@
 #include <dali-toolkit/devel-api/controls/scrollable/item-view/item-view-devel.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
 #include <dali-toolkit/devel-api/visuals/visual-properties-devel.h>
 #include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
 
@@ -240,6 +243,98 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Image_Visual_BORDER_get() {
   jresult = (int)result;
   return jresult;
 }
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SMOOTH_SCROLL_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::SMOOTH_SCROLL;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SMOOTH_SCROLL_DURATION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::SMOOTH_SCROLL_DURATION;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_ENABLE_SCROLL_BAR_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_SCROLL_BAR;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SCROLL_BAR_SHOW_DURATION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::SCROLL_BAR_SHOW_DURATION;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SCROLL_BAR_FADE_DURATION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::SCROLL_BAR_FADE_DURATION;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_PIXEL_SIZE_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::PIXEL_SIZE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_HIDDEN_INPUT_SETTINGS_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextField::Property::HIDDEN_INPUT_SETTINGS;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_PIXEL_SIZE_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextField::Property::PIXEL_SIZE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_PIXEL_SIZE_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::PIXEL_SIZE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_ELLIPSIS_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::ELLIPSIS;
+  jresult = (int)result;
+  return jresult;
+}
+
+
 
 #ifdef __cplusplus
 }
