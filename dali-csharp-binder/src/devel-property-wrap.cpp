@@ -334,7 +334,23 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_ELLIPSIS_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_AUTO_SCROLL_STOP_MODE_get() {
+  int jresult ;
+  int result;
 
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::AUTO_SCROLL_STOP_MODE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_AUTO_SCROLL_LOOP_DELAY_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::AUTO_SCROLL_LOOP_DELAY;
+  jresult = (int)result;
+  return jresult;
+}
 
 #ifdef __cplusplus
 }
