@@ -32,24 +32,30 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_EventThreadCallback(SWIG_CallbackM
   void * jresult ;
   void (*arg1)(void) = (void (*)(void)) 0 ;
   Dali::EventThreadCallback *result = 0 ;
+  Dali::CallbackBase * callbackBase = 0 ;
 
   arg1 = (void (*)(void))callbackOnMakeCallback;
+  callbackBase = (Dali::CallbackBase *)Dali::MakeCallback(arg1);
+
   {
     try {
-      result = (Dali::EventThreadCallback *)new Dali::EventThreadCallback((Dali::CallbackBase *)Dali::MakeCallback(arg1));
+      result = (Dali::EventThreadCallback *)new Dali::EventThreadCallback(callbackBase);
     } catch (std::out_of_range& e) {
       {
         delete result;
+        delete callbackBase;
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
       };
     } catch (std::exception& e) {
       {
         delete result;
+        delete callbackBase;
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
     } catch (...) {
       {
         delete result;
+        delete callbackBase;
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
