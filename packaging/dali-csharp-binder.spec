@@ -34,7 +34,6 @@ This package includes developer files common to all packages.
 # Build
 ##############################
 %build
-CXXFLAGS+=" -D_GLIBCXX_USE_CXX11_ABI=0 "
 %autogen
 make %{?_smp_mflags}
 
