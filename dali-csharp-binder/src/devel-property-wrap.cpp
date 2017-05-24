@@ -32,6 +32,7 @@
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
 #include <dali-toolkit/devel-api/visuals/visual-properties-devel.h>
 #include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
+#include <dali-toolkit/devel-api/controls/text-controls/hidden-input-properties.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -348,6 +349,106 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_AUTO_SCROLL_LOOP_DELAY_get(
   int result;
 
   result = (int)Dali::Toolkit::DevelTextLabel::Property::AUTO_SCROLL_LOOP_DELAY;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_MODE_get() {
+  int jresult ;
+  int result;
+
+  {
+    try {
+      result = (int)Dali::Toolkit::HiddenInput::Property::MODE;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SUBSTITUTE_CHARACTER_get() {
+  int jresult ;
+  int result;
+
+  {
+    try {
+      result = (int)Dali::Toolkit::HiddenInput::Property::SUBSTITUTE_CHARACTER;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SUBSTITUTE_COUNT_get() {
+  int jresult ;
+  int result;
+
+  {
+    try {
+      result = (int)Dali::Toolkit::HiddenInput::Property::SUBSTITUTE_COUNT;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SHOW_DURATION_get() {
+  int jresult ;
+  int result;
+
+  {
+    try {
+      result = (int)Dali::Toolkit::HiddenInput::Property::SHOW_DURATION;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
   jresult = (int)result;
   return jresult;
 }
