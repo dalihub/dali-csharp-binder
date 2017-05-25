@@ -13,6 +13,7 @@ missing
 *.o
 *.lo
 *.la
+*~
 Makefile
 autom4te.cache/
 config.h
