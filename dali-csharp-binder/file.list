@@ -10,8 +10,9 @@ dali_csharp_binder_src_files = \
   src/version-check.cpp \
   src/view-wrapper-impl-wrap.cpp \
   src/event-thread-callback-wrap.cpp \
-  src/key-grab.cpp \
-  src/manual-bindings-all.cpp
+  src/manual-bindings-all.cpp \
+  src/tts-player.cpp \
+  src/key-grab.cpp
 
 dali_csharp_binder_header_files = \
   src/common.h
