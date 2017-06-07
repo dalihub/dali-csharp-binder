@@ -299,6 +299,33 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_PIXEL_SIZE_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_COUNT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::LINE_COUNT;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_PLACEHOLDER_TEXT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::PLACEHOLDER_TEXT;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_PLACEHOLDER_TEXT_COLOR_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::PLACEHOLDER_TEXT_COLOR;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_HIDDEN_INPUT_SETTINGS_get() {
   int jresult ;
   int result;

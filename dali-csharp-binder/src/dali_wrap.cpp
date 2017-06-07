@@ -53464,6 +53464,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationExtensions_Init(void * jarg1)
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationExtensions_Start(void * jarg1) {
+  Dali::ApplicationExtensions *arg1 = (Dali::ApplicationExtensions *) 0 ;
+  
+  arg1 = (Dali::ApplicationExtensions *)jarg1; 
+  {
+    try {
+      (arg1)->Start();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ; 
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ; 
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; 
+      };
+    }
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationExtensions_Terminate(void * jarg1) {
   Dali::ApplicationExtensions *arg1 = (Dali::ApplicationExtensions *) 0 ;
