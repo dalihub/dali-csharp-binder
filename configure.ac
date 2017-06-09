@@ -12,8 +12,20 @@ AM_INIT_AUTOMAKE(1.6)
 AC_PROG_CXX
 AC_PROG_LIBTOOL
 
+# added for key grab binding only for tizen
+AC_ARG_ENABLE(tizenBuild,
+              [  --enable-tizenBuild       build on tizen],
+              enable_tizenBuild=yes,
+              enable_tizenBuild=no)
+
+AM_CONDITIONAL([TIZENBUILD], [test x$enable_tizenBuild = xyes])
+
 # Checks for libraries.
 PKG_CHECK_MODULES([DALI], [dali-core dali-adaptor dali-toolkit])
+# added for key grab binding only for tizen
+if test x$enable_tizenBuild = xyes; then
+PKG_CHECK_MODULES(ECORE_WAYLAND, ecore-wayland)
+fi
 
 AC_CONFIG_FILES([
 Makefile
