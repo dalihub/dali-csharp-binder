@@ -425,6 +425,7 @@ SWIGINTERN void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/events/key-event-devel.h>
 
 #include <dali/devel-api/actors/actor-devel.h>
+#include <dali/devel-api/animation/animation-devel.h>
 
 #include <dali/public-api/math/matrix.h>
 #include <dali/public-api/math/matrix3.h>
@@ -39357,6 +39358,58 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_Stop(void * jarg1) {
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_SetProgressNotification(void* jarg1, float jarg2) {
+  Dali::Animation* argp1 = (Dali::Animation *) jarg1 ;
+
+  Dali::Animation arg1 = *argp1;
+  float arg2 = (float)jarg2;
+
+  {
+    try {
+      Dali::DevelAnimation::SetProgressNotification(arg1, arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Animation_GetProgressNotification(void * jarg1) {
+  float jresult ;
+  Dali::Animation* argp1 = (Dali::Animation *) jarg1 ;
+  float result;
+
+  Dali::Animation arg1 = *argp1;
+  {
+    try {
+      result = (float)Dali::DevelAnimation::GetProgressNotification(arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_Clear(void * jarg1) {
   Dali::Animation *arg1 = (Dali::Animation *) 0 ;
@@ -39409,6 +39462,32 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Animation_FinishedSignal(void * jarg1)
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Animation_ProgressReachedSignal(void * jarg1) {
+  void * jresult ;
+  Dali::Animation* argp1 = (Dali::Animation*) jarg1 ;
+  Dali::Animation::AnimationSignalType *result = 0 ;
+
+  Dali::Animation arg1 = *argp1;
+  {
+    try {
+      result = (Dali::Animation::AnimationSignalType* ) &Dali::DevelAnimation::ProgressReachedSignal(arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_AnimateBy__SWIG_0(void * jarg1, void * jarg2, void * jarg3) {
   Dali::Animation *arg1 = (Dali::Animation *) 0 ;
