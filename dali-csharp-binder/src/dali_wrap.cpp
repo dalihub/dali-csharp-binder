@@ -300,18 +300,18 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_NDalic(SWIG_CSharpStringH
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, msg, ""); return nullreturn; } else
 
 /*  Errors in SWIG */
-#define  SWIG_UnknownError    	   -1
-#define  SWIG_IOError        	   -2
-#define  SWIG_RuntimeError   	   -3
-#define  SWIG_IndexError     	   -4
-#define  SWIG_TypeError      	   -5
-#define  SWIG_DivisionByZero 	   -6
-#define  SWIG_OverflowError  	   -7
-#define  SWIG_SyntaxError    	   -8
-#define  SWIG_ValueError     	   -9
-#define  SWIG_SystemError    	   -10
-#define  SWIG_AttributeError 	   -11
-#define  SWIG_MemoryError    	   -12
+#define  SWIG_UnknownError         -1
+#define  SWIG_IOError              -2
+#define  SWIG_RuntimeError         -3
+#define  SWIG_IndexError           -4
+#define  SWIG_TypeError            -5
+#define  SWIG_DivisionByZero       -6
+#define  SWIG_OverflowError        -7
+#define  SWIG_SyntaxError          -8
+#define  SWIG_ValueError           -9
+#define  SWIG_SystemError          -10
+#define  SWIG_AttributeError       -11
+#define  SWIG_MemoryError          -12
 #define  SWIG_NullReferenceError   -13
 
 
@@ -1228,7 +1228,7 @@ SWIGINTERN bool std_vector_Sl_unsigned_SS_int_Sg__Remove(std::vector< unsigned i
         std::vector< unsigned int >::iterator it = std::find(self->begin(), self->end(), value);
         if (it != self->end()) {
           self->erase(it);
-	  return true;
+          return true;
         }
         return false;
       }
@@ -64158,6 +64158,43 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View__SWIG_2(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_CreateTransition(void * jarg1, void * jarg2)
+{
+  void * jresult;
+  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) 0 ;
+  arg1 = (Dali::Toolkit::Control *)jarg1;
+
+  Dali::Toolkit::Internal::Control& controlImpl = Dali::Toolkit::Internal::GetImplementation( *arg1 );
+
+  Dali::Toolkit::TransitionData *arg2 = 0 ;
+  Dali::Animation result;
+
+  arg2 = (Dali::Toolkit::TransitionData *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::TransitionData const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = DevelControl::CreateTransition( controlImpl, (Dali::Toolkit::TransitionData const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Animation((const Dali::Animation &)result);
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::Control *arg1 = 0 ;
@@ -95773,4 +95810,3 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_ImfManager_SWIGUpcast(Dali
 #ifdef __cplusplus
 }
 #endif
-
