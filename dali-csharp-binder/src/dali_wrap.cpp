@@ -85728,12 +85728,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualBase_GetNaturalSize(void * jarg1, 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualBase_SetDepthIndex(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualBase_SetDepthIndex(void * jarg1, int jarg2) {
   Dali::Toolkit::Visual::Base *arg1 = (Dali::Toolkit::Visual::Base *) 0 ;
   float arg2 ;
   
   arg1 = (Dali::Toolkit::Visual::Base *)jarg1; 
-  arg2 = (float)jarg2; 
+  arg2 = (int)jarg2; 
   {
     try {
       (arg1)->SetDepthIndex(arg2);
@@ -85754,10 +85754,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualBase_SetDepthIndex(void * jarg1, f
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_VisualBase_GetDepthIndex(void * jarg1) {
-  float jresult ;
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VisualBase_GetDepthIndex(void * jarg1) {
+  int jresult ;
   Dali::Toolkit::Visual::Base *arg1 = (Dali::Toolkit::Visual::Base *) 0 ;
-  float result;
+  int result;
   
   arg1 = (Dali::Toolkit::Visual::Base *)jarg1; 
   {
