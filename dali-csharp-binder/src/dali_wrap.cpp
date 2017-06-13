@@ -3496,7 +3496,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_Assign(void * jarg1, void * jarg2)
   Dali::Any *arg2 = 0 ;
   Dali::Any *result = 0 ;
 
-  arg1 = (Dali::Any *)jarg1;
+  //DALI_LOG_ERROR("#####CSharp_Dali_Any_Assign()!\n");
+  arg1 = (Dali::Any *)jarg1; 
   arg2 = (Dali::Any *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Any const & type is null", 0);
@@ -3529,7 +3530,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_GetType(void * jarg1) {
   Dali::Any *arg1 = (Dali::Any *) 0 ;
   std::type_info *result = 0 ;
 
-  arg1 = (Dali::Any *)jarg1;
+  //DALI_LOG_ERROR("#####CSharp_Dali_Any_GetType()!\n");
+  arg1 = (Dali::Any *)jarg1; 
   {
     try {
       result = (std::type_info *) &((Dali::Any const *)arg1)->GetType();
@@ -3557,7 +3559,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Any_Empty(void * jarg1) {
   Dali::Any *arg1 = (Dali::Any *) 0 ;
   bool result;
 
-  arg1 = (Dali::Any *)jarg1;
+  //DALI_LOG_ERROR("##### CSharp_Dali_Any_Empty()!\n");
+  arg1 = (Dali::Any *)jarg1; 
   {
     try {
       result = (bool)((Dali::Any const *)arg1)->Empty();
@@ -3587,6 +3590,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Any_AnyContainerBase(void * jarg1,
   Dali::Any::DeleteFunc arg3 = (Dali::Any::DeleteFunc) 0 ;
   Dali::Any::AnyContainerBase *result = 0 ;
 
+  //DALI_LOG_ERROR("##### CSharp_Dali_new_Any_AnyContainerBase()!\n");
   arg1 = (std::type_info *)jarg1;
   if (!arg1) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
@@ -3621,7 +3625,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_GetType(void * ja
   Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
   std::type_info *result = 0 ;
 
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
+  //DALI_LOG_ERROR("##### CSharp_Dali_Any_AnyContainerBase_GetType()!\n");
+  arg1 = (Dali::Any::AnyContainerBase *)jarg1; 
   {
     try {
       result = (std::type_info *) &((Dali::Any::AnyContainerBase const *)arg1)->GetType();
@@ -3649,7 +3654,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mType_get(void * 
   Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
   ::std::type_info *result = 0 ;
 
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
+  //DALI_LOG_ERROR("##### CSharp_Dali_Any_AnyContainerBase_mType_get()!\n");
+  arg1 = (Dali::Any::AnyContainerBase *)jarg1; 
   result = (::std::type_info *) &(::std::type_info const &) ((arg1)->mType);
   jresult = (void *)result;
   return jresult;
@@ -3660,8 +3666,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mCloneFunc_set(void
   Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
   Dali::Any::CloneFunc arg2 = (Dali::Any::CloneFunc) 0 ;
 
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
-  arg2 = (Dali::Any::CloneFunc)jarg2;
+  //DALI_LOG_ERROR("##### CSharp_Dali_Any_AnyContainerBase_mCloneFunc_set()!\n");
+  arg1 = (Dali::Any::AnyContainerBase *)jarg1; 
+  arg2 = (Dali::Any::CloneFunc)jarg2; 
   if (arg1) (arg1)->mCloneFunc = arg2;
 }
 
@@ -3671,7 +3678,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mCloneFunc_get(vo
   Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
   Dali::Any::CloneFunc result;
 
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
+  //DALI_LOG_ERROR("##### CSharp_Dali_Any_AnyContainerBase_mCloneFunc_get()!\n");
+  arg1 = (Dali::Any::AnyContainerBase *)jarg1; 
   result = (Dali::Any::CloneFunc) ((arg1)->mCloneFunc);
   jresult = (void *)result;
   return jresult;
@@ -3682,8 +3690,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mDeleteFunc_set(voi
   Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
   Dali::Any::DeleteFunc arg2 = (Dali::Any::DeleteFunc) 0 ;
 
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
-  arg2 = (Dali::Any::DeleteFunc)jarg2;
+  //DALI_LOG_ERROR("##### CSharp_Dali_Any_AnyContainerBase_mDeleteFunc_set()!\n");
+  arg1 = (Dali::Any::AnyContainerBase *)jarg1; 
+  arg2 = (Dali::Any::DeleteFunc)jarg2; 
   if (arg1) (arg1)->mDeleteFunc = arg2;
 }
 
@@ -3693,7 +3702,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mDeleteFunc_get(v
   Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
   Dali::Any::DeleteFunc result;
 
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
+  //DALI_LOG_ERROR("##### CSharp_Dali_Any_AnyContainerBase_mDeleteFunc_get()!\n");
+  arg1 = (Dali::Any::AnyContainerBase *)jarg1; 
   result = (Dali::Any::DeleteFunc) ((arg1)->mDeleteFunc);
   jresult = (void *)result;
   return jresult;
@@ -3703,7 +3713,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mDeleteFunc_get(v
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Any_AnyContainerBase(void * jarg1) {
   Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
 
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
+  //DALI_LOG_ERROR("##### CSharp_Dali_delete_Any_AnyContainerBase()!\n");
+  arg1 = (Dali::Any::AnyContainerBase *)jarg1; 
   {
     try {
       delete arg1;
@@ -3728,8 +3739,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Any_mContainer_set(void * jarg1, void * 
   Dali::Any *arg1 = (Dali::Any *) 0 ;
   Dali::Any::AnyContainerBase *arg2 = (Dali::Any::AnyContainerBase *) 0 ;
 
-  arg1 = (Dali::Any *)jarg1;
-  arg2 = (Dali::Any::AnyContainerBase *)jarg2;
+  //DALI_LOG_ERROR("##### CSharp_Dali_Any_mContainer_set()!\n");
+  arg1 = (Dali::Any *)jarg1; 
+  arg2 = (Dali::Any::AnyContainerBase *)jarg2; 
   if (arg1) (arg1)->mContainer = arg2;
 }
 
@@ -3739,7 +3751,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_mContainer_get(void * jarg1) {
   Dali::Any *arg1 = (Dali::Any *) 0 ;
   Dali::Any::AnyContainerBase *result = 0 ;
 
-  arg1 = (Dali::Any *)jarg1;
+  //DALI_LOG_ERROR("##### CSharp_Dali_Any_mContainer_get()!\n");
+  arg1 = (Dali::Any *)jarg1; 
   result = (Dali::Any::AnyContainerBase *) ((arg1)->mContainer);
   jresult = (void *)result;
   return jresult;
@@ -3750,8 +3763,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_DaliAssertMessage(char * jarg1, char * j
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
 
-  arg1 = (char *)jarg1;
-  arg2 = (char *)jarg2;
+  //DALI_LOG_ERROR("##### CSharp_Dali_DaliAssertMessage()!\n");
+  arg1 = (char *)jarg1; 
+  arg2 = (char *)jarg2; 
   {
     try {
       Dali::DaliAssertMessage((char const *)arg1,(char const *)arg2);

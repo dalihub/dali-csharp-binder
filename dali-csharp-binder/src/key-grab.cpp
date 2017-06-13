@@ -20,6 +20,9 @@
 #include <dali/public-api/adaptor-framework/key-grab.h>
 #include <dali/devel-api/adaptor-framework/window-devel.h>
 
+#ifdef TIZEN_BUILD
+#include <Ecore_Wayland.h>
+#endif
 
 #undef LOG
 //#define LOG DALI_LOG_ERROR
@@ -29,7 +32,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKeyTopmost(void * window, int daliKey)
 {
@@ -159,8 +161,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetNativeWindowHandler( void* window )
   LOG("CSharp_Dali_GetNativeWindowHandler() [DP1] window=%d", window);
 
   {
+    Dali::Any result;
     try {
-      ret = Dali::DevelWindow::GetNativeWindowHandler(*_win);
+      result = _win->GetNativeHandle();
+
+      Ecore_Wl_Window * ecore_win = Dali::AnyCast<Ecore_Wl_Window*>(result);
+      ret = (void*)ecore_win;
+
     } catch (std::out_of_range& e) {
     {
       SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return NULL;
