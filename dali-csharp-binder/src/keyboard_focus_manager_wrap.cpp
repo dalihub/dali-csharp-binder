@@ -454,6 +454,28 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_GetFocusIndicatorActor
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardFocusManager_MoveFocusBackward(void * jarg1) {
+  Dali::Toolkit::KeyboardFocusManager *arg1 = (Dali::Toolkit::KeyboardFocusManager *) 0 ;
+
+  arg1 = (Dali::Toolkit::KeyboardFocusManager *)jarg1;
+  {
+    try {
+      (arg1)->MoveFocusBackward();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return;
+      };
+    }
+  }
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_PreFocusChangeSignal(void * jarg1) {
   void * jresult ;
