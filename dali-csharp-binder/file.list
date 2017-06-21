@@ -12,6 +12,8 @@ dali_csharp_binder_src_files = \
   src/event-thread-callback-wrap.cpp \
   src/manual-bindings-all.cpp \
   src/tts-player.cpp \
+  src/text-editor.cpp \
+  src/window.cpp \
   src/key-grab.cpp
 
 dali_csharp_binder_header_files = \
