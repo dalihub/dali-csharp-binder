@@ -11,6 +11,18 @@ dali_csharp_binder_src_files = \
   src/view-wrapper-impl-wrap.cpp \
   src/event-thread-callback-wrap.cpp \
   src/manual-bindings-all.cpp \
+  src/tts-player.cpp
+
+# added for key grab binding only for tizen
+dali_csharp_binder_src_files_tizen = \
+  src/dali_wrap.cpp \
+  src/callbackbase_wrap.cpp \
+  src/keyboard_focus_manager_wrap.cpp \
+  src/devel-property-wrap.cpp \
+  src/version-check.cpp \
+  src/view-wrapper-impl-wrap.cpp \
+  src/event-thread-callback-wrap.cpp \
+  src/manual-bindings-all.cpp \
   src/tts-player.cpp \
   src/text-editor.cpp \
   src/window.cpp \

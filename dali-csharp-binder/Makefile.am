@@ -11,9 +11,16 @@ libdali_csharp_binder_la_LDFLAGS = ${LDFLAGS}
 libdali_csharp_binder_la_CXXFLAGS = \
    ${CFLAGS} \
    $(DALI_CFLAGS) \
+   $(ECORE_WAYLAND_CFLAGS) \
    $(dali_csharp_binder_includes)
 
+# added for key grab binding only for tizen
+if TIZENBUILD
+libdali_csharp_binder_la_CXXFLAGS += -DTIZEN_BUILD
+libdali_csharp_binder_la_SOURCES = $(dali_csharp_binder_src_files_tizen)
+else
 libdali_csharp_binder_la_SOURCES = $(dali_csharp_binder_src_files)
+endif
 
 libdali_csharp_binderdir = $(includedir)/dali-csharp-binder
 libdali_csharp_binder_HEADERS = $(dali_csharp_binder_header_files)
