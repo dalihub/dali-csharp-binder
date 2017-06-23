@@ -94235,6 +94235,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ViewResourceReadySignal(void * ja
   }
 }
 
+SWIGEXPORT Dali::RefObject * SWIGSTDCALL CSharp_Dali_GetRefObjectPtr(Dali::BaseHandle *arg1) {
+  Dali::RefObject *result = NULL;
+
+  if (arg1)
+  {
+    result = (Dali::RefObject *)((Dali::BaseHandle const *)arg1)->GetObjectPtr();
+  }
+  return result;
+}
+
 SWIGEXPORT Dali::RefObject * SWIGSTDCALL CSharp_Dali_BaseObject_SWIGUpcast(Dali::BaseObject *jarg1) {
     return (Dali::RefObject *)jarg1;
 }
