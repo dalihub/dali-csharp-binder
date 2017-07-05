@@ -11,7 +11,6 @@ BuildRequires: pkgconfig(dali-core)
 BuildRequires: pkgconfig(dali-adaptor)
 BuildRequires: pkgconfig(dali-toolkit)
 BuildRequires: pkgconfig(ecore-wayland)
-BuildRequires: pkgconfig(widget_viewer_dali)
 
 %description
 dali-csharp-binder

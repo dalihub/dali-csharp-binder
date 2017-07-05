@@ -5,9 +5,9 @@ exec_prefix=@EXEC_DIR@
 libdir=@LIB_DIR@
 includedir=@INC_DIR@
 
-Name: dali-csharp-binder
-Description: dali-csharp-binder libaray
+Name: Pepper DALi
+Description: The Pepper DALi Libaray
 Version: @VERSION@
-Requires: dali-core dali-adaptor dali-toolkit ecore-wayland
-Libs: -L${libdir} -ldali-csharp-binder
+Requires: dali-toolkit
+Libs: -L${libdir} -lpepper-dali
 Cflags: -I${includedir}/dali-csharp-binder
