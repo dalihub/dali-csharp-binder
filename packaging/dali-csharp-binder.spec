@@ -1,3 +1,4 @@
+
 Name: dali-csharp-binder
 Version: 1.2.41
 Release: 1
@@ -9,6 +10,7 @@ Source: %{name}-%{version}.tar.xz
 BuildRequires: pkgconfig(dali-core)
 BuildRequires: pkgconfig(dali-adaptor)
 BuildRequires: pkgconfig(dali-toolkit)
+BuildRequires: pkgconfig(ecore-wayland)
 
 %description
 dali-csharp-binder
@@ -35,6 +37,8 @@ This package includes developer files common to all packages.
 ##############################
 %build
 %autogen
+# added for key grab binding only for tizen
+%configure --enable-tizenBuild=yes
 make %{?_smp_mflags}
 
 ##############################

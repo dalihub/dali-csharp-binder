@@ -5,9 +5,9 @@ exec_prefix=@EXEC_DIR@
 libdir=@LIB_DIR@
 includedir=@INC_DIR@
 
-Name: Pepper DALi
-Description: The Pepper DALi Libaray
+Name: DALi C# binder
+Description: DALi C# binder Libaray
 Version: @VERSION@
 Requires: dali-toolkit
-Libs: -L${libdir} -lpepper-dali
+Libs: -L${libdir} -ldali-csharp-binder
 Cflags: -I${includedir}/dali-csharp-binder
