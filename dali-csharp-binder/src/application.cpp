@@ -24,7 +24,7 @@
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
-static SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = NULL;
+extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
 
 // keep argcs and argv so they're always available to DALi
