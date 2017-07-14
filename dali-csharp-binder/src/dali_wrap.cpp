@@ -28523,7 +28523,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_GetDeviceName(void * jarg1) {
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceClass(void * jarg1) {
   int jresult ;
   Dali::KeyEvent *arg1 = 0 ;
-  Dali::DevelKeyEvent::DeviceClass::Type result;
+  Dali::DevelDevice::Class::Type result;
 
   arg1 = (Dali::KeyEvent *)jarg1;
   if (!arg1) {
@@ -28532,7 +28532,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceClass(void * jarg1) {
   }
   {
     try {
-      result = (Dali::DevelKeyEvent::DeviceClass::Type)Dali::DevelKeyEvent::GetDeviceClass((Dali::KeyEvent const &)*arg1);
+      result = (Dali::DevelDevice::Class::Type)Dali::DevelKeyEvent::GetDeviceClass((Dali::KeyEvent const &)*arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
