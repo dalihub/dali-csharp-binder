@@ -54311,6 +54311,131 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_ALPHA_MASK_URL_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_BATCH_SIZE_get() {
+  int jresult ;
+  int result;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::BATCH_SIZE;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_CACHE_SIZE_get() {
+  int jresult ;
+  int result;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::CACHE_SIZE;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_FRAME_DELAY_get() {
+  int jresult ;
+  int result;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::FRAME_DELAY;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_MASK_CONTENT_SCALE_get() {
+  int jresult ;
+  int result;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::MASK_CONTENT_SCALE;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_CROP_TO_MASK_get() {
+  int jresult ;
+  int result;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::CROP_TO_MASK;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_FITTING_MODE_get() {
   int jresult ;
   int result;
