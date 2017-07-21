@@ -284,7 +284,7 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionArgumentCallbacks_NDalic(
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
-static SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = NULL;
+SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = NULL;
 
 
 #ifdef __cplusplus
@@ -3721,20 +3721,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_DaliException(char * jarg1, char *
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_DaliException_location_set(void * jarg1, char * jarg2) {
   Dali::DaliException *arg1 = (Dali::DaliException *) 0 ;
-  char *arg2 = (char *) 0 ;
+  std::string arg2 = std::string(jarg2);
 
   arg1 = (Dali::DaliException *)jarg1;
-  arg2 = (char *)jarg2;
   {
-    if (arg2) {
-      arg1->location = (char const *) (new char[strlen((const char *)arg2)+1]);
-      strncpy((char *)arg1->location, (const char *)arg2, strlen((const char *)arg2));
+    if (!arg2.empty()) {
+      ((char *)(arg1->location))[arg2.copy((char*)(arg1->location), strlen(arg1->location)-1)] = '\0';
     } else {
       arg1->location = 0;
     }
   }
 }
-
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_DaliException_location_get(void * jarg1) {
   char * jresult ;
@@ -3750,14 +3747,12 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_DaliException_location_get(void * jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_DaliException_condition_set(void * jarg1, char * jarg2) {
   Dali::DaliException *arg1 = (Dali::DaliException *) 0 ;
-  char *arg2 = (char *) 0 ;
+  std::string arg2 = std::string(jarg2);
 
   arg1 = (Dali::DaliException *)jarg1;
-  arg2 = (char *)jarg2;
   {
-    if (arg2) {
-      arg1->condition = (char const *) (new char[strlen((const char *)arg2)+1]);
-      strncpy((char *)arg1->condition, (const char *)arg2, strlen((const char *)arg2));
+    if (!arg2.empty()) {
+      ((char *)(arg1->condition))[arg2.copy((char*)(arg1->condition), strlen(arg1->condition)-1)] = '\0';
     } else {
       arg1->condition = 0;
     }
