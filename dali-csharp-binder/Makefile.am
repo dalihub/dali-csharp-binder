@@ -12,7 +12,6 @@ libdali_csharp_binder_la_CXXFLAGS = \
    ${CFLAGS} \
    $(DALI_CFLAGS) \
    $(ECORE_WAYLAND_CFLAGS) \
-   $(viewer_dali_CFLAGS) \
    $(dali_csharp_binder_includes)
 
 # added for key grab binding only for tizen
