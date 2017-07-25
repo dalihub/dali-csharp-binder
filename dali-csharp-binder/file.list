@@ -10,8 +10,13 @@ dali_csharp_binder_src_files = \
   src/version-check.cpp \
   src/view-wrapper-impl-wrap.cpp \
   src/event-thread-callback-wrap.cpp \
-  src/manual-bindings-all.cpp \
-  src/tts-player.cpp
+  src/application.cpp \
+  src/text-editor.cpp \
+  src/text-field.cpp \
+  src/window.cpp \
+  src/tts-player.cpp \
+  src/imf-manager.cpp \
+  src/input-method-options.cpp
 
 # added for key grab binding only for tizen
 dali_csharp_binder_src_files_tizen = \
@@ -22,10 +27,13 @@ dali_csharp_binder_src_files_tizen = \
   src/version-check.cpp \
   src/view-wrapper-impl-wrap.cpp \
   src/event-thread-callback-wrap.cpp \
-  src/manual-bindings-all.cpp \
-  src/tts-player.cpp \
+  src/application.cpp \
   src/text-editor.cpp \
+  src/text-field.cpp \
   src/window.cpp \
+  src/tts-player.cpp \
+  src/imf-manager.cpp \
+  src/input-method-options.cpp \
   src/key-grab.cpp
 
 dali_csharp_binder_header_files = \
