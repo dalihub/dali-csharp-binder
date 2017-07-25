@@ -25,7 +25,7 @@
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
+static SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = NULL;
 
 
 

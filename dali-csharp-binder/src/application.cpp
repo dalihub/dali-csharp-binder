@@ -24,7 +24,7 @@
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
+static SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = NULL;
 
 
 // keep argcs and argv so they're always available to DALi
@@ -115,12 +115,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_1(int jarg1) {
     // allocate the string data
     for( int i=0; i < numStrings; i++)
     {
-      array[i]=(char *)malloc( stringLength * sizeof(char) );
+      array[i]=(char *)malloc( stringLength * sizeof(char *) );
     }
     array[ numStrings ] =  NULL; // we allocated +1 for hold the NULL part
 
-    std::string temp = "dali-csharp-app";
-    array[0][temp.copy(array[0], strlen(array[0])-1)] = '\0';
+    strcpy( array[0], "dali-csharp-app");
 
     arg1 = &argC;
     arg2 = &argV;
@@ -165,12 +164,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, cha
     // allocate the string data
     for( int i=0; i < numStrings; i++)
     {
-      array[i]=(char *)malloc( stringLength * sizeof(char) );
+      array[i]=(char *)malloc( stringLength * sizeof(char *) );
     }
     array[ numStrings ] =  NULL; // we allocated +1 for hold the NULL part
 
-    std::string temp = "dali-csharp-app";
-    array[0][temp.copy(array[0], strlen(array[0])-1)] = '\0';
+    strcpy( array[0], "dali-csharp-app");
 
     arg1 = &argC;
     arg2 = &argV;
@@ -225,12 +223,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, cha
     // allocate the string data
     for( int i=0; i < numStrings; i++)
     {
-      array[i]=(char *)malloc( stringLength * sizeof(char) );
+      array[i]=(char *)malloc( stringLength * sizeof(char *) );
     }
     array[ numStrings ] =  NULL; // we allocated +1 for hold the NULL part
 
-    std::string temp = "dali-csharp-app";
-    array[0][temp.copy(array[0], strlen(array[0])-1)] = '\0';
+    strcpy( array[0], "dali-csharp-app");
 
     arg1 = &argC;
     arg2 = &argV;
@@ -1430,12 +1427,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, cha
     // allocate the string data
     for( int i=0; i < numStrings; i++)
     {
-      array[i]=(char *)malloc( stringLength * sizeof(char) );
+      array[i]=(char *)malloc( stringLength * sizeof(char *) );
     }
     array[ numStrings ] =  NULL; // we allocated +1 for hold the NULL part
 
-    std::string temp = "dali-csharp-app";
-    array[0][temp.copy(array[0], strlen(array[0])-1)] = '\0';
+    strcpy( array[0], "dali-csharp-app");
 
     arg1 = &argC;
     arg2 = &argV;
