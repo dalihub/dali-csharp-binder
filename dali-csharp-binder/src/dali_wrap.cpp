@@ -454,6 +454,7 @@ SWIGINTERN void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-landscape-view.h>
 #include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-portrait-view.h>
 #include <dali-toolkit/devel-api/controls/scrollable/scroll-view/scroll-view-devel.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
 #include <dali-toolkit/devel-api/controls/buttons/toggle-button.h>
 
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
@@ -72653,6 +72654,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_TEXT_COLOR_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_TEXT_COLOR_ANIMATABLE_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::TEXT_COLOR_ANIMATABLE;
+  jresult = (int)result;
+  return jresult;
+}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_SHADOW_OFFSET_get() {
   int jresult ;
