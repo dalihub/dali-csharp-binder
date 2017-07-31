@@ -22,6 +22,7 @@
 #include <dali/devel-api/adaptor-framework/drag-and-drop-detector.h>
 #include <dali/public-api/adaptor-framework/window.h>
 #include <dali/devel-api/adaptor-framework/window-devel.h>
+#include <dali/integration-api/adaptors/adaptor.h>
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
@@ -2129,7 +2130,32 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetPosition(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedKeyEvent(void * jarg1) {
+  Dali::KeyEvent *arg1 = 0 ;
 
+  arg1 = (Dali::KeyEvent *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      Dali::Adaptor::Get().FeedKeyEvent(*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
 #ifdef __cplusplus
 }
 #endif
