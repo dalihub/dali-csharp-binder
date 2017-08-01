@@ -26,3 +26,5 @@ dali-csharp-binder/Makefile
 libtool
 stamp-h1
 
+*.gcno
+*.gcda
