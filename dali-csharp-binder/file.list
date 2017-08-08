@@ -16,7 +16,8 @@ dali_csharp_binder_src_files = \
   src/window.cpp \
   src/tts-player.cpp \
   src/imf-manager.cpp \
-  src/input-method-options.cpp
+  src/input-method-options.cpp \
+  src/animation.cpp
 
 # added for key grab binding only for tizen
 dali_csharp_binder_src_files_tizen = \
@@ -34,6 +35,7 @@ dali_csharp_binder_src_files_tizen = \
   src/tts-player.cpp \
   src/imf-manager.cpp \
   src/input-method-options.cpp \
+  src/animation.cpp \
   src/key-grab.cpp
 
 dali_csharp_binder_header_files = \
