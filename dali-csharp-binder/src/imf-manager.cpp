@@ -1591,41 +1591,13 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ImfEventSignalType_GetConnectio
   return jresult;
 }
 
-typedef Dali::ImfManager::ImfCallbackData* (SWIGSTDCALL* SWIG_CallbackEventReceived)(Dali::ImfManager *, Dali::ImfManager::ImfEventData *);
-SWIG_CallbackEventReceived swig_callbackOnEventReceived;
 
-Dali::ImfManager::ImfCallbackData OnEventReceivedCallback(Dali::ImfManager imfManager, Dali::ImfManager::ImfEventData imfEventData)
-{
-    Dali::ImfManager::ImfCallbackData *imfCallbackDataP;
-    Dali::ImfManager::ImfCallbackData imfCallbackData;
-    Dali::ImfManager *imfManagerP = NULL;
-    Dali::ImfManager::ImfEventData *imfEventDataP = NULL;
-
-    if (imfManager)
-    {
-      imfManagerP = (Dali::ImfManager *)&imfManager;
-    }
-
-    imfEventDataP = (Dali::ImfManager::ImfEventData *)&imfEventData;
-
-    imfCallbackDataP = (Dali::ImfManager::ImfCallbackData *)swig_callbackOnEventReceived(imfManagerP, imfEventDataP);
-    if (imfCallbackDataP)
-    {
-      imfCallbackData = *imfCallbackDataP;
-    }
-
-    return imfCallbackData;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Connect(void * jarg1, SWIG_CallbackEventReceived callbackOnEventReceived) {
-
-  swig_callbackOnEventReceived = callbackOnEventReceived;
-
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Connect(void * jarg1, void * jarg2) {
   Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *) 0 ;
   Dali::ImfManager::ImfCallbackData (*arg2)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &)) 0 ;
 
   arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)jarg1;
-  arg2 = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &))OnEventReceivedCallback;
+  arg2 = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &))jarg2;
   {
     try {
       Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Connect(arg1,arg2);
@@ -1646,15 +1618,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Connect(void * jarg1,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Disconnect(void * jarg1, SWIG_CallbackEventReceived callbackOnEventReceived) {
-
-  swig_callbackOnEventReceived = callbackOnEventReceived;
-
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Disconnect(void * jarg1, void * jarg2) {
   Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *) 0 ;
   Dali::ImfManager::ImfCallbackData (*arg2)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &)) 0 ;
 
   arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)jarg1;
-  arg2 = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &))OnEventReceivedCallback;
+  arg2 = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &))jarg2;
   {
     try {
       Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
@@ -1673,6 +1642,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Disconnect(void * jar
     }
   }
 }
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Emit(void * jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
