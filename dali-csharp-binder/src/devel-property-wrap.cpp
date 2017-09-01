@@ -58,6 +58,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_POSITION_USES_ANCHOR_POINT_get(
   return Dali::DevelActor::Property::POSITION_USES_ANCHOR_POINT;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_INHERIT_LAYOUT_DIRECTION_get() {
+  return Dali::DevelActor::Property::INHERIT_LAYOUT_DIRECTION;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_LAYOUT_DIRECTION_get() {
+  return Dali::DevelActor::Property::LAYOUT_DIRECTION;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_TOOLTIP_get() {
   int jresult ;
   int result;
