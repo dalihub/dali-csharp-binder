@@ -2156,6 +2156,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedKeyEvent(void * jarg1) {
     }
   }
 }
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_RenderOnce(void * /* jarg1 */) {
+  try {
+    Dali::Adaptor::Get().RenderOnce();
+  } catch (std::out_of_range& e) {
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+    };
+  } catch (std::exception& e) {
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+    };
+  } catch (...) {
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+    };
+  }
+}
+
 #ifdef __cplusplus
 }
 #endif
