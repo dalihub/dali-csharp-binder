@@ -3139,10 +3139,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RefObject_Reference(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
     } catch (DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
@@ -3161,10 +3157,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RefObject_Unreference(void * jarg1) {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
@@ -3229,10 +3221,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Any(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
     } catch (DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
@@ -3251,10 +3239,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Any_AssertAlways(char * jarg1) {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
