@@ -19,7 +19,6 @@
 #endif
 
 #include "common.h"
-#include "string"
 #include <dali/public-api/adaptor-framework/application.h>
 #include <dali/devel-api/adaptor-framework/application-devel.h>
 
@@ -248,68 +247,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, cha
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int jarg1, char * jarg2, char * jarg3, int jarg4) {
-  void * jresult ;
-  int *arg1 = (int *) 0 ;
-  char ***arg2 ;
-  std::string *arg3 = 0 ;
-  Dali::Application::WINDOW_MODE arg4 ;
-  Dali::Application result;
-  {
-    // Todo generate argv data from the C# args
-    int index = 0;
-    char *retPtr;
-    char *nextPtr;
-
-    argV = new char*[jarg1 + 1];
-
-    retPtr = strtok_r(jarg2," ", &nextPtr);
-    argV[index] = new char[strlen(retPtr)+1];
-    strncpy( argV[index], retPtr, strlen(retPtr) );
-    argV[index][strlen(retPtr)] = '\0';
-    index++;
-
-    while( index < jarg1 )
-    {
-      retPtr = strtok_r(NULL," ", &nextPtr);
-      argV[index] = new char[strlen(retPtr)+1];
-      strncpy( argV[index], retPtr, strlen(retPtr) );
-      argV[index][strlen(retPtr)] = '\0';
-      index++;
-    }
-
-    argV[jarg1] = NULL;
-    argC = jarg1;
-
-    arg1 = &argC;
-    arg2 = &argV;
-
-  }
-
-  std::string arg3_str(jarg3);
-  arg3 = &arg3_str;
-  arg4 = (Dali::Application::WINDOW_MODE)jarg4;
-  {
-    try {
-      result = Dali::Application::New(arg1,arg2,(std::string const &)*arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = new Dali::Application((const Dali::Application &)result);
-  return jresult;
-}
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Application__SWIG_0() {
   void * jresult ;
   Dali::Application *result = 0 ;
@@ -394,15 +331,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Application(void * jarg1) {
   {
     try {
       delete arg1;
-      if( argV )
-      {
-        // free string data
-        for( int i=0; i < argC+1; i++)
-        {
-          delete [] argV[i];
-        }
-        delete [] argV;
-      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
