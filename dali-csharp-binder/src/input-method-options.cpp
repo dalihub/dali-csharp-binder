@@ -38,7 +38,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodOptions() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
   jresult = (void *)result;
   return jresult;
 }
@@ -61,7 +66,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodOptions_IsPassword(vo
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
   jresult = result;
   return jresult;
 }
@@ -88,7 +98,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodOptions_ApplyProperty(void * 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
@@ -113,7 +128,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodOptions_RetrieveProperty(void
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
@@ -148,7 +168,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodOptions_CompareAndSet
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
   jresult = result;
   return jresult;
 }
@@ -169,7 +194,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodOptions(void * jarg1) 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 #ifdef __cplusplus

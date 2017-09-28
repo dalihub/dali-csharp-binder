@@ -16,16 +16,9 @@
 
 #include "common.h"
 
-#include <dali/dali.h>
-#include <dali-toolkit/dali-toolkit.h>
-#include <dali/public-api/common/dali-common.h>
 #include <dali/integration-api/debug.h>
 #include <dali/public-api/adaptor-framework/key-grab.h>
 #include <dali/devel-api/adaptor-framework/window-devel.h>
-
-#include <stdexcept>
-#include <exception>
-
 
 #ifdef TIZEN_BUILD
 #include <Ecore_Wayland.h>
@@ -58,7 +51,12 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKeyTopmost(void * window, int daliKe
     {
       SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
     };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (...) {
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return false;
+    };
+    }
+  }
 
   LOG("CSharp_Dali_GrabKeyTopmost() [DP2] ret=%d", ret);
 
@@ -83,7 +81,12 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKeyTopmost(void * window, int dali
     {
       SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
     };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (...) {
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return false;
+    };
+    }
+  }
 
   LOG("CSharp_Dali_UngrabKeyTopmost() [DP2] ret=%d", ret);
 
@@ -108,7 +111,12 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKey(void * window, int daliKey, int 
     {
       SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
     };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (...) {
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return false;
+    };
+    }
+  }
 
   DALI_LOG_ERROR("CSharp_Dali_GrabKey() [DP2] ret=%d", ret);
 
@@ -133,7 +141,12 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKey(void * window, int daliKey)
     {
       SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
     };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (...) {
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return false;
+    };
+    }
+  }
 
   LOG("CSharp_Dali_UngrabKey() [DP2] ret=%d", ret);
 

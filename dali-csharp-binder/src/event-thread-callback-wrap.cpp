@@ -52,12 +52,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_EventThreadCallback(SWIG_CallbackM
         delete callbackBase;
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (Dali::DaliException e) {
-      {
-        delete result;
-        delete callbackBase;
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
     } catch (...) {
       {
         delete result;
@@ -85,7 +79,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_EventThreadCallback(void * jarg1)
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
@@ -104,7 +103,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_EventThreadCallback_Trigger(void * jarg1
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 #ifdef __cplusplus
