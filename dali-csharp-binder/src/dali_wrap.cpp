@@ -204,7 +204,7 @@ typedef struct {
   SWIG_CSharpExceptionArgumentCallback_t callback;
 } SWIG_CSharpExceptionArgument_t;
 
-SWIG_CSharpException_t SWIG_csharp_exceptions[] = {
+static SWIG_CSharpException_t SWIG_csharp_exceptions[] = {
   { SWIG_CSharpApplicationException, NULL },
   { SWIG_CSharpArithmeticException, NULL },
   { SWIG_CSharpDivideByZeroException, NULL },
@@ -218,13 +218,13 @@ SWIG_CSharpException_t SWIG_csharp_exceptions[] = {
   { SWIG_CSharpSystemException, NULL }
 };
 
-SWIG_CSharpExceptionArgument_t SWIG_csharp_exceptions_argument[] = {
+static SWIG_CSharpExceptionArgument_t SWIG_csharp_exceptions_argument[] = {
   { SWIG_CSharpArgumentException, NULL },
   { SWIG_CSharpArgumentNullException, NULL },
   { SWIG_CSharpArgumentOutOfRangeException, NULL }
 };
 
-void SWIGUNUSED SWIG_CSharpSetPendingException(SWIG_CSharpExceptionCodes code, const char *msg) {
+static void SWIGUNUSED SWIG_CSharpSetPendingException(SWIG_CSharpExceptionCodes code, const char *msg) {
   SWIG_CSharpExceptionCallback_t callback = SWIG_csharp_exceptions[SWIG_CSharpApplicationException].callback;
   if ((size_t)code < sizeof(SWIG_csharp_exceptions)/sizeof(SWIG_CSharpException_t)) {
     callback = SWIG_csharp_exceptions[code].callback;
@@ -232,7 +232,7 @@ void SWIGUNUSED SWIG_CSharpSetPendingException(SWIG_CSharpExceptionCodes code, c
   callback(msg);
 }
 
-void SWIGUNUSED SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpExceptionArgumentCodes code, const char *msg, const char *param_name) {
+static void SWIGUNUSED SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpExceptionArgumentCodes code, const char *msg, const char *param_name) {
   SWIG_CSharpExceptionArgumentCallback_t callback = SWIG_csharp_exceptions_argument[SWIG_CSharpArgumentException].callback;
   if ((size_t)code < sizeof(SWIG_csharp_exceptions_argument)/sizeof(SWIG_CSharpExceptionArgument_t)) {
     callback = SWIG_csharp_exceptions_argument[code].callback;
@@ -378,7 +378,7 @@ namespace Swig {
 }
 
 
-void SWIG_CSharpException(int code, const char *msg) {
+SWIGINTERN void SWIG_CSharpException(int code, const char *msg) {
   if (code == SWIG_ValueError) {
     SWIG_CSharpExceptionArgumentCodes exception_code = SWIG_CSharpArgumentOutOfRangeException;
     SWIG_CSharpSetPendingExceptionArgument(exception_code, msg, 0);
