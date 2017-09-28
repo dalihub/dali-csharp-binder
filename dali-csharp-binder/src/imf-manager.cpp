@@ -91,10 +91,6 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Emit
 extern "C" {
 #endif
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_ImfManager_SWIGUpcast(Dali::ImfManager *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfEventData__SWIG_0() {
   void * jresult ;
   Dali::ImfManager::ImfEventData *result = 0 ;
@@ -888,7 +884,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetInputPanelUserData(void * 
   arg2 = &arg2_str;
   {
     try {
-      (arg1)->SetInputPanelUserData((std::string const &)*arg2);
+      (arg1)->SetInputPanelData((std::string const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -921,7 +917,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelUserData(void * 
 
   {
     try {
-      (arg1)->GetInputPanelUserData(*arg2);
+      (arg1)->GetInputPanelData(*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
