@@ -41,8 +41,7 @@ dali_csharp_binder_src_files_tizen = \
   src/widget_view_manager.cpp \
   src/animation.cpp \
   src/adaptor.cpp \
-  src/widget.cpp \
-  src/web-view-lite.cpp
+  src/widget.cpp
 
 dali_csharp_binder_header_files = \
   src/common.h
