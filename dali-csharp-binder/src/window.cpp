@@ -2130,7 +2130,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetPosition(void * jarg1) {
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedKeyEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedKeyEvent(void * jarg1) {
   Dali::KeyEvent *arg1 = 0 ;
 
   arg1 = (Dali::KeyEvent *)jarg1;
