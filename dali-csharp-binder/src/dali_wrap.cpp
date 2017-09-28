@@ -462,6 +462,7 @@ SWIGINTERN void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/public-api/visuals/image-visual-properties.h>
 
 #include <dali-toolkit/devel-api/controls/tooltip/tooltip-properties.h>
+#include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
 
 #include <dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h>
 
@@ -52213,6 +52214,56 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_SAMPLING_MODE_get() {
   {
     try {
       result = (int)Dali::Toolkit::ImageVisual::Property::SAMPLING_MODE;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_RELEASE_POLICY_get() {
+  int jresult ;
+  int result;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::RELEASE_POLICY;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_LOAD_POLICY_get() {
+  int jresult ;
+  int result;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::LOAD_POLICY;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
