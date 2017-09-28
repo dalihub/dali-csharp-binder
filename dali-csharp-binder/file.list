@@ -35,10 +35,8 @@ dali_csharp_binder_src_files_tizen = \
   src/tts-player.cpp \
   src/imf-manager.cpp \
   src/input-method-options.cpp \
+  src/animation.cpp \
   src/key-grab.cpp
-  src/key-grab.cpp \
-  src/widget_view.cpp \
-  src/widget_view_manager.cpp
 
 dali_csharp_binder_header_files = \
   src/common.h
