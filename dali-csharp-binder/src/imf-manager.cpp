@@ -436,6 +436,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfManager_ImfCallbackData(void *
     } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Finalize(void * jarg1) {
+  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+
+  arg1 = (Dali::ImfManager *)jarg1;
+  {
+    try {
+      (arg1)->Finalize();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_Get() {
   void * jresult ;
