@@ -24803,7 +24803,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Raise(void * jarg1) {
   arg1 = *argp1;
   {
     try {
-      Dali::DevelActor::Raise(arg1);
+      arg1.Raise();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -24828,7 +24828,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Lower(void * jarg1) {
   arg1 = *argp1;
   {
     try {
-      Dali::DevelActor::Lower(arg1);
+      arg1.Lower();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -24853,7 +24853,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RaiseToTop(void * jarg1) {
   arg1 = *argp1;
   {
     try {
-      Dali::DevelActor::RaiseToTop(arg1);
+      arg1.RaiseToTop();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -24878,7 +24878,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LowerToBottom(void * jarg1) {
   arg1 = *argp1;
   {
     try {
-      Dali::DevelActor::LowerToBottom(arg1);
+      arg1.LowerToBottom();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -24911,7 +24911,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RaiseAbove(void * jarg1, void * jarg2) {
   arg2 = *argp2;
   {
     try {
-      Dali::DevelActor::RaiseAbove(arg1,arg2);
+      arg1.RaiseAbove(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -24944,7 +24944,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LowerBelow(void * jarg1, void * jarg2) {
   arg2 = *argp2;
   {
     try {
-      Dali::DevelActor::LowerBelow(arg1,arg2);
+      arg1.LowerBelow(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
