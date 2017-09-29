@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2017 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1020,7 +1020,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_PlayAfter(void * jarg1, float 
   arg2 = (float)jarg2;
   {
     try {
-      Dali::DevelAnimation::PlayAfter(arg1,arg2);
+      arg1.PlayAfter(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
