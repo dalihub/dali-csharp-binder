@@ -91,6 +91,10 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Emit
 extern "C" {
 #endif
 
+SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_ImfManager_SWIGUpcast(Dali::ImfManager *jarg1) {
+  return (Dali::BaseHandle *)jarg1;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfEventData__SWIG_0() {
   void * jresult ;
   Dali::ImfManager::ImfEventData *result = 0 ;
