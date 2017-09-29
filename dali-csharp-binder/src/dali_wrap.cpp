@@ -422,7 +422,6 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali/dali.h>
 #include <dali-toolkit/dali-toolkit.h>
-#include <dali/devel-api/events/key-event-devel.h>
 
 #include <dali/devel-api/actors/actor-devel.h>
 
@@ -24726,7 +24725,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_GetDeviceName(void * jarg1) {
   }
   {
     try {
-      result = Dali::DevelKeyEvent::GetDeviceName((Dali::KeyEvent const &)*arg1);
+      result = arg1->GetDeviceName();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -24743,7 +24742,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_GetDeviceName(void * jarg1) {
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceClass(void * jarg1) {
   int jresult ;
   Dali::KeyEvent *arg1 = 0 ;
-  Dali::DevelDevice::Class::Type result;
+  Dali::Device::Class::Type result;
 
   arg1 = (Dali::KeyEvent *)jarg1;
   if (!arg1) {
@@ -24752,7 +24751,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceClass(void * jarg1) {
   }
   {
     try {
-      result = (Dali::DevelDevice::Class::Type)Dali::DevelKeyEvent::GetDeviceClass((Dali::KeyEvent const &)*arg1);
+      result = (Dali::Device::Class::Type)arg1->GetDeviceClass();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
