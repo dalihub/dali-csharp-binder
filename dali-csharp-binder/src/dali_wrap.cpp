@@ -459,8 +459,9 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/devel-api/visual-factory/visual-factory.h>
 #include <dali-toolkit/devel-api/visual-factory/transition-data.h>
 
-#include <dali-toolkit/devel-api/visuals/text-visual-properties.h>
-#include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
+#include <dali-toolkit/public-api/visuals/visual-properties.h>
+#include <dali-toolkit/public-api/visuals/text-visual-properties.h>
+#include <dali-toolkit/public-api/visuals/image-visual-properties.h>
 
 #include <dali-toolkit/devel-api/controls/tooltip/tooltip-properties.h>
 
@@ -44800,7 +44801,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_ALPHA_MASK_URL_get() {
 
   {
     try {
-      result = (int)Dali::Toolkit::DevelImageVisual::Property::ALPHA_MASK_URL;
+      result = (int)Dali::Toolkit::ImageVisual::Property::ALPHA_MASK_URL;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -44821,7 +44822,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_BATCH_SIZE_get() {
   {
     try
     {
-      result = (int)Dali::Toolkit::DevelImageVisual::Property::BATCH_SIZE;
+      result = (int)Dali::Toolkit::ImageVisual::Property::BATCH_SIZE;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -44841,7 +44842,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_CACHE_SIZE_get() {
   {
     try
     {
-      result = (int)Dali::Toolkit::DevelImageVisual::Property::CACHE_SIZE;
+      result = (int)Dali::Toolkit::ImageVisual::Property::CACHE_SIZE;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -44861,7 +44862,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_FRAME_DELAY_get() {
   {
     try
     {
-      result = (int)Dali::Toolkit::DevelImageVisual::Property::FRAME_DELAY;
+      result = (int)Dali::Toolkit::ImageVisual::Property::FRAME_DELAY;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -44881,7 +44882,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_MASK_CONTENT_SCALE_get() {
   {
     try
     {
-      result = (int)Dali::Toolkit::DevelImageVisual::Property::MASK_CONTENT_SCALE;
+      result = (int)Dali::Toolkit::ImageVisual::Property::MASK_CONTENT_SCALE;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -44901,7 +44902,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_CROP_TO_MASK_get() {
   {
     try
     {
-      result = (int)Dali::Toolkit::DevelImageVisual::Property::CROP_TO_MASK;
+      result = (int)Dali::Toolkit::ImageVisual::Property::CROP_TO_MASK;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -45103,6 +45104,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_WRAP_MODE_V_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Image_Visual_BORDER_get() {
+  int jresult ;
+  int result;
+
+  {
+    try {
+      result = (int)Dali::Toolkit::ImageVisual::Property::BORDER;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MESH_VISUAL_OBJECT_URL_get() {
   int jresult ;
