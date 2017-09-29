@@ -382,6 +382,33 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SHOW_DURATION_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_LINE_COUNT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::LINE_COUNT;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_LINE_WRAP_MODE_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::LINE_WRAP_MODE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_WRAP_MODE_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::LINE_WRAP_MODE;
+  jresult = (int)result;
+  return jresult;
+}
+
 #ifdef __cplusplus
 }
 #endif
