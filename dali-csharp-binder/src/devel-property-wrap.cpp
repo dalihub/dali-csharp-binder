@@ -24,7 +24,6 @@
 #include <dali/devel-api/actors/actor-devel.h>
 #include <dali/devel-api/rendering/renderer-devel.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
-#include <dali-toolkit/devel-api/controls/scrollable/item-view/item-view-devel.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
@@ -113,7 +112,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ItemView_Property_LAYOUT_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelItemView::Property::LAYOUT;
+  result = (int)Dali::Toolkit::ItemView::Property::LAYOUT;
   jresult = (int)result;
   return jresult;
 }

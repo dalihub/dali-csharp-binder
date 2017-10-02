@@ -446,7 +446,6 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/devel-api/controls/popup/popup.h>
-#include <dali-toolkit/devel-api/controls/progress-bar/progress-bar.h>
 #include <dali-toolkit/devel-api/controls/gaussian-blur-view/gaussian-blur-view.h>
 #include <dali-toolkit/devel-api/controls/page-turn-view/page-factory.h>
 #include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-view.h>
@@ -50579,7 +50578,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_CreateTransition(void * jarg1, vo
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::Control *arg1 = 0 ;
-  Dali::Toolkit::DevelControl::ResourceReadySignalType *result = 0 ;
+  Dali::Toolkit::Control::ResourceReadySignalType *result = 0 ;
 
   arg1 = (Dali::Toolkit::Control *)jarg1;
   if (!arg1) {
@@ -50588,7 +50587,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
   }
   {
     try {
-      result = (Dali::Toolkit::DevelControl::ResourceReadySignalType *) &Dali::Toolkit::DevelControl::ResourceReadySignal(*arg1);
+      result = (Dali::Toolkit::Control::ResourceReadySignalType *) &arg1->ResourceReadySignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -50615,7 +50614,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsResourceReady(void * jarg1) {
   }
   {
     try {
-      result = (bool)Dali::Toolkit::DevelControl::IsResourceReady((Dali::Toolkit::Control const &)*arg1);
+      result = (bool)arg1->IsResourceReady();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
