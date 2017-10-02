@@ -1451,7 +1451,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, cha
   arg5 = *argp5;
   {
     try {
-      result = Dali::DevelApplication::New(arg1,arg2,(std::string const &)*arg3,arg4,arg5);
+      result = Dali::Application::New(arg1,arg2,(std::string const &)*arg3,arg4,arg5);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
