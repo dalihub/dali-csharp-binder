@@ -29,8 +29,7 @@
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
-#include <dali-toolkit/devel-api/visuals/visual-properties-devel.h>
-#include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
+#include <dali-toolkit/public-api/visuals/visual-properties.h>
 #include <dali-toolkit/devel-api/controls/text-controls/hidden-input-properties.h>
 
 #ifdef __cplusplus
@@ -212,7 +211,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Visual_Property_TRANSFORM_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelVisual::Property::TRANSFORM;
+  result = (int)Dali::Toolkit::Visual::Property::TRANSFORM;
   jresult = (int)result;
   return jresult;
 }
@@ -221,7 +220,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Visual_Property_PREMULTIPLIED_ALPHA_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelVisual::Property::PREMULTIPLIED_ALPHA;
+  result = (int)Dali::Toolkit::Visual::Property::PREMULTIPLIED_ALPHA;
   jresult = (int)result;
   return jresult;
 }
@@ -230,20 +229,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Visual_Property_MIX_COLOR_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelVisual::Property::MIX_COLOR;
+  result = (int)Dali::Toolkit::Visual::Property::MIX_COLOR;
   jresult = (int)result;
   return jresult;
 }
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Image_Visual_BORDER_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::DevelImageVisual::Property::BORDER;
-  jresult = (int)result;
-  return jresult;
-}
-
 
 SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_PIXEL_SIZE_get() {
   int jresult ;
