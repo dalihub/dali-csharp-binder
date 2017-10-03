@@ -28,7 +28,6 @@
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
-#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
 #include <dali-toolkit/devel-api/controls/text-controls/hidden-input-properties.h>
 
@@ -238,7 +237,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_PIXEL_SIZE_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::PIXEL_SIZE;
+  result = (int)Dali::Toolkit::TextLabel::Property::PIXEL_SIZE;
   jresult = (int)result;
   return jresult;
 }
@@ -247,7 +246,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_ELLIPSIS_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::ELLIPSIS;
+  result = (int)Dali::Toolkit::TextLabel::Property::ELLIPSIS;
   jresult = (int)result;
   return jresult;
 }
@@ -256,7 +255,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_AUTO_SCROLL_STOP_MODE_get()
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::AUTO_SCROLL_STOP_MODE;
+  result = (int)Dali::Toolkit::TextLabel::Property::AUTO_SCROLL_STOP_MODE;
   jresult = (int)result;
   return jresult;
 }
@@ -265,7 +264,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_AUTO_SCROLL_LOOP_DELAY_get(
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::AUTO_SCROLL_LOOP_DELAY;
+  result = (int)Dali::Toolkit::TextLabel::Property::AUTO_SCROLL_LOOP_DELAY;
   jresult = (int)result;
   return jresult;
 }
@@ -374,7 +373,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_LINE_COUNT_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::LINE_COUNT;
+  result = (int)Dali::Toolkit::TextLabel::Property::LINE_COUNT;
   jresult = (int)result;
   return jresult;
 }
@@ -383,7 +382,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_LINE_WRAP_MODE_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::LINE_WRAP_MODE;
+  result = (int)Dali::Toolkit::TextLabel::Property::LINE_WRAP_MODE;
   jresult = (int)result;
   return jresult;
 }
