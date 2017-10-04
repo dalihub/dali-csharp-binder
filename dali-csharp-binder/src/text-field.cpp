@@ -20,7 +20,6 @@
 
 #include "common.h"
 #include <dali-toolkit/public-api/controls/text-controls/text-field.h>
-#include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextField_SP__Sg__Empty(Dali::Signal< void (Dali::Toolkit::TextField) > const *self){
   return self->Empty();
@@ -520,7 +519,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_HIDDEN_INPUT_SETTINGS_get()
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextField::Property::HIDDEN_INPUT_SETTINGS;
+  result = (int)Dali::Toolkit::TextField::Property::HIDDEN_INPUT_SETTINGS;
   jresult = (int)result;
   return jresult;
 }
@@ -529,7 +528,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_PIXEL_SIZE_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextField::Property::PIXEL_SIZE;
+  result = (int)Dali::Toolkit::TextField::Property::PIXEL_SIZE;
   jresult = (int)result;
   return jresult;
 }
@@ -538,7 +537,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ENABLE_SELECTION_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextField::Property::ENABLE_SELECTION;
+  result = (int)Dali::Toolkit::TextField::Property::ENABLE_SELECTION;
   jresult = (int)result;
   return jresult;
 }
@@ -547,7 +546,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_PLACEHOLDER_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextField::Property::PLACEHOLDER;
+  result = (int)Dali::Toolkit::TextField::Property::PLACEHOLDER;
   jresult = (int)result;
   return jresult;
 }
