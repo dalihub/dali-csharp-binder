@@ -27,9 +27,8 @@
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
-#include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
-#include <dali-toolkit/devel-api/controls/text-controls/hidden-input-properties.h>
+#include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -337,13 +336,13 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SUBSTITUTE_COUNT_get() {
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SHOW_DURATION_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SHOW_LAST_CHARACTER_DURATION_get() {
   int jresult ;
   int result;
 
   {
     try {
-      result = (int)Dali::Toolkit::HiddenInput::Property::SHOW_DURATION;
+      result = (int)Dali::Toolkit::HiddenInput::Property::SHOW_LAST_CHARACTER_DURATION;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
