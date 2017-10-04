@@ -26,7 +26,6 @@
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
-#include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
 #include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
 
@@ -405,7 +404,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_WRAP_MODE_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::LINE_WRAP_MODE;
+  result = (int)Dali::Toolkit::TextEditor::Property::LINE_WRAP_MODE;
   jresult = (int)result;
   return jresult;
 }

@@ -38,19 +38,19 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextEditor_SP__Sg__Emit(Dali
   self->Emit( arg );
 }
 
-SWIGINTERN bool Dali_Signal_void_TextEditor_Scroll_Type__Empty(Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > const *self){
+SWIGINTERN bool Dali_Signal_void_TextEditor_Scroll_Type__Empty(Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_void_TextEditor_Scroll_Type__GetConnectionCount(Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > const *self){
+SWIGINTERN std::size_t Dali_Signal_void_TextEditor_Scroll_Type__GetConnectionCount(Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > const *self){
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_void_TextEditor_Scroll_Type__Connect(Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *self,void (*func)(Dali::Toolkit::TextEditor,Dali::Toolkit::DevelTextEditor::Scroll::Type)){
+SWIGINTERN void Dali_Signal_void_TextEditor_Scroll_Type__Connect(Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *self,void (*func)(Dali::Toolkit::TextEditor,Dali::Toolkit::TextEditor::Scroll::Type)){
   self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_void_TextEditor_Scroll_Type__Disconnect(Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *self,void (*func)(Dali::Toolkit::TextEditor,Dali::Toolkit::DevelTextEditor::Scroll::Type)){
+SWIGINTERN void Dali_Signal_void_TextEditor_Scroll_Type__Disconnect(Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *self,void (*func)(Dali::Toolkit::TextEditor,Dali::Toolkit::TextEditor::Scroll::Type)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_void_TextEditor_Scroll_Type__Emit(Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *self,Dali::Toolkit::TextEditor arg1,Dali::Toolkit::DevelTextEditor::Scroll::Type arg2){
+SWIGINTERN void Dali_Signal_void_TextEditor_Scroll_Type__Emit(Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *self,Dali::Toolkit::TextEditor arg1,Dali::Toolkit::TextEditor::Scroll::Type arg2){
   self->Emit( arg1, arg2 );
 }
 
@@ -466,7 +466,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SMOOTH_SCROLL_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::SMOOTH_SCROLL;
+  result = (int)Dali::Toolkit::TextEditor::Property::SMOOTH_SCROLL;
   jresult = (int)result;
   return jresult;
 }
@@ -475,7 +475,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SMOOTH_SCROLL_DURATION_get
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::SMOOTH_SCROLL_DURATION;
+  result = (int)Dali::Toolkit::TextEditor::Property::SMOOTH_SCROLL_DURATION;
   jresult = (int)result;
   return jresult;
 }
@@ -484,7 +484,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_ENABLE_SCROLL_BAR_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_SCROLL_BAR;
+  result = (int)Dali::Toolkit::TextEditor::Property::ENABLE_SCROLL_BAR;
   jresult = (int)result;
   return jresult;
 }
@@ -493,7 +493,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SCROLL_BAR_SHOW_DURATION_g
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::SCROLL_BAR_SHOW_DURATION;
+  result = (int)Dali::Toolkit::TextEditor::Property::SCROLL_BAR_SHOW_DURATION;
   jresult = (int)result;
   return jresult;
 }
@@ -502,7 +502,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SCROLL_BAR_FADE_DURATION_g
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::SCROLL_BAR_FADE_DURATION;
+  result = (int)Dali::Toolkit::TextEditor::Property::SCROLL_BAR_FADE_DURATION;
   jresult = (int)result;
   return jresult;
 }
@@ -511,7 +511,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_PIXEL_SIZE_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::PIXEL_SIZE;
+  result = (int)Dali::Toolkit::TextEditor::Property::PIXEL_SIZE;
   jresult = (int)result;
   return jresult;
 }
@@ -520,7 +520,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_COUNT_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::LINE_COUNT;
+  result = (int)Dali::Toolkit::TextEditor::Property::LINE_COUNT;
   jresult = (int)result;
   return jresult;
 }
@@ -547,7 +547,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_ENABLE_SELECTION_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_SELECTION;
+  result = (int)Dali::Toolkit::TextEditor::Property::ENABLE_SELECTION;
   jresult = (int)result;
   return jresult;
 }
@@ -556,7 +556,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_PLACEHOLDER_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::PLACEHOLDER;
+  result = (int)Dali::Toolkit::TextEditor::Property::PLACEHOLDER;
   jresult = (int)result;
   return jresult;
 }
@@ -992,7 +992,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextEditorSignal(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_ScrollStateChangedSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::TextEditor *arg1 = 0 ;
-  Dali::Toolkit::DevelTextEditor::ScrollStateChangedSignalType *result = 0 ;
+  Dali::Toolkit::TextEditor::ScrollStateChangedSignalType *result = 0 ;
 
   arg1 = (Dali::Toolkit::TextEditor *)jarg1;
   if (!arg1) {
@@ -1001,7 +1001,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_ScrollStateChangedSignal(vo
   }
   {
     try {
-      result = (Dali::Toolkit::DevelTextEditor::ScrollStateChangedSignalType *) &Dali::Toolkit::DevelTextEditor::ScrollStateChangedSignal(*arg1);
+      result = (Dali::Toolkit::TextEditor::ScrollStateChangedSignalType *) &arg1->ScrollStateChangedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1017,13 +1017,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_ScrollStateChangedSignal(vo
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ScrollStateChangedSignal_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *) 0 ;
+  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *)jarg1;
+  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_void_TextEditor_Scroll_Type__Empty((Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > const *)arg1);
+      result = (bool)Dali_Signal_void_TextEditor_Scroll_Type__Empty((Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1040,13 +1040,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ScrollStateChangedSignal_Empty(v
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ScrollStateChangedSignal_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *) 0 ;
+  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *)jarg1;
+  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *)jarg1;
   {
     try {
-      result = Dali_Signal_void_TextEditor_Scroll_Type__GetConnectionCount((Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > const *)arg1);
+      result = Dali_Signal_void_TextEditor_Scroll_Type__GetConnectionCount((Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1062,11 +1062,11 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ScrollStateChangedSignal_GetCon
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollStateChangedSignal_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *) 0 ;
-  void (*arg2)(Dali::Toolkit::TextEditor,Dali::Toolkit::DevelTextEditor::Scroll::Type) = (void (*)(Dali::Toolkit::TextEditor,Dali::Toolkit::DevelTextEditor::Scroll::Type)) 0 ;
+  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *) 0 ;
+  void (*arg2)(Dali::Toolkit::TextEditor,Dali::Toolkit::TextEditor::Scroll::Type) = (void (*)(Dali::Toolkit::TextEditor,Dali::Toolkit::TextEditor::Scroll::Type)) 0 ;
 
-  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *)jarg1;
-  arg2 = (void (*)(Dali::Toolkit::TextEditor,Dali::Toolkit::DevelTextEditor::Scroll::Type))jarg2;
+  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *)jarg1;
+  arg2 = (void (*)(Dali::Toolkit::TextEditor,Dali::Toolkit::TextEditor::Scroll::Type))jarg2;
   {
     try {
       Dali_Signal_void_TextEditor_Scroll_Type__Connect(arg1,arg2);
@@ -1083,11 +1083,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollStateChangedSignal_Connect(void * 
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollStateChangedSignal_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *) 0 ;
-  void (*arg2)(Dali::Toolkit::TextEditor,Dali::Toolkit::DevelTextEditor::Scroll::Type) = (void (*)(Dali::Toolkit::TextEditor,Dali::Toolkit::DevelTextEditor::Scroll::Type)) 0 ;
+  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *) 0 ;
+  void (*arg2)(Dali::Toolkit::TextEditor,Dali::Toolkit::TextEditor::Scroll::Type) = (void (*)(Dali::Toolkit::TextEditor,Dali::Toolkit::TextEditor::Scroll::Type)) 0 ;
 
-  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *)jarg1;
-  arg2 = (void (*)(Dali::Toolkit::TextEditor,Dali::Toolkit::DevelTextEditor::Scroll::Type))jarg2;
+  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *)jarg1;
+  arg2 = (void (*)(Dali::Toolkit::TextEditor,Dali::Toolkit::TextEditor::Scroll::Type))jarg2;
   {
     try {
       Dali_Signal_void_TextEditor_Scroll_Type__Disconnect(arg1,arg2);
@@ -1104,14 +1104,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollStateChangedSignal_Disconnect(void
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollStateChangedSignal_Emit(void * jarg1, void * jarg2, int jarg3) {
-  Dali::Signal< void ( Dali::Toolkit::TextEditor,  Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor,  Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *) 0 ;
+  Dali::Signal< void ( Dali::Toolkit::TextEditor,  Dali::Toolkit::TextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor,  Dali::Toolkit::TextEditor::Scroll::Type ) > *) 0 ;
   Dali::Toolkit::TextEditor arg2 ;
-  Dali::Toolkit::DevelTextEditor::Scroll::Type arg3;
+  Dali::Toolkit::TextEditor::Scroll::Type arg3;
   Dali::Toolkit::TextEditor *argp2 ;
 
-  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *)jarg1;
+  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *)jarg1;
   argp2 = (Dali::Toolkit::TextEditor *)jarg2;
-  arg3 = (Dali::Toolkit::DevelTextEditor::Scroll::Type)jarg3;
+  arg3 = (Dali::Toolkit::TextEditor::Scroll::Type)jarg3;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::TextEditor", 0);
     return ;
@@ -1134,11 +1134,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollStateChangedSignal_Emit(void * jar
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollStateChangedSignal() {
   void * jresult ;
-  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *result = 0 ;
+  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *result = 0 ;
 
   {
     try {
-      result = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *)new Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) >();
+      result = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *)new Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1154,9 +1154,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollStateChangedSignal() {
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollStateChangedSignal(void * jarg1) {
-  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *) 0 ;
+  Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *) 0 ;
 
-  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::DevelTextEditor::Scroll::Type ) > *)jarg1;
+  arg1 = (Dali::Signal< void ( Dali::Toolkit::TextEditor, Dali::Toolkit::TextEditor::Scroll::Type ) > *)jarg1;
   {
     try {
       delete arg1;
