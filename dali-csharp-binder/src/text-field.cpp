@@ -552,7 +552,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_PLACEHOLDER_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ELLIPSIS_get() {
+  int jresult ;
+  int result;
 
+  result = (int)Dali::Toolkit::DevelTextField::Property::ELLIPSIS;
+  jresult = (int)result;
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField_Property() {
   void * jresult ;

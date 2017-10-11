@@ -24766,6 +24766,31 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceClass(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceSubClass(void * jarg1) {
+  int jresult ;
+  Dali::KeyEvent *arg1 = 0 ;
+  Dali::DevelDevice::Subclass::Type result;
+
+  arg1 = (Dali::KeyEvent *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::DevelDevice::Subclass::Type)Dali::DevelKeyEvent::GetDeviceSubclass((Dali::KeyEvent const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+  jresult = (int)result;
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Raise(void * jarg1) {
   Dali::Actor arg1 ;
