@@ -21,7 +21,7 @@
 #include <dali/public-api/common/dali-common.h>
 #include <dali/integration-api/debug.h>
 #include <dali/public-api/adaptor-framework/key-grab.h>
-#include <dali/devel-api/adaptor-framework/window-devel.h>
+#include <dali/public-api/adaptor-framework/window.h>
 
 #include <stdexcept>
 #include <exception>

@@ -555,7 +555,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ELLIPSIS_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextField::Property::ELLIPSIS;
+  result = (int)Dali::Toolkit::TextField::Property::ELLIPSIS;
   jresult = (int)result;
   return jresult;
 }

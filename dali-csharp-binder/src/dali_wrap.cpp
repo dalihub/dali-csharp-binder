@@ -1063,19 +1063,19 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ResourceImage_SP__Sg__Emit(Dali::Sig
           /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
 /*@SWIG@*/ self->Emit( arg );
       }
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Empty(Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Empty(Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > const *self){
          return self->Empty();
       }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > const *self){
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > const *self){
         return self->GetConnectionCount();
       }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Connect(Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *self,void (*func)(Dali::Actor, Dali::DevelActor::LayoutDirection::Type)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Connect(Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *self,void (*func)(Dali::Actor, Dali::LayoutDirection::Type)){
           return self->Connect( func );
       }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Disconnect(Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *self,void (*func)(Dali::Actor, Dali::DevelActor::LayoutDirection::Type)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Disconnect(Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *self,void (*func)(Dali::Actor, Dali::LayoutDirection::Type)){
           self->Disconnect( func );
       }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Emit(Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *self,Dali::Actor arg1, Dali::DevelActor::LayoutDirection::Type arg3){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Emit(Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *self,Dali::Actor arg1, Dali::LayoutDirection::Type arg3){
           self->Emit( arg1, arg3 );
       }
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Empty(Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > const *self){
@@ -24766,7 +24766,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceClass(void * jarg1) {
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceSubClass(void * jarg1) {
   int jresult ;
   Dali::KeyEvent *arg1 = 0 ;
-  Dali::DevelDevice::Subclass::Type result;
+  Dali::Device::Subclass::Type result;
 
   arg1 = (Dali::KeyEvent *)jarg1;
   if (!arg1) {
@@ -24775,7 +24775,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceSubClass(void * jarg1) {
   }
   {
     try {
-      result = (Dali::DevelDevice::Subclass::Type)Dali::DevelKeyEvent::GetDeviceSubclass((Dali::KeyEvent const &)*arg1);
+      result = (Dali::Device::Subclass::Type)arg1->GetDeviceSubclass();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -24986,19 +24986,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VisibilityChangedSignal(void * jarg1) 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LayoutDirectionChangedSignal(void * jarg1) {
   void * jresult ;
-  Dali::Actor arg1 ;
-  Dali::Actor *argp1 ;
-  Dali::DevelActor::LayoutDirectionChangedSignalType *result = 0 ;
+  Dali::Actor *arg1 ;
+  Dali::Actor::LayoutDirectionChangedSignalType *result = 0 ;
 
-  argp1 = (Dali::Actor *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
-    return 0;
-  }
-  arg1 = *argp1;
+  arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (Dali::DevelActor::LayoutDirectionChangedSignalType *) &Dali::DevelActor::LayoutDirectionChangedSignal(arg1);
+      result = (Dali::Actor::LayoutDirectionChangedSignalType *) &(arg1)->LayoutDirectionChangedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -25011,7 +25005,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LayoutDirectionChangedSignal(void * ja
   jresult = (void *)result;
   return jresult;
 }
-
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_PARENT_ORIGIN_get() {
@@ -43276,13 +43269,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ResourceImageSignal(void * jarg1)
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionChangedSignal_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *) 0 ;
+  Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Empty((Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Empty((Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -43299,13 +43292,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionChangedSignal
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionSignal_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *) 0 ;
+  Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -43321,11 +43314,11 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionSignal_GetCo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionSignal_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *) 0 ;
-  void (*arg2)(Dali::Actor, Dali::DevelActor::LayoutDirection::Type) = (void (*)(Dali::Actor, Dali::DevelActor::LayoutDirection::Type)) 0 ;
+  Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *) 0 ;
+  void (*arg2)(Dali::Actor, Dali::LayoutDirection::Type) = (void (*)(Dali::Actor, Dali::LayoutDirection::Type)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *)jarg1;
-  arg2 = (void (*)(Dali::Actor, Dali::DevelActor::LayoutDirection::Type))jarg2;
+  arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *)jarg1;
+  arg2 = (void (*)(Dali::Actor, Dali::LayoutDirection::Type))jarg2;
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Connect(arg1,arg2);
@@ -43342,11 +43335,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionSignal_Connect(void *
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionSignal_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *) 0 ;
-  void (*arg2)(Dali::Actor, Dali::DevelActor::LayoutDirection::Type) = (void (*)(Dali::Actor, Dali::DevelActor::LayoutDirection::Type)) 0 ;
+  Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *) 0 ;
+  void (*arg2)(Dali::Actor, Dali::LayoutDirection::Type) = (void (*)(Dali::Actor, Dali::LayoutDirection::Type)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *)jarg1;
-  arg2 = (void (*)(Dali::Actor, Dali::DevelActor::LayoutDirection::Type))jarg2;
+  arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *)jarg1;
+  arg2 = (void (*)(Dali::Actor, Dali::LayoutDirection::Type))jarg2;
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Disconnect(arg1,arg2);
@@ -43363,13 +43356,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionSignal_Disconnect(voi
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionSignal_Emit(void * jarg1, void * jarg2, int jarg4) {
-  Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *) 0 ;
+  Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *) 0 ;
   Dali::Actor arg2 ;
   //bool arg3 ;
-  Dali::DevelActor::LayoutDirection::Type arg4 ;
+  Dali::LayoutDirection::Type arg4 ;
   Dali::Actor *argp2 ;
 
-  arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *)jarg1;
   argp2 = (Dali::Actor *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
@@ -43377,7 +43370,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionSignal_Emit(void * ja
   }
   arg2 = *argp2;
   //arg3 = jarg3 ? true : false;
-  arg4 = (Dali::DevelActor::LayoutDirection::Type)jarg4;
+  arg4 = (Dali::LayoutDirection::Type)jarg4;
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_LayoutDirection_Type_SP__Sg__Emit(arg1,arg2,arg4);
@@ -43395,11 +43388,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionSignal_Emit(void * ja
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ViewLayoutDirectionSignal() {
   void * jresult ;
-  Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *result = 0 ;
+  Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *result = 0 ;
 
   {
     try {
-      result = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *)new Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) >();
+      result = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *)new Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -43415,9 +43408,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ViewLayoutDirectionSignal() {
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ViewLayoutDirectionSignal(void * jarg1) {
-  Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *) 0 ;
+  Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::Actor, Dali::DevelActor::LayoutDirection::Type) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *)jarg1;
   {
     try {
       delete arg1;
