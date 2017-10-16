@@ -17041,7 +17041,39 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_15(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_16(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_16(void * jarg1) {
+  void * jresult ;
+  Extents *arg1 = 0 ;
+  Dali::Property::Value *result = 0 ;
+
+  arg1 = (Extents *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Extents const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::Property::Value *)new Dali::Property::Value((Extents const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_17(int jarg1) {
   void * jresult ;
   Dali::Property::Type arg1 ;
   Dali::Property::Value *result = 0 ;
@@ -17074,7 +17106,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_16(int jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_17(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_18(void * jarg1) {
   void * jresult ;
   Dali::Property::Value *arg1 = 0 ;
   Dali::Property::Value *result = 0 ;
@@ -17746,6 +17778,40 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_14(void
     }
   }
 
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_15(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
+  Extents *arg2 = 0 ;
+  bool result;
+
+  arg1 = (Dali::Property::Value *)jarg1;
+  arg2 = (Extents *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Extents & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (bool)((Dali::Property::Value const *)arg1)->Get(*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
   jresult = result;
   return jresult;
 }
@@ -67038,6 +67104,24 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_BACKGROUND_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_MARGIN_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::Control::Property::MARGIN;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_PADDING_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::Control::Property::PADDING;
+  jresult = (int)result;
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View_Property() {
   void * jresult ;
