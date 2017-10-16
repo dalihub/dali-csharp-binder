@@ -61,7 +61,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetViewManager_New(void * jarg1, ch
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
   jresult = new Dali::WidgetView::WidgetViewManager((const Dali::WidgetView::WidgetViewManager &)result); 
   
   //argout typemap for const std::string&
@@ -93,7 +103,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetViewManager_DownCast(void * jarg
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
   jresult = new Dali::WidgetView::WidgetViewManager((const Dali::WidgetView::WidgetViewManager &)result); 
   return jresult;
 }
@@ -114,7 +134,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetViewManager__SWIG_0() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
   jresult = (void *)result; 
   return jresult;
 }
@@ -141,7 +171,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetViewManager__SWIG_1(void * j
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
   jresult = (void *)result; 
   return jresult;
 }
@@ -170,7 +210,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetViewManager_Assign(void * jarg1,
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
   jresult = (void *)result; 
   return jresult;
 }
@@ -191,7 +241,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetViewManager(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ; 
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetViewManager_AddWidget(void * jarg1, char * jarg2, char * jarg3, int jarg4, int jarg5, float jarg6) {
@@ -231,7 +291,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetViewManager_AddWidget(void * jar
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0; 
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
   jresult = new Dali::WidgetView::WidgetView((const Dali::WidgetView::WidgetView &)result); 
   return jresult;
 }

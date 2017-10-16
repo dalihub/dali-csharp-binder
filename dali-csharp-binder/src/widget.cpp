@@ -169,6 +169,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_New(char * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -194,6 +198,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Widget__SWIG_0() {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -225,6 +233,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Widget__SWIG_1(void * jarg1) {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -259,6 +271,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_Assign(void * jarg1, void * jar
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -284,6 +300,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Widget(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -308,6 +328,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_CreateSignal(void * jarg1) {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -336,6 +360,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_TerminateSignal(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -362,6 +390,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_PauseSignal(void * jarg1) {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -390,6 +422,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_ResumeSignal(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -417,6 +453,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_ResizeSignal(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -443,6 +483,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_UpdateSignal(void * jarg1) {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -507,6 +551,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_New(int jarg1,char *
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -531,6 +579,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetApplication__SWIG_0() {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -562,6 +614,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetApplication__SWIG_1(void * j
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -595,6 +651,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_Assign(void * jarg1,
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -630,6 +690,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetApplication(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -654,6 +718,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_MainLoop(void * jarg1)
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -676,6 +744,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_Quit(void * jarg1) {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -702,6 +774,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_GetWindow(void * jar
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -726,6 +802,10 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_WidgetApplication_GetResourcePath() {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -754,6 +834,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_InitSignal(void * ja
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -780,6 +864,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_TerminateSignal(void
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -808,6 +896,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_LanguageChangedSigna
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -834,6 +926,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_RegionChangedSignal(
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -862,6 +958,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_BatteryLowSignal(voi
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -888,6 +988,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_MemoryLowSignal(void
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -920,6 +1024,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetData_New(char * jarg1, void * ja
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -944,6 +1052,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetData__SWIG_0() {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -975,6 +1087,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetData__SWIG_1(void * jarg1) {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1009,6 +1125,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetData_Assign(void * jarg1, void *
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -1034,6 +1154,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetData(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1058,6 +1182,10 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_WidgetData_GetInstanceId(void * jarg1)
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1086,6 +1214,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetData_GetArgs(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -1112,6 +1244,10 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_WidgetData_GetContent(void * jarg1) {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1140,6 +1276,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetData_GetWindow(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -1167,6 +1307,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetData_SetArgs(void * jarg1, void * 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1191,6 +1335,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetData_SetContent(void * jarg1, char
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -1223,6 +1371,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetData_SetWindow(void * jarg1, void 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1247,6 +1399,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_E
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1275,6 +1431,10 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -1302,6 +1462,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Connect(v
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1326,6 +1490,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Disconnec
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -1368,6 +1536,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Emit(void
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1390,6 +1562,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceCreateSignalType() {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1416,6 +1592,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceCreateSignalType(vo
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1440,6 +1620,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalTyp
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1468,6 +1652,10 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalTy
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -1495,6 +1683,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Connec
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1519,6 +1711,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Discon
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -1555,6 +1751,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Emit(v
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1577,6 +1777,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceTerminateSignalType(
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1603,6 +1807,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceTerminateSignalType
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1627,6 +1835,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSigna
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1655,6 +1867,10 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSign
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -1682,6 +1898,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSignalType_Co
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1706,6 +1926,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSignalType_Di
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -1738,6 +1962,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSignalType_Em
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1760,6 +1988,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstancePauseOrResumeSignalT
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1786,6 +2018,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstancePauseOrResumeSignal
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1810,6 +2046,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_E
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1838,6 +2078,10 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -1865,6 +2109,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_Connect(v
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1889,6 +2137,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_Disconnec
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -1929,6 +2181,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_Emit(void
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -1951,6 +2207,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceResizeSignalType() {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1977,6 +2237,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceResizeSignalType(vo
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -2001,6 +2265,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_E
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -2029,6 +2297,10 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -2056,6 +2328,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_Connect(v
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -2080,6 +2356,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_Disconnec
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -2116,6 +2396,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_Emit(void
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -2138,6 +2422,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceUpdateSignalType() {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -2164,6 +2452,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceUpdateSignalType(vo
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -2188,6 +2480,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AppSignalType_Empty(void * jarg1
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -2216,6 +2512,10 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_AppSignalType_GetConnectionCoun
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
@@ -2243,6 +2543,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AppSignalType_Connect(void * jarg1, void
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -2267,6 +2571,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AppSignalType_Disconnect(void * jarg1, v
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -2297,6 +2605,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AppSignalType_Emit(void * jarg1, void * 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -2319,6 +2631,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_AppSignalType() {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -2344,6 +2660,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AppSignalType(void * jarg1) {
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
