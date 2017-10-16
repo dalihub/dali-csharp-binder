@@ -64642,6 +64642,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VideoView_Property_VOLUME_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VideoView_Property_UNDERLAY_get() {
+  int result;
+
+  result = (int)Dali::Toolkit::VideoView::Property::UNDERLAY;
+
+  return result;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VideoView_Property() {
   void * jresult ;
   Dali::Toolkit::VideoView::Property *result = 0 ;
