@@ -21,9 +21,8 @@
 
 #include "common.h"
 #include "string"
-#include <dali/devel-api/widget/widget.h>
-#include <dali/devel-api/widget/widget-application.h>
-#include <dali/devel-api/widget/widget-data.h>
+#include <dali/devel-api/adaptor-framework/widget.h>
+#include <dali/devel-api/adaptor-framework/widget-application.h>
 #include <dali/integration-api/debug.h>
 #include <dlog.h>
 
@@ -36,83 +35,83 @@ int argWidgetC = 1;
 char **argWidgetV = NULL;
 char *g_argv = NULL;
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WindowSize_SP__Sg__Empty(Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Window_SP__Sg__Empty(Dali::Signal< void (std::string const &,bundle *,Dali::Window) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WindowSize_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > const *self){
-return self->GetConnectionCount();
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Window_SP__Sg__GetConnectionCount(Dali::Signal< void (std::string const &,bundle *,Dali::Window) > const *self){
+  return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WindowSize_SP__Sg__Connect(Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *self,void (*func)(Dali::WidgetData,bundle *,Dali::Widget::WindowSize)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Window_SP__Sg__Connect(Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *self,void (*func)(std::string const &,bundle *,Dali::Window)){
   return self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WindowSize_SP__Sg__Disconnect(Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *self,void (*func)(Dali::WidgetData,bundle *,Dali::Widget::WindowSize)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Window_SP__Sg__Disconnect(Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *self,void (*func)(std::string const &,bundle *,Dali::Window)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WindowSize_SP__Sg__Emit(Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *self,Dali::WidgetData arg1,bundle *arg2,Dali::Widget::WindowSize arg3){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Window_SP__Sg__Emit(Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *self,std::string const &arg1,bundle *arg2,Dali::Window arg3){
   self->Emit( arg1, arg2, arg3 );
 }
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Empty(Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Empty(Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > const *self){
-return self->GetConnectionCount();
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__GetConnectionCount(Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > const *self){
+  return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Connect(Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *self,void (*func)(Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Connect(Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *self,void (*func)(std::string const &,bundle *,Dali::Widget::WidgetTerminateType)){
   return self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Disconnect(Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *self,void (*func)(Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Disconnect(Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *self,void (*func)(std::string const &,bundle *,Dali::Widget::WidgetTerminateType)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Emit(Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *self,Dali::WidgetData arg1,bundle *arg2,Dali::Widget::WidgetTerminateType arg3){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Emit(Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *self,std::string const &arg1,bundle *arg2,Dali::Widget::WidgetTerminateType arg3){
   self->Emit( arg1, arg2, arg3 );
 }
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_WidgetData_SP__Sg__Empty(Dali::Signal< void (Dali::WidgetData) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Empty(Dali::Signal< void (std::string const &) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_WidgetData_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::WidgetData) > const *self){
-return self->GetConnectionCount();
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal< void (std::string const &) > const *self){
+  return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_SP__Sg__Connect(Dali::Signal< void (Dali::WidgetData) > *self,void (*func)(Dali::WidgetData)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Connect(Dali::Signal< void (std::string const &) > *self,void (*func)(std::string const &)){
   self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_SP__Sg__Disconnect(Dali::Signal< void (Dali::WidgetData) > *self,void (*func)(Dali::WidgetData)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Disconnect(Dali::Signal< void (std::string const &) > *self,void (*func)(std::string const &)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_SP__Sg__Emit(Dali::Signal< void (Dali::WidgetData) > *self,Dali::WidgetData arg){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Emit(Dali::Signal< void (std::string const &) > *self,std::string const &arg){
   self->Emit( arg );
 }
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_Dali_Widget_WindowSize_SP__Sg__Empty(Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_Dali_Window_SP__Sg__Empty(Dali::Signal< void (std::string const &,Dali::Window) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_Dali_Widget_WindowSize_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > const *self){
-return self->GetConnectionCount();
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_Dali_Window_SP__Sg__GetConnectionCount(Dali::Signal< void (std::string const &,Dali::Window) > const *self){
+  return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_Dali_Widget_WindowSize_SP__Sg__Connect(Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *self,void (*func)(Dali::WidgetData,Dali::Widget::WindowSize)){
-self->Connect( func );
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_Dali_Window_SP__Sg__Connect(Dali::Signal< void (std::string const &,Dali::Window) > *self,void (*func)(std::string const &,Dali::Window)){
+  self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_Dali_Widget_WindowSize_SP__Sg__Disconnect(Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *self,void (*func)(Dali::WidgetData,Dali::Widget::WindowSize)){
-self->Disconnect( func );
-}
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_Dali_Widget_WindowSize_SP__Sg__Emit(Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *self,Dali::WidgetData arg1,Dali::Widget::WindowSize arg2){
-self->Emit( arg1, arg2 );
-}
-
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_int_SP__Sg__Empty(Dali::Signal< void (Dali::WidgetData,bundle *,int) > const *self){
-  return self->Empty();
-}
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_int_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::WidgetData,bundle *,int) > const *self){
-return self->GetConnectionCount();
-}
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_int_SP__Sg__Connect(Dali::Signal< void (Dali::WidgetData,bundle *,int) > *self,void (*func)(Dali::WidgetData,bundle *,int)){
-  return self->Connect( func );
-}
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_int_SP__Sg__Disconnect(Dali::Signal< void (Dali::WidgetData,bundle *,int) > *self,void (*func)(Dali::WidgetData,bundle *,int)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_Dali_Window_SP__Sg__Disconnect(Dali::Signal< void (std::string const &,Dali::Window) > *self,void (*func)(std::string const &,Dali::Window)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_int_SP__Sg__Emit(Dali::Signal< void (Dali::WidgetData,bundle *,int) > *self,Dali::WidgetData arg1,bundle *arg2,int arg3){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_Dali_Window_SP__Sg__Emit(Dali::Signal< void (std::string const &,Dali::Window) > *self,std::string const &arg1,Dali::Window arg2){
+  self->Emit( arg1, arg2 );
+}
+
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_int_SP__Sg__Empty(Dali::Signal< void (std::string const &,bundle *,int) > const *self){
+  return self->Empty();
+}
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_int_SP__Sg__GetConnectionCount(Dali::Signal< void (std::string const &,bundle *,int) > const *self){
+  return self->GetConnectionCount();
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_int_SP__Sg__Connect(Dali::Signal< void (std::string const &,bundle *,int) > *self,void (*func)(std::string const &,bundle *,int)){
+  return self->Connect( func );
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_int_SP__Sg__Disconnect(Dali::Signal< void (std::string const &,bundle *,int) > *self,void (*func)(std::string const &,bundle *,int)){
+  self->Disconnect( func );
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_int_SP__Sg__Emit(Dali::Signal< void (std::string const &,bundle *,int) > *self,std::string const &arg1,bundle *arg2,int arg3){
   self->Emit( arg1, arg2, arg3 );
 }
 
@@ -120,7 +119,7 @@ SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_WidgetApplication_SA__SP__Sg__Empty(
   return self->Empty();
 }
 SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_WidgetApplication_SA__SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::WidgetApplication &) > const *self){
-return self->GetConnectionCount();
+  return self->GetConnectionCount();
 }
 SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetApplication_SA__SP__Sg__Connect(Dali::Signal< void (Dali::WidgetApplication &) > *self,void (*func)(Dali::WidgetApplication &)){
   self->Connect( func );
@@ -129,6 +128,39 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetApplication_SA__SP__Sg__Discon
   self->Disconnect( func );
 }
 SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetApplication_SA__SP__Sg__Emit(Dali::Signal< void (Dali::WidgetApplication &) > *self,Dali::WidgetApplication &arg){
+  self->Emit( arg );
+}
+
+
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__Empty(Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > const *self){
+  return self->Empty();
+}
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > const *self){
+  return self->GetConnectionCount();
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__Connect(Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *self,void (*func)(Dali::DeviceStatus::Battery::Status)){
+  self->Connect( func );
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__Disconnect(Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *self,void (*func)(Dali::DeviceStatus::Battery::Status)){
+  self->Disconnect( func );
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__Emit(Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *self,Dali::DeviceStatus::Battery::Status arg){
+  self->Emit( arg );
+}
+
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__Empty(Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > const *self){
+  return self->Empty();
+}
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > const *self){
+  return self->GetConnectionCount();
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__Connect(Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *self,void (*func)(Dali::DeviceStatus::Memory::Status)){
+  self->Connect( func );
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__Disconnect(Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *self,void (*func)(Dali::DeviceStatus::Memory::Status)){
+  self->Disconnect( func );
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__Emit(Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *self,Dali::DeviceStatus::Memory::Status arg){
   self->Emit( arg );
 }
 
@@ -144,9 +176,6 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_WidgetApplication_SWIGUpca
     return (Dali::BaseHandle *)jarg1;
 }
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_WidgetData_SWIGUpcast(Dali::WidgetData *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_New(char * jarg1) {
   void * jresult ;
@@ -316,11 +345,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Widget(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_CreateSignal(void * jarg1) {
   void * jresult ;
   Dali::Widget *arg1 = (Dali::Widget *) 0 ;
-  Dali::Widget::WidgetInstanceCreateSignalType *result = 0 ;
+  Dali::Widget::WidgetCreateSignalType *result = 0 ;
+
   arg1 = (Dali::Widget *)jarg1;
   {
     try {
-      result = (Dali::Widget::WidgetInstanceCreateSignalType *) &(arg1)->CreateSignal();
+      result = (Dali::Widget::WidgetCreateSignalType *) &(arg1)->CreateSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -347,11 +377,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_CreateSignal(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_TerminateSignal(void * jarg1) {
   void * jresult ;
   Dali::Widget *arg1 = (Dali::Widget *) 0 ;
-  Dali::Widget::WidgetInstanceTerminateSignalType *result = 0 ;
+  Dali::Widget::WidgetTerminateSignalType *result = 0 ;
+
   arg1 = (Dali::Widget *)jarg1;
   {
     try {
-      result = (Dali::Widget::WidgetInstanceTerminateSignalType *) &(arg1)->TerminateSignal();
+      result = (Dali::Widget::WidgetTerminateSignalType *) &(arg1)->TerminateSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -378,11 +409,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_TerminateSignal(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_PauseSignal(void * jarg1) {
   void * jresult ;
   Dali::Widget *arg1 = (Dali::Widget *) 0 ;
-  Dali::Widget::WidgetInstancePauseSignalType *result = 0 ;
+  Dali::Widget::WidgetPauseSignalType *result = 0 ;
+
   arg1 = (Dali::Widget *)jarg1;
   {
     try {
-      result = (Dali::Widget::WidgetInstancePauseSignalType *) &(arg1)->PauseSignal();
+      result = (Dali::Widget::WidgetPauseSignalType *) &(arg1)->PauseSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -409,11 +441,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_PauseSignal(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_ResumeSignal(void * jarg1) {
   void * jresult ;
   Dali::Widget *arg1 = (Dali::Widget *) 0 ;
-  Dali::Widget::WidgetInstanceResumeSignalType *result = 0 ;
+  Dali::Widget::WidgetResumeSignalType *result = 0 ;
+
   arg1 = (Dali::Widget *)jarg1;
   {
     try {
-      result = (Dali::Widget::WidgetInstanceResumeSignalType *) &(arg1)->ResumeSignal();
+      result = (Dali::Widget::WidgetResumeSignalType *) &(arg1)->ResumeSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -440,11 +473,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_ResumeSignal(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_ResizeSignal(void * jarg1) {
   void * jresult ;
   Dali::Widget *arg1 = (Dali::Widget *) 0 ;
-  Dali::Widget::WidgetInstanceResizeSignalType *result = 0 ;
+  Dali::Widget::WidgetResizeSignalType *result = 0 ;
+
   arg1 = (Dali::Widget *)jarg1;
   {
     try {
-      result = (Dali::Widget::WidgetInstanceResizeSignalType *) &(arg1)->ResizeSignal();
+      result = (Dali::Widget::WidgetResizeSignalType *) &(arg1)->ResizeSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -471,11 +505,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_ResizeSignal(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_UpdateSignal(void * jarg1) {
   void * jresult ;
   Dali::Widget *arg1 = (Dali::Widget *) 0 ;
-  Dali::Widget::WidgetInstanceUpdateSignalType *result = 0 ;
+  Dali::Widget::WidgetUpdateSignalType *result = 0 ;
+
   arg1 = (Dali::Widget *)jarg1;
   {
     try {
-      result = (Dali::Widget::WidgetInstanceUpdateSignalType *) &(arg1)->UpdateSignal();
+      result = (Dali::Widget::WidgetUpdateSignalType *) &(arg1)->UpdateSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -758,14 +793,41 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_Quit(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_GetWindow(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_WidgetApplication_GetResourcePath() {
+  char * jresult ;
+  std::string result;
+
+  {
+    try {
+      result = Dali::WidgetApplication::GetResourcePath();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  return jresult;
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_WidgetApplication_GetRegion(void * jarg1) {
+  char * jresult ;
   Dali::WidgetApplication *arg1 = (Dali::WidgetApplication *) 0 ;
-  Dali::Window result;
+  std::string result;
+
   arg1 = (Dali::WidgetApplication *)jarg1;
   {
     try {
-      result = (arg1)->GetWindow();
+      result = (arg1)->GetRegion();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -784,17 +846,20 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_GetWindow(void * jar
       };
     }
   }
-  jresult = new Dali::Window((const Dali::Window &)result);
+  jresult = SWIG_csharp_string_callback((&result)->c_str());
   return jresult;
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_WidgetApplication_GetResourcePath() {
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_WidgetApplication_GetLanguage(void * jarg1) {
   char * jresult ;
+  Dali::WidgetApplication *arg1 = (Dali::WidgetApplication *) 0 ;
   std::string result;
+
+  arg1 = (Dali::WidgetApplication *)jarg1;
   {
     try {
-      result = Dali::WidgetApplication::GetResourcePath();
+      result = (arg1)->GetLanguage();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -942,14 +1007,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_RegionChangedSignal(
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_BatteryLowSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_LowBatterySignal(void * jarg1) {
   void * jresult ;
   Dali::WidgetApplication *arg1 = (Dali::WidgetApplication *) 0 ;
-  Dali::WidgetApplication::AppSignalType *result = 0 ;
+  Dali::WidgetApplication::LowBatterySignalType *result = 0 ;
+
   arg1 = (Dali::WidgetApplication *)jarg1;
   {
     try {
-      result = (Dali::WidgetApplication::AppSignalType *) &(arg1)->BatteryLowSignal();
+      result = (Dali::WidgetApplication::LowBatterySignalType *) &(arg1)->LowBatterySignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -973,14 +1039,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_BatteryLowSignal(voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_MemoryLowSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_LowMemorySignal(void * jarg1) {
   void * jresult ;
   Dali::WidgetApplication *arg1 = (Dali::WidgetApplication *) 0 ;
-  Dali::WidgetApplication::AppSignalType *result = 0 ;
+  Dali::WidgetApplication::LowMemorySignalType *result = 0 ;
+
   arg1 = (Dali::WidgetApplication *)jarg1;
   {
     try {
-      result = (Dali::WidgetApplication::AppSignalType *) &(arg1)->MemoryLowSignal();
+      result = (Dali::WidgetApplication::LowMemorySignalType *) &(arg1)->LowMemorySignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1004,394 +1071,16 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_MemoryLowSignal(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetData_New(char * jarg1, void * jarg2, char * jarg3) {
-  void * jresult ;
-  char *arg1 = (char *) 0 ;
-  bundle *arg2 = (bundle *) 0 ;
-  char *arg3 = (char *) 0 ;
-  Dali::WidgetData result;
-  arg1 = (char *)jarg1;
-  arg2 = (bundle *)jarg2;
-  arg3 = (char *)jarg3;
-  {
-    try {
-      result = Dali::WidgetData::New((char const *)arg1,arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = new Dali::WidgetData((const Dali::WidgetData &)result);
-  return jresult;
-}
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetData__SWIG_0() {
-  void * jresult ;
-  Dali::WidgetData *result = 0 ;
-  {
-    try {
-      result = (Dali::WidgetData *)new Dali::WidgetData();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetData__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::WidgetData *arg1 = 0 ;
-  Dali::WidgetData *result = 0 ;
-  arg1 = (Dali::WidgetData *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::WidgetData const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::WidgetData *)new Dali::WidgetData((Dali::WidgetData const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetData_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::WidgetData *arg1 = (Dali::WidgetData *) 0 ;
-  Dali::WidgetData *arg2 = 0 ;
-  Dali::WidgetData *result = 0 ;
-  arg1 = (Dali::WidgetData *)jarg1;
-  arg2 = (Dali::WidgetData *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::WidgetData const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::WidgetData *) &(arg1)->operator =((Dali::WidgetData const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetData(void * jarg1) {
-  Dali::WidgetData *arg1 = (Dali::WidgetData *) 0 ;
-  arg1 = (Dali::WidgetData *)jarg1;
-  {
-    try {
-      delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_WidgetData_GetInstanceId(void * jarg1) {
-  char * jresult ;
-  Dali::WidgetData *arg1 = (Dali::WidgetData *) 0 ;
-  char *result = 0 ;
-  arg1 = (Dali::WidgetData *)jarg1;
-  {
-    try {
-      result = (char *)(arg1)->GetInstanceId();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = SWIG_csharp_string_callback((const char *)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetData_GetArgs(void * jarg1) {
-  void * jresult ;
-  Dali::WidgetData *arg1 = (Dali::WidgetData *) 0 ;
-  bundle *result = 0 ;
-  arg1 = (Dali::WidgetData *)jarg1;
-  {
-    try {
-      result = (bundle *)(arg1)->GetArgs();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_WidgetData_GetContent(void * jarg1) {
-  char * jresult ;
-  Dali::WidgetData *arg1 = (Dali::WidgetData *) 0 ;
-  char *result = 0 ;
-  arg1 = (Dali::WidgetData *)jarg1;
-  {
-    try {
-      result = (char *)(arg1)->GetContent();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = SWIG_csharp_string_callback((const char *)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetData_GetWindow(void * jarg1) {
-  void * jresult ;
-  Dali::WidgetData *arg1 = (Dali::WidgetData *) 0 ;
-  Dali::Window result;
-  arg1 = (Dali::WidgetData *)jarg1;
-  {
-    try {
-      result = (arg1)->GetWindow();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = new Dali::Window((const Dali::Window &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetData_SetArgs(void * jarg1, void * jarg2) {
-  Dali::WidgetData *arg1 = (Dali::WidgetData *) 0 ;
-  bundle *arg2 = (bundle *) 0 ;
-  arg1 = (Dali::WidgetData *)jarg1;
-  arg2 = (bundle *)jarg2;
-  {
-    try {
-      (arg1)->SetArgs(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetData_SetContent(void * jarg1, char * jarg2) {
-  Dali::WidgetData *arg1 = (Dali::WidgetData *) 0 ;
-  char *arg2 = (char *) 0 ;
-  arg1 = (Dali::WidgetData *)jarg1;
-  arg2 = (char *)jarg2;
-  {
-    try {
-      (arg1)->SetContent(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetData_SetWindow(void * jarg1, void * jarg2) {
-  Dali::WidgetData *arg1 = (Dali::WidgetData *) 0 ;
-  Dali::Window arg2 ;
-  Dali::Window *argp2 ;
-  arg1 = (Dali::WidgetData *)jarg1;
-  argp2 = (Dali::Window *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      (arg1)->SetWindow(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetCreateSignalType_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *) 0 ;
+  Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *) 0 ;
   bool result;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *)jarg1;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WindowSize_SP__Sg__Empty((Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Window_SP__Sg__Empty((Dali::Signal< void (std::string const &,bundle *,Dali::Window) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1415,14 +1104,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_E
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_GetConnectionCount(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetCreateSignalType_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *) 0 ;
+  Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *) 0 ;
   std::size_t result;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *)jarg1;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WindowSize_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Window_SP__Sg__GetConnectionCount((Dali::Signal< void (std::string const &,bundle *,Dali::Window) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1446,14 +1136,15 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *) 0 ;
-  void (*arg2)(Dali::WidgetData,bundle *,Dali::Widget::WindowSize) = (void (*)(Dali::WidgetData,bundle *,Dali::Widget::WindowSize)) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *)jarg1;
-  arg2 = (void (*)(Dali::WidgetData,bundle *,Dali::Widget::WindowSize))jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetCreateSignalType_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *) 0 ;
+  void (*arg2)(std::string const &,bundle *,Dali::Window) = (void (*)(std::string const &,bundle *,Dali::Window)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *)jarg1;
+  arg2 = (void (*)(std::string const &,bundle *,Dali::Window))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WindowSize_SP__Sg__Connect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Window_SP__Sg__Connect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1461,10 +1152,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Connect(v
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -1475,14 +1162,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Connect(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *) 0 ;
-  void (*arg2)(Dali::WidgetData,bundle *,Dali::Widget::WindowSize) = (void (*)(Dali::WidgetData,bundle *,Dali::Widget::WindowSize)) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *)jarg1;
-  arg2 = (void (*)(Dali::WidgetData,bundle *,Dali::Widget::WindowSize))jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetCreateSignalType_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *) 0 ;
+  void (*arg2)(std::string const &,bundle *,Dali::Window) = (void (*)(std::string const &,bundle *,Dali::Window)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *)jarg1;
+  arg2 = (void (*)(std::string const &,bundle *,Dali::Window))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WindowSize_SP__Sg__Disconnect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Window_SP__Sg__Disconnect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1493,7 +1181,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Disconnec
       };
     } catch (Dali::DaliException e) {
       {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return;
       };
     } catch (...) {
       {
@@ -1504,30 +1192,30 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Disconnec
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Emit(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *) 0 ;
-  Dali::WidgetData arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetCreateSignalType_Emit(void * jarg1, char * jarg2, void * jarg3, void * jarg4) {
+  Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *) 0 ;
+  std::string *arg2 = 0 ;
   bundle *arg3 = (bundle *) 0 ;
-  Dali::Widget::WindowSize arg4 ;
-  Dali::WidgetData *argp2 ;
-  Dali::Widget::WindowSize *argp4 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *)jarg1;
-  argp2 = (Dali::WidgetData *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WidgetData", 0);
+  Dali::Window arg4 ;
+  Dali::Window *argp4 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *)jarg1;
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str;
   arg3 = (bundle *)jarg3;
-  argp4 = (Dali::Widget::WindowSize *)jarg4;
+  argp4 = (Dali::Window *)jarg4;
   if (!argp4) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Widget::WindowSize", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return ;
   }
   arg4 = *argp4;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WindowSize_SP__Sg__Emit(arg1,arg2,arg3,arg4);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Window_SP__Sg__Emit(arg1,(std::string const &)*arg2,arg3,arg4);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1535,10 +1223,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Emit(void
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -1549,12 +1233,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceCreateSignalType_Emit(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceCreateSignalType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetCreateSignalType() {
   void * jresult ;
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *result = 0 ;
+  Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *result = 0 ;
+
   {
     try {
-      result = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *)new Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) >();
+      result = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *)new Dali::Signal< void (std::string const &,bundle *,Dali::Window) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1578,9 +1263,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceCreateSignalType() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceCreateSignalType(void * jarg1) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WindowSize) > *)jarg1;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetCreateSignalType(void * jarg1) {
+  Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Window) > *)jarg1;
   {
     try {
       delete arg1;
@@ -1605,14 +1291,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceCreateSignalType(vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetTerminateSignalType_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
+  Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
   bool result;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Empty((Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Empty((Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1636,14 +1323,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalTyp
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_GetConnectionCount(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetTerminateSignalType_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
+  Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
   std::size_t result;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__GetConnectionCount((Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1651,10 +1339,6 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalTy
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
       };
     } catch (...) {
       {
@@ -1667,14 +1351,15 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalTy
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
-  void (*arg2)(Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) = (void (*)(Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType)) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
-  arg2 = (void (*)(Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType))jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetTerminateSignalType_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
+  void (*arg2)(std::string const &,bundle *,Dali::Widget::WidgetTerminateType) = (void (*)(std::string const &,bundle *,Dali::Widget::WidgetTerminateType)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
+  arg2 = (void (*)(std::string const &,bundle *,Dali::Widget::WidgetTerminateType))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Connect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Connect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1682,10 +1367,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Connec
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -1696,14 +1377,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Connec
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
-  void (*arg2)(Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) = (void (*)(Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType)) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
-  arg2 = (void (*)(Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType))jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetTerminateSignalType_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
+  void (*arg2)(std::string const &,bundle *,Dali::Widget::WidgetTerminateType) = (void (*)(std::string const &,bundle *,Dali::Widget::WidgetTerminateType)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
+  arg2 = (void (*)(std::string const &,bundle *,Dali::Widget::WidgetTerminateType))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Disconnect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Disconnect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1711,10 +1393,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Discon
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -1725,24 +1403,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Discon
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Emit(void * jarg1, void * jarg2, void * jarg3, int jarg4) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
-  Dali::WidgetData arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetTerminateSignalType_Emit(void * jarg1, char * jarg2, void * jarg3, int jarg4) {
+  Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
+  std::string *arg2 = 0 ;
   bundle *arg3 = (bundle *) 0 ;
   Dali::Widget::WidgetTerminateType arg4 ;
-  Dali::WidgetData *argp2 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
-  argp2 = (Dali::WidgetData *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WidgetData", 0);
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str;
   arg3 = (bundle *)jarg3;
   arg4 = (Dali::Widget::WidgetTerminateType)jarg4;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Emit(arg1,arg2,arg3,arg4);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_Dali_Widget_WidgetTerminateType_SP__Sg__Emit(arg1,(std::string const &)*arg2,arg3,arg4);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1750,10 +1428,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Emit(v
     } catch (std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
       };
     } catch (...) {
       {
@@ -1764,12 +1438,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceTerminateSignalType_Emit(v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceTerminateSignalType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetTerminateSignalType() {
   void * jresult ;
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *result = 0 ;
+  Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *result = 0 ;
+
   {
     try {
-      result = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *)new Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) >();
+      result = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *)new Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1793,9 +1468,432 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceTerminateSignalType(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceTerminateSignalType(void * jarg1) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetTerminateSignalType(void * jarg1) {
+  Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,Dali::Widget::WidgetTerminateType) > *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetPauseSignalType_Empty(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  {
+    try {
+      result = (bool)Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Empty((Dali::Signal< void (std::string const &) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetPauseSignalType_GetConnectionCount(void * jarg1) {
+  unsigned long jresult ;
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+  std::size_t result;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  {
+    try {
+      result = Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (std::string const &) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (unsigned long)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetPauseSignalType_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+  void (*arg2)(std::string const &) = (void (*)(std::string const &)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  arg2 = (void (*)(std::string const &))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Connect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetPauseSignalType_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+  void (*arg2)(std::string const &) = (void (*)(std::string const &)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  arg2 = (void (*)(std::string const &))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetPauseSignalType_Emit(void * jarg1, char * jarg2) {
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+  std::string *arg2 = 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Emit(arg1,(std::string const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetPauseSignalType() {
+  void * jresult ;
+  Dali::Signal< void (std::string const &) > *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Signal< void (std::string const &) > *)new Dali::Signal< void (std::string const &) >();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetPauseSignalType(void * jarg1) {
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetResumeSignalType_Empty(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  {
+    try {
+      result = (bool)Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Empty((Dali::Signal< void (std::string const &) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetResumeSignalType_GetConnectionCount(void * jarg1) {
+  unsigned long jresult ;
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+  std::size_t result;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  {
+    try {
+      result = Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (std::string const &) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (unsigned long)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetResumeSignalType_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+  void (*arg2)(std::string const &) = (void (*)(std::string const &)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  arg2 = (void (*)(std::string const &))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Connect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetResumeSignalType_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+  void (*arg2)(std::string const &) = (void (*)(std::string const &)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  arg2 = (void (*)(std::string const &))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetResumeSignalType_Emit(void * jarg1, char * jarg2) {
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+  std::string *arg2 = 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__SP__Sg__Emit(arg1,(std::string const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetResumeSignalType() {
+  void * jresult ;
+  Dali::Signal< void (std::string const &) > *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Signal< void (std::string const &) > *)new Dali::Signal< void (std::string const &) >();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetResumeSignalType(void * jarg1) {
+  Dali::Signal< void (std::string const &) > *arg1 = (Dali::Signal< void (std::string const &) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &) > *)jarg1;
   {
     try {
       delete arg1;
@@ -1820,14 +1918,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceTerminateSignalType
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSignalType_Empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetResizeSignalType_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::WidgetData) > *arg1 = (Dali::Signal< void (Dali::WidgetData) > *) 0 ;
+  Dali::Signal< void (std::string const &,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *) 0 ;
   bool result;
-  arg1 = (Dali::Signal< void (Dali::WidgetData) > *)jarg1;
+
+  arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_WidgetData_SP__Sg__Empty((Dali::Signal< void (Dali::WidgetData) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_Dali_Window_SP__Sg__Empty((Dali::Signal< void (std::string const &,Dali::Window) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1851,14 +1950,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSigna
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSignalType_GetConnectionCount(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetResizeSignalType_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::WidgetData) > *arg1 = (Dali::Signal< void (Dali::WidgetData) > *) 0 ;
+  Dali::Signal< void (std::string const &,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *) 0 ;
   std::size_t result;
-  arg1 = (Dali::Signal< void (Dali::WidgetData) > *)jarg1;
+
+  arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_Dali_WidgetData_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::WidgetData) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_Dali_Window_SP__Sg__GetConnectionCount((Dali::Signal< void (std::string const &,Dali::Window) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1882,14 +1982,15 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSign
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSignalType_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData) > *arg1 = (Dali::Signal< void (Dali::WidgetData) > *) 0 ;
-  void (*arg2)(Dali::WidgetData) = (void (*)(Dali::WidgetData)) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData) > *)jarg1;
-  arg2 = (void (*)(Dali::WidgetData))jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetResizeSignalType_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *) 0 ;
+  void (*arg2)(std::string const &,Dali::Window) = (void (*)(std::string const &,Dali::Window)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *)jarg1;
+  arg2 = (void (*)(std::string const &,Dali::Window))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_SP__Sg__Connect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_Dali_Window_SP__Sg__Connect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1911,14 +2012,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSignalType_Co
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSignalType_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData) > *arg1 = (Dali::Signal< void (Dali::WidgetData) > *) 0 ;
-  void (*arg2)(Dali::WidgetData) = (void (*)(Dali::WidgetData)) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData) > *)jarg1;
-  arg2 = (void (*)(Dali::WidgetData))jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetResizeSignalType_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *) 0 ;
+  void (*arg2)(std::string const &,Dali::Window) = (void (*)(std::string const &,Dali::Window)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *)jarg1;
+  arg2 = (void (*)(std::string const &,Dali::Window))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_SP__Sg__Disconnect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_Dali_Window_SP__Sg__Disconnect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1940,239 +2042,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSignalType_Di
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstancePauseOrResumeSignalType_Emit(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData) > *arg1 = (Dali::Signal< void (Dali::WidgetData) > *) 0 ;
-  Dali::WidgetData arg2 ;
-  Dali::WidgetData *argp2 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData) > *)jarg1;
-  argp2 = (Dali::WidgetData *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WidgetData", 0);
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetResizeSignalType_Emit(void * jarg1, char * jarg2, void * jarg3) {
+  Dali::Signal< void (std::string const &,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *) 0 ;
+  std::string *arg2 = 0 ;
+  Dali::Window arg3 ;
+  Dali::Window *argp3 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *)jarg1;
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_SP__Sg__Emit(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstancePauseOrResumeSignalType() {
-  void * jresult ;
-  Dali::Signal< void (Dali::WidgetData) > *result = 0 ;
-  {
-    try {
-      result = (Dali::Signal< void (Dali::WidgetData) > *)new Dali::Signal< void (Dali::WidgetData) >();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstancePauseOrResumeSignalType(void * jarg1) {
-  Dali::Signal< void (Dali::WidgetData) > *arg1 = (Dali::Signal< void (Dali::WidgetData) > *) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData) > *)jarg1;
-  {
-    try {
-      delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_Empty(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *) 0 ;
-  bool result;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *)jarg1;
-  {
-    try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_Dali_Widget_WindowSize_SP__Sg__Empty((Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > const *)arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_GetConnectionCount(void * jarg1) {
-  unsigned long jresult ;
-  Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *) 0 ;
-  std::size_t result;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *)jarg1;
-  {
-    try {
-      result = Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_Dali_Widget_WindowSize_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > const *)arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = (unsigned long)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *) 0 ;
-  void (*arg2)(Dali::WidgetData,Dali::Widget::WindowSize) = (void (*)(Dali::WidgetData,Dali::Widget::WindowSize)) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *)jarg1;
-  arg2 = (void (*)(Dali::WidgetData,Dali::Widget::WindowSize))jarg2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_Dali_Widget_WindowSize_SP__Sg__Connect(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *) 0 ;
-  void (*arg2)(Dali::WidgetData,Dali::Widget::WindowSize) = (void (*)(Dali::WidgetData,Dali::Widget::WindowSize)) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *)jarg1;
-  arg2 = (void (*)(Dali::WidgetData,Dali::Widget::WindowSize))jarg2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_Dali_Widget_WindowSize_SP__Sg__Disconnect(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_Emit(void * jarg1, void * jarg2, void * jarg3) {
-  Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *) 0 ;
-  Dali::WidgetData arg2 ;
-  Dali::Widget::WindowSize arg3 ;
-  Dali::WidgetData *argp2 ;
-  Dali::Widget::WindowSize *argp3 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *)jarg1;
-  argp2 = (Dali::WidgetData *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WidgetData", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  argp3 = (Dali::Widget::WindowSize *)jarg3;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str;
+  argp3 = (Dali::Window *)jarg3;
   if (!argp3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Widget::WindowSize", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return ;
   }
   arg3 = *argp3;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_Dali_Widget_WindowSize_SP__Sg__Emit(arg1,arg2,arg3);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_Dali_Window_SP__Sg__Emit(arg1,(std::string const &)*arg2,arg3);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -2194,12 +2085,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceResizeSignalType_Emit(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceResizeSignalType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetResizeSignalType() {
   void * jresult ;
-  Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *result = 0 ;
+  Dali::Signal< void (std::string const &,Dali::Window) > *result = 0 ;
+
   {
     try {
-      result = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *)new Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) >();
+      result = (Dali::Signal< void (std::string const &,Dali::Window) > *)new Dali::Signal< void (std::string const &,Dali::Window) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2223,9 +2115,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceResizeSignalType() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceResizeSignalType(void * jarg1) {
-  Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,Dali::Widget::WindowSize) > *)jarg1;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetResizeSignalType(void * jarg1) {
+  Dali::Signal< void (std::string const &,Dali::Window) > *arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,Dali::Window) > *)jarg1;
   {
     try {
       delete arg1;
@@ -2250,14 +2143,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceResizeSignalType(vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_Empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetUpdateSignalType_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::WidgetData,bundle *,int) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *) 0 ;
+  Dali::Signal< void (std::string const &,bundle *,int) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *) 0 ;
   bool result;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *)jarg1;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_int_SP__Sg__Empty((Dali::Signal< void (Dali::WidgetData,bundle *,int) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_int_SP__Sg__Empty((Dali::Signal< void (std::string const &,bundle *,int) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2281,14 +2175,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_E
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_GetConnectionCount(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetUpdateSignalType_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::WidgetData,bundle *,int) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *) 0 ;
+  Dali::Signal< void (std::string const &,bundle *,int) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *) 0 ;
   std::size_t result;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *)jarg1;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_int_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::WidgetData,bundle *,int) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_int_SP__Sg__GetConnectionCount((Dali::Signal< void (std::string const &,bundle *,int) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2312,14 +2207,15 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,int) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *) 0 ;
-  void (*arg2)(Dali::WidgetData,bundle *,int) = (void (*)(Dali::WidgetData,bundle *,int)) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *)jarg1;
-  arg2 = (void (*)(Dali::WidgetData,bundle *,int))jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetUpdateSignalType_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &,bundle *,int) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *) 0 ;
+  void (*arg2)(std::string const &,bundle *,int) = (void (*)(std::string const &,bundle *,int)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *)jarg1;
+  arg2 = (void (*)(std::string const &,bundle *,int))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_int_SP__Sg__Connect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_int_SP__Sg__Connect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -2341,14 +2237,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_Connect(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,int) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *) 0 ;
-  void (*arg2)(Dali::WidgetData,bundle *,int) = (void (*)(Dali::WidgetData,bundle *,int)) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *)jarg1;
-  arg2 = (void (*)(Dali::WidgetData,bundle *,int))jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetUpdateSignalType_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (std::string const &,bundle *,int) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *) 0 ;
+  void (*arg2)(std::string const &,bundle *,int) = (void (*)(std::string const &,bundle *,int)) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *)jarg1;
+  arg2 = (void (*)(std::string const &,bundle *,int))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_int_SP__Sg__Disconnect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_int_SP__Sg__Disconnect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -2370,24 +2267,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_Disconnec
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_Emit(void * jarg1, void * jarg2, void * jarg3, int jarg4) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,int) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *) 0 ;
-  Dali::WidgetData arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetUpdateSignalType_Emit(void * jarg1, char * jarg2, void * jarg3, int jarg4) {
+  Dali::Signal< void (std::string const &,bundle *,int) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *) 0 ;
+  std::string *arg2 = 0 ;
   bundle *arg3 = (bundle *) 0 ;
   int arg4 ;
-  Dali::WidgetData *argp2 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *)jarg1;
-  argp2 = (Dali::WidgetData *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WidgetData", 0);
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *)jarg1;
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str;
   arg3 = (bundle *)jarg3;
   arg4 = (int)jarg4;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_WidgetData_Sc_bundle_Sm__Sc_int_SP__Sg__Emit(arg1,arg2,arg3,arg4);
+      Dali_Signal_Sl_void_Sp_std_string_SS_const_SA__Sc_bundle_Sm__Sc_int_SP__Sg__Emit(arg1,(std::string const &)*arg2,arg3,arg4);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -2406,15 +2303,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetInstanceUpdateSignalType_Emit(void
       };
     }
   }
+
+  //argout typemap for const std::string&
+
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceUpdateSignalType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetUpdateSignalType() {
   void * jresult ;
-  Dali::Signal< void (Dali::WidgetData,bundle *,int) > *result = 0 ;
+  Dali::Signal< void (std::string const &,bundle *,int) > *result = 0 ;
+
   {
     try {
-      result = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *)new Dali::Signal< void (Dali::WidgetData,bundle *,int) >();
+      result = (Dali::Signal< void (std::string const &,bundle *,int) > *)new Dali::Signal< void (std::string const &,bundle *,int) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2438,9 +2339,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetInstanceUpdateSignalType() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetInstanceUpdateSignalType(void * jarg1) {
-  Dali::Signal< void (Dali::WidgetData,bundle *,int) > *arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *) 0 ;
-  arg1 = (Dali::Signal< void (Dali::WidgetData,bundle *,int) > *)jarg1;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetUpdateSignalType(void * jarg1) {
+  Dali::Signal< void (std::string const &,bundle *,int) > *arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (std::string const &,bundle *,int) > *)jarg1;
   {
     try {
       delete arg1;
@@ -2673,6 +2575,441 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AppSignalType(void * jarg1) {
   }
 }
 
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetApplication_LowBatterySignalType_Empty(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *)jarg1;
+  {
+    try {
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__Empty((Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetApplication_LowBatterySignalType_GetConnectionCount(void * jarg1) {
+  unsigned long jresult ;
+  Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *) 0 ;
+  std::size_t result;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *)jarg1;
+  {
+    try {
+      result = Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (unsigned long)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_LowBatterySignalType_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *) 0 ;
+  void (*arg2)(Dali::DeviceStatus::Battery::Status) = (void (*)(Dali::DeviceStatus::Battery::Status)) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *)jarg1;
+  arg2 = (void (*)(Dali::DeviceStatus::Battery::Status))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__Connect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_LowBatterySignalType_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *) 0 ;
+  void (*arg2)(Dali::DeviceStatus::Battery::Status) = (void (*)(Dali::DeviceStatus::Battery::Status)) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *)jarg1;
+  arg2 = (void (*)(Dali::DeviceStatus::Battery::Status))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__Disconnect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_LowBatterySignalType_Emit(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *) 0 ;
+  Dali::DeviceStatus::Battery::Status arg2 ;
+  Dali::DeviceStatus::Battery::Status *argp2 ;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *)jarg1;
+  argp2 = (Dali::DeviceStatus::Battery::Status *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::DeviceStatus::Battery::Status", 0);
+    return ;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__Emit(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_new_LowBatterySignalType() {
+  void * jresult ;
+  Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *)new Dali::Signal< void (Dali::DeviceStatus::Battery::Status) >();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_delete_LowBatterySignalType(void * jarg1) {
+  Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Battery::Status) > *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WidgetApplication_LowMemorySignalType_Empty(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *)jarg1;
+  {
+    try {
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__Empty((Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WidgetApplication_LowMemorySignalType_GetConnectionCount(void * jarg1) {
+  unsigned long jresult ;
+  Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *) 0 ;
+  std::size_t result;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *)jarg1;
+  {
+    try {
+      result = Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (unsigned long)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_LowMemorySignalType_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *) 0 ;
+  void (*arg2)(Dali::DeviceStatus::Memory::Status) = (void (*)(Dali::DeviceStatus::Memory::Status)) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *)jarg1;
+  arg2 = (void (*)(Dali::DeviceStatus::Memory::Status))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__Connect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_LowMemorySignalType_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *) 0 ;
+  void (*arg2)(Dali::DeviceStatus::Memory::Status) = (void (*)(Dali::DeviceStatus::Memory::Status)) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *)jarg1;
+  arg2 = (void (*)(Dali::DeviceStatus::Memory::Status))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__Disconnect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_LowMemorySignalType_Emit(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *) 0 ;
+  Dali::DeviceStatus::Memory::Status arg2 ;
+  Dali::DeviceStatus::Memory::Status *argp2 ;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *)jarg1;
+  argp2 = (Dali::DeviceStatus::Memory::Status *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::DeviceStatus::Memory::Status", 0);
+    return ;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__Emit(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_new_LowMemorySignalType() {
+  void * jresult ;
+  Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *)new Dali::Signal< void (Dali::DeviceStatus::Memory::Status) >();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_delete_LowMemorySignalType(void * jarg1) {
+  Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::DeviceStatus::Memory::Status) > *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
 
 #ifdef __cplusplus
 }
