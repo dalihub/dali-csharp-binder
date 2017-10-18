@@ -579,24 +579,40 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_1(int jarg1
   char ***arg2 ;
   Dali::WatchApplication result;
   {
-    int index=0;
+    int index = 0;
+    int length = 0;
     char *retPtr;
     char *nextPtr;
     argWatchC = jarg1;
     argWatchV = new char*[jarg1 + 1];
 
     retPtr = strtok_r(jarg2, " ", &nextPtr);
-    argWatchV[index] = new char[strlen(retPtr) + 1];
-    strncpy(argWatchV[index], retPtr, strlen(retPtr));
-    argWatchV[index][strlen(retPtr)] = '\0';
+    if( retPtr )
+    {
+      length = strlen(retPtr);
+    }
+    argWatchV[index] = new char[length + 1];
+    if( retPtr )
+    {
+      strncpy(argWatchV[index], retPtr, length);
+    }
+    argWatchV[index][length] = '\0';
     index++;
 
     while( index < jarg1 )
     {
+      length = 0;
       retPtr = strtok_r(NULL, " ", &nextPtr);
-      argWatchV[index] = new char[strlen(retPtr)+1];
-      strncpy(argWatchV[index], retPtr, strlen(retPtr));
-      argWatchV[index][strlen(retPtr)] = '\0';
+      if( retPtr )
+      {
+        length = strlen(retPtr);
+      }
+      argWatchV[index] = new char[length + 1];
+      if( retPtr )
+      {
+        strncpy(argWatchV[index], retPtr, length);
+      }
+      argWatchV[index][length] = '\0';
       index++;
     }
   }
@@ -638,24 +654,40 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_2(int jarg1
   std::string *arg3 = 0 ;
   Dali::WatchApplication result;
   {
-    int index=0;
+    int index = 0;
+    int length = 0;
     char *retPtr;
     char *nextPtr;
     argWatchC = jarg1;
     argWatchV = new char*[jarg1 + 1];
 
     retPtr = strtok_r(jarg2, " ", &nextPtr);
-    argWatchV[index] = new char[strlen(retPtr) + 1];
-    strncpy(argWatchV[index], retPtr, strlen(retPtr));
-    argWatchV[index][strlen(retPtr)] = '\0';
+    if( retPtr )
+    {
+      length = strlen(retPtr);
+    }
+    argWatchV[index] = new char[length + 1];
+    if( retPtr )
+    {
+      strncpy(argWatchV[index], retPtr, length);
+    }
+    argWatchV[index][length] = '\0';
     index++;
 
     while( index < jarg1 )
     {
+      length = 0;
       retPtr = strtok_r(NULL, " ", &nextPtr);
-      argWatchV[index] = new char[strlen(retPtr)+1];
-      strncpy(argWatchV[index], retPtr, strlen(retPtr));
-      argWatchV[index][strlen(retPtr)] = '\0';
+      if( retPtr )
+      {
+        length = strlen(retPtr);
+      }
+      argWatchV[index] = new char[length + 1];
+      if( retPtr )
+      {
+        strncpy(argWatchV[index], retPtr, length);
+      }
+      argWatchV[index][length] = '\0';
       index++;
     }
   }
