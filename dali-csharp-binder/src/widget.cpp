@@ -542,23 +542,39 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_New(int jarg1,char *
   Dali::WidgetApplication result;
   {
     int index = 0;
+    int length = 0;
     char *retPtr;
     char *nextPtr;
     argWidgetC = jarg1;
     argWidgetV = new char*[jarg1 + 1];
 
     retPtr = strtok_r( jarg2, " ", &nextPtr);
-    argWidgetV[index] = new char[strlen(retPtr)+1];
-    strncpy(argWidgetV[index], retPtr, strlen(retPtr));
-    argWidgetV[index][strlen(retPtr)] = '\0';
+    if( retPtr )
+    {
+      length = strlen(retPtr);
+    }
+    argWidgetV[index] = new char[length + 1];
+    if( retPtr )
+    {
+      strncpy(argWidgetV[index], retPtr, length);
+    }
+    argWidgetV[index][length] = '\0';
     index++;
 
     while (index < jarg1)
     {
+      length = 0;
       retPtr = strtok_r(NULL, " ", &nextPtr);
-      argWidgetV[index] = new char[strlen(retPtr)+1];
-      strncpy(argWidgetV[index], retPtr, strlen(retPtr));
-      argWidgetV[index][strlen(retPtr)] = '\0';
+      if( retPtr )
+      {
+        length = strlen(retPtr);
+      }
+      argWidgetV[index] = new char[length + 1];
+      if( retPtr )
+      {
+        strncpy(argWidgetV[index], retPtr, length);
+      }
+      argWidgetV[index][length] = '\0';
       index++;
     }
 
