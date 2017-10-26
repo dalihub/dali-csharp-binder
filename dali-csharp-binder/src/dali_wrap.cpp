@@ -60215,6 +60215,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_LOAD_POLICY_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_ORIENTATION_CORRECTION_get() {
+  int jresult ;
+  int result;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::ORIENTATION_CORRECTION;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_DESIRED_WIDTH_get() {
   int jresult ;
