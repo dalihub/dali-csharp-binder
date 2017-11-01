@@ -51207,22 +51207,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationExtensions_Init(void * jarg1)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationExtensions_Start(void * jarg1) {
   Dali::ApplicationExtensions *arg1 = (Dali::ApplicationExtensions *) 0 ;
-  
-  arg1 = (Dali::ApplicationExtensions *)jarg1; 
+
+  arg1 = (Dali::ApplicationExtensions *)jarg1;
   {
     try {
       (arg1)->Start();
     } catch (std::out_of_range& e) {
       {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ; 
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
       };
     } catch (std::exception& e) {
       {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ; 
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
     } catch (...) {
       {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; 
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
       };
     }
   }
@@ -59024,6 +59024,44 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View__SWIG_2(void * jarg1) {
     }
   }
   jresult = (void *)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_GetVisualResourceStatus(void * jarg1, int jarg2)
+{
+  int jresult;
+  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) 0 ;
+  arg1 = (Dali::Toolkit::Control *)jarg1;
+
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control & type is null", 0);
+    return 0;
+  }
+
+  Dali::Toolkit::Internal::Control& controlImpl = Dali::Toolkit::Internal::GetImplementation( *arg1 );
+
+  Dali::Property::Index arg2 = 0 ;
+  arg2 = (Dali::Property::Index)jarg2;
+
+  Toolkit::Visual::ResourceStatus result;
+  {
+    try {
+      result = DevelControl::GetVisualResourceStatus(controlImpl, arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)(result);
   return jresult;
 }
 
