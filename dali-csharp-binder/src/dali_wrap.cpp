@@ -58962,10 +58962,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationExtensions_Start(void * jarg1
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
     } catch (DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }
   }
 }
