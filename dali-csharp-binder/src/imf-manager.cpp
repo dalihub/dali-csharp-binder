@@ -888,7 +888,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetInputPanelUserData(void * 
   arg2 = &arg2_str;
   {
     try {
-      (arg1)->SetInputPanelData((std::string const &)*arg2);
+      (arg1)->SetInputPanelUserData((std::string const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -921,7 +921,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelUserData(void * 
 
   {
     try {
-      (arg1)->GetInputPanelData(*arg2);
+      (arg1)->GetInputPanelUserData(*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
