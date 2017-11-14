@@ -44181,8 +44181,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PaddingType__SWIG_1(float jarg1, f
 
   arg1 = (float)jarg1;
   arg2 = (float)jarg2;
-  arg3 = (float)jarg4;
-  arg4 = (float)jarg3;
+  arg3 = (float)jarg3;
+  arg4 = (float)jarg4;
   {
     try {
       result = (Dali::Rect< float > *)new Dali::Rect< float >(arg1,arg2,arg3,arg4);
@@ -44281,8 +44281,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_Set(void * jarg1, float jarg
   arg1 = (Dali::Rect< float > *)jarg1;
   arg2 = (float)jarg2;
   arg3 = (float)jarg3;
-  arg4 = (float)jarg5;
-  arg5 = (float)jarg4;
+  arg4 = (float)jarg4;
+  arg5 = (float)jarg5;
   {
     try {
       (arg1)->Set(arg2,arg3,arg4,arg5);
@@ -44300,6 +44300,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_Set(void * jarg1, float jarg
       };
     }
   }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_x_set(void * jarg1, float jarg2) {
+  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
+  float arg2 ;
+
+  arg1 = (Dali::Rect< float > *)jarg1;
+  arg2 = (float)jarg2;
+  if (arg1) (arg1)->x = arg2;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_x_get(void * jarg1) {
+  float jresult ;
+  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
+  float result;
+
+  arg1 = (Dali::Rect< float > *)jarg1;
+  result = (float) ((arg1)->x);
+  jresult = result;
+  return jresult;
 }
 
 
@@ -44325,23 +44347,23 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_left_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_start_set(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_y_set(void * jarg1, float jarg2) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
 
   arg1 = (Dali::Rect< float > *)jarg1;
   arg2 = (float)jarg2;
-  if (arg1) (arg1)->left = arg2;
+  if (arg1) (arg1)->y = arg2;
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_start_get(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_y_get(void * jarg1) {
   float jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float result;
 
   arg1 = (Dali::Rect< float > *)jarg1;
-  result = (float) ((arg1)->left);
+  result = (float) ((arg1)->y);
   jresult = result;
   return jresult;
 }
@@ -44369,23 +44391,23 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_right_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_end_set(void * jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_width_set(void * jarg1, float jarg2) {
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float arg2 ;
 
   arg1 = (Dali::Rect< float > *)jarg1;
   arg2 = (float)jarg2;
-  if (arg1) (arg1)->right = arg2;
+  if (arg1) (arg1)->width = arg2;
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_end_get(void * jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_width_get(void * jarg1) {
   float jresult ;
   Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
   float result;
 
   arg1 = (Dali::Rect< float > *)jarg1;
-  result = (float) ((arg1)->right);
+  result = (float) ((arg1)->width);
   jresult = result;
   return jresult;
 }
@@ -44408,6 +44430,28 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_bottom_get(void * jarg1) {
 
   arg1 = (Dali::Rect< float > *)jarg1;
   result = (float) ((arg1)->bottom);
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_height_set(void * jarg1, float jarg2) {
+  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
+  float arg2 ;
+
+  arg1 = (Dali::Rect< float > *)jarg1;
+  arg2 = (float)jarg2;
+  if (arg1) (arg1)->height = arg2;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_height_get(void * jarg1) {
+  float jresult ;
+  Dali::Rect< float > *arg1 = (Dali::Rect< float > *) 0 ;
+  float result;
+
+  arg1 = (Dali::Rect< float > *)jarg1;
+  result = (float) ((arg1)->height);
   jresult = result;
   return jresult;
 }
