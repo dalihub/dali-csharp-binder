@@ -384,7 +384,7 @@ SWIGINTERN void SWIG_CSharpException(int code, const char *msg) {
     SWIG_CSharpSetPendingExceptionArgument(exception_code, msg, 0);
   } else {
     SWIG_CSharpExceptionCodes exception_code = SWIG_CSharpApplicationException;
-    switch (code) {
+    switch(code) {
     case SWIG_MemoryError:
       exception_code = SWIG_CSharpOutOfMemoryException;
       break;
@@ -514,7 +514,7 @@ SWIGINTERN floatp *new_floatp(){
 SWIGINTERN void delete_floatp(floatp *self){
   if (self) delete self;
 }
-SWIGINTERN void floatp_assign(floatp *self, float value){
+SWIGINTERN void floatp_assign(floatp *self,float value){
   *self = value;
 }
 SWIGINTERN float floatp_value(floatp *self){
@@ -535,7 +535,7 @@ SWIGINTERN intp *new_intp(){
 SWIGINTERN void delete_intp(intp *self){
   if (self) delete self;
 }
-SWIGINTERN void intp_assign(intp *self, int value){
+SWIGINTERN void intp_assign(intp *self,int value){
   *self = value;
 }
 SWIGINTERN int intp_value(intp *self){
@@ -556,7 +556,7 @@ SWIGINTERN doublep *new_doublep(){
 SWIGINTERN void delete_doublep(doublep *self){
   if (self) delete self;
 }
-SWIGINTERN void doublep_assign(doublep *self, double value){
+SWIGINTERN void doublep_assign(doublep *self,double value){
   *self = value;
 }
 SWIGINTERN double doublep_value(doublep *self){
@@ -577,7 +577,7 @@ SWIGINTERN uintp *new_uintp(){
 SWIGINTERN void delete_uintp(uintp *self){
   if (self) delete self;
 }
-SWIGINTERN void uintp_assign(uintp *self, unsigned int value){
+SWIGINTERN void uintp_assign(uintp *self,unsigned int value){
   *self = value;
 }
 SWIGINTERN unsigned int uintp_value(uintp *self){
@@ -598,7 +598,7 @@ SWIGINTERN ushortp *new_ushortp(){
 SWIGINTERN void delete_ushortp(ushortp *self){
   if (self) delete self;
 }
-SWIGINTERN void ushortp_assign(ushortp *self, unsigned short value){
+SWIGINTERN void ushortp_assign(ushortp *self,unsigned short value){
   *self = value;
 }
 SWIGINTERN unsigned short ushortp_value(ushortp *self){
@@ -626,26 +626,32 @@ SWIGINTERN bool Dali_BaseHandle_HasBody(Dali::BaseHandle const *self){
      // Handles in DALi can be converted into a boolean type
      // to check if the handle has a valid body attached to it.
      // Internally checking *self will  checks IntrusivePtr<Dali::RefObject> mObjectHandle in BaseHandle;
-     if ( *self ) {
+     if( *self )
+     {
        return true;
-     } else {
+     }
+     else
+     {
        return false;
      }
     }
-SWIGINTERN bool Dali_BaseHandle_IsEqual(Dali::BaseHandle const *self, Dali::BaseHandle const &rhs){
+SWIGINTERN bool Dali_BaseHandle_IsEqual(Dali::BaseHandle const *self,Dali::BaseHandle const &rhs){
 
      // C++ code. Check if two handles reference the same implemtion
-     if ( *self == rhs) {
+     if( *self == rhs)
+     {
        return true;
-     } else {
+     }
+     else
+     {
        return false;
      }
     }
 SWIGINTERN void Dali_TypeRegistration_RegisterControl(std::string const &controlName,Dali::CSharpTypeInfo::CreateFunction createFunc){
-     Dali::CSharpTypeRegistry::RegisterType ( controlName, typeid( Dali::Toolkit::Control ), createFunc );
+     Dali::CSharpTypeRegistry::RegisterType( controlName, typeid( Dali::Toolkit::Control), createFunc );
    }
-SWIGINTERN void Dali_TypeRegistration_RegisterProperty(std::string const &controlName, std::string const &propertyName, int index,Dali::Property::Type type, Dali::CSharpTypeInfo::SetPropertyFunction setFunc, Dali::CSharpTypeInfo::GetPropertyFunction getFunc){
-     Dali::CSharpTypeRegistry::RegisterProperty ( controlName, propertyName, index, type, setFunc, getFunc );
+SWIGINTERN void Dali_TypeRegistration_RegisterProperty(std::string const &controlName,std::string const &propertyName,int index,Dali::Property::Type type,Dali::CSharpTypeInfo::SetPropertyFunction setFunc,Dali::CSharpTypeInfo::GetPropertyFunction getFunc){
+     Dali::CSharpTypeRegistry::RegisterProperty( controlName, propertyName, index, type, setFunc, getFunc );
    }
 SWIGINTERN std::vector< Dali::TouchPoint > *new_std_vector_Sl_Dali_TouchPoint_Sg___SWIG_2(int capacity){
         std::vector< Dali::TouchPoint >* pv = 0;
@@ -657,13 +663,13 @@ SWIGINTERN std::vector< Dali::TouchPoint > *new_std_vector_Sl_Dali_TouchPoint_Sg
        }
        return pv;
       }
-SWIGINTERN Dali::TouchPoint std_vector_Sl_Dali_TouchPoint_Sg__getitemcopy(std::vector< Dali::TouchPoint > *self, int index){
-        if (index >= 0 && index < (int)self->size())
+SWIGINTERN Dali::TouchPoint std_vector_Sl_Dali_TouchPoint_Sg__getitemcopy(std::vector< Dali::TouchPoint > *self,int index){
+        if (index>=0 && index<(int)self->size())
           return (*self)[index];
         else
           throw std::out_of_range("index");
       }
-SWIGINTERN Dali::TouchPoint const &std_vector_Sl_Dali_TouchPoint_Sg__getitem(std::vector< Dali::TouchPoint > *self, int index){
+SWIGINTERN Dali::TouchPoint const &std_vector_Sl_Dali_TouchPoint_Sg__getitem(std::vector< Dali::TouchPoint > *self,int index){
         if (index>=0 && index<(int)self->size())
           return (*self)[index];
         else
@@ -3217,7 +3223,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RefObject_Reference(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
@@ -3236,7 +3247,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RefObject_Unreference(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
@@ -3309,7 +3325,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Any(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
@@ -3328,7 +3349,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Any_AssertAlways(char * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
@@ -63235,11 +63261,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_SetScrollPositionIntervals(voi
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollBar_GetScrollPositionIntervals(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
+  Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true > result;
 
   arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
   {
     try {
-      jresult = new Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true >((const Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true > &)(((Dali::Toolkit::ScrollBar const *)arg1)->GetScrollPositionIntervals()));
+      result = ((Dali::Toolkit::ScrollBar const *)arg1)->GetScrollPositionIntervals();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -63254,6 +63281,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollBar_GetScrollPositionIntervals(v
       };
     }
   }
+  jresult = new Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true >((const Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true > &)result);
   return jresult;
 }
 
