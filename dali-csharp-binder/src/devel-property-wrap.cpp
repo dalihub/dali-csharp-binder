@@ -24,15 +24,10 @@
 #include <dali/devel-api/actors/actor-devel.h>
 #include <dali/devel-api/rendering/renderer-devel.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
-#include <dali-toolkit/devel-api/controls/scrollable/item-view/item-view-devel.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
-#include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
-#include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
-#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
-#include <dali-toolkit/devel-api/visuals/visual-properties-devel.h>
-#include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
-#include <dali-toolkit/devel-api/controls/text-controls/hidden-input-properties.h>
+#include <dali-toolkit/public-api/visuals/visual-properties.h>
+#include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -56,6 +51,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_SCREEN_POSITION_get() {
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_POSITION_USES_ANCHOR_POINT_get() {
 
   return Dali::DevelActor::Property::POSITION_USES_ANCHOR_POINT;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_INHERIT_LAYOUT_DIRECTION_get() {
+  return Dali::DevelActor::Property::INHERIT_LAYOUT_DIRECTION;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_LAYOUT_DIRECTION_get() {
+  return Dali::DevelActor::Property::LAYOUT_DIRECTION;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_TOOLTIP_get() {
@@ -105,7 +108,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ItemView_Property_LAYOUT_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelItemView::Property::LAYOUT;
+  result = (int)Dali::Toolkit::ItemView::Property::LAYOUT;
   jresult = (int)result;
   return jresult;
 }
@@ -213,7 +216,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Visual_Property_TRANSFORM_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelVisual::Property::TRANSFORM;
+  result = (int)Dali::Toolkit::Visual::Property::TRANSFORM;
   jresult = (int)result;
   return jresult;
 }
@@ -222,7 +225,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Visual_Property_PREMULTIPLIED_ALPHA_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelVisual::Property::PREMULTIPLIED_ALPHA;
+  result = (int)Dali::Toolkit::Visual::Property::PREMULTIPLIED_ALPHA;
   jresult = (int)result;
   return jresult;
 }
@@ -231,26 +234,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Visual_Property_MIX_COLOR_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelVisual::Property::MIX_COLOR;
+  result = (int)Dali::Toolkit::Visual::Property::MIX_COLOR;
   jresult = (int)result;
   return jresult;
 }
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Image_Visual_BORDER_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::DevelImageVisual::Property::BORDER;
-  jresult = (int)result;
-  return jresult;
-}
-
 
 SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_PIXEL_SIZE_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::PIXEL_SIZE;
+  result = (int)Dali::Toolkit::TextLabel::Property::PIXEL_SIZE;
   jresult = (int)result;
   return jresult;
 }
@@ -259,7 +252,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_ELLIPSIS_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::ELLIPSIS;
+  result = (int)Dali::Toolkit::TextLabel::Property::ELLIPSIS;
   jresult = (int)result;
   return jresult;
 }
@@ -268,7 +261,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_AUTO_SCROLL_STOP_MODE_get()
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::AUTO_SCROLL_STOP_MODE;
+  result = (int)Dali::Toolkit::TextLabel::Property::AUTO_SCROLL_STOP_MODE;
   jresult = (int)result;
   return jresult;
 }
@@ -277,7 +270,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_AUTO_SCROLL_LOOP_DELAY_get(
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::AUTO_SCROLL_LOOP_DELAY;
+  result = (int)Dali::Toolkit::TextLabel::Property::AUTO_SCROLL_LOOP_DELAY;
   jresult = (int)result;
   return jresult;
 }
@@ -297,7 +290,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_MODE_get() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
   jresult = (int)result;
   return jresult;
 }
@@ -317,7 +320,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SUBSTITUTE_CHARACTER_get(
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
   jresult = (int)result;
   return jresult;
 }
@@ -337,18 +350,28 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SUBSTITUTE_COUNT_get() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
   jresult = (int)result;
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SHOW_DURATION_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SHOW_LAST_CHARACTER_DURATION_get() {
   int jresult ;
   int result;
 
   {
     try {
-      result = (int)Dali::Toolkit::HiddenInput::Property::SHOW_DURATION;
+      result = (int)Dali::Toolkit::HiddenInput::Property::SHOW_LAST_CHARACTER_DURATION;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -357,7 +380,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SHOW_DURATION_get() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
   jresult = (int)result;
   return jresult;
 }
@@ -366,7 +399,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_LINE_COUNT_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::LINE_COUNT;
+  result = (int)Dali::Toolkit::TextLabel::Property::LINE_COUNT;
   jresult = (int)result;
   return jresult;
 }
@@ -375,7 +408,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_LINE_WRAP_MODE_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::LINE_WRAP_MODE;
+  result = (int)Dali::Toolkit::TextLabel::Property::LINE_WRAP_MODE;
   jresult = (int)result;
   return jresult;
 }
@@ -384,7 +417,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_WRAP_MODE_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::LINE_WRAP_MODE;
+  result = (int)Dali::Toolkit::TextEditor::Property::LINE_WRAP_MODE;
   jresult = (int)result;
   return jresult;
 }
