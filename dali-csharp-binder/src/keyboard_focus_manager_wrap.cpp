@@ -56,12 +56,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_KeyboardFocusManager() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (void *)result;
   return jresult;
 }
@@ -82,12 +87,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_KeyboardFocusManager(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
       };
     }
   }
+
 }
 
 
@@ -106,12 +116,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_Get() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = new Dali::Toolkit::KeyboardFocusManager((const Dali::Toolkit::KeyboardFocusManager &)result);
   return jresult;
 }
@@ -142,12 +157,17 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_KeyboardFocusManager_SetCurrentFocusA
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = result;
   return jresult;
 }
@@ -170,12 +190,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_GetCurrentFocusActor(v
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = new Dali::Actor((const Dali::Actor &)result);
   return jresult;
 }
@@ -200,12 +225,17 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_KeyboardFocusManager_MoveFocus(void *
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = result;
   return jresult;
 }
@@ -252,12 +282,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardFocusManager_SetFocusGroupLoop(void *
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
       };
     }
   }
+
 }
 
 
@@ -278,12 +313,17 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_KeyboardFocusManager_GetFocusGroupLoo
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = result;
   return jresult;
 }
@@ -314,12 +354,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardFocusManager_SetAsFocusGroup(void * j
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
       };
     }
   }
+
 }
 
 
@@ -348,12 +393,17 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_KeyboardFocusManager_IsFocusGroup(voi
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = result;
   return jresult;
 }
@@ -384,12 +434,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_GetFocusGroup(void * j
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = new Dali::Actor((const Dali::Actor &)result);
   return jresult;
 }
@@ -418,12 +473,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardFocusManager_SetFocusIndicatorActor(v
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
       };
     }
   }
+
 }
 
 
@@ -444,12 +504,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_GetFocusIndicatorActor
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = new Dali::Actor((const Dali::Actor &)result);
   return jresult;
 }
@@ -494,12 +559,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_PreFocusChangeSignal(v
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (void *)result;
   return jresult;
 }
@@ -522,12 +592,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_FocusChangedSignal(voi
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (void *)result;
   return jresult;
 }
@@ -550,12 +625,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_FocusGroupChangedSigna
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (void *)result;
   return jresult;
 }
@@ -578,12 +658,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_FocusedActorEnterKeySi
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (void *)result;
   return jresult;
 }
@@ -607,12 +692,17 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Empty(vo
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = result;
   return jresult;
 }
@@ -635,12 +725,17 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_GetConn
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (unsigned long)result;
   return jresult;
 }
@@ -695,12 +790,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Connect(void * j
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
       };
     }
   }
+
 }
 
 
@@ -724,12 +824,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Disconnect(void 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
       };
     }
   }
+
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Emit(void * jarg1, void * jarg2, void * jarg3, int jarg4) {
@@ -767,12 +872,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Emit(void * ja
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = new Dali::Actor((const Dali::Actor &)result);
   return jresult;
 }
@@ -793,12 +903,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_KeyboardPreFocusChangeSignal() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (void *)result;
   return jresult;
 }
@@ -819,12 +934,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_KeyboardPreFocusChangeSignal(void * ja
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
       };
     }
   }
+
 }
 
 SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_KeyboardFocusManager_SWIGUpcast(Dali::Toolkit::KeyboardFocusManager *jarg1) {

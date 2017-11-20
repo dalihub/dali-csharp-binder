@@ -27,69 +27,92 @@ extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Empty(Dali::Signal< void (Dali::ImfManager &) > const *self){
-         return self->Empty();
-      }
+  return self->Empty();
+}
 SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::ImfManager &) > const *self){
-        return self->GetConnectionCount();
-      }
+  return self->GetConnectionCount();
+}
 SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Connect(Dali::Signal< void (Dali::ImfManager &) > *self,void (*func)(Dali::ImfManager &)){
-          self->Connect( func );
-      }
+  self->Connect( func );
+}
 SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Disconnect(Dali::Signal< void (Dali::ImfManager &) > *self,void (*func)(Dali::ImfManager &)){
-          self->Disconnect( func );
-      }
+  self->Disconnect( func );
+}
 SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Emit(Dali::Signal< void (Dali::ImfManager &) > *self,Dali::ImfManager &arg){
-          self->Emit( arg );
-      }
+  self->Emit( arg );
+}
+
 SWIGINTERN bool Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Empty(Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > const *self){
-         return self->Empty();
-      }
+  return self->Empty();
+}
 SWIGINTERN std::size_t Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > const *self){
-        return self->GetConnectionCount();
-      }
+  return self->GetConnectionCount();
+}
 SWIGINTERN void Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Connect(Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *self,Dali::ImfManager::ImfCallbackData (*func)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &)){
-        self->Connect( func );
-      }
+  self->Connect( func );
+}
 SWIGINTERN void Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Disconnect(Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *self,Dali::ImfManager::ImfCallbackData (*func)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &)){
-        self->Disconnect( func );
-      }
+  self->Disconnect( func );
+}
 SWIGINTERN Dali::ImfManager::ImfCallbackData Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Emit(Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *self,Dali::ImfManager &arg1,Dali::ImfManager::ImfEventData const &arg2){
-        return self->Emit( arg1, arg2 );
-      }
+  return self->Emit( arg1, arg2 );
+}
+
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_bool_SP__Sg__Empty(Dali::Signal< void (bool) > const *self){
-         return self->Empty();
-      }
+  return self->Empty();
+}
 SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_bool_SP__Sg__GetConnectionCount(Dali::Signal< void (bool) > const *self){
-        return self->GetConnectionCount();
-      }
+  return self->GetConnectionCount();
+}
 SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Connect(Dali::Signal< void (bool) > *self,void (*func)(bool)){
-          self->Connect( func );
-      }
+  self->Connect( func );
+}
 SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Disconnect(Dali::Signal< void (bool) > *self,void (*func)(bool)){
-          self->Disconnect( func );
-      }
+  self->Disconnect( func );
+}
 SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Emit(Dali::Signal< void (bool) > *self,bool arg){
-          self->Emit( arg );
-      }
+  self->Emit( arg );
+}
+
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Empty(Dali::Signal< void (Dali::ImfManager::KeyboardType) > const *self){
-         return self->Empty();
-      }
+  return self->Empty();
+}
 SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::ImfManager::KeyboardType) > const *self){
-        return self->GetConnectionCount();
-      }
+  return self->GetConnectionCount();
+}
 SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Connect(Dali::Signal< void (Dali::ImfManager::KeyboardType) > *self,void (*func)(Dali::ImfManager::KeyboardType)){
-          self->Connect( func );
-      }
+  self->Connect( func );
+}
 SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Disconnect(Dali::Signal< void (Dali::ImfManager::KeyboardType) > *self,void (*func)(Dali::ImfManager::KeyboardType)){
-          self->Disconnect( func );
-      }
+  self->Disconnect( func );
+}
 SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Emit(Dali::Signal< void (Dali::ImfManager::KeyboardType) > *self,Dali::ImfManager::KeyboardType arg){
-          self->Emit( arg );
-      }
+  self->Emit( arg );
+}
+
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_int_SP__Sg__Empty(Dali::Signal< void (int) > const *self){
+  return self->Empty();
+}
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_int_SP__Sg__GetConnectionCount(Dali::Signal< void (int) > const *self){
+  return self->GetConnectionCount();
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_int_SP__Sg__Connect(Dali::Signal< void (int) > *self,void (*func)(int)){
+  self->Connect( func );
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_int_SP__Sg__Disconnect(Dali::Signal< void (int) > *self,void (*func)(int)){
+  self->Disconnect( func );
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_int_SP__Sg__Emit(Dali::Signal< void (int) > *self,int arg){
+  self->Emit( arg );
+}
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_ImfManager_SWIGUpcast(Dali::ImfManager *jarg1) {
+  return (Dali::BaseHandle *)jarg1;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfEventData__SWIG_0() {
   void * jresult ;
@@ -106,12 +129,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfEventData__SWIG_0() 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -145,12 +163,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfEventData__SWIG_1(in
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
 
   //argout typemap for const std::string&
@@ -270,12 +283,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfManager_ImfEventData(void * ja
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -294,12 +302,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfCallbackData__SWIG_0
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -333,12 +336,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfCallbackData__SWIG_1
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
 
   //argout typemap for const std::string&
@@ -458,12 +456,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfManager_ImfCallbackData(void *
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -482,12 +475,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_Get() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = new Dali::ImfManager((const Dali::ImfManager &)result);
   return jresult;
 }
@@ -508,12 +496,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Activate(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -532,12 +515,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Deactivate(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -558,12 +536,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfManager_RestoreAfterFocusLost
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = result;
   return jresult;
 }
@@ -586,12 +559,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetRestoreAfterFocusLost(void
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -610,12 +578,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Reset(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -634,12 +597,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_NotifyCursorPosition(void * j
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -660,12 +618,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetCursorPosition(void * jarg
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -686,12 +639,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfManager_GetCursorPosition(voi
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = result;
   return jresult;
 }
@@ -719,12 +667,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetSurroundingText(void * jar
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 
   //argout typemap for const std::string&
 
@@ -748,12 +691,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_ImfManager_GetSurroundingText(void * j
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = SWIG_csharp_string_callback(result->c_str());
   return jresult;
 }
@@ -776,12 +714,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_NotifyTextInputMultiLine(void
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -802,12 +735,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_GetTextDirection(void * jarg1)
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (int)result;
   return jresult;
 }
@@ -830,12 +758,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_GetInputMethodArea(void * j
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = new Dali::Rect< int >((const Dali::Rect< int > &)result);
   return jresult;
 }
@@ -862,12 +785,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ApplyOptions(void * jarg1, vo
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -893,12 +811,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetInputPanelUserData(void * 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 
   //argout typemap for const std::string&
 
@@ -926,12 +839,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelUserData(void * 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 
   //Typemap argout in c++ file.
   //This will convert c++ string to c# string
@@ -957,12 +865,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelState(void * jarg
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (int)result;
   return jresult;
 }
@@ -985,12 +888,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetReturnKeyState(void * jarg
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1011,12 +909,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_AutoEnableInputPanel(void * j
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1035,12 +928,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ShowInputPanel(void * jarg1) 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1059,12 +947,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_HideInputPanel(void * jarg1) 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1085,12 +968,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_GetKeyboardType(void * jarg1) 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (int)result;
   return jresult;
 }
@@ -1113,12 +991,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelLocale(void * 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = SWIG_csharp_string_callback((&result)->c_str());
   return jresult;
 }
@@ -1141,12 +1014,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_ActivatedSignal(void * jarg
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -1169,12 +1037,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_EventReceivedSignal(void * 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -1197,26 +1060,20 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_StatusChangedSignal(void * 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_ResizedSignal(void * jarg1) {
   void * jresult ;
   Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::VoidSignalType *result = 0 ;
+  Dali::ImfManager::KeyboardResizedSignalType *result = 0 ;
 
   arg1 = (Dali::ImfManager *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::VoidSignalType *) &(arg1)->ResizedSignal();
+      result = (Dali::ImfManager::KeyboardResizedSignalType *) &(arg1)->ResizedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1234,17 +1091,16 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_ResizedSignal(void * jarg1)
   jresult = (void *)result;
   return jresult;
 }
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_LanguageChangedSignal(void * jarg1) {
   void * jresult ;
   Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::VoidSignalType *result = 0 ;
+  Dali::ImfManager::LanguageChangedSignalType *result = 0 ;
 
   arg1 = (Dali::ImfManager *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::VoidSignalType *) &(arg1)->LanguageChangedSignal();
+      result = (Dali::ImfManager::LanguageChangedSignalType *) &(arg1)->LanguageChangedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1262,7 +1118,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_LanguageChangedSignal(void 
   jresult = (void *)result;
   return jresult;
 }
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_KeyboardTypeChangedSignal(void * jarg1) {
   void * jresult ;
@@ -1281,12 +1136,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_KeyboardTypeChangedSignal(v
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -1307,12 +1157,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -1333,12 +1178,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfManager(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1361,12 +1201,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Empty(void *
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = result;
   return jresult;
 }
@@ -1389,12 +1224,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ActivatedSignalType_GetConnecti
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (unsigned long)result;
   return jresult;
 }
@@ -1417,12 +1247,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Connect(void * jarg1
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1443,12 +1268,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Disconnect(void * ja
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1473,12 +1293,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Emit(void * jarg1, v
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1497,12 +1312,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ActivatedSignalType() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -1523,12 +1333,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActivatedSignalType(void * jarg1)
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 // ImfEventSignalType
@@ -1549,12 +1354,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Empty(void * 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = result;
   return jresult;
 }
@@ -1577,23 +1377,46 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ImfEventSignalType_GetConnectio
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (unsigned long)result;
   return jresult;
 }
 
+typedef Dali::ImfManager::ImfCallbackData* (SWIGSTDCALL* SWIG_CallbackEventReceived)(Dali::ImfManager *, Dali::ImfManager::ImfEventData *);
+SWIG_CallbackEventReceived swig_callbackOnEventReceived;
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Connect(void * jarg1, void * jarg2) {
+Dali::ImfManager::ImfCallbackData OnEventReceivedCallback(Dali::ImfManager imfManager, Dali::ImfManager::ImfEventData imfEventData)
+{
+    Dali::ImfManager::ImfCallbackData *imfCallbackDataP;
+    Dali::ImfManager::ImfCallbackData imfCallbackData;
+    Dali::ImfManager *imfManagerP = NULL;
+    Dali::ImfManager::ImfEventData *imfEventDataP = NULL;
+
+    if (imfManager)
+    {
+      imfManagerP = (Dali::ImfManager *)&imfManager;
+    }
+
+    imfEventDataP = (Dali::ImfManager::ImfEventData *)&imfEventData;
+
+    imfCallbackDataP = (Dali::ImfManager::ImfCallbackData *)swig_callbackOnEventReceived(imfManagerP, imfEventDataP);
+    if (imfCallbackDataP)
+    {
+      imfCallbackData = *imfCallbackDataP;
+    }
+
+    return imfCallbackData;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Connect(void * jarg1, SWIG_CallbackEventReceived callbackOnEventReceived) {
+
+  swig_callbackOnEventReceived = callbackOnEventReceived;
+
   Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *) 0 ;
   Dali::ImfManager::ImfCallbackData (*arg2)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &)) 0 ;
 
   arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)jarg1;
-  arg2 = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &))jarg2;
+  arg2 = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &))OnEventReceivedCallback;
   {
     try {
       Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Connect(arg1,arg2);
@@ -1605,21 +1428,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Connect(void * jarg1,
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Disconnect(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Disconnect(void * jarg1, SWIG_CallbackEventReceived callbackOnEventReceived) {
+
+  swig_callbackOnEventReceived = callbackOnEventReceived;
+
   Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *) 0 ;
   Dali::ImfManager::ImfCallbackData (*arg2)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &)) 0 ;
 
   arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)jarg1;
-  arg2 = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &))jarg2;
+  arg2 = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &))OnEventReceivedCallback;
   {
     try {
       Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
@@ -1631,14 +1452,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Disconnect(void * jar
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Emit(void * jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
@@ -1669,12 +1484,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Emit(void * jarg1, 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = new Dali::ImfManager::ImfCallbackData((const Dali::ImfManager::ImfCallbackData &)result);
   return jresult;
 }
@@ -1695,12 +1505,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfEventSignalType() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -1721,12 +1526,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfEventSignalType(void * jarg1) 
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1746,12 +1546,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfVoidSignalType() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -1772,12 +1567,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfVoidSignalType(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1798,12 +1588,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Empty(void * j
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = result;
   return jresult;
 }
@@ -1826,12 +1611,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_GetConnection
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (unsigned long)result;
   return jresult;
 }
@@ -1854,12 +1634,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Connect__SWIG_0(void *
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1880,12 +1655,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Disconnect(void * jarg
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1908,12 +1678,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Connect__SWIG_4(void *
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -1932,12 +1697,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Emit(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 //StatusSignalType
@@ -1958,12 +1718,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_StatusSignalType_Empty(void * ja
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = result;
   return jresult;
 }
@@ -1986,12 +1741,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_StatusSignalType_GetConnectionC
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (unsigned long)result;
   return jresult;
 }
@@ -2014,12 +1764,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StatusSignalType_Connect(void * jarg1, v
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -2040,12 +1785,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StatusSignalType_Disconnect(void * jarg1
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -2066,12 +1806,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StatusSignalType_Emit(void * jarg1, unsi
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -2090,12 +1825,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_StatusSignalType() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -2116,12 +1846,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_StatusSignalType(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 //KeyboardTypeSignalType
@@ -2142,12 +1867,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Empty(voi
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = result;
   return jresult;
 }
@@ -2170,12 +1890,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_GetConne
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (unsigned long)result;
   return jresult;
 }
@@ -2198,12 +1913,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Connect(void * ja
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -2224,12 +1934,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Disconnect(void *
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -2250,12 +1955,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Emit(void * jarg1
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
 
@@ -2274,12 +1974,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_KeyboardTypeSignalType() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
   jresult = (void *)result;
   return jresult;
 }
@@ -2300,6 +1995,84 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyboardTypeSignalType(void * jar
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
       };
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+}
+
+//LanguageChangedSignalType
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LanguageChangedSignalType_Empty(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  {
+    try {
+      result = (bool)Dali_Signal_Sl_void_Sp_int_SP__Sg__Empty((Dali::Signal< void (int) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_LanguageChangedSignalType_GetConnectionCount(void * jarg1) {
+  unsigned long jresult ;
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+  std::size_t result;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  {
+    try {
+      result = Dali_Signal_Sl_void_Sp_int_SP__Sg__GetConnectionCount((Dali::Signal< void (int) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (unsigned long)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LanguageChangedSignalType_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+  void (*arg2)(int) = (void (*)(int)) 0 ;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  arg2 = (void (*)(int))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_int_SP__Sg__Connect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
@@ -2309,7 +2082,291 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyboardTypeSignalType(void * jar
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LanguageChangedSignalType_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+  void (*arg2)(int) = (void (*)(int)) 0 ;
 
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  arg2 = (void (*)(int))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_int_SP__Sg__Disconnect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LanguageChangedSignalType_Emit(void * jarg1, int jarg2) {
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+  int arg2 ;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  arg2 = (int)jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_int_SP__Sg__Emit(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_LanguageChangedSignalType() {
+  void * jresult ;
+  Dali::Signal< void (int) > *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Signal< void (int) > *)new Dali::Signal< void (int) >();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LanguageChangedSignalType(void * jarg1) {
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+//KeyboardTypeSignalType
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyboardResizedSignalType_Empty(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  {
+    try {
+      result = (bool)Dali_Signal_Sl_void_Sp_int_SP__Sg__Empty((Dali::Signal< void (int) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyboardResizedSignalType_GetConnectionCount(void * jarg1) {
+  unsigned long jresult ;
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+  std::size_t result;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  {
+    try {
+      result = Dali_Signal_Sl_void_Sp_int_SP__Sg__GetConnectionCount((Dali::Signal< void (int) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (unsigned long)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardResizedSignalType_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+  void (*arg2)(int) = (void (*)(int)) 0 ;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  arg2 = (void (*)(int))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_int_SP__Sg__Connect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardResizedSignalType_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+  void (*arg2)(int) = (void (*)(int)) 0 ;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  arg2 = (void (*)(int))jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_int_SP__Sg__Disconnect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardResizedSignalType_Emit(void * jarg1, int jarg2) {
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+  int arg2 ;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  arg2 = (int)jarg2;
+  {
+    try {
+      Dali_Signal_Sl_void_Sp_int_SP__Sg__Emit(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_KeyboardResizedSignalType() {
+  void * jresult ;
+  Dali::Signal< void (int) > *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Signal< void (int) > *)new Dali::Signal< void (int) >();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyboardResizedSignalType(void * jarg1) {
+  Dali::Signal< void (int) > *arg1 = (Dali::Signal< void (int) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (int) > *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
 
 #ifdef __cplusplus
 }

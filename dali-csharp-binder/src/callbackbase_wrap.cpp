@@ -42,12 +42,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MakeCallback(void * jarg1) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
 
   jresult = (void *)result;
 
