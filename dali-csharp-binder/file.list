@@ -43,7 +43,6 @@ dali_csharp_binder_src_files_tizen = \
   src/watch.cpp \
   src/widget_view.cpp \
   src/widget_view_manager.cpp \
-  src/widget.cpp \
   src/adaptor.cpp \
   src/extents.cpp \
   src/web-view-lite.cpp \
