@@ -59102,6 +59102,46 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_CreateTransition(void * jarg1, vo
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoAction(void * jarg1, int jarg2, int jarg3, void * jarg4 )
+{
+  Dali::Toolkit::Control arg1;
+  Dali::Toolkit::Control *argp1  = (Dali::Toolkit::Control *)jarg1;
+
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control & type is null", 0);
+  }
+  arg1 = *argp1;
+
+  Dali::Property::Index arg2 = 0 ;
+  arg2 = (Dali::Property::Index)jarg2;
+
+  Dali::Property::Index arg3 = 0 ;
+  arg3 = (Dali::Property::Index)jarg3;
+
+  Dali::Property::Value arg4;
+  arg4 = (Dali::Property::Value *)jarg4;
+
+  {
+    try {
+      DevelControl::DoAction(arg1, arg2, arg3, arg4);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::Control *arg1 = 0 ;
@@ -62526,7 +62566,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImageView_SetImage__SWIG_2(void * jarg1,
   //argout typemap for const std::string&
 
 }
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_GetImage(void * jarg1) {
   void * jresult ;
