@@ -60240,6 +60240,59 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_ORIENTATION_CORRECTION_get()
   return jresult;
 }
 
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_AUXILIARY_IMAGE_get() {
+  int jresult ;
+  int result;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::AUXILIARY_IMAGE;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_AUXILIARY_IMAGE_ALPHA_get() {
+  int jresult ;
+  int result;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::AUXILIARY_IMAGE_ALPHA;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_DESIRED_WIDTH_get() {
   int jresult ;
   int result;
