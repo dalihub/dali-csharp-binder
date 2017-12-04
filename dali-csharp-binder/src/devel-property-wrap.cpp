@@ -53,6 +53,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_POSITION_USES_ANCHOR_POINT_get(
   return Dali::DevelActor::Property::POSITION_USES_ANCHOR_POINT;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_INHERIT_LAYOUT_DIRECTION_get() {
+  return Dali::DevelActor::Property::INHERIT_LAYOUT_DIRECTION;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_LAYOUT_DIRECTION_get() {
+  return Dali::DevelActor::Property::LAYOUT_DIRECTION;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_TOOLTIP_get() {
   int jresult ;
   int result;
@@ -282,12 +290,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_MODE_get() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (int)result;
   return jresult;
 }
@@ -307,12 +320,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SUBSTITUTE_CHARACTER_get(
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (int)result;
   return jresult;
 }
@@ -332,12 +350,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SUBSTITUTE_COUNT_get() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (int)result;
   return jresult;
 }
@@ -357,12 +380,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SHOW_LAST_CHARACTER_DURAT
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
     } catch (...) {
       {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
   }
+
   jresult = (int)result;
   return jresult;
 }

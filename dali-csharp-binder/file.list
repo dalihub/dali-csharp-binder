@@ -18,7 +18,9 @@ dali_csharp_binder_src_files = \
   src/imf-manager.cpp \
   src/input-method-options.cpp \
   src/animation.cpp \
-  src/watch.cpp
+  src/watch.cpp \
+  src/adaptor.cpp \
+  src/extents.cpp
 
 # added for key grab binding only for tizen
 dali_csharp_binder_src_files_tizen = \
@@ -38,7 +40,9 @@ dali_csharp_binder_src_files_tizen = \
   src/input-method-options.cpp \
   src/animation.cpp \
   src/key-grab.cpp \
-  src/watch.cpp
+  src/watch.cpp \
+  src/adaptor.cpp \
+  src/extents.cpp
 
 dali_csharp_binder_header_files = \
   src/common.h
