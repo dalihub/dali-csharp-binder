@@ -28,6 +28,7 @@
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
 #include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -409,6 +410,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_LINE_WRAP_MODE_get() {
   int result;
 
   result = (int)Dali::Toolkit::TextLabel::Property::LINE_WRAP_MODE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_TEXT_DIRECTION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::TEXT_DIRECTION;
   jresult = (int)result;
   return jresult;
 }
