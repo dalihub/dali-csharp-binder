@@ -46,7 +46,8 @@ dali_csharp_binder_src_files_tizen = \
   src/widget.cpp \
   src/adaptor.cpp \
   src/extents.cpp \
-  src/web-view-lite.cpp
+  src/web-view-lite.cpp \
+  src/font-client.cpp
 
 dali_csharp_binder_header_files = \
   src/common.h
