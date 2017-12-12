@@ -156,8 +156,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_1(int jarg1) {
     }
     array[ numStrings ] =  NULL; // we allocated +1 for hold the NULL part
 
-    std::string temp = "dali-csharp-app";
-    array[0][temp.copy(array[0], strlen(array[0])-1)] = '\0';
+    std::string temp = "dali-csharp-app"; 
+    char* copy;
+    asprintf(&copy, "%s", temp.c_str() );
+    array[0] = copy;
 
     arg1 = &argC;
     arg2 = &argV;
@@ -211,8 +213,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, cha
     }
     array[ numStrings ] =  NULL; // we allocated +1 for hold the NULL part
 
-    std::string temp = "dali-csharp-app";
-    array[0][temp.copy(array[0], strlen(array[0])-1)] = '\0';
+    std::string temp = "dali-csharp-app"; 
+    char* copy;
+    asprintf(&copy, "%s", temp.c_str() );
+    array[0] = copy;
 
     arg1 = &argC;
     arg2 = &argV;
@@ -277,7 +281,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, cha
     array[ numStrings ] =  NULL; // we allocated +1 for hold the NULL part
 
     std::string temp = "dali-csharp-app";
-    array[0][temp.copy(array[0], strlen(array[0])-1)] = '\0';
+    char* copy;
+    asprintf(&copy, "%s", temp.c_str() );
+    array[0] = copy;
 
     arg1 = &argC;
     arg2 = &argV;
