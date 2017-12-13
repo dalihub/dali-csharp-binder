@@ -468,12 +468,11 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h>
 
-#include <dali/devel-api/adaptor-framework/widget.h>
-#include <dali/devel-api/adaptor-framework/widget-impl.h>
-#include <dali/devel-api/adaptor-framework/widget-application.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
+#include <dali-toolkit/devel-api/text/text-enumerations-devel.h>
 
-#include <dali/devel-api/adaptor-framework/pixel-buffer.h>
-#include <dali/devel-api/adaptor-framework/image-loading.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
+#include <dali-toolkit/devel-api/text/text-enumerations-devel.h>
 
 // add here SWIG version check
 
@@ -84295,6 +84294,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_0() {
   {
     try {
       result = Dali::Toolkit::TextLabel::New();
+
+      // default behaviour of NUI TextLabel
+      result.SetProperty( Dali::Toolkit::DevelTextLabel::Property::VERTICAL_LINE_ALIGNMENT, Dali::Toolkit::DevelText::VerticalLineAlignment::MIDDLE );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -84333,6 +84335,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_1(char * jarg1) {
   {
     try {
       result = Dali::Toolkit::TextLabel::New((std::string const &)*arg1);
+
+      // default behaviour of NUI TextLabel
+      result.SetProperty( Dali::Toolkit::DevelTextLabel::Property::VERTICAL_LINE_ALIGNMENT, Dali::Toolkit::DevelText::VerticalLineAlignment::MIDDLE );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
