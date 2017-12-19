@@ -29,6 +29,8 @@
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
 #include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
+#include <dali-toolkit/devel-api/visuals/image-visual-actions-devel.h>
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -430,6 +432,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_WRAP_MODE_get() {
   result = (int)Dali::Toolkit::TextEditor::Property::LINE_WRAP_MODE;
   jresult = (int)result;
   return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_RELOAD_get()
+{
+  return (int)Dali::Toolkit::DevelImageVisual::Action::RELOAD;
 }
 
 #ifdef __cplusplus
