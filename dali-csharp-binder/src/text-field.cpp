@@ -20,6 +20,7 @@
 
 #include "common.h"
 #include <dali-toolkit/public-api/controls/text-controls/text-field.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextField_SP__Sg__Empty(Dali::Signal< void (Dali::Toolkit::TextField) > const *self){
   return self->Empty();
@@ -1207,6 +1208,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextFieldSignal(void * jarg1) {
     }
   }
 
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ENABLE_SHIFT_SELECTION_get()
+{
+  return (int)Dali::Toolkit::DevelTextField::Property::ENABLE_SHIFT_SELECTION;
 }
 
 
