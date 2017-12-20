@@ -60312,7 +60312,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_RELEASE_POLICY_get() {
   {
     try
     {
-      result = (int)Dali::Toolkit::DevelImageVisual::Property::RELEASE_POLICY;
+      result = (int)Dali::Toolkit::ImageVisual::Property::RELEASE_POLICY;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -60337,7 +60337,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_LOAD_POLICY_get() {
   {
     try
     {
-      result = (int)Dali::Toolkit::DevelImageVisual::Property::LOAD_POLICY;
+      result = (int)Dali::Toolkit::ImageVisual::Property::LOAD_POLICY;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -60362,7 +60362,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_ORIENTATION_CORRECTION_get()
   {
     try
     {
-      result = (int)Dali::Toolkit::DevelImageVisual::Property::ORIENTATION_CORRECTION;
+      result = (int)Dali::Toolkit::ImageVisual::Property::ORIENTATION_CORRECTION;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -68293,15 +68293,13 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_GetVisualResourceStatus(void * jarg1
     return 0;
   }
 
-  Dali::Toolkit::Internal::Control& controlImpl = Dali::Toolkit::Internal::GetImplementation( *arg1 );
-
   Dali::Property::Index arg2 = 0 ;
   arg2 = (Dali::Property::Index)jarg2;
 
   Toolkit::Visual::ResourceStatus result;
   {
     try {
-      result = DevelControl::GetVisualResourceStatus(controlImpl, arg2);
+      result = arg1->GetVisualResourceStatus(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
