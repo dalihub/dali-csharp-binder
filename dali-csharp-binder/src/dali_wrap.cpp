@@ -468,9 +468,8 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h>
 
-#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
-#include <dali-toolkit/devel-api/text/text-enumerations-devel.h>
-
+#include <dali/devel-api/adaptor-framework/pixel-buffer.h>
+#include <dali/devel-api/adaptor-framework/image-loading.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
 #include <dali-toolkit/devel-api/text/text-enumerations-devel.h>
 
