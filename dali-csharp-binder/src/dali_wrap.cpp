@@ -468,10 +468,6 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h>
 
-#include <dali/devel-api/adaptor-framework/widget.h>
-#include <dali/devel-api/adaptor-framework/widget-impl.h>
-#include <dali/devel-api/adaptor-framework/widget-application.h>
-
 #include <dali/devel-api/adaptor-framework/pixel-buffer.h>
 #include <dali/devel-api/adaptor-framework/image-loading.h>
 
