@@ -138,24 +138,24 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_0() {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_1(int jarg1) {
   void * jresult ;
   int arg1 = 1;
-  char **arg2 = new char*[arg1 + 1];
+  char ***arg2;
 
   Dali::Application result;
   {
     std::string app_name = "dali-csharp-app";
     int stringLength = app_name.length();
-    char* array = new char[stringLength + 1];
+    argV = new char*[arg1 + 1];
+    argV[0] = new char[stringLength + 1];
 
-    strncpy(array, app_name.c_str(), stringLength);
-    array[stringLength] = '\0';
+    strncpy(argV[0], app_name.c_str(), stringLength);
+    argV[0][stringLength] = '\0';
+    argV[1] = NULL;
 
-    argV = &array;
-    arg2[0] = array;
-    arg2[1] = NULL;
+    arg2 = &argV;
   }
   {
     try {
-      result = Dali::Application::New(&arg1, &arg2);
+      result = Dali::Application::New(&arg1, arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -183,21 +183,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_1(int jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, char * jarg3) {
   void * jresult ;
   int arg1 = 1;
-  char **arg2 = new char*[arg1 + 1];
+  char ***arg2;
   std::string *arg3 = 0;
 
   Dali::Application result;
   {
     std::string app_name = "dali-csharp-app";
     int stringLength = app_name.length();
-    char* array = new char[stringLength + 1];
+    argV = new char*[arg1 + 1];
+    argV[0] = new char[stringLength + 1];
 
-    strncpy(array, app_name.c_str(), stringLength);
-    array[stringLength] = '\0';
+    strncpy(argV[0], app_name.c_str(), stringLength);
+    argV[0][stringLength] = '\0';
+    argV[1] = NULL;
 
-    argV = &array;
-    arg2[0] = array;
-    arg2[1] = NULL;
+    arg2 = &argV;
+
   }
   if (!jarg3) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
@@ -209,7 +210,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, cha
   arg3 = &arg3_str;
   {
     try {
-      result = Dali::Application::New(&arg1, &arg2,(std::string const &)*arg3);
+      result = Dali::Application::New(&arg1, arg2,(std::string const &)*arg3);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -240,7 +241,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, cha
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char * jarg3, int jarg4) {
   void * jresult ;
   int arg1 = 1;
-  char **arg2 = new char*[arg1 + 1];
+  char ***arg2;
   std::string *arg3 = 0;
   Dali::Application::WINDOW_MODE arg4;
 
@@ -248,14 +249,14 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, cha
   {
     std::string app_name = "dali-csharp-app";
     int stringLength = app_name.length();
-    char* array = new char[stringLength + 1];
+    argV = new char*[arg1 + 1];
+    argV[0] = new char[stringLength + 1];
 
-    strncpy(array, app_name.c_str(), stringLength);
-    array[stringLength] = '\0';
+    strncpy(argV[0], app_name.c_str(), stringLength);
+    argV[0][stringLength] = '\0';
+    argV[1] = NULL;
 
-    argV = &array;
-    arg2[0] = array;
-    arg2[1] = NULL;
+    arg2 = &argV;
   }
   if (!jarg3) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
@@ -268,7 +269,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, cha
   arg4 = (Dali::Application::WINDOW_MODE)jarg4;
   {
     try {
-      result = Dali::Application::New(&arg1, &arg2,(std::string const &)*arg3,arg4);
+      result = Dali::Application::New(&arg1, arg2,(std::string const &)*arg3,arg4);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
