@@ -103430,6 +103430,1263 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GetMaxTextureSize() {
 }
 
 
+//for PixelBuffer and ImageLoading
+
+SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_PixelBuffer_SWIGUpcast(Dali::Devel::PixelBuffer *jarg1) {
+    return (Dali::BaseHandle *)jarg1;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelBuffer_New(unsigned int jarg1, unsigned int jarg2, int jarg3) {
+  void * jresult ;
+  unsigned int arg1 ;
+  unsigned int arg2 ;
+  Dali::Pixel::Format arg3 ;
+  Dali::Devel::PixelBuffer result;
+
+  arg1 = (unsigned int)jarg1;
+  arg2 = (unsigned int)jarg2;
+  arg3 = (Dali::Pixel::Format)jarg3;
+  {
+    try {
+      result = Dali::Devel::PixelBuffer::New(arg1,arg2,arg3);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PixelBuffer__SWIG_0() {
+  void * jresult ;
+  Dali::Devel::PixelBuffer *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Devel::PixelBuffer *)new Dali::Devel::PixelBuffer();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PixelBuffer(void * jarg1) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PixelBuffer__SWIG_1(void * jarg1) {
+  void * jresult ;
+  Dali::Devel::PixelBuffer *arg1 = 0 ;
+  Dali::Devel::PixelBuffer *result = 0 ;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Devel::PixelBuffer const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::Devel::PixelBuffer *)new Dali::Devel::PixelBuffer((Dali::Devel::PixelBuffer const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelBuffer_Assign(void * jarg1, void * jarg2) {
+  void * jresult ;
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  Dali::Devel::PixelBuffer *arg2 = 0 ;
+  Dali::Devel::PixelBuffer *result = 0 ;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  arg2 = (Dali::Devel::PixelBuffer *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Devel::PixelBuffer const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::Devel::PixelBuffer *) &(arg1)->operator =((Dali::Devel::PixelBuffer const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelBuffer_Convert(void * jarg1) {
+  void * jresult ;
+  Dali::Devel::PixelBuffer *arg1 = 0 ;
+  Dali::PixelData result;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Devel::PixelBuffer & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = Dali::Devel::PixelBuffer::Convert(*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::PixelData((const Dali::PixelData &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelBuffer_CreatePixelData(void * jarg1) {
+  void * jresult ;
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  Dali::PixelData result;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  {
+    try {
+      result = ((Dali::Devel::PixelBuffer const *)arg1)->CreatePixelData();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::PixelData((const Dali::PixelData &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelBuffer_GetBuffer(void * jarg1) {
+  void * jresult ;
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  unsigned char *result = 0 ;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  {
+    try {
+      result = (unsigned char *)(arg1)->GetBuffer();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetWidth(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  unsigned int result;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  {
+    try {
+      result = (unsigned int)((Dali::Devel::PixelBuffer const *)arg1)->GetWidth();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetHeight(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  unsigned int result;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  {
+    try {
+      result = (unsigned int)((Dali::Devel::PixelBuffer const *)arg1)->GetHeight();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetPixelFormat(void * jarg1) {
+  int jresult ;
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  Dali::Pixel::Format result;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  {
+    try {
+      result = (Dali::Pixel::Format)((Dali::Devel::PixelBuffer const *)arg1)->GetPixelFormat();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_0(void * jarg1, void * jarg2, float jarg3, unsigned int jarg4) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  Dali::Devel::PixelBuffer arg2 ;
+  float arg3 ;
+  bool arg4 ;
+  Dali::Devel::PixelBuffer *argp2 ;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  argp2 = (Dali::Devel::PixelBuffer *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Devel::PixelBuffer", 0);
+    return ;
+  }
+  arg2 = *argp2;
+  arg3 = (float)jarg3;
+  arg4 = jarg4 ? true : false;
+  {
+    try {
+      (arg1)->ApplyMask(arg2,arg3,arg4);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_1(void * jarg1, void * jarg2, float jarg3) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  Dali::Devel::PixelBuffer arg2 ;
+  float arg3 ;
+  Dali::Devel::PixelBuffer *argp2 ;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  argp2 = (Dali::Devel::PixelBuffer *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Devel::PixelBuffer", 0);
+    return ;
+  }
+  arg2 = *argp2;
+  arg3 = (float)jarg3;
+  {
+    try {
+      (arg1)->ApplyMask(arg2,arg3);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_2(void * jarg1, void * jarg2) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  Dali::Devel::PixelBuffer arg2 ;
+  Dali::Devel::PixelBuffer *argp2 ;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  argp2 = (Dali::Devel::PixelBuffer *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Devel::PixelBuffer", 0);
+    return ;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      (arg1)->ApplyMask(arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyGaussianBlur(void * jarg1, float jarg2) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  float arg2 ;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  arg2 = (float)jarg2;
+  {
+    try {
+      (arg1)->ApplyGaussianBlur(arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Crop(void * jarg1, unsigned short jarg2, unsigned short jarg3, unsigned short jarg4, unsigned short jarg5) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  uint16_t arg2 ;
+  uint16_t arg3 ;
+  uint16_t arg4 ;
+  uint16_t arg5 ;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  arg2 = (uint16_t)jarg2;
+  arg3 = (uint16_t)jarg3;
+  arg4 = (uint16_t)jarg4;
+  arg5 = (uint16_t)jarg5;
+  {
+    try {
+      (arg1)->Crop(arg2,arg3,arg4,arg5);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_GetMetadata(void * jarg1, void * jarg2) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  Dali::Property::Map *arg2 = (Dali::Property::Map *) 0 ;
+
+  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg2 = (Dali::Property::Map*)jarg2;
+  {
+    try {
+      (arg1)->GetMetadata(*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Resize(void * jarg1, unsigned short jarg2, unsigned short jarg3) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  uint16_t arg2 ;
+  uint16_t arg3 ;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  arg2 = (uint16_t)jarg2;
+  arg3 = (uint16_t)jarg3;
+  {
+    try {
+      (arg1)->Resize(arg2,arg3);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PixelBuffer__SWIG_2(void * jarg1) {
+  void * jresult ;
+  Dali::Internal::Adaptor::PixelBuffer *arg1 = (Dali::Internal::Adaptor::PixelBuffer *) 0 ;
+  Dali::Devel::PixelBuffer *result = 0 ;
+
+  arg1 = (Dali::Internal::Adaptor::PixelBuffer *)jarg1;
+  {
+    try {
+      result = (Dali::Devel::PixelBuffer *)new Dali::Devel::PixelBuffer(arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::SamplingMode::Type arg4 ;
+  bool arg5 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  arg4 = (Dali::SamplingMode::Type)jarg4;
+  arg5 = jarg5 ? true : false;
+  {
+    try {
+      result = Dali::LoadImageFromFile((std::string const &)*arg1,arg2,arg3,arg4,arg5);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_1(char * jarg1, void * jarg2, int jarg3, int jarg4) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::SamplingMode::Type arg4 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  arg4 = (Dali::SamplingMode::Type)jarg4;
+  {
+    try {
+      result = Dali::LoadImageFromFile((std::string const &)*arg1,arg2,arg3,arg4);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_2(char * jarg1, void * jarg2, int jarg3) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  {
+    try {
+      result = Dali::LoadImageFromFile((std::string const &)*arg1,arg2,arg3);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_3(char * jarg1, void * jarg2) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      result = Dali::LoadImageFromFile((std::string const &)*arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_4(char * jarg1) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  {
+    try {
+      result = Dali::LoadImageFromFile((std::string const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::SamplingMode::Type arg4 ;
+  bool arg5 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::ImageDimensions result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  arg4 = (Dali::SamplingMode::Type)jarg4;
+  arg5 = jarg5 ? true : false;
+  {
+    try {
+      result = Dali::GetClosestImageSize((std::string const &)*arg1,arg2,arg3,arg4,arg5);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_1(char * jarg1, void * jarg2, int jarg3, int jarg4) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::SamplingMode::Type arg4 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::ImageDimensions result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  arg4 = (Dali::SamplingMode::Type)jarg4;
+  {
+    try {
+      result = Dali::GetClosestImageSize((std::string const &)*arg1,arg2,arg3,arg4);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_2(char * jarg1, void * jarg2, int jarg3) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::ImageDimensions result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  {
+    try {
+      result = Dali::GetClosestImageSize((std::string const &)*arg1,arg2,arg3);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_3(char * jarg1, void * jarg2) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::ImageDimensions result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      result = Dali::GetClosestImageSize((std::string const &)*arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_4(char * jarg1) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  {
+    try {
+      result = Dali::GetClosestImageSize((std::string const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::SamplingMode::Type arg4 ;
+  bool arg5 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  arg4 = (Dali::SamplingMode::Type)jarg4;
+  arg5 = jarg5 ? true : false;
+  {
+    try {
+      result = Dali::DownloadImageSynchronously((std::string const &)*arg1,arg2,arg3,arg4,arg5);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_1(char * jarg1, void * jarg2, int jarg3, int jarg4) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::SamplingMode::Type arg4 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  arg4 = (Dali::SamplingMode::Type)jarg4;
+  {
+    try {
+      result = Dali::DownloadImageSynchronously((std::string const &)*arg1,arg2,arg3,arg4);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_2(char * jarg1, void * jarg2, int jarg3) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  {
+    try {
+      result = Dali::DownloadImageSynchronously((std::string const &)*arg1,arg2,arg3);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_3(char * jarg1, void * jarg2) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions arg2 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      result = Dali::DownloadImageSynchronously((std::string const &)*arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_4(char * jarg1) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  {
+    try {
+      result = Dali::DownloadImageSynchronously((std::string const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetMaxTextureSize(unsigned int jarg1) {
+  unsigned int arg1 ;
+
+  arg1 = (unsigned int)jarg1;
+  {
+    try {
+      Dali::SetMaxTextureSize(arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GetMaxTextureSize() {
+  unsigned int jresult ;
+  unsigned int result;
+
+  {
+    try {
+      result = (unsigned int)Dali::GetMaxTextureSize();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
+
 
 #ifdef __cplusplus
 }
