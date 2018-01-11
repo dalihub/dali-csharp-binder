@@ -60181,6 +60181,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_FRAME_DELAY_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_LOOP_COUNT_get() {
+  return (int)Dali::Toolkit::DevelImageVisual::Property::LOOP_COUNT;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_MASK_CONTENT_SCALE_get() {
   int jresult ;
   int result;
