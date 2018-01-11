@@ -307,23 +307,28 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int jarg1, c
   {
     // Todo generate argv data from the C# args
     int index = 0;
-    char *retPtr;
+    int length = 0;
+    char *retPtr = NULL;
     char *nextPtr;
 
     argV = new char*[jarg1 + 1];
 
-    retPtr = strtok_r(jarg2," ", &nextPtr);
-    argV[index] = new char[strlen(retPtr)+1];
-    strncpy( argV[index], retPtr, strlen(retPtr) );
-    argV[index][strlen(retPtr)] = '\0';
-    index++;
+    for(retPtr = strtok_r(jarg2, " ", &nextPtr);
+        retPtr != NULL && index < jarg1;
+        retPtr = strtok_r(NULL, " ", &nextPtr))
+    {
+      length = 0;
+      length = strlen(retPtr);
+      argV[ index ] = new char[ length + 1 ];
+      strncpy( argV[ index ], retPtr, length );
+      argV[ index ][ length ] = '\0';
+      index++;
+    }
 
     while( index < jarg1 )
     {
-      retPtr = strtok_r(NULL," ", &nextPtr);
-      argV[index] = new char[strlen(retPtr)+1];
-      strncpy( argV[index], retPtr, strlen(retPtr) );
-      argV[index][strlen(retPtr)] = '\0';
+      //if jarg1 - index >1, maybe cause error.
+      argV[index] = NULL;
       index++;
     }
 
@@ -332,7 +337,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int jarg1, c
 
     arg1 = &argC;
     arg2 = &argV;
-
   }
 
   std::string arg3_str(jarg3);
