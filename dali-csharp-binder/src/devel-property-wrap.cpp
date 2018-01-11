@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2018 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@
 #include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
 #include <dali-toolkit/devel-api/visuals/image-visual-actions-devel.h>
+#include <dali-toolkit/devel-api/visuals/animated-image-visual-actions-devel.h>
 
 
 #ifdef __cplusplus
@@ -437,6 +438,21 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_WRAP_MODE_get() {
 SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_RELOAD_get()
 {
   return (int)Dali::Toolkit::DevelImageVisual::Action::RELOAD;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_PLAY_get()
+{
+  return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::PLAY;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_PAUSE_get()
+{
+  return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::PAUSE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_STOP_get()
+{
+  return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::STOP;
 }
 
 #ifdef __cplusplus
