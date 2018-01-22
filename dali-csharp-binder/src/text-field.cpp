@@ -1215,6 +1215,32 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ENABLE_SHIFT_SELECTION_get(
   return (int)Dali::Toolkit::DevelTextField::Property::ENABLE_SHIFT_SELECTION;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_GetInputMethodContext(void * jarg1) {
+  void * jresult ;
+  Dali::Toolkit::TextField *arg1 = (Dali::Toolkit::TextField *) 0 ;
+  Dali::InputMethodContext result;
+
+  arg1 = (Dali::Toolkit::TextField *)jarg1;
+  {
+    try {
+      result = Dali::Toolkit::DevelTextField::GetInputMethodContext(*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::InputMethodContext((const Dali::InputMethodContext &)result);
+  return jresult;
+}
 
 #ifdef __cplusplus
 }
