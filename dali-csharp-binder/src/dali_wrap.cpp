@@ -31307,12 +31307,21 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressedName_set(void * jarg1, cha
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_keyPressedName_get(void * jarg1) {
   char * jresult ;
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
-  std::string *result = 0 ;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
-  result = (std::string *) & ((arg1)->keyPressedName);
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  if( jarg1 == NULL )
+  {
+    jresult = SWIG_csharp_string_callback( "" );
+  }
+  else
+  {
+    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+    std::string *result = 0;
+
+    arg1 = ( Dali::KeyEvent * )jarg1;
+    result = ( std::string * ) & ( ( arg1 )->keyPressedName );
+    jresult = SWIG_csharp_string_callback( result->c_str() );
+  }
+
   return jresult;
 }
 
@@ -31337,12 +31346,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressed_set(void * jarg1, char * 
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_keyPressed_get(void * jarg1) {
   char * jresult ;
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
-  std::string *result = 0 ;
+  if( NULL == jarg1 )
+  {
+    jresult = NULL;
+  }
+  else
+  {
+    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+    std::string *result = 0;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
-  result = (std::string *) & ((arg1)->keyPressed);
-  jresult = SWIG_csharp_string_callback(result->c_str());
+    arg1 = ( Dali::KeyEvent * )jarg1;
+    result = ( std::string * ) & ( ( arg1 )->keyPressed );
+    jresult = SWIG_csharp_string_callback( result->c_str() );
+  }
   return jresult;
 }
 
@@ -31359,12 +31375,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyCode_set(void * jarg1, int jarg2)
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Key_keyCode_get(void * jarg1) {
   int jresult ;
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
-  int result;
+  if( NULL == jarg1 )
+  {
+    jresult = -1;
+  }
+  else
+  {
+    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+    int result;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
-  result = (int) ((arg1)->keyCode);
-  jresult = result;
+    arg1 = ( Dali::KeyEvent * )jarg1;
+    result = (int)( ( arg1 )->keyCode );
+    jresult = result;
+  }
   return jresult;
 }
 
@@ -31381,12 +31404,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyModifier_set(void * jarg1, int ja
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Key_keyModifier_get(void * jarg1) {
   int jresult ;
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
-  int result;
+  if( jarg1 == NULL )
+  {
+    jresult = -1;
+  }
+  else
+  {
+    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+    int result;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
-  result = (int) ((arg1)->keyModifier);
-  jresult = result;
+    arg1 = ( Dali::KeyEvent * )jarg1;
+    result = (int)( ( arg1 )->keyModifier );
+    jresult = result;
+  }
   return jresult;
 }
 
@@ -31403,12 +31433,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_time_set(void * jarg1, unsigned long
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Key_time_get(void * jarg1) {
   unsigned long jresult ;
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
-  unsigned long result;
+  if( jarg1 == NULL )
+  {
+    jresult = 0;
+  }
+  else
+  {
+    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+    unsigned long result;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
-  result = (unsigned long) ((arg1)->time);
-  jresult = (unsigned long)result;
+    arg1 = ( Dali::KeyEvent * )jarg1;
+    result = (unsigned long)( ( arg1 )->time );
+    jresult = (unsigned long)result;
+  }
   return jresult;
 }
 
@@ -31425,12 +31462,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_state_set(void * jarg1, int jarg2) {
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Key_state_get(void * jarg1) {
   int jresult ;
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
-  Dali::KeyEvent::State result;
+  if( jarg1 == NULL )
+  {
+    jresult = -1;
+  }
+  else
+  {
+    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+    Dali::KeyEvent::State result;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
-  result = (Dali::KeyEvent::State) ((arg1)->state);
-  jresult = (int)result;
+    arg1 = ( Dali::KeyEvent * )jarg1;
+    result = ( Dali::KeyEvent::State ) ( ( arg1 )->state );
+    jresult = (int)result;
+  }
   return jresult;
 }
 
