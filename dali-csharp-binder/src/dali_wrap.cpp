@@ -31348,7 +31348,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_keyPressed_get(void * jarg1) {
   char * jresult ;
   if( NULL == jarg1 )
   {
-    jresult = NULL;
+    jresult = SWIG_csharp_string_callback( "" );
   }
   else
   {
