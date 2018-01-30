@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2018 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,10 @@
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
 #include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
+#include <dali-toolkit/devel-api/visuals/image-visual-actions-devel.h>
+#include <dali-toolkit/devel-api/visuals/animated-image-visual-actions-devel.h>
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -413,6 +417,24 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_LINE_WRAP_MODE_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_TEXT_DIRECTION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::TEXT_DIRECTION;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_VERTICAL_LINE_ALIGNMENT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::VERTICAL_LINE_ALIGNMENT;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_WRAP_MODE_get() {
   int jresult ;
   int result;
@@ -420,6 +442,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_WRAP_MODE_get() {
   result = (int)Dali::Toolkit::TextEditor::Property::LINE_WRAP_MODE;
   jresult = (int)result;
   return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_RELOAD_get()
+{
+  return (int)Dali::Toolkit::DevelImageVisual::Action::RELOAD;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_PLAY_get()
+{
+  return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::PLAY;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_PAUSE_get()
+{
+  return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::PAUSE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_STOP_get()
+{
+  return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::STOP;
 }
 
 #ifdef __cplusplus
