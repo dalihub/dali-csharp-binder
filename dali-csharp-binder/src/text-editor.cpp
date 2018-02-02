@@ -1441,6 +1441,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollStateChangedSignal(void * j
 
 }
 
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_ENABLE_SHIFT_SELECTION_get()
+{
+  return (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_SHIFT_SELECTION;
+}
+
+
 #ifdef __cplusplus
 }
 #endif

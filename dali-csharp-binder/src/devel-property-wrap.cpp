@@ -426,6 +426,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_TEXT_DIRECTION_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_VERTICAL_LINE_ALIGNMENT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::VERTICAL_LINE_ALIGNMENT;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_WRAP_MODE_get() {
   int jresult ;
   int result;
@@ -458,4 +467,3 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_STOP_get()
 #ifdef __cplusplus
 }
 #endif
-

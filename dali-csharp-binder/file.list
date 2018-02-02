@@ -42,7 +42,8 @@ dali_csharp_binder_src_files_tizen = \
   src/key-grab.cpp \
   src/watch.cpp \
   src/adaptor.cpp \
-  src/extents.cpp
+  src/extents.cpp \
+  src/font-client.cpp
 
 dali_csharp_binder_header_files = \
   src/common.h

@@ -8,7 +8,6 @@
  * interface file instead.
  * ----------------------------------------------------------------------------- */
 
-
 #ifndef SWIGCSHARP
 #define SWIGCSHARP
 #endif
@@ -438,8 +437,6 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/adaptor-framework/application-extensions.h>
 
 #include <dali/devel-api/images/nine-patch-image.h>
-#include <dali/devel-api/adaptor-framework/pixel-buffer.h>
-#include <dali/devel-api/adaptor-framework/image-loading.h>
 
 #include <dali-toolkit/devel-api/builder/builder.h>
 
@@ -454,10 +451,13 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-landscape-view.h>
 #include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-portrait-view.h>
 #include <dali-toolkit/devel-api/controls/buttons/toggle-button.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
+#include <dali-toolkit/devel-api/text/text-enumerations-devel.h>
 
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-factory.h>
 #include <dali-toolkit/devel-api/visual-factory/transition-data.h>
+
 
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
 #include <dali-toolkit/public-api/visuals/text-visual-properties.h>
@@ -468,8 +468,8 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h>
 
-#include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
-#include <dali-toolkit/devel-api/text/text-enumerations-devel.h>
+#include <dali/devel-api/adaptor-framework/pixel-buffer.h>
+#include <dali/devel-api/adaptor-framework/image-loading.h>
 
 // add here SWIG version check
 
@@ -102328,4 +102328,3 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GetMaxTextureSize() {
 #ifdef __cplusplus
 }
 #endif
-
