@@ -465,7 +465,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Finalize(void * jarg1) {
   arg1 = (Dali::ImfManager *)jarg1;
   {
     try {
-      (arg1)->Finalize();
+      //Need to check, Finalize is deprecated
+      //(arg1)->Finalize();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -819,7 +820,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetInputPanelUserData(void * 
   arg2 = &arg2_str;
   {
     try {
-      (arg1)->SetInputPanelUserData((std::string const &)*arg2);
+      (arg1)->SetInputPanelData((std::string const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -847,7 +848,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelUserData(void * 
 
   {
     try {
-      (arg1)->GetInputPanelUserData(*arg2);
+      (arg1)->GetInputPanelData(*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
