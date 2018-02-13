@@ -28,7 +28,11 @@
 
 
 #ifdef TIZEN_BUILD
+#ifdef ECORE_WL2
+#include <Ecore_Wl2.h>
+#else
 #include <Ecore_Wayland.h>
+#endif
 #endif
 
 #undef LOG
@@ -191,8 +195,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetNativeWindowHandler( void* window )
     Dali::Any result;
     try {
       result = _win->GetNativeHandle();
-
+#ifdef ECORE_WL2
+      Ecore_Wl2_Window * ecore_win = Dali::AnyCast<Ecore_Wl2_Window*>(result);
+#else
       Ecore_Wl_Window * ecore_win = Dali::AnyCast<Ecore_Wl_Window*>(result);
+#endif
       ret = (void*)ecore_win;
 
     } catch (std::out_of_range& e) {

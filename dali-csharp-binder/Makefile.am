@@ -11,9 +11,14 @@ libdali_csharp_binder_la_LDFLAGS = ${LDFLAGS}
 libdali_csharp_binder_la_CXXFLAGS = \
    ${CFLAGS} \
    $(DALI_CFLAGS) \
-   $(ECORE_WAYLAND_CFLAGS) \
    $(viewer_dali_CFLAGS) \
    $(dali_csharp_binder_includes)
+
+if ECOREWL2
+libdali_csharp_binder_la_CXXFLAGS+= $(ECORE_WL2_CFLAGS)
+else
+libdali_csharp_binder_la_CXXFLAGS+= $(ECORE_WAYLAND_CFLAGS)
+endif
 
 # added for key grab binding only for tizen
 if TIZENBUILD

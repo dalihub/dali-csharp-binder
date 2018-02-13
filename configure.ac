@@ -18,14 +18,24 @@ AC_ARG_ENABLE(tizenBuild,
               enable_tizenBuild=yes,
               enable_tizenBuild=no)
 
+AC_ARG_ENABLE(Ecore_Wl2,
+              [  --enable-ecore-wl2      build with ecorewl2 on tizen],
+              enable_ecore_wl2=yes,
+              enable_ecore_wl2=no)
+
 AM_CONDITIONAL([TIZENBUILD], [test x$enable_tizenBuild = xyes])
+AM_CONDITIONAL([ECOREWL2], [test "x$enable_ecore_wl2" = "xyes"])
 
 PKG_PROG_PKG_CONFIG
 # Checks for libraries. added for widget_viewer_dali binding only for tizen
 # added for key grab binding only for tizen
 if test x$enable_tizenBuild = xyes; then
   PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit widget_viewer_dali)
-  PKG_CHECK_MODULES(ECORE_WAYLAND, ecore-wayland)
+  if test x$enable_ecore_wl2 = xyes; then
+    PKG_CHECK_MODULES(ECORE_WL2, ecore-wl2)
+  else
+    PKG_CHECK_MODULES(ECORE_WAYLAND, ecore-wayland)
+  fi
 else
   PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit)
 fi
