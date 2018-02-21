@@ -2237,6 +2237,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, cha
     int numStrings = 1;     // number of strings
     int stringLength = 30;      // max string length.
     array = (char **)malloc( (numStrings + 1 )* sizeof(char *) );
+    if(!array) {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "array is null", 0);
+      return 0;
+    }
     argV = array;
 
     // allocate the string data
@@ -2247,6 +2251,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, cha
     array[ numStrings ] =  NULL; // we allocated +1 for hold the NULL part
 
     std::string temp = "dali-csharp-app";
+
+    if(!array[0]) {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "array[0] is null", 0);
+      return 0;
+    }
     array[0][temp.copy(array[0], strlen(array[0])-1)] = '\0';
 
     arg1 = &argC;

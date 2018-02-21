@@ -465,7 +465,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Finalize(void * jarg1) {
   arg1 = (Dali::ImfManager *)jarg1;
   {
     try {
-      (arg1)->Finalize();
+//      (arg1)->Finalize();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
