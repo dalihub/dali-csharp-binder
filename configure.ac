@@ -20,12 +20,14 @@ AC_ARG_ENABLE(tizenBuild,
 
 AM_CONDITIONAL([TIZENBUILD], [test x$enable_tizenBuild = xyes])
 
-# Checks for libraries.
-PKG_CHECK_MODULES([DALI], [dali-core dali-adaptor dali-toolkit widget_viewer_dali])
-
+PKG_PROG_PKG_CONFIG
+# Checks for libraries. added for widget_viewer_dali binding only for tizen
 # added for key grab binding only for tizen
 if test x$enable_tizenBuild = xyes; then
+  PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit widget_viewer_dali)
   PKG_CHECK_MODULES(ECORE_WAYLAND, ecore-wayland)
+else
+  PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit)
 fi
 
 AC_CONFIG_FILES([
