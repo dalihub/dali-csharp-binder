@@ -43,6 +43,82 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeVersionCheck(int * ver1, int * ver
   return true;
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_NUI_InternalAPIVersionCheck(int * version, int * reserved1, int * reserved2 )
+{
+  try
+  {
+    if(Dali::CORE_MAJOR_VERSION == 1 && Dali::CORE_MINOR_VERSION == 2)
+    {
+      //by dali_1.2.85, nui_api_internal_version is set as 400
+      if(Dali::CORE_MICRO_VERSION <= 85)
+      {
+        *version = 400;
+        *reserved1 = 0;
+        *reserved2 = 0;
+        return true;
+      }
+      //from dali_1.2.86, nui_api_internal_version is set as 401
+      else if(Dali::CORE_MICRO_VERSION == 86)
+      {
+        *version = 401;
+        *reserved1 = 0;
+        *reserved2 = 0;
+        return true;
+      }
+      //gotten wrong native wrong version
+      else
+      {
+        *version = Dali::CORE_MAJOR_VERSION;
+        *reserved1 = Dali::CORE_MINOR_VERSION;
+        *reserved2 = Dali::CORE_MICRO_VERSION;
+        return false;
+      }
+    }
+    else if(Dali::CORE_MAJOR_VERSION == 1 && Dali::CORE_MINOR_VERSION == 3)
+    {
+      //nui_api_internal_version is set as 500
+      if(Dali::CORE_MICRO_VERSION <= 99)
+      {
+        *version = 500;
+        *reserved1 = 0;
+        *reserved2 = 0;
+        return true;
+      }
+      else
+      {
+        *version = Dali::CORE_MAJOR_VERSION;
+        *reserved1 = Dali::CORE_MINOR_VERSION;
+        *reserved2 = Dali::CORE_MICRO_VERSION;
+        return false;
+      }
+    }
+    //something wrong
+    else
+    {
+      *version = Dali::CORE_MAJOR_VERSION;
+      *reserved1 = Dali::CORE_MINOR_VERSION;
+      *reserved2 = Dali::CORE_MICRO_VERSION;
+      return false;
+    }
+  }
+  catch (std::out_of_range& e)
+  {
+    SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+    return false;
+  }
+  catch (std::exception& e)
+  {
+    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+    return false;
+   }
+  catch (...)
+  {
+    SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+    return false;
+  }
+  return false;
+}
+
 #ifdef __cplusplus
 }
 #endif

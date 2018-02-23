@@ -467,3 +467,4 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_STOP_get()
 #ifdef __cplusplus
 }
 #endif
+

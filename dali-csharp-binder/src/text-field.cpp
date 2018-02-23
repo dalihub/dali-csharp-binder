@@ -1215,6 +1215,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ENABLE_SHIFT_SELECTION_get(
   return (int)Dali::Toolkit::DevelTextField::Property::ENABLE_SHIFT_SELECTION;
 }
 
+
 #ifdef __cplusplus
 }
 #endif

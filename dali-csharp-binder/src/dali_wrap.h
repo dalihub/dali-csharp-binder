@@ -11,6 +11,42 @@
 #ifndef SWIG_NDalic_WRAP_H_
 #define SWIG_NDalic_WRAP_H_
 
+class SwigDirector_WidgetImpl : public Dali::Internal::Adaptor::Widget, public Swig::Director {
+
+public:
+    SwigDirector_WidgetImpl();
+    virtual ~SwigDirector_WidgetImpl();
+    virtual void OnCreate(std::string const &contentInfo, Dali::Window window);
+    virtual void OnTerminate(std::string const &contentInfo, Dali::Widget::Termination type);
+    virtual void OnPause();
+    virtual void OnResume();
+    virtual void OnResize(Dali::Window window);
+    virtual void OnUpdate(std::string const &contentInfo, int force);
+    virtual void SignalConnected(Dali::SlotObserver *slotObserver, Dali::CallbackBase *callback);
+    virtual void SignalDisconnected(Dali::SlotObserver *slotObserver, Dali::CallbackBase *callback);
+
+    typedef void (SWIGSTDCALL* SWIG_Callback0_t)(char *, void *);
+    typedef void (SWIGSTDCALL* SWIG_Callback1_t)(char *, int);
+    typedef void (SWIGSTDCALL* SWIG_Callback2_t)();
+    typedef void (SWIGSTDCALL* SWIG_Callback3_t)();
+    typedef void (SWIGSTDCALL* SWIG_Callback4_t)(void *);
+    typedef void (SWIGSTDCALL* SWIG_Callback5_t)(char *, int);
+    typedef void (SWIGSTDCALL* SWIG_Callback6_t)(void *, void *);
+    typedef void (SWIGSTDCALL* SWIG_Callback7_t)(void *, void *);
+    void swig_connect_director(SWIG_Callback0_t callbackOnCreate, SWIG_Callback1_t callbackOnTerminate, SWIG_Callback2_t callbackOnPause, SWIG_Callback3_t callbackOnResume, SWIG_Callback4_t callbackOnResize, SWIG_Callback5_t callbackOnUpdate, SWIG_Callback6_t callbackSignalConnected, SWIG_Callback7_t callbackSignalDisconnected);
+
+private:
+    SWIG_Callback0_t swig_callbackOnCreate;
+    SWIG_Callback1_t swig_callbackOnTerminate;
+    SWIG_Callback2_t swig_callbackOnPause;
+    SWIG_Callback3_t swig_callbackOnResume;
+    SWIG_Callback4_t swig_callbackOnResize;
+    SWIG_Callback5_t swig_callbackOnUpdate;
+    SWIG_Callback6_t swig_callbackSignalConnected;
+    SWIG_Callback7_t swig_callbackSignalDisconnected;
+    void swig_init_callbacks();
+};
+
 class SwigDirector_ViewImpl : public Dali::Toolkit::Internal::Control, public Swig::Director {
 
 public:

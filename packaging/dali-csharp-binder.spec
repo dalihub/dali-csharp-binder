@@ -1,6 +1,6 @@
 
 Name: dali-csharp-binder
-Version: 1.2.39
+Version: 1.3.9+nui500
 Release: 1
 Summary: build dali csharp binder
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -11,6 +11,7 @@ BuildRequires: pkgconfig(dali-core)
 BuildRequires: pkgconfig(dali-adaptor)
 BuildRequires: pkgconfig(dali-toolkit)
 BuildRequires: pkgconfig(ecore-wayland)
+BuildRequires: pkgconfig(widget_viewer_dali)
 
 %description
 dali-csharp-binder
