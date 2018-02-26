@@ -43,24 +43,39 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeVersionCheck(int * ver1, int * ver
   return true;
 }
 
+/*
+dali native and nui versioning : 
+  - tizen_4.0 : major version(1), minor version(2), micro version represents dali native release version
+  - tizen_5.0 : major version(1), minor version(3), micro version represents dali native release version
+  - nui_api_internal_version : only changed when the APIs are changed. for bug fix, this is not changed. (tizenfx version is changed for bug fix)
+  - example : No API changed and bug fixed in dali_1.2.86 (dali-csharp-binder-1.2.86+nui401), API changed and whatever for bug fix in dali_1.2.88 (dali-csharp-binder-1.2.88+nui402)
+*/
+//tizen_4.0
+#define CURRENT_MAJOR 1
+#define CURRNT_MINOR 2
+//by dali_1.2.85, nui_api_internal_version is set as 400
+#define NUI_API_INTERNAL_VER_BOUNDARY_1 85
+#define NUI_API_INTERNAL_VERSION_1 400
+//from dali_1.2.86, nui_api_internal_version is set as 401
+#define NUI_API_INTERNAL_BOUNDARY_2 88
+#define NUI_API_INTERNAL_VERSION_2 401
+
 SWIGEXPORT bool SWIGSTDCALL CSharp_NUI_InternalAPIVersionCheck(int * version, int * reserved1, int * reserved2 )
 {
   try
   {
-    if(Dali::CORE_MAJOR_VERSION == 1 && Dali::CORE_MINOR_VERSION == 2)
+    if(Dali::CORE_MAJOR_VERSION == CURRENT_MAJOR && Dali::CORE_MINOR_VERSION == CURRNT_MINOR)
     {
-      //by dali_1.2.85, nui_api_internal_version is set as 400
-      if(Dali::CORE_MICRO_VERSION <= 85)
+      if(Dali::CORE_MICRO_VERSION > 0 && Dali::CORE_MICRO_VERSION <= NUI_API_INTERNAL_VER_BOUNDARY_1)
       {
-        *version = 400;
+        *version = NUI_API_INTERNAL_VERSION_1;
         *reserved1 = 0;
         *reserved2 = 0;
         return true;
       }
-      //from dali_1.2.86, nui_api_internal_version is set as 401
-      else if(Dali::CORE_MICRO_VERSION >= 86 && Dali::CORE_MICRO_VERSION <= 87)
+      else if(Dali::CORE_MICRO_VERSION > NUI_API_INTERNAL_VER_BOUNDARY_1 && Dali::CORE_MICRO_VERSION <= NUI_API_INTERNAL_BOUNDARY_2)
       {
-        *version = 401;
+        *version = NUI_API_INTERNAL_VERSION_2;
         *reserved1 = 0;
         *reserved2 = 0;
         return true;
