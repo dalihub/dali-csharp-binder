@@ -202,8 +202,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, cha
   }
   if (!jarg3) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    delete []arg2[0];
-    delete []arg2;
+    delete []argV[0];
+    delete []argV;
     return 0;
   }
   std::string arg3_str(jarg3);
@@ -260,8 +260,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, cha
   }
   if (!jarg3) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    delete []arg2[0];
-    delete []arg2;
+    delete []argV[0];
+    delete []argV;
     return 0;
   }
   std::string arg3_str(jarg3);
