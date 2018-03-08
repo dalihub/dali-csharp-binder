@@ -11,10 +11,8 @@ BuildRequires: pkgconfig(dali-core)
 BuildRequires: pkgconfig(dali-adaptor)
 BuildRequires: pkgconfig(dali-toolkit)
 BuildRequires: pkgconfig(widget_viewer_dali)
-
-# dali-adaptor uses ecore mainloop
 %if 0%{?tizen_version_major} >= 5
-BuildRequires:  pkgconfig(ecore-wl2)
+BuildRequires: pkgconfig(ecore-wl2)
 %else
 BuildRequires:  pkgconfig(ecore-wayland)
 %endif
@@ -25,7 +23,6 @@ dali-csharp-binder
 %if 0%{?tizen_version_major} >= 5
 CFLAGS+=" -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
 CXXFLAGS+=" -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
-configure_flags="--enable-ecore-wl2"
 %endif
 
 ##############################
@@ -51,8 +48,12 @@ This package includes developer files common to all packages.
 %build
 %autogen
 # added for key grab binding only for tizen
-%configure --enable-tizenBuild=yes \
-           $configure_flags
+%if 0%{?tizen_version_major} >= 5
+%configure --enable-ecoreWl2=yes \
+           --enable-tizenBuild=yes
+%else
+%configure --enable-tizenBuild=yes
+%endif
 
 make %{?_smp_mflags}
 

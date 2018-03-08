@@ -18,13 +18,13 @@ AC_ARG_ENABLE(tizenBuild,
               enable_tizenBuild=yes,
               enable_tizenBuild=no)
 
-AC_ARG_ENABLE(Ecore_Wl2,
-              [  --enable-ecore-wl2      build with ecorewl2 on tizen],
-              enable_ecore_wl2=yes,
-              enable_ecore_wl2=no)
+AC_ARG_ENABLE(ecoreWl2,
+              [  --enable-ecore-wl2      build on ecorewl2],
+              enable_ecoreWl2=yes,
+              enable_ecoreWl2=no)
 
 AM_CONDITIONAL([TIZENBUILD], [test x$enable_tizenBuild = xyes])
-AM_CONDITIONAL([ECOREWL2], [test "x$enable_ecore_wl2" = "xyes"])
+AM_CONDITIONAL([ECOREWL2], [test x$enable_ecoreWl2 = xyes])
 
 PKG_PROG_PKG_CONFIG
 # Checks for libraries. added for widget_viewer_dali binding only for tizen

@@ -14,15 +14,16 @@ libdali_csharp_binder_la_CXXFLAGS = \
    $(viewer_dali_CFLAGS) \
    $(dali_csharp_binder_includes)
 
+# added for key grab binding only for tizen
+if TIZENBUILD
+libdali_csharp_binder_la_CXXFLAGS += -DTIZEN_BUILD
 if ECOREWL2
+libdali_csharp_binder_la_CXXFLAGS += -DECORE_WL2
+libdali_csharp_binder_la_CXXFLAGS += -DEFL_BETA_API_SUPPORT
 libdali_csharp_binder_la_CXXFLAGS+= $(ECORE_WL2_CFLAGS)
 else
 libdali_csharp_binder_la_CXXFLAGS+= $(ECORE_WAYLAND_CFLAGS)
 endif
-
-# added for key grab binding only for tizen
-if TIZENBUILD
-libdali_csharp_binder_la_CXXFLAGS += -DTIZEN_BUILD
 libdali_csharp_binder_la_SOURCES = $(dali_csharp_binder_src_files_tizen)
 else
 libdali_csharp_binder_la_SOURCES = $(dali_csharp_binder_src_files)
