@@ -31,7 +31,7 @@ PKG_PROG_PKG_CONFIG
 # added for key grab binding only for tizen
 if test x$enable_tizenBuild = xyes; then
   PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit widget_viewer_dali)
-  if test x$enable_ecore_wl2 = xyes; then
+  if test x$enable_ecoreWl2 = xyes; then
     PKG_CHECK_MODULES(ECORE_WL2, ecore-wl2)
   else
     PKG_CHECK_MODULES(ECORE_WAYLAND, ecore-wayland)
