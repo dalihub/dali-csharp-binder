@@ -64710,6 +64710,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeSet(void * jarg1, void * 
     return ;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnSizeSet((Dali::Vector3 const &)*arg2);
@@ -64747,6 +64751,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeSetSwigExplicitViewImpl(v
     return ;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnSizeSetSwigPublic((Dali::Vector3 const &)*arg2);
@@ -64790,6 +64798,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeAnimation(void * jarg1, v
     return ;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnSizeAnimation(*arg2,(Dali::Vector3 const &)*arg3);
@@ -64833,6 +64845,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeAnimationSwigExplicitView
     return ;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnSizeAnimationSwigPublic(*arg2,(Dali::Vector3 const &)*arg3);
@@ -64872,6 +64888,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnTouchEvent(void * jar
     return 0;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->OnTouchEvent((Dali::TouchEvent const &)*arg2);
@@ -64913,6 +64933,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnTouchEventSwigExplici
     return 0;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->OnTouchEventSwigPublic((Dali::TouchEvent const &)*arg2);
@@ -64954,6 +64978,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnHoverEvent(void * jar
     return 0;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->OnHoverEvent((Dali::HoverEvent const &)*arg2);
@@ -64995,6 +65023,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnHoverEventSwigExplici
     return 0;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->OnHoverEventSwigPublic((Dali::HoverEvent const &)*arg2);
@@ -65036,6 +65068,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEvent(void * jarg1
     return 0;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->OnKeyEvent((Dali::KeyEvent const &)*arg2);
@@ -65077,6 +65113,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEventSwigExplicitV
     return 0;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->OnKeyEventSwigPublic((Dali::KeyEvent const &)*arg2);
@@ -65118,6 +65158,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnWheelEvent(void * jar
     return 0;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->OnWheelEvent((Dali::WheelEvent const &)*arg2);
@@ -65159,6 +65203,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnWheelEventSwigExplici
     return 0;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->OnWheelEventSwigPublic((Dali::WheelEvent const &)*arg2);
@@ -65204,6 +65252,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnRelayout(void * jarg1, void *
     return ;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnRelayout((Dali::Vector2 const &)*arg2,*arg3);
@@ -65247,6 +65299,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnRelayoutSwigExplicitViewImpl(
     return ;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnRelayoutSwigPublic((Dali::Vector2 const &)*arg2,*arg3);
@@ -65282,6 +65338,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSetResizePolicy(void * jarg1,
   arg2 = (Dali::ResizePolicy::Type)jarg2;
   arg3 = (Dali::Dimension::Type)jarg3;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnSetResizePolicy(arg2,arg3);
@@ -65317,6 +65377,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSetResizePolicySwigExplicitVi
   arg2 = (Dali::ResizePolicy::Type)jarg2;
   arg3 = (Dali::Dimension::Type)jarg3;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnSetResizePolicySwigPublic(arg2,arg3);
@@ -65350,6 +65414,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetNaturalSize(void * jarg1) 
 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (darg)->GetNaturalSize();
@@ -65385,6 +65453,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetNaturalSizeSwigExplicitVie
 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (darg)->GetNaturalSizeSwigPublic();
@@ -65428,6 +65500,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ViewImpl_CalculateChildSize(void * jarg
   }
   arg3 = (Dali::Dimension::Type)jarg3;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (float)(darg)->CalculateChildSize((Dali::Actor const &)*arg2,arg3);
@@ -65471,6 +65547,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ViewImpl_CalculateChildSizeSwigExplicit
   }
   arg3 = (Dali::Dimension::Type)jarg3;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (float)(darg)->CalculateChildSizeSwigPublic((Dali::Actor const &)*arg2,arg3);
@@ -65508,6 +65588,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ViewImpl_GetHeightForWidth(void * jarg1
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   arg2 = (float)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (float)(darg)->GetHeightForWidth(arg2);
@@ -65545,6 +65629,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ViewImpl_GetHeightForWidthSwigExplicitV
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   arg2 = (float)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (float)(darg)->GetHeightForWidthSwigPublic(arg2);
@@ -65582,6 +65670,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ViewImpl_GetWidthForHeight(void * jarg1
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   arg2 = (float)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (float)(darg)->GetWidthForHeight(arg2);
@@ -65619,6 +65711,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ViewImpl_GetWidthForHeightSwigExplicitV
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   arg2 = (float)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (float)(darg)->GetWidthForHeightSwigPublic(arg2);
@@ -65656,6 +65752,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChil
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   arg2 = (Dali::Dimension::Type)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->RelayoutDependentOnChildren(arg2);
@@ -65693,6 +65793,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChil
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   arg2 = (Dali::Dimension::Type)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->RelayoutDependentOnChildrenSwigPublic(arg2);
@@ -65728,6 +65832,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChil
 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->RelayoutDependentOnChildren();
@@ -65763,6 +65871,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChil
 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return 0;
+  }
   {
     try {
       result = (bool)(darg)->RelayoutDependentOnChildrenSwigPublic();
@@ -65798,6 +65910,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnCalculateRelayoutSize(void * 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   arg2 = (Dali::Dimension::Type)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnCalculateRelayoutSize(arg2);
@@ -65831,6 +65947,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnCalculateRelayoutSizeSwigExpl
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   arg2 = (Dali::Dimension::Type)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnCalculateRelayoutSizeSwigPublic(arg2);
@@ -65866,6 +65986,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnLayoutNegotiated(void * jarg1
   arg2 = (float)jarg2;
   arg3 = (Dali::Dimension::Type)jarg3;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnLayoutNegotiated(arg2,arg3);
@@ -65901,6 +66025,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnLayoutNegotiatedSwigExplicitV
   arg2 = (float)jarg2;
   arg3 = (Dali::Dimension::Type)jarg3;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnLayoutNegotiatedSwigPublic(arg2,arg3);
