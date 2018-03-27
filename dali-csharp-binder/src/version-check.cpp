@@ -57,7 +57,7 @@ dali native and nui versioning :
 #define NUI_API_INTERNAL_VER_BOUNDARY_1 85
 #define NUI_API_INTERNAL_VERSION_1 400
 //from dali_1.2.86, nui_api_internal_version is set as 401
-#define NUI_API_INTERNAL_BOUNDARY_2 88
+#define NUI_API_INTERNAL_BOUNDARY_2 89
 #define NUI_API_INTERNAL_VERSION_2 401
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_NUI_InternalAPIVersionCheck(int * version, int * reserved1, int * reserved2 )
