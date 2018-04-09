@@ -64350,7 +64350,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageConnection(void * jarg1,
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
   {
     try {
-      (darg)->OnStageConnection(arg2);
+      if(darg) {
+        (darg)->OnStageConnection(arg2);
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -64383,7 +64385,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageConnectionSwigExplicitVi
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
   {
     try {
-      (darg)->OnStageConnectionSwigPublic(arg2);
+      if(darg) {
+        (darg)->OnStageConnectionSwigPublic(arg2);
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -64414,7 +64418,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageDisconnection(void * jar
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
   {
     try {
-      (darg)->OnStageDisconnection();
+      if(darg) {
+        (darg)->OnStageDisconnection();
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -64445,7 +64451,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageDisconnectionSwigExplici
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
   {
     try {
-      (darg)->OnStageDisconnectionSwigPublic();
+      if(darg) {
+        (darg)->OnStageDisconnectionSwigPublic();
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -64482,7 +64490,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildAdd(void * jarg1, void *
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
   {
     try {
-      (darg)->OnChildAdd(*arg2);
+      if(darg) {
+        (darg)->OnChildAdd(*arg2);
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -64519,7 +64529,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildAddSwigExplicitViewImpl(
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
   {
     try {
-      (darg)->OnChildAddSwigPublic(*arg2);
+      if(darg) {
+          (darg)->OnChildAddSwigPublic(*arg2);
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -64556,7 +64568,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildRemove(void * jarg1, voi
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
   {
     try {
-      (darg)->OnChildRemove(*arg2);
+      if(darg) {
+        (darg)->OnChildRemove(*arg2);
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -64593,7 +64607,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildRemoveSwigExplicitViewIm
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
   {
     try {
-      (darg)->OnChildRemoveSwigPublic(*arg2);
+      if(darg) {
+        (darg)->OnChildRemoveSwigPublic(*arg2);
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
