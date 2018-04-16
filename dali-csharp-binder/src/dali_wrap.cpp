@@ -64689,6 +64689,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnPropertySetSwigExplicitViewIm
   }
   arg3 = *argp3;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnPropertySetSwigPublic(arg2,arg3);
