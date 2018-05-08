@@ -14,7 +14,6 @@
 
 #define SWIG_DIRECTORS
 
-
 #ifdef __cplusplus
 /* SwigValueWrapper is described in swig.swg */
 template<typename T> class SwigValueWrapper {
@@ -166,7 +165,6 @@ template <typename T> T SwigValueInit() {
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-
 
 /* Support for throwing C# exceptions from C/C++. There are two types:
  * Exceptions that take a message and ArgumentExceptions that take a message and a parameter name. */
@@ -32706,7 +32704,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LowerToBottom(void * jarg1) {
 
 }
 
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RaiseAbove(void * jarg1, void * jarg2) {
   Dali::Actor arg1 ;
   Dali::Actor arg2 ;
@@ -62704,7 +62701,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TransitionData__SWIG_0() {
   jresult = (void *)result;
   return jresult;
 }
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TransitionData(void * jarg1) {
   Dali::Toolkit::TransitionData *arg1 = (Dali::Toolkit::TransitionData *) 0 ;
