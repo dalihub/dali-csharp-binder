@@ -280,5 +280,4 @@ private:
     void swig_init_callbacks();
 };
 
-
 #endif
