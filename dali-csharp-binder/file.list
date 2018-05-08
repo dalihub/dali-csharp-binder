@@ -8,6 +8,7 @@ dali_csharp_binder_src_files = \
   src/keyboard_focus_manager_wrap.cpp \
   src/devel-property-wrap.cpp \
   src/version-check.cpp \
+  src/layout-group-impl-wrap.cpp \
   src/view-wrapper-impl-wrap.cpp \
   src/event-thread-callback-wrap.cpp \
   src/application.cpp \
@@ -29,6 +30,7 @@ dali_csharp_binder_src_files_tizen = \
   src/keyboard_focus_manager_wrap.cpp \
   src/devel-property-wrap.cpp \
   src/version-check.cpp \
+  src/layout-group-impl-wrap.cpp \
   src/view-wrapper-impl-wrap.cpp \
   src/event-thread-callback-wrap.cpp \
   src/application.cpp \
