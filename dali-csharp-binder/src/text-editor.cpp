@@ -1441,13 +1441,37 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollStateChangedSignal(void * j
 
 }
 
-
 SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_ENABLE_SHIFT_SELECTION_get()
 {
   return (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_SHIFT_SELECTION;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_GetInputMethodContext(void * jarg1) {
+  void * jresult ;
+  Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0 ;
+  Dali::InputMethodContext result;
 
+  arg1 = (Dali::Toolkit::TextEditor *)jarg1;
+  {
+    try {
+      result = Dali::Toolkit::DevelTextEditor::GetInputMethodContext(*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::InputMethodContext((const Dali::InputMethodContext &)result);
+  return jresult;
+}
 #ifdef __cplusplus
 }
 #endif

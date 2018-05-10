@@ -14,47 +14,47 @@
 *
 */
 
-#ifndef CSHARP_IMF_MANAGER
-#define CSHARP_IMF_MANAGER
+#ifndef CSHARP_INPUT_METHOD_CONTEXT
+#define CSHARP_INPUT_METHOD_CONTEXT
 #endif
 
 #include "common.h"
-#include <dali/devel-api/adaptor-framework/imf-manager.h>
+#include <dali/devel-api/adaptor-framework/input-method-context.h>
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Empty(Dali::Signal< void (Dali::ImfManager &) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Empty(Dali::Signal< void (Dali::InputMethodContext &) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::ImfManager &) > const *self){
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::InputMethodContext &) > const *self){
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Connect(Dali::Signal< void (Dali::ImfManager &) > *self,void (*func)(Dali::ImfManager &)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Connect(Dali::Signal< void (Dali::InputMethodContext &) > *self,void (*func)(Dali::InputMethodContext &)){
   self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Disconnect(Dali::Signal< void (Dali::ImfManager &) > *self,void (*func)(Dali::ImfManager &)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Disconnect(Dali::Signal< void (Dali::InputMethodContext &) > *self,void (*func)(Dali::InputMethodContext &)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Emit(Dali::Signal< void (Dali::ImfManager &) > *self,Dali::ImfManager &arg){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Emit(Dali::Signal< void (Dali::InputMethodContext &) > *self,Dali::InputMethodContext &arg){
   self->Emit( arg );
 }
 
-SWIGINTERN bool Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Empty(Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__Empty(Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > const *self){
+SWIGINTERN std::size_t Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > const *self){
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Connect(Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *self,Dali::ImfManager::ImfCallbackData (*func)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &)){
+SWIGINTERN void Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__Connect(Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *self,Dali::InputMethodContext::CallbackData (*func)(Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &)){
   self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Disconnect(Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *self,Dali::ImfManager::ImfCallbackData (*func)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &)){
+SWIGINTERN void Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__Disconnect(Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *self,Dali::InputMethodContext::CallbackData (*func)(Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &)){
   self->Disconnect( func );
 }
-SWIGINTERN Dali::ImfManager::ImfCallbackData Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Emit(Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *self,Dali::ImfManager &arg1,Dali::ImfManager::ImfEventData const &arg2){
+SWIGINTERN Dali::InputMethodContext::CallbackData Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__Emit(Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *self,Dali::InputMethodContext &arg1,Dali::InputMethodContext::EventData const &arg2){
   return self->Emit( arg1, arg2 );
 }
 
@@ -74,19 +74,19 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Emit(Dali::Signal< void (boo
   self->Emit( arg );
 }
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Empty(Dali::Signal< void (Dali::ImfManager::KeyboardType) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_KeyboardType_SP__Sg__Empty(Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::ImfManager::KeyboardType) > const *self){
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_KeyboardType_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > const *self){
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Connect(Dali::Signal< void (Dali::ImfManager::KeyboardType) > *self,void (*func)(Dali::ImfManager::KeyboardType)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_KeyboardType_SP__Sg__Connect(Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *self,void (*func)(Dali::InputMethodContext::KeyboardType)){
   self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Disconnect(Dali::Signal< void (Dali::ImfManager::KeyboardType) > *self,void (*func)(Dali::ImfManager::KeyboardType)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_KeyboardType_SP__Sg__Disconnect(Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *self,void (*func)(Dali::InputMethodContext::KeyboardType)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Emit(Dali::Signal< void (Dali::ImfManager::KeyboardType) > *self,Dali::ImfManager::KeyboardType arg){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_KeyboardType_SP__Sg__Emit(Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *self,Dali::InputMethodContext::KeyboardType arg){
   self->Emit( arg );
 }
 
@@ -110,17 +110,17 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_int_SP__Sg__Emit(Dali::Signal< void (int)
 extern "C" {
 #endif
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_ImfManager_SWIGUpcast(Dali::ImfManager *jarg1) {
+SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_InputMethodContext_SWIGUpcast(Dali::InputMethodContext *jarg1) {
   return (Dali::BaseHandle *)jarg1;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfEventData__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_EventData__SWIG_0() {
   void * jresult ;
-  Dali::ImfManager::ImfEventData *result = 0 ;
+  Dali::InputMethodContext::EventData *result = 0 ;
 
   {
     try {
-      result = (Dali::ImfManager::ImfEventData *)new Dali::ImfManager::ImfEventData();
+      result = (Dali::InputMethodContext::EventData *)new Dali::InputMethodContext::EventData();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -135,15 +135,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfEventData__SWIG_0() 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfEventData__SWIG_1(int jarg1, char * jarg2, int jarg3, int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_EventData__SWIG_1(int jarg1, char * jarg2, int jarg3, int jarg4) {
   void * jresult ;
-  Dali::ImfManager::ImfEvent arg1 ;
+  Dali::InputMethodContext::EventType arg1 ;
   std::string *arg2 = 0 ;
   int arg3 ;
   int arg4 ;
-  Dali::ImfManager::ImfEventData *result = 0 ;
+  Dali::InputMethodContext::EventData *result = 0 ;
 
-  arg1 = (Dali::ImfManager::ImfEvent)jarg1;
+  arg1 = (Dali::InputMethodContext::EventType)jarg1;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
@@ -154,7 +154,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfEventData__SWIG_1(in
   arg4 = (int)jarg4;
   {
     try {
-      result = (Dali::ImfManager::ImfEventData *)new Dali::ImfManager::ImfEventData(arg1,(std::string const &)*arg2,arg3,arg4);
+      result = (Dali::InputMethodContext::EventData *)new Dali::InputMethodContext::EventData(arg1,(std::string const &)*arg2,arg3,arg4);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -172,11 +172,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfEventData__SWIG_1(in
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ImfEventData_predictiveString_set(void * jarg1, char * jarg2) {
-  Dali::ImfManager::ImfEventData *arg1 = (Dali::ImfManager::ImfEventData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_predictiveString_set(void * jarg1, char * jarg2) {
+  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
   std::string *arg2 = 0 ;
 
-  arg1 = (Dali::ImfManager::ImfEventData *)jarg1;
+  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
@@ -190,88 +190,88 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ImfEventData_predictiveString
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_ImfManager_ImfEventData_predictiveString_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_predictiveString_get(void * jarg1) {
   char * jresult ;
-  Dali::ImfManager::ImfEventData *arg1 = (Dali::ImfManager::ImfEventData *) 0 ;
+  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
   std::string *result = 0 ;
 
-  arg1 = (Dali::ImfManager::ImfEventData *)jarg1;
+  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
   result = (std::string *) & ((arg1)->predictiveString);
   jresult = SWIG_csharp_string_callback(result->c_str());
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ImfEventData_eventName_set(void * jarg1, int jarg2) {
-  Dali::ImfManager::ImfEventData *arg1 = (Dali::ImfManager::ImfEventData *) 0 ;
-  Dali::ImfManager::ImfEvent arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_eventName_set(void * jarg1, int jarg2) {
+  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
+  Dali::InputMethodContext::EventType arg2 ;
 
-  arg1 = (Dali::ImfManager::ImfEventData *)jarg1;
-  arg2 = (Dali::ImfManager::ImfEvent)jarg2;
+  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
+  arg2 = (Dali::InputMethodContext::EventType)jarg2;
   if (arg1) (arg1)->eventName = arg2;
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_ImfEventData_eventName_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_eventName_get(void * jarg1) {
   int jresult ;
-  Dali::ImfManager::ImfEventData *arg1 = (Dali::ImfManager::ImfEventData *) 0 ;
-  Dali::ImfManager::ImfEvent result;
+  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
+  Dali::InputMethodContext::EventType result;
 
-  arg1 = (Dali::ImfManager::ImfEventData *)jarg1;
-  result = (Dali::ImfManager::ImfEvent) ((arg1)->eventName);
+  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
+  result = (Dali::InputMethodContext::EventType) ((arg1)->eventName);
   jresult = (int)result;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ImfEventData_cursorOffset_set(void * jarg1, int jarg2) {
-  Dali::ImfManager::ImfEventData *arg1 = (Dali::ImfManager::ImfEventData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_cursorOffset_set(void * jarg1, int jarg2) {
+  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
   int arg2 ;
 
-  arg1 = (Dali::ImfManager::ImfEventData *)jarg1;
+  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
   arg2 = (int)jarg2;
   if (arg1) (arg1)->cursorOffset = arg2;
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_ImfEventData_cursorOffset_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_cursorOffset_get(void * jarg1) {
   int jresult ;
-  Dali::ImfManager::ImfEventData *arg1 = (Dali::ImfManager::ImfEventData *) 0 ;
+  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
   int result;
 
-  arg1 = (Dali::ImfManager::ImfEventData *)jarg1;
+  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
   result = (int) ((arg1)->cursorOffset);
   jresult = result;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ImfEventData_numberOfChars_set(void * jarg1, int jarg2) {
-  Dali::ImfManager::ImfEventData *arg1 = (Dali::ImfManager::ImfEventData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_numberOfChars_set(void * jarg1, int jarg2) {
+  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
   int arg2 ;
 
-  arg1 = (Dali::ImfManager::ImfEventData *)jarg1;
+  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
   arg2 = (int)jarg2;
   if (arg1) (arg1)->numberOfChars = arg2;
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_ImfEventData_numberOfChars_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_numberOfChars_get(void * jarg1) {
   int jresult ;
-  Dali::ImfManager::ImfEventData *arg1 = (Dali::ImfManager::ImfEventData *) 0 ;
+  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
   int result;
 
-  arg1 = (Dali::ImfManager::ImfEventData *)jarg1;
+  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
   result = (int) ((arg1)->numberOfChars);
   jresult = result;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfManager_ImfEventData(void * jarg1) {
-  Dali::ImfManager::ImfEventData *arg1 = (Dali::ImfManager::ImfEventData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext_EventData(void * jarg1) {
+  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
 
-  arg1 = (Dali::ImfManager::ImfEventData *)jarg1;
+  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
   {
     try {
       delete arg1;
@@ -287,13 +287,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfManager_ImfEventData(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfCallbackData__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_CallbackData__SWIG_0() {
   void * jresult ;
-  Dali::ImfManager::ImfCallbackData *result = 0 ;
+  Dali::InputMethodContext::CallbackData *result = 0 ;
 
   {
     try {
-      result = (Dali::ImfManager::ImfCallbackData *)new Dali::ImfManager::ImfCallbackData();
+      result = (Dali::InputMethodContext::CallbackData *)new Dali::InputMethodContext::CallbackData();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -308,13 +308,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfCallbackData__SWIG_0
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfCallbackData__SWIG_1(unsigned int jarg1, int jarg2, char * jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_CallbackData__SWIG_1(unsigned int jarg1, int jarg2, char * jarg3, unsigned int jarg4) {
   void * jresult ;
   bool arg1 ;
   int arg2 ;
   std::string *arg3 = 0 ;
   bool arg4 ;
-  Dali::ImfManager::ImfCallbackData *result = 0 ;
+  Dali::InputMethodContext::CallbackData *result = 0 ;
 
   arg1 = jarg1 ? true : false;
   arg2 = (int)jarg2;
@@ -327,7 +327,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfCallbackData__SWIG_1
   arg4 = jarg4 ? true : false;
   {
     try {
-      result = (Dali::ImfManager::ImfCallbackData *)new Dali::ImfManager::ImfCallbackData(arg1,arg2,(std::string const &)*arg3,arg4);
+      result = (Dali::InputMethodContext::CallbackData *)new Dali::InputMethodContext::CallbackData(arg1,arg2,(std::string const &)*arg3,arg4);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -345,11 +345,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager_ImfCallbackData__SWIG_1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ImfCallbackData_currentText_set(void * jarg1, char * jarg2) {
-  Dali::ImfManager::ImfCallbackData *arg1 = (Dali::ImfManager::ImfCallbackData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_currentText_set(void * jarg1, char * jarg2) {
+  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
   std::string *arg2 = 0 ;
 
-  arg1 = (Dali::ImfManager::ImfCallbackData *)jarg1;
+  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
@@ -363,88 +363,88 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ImfCallbackData_currentText_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_ImfManager_ImfCallbackData_currentText_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_currentText_get(void * jarg1) {
   char * jresult ;
-  Dali::ImfManager::ImfCallbackData *arg1 = (Dali::ImfManager::ImfCallbackData *) 0 ;
+  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
   std::string *result = 0 ;
 
-  arg1 = (Dali::ImfManager::ImfCallbackData *)jarg1;
+  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
   result = (std::string *) & ((arg1)->currentText);
   jresult = SWIG_csharp_string_callback(result->c_str());
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ImfCallbackData_cursorPosition_set(void * jarg1, int jarg2) {
-  Dali::ImfManager::ImfCallbackData *arg1 = (Dali::ImfManager::ImfCallbackData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_cursorPosition_set(void * jarg1, int jarg2) {
+  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
   int arg2 ;
 
-  arg1 = (Dali::ImfManager::ImfCallbackData *)jarg1;
+  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
   arg2 = (int)jarg2;
   if (arg1) (arg1)->cursorPosition = arg2;
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_ImfCallbackData_cursorPosition_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_cursorPosition_get(void * jarg1) {
   int jresult ;
-  Dali::ImfManager::ImfCallbackData *arg1 = (Dali::ImfManager::ImfCallbackData *) 0 ;
+  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
   int result;
 
-  arg1 = (Dali::ImfManager::ImfCallbackData *)jarg1;
+  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
   result = (int) ((arg1)->cursorPosition);
   jresult = result;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ImfCallbackData_update_set(void * jarg1, unsigned int jarg2) {
-  Dali::ImfManager::ImfCallbackData *arg1 = (Dali::ImfManager::ImfCallbackData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_update_set(void * jarg1, unsigned int jarg2) {
+  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
   bool arg2 ;
 
-  arg1 = (Dali::ImfManager::ImfCallbackData *)jarg1;
+  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
   arg2 = jarg2 ? true : false;
   if (arg1) (arg1)->update = arg2;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfManager_ImfCallbackData_update_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_update_get(void * jarg1) {
   unsigned int jresult ;
-  Dali::ImfManager::ImfCallbackData *arg1 = (Dali::ImfManager::ImfCallbackData *) 0 ;
+  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
   bool result;
 
-  arg1 = (Dali::ImfManager::ImfCallbackData *)jarg1;
+  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
   result = (bool) ((arg1)->update);
   jresult = result;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ImfCallbackData_preeditResetRequired_set(void * jarg1, unsigned int jarg2) {
-  Dali::ImfManager::ImfCallbackData *arg1 = (Dali::ImfManager::ImfCallbackData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_preeditResetRequired_set(void * jarg1, unsigned int jarg2) {
+  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
   bool arg2 ;
 
-  arg1 = (Dali::ImfManager::ImfCallbackData *)jarg1;
+  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
   arg2 = jarg2 ? true : false;
   if (arg1) (arg1)->preeditResetRequired = arg2;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfManager_ImfCallbackData_preeditResetRequired_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_preeditResetRequired_get(void * jarg1) {
   unsigned int jresult ;
-  Dali::ImfManager::ImfCallbackData *arg1 = (Dali::ImfManager::ImfCallbackData *) 0 ;
+  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
   bool result;
 
-  arg1 = (Dali::ImfManager::ImfCallbackData *)jarg1;
+  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
   result = (bool) ((arg1)->preeditResetRequired);
   jresult = result;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfManager_ImfCallbackData(void * jarg1) {
-  Dali::ImfManager::ImfCallbackData *arg1 = (Dali::ImfManager::ImfCallbackData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext_CallbackData(void * jarg1) {
+  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
 
-  arg1 = (Dali::ImfManager::ImfCallbackData *)jarg1;
+  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
   {
     try {
       delete arg1;
@@ -459,10 +459,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfManager_ImfCallbackData(void *
     } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Finalize(void * jarg1) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Finalize(void * jarg1) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
 //      (arg1)->Finalize();
@@ -477,13 +477,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Finalize(void * jarg1) {
     } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_Get() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext__SWIG_0() {
   void * jresult ;
-  Dali::ImfManager result;
+  Dali::InputMethodContext *result = 0 ;
 
   {
     try {
-      result = Dali::ImfManager::Get();
+      result = (Dali::InputMethodContext *)new Dali::InputMethodContext();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -492,16 +492,171 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_Get() {
       {
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
-  jresult = new Dali::ImfManager((const Dali::ImfManager &)result);
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Activate(void * jarg1) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext(void * jarg1) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_New() {
+  void * jresult ;
+  Dali::InputMethodContext result;
+
+  {
+    try {
+      result = Dali::InputMethodContext::New();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::InputMethodContext((const Dali::InputMethodContext &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext__SWIG_1(void * jarg1) {
+  void * jresult ;
+  Dali::InputMethodContext *arg1 = 0 ;
+  Dali::InputMethodContext *result = 0 ;
+
+  arg1 = (Dali::InputMethodContext *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::InputMethodContext const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::InputMethodContext *)new Dali::InputMethodContext((Dali::InputMethodContext const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_Assign(void * jarg1, void * jarg2) {
+  void * jresult ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext *arg2 = 0 ;
+  Dali::InputMethodContext *result = 0 ;
+
+  arg1 = (Dali::InputMethodContext *)jarg1;
+  arg2 = (Dali::InputMethodContext *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::InputMethodContext const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::InputMethodContext *) &(arg1)->operator =((Dali::InputMethodContext const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_DownCast(void * jarg1) {
+  void * jresult ;
+  Dali::BaseHandle arg1 ;
+  Dali::BaseHandle *argp1 ;
+  Dali::InputMethodContext result;
+
+  argp1 = (Dali::BaseHandle *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
+    return 0;
+  }
+  arg1 = *argp1;
+  {
+    try {
+      result = Dali::InputMethodContext::DownCast(arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::InputMethodContext((const Dali::InputMethodContext &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Activate(void * jarg1) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
       (arg1)->Activate();
@@ -517,10 +672,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Activate(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Deactivate(void * jarg1) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Deactivate(void * jarg1) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
       (arg1)->Deactivate();
@@ -536,15 +691,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Deactivate(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfManager_RestoreAfterFocusLost(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_RestoreAfterFocusLost(void * jarg1) {
   unsigned int jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   bool result;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (bool)((Dali::ImfManager const *)arg1)->RestoreAfterFocusLost();
+      result = (bool)((Dali::InputMethodContext const *)arg1)->RestoreAfterFocusLost();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -559,11 +714,11 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfManager_RestoreAfterFocusLost
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetRestoreAfterFocusLost(void * jarg1, unsigned int jarg2) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetRestoreAfterFocusLost(void * jarg1, unsigned int jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   bool arg2 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   arg2 = jarg2 ? true : false;
   {
     try {
@@ -580,10 +735,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetRestoreAfterFocusLost(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Reset(void * jarg1) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Reset(void * jarg1) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
       (arg1)->Reset();
@@ -599,10 +754,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_Reset(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_NotifyCursorPosition(void * jarg1) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_NotifyCursorPosition(void * jarg1) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
       (arg1)->NotifyCursorPosition();
@@ -618,11 +773,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_NotifyCursorPosition(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetCursorPosition(void * jarg1, unsigned int jarg2) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetCursorPosition(void * jarg1, unsigned int jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   unsigned int arg2 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   arg2 = (unsigned int)jarg2;
   {
     try {
@@ -639,15 +794,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetCursorPosition(void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfManager_GetCursorPosition(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetCursorPosition(void * jarg1) {
   unsigned int jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   unsigned int result;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (unsigned int)((Dali::ImfManager const *)arg1)->GetCursorPosition();
+      result = (unsigned int)((Dali::InputMethodContext const *)arg1)->GetCursorPosition();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -662,11 +817,11 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfManager_GetCursorPosition(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetSurroundingText(void * jarg1, char * jarg2) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetSurroundingText(void * jarg1, char * jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   std::string *arg2 = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
@@ -691,15 +846,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetSurroundingText(void * jar
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_ImfManager_GetSurroundingText(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_GetSurroundingText(void * jarg1) {
   char * jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   std::string *result = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (std::string *) &((Dali::ImfManager const *)arg1)->GetSurroundingText();
+      result = (std::string *) &((Dali::InputMethodContext const *)arg1)->GetSurroundingText();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -714,11 +869,11 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_ImfManager_GetSurroundingText(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_NotifyTextInputMultiLine(void * jarg1, unsigned int jarg2) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_NotifyTextInputMultiLine(void * jarg1, unsigned int jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   bool arg2 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   arg2 = jarg2 ? true : false;
   {
     try {
@@ -735,15 +890,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_NotifyTextInputMultiLine(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_GetTextDirection(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetTextDirection(void * jarg1) {
   int jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::TextDirection result;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::TextDirection result;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::TextDirection)(arg1)->GetTextDirection();
+      result = (Dali::InputMethodContext::TextDirection)(arg1)->GetTextDirection();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -758,12 +913,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_GetTextDirection(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_GetInputMethodArea(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputMethodArea(void * jarg1) {
   void * jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   Dali::Rect< int > result;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
       result = (arg1)->GetInputMethodArea();
@@ -781,11 +936,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_GetInputMethodArea(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ApplyOptions(void * jarg1, void * jarg2) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_ApplyOptions(void * jarg1, void * jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   Dali::InputMethodOptions *arg2 = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   arg2 = (Dali::InputMethodOptions *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "InputMethodOptions const & type is null", 0);
@@ -806,11 +961,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ApplyOptions(void * jarg1, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetInputPanelUserData(void * jarg1, char * jarg2) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelUserData(void * jarg1, char * jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   std::string *arg2 = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
@@ -835,11 +990,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetInputPanelUserData(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelUserData(void * jarg1, char** jarg2) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelUserData(void * jarg1, char** jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   std::string *arg2 = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
 
   //typemap in
   std::string temp;
@@ -865,15 +1020,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelUserData(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelState(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelState(void * jarg1) {
   int jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::State result;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::State result;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::State)(arg1)->GetInputPanelState();
+      result = (Dali::InputMethodContext::State)(arg1)->GetInputPanelState();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -888,11 +1043,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelState(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetReturnKeyState(void * jarg1, unsigned int jarg2) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetReturnKeyState(void * jarg1, unsigned int jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   bool arg2 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   arg2 = jarg2 ? true : false;
   {
     try {
@@ -909,11 +1064,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_SetReturnKeyState(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_AutoEnableInputPanel(void * jarg1, unsigned int jarg2) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_AutoEnableInputPanel(void * jarg1, unsigned int jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   bool arg2 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   arg2 = jarg2 ? true : false;
   {
     try {
@@ -930,10 +1085,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_AutoEnableInputPanel(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ShowInputPanel(void * jarg1) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_ShowInputPanel(void * jarg1) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
       (arg1)->ShowInputPanel();
@@ -949,10 +1104,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_ShowInputPanel(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_HideInputPanel(void * jarg1) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_HideInputPanel(void * jarg1) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
       (arg1)->HideInputPanel();
@@ -968,15 +1123,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfManager_HideInputPanel(void * jarg1) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_GetKeyboardType(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetKeyboardType(void * jarg1) {
   int jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::KeyboardType result;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::KeyboardType result;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::KeyboardType)(arg1)->GetKeyboardType();
+      result = (Dali::InputMethodContext::KeyboardType)(arg1)->GetKeyboardType();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -991,12 +1146,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImfManager_GetKeyboardType(void * jarg1) 
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelLocale(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelLocale(void * jarg1) {
   char * jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
   std::string result;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
       result = (arg1)->GetInputPanelLocale();
@@ -1014,15 +1169,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_ImfManager_GetInputPanelLocale(void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_ActivatedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ActivatedSignal(void * jarg1) {
   void * jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::ImfManagerSignalType *result = 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::ActivatedSignalType *result = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::ImfManagerSignalType *) &(arg1)->ActivatedSignal();
+      result = (Dali::InputMethodContext::ActivatedSignalType *) &(arg1)->ActivatedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1037,15 +1192,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_ActivatedSignal(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_EventReceivedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_EventReceivedSignal(void * jarg1) {
   void * jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::ImfEventSignalType *result = 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::KeyboardEventSignalType *result = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::ImfEventSignalType *) &(arg1)->EventReceivedSignal();
+      result = (Dali::InputMethodContext::KeyboardEventSignalType *) &(arg1)->EventReceivedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1060,15 +1215,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_EventReceivedSignal(void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_StatusChangedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_StatusChangedSignal(void * jarg1) {
   void * jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::StatusSignalType *result = 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::StatusSignalType *result = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::StatusSignalType *) &(arg1)->StatusChangedSignal();
+      result = (Dali::InputMethodContext::StatusSignalType *) &(arg1)->StatusChangedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1082,15 +1237,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_StatusChangedSignal(void * 
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_ResizedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ResizedSignal(void * jarg1) {
   void * jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::KeyboardResizedSignalType *result = 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::KeyboardResizedSignalType *result = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::KeyboardResizedSignalType *) &(arg1)->ResizedSignal();
+      result = (Dali::InputMethodContext::KeyboardResizedSignalType *) &(arg1)->ResizedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1109,15 +1264,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_ResizedSignal(void * jarg1)
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_LanguageChangedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_LanguageChangedSignal(void * jarg1) {
   void * jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::LanguageChangedSignalType *result = 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::LanguageChangedSignalType *result = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::LanguageChangedSignalType *) &(arg1)->LanguageChangedSignal();
+      result = (Dali::InputMethodContext::LanguageChangedSignalType *) &(arg1)->LanguageChangedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1136,15 +1291,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_LanguageChangedSignal(void 
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_KeyboardTypeChangedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_KeyboardTypeChangedSignal(void * jarg1) {
   void * jresult ;
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-  Dali::ImfManager::KeyboardTypeSignalType *result = 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::KeyboardTypeSignalType *result = 0 ;
 
-  arg1 = (Dali::ImfManager *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      result = (Dali::ImfManager::KeyboardTypeSignalType *) &(arg1)->KeyboardTypeChangedSignal();
+      result = (Dali::InputMethodContext::KeyboardTypeSignalType *) &(arg1)->KeyboardTypeChangedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1157,59 +1312,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfManager_KeyboardTypeChangedSignal(v
   jresult = (void *)result;
   return jresult;
 }
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfManager() {
-  void * jresult ;
-  Dali::ImfManager *result = 0 ;
-
-  {
-    try {
-      result = (Dali::ImfManager *)new Dali::ImfManager();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfManager(void * jarg1) {
-  Dali::ImfManager *arg1 = (Dali::ImfManager *) 0 ;
-
-  arg1 = (Dali::ImfManager *)jarg1;
-  {
-    try {
-      delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
-}
-
-
 
 // ActivatedSignalType
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::ImfManager &) > *arg1 = (Dali::Signal< void (Dali::ImfManager &) > *) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager &) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Empty((Dali::Signal< void (Dali::ImfManager &) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Empty((Dali::Signal< void (Dali::InputMethodContext &) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1226,13 +1339,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Empty(void *
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ActivatedSignalType_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::ImfManager &) > *arg1 = (Dali::Signal< void (Dali::ImfManager &) > *) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager &) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::ImfManager &) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::InputMethodContext &) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1248,14 +1361,14 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ActivatedSignalType_GetConnecti
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::ImfManager &) > *arg1 = (Dali::Signal< void (Dali::ImfManager &) > *) 0 ;
-  void (*arg2)(Dali::ImfManager &) = (void (*)(Dali::ImfManager &)) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
+  void (*arg2)(Dali::InputMethodContext &) = (void (*)(Dali::InputMethodContext &)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager &) > *)jarg1;
-  arg2 = (void (*)(Dali::ImfManager &))jarg2;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
+  arg2 = (void (*)(Dali::InputMethodContext &))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Connect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Connect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1269,14 +1382,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Connect(void * jarg1
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::ImfManager &) > *arg1 = (Dali::Signal< void (Dali::ImfManager &) > *) 0 ;
-  void (*arg2)(Dali::ImfManager &) = (void (*)(Dali::ImfManager &)) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
+  void (*arg2)(Dali::InputMethodContext &) = (void (*)(Dali::InputMethodContext &)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager &) > *)jarg1;
-  arg2 = (void (*)(Dali::ImfManager &))jarg2;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
+  arg2 = (void (*)(Dali::InputMethodContext &))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Disconnect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Disconnect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1290,18 +1403,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Disconnect(void * ja
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Emit(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::ImfManager &) > *arg1 = (Dali::Signal< void (Dali::ImfManager &) > *) 0 ;
-  Dali::ImfManager *arg2 = 0 ;
+  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
+  Dali::InputMethodContext *arg2 = 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager &) > *)jarg1;
-  arg2 = (Dali::ImfManager *)jarg2;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
+  arg2 = (Dali::InputMethodContext *)jarg2;
   if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::ImfManager & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::InputMethodContext & type is null", 0);
     return ;
   }
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_ImfManager_SA__SP__Sg__Emit(arg1,*arg2);
+      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Emit(arg1,*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1316,11 +1429,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Emit(void * jarg1, v
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ActivatedSignalType() {
   void * jresult ;
-  Dali::Signal< void (Dali::ImfManager &) > *result = 0 ;
+  Dali::Signal< void (Dali::InputMethodContext &) > *result = 0 ;
 
   {
     try {
-      result = (Dali::Signal< void (Dali::ImfManager &) > *)new Dali::Signal< void (Dali::ImfManager &) >();
+      result = (Dali::Signal< void (Dali::InputMethodContext &) > *)new Dali::Signal< void (Dali::InputMethodContext &) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1336,9 +1449,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ActivatedSignalType() {
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActivatedSignalType(void * jarg1) {
-  Dali::Signal< void (Dali::ImfManager &) > *arg1 = (Dali::Signal< void (Dali::ImfManager &) > *) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager &) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
   {
     try {
       delete arg1;
@@ -1353,16 +1466,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActivatedSignalType(void * jarg1)
     } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
-// ImfEventSignalType
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Empty(void * jarg1) {
+// KeyboardEventSignalType
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *) 0 ;
+  Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)jarg1;
+  arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Empty((Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__Empty((Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1377,15 +1490,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Empty(void * 
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ImfEventSignalType_GetConnectionCount(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *) 0 ;
+  Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)jarg1;
+  arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > const *)arg1);
+      result = Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1399,44 +1512,44 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ImfEventSignalType_GetConnectio
   return jresult;
 }
 
-typedef Dali::ImfManager::ImfCallbackData* (SWIGSTDCALL* SWIG_CallbackEventReceived)(Dali::ImfManager *, Dali::ImfManager::ImfEventData *);
+typedef Dali::InputMethodContext::CallbackData* (SWIGSTDCALL* SWIG_CallbackEventReceived)(Dali::InputMethodContext *, Dali::InputMethodContext::EventData *);
 SWIG_CallbackEventReceived swig_callbackOnEventReceived;
 
-Dali::ImfManager::ImfCallbackData OnEventReceivedCallback(Dali::ImfManager imfManager, Dali::ImfManager::ImfEventData imfEventData)
+Dali::InputMethodContext::CallbackData OnEventReceivedCallback(Dali::InputMethodContext inputMethodContext, Dali::InputMethodContext::EventData eventData)
 {
-    Dali::ImfManager::ImfCallbackData *imfCallbackDataP;
-    Dali::ImfManager::ImfCallbackData imfCallbackData;
-    Dali::ImfManager *imfManagerP = NULL;
-    Dali::ImfManager::ImfEventData *imfEventDataP = NULL;
+    Dali::InputMethodContext::CallbackData *callbackDataP;
+    Dali::InputMethodContext::CallbackData callbackData;
+    Dali::InputMethodContext *inputMethodContextP = NULL;
+    Dali::InputMethodContext::EventData *eventDataP = NULL;
 
-    if (imfManager)
+    if (inputMethodContext)
     {
-      imfManagerP = (Dali::ImfManager *)&imfManager;
+      inputMethodContextP = (Dali::InputMethodContext *)&inputMethodContext;
     }
 
-    imfEventDataP = (Dali::ImfManager::ImfEventData *)&imfEventData;
+    eventDataP = (Dali::InputMethodContext::EventData *)&eventData;
 
-    imfCallbackDataP = (Dali::ImfManager::ImfCallbackData *)swig_callbackOnEventReceived(imfManagerP, imfEventDataP);
-    if (imfCallbackDataP)
+    callbackDataP = (Dali::InputMethodContext::CallbackData *)swig_callbackOnEventReceived(inputMethodContextP, eventDataP);
+    if (callbackDataP)
     {
-      imfCallbackData = *imfCallbackDataP;
+      callbackData = *callbackDataP;
     }
 
-    return imfCallbackData;
+    return callbackData;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Connect(void * jarg1, SWIG_CallbackEventReceived callbackOnEventReceived) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Connect(void * jarg1, SWIG_CallbackEventReceived callbackOnEventReceived) {
 
   swig_callbackOnEventReceived = callbackOnEventReceived;
 
-  Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *) 0 ;
-  Dali::ImfManager::ImfCallbackData (*arg2)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &)) 0 ;
+  Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *) 0 ;
+  Dali::InputMethodContext::CallbackData (*arg2)(Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) = (Dali::InputMethodContext::CallbackData (*)(Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &)) 0 ;
 
-  arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)jarg1;
-  arg2 = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &))OnEventReceivedCallback;
+  arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)jarg1;
+  arg2 = (Dali::InputMethodContext::CallbackData (*)(Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &))OnEventReceivedCallback;
   {
     try {
-      Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Connect(arg1,arg2);
+      Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__Connect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1449,18 +1562,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Connect(void * jarg1,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Disconnect(void * jarg1, SWIG_CallbackEventReceived callbackOnEventReceived) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Disconnect(void * jarg1, SWIG_CallbackEventReceived callbackOnEventReceived) {
 
   swig_callbackOnEventReceived = callbackOnEventReceived;
 
-  Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *) 0 ;
-  Dali::ImfManager::ImfCallbackData (*arg2)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &)) 0 ;
+  Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *) 0 ;
+  Dali::InputMethodContext::CallbackData (*arg2)(Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) = (Dali::InputMethodContext::CallbackData (*)(Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &)) 0 ;
 
-  arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)jarg1;
-  arg2 = (Dali::ImfManager::ImfCallbackData (*)(Dali::ImfManager &,Dali::ImfManager::ImfEventData const &))OnEventReceivedCallback;
+  arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)jarg1;
+  arg2 = (Dali::InputMethodContext::CallbackData (*)(Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &))OnEventReceivedCallback;
   {
     try {
-      Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
+      Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1472,27 +1585,27 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Disconnect(void * jar
     } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Emit(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Emit(void * jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
-  Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *) 0 ;
-  Dali::ImfManager *arg2 = 0 ;
-  Dali::ImfManager::ImfEventData *arg3 = 0 ;
-  Dali::ImfManager::ImfCallbackData result;
+  Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *) 0 ;
+  Dali::InputMethodContext *arg2 = 0 ;
+  Dali::InputMethodContext::EventData *arg3 = 0 ;
+  Dali::InputMethodContext::CallbackData result;
 
-  arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)jarg1;
-  arg2 = (Dali::ImfManager *)jarg2;
+  arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)jarg1;
+  arg2 = (Dali::InputMethodContext *)jarg2;
   if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::ImfManager & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::InputMethodContext & type is null", 0);
     return 0;
   }
-  arg3 = (Dali::ImfManager::ImfEventData *)jarg3;
+  arg3 = (Dali::InputMethodContext::EventData *)jarg3;
   if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::ImfManager::ImfEventData const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::InputMethodContext::EventData const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = Dali_Signal_Sl_Dali_ImfManager_ImfCallbackData_Sp_Dali_ImfManager_SA__Sc_Dali_ImfManager_ImfEventData_SS_const_SA__SP__Sg__Emit(arg1,*arg2,(Dali::ImfManager::ImfEventData const &)*arg3);
+      result = Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__Emit(arg1,*arg2,(Dali::InputMethodContext::EventData const &)*arg3);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1502,18 +1615,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImfEventSignalType_Emit(void * jarg1, 
         SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
       };
     } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
-  jresult = new Dali::ImfManager::ImfCallbackData((const Dali::ImfManager::ImfCallbackData &)result);
+  jresult = new Dali::InputMethodContext::CallbackData((const Dali::InputMethodContext::CallbackData &)result);
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfEventSignalType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_KeyboardEventSignalType() {
   void * jresult ;
-  Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *result = 0 ;
+  Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *result = 0 ;
 
   {
     try {
-      result = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)new Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) >();
+      result = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)new Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1528,10 +1641,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfEventSignalType() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfEventSignalType(void * jarg1) {
-  Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyboardEventSignalType(void * jarg1) {
+  Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *) 0 ;
 
-  arg1 = (Dali::Signal< Dali::ImfManager::ImfCallbackData (Dali::ImfManager &,Dali::ImfManager::ImfEventData const &) > *)jarg1;
+  arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)jarg1;
   {
     try {
       delete arg1;
@@ -1547,8 +1660,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfEventSignalType(void * jarg1) 
 }
 
 
-// ImfVoidSignalType
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfVoidSignalType() {
+// VoidSignalType
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VoidSignalType() {
   void * jresult ;
   Dali::Signal< void () > *result = 0 ;
 
@@ -1569,7 +1682,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImfVoidSignalType() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfVoidSignalType(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VoidSignalType(void * jarg1) {
   Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
 
   arg1 = (Dali::Signal< void () > *)jarg1;
@@ -1588,7 +1701,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImfVoidSignalType(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_VoidSignalType_Empty(void * jarg1) {
   unsigned int jresult ;
   Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
   bool result;
@@ -1611,7 +1724,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Empty(void * j
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_GetConnectionCount(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_VoidSignalType_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
   Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
   std::size_t result;
@@ -1634,7 +1747,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_GetConnection
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Connect__SWIG_0(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VoidSignalType_Connect__SWIG_0(void * jarg1, void * jarg2) {
   Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
   void (*arg2)() = (void (*)()) 0 ;
 
@@ -1655,7 +1768,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Connect__SWIG_0(void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Disconnect(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VoidSignalType_Disconnect(void * jarg1, void * jarg2) {
   Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
   void (*arg2)() = (void (*)()) 0 ;
 
@@ -1676,7 +1789,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Disconnect(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Connect__SWIG_4(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VoidSignalType_Connect__SWIG_4(void * jarg1, void * jarg2, void * jarg3) {
   Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
   Dali::ConnectionTrackerInterface *arg2 = (Dali::ConnectionTrackerInterface *) 0 ;
   Dali::FunctorDelegate *arg3 = (Dali::FunctorDelegate *) 0 ;
@@ -1699,7 +1812,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Connect__SWIG_4(void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImfVoidSignalType_Emit(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VoidSignalType_Emit(void * jarg1) {
   Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
 
   arg1 = (Dali::Signal< void () > *)jarg1;
@@ -1869,13 +1982,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_StatusSignalType(void * jarg1) {
 //KeyboardTypeSignalType
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::ImfManager::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Empty((Dali::Signal< void (Dali::ImfManager::KeyboardType) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_KeyboardType_SP__Sg__Empty((Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1892,13 +2005,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Empty(voi
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::ImfManager::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::ImfManager::KeyboardType) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_KeyboardType_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1914,14 +2027,14 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_GetConne
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::ImfManager::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *) 0 ;
-  void (*arg2)(Dali::ImfManager::KeyboardType) = (void (*)(Dali::ImfManager::KeyboardType)) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *) 0 ;
+  void (*arg2)(Dali::InputMethodContext::KeyboardType) = (void (*)(Dali::InputMethodContext::KeyboardType)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *)jarg1;
-  arg2 = (void (*)(Dali::ImfManager::KeyboardType))jarg2;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *)jarg1;
+  arg2 = (void (*)(Dali::InputMethodContext::KeyboardType))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Connect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_KeyboardType_SP__Sg__Connect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1935,14 +2048,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Connect(void * ja
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::ImfManager::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *) 0 ;
-  void (*arg2)(Dali::ImfManager::KeyboardType) = (void (*)(Dali::ImfManager::KeyboardType)) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *) 0 ;
+  void (*arg2)(Dali::InputMethodContext::KeyboardType) = (void (*)(Dali::InputMethodContext::KeyboardType)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *)jarg1;
-  arg2 = (void (*)(Dali::ImfManager::KeyboardType))jarg2;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *)jarg1;
+  arg2 = (void (*)(Dali::InputMethodContext::KeyboardType))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Disconnect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_KeyboardType_SP__Sg__Disconnect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1956,14 +2069,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Disconnect(void *
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Emit(void * jarg1, int jarg2) {
-  Dali::Signal< void (Dali::ImfManager::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *) 0 ;
-  Dali::ImfManager::KeyboardType arg2 ;
+  Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *) 0 ;
+  Dali::InputMethodContext::KeyboardType arg2 ;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *)jarg1;
-  arg2 = (Dali::ImfManager::KeyboardType)jarg2;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *)jarg1;
+  arg2 = (Dali::InputMethodContext::KeyboardType)jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_ImfManager_KeyboardType_SP__Sg__Emit(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_KeyboardType_SP__Sg__Emit(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -1978,11 +2091,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardTypeSignalType_Emit(void * jarg1
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_KeyboardTypeSignalType() {
   void * jresult ;
-  Dali::Signal< void (Dali::ImfManager::KeyboardType) > *result = 0 ;
+  Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *result = 0 ;
 
   {
     try {
-      result = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *)new Dali::Signal< void (Dali::ImfManager::KeyboardType) >();
+      result = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *)new Dali::Signal< void (Dali::InputMethodContext::KeyboardType) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1998,9 +2111,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_KeyboardTypeSignalType() {
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyboardTypeSignalType(void * jarg1) {
-  Dali::Signal< void (Dali::ImfManager::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::ImfManager::KeyboardType) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::InputMethodContext::KeyboardType) > *)jarg1;
   {
     try {
       delete arg1;
