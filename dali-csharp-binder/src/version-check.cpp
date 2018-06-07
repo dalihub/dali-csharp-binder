@@ -59,6 +59,9 @@ dali native and nui versioning :
 //from dali_1.2.86, nui_api_internal_version is set as 401
 #define NUI_API_INTERNAL_BOUNDARY_2 89
 #define NUI_API_INTERNAL_VERSION_2 401
+//from dali_1.2.90, nui_api_internal_version is set as 402
+#define NUI_API_INTERNAL_BOUNDARY_3 90
+#define NUI_API_INTERNAL_VERSION_3 402
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_NUI_InternalAPIVersionCheck(int * version, int * reserved1, int * reserved2 )
 {
@@ -76,6 +79,13 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_NUI_InternalAPIVersionCheck(int * version, in
       else if(Dali::CORE_MICRO_VERSION > NUI_API_INTERNAL_VER_BOUNDARY_1 && Dali::CORE_MICRO_VERSION <= NUI_API_INTERNAL_BOUNDARY_2)
       {
         *version = NUI_API_INTERNAL_VERSION_2;
+        *reserved1 = 0;
+        *reserved2 = 0;
+        return true;
+      }
+      else if(Dali::CORE_MICRO_VERSION > NUI_API_INTERNAL_VER_BOUNDARY_1 && Dali::CORE_MICRO_VERSION <= NUI_API_INTERNAL_BOUNDARY_3)
+      {
+        *version = NUI_API_INTERNAL_VERSION_3;
         *reserved1 = 0;
         *reserved2 = 0;
         return true;

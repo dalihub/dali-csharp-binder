@@ -40,6 +40,7 @@ dali_csharp_binder_src_files_tizen = \
   src/input-method-options.cpp \
   src/animation.cpp \
   src/key-grab.cpp \
+  src/keyboard.cpp \
   src/watch.cpp \
   src/widget_view.cpp \
   src/widget_view_manager.cpp \
