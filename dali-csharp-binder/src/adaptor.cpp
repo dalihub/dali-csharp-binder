@@ -384,7 +384,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Adaptor_AddIdle(void * jarg1, vo
   arg2 = (Dali::CallbackBase *)jarg2;
   {
     try {
-      result = (bool)(arg1)->AddIdle(arg2);
+      result = (bool)(arg1)->AddIdle(arg2, false);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
