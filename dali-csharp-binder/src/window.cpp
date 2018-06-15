@@ -1,4 +1,4 @@
-/** Copyright (c) 2017 Samsung Electronics Co., Ltd.
+/** Copyright (c) 2018 Samsung Electronics Co., Ltd.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -22,6 +22,9 @@
 #include <dali/devel-api/adaptor-framework/drag-and-drop-detector.h>
 #include <dali/public-api/adaptor-framework/window.h>
 #include <dali/integration-api/adaptors/adaptor.h>
+
+#include <dali-toolkit/devel-api/controls/control-devel.h>
+#include <dali-toolkit/devel-api/layouting/absolute-layout.h>
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
@@ -2528,6 +2531,29 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_RenderOnce(void * /* jarg1 */) {
       SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
     };
   }
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_New_Root_Layout() {
+  void * jresult ;
+  Dali::Toolkit::Control result;
+  {
+    try {
+      Dali::Toolkit::AbsoluteLayout absoluteLayout = Dali::Toolkit::AbsoluteLayout::New();
+      result = Dali::Toolkit::Control::New();
+      Dali::Toolkit::DevelControl::SetLayout( result, absoluteLayout );
+      result.SetName("rootAbsoluteLayout");
+      result.SetAnchorPoint( Dali::AnchorPoint::CENTER );
+      result.SetParentOrigin( Dali::ParentOrigin::CENTER );
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control &)result);
+
+  return jresult;
 }
 
 #ifdef __cplusplus
