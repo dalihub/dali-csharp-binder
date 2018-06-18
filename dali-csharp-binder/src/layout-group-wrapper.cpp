@@ -32,16 +32,6 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LayoutGroupWrapper_UNKNOWN_ID_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LayoutGroupWrapper_ChildProperty_MARGIN_SPECIFICATION_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::LayoutGroup::ChildProperty::MARGIN_SPECIFICATION;
-  jresult = (int)result;
-  return jresult;
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_LayoutGroupWrapper_ChildProperty() {
   void * jresult ;
   Dali::Toolkit::LayoutGroup::ChildProperty *result = 0 ;
@@ -454,4 +444,3 @@ SWIGEXPORT Dali::Toolkit::LayoutItem * SWIGSTDCALL CSharp_Dali_LayoutGroupWrappe
 #ifdef __cplusplus
 }
 #endif
-
