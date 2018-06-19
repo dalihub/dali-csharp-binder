@@ -2,7 +2,7 @@
 #define CSHARP_COMMON_H
 
 /*
- * Copyright (c) 2018 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2016 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,7 +131,6 @@ typedef enum
 
 typedef void (SWIGSTDCALL* SWIG_CSharpExceptionCallback_t)(const char *);
 typedef void (SWIGSTDCALL* SWIG_CSharpExceptionArgumentCallback_t)(const char *, const char *);
-typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
 
 typedef struct
 {
@@ -166,6 +165,5 @@ extern void SWIG_CSharpException(int code, const char *msg);
 
 #include <dali-toolkit/devel-api/controls/control-wrapper.h>
 #include <dali-toolkit/devel-api/controls/control-wrapper-impl.h>
-#include <dali-toolkit/devel-api/controls/control-devel.h>
 
 #endif // CSHARP_COMMON_H

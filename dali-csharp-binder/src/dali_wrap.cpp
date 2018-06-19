@@ -14,6 +14,7 @@
 
 #define SWIG_DIRECTORS
 
+
 #ifdef __cplusplus
 /* SwigValueWrapper is described in swig.swg */
 template<typename T> class SwigValueWrapper {
@@ -165,6 +166,7 @@ template <typename T> T SwigValueInit() {
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
 
 /* Support for throwing C# exceptions from C/C++. There are two types:
  * Exceptions that take a message and ArgumentExceptions that take a message and a parameter name. */
@@ -32704,6 +32706,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LowerToBottom(void * jarg1) {
 
 }
 
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RaiseAbove(void * jarg1, void * jarg2) {
   Dali::Actor arg1 ;
   Dali::Actor arg2 ;
@@ -62702,6 +62705,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TransitionData__SWIG_0() {
   return jresult;
 }
 
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TransitionData(void * jarg1) {
   Dali::Toolkit::TransitionData *arg1 = (Dali::Toolkit::TransitionData *) 0 ;
 
@@ -68590,144 +68594,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoAction(void * jarg1, int jarg2, i
   }
 
 
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetLayout__SWIG_0(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = 0 ;
-  Dali::Toolkit::LayoutItem result;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Internal::Control & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = Dali::Toolkit::DevelControl::GetLayout(*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = new Dali::Toolkit::LayoutItem((const Dali::Toolkit::LayoutItem &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetLayout__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Control arg1 ;
-  Dali::Toolkit::Control *argp1 ;
-  Dali::Toolkit::LayoutItem result;
-
-  argp1 = (Dali::Toolkit::Control *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::Control", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::DevelControl::GetLayout(arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = new Dali::Toolkit::LayoutItem((const Dali::Toolkit::LayoutItem &)result);
-  return jresult;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetLayout__SWIG_0(void * jarg1, void * jarg2) {
-  Dali::Toolkit::Internal::Control *arg1 = 0 ;
-  Dali::Toolkit::LayoutItem arg2 ;
-  Dali::Toolkit::LayoutItem *argp2 ;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Internal::Control & type is null", 0);
-    return ;
-  }
-  argp2 = (Dali::Toolkit::LayoutItem *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::LayoutItem", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      Dali::Toolkit::DevelControl::SetLayout(*arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetLayout__SWIG_1(void * jarg1, void * jarg2) {
-  Dali::Toolkit::Control arg1 ;
-  Dali::Toolkit::LayoutItem arg2 ;
-  Dali::Toolkit::Control *argp1 ;
-  Dali::Toolkit::LayoutItem *argp2 ;
-
-  argp1 = (Dali::Toolkit::Control *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::Control", 0);
-    return ;
-  }
-  arg1 = *argp1;
-  argp2 = (Dali::Toolkit::LayoutItem *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::LayoutItem", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      Dali::Toolkit::DevelControl::SetLayout(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
