@@ -17,6 +17,9 @@ dali_csharp_binder_src_files = \
   src/layout-item-wrapper-impl.cpp \
   src/layout-group-wrapper.cpp \
   src/layout-group-wrapper-impl.cpp \
+  src/absolute-layout.cpp \
+  src/flex-layout.cpp \
+  src/linear-layout.cpp \
   src/view-wrapper-impl-wrap.cpp \
   src/event-thread-callback-wrap.cpp \
   src/application.cpp \
@@ -47,6 +50,9 @@ dali_csharp_binder_src_files_tizen = \
   src/layout-item-wrapper-impl.cpp \
   src/layout-group-wrapper.cpp \
   src/layout-group-wrapper-impl.cpp \
+  src/absolute-layout.cpp \
+  src/flex-layout.cpp \
+  src/linear-layout.cpp \
   src/view-wrapper-impl-wrap.cpp \
   src/event-thread-callback-wrap.cpp \
   src/application.cpp \
