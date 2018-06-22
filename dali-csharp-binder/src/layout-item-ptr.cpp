@@ -511,41 +511,6 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LayoutItemPtr_IsLayoutAnimated(v
   return jresult;
 }
 
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemPtr_RegisterChildProperties(void * jarg1, char * jarg2) {
-  Dali::IntrusivePtr< Dali::Toolkit::Internal::LayoutItem > *arg1 = (Dali::IntrusivePtr< Dali::Toolkit::Internal::LayoutItem > *) 0 ;
-  std::string *arg2 = 0 ;
-
-  arg1 = (Dali::IntrusivePtr< Dali::Toolkit::Internal::LayoutItem > *)jarg1;
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return ;
-  }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
-  {
-    try {
-      (*arg1)->RegisterChildProperties((std::string const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
-  //argout typemap for const std::string&
-
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemPtr_Measure(void * jarg1, void * jarg2, void * jarg3) {
   Dali::IntrusivePtr< Dali::Toolkit::Internal::LayoutItem > *arg1 = (Dali::IntrusivePtr< Dali::Toolkit::Internal::LayoutItem > *) 0 ;
   SwigValueWrapper< Dali::Toolkit::MeasureSpec > arg2 ;

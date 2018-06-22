@@ -438,6 +438,29 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LayoutSize_height_get(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LayoutSize(void * jarg1) {
+  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
+
+  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
 #ifdef __cplusplus
 }
 #endif
