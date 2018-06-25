@@ -64344,6 +64344,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageConnection(void * jarg1,
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   arg2 = (int)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if(!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       if(darg) {
@@ -64379,6 +64383,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageConnectionSwigExplicitVi
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   arg2 = (int)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if(!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       if(darg) {
@@ -64412,6 +64420,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageDisconnection(void * jar
 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if(!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       if(darg) {
@@ -64445,6 +64457,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageDisconnectionSwigExplici
 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if(!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       if(darg) {
@@ -64484,6 +64500,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildAdd(void * jarg1, void *
     return ;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if(!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       if(darg) {
@@ -64523,6 +64543,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildAddSwigExplicitViewImpl(
     return ;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if(!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       if(darg) {
@@ -64562,6 +64586,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildRemove(void * jarg1, voi
     return ;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if(!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       if(darg) {
@@ -64601,6 +64629,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildRemoveSwigExplicitViewIm
     return ;
   }
   darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if(!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
   {
     try {
       if(darg) {
