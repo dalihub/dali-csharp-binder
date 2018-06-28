@@ -1168,6 +1168,47 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelLocale
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_AllowTextPrediction(void * jarg1, unsigned int jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  bool arg2 ;
+
+  arg1 = (Dali::InputMethodContext *)jarg1;
+  arg2 = jarg2 ? true : false;
+  {
+    try {
+      (arg1)->AllowTextPrediction(arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_IsTextPredictionAllowed(void * jarg1) {
+  unsigned int jresult ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  bool result;
+
+  arg1 = (Dali::InputMethodContext *)jarg1;
+  {
+    try {
+      result = (bool)((Dali::InputMethodContext const *)arg1)->IsTextPredictionAllowed();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+  jresult = result;
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ActivatedSignal(void * jarg1) {
   void * jresult ;
