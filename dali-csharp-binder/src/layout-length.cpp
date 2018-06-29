@@ -251,7 +251,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LayoutLength_GreaterThan__SWIG_0
   unsigned int jresult ;
   Dali::Toolkit::LayoutLength *arg1 = (Dali::Toolkit::LayoutLength *) 0 ;
   Dali::Toolkit::LayoutLength *arg2 = 0 ;
-  bool result;
+  bool result = false;
 
   arg1 = (Dali::Toolkit::LayoutLength *)jarg1;
   arg2 = (Dali::Toolkit::LayoutLength *)jarg2;

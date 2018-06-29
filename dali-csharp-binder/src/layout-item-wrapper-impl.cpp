@@ -967,6 +967,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnUnparent(void * 
 
   arg1 = (Dali::Toolkit::Internal::LayoutItem *)jarg1;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnUnparent();
@@ -993,6 +998,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnUnparentSwigExpl
 
   arg1 = (Dali::Toolkit::Internal::LayoutItem *)jarg1;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnUnparentSwigPublic();
@@ -1026,6 +1036,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnRegisterChildPro
   std::string arg2_str(jarg2);
   arg2 = &arg2_str;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnRegisterChildProperties((std::string const &)*arg2);
@@ -1062,6 +1077,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnRegisterChildPro
   std::string arg2_str(jarg2);
   arg2 = &arg2_str;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnRegisterChildPropertiesSwigPublic((std::string const &)*arg2);
@@ -1107,6 +1127,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnMeasure(void * j
   }
   arg3 = *argp3;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnMeasure(arg2,arg3);
@@ -1149,6 +1174,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnMeasureSwigExpli
   }
   arg3 = *argp3;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnMeasureSwigPublic(arg2,arg3);
@@ -1209,6 +1239,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnLayout(void * ja
   }
   arg6 = *argp6;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnLayout(arg2,arg3,arg4,arg5,arg6);
@@ -1269,6 +1304,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnLayoutSwigExplic
   }
   arg6 = *argp6;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnLayoutSwigPublic(arg2,arg3,arg4,arg5,arg6);
@@ -1311,6 +1351,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnSizeChanged(void
   }
   arg3 = *argp3;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnSizeChanged(arg2,arg3);
@@ -1353,6 +1398,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnSizeChangedSwigE
   }
   arg3 = *argp3;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnSizeChangedSwigPublic(arg2,arg3);
@@ -1379,6 +1429,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnInitialize(void 
 
   arg1 = (Dali::Toolkit::Internal::LayoutItem *)jarg1;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnInitialize();
@@ -1405,6 +1460,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutItemWrapperImpl_OnInitializeSwigEx
 
   arg1 = (Dali::Toolkit::Internal::LayoutItem *)jarg1;
   darg = dynamic_cast<SwigDirector_LayoutItemWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutItemWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->OnInitializeSwigPublic();
