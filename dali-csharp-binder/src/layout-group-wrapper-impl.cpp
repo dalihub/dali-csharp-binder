@@ -701,6 +701,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_DoInitialize(void
 
   arg1 = (Dali::Toolkit::Internal::LayoutGroup *)jarg1;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->DoInitialize();
@@ -727,6 +732,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_DoInitializeSwigE
 
   arg1 = (Dali::Toolkit::Internal::LayoutGroup *)jarg1;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->DoInitializeSwigPublic();
@@ -760,6 +770,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_DoRegisterChildPr
   std::string arg2_str(jarg2);
   arg2 = &arg2_str;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->DoRegisterChildProperties((std::string const &)*arg2);
@@ -796,6 +811,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_DoRegisterChildPr
   std::string arg2_str(jarg2);
   arg2 = &arg2_str;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->DoRegisterChildPropertiesSwigPublic((std::string const &)*arg2);
@@ -833,6 +853,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_GenerateDefaultCh
   }
   arg2 = *argp2;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->GenerateDefaultChildPropertyValues(arg2);
@@ -867,6 +892,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_GenerateDefaultCh
   }
   arg2 = *argp2;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->GenerateDefaultChildPropertyValuesSwigPublic(arg2);
@@ -909,6 +939,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_MeasureChildren(v
   }
   arg3 = *argp3;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->MeasureChildren(arg2,arg3);
@@ -951,6 +986,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_MeasureChildrenSw
   }
   arg3 = *argp3;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->MeasureChildrenSwigPublic(arg2,arg3);
@@ -1001,6 +1041,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_MeasureChild(void
   }
   arg4 = *argp4;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->MeasureChild(arg2,arg3,arg4);
@@ -1051,6 +1096,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_MeasureChildSwigE
   }
   arg4 = *argp4;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->MeasureChildSwigPublic(arg2,arg3,arg4);
@@ -1117,6 +1167,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_MeasureChildWithM
   }
   arg6 = *argp6;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->MeasureChildWithMargins(arg2,arg3,arg4,arg5,arg6);
@@ -1183,6 +1238,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutGroupWrapperImpl_MeasureChildWithM
   }
   arg6 = *argp6;
   darg = dynamic_cast<SwigDirector_LayoutGroupWrapperImpl *>(arg1);
+  if(!darg)
+  {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_LayoutGroupWrapperImpl> error. darg is null");
+    return;
+  }
   {
     try {
       (darg)->MeasureChildWithMarginsSwigPublic(arg2,arg3,arg4,arg5,arg6);
