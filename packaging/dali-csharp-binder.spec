@@ -50,10 +50,14 @@ This package includes developer files common to all packages.
 # added for key grab binding only for tizen
 %if 0%{?tizen_version_major} >= 5
 %configure --enable-ecoreWl2=yes \
+%if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
+           --enable-profile=WEARABLE \
+%endif
            --enable-tizenBuild=yes
 %else
 %configure --enable-tizenBuild=yes
 %endif
+
 
 make %{?_smp_mflags}
 
