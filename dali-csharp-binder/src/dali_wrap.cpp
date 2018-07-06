@@ -469,6 +469,8 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/adaptor-framework/pixel-buffer.h>
 #include <dali/devel-api/adaptor-framework/image-loading.h>
 
+#include <dali/public-api/events/mouse-button.h>
+
 // add here SWIG version check
 
 #if defined(_MSC_VER)         // Microsoft Visual C++ 6.0
@@ -30264,6 +30266,41 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetAngle(void * jarg1, unsigned 
   }
 
   jresult = new Dali::Degree((const Dali::Degree &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetMouseButton(void * jarg1, unsigned long jarg2) {
+  int jresult ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
+  std::size_t arg2 ;
+  Dali::MouseButton::Type result;
+
+  arg1 = (Dali::TouchData *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::TouchData const *)arg1)->GetMouseButton(arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = static_cast< int >(result);
   return jresult;
 }
 
