@@ -17,6 +17,8 @@
 
 #include "common.h"
 #include <dali-toolkit/devel-api/layouting/layout-item-impl.h>
+#include <dali-toolkit/devel-api/layouting/layout-parent-impl.h>
+#include <dali-toolkit/devel-api/layouting/layout-child-impl.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,10 +26,10 @@ extern "C" {
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LayoutParent_GetParent(void * jarg1) {
   void * jresult ;
-  Dali::Toolkit::Internal::LayoutParent *arg1 = (Dali::Toolkit::Internal::LayoutParent *) 0 ;
+  Dali::Toolkit::Internal::LayoutChild *arg1 = (Dali::Toolkit::Internal::LayoutChild *) 0 ;
   Dali::Toolkit::Internal::LayoutParent *result = 0 ;
 
-  arg1 = (Dali::Toolkit::Internal::LayoutParent *)jarg1;
+  arg1 = (Dali::Toolkit::Internal::LayoutChild *)jarg1;
   {
     try {
       result = (Dali::Toolkit::Internal::LayoutParent *)(arg1)->GetParent();
@@ -380,4 +382,3 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_LayoutItemWrapper_SWIGUpca
 #ifdef __cplusplus
 }
 #endif
-
