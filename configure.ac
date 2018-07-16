@@ -23,8 +23,16 @@ AC_ARG_ENABLE(ecoreWl2,
               enable_ecoreWl2=yes,
               enable_ecoreWl2=no)
 
+# Tizen Profile options
+AC_ARG_ENABLE([profile],
+              [AC_HELP_STRING([--enable-profile=COMMON,MOBILE,WEARABLE,TV,IVI,UBUNTU],
+                            [Select the variant of tizen])],
+              [enable_profile=$enableval],
+              [enable_profile=UBUNTU])
+
 AM_CONDITIONAL([TIZENBUILD], [test x$enable_tizenBuild = xyes])
 AM_CONDITIONAL([ECOREWL2], [test x$enable_ecoreWl2 = xyes])
+AM_CONDITIONAL([WEARABLE_PROFILE], [test x$enable_profile = xWEARABLE])
 
 PKG_PROG_PKG_CONFIG
 # Checks for libraries. added for widget_viewer_dali binding only for tizen
