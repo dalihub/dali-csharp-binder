@@ -4,11 +4,11 @@ include ./file.list
 dali_csharp_binder_includes = \
         -I.
 
-libdali_csharp_binder_la_LTLIBRARIES = libdali-csharp-binder.la
-libdali_csharp_binder_ladir = $(libdir)
-libdali_csharp_binder_la_LIBADD = @DALI_LIBS@
-libdali_csharp_binder_la_LDFLAGS = ${LDFLAGS}
-libdali_csharp_binder_la_CXXFLAGS = \
+libdali_csharp_binder_vk_la_LTLIBRARIES = libdali-csharp-binder-vk.la
+libdali_csharp_binder_vk_ladir = $(libdir)
+libdali_csharp_binder_vk_la_LIBADD = @DALI_LIBS@
+libdali_csharp_binder_vk_la_LDFLAGS = ${LDFLAGS}
+libdali_csharp_binder_vk_la_CXXFLAGS = \
    ${CFLAGS} \
    $(DALI_CFLAGS) \
    $(viewer_dali_CFLAGS) \
@@ -16,17 +16,17 @@ libdali_csharp_binder_la_CXXFLAGS = \
 
 # added for key grab binding only for tizen
 if TIZENBUILD
-libdali_csharp_binder_la_CXXFLAGS += -DTIZEN_BUILD
+libdali_csharp_binder_vk_la_CXXFLAGS += -DTIZEN_BUILD
 if ECOREWL2
-libdali_csharp_binder_la_CXXFLAGS += -DECORE_WL2
-libdali_csharp_binder_la_CXXFLAGS += -DEFL_BETA_API_SUPPORT
-libdali_csharp_binder_la_CXXFLAGS+= $(ECORE_WL2_CFLAGS)
+libdali_csharp_binder_vk_la_CXXFLAGS += -DECORE_WL2
+libdali_csharp_binder_vk_la_CXXFLAGS += -DEFL_BETA_API_SUPPORT
+libdali_csharp_binder_vk_la_CXXFLAGS+= $(ECORE_WL2_CFLAGS)
 else
-libdali_csharp_binder_la_CXXFLAGS+= $(ECORE_WAYLAND_CFLAGS)
+libdali_csharp_binder_vk_la_CXXFLAGS+= $(ECORE_WAYLAND_CFLAGS)
 endif
-libdali_csharp_binder_la_SOURCES = $(dali_csharp_binder_src_files_tizen)
+libdali_csharp_binder_vk_la_SOURCES = $(dali_csharp_binder_src_files_tizen)
 else
-libdali_csharp_binder_la_SOURCES = $(dali_csharp_binder_src_files)
+libdali_csharp_binder_vk_la_SOURCES = $(dali_csharp_binder_src_files)
 endif
 
 libdali_csharp_binderdir = $(includedir)/dali-csharp-binder

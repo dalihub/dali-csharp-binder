@@ -30,14 +30,14 @@ PKG_PROG_PKG_CONFIG
 # Checks for libraries. added for widget_viewer_dali binding only for tizen
 # added for key grab binding only for tizen
 if test x$enable_tizenBuild = xyes; then
-  PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit widget_viewer_dali)
+  PKG_CHECK_MODULES(DALI, dali-core-vk dali-adaptor-vk dali-toolkit-vk widget_viewer_dali)
   if test x$enable_ecoreWl2 = xyes; then
     PKG_CHECK_MODULES(ECORE_WL2, ecore-wl2)
   else
     PKG_CHECK_MODULES(ECORE_WAYLAND, ecore-wayland)
   fi
 else
-  PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit)
+  PKG_CHECK_MODULES(DALI, dali-core-vk dali-adaptor-vk dali-toolkit-vk)
 fi
 
 AC_CONFIG_FILES([
@@ -45,5 +45,5 @@ Makefile
 dali-csharp-binder/Makefile
 ])
 AC_OUTPUT([
-dali-csharp-binder.pc
+dali-csharp-binder-vk.pc
 ])
