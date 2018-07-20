@@ -55,6 +55,8 @@ make %{?_smp_mflags}
 %manifest dali-csharp-binder.manifest     
 %defattr(-,root,root,-)
 %{_libdir}/lib%{name}.so*
+%defattr(-,app,app,-)
+%license LICENSE
 
 %files devel
 %defattr(-,root,root,-)
