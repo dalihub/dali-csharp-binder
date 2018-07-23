@@ -40,7 +40,7 @@ dali_csharp_binder_dir = ../../dali-csharp-binder
 include ../../dali-csharp-binder/file.list
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = dali-csharp-binder.pc
+pkgconfig_DATA = dali-csharp-binder-vk.pc
 
 # sources
 if UBUNTU_PROFILE
@@ -110,14 +110,14 @@ endif
 
 endif
 
-lib_LTLIBRARIES = libdali-csharp-binder.la
+lib_LTLIBRARIES = libdali-csharp-binder-vk.la
 
-libdali_csharp_binder_la_SOURCES = $(LIBDALI_CSHARP_BINDER_LA_SOURCES)
-libdali_csharp_binder_la_includes = $(LIBDALI_CSHARP_BINDER_LA_INCLUDES)
-libdali_csharp_binder_ladir = $(libdir)
-libdali_csharp_binder_la_LDFLAGS = ${LDFLAGS}
-libdali_csharp_binder_la_CXXFLAGS = $(LIBDALI_CSHARP_BINDER_LA_CXXFLAGS)
-libdali_csharp_binder_la_LIBADD = $(LIBDALI_CSHARP_BINDER_LA_LIBADD)
+libdali_csharp_binder_vk_la_SOURCES = $(LIBDALI_CSHARP_BINDER_LA_SOURCES)
+libdali_csharp_binder_vk_la_includes = $(LIBDALI_CSHARP_BINDER_LA_INCLUDES)
+libdali_csharp_binder_vk_ladir = $(libdir)
+libdali_csharp_binder_vk_la_LDFLAGS = ${LDFLAGS}
+libdali_csharp_binder_vk_la_CXXFLAGS = $(LIBDALI_CSHARP_BINDER_LA_CXXFLAGS)
+libdali_csharp_binder_vk_la_LIBADD = $(LIBDALI_CSHARP_BINDER_LA_LIBADD)
 
 libdali_csharp_binderdir = $(includedir)/dali-csharp-binder
 libdali_csharp_binder_HEADERS = $(dali_csharp_binder_header_files)
