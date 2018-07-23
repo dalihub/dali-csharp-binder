@@ -67,9 +67,9 @@ AM_CONDITIONAL([ENABLE_RENAME_SO], [test x$enable_rename_so = xyes])
 ### AM_CONDITIONAL([TIZENBUILD], [test x$enable_tizenBuild = xyes])
 ### AM_CONDITIONAL([ECOREWL2], [test x$enable_ecoreWl2 = xyes])
 
-PKG_CHECK_MODULES(DALICORE, dali-core)
-PKG_CHECK_MODULES(DALIADAPTOR, dali-adaptor)
-PKG_CHECK_MODULES(DALITOOLKIT, dali-toolkit)
+PKG_CHECK_MODULES(DALICORE, dali-core-vk)
+PKG_CHECK_MODULES(DALIADAPTOR, dali-adaptor-vk)
+PKG_CHECK_MODULES(DALITOOLKIT, dali-toolkit-vk)
 
 if test "x$enable_profile" = "xMOBILE" -o "x$enable_profile" = "xWEARABLE" -o "x$enable_profile" = "xTV" -o "x$enable_profile" = "xIVI"; then
   PKG_CHECK_MODULES(DALIWIDGET, widget_viewer_dali)
@@ -113,7 +113,7 @@ AC_SUBST(DALI_CSHARP_BINDER_CFLAGS)
 AC_SUBST(DALI_PROFILE_CFLAGS)
 
 AC_CONFIG_FILES([Makefile])
-AC_CONFIG_FILES([dali-csharp-binder.pc])
+AC_CONFIG_FILES([dali-csharp-binder-vk.pc])
 
 AC_OUTPUT
 

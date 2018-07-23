@@ -16,7 +16,7 @@
 
 %bcond_with wayland
 
-Name: dali-csharp-binder
+Name: dali-csharp-binder-vk
 Summary: The DALI Csharp Binder
 Version: 1.3.33
 Release: 1
@@ -53,9 +53,9 @@ BuildRequires:  pkgconfig(screen_connector_provider)
 %endif
 
 BuildRequires: pkgconfig
-BuildRequires: pkgconfig(dali-core)
-BuildRequires: pkgconfig(dali-adaptor)
-BuildRequires: pkgconfig(dali-toolkit)
+BuildRequires: pkgconfig(dali-core-vk)
+BuildRequires: pkgconfig(dali-adaptor-vk)
+BuildRequires: pkgconfig(dali-toolkit-vk)
 BuildRequires: pkgconfig(widget_viewer_dali)
 
 
@@ -377,35 +377,35 @@ pushd %{buildroot}%{_libdir}
 # if common ||"undefined"
 #%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 rm -rf libdali-csharp-binder*.so
-ln -s libdali-csharp-binder.so.0.0.0 libdali-csharp-binder.so
+ln -s libdali-csharp-binder-vk.so.0.0.0 libdali-csharp-binder-vk.so
 #%endif
 
 # This is for backward-compatibility. This does not deteriorate 4.0 Configurability
 # if wearable || "undefined"
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 rm -rf libdali-csharp-binder*.so.wearable
-ln -s libdali-csharp-binder.so.0.0.*.wearable libdali-csharp-binder.so.wearable
+ln -s libdali-csharp-binder-vk.so.0.0.*.wearable libdali-csharp-binder-vk.so.wearable
 %endif
 
 # This is for backward-compatibility. This does not deteriorate 4.0 Configurability
 # if tv ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 rm -rf libdali-csharp-binder*.so.tv
-ln -s libdali-csharp-binder.so.0.0.*.tv libdali-csharp-binder.so.tv
+ln -s libdali-csharp-binder-vk.so.0.0.*.tv libdali-csharp-binder-vk.so.tv
 %endif
 
 # This is for backward-compatibility. This does not deteriorate 4.0 Configurability
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 rm -rf libdali-csharp-binder*.so.ivi
-ln -s libdali-csharp-binder.so.0.0.*.ivi libdali-csharp-binder.so.ivi
+ln -s libdali-csharp-binder-vk.so.0.0.*.ivi libdali-csharp-binder-vk.so.ivi
 %endif
 
 # This is for backward-compatibility. This does not deteriorate 4.0 Configurability
 # if mobile || "undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 rm -rf libdali-csharp-binder*.so.mobile
-ln -s libdali-csharp-binder.so.0.0.*.mobile libdali-csharp-binder.so.mobile
+ln -s libdali-csharp-binder-vk.so.0.0.*.mobile libdali-csharp-binder-vk.so.mobile
 %endif
 popd
 
@@ -449,7 +449,7 @@ exit 0
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %post profile_mobile
 pushd %{_libdir}
-for FILE in libdali-csharp-binder.so*.mobile; do ln -sf "$FILE" "${FILE%.mobile}"; done
+for FILE in libdali-csharp-binder-vk.so*.mobile; do ln -sf "$FILE" "${FILE%.mobile}"; done
 popd
 /sbin/ldconfig
 exit 0
@@ -466,7 +466,7 @@ exit 0
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %post profile_tv
 pushd %{_libdir}
-for FILE in libdali-csharp-binder.so*.tv; do ln -sf "$FILE" "${FILE%.tv}"; done
+for FILE in libdali-csharp-binder-vk.so*.tv; do ln -sf "$FILE" "${FILE%.tv}"; done
 popd
 /sbin/ldconfig
 exit 0
@@ -483,7 +483,7 @@ exit 0
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %post profile_wearable
 pushd %{_libdir}
-for FILE in libdali-csharp-binder.so*.wearable; do ln -sf "$FILE" "${FILE%.wearable}"; done
+for FILE in libdali-csharp-binder-vk.so*.wearable; do ln -sf "$FILE" "${FILE%.wearable}"; done
 popd
 /sbin/ldconfig
 exit 0
@@ -500,7 +500,7 @@ exit 0
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 %post profile_ivi
 pushd %{_libdir}
-for FILE in libdali-csharp-binder.so*.ivi; do ln -sf "$FILE" "${FILE%.ivi}"; done
+for FILE in libdali-csharp-binder-vk.so*.ivi; do ln -sf "$FILE" "${FILE%.ivi}"; done
 popd
 /sbin/ldconfig
 exit 0
@@ -524,7 +524,7 @@ exit 0
 # if common ||"undefined"
 #%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %defattr(-,root,root,-)
-%{_libdir}/libdali-csharp-binder.so*
+%{_libdir}/libdali-csharp-binder-vk.so*
 %exclude %{_libdir}/libdali-csharp-binder*.so*.mobile
 %exclude %{_libdir}/libdali-csharp-binder*.so*.wearable
 %exclude %{_libdir}/libdali-csharp-binder*.so*.tv
@@ -544,7 +544,7 @@ exit 0
 %files profile_mobile
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%{_libdir}/libdali-csharp-binder.so.*mobile
+%{_libdir}/libdali-csharp-binder-vk.so.*mobile
 %endif
 
 # This is for backward-compatibility. This does not deteriorate 4.0 Configurability
@@ -553,7 +553,7 @@ exit 0
 %files profile_tv
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%{_libdir}/libdali-csharp-binder.so.*tv
+%{_libdir}/libdali-csharp-binder-vk.so.*tv
 %endif
 
 # This is for backward-compatibility. This does not deteriorate 4.0 Configurability
@@ -562,7 +562,7 @@ exit 0
 %files profile_wearable
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%{_libdir}/libdali-csharp-binder.so.*wearable
+%{_libdir}/libdali-csharp-binder-vk.so.*wearable
 %endif
 
 # This is for backward-compatibility. This does not deteriorate 4.0 Configurability
@@ -571,7 +571,7 @@ exit 0
 %files profile_ivi
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%{_libdir}/libdali-csharp-binder.so.*ivi
+%{_libdir}/libdali-csharp-binder-vk.so.*ivi
 %endif
 
 %files devel
