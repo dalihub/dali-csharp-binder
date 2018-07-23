@@ -8,6 +8,6 @@ includedir=@INC_DIR@
 Name: DALi C# binder
 Description: DALi C# binder Libaray
 Version: @VERSION@
-Requires: dali-core dali-adaptor dali-toolkit
-Libs: -L${libdir} -ldali-csharp-binder
+Requires: dali-core-vk dali-adaptor-vk dali-toolkit-vk
+Libs: -L${libdir} -ldali-csharp-binder-vk
 Cflags: -I${includedir}/dali-csharp-binder
