@@ -44,7 +44,7 @@ BuildRequires:  pkgconfig(libtzplatform-config)
 %define profile %{tizen_profile_name}
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if wearable || "undefined"
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 BuildRequires:  pkgconfig(capi-appfw-watch-application)
@@ -76,7 +76,7 @@ dali-csharp-binder
 # Dali csharp binder for profiles
 ###########################################
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if mobile || "undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %package profile_mobile
@@ -90,7 +90,7 @@ Conflicts:      %{name}-profile_common
 The DALi Tizen csharp binder for mobile.
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if tv ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %package profile_tv
@@ -104,7 +104,7 @@ Conflicts:      %{name}-profile_common
 The DALi Tizen csharp binder for tv.
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if wearable || "undefined"
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %package profile_wearable
@@ -118,7 +118,7 @@ Conflicts:      %{name}-profile_common
 The DALi Tizen csharp binder for wearable.
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 %package profile_ivi
@@ -132,7 +132,7 @@ Conflicts:      %{name}-profile_common
 The DALi Tizen csharp binder for ivi.
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if common ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 # Currently Tizen Common we use does not have wayland extensions like xdg-shell
@@ -214,7 +214,7 @@ TIZEN_PLATFORM_CONFIG_SUPPORTED="%{tizen_platform_config_supported}" ; export TI
 
 # Set up the build via configure.
 #######################################################################
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if mobile || "undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %configure --prefix=$PREFIX --enable-profile=MOBILE \
@@ -240,7 +240,7 @@ make clean
 %endif
 
 #######################################################################
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if tv ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %configure --prefix=$PREFIX --enable-profile=TV \
@@ -266,7 +266,7 @@ make clean
 %endif
 
 #######################################################################
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if wearable || "undefined"
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %configure --prefix=$PREFIX --enable-profile=WEARABLE \
@@ -292,7 +292,7 @@ make clean
 %endif
 
 #######################################################################
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 %configure --prefix=$PREFIX --enable-profile=IVI \
@@ -319,7 +319,7 @@ make clean
 
 #######################################################################
 # common
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if common ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %configure --prefix=$PREFIX --enable-profile=COMMON \
@@ -354,13 +354,13 @@ pushd %{_builddir}/%{name}-%{version}/build/tizen
 %make_install DALI_DATA_RW_DIR="%{dali_data_rw_dir}" DALI_DATA_RO_DIR="%{dali_data_ro_dir}"
 
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # !unified && (wearable || tv || ivi || mobile)
 %if "%{?profile}" == "wearable" || "%{?profile}" == "tv" || "%{?profile}" == "ivi" || "%{?profile}" == "mobile"
 rm -rf %{buildroot}%{_libdir}/libdali-csharp-binder*.so*
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # wearable || tv || ivi || mobile || unified
 %if "%{?profile}" != "common"
 for FILE in libdali-*.so*; do mv "$FILE" "%{buildroot}%{_libdir}/$FILE"; done
@@ -373,35 +373,35 @@ popd
 ###############################################
 pushd %{buildroot}%{_libdir}
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if common ||"undefined"
 #%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 rm -rf libdali-csharp-binder*.so
 ln -s libdali-csharp-binder.so.0.0.0 libdali-csharp-binder.so
 #%endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if wearable || "undefined"
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 rm -rf libdali-csharp-binder*.so.wearable
 ln -s libdali-csharp-binder.so.0.0.*.wearable libdali-csharp-binder.so.wearable
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if tv ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 rm -rf libdali-csharp-binder*.so.tv
 ln -s libdali-csharp-binder.so.0.0.*.tv libdali-csharp-binder.so.tv
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 rm -rf libdali-csharp-binder*.so.ivi
 ln -s libdali-csharp-binder.so.0.0.*.ivi libdali-csharp-binder.so.ivi
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if mobile || "undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 rm -rf libdali-csharp-binder*.so.mobile
@@ -444,7 +444,7 @@ exit 0
 
 ##############################
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if mobile || "undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %post profile_mobile
@@ -461,7 +461,7 @@ exit 0
 
 ##############################
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if tv ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %post profile_tv
@@ -478,7 +478,7 @@ exit 0
 
 ##############################
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if wearable || "undefined"
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %post profile_wearable
@@ -495,7 +495,7 @@ exit 0
 
 ##############################
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 %post profile_ivi
@@ -520,7 +520,7 @@ exit 0
 %defattr(-,app,app,-)
 %license LICENSE
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if common ||"undefined"
 #%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %defattr(-,root,root,-)
@@ -531,14 +531,14 @@ exit 0
 %exclude %{_libdir}/libdali-csharp-binder*.so*.ivi
 #%endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if common ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %files profile_common
 # default .so files are housed in the main pkg.
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if mobile || "undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %files profile_mobile
@@ -547,7 +547,7 @@ exit 0
 %{_libdir}/libdali-csharp-binder.so.*mobile
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if tv ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %files profile_tv
@@ -556,7 +556,7 @@ exit 0
 %{_libdir}/libdali-csharp-binder.so.*tv
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if wearable || "undefined"
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %files profile_wearable
@@ -565,7 +565,7 @@ exit 0
 %{_libdir}/libdali-csharp-binder.so.*wearable
 %endif
 
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
+# If the profile is selected, the line below is repquired.
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 %files profile_ivi
