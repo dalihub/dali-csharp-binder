@@ -56,7 +56,6 @@ BuildRequires: pkgconfig
 BuildRequires: pkgconfig(dali-core-vk)
 BuildRequires: pkgconfig(dali-adaptor-vk)
 BuildRequires: pkgconfig(dali-toolkit-vk)
-BuildRequires: pkgconfig(widget_viewer_dali)
 
 
 %if 0%{?tizen_version_major} >= 5

@@ -72,27 +72,12 @@ PKG_CHECK_MODULES(DALIADAPTOR, dali-adaptor-vk)
 PKG_CHECK_MODULES(DALITOOLKIT, dali-toolkit-vk)
 
 if test "x$enable_profile" = "xMOBILE" -o "x$enable_profile" = "xWEARABLE" -o "x$enable_profile" = "xTV" -o "x$enable_profile" = "xIVI"; then
-  PKG_CHECK_MODULES(DALIWIDGET, widget_viewer_dali)
   if test x$enable_ecore_wayland2 = xyes; then
     PKG_CHECK_MODULES(ECORE_WL2, ecore-wl2)
   else
     PKG_CHECK_MODULES(ECORE_WAYLAND, ecore-wayland)
   fi
 fi
-
-
-# Checks for libraries. added for widget_viewer_dali binding only for tizen
-# added for key grab binding only for tizen
-## if test x$enable_tizenBuild = xyes; then
-##  PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit widget_viewer_dali)
-##   if test x$enable_ecoreWl2 = xyes; then
-##     PKG_CHECK_MODULES(ECORE_WL2, ecore-wl2)
-##   else
-##     PKG_CHECK_MODULES(ECORE_WAYLAND, ecore-wayland)
-##   fi
-##  else
-##   PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit)
-## fi
 
 
 if test x$DALI_DATA_RW_DIR != x; then

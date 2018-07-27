@@ -40,9 +40,7 @@ dali_csharp_binder_common_src_files = \
 # module: csharp-binder, backend: mobile,tv,ivi,watch
 dali_csharp_binder_tizen_src_files = \
   ${dali_csharp_binder_dir}/src/key-grab.cpp \
-  ${dali_csharp_binder_dir}/src/keyboard.cpp \
-  ${dali_csharp_binder_dir}/src/widget_view.cpp \
-  ${dali_csharp_binder_dir}/src/widget_view_manager.cpp 
+  ${dali_csharp_binder_dir}/src/keyboard.cpp
 
 # module: csharp-binder, backend: tizen-wearable
 dali_csharp_binder_tizen_wearable_src_files = \
