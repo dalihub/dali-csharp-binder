@@ -42,7 +42,7 @@ T.O.C.
 
 To build the repository enter the 'build/tizen' folder:
 
- cd dali-toolkit/build/tizen
+ cd dali-csharp-binder/build/tizen
 
 Then run the following commands:
 

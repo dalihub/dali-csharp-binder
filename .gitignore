@@ -25,6 +25,9 @@ dali-csharp-binder/.libs/
 dali-csharp-binder/Makefile
 libtool
 stamp-h1
-
+build/tizen/m4/
 *.gcno
 *.gcda
+build/tizen/.deps/
+build/tizen/.libs/
+
