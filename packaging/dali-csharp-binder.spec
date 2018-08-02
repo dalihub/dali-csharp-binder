@@ -48,11 +48,12 @@ This package includes developer files common to all packages.
 %build
 %autogen
 # added for key grab binding only for tizen
+# Do not merge this on tizen branch!
 %if 0%{?tizen_version_major} >= 5
 %configure --enable-ecoreWl2=yes \
-           --enable-tizenBuild=yes
+           --enable-tizenBuild=no
 %else
-%configure --enable-tizenBuild=yes
+%configure --enable-tizenBuild=no
 %endif
 
 make %{?_smp_mflags}
