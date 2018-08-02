@@ -29,11 +29,7 @@ else
 libdali_csharp_binder_la_SOURCES = $(dali_csharp_binder_src_files)
 endif
 
-if WEARABLE_PROFILE
-libdali_csharp_binder_la_SOURCES += \
-                  $(dali_csharp_binder_src_files_watch)
-endif
-
 libdali_csharp_binderdir = $(includedir)/dali-csharp-binder
 libdali_csharp_binder_HEADERS = $(dali_csharp_binder_header_files)
+
 

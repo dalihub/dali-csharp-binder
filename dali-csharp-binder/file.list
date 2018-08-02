@@ -30,6 +30,7 @@ dali_csharp_binder_src_files = \
   src/input-method-context.cpp \
   src/input-method-options.cpp \
   src/animation.cpp \
+  src/watch.cpp \
   src/adaptor.cpp \
   src/extents.cpp
 
@@ -63,6 +64,7 @@ dali_csharp_binder_src_files_tizen = \
   src/input-method-options.cpp \
   src/animation.cpp \
   src/key-grab.cpp \
+  src/watch.cpp \
   src/widget_view.cpp \
   src/widget_view_manager.cpp \
   src/adaptor.cpp \
@@ -73,5 +75,3 @@ dali_csharp_binder_src_files_tizen = \
 dali_csharp_binder_header_files = \
   src/common.h
 
-dali_csharp_binder_src_files_tizen_watch = \
-  src/watch.cpp
