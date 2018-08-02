@@ -92,7 +92,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_NUI_InternalAPIVersionCheck(int * version, in
         *reserved2 = 0;
         return true;
       }
-      else if(Dali::CORE_MICRO_VERSION <= 34)
+      else if(Dali::CORE_MICRO_VERSION <= 33)
       {
         //from dali_1.3.28, nui_api_internal_version is set as 502
         *version = 502;
@@ -102,7 +102,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_NUI_InternalAPIVersionCheck(int * version, in
       }
       else if(Dali::CORE_MICRO_VERSION <= 99)
       {
-         //from dali_1.3.35, nui_api_internal_version is set as 503
+         //from dali_1.3.34, nui_api_internal_version is set as 503
         *version = 503;
         *reserved1 = 0;
         *reserved2 = 0;
