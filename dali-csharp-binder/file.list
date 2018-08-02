@@ -1,77 +1,55 @@
 #
 # Add source files here
-#
+# backend: common - ubuntu,mobile,tv,ivi,tizen-wearable
+# backend: tizen - mobile,tv,ivi,tizen-wearable
+# backend: tizen-wearable - tizen-wearable
 
-dali_csharp_binder_src_files = \
-  src/dali_wrap.cpp \
-  src/callbackbase_wrap.cpp \
-  src/keyboard_focus_manager_wrap.cpp \
-  src/devel-property-wrap.cpp \
-  src/version-check.cpp \
-  src/layout-length.cpp \
-  src/layout-size.cpp \
-  src/layout-measured-size.cpp \
-  src/layout-measure-spec.cpp \
-  src/layout-item-ptr.cpp \
-  src/layout-item-wrapper.cpp \
-  src/layout-item-wrapper-impl.cpp \
-  src/layout-group-wrapper.cpp \
-  src/layout-group-wrapper-impl.cpp \
-  src/absolute-layout.cpp \
-  src/flex-layout.cpp \
-  src/linear-layout.cpp \
-  src/view-wrapper-impl-wrap.cpp \
-  src/event-thread-callback-wrap.cpp \
-  src/application.cpp \
-  src/text-editor.cpp \
-  src/text-field.cpp \
-  src/window.cpp \
-  src/tts-player.cpp \
-  src/input-method-context.cpp \
-  src/input-method-options.cpp \
-  src/animation.cpp \
-  src/watch.cpp \
-  src/adaptor.cpp \
-  src/extents.cpp
+# module: csharp-binder, backend: common
+dali_csharp_binder_common_src_files = \
+  ${dali_csharp_binder_dir}/src/dali_wrap.cpp \
+  ${dali_csharp_binder_dir}/src/callbackbase_wrap.cpp \
+  ${dali_csharp_binder_dir}/src/keyboard_focus_manager_wrap.cpp \
+  ${dali_csharp_binder_dir}/src/devel-property-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/version-check.cpp \
+  ${dali_csharp_binder_dir}/src/layout-length.cpp \
+  ${dali_csharp_binder_dir}/src/layout-size.cpp \
+  ${dali_csharp_binder_dir}/src/layout-measured-size.cpp \
+  ${dali_csharp_binder_dir}/src/layout-measure-spec.cpp \
+  ${dali_csharp_binder_dir}/src/layout-item-ptr.cpp \
+  ${dali_csharp_binder_dir}/src/layout-item-wrapper.cpp \
+  ${dali_csharp_binder_dir}/src/layout-item-wrapper-impl.cpp \
+  ${dali_csharp_binder_dir}/src/layout-group-wrapper.cpp \
+  ${dali_csharp_binder_dir}/src/layout-group-wrapper-impl.cpp \
+  ${dali_csharp_binder_dir}/src/absolute-layout.cpp \
+  ${dali_csharp_binder_dir}/src/flex-layout.cpp \
+  ${dali_csharp_binder_dir}/src/linear-layout.cpp \
+  ${dali_csharp_binder_dir}/src/view-wrapper-impl-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/event-thread-callback-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/application.cpp \
+  ${dali_csharp_binder_dir}/src/text-editor.cpp \
+  ${dali_csharp_binder_dir}/src/text-field.cpp \
+  ${dali_csharp_binder_dir}/src/window.cpp \
+  ${dali_csharp_binder_dir}/src/tts-player.cpp \
+  ${dali_csharp_binder_dir}/src/input-method-context.cpp \
+  ${dali_csharp_binder_dir}/src/input-method-options.cpp \
+  ${dali_csharp_binder_dir}/src/animation.cpp \
+  ${dali_csharp_binder_dir}/src/adaptor.cpp \
+  ${dali_csharp_binder_dir}/src/extents.cpp
 
 # added for key grab binding only for tizen
-dali_csharp_binder_src_files_tizen = \
-  src/dali_wrap.cpp \
-  src/callbackbase_wrap.cpp \
-  src/keyboard_focus_manager_wrap.cpp \
-  src/devel-property-wrap.cpp \
-  src/version-check.cpp \
-  src/layout-length.cpp \
-  src/layout-size.cpp \
-  src/layout-measured-size.cpp \
-  src/layout-measure-spec.cpp \
-  src/layout-item-ptr.cpp \
-  src/layout-item-wrapper.cpp \
-  src/layout-item-wrapper-impl.cpp \
-  src/layout-group-wrapper.cpp \
-  src/layout-group-wrapper-impl.cpp \
-  src/absolute-layout.cpp \
-  src/flex-layout.cpp \
-  src/linear-layout.cpp \
-  src/view-wrapper-impl-wrap.cpp \
-  src/event-thread-callback-wrap.cpp \
-  src/application.cpp \
-  src/text-editor.cpp \
-  src/text-field.cpp \
-  src/window.cpp \
-  src/tts-player.cpp \
-  src/input-method-context.cpp \
-  src/input-method-options.cpp \
-  src/animation.cpp \
-  src/key-grab.cpp \
-  src/watch.cpp \
-  src/widget_view.cpp \
-  src/widget_view_manager.cpp \
-  src/adaptor.cpp \
-  src/extents.cpp \
-  src/web-view-lite.cpp \
-  src/font-client.cpp
+# module: csharp-binder, backend: mobile,tv,ivi,watch
+dali_csharp_binder_tizen_src_files = \
+  ${dali_csharp_binder_dir}/src/key-grab.cpp \
+  ${dali_csharp_binder_dir}/src/keyboard.cpp \
+  ${dali_csharp_binder_dir}/src/widget_view.cpp \
+  ${dali_csharp_binder_dir}/src/widget_view_manager.cpp \
+  ${dali_csharp_binder_dir}/src/font-client.cpp \
+  ${dali_csharp_binder_dir}/src/web-view-lite.cpp
+
+# module: csharp-binder, backend: tizen-wearable
+dali_csharp_binder_tizen_wearable_src_files = \
+  ${dali_csharp_binder_dir}/src/watch.cpp
 
 dali_csharp_binder_header_files = \
-  src/common.h
+  ${dali_csharp_binder_dir}/src/common.h
 
