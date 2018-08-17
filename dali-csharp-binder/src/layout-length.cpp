@@ -249,11 +249,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LayoutLength_LessThan__SWIG_0(vo
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LayoutLength_GreaterThan__SWIG_0(void * jarg1, void * jarg2) {
   unsigned int jresult ;
-  Dali::Toolkit::LayoutLength *arg1 = (Dali::Toolkit::LayoutLength *) 0 ;
+  // Umar:: To do Later///
+  //Dali::Toolkit::LayoutLength *arg1 = (Dali::Toolkit::LayoutLength *) 0 ;
   Dali::Toolkit::LayoutLength *arg2 = 0 ;
   bool result = false;
 
-  arg1 = (Dali::Toolkit::LayoutLength *)jarg1;
+  // Umar:: To do Later///
+  //arg1 = (Dali::Toolkit::LayoutLength *)jarg1;
   arg2 = (Dali::Toolkit::LayoutLength *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::LayoutLength const & type is null", 0);
