@@ -36699,6 +36699,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetHierarchyDepth(void * jarg1) {
   {
     try {
       result = (int)(arg1)->GetHierarchyDepth();
+      Dali::Actor parent = ((Dali::Actor const *)arg1)->GetParent();
+      if(parent)
+      {
+        const std::string parentName = parent.GetName();
+        if(parentName.compare("rootAbsoluteLayout") == 0)
+        {
+          result -= 1;
+        }
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
