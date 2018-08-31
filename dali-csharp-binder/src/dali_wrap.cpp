@@ -424,6 +424,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/dali-toolkit.h>
 
 #include <dali/devel-api/actors/actor-devel.h>
+#include <dali/devel-api/common/stage-devel.h>
 
 #include <dali/public-api/math/matrix.h>
 #include <dali/public-api/math/matrix3.h>
@@ -36698,6 +36699,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetHierarchyDepth(void * jarg1) {
   {
     try {
       result = (int)(arg1)->GetHierarchyDepth();
+      Dali::Actor parent = ((Dali::Actor const *)arg1)->GetParent();
+      if(parent)
+      {
+        const std::string parentName = parent.GetName();
+        if(parentName.compare("rootAbsoluteLayout") == 0)
+        {
+          result -= 1;
+        }
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -39062,6 +39072,68 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Stage_SceneCreatedSignal(void * jarg1)
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Stage_SetRenderingBehavior(void * jarg1, int jarg2) {
+  Dali::Stage *arg1 = (Dali::Stage *) 0 ;
+  Dali::DevelStage::Rendering arg2 ;
+
+  arg1 = (Dali::Stage *)jarg1;
+  arg2 = (Dali::DevelStage::Rendering)jarg2;
+  {
+    try {
+      DevelStage::SetRenderingBehavior(*arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Stage_GetRenderingBehavior(void * jarg1) {
+
+  int jresult ;
+  int result ;
+  Dali::Stage *arg1 = (Dali::Stage *) 0 ;
+
+  arg1 = (Dali::Stage *)jarg1;
+  {
+    try {
+      result = (int)(DevelStage::GetRenderingBehavior(*arg1));
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = result;
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RelayoutContainer(void * jarg1) {
   Dali::RelayoutContainer *arg1 = (Dali::RelayoutContainer *) 0 ;
