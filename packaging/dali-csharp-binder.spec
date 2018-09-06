@@ -16,9 +16,12 @@
 
 %bcond_with wayland
 
+#please update nui_internal_version below, if you changed version-check.cpp
+%define nui_internal_version nui503
+
 Name: dali-csharp-binder-vk
 Summary: The DALI Csharp Binder
-Version: 1.3.36
+Version: 1.3.39
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT

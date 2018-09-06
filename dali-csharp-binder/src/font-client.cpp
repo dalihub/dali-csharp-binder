@@ -1,4 +1,4 @@
-/** Copyright (c) 2017 Samsung Electronics Co., Ltd.
+/** Copyright (c) 2018 Samsung Electronics Co., Ltd.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -2274,25 +2274,29 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetGlyphMetrics__SWIG
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_CreateBitmap__SWIG_0(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4, int jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_CreateBitmap__SWIG_0(void * jarg1, unsigned int jarg2, unsigned int jarg3, bool jarg4, bool jarg5, void * jarg6, int jarg7) {
   Dali::TextAbstraction::FontClient *arg1 = (Dali::TextAbstraction::FontClient *) 0 ;
   Dali::TextAbstraction::FontId arg2 ;
   Dali::TextAbstraction::GlyphIndex arg3 ;
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg4 = 0 ;
-  int arg5 ;
+  bool arg4;
+  bool arg5;
+  Dali::TextAbstraction::FontClient::GlyphBufferData *arg6 = 0 ;
+  int arg7 ;
 
   arg1 = (Dali::TextAbstraction::FontClient *)jarg1;
   arg2 = (Dali::TextAbstraction::FontId)jarg2;
   arg3 = (Dali::TextAbstraction::GlyphIndex)jarg3;
-  arg4 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg4;
-  if (!arg4) {
+  arg4 = jarg4;
+  arg5 = jarg5;
+  arg6 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg6;
+  if (!arg6) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TextAbstraction::FontClient::GlyphBufferData & type is null", 0);
     return ;
   }
-  arg5 = (int)jarg5;
+  arg7 = (int)jarg7;
   {
     try {
-      (arg1)->CreateBitmap(arg2,arg3,*arg4,arg5);
+      (arg1)->CreateBitmap(arg2,arg3,arg4,arg5,*arg6,arg7);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
