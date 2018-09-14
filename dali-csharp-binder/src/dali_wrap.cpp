@@ -68675,6 +68675,70 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetLayout__SWIG_1(void * jarg1, void * j
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetLayoutingRequired(void * jarg1, bool jarg2) {
+  Dali::Toolkit::Control *arg1 = 0 ;
+
+  arg1 = (Dali::Toolkit::Control *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Internal::Control & type is null", 0);
+    return ;
+  }
+
+  {
+    try {
+      Dali::Toolkit::DevelControl::SetLayoutingRequired(*arg1,jarg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_View_IsLayoutingRequired(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Toolkit::Control *arg1 = 0 ;
+  bool result;
+
+  arg1 = (Dali::Toolkit::Control *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (bool)DevelControl::IsLayoutingRequired( *arg1 );
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::Control *arg1 = 0 ;
