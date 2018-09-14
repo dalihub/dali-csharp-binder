@@ -520,7 +520,6 @@ exit 0
 %files
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%defattr(-,app,app,-)
 %license LICENSE
 
 # If the profile is selected, the line below is repquired.
