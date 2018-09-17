@@ -304,6 +304,178 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LinearLayout_GetOrientation(void * jarg1)
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LinearLayout_SetAlignment(void * jarg1, unsigned int jarg2) {
+  Dali::Toolkit::LinearLayout *arg1 = (Dali::Toolkit::LinearLayout *) 0 ;
+  unsigned int arg2 ;
+
+  arg1 = (Dali::Toolkit::LinearLayout *)jarg1;
+  arg2 = (unsigned int)jarg2;
+  {
+    try {
+      (arg1)->SetAlignment(arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LinearLayout_GetAlignment(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Toolkit::LinearLayout *arg1 = (Dali::Toolkit::LinearLayout *) 0 ;
+  unsigned int result;
+
+  arg1 = (Dali::Toolkit::LinearLayout *)jarg1;
+  {
+    try {
+      result = (unsigned int)((Dali::Toolkit::LinearLayout const *)arg1)->GetAlignment();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_LinearLayout_Alignment() {
+  void * jresult ;
+  Dali::Toolkit::LinearLayout::Alignment *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Toolkit::LinearLayout::Alignment *)new Dali::Toolkit::LinearLayout::Alignment();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LinearLayout_Alignment(void * jarg1) {
+  Dali::Toolkit::LinearLayout::Alignment *arg1 = (Dali::Toolkit::LinearLayout::Alignment *) 0 ;
+
+  arg1 = (Dali::Toolkit::LinearLayout::Alignment *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LinearLayout_ChildProperty_WEIGHT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::LinearLayout::ChildProperty::WEIGHT;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_LinearLayout_ChildProperty() {
+  void * jresult ;
+  Dali::Toolkit::LinearLayout::ChildProperty *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Toolkit::LinearLayout::ChildProperty *)new Dali::Toolkit::LinearLayout::ChildProperty();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LinearLayout_ChildProperty(void * jarg1) {
+  Dali::Toolkit::LinearLayout::ChildProperty *arg1 = (Dali::Toolkit::LinearLayout::ChildProperty *) 0 ;
+
+  arg1 = (Dali::Toolkit::LinearLayout::ChildProperty *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
 
 #ifdef __cplusplus
 }
