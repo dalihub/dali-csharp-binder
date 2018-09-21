@@ -59,10 +59,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_MeasureSpec__SWIG_0(void * jarg1, 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_MeasureSpec__SWIG_1(int jarg1) {
   void * jresult ;
-  Dali::Toolkit::MeasureSpec::IntType arg1 ;
+  Dali::Toolkit::LayoutLength arg1( jarg1 );
   Dali::Toolkit::MeasureSpec *result = 0 ;
-
-  arg1 = (Dali::Toolkit::MeasureSpec::IntType)jarg1;
   {
     try {
       result = (Dali::Toolkit::MeasureSpec *)new Dali::Toolkit::MeasureSpec(arg1);
@@ -245,13 +243,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MeasureSpec_GetMode(void * jarg1) {
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MeasureSpec_GetSize(void * jarg1) {
   int jresult ;
-  Dali::Toolkit::MeasureSpec *arg1 = (Dali::Toolkit::MeasureSpec *) 0 ;
-  Dali::Toolkit::MeasureSpec::IntType result;
-
-  arg1 = (Dali::Toolkit::MeasureSpec *)jarg1;
+  Dali::Toolkit::MeasureSpec* arg1 = (Dali::Toolkit::MeasureSpec *)jarg1;
+  Dali::Toolkit::LayoutLength result( 0 );
   {
     try {
-      result = (Dali::Toolkit::MeasureSpec::IntType)((Dali::Toolkit::MeasureSpec const *)arg1)->GetSize();
+      result = (Dali::Toolkit::LayoutLength)((Dali::Toolkit::MeasureSpec const *)arg1)->GetSize();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -266,7 +262,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MeasureSpec_GetSize(void * jarg1) {
       };
     }
   }
-  jresult = result;
+  jresult = result.mValue;
   return jresult;
 }
 
@@ -308,23 +304,19 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MeasureSpec_Adjust(void * jarg1, int j
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MeasureSpec_mSize_set(void * jarg1, int jarg2) {
-  Dali::Toolkit::MeasureSpec *arg1 = (Dali::Toolkit::MeasureSpec *) 0 ;
-  Dali::Toolkit::MeasureSpec::IntType arg2 ;
-
-  arg1 = (Dali::Toolkit::MeasureSpec *)jarg1;
-  arg2 = (Dali::Toolkit::MeasureSpec::IntType)jarg2;
-  if (arg1) (arg1)->mSize = arg2;
+  Dali::Toolkit::MeasureSpec *arg1 = (Dali::Toolkit::MeasureSpec *)jarg1;
+  Dali::Toolkit::LayoutLength arg2( jarg2 );
+  if (arg1) (arg1)->SetSize( arg2 );
 }
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MeasureSpec_mSize_get(void * jarg1) {
   int jresult ;
   Dali::Toolkit::MeasureSpec *arg1 = (Dali::Toolkit::MeasureSpec *) 0 ;
-  Dali::Toolkit::MeasureSpec::IntType result;
 
   arg1 = (Dali::Toolkit::MeasureSpec *)jarg1;
-  result = (Dali::Toolkit::MeasureSpec::IntType) ((arg1)->mSize);
-  jresult = result;
+  Dali::Toolkit::LayoutLength result((arg1)->GetSize());
+  jresult = result.mValue;
   return jresult;
 }
 
@@ -335,7 +327,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MeasureSpec_mMode_set(void * jarg1, int 
 
   arg1 = (Dali::Toolkit::MeasureSpec *)jarg1;
   arg2 = (Dali::Toolkit::MeasureSpec::Mode)jarg2;
-  if (arg1) (arg1)->mMode = arg2;
+  if (arg1) (arg1)->SetMode( arg2 );
 }
 
 
@@ -345,7 +337,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MeasureSpec_mMode_get(void * jarg1) {
   Dali::Toolkit::MeasureSpec::Mode result;
 
   arg1 = (Dali::Toolkit::MeasureSpec *)jarg1;
-  result = (Dali::Toolkit::MeasureSpec::Mode) ((arg1)->mMode);
+  result = (Dali::Toolkit::MeasureSpec::Mode) ((arg1)->GetMode());
   jresult = (int)result;
   return jresult;
 }

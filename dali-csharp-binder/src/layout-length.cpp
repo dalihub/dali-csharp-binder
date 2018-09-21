@@ -699,34 +699,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LayoutLength_Multiply__SWIG_2(void * j
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_LayoutLength_ConvertToFloat(void * jarg1) {
-  float jresult ;
-  Dali::Toolkit::LayoutLength *arg1 = (Dali::Toolkit::LayoutLength *) 0 ;
-  float result;
-
-  arg1 = (Dali::Toolkit::LayoutLength *)jarg1;
-  {
-    try {
-      result = (float)(arg1)->operator float();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = result;
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutLength_mValue_set(void * jarg1, int jarg2) {
   Dali::Toolkit::LayoutLength *arg1 = (Dali::Toolkit::LayoutLength *) 0 ;
   Dali::Toolkit::LayoutLength::IntType arg2 ;
