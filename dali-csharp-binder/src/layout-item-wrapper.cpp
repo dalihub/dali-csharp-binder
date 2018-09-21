@@ -379,6 +379,35 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_LayoutItemWrapper_SWIGUpca
     return (Dali::BaseHandle *)jarg1;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LayoutItemWrapper_GetImplementation(void * jarg1) {
+  Dali::Toolkit::LayoutItem *arg1 = (Dali::Toolkit::LayoutItem *) 0;
+  Dali::BaseObject* object = (Dali::BaseObject *) 0;
+  Dali::Toolkit::Internal::LayoutItem* result = (Dali::Toolkit::Internal::LayoutItem*) 0;
+
+  arg1 = (Dali::Toolkit::LayoutItem *)jarg1;
+
+  {
+    try {
+        object = &(arg1->GetBaseObject());
+        result = static_cast< Dali::Toolkit::Internal::LayoutItem* >( object );
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  return (void*) result;
+}
+
+
 #ifdef __cplusplus
 }
 #endif
