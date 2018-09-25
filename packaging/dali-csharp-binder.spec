@@ -17,11 +17,11 @@
 %bcond_with wayland
 
 #please update nui_internal_version below, if you changed version-check.cpp
-%define nui_internal_version nui503
+%define nui_internal_version nui504
 
 Name: dali-csharp-binder-vk
 Summary: The DALI Csharp Binder
-Version: 1.3.39
+Version: 1.3.42
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -519,7 +519,6 @@ exit 0
 %files
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%defattr(-,app,app,-)
 %license LICENSE
 
 # If the profile is selected, the line below is repquired.
