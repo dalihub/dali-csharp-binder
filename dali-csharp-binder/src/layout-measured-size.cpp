@@ -184,15 +184,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MeasuredSize_Assign__SWIG_1(void * jar
 {
   void * jresult ;
   Dali::Toolkit::MeasuredSize *arg1 = (Dali::Toolkit::MeasuredSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType arg2 ;
   Dali::Toolkit::MeasuredSize *result = 0 ;
 
   arg1 = (Dali::Toolkit::MeasuredSize *)jarg1;
-  arg2 = (Dali::Toolkit::LayoutLength::IntType)jarg2;
 
   try
   {
-    result = (Dali::Toolkit::MeasuredSize *) &(arg1)->operator =(arg2);
+    result = (Dali::Toolkit::MeasuredSize *) &(arg1)->operator =(jarg2);
   }
   catch (std::out_of_range& e)
   {
