@@ -262,7 +262,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MeasureSpec_GetSize(void * jarg1) {
       };
     }
   }
-  jresult = result.mValue;
+  jresult = result.AsInteger();
   return jresult;
 }
 
@@ -304,7 +304,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MeasureSpec_Adjust(void * jarg1, int j
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MeasureSpec_mSize_set(void * jarg1, int jarg2) {
-  Dali::Toolkit::MeasureSpec *arg1 = (Dali::Toolkit::MeasureSpec *)jarg1;
+  Dali::Toolkit::MeasureSpec *arg1 = (Dali::Toolkit::MeasureSpec *) jarg1;
   Dali::Toolkit::LayoutLength arg2( jarg2 );
   if (arg1) (arg1)->SetSize( arg2 );
 }
@@ -316,7 +316,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MeasureSpec_mSize_get(void * jarg1) {
 
   arg1 = (Dali::Toolkit::MeasureSpec *)jarg1;
   Dali::Toolkit::LayoutLength result((arg1)->GetSize());
-  jresult = result.mValue;
+  jresult = result.AsInteger();
   return jresult;
 }
 
