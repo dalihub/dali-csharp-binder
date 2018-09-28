@@ -51,15 +51,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_LayoutSize__SWIG_0() {
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_LayoutSize__SWIG_1(int jarg1, int jarg2) {
   void * jresult ;
-  Dali::Toolkit::LayoutLength::IntType arg1 ;
-  Dali::Toolkit::LayoutLength::IntType arg2 ;
   Dali::Toolkit::LayoutSize *result = 0 ;
 
-  arg1 = (Dali::Toolkit::LayoutLength::IntType)jarg1;
-  arg2 = (Dali::Toolkit::LayoutLength::IntType)jarg2;
   {
     try {
-      result = (Dali::Toolkit::LayoutSize *)new Dali::Toolkit::LayoutSize(arg1,arg2);
+      result = (Dali::Toolkit::LayoutSize *)new Dali::Toolkit::LayoutSize(jarg1,jarg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -146,110 +142,26 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LayoutSize_Assign(void * jarg1, void *
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LayoutSize_GetWidth(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType result;
-
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::LayoutLength::IntType)(arg1)->GetWidth();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = result;
-  return jresult;
+  Dali::Toolkit::LayoutSize* arg1 = (Dali::Toolkit::LayoutSize *) jarg1;
+  return (int)(arg1)->GetWidth().AsInteger();
 }
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LayoutSize_GetHeight(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType result;
-
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::LayoutLength::IntType)(arg1)->GetHeight();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = result;
-  return jresult;
+  Dali::Toolkit::LayoutSize* arg1 = (Dali::Toolkit::LayoutSize *) jarg1;
+  return (int)(arg1)->GetHeight().AsInteger();
 }
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutSize_SetWidth__SWIG_0(void * jarg1, int jarg2) {
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType arg2 ;
-
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  arg2 = (Dali::Toolkit::LayoutLength::IntType)jarg2;
-  {
-    try {
-      (arg1)->SetWidth(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
+  (arg1)->SetWidth(jarg2);
 }
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutSize_SetHeight__SWIG_0(void * jarg1, int jarg2) {
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType arg2 ;
-
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  arg2 = (Dali::Toolkit::LayoutLength::IntType)jarg2;
-  {
-    try {
-      (arg1)->SetHeight(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
+  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
+  (arg1)->SetHeight(jarg2);
 }
 
 
@@ -353,89 +265,54 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LayoutSize_EqualTo(void * jarg1,
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutSize_x_set(void * jarg1, int jarg2) {
   Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType arg2 ;
 
   arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  arg2 = (Dali::Toolkit::LayoutLength::IntType)jarg2;
-  if (arg1) (arg1)->x = arg2;
+  if (arg1) (arg1)->x = jarg2;
 }
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LayoutSize_x_get(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType result;
-
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  result = (Dali::Toolkit::LayoutLength::IntType) ((arg1)->x);
-  jresult = result;
-  return jresult;
+  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) jarg1;
+  return (int) ((arg1)->x.AsInteger());
 }
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutSize_width_set(void * jarg1, int jarg2) {
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType arg2 ;
+  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) jarg1;
 
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  arg2 = (Dali::Toolkit::LayoutLength::IntType)jarg2;
-  if (arg1) (arg1)->width = arg2;
+  if (arg1) (arg1)->width = jarg2;
 }
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LayoutSize_width_get(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType result;
-
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  result = (Dali::Toolkit::LayoutLength::IntType) ((arg1)->width);
-  jresult = result;
-  return jresult;
+  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) jarg1;
+  return (int) ((arg1)->width.AsInteger());
 }
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutSize_y_set(void * jarg1, int jarg2) {
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType arg2 ;
+  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) jarg1;
 
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  arg2 = (Dali::Toolkit::LayoutLength::IntType)jarg2;
-  if (arg1) (arg1)->y = arg2;
+  if (arg1) (arg1)->y = jarg2;
 }
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LayoutSize_y_get(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType result;
-
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  result = (Dali::Toolkit::LayoutLength::IntType) ((arg1)->y);
-  jresult = result;
-  return jresult;
+  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) jarg1;
+  return (int) ((arg1)->x.AsInteger());
 }
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutSize_height_set(void * jarg1, int jarg2) {
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType arg2 ;
+  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) jarg1;
 
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  arg2 = (Dali::Toolkit::LayoutLength::IntType)jarg2;
-  if (arg1) (arg1)->height = arg2;
+  if (arg1) (arg1)->height = jarg2;
 }
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LayoutSize_height_get(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) 0 ;
-  Dali::Toolkit::LayoutLength::IntType result;
-
-  arg1 = (Dali::Toolkit::LayoutSize *)jarg1;
-  result = (Dali::Toolkit::LayoutLength::IntType) ((arg1)->height);
-  jresult = result;
-  return jresult;
+  Dali::Toolkit::LayoutSize *arg1 = (Dali::Toolkit::LayoutSize *) jarg1;
+  return (int) ((arg1)->height.AsInteger());
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LayoutSize(void * jarg1) {
