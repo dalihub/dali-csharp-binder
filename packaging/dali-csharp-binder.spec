@@ -21,7 +21,7 @@
 
 Name: dali-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 1.3.41+%{nui_internal_version}
+Version: 1.3.43
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -520,7 +520,6 @@ exit 0
 %files
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%defattr(-,app,app,-)
 %license LICENSE
 
 # If the profile is selected, the line below is repquired.
