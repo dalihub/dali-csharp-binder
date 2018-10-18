@@ -103627,56 +103627,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_4(cha
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetMaxTextureSize(unsigned int jarg1) {
-  unsigned int arg1 ;
-
-  arg1 = (unsigned int)jarg1;
-  {
-    try {
-      Dali::SetMaxTextureSize(arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GetMaxTextureSize() {
-  unsigned int jresult ;
-  unsigned int result;
-
-  {
-    try {
-      result = (unsigned int)Dali::GetMaxTextureSize();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = result;
-  return jresult;
-}
-
-
 #ifdef __cplusplus
 }
 #endif
