@@ -20,6 +20,7 @@
 
 #include "common.h"
 #include <dali/devel-api/adaptor-framework/drag-and-drop-detector.h>
+#include <dali/devel-api/adaptor-framework/window-devel.h>
 #include <dali/public-api/adaptor-framework/window.h>
 #include <dali/integration-api/adaptors/adaptor.h>
 
@@ -2450,6 +2451,43 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetPosition(void * jarg1) {
 
   jresult = new Dali::Window::WindowPosition((const Dali::Window::WindowPosition &)result);
   return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSize(void* jarg1, void* jarg2)
+{
+  Dali::Window* window = (Dali::Window*)jarg1;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+
+  Dali::Rect<int>* positionSize = (Dali::Rect<int>*)jarg2;
+  if (!positionSize) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< int > const & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      Dali::DevelWindow::SetPositionSize(*window, *positionSize);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetTransparency(void * jarg1, unsigned int jarg2) {
