@@ -89737,7 +89737,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_New__SWIG_1(unsigned 
   arg6 = jarg6 ? true : false;
   {
     try {
-      result = Dali::Toolkit::GaussianBlurView::New(arg1,arg2,arg3,arg4,arg5,arg6);
+      result = Dali::Toolkit::GaussianBlurView::New(arg1,arg2,arg4,arg5);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -89778,7 +89778,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_New__SWIG_2(unsigned 
   arg5 = (float)jarg5;
   {
     try {
-      result = Dali::Toolkit::GaussianBlurView::New(arg1,arg2,arg3,arg4,arg5);
+      result = Dali::Toolkit::GaussianBlurView::New(arg1,arg2,arg4,arg5);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -89964,113 +89964,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurView_Deactivate(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurView_SetUserImageAndOutputRenderTarget(void * jarg1, void * jarg2, void * jarg3) {
-  Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::Image arg2 ;
-  Dali::FrameBufferImage arg3 ;
-  Dali::Image *argp2 ;
-  Dali::FrameBufferImage *argp3 ;
-
-  arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
-  argp2 = (Dali::Image *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Image", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  argp3 = (Dali::FrameBufferImage *)jarg3;
-  if (!argp3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::FrameBufferImage", 0);
-    return ;
-  }
-  arg3 = *argp3;
-  {
-    try {
-      (arg1)->SetUserImageAndOutputRenderTarget(arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurView_SetUserImageAndOutputRenderTarget(void * jarg1, void * jarg2, void * jarg3){
 }
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBlurStrengthPropertyIndex(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::Property::Index result;
-
-  arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
-  {
-    try {
-      result = (Dali::Property::Index)((Dali::Toolkit::GaussianBlurView const *)arg1)->GetBlurStrengthPropertyIndex();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = result;
-  return jresult;
+  return (int)Dali::Property::INVALID_INDEX;
 }
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBlurredRenderTarget(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::FrameBufferImage result;
-
-  arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
-  {
-    try {
-      result = ((Dali::Toolkit::GaussianBlurView const *)arg1)->GetBlurredRenderTarget();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = new Dali::FrameBufferImage((const Dali::FrameBufferImage &)result);
+  void * jresult = nullptr;
+  jresult = new Dali::FrameBufferImage();
   return jresult;
 }
 
@@ -90143,36 +90048,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBackgroundColor(vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_FinishedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::Toolkit::GaussianBlurView::GaussianBlurViewSignal *result = 0 ;
-
-  arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::GaussianBlurView::GaussianBlurViewSignal *) &(arg1)->FinishedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_FinishedSignal(void * jarg1)
+{
+  return nullptr;
 }
 
 
@@ -104494,4 +104372,3 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewSignalProxy_Emit(void * jarg1, vo
 #ifdef __cplusplus
 }
 #endif
-
