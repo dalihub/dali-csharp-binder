@@ -31,11 +31,18 @@ T.O.C.
 2. Building for Ubuntu desktop
 ==============================
 
-2.1. Minimum Requirements
+2.1. Requirements
 ------------------------
 
- - Ubuntu 14.04
+ - Ubuntu 14.04 or later
  - Environment created using dali_env script in dali-core repository
+ - GCC version 6
+
+DALi requires a compiler supporting C++11 features.
+Ubuntu 16.04 is the first version to offer this by default (GCC v5.4.0).
+
+GCC version 6 is recommended since it has fixes for issues in version 5
+e.g. it avoids spurious 'defined but not used' warnings in header files.
 
 2.2. Building the Repository
 ----------------------------
