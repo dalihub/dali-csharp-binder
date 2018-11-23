@@ -21,7 +21,7 @@
 
 Name: dali-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 1.3.50
+Version: 1.3.51
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
