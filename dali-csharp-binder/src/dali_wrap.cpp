@@ -104052,6 +104052,42 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1,
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void* jarg1, char* jarg2, void* jarg3)
+{
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView *) jarg1;
+  std::string exposedObjectName = jarg2;
+  void (*handler)(char*) = (void (*)(char*)) jarg3;
+
+  {
+    try {
+      webview->AddJavaScriptMessageHandler(exposedObjectName, [handler](const std::string& message) {
+        handler(SWIG_csharp_string_callback(message.c_str()));
+      });
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ClearHistory(void * jarg1) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *) 0 ;
 
