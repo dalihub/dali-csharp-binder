@@ -471,9 +471,10 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/adaptor-framework/pixel-buffer.h>
 #include <dali/devel-api/adaptor-framework/image-loading.h>
 
-#include <dali/public-api/events/mouse-button.h>
-
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
+
+#include <dali/devel-api/events/mouse-button.h>
+#include <dali/devel-api/events/touch-data-devel.h>
 
 
 // add here SWIG version check
@@ -30218,7 +30219,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetMouseButton(void * jarg1, unsign
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = ((Dali::TouchData const *)arg1)->GetMouseButton(arg2);
+      result = Dali::DevelTouchData::GetMouseButton(*arg1, arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
