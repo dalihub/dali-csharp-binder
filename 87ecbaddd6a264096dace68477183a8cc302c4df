@@ -1,0 +1,7 @@
+Code-Review+2: David Steele <david.steele@samsung.com>
+Verified+1: David Steele <david.steele@samsung.com>
+Submitted-by: David Steele <david.steele@samsung.com>
+Submitted-at: Tue, 18 Dec 2018 17:16:57 +0000
+Reviewed-on: https://review.gerrithub.io/435686
+Project: dalihub/dali-csharp-binder
+Branch: refs/heads/devel/vulkan
