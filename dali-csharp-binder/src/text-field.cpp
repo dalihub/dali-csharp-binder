@@ -177,26 +177,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_PLACEHOLDER_TEXT_COLOR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SHADOW_OFFSET_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextField::Property::SHADOW_OFFSET;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SHADOW_COLOR_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextField::Property::SHADOW_COLOR;
-  jresult = (int)result;
-  return jresult;
-}
-
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_PRIMARY_CURSOR_COLOR_get() {
   int jresult ;
   int result;
