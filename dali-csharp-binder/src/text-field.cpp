@@ -1215,6 +1215,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ENABLE_SHIFT_SELECTION_get(
   return (int)Dali::Toolkit::DevelTextField::Property::ENABLE_SHIFT_SELECTION;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_MATCH_SYSTEM_LANGUAGE_DIRECTION_get() {
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextField::Property::MATCH_SYSTEM_LANGUAGE_DIRECTION;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_GetInputMethodContext(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::TextField *arg1 = (Dali::Toolkit::TextField *) 0 ;
