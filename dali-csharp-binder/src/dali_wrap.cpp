@@ -33247,16 +33247,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_COLOR_MODE_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_POSITION_INHERITANCE_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Actor::Property::POSITION_INHERITANCE;
-  jresult = (int)result;
-  return jresult;
-}
-
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_DRAW_MODE_get() {
   int jresult ;
   int result;
@@ -34860,39 +34850,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritPosition(void * jarg1, u
     }
   }
 
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetPositionInheritanceMode(void * jarg1) {
-  int jresult ;
-  Dali::Actor *arg1 = (Dali::Actor *) 0 ;
-  Dali::PositionInheritanceMode result;
-
-  arg1 = (Dali::Actor *)jarg1;
-  {
-    try {
-      result = (Dali::PositionInheritanceMode)((Dali::Actor const *)arg1)->GetPositionInheritanceMode();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (int)result;
-  return jresult;
 }
 
 
@@ -84416,55 +84373,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_TEXT_COLOR_get() {
   int result;
 
   result = (int)Dali::Toolkit::TextLabel::Property::TEXT_COLOR;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_SHADOW_OFFSET_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextLabel::Property::SHADOW_OFFSET;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_SHADOW_COLOR_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextLabel::Property::SHADOW_COLOR;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_UNDERLINE_ENABLED_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextLabel::Property::UNDERLINE_ENABLED;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_UNDERLINE_COLOR_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextLabel::Property::UNDERLINE_COLOR;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_UNDERLINE_HEIGHT_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextLabel::Property::UNDERLINE_HEIGHT;
   jresult = (int)result;
   return jresult;
 }

@@ -1446,6 +1446,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_ENABLE_SHIFT_SELECTION_get
   return (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_SHIFT_SELECTION;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_MATCH_SYSTEM_LANGUAGE_DIRECTION_get() {
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::MATCH_SYSTEM_LANGUAGE_DIRECTION;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_GetInputMethodContext(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0 ;
