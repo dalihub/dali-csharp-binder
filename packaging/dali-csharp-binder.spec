@@ -380,7 +380,11 @@ pushd %{buildroot}%{_libdir}
 # if common ||"undefined"
 #%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 rm -rf libdali-csharp-binder*.so
+%if 0%{?graphic_backend_vulkan} > 0
+ln -s libdali-csharp-binder-vk.so.0.0.0 libdali-csharp-binder.so
+%else
 ln -s libdali-csharp-binder.so.0.0.0 libdali-csharp-binder.so
+%endif
 #%endif
 
 # If the profile is selected, the line below is repquired.
