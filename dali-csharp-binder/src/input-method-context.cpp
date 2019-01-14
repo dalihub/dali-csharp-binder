@@ -460,14 +460,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext_CallbackData(v
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Finalize(void * jarg1) {
-  //This is not necessary in tizen5.0, but because of backwards compatibility, the method is maintained but the body is deleted.
-  //Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
 
-  //arg1 = (Dali::InputMethodContext *)jarg1;
+  arg1 = (Dali::InputMethodContext *)jarg1;
   {
     try {
-      //This is not necessary in tizen5.0, but because of backwards compatibility, the method is maintained but the body is deleted.
-      //(arg1)->Finalize();
+      (arg1)->Finalize();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
