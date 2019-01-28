@@ -103323,6 +103323,38 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_4(char * jar
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char * jarg1) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  {
+    try {
+      result = Dali::GetOriginalImageSize((std::string const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
+
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
   void * jresult ;
