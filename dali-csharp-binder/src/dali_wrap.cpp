@@ -33247,16 +33247,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_COLOR_MODE_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_POSITION_INHERITANCE_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Actor::Property::POSITION_INHERITANCE;
-  jresult = (int)result;
-  return jresult;
-}
-
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_DRAW_MODE_get() {
   int jresult ;
   int result;
@@ -34860,39 +34850,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritPosition(void * jarg1, u
     }
   }
 
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetPositionInheritanceMode(void * jarg1) {
-  int jresult ;
-  Dali::Actor *arg1 = (Dali::Actor *) 0 ;
-  Dali::PositionInheritanceMode result;
-
-  arg1 = (Dali::Actor *)jarg1;
-  {
-    try {
-      result = (Dali::PositionInheritanceMode)((Dali::Actor const *)arg1)->GetPositionInheritanceMode();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (int)result;
-  return jresult;
 }
 
 
@@ -84420,55 +84377,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_TEXT_COLOR_get() {
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_SHADOW_OFFSET_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextLabel::Property::SHADOW_OFFSET;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_SHADOW_COLOR_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextLabel::Property::SHADOW_COLOR;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_UNDERLINE_ENABLED_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextLabel::Property::UNDERLINE_ENABLED;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_UNDERLINE_COLOR_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextLabel::Property::UNDERLINE_COLOR;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_UNDERLINE_HEIGHT_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextLabel::Property::UNDERLINE_HEIGHT;
-  jresult = (int)result;
-  return jresult;
-}
-
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ENABLE_MARKUP_get() {
   int jresult ;
@@ -103293,6 +103201,38 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_4(char * jar
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char * jarg1) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::ImageDimensions result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  {
+    try {
+      result = Dali::GetOriginalImageSize((std::string const &)*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
+
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
   void * jresult ;
@@ -104002,6 +103942,42 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1,
   {
     try {
       (arg1)->EvaluateJavaScript((std::string const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void* jarg1, char* jarg2, void* jarg3)
+{
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView *) jarg1;
+  std::string exposedObjectName = jarg2;
+  void (*handler)(char*) = (void (*)(char*)) jarg3;
+
+  {
+    try {
+      webview->AddJavaScriptMessageHandler(exposedObjectName, [handler](const std::string& message) {
+        handler(SWIG_csharp_string_callback(message.c_str()));
+      });
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;

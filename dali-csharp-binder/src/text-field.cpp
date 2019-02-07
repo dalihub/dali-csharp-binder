@@ -177,26 +177,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_PLACEHOLDER_TEXT_COLOR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SHADOW_OFFSET_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextField::Property::SHADOW_OFFSET;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SHADOW_COLOR_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::TextField::Property::SHADOW_COLOR;
-  jresult = (int)result;
-  return jresult;
-}
-
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_PRIMARY_CURSOR_COLOR_get() {
   int jresult ;
   int result;
@@ -1213,6 +1193,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextFieldSignal(void * jarg1) {
 SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ENABLE_SHIFT_SELECTION_get()
 {
   return (int)Dali::Toolkit::DevelTextField::Property::ENABLE_SHIFT_SELECTION;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_MATCH_SYSTEM_LANGUAGE_DIRECTION_get() {
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextField::Property::MATCH_SYSTEM_LANGUAGE_DIRECTION;
+  jresult = (int)result;
+  return jresult;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_GetInputMethodContext(void * jarg1) {
