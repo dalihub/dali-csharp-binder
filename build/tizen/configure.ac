@@ -70,6 +70,7 @@ AM_CONDITIONAL([ENABLE_RENAME_SO], [test x$enable_rename_so = xyes])
 PKG_CHECK_MODULES(DALICORE, dali-core-vk)
 PKG_CHECK_MODULES(DALIADAPTOR, dali-adaptor-vk)
 PKG_CHECK_MODULES(DALITOOLKIT, dali-toolkit-vk)
+PKG_CHECK_MODULES(DALIGRAPHICS, dali-graphics-vk)
 
 if test "x$enable_profile" = "xMOBILE" -o "x$enable_profile" = "xWEARABLE" -o "x$enable_profile" = "xTV" -o "x$enable_profile" = "xIVI"; then
   if test x$enable_ecore_wayland2 = xyes; then

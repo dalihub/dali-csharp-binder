@@ -59,6 +59,7 @@ BuildRequires: pkgconfig
 BuildRequires: pkgconfig(dali-core-vk)
 BuildRequires: pkgconfig(dali-adaptor-vk)
 BuildRequires: pkgconfig(dali-toolkit-vk)
+BuildRequires: pkgconfig(dali-graphics-vk)
 
 
 %if 0%{?tizen_version_major} >= 5
@@ -580,4 +581,3 @@ exit 0
 %dir %{_includedir}/dali-csharp-binder/
 %{_includedir}/dali-csharp-binder/*
 %{_libdir}/pkgconfig/%{name}.pc
-

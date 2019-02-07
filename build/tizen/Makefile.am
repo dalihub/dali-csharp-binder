@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018 Samsung Electronics Co., Ltd.
+# Copyright (c) 2019 Samsung Electronics Co., Ltd.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -89,11 +89,13 @@ LIBDALI_CSHARP_BINDER_LA_CXXFLAGS = \
                         ${CFLAGS} \
                         $(DALICORE_CFLAGS) \
                         $(DALIADAPTOR_CFLAGS) \
+                        $(DALIGRAPHICS_CFLAGS) \
                         $(DALITOOLKIT_CFLAGS)
 
 LIBDALI_CSHARP_BINDER_LA_LIBADD = \
                     $(DALICORE_LIBS) \
                     $(DALIADAPTOR_LIBS) \
+                    $(DALIGRAPHICS_LIBS) \
                     $(DALITOOLKIT_LIBS)
 
 if !UBUNTU_PROFILE
