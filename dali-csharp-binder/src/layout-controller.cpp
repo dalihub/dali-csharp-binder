@@ -27,7 +27,7 @@ namespace
 static int gLayoutControllerId = 1;
 } // unnamed namespace
 
-LayoutController::LayoutController() : handler( NULL ), mId( gLayoutControllerId++ )
+LayoutController::LayoutController() : mId( gLayoutControllerId++ )
 {
   Dali::Adaptor::Get().RegisterProcessor(*this);
 }
@@ -110,7 +110,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LayoutController(void * jarg1) {
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutController_SetCallback( void* jarg1, LayoutController::LayoutControllerProcessCallback callback )
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LayoutController_SetCallback( void* jarg1, LayoutController::LayoutControllerProcessCallback callback )
 {
   LayoutController* layoutController = (LayoutController *) jarg1;
 
@@ -120,15 +120,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutController_SetCallback( void* jarg
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LayoutController_GetId( void* jarg1 )
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LayoutController_GetId( void* jarg1 )
 {
   LayoutController * layoutController = (LayoutController *)jarg1;
-  int ret = 0;
   if( layoutController )
   {
-    ret = layoutController->GetId();
+    layoutController->GetId();
   }
-  return ret;
 }
 
 #ifdef __cplusplus
