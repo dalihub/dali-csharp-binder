@@ -20,6 +20,7 @@
 
 // INTERNAL INCLUDES
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
+#include <dali/devel-api/events/touch-data-devel.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -91,7 +92,8 @@ bool SwigDirector_ViewWrapperImpl::OnTouchEvent(Dali::TouchEvent const &event) {
   if (!swig_callbackOnTouchEvent) {
     return Dali::Toolkit::Internal::Control::OnTouchEvent(event);
   } else {
-    jarg0 = (Dali::TouchEvent *) &event;
+    Dali::TouchData data = Dali::DevelTouchData::Convert(event);
+    jarg0 = (Dali::TouchData *) &data;
     jresult = (unsigned int) swig_callbackOnTouchEvent(jarg0);
     c_result = jresult ? true : false;
   }
