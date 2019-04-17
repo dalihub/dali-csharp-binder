@@ -523,6 +523,24 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ENABLE_SELECTION_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ENABLE_GRAB_HANDLE_get() {
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextField::Property::ENABLE_GRAB_HANDLE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ENABLE_GRAB_HANDLE_POPUP_get() {
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextField::Property::ENABLE_GRAB_HANDLE_POPUP;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_PLACEHOLDER_get() {
   int jresult ;
   int result;
@@ -963,6 +981,38 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_InputStyleChangedSignal(void
 
   jresult = (void *)result;
   return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextField_SelectWholeText(void * jarg1) {
+  Dali::Toolkit::TextField *arg1 = (Dali::Toolkit::TextField *) 0;
+
+  arg1 = (Dali::Toolkit::TextField *)jarg1;
+  {
+    try {
+      Dali::Toolkit::DevelTextField::SelectWholeText( *arg1 );
+    }
+    catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
 }
 
 
