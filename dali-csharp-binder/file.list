@@ -12,19 +12,6 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/devel-property-wrap.cpp \
   ${dali_csharp_binder_dir}/src/version-check.cpp \
   ${dali_csharp_binder_dir}/src/layout-controller.cpp \
-  ${dali_csharp_binder_dir}/src/layout-length.cpp \
-  ${dali_csharp_binder_dir}/src/layout-size.cpp \
-  ${dali_csharp_binder_dir}/src/layout-measured-size.cpp \
-  ${dali_csharp_binder_dir}/src/layout-measure-spec.cpp \
-  ${dali_csharp_binder_dir}/src/layout-item-ptr.cpp \
-  ${dali_csharp_binder_dir}/src/layout-item-wrapper.cpp \
-  ${dali_csharp_binder_dir}/src/layout-item-wrapper-impl.cpp \
-  ${dali_csharp_binder_dir}/src/layout-group-wrapper.cpp \
-  ${dali_csharp_binder_dir}/src/layout-group-wrapper-impl.cpp \
-  ${dali_csharp_binder_dir}/src/absolute-layout.cpp \
-  ${dali_csharp_binder_dir}/src/flex-layout.cpp \
-  ${dali_csharp_binder_dir}/src/grid-layout.cpp \
-  ${dali_csharp_binder_dir}/src/linear-layout.cpp \
   ${dali_csharp_binder_dir}/src/view-wrapper-impl-wrap.cpp \
   ${dali_csharp_binder_dir}/src/event-thread-callback-wrap.cpp \
   ${dali_csharp_binder_dir}/src/application.cpp \
