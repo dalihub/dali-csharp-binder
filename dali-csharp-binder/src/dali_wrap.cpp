@@ -23975,7 +23975,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelData_New(unsigned char* jarg1, un
   arg6 = (Dali::PixelData::ReleaseFunction)jarg6;
   {
     try {
-      result = Dali::PixelData::New(arg1,arg2,arg3,arg4,arg5,arg6);
+      auto pixelBuffer = new unsigned char[jarg2];
+      memcpy( pixelBuffer, arg1, arg2);
+      result = Dali::PixelData::New(pixelBuffer,arg2,arg3,arg4,arg5,arg6);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
