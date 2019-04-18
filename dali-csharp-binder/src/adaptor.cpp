@@ -87,8 +87,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_0(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_1(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Window arg1 ;
-  Dali::Configuration::ContextLoss arg2 ;
   Dali::Window *argp1 ;
+  Dali::Configuration::ContextLoss arg2 ;
   Dali::Configuration::ContextLoss *argp2 ;
   Dali::Adaptor *result = 0 ;
 
@@ -133,25 +133,25 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_1(void * jarg1, void
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_2(void * jarg1, void * jarg2) {
   void * jresult ;
-  Dali::Any arg1 ;
-  Dali::RenderSurface *arg2 = 0 ;
-  Dali::Any *argp1 ;
+  Dali::Window arg1 ;
+  Dali::Window *argp1 ;
+  Dali::RenderSurfaceInterface *arg2 = 0 ;
   Dali::Adaptor *result = 0 ;
 
-  argp1 = (Dali::Any *)jarg1;
+  argp1 = (Dali::Window *)jarg1;
   if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Any", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return 0;
   }
   arg1 = *argp1;
-  arg2 = (Dali::RenderSurface *)jarg2;
+  arg2 = (Dali::RenderSurfaceInterface *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::RenderSurface const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (Dali::Adaptor *) &Dali::Adaptor::New(arg1,(Dali::RenderSurface const &)*arg2,Dali::Configuration::APPLICATION_DOES_NOT_HANDLE_CONTEXT_LOSS);
+      result = (Dali::Adaptor *) &Dali::Adaptor::New(arg1,(Dali::RenderSurfaceInterface const &)*arg2,Dali::Configuration::APPLICATION_DOES_NOT_HANDLE_CONTEXT_LOSS);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -178,20 +178,20 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_2(void * jarg1, void
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_3(void * jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
-  Dali::Any arg1 ;
-  Dali::RenderSurface *arg2 = 0 ;
+  Dali::Window arg1 ;
+  Dali::Window *argp1 ;
+  Dali::RenderSurfaceInterface *arg2 = 0 ;
   Dali::Configuration::ContextLoss arg3 ;
-  Dali::Any *argp1 ;
   Dali::Configuration::ContextLoss *argp3 ;
   Dali::Adaptor *result = 0 ;
 
-  argp1 = (Dali::Any *)jarg1;
+  argp1 = (Dali::Window *)jarg1;
   if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Any", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return 0;
   }
   arg1 = *argp1;
-  arg2 = (Dali::RenderSurface *)jarg2;
+  arg2 = (Dali::RenderSurfaceInterface *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::RenderSurface const & type is null", 0);
     return 0;
@@ -204,7 +204,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_3(void * jarg1, void
   arg3 = *argp3;
   {
     try {
-      result = (Dali::Adaptor *) &Dali::Adaptor::New(arg1,(Dali::RenderSurface const &)*arg2,arg3);
+      result = (Dali::Adaptor *) &Dali::Adaptor::New(arg1,(Dali::RenderSurfaceInterface const &)*arg2,arg3);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -442,25 +442,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_RemoveIdle(void * jarg1, void * 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_ReplaceSurface(void * jarg1, void * jarg2, void * jarg3) {
   Dali::Adaptor *arg1 = (Dali::Adaptor *) 0 ;
-  Dali::Any arg2 ;
-  Dali::RenderSurface *arg3 = 0 ;
-  Dali::Any *argp2 ;
+  Dali::Window arg2 ;
+  Dali::Window *argp2 ;
+  Dali::RenderSurfaceInterface *arg3 = 0 ;
 
   arg1 = (Dali::Adaptor *)jarg1;
-  argp2 = (Dali::Any *)jarg2;
+  argp2 = (Dali::Window *)jarg2;
   if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Any", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return ;
   }
   arg2 = *argp2;
-  arg3 = (Dali::RenderSurface *)jarg3;
+  arg3 = (Dali::RenderSurfaceInterface *)jarg3;
   if (!arg3) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::RenderSurface & type is null", 0);
     return ;
   }
   {
     try {
-      (arg1)->ReplaceSurface(arg2,*arg3);
+      (arg1)->ReplaceSurface(arg2, *arg3);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -486,12 +486,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_ReplaceSurface(void * jarg1, voi
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_GetSurface(void * jarg1) {
   void * jresult ;
   Dali::Adaptor *arg1 = (Dali::Adaptor *) 0 ;
-  Dali::RenderSurface *result = 0 ;
+  Dali::RenderSurfaceInterface *result = 0 ;
 
   arg1 = (Dali::Adaptor *)jarg1;
   {
     try {
-      result = (Dali::RenderSurface *) &(arg1)->GetSurface();
+      result = (Dali::RenderSurfaceInterface *) &(arg1)->GetSurface();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
