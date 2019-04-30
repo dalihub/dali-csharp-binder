@@ -68208,12 +68208,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoAction(void * jarg1, int jarg2, i
   Dali::Property::Index arg3 = 0 ;
   arg3 = (Dali::Property::Index)jarg3;
 
-  Dali::Property::Value arg4;
-  arg4 = (Dali::Property::Value *)jarg4;
+  Dali::Property::Value *arg4 = (Dali::Property::Value *)jarg4;
 
   {
     try {
-      DevelControl::DoAction(arg1, arg2, arg3, arg4);
+      DevelControl::DoAction(arg1, arg2, arg3, *arg4);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
