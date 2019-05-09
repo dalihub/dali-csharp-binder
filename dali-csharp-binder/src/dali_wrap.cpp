@@ -92325,10 +92325,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetCustomAlgorithm(void * jarg1, void * 
   }
   arg1 = *argp1;
   arg2 = (Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface & type is null", 0);
-    return ;
-  }
+  //Null checking of arg2 is removed. arg2's null set means resetting so it can be a null value.
   {
     try {
       Dali::Toolkit::DevelKeyboardFocusManager::SetCustomAlgorithm(arg1,*arg2);
