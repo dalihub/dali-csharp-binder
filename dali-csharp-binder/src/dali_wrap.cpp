@@ -435,7 +435,6 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali/public-api/adaptor-framework/timer.h>
 #include <dali/public-api/adaptor-framework/style-change.h>
-#include <dali/devel-api/adaptor-framework/drag-and-drop-detector.h>
 #include <dali/devel-api/adaptor-framework/environment-variable.h>
 
 #include <dali/devel-api/images/nine-patch-image.h>
@@ -58742,263 +58741,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Timer_TickSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_DragAndDropDetector() {
-  void * jresult ;
-  Dali::DragAndDropDetector *result = 0 ;
-
-  {
-    try {
-      result = (Dali::DragAndDropDetector *)new Dali::DragAndDropDetector();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_DragAndDropDetector(void * jarg1) {
-  Dali::DragAndDropDetector *arg1 = (Dali::DragAndDropDetector *) 0 ;
-
-  arg1 = (Dali::DragAndDropDetector *)jarg1;
-  {
-    try {
-      delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
-}
-
-
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_DragAndDropDetector_GetContent(void * jarg1) {
-  char * jresult ;
-  Dali::DragAndDropDetector *arg1 = (Dali::DragAndDropDetector *) 0 ;
-  std::string *result = 0 ;
-
-  arg1 = (Dali::DragAndDropDetector *)jarg1;
-  {
-    try {
-      result = (std::string *) &((Dali::DragAndDropDetector const *)arg1)->GetContent();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = SWIG_csharp_string_callback(result->c_str());
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DragAndDropDetector_GetCurrentScreenPosition(void * jarg1) {
-  void * jresult ;
-  Dali::DragAndDropDetector *arg1 = (Dali::DragAndDropDetector *) 0 ;
-  Dali::Vector2 result;
-
-  arg1 = (Dali::DragAndDropDetector *)jarg1;
-  {
-    try {
-      result = ((Dali::DragAndDropDetector const *)arg1)->GetCurrentScreenPosition();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DragAndDropDetector_EnteredSignal(void * jarg1) {
-  void * jresult ;
-  Dali::DragAndDropDetector *arg1 = (Dali::DragAndDropDetector *) 0 ;
-  Dali::DragAndDropDetector::DragAndDropSignal *result = 0 ;
-
-  arg1 = (Dali::DragAndDropDetector *)jarg1;
-  {
-    try {
-      result = (Dali::DragAndDropDetector::DragAndDropSignal *) &(arg1)->EnteredSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DragAndDropDetector_ExitedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::DragAndDropDetector *arg1 = (Dali::DragAndDropDetector *) 0 ;
-  Dali::DragAndDropDetector::DragAndDropSignal *result = 0 ;
-
-  arg1 = (Dali::DragAndDropDetector *)jarg1;
-  {
-    try {
-      result = (Dali::DragAndDropDetector::DragAndDropSignal *) &(arg1)->ExitedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DragAndDropDetector_MovedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::DragAndDropDetector *arg1 = (Dali::DragAndDropDetector *) 0 ;
-  Dali::DragAndDropDetector::DragAndDropSignal *result = 0 ;
-
-  arg1 = (Dali::DragAndDropDetector *)jarg1;
-  {
-    try {
-      result = (Dali::DragAndDropDetector::DragAndDropSignal *) &(arg1)->MovedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DragAndDropDetector_DroppedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::DragAndDropDetector *arg1 = (Dali::DragAndDropDetector *) 0 ;
-  Dali::DragAndDropDetector::DragAndDropSignal *result = 0 ;
-
-  arg1 = (Dali::DragAndDropDetector *)jarg1;
-  {
-    try {
-      result = (Dali::DragAndDropDetector::DragAndDropSignal *) &(arg1)->DroppedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TimerSignalType_Empty(void * jarg1) {
   unsigned int jresult ;
   Dali::Signal< bool () > *arg1 = (Dali::Signal< bool () > *) 0 ;
@@ -68208,12 +67950,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoAction(void * jarg1, int jarg2, i
   Dali::Property::Index arg3 = 0 ;
   arg3 = (Dali::Property::Index)jarg3;
 
-  Dali::Property::Value arg4;
-  arg4 = (Dali::Property::Value *)jarg4;
+  Dali::Property::Value *arg4 = (Dali::Property::Value *)jarg4;
 
   {
     try {
-      DevelControl::DoAction(arg1, arg2, arg3, arg4);
+      DevelControl::DoAction(arg1, arg2, arg3, *arg4);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -92326,10 +92067,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetCustomAlgorithm(void * jarg1, void * 
   }
   arg1 = *argp1;
   arg2 = (Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface & type is null", 0);
-    return ;
-  }
+  //Null checking of arg2 is removed. arg2's null set means resetting so it can be a null value.
   {
     try {
       Dali::Toolkit::DevelKeyboardFocusManager::SetCustomAlgorithm(arg1,*arg2);
@@ -100748,11 +100486,6 @@ SWIGEXPORT Dali::Actor * SWIGSTDCALL CSharp_Dali_CameraActor_SWIGUpcast(Dali::Ca
 SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Timer_SWIGUpcast(Dali::Timer *jarg1) {
     return (Dali::BaseHandle *)jarg1;
 }
-
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_DragAndDropDetector_SWIGUpcast(Dali::DragAndDropDetector *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
-
 
 SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Builder_SWIGUpcast(Dali::Toolkit::Builder *jarg1) {
     return (Dali::BaseHandle *)jarg1;

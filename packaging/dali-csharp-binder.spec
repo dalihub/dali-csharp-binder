@@ -17,11 +17,11 @@
 %bcond_with wayland
 
 #please update nui_internal_version below, if you changed version-check.cpp
-%define nui_internal_version nui505
+%define nui_internal_version nui550
 
 Name: dali-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 1.4.18
+Version: 1.4.19
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -30,22 +30,8 @@ Source: %{name}-%{version}.tar.xz
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 
-#need libtzplatform-config for directory if tizen version is 3.x
-
-%if 0%{?tizen_version_major} >= 3
 %define tizen_platform_config_supported 1
 BuildRequires:  pkgconfig(libtzplatform-config)
-%endif
-
-%if 0%{?tizen_version_major} < 4
-%define disable_cxx03_build 1
-%endif
-
-# Get the profile from tizen_profile_name if tizen version is 2.x and tizen_profile_name exists.
-
-%if "%{tizen_version_major}" == "2" && 0%{?tizen_profile_name:1}
-%define profile %{tizen_profile_name}
-%endif
 
 # If the profile is selected, the line below is repquired.
 # if wearable || "undefined"
@@ -169,16 +155,8 @@ This package includes developer files common to all packages.
 %prep
 %setup -q
 
-#Use TZ_PATH when tizen version is 3.x or greater
-
-%if 0%{?tizen_version_major} >= 3
 %define dali_data_rw_dir         %TZ_SYS_RO_SHARE/dali/
 %define dali_data_ro_dir         %TZ_SYS_RO_SHARE/dali/
-%else
-%define dali_data_rw_dir         /usr/share/dali/
-%define dali_data_ro_dir         /usr/share/dali/
-%endif
-
 
 ##############################
 # Build
