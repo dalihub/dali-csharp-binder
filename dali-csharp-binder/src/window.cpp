@@ -19,7 +19,6 @@
 #endif
 
 #include "common.h"
-#include <dali/devel-api/adaptor-framework/drag-and-drop-detector.h>
 #include <dali/devel-api/adaptor-framework/window-devel.h>
 #include <dali/public-api/adaptor-framework/window.h>
 #include <dali/integration-api/adaptors/adaptor.h>
@@ -763,39 +762,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetPreferredOrientation(void * jar
   }
 
   jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetDragAndDropDetector(void * jarg1) {
-  void * jresult ;
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::DragAndDropDetector result;
-
-  arg1 = (Dali::Window *)jarg1;
-  {
-    try {
-      result = ((Dali::Window const *)arg1)->GetDragAndDropDetector();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = new Dali::DragAndDropDetector((const Dali::DragAndDropDetector &)result);
   return jresult;
 }
 

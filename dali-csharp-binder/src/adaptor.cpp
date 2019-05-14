@@ -760,37 +760,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_NotifyLanguageChanged(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_SetMinimumPinchDistance(void * jarg1, float jarg2) {
-  Dali::Adaptor *arg1 = (Dali::Adaptor *) 0 ;
-  float arg2 ;
-
-  arg1 = (Dali::Adaptor *)jarg1;
-  arg2 = (float)jarg2;
-  {
-    try {
-      (arg1)->SetMinimumPinchDistance(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedTouchPoint(void * jarg1, void * jarg2, int jarg3) {
   Dali::Adaptor *arg1 = (Dali::Adaptor *) 0 ;
   Dali::TouchPoint *arg2 = 0 ;
