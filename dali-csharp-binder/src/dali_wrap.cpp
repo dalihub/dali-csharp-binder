@@ -463,6 +463,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali-toolkit/devel-api/controls/tooltip/tooltip-properties.h>
 #include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
+#include <dali-toolkit/devel-api/controls/control-depth-index-ranges.h>
 
 #include <dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h>
 
@@ -26524,6 +26525,56 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Shader_Assign(void * jarg1, void * jar
   }
 
   jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Range_BACKGROUND_EFFECT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DepthIndex::Ranges::BACKGROUND_EFFECT;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Range_BACKGROUND_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DepthIndex::Ranges::BACKGROUND;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Range_CONTENT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DepthIndex::Ranges::CONTENT;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Range_DECORATION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DepthIndex::Ranges::DECORATION;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Range_FOREGROUND_EFFECT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DepthIndex::FOREGROUND_EFFECT;
+  jresult = (int)result;
   return jresult;
 }
 
