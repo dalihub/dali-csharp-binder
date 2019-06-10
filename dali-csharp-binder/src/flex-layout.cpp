@@ -3,246 +3,301 @@
 #endif
 
 #include "common.h"
-#include <dali-toolkit/devel-api/layouting/flex-layout.h>
+#include <dali-toolkit/devel-api/layouting/flex-node.h>
+#include <iostream>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-SWIGEXPORT Dali::Toolkit::LayoutGroup * SWIGSTDCALL CSharp_Dali_FlexLayout_SWIGUpcast(Dali::Toolkit::FlexLayout *jarg1) {
-    return (Dali::Toolkit::LayoutGroup *)jarg1;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_ChildProperty_FLEX_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::FlexLayout::ChildProperty::FLEX;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_ChildProperty_ALIGN_SELF_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::FlexLayout::ChildProperty::ALIGN_SELF;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FlexLayout__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FlexLayout_New()
+{
   void * jresult ;
-  Dali::Toolkit::FlexLayout *result = 0 ;
+  Dali::Toolkit::Flex::Node* result;
 
   {
     try {
-      result = (Dali::Toolkit::FlexLayout *)new Dali::Toolkit::FlexLayout();
+      result = new Dali::Toolkit::Flex::Node();
     } catch (std::out_of_range& e) {
       {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
       };
     } catch (std::exception& e) {
       {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
       };
     } catch (...) {
       {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
       };
     }
   }
   jresult = (void *)result;
-  return jresult;
+  return result;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FlexLayout_New() {
-  void * jresult ;
-  Dali::Toolkit::FlexLayout result;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FlexLayout(void * jarg1)
+{
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
 
-  {
-    try {
-      result = Dali::Toolkit::FlexLayout::New();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = new Dali::Toolkit::FlexLayout((const Dali::Toolkit::FlexLayout &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FlexLayout_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::FlexLayout result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::FlexLayout::DownCast(arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = new Dali::Toolkit::FlexLayout((const Dali::Toolkit::FlexLayout &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FlexLayout__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::FlexLayout *arg1 = 0 ;
-  Dali::Toolkit::FlexLayout *result = 0 ;
-
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::FlexLayout const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::FlexLayout *)new Dali::Toolkit::FlexLayout((Dali::Toolkit::FlexLayout const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FlexLayout_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout *arg2 = 0 ;
-  Dali::Toolkit::FlexLayout *result = 0 ;
-
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
-  arg2 = (Dali::Toolkit::FlexLayout *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::FlexLayout const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::FlexLayout *) &(arg1)->operator =((Dali::Toolkit::FlexLayout const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FlexLayout(void * jarg1) {
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
   {
     try {
       delete arg1;
     } catch (std::out_of_range& e) {
       {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
       };
     } catch (std::exception& e) {
       {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
       };
     } catch (...) {
       {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
       };
     }
   }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexDirection(void * jarg1, int jarg2) {
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout::FlexDirection arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexDirection(void * jarg1, int jarg2)
+{
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  Dali::Toolkit::Flex::FlexDirection arg2 ;
 
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
-  arg2 = (Dali::Toolkit::FlexLayout::FlexDirection)jarg2;
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
+  arg2 = (Dali::Toolkit::Flex::FlexDirection)jarg2;
   {
     try {
-      (arg1)->SetFlexDirection(arg2);
+      arg1->Dali::Toolkit::Flex::Node::SetFlexDirection( arg2);
     } catch (std::out_of_range& e) {
       {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
       };
     } catch (std::exception& e) {
       {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
       };
     } catch (...) {
       {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
       };
     }
   }
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexDirection(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout::FlexDirection result;
 
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_AddChild(void * jarg1, void *jarg2, Dali::Toolkit::Flex::MeasureCallback jarg3, int jarg4)
+{
+  Dali::Toolkit::Flex::Node* arg1 = (Dali::Toolkit::Flex::Node* )jarg1;
+  Dali::Actor *arg2 = (Dali::Actor *) 0;  arg2 = (Dali::Actor *)jarg2;
+
   {
     try {
-      result = (Dali::Toolkit::FlexLayout::FlexDirection)((Dali::Toolkit::FlexLayout const *)arg1)->GetFlexDirection();
+        arg1->Dali::Toolkit::Flex::Node::AddChild((Dali::Actor &)*arg2, jarg3, jarg4);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_RemoveChild(void * jarg1, void * jarg2)
+{
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  Dali::Actor* arg2 = (Dali::Actor *)jarg2;
+
+  arg1 = (Dali::Toolkit::Flex::Node*)jarg1;
+  {
+    try {
+      arg1->Dali::Toolkit::Flex::Node::RemoveChild(*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_CalculateLayout(void * jarg1, float jarg2, float jarg3, bool isRtl )
+{
+  Dali::Toolkit::Flex::Node * arg1 = (Dali::Toolkit::Flex::Node* )jarg1;
+  {
+    try {
+      arg1->Dali::Toolkit::Flex::Node::CalculateLayout(jarg2, jarg3, isRtl);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FlexLayout_GetWidth(void * jarg1 )
+{
+  Dali::Toolkit::Flex::Node* arg1 = (Dali::Toolkit::Flex::Node* )jarg1 ;
+  float result = 0.0f;
+  {
+    try {
+      result = arg1->Dali::Toolkit::Flex::Node::GetFlexWidth();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+  return result;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FlexLayout_GetHeight(void * jarg1 )
+{
+  float result = 0.0f;
+  Dali::Toolkit::Flex::Node* arg1 = (Dali::Toolkit::Flex::Node* )jarg1 ;
+  {
+    try {
+      result = arg1->Dali::Toolkit::Flex::Node::GetFlexHeight();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+  return result;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_FlexLayout_GetNodeFrame( void * jarg1, int index )
+{
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
+  Dali::Vector4 result;
+  void* jresult;
+  {
+    try {
+      result = arg1->Dali::Toolkit::Flex::Node::GetNodeFrame(index);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+
+  jresult = new Dali::Vector4((const Dali::Vector4 &)result);
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetMargin(void * jarg1, void * jarg2)
+{
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
+  Dali::Extents* arg2 = (Dali::Extents *)jarg2;
+  {
+    try {
+      arg1->Dali::Toolkit::Flex::Node::SetMargin( *arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetPadding(void * jarg1, void * jarg2)
+{
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
+  Dali::Extents* arg2 = (Dali::Extents *)jarg2;
+  {
+    try {
+      arg1->Dali::Toolkit::Flex::Node::SetPadding( *arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexDirection(void * jarg1)
+{
+  int jresult ;
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  Dali::Toolkit::Flex::FlexDirection result;
+
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
+  {
+    try {
+      result = (Dali::Toolkit::Flex::FlexDirection)arg1->Dali::Toolkit::Flex::Node::GetFlexDirection();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -262,15 +317,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexDirection(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexJustification(void * jarg1, int jarg2) {
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout::Justification arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexJustification(void * jarg1, int jarg2)
+{
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  Dali::Toolkit::Flex::Justification arg2 ;
 
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
-  arg2 = (Dali::Toolkit::FlexLayout::Justification)jarg2;
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
+  arg2 = (Dali::Toolkit::Flex::Justification)jarg2;
   {
     try {
-      (arg1)->SetFlexJustification(arg2);
+      arg1->Dali::Toolkit::Flex::Node::SetFlexJustification(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -288,15 +344,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexJustification(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexJustification(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexJustification(void * jarg1)
+{
   int jresult ;
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout::Justification result;
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  Dali::Toolkit::Flex::Justification result;
 
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
   {
     try {
-      result = (Dali::Toolkit::FlexLayout::Justification)((Dali::Toolkit::FlexLayout const *)arg1)->GetFlexJustification();
+      result = (Dali::Toolkit::Flex::Justification)arg1->Dali::Toolkit::Flex::Node::GetFlexJustification();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -316,15 +373,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexJustification(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexWrap(void * jarg1, int jarg2) {
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout::WrapType arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexWrap(void * jarg1, int jarg2)
+{
 
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
-  arg2 = (Dali::Toolkit::FlexLayout::WrapType)jarg2;
+  Dali::Toolkit::Flex::Node* arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
+  Dali::Toolkit::Flex::WrapType arg2 = (Dali::Toolkit::Flex::WrapType)jarg2;
   {
     try {
-      (arg1)->SetFlexWrap(arg2);
+      arg1->Dali::Toolkit::Flex::Node::SetFlexWrap(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -342,15 +398,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexWrap(void * jarg1, int
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexWrap(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexWrap(void * jarg1)
+{
   int jresult ;
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout::WrapType result;
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  Dali::Toolkit::Flex::WrapType result;
 
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
   {
     try {
-      result = (Dali::Toolkit::FlexLayout::WrapType)((Dali::Toolkit::FlexLayout const *)arg1)->GetFlexWrap();
+      result = (Dali::Toolkit::Flex::WrapType)arg1->Dali::Toolkit::Flex::Node::GetFlexWrap();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -370,15 +427,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexWrap(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexAlignment(void * jarg1, int jarg2) {
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout::Alignment::Type arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexAlignment(void * jarg1, int jarg2)
+{
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  Dali::Toolkit::Flex::Alignment arg2 ;
 
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
-  arg2 = (Dali::Toolkit::FlexLayout::Alignment::Type)jarg2;
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
+  arg2 = (Dali::Toolkit::Flex::Alignment)jarg2;
   {
     try {
-      (arg1)->SetFlexAlignment(arg2);
+      arg1->Dali::Toolkit::Flex::Node::SetFlexAlignment(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -396,15 +454,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexAlignment(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexAlignment(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexAlignment(void * jarg1)
+{
   int jresult ;
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout::Alignment::Type result;
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  Dali::Toolkit::Flex::Alignment result;
 
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
   {
     try {
-      result = (Dali::Toolkit::FlexLayout::Alignment::Type)((Dali::Toolkit::FlexLayout const *)arg1)->GetFlexAlignment();
+      result = (Dali::Toolkit::Flex::Alignment)arg1->Dali::Toolkit::Flex::Node::GetFlexAlignment();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -424,15 +483,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexAlignment(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexItemsAlignment(void * jarg1, int jarg2) {
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout::Alignment::Type arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexItemsAlignment(void * jarg1, int jarg2)
+{
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  Dali::Toolkit::Flex::Alignment arg2 ;
 
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
-  arg2 = (Dali::Toolkit::FlexLayout::Alignment::Type)jarg2;
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
+  arg2 = (Dali::Toolkit::Flex::Alignment)jarg2;
   {
     try {
-      (arg1)->SetFlexItemsAlignment(arg2);
+      arg1->Dali::Toolkit::Flex::Node::SetFlexItemsAlignment(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -450,15 +510,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexItemsAlignment(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexItemsAlignment(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexItemsAlignment(void * jarg1)
+{
   int jresult ;
-  Dali::Toolkit::FlexLayout *arg1 = (Dali::Toolkit::FlexLayout *) 0 ;
-  Dali::Toolkit::FlexLayout::Alignment::Type result;
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+  Dali::Toolkit::Flex::Alignment result;
 
-  arg1 = (Dali::Toolkit::FlexLayout *)jarg1;
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
   {
     try {
-      result = (Dali::Toolkit::FlexLayout::Alignment::Type)((Dali::Toolkit::FlexLayout const *)arg1)->GetFlexItemsAlignment();
+      result = (Dali::Toolkit::Flex::Alignment)arg1->Dali::Toolkit::Flex::Node::GetFlexItemsAlignment();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -476,6 +537,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexItemsAlignment(void * j
   jresult = (int)result;
   return jresult;
 }
+
 
 
 #ifdef __cplusplus
