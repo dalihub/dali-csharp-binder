@@ -425,7 +425,6 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali/devel-api/actors/actor-devel.h>
 #include <dali/devel-api/common/stage-devel.h>
-#include <dali/devel-api/events/key-event-devel.h>
 
 #include <dali/public-api/math/matrix.h>
 #include <dali/public-api/math/matrix3.h>
@@ -31501,43 +31500,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Key_state_get(void * jarg1) {
     result = ( Dali::KeyEvent::State ) ( ( arg1 )->state );
     jresult = (int)result;
   }
-  return jresult;
-}
-
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_logicalKey_get(void * jarg1) {
-  char * jresult ;
-  std::string result;
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0;
-
-  arg1 = (Dali::KeyEvent *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::DevelKeyEvent const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = Dali::DevelKeyEvent::GetLogicalKey(*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-
-  }
-
-  jresult = SWIG_csharp_string_callback( (&result)->c_str() );
   return jresult;
 }
 
