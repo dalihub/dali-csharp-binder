@@ -476,6 +476,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
 #include "web-view-signal-converter.h"
 
+#include <dali/integration-api/debug.h>
 
 // add here SWIG version check
 
@@ -2567,7 +2568,7 @@ Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::A
     jdirection = (int)direction;
     jresult = (void *) swig_callbackGetNextFocusableActor(jcurrent, jproposed, jdirection);
     if (!jresult) {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Unexpected null return for type Dali::Actor", 0);
+      DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::Actor! Next focus will be NULL, please be cautious to handle the keyboard foucs! ", __FILE__, __LINE__);
       return c_result;
     }
     c_result = *(Dali::Actor *)jresult;
