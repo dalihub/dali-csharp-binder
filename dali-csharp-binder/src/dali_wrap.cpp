@@ -103471,13 +103471,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1,
   std::string jarg2_str = std::string(jarg2);
   arg2 = &jarg2_str;
 
-  void (*handler)(char*) = (void (*)(char*)) jarg3;
-
   {
     try {
-      (arg1)->EvaluateJavaScript((std::string const &)*arg2, [handler](const std::string& result) {
-        handler(SWIG_csharp_string_callback(result.c_str()));
-      });
+      if (jarg3) {
+        void (*handler)(char*) = (void (*)(char*)) jarg3;
+        (arg1)->EvaluateJavaScript((std::string const &)*arg2, [handler](const std::string& result) {
+          handler(SWIG_csharp_string_callback(result.c_str()));
+        });
+      } else {
+        (arg1)->EvaluateJavaScript((std::string const &)*arg2);
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
