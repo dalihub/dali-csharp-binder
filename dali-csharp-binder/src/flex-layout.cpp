@@ -12,9 +12,7 @@ extern "C" {
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FlexLayout_New()
 {
-  void * jresult ;
-  Dali::Toolkit::Flex::Node* result;
-
+  Dali::Toolkit::Flex::Node* result = (Dali::Toolkit::Flex::Node*)0;
   {
     try {
       result = new Dali::Toolkit::Flex::Node();
@@ -32,8 +30,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FlexLayout_New()
       };
     }
   }
-  jresult = (void *)result;
-  return result;
+  return (void *)result;
 }
 
 

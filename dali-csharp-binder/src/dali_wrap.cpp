@@ -425,6 +425,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali/devel-api/actors/actor-devel.h>
 #include <dali/devel-api/common/stage-devel.h>
+#include <dali/devel-api/events/key-event-devel.h>
 
 #include <dali/public-api/math/matrix.h>
 #include <dali/public-api/math/matrix3.h>
@@ -475,6 +476,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
 #include "web-view-signal-converter.h"
 
+#include <dali/integration-api/debug.h>
 
 // add here SWIG version check
 
@@ -2566,7 +2568,7 @@ Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::A
     jdirection = (int)direction;
     jresult = (void *) swig_callbackGetNextFocusableActor(jcurrent, jproposed, jdirection);
     if (!jresult) {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Unexpected null return for type Dali::Actor", 0);
+      DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::Actor! Next focus will be NULL, please be cautious to handle the keyboard foucs! ", __FILE__, __LINE__);
       return c_result;
     }
     c_result = *(Dali::Actor *)jresult;
@@ -31500,6 +31502,43 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Key_state_get(void * jarg1) {
     result = ( Dali::KeyEvent::State ) ( ( arg1 )->state );
     jresult = (int)result;
   }
+  return jresult;
+}
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_logicalKey_get(void * jarg1) {
+  char * jresult ;
+  std::string result;
+  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0;
+
+  arg1 = (Dali::KeyEvent *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::DevelKeyEvent const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = Dali::DevelKeyEvent::GetLogicalKey(*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+
+  }
+
+  jresult = SWIG_csharp_string_callback( (&result)->c_str() );
   return jresult;
 }
 
@@ -103433,13 +103472,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1,
   std::string jarg2_str = std::string(jarg2);
   arg2 = &jarg2_str;
 
-  void (*handler)(char*) = (void (*)(char*)) jarg3;
-
   {
     try {
-      (arg1)->EvaluateJavaScript((std::string const &)*arg2, [handler](const std::string& result) {
-        handler(SWIG_csharp_string_callback(result.c_str()));
-      });
+      if (jarg3) {
+        void (*handler)(char*) = (void (*)(char*)) jarg3;
+        (arg1)->EvaluateJavaScript((std::string const &)*arg2, [handler](const std::string& result) {
+          handler(SWIG_csharp_string_callback(result.c_str()));
+        });
+      } else {
+        (arg1)->EvaluateJavaScript((std::string const &)*arg2);
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
