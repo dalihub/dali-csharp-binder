@@ -22,6 +22,7 @@
 #include "string"
 #include <dali/public-api/adaptor-framework/application.h>
 #include <dali/devel-api/adaptor-framework/application-devel.h>
+#include <dali/integration-api/adaptors/adaptor.h>
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
@@ -703,6 +704,63 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_GetWindow(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Application_GetWindowsListSize() {
+  unsigned int jresult ;
+  Dali::WindowContainer result;
+  {
+    try {
+      result = Dali::Adaptor::Get().GetWindows();
+      jresult = result.size();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_GetWindowsFromList(uint jarg1) {
+  void * jresult ;
+  uint index = jarg1;
+  Dali::WindowContainer result;
+
+  {
+    try {
+      result = Dali::Adaptor::Get().GetWindows();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Window((const Dali::Window &)result[index]);
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_ReplaceWindow(void * jarg1, void * jarg2, char * jarg3) {
   Dali::Application *arg1 = (Dali::Application *) 0 ;

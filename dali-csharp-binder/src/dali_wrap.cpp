@@ -476,6 +476,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
 #include "web-view-signal-converter.h"
 
+#include <dali/integration-api/debug.h>
 
 // add here SWIG version check
 
@@ -2567,7 +2568,7 @@ Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::A
     jdirection = (int)direction;
     jresult = (void *) swig_callbackGetNextFocusableActor(jcurrent, jproposed, jdirection);
     if (!jresult) {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Unexpected null return for type Dali::Actor", 0);
+      DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::Actor! Next focus will be NULL, please be cautious to handle the keyboard foucs! ", __FILE__, __LINE__);
       return c_result;
     }
     c_result = *(Dali::Actor *)jresult;
@@ -89239,21 +89240,21 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurView_Deactivate(void * jarg1
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurView_SetUserImageAndOutputRenderTarget(void * jarg1, void * jarg2, void * jarg3) {
   Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::Image arg2 ;
-  Dali::FrameBufferImage arg3 ;
-  Dali::Image *argp2 ;
-  Dali::FrameBufferImage *argp3 ;
+  Dali::Texture arg2 ;
+  Dali::FrameBuffer arg3 ;
+  Dali::Texture *argp2 ;
+  Dali::FrameBuffer *argp3 ;
 
   arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
-  argp2 = (Dali::Image *)jarg2;
+  argp2 = (Dali::Texture *)jarg2;
   if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Image", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Texture", 0);
     return ;
   }
   arg2 = *argp2;
-  argp3 = (Dali::FrameBufferImage *)jarg3;
+  argp3 = (Dali::FrameBuffer *)jarg3;
   if (!argp3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::FrameBufferImage", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::FrameBuffer", 0);
     return ;
   }
   arg3 = *argp3;
@@ -89318,7 +89319,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBlurStrengthPropertyI
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBlurredRenderTarget(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::FrameBufferImage result;
+  Dali::FrameBuffer result;
 
   arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
   {
@@ -89343,7 +89344,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBlurredRenderTarge
     }
   }
 
-  jresult = new Dali::FrameBufferImage((const Dali::FrameBufferImage &)result);
+  jresult = new Dali::FrameBuffer((const Dali::FrameBuffer &)result);
   return jresult;
 }
 
@@ -103471,13 +103472,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1,
   std::string jarg2_str = std::string(jarg2);
   arg2 = &jarg2_str;
 
-  void (*handler)(char*) = (void (*)(char*)) jarg3;
-
   {
     try {
-      (arg1)->EvaluateJavaScript((std::string const &)*arg2, [handler](const std::string& result) {
-        handler(SWIG_csharp_string_callback(result.c_str()));
-      });
+      if (jarg3) {
+        void (*handler)(char*) = (void (*)(char*)) jarg3;
+        (arg1)->EvaluateJavaScript((std::string const &)*arg2, [handler](const std::string& result) {
+          handler(SWIG_csharp_string_callback(result.c_str()));
+        });
+      } else {
+        (arg1)->EvaluateJavaScript((std::string const &)*arg2);
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
