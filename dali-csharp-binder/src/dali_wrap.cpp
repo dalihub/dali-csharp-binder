@@ -89240,21 +89240,21 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurView_Deactivate(void * jarg1
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurView_SetUserImageAndOutputRenderTarget(void * jarg1, void * jarg2, void * jarg3) {
   Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::Image arg2 ;
-  Dali::FrameBufferImage arg3 ;
-  Dali::Image *argp2 ;
-  Dali::FrameBufferImage *argp3 ;
+  Dali::Texture arg2 ;
+  Dali::FrameBuffer arg3 ;
+  Dali::Texture *argp2 ;
+  Dali::FrameBuffer *argp3 ;
 
   arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
-  argp2 = (Dali::Image *)jarg2;
+  argp2 = (Dali::Texture *)jarg2;
   if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Image", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Texture", 0);
     return ;
   }
   arg2 = *argp2;
-  argp3 = (Dali::FrameBufferImage *)jarg3;
+  argp3 = (Dali::FrameBuffer *)jarg3;
   if (!argp3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::FrameBufferImage", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::FrameBuffer", 0);
     return ;
   }
   arg3 = *argp3;
@@ -89319,7 +89319,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBlurStrengthPropertyI
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBlurredRenderTarget(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::FrameBufferImage result;
+  Dali::FrameBuffer result;
 
   arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
   {
@@ -89344,7 +89344,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBlurredRenderTarge
     }
   }
 
-  jresult = new Dali::FrameBufferImage((const Dali::FrameBufferImage &)result);
+  jresult = new Dali::FrameBuffer((const Dali::FrameBuffer &)result);
   return jresult;
 }
 
