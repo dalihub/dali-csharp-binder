@@ -89547,11 +89547,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PageFactory_NewPage(void * jarg1, unsi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PageTurnView_Property_PAGE_SIZE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PageTurnView_Property_VIEW_PAGE_SIZE_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::PageTurnView::Property::PAGE_SIZE;
+  result = (int)Dali::Toolkit::PageTurnView::Property::VIEW_PAGE_SIZE;
   jresult = (int)result;
   return jresult;
 }
