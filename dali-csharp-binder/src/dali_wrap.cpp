@@ -62038,49 +62038,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Builder_CreateRenderTask(void * jarg1, c
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Builder_GetFrameBufferImage(void * jarg1, char * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::Builder *arg1 = (Dali::Toolkit::Builder *) 0 ;
-  std::string *arg2 = 0 ;
-  Dali::FrameBufferImage result;
-
-  arg1 = (Dali::Toolkit::Builder *)jarg1;
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
-  {
-    try {
-      result = (arg1)->GetFrameBufferImage((std::string const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = new Dali::FrameBufferImage((const Dali::FrameBufferImage &)result);
-
-  //argout typemap for const std::string&
-
-  return jresult;
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Builder_GetPath(void * jarg1, char * jarg2) {
   void * jresult ;
   Dali::Toolkit::Builder *arg1 = (Dali::Toolkit::Builder *) 0 ;
