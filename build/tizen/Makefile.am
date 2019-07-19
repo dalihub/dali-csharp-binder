@@ -68,7 +68,8 @@ endif
 
 if COMMON_PROFILE
 LIBDALI_CSHARP_BINDER_LA_SOURCES = \
-                        $(dali_csharp_binder_common_src_files)
+                        $(dali_csharp_binder_common_src_files) \
+                        $(dali_csharp_binder_tizen_src_files)
 endif
 
 if WEARABLE_PROFILE
