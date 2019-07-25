@@ -1239,7 +1239,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetMIMEType(void * ja
   arg2 = &arg2_str;
   {
     try {
-      (arg1)->SetMIMEType((std::string const &)*arg2);
+      (arg1)->SetContentMIMETypes((std::string const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
