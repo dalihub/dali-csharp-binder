@@ -82,11 +82,14 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_New__SWIG_0(void * jarg1, char 
   Dali::Window result;
 
   argp1 = (Dali::PositionSize *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
-    return 0;
+  if (!argp1)
+  {
+    arg1 = Dali::PositionSize(0, 0, 0, 0);
   }
-  arg1 = *argp1;
+  else
+  {
+    arg1 = *argp1;
+  }
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
