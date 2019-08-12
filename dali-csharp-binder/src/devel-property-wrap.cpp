@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2019 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,7 +143,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_UNSELECTED_VISUAL_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelButton::Property::UNSELECTED_VISUAL;
+  result = (int)Dali::Toolkit::Button::Property::UNSELECTED_VISUAL;
   jresult = (int)result;
   return jresult;
 }
@@ -152,7 +152,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_SELECTED_VISUAL_get() {
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelButton::Property::SELECTED_VISUAL;
+  result = (int)Dali::Toolkit::Button::Property::SELECTED_VISUAL;
   jresult = (int)result;
   return jresult;
 }
@@ -161,7 +161,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_DISABLED_SELECTED_VISUAL_get()
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelButton::Property::DISABLED_SELECTED_VISUAL;
+  result = (int)Dali::Toolkit::Button::Property::DISABLED_SELECTED_VISUAL;
   jresult = (int)result;
   return jresult;
 }
@@ -170,7 +170,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_DISABLED_UNSELECTED_VISUAL_get
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelButton::Property::DISABLED_UNSELECTED_VISUAL;
+  result = (int)Dali::Toolkit::Button::Property::DISABLED_UNSELECTED_VISUAL;
   jresult = (int)result;
   return jresult;
 }
@@ -179,7 +179,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_UNSELECTED_BACKGROUND_VISUAL_g
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelButton::Property::UNSELECTED_BACKGROUND_VISUAL;
+  result = (int)Dali::Toolkit::Button::Property::UNSELECTED_BACKGROUND_VISUAL;
   jresult = (int)result;
   return jresult;
 }
@@ -188,7 +188,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_SELECTED_BACKGROUND_VISUAL_get
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelButton::Property::SELECTED_BACKGROUND_VISUAL;
+  result = (int)Dali::Toolkit::Button::Property::SELECTED_BACKGROUND_VISUAL;
   jresult = (int)result;
   return jresult;
 }
@@ -197,7 +197,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_DISABLED_UNSELECTED_BACKGROUND
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelButton::Property::DISABLED_UNSELECTED_BACKGROUND_VISUAL;
+  result = (int)Dali::Toolkit::Button::Property::DISABLED_UNSELECTED_BACKGROUND_VISUAL;
   jresult = (int)result;
   return jresult;
 }
@@ -206,7 +206,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_DISABLED_SELECTED_BACKGROUND_V
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::DevelButton::Property::DISABLED_SELECTED_BACKGROUND_VISUAL;
+  result = (int)Dali::Toolkit::Button::Property::DISABLED_SELECTED_BACKGROUND_VISUAL;
   jresult = (int)result;
   return jresult;
 }
