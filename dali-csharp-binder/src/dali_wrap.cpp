@@ -33802,6 +33802,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_GetId(void * jarg1) {
   unsigned int result;
 
   arg1 = (Dali::Actor *)jarg1;
+
+  if(!arg1) {
+    DALI_LOG_ERROR("[ERROR] actor is null! return -1");
+    return -1;
+  }
+
   {
     try {
       result = (unsigned int)((Dali::Actor const *)arg1)->GetId();

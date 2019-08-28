@@ -2360,6 +2360,83 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, cha
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(int jarg1, char * jarg2, char * jarg3, int jarg4, void * jarg5) {
+ void * jresult ;
+ int *arg1 = (int *) 0 ;
+ char ***arg2 ;
+ std::string *arg3 = 0 ;
+ Dali::Application::WINDOW_MODE arg4 ;
+ Dali::PositionSize arg5 ;
+ Dali::PositionSize *argp5 ;
+ Dali::Application result;
+ {
+   int index = 0;
+   int length = 0;
+   char *retPtr = NULL;
+   char *nextPtr;
+
+   argV = new char*[jarg1 + 1];
+
+   for(retPtr = strtok_r(jarg2, " ", &nextPtr);
+       retPtr != NULL && index < jarg1;
+       retPtr = strtok_r(NULL, " ", &nextPtr))
+   {
+     length = 0;
+     length = strlen(retPtr);
+     argV[ index ] = new char[ length + 1 ];
+     strncpy( argV[ index ], retPtr, length );
+     argV[ index ][ length ] = '\0';
+     index++;
+   }
+
+   while( index < jarg1 )
+   {
+     //if jarg1 - index >1, maybe cause error.
+     argV[index] = NULL;
+     index++;
+   }
+
+   argV[jarg1] = NULL;
+   argC = jarg1;
+
+   arg1 = &argC;
+   arg2 = &argV;
+ }
+
+ std::string arg3_str(jarg3);
+ arg3 = &arg3_str;
+ arg4 = (Dali::Application::WINDOW_MODE)jarg4;
+ argp5 = (Dali::PositionSize *)jarg5;
+ if (!argp5) {
+   SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
+   return 0;
+ }
+ arg5 = *argp5;
+ {
+   try {
+     result = Dali::Application::New(arg1,arg2,(std::string const &)*arg3,arg4,arg5);
+   } catch (std::out_of_range& e) {
+     {
+       SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+     };
+   } catch (std::exception& e) {
+     {
+       SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+     };
+   } catch (Dali::DaliException e) {
+     {
+       SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+     };
+   } catch (...) {
+     {
+       SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+     };
+   }
+ }
+ jresult = new Dali::Application((const Dali::Application &)result);
+ return jresult;
+}
+
 
 #ifdef __cplusplus
 }
