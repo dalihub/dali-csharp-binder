@@ -66973,6 +66973,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_PADDING_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_UPDATE_SIZE_HINT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::DevelActor::Property::UPDATE_SIZE_HINT;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View_Property() {
   void * jresult ;
   Dali::Toolkit::Control::Property *result = 0 ;
