@@ -63107,7 +63107,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetBackgroundColor(void * jar
       {
         if(resultMap->Find( Toolkit::Visual::Property::TYPE )->Get<int>() == Visual::COLOR )
         {
-          result = resultMap->Find( ColorVisual::Property::MIX_COLOR )->Get<Vector4>();
+          Dali::Property::Value* value = resultMap->Find( ColorVisual::Property::MIX_COLOR );
+          if (value)
+          {
+            result = value->Get<Vector4>();
+          }
         }
       }
     } catch (std::out_of_range& e) {
