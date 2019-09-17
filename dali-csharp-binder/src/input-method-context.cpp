@@ -549,7 +549,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_New() {
 
   {
     try {
-      result = Dali::InputMethodContext::New();
+      result = Dali::InputMethodContext::New( Dali::Stage::GetCurrent().GetRootLayer() );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
