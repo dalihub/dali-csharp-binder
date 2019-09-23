@@ -37,8 +37,7 @@ dali_csharp_binder_tizen_src_files = \
   ${dali_csharp_binder_dir}/src/widget_view_manager.cpp \
   ${dali_csharp_binder_dir}/src/font-client.cpp \
   ${dali_csharp_binder_dir}/src/transition-effects.cpp \
-  ${dali_csharp_binder_dir}/src/actor-devel.cpp \
-  ${dali_csharp_binder_dir}/src/atspi.cpp
+  ${dali_csharp_binder_dir}/src/actor-devel.cpp
 
 # module: csharp-binder, backend: tizen-wearable
 dali_csharp_binder_tizen_wearable_src_files = \
