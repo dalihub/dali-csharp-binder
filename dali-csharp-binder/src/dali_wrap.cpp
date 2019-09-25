@@ -63105,7 +63105,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetBackgroundColor(void * jar
       Property::Map* resultMap = ((arg1)->GetProperty( Control::Property::BACKGROUND )).GetMap();
       if (resultMap)
       {
-        if(resultMap->Find( Toolkit::Visual::Property::TYPE )->Get<int>() == Visual::COLOR )
+        Dali::Property::Value* type = resultMap->Find( Toolkit::Visual::Property::TYPE );
+        if(type && type->Get<int>() == Visual::COLOR )
         {
           Dali::Property::Value* value = resultMap->Find( ColorVisual::Property::MIX_COLOR );
           if (value)

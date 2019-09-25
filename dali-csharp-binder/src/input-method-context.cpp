@@ -1254,6 +1254,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetMIMEType(void * ja
 
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelPosition(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  unsigned int arg2 ;
+  unsigned int arg3 ;
+
+  arg1 = (Dali::InputMethodContext *)jarg1;
+  arg2 = (unsigned int)jarg2;
+  arg3 = (unsigned int)jarg3;
+  {
+    try {
+      (arg1)->SetInputPanelPosition(arg2, arg3);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+}
+
 
 // Signals
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ActivatedSignal(void * jarg1) {
