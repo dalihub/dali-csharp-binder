@@ -64,6 +64,24 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Emit(Dali:
   self->Emit( arg );
 }
 
+//Transition effect
+SWIGINTERN bool Dali_Signal_Window_Transition_Effect_Event_Signal_Empty(Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > const *self){
+  return self->Empty();
+}
+SWIGINTERN std::size_t Dali_Signal_Window_Transition_Effect_Event_Signal_GetConnectionCount(Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > const *self){
+return self->GetConnectionCount();
+}
+SWIGINTERN void Dali_Signal_Window_Transition_Effect_Event_Signal_Connect(Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *self, void (*func)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType)){
+  self->Connect( func );
+}
+SWIGINTERN void Dali_Signal_Window_Transition_Effect_Event_Signal_Disconnect(Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *self,void (*func)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType)){
+  self->Disconnect( func );
+}
+SWIGINTERN void Dali_Signal_Window_Transition_Effect_Event_Signal_Emit(Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *self,Dali::Window arg, Dali::DevelWindow::EffectState state, Dali::DevelWindow::EffectType type){
+  self->Emit( arg, state, type );
+}
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -2871,6 +2889,265 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetParent(void* jarg1)
   jresult = new Dali::Window((const Dali::Window &)result);
   return jresult;
 }
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_EventSignal(void * jarg1) {
+  void * jresult ;
+  Dali::Window *arg1 = (Dali::Window *) 0 ;
+  Dali::DevelWindow::TransitionEffectEventSignalType *result = 0 ;
+
+  arg1 = (Dali::Window *)jarg1;
+  {
+    try {
+      result = (Dali::DevelWindow::TransitionEffectEventSignalType *) &(Dali::DevelWindow::TransitionEffectEventSignal(*arg1));
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Empty(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
+  {
+    try {
+      result = (bool)Dali_Signal_Window_Transition_Effect_Event_Signal_Empty((Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_GetConnectionCount(void * jarg1) {
+  unsigned long jresult ;
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
+  std::size_t result;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
+  {
+    try {
+      result = Dali_Signal_Window_Transition_Effect_Event_Signal_GetConnectionCount((Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > const *)arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = (unsigned long)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
+  void (*arg2)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) = (void (*)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType)) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
+  arg2 = (void (*)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType))jarg2;
+  {
+    try {
+    //DALI_LOG_ERROR("CSharp_Dali_Window_Transition_Effect_Event_Signal_Connect(arg1=0x%x, arg2=0x%x) \n", arg1, arg2);
+      Dali_Signal_Window_Transition_Effect_Event_Signal_Connect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
+  void (*arg2)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) = (void (*)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType)) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
+  arg2 = (void (*)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType))jarg2;
+  {
+    try {
+      Dali_Signal_Window_Transition_Effect_Event_Signal_Disconnect(arg1,arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Emit(void * jarg1, void * jarg2, int jarg3, int jarg4) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
+  Dali::Window arg2 ;
+  Dali::Window *argp2 ;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
+  argp2 = (Dali::Window *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      Dali_Signal_Window_Transition_Effect_Event_Signal_Emit(arg1,arg2, (Dali::DevelWindow::EffectState)jarg3, (Dali::DevelWindow::EffectType)jarg4);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_new() {
+  void * jresult ;
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)new Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) >();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_delete(void * jarg1) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
+  {
+    try {
+      delete arg1;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+}
+
+
 
 #ifdef __cplusplus
 }
