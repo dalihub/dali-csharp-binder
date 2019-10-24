@@ -16,7 +16,7 @@
  */
 
 #include "layout-controller.h"
-#include <dali/integration-api/adaptors/adaptor.h>
+#include <dali/integration-api/adaptor-framework/adaptor.h>
 
 #ifdef __cplusplus
 extern "C" {
