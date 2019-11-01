@@ -21,7 +21,7 @@
 #include "common.h"
 #include <dali/devel-api/adaptor-framework/window-devel.h>
 #include <dali/public-api/adaptor-framework/window.h>
-#include <dali/integration-api/adaptors/adaptor.h>
+#include <dali/integration-api/adaptor-framework/adaptor.h>
 
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 
