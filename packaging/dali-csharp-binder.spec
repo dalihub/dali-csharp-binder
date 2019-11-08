@@ -46,6 +46,8 @@ BuildRequires: pkgconfig(dali-core)
 BuildRequires: pkgconfig(dali-adaptor)
 BuildRequires: pkgconfig(dali-toolkit)
 BuildRequires: pkgconfig(widget_viewer_dali)
+BuildRequires: pkgconfig(component-based-core-base)
+BuildRequires: pkgconfig(capi-appfw-app-common)
 
 
 %if 0%{?tizen_version_major} >= 5
@@ -177,6 +179,11 @@ CFLAGS+=" -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
 CXXFLAGS+=" -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
 configure_flags+=" --enable-ecore-wayland2"
 %endif
+%endif
+
+%if 0%{?tizen_version_major} >= 5 && 0%{?tizen_version_minor} >= 5 || 0%{?tizen_version_major} >= 6
+CFLAGS+=" -DCOMPONENT_APPLICATION_SUPPORT"
+CXXFLAGS+=" -DCOMPONENT_APPLICATION_SUPPORT"
 %endif
 
 # autogen
