@@ -79,7 +79,7 @@ void SwigDirector_ViewWrapperImpl::OnSizeSet(Dali::Vector3 const &targetSize) {
 }
 
 void SwigDirector_ViewWrapperImpl::OnSizeAnimation(Dali::Animation &animation, Dali::Vector3 const &targetSize) {
-  swig_callbackOnSizeAnimation(&animation, (Dali::Vector3 *) &targetSize);
+  swig_callbackOnSizeAnimation(new Dali::Animation(animation), (Dali::Vector3 *) &targetSize);
 
   Dali::Toolkit::Internal::Control::OnSizeAnimation(animation,targetSize);
 }
