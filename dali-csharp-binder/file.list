@@ -13,7 +13,6 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/version-check.cpp \
   ${dali_csharp_binder_dir}/src/layout-controller.cpp \
   ${dali_csharp_binder_dir}/src/flex-layout.cpp \
-  ${dali_csharp_binder_dir}/src/gestures.cpp \
   ${dali_csharp_binder_dir}/src/view-wrapper-impl-wrap.cpp \
   ${dali_csharp_binder_dir}/src/event-thread-callback-wrap.cpp \
   ${dali_csharp_binder_dir}/src/application.cpp \
