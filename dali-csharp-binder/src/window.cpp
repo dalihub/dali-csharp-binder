@@ -25,14 +25,6 @@
 
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 
-#ifdef TIZEN_BUILD
-#ifdef ECORE_WL2
-#include <Ecore_Wl2.h>
-#else
-#include <Ecore_Wayland.h>
-#endif
-#endif
-
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
@@ -1446,44 +1438,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetType(void * jarg1, int jarg2) {
 
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetResourceID(void * jarg1) {
-  int windowId = 0;
-  Dali::Window *window = (Dali::Window *)jarg1;
-  Dali::Any any;
-
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
-  }
-
-  try {
-      any = window->GetNativeHandle();
-#ifdef TIZEN_BUILD
-#ifdef ECORE_WL2
-      windowId = ecore_wl2_window_id_get(Dali::AnyCast<Ecore_Wl2_Window*>(any));
-#else
-      windowId = ecore_wl_window_id_get(Dali::AnyCast<Ecore_Wl_Window*>(any));
-#endif
-#endif
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  return windowId;
-}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetType(void * jarg1) {
   int jresult ;
