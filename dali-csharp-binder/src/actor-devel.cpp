@@ -25,6 +25,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_UPDATE_SIZE_HINT_get() {
   int jresult ;
   int result;
