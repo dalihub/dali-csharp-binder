@@ -2578,6 +2578,9 @@ Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::A
 
 void SwigDirector_CustomAlgorithmInterface::swig_connect_director(SWIG_Callback0_t callbackGetNextFocusableActor) {
   swig_callbackGetNextFocusableActor = callbackGetNextFocusableActor;
+
+  //Workaround: fix CustomAlgorithmInterface crash error occurred only in emulator, will be removed later after a proper solution is found
+  swig_callbackGetNextFocusableActor(NULL, NULL, 0); //upcall forcibly.
 }
 
 void SwigDirector_CustomAlgorithmInterface::swig_init_callbacks() {
