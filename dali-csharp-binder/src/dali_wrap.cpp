@@ -86152,6 +86152,80 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_1(char * jarg1) {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_2(bool swCodec) {
+  void * jresult ;
+  Dali::Toolkit::VideoView result;
+  {
+    try {
+      result = Dali::Toolkit::VideoView::New(swCodec);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView &)result);
+
+  //argout typemap for const std::string&
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char * jarg1, bool swCodec) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::Toolkit::VideoView result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  {
+    try {
+      result = Dali::Toolkit::VideoView::New((std::string const &)*arg1, swCodec);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView &)result);
+
+  //argout typemap for const std::string&
+
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VideoView__SWIG_0() {
   void * jresult ;
   Dali::Toolkit::VideoView *result = 0 ;
