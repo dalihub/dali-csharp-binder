@@ -100586,6 +100586,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_GetImplementation__SWIG_0(void 
   return jresult;
 }
 
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetApplication_New(int jarg1, char * jarg2, char * jarg3) {
   void * jresult ;
   int *arg1 = (int *) 0 ;
