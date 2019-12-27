@@ -16645,7 +16645,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Property_Map_Assign(void * jarg1, void
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey(void* jarg1, char* jarg2, void* jarg3) {
-  Dali::Property::Value *result = 0 ;
 
   Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
 
@@ -16683,7 +16682,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey(void* ja
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey(void* jarg1, int jarg2, void* jarg3) {
-  Dali::Property::Value *result = 0 ;
 
   Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
   Dali::Property::Index arg2 = (Dali::Property::Index)jarg2;
