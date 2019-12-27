@@ -16647,73 +16647,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Property_Map_Assign(void * jarg1, void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey(void* jarg1, char* jarg2, void* jarg3) {
-
-  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
-
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return;
-  }
-  std::string arg2_str(jarg2);
-  std::string* arg2 = &arg2_str;
-
-  Dali::Property::Value* arg3 = (Dali::Property::Value*)jarg3;
-
-  {
-    try {
-      arg1->operator[]((std::string const &)*arg2) = *arg3;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return;
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey(void* jarg1, int jarg2, void* jarg3) {
-
-  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
-  Dali::Property::Index arg2 = (Dali::Property::Index)jarg2;
-  Dali::Property::Value* arg3 = (Dali::Property::Value*)jarg3;
-
-  {
-    try {
-      arg1->operator[](arg2) = *arg3;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return;
-      };
-    }
-  }
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_0() {
   void * jresult ;
   Dali::Property::Value *result = 0 ;
@@ -67040,15 +66973,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_PADDING_get() {
   int result;
 
   result = (int)Dali::Toolkit::Control::Property::PADDING;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_SHADOW_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::DevelControl::Property::SHADOW;
   jresult = (int)result;
   return jresult;
 }
