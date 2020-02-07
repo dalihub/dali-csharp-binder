@@ -478,6 +478,9 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali/integration-api/debug.h>
 
+#include <dali-toolkit/devel-api/controls/video-view/video-view-devel.h>
+
+
 // add here SWIG version check
 
 #if defined(_MSC_VER)         // Microsoft Visual C++ 6.0
@@ -86656,6 +86659,42 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_FinishedSignal(void * jarg1)
 
   jresult = (void *)result;
   return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_GetNativePlayerHandle( void * jarg1 )
+{
+  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *)jarg1;
+  if( arg1 == nullptr )
+  {
+    DALI_LOG_ERROR("VideoView is nullptr!");
+    return nullptr;
+  }
+  void * ret = nullptr;
+  {
+    try{
+
+      Dali::Any result = Toolkit::DevelVideoView::GetMediaPlayer( *arg1 );
+      ret = Dali::AnyCast< void * >( result );
+
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  return ret;
 }
 
 
