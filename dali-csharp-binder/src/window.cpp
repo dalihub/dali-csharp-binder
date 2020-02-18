@@ -820,6 +820,47 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetCurrentOrientation(void * jarg1
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAvailableOrientations(void * jarg1, int* jarg2, int jarg3) {
+  Dali::Window* window = (Dali::Window*)jarg1;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return;
+  }
+  int *arg2 = (int *) 0 ;
+  int count = jarg3;
+
+  arg2 = jarg2;
+  Dali::Vector< Dali::Window::WindowOrientation> orientations;
+  orientations.Resize( count );
+  for( int i = 0; i<count; ++i)
+  {
+    orientations[i] = static_cast< Dali::Window::WindowOrientation >(arg2[i]);
+  }
+  {
+    try {
+      Dali::DevelWindow::SetAvailableOrientations(*window, orientations);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return;
+      };
+    }
+  }
+
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetNativeHandle(void * jarg1) {
   void * jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;
