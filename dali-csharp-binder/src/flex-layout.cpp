@@ -85,16 +85,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexDirection(void * jarg1
   }
 }
 
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_AddChild(void * jarg1, void *jarg2, Dali::Toolkit::Flex::MeasureCallback jarg3, int jarg4)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_AddChildWithMargin(void * jarg1, void *jarg2, void *jarg3, Dali::Toolkit::Flex::MeasureCallback jarg4, int jarg5)
 {
   Dali::Toolkit::Flex::Node* arg1 = (Dali::Toolkit::Flex::Node* )jarg1;
   Dali::Actor *arg2 = (Dali::Actor *) 0;  arg2 = (Dali::Actor *)jarg2;
 
   {
     try {
-        arg1->Dali::Toolkit::Flex::Node::AddChild((Dali::Actor &)*arg2, jarg3, jarg4);
+      if(jarg3 == NULL)
+      {
+        arg1->Dali::Toolkit::Flex::Node::AddChild((Dali::Actor &)*arg2, Dali::Extents(0,0,0,0), jarg4, jarg5);
+      }
+      else
+      {
+        Dali::Extents* arg3 = (Dali::Extents *)jarg3;
+        arg1->Dali::Toolkit::Flex::Node::AddChild((Dali::Actor &)*arg2, *arg3, jarg4, jarg5);
+      }
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
@@ -109,6 +115,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_AddChild(void * jarg1, void *
       };
     }
   }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_AddChild(void * jarg1, void *jarg2, Dali::Toolkit::Flex::MeasureCallback jarg3, int jarg4)
+{
+  return CSharp_Dali_FlexLayout_AddChildWithMargin(jarg1,jarg2,NULL,jarg3,jarg4);
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_RemoveChild(void * jarg1, void * jarg2)
