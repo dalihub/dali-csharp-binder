@@ -480,6 +480,8 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali-toolkit/devel-api/controls/video-view/video-view-devel.h>
 
+#include <dali/devel-api/adaptor-framework/native-image-source-devel.h>
+
 
 // add here SWIG version check
 
@@ -103089,6 +103091,157 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_SetEnvironmentVariable(char * jarg1, cha
   bool result = EnvironmentVariable::SetEnvironmentVariable(jarg1, jarg2);
   return result;
 }
+
+
+struct NativeImageSourcePtrHandle
+{
+  NativeImageSourcePtr Ptr;
+};
+
+SWIGEXPORT NativeImageInterface* SWIGSTDCALL CSharp_Dali_NativeImageSource_Upcast(void* jarg1)
+{
+  NativeImageSource* arg1 = (NativeImageSource*)jarg1;
+  return (NativeImageInterface*)(arg1);
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New_Handle(unsigned int jarg1, unsigned int jarg2, int jarg3)
+{
+  void* jresult;
+  NativeImageSourcePtrHandle* handle = new NativeImageSourcePtrHandle();
+  {
+    try {
+      handle->Ptr = ( NativeImageSource::New(jarg1, jarg2, (NativeImageSource::ColorDepth)jarg3) );
+    }
+    catch (std::out_of_range & e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    }
+    catch (std::exception & e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = (void *)handle;
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New(void* jarg1)
+{
+  void* jresult;
+  NativeImageSourcePtrHandle* handle = (NativeImageSourcePtrHandle*)jarg1;
+  jresult = (void*)( handle->Ptr.Get() );
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_Delete(void* jarg1) {
+  NativeImageSourcePtrHandle* arg1 = (NativeImageSourcePtrHandle*)jarg1;
+  {
+    try {
+      delete arg1;
+    }
+    catch (std::out_of_range & e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return;
+      };
+    }
+    catch (std::exception & e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return;
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return;
+      };
+    }
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_AcquireBuffer(void* jarg1, int* jarg2, int* jarg3, int* jarg4)
+{
+  void* jresult;
+  NativeImageSource* arg1 = (NativeImageSource*)jarg1;
+  uint16_t* arg2 = (uint16_t*)(jarg2);
+  uint16_t* arg3 = (uint16_t*)(jarg3);
+  uint16_t* arg4 = (uint16_t*)(jarg4);
+  {
+    try {
+      jresult = (void *)Dali::DevelNativeImageSource::AcquireBuffer( *arg1, *arg2, *arg3, *arg4 );
+    }
+    catch (std::out_of_range & e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    }
+    catch (std::exception & e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageSource_ReleaseBuffer(void* jarg1)
+{
+  bool jresult;
+  NativeImageSource* arg1 = (NativeImageSource*)jarg1;
+
+  {
+    try {
+      jresult = Dali::DevelNativeImageSource::ReleaseBuffer( *arg1 );
+    }
+    catch (std::out_of_range & e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    }
+    catch (std::exception & e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  return jresult;
+}
+
 
 #ifdef __cplusplus
 }
