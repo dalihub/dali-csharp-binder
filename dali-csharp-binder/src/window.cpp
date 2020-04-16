@@ -3473,6 +3473,44 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_delete(
   return;
 }
 
+SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Window_GetNativeId( void* jarg1 )
+{
+  Dali::Window* window = (Dali::Window*)jarg1;
+  int32_t ret = -1;
+  if( !window )
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ret;
+  }
+
+  {
+    try {
+      ret = Dali::DevelWindow::GetNativeId( *window );
+    }
+    catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ret;
+      };
+    }
+    catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ret;
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ret;
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ret;
+      };
+    }
+  }
+  return ret;
+}
+
 #ifdef __cplusplus
 }
 #endif
