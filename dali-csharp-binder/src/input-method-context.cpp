@@ -20,6 +20,7 @@
 
 #include "common.h"
 #include <dali/devel-api/adaptor-framework/input-method-context.h>
+#include <dali/integration-api/debug.h>
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
@@ -1252,6 +1253,57 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetMIMEType(void * ja
 
   //argout typemap for const std::string&
 
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelLanguage(void * jarg1, int jarg2) {
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::InputPanelLanguage arg2 ;
+
+  arg1 = (Dali::InputMethodContext *)jarg1;
+  if (arg1 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+    return;
+  }
+
+  arg2 = (Dali::InputMethodContext::InputPanelLanguage)jarg2;
+  {
+    try {
+      (arg1)->SetInputPanelLanguage(arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return ; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ; }  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelLanguage(void * jarg1) {
+  int jresult ;
+  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::InputPanelLanguage result;
+
+  arg1 = (Dali::InputMethodContext *)jarg1;
+  if (arg1 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+    return false;
+  }
+  {
+    try {
+      result = (Dali::InputMethodContext::InputPanelLanguage)(arg1)->GetInputPanelLanguage();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) { SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0; } catch (...) { SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0; }  }
+  jresult = (int)result;
+  return jresult;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelPosition(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
