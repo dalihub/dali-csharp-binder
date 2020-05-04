@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-m4_define([dali_version],[0.1.0])
+m4_define([dali_version],[2.0.0])
 AC_INIT([dali], [dali_version])
 AM_INIT_AUTOMAKE([-Wall foreign])
 AC_CONFIG_MACRO_DIR([m4])
@@ -67,9 +67,9 @@ AM_CONDITIONAL([ENABLE_RENAME_SO], [test x$enable_rename_so = xyes])
 ### AM_CONDITIONAL([TIZENBUILD], [test x$enable_tizenBuild = xyes])
 ### AM_CONDITIONAL([ECOREWL2], [test x$enable_ecoreWl2 = xyes])
 
-PKG_CHECK_MODULES(DALICORE, dali-core)
-PKG_CHECK_MODULES(DALIADAPTOR, dali-adaptor)
-PKG_CHECK_MODULES(DALITOOLKIT, dali-toolkit)
+PKG_CHECK_MODULES(DALICORE, dali2-core)
+PKG_CHECK_MODULES(DALIADAPTOR, dali2-adaptor)
+PKG_CHECK_MODULES(DALITOOLKIT, dali2-toolkit)
 
 if test "x$enable_profile" = "xMOBILE" -o "x$enable_profile" = "xWEARABLE" -o "x$enable_profile" = "xTV" -o "x$enable_profile" = "xIVI" -o "x$enable_profile" = "xCOMMON"; then
   PKG_CHECK_MODULES(DALIWIDGET, widget_viewer_dali)
@@ -79,21 +79,6 @@ if test "x$enable_profile" = "xMOBILE" -o "x$enable_profile" = "xWEARABLE" -o "x
     PKG_CHECK_MODULES(ECORE_WAYLAND, ecore-wayland)
   fi
 fi
-
-
-# Checks for libraries. added for widget_viewer_dali binding only for tizen
-# added for key grab binding only for tizen
-## if test x$enable_tizenBuild = xyes; then
-##  PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit widget_viewer_dali)
-##   if test x$enable_ecoreWl2 = xyes; then
-##     PKG_CHECK_MODULES(ECORE_WL2, ecore-wl2)
-##   else
-##     PKG_CHECK_MODULES(ECORE_WAYLAND, ecore-wayland)
-##   fi
-##  else
-##   PKG_CHECK_MODULES(DALI, dali-core dali-adaptor dali-toolkit)
-## fi
-
 
 if test x$DALI_DATA_RW_DIR != x; then
   dataReadWriteDir=$DALI_DATA_RW_DIR
@@ -113,7 +98,7 @@ AC_SUBST(DALI_CSHARP_BINDER_CFLAGS)
 AC_SUBST(DALI_PROFILE_CFLAGS)
 
 AC_CONFIG_FILES([Makefile])
-AC_CONFIG_FILES([dali-csharp-binder.pc])
+AC_CONFIG_FILES([dali2-csharp-binder.pc])
 
 AC_OUTPUT
 

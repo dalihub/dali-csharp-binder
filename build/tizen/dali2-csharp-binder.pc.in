@@ -9,5 +9,5 @@ Name: DALi C# binder
 Description: DALi C# binder Libaray
 Version: @VERSION@
 Requires: dali-core dali-adaptor dali-toolkit
-Libs: -L${libdir} -ldali-csharp-binder
+Libs: -L${libdir} -ldali2-csharp-binder
 Cflags: -I${includedir}/dali-csharp-binder
