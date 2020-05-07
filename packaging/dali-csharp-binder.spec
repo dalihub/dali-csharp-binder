@@ -19,9 +19,9 @@
 #please update nui_internal_version below, if you changed version-check.cpp
 %define nui_internal_version nui550
 
-Name: dali-csharp-binder
+Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 1.9.10
+Version: 1.9.11
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -42,9 +42,9 @@ BuildRequires:  pkgconfig(screen_connector_provider)
 %endif
 
 BuildRequires: pkgconfig
-BuildRequires: pkgconfig(dali-core)
-BuildRequires: pkgconfig(dali-adaptor)
-BuildRequires: pkgconfig(dali-toolkit)
+BuildRequires: pkgconfig(dali2-core)
+BuildRequires: pkgconfig(dali2-adaptor)
+BuildRequires: pkgconfig(dali2-toolkit)
 BuildRequires: pkgconfig(widget_viewer_dali)
 
 
@@ -213,8 +213,8 @@ pushd %{_builddir}/%{name}-%{version}/build/tizen
 popd
 
 pushd %{buildroot}%{_libdir}
-for FILE in libdali-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.mobile"; done
-mv pkgconfig/dali-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
+for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.mobile"; done
+mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
 make clean
@@ -239,8 +239,8 @@ pushd %{_builddir}/%{name}-%{version}/build/tizen
 popd
 
 pushd %{buildroot}%{_libdir}
-for FILE in libdali-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.tv"; done
-mv pkgconfig/dali-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
+for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.tv"; done
+mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
 make clean
@@ -265,8 +265,8 @@ pushd %{_builddir}/%{name}-%{version}/build/tizen
 popd
 
 pushd %{buildroot}%{_libdir}
-for FILE in libdali-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.wearable"; done
-mv pkgconfig/dali-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
+for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.wearable"; done
+mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
 make clean
@@ -291,8 +291,8 @@ pushd %{_builddir}/%{name}-%{version}/build/tizen
 popd
 
 pushd %{buildroot}%{_libdir}
-for FILE in libdali-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.ivi"; done
-mv pkgconfig/dali-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
+for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.ivi"; done
+mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
 make clean
@@ -318,8 +318,8 @@ pushd %{_builddir}/%{name}-%{version}/build/tizen
 popd
 
 pushd %{buildroot}%{_libdir}
-for FILE in libdali-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE"; done
-mv pkgconfig/dali-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
+for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE"; done
+mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
 make clean
@@ -338,14 +338,14 @@ pushd %{_builddir}/%{name}-%{version}/build/tizen
 # If the profile is selected, the line below is repquired.
 # !unified && (wearable || tv || ivi || mobile)
 %if "%{?profile}" == "wearable" || "%{?profile}" == "tv" || "%{?profile}" == "ivi" || "%{?profile}" == "mobile"
-rm -rf %{buildroot}%{_libdir}/libdali-csharp-binder*.so*
+rm -rf %{buildroot}%{_libdir}/libdali2-csharp-binder*.so*
 %endif
 
 # If the profile is selected, the line below is repquired.
 # wearable || tv || ivi || mobile || unified
 %if "%{?profile}" != "common"
-for FILE in libdali-*.so*; do mv "$FILE" "%{buildroot}%{_libdir}/$FILE"; done
-mv dali-csharp-binder*.pc %{buildroot}%{_libdir}/pkgconfig/
+for FILE in libdali2-*.so*; do mv "$FILE" "%{buildroot}%{_libdir}/$FILE"; done
+mv dali2-csharp-binder*.pc %{buildroot}%{_libdir}/pkgconfig/
 %endif
 popd
 
@@ -357,36 +357,36 @@ pushd %{buildroot}%{_libdir}
 # If the profile is selected, the line below is repquired.
 # if common ||"undefined"
 #%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
-rm -rf libdali-csharp-binder*.so
-ln -s libdali-csharp-binder.so.0.0.0 libdali-csharp-binder.so
+rm -rf libdali2-csharp-binder*.so
+ln -s libdali2-csharp-binder.so.0.0.0 libdali2-csharp-binder.so
 #%endif
 
 # If the profile is selected, the line below is repquired.
 # if wearable || "undefined"
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-rm -rf libdali-csharp-binder*.so.wearable
-ln -s libdali-csharp-binder.so.0.0.*.wearable libdali-csharp-binder.so.wearable
+rm -rf libdali2-csharp-binder*.so.wearable
+ln -s libdali2-csharp-binder.so.0.0.*.wearable libdali2-csharp-binder.so.wearable
 %endif
 
 # If the profile is selected, the line below is repquired.
 # if tv ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
-rm -rf libdali-csharp-binder*.so.tv
-ln -s libdali-csharp-binder.so.0.0.*.tv libdali-csharp-binder.so.tv
+rm -rf libdali2-csharp-binder*.so.tv
+ln -s libdali2-csharp-binder.so.0.0.*.tv libdali2-csharp-binder.so.tv
 %endif
 
 # If the profile is selected, the line below is repquired.
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
-rm -rf libdali-csharp-binder*.so.ivi
-ln -s libdali-csharp-binder.so.0.0.*.ivi libdali-csharp-binder.so.ivi
+rm -rf libdali2-csharp-binder*.so.ivi
+ln -s libdali2-csharp-binder.so.0.0.*.ivi libdali2-csharp-binder.so.ivi
 %endif
 
 # If the profile is selected, the line below is repquired.
 # if mobile || "undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-rm -rf libdali-csharp-binder*.so.mobile
-ln -s libdali-csharp-binder.so.0.0.*.mobile libdali-csharp-binder.so.mobile
+rm -rf libdali2-csharp-binder*.so.mobile
+ln -s libdali2-csharp-binder.so.0.0.*.mobile libdali2-csharp-binder.so.mobile
 %endif
 popd
 
@@ -430,7 +430,7 @@ exit 0
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %post profile_mobile
 pushd %{_libdir}
-for FILE in libdali-csharp-binder.so*.mobile; do ln -sf "$FILE" "${FILE%.mobile}"; done
+for FILE in libdali2-csharp-binder.so*.mobile; do ln -sf "$FILE" "${FILE%.mobile}"; done
 popd
 /sbin/ldconfig
 exit 0
@@ -447,7 +447,7 @@ exit 0
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %post profile_tv
 pushd %{_libdir}
-for FILE in libdali-csharp-binder.so*.tv; do ln -sf "$FILE" "${FILE%.tv}"; done
+for FILE in libdali2-csharp-binder.so*.tv; do ln -sf "$FILE" "${FILE%.tv}"; done
 popd
 /sbin/ldconfig
 exit 0
@@ -464,7 +464,7 @@ exit 0
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %post profile_wearable
 pushd %{_libdir}
-for FILE in libdali-csharp-binder.so*.wearable; do ln -sf "$FILE" "${FILE%.wearable}"; done
+for FILE in libdali2-csharp-binder.so*.wearable; do ln -sf "$FILE" "${FILE%.wearable}"; done
 popd
 /sbin/ldconfig
 exit 0
@@ -481,7 +481,7 @@ exit 0
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 %post profile_ivi
 pushd %{_libdir}
-for FILE in libdali-csharp-binder.so*.ivi; do ln -sf "$FILE" "${FILE%.ivi}"; done
+for FILE in libdali2-csharp-binder.so*.ivi; do ln -sf "$FILE" "${FILE%.ivi}"; done
 popd
 /sbin/ldconfig
 exit 0
@@ -504,11 +504,11 @@ exit 0
 # if common ||"undefined"
 #%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %defattr(-,root,root,-)
-%{_libdir}/libdali-csharp-binder.so*
-%exclude %{_libdir}/libdali-csharp-binder*.so*.mobile
-%exclude %{_libdir}/libdali-csharp-binder*.so*.wearable
-%exclude %{_libdir}/libdali-csharp-binder*.so*.tv
-%exclude %{_libdir}/libdali-csharp-binder*.so*.ivi
+%{_libdir}/libdali2-csharp-binder.so*
+%exclude %{_libdir}/libdali2-csharp-binder*.so*.mobile
+%exclude %{_libdir}/libdali2-csharp-binder*.so*.wearable
+%exclude %{_libdir}/libdali2-csharp-binder*.so*.tv
+%exclude %{_libdir}/libdali2-csharp-binder*.so*.ivi
 #%endif
 
 # If the profile is selected, the line below is repquired.
@@ -524,7 +524,7 @@ exit 0
 %files profile_mobile
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%{_libdir}/libdali-csharp-binder.so.*mobile
+%{_libdir}/libdali2-csharp-binder.so.*mobile
 %endif
 
 # If the profile is selected, the line below is repquired.
@@ -533,7 +533,7 @@ exit 0
 %files profile_tv
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%{_libdir}/libdali-csharp-binder.so.*tv
+%{_libdir}/libdali2-csharp-binder.so.*tv
 %endif
 
 # If the profile is selected, the line below is repquired.
@@ -542,7 +542,7 @@ exit 0
 %files profile_wearable
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%{_libdir}/libdali-csharp-binder.so.*wearable
+%{_libdir}/libdali2-csharp-binder.so.*wearable
 %endif
 
 # If the profile is selected, the line below is repquired.
@@ -551,12 +551,12 @@ exit 0
 %files profile_ivi
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
-%{_libdir}/libdali-csharp-binder.so.*ivi
+%{_libdir}/libdali2-csharp-binder.so.*ivi
 %endif
 
 %files devel
 %defattr(-,root,root,-)
-%dir %{_includedir}/%{name}/
-%{_includedir}/%{name}/*
+%dir %{_includedir}/dali-csharp-binder/
+%{_includedir}/dali-csharp-binder/*
 %{_libdir}/pkgconfig/%{name}.pc
 

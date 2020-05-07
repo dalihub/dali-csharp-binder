@@ -19,10 +19,10 @@ autom4te.cache/
 config.h
 config.log
 config.status
-dali-csharp-binder.pc
-dali-csharp-binder/.deps/
-dali-csharp-binder/.libs/
-dali-csharp-binder/Makefile
+dali2-csharp-binder.pc
+dali2-csharp-binder/.deps/
+dali2-csharp-binder/.libs/
+dali2-csharp-binder/Makefile
 libtool
 stamp-h1
 build/tizen/m4/
