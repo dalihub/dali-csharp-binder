@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018 Samsung Electronics Co., Ltd.
+# Copyright (c) 2020 Samsung Electronics Co., Ltd.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ dali_csharp_binder_dir = ../../dali-csharp-binder
 include ../../dali-csharp-binder/file.list
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = dali-csharp-binder.pc
+pkgconfig_DATA = dali2-csharp-binder.pc
 
 # sources
 if UBUNTU_PROFILE
@@ -111,29 +111,14 @@ endif
 
 endif
 
-lib_LTLIBRARIES = libdali-csharp-binder.la
+lib_LTLIBRARIES = libdali2-csharp-binder.la
 
-libdali_csharp_binder_la_SOURCES = $(LIBDALI_CSHARP_BINDER_LA_SOURCES)
-libdali_csharp_binder_la_includes = $(LIBDALI_CSHARP_BINDER_LA_INCLUDES)
-libdali_csharp_binder_ladir = $(libdir)
-libdali_csharp_binder_la_LDFLAGS = ${LDFLAGS}
-libdali_csharp_binder_la_CXXFLAGS = $(LIBDALI_CSHARP_BINDER_LA_CXXFLAGS)
-libdali_csharp_binder_la_LIBADD = $(LIBDALI_CSHARP_BINDER_LA_LIBADD)
+libdali2_csharp_binder_la_SOURCES = $(LIBDALI_CSHARP_BINDER_LA_SOURCES)
+libdali2_csharp_binder_la_includes = $(LIBDALI_CSHARP_BINDER_LA_INCLUDES)
+libdali2_csharp_binder_ladir = $(libdir)
+libdali2_csharp_binder_la_LDFLAGS = ${LDFLAGS}
+libdali2_csharp_binder_la_CXXFLAGS = $(LIBDALI_CSHARP_BINDER_LA_CXXFLAGS)
+libdali2_csharp_binder_la_LIBADD = $(LIBDALI_CSHARP_BINDER_LA_LIBADD)
 
-libdali_csharp_binderdir = $(includedir)/dali-csharp-binder
-libdali_csharp_binder_HEADERS = $(dali_csharp_binder_header_files)
-
-## added for key grab binding only for tizen
-## if TIZENBUILD
-## libdali_csharp_binder_la_CXXFLAGS += -DTIZEN_BUILD
-## if ECOREWL2
-## libdali_csharp_binder_la_CXXFLAGS += -DECORE_WL2
-## libdali_csharp_binder_la_CXXFLAGS += -DEFL_BETA_API_SUPPORT
-## libdali_csharp_binder_la_CXXFLAGS+= $(ECORE_WL2_CFLAGS)
-## else
-## libdali_csharp_binder_la_CXXFLAGS+= $(ECORE_WAYLAND_CFLAGS)
-## endif
-## libdali_csharp_binder_la_SOURCES = $(dali_csharp_binder_src_files_tizen)
-## else
-## libdali_csharp_binder_la_SOURCES = $(dali_csharp_binder_src_files)
-## endif
+libdali2_csharp_binderdir = $(includedir)/dali-csharp-binder
+libdali2_csharp_binder_HEADERS = $(dali_csharp_binder_header_files)
