@@ -466,6 +466,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_MATCH_SYSTEM_LANGUAGE_DIREC
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_MIN_LINE_SIZE_get() {
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::MIN_LINE_SIZE;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_LINE_WRAP_MODE_get() {
   int jresult ;
   int result;
