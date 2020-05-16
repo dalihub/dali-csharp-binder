@@ -101470,6 +101470,34 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Resize(void * jarg1, unsigne
   }
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PixelBuffer_Rotate(void * jarg1, void * jarg2) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  Dali::Degree * arg2 ;
+
+  bool result = false;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  arg2 = (Dali::Degree *)jarg2;
+  {
+    try {
+      result = (arg1)->Rotate(*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return false;
+      };
+    }
+  }
+  return result;
+}
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
   void * jresult ;
