@@ -34468,7 +34468,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_0(void * jarg1, floa
   arg3 = (float)jarg3;
   {
     try {
-      (arg1)->SetSize(arg2,arg3);
+      (arg1)->SetProperty( Actor::Property::SIZE, Dali::Vector2(arg2,arg3) );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -34503,7 +34503,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_1(void * jarg1, floa
   arg4 = (float)jarg4;
   {
     try {
-      (arg1)->SetSize(arg2,arg3,arg4);
+      (arg1)->SetProperty( Actor::Property::SIZE, Dali::Vector3(arg2,arg3,arg4) );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -34538,7 +34538,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_2(void * jarg1, void
   }
   {
     try {
-      (arg1)->SetSize((Dali::Vector2 const &)*arg2);
+      (arg1)->SetProperty( Actor::Property::SIZE, (Dali::Vector2 const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -34573,7 +34573,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_3(void * jarg1, void
   }
   {
     try {
-      (arg1)->SetSize((Dali::Vector3 const &)*arg2);
+      (arg1)->SetProperty( Actor::Property::SIZE, (Dali::Vector3 const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -34705,7 +34705,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPosition__SWIG_0(void * jarg1, 
   arg3 = (float)jarg3;
   {
     try {
-      (arg1)->SetPosition(arg2,arg3);
+      (arg1)->SetProperty( Actor::Property::POSITION, Dali::Vector2( arg2, arg3 ) );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -34740,7 +34740,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPosition__SWIG_1(void * jarg1, 
   arg4 = (float)jarg4;
   {
     try {
-      (arg1)->SetPosition(arg2,arg3,arg4);
+      (arg1)->SetProperty( Actor::Property::POSITION, Dali::Vector3( arg2, arg3, arg4 ) );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -34775,7 +34775,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPosition__SWIG_2(void * jarg1, 
   }
   {
     try {
-      (arg1)->SetPosition((Dali::Vector3 const &)*arg2);
+      (arg1)->SetProperty( Actor::Property::POSITION, (Dali::Vector3 const &)*arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -34806,7 +34806,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetX(void * jarg1, float jarg2) {
   arg2 = (float)jarg2;
   {
     try {
-      (arg1)->SetX(arg2);
+      (arg1)->SetProperty( Actor::Property::POSITION_X, (arg2) );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -34837,7 +34837,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetY(void * jarg1, float jarg2) {
   arg2 = (float)jarg2;
   {
     try {
-      (arg1)->SetY(arg2);
+      (arg1)->SetProperty( Actor::Property::POSITION_Y, arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -34868,7 +34868,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetZ(void * jarg1, float jarg2) {
   arg2 = (float)jarg2;
   {
     try {
-      (arg1)->SetZ(arg2);
+      (arg1)->SetProperty( Actor::Property::POSITION_Z, arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -35428,7 +35428,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetScale__SWIG_0(void * jarg1, flo
   arg2 = (float)jarg2;
   {
     try {
-      (arg1)->SetScale(arg2);
+      (arg1)->SetProperty( Actor::Property::SCALE, arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -35463,7 +35463,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetScale__SWIG_1(void * jarg1, flo
   arg4 = (float)jarg4;
   {
     try {
-      (arg1)->SetScale(arg2,arg3,arg4);
+      (arg1)->SetProperty( Actor::Property::SCALE, Vector3( arg2, arg3, arg4 ) );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -35498,7 +35498,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetScale__SWIG_2(void * jarg1, voi
   }
   {
     try {
-      (arg1)->SetScale((Dali::Vector3 const &)*arg2);
+      (arg1)->SetProperty( Actor::Property::SCALE, (Dali::Vector3 const &)*arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
