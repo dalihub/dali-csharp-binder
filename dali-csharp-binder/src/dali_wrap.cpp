@@ -35074,7 +35074,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetOrientation__SWIG_0(void * jarg
   }
   {
     try {
-      (arg1)->SetOrientation((Dali::Degree const &)*arg2,(Dali::Vector3 const &)*arg3);
+      (arg1)->SetProperty( Actor::Property::ORIENTATION, Quaternion( (Dali::Degree const &)*arg2,(Dali::Vector3 const &)*arg3 ) );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -35115,7 +35115,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetOrientation__SWIG_1(void * jarg
   }
   {
     try {
-      (arg1)->SetOrientation((Dali::Radian const &)*arg2,(Dali::Vector3 const &)*arg3);
+      (arg1)->SetProperty( Actor::Property::ORIENTATION, Quaternion( (Dali::Radian const &)*arg2,(Dali::Vector3 const &)*arg3 ) );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -35150,7 +35150,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetOrientation__SWIG_2(void * jarg
   }
   {
     try {
-      (arg1)->SetOrientation((Dali::Quaternion const &)*arg2);
+      (arg1)->SetProperty( Actor::Property::ORIENTATION, (Dali::Quaternion const &)*arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -35923,7 +35923,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColorMode(void * jarg1, int jar
   arg2 = (Dali::ColorMode)jarg2;
   {
     try {
-      (arg1)->SetColorMode(arg2);
+      (arg1)->SetProperty( Actor::Property::COLOR_MODE,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -35954,7 +35954,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetColorMode(void * jarg1) {
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (Dali::ColorMode)((Dali::Actor const *)arg1)->GetColorMode();
+      result = (Dali::ColorMode)((Dali::Actor const *)arg1)->GetProperty< ColorMode >( Actor::Property::COLOR_MODE );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -36020,7 +36020,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetDrawMode(void * jarg1, int jarg
   arg2 = (Dali::DrawMode::Type)jarg2;
   {
     try {
-      (arg1)->SetDrawMode(arg2);
+      (arg1)->SetProperty( Actor::Property::DRAW_MODE,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -36051,7 +36051,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetDrawMode(void * jarg1) {
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (Dali::DrawMode::Type)((Dali::Actor const *)arg1)->GetDrawMode();
+      result = (Dali::DrawMode::Type)((Dali::Actor const *)arg1)->GetProperty< DrawMode::Type >( Actor::Property::DRAW_MODE );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -36385,7 +36385,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSizeScalePolicy(void * jarg1, i
   arg2 = (Dali::SizeScalePolicy::Type)jarg2;
   {
     try {
-      (arg1)->SetSizeScalePolicy(arg2);
+      (arg1)->SetProperty( Actor::Property::SIZE_SCALE_POLICY,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -36416,7 +36416,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetSizeScalePolicy(void * jarg1) {
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (Dali::SizeScalePolicy::Type)((Dali::Actor const *)arg1)->GetSizeScalePolicy();
+      result = (Dali::SizeScalePolicy::Type)((Dali::Actor const *)arg1)->GetProperty< SizeScalePolicy::Type >( Actor::Property::SIZE_SCALE_POLICY );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -36453,7 +36453,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSizeModeFactor(void * jarg1, vo
   }
   {
     try {
-      (arg1)->SetSizeModeFactor((Dali::Vector3 const &)*arg2);
+      (arg1)->SetProperty( Actor::Property::SIZE_MODE_FACTOR, (Dali::Vector3 const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -36484,7 +36484,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetSizeModeFactor(void * jarg1) 
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = ((Dali::Actor const *)arg1)->GetSizeModeFactor();
+      result = ((Dali::Actor const *)arg1)->GetProperty< Vector3 >( Actor::Property::SIZE_MODE_FACTOR );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -36626,7 +36626,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPadding(void * jarg1, void * ja
   }
   {
     try {
-      (arg1)->SetPadding((Dali::Padding const &)*arg2);
+      (arg1)->SetProperty( Actor::Property::PADDING, (Dali::Padding const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -36661,7 +36661,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_GetPadding(void * jarg1, void * ja
   }
   {
     try {
-      ((Dali::Actor const *)arg1)->GetPadding(*arg2);
+      *arg2 = ((Dali::Actor const *)arg1)->GetProperty<Vector4>( Actor::Property::PADDING );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -101468,6 +101468,34 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Resize(void * jarg1, unsigne
       };
     }
   }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PixelBuffer_Rotate(void * jarg1, void * jarg2) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  Dali::Degree * arg2 ;
+
+  bool result = false;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  arg2 = (Dali::Degree *)jarg2;
+  {
+    try {
+      result = (arg1)->Rotate(*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return false;
+      };
+    }
+  }
+  return result;
 }
 
 
