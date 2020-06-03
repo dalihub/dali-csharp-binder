@@ -107,6 +107,10 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Application_SWIGUpcast(Dal
   return (Dali::BaseHandle *)jarg1;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_PreInitialize() {
+  ApplicationPreInitialize(&gArgC, &gArgV);
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_0() {
   void * jresult ;
   Dali::Application result;
