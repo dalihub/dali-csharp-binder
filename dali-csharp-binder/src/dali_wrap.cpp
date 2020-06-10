@@ -37593,7 +37593,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Layer_GetDepth(void * jarg1) {
   arg1 = (Dali::Layer *)jarg1;
   {
     try {
-      result = (unsigned int)((Dali::Layer const *)arg1)->GetDepth();
+      result = (unsigned int)((Dali::Layer const *)arg1)->GetProperty< int >( Layer::Property::DEPTH );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -37890,7 +37890,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetBehavior(void * jarg1, int jarg
   arg2 = (Dali::Layer::Behavior)jarg2;
   {
     try {
-      (arg1)->SetBehavior(arg2);
+      (arg1)->SetProperty( Layer::Property::BEHAVIOR, arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -37921,7 +37921,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Layer_GetBehavior(void * jarg1) {
   arg1 = (Dali::Layer *)jarg1;
   {
     try {
-      result = (Dali::Layer::Behavior)((Dali::Layer const *)arg1)->GetBehavior();
+      result = (Dali::Layer::Behavior)((Dali::Layer const *)arg1)->GetProperty<Dali::Layer::Behavior>( Dali::Layer::Property::BEHAVIOR );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -37954,7 +37954,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClipping(void * jarg1, unsigned
   arg2 = jarg2 ? true : false;
   {
     try {
-      (arg1)->SetClipping(arg2);
+      (arg1)->SetProperty( Dali::Layer::Property::CLIPPING_ENABLE, arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -37985,7 +37985,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Layer_IsClipping(void * jarg1) {
   arg1 = (Dali::Layer *)jarg1;
   {
     try {
-      result = (bool)((Dali::Layer const *)arg1)->IsClipping();
+      result = (bool)((Dali::Layer const *)arg1)->GetProperty< bool >( Dali::Layer::Property::CLIPPING_ENABLE );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -38024,7 +38024,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_0(void * jarg
   arg5 = (int)jarg5;
   {
     try {
-      (arg1)->SetClippingBox(arg2,arg3,arg4,arg5);
+      (arg1)->SetProperty( Dali::Layer::Property::CLIPPING_BOX, Rect<int32_t>( arg2,arg3,arg4,arg5 ) );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -38061,7 +38061,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_1(void * jarg
   arg2 = *argp2;
   {
     try {
-      (arg1)->SetClippingBox(arg2);
+      (arg1)->SetProperty( Dali::Layer::Property::CLIPPING_BOX, arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -38092,7 +38092,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Layer_GetClippingBox(void * jarg1) {
   arg1 = (Dali::Layer *)jarg1;
   {
     try {
-      result = ((Dali::Layer const *)arg1)->GetClippingBox();
+      result = ((Dali::Layer const *)arg1)->GetProperty< Rect<int32_t> >( Layer::Property::CLIPPING_BOX );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -38125,7 +38125,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetDepthTestDisabled(void * jarg1,
   arg2 = jarg2 ? true : false;
   {
     try {
-      (arg1)->SetDepthTestDisabled(arg2);
+      (arg1)->SetProperty( Layer::Property::DEPTH_TEST, !arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -38156,7 +38156,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Layer_IsDepthTestDisabled(void *
   arg1 = (Dali::Layer *)jarg1;
   {
     try {
-      result = (bool)((Dali::Layer const *)arg1)->IsDepthTestDisabled();
+      result = !(bool)((Dali::Layer const *)arg1)->GetProperty< bool >( Layer::Property::DEPTH_TEST );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -38220,7 +38220,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetTouchConsumed(void * jarg1, uns
   arg2 = jarg2 ? true : false;
   {
     try {
-      (arg1)->SetTouchConsumed(arg2);
+      (arg1)->SetProperty( Layer::Property::CONSUMES_TOUCH, arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -38251,7 +38251,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Layer_IsTouchConsumed(void * jar
   arg1 = (Dali::Layer *)jarg1;
   {
     try {
-      result = (bool)((Dali::Layer const *)arg1)->IsTouchConsumed();
+      result = (bool)((Dali::Layer const *)arg1)->GetProperty< bool >( Layer::Property::CONSUMES_TOUCH );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -38284,7 +38284,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetHoverConsumed(void * jarg1, uns
   arg2 = jarg2 ? true : false;
   {
     try {
-      (arg1)->SetHoverConsumed(arg2);
+      (arg1)->SetProperty( Layer::Property::CONSUMES_HOVER, arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -38315,7 +38315,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Layer_IsHoverConsumed(void * jar
   arg1 = (Dali::Layer *)jarg1;
   {
     try {
-      result = (bool)((Dali::Layer const *)arg1)->IsHoverConsumed();
+      result = (bool)((Dali::Layer const *)arg1)->GetProperty< bool >( Layer::Property::CONSUMES_HOVER );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
