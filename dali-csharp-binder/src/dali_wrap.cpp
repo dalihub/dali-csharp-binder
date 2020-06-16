@@ -33237,6 +33237,28 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_CLIPPING_MODE_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_OPACITY_get() {
+
+  return Dali::Actor::Property::OPACITY;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_SCREEN_POSITION_get() {
+
+  return Dali::Actor::Property::SCREEN_POSITION;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_POSITION_USES_ANCHOR_POINT_get() {
+
+  return Dali::Actor::Property::POSITION_USES_ANCHOR_POINT;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_INHERIT_LAYOUT_DIRECTION_get() {
+  return Dali::Actor::Property::INHERIT_LAYOUT_DIRECTION;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_LAYOUT_DIRECTION_get() {
+  return Dali::Actor::Property::LAYOUT_DIRECTION;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Actor_Property() {
   void * jresult ;
@@ -33591,7 +33613,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_GetId(void * jarg1) {
 
   {
     try {
-      result = (unsigned int)((Dali::Actor const *)arg1)->GetId();
+      result = (unsigned int)((Dali::Actor const *)arg1)->GetProperty< int >( Actor::Property::ID );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -33624,7 +33646,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsRoot(void * jarg1) {
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (bool)((Dali::Actor const *)arg1)->IsRoot();
+      result = (bool)((Dali::Actor const *)arg1)->GetProperty< bool >( Actor::Property::IS_ROOT );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -33657,7 +33679,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_OnStage(void * jarg1) {
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (bool)((Dali::Actor const *)arg1)->OnStage();
+      result = (bool)((Dali::Actor const *)arg1)->GetProperty< bool >( Actor::Property::CONNECTED_TO_SCENE );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -33690,7 +33712,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsLayer(void * jarg1) {
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (bool)((Dali::Actor const *)arg1)->IsLayer();
+      result = (bool)((Dali::Actor const *)arg1)->GetProperty< bool >( Actor::Property::IS_LAYER );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -35499,7 +35521,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetOpacity(void * jarg1, float jar
   arg2 = (float)jarg2;
   {
     try {
-      (arg1)->SetProperty( DevelActor::Property::OPACITY,arg2);
+      (arg1)->SetProperty( Actor::Property::OPACITY,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -35530,7 +35552,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetCurrentOpacity(void * jarg1) {
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (float)((Dali::Actor const *)arg1)->GetCurrentProperty< float >( DevelActor::Property::OPACITY );
+      result = (float)((Dali::Actor const *)arg1)->GetCurrentProperty< float >( Actor::Property::OPACITY );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -35961,7 +35983,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusable(void * jarg1,
   arg2 = jarg2 ? true : false;
   {
     try {
-      (arg1)->SetKeyboardFocusable(arg2);
+      (arg1)->SetProperty( Actor::Property::KEYBOARD_FOCUSABLE, arg2 );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -35992,7 +36014,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsKeyboardFocusable(void *
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (bool)((Dali::Actor const *)arg1)->IsKeyboardFocusable();
+      result = (bool)((Dali::Actor const *)arg1)->GetProperty< bool >( Actor::Property::KEYBOARD_FOCUSABLE );
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -36536,7 +36558,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetHierarchyDepth(void * jarg1) {
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (int)(arg1)->GetHierarchyDepth();
+      result = (int)(arg1)->GetProperty< int >( Actor::Property::HIERARCHY_DEPTH );
       Dali::Actor parent = ((Dali::Actor const *)arg1)->GetParent();
     } catch (std::out_of_range& e) {
       {
