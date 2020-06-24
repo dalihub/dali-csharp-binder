@@ -438,6 +438,8 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/public-api/adaptor-framework/style-change.h>
 #include <dali/devel-api/adaptor-framework/environment-variable.h>
 
+#include <dali-toolkit/devel-api/accessibility-manager/accessibility-manager.h>
+
 #include <dali-toolkit/devel-api/builder/builder.h>
 
 #include <dali-toolkit/devel-api/focus-manager/keyinput-focus-manager.h>
@@ -451,6 +453,9 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-landscape-view.h>
 #include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-portrait-view.h>
 #include <dali-toolkit/devel-api/controls/buttons/toggle-button.h>
+#include <dali-toolkit/devel-api/controls/alignment/alignment.h>
+#include <dali-toolkit/devel-api/controls/scroll-bar/scroll-bar.h>
+#include <dali-toolkit/devel-api/controls/table-view/table-view.h>
 
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-factory.h>
