@@ -1,4 +1,4 @@
-/** Copyright (c) 2017 Samsung Electronics Co., Ltd.
+/** Copyright (c) 2020 Samsung Electronics Co., Ltd.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -51,7 +51,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_RENDERING_BACKEND_get(
   int jresult ;
   int result;
 
-  result = (int)Dali::Toolkit::TextField::Property::RENDERING_BACKEND;
+  result = (int)Dali::Toolkit::DevelTextField::Property::RENDERING_BACKEND;
   jresult = (int)result;
   return jresult;
 }

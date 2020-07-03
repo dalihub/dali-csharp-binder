@@ -1,4 +1,4 @@
-/** Copyright (c) 2019 Samsung Electronics Co., Ltd.
+/** Copyright (c) 2020 Samsung Electronics Co., Ltd.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -756,53 +756,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_GetWindowsFromList(uint ja
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_ReplaceWindow(void * jarg1, void * jarg2, char * jarg3) {
-  Dali::Application *arg1 = (Dali::Application *) 0 ;
-  Dali::PositionSize arg2 ;
-  std::string *arg3 = 0 ;
-  Dali::PositionSize *argp2 ;
-
-  arg1 = (Dali::Application *)jarg1;
-  argp2 = (Dali::PositionSize *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  if (!jarg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return ;
-  }
-  std::string arg3_str(jarg3);
-  arg3 = &arg3_str;
-  {
-    try {
-      (arg1)->ReplaceWindow(arg2,(std::string const &)*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
-
-  //argout typemap for const std::string&
-
-}
-
-
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Application_GetResourcePath() {
   char * jresult ;
   std::string result;
@@ -895,134 +848,6 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Application_GetLanguage(void * jarg1) 
   jresult = SWIG_csharp_string_callback((&result)->c_str());
   return jresult;
 }
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_SetViewMode(void * jarg1, int jarg2) {
-  Dali::Application *arg1 = (Dali::Application *) 0 ;
-  Dali::ViewMode arg2 ;
-
-  arg1 = (Dali::Application *)jarg1;
-  arg2 = (Dali::ViewMode)jarg2;
-  {
-    try {
-      (arg1)->SetViewMode(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Application_GetViewMode(void * jarg1) {
-  int jresult ;
-  Dali::Application *arg1 = (Dali::Application *) 0 ;
-  Dali::ViewMode result;
-
-  arg1 = (Dali::Application *)jarg1;
-  {
-    try {
-      result = (Dali::ViewMode)((Dali::Application const *)arg1)->GetViewMode();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_SetStereoBase(void * jarg1, float jarg2) {
-  Dali::Application *arg1 = (Dali::Application *) 0 ;
-  float arg2 ;
-
-  arg1 = (Dali::Application *)jarg1;
-  arg2 = (float)jarg2;
-  {
-    try {
-      (arg1)->SetStereoBase(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Application_GetStereoBase(void * jarg1) {
-  float jresult ;
-  Dali::Application *arg1 = (Dali::Application *) 0 ;
-  float result;
-
-  arg1 = (Dali::Application *)jarg1;
-  {
-    try {
-      result = (float)((Dali::Application const *)arg1)->GetStereoBase();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = result;
-  return jresult;
-}
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_InitSignal(void * jarg1) {
   void * jresult ;
@@ -1165,39 +990,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_ResetSignal(void * jarg1) 
   {
     try {
       result = (Dali::Application::AppSignalType *) &(arg1)->ResetSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_ResizeSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Application *arg1 = (Dali::Application *) 0 ;
-  Dali::Application::AppSignalType *result = 0 ;
-
-  arg1 = (Dali::Application *)jarg1;
-  {
-    try {
-      result = (Dali::Application::AppSignalType *) &(arg1)->ResizeSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
