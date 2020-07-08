@@ -2712,12 +2712,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetRootLayer(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_KeyEventSignal(void * jarg1) {
   void * jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::DevelWindow::KeyEventSignalType *result = 0 ;
+  Dali::Window::KeyEventSignalType *result = 0 ;
 
   arg1 = (Dali::Window *)jarg1;
   {
     try {
-      result = (Dali::DevelWindow::KeyEventSignalType *) &(Dali::DevelWindow::KeyEventSignal(*arg1));
+      result = (Dali::Window::KeyEventSignalType *) &(arg1->KeyEventSignal());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2744,12 +2744,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_KeyEventSignal(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_TouchSignal(void * jarg1) {
   void * jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::DevelWindow::TouchSignalType *result = 0 ;
+  Dali::Window::TouchSignalType *result = 0 ;
 
   arg1 = (Dali::Window *)jarg1;
   {
     try {
-      result = (Dali::DevelWindow::TouchSignalType *) &(Dali::DevelWindow::TouchSignal(*arg1));
+      result = (Dali::Window::TouchSignalType *) &(arg1->TouchSignal());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
