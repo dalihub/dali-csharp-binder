@@ -485,6 +485,8 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/devel-api/controls/video-view/video-view-devel.h>
 
 #include <dali/devel-api/adaptor-framework/native-image-source-devel.h>
+#include <tbm_surface.h>
+
 
 #include <dali-toolkit/devel-api/text/rendering-backend.h>
 
@@ -24121,6 +24123,38 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Texture_New__SWIG_1(void * jarg1) {
   return jresult;
 }
 
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Texture_TbmSurface(tbm_surface_h tbm_surface) {
+  Dali::NativeImageSourcePtr mNativeImageSrc;
+  Dali::Texture mNativeTexture;
+  void * jresult ;
+
+  if (!tbm_surface) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "tbm surface is null", 0);
+    return 0;
+  }
+
+  try {
+    Dali::Any source(tbm_surface);
+    mNativeImageSrc = Dali::NativeImageSource::New(source);
+    mNativeTexture = Dali::Texture::New( *mNativeImageSrc );
+    } catch (std::out_of_range& e) {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return 0;
+    } catch (std::exception& e) {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return 0;
+    } catch (Dali::DaliException e) {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return 0;
+    } catch (...) {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return 0;
+  }
+
+  jresult = new Dali::Texture((const Dali::Texture &)mNativeTexture);
+  return (void*)jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Texture__SWIG_0() {
   void * jresult ;
