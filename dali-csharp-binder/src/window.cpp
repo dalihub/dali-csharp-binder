@@ -1,4 +1,4 @@
-/** Copyright (c) 2019 Samsung Electronics Co., Ltd.
+/** Copyright (c) 2020 Samsung Electronics Co., Ltd.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -31,20 +31,20 @@ extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
 
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_bool_SP__Sg__Empty(Dali::Signal< void (bool) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_bool_SP__Sg__Empty(Dali::Signal< void (Dali::Window, bool) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_bool_SP__Sg__GetConnectionCount(Dali::Signal< void (bool) > const *self){
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_bool_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::Window, bool) > const *self){
 return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Connect(Dali::Signal< void (bool) > *self,void (*func)(bool)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Connect(Dali::Signal< void (Dali::Window, bool) > *self,void (*func)(Dali::Window, bool)){
   self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Disconnect(Dali::Signal< void (bool) > *self,void (*func)(bool)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Disconnect(Dali::Signal< void (Dali::Window, bool) > *self,void (*func)(Dali::Window, bool)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Emit(Dali::Signal< void (bool) > *self,bool arg){
-  self->Emit( arg );
+SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Emit(Dali::Signal< void (Dali::Window, bool) > *self,Dali::Window arg, bool focusIn){
+  self->Emit( arg, focusIn );
 }
 
 /*ResizedSignal*/
@@ -440,99 +440,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Assign(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_ShowIndicator(void * jarg1, int jarg2) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Window::IndicatorVisibleMode arg2 ;
-
-  arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::Window::IndicatorVisibleMode)jarg2;
-  {
-    try {
-      (arg1)->ShowIndicator(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetIndicatorBgOpacity(void * jarg1, int jarg2) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Window::IndicatorBgOpacity arg2 ;
-
-  arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::Window::IndicatorBgOpacity)jarg2;
-  {
-    try {
-      (arg1)->SetIndicatorBgOpacity(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RotateIndicator(void * jarg1, int jarg2) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Window::WindowOrientation arg2 ;
-
-  arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::Window::WindowOrientation)jarg2;
-  {
-    try {
-      (arg1)->RotateIndicator(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetClass(void * jarg1, char * jarg2, char * jarg3) {
   Dali::Window *arg1 = (Dali::Window *) 0 ;
   std::string arg2 ;
@@ -899,7 +806,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FocusChangedSignal(void * jarg1) {
   void * jresult ;
   Dali::Window arg1 ;
   Dali::Window *argp1 ;
-  Dali::Window::FocusSignalType *result = 0 ;
+  Dali::Window::FocusChangeSignalType *result = 0 ;
 
   argp1 = (Dali::Window *)jarg1;
   if (!argp1) {
@@ -909,7 +816,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FocusChangedSignal(void * jarg1) {
   arg1 = *argp1;
   {
     try {
-      result = (Dali::Window::FocusSignalType*)&arg1.FocusChangedSignal();
+      result = (Dali::Window::FocusChangeSignalType*)&arg1.FocusChangeSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1869,13 +1776,13 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetBrightness(void * jarg1) {
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (bool) > *arg1 = (Dali::Signal< void (bool) > *) 0 ;
+  Dali::Signal< void (Dali::Window, bool) > *arg1 = (Dali::Signal< void (Dali::Window, bool) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< void (bool) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Window, bool) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_bool_SP__Sg__Empty((Dali::Signal< void (bool) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_bool_SP__Sg__Empty((Dali::Signal< void (Dali::Window, bool) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1902,13 +1809,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_Empty(void
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (bool) > *arg1 = (Dali::Signal< void (bool) > *) 0 ;
+  Dali::Signal< void (Dali::Window, bool) > *arg1 = (Dali::Signal< void (Dali::Window, bool) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< void (bool) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Window, bool) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_bool_SP__Sg__GetConnectionCount((Dali::Signal< void (bool) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_bool_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Window, bool) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1934,11 +1841,11 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_GetConnec
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (bool) > *arg1 = (Dali::Signal< void (bool) > *) 0 ;
-  void (*arg2)(bool) = (void (*)(bool)) 0 ;
+  Dali::Signal< void (Dali::Window, bool) > *arg1 = (Dali::Signal< void (Dali::Window, bool) > *) 0 ;
+  void (*arg2)(Dali::Window, bool) = (void (*)(Dali::Window, bool)) 0 ;
 
-  arg1 = (Dali::Signal< void (bool) > *)jarg1;
-  arg2 = (void (*)(bool))jarg2;
+  arg1 = (Dali::Signal< void (Dali::Window, bool) > *)jarg1;
+  arg2 = (void (*)(Dali::Window, bool))jarg2;
   {
     try {
       Dali_Signal_Sl_void_Sp_bool_SP__Sg__Connect(arg1,arg2);
@@ -1965,11 +1872,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_Connect(void * jar
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (bool) > *arg1 = (Dali::Signal< void (bool) > *) 0 ;
-  void (*arg2)(bool) = (void (*)(bool)) 0 ;
+  Dali::Signal< void (Dali::Window, bool) > *arg1 = (Dali::Signal< void (Dali::Window, bool) > *) 0 ;
+  void (*arg2)(Dali::Window, bool) = (void (*)(Dali::Window, bool)) 0 ;
 
-  arg1 = (Dali::Signal< void (bool) > *)jarg1;
-  arg2 = (void (*)(bool))jarg2;
+  arg1 = (Dali::Signal< void (Dali::Window, bool) > *)jarg1;
+  arg2 = (void (*)(Dali::Window, bool))jarg2;
   {
     try {
       Dali_Signal_Sl_void_Sp_bool_SP__Sg__Disconnect(arg1,arg2);
@@ -1995,15 +1902,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_Disconnect(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_Emit(void * jarg1, unsigned int jarg2) {
-  Dali::Signal< void (bool) > *arg1 = (Dali::Signal< void (bool) > *) 0 ;
-  bool arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_Emit(void * jarg1, void* jarg2, unsigned int jarg3) {
+  Dali::Signal< void (Dali::Window, bool) > *arg1 = (Dali::Signal< void (Dali::Window, bool) > *)jarg1;
+  Dali::Window* arg2 = (Dali::Window*)jarg2;
+  bool arg3 = jarg3 ? true : false;;
 
-  arg1 = (Dali::Signal< void (bool) > *)jarg1;
-  arg2 = jarg2 ? true : false;
+  if (arg1 == nullptr || arg2 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr or arg2 == nullptr");
+    return;
+  }
+
   {
     try {
-      Dali_Signal_Sl_void_Sp_bool_SP__Sg__Emit(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_bool_SP__Sg__Emit(arg1,*arg2,arg3);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -2028,11 +1939,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowFocusSignalType_Emit(void * jarg1,
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WindowFocusSignalType() {
   void * jresult ;
-  Dali::Signal< void (bool) > *result = 0 ;
+  Dali::Signal< void (Dali::Window, bool) > *result = 0 ;
 
   {
     try {
-      result = (Dali::Signal< void (bool) > *)new Dali::Signal< void (bool) >();
+      result = (Dali::Signal< void (Dali::Window, bool) > *)new Dali::Signal< void (Dali::Window, bool) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2058,9 +1969,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WindowFocusSignalType() {
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowFocusSignalType(void * jarg1) {
-  Dali::Signal< void (bool) > *arg1 = (Dali::Signal< void (bool) > *) 0 ;
+  Dali::Signal< void (Dali::Window, bool) > *arg1 = (Dali::Signal< void (Dali::Window, bool) > *) 0 ;
 
-  arg1 = (Dali::Signal< void (bool) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Window, bool) > *)jarg1;
   {
     try {
       delete arg1;
@@ -2801,12 +2712,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetRootLayer(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_KeyEventSignal(void * jarg1) {
   void * jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::DevelWindow::KeyEventSignalType *result = 0 ;
+  Dali::Window::KeyEventSignalType *result = 0 ;
 
   arg1 = (Dali::Window *)jarg1;
   {
     try {
-      result = (Dali::DevelWindow::KeyEventSignalType *) &(Dali::DevelWindow::KeyEventSignal(*arg1));
+      result = (Dali::Window::KeyEventSignalType *) &(arg1->KeyEventSignal());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2833,12 +2744,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_KeyEventSignal(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_TouchSignal(void * jarg1) {
   void * jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::DevelWindow::TouchSignalType *result = 0 ;
+  Dali::Window::TouchSignalType *result = 0 ;
 
   arg1 = (Dali::Window *)jarg1;
   {
     try {
-      result = (Dali::DevelWindow::TouchSignalType *) &(Dali::DevelWindow::TouchSignal(*arg1));
+      result = (Dali::Window::TouchSignalType *) &(arg1->TouchSignal());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
