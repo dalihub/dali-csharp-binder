@@ -419,6 +419,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #define SWIGSTDCALL
 
+#include <time.h>
 
 #include <dali/dali.h>
 #include <dali-toolkit/dali-toolkit.h>

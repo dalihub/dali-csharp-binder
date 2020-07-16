@@ -726,9 +726,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Application_GetWindowsListSize()
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_GetWindowsFromList(uint jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_GetWindowsFromList(unsigned int jarg1) {
   void * jresult ;
-  uint index = jarg1;
+  unsigned int index = jarg1;
   Dali::WindowContainer result;
 
   {
