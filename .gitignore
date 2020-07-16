@@ -30,4 +30,4 @@ build/tizen/m4/
 *.gcda
 build/tizen/.deps/
 build/tizen/.libs/
-
+build/tizen/build/

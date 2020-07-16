@@ -22,11 +22,11 @@
 #include <dali/dali.h>
 #include <dali-toolkit/devel-api/text/text-utils-devel.h>
 
+extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RendererParameters_0() {
   void * jresult ;
