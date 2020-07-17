@@ -2712,12 +2712,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetRootLayer(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_KeyEventSignal(void * jarg1) {
   void * jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::DevelWindow::KeyEventSignalType *result = 0 ;
+  Dali::Window::KeyEventSignalType *result = 0 ;
 
   arg1 = (Dali::Window *)jarg1;
   {
     try {
-      result = (Dali::DevelWindow::KeyEventSignalType *) &(Dali::DevelWindow::KeyEventSignal(*arg1));
+      result = (Dali::Window::KeyEventSignalType *) &(arg1->KeyEventSignal());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2744,12 +2744,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_KeyEventSignal(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_TouchSignal(void * jarg1) {
   void * jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::DevelWindow::TouchSignalType *result = 0 ;
+  Dali::Window::TouchSignalType *result = 0 ;
 
   arg1 = (Dali::Window *)jarg1;
   {
     try {
-      result = (Dali::DevelWindow::TouchSignalType *) &(Dali::DevelWindow::TouchSignal(*arg1));
+      result = (Dali::Window::TouchSignalType *) &(arg1->TouchSignal());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -3420,6 +3420,80 @@ SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Window_GetNativeId( void* jarg1 )
     }
   }
   return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFrameRenderedCallback( void* nuiWindow, void* nuiCallback, int nuiFrameId )
+{
+  Dali::Window* window = (Dali::Window*)nuiWindow;
+  void (*callback)(int32_t) = (void (*)(int32_t))nuiCallback;
+
+  if( !window || !callback )
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null", 0);
+    return;
+  }
+
+  try
+  {
+    Dali::DevelWindow::AddFrameRenderedCallback( *window, std::unique_ptr< Dali::CallbackBase >( Dali::MakeCallback( callback ) ), nuiFrameId );
+  }
+  catch( std::out_of_range& e )
+  {
+    SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+    return;
+  }
+  catch( std::exception& e )
+  {
+    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+    return;
+  }
+  catch( Dali::DaliException e )
+  {
+    SWIG_CSharpException(SWIG_UnknownError, e.condition);
+    return;
+  }
+  catch(...)
+  {
+    SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+    return;
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFramePresentedCallback( void* nuiWindow, void* nuiCallback, int nuiFrameId )
+{
+  Dali::Window* window = (Dali::Window*)nuiWindow;
+  void (*callback)(int32_t) = (void (*)(int32_t))nuiCallback;
+
+  if( !window || !callback )
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null", 0);
+    return;
+  }
+
+  try
+  {
+    Dali::DevelWindow::AddFramePresentedCallback( *window, std::unique_ptr< Dali::CallbackBase >( Dali::MakeCallback( callback ) ), nuiFrameId );
+  }
+  catch( std::out_of_range& e )
+  {
+    SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+    return;
+  }
+  catch( std::exception& e )
+  {
+    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+    return;
+  }
+  catch( Dali::DaliException e )
+  {
+    SWIG_CSharpException(SWIG_UnknownError, e.condition);
+    return;
+  }
+  catch(...)
+  {
+    SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+    return;
+  }
 }
 
 #ifdef __cplusplus

@@ -1,4 +1,4 @@
-/** Copyright (c) 2017 Samsung Electronics Co., Ltd.
+/** Copyright (c) 2020 Samsung Electronics Co., Ltd.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@
 
 #include "common.h"
 #include <dali/devel-api/adaptor-framework/input-method-context.h>
+#include <dali/devel-api/common/stage.h>
 #include <dali/integration-api/debug.h>
 
 /* Callback for returning strings to C# without leaking memory */
