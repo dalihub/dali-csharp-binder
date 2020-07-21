@@ -64,6 +64,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_SIBLING_ORDER_get() {
   return Dali::DevelActor::Property::SIBLING_ORDER;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_CAPTURE_ALL_TOUCH_AFTER_START_get() {
+
+  return Dali::DevelActor::Property::CAPTURE_ALL_TOUCH_AFTER_START;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_TOOLTIP_get() {
   int jresult ;
   int result;
