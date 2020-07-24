@@ -44246,7 +44246,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_DEFAULT_get() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageInterface_GlExtensionCreate(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageInterface_CreateResource(void * jarg1) {
   unsigned int jresult ;
   Dali::NativeImageInterface *arg1 = (Dali::NativeImageInterface *) 0 ;
   bool result;
@@ -44254,7 +44254,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageInterface_GlExtension
   arg1 = (Dali::NativeImageInterface *)jarg1;
   {
     try {
-      result = (bool)(arg1)->GlExtensionCreate();
+      result = (bool)(arg1)->CreateResource();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -44279,13 +44279,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageInterface_GlExtension
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageInterface_GlExtensionDestroy(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageInterface_DestroyResource(void * jarg1) {
   Dali::NativeImageInterface *arg1 = (Dali::NativeImageInterface *) 0 ;
 
   arg1 = (Dali::NativeImageInterface *)jarg1;
   {
     try {
-      (arg1)->GlExtensionDestroy();
+      (arg1)->DestroyResource();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -98836,4 +98836,3 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageSource_ReleaseBuffer(void* ja
 #ifdef __cplusplus
 }
 #endif
-
