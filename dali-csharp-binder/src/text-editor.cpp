@@ -1455,6 +1455,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_MATCH_SYSTEM_LANGUAGE_DIRE
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_MAX_LENGTH_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::MAX_LENGTH;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_GetInputMethodContext(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0 ;
@@ -1479,6 +1488,38 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_GetInputMethodContext(void 
     }
   }
   jresult = new Dali::InputMethodContext((const Dali::InputMethodContext &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_MaxLengthReachedSignal(void * jarg1) {
+  void * jresult ;
+  Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0 ;
+  Dali::Toolkit::DevelTextEditor::MaxLengthReachedSignalType *result = 0 ;
+
+  arg1 = (Dali::Toolkit::TextEditor *)jarg1;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextEditor::MaxLengthReachedSignalType *)&Dali::Toolkit::DevelTextEditor::MaxLengthReachedSignal(*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = (void *)result;
   return jresult;
 }
 #ifdef __cplusplus
