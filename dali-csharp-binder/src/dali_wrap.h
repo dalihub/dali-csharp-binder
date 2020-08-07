@@ -52,13 +52,13 @@ class SwigDirector_ViewImpl : public Dali::Toolkit::Internal::Control, public Sw
 public:
     SwigDirector_ViewImpl(Dali::Toolkit::Internal::Control::ControlBehaviour behaviourFlags);
     virtual ~SwigDirector_ViewImpl();
-    virtual void OnStageConnection(int depth);
-    virtual void OnStageConnectionSwigPublic(int depth) {
-      Dali::Toolkit::Internal::Control::OnStageConnection(depth);
+    virtual void OnSceneConnection(int depth);
+    virtual void OnSceneConnectionSwigPublic(int depth) {
+      Dali::Toolkit::Internal::Control::OnSceneConnection(depth);
     }
-    virtual void OnStageDisconnection();
-    virtual void OnStageDisconnectionSwigPublic() {
-      Dali::Toolkit::Internal::Control::OnStageDisconnection();
+    virtual void OnSceneDisconnection();
+    virtual void OnSceneDisconnectionSwigPublic() {
+      Dali::Toolkit::Internal::Control::OnSceneDisconnection();
     }
     virtual void OnChildAdd(Dali::Actor &child);
     virtual void OnChildAddSwigPublic(Dali::Actor &child) {
@@ -194,11 +194,11 @@ public:
     typedef void (SWIGSTDCALL* SWIG_Callback38_t)(void *);
     typedef void (SWIGSTDCALL* SWIG_Callback39_t)(void *, void *);
     typedef void (SWIGSTDCALL* SWIG_Callback40_t)(void *, void *);
-    void swig_connect_director(SWIG_Callback0_t callbackOnStageConnection, SWIG_Callback1_t callbackOnStageDisconnection, SWIG_Callback2_t callbackOnChildAdd, SWIG_Callback3_t callbackOnChildRemove, SWIG_Callback4_t callbackOnPropertySet, SWIG_Callback5_t callbackOnSizeSet, SWIG_Callback6_t callbackOnSizeAnimation, SWIG_Callback7_t callbackOnTouchEvent, SWIG_Callback8_t callbackOnHoverEvent, SWIG_Callback9_t callbackOnKeyEvent, SWIG_Callback10_t callbackOnWheelEvent, SWIG_Callback11_t callbackOnRelayout, SWIG_Callback12_t callbackOnSetResizePolicy, SWIG_Callback13_t callbackGetNaturalSize, SWIG_Callback14_t callbackCalculateChildSize, SWIG_Callback15_t callbackGetHeightForWidth, SWIG_Callback16_t callbackGetWidthForHeight, SWIG_Callback17_t callbackRelayoutDependentOnChildren__SWIG_0, SWIG_Callback18_t callbackRelayoutDependentOnChildren__SWIG_1, SWIG_Callback19_t callbackOnCalculateRelayoutSize, SWIG_Callback20_t callbackOnLayoutNegotiated, SWIG_Callback21_t callbackOnInitialize, SWIG_Callback24_t callbackOnStyleChange, SWIG_Callback25_t callbackOnAccessibilityActivated, SWIG_Callback26_t callbackOnAccessibilityPan, SWIG_Callback27_t callbackOnAccessibilityTouch, SWIG_Callback28_t callbackOnAccessibilityValueChange, SWIG_Callback29_t callbackOnAccessibilityZoom, SWIG_Callback30_t callbackOnKeyInputFocusGained, SWIG_Callback31_t callbackOnKeyInputFocusLost, SWIG_Callback32_t callbackGetNextKeyboardFocusableActor, SWIG_Callback33_t callbackOnKeyboardFocusChangeCommitted, SWIG_Callback34_t callbackOnKeyboardEnter, SWIG_Callback35_t callbackOnPinch, SWIG_Callback36_t callbackOnPan, SWIG_Callback37_t callbackOnTap, SWIG_Callback38_t callbackOnLongPress, SWIG_Callback39_t callbackSignalConnected, SWIG_Callback40_t callbackSignalDisconnected);
+    void swig_connect_director(SWIG_Callback0_t callbackOnSceneConnection, SWIG_Callback1_t callbackOnSceneDisconnection, SWIG_Callback2_t callbackOnChildAdd, SWIG_Callback3_t callbackOnChildRemove, SWIG_Callback4_t callbackOnPropertySet, SWIG_Callback5_t callbackOnSizeSet, SWIG_Callback6_t callbackOnSizeAnimation, SWIG_Callback7_t callbackOnTouchEvent, SWIG_Callback8_t callbackOnHoverEvent, SWIG_Callback9_t callbackOnKeyEvent, SWIG_Callback10_t callbackOnWheelEvent, SWIG_Callback11_t callbackOnRelayout, SWIG_Callback12_t callbackOnSetResizePolicy, SWIG_Callback13_t callbackGetNaturalSize, SWIG_Callback14_t callbackCalculateChildSize, SWIG_Callback15_t callbackGetHeightForWidth, SWIG_Callback16_t callbackGetWidthForHeight, SWIG_Callback17_t callbackRelayoutDependentOnChildren__SWIG_0, SWIG_Callback18_t callbackRelayoutDependentOnChildren__SWIG_1, SWIG_Callback19_t callbackOnCalculateRelayoutSize, SWIG_Callback20_t callbackOnLayoutNegotiated, SWIG_Callback21_t callbackOnInitialize, SWIG_Callback24_t callbackOnStyleChange, SWIG_Callback25_t callbackOnAccessibilityActivated, SWIG_Callback26_t callbackOnAccessibilityPan, SWIG_Callback27_t callbackOnAccessibilityTouch, SWIG_Callback28_t callbackOnAccessibilityValueChange, SWIG_Callback29_t callbackOnAccessibilityZoom, SWIG_Callback30_t callbackOnKeyInputFocusGained, SWIG_Callback31_t callbackOnKeyInputFocusLost, SWIG_Callback32_t callbackGetNextKeyboardFocusableActor, SWIG_Callback33_t callbackOnKeyboardFocusChangeCommitted, SWIG_Callback34_t callbackOnKeyboardEnter, SWIG_Callback35_t callbackOnPinch, SWIG_Callback36_t callbackOnPan, SWIG_Callback37_t callbackOnTap, SWIG_Callback38_t callbackOnLongPress, SWIG_Callback39_t callbackSignalConnected, SWIG_Callback40_t callbackSignalDisconnected);
 
 private:
-    SWIG_Callback0_t swig_callbackOnStageConnection;
-    SWIG_Callback1_t swig_callbackOnStageDisconnection;
+    SWIG_Callback0_t swig_callbackOnSceneConnection;
+    SWIG_Callback1_t swig_callbackOnSceneDisconnection;
     SWIG_Callback2_t swig_callbackOnChildAdd;
     SWIG_Callback3_t swig_callbackOnChildRemove;
     SWIG_Callback4_t swig_callbackOnPropertySet;

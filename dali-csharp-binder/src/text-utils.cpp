@@ -640,6 +640,25 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RendererParameters_isTextColorSet_get(vo
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RendererParameters_minLineSize_set(void * jarg1, float jarg2) {
+  Dali::Toolkit::DevelText::RendererParameters *arg1 = (Dali::Toolkit::DevelText::RendererParameters *) 0 ;
+  float arg2 ;
+
+  arg1 = (Dali::Toolkit::DevelText::RendererParameters *)jarg1;
+  arg2 = (float)jarg2;
+  if (arg1) (arg1)->minLineSize = arg2;
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RendererParameters_minLineSize_get(void * jarg1) {
+  float jresult ;
+  Dali::Toolkit::DevelText::RendererParameters *arg1 = (Dali::Toolkit::DevelText::RendererParameters *) 0 ;
+  float result;
+
+  arg1 = (Dali::Toolkit::DevelText::RendererParameters *)jarg1;
+  result = (float) ((arg1)->minLineSize);
+  jresult = result;
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_EmbeddedItemInfo_0() {
   void * jresult ;

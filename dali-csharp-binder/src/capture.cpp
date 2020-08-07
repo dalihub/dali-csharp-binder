@@ -685,6 +685,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg
   if (!arg1)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    delete handle;
     return 0;
   }
   {
@@ -692,24 +693,28 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg
     {
       handle->Ptr = arg1->GetNativeImageSource();
     }
-    catch (std::out_of_range& e)
+    catch (std::out_of_range &e)
     {
       SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      delete handle;
       return 0;
     }
     catch (std::exception& e)
     {
       SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      delete handle;
       return 0;
     }
     catch (Dali::DaliException e)
     {
       SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      delete handle;
       return 0;
     }
     catch (...)
     {
       SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      delete handle;
       return 0;
     }
   }
