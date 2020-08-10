@@ -487,6 +487,11 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali-toolkit/devel-api/text/rendering-backend.h>
 
+
+#include <dali/devel-api/update/frame-callback-interface.h>
+#include <dali/devel-api/update/update-proxy.h>
+
+
 // add here SWIG version check
 
 #if defined(_MSC_VER)         // Microsoft Visual C++ 6.0
@@ -1816,24 +1821,24 @@ SwigDirector_ViewImpl::~SwigDirector_ViewImpl() {
 }
 
 
-void SwigDirector_ViewImpl::OnStageConnection(int depth) {
+void SwigDirector_ViewImpl::OnSceneConnection(int depth) {
   int jdepth  ;
 
-  if (!swig_callbackOnStageConnection) {
-    Dali::Toolkit::Internal::Control::OnStageConnection(depth);
+  if (!swig_callbackOnSceneConnection) {
+    Dali::Toolkit::Internal::Control::OnSceneConnection(depth);
     return;
   } else {
     jdepth = depth;
-    swig_callbackOnStageConnection(jdepth);
+    swig_callbackOnSceneConnection(jdepth);
   }
 }
 
-void SwigDirector_ViewImpl::OnStageDisconnection() {
-  if (!swig_callbackOnStageDisconnection) {
-    Dali::Toolkit::Internal::Control::OnStageDisconnection();
+void SwigDirector_ViewImpl::OnSceneDisconnection() {
+  if (!swig_callbackOnSceneDisconnection) {
+    Dali::Toolkit::Internal::Control::OnSceneDisconnection();
     return;
   } else {
-    swig_callbackOnStageDisconnection();
+    swig_callbackOnSceneDisconnection();
   }
 }
 
@@ -2338,9 +2343,9 @@ Dali::Toolkit::Internal::Control::Extension *SwigDirector_ViewImpl::GetControlEx
   return Dali::Toolkit::Internal::Control::GetControlExtension();
 }
 
-void SwigDirector_ViewImpl::swig_connect_director(SWIG_Callback0_t callbackOnStageConnection, SWIG_Callback1_t callbackOnStageDisconnection, SWIG_Callback2_t callbackOnChildAdd, SWIG_Callback3_t callbackOnChildRemove, SWIG_Callback4_t callbackOnPropertySet, SWIG_Callback5_t callbackOnSizeSet, SWIG_Callback6_t callbackOnSizeAnimation, SWIG_Callback7_t callbackOnTouchEvent, SWIG_Callback8_t callbackOnHoverEvent, SWIG_Callback9_t callbackOnKeyEvent, SWIG_Callback10_t callbackOnWheelEvent, SWIG_Callback11_t callbackOnRelayout, SWIG_Callback12_t callbackOnSetResizePolicy, SWIG_Callback13_t callbackGetNaturalSize, SWIG_Callback14_t callbackCalculateChildSize, SWIG_Callback15_t callbackGetHeightForWidth, SWIG_Callback16_t callbackGetWidthForHeight, SWIG_Callback17_t callbackRelayoutDependentOnChildren__SWIG_0, SWIG_Callback18_t callbackRelayoutDependentOnChildren__SWIG_1, SWIG_Callback19_t callbackOnCalculateRelayoutSize, SWIG_Callback20_t callbackOnLayoutNegotiated, SWIG_Callback21_t callbackOnInitialize, SWIG_Callback24_t callbackOnStyleChange, SWIG_Callback25_t callbackOnAccessibilityActivated, SWIG_Callback26_t callbackOnAccessibilityPan, SWIG_Callback27_t callbackOnAccessibilityTouch, SWIG_Callback28_t callbackOnAccessibilityValueChange, SWIG_Callback29_t callbackOnAccessibilityZoom, SWIG_Callback30_t callbackOnKeyInputFocusGained, SWIG_Callback31_t callbackOnKeyInputFocusLost, SWIG_Callback32_t callbackGetNextKeyboardFocusableActor, SWIG_Callback33_t callbackOnKeyboardFocusChangeCommitted, SWIG_Callback34_t callbackOnKeyboardEnter, SWIG_Callback35_t callbackOnPinch, SWIG_Callback36_t callbackOnPan, SWIG_Callback37_t callbackOnTap, SWIG_Callback38_t callbackOnLongPress, SWIG_Callback39_t callbackSignalConnected, SWIG_Callback40_t callbackSignalDisconnected) {
-  swig_callbackOnStageConnection = callbackOnStageConnection;
-  swig_callbackOnStageDisconnection = callbackOnStageDisconnection;
+void SwigDirector_ViewImpl::swig_connect_director(SWIG_Callback0_t callbackOnSceneConnection, SWIG_Callback1_t callbackOnSceneDisconnection, SWIG_Callback2_t callbackOnChildAdd, SWIG_Callback3_t callbackOnChildRemove, SWIG_Callback4_t callbackOnPropertySet, SWIG_Callback5_t callbackOnSizeSet, SWIG_Callback6_t callbackOnSizeAnimation, SWIG_Callback7_t callbackOnTouchEvent, SWIG_Callback8_t callbackOnHoverEvent, SWIG_Callback9_t callbackOnKeyEvent, SWIG_Callback10_t callbackOnWheelEvent, SWIG_Callback11_t callbackOnRelayout, SWIG_Callback12_t callbackOnSetResizePolicy, SWIG_Callback13_t callbackGetNaturalSize, SWIG_Callback14_t callbackCalculateChildSize, SWIG_Callback15_t callbackGetHeightForWidth, SWIG_Callback16_t callbackGetWidthForHeight, SWIG_Callback17_t callbackRelayoutDependentOnChildren__SWIG_0, SWIG_Callback18_t callbackRelayoutDependentOnChildren__SWIG_1, SWIG_Callback19_t callbackOnCalculateRelayoutSize, SWIG_Callback20_t callbackOnLayoutNegotiated, SWIG_Callback21_t callbackOnInitialize, SWIG_Callback24_t callbackOnStyleChange, SWIG_Callback25_t callbackOnAccessibilityActivated, SWIG_Callback26_t callbackOnAccessibilityPan, SWIG_Callback27_t callbackOnAccessibilityTouch, SWIG_Callback28_t callbackOnAccessibilityValueChange, SWIG_Callback29_t callbackOnAccessibilityZoom, SWIG_Callback30_t callbackOnKeyInputFocusGained, SWIG_Callback31_t callbackOnKeyInputFocusLost, SWIG_Callback32_t callbackGetNextKeyboardFocusableActor, SWIG_Callback33_t callbackOnKeyboardFocusChangeCommitted, SWIG_Callback34_t callbackOnKeyboardEnter, SWIG_Callback35_t callbackOnPinch, SWIG_Callback36_t callbackOnPan, SWIG_Callback37_t callbackOnTap, SWIG_Callback38_t callbackOnLongPress, SWIG_Callback39_t callbackSignalConnected, SWIG_Callback40_t callbackSignalDisconnected) {
+  swig_callbackOnSceneConnection = callbackOnSceneConnection;
+  swig_callbackOnSceneDisconnection = callbackOnSceneDisconnection;
   swig_callbackOnChildAdd = callbackOnChildAdd;
   swig_callbackOnChildRemove = callbackOnChildRemove;
   swig_callbackOnPropertySet = callbackOnPropertySet;
@@ -2381,8 +2386,8 @@ void SwigDirector_ViewImpl::swig_connect_director(SWIG_Callback0_t callbackOnSta
 }
 
 void SwigDirector_ViewImpl::swig_init_callbacks() {
-  swig_callbackOnStageConnection = 0;
-  swig_callbackOnStageDisconnection = 0;
+  swig_callbackOnSceneConnection = 0;
+  swig_callbackOnSceneDisconnection = 0;
   swig_callbackOnChildAdd = 0;
   swig_callbackOnChildRemove = 0;
   swig_callbackOnPropertySet = 0;
@@ -2531,6 +2536,36 @@ void SwigDirector_CustomAlgorithmInterface::swig_connect_director(SWIG_Callback0
 
 void SwigDirector_CustomAlgorithmInterface::swig_init_callbacks() {
   swig_callbackGetNextFocusableActor = 0;
+}
+
+SwigDirector_FrameCallbackInterface::SwigDirector_FrameCallbackInterface() : Dali::FrameCallbackInterface(), Swig::Director() {
+  swig_callbackOnUpdate = 0;
+}
+
+SwigDirector_FrameCallbackInterface::~SwigDirector_FrameCallbackInterface() {
+
+}
+
+void SwigDirector_FrameCallbackInterface::swig_connect_director(SWIG_Callback0_t callbackUpdate) {
+  swig_callbackOnUpdate = callbackUpdate;
+}
+
+
+void SwigDirector_FrameCallbackInterface::Update(Dali::UpdateProxy& updateProxy, float elapsedSeconds) {
+  void * jcurrent  ;
+
+  if (!swig_callbackOnUpdate) {
+    throw Swig::DirectorPureVirtualException("Dali::FrameCallbackInterface::Update");
+  } else {
+    Dali::UpdateProxy* proxy = &updateProxy;
+    jcurrent = (void *)proxy;
+    swig_callbackOnUpdate(jcurrent, elapsedSeconds);
+    if (!jcurrent) {
+      DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::UpdateProxy! ", __FILE__, __LINE__);
+      return;
+    }
+  }
+  return;
 }
 
 
@@ -36748,15 +36783,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_WheelEventSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OnStageSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OnSceneSignal(void * jarg1) {
   void * jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
-  Dali::Actor::OnStageSignalType *result = 0 ;
+  Dali::Actor::OnSceneSignalType *result = 0 ;
 
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (Dali::Actor::OnStageSignalType *) &(arg1)->OnStageSignal();
+      result = (Dali::Actor::OnSceneSignalType *) &(arg1)->OnSceneSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -36781,15 +36816,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OnStageSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OffStageSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OffSceneSignal(void * jarg1) {
   void * jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
-  Dali::Actor::OffStageSignalType *result = 0 ;
+  Dali::Actor::OffSceneSignalType *result = 0 ;
 
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (Dali::Actor::OffStageSignalType *) &(arg1)->OffStageSignal();
+      result = (Dali::Actor::OffSceneSignalType *) &(arg1)->OffSceneSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -38453,7 +38488,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CustomActorImpl_Self(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomActorImpl_OnStageConnection(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomActorImpl_OnSceneConnection(void * jarg1, int jarg2) {
   Dali::CustomActorImpl *arg1 = (Dali::CustomActorImpl *) 0 ;
   int arg2 ;
 
@@ -38461,7 +38496,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomActorImpl_OnStageConnection(void *
   arg2 = (int)jarg2;
   {
     try {
-      (arg1)->OnStageConnection(arg2);
+      (arg1)->OnSceneConnection(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -38484,13 +38519,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomActorImpl_OnStageConnection(void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomActorImpl_OnStageDisconnection(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomActorImpl_OnSceneDisconnection(void * jarg1) {
   Dali::CustomActorImpl *arg1 = (Dali::CustomActorImpl *) 0 ;
 
   arg1 = (Dali::CustomActorImpl *)jarg1;
   {
     try {
-      (arg1)->OnStageDisconnection();
+      (arg1)->OnSceneDisconnection();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -59741,7 +59776,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_KeyInputFocusLostSignal(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageConnection(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneConnection(void * jarg1, int jarg2) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   int arg2 ;
   SwigDirector_ViewImpl *darg = 0;
@@ -59756,7 +59791,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageConnection(void * jarg1,
   {
     try {
       if(darg) {
-        (darg)->OnStageConnection(arg2);
+        (darg)->OnSceneConnection(arg2);
       }
     } catch (std::out_of_range& e) {
       {
@@ -59780,7 +59815,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageConnection(void * jarg1,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageConnectionSwigExplicitViewImpl(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneConnectionSwigExplicitViewImpl(void * jarg1, int jarg2) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   int arg2 ;
   SwigDirector_ViewImpl *darg = 0;
@@ -59795,7 +59830,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageConnectionSwigExplicitVi
   {
     try {
       if(darg) {
-        (darg)->OnStageConnectionSwigPublic(arg2);
+        (darg)->OnSceneConnectionSwigPublic(arg2);
       }
     } catch (std::out_of_range& e) {
       {
@@ -59819,7 +59854,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageConnectionSwigExplicitVi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageDisconnection(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneDisconnection(void * jarg1) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   SwigDirector_ViewImpl *darg = 0;
 
@@ -59832,7 +59867,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageDisconnection(void * jar
   {
     try {
       if(darg) {
-        (darg)->OnStageDisconnection();
+        (darg)->OnSceneDisconnection();
       }
     } catch (std::out_of_range& e) {
       {
@@ -59856,7 +59891,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageDisconnection(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageDisconnectionSwigExplicitViewImpl(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneDisconnectionSwigExplicitViewImpl(void * jarg1) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   SwigDirector_ViewImpl *darg = 0;
 
@@ -59869,7 +59904,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStageDisconnectionSwigExplici
   {
     try {
       if(darg) {
-        (darg)->OnStageDisconnectionSwigPublic();
+        (darg)->OnSceneDisconnectionSwigPublic();
       }
     } catch (std::out_of_range& e) {
       {
@@ -86948,6 +86983,150 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_CustomAlgorithmInterface() {
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_director_connect(void *objarg, SwigDirector_FrameCallbackInterface::SWIG_Callback0_t callback0) {
+  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)objarg;
+  SwigDirector_FrameCallbackInterface *director = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
+  if (director) {
+    director->swig_connect_director(callback0);
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FrameCallbackInterface() {
+  void * jresult ;
+  Dali::FrameCallbackInterface *result = 0 ;
+
+  {
+    try {
+      result =(Dali::FrameCallbackInterface *) new SwigDirector_FrameCallbackInterface();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetPosition(void * updateProxy, unsigned int id,  void* position) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3 = (Dali::Vector3 *)position;
+  return proxy->GetPosition(id, *vector3);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetPosition(void * updateProxy, unsigned int id, void* position) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3 = (Dali::Vector3 *)position;
+  return proxy->SetPosition(id, *vector3);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakePosition(void * updateProxy, unsigned int id, void* position) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3 = (Dali::Vector3 *)position;
+  return proxy->BakePosition(id, *vector3);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetSize(void * updateProxy, unsigned int id, void* size) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3 = (Dali::Vector3 *)size;
+  return proxy->GetSize(id, *vector3);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetSize(void * updateProxy, unsigned int id, void* size) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3 = (Dali::Vector3 *)size;
+  return proxy->SetSize(id, *vector3);
+}
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeSize(void * updateProxy, unsigned int id, void* size) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3 = (Dali::Vector3 *)size;
+  return proxy->BakeSize(id, *vector3);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetPositionAndSize(void * updateProxy, unsigned int id, void* position, void* size) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3_pos = (Dali::Vector3 *)position;
+  Dali::Vector3* vector3_size = (Dali::Vector3 *)size;
+  return proxy->GetPositionAndSize(id, *vector3_pos, *vector3_size);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetScale(void * updateProxy, unsigned int id, void* scale) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3 = (Dali::Vector3 *)scale;
+  return proxy->GetScale(id,* vector3);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetScale(void * updateProxy, unsigned int id, void* scale) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3 = (Dali::Vector3 *)scale;
+  return proxy->SetScale(id, *vector3);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeScale(void * updateProxy, unsigned int id, void* scale) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3 = (Dali::Vector3 *)scale;
+  return proxy->BakeScale(id, *vector3);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetColor(void * updateProxy, unsigned int id, void* color) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector4* vector4 = (Dali::Vector4 *)color;
+  return proxy->GetColor(id, *vector4);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetColor(void * updateProxy, unsigned int id, void* color) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector4* vector4 = (Dali::Vector4 *)color;
+  return proxy->SetColor(id, *vector4);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeColor(void * updateProxy, unsigned int id, void* color) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector4* vector4 = (Dali::Vector4 *)color;
+  return proxy->BakeColor(id, *vector4);
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_AddFrameCallback(void * jarg1, void* jarg2, void* jarg3) {
+  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;
+  SwigDirector_FrameCallbackInterface *arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
+
+  Dali::Stage *arg1 = (Dali::Stage *) 0;
+  Dali::Actor *arg3 = 0;
+
+  arg1 = (Dali::Stage *)jarg1;
+  arg3 = (Dali::Actor *)jarg3;
+
+  DevelStage::AddFrameCallback( *arg1, *arg2, *arg3 );
+  return;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_RemoveFrameCallback(void * jarg1, void* jarg2) {
+
+  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;
+  SwigDirector_FrameCallbackInterface *arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
+
+  Dali::Stage *arg1 = (Dali::Stage *) 0;
+
+  arg1 = (Dali::Stage *)jarg1;
+
+  DevelStage::RemoveFrameCallback( *arg1, *arg2 );
+  return;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomAlgorithmInterface_director_connect(void *objarg, SwigDirector_CustomAlgorithmInterface::SWIG_Callback0_t callback0) {
   Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *obj = (Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *)objarg;
   SwigDirector_CustomAlgorithmInterface *director = dynamic_cast<SwigDirector_CustomAlgorithmInterface *>(obj);
@@ -86955,7 +87134,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomAlgorithmInterface_director_connec
     director->swig_connect_director(callback0);
   }
 }
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetCustomAlgorithm(void * jarg1, void * jarg2) {
   KeyboardFocusManager arg1 ;
