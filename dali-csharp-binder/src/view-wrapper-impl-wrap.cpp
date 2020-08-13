@@ -20,7 +20,7 @@
 
 // INTERNAL INCLUDES
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
-#include <dali/devel-api/events/touch-data-devel.h>
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -84,21 +84,6 @@ void SwigDirector_ViewWrapperImpl::OnSizeAnimation(Dali::Animation &animation, D
   Dali::Toolkit::Internal::Control::OnSizeAnimation(animation,targetSize);
 }
 
-bool SwigDirector_ViewWrapperImpl::OnTouchEvent(Dali::TouchEvent const &event) {
-  bool c_result = SwigValueInit< bool >() ;
-  unsigned int jresult = 0 ;
-  void * jarg0 = 0 ;
-
-  if (!swig_callbackOnTouchEvent) {
-    return Dali::Toolkit::Internal::Control::OnTouchEvent(event);
-  } else {
-    Dali::TouchData data = Dali::DevelTouchData::Convert(event);
-    jarg0 = (Dali::TouchData *) &data;
-    jresult = (unsigned int) swig_callbackOnTouchEvent(jarg0);
-    c_result = jresult ? true : false;
-  }
-  return c_result;
-}
 
 bool SwigDirector_ViewWrapperImpl::OnHoverEvent(Dali::HoverEvent const &event) {
   bool c_result = SwigValueInit< bool >() ;
@@ -311,16 +296,16 @@ bool SwigDirector_ViewWrapperImpl::OnAccessibilityPan(Dali::PanGesture gesture) 
   return c_result;
 }
 
-bool SwigDirector_ViewWrapperImpl::OnAccessibilityTouch(Dali::TouchEvent const &touchEvent) {
+bool SwigDirector_ViewWrapperImpl::OnAccessibilityTouch(Dali::TouchData const &touchData) {
   bool c_result = SwigValueInit< bool >() ;
   unsigned int jresult = 0 ;
-  void * jtouchEvent = 0 ;
+  void * jtouchData = 0 ;
 
   if (!swig_callbackOnAccessibilityTouch) {
-    return Dali::Toolkit::Internal::Control::OnAccessibilityTouch(touchEvent);
+    return Dali::Toolkit::Internal::Control::OnAccessibilityTouch(touchData);
   } else {
-    jtouchEvent = (Dali::TouchEvent *) &touchEvent;
-    jresult = (unsigned int) swig_callbackOnAccessibilityTouch(jtouchEvent);
+    jtouchData = (Dali::TouchData *) &touchData;
+    jresult = (unsigned int) swig_callbackOnAccessibilityTouch(jtouchData);
     c_result = jresult ? true : false;
   }
   return c_result;
@@ -447,7 +432,7 @@ Dali::Toolkit::Internal::Control::Extension *SwigDirector_ViewWrapperImpl::GetCo
   return Dali::Toolkit::Internal::Control::GetControlExtension();
 }
 
-void SwigDirector_ViewWrapperImpl::swig_connect_director(SWIG_Callback0_t callbackOnSceneConnection, SWIG_Callback1_t callbackOnSceneDisconnection, SWIG_Callback2_t callbackOnChildAdd, SWIG_Callback3_t callbackOnChildRemove, SWIG_Callback4_t callbackOnPropertySet, SWIG_Callback5_t callbackOnSizeSet, SWIG_Callback6_t callbackOnSizeAnimation, SWIG_Callback7_t callbackOnTouchEvent, SWIG_Callback8_t callbackOnHoverEvent, SWIG_Callback9_t callbackOnKeyEvent, SWIG_Callback10_t callbackOnWheelEvent, SWIG_Callback11_t callbackOnRelayout, SWIG_Callback12_t callbackOnSetResizePolicy, SWIG_Callback13_t callbackGetNaturalSize, SWIG_Callback14_t callbackCalculateChildSize, SWIG_Callback15_t callbackGetHeightForWidth, SWIG_Callback16_t callbackGetWidthForHeight, SWIG_Callback17_t callbackRelayoutDependentOnChildren__SWIG_0, SWIG_Callback18_t callbackRelayoutDependentOnChildren__SWIG_1, SWIG_Callback19_t callbackOnCalculateRelayoutSize, SWIG_Callback20_t callbackOnLayoutNegotiated, SWIG_Callback21_t callbackOnInitialize, SWIG_Callback24_t callbackOnStyleChange, SWIG_Callback25_t callbackOnAccessibilityActivated, SWIG_Callback26_t callbackOnAccessibilityPan, SWIG_Callback27_t callbackOnAccessibilityTouch, SWIG_Callback28_t callbackOnAccessibilityValueChange, SWIG_Callback29_t callbackOnAccessibilityZoom, SWIG_Callback30_t callbackOnKeyInputFocusGained, SWIG_Callback31_t callbackOnKeyInputFocusLost, SWIG_Callback32_t callbackGetNextKeyboardFocusableActor, SWIG_Callback33_t callbackOnKeyboardFocusChangeCommitted, SWIG_Callback34_t callbackOnKeyboardEnter, SWIG_Callback35_t callbackOnPinch, SWIG_Callback36_t callbackOnPan, SWIG_Callback37_t callbackOnTap, SWIG_Callback38_t callbackOnLongPress, SWIG_Callback39_t callbackSignalConnected, SWIG_Callback40_t callbackSignalDisconnected) {
+void SwigDirector_ViewWrapperImpl::swig_connect_director(SWIG_Callback0_t callbackOnSceneConnection, SWIG_Callback1_t callbackOnSceneDisconnection, SWIG_Callback2_t callbackOnChildAdd, SWIG_Callback3_t callbackOnChildRemove, SWIG_Callback4_t callbackOnPropertySet, SWIG_Callback5_t callbackOnSizeSet, SWIG_Callback6_t callbackOnSizeAnimation, SWIG_Callback8_t callbackOnHoverEvent, SWIG_Callback9_t callbackOnKeyEvent, SWIG_Callback10_t callbackOnWheelEvent, SWIG_Callback11_t callbackOnRelayout, SWIG_Callback12_t callbackOnSetResizePolicy, SWIG_Callback13_t callbackGetNaturalSize, SWIG_Callback14_t callbackCalculateChildSize, SWIG_Callback15_t callbackGetHeightForWidth, SWIG_Callback16_t callbackGetWidthForHeight, SWIG_Callback17_t callbackRelayoutDependentOnChildren__SWIG_0, SWIG_Callback18_t callbackRelayoutDependentOnChildren__SWIG_1, SWIG_Callback19_t callbackOnCalculateRelayoutSize, SWIG_Callback20_t callbackOnLayoutNegotiated, SWIG_Callback21_t callbackOnInitialize, SWIG_Callback24_t callbackOnStyleChange, SWIG_Callback25_t callbackOnAccessibilityActivated, SWIG_Callback26_t callbackOnAccessibilityPan, SWIG_Callback27_t callbackOnAccessibilityTouch, SWIG_Callback28_t callbackOnAccessibilityValueChange, SWIG_Callback29_t callbackOnAccessibilityZoom, SWIG_Callback30_t callbackOnKeyInputFocusGained, SWIG_Callback31_t callbackOnKeyInputFocusLost, SWIG_Callback32_t callbackGetNextKeyboardFocusableActor, SWIG_Callback33_t callbackOnKeyboardFocusChangeCommitted, SWIG_Callback34_t callbackOnKeyboardEnter, SWIG_Callback35_t callbackOnPinch, SWIG_Callback36_t callbackOnPan, SWIG_Callback37_t callbackOnTap, SWIG_Callback38_t callbackOnLongPress, SWIG_Callback39_t callbackSignalConnected, SWIG_Callback40_t callbackSignalDisconnected) {
   swig_callbackOnSceneConnection = callbackOnSceneConnection;
   swig_callbackOnSceneDisconnection = callbackOnSceneDisconnection;
   swig_callbackOnChildAdd = callbackOnChildAdd;
@@ -455,7 +440,6 @@ void SwigDirector_ViewWrapperImpl::swig_connect_director(SWIG_Callback0_t callba
   swig_callbackOnPropertySet = callbackOnPropertySet;
   swig_callbackOnSizeSet = callbackOnSizeSet;
   swig_callbackOnSizeAnimation = callbackOnSizeAnimation;
-  swig_callbackOnTouchEvent = callbackOnTouchEvent;
   swig_callbackOnHoverEvent = callbackOnHoverEvent;
   swig_callbackOnKeyEvent = callbackOnKeyEvent;
   swig_callbackOnWheelEvent = callbackOnWheelEvent;
@@ -497,7 +481,6 @@ void SwigDirector_ViewWrapperImpl::swig_init_callbacks() {
   swig_callbackOnPropertySet = 0;
   swig_callbackOnSizeSet = 0;
   swig_callbackOnSizeAnimation = 0;
-  swig_callbackOnTouchEvent = 0;
   swig_callbackOnHoverEvent = 0;
   swig_callbackOnKeyEvent = 0;
   swig_callbackOnWheelEvent = 0;
@@ -645,11 +628,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ViewWrapperImpl(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewWrapperImpl_director_connect(void *objarg, SwigDirector_ViewWrapperImpl::SWIG_Callback0_t callback0, SwigDirector_ViewWrapperImpl::SWIG_Callback1_t callback1, SwigDirector_ViewWrapperImpl::SWIG_Callback2_t callback2, SwigDirector_ViewWrapperImpl::SWIG_Callback3_t callback3, SwigDirector_ViewWrapperImpl::SWIG_Callback4_t callback4, SwigDirector_ViewWrapperImpl::SWIG_Callback5_t callback5, SwigDirector_ViewWrapperImpl::SWIG_Callback6_t callback6, SwigDirector_ViewWrapperImpl::SWIG_Callback7_t callback7, SwigDirector_ViewWrapperImpl::SWIG_Callback8_t callback8, SwigDirector_ViewWrapperImpl::SWIG_Callback9_t callback9, SwigDirector_ViewWrapperImpl::SWIG_Callback10_t callback10, SwigDirector_ViewWrapperImpl::SWIG_Callback11_t callback11, SwigDirector_ViewWrapperImpl::SWIG_Callback12_t callback12, SwigDirector_ViewWrapperImpl::SWIG_Callback13_t callback13, SwigDirector_ViewWrapperImpl::SWIG_Callback14_t callback14, SwigDirector_ViewWrapperImpl::SWIG_Callback15_t callback15, SwigDirector_ViewWrapperImpl::SWIG_Callback16_t callback16, SwigDirector_ViewWrapperImpl::SWIG_Callback17_t callback17, SwigDirector_ViewWrapperImpl::SWIG_Callback18_t callback18, SwigDirector_ViewWrapperImpl::SWIG_Callback19_t callback19, SwigDirector_ViewWrapperImpl::SWIG_Callback20_t callback20, SwigDirector_ViewWrapperImpl::SWIG_Callback21_t callback21, SwigDirector_ViewWrapperImpl::SWIG_Callback24_t callback24, SwigDirector_ViewWrapperImpl::SWIG_Callback25_t callback25, SwigDirector_ViewWrapperImpl::SWIG_Callback26_t callback26, SwigDirector_ViewWrapperImpl::SWIG_Callback27_t callback27, SwigDirector_ViewWrapperImpl::SWIG_Callback28_t callback28, SwigDirector_ViewWrapperImpl::SWIG_Callback29_t callback29, SwigDirector_ViewWrapperImpl::SWIG_Callback30_t callback30, SwigDirector_ViewWrapperImpl::SWIG_Callback31_t callback31, SwigDirector_ViewWrapperImpl::SWIG_Callback32_t callback32, SwigDirector_ViewWrapperImpl::SWIG_Callback33_t callback33, SwigDirector_ViewWrapperImpl::SWIG_Callback34_t callback34, SwigDirector_ViewWrapperImpl::SWIG_Callback35_t callback35, SwigDirector_ViewWrapperImpl::SWIG_Callback36_t callback36, SwigDirector_ViewWrapperImpl::SWIG_Callback37_t callback37, SwigDirector_ViewWrapperImpl::SWIG_Callback38_t callback38, SwigDirector_ViewWrapperImpl::SWIG_Callback39_t callback39, SwigDirector_ViewWrapperImpl::SWIG_Callback40_t callback40) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewWrapperImpl_director_connect(void *objarg, SwigDirector_ViewWrapperImpl::SWIG_Callback0_t callback0, SwigDirector_ViewWrapperImpl::SWIG_Callback1_t callback1, SwigDirector_ViewWrapperImpl::SWIG_Callback2_t callback2, SwigDirector_ViewWrapperImpl::SWIG_Callback3_t callback3, SwigDirector_ViewWrapperImpl::SWIG_Callback4_t callback4, SwigDirector_ViewWrapperImpl::SWIG_Callback5_t callback5, SwigDirector_ViewWrapperImpl::SWIG_Callback6_t callback6, SwigDirector_ViewWrapperImpl::SWIG_Callback8_t callback8, SwigDirector_ViewWrapperImpl::SWIG_Callback9_t callback9, SwigDirector_ViewWrapperImpl::SWIG_Callback10_t callback10, SwigDirector_ViewWrapperImpl::SWIG_Callback11_t callback11, SwigDirector_ViewWrapperImpl::SWIG_Callback12_t callback12, SwigDirector_ViewWrapperImpl::SWIG_Callback13_t callback13, SwigDirector_ViewWrapperImpl::SWIG_Callback14_t callback14, SwigDirector_ViewWrapperImpl::SWIG_Callback15_t callback15, SwigDirector_ViewWrapperImpl::SWIG_Callback16_t callback16, SwigDirector_ViewWrapperImpl::SWIG_Callback17_t callback17, SwigDirector_ViewWrapperImpl::SWIG_Callback18_t callback18, SwigDirector_ViewWrapperImpl::SWIG_Callback19_t callback19, SwigDirector_ViewWrapperImpl::SWIG_Callback20_t callback20, SwigDirector_ViewWrapperImpl::SWIG_Callback21_t callback21, SwigDirector_ViewWrapperImpl::SWIG_Callback24_t callback24, SwigDirector_ViewWrapperImpl::SWIG_Callback25_t callback25, SwigDirector_ViewWrapperImpl::SWIG_Callback26_t callback26, SwigDirector_ViewWrapperImpl::SWIG_Callback27_t callback27, SwigDirector_ViewWrapperImpl::SWIG_Callback28_t callback28, SwigDirector_ViewWrapperImpl::SWIG_Callback29_t callback29, SwigDirector_ViewWrapperImpl::SWIG_Callback30_t callback30, SwigDirector_ViewWrapperImpl::SWIG_Callback31_t callback31, SwigDirector_ViewWrapperImpl::SWIG_Callback32_t callback32, SwigDirector_ViewWrapperImpl::SWIG_Callback33_t callback33, SwigDirector_ViewWrapperImpl::SWIG_Callback34_t callback34, SwigDirector_ViewWrapperImpl::SWIG_Callback35_t callback35, SwigDirector_ViewWrapperImpl::SWIG_Callback36_t callback36, SwigDirector_ViewWrapperImpl::SWIG_Callback37_t callback37, SwigDirector_ViewWrapperImpl::SWIG_Callback38_t callback38, SwigDirector_ViewWrapperImpl::SWIG_Callback39_t callback39, SwigDirector_ViewWrapperImpl::SWIG_Callback40_t callback40) {
   Dali::Toolkit::Internal::ControlWrapper *obj = (Dali::Toolkit::Internal::ControlWrapper *)objarg;
   SwigDirector_ViewWrapperImpl *director = dynamic_cast<SwigDirector_ViewWrapperImpl *>(obj);
   if (director) {
-    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback24, callback25, callback26, callback27, callback28, callback29, callback30, callback31, callback32, callback33, callback34, callback35, callback36, callback37, callback38, callback39, callback40);
+    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback24, callback25, callback26, callback27, callback28, callback29, callback30, callback31, callback32, callback33, callback34, callback35, callback36, callback37, callback38, callback39, callback40);
   }
 }
 
