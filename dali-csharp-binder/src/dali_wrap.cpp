@@ -899,19 +899,19 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_LongPressGesture_SS_co
         /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
 /*@SWIG@*/ self->Emit( arg1, arg2 );
       }
-SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchData_SS_const_SA__SP__Sg__Empty(Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > const *self){
          return self->Empty();
       }
-SWIGINTERN std::size_t Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > const *self){
+SWIGINTERN std::size_t Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchData_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > const *self){
         return self->GetConnectionCount();
       }
-SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *self,bool (*func)(Dali::Actor,Dali::TouchEvent const &)){
+SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchData_SS_const_SA__SP__Sg__Connect(Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *self,bool (*func)(Dali::Actor,Dali::TouchData const &)){
         self->Connect( func );
       }
-SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *self,bool (*func)(Dali::Actor,Dali::TouchEvent const &)){
+SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchData_SS_const_SA__SP__Sg__Disconnect(Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *self,bool (*func)(Dali::Actor,Dali::TouchData const &)){
         self->Disconnect( func );
       }
-SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *self,Dali::Actor arg1,Dali::TouchEvent const &arg2){
+SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchData_SS_const_SA__SP__Sg__Emit(Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *self,Dali::Actor arg1,Dali::TouchData const &arg2){
         return self->Emit( arg1, arg2 );
       }
 SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal< bool (Dali::Actor,Dali::HoverEvent const &) > const *self){
@@ -976,19 +976,19 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_KeyEvent_SS_const_SA__SP__Sg__Emit(D
           /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
 /*@SWIG@*/ self->Emit( arg );
       }
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal< void (Dali::TouchEvent const &) > const *self){
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_TouchData_SS_const_SA__SP__Sg__Empty(Dali::Signal< void (Dali::TouchData const &) > const *self){
          return self->Empty();
       }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::TouchEvent const &) > const *self){
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_TouchData_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::TouchData const &) > const *self){
         return self->GetConnectionCount();
       }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal< void (Dali::TouchEvent const &) > *self,void (*func)(Dali::TouchEvent const &)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_TouchData_SS_const_SA__SP__Sg__Connect(Dali::Signal< void (Dali::TouchData const &) > *self,void (*func)(Dali::TouchData const &)){
           self->Connect( func );
       }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal< void (Dali::TouchEvent const &) > *self,void (*func)(Dali::TouchEvent const &)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_TouchData_SS_const_SA__SP__Sg__Disconnect(Dali::Signal< void (Dali::TouchData const &) > *self,void (*func)(Dali::TouchData const &)){
           self->Disconnect( func );
       }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal< void (Dali::TouchEvent const &) > *self,Dali::TouchEvent const &arg){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_TouchData_SS_const_SA__SP__Sg__Emit(Dali::Signal< void (Dali::TouchData const &) > *self,Dali::TouchData const &arg){
           /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
 /*@SWIG@*/ self->Emit( arg );
       }
@@ -2139,16 +2139,16 @@ bool SwigDirector_ViewImpl::OnAccessibilityPan(Dali::PanGesture gesture) {
   return c_result;
 }
 
-bool SwigDirector_ViewImpl::OnAccessibilityTouch(Dali::TouchEvent const &touch) {
+bool SwigDirector_ViewImpl::OnAccessibilityTouch(Dali::TouchData const &touchData) {
   bool c_result = SwigValueInit< bool >() ;
   unsigned int jresult = 0 ;
-  void * jtouch = 0 ;
+  void * jtouchData = 0 ;
 
   if (!swig_callbackOnAccessibilityTouch) {
-    return Dali::Toolkit::Internal::Control::OnAccessibilityTouch(touch);
+    return Dali::Toolkit::Internal::Control::OnAccessibilityTouch(touchData);
   } else {
-    jtouch = (Dali::TouchEvent *) &touch;
-    jresult = (unsigned int) swig_callbackOnAccessibilityTouch(jtouch);
+    jtouchData = (Dali::TouchData *) &touchData;
+    jresult = (unsigned int) swig_callbackOnAccessibilityTouch(jtouchData);
     c_result = jresult ? true : false;
   }
   return c_result;
@@ -29437,11 +29437,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TouchPoint_screen_get(void * jarg1) {
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Touch__SWIG_0() {
   void * jresult ;
-  Dali::TouchEvent *result = 0 ;
+  Dali::TouchData *result = 0 ;
 
   {
     try {
-      result = (Dali::TouchEvent *)new Dali::TouchEvent();
+      result = (Dali::TouchData *)new Dali::TouchData();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29468,17 +29468,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Touch__SWIG_0() {
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Touch__SWIG_1(void * jarg1) {
   void * jresult ;
-  Dali::TouchEvent *arg1 = 0 ;
-  Dali::TouchEvent *result = 0 ;
+  Dali::TouchData *arg1 = 0 ;
+  Dali::TouchData *result = 0 ;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchEvent const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchData const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (Dali::TouchEvent *)new Dali::TouchEvent((Dali::TouchEvent const &)*arg1);
+      result = (Dali::TouchData *)new Dali::TouchData((Dali::TouchData const &)*arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29504,9 +29504,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Touch__SWIG_1(void * jarg1) {
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Touch(void * jarg1) {
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   {
     try {
       delete arg1;
@@ -29534,19 +29534,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Touch(void * jarg1) {
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_Assign(void * jarg1, void * jarg2) {
   void * jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
-  Dali::TouchEvent *arg2 = 0 ;
-  Dali::TouchEvent *result = 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
+  Dali::TouchData *arg2 = 0 ;
+  Dali::TouchData *result = 0 ;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
-  arg2 = (Dali::TouchEvent *)jarg2;
+  arg1 = (Dali::TouchData *)jarg1;
+  arg2 = (Dali::TouchData *)jarg2;
   if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchEvent const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchData const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (Dali::TouchEvent *) &(arg1)->operator =((Dali::TouchEvent const &)*arg2);
+      result = (Dali::TouchData *) &(arg1)->operator =((Dali::TouchData const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29573,13 +29573,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_Assign(void * jarg1, void * jarg
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Touch_GetTime(void * jarg1) {
   unsigned long jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   unsigned long result;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   {
     try {
-      result = (unsigned long)((Dali::TouchEvent const *)arg1)->GetTime();
+      result = (unsigned long)((Dali::TouchData const *)arg1)->GetTime();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29606,13 +29606,13 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Touch_GetTime(void * jarg1) {
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Touch_GetPointCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   {
     try {
-      result = ((Dali::TouchEvent const *)arg1)->GetPointCount();
+      result = ((Dali::TouchData const *)arg1)->GetPointCount();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29639,15 +29639,15 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Touch_GetPointCount(void * jarg
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetDeviceId(void * jarg1, unsigned long jarg2) {
   int jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t arg2 ;
   int32_t result;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = ((Dali::TouchEvent const *)arg1)->GetDeviceId(arg2);
+      result = ((Dali::TouchData const *)arg1)->GetDeviceId(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29674,15 +29674,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetDeviceId(void * jarg1, unsigned 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetState(void * jarg1, unsigned long jarg2) {
   int jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t arg2 ;
   Dali::PointState::Type result;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = (Dali::PointState::Type)((Dali::TouchEvent const *)arg1)->GetState(arg2);
+      result = (Dali::PointState::Type)((Dali::TouchData const *)arg1)->GetState(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29709,15 +29709,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetState(void * jarg1, unsigned lon
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetHitActor(void * jarg1, unsigned long jarg2) {
   void * jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t arg2 ;
   Dali::Actor result;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = ((Dali::TouchEvent const *)arg1)->GetHitActor(arg2);
+      result = ((Dali::TouchData const *)arg1)->GetHitActor(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29744,15 +29744,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetHitActor(void * jarg1, unsign
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetLocalPosition(void * jarg1, unsigned long jarg2) {
   void * jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t arg2 ;
   Dali::Vector2 *result = 0 ;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = (Dali::Vector2 *) &((Dali::TouchEvent const *)arg1)->GetLocalPosition(arg2);
+      result = (Dali::Vector2 *) &((Dali::TouchData const *)arg1)->GetLocalPosition(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29779,15 +29779,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetLocalPosition(void * jarg1, u
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetScreenPosition(void * jarg1, unsigned long jarg2) {
   void * jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t arg2 ;
   Dali::Vector2 *result = 0 ;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = (Dali::Vector2 *) &((Dali::TouchEvent const *)arg1)->GetScreenPosition(arg2);
+      result = (Dali::Vector2 *) &((Dali::TouchData const *)arg1)->GetScreenPosition(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29814,15 +29814,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetScreenPosition(void * jarg1, 
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Touch_GetRadius(void * jarg1, unsigned long jarg2) {
   float jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t arg2 ;
   float result;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = (float)((Dali::TouchEvent const *)arg1)->GetRadius(arg2);
+      result = (float)((Dali::TouchData const *)arg1)->GetRadius(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29849,15 +29849,15 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Touch_GetRadius(void * jarg1, unsigned 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetEllipseRadius(void * jarg1, unsigned long jarg2) {
   void * jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t arg2 ;
   Dali::Vector2 *result = 0 ;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = (Dali::Vector2 *) &((Dali::TouchEvent const *)arg1)->GetEllipseRadius(arg2);
+      result = (Dali::Vector2 *) &((Dali::TouchData const *)arg1)->GetEllipseRadius(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29884,15 +29884,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetEllipseRadius(void * jarg1, u
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Touch_GetPressure(void * jarg1, unsigned long jarg2) {
   float jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t arg2 ;
   float result;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = (float)((Dali::TouchEvent const *)arg1)->GetPressure(arg2);
+      result = (float)((Dali::TouchData const *)arg1)->GetPressure(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29919,15 +29919,15 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Touch_GetPressure(void * jarg1, unsigne
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetAngle(void * jarg1, unsigned long jarg2) {
   void * jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t arg2 ;
   Dali::Degree result;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = ((Dali::TouchEvent const *)arg1)->GetAngle(arg2);
+      result = ((Dali::TouchData const *)arg1)->GetAngle(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -29954,15 +29954,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetAngle(void * jarg1, unsigned 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetMouseButton(void * jarg1, unsigned long jarg2) {
   int jresult ;
-  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  Dali::TouchData *arg1 = (Dali::TouchData *) 0 ;
   std::size_t arg2 ;
   Dali::MouseButton::Type result;
 
-  arg1 = (Dali::TouchEvent *)jarg1;
+  arg1 = (Dali::TouchData *)jarg1;
   arg2 = (std::size_t)jarg2;
   {
     try {
-      result = ((Dali::TouchEvent const *)arg1)->GetMouseButton(arg2);
+      result = ((Dali::TouchData const *)arg1)->GetMouseButton(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -36842,12 +36842,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_RemoveRenderer__SWIG_1(void * jarg
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_TouchSignal(void * jarg1) {
   void * jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
-  Dali::Actor::TouchEventSignalType *result = 0 ;
+  Dali::Actor::TouchDataSignalType *result = 0 ;
 
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (Dali::Actor::TouchEventSignalType *) &(arg1)->TouchSignal();
+      result = (Dali::Actor::TouchDataSignalType *) &(arg1)->TouchSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -51752,13 +51752,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LongPressGestureDetectedSignal(vo
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *) 0 ;
+  Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *)jarg1;
+  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Empty((Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchData_SS_const_SA__SP__Sg__Empty((Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -51785,13 +51785,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Empty(void 
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *) 0 ;
+  Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *)jarg1;
+  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > const *)arg1);
+      result = Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchData_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -51817,14 +51817,14 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_GetConnect
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *) 0 ;
-  bool (*arg2)(Dali::Actor,Dali::TouchEvent const &) = (bool (*)(Dali::Actor,Dali::TouchEvent const &)) 0 ;
+  Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *) 0 ;
+  bool (*arg2)(Dali::Actor,Dali::TouchData const &) = (bool (*)(Dali::Actor,Dali::TouchData const &)) 0 ;
 
-  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *)jarg1;
-  arg2 = (bool (*)(Dali::Actor,Dali::TouchEvent const &))jarg2;
+  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *)jarg1;
+  arg2 = (bool (*)(Dali::Actor,Dali::TouchData const &))jarg2;
   {
     try {
-      Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Connect(arg1,arg2);
+      Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchData_SS_const_SA__SP__Sg__Connect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -51848,14 +51848,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Connect(void * jarg
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *) 0 ;
-  bool (*arg2)(Dali::Actor,Dali::TouchEvent const &) = (bool (*)(Dali::Actor,Dali::TouchEvent const &)) 0 ;
+  Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *) 0 ;
+  bool (*arg2)(Dali::Actor,Dali::TouchData const &) = (bool (*)(Dali::Actor,Dali::TouchData const &)) 0 ;
 
-  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *)jarg1;
-  arg2 = (bool (*)(Dali::Actor,Dali::TouchEvent const &))jarg2;
+  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *)jarg1;
+  arg2 = (bool (*)(Dali::Actor,Dali::TouchData const &))jarg2;
   {
     try {
-      Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
+      Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchData_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -51880,27 +51880,27 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Disconnect(void * j
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Emit(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
-  Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *) 0 ;
+  Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *) 0 ;
   Dali::Actor arg2 ;
-  Dali::TouchEvent *arg3 = 0 ;
+  Dali::TouchData *arg3 = 0 ;
   Dali::Actor *argp2 ;
   bool result;
 
-  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *)jarg1;
+  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *)jarg1;
   argp2 = (Dali::Actor *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::TouchEvent *)jarg3;
+  arg3 = (Dali::TouchData *)jarg3;
   if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchEvent const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchData const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (bool)Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Emit(arg1,arg2,(Dali::TouchEvent const &)*arg3);
+      result = (bool)Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchData_SS_const_SA__SP__Sg__Emit(arg1,arg2,(Dali::TouchData const &)*arg3);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -51927,11 +51927,11 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Emit(void *
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ActorTouchDataSignal() {
   void * jresult ;
-  Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *result = 0 ;
+  Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *result = 0 ;
 
   {
     try {
-      result = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *)new Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) >();
+      result = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *)new Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -51957,9 +51957,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ActorTouchDataSignal() {
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActorTouchDataSignal(void * jarg1) {
-  Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *) 0 ;
+  Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *) 0 ;
 
-  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *)jarg1;
+  arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchData const &) > *)jarg1;
   {
     try {
       delete arg1;
@@ -52905,13 +52905,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyEventSignal(void * jarg1) {
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TouchSignal_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
+  Dali::Signal< void (Dali::TouchData const &) > *arg1 = (Dali::Signal< void (Dali::TouchData const &) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::TouchData const &) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Empty((Dali::Signal< void (Dali::TouchEvent const &) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_TouchData_SS_const_SA__SP__Sg__Empty((Dali::Signal< void (Dali::TouchData const &) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -52938,13 +52938,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TouchSignal_Empty(void * jarg1) 
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_TouchSignal_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
+  Dali::Signal< void (Dali::TouchData const &) > *arg1 = (Dali::Signal< void (Dali::TouchData const &) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::TouchData const &) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::TouchEvent const &) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_Dali_TouchData_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::TouchData const &) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -52970,14 +52970,14 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_TouchSignal_GetConnectionCount(
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchSignal_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
-  void (*arg2)(Dali::TouchEvent const &) = (void (*)(Dali::TouchEvent const &)) 0 ;
+  Dali::Signal< void (Dali::TouchData const &) > *arg1 = (Dali::Signal< void (Dali::TouchData const &) > *) 0 ;
+  void (*arg2)(Dali::TouchData const &) = (void (*)(Dali::TouchData const &)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
-  arg2 = (void (*)(Dali::TouchEvent const &))jarg2;
+  arg1 = (Dali::Signal< void (Dali::TouchData const &) > *)jarg1;
+  arg2 = (void (*)(Dali::TouchData const &))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Connect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_Dali_TouchData_SS_const_SA__SP__Sg__Connect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -53001,14 +53001,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchSignal_Connect(void * jarg1, void *
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchSignal_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
-  void (*arg2)(Dali::TouchEvent const &) = (void (*)(Dali::TouchEvent const &)) 0 ;
+  Dali::Signal< void (Dali::TouchData const &) > *arg1 = (Dali::Signal< void (Dali::TouchData const &) > *) 0 ;
+  void (*arg2)(Dali::TouchData const &) = (void (*)(Dali::TouchData const &)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
-  arg2 = (void (*)(Dali::TouchEvent const &))jarg2;
+  arg1 = (Dali::Signal< void (Dali::TouchData const &) > *)jarg1;
+  arg2 = (void (*)(Dali::TouchData const &))jarg2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_Dali_TouchData_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -53032,18 +53032,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchSignal_Disconnect(void * jarg1, voi
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchSignal_Emit(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
-  Dali::TouchEvent *arg2 = 0 ;
+  Dali::Signal< void (Dali::TouchData const &) > *arg1 = (Dali::Signal< void (Dali::TouchData const &) > *) 0 ;
+  Dali::TouchData *arg2 = 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
-  arg2 = (Dali::TouchEvent *)jarg2;
+  arg1 = (Dali::Signal< void (Dali::TouchData const &) > *)jarg1;
+  arg2 = (Dali::TouchData *)jarg2;
   if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchEvent const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchData const & type is null", 0);
     return ;
   }
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Emit(arg1,(Dali::TouchEvent const &)*arg2);
+      Dali_Signal_Sl_void_Sp_Dali_TouchData_SS_const_SA__SP__Sg__Emit(arg1,(Dali::TouchData const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -53068,11 +53068,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchSignal_Emit(void * jarg1, void * ja
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TouchSignal() {
   void * jresult ;
-  Dali::Signal< void (Dali::TouchEvent const &) > *result = 0 ;
+  Dali::Signal< void (Dali::TouchData const &) > *result = 0 ;
 
   {
     try {
-      result = (Dali::Signal< void (Dali::TouchEvent const &) > *)new Dali::Signal< void (Dali::TouchEvent const &) >();
+      result = (Dali::Signal< void (Dali::TouchData const &) > *)new Dali::Signal< void (Dali::TouchData const &) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -53098,9 +53098,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TouchSignal() {
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TouchSignal(void * jarg1) {
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
+  Dali::Signal< void (Dali::TouchData const &) > *arg1 = (Dali::Signal< void (Dali::TouchData const &) > *) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::TouchData const &) > *)jarg1;
   {
     try {
       delete arg1;
@@ -61856,18 +61856,18 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityPanSwigE
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityTouch(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::TouchEvent *arg2 = 0 ;
+  Dali::TouchData *arg2 = 0 ;
   bool result;
 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  arg2 = (Dali::TouchEvent *)jarg2;
+  arg2 = (Dali::TouchData *)jarg2;
   if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchEvent const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchData const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (bool)(arg1)->OnAccessibilityTouch((Dali::TouchEvent const &)*arg2);
+      result = (bool)(arg1)->OnAccessibilityTouch((Dali::TouchData const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -61895,18 +61895,18 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityTouch(vo
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityTouchSwigExplicitViewImpl(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::TouchEvent *arg2 = 0 ;
+  Dali::TouchData *arg2 = 0 ;
   bool result;
 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  arg2 = (Dali::TouchEvent *)jarg2;
+  arg2 = (Dali::TouchData *)jarg2;
   if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchEvent const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchData const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (bool)(arg1)->Dali::Toolkit::Internal::Control::OnAccessibilityTouch((Dali::TouchEvent const &)*arg2);
+      result = (bool)(arg1)->Dali::Toolkit::Internal::Control::OnAccessibilityTouch((Dali::TouchData const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -95473,7 +95473,7 @@ SWIGEXPORT Dali::Handle * SWIGSTDCALL CSharp_Dali_RenderTask_SWIGUpcast(Dali::Re
     return (Dali::Handle *)jarg1;
 }
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Touch_SWIGUpcast(Dali::TouchEvent *jarg1) {
+SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Touch_SWIGUpcast(Dali::TouchData *jarg1) {
     return (Dali::BaseHandle *)jarg1;
 }
 

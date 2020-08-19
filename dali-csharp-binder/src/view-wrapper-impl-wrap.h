@@ -121,7 +121,7 @@ public:
     virtual void OnStyleChange(Dali::Toolkit::StyleManager styleManager, Dali::StyleChange::Type change);
     virtual bool OnAccessibilityActivated();
     virtual bool OnAccessibilityPan(Dali::PanGesture gesture);
-    virtual bool OnAccessibilityTouch(Dali::TouchEvent const &touch);
+    virtual bool OnAccessibilityTouch(Dali::TouchData const &touchData);
     virtual bool OnAccessibilityValueChange(bool isIncrease);
     virtual bool OnAccessibilityZoom();
     virtual void OnKeyInputFocusGained();

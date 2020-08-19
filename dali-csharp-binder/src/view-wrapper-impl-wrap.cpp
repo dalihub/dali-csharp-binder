@@ -296,16 +296,16 @@ bool SwigDirector_ViewWrapperImpl::OnAccessibilityPan(Dali::PanGesture gesture) 
   return c_result;
 }
 
-bool SwigDirector_ViewWrapperImpl::OnAccessibilityTouch(Dali::TouchEvent const &touch) {
+bool SwigDirector_ViewWrapperImpl::OnAccessibilityTouch(Dali::TouchData const &touchData) {
   bool c_result = SwigValueInit< bool >() ;
   unsigned int jresult = 0 ;
-  void * jtouch = 0 ;
+  void * jtouchData = 0 ;
 
   if (!swig_callbackOnAccessibilityTouch) {
-    return Dali::Toolkit::Internal::Control::OnAccessibilityTouch(touch);
+    return Dali::Toolkit::Internal::Control::OnAccessibilityTouch(touchData);
   } else {
-    jtouch = (Dali::TouchEvent *) &touch;
-    jresult = (unsigned int) swig_callbackOnAccessibilityTouch(jtouch);
+    jtouchData = (Dali::TouchData *) &touchData;
+    jresult = (unsigned int) swig_callbackOnAccessibilityTouch(jtouchData);
     c_result = jresult ? true : false;
   }
   return c_result;
