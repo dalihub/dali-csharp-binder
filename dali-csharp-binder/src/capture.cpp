@@ -297,22 +297,22 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_Assign(void* jarg1, void* jarg2
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_1(void* jarg0, void* jarg1, void* jarg2, char* jarg3, void* jarg4)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_1(void* nuiCapture, void* nuiSource, void* nuiSize, char* nuiPath, void* nuiClearColor)
 {
-  Dali::Capture* arg0 = (Dali::Capture*)0;
-  Dali::Actor* arg1 = (Dali::Actor*)0;
-  Dali::Vector2* arg2 = (Dali::Vector2*)0;
-  std::string* arg3;
-  std::string arg3_str(jarg3);
-  Dali::Vector4* arg4 = (Dali::Vector4*)0;
+  Dali::Capture* capture = (Dali::Capture*)0;
+  Dali::Actor* source = (Dali::Actor*)0;
+  Dali::Vector2* size = (Dali::Vector2*)0;
+  std::string* path;
+  std::string path_str(nuiPath);
+  Dali::Vector4* clearColor = (Dali::Vector4*)0;
 
-  arg0 = (Dali::Capture*)jarg0;
-  arg1 = (Dali::Actor*)jarg1;
-  arg2 = (Dali::Vector2*)jarg2;
-  arg3 = &arg3_str;
-  arg4 = (Dali::Vector4*)jarg4;
+  capture = (Dali::Capture*)nuiCapture;
+  source = (Dali::Actor*)nuiSource;
+  size = (Dali::Vector2*)nuiSize;
+  path = &path_str;
+  clearColor = (Dali::Vector4*)nuiClearColor;
 
-  if (!arg0 || !arg1 || !arg2 || !arg3 || !arg4)
+  if (!capture || !source || !size || !path || !clearColor)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return;
@@ -321,7 +321,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_1(void* jarg0, void* jarg1
   {
     try
     {
-      (arg0)->Start(*arg1, (const Dali::Vector2&) * arg2, (const std::string&) * arg3, (const Dali::Vector4&) * arg4);
+      (capture)->Start(*source, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&) * clearColor);
     }
     catch (std::out_of_range& e)
     {
@@ -369,6 +369,149 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_2(void* nuiCapture, void* 
     try
     {
       (capture)->Start(*source, (const Dali::Vector2&)*size, (const std::string&)*path);
+    }
+    catch (std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return;
+    }
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_3(void* nuiCapture, void* nuiSource, void* nuiSize, char* nuiPath, void* nuiClearColor, uint32_t nuiQuality)
+{
+  Dali::Capture* capture = (Dali::Capture*)0;
+  Dali::Actor* source = (Dali::Actor*)0;
+  Dali::Vector2* size = (Dali::Vector2*)0;
+  std::string* path;
+  std::string path_str(nuiPath);
+  Dali::Vector4* clearColor = (Dali::Vector4*)0;
+  uint32_t quality;
+
+  capture = (Dali::Capture*)nuiCapture;
+  source = (Dali::Actor*)nuiSource;
+  size = (Dali::Vector2*)nuiSize;
+  path = &path_str;
+  clearColor = (Dali::Vector4*)nuiClearColor;
+  quality = nuiQuality;
+
+  if (!capture || !source || !size || !path || !clearColor)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return;
+  }
+
+  {
+    try
+    {
+      (capture)->Start(*source, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&) * clearColor, quality);
+    }
+    catch (std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return;
+    }
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_4( void* nuiCapture, void* nuiSource, void* nuiPosition, void* nuiSize, char* nuiPath, void* nuiClearColor )
+{
+  Dali::Capture* capture = (Dali::Capture*)0;
+  Dali::Actor* source = (Dali::Actor*)0;
+  Dali::Vector2* position = (Dali::Vector2*)0;
+  Dali::Vector2* size = (Dali::Vector2*)0;
+  std::string* path;
+  std::string path_str(nuiPath);
+  Dali::Vector4* clearColor = (Dali::Vector4*)0;
+
+  capture = (Dali::Capture*)nuiCapture;
+  source = (Dali::Actor*)nuiSource;
+  position = (Dali::Vector2*)nuiPosition;
+  size = (Dali::Vector2*)nuiSize;
+  path = &path_str;
+  clearColor = (Dali::Vector4*)nuiClearColor;
+
+  if (!capture || !source || !size || !position || !path || !clearColor)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return;
+  }
+
+  {
+    try
+    {
+      (capture)->Start(*source, (const Dali::Vector2&)*position, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&) * clearColor);
+    }
+    catch (std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return;
+    }
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_SetImageQuality( void* nuiCapture, uint32_t nuiQuality )
+{
+  Dali::Capture* capture = (Dali::Capture*)0;
+  uint32_t quality = nuiQuality;
+
+  capture = (Dali::Capture*)nuiCapture;
+
+  if ( !capture )
+  {
+    SWIG_CSharpSetPendingExceptionArgument( SWIG_CSharpArgumentNullException, "some argument is null", 0 );
+    return;
+  }
+
+  {
+    try
+    {
+      ( capture )->SetImageQuality( quality );
     }
     catch (std::out_of_range& e)
     {
