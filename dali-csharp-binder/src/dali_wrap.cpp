@@ -33737,12 +33737,14 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Actor_GetName(void * jarg1) {
   char * jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   std::string *result = 0 ;
+  std::string name = "";
 
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      std::string name = ((Dali::Actor const *)arg1)->GetProperty< std::string >( Dali::Actor::Property::NAME );
+      name = ((Dali::Actor const *)arg1)->GetProperty< std::string >( Dali::Actor::Property::NAME );
       result = (std::string *) &name;
+      jresult = SWIG_csharp_string_callback(result->c_str());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -33761,8 +33763,6 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Actor_GetName(void * jarg1) {
       };
     }
   }
-
-  jresult = SWIG_csharp_string_callback(result->c_str());
   return jresult;
 }
 
