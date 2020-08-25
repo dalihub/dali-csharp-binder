@@ -46,7 +46,8 @@ BuildRequires: pkgconfig(dali2-core)
 BuildRequires: pkgconfig(dali2-adaptor)
 BuildRequires: pkgconfig(dali2-toolkit)
 BuildRequires: pkgconfig(widget_viewer_dali)
-
+BuildRequires: pkgconfig(watch_viewer_dali)
+BuildRequires: pkgconfig(watch-holder-base)
 
 %if 0%{?tizen_version_major} >= 5
 BuildRequires: pkgconfig(ecore-wl2)
