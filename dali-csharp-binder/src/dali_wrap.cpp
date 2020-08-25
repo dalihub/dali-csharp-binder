@@ -25181,10 +25181,10 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_TextureSet_GetTextureCount(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PropertyBuffer_New(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VertexBuffer_New(void * jarg1) {
   void * jresult ;
   Dali::Property::Map *arg1 = 0 ;
-  Dali::PropertyBuffer result;
+  Dali::VertexBuffer result;
 
   arg1 = (Dali::Property::Map *)jarg1;
   if (!arg1) {
@@ -25193,7 +25193,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PropertyBuffer_New(void * jarg1) {
   }
   {
     try {
-      result = Dali::PropertyBuffer::New(*arg1);
+      result = Dali::VertexBuffer::New(*arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -25213,18 +25213,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PropertyBuffer_New(void * jarg1) {
     }
   }
 
-  jresult = new Dali::PropertyBuffer((const Dali::PropertyBuffer &)result);
+  jresult = new Dali::VertexBuffer((const Dali::VertexBuffer &)result);
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PropertyBuffer__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VertexBuffer__SWIG_0() {
   void * jresult ;
-  Dali::PropertyBuffer *result = 0 ;
+  Dali::VertexBuffer *result = 0 ;
 
   {
     try {
-      result = (Dali::PropertyBuffer *)new Dali::PropertyBuffer();
+      result = (Dali::VertexBuffer *)new Dali::VertexBuffer();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -25249,10 +25249,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PropertyBuffer__SWIG_0() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PropertyBuffer(void * jarg1) {
-  Dali::PropertyBuffer *arg1 = (Dali::PropertyBuffer *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VertexBuffer(void * jarg1) {
+  Dali::VertexBuffer *arg1 = (Dali::VertexBuffer *) 0 ;
 
-  arg1 = (Dali::PropertyBuffer *)jarg1;
+  arg1 = (Dali::VertexBuffer *)jarg1;
   {
     try {
       delete arg1;
@@ -25278,19 +25278,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PropertyBuffer(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PropertyBuffer__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VertexBuffer__SWIG_1(void * jarg1) {
   void * jresult ;
-  Dali::PropertyBuffer *arg1 = 0 ;
-  Dali::PropertyBuffer *result = 0 ;
+  Dali::VertexBuffer *arg1 = 0 ;
+  Dali::VertexBuffer *result = 0 ;
 
-  arg1 = (Dali::PropertyBuffer *)jarg1;
+  arg1 = (Dali::VertexBuffer *)jarg1;
   if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::PropertyBuffer const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::VertexBuffer const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (Dali::PropertyBuffer *)new Dali::PropertyBuffer((Dali::PropertyBuffer const &)*arg1);
+      result = (Dali::VertexBuffer *)new Dali::VertexBuffer((Dali::VertexBuffer const &)*arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -25315,11 +25315,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PropertyBuffer__SWIG_1(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PropertyBuffer_DownCast(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VertexBuffer_DownCast(void * jarg1) {
   void * jresult ;
   Dali::BaseHandle arg1 ;
   Dali::BaseHandle *argp1 ;
-  Dali::PropertyBuffer result;
+  Dali::VertexBuffer result;
 
   argp1 = (Dali::BaseHandle *)jarg1;
   if (!argp1) {
@@ -25329,7 +25329,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PropertyBuffer_DownCast(void * jarg1) 
   arg1 = *argp1;
   {
     try {
-      result = Dali::PropertyBuffer::DownCast(arg1);
+      result = Dali::VertexBuffer::DownCast(arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -25349,26 +25349,26 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PropertyBuffer_DownCast(void * jarg1) 
     }
   }
 
-  jresult = new Dali::PropertyBuffer((const Dali::PropertyBuffer &)result);
+  jresult = new Dali::VertexBuffer((const Dali::VertexBuffer &)result);
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PropertyBuffer_Assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VertexBuffer_Assign(void * jarg1, void * jarg2) {
   void * jresult ;
-  Dali::PropertyBuffer *arg1 = (Dali::PropertyBuffer *) 0 ;
-  Dali::PropertyBuffer *arg2 = 0 ;
-  Dali::PropertyBuffer *result = 0 ;
+  Dali::VertexBuffer *arg1 = (Dali::VertexBuffer *) 0 ;
+  Dali::VertexBuffer *arg2 = 0 ;
+  Dali::VertexBuffer *result = 0 ;
 
-  arg1 = (Dali::PropertyBuffer *)jarg1;
-  arg2 = (Dali::PropertyBuffer *)jarg2;
+  arg1 = (Dali::VertexBuffer *)jarg1;
+  arg2 = (Dali::VertexBuffer *)jarg2;
   if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::PropertyBuffer const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::VertexBuffer const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (Dali::PropertyBuffer *) &(arg1)->operator =((Dali::PropertyBuffer const &)*arg2);
+      result = (Dali::VertexBuffer *) &(arg1)->operator =((Dali::VertexBuffer const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -25393,12 +25393,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PropertyBuffer_Assign(void * jarg1, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PropertyBuffer_SetData(void * jarg1, void * jarg2, unsigned long jarg3) {
-  Dali::PropertyBuffer *arg1 = (Dali::PropertyBuffer *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VertexBuffer_SetData(void * jarg1, void * jarg2, unsigned long jarg3) {
+  Dali::VertexBuffer *arg1 = (Dali::VertexBuffer *) 0 ;
   void *arg2 = (void *) 0 ;
   std::size_t arg3 ;
 
-  arg1 = (Dali::PropertyBuffer *)jarg1;
+  arg1 = (Dali::VertexBuffer *)jarg1;
   arg2 = jarg2;
   arg3 = (std::size_t)jarg3;
   {
@@ -25426,15 +25426,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PropertyBuffer_SetData(void * jarg1, voi
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_PropertyBuffer_GetSize(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_VertexBuffer_GetSize(void * jarg1) {
   unsigned long jresult ;
-  Dali::PropertyBuffer *arg1 = (Dali::PropertyBuffer *) 0 ;
+  Dali::VertexBuffer *arg1 = (Dali::VertexBuffer *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::PropertyBuffer *)jarg1;
+  arg1 = (Dali::VertexBuffer *)jarg1;
   {
     try {
-      result = ((Dali::PropertyBuffer const *)arg1)->GetSize();
+      result = ((Dali::VertexBuffer const *)arg1)->GetSize();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -25668,13 +25668,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Geometry_Assign(void * jarg1, void * j
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Geometry_AddVertexBuffer(void * jarg1, void * jarg2) {
   unsigned long jresult ;
   Dali::Geometry *arg1 = (Dali::Geometry *) 0 ;
-  Dali::PropertyBuffer *arg2 = 0 ;
+  Dali::VertexBuffer *arg2 = 0 ;
   std::size_t result;
 
   arg1 = (Dali::Geometry *)jarg1;
-  arg2 = (Dali::PropertyBuffer *)jarg2;
+  arg2 = (Dali::VertexBuffer *)jarg2;
   if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::PropertyBuffer & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::VertexBuffer & type is null", 0);
     return 0;
   }
   {
@@ -95705,7 +95705,7 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_TextureSet_SWIGUpcast(Dali
     return (Dali::BaseHandle *)jarg1;
 }
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_PropertyBuffer_SWIGUpcast(Dali::PropertyBuffer *jarg1) {
+SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_VertexBuffer_SWIGUpcast(Dali::VertexBuffer *jarg1) {
     return (Dali::BaseHandle *)jarg1;
 }
 
