@@ -427,6 +427,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/common/stage-devel.h>
 #include <dali/devel-api/events/key-event-devel.h>
 #include <dali/devel-api/events/wheel-event-devel.h>
+#include <dali/devel-api/events/key-event-devel.h>
 
 #include <dali/public-api/math/matrix.h>
 #include <dali/public-api/math/matrix3.h>
@@ -30896,67 +30897,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Key__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Key__SWIG_1(char * jarg1, char * jarg2, int jarg3, int jarg4, unsigned long jarg5, int jarg6) {
-  void * jresult ;
-  std::string *arg1 = 0 ;
-  std::string *arg2 = 0 ;
-  int arg3 ;
-  int arg4 ;
-  unsigned long arg5 ;
-  Dali::KeyEvent::State *arg6 = 0 ;
-  Dali::KeyEvent::State temp6 ;
-  Dali::KeyEvent *result = 0 ;
-
-  if (!jarg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
-  arg3 = (int)jarg3;
-  arg4 = (int)jarg4;
-  arg5 = (unsigned long)jarg5;
-  temp6 = (Dali::KeyEvent::State)jarg6;
-  arg6 = &temp6;
-  {
-    try {
-      result = (Dali::KeyEvent *)new Dali::KeyEvent((std::string const &)*arg1,(std::string const &)*arg2,arg3,arg4,arg5,(Dali::KeyEvent::State const &)*arg6);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-
-  //argout typemap for const std::string&
-
-
-  //argout typemap for const std::string&
-
-  return jresult;
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Key__SWIG_2(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Key__SWIG_1(void * jarg1) {
   void * jresult ;
   Dali::KeyEvent *arg1 = 0 ;
   Dali::KeyEvent *result = 0 ;
@@ -31031,6 +30972,66 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Key_Assign(void * jarg1, void * jarg2)
   return jresult;
 }
 
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Key_New(char * jarg1, char * jarg2, int jarg3, int jarg4, unsigned long jarg5, int jarg6) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  int arg3 ;
+  int arg4 ;
+  unsigned long arg5 ;
+  Dali::KeyEvent::State *arg6 = 0 ;
+  Dali::KeyEvent::State temp6 ;
+  Dali::KeyEvent result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str;
+  arg3 = (int)jarg3;
+  arg4 = (int)jarg4;
+  arg5 = (unsigned long)jarg5;
+  temp6 = (Dali::KeyEvent::State)jarg6;
+  arg6 = &temp6;
+  {
+    try {
+      result = DevelKeyEvent::New((std::string const &)*arg1, "", (std::string const &)*arg2, arg3, arg4, arg5, (Dali::KeyEvent::State const &)*arg6, "", "", Device::Class::NONE, Device::Subclass::NONE);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = new Dali::KeyEvent((const Dali::KeyEvent &)result);
+
+  //argout typemap for const std::string&
+
+
+  //argout typemap for const std::string&
+
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Key(void * jarg1) {
   Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
@@ -31161,20 +31162,38 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Key_IsAltModifier(void * jarg1) 
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressedName_set(void * jarg1, char * jarg2) {
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
+  Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0 ;
   std::string *arg2 = 0 ;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
+  Dali::KeyEvent arg1 = *argp1;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
   std::string arg2_str(jarg2);
   arg2 = &arg2_str;
-  if (arg1) (arg1)->keyPressedName = *arg2;
 
-  //argout typemap for const std::string&
-
+  {
+    try {
+      Dali::DevelKeyEvent::SetKeyName(arg1, (std::string const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
@@ -31191,8 +31210,30 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_keyPressedName_get(void * jarg1) {
     std::string *result = 0;
 
     arg1 = ( Dali::KeyEvent * )jarg1;
-    result = ( std::string * ) & ( ( arg1 )->keyPressedName );
-    jresult = SWIG_csharp_string_callback( result->c_str() );
+    {
+      try {
+        std::string str = ((Dali::KeyEvent const *)arg1)->GetKeyName();
+        result = (std::string *) &str;
+      } catch (std::out_of_range& e) {
+        {
+          SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+        };
+      } catch (std::exception& e) {
+        {
+          SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+        };
+      } catch (Dali::DaliException e) {
+        {
+          SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+        };
+      } catch (...) {
+        {
+          SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+        };
+      }
+    }
+
+    jresult = SWIG_csharp_string_callback(result->c_str());
   }
 
   return jresult;
@@ -31200,170 +31241,340 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_keyPressedName_get(void * jarg1) {
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressed_set(void * jarg1, char * jarg2) {
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
+  Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0 ;
   std::string *arg2 = 0 ;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
+  Dali::KeyEvent arg1 = *argp1;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
   std::string arg2_str(jarg2);
   arg2 = &arg2_str;
-  if (arg1) (arg1)->keyPressed = *arg2;
 
-  //argout typemap for const std::string&
-
+  {
+    try {
+      Dali::DevelKeyEvent::SetKeyString(arg1, (std::string const &)*arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_keyPressed_get(void * jarg1) {
   char * jresult ;
-  if( NULL == jarg1 )
-  {
-    jresult = SWIG_csharp_string_callback( "" );
-  }
-  else
-  {
-    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
-    std::string *result = 0;
 
-    arg1 = ( Dali::KeyEvent * )jarg1;
-    result = ( std::string * ) & ( ( arg1 )->keyPressed );
-    jresult = SWIG_csharp_string_callback( result->c_str() );
+  Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+  std::string *result = 0;
+
+  arg1 = ( Dali::KeyEvent * )jarg1;
+  {
+    try {
+      std::string str = ((Dali::KeyEvent const *)arg1)->GetKeyString();
+      result = (std::string *) &str;
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+
+    jresult = SWIG_csharp_string_callback(result->c_str());
   }
+
   return jresult;
 }
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyCode_set(void * jarg1, int jarg2) {
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
+  Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0 ;
   int arg2 ;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
+  Dali::KeyEvent arg1 = *argp1;
   arg2 = (int)jarg2;
-  if (arg1) (arg1)->keyCode = arg2;
+  {
+    try {
+      Dali::DevelKeyEvent::SetKeyCode(arg1, arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Key_keyCode_get(void * jarg1) {
   int jresult ;
-  if( NULL == jarg1 )
-  {
-    jresult = -1;
-  }
-  else
-  {
-    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
-    int result;
+  Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+  int result;
 
-    arg1 = ( Dali::KeyEvent * )jarg1;
-    result = (int)( ( arg1 )->keyCode );
-    jresult = result;
+  arg1 = (Dali::KeyEvent *)jarg1;
+  {
+    try {
+      result = (int)((Dali::KeyEvent const *)arg1)->GetKeyCode();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
   }
+
+  jresult = result;
   return jresult;
 }
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyModifier_set(void * jarg1, int jarg2) {
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
+  Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0 ;
   int arg2 ;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
+  Dali::KeyEvent arg1 = *argp1;
   arg2 = (int)jarg2;
-  if (arg1) (arg1)->keyModifier = arg2;
+  {
+    try {
+      Dali::DevelKeyEvent::SetKeyModifier(arg1, arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Key_keyModifier_get(void * jarg1) {
   int jresult ;
-  if( jarg1 == NULL )
-  {
-    jresult = -1;
-  }
-  else
-  {
-    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
-    int result;
+  Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+  int result;
 
-    arg1 = ( Dali::KeyEvent * )jarg1;
-    result = (int)( ( arg1 )->keyModifier );
-    jresult = result;
+  arg1 = (Dali::KeyEvent *)jarg1;
+  {
+    try {
+      result = (int)((Dali::KeyEvent const *)arg1)->GetKeyModifier();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
   }
+
+  jresult = result;
   return jresult;
 }
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_time_set(void * jarg1, unsigned long jarg2) {
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
+  Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0 ;
   unsigned long arg2 ;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
-  arg2 = (unsigned long)jarg2;
-  if (arg1) (arg1)->time = arg2;
+  Dali::KeyEvent arg1 = *argp1;
+  arg2 = (int)jarg2;
+  {
+    try {
+      Dali::DevelKeyEvent::SetTime(arg1, arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Key_time_get(void * jarg1) {
   unsigned long jresult ;
-  if( jarg1 == NULL )
-  {
-    jresult = 0;
-  }
-  else
-  {
-    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
-    unsigned long result;
+  Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+  unsigned long result;
 
-    arg1 = ( Dali::KeyEvent * )jarg1;
-    result = (unsigned long)( ( arg1 )->time );
-    jresult = (unsigned long)result;
+  arg1 = (Dali::KeyEvent *)jarg1;
+  {
+    try {
+      result = (int)((Dali::KeyEvent const *)arg1)->GetTime();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
   }
+
+  jresult = result;
   return jresult;
 }
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_state_set(void * jarg1, int jarg2) {
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
-  Dali::KeyEvent::State arg2 ;
+  Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0;
+  Dali::KeyEvent::State arg2;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
+  Dali::KeyEvent arg1 = *argp1;
   arg2 = (Dali::KeyEvent::State)jarg2;
-  if (arg1) (arg1)->state = arg2;
+  {
+    try {
+      Dali::DevelKeyEvent::SetState(arg1, arg2);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
 }
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Key_state_get(void * jarg1) {
   int jresult ;
-  if( jarg1 == NULL )
-  {
-    jresult = -1;
-  }
-  else
-  {
-    Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
-    Dali::KeyEvent::State result;
+  Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+  Dali::KeyEvent::State result;
 
-    arg1 = ( Dali::KeyEvent * )jarg1;
-    result = ( Dali::KeyEvent::State ) ( ( arg1 )->state );
-    jresult = (int)result;
+  arg1 = (Dali::KeyEvent *)jarg1;
+  {
+    try {
+      result = (Dali::KeyEvent::State)((Dali::KeyEvent const *)arg1)->GetState();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
   }
+
+  jresult = (int)result;
   return jresult;
+
 }
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_logicalKey_get(void * jarg1) {
   char * jresult ;
-  std::string result;
-  Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0;
 
-  arg1 = (Dali::KeyEvent *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::DevelKeyEvent const & type is null", 0);
-    return 0;
-  }
+  Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
+  std::string *result = 0;
+
+  arg1 = ( Dali::KeyEvent * )jarg1;
   {
     try {
-      result = Dali::DevelKeyEvent::GetLogicalKey(*arg1);
+      std::string str = ((Dali::KeyEvent const *)arg1)->GetLogicalKey();
+      result = (std::string *) &str;
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -31384,7 +31595,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_logicalKey_get(void * jarg1) {
 
   }
 
-  jresult = SWIG_csharp_string_callback( (&result)->c_str() );
+  jresult = SWIG_csharp_string_callback(result->c_str());
   return jresult;
 }
 
@@ -95531,6 +95742,10 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Hover_SWIGUpcast(Dali::Hov
 }
 
 SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Wheel_SWIGUpcast(Dali::WheelEvent *jarg1) {
+    return (Dali::BaseHandle *)jarg1;
+}
+
+SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Key_SWIGUpcast(Dali::KeyEvent *jarg1) {
     return (Dali::BaseHandle *)jarg1;
 }
 
