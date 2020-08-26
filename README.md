@@ -57,3 +57,34 @@ Then run the following commands:
  ./configure --prefix=$DESKTOP_PREFIX
  make install -j8
 
+3. Building for Windows
+=======================
+
+Third party dependencies are built using vcpkg. Instructions on how to install vcpkg can be found in the
+vcpkg-script folder in the windows-dependencies repository.
+
+- Download the windows-dependencies repository from DaliHub
+
+         $ git clone https://github.com/dalihub/windows-dependencies.git
+
+- Read the windows-dependencies/vcpkg-script/Readme.md file for more instructions on how to build and install the third-party dependencies.
+
+3.1 Building with CMake
+-----------------------
+
+  * Requirements
+    It's required the version 3.12.2 of CMake and Visual Studio Community Edition
+
+  * Define an environment variable to set the path to the VCPKG folder
+
+    $ set VCPKG_FOLDER=C:/Users/username/Workspace/VCPKG_TOOL
+
+  * Define an environment variable to set the path where DALi is going to be installed.
+
+    $ set DALI_ENV_FOLDER=C:/Users/username/Workspace/dali-env
+
+  * Execute the following commands to create the makefiles, build and install DALi.
+
+    $ cmake -g Ninja . -DCMAKE_TOOLCHAIN_FILE=%VCPKG_FOLDER%/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_INSTALL_PREFIX=%DALI_ENV_FOLDER%
+
+    $ cmake --build . --target install
