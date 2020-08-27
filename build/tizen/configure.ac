@@ -24,6 +24,7 @@ AC_ARG_ENABLE([debug],
               [enable_debug=$enableval],
               [enable_debug=no])
 
+DALI_CSHARP_BINDER_CFLAGS="$DALI_CSHARP_BINDER_CFLAGS -std=c++17 "
 if test "x$enable_debug" = "xyes"; then
   DALI_CSHARP_BINDER_CFLAGS="$DALI_CSHARP_BINDER_CFLAGS -DDEBUG_ENABLED"
 fi
