@@ -30518,19 +30518,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Hover__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Hover__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Hover__SWIG_1(unsigned long jarg1) {
   void * jresult ;
-  Dali::HoverEvent *arg1 = 0 ;
+  unsigned long arg1 ;
   Dali::HoverEvent *result = 0 ;
 
-  arg1 = (Dali::HoverEvent *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::HoverEvent const & type is null", 0);
-    return 0;
-  }
+  arg1 = (unsigned long)jarg1;
   {
     try {
-      result = (Dali::HoverEvent *)new Dali::HoverEvent((Dali::HoverEvent const &)*arg1);
+      result = (Dali::HoverEvent *)new Dali::HoverEvent(arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -30584,122 +30580,59 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Hover(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Hover_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Hover_points_set(void * jarg1, void * jarg2) {
   Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
-  Dali::HoverEvent *arg2 = 0 ;
-  Dali::HoverEvent *result = 0 ;
+  Dali::TouchPointContainer *arg2 = (Dali::TouchPointContainer *) 0 ;
 
   arg1 = (Dali::HoverEvent *)jarg1;
-  arg2 = (Dali::HoverEvent *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::HoverEvent const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::HoverEvent *) &(arg1)->operator =((Dali::HoverEvent const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
+  arg2 = (Dali::TouchPointContainer *)jarg2;
+  if (arg1) (arg1)->points = *arg2;
+}
 
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Hover_points_get(void * jarg1) {
+  void * jresult ;
+  Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
+  Dali::TouchPointContainer *result = 0 ;
+
+  arg1 = (Dali::HoverEvent *)jarg1;
+  result = (Dali::TouchPointContainer *)& ((arg1)->points);
   jresult = (void *)result;
   return jresult;
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Hover_GetTime(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Hover_time_set(void * jarg1, unsigned long jarg2) {
+  Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
+  unsigned long arg2 ;
+
+  arg1 = (Dali::HoverEvent *)jarg1;
+  arg2 = (unsigned long)jarg2;
+  if (arg1) (arg1)->time = arg2;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Hover_time_get(void * jarg1) {
   unsigned long jresult ;
   Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
   unsigned long result;
 
   arg1 = (Dali::HoverEvent *)jarg1;
-  {
-    try {
-      result = (unsigned long)((Dali::HoverEvent const *)arg1)->GetTime();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
+  result = (unsigned long) ((arg1)->time);
   jresult = (unsigned long)result;
   return jresult;
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Hover_GetPointCount(void * jarg1) {
-  unsigned long jresult ;
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Hover_GetPointCount(void * jarg1) {
+  unsigned int jresult ;
   Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
-  std::size_t result;
+  unsigned int result;
 
   arg1 = (Dali::HoverEvent *)jarg1;
   {
     try {
-      result = ((Dali::HoverEvent const *)arg1)->GetPointCount();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (unsigned long)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Hover_GetDeviceId(void * jarg1, unsigned long jarg2) {
-  int jresult ;
-  Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
-  std::size_t arg2 ;
-  int32_t result;
-
-  arg1 = (Dali::HoverEvent *)jarg1;
-  arg2 = (std::size_t)jarg2;
-  {
-    try {
-      result = ((Dali::HoverEvent const *)arg1)->GetDeviceId(arg2);
+      result = (unsigned int)((Dali::HoverEvent const *)arg1)->GetPointCount();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -30724,122 +30657,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Hover_GetDeviceId(void * jarg1, unsigned 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Hover_GetState(void * jarg1, unsigned long jarg2) {
-  int jresult ;
-  Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
-  std::size_t arg2 ;
-  Dali::PointState::Type result;
-
-  arg1 = (Dali::HoverEvent *)jarg1;
-  arg2 = (std::size_t)jarg2;
-  {
-    try {
-      result = (Dali::PointState::Type)((Dali::HoverEvent const *)arg1)->GetState(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Hover_GetHitActor(void * jarg1, unsigned long jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Hover_GetPoint(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
-  std::size_t arg2 ;
-  Dali::Actor result;
+  unsigned int arg2 ;
+  Dali::TouchPoint *result = 0 ;
 
   arg1 = (Dali::HoverEvent *)jarg1;
-  arg2 = (std::size_t)jarg2;
+  arg2 = (unsigned int)jarg2;
   {
     try {
-      result = ((Dali::HoverEvent const *)arg1)->GetHitActor(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = new Dali::Actor((const Dali::Actor &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Hover_GetLocalPosition(void * jarg1, unsigned long jarg2) {
-  void * jresult ;
-  Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
-  std::size_t arg2 ;
-  Dali::Vector2 *result = 0 ;
-
-  arg1 = (Dali::HoverEvent *)jarg1;
-  arg2 = (std::size_t)jarg2;
-  {
-    try {
-      result = (Dali::Vector2 *) &((Dali::HoverEvent const *)arg1)->GetLocalPosition(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Hover_GetScreenPosition(void * jarg1, unsigned long jarg2) {
-  void * jresult ;
-  Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
-  std::size_t arg2 ;
-  Dali::Vector2 *result = 0 ;
-
-  arg1 = (Dali::HoverEvent *)jarg1;
-  arg2 = (std::size_t)jarg2;
-  {
-    try {
-      result = (Dali::Vector2 *) &((Dali::HoverEvent const *)arg1)->GetScreenPosition(arg2);
+      result = (Dali::TouchPoint *) &((Dali::HoverEvent const *)arg1)->GetPoint(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -95381,10 +95209,6 @@ SWIGEXPORT Dali::Handle * SWIGSTDCALL CSharp_Dali_RenderTask_SWIGUpcast(Dali::Re
 }
 
 SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Touch_SWIGUpcast(Dali::TouchEvent *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
-
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Hover_SWIGUpcast(Dali::HoverEvent *jarg1) {
     return (Dali::BaseHandle *)jarg1;
 }
 
