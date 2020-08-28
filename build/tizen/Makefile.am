@@ -90,7 +90,8 @@ LIBDALI_CSHARP_BINDER_LA_CXXFLAGS = \
                         ${CFLAGS} \
                         $(DALICORE_CFLAGS) \
                         $(DALIADAPTOR_CFLAGS) \
-                        $(DALITOOLKIT_CFLAGS)
+                        $(DALITOOLKIT_CFLAGS) \
+                        $(DALI_CSHARP_BINDER_CFLAGS)
 
 LIBDALI_CSHARP_BINDER_LA_LIBADD = \
                     $(DALICORE_LIBS) \
