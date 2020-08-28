@@ -426,7 +426,6 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/actors/actor-devel.h>
 #include <dali/devel-api/common/stage-devel.h>
 #include <dali/devel-api/events/key-event-devel.h>
-#include <dali/devel-api/events/wheel-event-devel.h>
 
 #include <dali/public-api/math/matrix.h>
 #include <dali/public-api/math/matrix3.h>
@@ -32061,82 +32060,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Wheel__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Wheel__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::WheelEvent *arg1 = 0 ;
-  Dali::WheelEvent *result = 0 ;
-
-  arg1 = (Dali::WheelEvent *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::WheelEvent const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::WheelEvent *)new Dali::WheelEvent((Dali::WheelEvent const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Wheel_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
-  Dali::WheelEvent *arg2 = 0 ;
-  Dali::WheelEvent *result = 0 ;
-
-  arg1 = (Dali::WheelEvent *)jarg1;
-  arg2 = (Dali::WheelEvent *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::WheelEvent const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::WheelEvent *) &(arg1)->operator =((Dali::WheelEvent const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Wheel_New(int jarg1, int jarg2, unsigned int jarg3, void * jarg4, int jarg5, unsigned int jarg6) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Wheel__SWIG_1(int jarg1, int jarg2, unsigned int jarg3, void * jarg4, int jarg5, unsigned int jarg6) {
   void * jresult ;
   Dali::WheelEvent::Type arg1 ;
   int arg2 ;
@@ -32145,7 +32069,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Wheel_New(int jarg1, int jarg2, unsign
   int arg5 ;
   unsigned int arg6 ;
   Dali::Vector2 *argp4 ;
-  Dali::WheelEvent result;
+  Dali::WheelEvent *result = 0 ;
 
   arg1 = (Dali::WheelEvent::Type)jarg1;
   arg2 = (int)jarg2;
@@ -32160,7 +32084,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Wheel_New(int jarg1, int jarg2, unsign
   arg6 = (unsigned int)jarg6;
   {
     try {
-      result = DevelWheelEvent::New(arg1,arg2,arg3,arg4,arg5,arg6);
+      result = (Dali::WheelEvent *)new Dali::WheelEvent(arg1,arg2,arg3,arg4,arg5,arg6);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -32180,7 +32104,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Wheel_New(int jarg1, int jarg2, unsign
     }
   }
 
-  jresult = new Dali::WheelEvent((const Dali::WheelEvent &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -32313,36 +32237,35 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Wheel_IsAltModifier(void * jarg1
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Wheel_type_set(void * jarg1, int jarg2) {
+  Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
+  Dali::WheelEvent::Type arg2 ;
+
+  arg1 = (Dali::WheelEvent *)jarg1;
+  arg2 = (Dali::WheelEvent::Type)jarg2;
+  if (arg1) (arg1)->type = arg2;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Wheel_type_get(void * jarg1) {
   int jresult ;
   Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
   Dali::WheelEvent::Type result;
 
   arg1 = (Dali::WheelEvent *)jarg1;
-  {
-    try {
-      result = ((Dali::WheelEvent const *)arg1)->GetType();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
+  result = (Dali::WheelEvent::Type) ((arg1)->type);
   jresult = (int)result;
   return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Wheel_direction_set(void * jarg1, int jarg2) {
+  Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
+  int arg2 ;
+
+  arg1 = (Dali::WheelEvent *)jarg1;
+  arg2 = (int)jarg2;
+  if (arg1) (arg1)->direction = arg2;
 }
 
 
@@ -32352,30 +32275,19 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Wheel_direction_get(void * jarg1) {
   int result;
 
   arg1 = (Dali::WheelEvent *)jarg1;
-  {
-    try {
-      result = ((Dali::WheelEvent const *)arg1)->GetDirection();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
+  result = (int) ((arg1)->direction);
   jresult = result;
   return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Wheel_modifiers_set(void * jarg1, unsigned int jarg2) {
+  Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
+  unsigned int arg2 ;
+
+  arg1 = (Dali::WheelEvent *)jarg1;
+  arg2 = (unsigned int)jarg2;
+  if (arg1) (arg1)->modifiers = arg2;
 }
 
 
@@ -32385,30 +32297,19 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Wheel_modifiers_get(void * jarg1
   unsigned int result;
 
   arg1 = (Dali::WheelEvent *)jarg1;
-  {
-    try {
-      result = ((Dali::WheelEvent const *)arg1)->GetModifiers();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
+  result = (unsigned int) ((arg1)->modifiers);
   jresult = result;
   return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Wheel_point_set(void * jarg1, void * jarg2) {
+  Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
+  Dali::Vector2 *arg2 = (Dali::Vector2 *) 0 ;
+
+  arg1 = (Dali::WheelEvent *)jarg1;
+  arg2 = (Dali::Vector2 *)jarg2;
+  if (arg1) (arg1)->point = *arg2;
 }
 
 
@@ -32418,63 +32319,41 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Wheel_point_get(void * jarg1) {
   Dali::Vector2 *result = 0 ;
 
   arg1 = (Dali::WheelEvent *)jarg1;
-  {
-    try {
-      result = (Dali::Vector2 *) &((Dali::WheelEvent const *)arg1)->GetPoint();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
+  result = (Dali::Vector2 *)& ((arg1)->point);
   jresult = (void *)result;
   return jresult;
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Wheel_delta_get(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Wheel_z_set(void * jarg1, int jarg2) {
+  Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
+  int arg2 ;
+
+  arg1 = (Dali::WheelEvent *)jarg1;
+  arg2 = (int)jarg2;
+  if (arg1) (arg1)->z = arg2;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Wheel_z_get(void * jarg1) {
   int jresult ;
   Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
   int result;
 
   arg1 = (Dali::WheelEvent *)jarg1;
-  {
-    try {
-      result = ((Dali::WheelEvent const *)arg1)->GetDelta();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
+  result = (int) ((arg1)->z);
   jresult = result;
   return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Wheel_timeStamp_set(void * jarg1, unsigned int jarg2) {
+  Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
+  unsigned int arg2 ;
+
+  arg1 = (Dali::WheelEvent *)jarg1;
+  arg2 = (unsigned int)jarg2;
+  if (arg1) (arg1)->timeStamp = arg2;
 }
 
 
@@ -32484,28 +32363,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Wheel_timeStamp_get(void * jarg1
   unsigned int result;
 
   arg1 = (Dali::WheelEvent *)jarg1;
-  {
-    try {
-      result = ((Dali::WheelEvent const *)arg1)->GetTime();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
+  result = (unsigned int) ((arg1)->timeStamp);
   jresult = result;
   return jresult;
 }
@@ -95527,10 +95385,6 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Touch_SWIGUpcast(Dali::Tou
 }
 
 SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Hover_SWIGUpcast(Dali::HoverEvent *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
-
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Wheel_SWIGUpcast(Dali::WheelEvent *jarg1) {
     return (Dali::BaseHandle *)jarg1;
 }
 
