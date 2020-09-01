@@ -47,21 +47,21 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_bool_SP__Sg__Emit(Dali::Signal< void (Dal
   self->Emit( arg, focusIn );
 }
 
-/*ResizeSignal*/
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Empty(Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > const *self){
+/*ResizedSignal*/
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Empty(Dali::Signal< void (Dali::Window::WindowSize) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > const *self){
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::Window::WindowSize) > const *self){
 return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Connect(Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *self,void (*func)(Dali::Window, Dali::Window::WindowSize)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Connect(Dali::Signal< void (Dali::Window::WindowSize) > *self,void (*func)(Dali::Window::WindowSize)){
   self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Disconnect(Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *self,void (*func)(Dali::Window, Dali::Window::WindowSize)){
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Disconnect(Dali::Signal< void (Dali::Window::WindowSize) > *self,void (*func)(Dali::Window::WindowSize)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Emit(Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *self, Dali::Window arg, Dali::Window::WindowSize size){
-  self->Emit( arg, size );
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Emit(Dali::Signal< void (Dali::Window::WindowSize) > *self,Dali::Window::WindowSize arg){
+  self->Emit( arg );
 }
 
 //Transition effect
@@ -1997,11 +1997,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowFocusSignalType(void * jarg
 
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_ResizeSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_ResizedSignal(void * jarg1) {
   void * jresult ;
   Dali::Window arg1 ;
   Dali::Window *argp1 ;
-  Dali::Window::ResizeSignalType *result = 0 ;
+  Dali::Window::ResizedSignalType *result = 0 ;
 
   argp1 = (Dali::Window *)jarg1;
   if (!argp1) {
@@ -2011,7 +2011,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_ResizeSignal(void * jarg1) {
   arg1 = *argp1;
   {
     try {
-      result = (Dali::Window::ResizeSignalType *) &arg1.ResizeSignal();
+      result = (Dali::Window::ResizedSignalType *) &arg1.ResizedSignal();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2036,15 +2036,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_ResizeSignal(void * jarg1) {
 }
 
 /*ResizedSignal binding*/
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ResizeSignal_Empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ResizedSignal_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *) 0 ;
+  Dali::Signal< void (Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Empty((Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Empty((Dali::Signal< void (Dali::Window::WindowSize) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2069,15 +2069,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ResizeSignal_Empty(void * jarg1)
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ResizeSignal_GetConnectionCount(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ResizedSignal_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *) 0 ;
+  Dali::Signal< void (Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Window::WindowSize) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2102,12 +2102,12 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ResizeSignal_GetConnectionCount
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizeSignal_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *) 0 ;
-  void (*arg2)(Dali::Window, Dali::Window::WindowSize) = (void (*)(Dali::Window, Dali::Window::WindowSize)) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizedSignal_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *) 0 ;
+  void (*arg2)(Dali::Window::WindowSize) = (void (*)(Dali::Window::WindowSize)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *)jarg1;
-  arg2 = (void (*)(Dali::Window, Dali::Window::WindowSize))jarg2;
+  arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *)jarg1;
+  arg2 = (void (*)(Dali::Window::WindowSize))jarg2;
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Connect(arg1,arg2);
@@ -2133,12 +2133,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizeSignal_Connect(void * jarg1, void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizeSignal_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *) 0 ;
-  void (*arg2)(Dali::Window, Dali::Window::WindowSize) = (void (*)(Dali::Window, Dali::Window::WindowSize)) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizedSignal_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *) 0 ;
+  void (*arg2)(Dali::Window::WindowSize) = (void (*)(Dali::Window::WindowSize)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *)jarg1;
-  arg2 = (void (*)(Dali::Window, Dali::Window::WindowSize))jarg2;
+  arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *)jarg1;
+  arg2 = (void (*)(Dali::Window::WindowSize))jarg2;
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Disconnect(arg1,arg2);
@@ -2164,27 +2164,21 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizeSignal_Disconnect(void * jarg1, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizeSignal_Emit(void * jarg1, void* jarg2, void * jarg3) {
-  Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *) 0 ;
-  Dali::Window* arg2 = (Dali::Window*)jarg2;
-  Dali::Window::WindowSize arg3 ;
-  Dali::Window::WindowSize *argp3 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizedSignal_Emit(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *) 0 ;
+  Dali::Window::WindowSize arg2 ;
+  Dali::Window::WindowSize *argp2 ;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *)jarg1;
-  if (arg1 == nullptr || arg2 == nullptr) {
-    DALI_LOG_ERROR("[ERR] arg1 == nullptr or arg2 == nullptr");
-    return;
-  }
-
-  argp3 = (Dali::Window::WindowSize *)jarg3;
-  if (!argp3) {
+  arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *)jarg1;
+  argp2 = (Dali::Window::WindowSize *)jarg2;
+  if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
     return ;
   }
-  arg3 = *argp3;
+  arg2 = *argp2;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Emit(arg1,*arg2,arg3);
+      Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Emit(arg1,arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -2207,13 +2201,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizeSignal_Emit(void * jarg1, void* ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ResizeSignal() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ResizedSignal() {
   void * jresult ;
-  Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *result = 0 ;
+  Dali::Signal< void (Dali::Window::WindowSize) > *result = 0 ;
 
   {
     try {
-      result = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *)new Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) >();
+      result = (Dali::Signal< void (Dali::Window::WindowSize) > *)new Dali::Signal< void (Dali::Window::WindowSize) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2238,10 +2232,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ResizeSignal() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ResizeSignal(void * jarg1) {
-  Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ResizedSignal(void * jarg1) {
+  Dali::Signal< void (Dali::Window::WindowSize) > *arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Window::WindowSize) > *)jarg1;
   {
     try {
       delete arg1;
