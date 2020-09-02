@@ -83,54 +83,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_0(void * jarg1) {
   return jresult;
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_1(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
-  Dali::Configuration::ContextLoss arg2 ;
-  Dali::Configuration::ContextLoss *argp2 ;
-  Dali::Adaptor *result = 0 ;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  argp2 = (Dali::Configuration::ContextLoss *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Configuration::ContextLoss", 0);
-    return 0;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      result = (Dali::Adaptor *) &Dali::Adaptor::New(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_2(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Window arg1 ;
@@ -151,60 +103,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_2(void * jarg1, void
   }
   {
     try {
-      result = (Dali::Adaptor *) &Dali::Adaptor::New(arg1,(Dali::RenderSurfaceInterface const &)*arg2,Dali::Configuration::APPLICATION_DOES_NOT_HANDLE_CONTEXT_LOSS);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_New__SWIG_3(void * jarg1, void * jarg2, void * jarg3) {
-  void * jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
-  Dali::RenderSurfaceInterface *arg2 = 0 ;
-  Dali::Configuration::ContextLoss arg3 ;
-  Dali::Configuration::ContextLoss *argp3 ;
-  Dali::Adaptor *result = 0 ;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  arg2 = (Dali::RenderSurfaceInterface *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::RenderSurface const & type is null", 0);
-    return 0;
-  }
-  argp3 = (Dali::Configuration::ContextLoss *)jarg3;
-  if (!argp3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Configuration::ContextLoss", 0);
-    return 0;
-  }
-  arg3 = *argp3;
-  {
-    try {
-      result = (Dali::Adaptor *) &Dali::Adaptor::New(arg1,(Dali::RenderSurfaceInterface const &)*arg2,arg3);
+      result = (Dali::Adaptor *) &Dali::Adaptor::New(arg1,(Dali::RenderSurfaceInterface const &)*arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1156,5 +1055,3 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AdaptorSignalType(void * jarg1) {
 #ifdef __cplusplus
 }
 #endif
-
-
