@@ -427,7 +427,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/common/stage-devel.h>
 #include <dali/devel-api/events/key-event-devel.h>
 #include <dali/devel-api/events/wheel-event-devel.h>
-#include <dali/devel-api/events/key-event-devel.h>
+#include <dali/devel-api/events/hover-event-devel.h>
 #include <dali/devel-api/events/touch-point.h>
 
 #include <dali/public-api/math/matrix.h>
@@ -19166,6 +19166,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Hover_Assign(void * jarg1, void * jarg
   }
 
   jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Hover_New(unsigned int jarg1) {
+  void * jresult ;
+  unsigned int arg1 ;
+  Dali::HoverEvent result;
+
+  arg1 = (unsigned int)jarg1;
+  {
+    try {
+      result = DevelHoverEvent::New(arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::HoverEvent((const Dali::HoverEvent &)result);
   return jresult;
 }
 
