@@ -23385,7 +23385,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_TouchSignal(void * jarg1) {
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
-      result = (Dali::Actor::TouchEventSignalType *) &(arg1)->TouchSignal();
+      result = (Dali::Actor::TouchEventSignalType *) &(arg1)->TouchedSignal();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -24150,12 +24150,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Stage_EventProcessingFinishedSignal(vo
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Stage_TouchSignal(void * jarg1) {
   void * jresult ;
   Dali::Stage *arg1 = (Dali::Stage *) 0 ;
-  Dali::Stage::TouchSignalType *result = 0 ;
+  Dali::Stage::TouchEventSignalType *result = 0 ;
 
   arg1 = (Dali::Stage *)jarg1;
   {
     try {
-      result = (Dali::Stage::TouchSignalType *) &(arg1)->TouchSignal();
+      result = (Dali::Stage::TouchEventSignalType *) &(arg1)->TouchedSignal();
     } CALL_CATCH_EXCEPTION(0);
   }
 
