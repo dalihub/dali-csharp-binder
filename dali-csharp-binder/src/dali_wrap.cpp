@@ -19051,10 +19051,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Gesture(void * jarg1) {
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_type_get(void * jarg1) {
   int jresult ;
   Dali::Gesture *arg1 = (Dali::Gesture *) 0 ;
-  Dali::Gesture::Type result;
+  Dali::GestureType::Value result;
 
   arg1 = (Dali::Gesture *)jarg1;
-  result = (Dali::Gesture::Type) ((arg1)->GetType());
+  result = (Dali::GestureType::Value) ((arg1)->GetType());
   jresult = (int)result;
   return jresult;
 }
@@ -19062,10 +19062,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_type_get(void * jarg1) {
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_state_get(void * jarg1) {
   int jresult ;
   Dali::Gesture *arg1 = (Dali::Gesture *) 0 ;
-  Dali::Gesture::State result;
+  Dali::GestureState result;
 
   arg1 = (Dali::Gesture *)jarg1;
-  result = (Dali::Gesture::State) ((arg1)->GetState());
+  result = (Dali::GestureState) ((arg1)->GetState());
   jresult = (int)result;
   return jresult;
 }
@@ -25474,10 +25474,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PanGesture__SWIG_0() {
 // Need to delete this
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PanGesture__SWIG_1(int jarg1) {
   void * jresult ;
-  Dali::Gesture::State arg1 ;
+  Dali::GestureState arg1 ;
   Dali::PanGesture *result = 0 ;
 
-  arg1 = (Dali::Gesture::State)jarg1;
+  arg1 = (Dali::GestureState)jarg1;
   {
     try {
       result = (Dali::PanGesture *)new Dali::PanGesture();
@@ -35890,10 +35890,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_ClearBackground(void * jarg1) {
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_EnableGestureDetection(void * jarg1, int jarg2) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::Gesture::Type arg2 ;
+  Dali::GestureType::Value arg2 ;
 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  arg2 = (Dali::Gesture::Type)jarg2;
+  arg2 = (Dali::GestureType::Value)jarg2;
   {
     try {
       (arg1)->EnableGestureDetection(arg2);
@@ -35905,10 +35905,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_EnableGestureDetection(void * j
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_DisableGestureDetection(void * jarg1, int jarg2) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::Gesture::Type arg2 ;
+  Dali::GestureType::Value arg2 ;
 
   arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  arg2 = (Dali::Gesture::Type)jarg2;
+  arg2 = (Dali::GestureType::Value)jarg2;
   {
     try {
       (arg1)->DisableGestureDetection(arg2);
