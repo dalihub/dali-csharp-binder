@@ -61,7 +61,7 @@ void SwigDirector_ViewWrapperImpl::OnChildRemove(Dali::Actor &child) {
     Dali::Toolkit::Internal::Control::OnChildRemove( child );
 }
 
-void SwigDirector_ViewWrapperImpl::OnPropertySet(Dali::Property::Index index, Dali::Property::Value propertyValue) {
+void SwigDirector_ViewWrapperImpl::OnPropertySet(Dali::Property::Index index, const Dali::Property::Value& propertyValue) {
   int jindex  ;
   void * jpropertyValue  ;
 

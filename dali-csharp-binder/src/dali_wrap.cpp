@@ -1855,7 +1855,7 @@ void SwigDirector_ViewImpl::OnChildRemove(Dali::Actor &child) {
   }
 }
 
-void SwigDirector_ViewImpl::OnPropertySet(Dali::Property::Index index, Dali::Property::Value propertyValue) {
+void SwigDirector_ViewImpl::OnPropertySet(Dali::Property::Index index, const Dali::Property::Value& propertyValue) {
   int jindex  ;
   void * jpropertyValue  ;
 

@@ -46,7 +46,7 @@ public:
     {
       Dali::Toolkit::Internal::Control::OnChildRemove(child);
     }
-    virtual void OnPropertySet(Dali::Property::Index index, Dali::Property::Value propertyValue);
+    virtual void OnPropertySet(Dali::Property::Index index, const Dali::Property::Value& propertyValue);
     virtual void OnSizeSet(Dali::Vector3 const &targetSize);
     virtual void OnSizeSetSwigPublic(Dali::Vector3 const &targetSize)
     {
