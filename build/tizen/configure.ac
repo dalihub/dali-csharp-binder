@@ -81,11 +81,6 @@ if test "x$enable_profile" = "xMOBILE" -o "x$enable_profile" = "xWEARABLE" -o "x
   fi
 fi
 
-if test "x$enable_profile" = "xWEARABLE"; then
-  PKG_CHECK_MODULES(DALIWATCHVIEW, watch_viewer_dali)
-  PKG_CHECK_MODULES(DALIWATCHHOLDERBASE, watch-holder-base)
-fi
-
 if test x$DALI_DATA_RW_DIR != x; then
   dataReadWriteDir=$DALI_DATA_RW_DIR
 else
