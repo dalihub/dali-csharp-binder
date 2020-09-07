@@ -39,6 +39,8 @@ BuildRequires:  pkgconfig(libtzplatform-config)
 BuildRequires:  pkgconfig(capi-appfw-watch-application)
 BuildRequires:  pkgconfig(appcore-watch)
 BuildRequires:  pkgconfig(screen_connector_provider)
+BuildRequires:  pkgconfig(watch_viewer_dali)
+BuildRequires:  pkgconfig(watch-holder-base)
 %endif
 
 BuildRequires: pkgconfig
@@ -46,7 +48,6 @@ BuildRequires: pkgconfig(dali2-core)
 BuildRequires: pkgconfig(dali2-adaptor)
 BuildRequires: pkgconfig(dali2-toolkit)
 BuildRequires: pkgconfig(widget_viewer_dali)
-
 
 %if 0%{?tizen_version_major} >= 5
 BuildRequires: pkgconfig(ecore-wl2)
