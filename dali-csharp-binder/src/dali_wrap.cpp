@@ -428,6 +428,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/events/key-event-devel.h>
 #include <dali/devel-api/events/wheel-event-devel.h>
 #include <dali/devel-api/events/key-event-devel.h>
+#include <dali/devel-api/events/touch-point.h>
 
 #include <dali/public-api/math/matrix.h>
 #include <dali/public-api/math/matrix3.h>
@@ -18339,13 +18340,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RenderTask_FinishedSignal(void * jarg1
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TouchPoint__SWIG_0(int jarg1, int jarg2, float jarg3, float jarg4) {
   void * jresult ;
   int arg1 ;
-  Dali::TouchPoint::State arg2 ;
+  Dali::PointState::Type arg2 ;
   float arg3 ;
   float arg4 ;
   Dali::TouchPoint *result = 0 ;
 
   arg1 = (int)jarg1;
-  arg2 = (Dali::TouchPoint::State)jarg2;
+  arg2 = (Dali::PointState::Type)jarg2;
   arg3 = (float)jarg3;
   arg4 = (float)jarg4;
   {
@@ -18362,7 +18363,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TouchPoint__SWIG_0(int jarg1, int 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TouchPoint__SWIG_1(int jarg1, int jarg2, float jarg3, float jarg4, float jarg5, float jarg6) {
   void * jresult ;
   int arg1 ;
-  Dali::TouchPoint::State arg2 ;
+  Dali::PointState::Type arg2 ;
   float arg3 ;
   float arg4 ;
   float arg5 ;
@@ -18370,7 +18371,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TouchPoint__SWIG_1(int jarg1, int 
   Dali::TouchPoint *result = 0 ;
 
   arg1 = (int)jarg1;
-  arg2 = (Dali::TouchPoint::State)jarg2;
+  arg2 = (Dali::PointState::Type)jarg2;
   arg3 = (float)jarg3;
   arg4 = (float)jarg4;
   arg5 = (float)jarg5;
@@ -18423,10 +18424,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TouchPoint_deviceId_get(void * jarg1) {
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchPoint_state_set(void * jarg1, int jarg2) {
   Dali::TouchPoint *arg1 = (Dali::TouchPoint *) 0 ;
-  Dali::TouchPoint::State arg2 ;
+  Dali::PointState::Type arg2 ;
 
   arg1 = (Dali::TouchPoint *)jarg1;
-  arg2 = (Dali::TouchPoint::State)jarg2;
+  arg2 = (Dali::PointState::Type)jarg2;
   if (arg1) (arg1)->state = arg2;
 }
 
@@ -18434,10 +18435,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchPoint_state_set(void * jarg1, int j
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TouchPoint_state_get(void * jarg1) {
   int jresult ;
   Dali::TouchPoint *arg1 = (Dali::TouchPoint *) 0 ;
-  Dali::TouchPoint::State result;
+  Dali::PointState::Type result;
 
   arg1 = (Dali::TouchPoint *)jarg1;
-  result = (Dali::TouchPoint::State) ((arg1)->state);
+  result = (Dali::PointState::Type) ((arg1)->state);
   jresult = (int)result;
   return jresult;
 }
