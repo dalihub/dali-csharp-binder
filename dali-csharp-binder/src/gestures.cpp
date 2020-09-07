@@ -293,15 +293,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGestureDetector_DetectedSignal
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGesture__SWIG_0(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGesture__SWIG_0() {
   void * jresult ;
-  Dali::Gesture::State arg1 ;
   Dali::RotationGesture *result = 0 ;
 
-  arg1 = (Dali::Gesture::State)jarg1;
   {
     try {
-      result = (Dali::RotationGesture *)new Dali::RotationGesture(arg1);
+      result = (Dali::RotationGesture *)new Dali::RotationGesture();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -430,69 +428,76 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RotationGesture(void * jarg1) {
 
 }
 
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGesture_rotation_set(void * jarg1, float jarg2) {
-  Dali::RotationGesture *arg1 = (Dali::RotationGesture *) 0 ;
-  float arg2 ;
-
-  arg1 = (Dali::RotationGesture *)jarg1;
-  arg2 = (float)jarg2;
-  if (arg1) (arg1)->rotation = arg2;
-}
-
-
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RotationGesture_rotation_get(void * jarg1) {
   float jresult ;
   Dali::RotationGesture *arg1 = (Dali::RotationGesture *) 0 ;
   float result;
 
   arg1 = (Dali::RotationGesture *)jarg1;
-  result = (float) ((arg1)->rotation.radian);
+  result = (float) ((arg1)->GetRotation().radian);
   jresult = result;
   return jresult;
 }
 
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGesture_screenCenterPoint_set(void * jarg1, void * jarg2) {
-  Dali::RotationGesture *arg1 = (Dali::RotationGesture *) 0 ;
-  Dali::Vector2 *arg2 = (Dali::Vector2 *) 0 ;
-
-  arg1 = (Dali::RotationGesture *)jarg1;
-  arg2 = (Dali::Vector2 *)jarg2;
-  if (arg1) (arg1)->screenCenterPoint = *arg2;
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_screenCenterPoint_get(void * jarg1) {
   void * jresult ;
   Dali::RotationGesture *arg1 = (Dali::RotationGesture *) 0 ;
-  Dali::Vector2 *result = 0 ;
+  Dali::Vector2 result;
 
   arg1 = (Dali::RotationGesture *)jarg1;
-  result = (Dali::Vector2 *)& ((arg1)->screenCenterPoint);
-  jresult = (void *)result;
+  {
+    try {
+      result = ((Dali::RotationGesture const *)arg1)->GetScreenCenterPoint();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
   return jresult;
 }
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGesture_localCenterPoint_set(void * jarg1, void * jarg2) {
-  Dali::RotationGesture *arg1 = (Dali::RotationGesture *) 0 ;
-  Dali::Vector2 *arg2 = (Dali::Vector2 *) 0 ;
-
-  arg1 = (Dali::RotationGesture *)jarg1;
-  arg2 = (Dali::Vector2 *)jarg2;
-  if (arg1) (arg1)->localCenterPoint = *arg2;
-}
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_localCenterPoint_get(void * jarg1) {
   void * jresult ;
   Dali::RotationGesture *arg1 = (Dali::RotationGesture *) 0 ;
-  Dali::Vector2 *result = 0 ;
+  Dali::Vector2 result;
 
   arg1 = (Dali::RotationGesture *)jarg1;
-  result = (Dali::Vector2 *)& ((arg1)->localCenterPoint);
-  jresult = (void *)result;
+  {
+    try {
+      result = ((Dali::RotationGesture const *)arg1)->GetLocalCenterPoint();
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
   return jresult;
 }
 

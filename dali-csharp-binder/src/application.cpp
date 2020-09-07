@@ -535,44 +535,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_MainLoop__SWIG_0(void * jarg
 
 }
 
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_MainLoop__SWIG_1(void * jarg1, void * jarg2) {
-  Dali::Application *arg1 = (Dali::Application *) 0 ;
-  Dali::Configuration::ContextLoss arg2 ;
-  Dali::Configuration::ContextLoss *argp2 ;
-
-  arg1 = (Dali::Application *)jarg1;
-  argp2 = (Dali::Configuration::ContextLoss *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Configuration::ContextLoss", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      (arg1)->MainLoop(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
-  }
-
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_Lower(void * jarg1) {
   Dali::Application *arg1 = (Dali::Application *) 0 ;
 
@@ -2223,4 +2185,3 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition
 #ifdef __cplusplus
 }
 #endif
-
