@@ -429,6 +429,10 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/events/wheel-event-devel.h>
 #include <dali/devel-api/events/hover-event-devel.h>
 #include <dali/devel-api/events/touch-point.h>
+#include <dali/devel-api/events/pan-gesture-devel.h>
+#include <dali/devel-api/events/pinch-gesture-devel.h>
+#include <dali/devel-api/events/long-press-gesture-devel.h>
+#include <dali/devel-api/events/tap-gesture-devel.h>
 
 #include <dali/public-api/math/matrix.h>
 #include <dali/public-api/math/matrix3.h>
@@ -20232,6 +20236,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_LongPressGesture__SWIG_0() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LongPressGesture_New(int jarg1) {
+  void * jresult ;
+  Dali::GestureState arg1 ;
+  Dali::LongPressGesture result;
+
+  arg1 = (Dali::GestureState)jarg1;
+  {
+    try {
+      result = DevelLongPressGesture::New(arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::LongPressGesture((const Dali::LongPressGesture &)result);
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_LongPressGesture__SWIG_1(void * jarg1) {
   void * jresult ;
   Dali::LongPressGesture *arg1 = 0 ;
@@ -25368,36 +25389,20 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PanGesture__SWIG_0() {
   return jresult;
 }
 
-// Need to delete this
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PanGesture__SWIG_1(int jarg1) {
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_New(int jarg1) {
   void * jresult ;
   Dali::GestureState arg1 ;
-  Dali::PanGesture *result = 0 ;
+  Dali::PanGesture result;
 
   arg1 = (Dali::GestureState)jarg1;
   {
     try {
-      result = (Dali::PanGesture *)new Dali::PanGesture();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+      result = DevelPanGesture::New(arg1);
+    } CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (void *)result;
+  jresult = new Dali::PanGesture((const Dali::PanGesture &)result);
   return jresult;
 }
 
@@ -25872,6 +25877,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PinchGesture__SWIG_0() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PinchGesture_New(int jarg1) {
+  void * jresult ;
+  Dali::GestureState arg1 ;
+  Dali::PinchGesture result;
+
+  arg1 = (Dali::GestureState)jarg1;
+  {
+    try {
+      result = DevelPinchGesture::New(arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::PinchGesture((const Dali::PinchGesture &)result);
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PinchGesture__SWIG_1(void * jarg1) {
   void * jresult ;
   Dali::PinchGesture *arg1 = 0 ;
@@ -26236,6 +26258,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TapGesture__SWIG_0() {
   }
 
   jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGesture_New(int jarg1) {
+  void * jresult ;
+  Dali::GestureState arg1 ;
+  Dali::TapGesture result;
+
+  arg1 = (Dali::GestureState)jarg1;
+  {
+    try {
+      result = DevelTapGesture::New(arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::TapGesture((const Dali::TapGesture &)result);
   return jresult;
 }
 
