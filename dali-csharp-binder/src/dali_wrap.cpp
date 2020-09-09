@@ -33130,15 +33130,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ViewLayoutDirectionSignal(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_iewVisibilityChangedSignal_Empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewVisibilityChangedSignal_Empty(void * jarg1) {
   unsigned int jresult ;
   Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > *arg1 = (Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > *) 0 ;
   bool result = false;
-  
-  arg1 = (Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > *)jarg1;  
+
+  arg1 = (Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > *)jarg1;
   {
     try {
-	  result = (bool)Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Empty((Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > const *)arg1);      
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Empty((Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > const *)arg1);      
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
