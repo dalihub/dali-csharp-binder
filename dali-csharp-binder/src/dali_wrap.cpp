@@ -19537,6 +19537,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressedName_set(void * jarg1, cha
   Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0 ;
   std::string *arg2 = 0 ;
 
+  argp1 = (Dali::KeyEvent *) jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "KeyEvent is null", 0);
+    return ;
+  }
+
   Dali::KeyEvent arg1 = *argp1;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
@@ -19616,6 +19622,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressed_set(void * jarg1, char * 
   Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0 ;
   std::string *arg2 = 0 ;
 
+  argp1 = (Dali::KeyEvent *) jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "KeyEvent is null", 0);
+    return ;
+  }
+
   Dali::KeyEvent arg1 = *argp1;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
@@ -19688,6 +19700,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyCode_set(void * jarg1, int jarg2)
   Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0 ;
   int arg2 ;
 
+  argp1 = (Dali::KeyEvent *) jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "KeyEvent is null", 0);
+    return ;
+  }
+
   Dali::KeyEvent arg1 = *argp1;
   arg2 = (int)jarg2;
   {
@@ -19750,6 +19768,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Key_keyCode_get(void * jarg1) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyModifier_set(void * jarg1, int jarg2) {
   Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0 ;
   int arg2 ;
+
+  argp1 = (Dali::KeyEvent *) jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "KeyEvent is null", 0);
+    return ;
+  }
 
   Dali::KeyEvent arg1 = *argp1;
   arg2 = (int)jarg2;
@@ -19814,6 +19838,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_time_set(void * jarg1, unsigned long
   Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0 ;
   unsigned long arg2 ;
 
+  argp1 = (Dali::KeyEvent *) jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "KeyEvent is null", 0);
+    return ;
+  }
+
   Dali::KeyEvent arg1 = *argp1;
   arg2 = (int)jarg2;
   {
@@ -19876,6 +19906,12 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Key_time_get(void * jarg1) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_state_set(void * jarg1, int jarg2) {
   Dali::KeyEvent *argp1 = (Dali::KeyEvent *) 0;
   Dali::KeyEvent::State arg2;
+
+  argp1 = (Dali::KeyEvent *) jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "KeyEvent is null", 0);
+    return ;
+  }
 
   Dali::KeyEvent arg1 = *argp1;
   arg2 = (Dali::KeyEvent::State)jarg2;
@@ -33177,7 +33213,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewVisibilityChangedSignal_Empt
   arg1 = (Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Empty((Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > const *)arg1);      
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Empty((Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > const *)arg1);
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
@@ -56530,7 +56566,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_New__SWIG_0() {
       result = Dali::Widget::New();
     } CALL_CATCH_EXCEPTION(0);
   }
-  
+
   jresult = new Dali::Widget((const Dali::Widget &)result);
   return jresult;
 }
@@ -57244,11 +57280,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelBuffer_Convert(void * jarg1) {
     try {
       result = Dali::Devel::PixelBuffer::Convert(*arg1);
     } CALL_CATCH_EXCEPTION(0);
-  }  
+  }
   jresult = new Dali::PixelData((const Dali::PixelData &)result);
   return jresult;
 }
-  
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelBuffer_CreatePixelData(void * jarg1) {
   void * jresult ;
@@ -57487,7 +57523,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char * jarg1
     try {
       result = Dali::LoadImageFromFile((std::string const &)*arg1,arg2,arg3,arg4,arg5);
     } CALL_CATCH_EXCEPTION(0);
-  }  
+  }
   jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
   return jresult;
 }
@@ -57638,7 +57674,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_0(char * jar
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
-  return jresult;  
+  return jresult;
 }
 
 
@@ -57671,7 +57707,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_1(char * jar
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
-  return jresult;  
+  return jresult;
 }
 
 
@@ -57702,7 +57738,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_2(char * jar
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
-  return jresult;  
+  return jresult;
 }
 
 
@@ -57731,7 +57767,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_3(char * jar
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
-  return jresult;  
+  return jresult;
 }
 
 
@@ -57752,7 +57788,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_4(char * jar
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
-  return jresult;  
+  return jresult;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char * jarg1) {
@@ -57772,7 +57808,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char * jarg1) {
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
-  return jresult;  
+  return jresult;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
