@@ -56309,6 +56309,10 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Key_SWIGUpcast(Dali::KeyEv
     return (Dali::BaseHandle *)jarg1;
 }
 
+SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Gesture_SWIGUpcast(Dali::Gesture *jarg1) {
+    return (Dali::BaseHandle *)jarg1;
+}
+
 SWIGEXPORT Dali::Handle * SWIGSTDCALL CSharp_Dali_GestureDetector_SWIGUpcast(Dali::GestureDetector *jarg1) {
     return (Dali::Handle *)jarg1;
 }
