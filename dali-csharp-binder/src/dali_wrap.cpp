@@ -19586,12 +19586,14 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_keyPressedName_get(void * jarg1) {
   {
     Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
     std::string *result = 0;
+    std::string str = "";
 
     arg1 = ( Dali::KeyEvent * )jarg1;
     {
       try {
-        std::string str = ((Dali::KeyEvent const *)arg1)->GetKeyName();
+        str = ((Dali::KeyEvent const *)arg1)->GetKeyName();
         result = (std::string *) &str;
+        jresult = SWIG_csharp_string_callback(result->c_str());
       } catch (std::out_of_range& e) {
         {
           SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -19611,7 +19613,6 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_keyPressedName_get(void * jarg1) {
       }
     }
 
-    jresult = SWIG_csharp_string_callback(result->c_str());
   }
 
   return jresult;
@@ -19665,12 +19666,13 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_keyPressed_get(void * jarg1) {
 
   Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
   std::string *result = 0;
-
+  std::string str = "";
   arg1 = ( Dali::KeyEvent * )jarg1;
   {
     try {
-      std::string str = ((Dali::KeyEvent const *)arg1)->GetKeyString();
+      str = ((Dali::KeyEvent const *)arg1)->GetKeyString();
       result = (std::string *) &str;
+      jresult = SWIG_csharp_string_callback(result->c_str());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -19688,8 +19690,6 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_keyPressed_get(void * jarg1) {
         SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
       };
     }
-
-    jresult = SWIG_csharp_string_callback(result->c_str());
   }
 
   return jresult;
@@ -19977,17 +19977,17 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Key_logicalKey_get(void * jarg1) {
 
   Dali::KeyEvent *arg1 = ( Dali::KeyEvent * ) 0;
   std::string *result = 0;
+  std::string str = "";
 
   arg1 = ( Dali::KeyEvent * )jarg1;
   {
     try {
-      std::string str = ((Dali::KeyEvent const *)arg1)->GetLogicalKey();
+      str = ((Dali::KeyEvent const *)arg1)->GetLogicalKey();
       result = (std::string *) &str;
+      jresult = SWIG_csharp_string_callback(result->c_str());
     } CALL_CATCH_EXCEPTION(0);
-
   }
 
-  jresult = SWIG_csharp_string_callback(result->c_str());
   return jresult;
 }
 
