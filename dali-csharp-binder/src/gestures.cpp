@@ -22,7 +22,6 @@
 #include "common.h"
 #include <dali/public-api/events/rotation-gesture.h>
 #include <dali/public-api/events/rotation-gesture-detector.h>
-#include <dali/devel-api/events/rotation-gesture-devel.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -321,39 +320,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGesture__SWIG_0() {
   }
 
   jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_New(int jarg1) {
-  void * jresult ;
-  Dali::GestureState arg1 ;
-  Dali::RotationGesture result;
-
-  arg1 = (Dali::GestureState)jarg1;
-  {
-    try {
-      result = DevelRotationGesture::New(arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
-  }
-
-  jresult = new Dali::RotationGesture((const Dali::RotationGesture &)result);
   return jresult;
 }
 
