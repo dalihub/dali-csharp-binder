@@ -586,6 +586,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SELECTED_TEXT_END_get(
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_ENABLE_EDITING() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextField::Property::ENABLE_EDITING;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField_Property() {
   void * jresult ;
   Dali::Toolkit::TextField::Property *result = 0 ;

@@ -579,6 +579,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SELECTED_TEXT_END_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_ENABLE_EDITING_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_EDITING;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextEditor_Property() {
   void * jresult ;
   Dali::Toolkit::TextEditor::Property *result = 0 ;
