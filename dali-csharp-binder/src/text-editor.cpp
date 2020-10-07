@@ -561,7 +561,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_PLACEHOLDER_get() {
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SELECTED_TEXT_START_set() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SELECTED_TEXT_START_get() {
   int jresult ;
   int result;
 
