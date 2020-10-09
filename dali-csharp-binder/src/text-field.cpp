@@ -568,7 +568,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SELECTED_TEXT_get() {
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SELECTED_TEXT_START_set() {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SELECTED_TEXT_START_get() {
   int jresult ;
   int result;
 
@@ -582,6 +582,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SELECTED_TEXT_END_get(
   int result;
 
   result = (int)Dali::Toolkit::DevelTextField::Property::SELECTED_TEXT_END;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_ENABLE_EDITING_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextField::Property::ENABLE_EDITING;
   jresult = (int)result;
   return jresult;
 }
