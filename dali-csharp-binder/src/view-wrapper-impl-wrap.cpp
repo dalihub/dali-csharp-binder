@@ -320,7 +320,7 @@ Dali::Actor SwigDirector_ViewWrapperImpl::GetNextKeyboardFocusableActor(Dali::Ac
     jloopEnabled = loopEnabled;
     jresult = (void *) swig_callbackGetNextKeyboardFocusableActor(jcurrentFocusedActor, jdirection, jloopEnabled);
     if (!jresult) {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Unexpected null return for type Dali::Actor", 0);
+      // Return empty base handle when NUI returns null.
       return c_result;
     }
     c_result = *(Dali::Actor *)jresult;
