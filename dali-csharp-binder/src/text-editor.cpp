@@ -561,6 +561,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_PLACEHOLDER_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_SELECTED_TEXT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::SELECTED_TEXT;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SELECTED_TEXT_START_get() {
   int jresult ;
   int result;
@@ -978,6 +987,71 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_InputStyleChangedSignal(voi
   jresult = (void *)result;
   return jresult;
 }
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_SelectWholeText(void * jarg1) {
+  Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0;
+
+  arg1 = (Dali::Toolkit::TextEditor *)jarg1;
+  {
+    try {
+      Dali::Toolkit::DevelTextEditor::SelectWholeText( *arg1 );
+    }
+    catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_SelectNone(void * jarg1) {
+  Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0;
+
+  arg1 = (Dali::Toolkit::TextEditor *)jarg1;
+  {
+    try {
+      Dali::Toolkit::DevelTextEditor::SelectNone( *arg1 );
+    }
+    catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+}
+
 
 /*TextEditorSignal*/
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TextEditorSignal_Empty(void * jarg1) {
