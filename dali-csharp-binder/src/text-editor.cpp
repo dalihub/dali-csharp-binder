@@ -570,7 +570,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_SELECTED_TEXT_get() {
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SELECTED_TEXT_START_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_SELECTED_TEXT_START_get() {
   int jresult ;
   int result;
 
@@ -579,7 +579,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SELECTED_TEXT_START_get() 
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SELECTED_TEXT_END_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_SELECTED_TEXT_END_get() {
   int jresult ;
   int result;
 
@@ -588,7 +588,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_SELECTED_TEXT_END_get() {
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_ENABLE_EDITING_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_ENABLE_EDITING_get() {
   int jresult ;
   int result;
 
