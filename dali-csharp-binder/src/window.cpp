@@ -65,19 +65,19 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Emit(Dali:
 }
 
 //Transition effect
-SWIGINTERN bool Dali_Signal_Window_Transition_Effect_Event_Signal_Empty(Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > const *self){
+SWIGINTERN bool Dali_Signal_Window_Transition_Effect_Event_Signal_Empty(Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > const *self){
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Window_Transition_Effect_Event_Signal_GetConnectionCount(Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > const *self){
+SWIGINTERN std::size_t Dali_Signal_Window_Transition_Effect_Event_Signal_GetConnectionCount(Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > const *self){
 return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Window_Transition_Effect_Event_Signal_Connect(Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *self, void (*func)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType)){
+SWIGINTERN void Dali_Signal_Window_Transition_Effect_Event_Signal_Connect(Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *self, void (*func)(Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType)){
   self->Connect( func );
 }
-SWIGINTERN void Dali_Signal_Window_Transition_Effect_Event_Signal_Disconnect(Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *self,void (*func)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType)){
+SWIGINTERN void Dali_Signal_Window_Transition_Effect_Event_Signal_Disconnect(Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *self,void (*func)(Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_Window_Transition_Effect_Event_Signal_Emit(Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *self,Dali::Window arg, Dali::DevelWindow::EffectState state, Dali::DevelWindow::EffectType type){
+SWIGINTERN void Dali_Signal_Window_Transition_Effect_Event_Signal_Emit(Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *self,Dali::Window arg, Dali::WindowEffectState state, Dali::WindowEffectType type){
   self->Emit( arg, state, type );
 }
 
@@ -569,10 +569,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Activate(void * jarg1) {
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddAvailableOrientation(void * jarg1, int jarg2) {
   Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Window::WindowOrientation arg2 ;
+  Dali::WindowOrientation arg2 ;
 
   arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::Window::WindowOrientation)jarg2;
+  arg2 = (Dali::WindowOrientation)jarg2;
   {
     try {
       (arg1)->AddAvailableOrientation(arg2);
@@ -600,10 +600,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddAvailableOrientation(void * ja
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RemoveAvailableOrientation(void * jarg1, int jarg2) {
   Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Window::WindowOrientation arg2 ;
+  Dali::WindowOrientation arg2 ;
 
   arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::Window::WindowOrientation)jarg2;
+  arg2 = (Dali::WindowOrientation)jarg2;
   {
     try {
       (arg1)->RemoveAvailableOrientation(arg2);
@@ -631,10 +631,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RemoveAvailableOrientation(void *
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPreferredOrientation(void * jarg1, int jarg2) {
   Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Window::WindowOrientation arg2 ;
+  Dali::WindowOrientation arg2 ;
 
   arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::Window::WindowOrientation)jarg2;
+  arg2 = (Dali::WindowOrientation)jarg2;
   {
     try {
       (arg1)->SetPreferredOrientation(arg2);
@@ -663,12 +663,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPreferredOrientation(void * ja
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetPreferredOrientation(void * jarg1) {
   int jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Window::WindowOrientation result;
+  Dali::WindowOrientation result;
 
   arg1 = (Dali::Window *)jarg1;
   {
     try {
-      result = (Dali::Window::WindowOrientation)(arg1)->GetPreferredOrientation();
+      result = (Dali::WindowOrientation)(arg1)->GetPreferredOrientation();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -694,7 +694,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetPreferredOrientation(void * jar
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetCurrentOrientation(void * jarg1) {
   int jresult ;
-  Dali::Window::WindowOrientation result;
+  Dali::WindowOrientation result;
   Dali::Window* window = (Dali::Window*)jarg1;
   if (!window) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
@@ -736,11 +736,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAvailableOrientations(void * j
   int count = jarg3;
 
   arg2 = jarg2;
-  Dali::Vector< Dali::Window::WindowOrientation> orientations;
+  Dali::Vector< Dali::WindowOrientation> orientations;
   orientations.Resize( count );
   for( int i = 0; i<count; ++i)
   {
-    orientations[i] = static_cast< Dali::Window::WindowOrientation >(arg2[i]);
+    orientations[i] = static_cast< Dali::WindowOrientation >(arg2[i]);
   }
   {
     try {
@@ -1384,7 +1384,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetInputRegion(void * jarg1, void * jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetType(void * jarg1, int jarg2) {
   Dali::Window arg1 ;
-  Dali::Window::Type arg2 ;
+  Dali::WindowType arg2 ;
   Dali::Window *argp1 ;
 
   argp1 = (Dali::Window *)jarg1;
@@ -1393,7 +1393,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetType(void * jarg1, int jarg2) {
     return ;
   }
   arg1 = *argp1;
-  arg2 = (Dali::Window::Type)jarg2;
+  arg2 = (Dali::WindowType)jarg2;
   {
     try {
       arg1.SetType(arg2);
@@ -1423,7 +1423,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetType(void * jarg1) {
   int jresult ;
   Dali::Window arg1 ;
   Dali::Window *argp1 ;
-  Dali::Window::Type result;
+  Dali::WindowType result;
 
   argp1 = (Dali::Window *)jarg1;
   if (!argp1) {
@@ -1433,7 +1433,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetType(void * jarg1) {
   arg1 = *argp1;
   {
     try {
-      result = (Dali::Window::Type)arg1.GetType();
+      result = (Dali::WindowType)arg1.GetType();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1461,7 +1461,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetType(void * jarg1) {
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetNotificationLevel(void * jarg1, int jarg2) {
   unsigned int jresult ;
   Dali::Window arg1 ;
-  Dali::Window::NotificationLevel::Type arg2 ;
+  Dali::WindowNotificationLevel arg2 ;
   Dali::Window *argp1 ;
   bool result;
 
@@ -1471,7 +1471,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetNotificationLevel(void * jarg
     return 0;
   }
   arg1 = *argp1;
-  arg2 = (Dali::Window::NotificationLevel::Type)jarg2;
+  arg2 = (Dali::WindowNotificationLevel)jarg2;
   {
     try {
       result = (bool)arg1.SetNotificationLevel(arg2);
@@ -1503,7 +1503,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetNotificationLevel(void * jarg1) {
   int jresult ;
   Dali::Window arg1 ;
   Dali::Window *argp1 ;
-  Dali::Window::NotificationLevel::Type result;
+  Dali::WindowNotificationLevel result;
 
   argp1 = (Dali::Window *)jarg1;
   if (!argp1) {
@@ -1513,7 +1513,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetNotificationLevel(void * jarg1) {
   arg1 = *argp1;
   {
     try {
-      result = (Dali::Window::NotificationLevel::Type)arg1.GetNotificationLevel();
+      result = (Dali::WindowNotificationLevel)arg1.GetNotificationLevel();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1617,7 +1617,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsOpaqueState(void * jarg1) {
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetScreenOffMode(void * jarg1, int jarg2) {
   unsigned int jresult ;
   Dali::Window arg1 ;
-  Dali::Window::ScreenOffMode::Type arg2 ;
+  Dali::WindowScreenOffMode arg2 ;
   Dali::Window *argp1 ;
   bool result;
 
@@ -1627,7 +1627,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetScreenOffMode(void * jarg1, i
     return 0;
   }
   arg1 = *argp1;
-  arg2 = (Dali::Window::ScreenOffMode::Type)jarg2;
+  arg2 = (Dali::WindowScreenOffMode)jarg2;
   {
     try {
       result = (bool)arg1.SetScreenOffMode(arg2);
@@ -1659,7 +1659,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetScreenOffMode(void * jarg1) {
   int jresult ;
   Dali::Window arg1 ;
   Dali::Window *argp1 ;
-  Dali::Window::ScreenOffMode::Type result;
+  Dali::WindowScreenOffMode result;
 
   argp1 = (Dali::Window *)jarg1;
   if (!argp1) {
@@ -1669,7 +1669,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetScreenOffMode(void * jarg1) {
   arg1 = *argp1;
   {
     try {
-      result = (Dali::Window::ScreenOffMode::Type)arg1.GetScreenOffMode();
+      result = (Dali::WindowScreenOffMode)arg1.GetScreenOffMode();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2914,13 +2914,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_EventSignal(v
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Empty(void * jarg1) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
+  Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *)jarg1;
   {
     try {
-      result = (bool)Dali_Signal_Window_Transition_Effect_Event_Signal_Empty((Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > const *)arg1);
+      result = (bool)Dali_Signal_Window_Transition_Effect_Event_Signal_Empty((Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2947,13 +2947,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_S
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_GetConnectionCount(void * jarg1) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
+  Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *)jarg1;
   {
     try {
-      result = Dali_Signal_Window_Transition_Effect_Event_Signal_GetConnectionCount((Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > const *)arg1);
+      result = Dali_Signal_Window_Transition_Effect_Event_Signal_GetConnectionCount((Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > const *)arg1);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -2979,11 +2979,11 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
-  void (*arg2)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) = (void (*)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType)) 0 ;
+  Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *) 0 ;
+  void (*arg2)(Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) = (void (*)(Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
-  arg2 = (void (*)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType))jarg2;
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *)jarg1;
+  arg2 = (void (*)(Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType))jarg2;
   {
     try {
     //DALI_LOG_ERROR("CSharp_Dali_Window_Transition_Effect_Event_Signal_Connect(arg1=0x%x, arg2=0x%x) \n", arg1, arg2);
@@ -3011,11 +3011,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Co
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
-  void (*arg2)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) = (void (*)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType)) 0 ;
+  Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *) 0 ;
+  void (*arg2)(Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) = (void (*)(Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
-  arg2 = (void (*)(Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType))jarg2;
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *)jarg1;
+  arg2 = (void (*)(Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType))jarg2;
   {
     try {
       Dali_Signal_Window_Transition_Effect_Event_Signal_Disconnect(arg1,arg2);
@@ -3042,11 +3042,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Di
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Emit(void * jarg1, void * jarg2, int jarg3, int jarg4) {
-  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
+  Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *) 0 ;
   Dali::Window arg2 ;
   Dali::Window *argp2 ;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *)jarg1;
   argp2 = (Dali::Window *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
@@ -3055,7 +3055,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Em
   arg2 = *argp2;
   {
     try {
-      Dali_Signal_Window_Transition_Effect_Event_Signal_Emit(arg1,arg2, (Dali::DevelWindow::EffectState)jarg3, (Dali::DevelWindow::EffectType)jarg4);
+      Dali_Signal_Window_Transition_Effect_Event_Signal_Emit(arg1,arg2, (Dali::WindowEffectState)jarg3, (Dali::WindowEffectType)jarg4);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
@@ -3080,11 +3080,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_Em
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_new() {
   void * jresult ;
-  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *result = 0 ;
+  Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *result = 0 ;
 
   {
     try {
-      result = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)new Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) >();
+      result = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *)new Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) >();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -3110,9 +3110,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_delete(void * jarg1) {
-  Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *) 0 ;
+  Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::EffectState, Dali::DevelWindow::EffectType) > *)jarg1;
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType) > *)jarg1;
   {
     try {
       delete arg1;

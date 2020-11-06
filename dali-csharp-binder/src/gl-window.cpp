@@ -995,7 +995,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GlWindow_IsOpaqueState(void * ja
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GlWindow_GetCurrentOrientation(void * jarg1) {
   int jresult ;
-  Dali::GlWindow::GlWindowOrientation result;
+  Dali::WindowOrientation result;
   Dali::GlWindow *arg1 = (Dali::GlWindow *) 0 ;
   arg1 = (Dali::GlWindow *)jarg1;
   if (!arg1) {
@@ -1038,13 +1038,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetAvailableOrientations(void *
   Dali::Property::Array* arg2 = (static_cast<Dali::Property::Array *>( jarg2 ));
   unsigned int count = static_cast< unsigned int >( jarg3 );
 
-  DALI_LOG_ERROR("Orientations count: %d\n",count);
-  Dali::Vector< Dali::GlWindow::GlWindowOrientation > angles;
+  Dali::Vector< Dali::WindowOrientation > angles;
   angles.Resize( count );
   for( Dali::Property::Array::SizeType i = 0; i < count; ++i)
   {
-    DALI_LOG_ERROR("Orientations orientation: %d\n", arg2->GetElementAt(i).Get<int>() );
-    angles[i] = static_cast< Dali::GlWindow::GlWindowOrientation >( arg2->GetElementAt(i).Get<int>() );
+    int angle = arg2->GetElementAt(i).Get<int>();
+    angles[i] = static_cast< Dali::WindowOrientation >( angle );
   }
   {
     try {
@@ -1073,10 +1072,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetAvailableOrientations(void *
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetPreferredOrientation(void * jarg1, int jarg2) {
   Dali::GlWindow *arg1 = (Dali::GlWindow *) 0 ;
-  Dali::GlWindow::GlWindowOrientation arg2 ;
+  Dali::WindowOrientation arg2 ;
+  int angle = jarg2;
 
   arg1 = (Dali::GlWindow *)jarg1;
-  arg2 = (Dali::GlWindow::GlWindowOrientation)jarg2;
+  arg2 = (Dali::WindowOrientation)angle;
   {
     try {
       (arg1)->SetPreferredOrientation(arg2);
@@ -1102,11 +1102,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetPreferredOrientation(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_RegisterGlCallback( void* jarg1, void* initCallback, void* RenderFrameCallback, void* terminateCallback )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_RegisterGlCallback( void* jarg1, void* initCallback, int* RenderFrameCallback, void* terminateCallback )
 {
   Dali::GlWindow* argp1 = (Dali::GlWindow*)jarg1;
   void (*initCB)() = (void (*)())initCallback;
-  void (*renderFrameCB)() = (void (*)())RenderFrameCallback;
+  int (*renderFrameCB)() = (int (*)())RenderFrameCallback;
   void (*terminateCB)() = (void (*)())terminateCallback;
 
   if( !argp1 || !initCB || !renderFrameCB || !terminateCB )
@@ -1117,7 +1117,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_RegisterGlCallback( void* jarg1
   Dali::GlWindow arg1 = *argp1;
   try
   {
-    arg1.RegisterGlCallback( *initCB, *renderFrameCB, *terminateCB );
+    arg1.RegisterGlCallback( Dali::MakeCallback( initCB ), Dali::MakeCallback( renderFrameCB ), Dali::MakeCallback( terminateCB ) );
   }
   catch( std::out_of_range& e )
   {
