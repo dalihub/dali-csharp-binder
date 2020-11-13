@@ -654,6 +654,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_ENABLE_EDITING_get() 
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_FONT_SIZE_SCALE_get()
+{
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::FONT_SIZE_SCALE;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextEditor_Property() {
   void * jresult ;
   Dali::Toolkit::TextEditor::Property *result = 0 ;
