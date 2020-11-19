@@ -21,6 +21,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_TEXT_FIT_get()
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_FONT_SIZE_SCALE_get()
+{
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextLabel::Property::FONT_SIZE_SCALE;
+  jresult = (int)result;
+  return jresult;
+}
+
 #ifdef __cplusplus
 }
 #endif

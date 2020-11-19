@@ -588,11 +588,78 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_SELECTED_TEXT_END_get
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_HORIZONTAL_SCROLL_POSITION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::HORIZONTAL_SCROLL_POSITION;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_VERTICAL_SCROLL_POSITION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::VERTICAL_SCROLL_POSITION;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_ScrollBy(void * jarg1, void * jarg2) {
+  Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0;
+  Dali::Vector2 *arg2 = 0 ;
+
+  arg1 = (Dali::Toolkit::TextEditor *)jarg1;
+  arg2 = (Dali::Vector2 *)jarg2;
+
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector2 type is null", 0);
+    return ;
+  }
+
+  {
+    try {
+      Dali::Toolkit::DevelTextEditor::ScrollBy( *arg1 , *arg2);
+    }
+    catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_ENABLE_EDITING_get() {
   int jresult ;
   int result;
 
   result = (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_EDITING;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_FONT_SIZE_SCALE_get()
+{
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::FONT_SIZE_SCALE;
   jresult = (int)result;
   return jresult;
 }
