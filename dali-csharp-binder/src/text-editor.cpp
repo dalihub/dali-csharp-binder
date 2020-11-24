@@ -606,6 +606,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_VERTICAL_SCROLL_POSIT
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_PRIMARY_CURSOR_POSITION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::PRIMARY_CURSOR_POSITION;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_ScrollBy(void * jarg1, void * jarg2) {
   Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0;
   Dali::Vector2 *arg2 = 0 ;
