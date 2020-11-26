@@ -28,7 +28,6 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/extents.cpp \
   ${dali_csharp_binder_dir}/src/text-label.cpp \
   ${dali_csharp_binder_dir}/src/text-utils.cpp \
-  ${dali_csharp_binder_dir}/src/capabilities.cpp \
   ${dali_csharp_binder_dir}/src/capture.cpp \
   ${dali_csharp_binder_dir}/src/gl-window.cpp \
   ${dali_csharp_binder_dir}/src/autofill-container-wrap.cpp

@@ -74,11 +74,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_TOUCH_AREA_get() {
   return Dali::DevelActor::Property::TOUCH_AREA;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_BLEND_EQUATION_get() {
-
-  return Dali::DevelActor::Property::BLEND_EQUATION;
-}
-
 SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_TOOLTIP_get() {
   int jresult ;
   int result;
