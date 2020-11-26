@@ -47589,6 +47589,38 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AccessibilityManager_GetReadPosition(v
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_EnableAccessibility(void * jarg1, unsigned int jarg2) {
+  Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
+  bool arg2 ;
+
+  arg1 = (Dali::Toolkit::AccessibilityManager *)jarg1;
+  arg2 = jarg2 ? true : false;
+  {
+    try {
+      (arg1)->EnableAccessibility(arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_IsEnabled(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Toolkit::AccessibilityManager *)jarg1;
+  {
+    try {
+      result = (bool)((Dali::Toolkit::AccessibilityManager const *)arg1)->IsEnabled();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AccessibilityManager_FocusChangedSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
