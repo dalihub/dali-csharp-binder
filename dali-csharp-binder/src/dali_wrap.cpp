@@ -498,6 +498,8 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/update/frame-callback-interface.h>
 #include <dali/devel-api/update/update-proxy.h>
 
+#include <dali-toolkit/public-api/image-loader/image.h>
+
 
 // add here SWIG version check
 
@@ -15269,6 +15271,45 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelData_GetPixelFormat(void * jarg1) {
 
   jresult = (int)result;
   return jresult;
+}
+
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* handle)
+{
+  std::string url = "";
+  Dali::PixelData* pixelData = (Dali::PixelData*)handle;
+
+  if (!pixelData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      url = Dali::Toolkit::Image::GenerateUrl(*pixelData);
+    }
+    catch (std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return 0;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return 0;
+    }
+  }
+  return SWIG_csharp_string_callback( (const char *)url.c_str() );
 }
 
 
@@ -58603,6 +58644,45 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageSource_ReleaseBuffer(void* ja
     }
   }
   return jresult;
+}
+
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* handle)
+{
+  std::string url = "";
+  NativeImageSource* nativeImageSource = (NativeImageSource*)handle;
+
+  if (!nativeImageSource)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      url = Dali::Toolkit::Image::GenerateUrl(nativeImageSource);
+    }
+    catch (std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return 0;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return 0;
+    }
+  }
+  return SWIG_csharp_string_callback( (const char *)url.c_str() );
 }
 
 

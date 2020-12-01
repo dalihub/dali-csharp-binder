@@ -605,6 +605,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_FONT_SIZE_SCALE_get()
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_PRIMARY_CURSOR_POSITION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextField::Property::PRIMARY_CURSOR_POSITION;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField_Property() {
   void * jresult ;
   Dali::Toolkit::TextField::Property *result = 0 ;
