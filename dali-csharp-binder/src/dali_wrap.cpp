@@ -164,6 +164,7 @@ template <typename T> T SwigValueInit() {
 
 #include <stdlib.h>
 #include <string.h>
+#include <string_view>
 #include <stdio.h>
 
 /* Support for throwing C# exceptions from C/C++. There are two types:
@@ -497,6 +498,8 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali/devel-api/update/frame-callback-interface.h>
 #include <dali/devel-api/update/update-proxy.h>
+
+#include <dali-toolkit/public-api/image-loader/image.h>
 
 
 // add here SWIG version check
@@ -13690,17 +13693,17 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_TypeInfo_GetPropertyName(void * jarg1,
   char * jresult ;
   Dali::TypeInfo *arg1 = (Dali::TypeInfo *) 0 ;
   Dali::Property::Index arg2 ;
-  std::string *result = 0 ;
+  std::string_view result;
 
   arg1 = (Dali::TypeInfo *)jarg1;
   arg2 = (Dali::Property::Index)jarg2;
   {
     try {
-      result = (std::string *) &((Dali::TypeInfo const *)arg1)->GetPropertyName(arg2);
+      result = ((Dali::TypeInfo const *)arg1)->GetPropertyName(arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  jresult = SWIG_csharp_string_callback(result.data());
   return jresult;
 }
 
@@ -15269,6 +15272,45 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelData_GetPixelFormat(void * jarg1) {
 
   jresult = (int)result;
   return jresult;
+}
+
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* handle)
+{
+  std::string url = "";
+  Dali::PixelData* pixelData = (Dali::PixelData*)handle;
+
+  if (!pixelData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      url = Dali::Toolkit::Image::GenerateUrl(*pixelData);
+    }
+    catch (std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return 0;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return 0;
+    }
+  }
+  return SWIG_csharp_string_callback( (const char *)url.c_str() );
 }
 
 
@@ -58603,6 +58645,45 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageSource_ReleaseBuffer(void* ja
     }
   }
   return jresult;
+}
+
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* handle)
+{
+  std::string url = "";
+  NativeImageSource* nativeImageSource = (NativeImageSource*)handle;
+
+  if (!nativeImageSource)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      url = Dali::Toolkit::Image::GenerateUrl(nativeImageSource);
+    }
+    catch (std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return 0;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return 0;
+    }
+  }
+  return SWIG_csharp_string_callback( (const char *)url.c_str() );
 }
 
 
