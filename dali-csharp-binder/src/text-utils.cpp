@@ -660,6 +660,26 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RendererParameters_minLineSize_get(void
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RendererParameters_padding_set(void * jarg1, void * jarg2) {
+  Dali::Toolkit::DevelText::RendererParameters *arg1 = (Dali::Toolkit::DevelText::RendererParameters *) 0 ;
+  Dali::Extents *arg2 ;
+
+  arg1 = (Dali::Toolkit::DevelText::RendererParameters *)jarg1;
+  arg2 = (Dali::Extents *)jarg2;
+  if (arg1) (arg1)->padding = *arg2;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RendererParameters_padding_get(void * jarg1) {
+  void * jresult ;
+  Dali::Toolkit::DevelText::RendererParameters *arg1 = (Dali::Toolkit::DevelText::RendererParameters *) 0 ;
+  Dali::Extents * result;
+
+  arg1 = (Dali::Toolkit::DevelText::RendererParameters *)jarg1;
+  result = (Dali::Extents *) new Dali::Extents((arg1)->padding);
+  jresult = (void *)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_EmbeddedItemInfo_0() {
   void * jresult ;
   Dali::Toolkit::DevelText::EmbeddedItemInfo *result = 0 ;

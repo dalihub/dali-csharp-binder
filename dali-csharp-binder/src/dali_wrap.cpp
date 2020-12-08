@@ -164,6 +164,7 @@ template <typename T> T SwigValueInit() {
 
 #include <stdlib.h>
 #include <string.h>
+#include <string_view>
 #include <stdio.h>
 
 /* Support for throwing C# exceptions from C/C++. There are two types:
@@ -13692,17 +13693,17 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_TypeInfo_GetPropertyName(void * jarg1,
   char * jresult ;
   Dali::TypeInfo *arg1 = (Dali::TypeInfo *) 0 ;
   Dali::Property::Index arg2 ;
-  std::string *result = 0 ;
+  std::string_view result;
 
   arg1 = (Dali::TypeInfo *)jarg1;
   arg2 = (Dali::Property::Index)jarg2;
   {
     try {
-      result = (std::string *) &((Dali::TypeInfo const *)arg1)->GetPropertyName(arg2);
+      result = ((Dali::TypeInfo const *)arg1)->GetPropertyName(arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  jresult = SWIG_csharp_string_callback(result.data());
   return jresult;
 }
 
