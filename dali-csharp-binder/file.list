@@ -30,7 +30,8 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/text-utils.cpp \
   ${dali_csharp_binder_dir}/src/capture.cpp \
   ${dali_csharp_binder_dir}/src/gl-window.cpp \
-  ${dali_csharp_binder_dir}/src/autofill-container-wrap.cpp
+  ${dali_csharp_binder_dir}/src/autofill-container-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/web-view.cpp
 
 # added for key grab binding only for tizen
 # module: csharp-binder, backend: mobile,tv,ivi,watch
