@@ -37753,6 +37753,34 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_SHADOW_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_NAME_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_NAME;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_DESCRIPTION_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_DESCRIPTION;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_TRANSLATION_DOMAIN_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_TRANSLATION_DOMAIN;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_ROLE_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_ROLE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_HIGHLIGHTABLE_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_HIGHLIGHTABLE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_ATTRIBUTES_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_ATTRIBUTES;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_ANIMATED_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_ANIMATED;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View_Property() {
   void * jresult ;
   Dali::Toolkit::Control::Property *result = 0 ;
@@ -37916,6 +37944,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_DownCast(void * jarg1) {
 
   jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control &)result);
   return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Control(void * jarg1) {
+  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) jarg1;
+  try {
+    delete arg1;
+  } CALL_CATCH_EXCEPTION();
 }
 
 
