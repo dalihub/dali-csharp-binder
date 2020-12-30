@@ -38251,6 +38251,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoAction(void * jarg1, int jarg2, i
   }
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_GetVisualProperty(void* control, int propertyIndex, int visualPropertyIndex)
+{
+  if (!control)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Given control is null", 0);
+    return 0;
+  }
+
+  void* result = 0;
+  try
+  {
+    Dali::Property property = DevelControl::GetVisualProperty(*((Dali::Toolkit::Control*)control), (Dali::Property::Index)propertyIndex, (Dali::Property::Index)visualPropertyIndex);
+    result = new Dali::Property(property.object, property.propertyIndex, property.componentIndex);
+  }
+  CALL_CATCH_EXCEPTION(0);
+
+  return result;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::Control *arg1 = 0 ;
