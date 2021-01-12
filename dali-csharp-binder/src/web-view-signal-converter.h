@@ -31,9 +31,9 @@ class WebViewPageLoadSignal : public Dali::ConnectionTracker
 {
 
 public:
-  typedef Dali::Signal< void(Dali::Toolkit::WebView, const std::string&) > NativeSignalType;
-  typedef Dali::Signal< void(Dali::Toolkit::WebView, char*) > ProxySignalType;
-  typedef void (*CallbackType)(Dali::Toolkit::WebView, char*);
+  using NativeSignalType = Dali::Signal< void( Dali::Toolkit::WebView, const std::string& ) >;
+  using ProxySignalType = Dali::Signal< void( Dali::Toolkit::WebView, char* ) >;
+  using CallbackType = void ( * )( Dali::Toolkit::WebView, char* );
 
   WebViewPageLoadSignal( NativeSignalType* signal )
     : mNativeSignalPtr( signal )
@@ -84,9 +84,9 @@ private:
 class WebViewPageLoadErrorSignal : public Dali::ConnectionTracker
 {
 public:
-  typedef Dali::Signal< void(Dali::Toolkit::WebView, const std::string&, Dali::Toolkit::WebView::LoadErrorCode) > NativeSignalType;
-  typedef Dali::Signal< void(Dali::Toolkit::WebView, char*, int) > ProxySignalType;
-  typedef void (*CallbackType)(Dali::Toolkit::WebView, char*, int);
+  using NativeSignalType = Dali::Signal< void( Dali::Toolkit::WebView, const std::string&, Dali::Toolkit::WebView::LoadErrorCode ) >;
+  using ProxySignalType = Dali::Signal< void( Dali::Toolkit::WebView, char*, int ) >;
+  using CallbackType = void ( * )( Dali::Toolkit::WebView, char*, int );
 
   WebViewPageLoadErrorSignal( NativeSignalType* signal )
     : mNativeSignalPtr( signal )
@@ -127,6 +127,57 @@ public:
 
 private:
 
+  NativeSignalType* mNativeSignalPtr;
+  ProxySignalType   mProxySignal;
+};
+
+// Proxy class of WebViewScrollEdgeReachedSignal.
+// WebViewScrollEdgeReachedSignal has an argument of enum type which is not supported at C# side.
+// The purpose of this class is to convert signal argument of enum type safely.
+class WebViewScrollEdgeReachedSignal : public Dali::ConnectionTracker
+{
+public:
+  using NativeSignalType = Dali::Signal< void( Dali::Toolkit::WebView, Dali::WebEnginePlugin::ScrollEdge ) >;
+  using ProxySignalType = Dali::Signal< void( Dali::Toolkit::WebView, int ) >;
+  using CallbackType = void ( * )( Dali::Toolkit::WebView, int );
+
+  WebViewScrollEdgeReachedSignal( NativeSignalType* signal )
+    : mNativeSignalPtr( signal )
+  {
+  }
+
+  ~WebViewScrollEdgeReachedSignal()
+  {
+    if ( !mProxySignal.Empty() )
+    {
+       mNativeSignalPtr->Disconnect( this, &SignalConverter::WebViewScrollEdgeReachedSignal::OnEmit );
+    }
+  }
+
+  void Connect( CallbackType csharpCallback )
+  {
+    if ( mNativeSignalPtr->Empty() )
+    {
+       mNativeSignalPtr->Connect( this, &SignalConverter::WebViewScrollEdgeReachedSignal::OnEmit );
+    }
+    mProxySignal.Connect( csharpCallback );
+  }
+
+  void Disconnect( CallbackType csharpCallback )
+  {
+    mProxySignal.Disconnect( csharpCallback );
+    if ( mProxySignal.Empty() )
+    {
+       mNativeSignalPtr->Disconnect( this, &SignalConverter::WebViewScrollEdgeReachedSignal::OnEmit );
+    }
+  }
+
+  void OnEmit( Dali::Toolkit::WebView webview, Dali::WebEnginePlugin::ScrollEdge edge )
+  {
+    mProxySignal.Emit( webview, static_cast< int >( edge ) );
+  }
+
+private:
   NativeSignalType* mNativeSignalPtr;
   ProxySignalType   mProxySignal;
 };
