@@ -47149,6 +47149,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetAccessibilityAtt
 
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_DeleteAccessibilityAttribute(void * jarg1, void * jarg2) {
+  Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0;
+  Dali::Actor arg2;
+  Dali::Actor *argp2;
+
+  arg1 = (Dali::Toolkit::AccessibilityManager *)jarg1;
+  argp2 = (Dali::Actor *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
+    return;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      (arg1)->DeleteAccessibilityAttribute(arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_AccessibilityManager_GetAccessibilityAttribute(void * jarg1, void * jarg2, int jarg3) {
   char * jresult ;
