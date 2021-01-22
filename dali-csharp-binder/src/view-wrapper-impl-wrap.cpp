@@ -308,17 +308,15 @@ void SwigDirector_ViewWrapperImpl::OnKeyInputFocusLost() {
 Dali::Actor SwigDirector_ViewWrapperImpl::GetNextKeyboardFocusableActor(Dali::Actor currentFocusedActor, Dali::Toolkit::Control::KeyboardFocus::Direction direction, bool loopEnabled) {
   Dali::Actor c_result ;
   void * jresult = 0 ;
-  void * jcurrentFocusedActor  ;
   int jdirection  ;
   unsigned int jloopEnabled  ;
 
   if (!swig_callbackGetNextKeyboardFocusableActor) {
     return Dali::Toolkit::Internal::Control::GetNextKeyboardFocusableActor(currentFocusedActor,direction,loopEnabled);
   } else {
-    jcurrentFocusedActor = (void *)new Dali::Actor((const Dali::Actor &)currentFocusedActor);
     jdirection = (int)direction;
     jloopEnabled = loopEnabled;
-    jresult = (void *) swig_callbackGetNextKeyboardFocusableActor(jcurrentFocusedActor, jdirection, jloopEnabled);
+    jresult = (void *) swig_callbackGetNextKeyboardFocusableActor((void*)((Dali::Actor*)&currentFocusedActor), jdirection, jloopEnabled);
     if (!jresult) {
       // Return empty base handle when NUI returns null.
       return c_result;
@@ -329,9 +327,7 @@ Dali::Actor SwigDirector_ViewWrapperImpl::GetNextKeyboardFocusableActor(Dali::Ac
 }
 
 void SwigDirector_ViewWrapperImpl::OnKeyboardFocusChangeCommitted(Dali::Actor commitedFocusableActor) {
-  void * jcommitedFocusableActor  ;
-  jcommitedFocusableActor = (void *)new Dali::Actor((const Dali::Actor &)commitedFocusableActor);
-  swig_callbackOnKeyboardFocusChangeCommitted(jcommitedFocusableActor);
+  swig_callbackOnKeyboardFocusChangeCommitted((void*)((Dali::Actor*)&commitedFocusableActor));
 
   Dali::Toolkit::Internal::Control::OnKeyboardFocusChangeCommitted(commitedFocusableActor);
 }
