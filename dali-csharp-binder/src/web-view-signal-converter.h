@@ -186,6 +186,57 @@ private:
   ProxySignalType   mProxySignal;
 };
 
+// Proxy class of WebViewUrlChangedSignal.
+// WebViewUrlChangedSignal has an argument of string type which is not supported at C# side.
+// The purpose of this class is to convert signal argument of string type safely.
+class WebViewUrlChangedSignal : public Dali::ConnectionTracker
+{
+public:
+  using NativeSignalType = Dali::Signal< void( Dali::Toolkit::WebView, const std::string& ) >;
+  using ProxySignalType = Dali::Signal< void( Dali::Toolkit::WebView, char* ) >;
+  using CallbackType = void ( * )( Dali::Toolkit::WebView, char* );
+
+  WebViewUrlChangedSignal( NativeSignalType* signal )
+    : mNativeSignalPtr(signal)
+  {
+  }
+
+  ~WebViewUrlChangedSignal()
+  {
+    if ( !mProxySignal.Empty() )
+    {
+      mNativeSignalPtr->Disconnect( this, &SignalConverter::WebViewUrlChangedSignal::OnEmit );
+    }
+  }
+
+  void Connect( CallbackType csharpCallback )
+  {
+    if ( mNativeSignalPtr->Empty() )
+    {
+      mNativeSignalPtr->Connect( this, &SignalConverter::WebViewUrlChangedSignal::OnEmit );
+    }
+    mProxySignal.Connect( csharpCallback );
+  }
+
+  void Disconnect( CallbackType csharpCallback )
+  {
+    mProxySignal.Disconnect( csharpCallback );
+    if ( mProxySignal.Empty() )
+    {
+      mNativeSignalPtr->Disconnect( this, &SignalConverter::WebViewUrlChangedSignal::OnEmit );
+    }
+  }
+
+  void OnEmit( Dali::Toolkit::WebView webview, const std::string& url )
+  {
+    mProxySignal.Emit( webview, SWIG_csharp_string_callback( url.c_str() ) );
+  }
+
+private:
+  NativeSignalType* mNativeSignalPtr;
+  ProxySignalType   mProxySignal;
+};
+
 } // namespace SignalConverter
 
 #endif // __DALI_CSHARP_BINDER_WEB_VIEW_SIGNAL_CONVERTER_H__
