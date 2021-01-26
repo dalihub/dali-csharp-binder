@@ -21,6 +21,10 @@
 #include <dali/public-api/signals/connection-tracker.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
 
+/* Callback for returning strings to C# without leaking memory */
+typedef char* (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
+extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
+
 namespace SignalConverter
 {
 
