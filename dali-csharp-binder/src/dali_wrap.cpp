@@ -57865,7 +57865,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_4(char * jar
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize__SWIG_0(char * jarg1) {
   void * jresult ;
   std::string *arg1 = 0 ;
   Dali::ImageDimensions result;
@@ -57879,6 +57879,28 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char * jarg1) {
   {
     try {
       result = Dali::GetOriginalImageSize((std::string const &)*arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize__SWIG_1(char * jarg1, bool jarg2) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  bool arg2 ;
+  Dali::ImageDimensions result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  arg2 = jarg2 ? true : false;
+  {
+    try {
+      result = Dali::GetOriginalImageSize((std::string const &)*arg1,arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
