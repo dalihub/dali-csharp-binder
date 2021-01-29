@@ -21,6 +21,10 @@
 #include <dali/public-api/signals/connection-tracker.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
 
+/* Callback for returning strings to C# without leaking memory */
+typedef char* (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
+extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
+
 namespace SignalConverter
 {
 
@@ -31,9 +35,9 @@ class WebViewPageLoadSignal : public Dali::ConnectionTracker
 {
 
 public:
-  typedef Dali::Signal< void(Dali::Toolkit::WebView, const std::string&) > NativeSignalType;
-  typedef Dali::Signal< void(Dali::Toolkit::WebView, char*) > ProxySignalType;
-  typedef void (*CallbackType)(Dali::Toolkit::WebView, char*);
+  using NativeSignalType = Dali::Signal< void( Dali::Toolkit::WebView, const std::string& ) >;
+  using ProxySignalType = Dali::Signal< void( Dali::Toolkit::WebView, char* ) >;
+  using CallbackType = void ( * )( Dali::Toolkit::WebView, char* );
 
   WebViewPageLoadSignal( NativeSignalType* signal )
     : mNativeSignalPtr( signal )
@@ -84,9 +88,9 @@ private:
 class WebViewPageLoadErrorSignal : public Dali::ConnectionTracker
 {
 public:
-  typedef Dali::Signal< void(Dali::Toolkit::WebView, const std::string&, Dali::Toolkit::WebView::LoadErrorCode) > NativeSignalType;
-  typedef Dali::Signal< void(Dali::Toolkit::WebView, char*, int) > ProxySignalType;
-  typedef void (*CallbackType)(Dali::Toolkit::WebView, char*, int);
+  using NativeSignalType = Dali::Signal< void( Dali::Toolkit::WebView, const std::string&, Dali::Toolkit::WebView::LoadErrorCode ) >;
+  using ProxySignalType = Dali::Signal< void( Dali::Toolkit::WebView, char*, int ) >;
+  using CallbackType = void ( * )( Dali::Toolkit::WebView, char*, int );
 
   WebViewPageLoadErrorSignal( NativeSignalType* signal )
     : mNativeSignalPtr( signal )
@@ -137,9 +141,9 @@ private:
 class WebViewScrollEdgeReachedSignal : public Dali::ConnectionTracker
 {
 public:
-  typedef Dali::Signal< void(Dali::Toolkit::WebView, Dali::WebEnginePlugin::ScrollEdge) > NativeSignalType;
-  typedef Dali::Signal< void(Dali::Toolkit::WebView, int) > ProxySignalType;
-  typedef void (*CallbackType)(Dali::Toolkit::WebView, int);
+  using NativeSignalType = Dali::Signal< void( Dali::Toolkit::WebView, Dali::WebEnginePlugin::ScrollEdge ) >;
+  using ProxySignalType = Dali::Signal< void( Dali::Toolkit::WebView, int ) >;
+  using CallbackType = void ( * )( Dali::Toolkit::WebView, int );
 
   WebViewScrollEdgeReachedSignal( NativeSignalType* signal )
     : mNativeSignalPtr( signal )
