@@ -106,6 +106,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_New_2(char * jarg1, char * jar
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_New_3( int jarg1, char** jarg2 ) {
+  if ( !jarg2 ) {
+    SWIG_CSharpSetPendingExceptionArgument( SWIG_CSharpArgumentNullException, "jarg2 is null string", 0 );
+    return 0;
+  }
+
+  Dali::Toolkit::WebView result;
+  {
+    try {
+      result = Dali::Toolkit::WebView::New( jarg1, jarg2 );
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  void* jresult = new Dali::Toolkit::WebView( ( const Dali::Toolkit::WebView& ) result );
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WebView__SWIG_1(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::WebView *arg1 = 0 ;
@@ -261,6 +277,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_CONTENT_SIZE_get() {
   return (int)Dali::Toolkit::WebView::Property::CONTENT_SIZE;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_TITLE_get() {
+  return (int)Dali::Toolkit::WebView::Property::TITLE;
+}
+
 //@DEPRECATED_2_0.9.
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_CACHE_MODEL_get() {
   return 0;
@@ -336,6 +356,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_LoadHtmlString(void * jarg1, cha
 //@DEPRECATED_2_0.9.
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_LoadHTMLString(void* jarg1, char* jarg2) {
   CSharp_Dali_WebView_LoadHtmlString(jarg1, jarg2);
+}
+
+SWIGEXPORT const void* SWIGSTDCALL CSharp_Dali_WebView_GetFavicon( void* jarg1 ) {
+  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)jarg1;
+  Dali::Toolkit::ImageView* result = 0;
+  {
+    try {
+      result = ( Dali::Toolkit::ImageView * )&( arg1 )->GetFavicon();
+    } CALL_CATCH_EXCEPTION( 0 );
+  }
+  return result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_Reload(void * jarg1) {
@@ -483,6 +514,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void
       webview->AddJavaScriptMessageHandler(exposedObjectName, [handler](const std::string& message) {
         handler(SWIG_csharp_string_callback(message.c_str()));
       });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ClearAllTilesResources( void* jarg1 ) {
+  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)jarg1;
+  {
+    try {
+      ( arg1 )->ClearAllTilesResources();
     } CALL_CATCH_EXCEPTION();
   }
 }
