@@ -31,7 +31,7 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/capabilities.cpp \
   ${dali_csharp_binder_dir}/src/capture.cpp \
   ${dali_csharp_binder_dir}/src/gl-window.cpp \
-  ${dali_csharp_binder_dir}/src/web-view.cpp
+  ${dali_csharp_binder_dir}/src/web-view.cpp \
   ${dali_csharp_binder_dir}/src/autofill-container-wrap.cpp
 
 # added for key grab binding only for tizen
