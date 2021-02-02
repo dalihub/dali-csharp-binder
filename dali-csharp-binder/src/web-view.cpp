@@ -281,6 +281,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_VIDEO_HOLE_ENABLED_get()
   return (int)Dali::Toolkit::WebView::Property::VIDEO_HOLE_ENABLED;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_MOUSE_EVENTS_ENABLED_get() {
+  return (int) Dali::Toolkit::WebView::Property::MOUSE_EVENTS_ENABLED;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_KEY_EVENTS_ENABLED_get() {
+  return (int) Dali::Toolkit::WebView::Property::KEY_EVENTS_ENABLED;
+}
+
 //@DEPRECATED_2_0.9.
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_CACHE_MODEL_get() {
   return 0;
