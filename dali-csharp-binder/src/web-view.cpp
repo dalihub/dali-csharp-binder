@@ -32,6 +32,8 @@
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
 #include <dali/devel-api/adaptor-framework/web-engine-console-message.h>
 #include <dali/devel-api/adaptor-framework/web-engine-load-error.h>
+#include <dali/devel-api/adaptor-framework/web-engine-frame.h>
+#include <dali/devel-api/adaptor-framework/web-engine-policy-decision.h>
 #include <dali/devel-api/adaptor-framework/web-engine-request-interceptor.h>
 #include <dali/public-api/common/dali-common.h>
 
@@ -1153,7 +1155,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebViewFrameRenderedSignal_FrameRendere
       result = (Dali::Toolkit::WebView::WebViewFrameRenderedSignalType*)(&(webview->FrameRenderedSignal()));
     } CALL_CATCH_EXCEPTION(0);
   }
-  return (void *)result;
+  return (void*)result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewFrameRenderedSignal_Connect(void* jarg1, void* jarg2) {
@@ -1249,6 +1251,46 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewConsoleMessageSignal_Connect(void
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewConsoleMessageSignal_Disconnect(void* jarg1, void* jarg2) {
   SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>::CallbackType)jarg2;
+  {
+    try {
+      proxy->Disconnect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewPolicyDecisionSignal_PolicyDecision(void* jarg1) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>* result = 0;
+  {
+    try {
+      result = new SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>(&webview->PolicyDecisionSignal());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void*)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewPolicyDecisionSignal(void* jarg1) {
+  SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>* object = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>*)jarg1;
+  {
+    try {
+      delete object;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPolicyDecisionSignal_Connect(void *jarg1, void *jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>::CallbackType)jarg2;
+  {
+    try {
+      proxy->Connect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPolicyDecisionSignal_Disconnect(void *jarg1, void *jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>::CallbackType)jarg2;
   {
     try {
       proxy->Disconnect(callback);
@@ -1551,6 +1593,144 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebFormRepostDecision_Reply(void *jarg1,
       arg1->Reply(jarg2);
     } CALL_CATCH_EXCEPTION();
   }
+}
+
+//----------------------------------WebFrame---------------------------------------------------
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebFrame_IsMainFrame(void* jarg1) {
+  Dali::WebEngineFrame* arg1 = (Dali::WebEngineFrame*)jarg1;
+  bool result = false;
+  {
+    try {
+      result = (arg1)->IsMainFrame();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+//----------------------------------WebPolicyDecision-----------------------------------------------------
+SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetUrl(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  std::string result;
+  {
+    try {
+      result = arg1->GetUrl();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char* jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetCookie(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  std::string result;
+  {
+    try {
+      result = arg1->GetCookie();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char* jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetDecisionType(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  int result;
+  {
+    try {
+      result = (int)arg1->GetDecisionType();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetResponseMime(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  std::string result;
+  {
+    try {
+      result = arg1->GetResponseMime();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char* jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetResponseStatusCode(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  int result;
+  {
+    try {
+      result = arg1->GetResponseStatusCode();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetNavigationType(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  int result;
+  {
+    try {
+      result = (int)arg1->GetNavigationType();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetFrame(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  Dali::WebEngineFrame* result = 0;
+  {
+    try {
+      result = &((arg1)->GetFrame());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetScheme(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  std::string result;
+  {
+    try {
+      result = arg1->GetScheme();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char* jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Use(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  bool result;
+  {
+    try {
+      result = arg1->Use();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Ignore(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  bool result;
+  {
+    try {
+      result = arg1->Ignore();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Suspend(void* jarg1) {
+  Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
+  bool result;
+  {
+    try {
+      result = arg1->Suspend();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
 }
 
 //----------------------------------WebRequestInterceptor---------------------------------------------------
