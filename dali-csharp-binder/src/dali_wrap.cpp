@@ -37753,6 +37753,34 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_SHADOW_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_NAME_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_NAME;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_DESCRIPTION_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_DESCRIPTION;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_TRANSLATION_DOMAIN_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_TRANSLATION_DOMAIN;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_ROLE_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_ROLE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_HIGHLIGHTABLE_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_HIGHLIGHTABLE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_ATTRIBUTES_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_ATTRIBUTES;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_ANIMATED_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_ANIMATED;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View_Property() {
   void * jresult ;
   Dali::Toolkit::Control::Property *result = 0 ;
@@ -37916,6 +37944,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_DownCast(void * jarg1) {
 
   jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control &)result);
   return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Control(void * jarg1) {
+  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) jarg1;
+  try {
+    delete arg1;
+  } CALL_CATCH_EXCEPTION();
 }
 
 
@@ -58243,6 +58278,53 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* han
   return SWIG_csharp_string_callback( (const char *)url.c_str() );
 }
 
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumWidth(void * jarg1) {
+  Dali::Actor *arg1 = (Dali::Actor *) 0;
+  Dali::Vector2 maximumSize;
+  Dali::Vector2 minimumSize;
+  Dali::Vector3 naturalSize;
+  float result;
+  {
+    try {
+      arg1 = (Dali::Actor *)jarg1;
+      maximumSize = arg1->GetProperty< Vector2 >( Actor::Property::MAXIMUM_SIZE );
+      minimumSize = arg1->GetProperty< Vector2 >( Actor::Property::MINIMUM_SIZE );
+      naturalSize = arg1->GetNaturalSize();
+
+      float baseHeight = maximumSize.height > 0 ? std::min(maximumSize.height, naturalSize.height) : naturalSize.height;
+      float baseWidth = arg1->GetWidthForHeight(baseHeight);
+
+      result = minimumSize.width > 0 ? std::max(baseWidth, minimumSize.width) : baseWidth;
+      result = maximumSize.width > 0 ? std::min(result, maximumSize.width) : result;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumHeight(void * jarg1) {
+  Dali::Actor *arg1 = (Dali::Actor *) 0;
+  Dali::Vector2 maximumSize;
+  Dali::Vector2 minimumSize;
+  Dali::Vector3 naturalSize;
+  float result;
+  {
+    try {
+      arg1 = (Dali::Actor *)jarg1;
+      maximumSize = arg1->GetProperty< Vector2 >( Actor::Property::MAXIMUM_SIZE );
+      minimumSize = arg1->GetProperty< Vector2 >( Actor::Property::MINIMUM_SIZE );
+      naturalSize = arg1->GetNaturalSize();
+
+      float baseWidth = maximumSize.width > 0 ? std::min(maximumSize.width, naturalSize.width) : naturalSize.width;
+      float baseHeight = arg1->GetHeightForWidth(baseWidth);
+
+      result = minimumSize.height > 0 ? std::max(baseHeight, minimumSize.height) : baseHeight;
+      result = maximumSize.height > 0 ? std::min(result, maximumSize.height) : result;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
 
 #ifdef __cplusplus
 }
