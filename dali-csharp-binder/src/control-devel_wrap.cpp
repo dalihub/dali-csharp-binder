@@ -350,6 +350,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_delete_States(void 
     });
 }
 
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Copy(void *arg1) {
+    Dali::Accessibility::States *result = nullptr;
+    GUARD_ON_NULL_RET0(arg1);
+    try_catch([&]() {
+       auto &states = *static_cast<Dali::Accessibility::States *>(arg1);
+       result = new Dali::Accessibility::States(states);
+    });
+    return result;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibilityStateChange(void *arg1, void *arg2, int arg3) {
     GUARD_ON_NULL_RET(arg1);
     GUARD_ON_NULL_RET(arg2);
@@ -360,8 +370,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibility
         NotifyAccessibilityStateChange(*control, *states, doRecursive);
     });
 }
-
-//DALI_TOOLKIT_API void SetAccessibilityConstructor( Dali::Actor control, std::function<std::unique_ptr<Dali::Accessibility::Accessible>(Dali::Actor)> constructor);
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetBoundAccessibilityObject(void *arg1) {
     Dali::Accessibility::Accessible *result = nullptr;
@@ -374,6 +382,5 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetBoundAccessibil
 }
 
 #ifdef __cplusplus
-}
+} // extern "C"
 #endif
-

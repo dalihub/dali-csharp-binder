@@ -33,7 +33,8 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/gl-window.cpp \
   ${dali_csharp_binder_dir}/src/web-view.cpp \
   ${dali_csharp_binder_dir}/src/control-devel_wrap.cpp \
-  ${dali_csharp_binder_dir}/src/signal_wrap.cpp
+  ${dali_csharp_binder_dir}/src/signal_wrap.cpp \
+  ${dali_csharp_binder_dir}/src/accessible-impl-nui.cpp
 
 # added for key grab binding only for tizen
 # module: csharp-binder, backend: mobile,tv,ivi,watch
@@ -55,4 +56,3 @@ dali_csharp_binder_tizen_wearable_src_files = \
 
 dali_csharp_binder_header_files = \
   ${dali_csharp_binder_dir}/src/common.h
-
