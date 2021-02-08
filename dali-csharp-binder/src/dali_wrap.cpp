@@ -14748,8 +14748,78 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AnchorPointBottomRight_get() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ALICE_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::ALICE_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ANTIQUE_WHITE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::ANTIQUE_WHITE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AQUA_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::AQUA;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AQUA_MARINE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::AQUA_MARINE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AZURE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::AZURE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BEIGE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::BEIGE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BISQUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::BISQUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BLACK_get() {
-  void * jresult ;
+  void * jresult;
   Dali::Vector4 *result = 0 ;
 
   result = (Dali::Vector4 *)&Dali::Color::BLACK;
@@ -14758,38 +14828,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BLACK_get() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WHITE_get() {
-  void * jresult ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BLANCHE_DALMOND_get() {
+  void * jresult;
   Dali::Vector4 *result = 0 ;
 
-  result = (Dali::Vector4 *)&Dali::Color::WHITE;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RED_get() {
-  void * jresult ;
-  Dali::Vector4 *result = 0 ;
-
-  result = (Dali::Vector4 *)&Dali::Color::RED;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GREEN_get() {
-  void * jresult ;
-  Dali::Vector4 *result = 0 ;
-
-  result = (Dali::Vector4 *)&Dali::Color::GREEN;
+  result = (Dali::Vector4 *)&Dali::Color::BLANCHE_DALMOND;
   jresult = (void *)result;
   return jresult;
 }
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BLUE_get() {
-  void * jresult ;
+  void * jresult;
   Dali::Vector4 *result = 0 ;
 
   result = (Dali::Vector4 *)&Dali::Color::BLUE;
@@ -14798,28 +14848,108 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BLUE_get() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_YELLOW_get() {
-  void * jresult ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BLUE_VIOLET_get() {
+  void * jresult;
   Dali::Vector4 *result = 0 ;
 
-  result = (Dali::Vector4 *)&Dali::Color::YELLOW;
+  result = (Dali::Vector4 *)&Dali::Color::BLUE_VIOLET;
   jresult = (void *)result;
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MAGENTA_get() {
-  void * jresult ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BROWN_get() {
+  void * jresult;
   Dali::Vector4 *result = 0 ;
 
-  result = (Dali::Vector4 *)&Dali::Color::MAGENTA;
+  result = (Dali::Vector4 *)&Dali::Color::BROWN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BURLY_WOOD_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::BURLY_WOOD;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CADET_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::CADET_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CHARTREUSE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::CHARTREUSE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CHOCOLATE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::CHOCOLATE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CORAL_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::CORAL;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CORNFLOWER_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::CORNFLOWER_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CORNSILK_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::CORNSILK;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CRIMSON_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::CRIMSON;
   jresult = (void *)result;
   return jresult;
 }
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CYAN_get() {
-  void * jresult ;
+  void * jresult;
   Dali::Vector4 *result = 0 ;
 
   result = (Dali::Vector4 *)&Dali::Color::CYAN;
@@ -14828,11 +14958,1271 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CYAN_get() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_CYAN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_CYAN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_GOLDENROD_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_GOLDENROD;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_GRAY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_GRAY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_GREY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_GREY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_KHAKI_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_KHAKI;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_MAGENTA_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_MAGENTA;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_OLIVE_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_OLIVE_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_ORANGE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_ORANGE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_ORCHID_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_ORCHID;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_RED_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_RED;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_SALMON_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_SALMON;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_SEA_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_SEA_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_SLATE_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_SLATE_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_SLATE_GRAY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_SLATE_GRAY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_SLATE_GREY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_SLATE_GREY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_TURQUOISE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_TURQUOISE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DARK_VIOLET_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DARK_VIOLET;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DEEP_PINK_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DEEP_PINK;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DEEP_SKY_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DEEP_SKY_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DIM_GRAY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DIM_GRAY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DIM_GREY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DIM_GREY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DODGER_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::DODGER_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FIRE_BRICK_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::FIRE_BRICK;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FLORAL_WHITE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::FLORAL_WHITE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FOREST_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::FOREST_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FUCHSIA_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::FUCHSIA;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GAINSBORO_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::GAINSBORO;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GHOST_WHITE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::GHOST_WHITE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GOLD_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::GOLD;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GOLDEN_ROD_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::GOLDEN_ROD;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GRAY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::GRAY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GREEN_YELLOW_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::GREEN_YELLOW;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GREY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::GREY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_HONEYDEW_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::HONEYDEW;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_HOT_PINK_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::HOT_PINK;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_INDIANRED_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::INDIANRED;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_INDIGO_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::INDIGO;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_IVORY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::IVORY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_KHAKI_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::KHAKI;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LAVENDER_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LAVENDER;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LAVENDER_BLUSH_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LAVENDER_BLUSH;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LAWN_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LAWN_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LEMON_CHIFFON_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LEMON_CHIFFON;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_CORAL_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_CORAL;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_CYAN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_CYAN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_GOLDEN_ROD_YELLOW_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_GOLDEN_ROD_YELLOW;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_GRAY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_GRAY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_GREY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_GREY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_PINK_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_PINK;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_SALMON_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_SALMON;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_SEA_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_SEA_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_SKY_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_SKY_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_SLATE_GRAY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_SLATE_GRAY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_SLATE_GREY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_SLATE_GREY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_STEEL_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_STEEL_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIGHT_YELLOW_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIGHT_YELLOW;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIME_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIME;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LIME_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LIME_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LINEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::LINEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MAGENTA_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MAGENTA;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MAROON_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MAROON;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MEDIUM_AQUA_MARINE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MEDIUM_AQUA_MARINE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MEDIUM_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MEDIUM_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MEDIUM_ORCHID_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MEDIUM_ORCHID;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MEDIUM_PURPLE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MEDIUM_PURPLE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MEDIUM_SEA_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MEDIUM_SEA_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MEDIUM_SLATE_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MEDIUM_SLATE_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MEDIUM_SPRING_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MEDIUM_SPRING_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MEDIUM_TURQUOISE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MEDIUM_TURQUOISE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MEDIUM_VIOLETRED_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MEDIUM_VIOLETRED;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MIDNIGHT_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MIDNIGHT_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MINT_CREAM_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MINT_CREAM;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MISTY_ROSE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MISTY_ROSE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MOCCASIN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::MOCCASIN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_NAVAJO_WHITE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::NAVAJO_WHITE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_NAVY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::NAVY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_OLD_LACE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::OLD_LACE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_OLIVE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::OLIVE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_OLIVE_DRAB_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::OLIVE_DRAB;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ORANGE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::ORANGE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ORANGE_RED_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::ORANGE_RED;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ORCHID_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::ORCHID;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PALE_GOLDEN_ROD_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::PALE_GOLDEN_ROD;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PALE_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::PALE_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PALE_TURQUOISE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::PALE_TURQUOISE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PALE_VIOLET_RED_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::PALE_VIOLET_RED;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PAPAYA_WHIP_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::PAPAYA_WHIP;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PEACH_PUFF_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::PEACH_PUFF;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PERU_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::PERU;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PINK_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::PINK;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PLUM_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::PLUM;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_POWDER_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::POWDER_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PURPLE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::PURPLE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RED_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::RED;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ROSY_BROWN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::ROSY_BROWN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ROYAL_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::ROYAL_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SADDLE_BROWN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SADDLE_BROWN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SALMON_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SALMON;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SANDY_BROWN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SANDY_BROWN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SEA_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SEA_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SEA_SHELL_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SEA_SHELL;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SIENNA_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SIENNA;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SILVER_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SILVER;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SKY_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SKY_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SLATE_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SLATE_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SLATE_GRAY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SLATE_GRAY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SLATE_GREY_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SLATE_GREY;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SNOW_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SNOW;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_SPRING_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::SPRING_GREEN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_STEEL_BLUE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::STEEL_BLUE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TAN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::TAN;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TEAL_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::TEAL;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_THISTLE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::THISTLE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TOMATO_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::TOMATO;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TRANSPARENT_get() {
-  void * jresult ;
+  void * jresult;
   Dali::Vector4 *result = 0 ;
 
   result = (Dali::Vector4 *)&Dali::Color::TRANSPARENT;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TURQUOISE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::TURQUOISE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VIOLET_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::VIOLET;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WHEAT_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::WHEAT;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WHITE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::WHITE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WHITE_SMOKE_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::WHITE_SMOKE;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_YELLOW_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::YELLOW;
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_YELLOW_GREEN_get() {
+  void * jresult;
+  Dali::Vector4 *result = 0 ;
+
+  result = (Dali::Vector4 *)&Dali::Color::YELLOW_GREEN;
   jresult = (void *)result;
   return jresult;
 }
