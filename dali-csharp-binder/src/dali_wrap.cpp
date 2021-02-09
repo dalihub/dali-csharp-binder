@@ -425,6 +425,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/dali-toolkit.h>
 
 #include <dali/devel-api/actors/actor-devel.h>
+#include <dali/devel-api/animation/key-frames-devel.h>
 #include <dali/devel-api/common/stage-devel.h>
 #include <dali/devel-api/events/key-event-devel.h>
 #include <dali/devel-api/events/wheel-event-devel.h>
@@ -28212,6 +28213,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyFrames_Add__SWIG_1(void * jarg1, floa
 
 }
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyFrames_GetKeyFrameCount(void* keyFrames)
+{
+  return (unsigned int) Dali::DevelKeyFrames::GetKeyFrameCount(*((Dali::KeyFrames*)keyFrames));
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyFrames_GetKeyFrame(void* keyFrames, unsigned int index, float* time, void* value)
+{
+  Dali::DevelKeyFrames::GetKeyFrame(*((Dali::KeyFrames*)keyFrames), (size_t)index, *time, *((Property::Value*)value));
+}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Path_Property_POINTS_get() {
   int jresult ;
