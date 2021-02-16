@@ -11,7 +11,6 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/keyboard_focus_manager_wrap.cpp \
   ${dali_csharp_binder_dir}/src/devel-property-wrap.cpp \
   ${dali_csharp_binder_dir}/src/version-check.cpp \
-  ${dali_csharp_binder_dir}/src/autofill-container-wrap.cpp \
   ${dali_csharp_binder_dir}/src/layout-controller.cpp \
   ${dali_csharp_binder_dir}/src/flex-layout.cpp \
   ${dali_csharp_binder_dir}/src/gestures.cpp \
