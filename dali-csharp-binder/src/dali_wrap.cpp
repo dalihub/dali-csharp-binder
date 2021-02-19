@@ -18271,6 +18271,9 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_STENCIL_OPERATION_ON_Z_
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_CULLED_get() {
+  return Dali::Actor::Property::CULLED;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Renderer_Property() {
   void * jresult ;
