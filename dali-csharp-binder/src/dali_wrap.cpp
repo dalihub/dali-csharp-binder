@@ -59314,9 +59314,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_4(char * jar
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char * jarg1, bool jarg2) {
   void * jresult ;
   std::string *arg1 = 0 ;
+  bool arg2 ;
   Dali::ImageDimensions result;
 
   if (!jarg1) {
@@ -59325,9 +59326,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char * jarg1) {
   }
   std::string arg1_str(jarg1);
   arg1 = &arg1_str;
+  arg2 = jarg2 ? true : false;
   {
     try {
-      result = Dali::GetOriginalImageSize((std::string const &)*arg1);
+      result = Dali::GetOriginalImageSize((std::string const &)*arg1,arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::ImageDimensions((const Dali::ImageDimensions &)result);
