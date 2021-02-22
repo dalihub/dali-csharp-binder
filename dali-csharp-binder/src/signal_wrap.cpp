@@ -161,78 +161,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_delete(void *ar
     });
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_Convert_Param1(void *arg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_GetSizeOfGestureInfo(void) {
+    return sizeof(Dali::Accessibility::GestureInfo);
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_GetResult(void *arg1) {
     int result = 0;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        auto gp = (GesturePair*)arg1;
-        result = (int)gp->first.type;
-    });
-    return result;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_Convert_Param2(void *arg1) {
-    int result = 0;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        auto gp = (GesturePair*)arg1;
-        result = gp->first.xBeg;
-    });
-    return result;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_Convert_Param3(void *arg1) {
-    int result = 0;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        auto gp = (GesturePair*)arg1;
-        result = gp->first.xEnd;
-    });
-    return result;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_Convert_Param4(void *arg1) {
-    int result = 0;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        auto gp = (GesturePair*)arg1;
-        result = gp->first.yBeg;
-    });
-    return result;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_Convert_Param5(void *arg1) {
-    int result = 0;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        auto gp = (GesturePair*)arg1;
-        result = gp->first.yEnd;
-    });
-    return result;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_Convert_Param6(void *arg1) {
-    int result = 0;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        auto gp = (GesturePair*)arg1;
-        result = (int)gp->first.state;
-    });
-    return result;
-}
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_Convert_Param7(void *arg1) {
-    unsigned int result = 0;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        auto gp = (GesturePair*)arg1;
-        result = gp->first.eventTime;
-    });
-    return result;
-}
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_Convert_Param8(void *arg1) {
-    unsigned int result = 0;
     GUARD_ON_NULL_RET0(arg1);
     try_catch([&]() {
         auto gp = (GesturePair*)arg1;
