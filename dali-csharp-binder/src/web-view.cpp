@@ -30,9 +30,11 @@
 #include <dali-toolkit/devel-api/controls/web-view/web-form-repost-decision.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-settings.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
+#include <dali/devel-api/adaptor-framework/web-engine-certificate.h>
 #include <dali/devel-api/adaptor-framework/web-engine-console-message.h>
-#include <dali/devel-api/adaptor-framework/web-engine-load-error.h>
 #include <dali/devel-api/adaptor-framework/web-engine-frame.h>
+#include <dali/devel-api/adaptor-framework/web-engine-http-auth-handler.h>
+#include <dali/devel-api/adaptor-framework/web-engine-load-error.h>
 #include <dali/devel-api/adaptor-framework/web-engine-policy-decision.h>
 #include <dali/devel-api/adaptor-framework/web-engine-request-interceptor.h>
 #include <dali/public-api/common/dali-common.h>
@@ -56,7 +58,7 @@
   }
 
 /* Callback for returning strings to C# without leaking memory */
-typedef char *(SWIGSTDCALL *SWIG_CSharpStringHelperCallback)(const char *);
+typedef char *(SWIGSTDCALL *SWIG_CSharpStringHelperCallback)(const char*);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
 #ifdef __cplusplus
@@ -177,10 +179,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_Assign(void * jarg1, void * ja
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_DownCast(void * jarg1) {
   void * jresult;
   Dali::BaseHandle arg1;
-  Dali::BaseHandle *argp1;
+  Dali::BaseHandle* argp1;
   Dali::Toolkit::WebView result;
 
-  argp1 = (Dali::BaseHandle *)jarg1;
+  argp1 = (Dali::BaseHandle*)jarg1;
   if (!argp1) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
     return 0;
@@ -678,7 +680,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void
 
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   std::string exposedObjectName = jarg2;
-  void (*handler)(char *) = (void (*)(char *))jarg3;
+  void (*handler)(char*) = (void (*)(char*))jarg3;
 
   {
     try {
@@ -691,7 +693,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptAlertCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
-  bool (*handler)(char *) = (bool (*)(char *))jarg2;
+  bool (*handler)(char*) = (bool (*)(char*))jarg2;
   {
     try {
       webview->RegisterJavaScriptAlertCallback([handler](const std::string &message) -> bool {
@@ -712,7 +714,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptAlertReply(void * jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptConfirmCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
-  bool (*handler)(char *) = (bool (*)(char *))jarg2;
+  bool (*handler)(char*) = (bool (*)(char*))jarg2;
 
   {
     try {
@@ -734,7 +736,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptConfirmReply(void * ja
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptPromptCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
-  bool (*handler)(char *, char *) = (bool (*)(char *, char *))jarg2;
+  bool (*handler)(char *, char*) = (bool (*)(char *, char*))jarg2;
 
   {
     try {
@@ -922,7 +924,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ClearCookies(void * jarg1) {
 }
 
 SWIGEXPORT Dali::Toolkit::Control *SWIGSTDCALL CSharp_Dali_WebView_SWIGUpcast(Dali::Toolkit::WebView* jarg1) {
-  return (Dali::Toolkit::Control *)jarg1;
+  return (Dali::Toolkit::Control*)jarg1;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WebViewPageLoadSignal_PageLoadStarted(void * jarg1) {
@@ -959,7 +961,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WebViewPageLoadSignal_PageLoadFini
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewPageLoadSignal(void * jarg1) {
-  SignalConverter::WebViewPageLoadSignal *object = (SignalConverter::WebViewPageLoadSignal *)jarg1;
+  SignalConverter::WebViewPageLoadSignal *object = (SignalConverter::WebViewPageLoadSignal*)jarg1;
   {
     try {
       delete object;
@@ -968,7 +970,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewPageLoadSignal(void * jarg
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPageLoadSignal_Connect(void * jarg1, void * jarg2) {
-  SignalConverter::WebViewPageLoadSignal * proxy = (SignalConverter::WebViewPageLoadSignal *)jarg1;
+  SignalConverter::WebViewPageLoadSignal* proxy = (SignalConverter::WebViewPageLoadSignal*)jarg1;
   SignalConverter::WebViewPageLoadSignal::CallbackType callback = (SignalConverter::WebViewPageLoadSignal::CallbackType)jarg2;
   {
     try {
@@ -978,7 +980,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPageLoadSignal_Connect(void * jar
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPageLoadSignal_Disconnect(void * jarg1, void * jarg2) {
-  SignalConverter::WebViewPageLoadSignal * proxy = (SignalConverter::WebViewPageLoadSignal *)jarg1;
+  SignalConverter::WebViewPageLoadSignal* proxy = (SignalConverter::WebViewPageLoadSignal*)jarg1;
   SignalConverter::WebViewPageLoadSignal::CallbackType callback = (SignalConverter::WebViewPageLoadSignal::CallbackType)jarg2;
   {
     try {
@@ -998,7 +1000,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewPageLoadErrorSignal_PageLoad
   return (void*)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewPageLoadErrorSignal(void* jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewPageLoadErrorSignal(void * jarg1) {
   SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>* object = (SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>*)jarg1;
   {
     try {
@@ -1007,7 +1009,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewPageLoadErrorSignal(void* 
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPageLoadErrorSignal_Connect(void* jarg1, void* jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPageLoadErrorSignal_Connect(void * jarg1, void * jarg2) {
   SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>::CallbackType)jarg2;
   {
@@ -1017,7 +1019,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPageLoadErrorSignal_Connect(void*
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPageLoadErrorSignal_Disconnect(void* jarg1, void* jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPageLoadErrorSignal_Disconnect(void * jarg1, void * jarg2) {
   SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>::CallbackType)jarg2;
   {
@@ -1039,7 +1041,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WebViewScrollEdgeReachedSignal_Scr
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewScrollEdgeReachedSignal(void * jarg1) {
-  SignalConverter::WebViewScrollEdgeReachedSignal *object = (SignalConverter::WebViewScrollEdgeReachedSignal *)jarg1;
+  SignalConverter::WebViewScrollEdgeReachedSignal*object = (SignalConverter::WebViewScrollEdgeReachedSignal*)jarg1;
   {
     try {
       delete object;
@@ -1048,7 +1050,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewScrollEdgeReachedSignal(vo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewScrollEdgeReachedSignal_Connect(void * jarg1, void * jarg2) {
-  SignalConverter::WebViewScrollEdgeReachedSignal *proxy = (SignalConverter::WebViewScrollEdgeReachedSignal *)jarg1;
+  SignalConverter::WebViewScrollEdgeReachedSignal* proxy = (SignalConverter::WebViewScrollEdgeReachedSignal*)jarg1;
   SignalConverter::WebViewScrollEdgeReachedSignal::CallbackType callback = (SignalConverter::WebViewScrollEdgeReachedSignal::CallbackType)jarg2;
   {
     try {
@@ -1058,7 +1060,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewScrollEdgeReachedSignal_Connect(v
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewScrollEdgeReachedSignal_Disconnect(void * jarg1, void * jarg2) {
-  SignalConverter::WebViewScrollEdgeReachedSignal *proxy = (SignalConverter::WebViewScrollEdgeReachedSignal *)jarg1;
+  SignalConverter::WebViewScrollEdgeReachedSignal* proxy = (SignalConverter::WebViewScrollEdgeReachedSignal*)jarg1;
   SignalConverter::WebViewScrollEdgeReachedSignal::CallbackType callback = (SignalConverter::WebViewScrollEdgeReachedSignal::CallbackType)jarg2;
   {
     try {
@@ -1079,7 +1081,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WebViewUrlChangedSignal_UrlChanged
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewUrlChangedSignal(void * jarg1) {
-  SignalConverter::WebViewUrlChangedSignal *object = (SignalConverter::WebViewUrlChangedSignal *)jarg1;
+  SignalConverter::WebViewUrlChangedSignal* object = (SignalConverter::WebViewUrlChangedSignal*)jarg1;
   {
     try {
       delete object;
@@ -1088,7 +1090,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewUrlChangedSignal(void * ja
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewUrlChangedSignal_Connect(void * jarg1, void * jarg2) {
-  SignalConverter::WebViewUrlChangedSignal *proxy = (SignalConverter::WebViewUrlChangedSignal *)jarg1;
+  SignalConverter::WebViewUrlChangedSignal* proxy = (SignalConverter::WebViewUrlChangedSignal*)jarg1;
   SignalConverter::WebViewUrlChangedSignal::CallbackType callback = (SignalConverter::WebViewUrlChangedSignal::CallbackType)jarg2;
   {
     try {
@@ -1218,7 +1220,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewRequestInterceptorSignal_Disconne
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewConsoleMessageSignal_ConsoleMessage(void* jarg1) {
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewConsoleMessageSignal_ConsoleMessage(void * jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>* result = 0;
   {
@@ -1229,7 +1231,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewConsoleMessageSignal_Console
   return (void*)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewConsoleMessageSignal(void* jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewConsoleMessageSignal(void * jarg1) {
   SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>* object = (SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>*)jarg1;
   {
     try {
@@ -1238,7 +1240,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewConsoleMessageSignal(void*
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewConsoleMessageSignal_Connect(void* jarg1, void* jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewConsoleMessageSignal_Connect(void * jarg1, void * jarg2) {
   SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>::CallbackType)jarg2;
   {
@@ -1248,7 +1250,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewConsoleMessageSignal_Connect(void
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewConsoleMessageSignal_Disconnect(void* jarg1, void* jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewConsoleMessageSignal_Disconnect(void * jarg1, void * jarg2) {
   SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineConsoleMessage>::CallbackType)jarg2;
   {
@@ -1258,7 +1260,58 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewConsoleMessageSignal_Disconnect(v
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewPolicyDecisionSignal_PolicyDecision(void* jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WebViewCertificateSignal_CertificateConfirm(void * jarg1) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>* result = 0;
+  {
+    try {
+      result = new SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>(&webview->CertificateConfirmSignal());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void*)result;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewCertificateSignal_SslCertificateChanged(void * jarg1) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>* result = 0;
+  {
+    try {
+      result = new SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>(&webview->SslCertificateChangedSignal());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void*)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewCertificateSignal(void * jarg1) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>* object = (SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>*)jarg1;
+  {
+    try {
+      delete object;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewCertificateSignal_Connect(void * jarg1, void * jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>::CallbackType)jarg2;
+  {
+    try {
+      proxy->Connect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewCertificateSignal_Disconnect(void * jarg1, void * jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineCertificate>::CallbackType)jarg2;
+  {
+    try {
+      proxy->Disconnect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewPolicyDecisionSignal_PolicyDecision(void * jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>* result = 0;
   {
@@ -1269,7 +1322,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewPolicyDecisionSignal_PolicyD
   return (void*)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewPolicyDecisionSignal(void* jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewPolicyDecisionSignal(void * jarg1) {
   SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>* object = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>*)jarg1;
   {
     try {
@@ -1278,7 +1331,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewPolicyDecisionSignal(void*
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPolicyDecisionSignal_Connect(void *jarg1, void *jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPolicyDecisionSignal_Connect(void * jarg1, void * jarg2) {
   SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>::CallbackType)jarg2;
   {
@@ -1288,9 +1341,49 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPolicyDecisionSignal_Connect(void
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPolicyDecisionSignal_Disconnect(void *jarg1, void *jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPolicyDecisionSignal_Disconnect(void * jarg1, void * jarg2) {
   SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>::CallbackType)jarg2;
+  {
+    try {
+      proxy->Disconnect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewHttpAuthHandlerSignal_HttpAuthHandler(void * jarg1) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>* result = 0;
+  {
+    try {
+      result = new SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>(&webview->HttpAuthHandlerSignal());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void*)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewHttpAuthHandlerSignal(void * jarg1) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>* object = (SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>*)jarg1;
+  {
+    try {
+      delete object;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewHttpAuthHandlerSignal_Connect(void * jarg1, void * jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>::CallbackType)jarg2;
+  {
+    try {
+      proxy->Connect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewHttpAuthHandlerSignal_Disconnect(void * jarg1, void * jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineHttpAuthHandler>::CallbackType)jarg2;
   {
     try {
       proxy->Disconnect(callback);
@@ -1419,6 +1512,50 @@ SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebConsoleMessage_GetText(void* j
   return jresult;
 }
 
+//----------------------------------WebCertificate-----------------------------------------------------
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCertificate_Allow(void * jarg1, bool jarg2) {
+  Dali::WebEngineCertificate *arg1 = (Dali::WebEngineCertificate*)jarg1;
+  {
+    try {
+      (arg1)->Allow(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebCertificate_IsFromMainFrame(void * jarg1) {
+  Dali::WebEngineCertificate* arg1 = (Dali::WebEngineCertificate*)jarg1;
+  bool ret;
+  {
+    try {
+      ret = (arg1)->IsFromMainFrame();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT const char *SWIGSTDCALL CSharp_Dali_WebCertificate_GetPem(void * jarg1) {
+  Dali::WebEngineCertificate* arg1 = (Dali::WebEngineCertificate*)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetPem();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char *jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebCertificate_IsContextSecure(void * jarg1) {
+  Dali::WebEngineCertificate* arg1 = (Dali::WebEngineCertificate*)jarg1;
+  bool ret;
+  {
+    try {
+      ret = (arg1)->IsContextSecure();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
 //----------------------------------WebContext-----------------------------------------------------
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebContext_GetCacheModel(void * jarg1) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
@@ -1537,10 +1674,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_ClearCache(void * jarg1) {
 
 //----------------------------------WebCookieManager---------------------------------------------------
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebCookieManager_GetCookieAcceptPolicy(void * jarg1) {
-  Dali::Toolkit::WebCookieManager *arg1 = (Dali::Toolkit::WebCookieManager *)0;
+  Dali::Toolkit::WebCookieManager* arg1 = (Dali::Toolkit::WebCookieManager*)0;
   int ret;
 
-  arg1 = (Dali::Toolkit::WebCookieManager *)jarg1;
+  arg1 = (Dali::Toolkit::WebCookieManager*)jarg1;
   {
     try {
       ret = (int)(arg1)->GetCookieAcceptPolicy();
@@ -1550,9 +1687,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebCookieManager_GetCookieAcceptPolicy(vo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_SetCookieAcceptPolicy(void * jarg1, int jarg2) {
-  Dali::Toolkit::WebCookieManager *arg1 = (Dali::Toolkit::WebCookieManager *)0;
-
-  arg1 = (Dali::Toolkit::WebCookieManager *)jarg1;
+  Dali::Toolkit::WebCookieManager* arg1 = (Dali::Toolkit::WebCookieManager*)0;
+  arg1 = (Dali::Toolkit::WebCookieManager*)jarg1;
   {
     try {
       (arg1)->SetCookieAcceptPolicy(
@@ -1562,9 +1698,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_SetCookieAcceptPolicy(v
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_SetPersistentStorage(void * jarg1, const char * jarg2, int jarg3) {
-  Dali::Toolkit::WebCookieManager *arg1 = (Dali::Toolkit::WebCookieManager *)0;
+  Dali::Toolkit::WebCookieManager* arg1 = (Dali::Toolkit::WebCookieManager*)0;
 
-  arg1 = (Dali::Toolkit::WebCookieManager *)jarg1;
+  arg1 = (Dali::Toolkit::WebCookieManager*)jarg1;
   std::string arg2_str(jarg2);
   Dali::WebEngineCookieManager::CookiePersistentStorage arg3_enum = (Dali::WebEngineCookieManager::CookiePersistentStorage)jarg3;
   {
@@ -1575,9 +1711,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_SetPersistentStorage(vo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ClearCookies(void * jarg1) {
-  Dali::Toolkit::WebCookieManager *arg1 = (Dali::Toolkit::WebCookieManager *)0;
+  Dali::Toolkit::WebCookieManager* arg1 = (Dali::Toolkit::WebCookieManager*)0;
 
-  arg1 = (Dali::Toolkit::WebCookieManager *)jarg1;
+  arg1 = (Dali::Toolkit::WebCookieManager*)jarg1;
   {
     try {
       (arg1)->ClearCookies();
@@ -1794,6 +1930,49 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponseBody(vo
   return ret;
 }
 
+//----------------------------------WebHttpAuthHandler---------------------------------------------------
+SWIGEXPORT const char *SWIGSTDCALL CSharp_Dali_WebHttpAuthHandler_GetRealm(void * jarg1) {
+  Dali::WebEngineHttpAuthHandler* arg1 = (Dali::WebEngineHttpAuthHandler*)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetRealm();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char *jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebHttpAuthHandler_Suspend(void * jarg1) {
+  Dali::WebEngineHttpAuthHandler* arg1 = (Dali::WebEngineHttpAuthHandler*)jarg1;
+  {
+    try {
+      (arg1)->Suspend();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebHttpAuthHandler_UseCredential(
+    void * jarg1, const char *jarg2, const char *jarg3) {
+  Dali::WebEngineHttpAuthHandler* arg1 = (Dali::WebEngineHttpAuthHandler*)jarg1;
+  std::string arg2_str(jarg2);
+  std::string arg3_str(jarg3);
+  {
+    try {
+      (arg1)->UseCredential(arg2_str, arg3_str);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebHttpAuthHandler_CancelCredential(void * jarg1) {
+  Dali::WebEngineHttpAuthHandler* arg1 = (Dali::WebEngineHttpAuthHandler*)jarg1;
+  {
+    try {
+      (arg1)->CancelCredential();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 //----------------------------------WebLoadError-----------------------------------------------------
 SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebLoadError_GetUrl(void* jarg1) {
   Dali::WebEngineLoadError* arg1 = (Dali::WebEngineLoadError*)jarg1;
@@ -1899,7 +2078,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableWebSecurity(void * jar
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableCacheBuilder(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableCacheBuilder(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -1910,7 +2089,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableCacheBuilder(void* jar
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_UseScrollbarThumbFocusNotifications(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_UseScrollbarThumbFocusNotifications(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -1921,7 +2100,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_UseScrollbarThumbFocusNotifi
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableDoNotTrack(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableDoNotTrack(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -1980,7 +2159,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsAutoFittingEnabled(void * 
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableAutoFitting(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableAutoFitting(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2004,7 +2183,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_ArePluginsEnabled(void * jar
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnablePlugins(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnablePlugins(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2028,7 +2207,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsPrivateBrowsingEnabled(voi
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnablePrivateBrowsing(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnablePrivateBrowsing(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2052,7 +2231,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsLinkMagnifierEnabled(void 
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableLinkMagnifier(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableLinkMagnifier(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2076,7 +2255,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsKeypadWithoutUserActionUse
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_UseKeypadWithoutUserAction(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_UseKeypadWithoutUserAction(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2100,7 +2279,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsAutofillPasswordFormEnable
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableAutofillPasswordForm(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableAutofillPasswordForm(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2124,7 +2303,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsFormCandidateDataEnabled(v
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableFormCandidateData(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableFormCandidateData(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2148,7 +2327,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsTextSelectionEnabled(void 
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableTextSelection(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableTextSelection(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2172,7 +2351,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsTextAutosizingEnabled(void
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableTextAutosizing(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableTextAutosizing(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2196,7 +2375,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsArrowScrollEnabled(void * 
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableArrowScroll(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableArrowScroll(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2220,7 +2399,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsClipboardEnabled(void * ja
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableClipboard(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableClipboard(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
@@ -2244,7 +2423,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsImePanelEnabled(void * jar
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableImePanel(void* jarg1, bool jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableImePanel(void * jarg1, bool jarg2) {
   Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
 
   arg1 = (Dali::Toolkit::WebSettings*)jarg1;
