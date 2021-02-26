@@ -20,6 +20,9 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/application.cpp \
   ${dali_csharp_binder_dir}/src/text-editor.cpp \
   ${dali_csharp_binder_dir}/src/text-field.cpp \
+  ${dali_csharp_binder_dir}/src/transition-base.cpp \
+  ${dali_csharp_binder_dir}/src/transition.cpp \
+  ${dali_csharp_binder_dir}/src/transition-set.cpp \
   ${dali_csharp_binder_dir}/src/window.cpp \
   ${dali_csharp_binder_dir}/src/tts-player.cpp \
   ${dali_csharp_binder_dir}/src/input-method-context.cpp \
