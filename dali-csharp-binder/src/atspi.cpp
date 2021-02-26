@@ -57,6 +57,14 @@ void sayTestCallback(std::string result)
     {
       callBack(3);
     }
+    else if(result == "ReadingPaused")
+    {
+      callBack(4);
+    }
+    else if(result == "ReadingResumed")
+    {
+      callBack(5);
+    }
     else
     {
       callBack(-1);
