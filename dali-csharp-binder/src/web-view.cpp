@@ -26,14 +26,15 @@
 #include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-context.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-cookie-manager.h>
-#include <dali-toolkit/devel-api/controls/web-view/web-form-repost-decision.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-settings.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
 #include <dali/devel-api/adaptor-framework/web-engine-certificate.h>
 #include <dali/devel-api/adaptor-framework/web-engine-context-menu.h>
 #include <dali/devel-api/adaptor-framework/web-engine-context-menu-item.h>
 #include <dali/devel-api/adaptor-framework/web-engine-console-message.h>
+#include <dali/devel-api/adaptor-framework/web-engine-form-repost-decision.h>
 #include <dali/devel-api/adaptor-framework/web-engine-frame.h>
+#include <dali/devel-api/adaptor-framework/web-engine-hit-test.h>
 #include <dali/devel-api/adaptor-framework/web-engine-http-auth-handler.h>
 #include <dali/devel-api/adaptor-framework/web-engine-load-error.h>
 #include <dali/devel-api/adaptor-framework/web-engine-policy-decision.h>
@@ -113,7 +114,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_New_2(char * jarg1, char * jar
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_New_3(int jarg1, char ** jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_New_3(uint32_t jarg1, char ** jarg2) {
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "jarg2 is null string", 0);
     return 0;
@@ -579,7 +580,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_StopInspectorServer(void * jarg1
   return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ScrollBy(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ScrollBy(void * jarg1, int32_t jarg2, int32_t jarg3) {
   Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
   arg1 = (Dali::Toolkit::WebView*)jarg1;
   {
@@ -589,7 +590,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ScrollBy(void * jarg1, int jarg2
   }
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_ScrollEdgeBy(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_ScrollEdgeBy(void * jarg1, int32_t jarg2, int32_t jarg3) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   bool result = false;
   {
@@ -762,6 +763,33 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptPromptReply(void * jar
   }
 }
 
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebView_CreateHitTest(void * jarg1, int32_t jarg2, int32_t jarg3, int jarg4) {
+  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)jarg1;
+  Dali::WebEngineHitTest* result = 0;
+  {
+    try {
+      std::unique_ptr<Dali::WebEngineHitTest> hitTest = (arg1)->CreateHitTest(jarg2, jarg3, (Dali::WebEngineHitTest::HitTestMode)jarg4);
+      result = hitTest.release();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void *)result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CreateHitTestAsynchronously(void * jarg1, int32_t jarg2, int32_t jarg3, int jarg4, void * jarg5) {
+  Dali::Toolkit::WebView *webview = (Dali::Toolkit::WebView *)jarg1;
+  bool (*handler)(Dali::WebEngineHitTest*) = (bool (*)(Dali::WebEngineHitTest*))jarg5;
+  bool result = false;
+  {
+    try {
+      result = webview->CreateHitTestAsynchronously(jarg2, jarg3, (Dali::WebEngineHitTest::HitTestMode)jarg4,
+          [handler](std::unique_ptr<Dali::WebEngineHitTest> hitTest) -> bool {
+            return handler(hitTest.release());
+          });
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ClearHistory(void * jarg1) {
   Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
 
@@ -843,7 +871,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddDynamicCertificatePath(void *
 
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebView_GetScreenshot(void * jarg1, void * jarg2, float jarg3) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  Dali::Rect<int> *arg = (Dali::Rect<int> *)jarg2;
+  Dali::Rect<int32_t> *arg = (Dali::Rect<int32_t> *)jarg2;
   Dali::Toolkit::ImageView result;
   {
     try {
@@ -866,7 +894,7 @@ void OnWebViewScreenshotCapturedCallback(Dali::Toolkit::ImageView imageView) {
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_GetScreenshotAsynchronously(void * jarg1, void * jarg2, float jarg3, void * jarg4) {
   swig_callbackOnWebViewScreenshotCaptured = (SWIG_CallbackWebViewScreenshotCaptured)jarg4;
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  Dali::Rect<int> *arg2 = (Dali::Rect<int> *)jarg2;
+  Dali::Rect<int32_t> *arg2 = (Dali::Rect<int32_t> *)jarg2;
   Dali::Toolkit::WebView::WebViewScreenshotCapturedCallback callback = OnWebViewScreenshotCapturedCallback;
   bool result;
   {
@@ -992,7 +1020,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewPageLoadSignal_Disconnect(void * 
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewPageLoadErrorSignal_PageLoadError(void* jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WebViewPageLoadErrorSignal_PageLoadError(void * jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineLoadError>* result = 0;
   {
@@ -1194,17 +1222,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuItemSelectedSignal_Dis
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewFormRepostDecisionSignal_FormRepostDecision(void* jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
-  SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>* result = 0;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>* result = 0;
   {
     try {
-      result = new SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>(&webview->FormRepostDecisionSignal());
+      result = new SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>(&webview->FormRepostDecisionSignal());
     } CALL_CATCH_EXCEPTION(0);
   }
   return (void*)result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewFormRepostDecisionSignal(void* jarg1) {
-  SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>* object = (SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>* object = (SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>*)jarg1;
   {
     try {
       delete object;
@@ -1213,8 +1241,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewFormRepostDecisionSignal(v
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewFormRepostDecisionSignal_Connect(void* jarg1, void* jarg2) {
-  SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>* proxy = (SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>*)jarg1;
-  SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>::CallbackType)jarg2;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>::CallbackType)jarg2;
   {
     try {
       proxy->Connect(callback);
@@ -1223,8 +1251,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewFormRepostDecisionSignal_Connect(
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewFormRepostDecisionSignal_Disconnect(void* jarg1, void* jarg2) {
-  SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>* proxy = (SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>*)jarg1;
-  SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>::CallbackType)jarg2;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineFormRepostDecision>::CallbackType)jarg2;
   {
     try {
       proxy->Disconnect(callback);
@@ -1514,9 +1542,9 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetOrigin
   return jresult;
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetItemCount(void * jarg1) {
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetItemCount(void * jarg1) {
   Dali::Toolkit::WebBackForwardList *arg1 = (Dali::Toolkit::WebBackForwardList *)0;
-  unsigned int result = 0;
+  uint32_t result = 0;
   arg1 = (Dali::Toolkit::WebBackForwardList *)jarg1;
   {
     try {
@@ -2266,7 +2294,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ClearCookies(void * jar
 
 //----------------------------------WebFormRepostDecision---------------------------------------------------
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebFormRepostDecision_Reply(void *jarg1, bool jarg2) {
-  Dali::Toolkit::WebFormRepostDecision* arg1 = (Dali::Toolkit::WebFormRepostDecision*)jarg1;
+  Dali::WebEngineFormRepostDecision* arg1 = (Dali::WebEngineFormRepostDecision*)jarg1;
   {
     try {
       arg1->Reply(jarg2);
@@ -2684,8 +2712,153 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebSecurityOriginList_ValueOfIndex(voi
       result = ((arg1)->operator[](jarg2)).get();
     } CALL_CATCH_EXCEPTION(0);
   }
-
   return result;
+}
+
+//----------------------------------WebHitTest---------------------------------------------------
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebEngineHitTest(void * jarg1) {
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebEngineHitTest is null", 0);
+    return;
+  }
+
+  Dali::WebEngineHitTest* arg1 = (Dali::WebEngineHitTest*)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebHitTest_GetResultContext(void * jarg1) {
+  Dali::WebEngineHitTest *arg1 = (Dali::WebEngineHitTest *)jarg1;
+  int ret;
+  {
+    try {
+      ret = (int)(arg1)->GetResultContext();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebHitTest_GetLinkUri(void * jarg1) {
+  Dali::WebEngineHitTest *arg1 = (Dali::WebEngineHitTest *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetLinkUri();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char *jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebHitTest_GetLinkTitle(void * jarg1) {
+  Dali::WebEngineHitTest *arg1 = (Dali::WebEngineHitTest *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetLinkTitle();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char *jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebHitTest_GetLinkLabel(void * jarg1) {
+  Dali::WebEngineHitTest *arg1 = (Dali::WebEngineHitTest *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetLinkLabel();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char *jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebHitTest_GetImageUri(void * jarg1) {
+  Dali::WebEngineHitTest *arg1 = (Dali::WebEngineHitTest *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetImageUri();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char * jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebHitTest_GetMediaUri(void * jarg1) {
+  Dali::WebEngineHitTest *arg1 = (Dali::WebEngineHitTest *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetMediaUri();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char * jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebHitTest_GetTagName(void * jarg1) {
+  Dali::WebEngineHitTest *arg1 = (Dali::WebEngineHitTest *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetTagName();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char *jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebHitTest_GetNodeValue(void * jarg1) {
+  Dali::WebEngineHitTest * arg1 = (Dali::WebEngineHitTest *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetNodeValue();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char * jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebHitTest_GetAttributes(void * jarg1) {
+  Dali::WebEngineHitTest *arg1 = (Dali::WebEngineHitTest *)jarg1;
+  Dali::Property::Map *result = 0;
+  {
+    try {
+      result = &(arg1)->GetAttributes();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void *)result;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebHitTest_GetImageFileNameExtension(void * jarg1) {
+  Dali::WebEngineHitTest *arg1 = (Dali::WebEngineHitTest *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetImageFileNameExtension();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char *jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebHitTest_GetImageBuffer(void * jarg1) {
+  Dali::WebEngineHitTest* arg1 = (Dali::WebEngineHitTest *)jarg1;
+  Dali::PixelData result;
+  {
+    try {
+      result = (arg1)->GetImageBuffer();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  Dali::PixelData* jresult = new Dali::PixelData((const Dali::PixelData &)result);
+  return (void *)jresult;
 }
 
 //----------------------------------WebSettings---------------------------------------------------
