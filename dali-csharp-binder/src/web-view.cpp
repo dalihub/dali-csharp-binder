@@ -1314,6 +1314,42 @@ CSharp_Dali_WebSettings_EnableWebSecurity(void *jarg1, bool jarg2) {
 }
 
 SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableCacheBuilder(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableCacheBuilder(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_UseScrollbarThumbFocusNotifications(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->UseScrollbarThumbFocusNotifications(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableDoNotTrack(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableDoNotTrack(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL
 CSharp_Dali_WebSettings_AllowFileAccessFromExternalUrl(void *jarg1,
                                                        bool jarg2) {
   Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
@@ -1352,6 +1388,330 @@ CSharp_Dali_WebSettings_EnableJavaScript(void *jarg1, bool jarg2) {
       (arg1)->EnableJavaScript(jarg2);
     }
     CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsAutoFittingEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsAutoFittingEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableAutoFitting(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableAutoFitting(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_ArePluginsEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->ArePluginsEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnablePlugins(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnablePlugins(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsPrivateBrowsingEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsPrivateBrowsingEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnablePrivateBrowsing(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnablePrivateBrowsing(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsLinkMagnifierEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsLinkMagnifierEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableLinkMagnifier(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableLinkMagnifier(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsKeypadWithoutUserActionUsed(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsKeypadWithoutUserActionUsed();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_UseKeypadWithoutUserAction(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->UseKeypadWithoutUserAction(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsAutofillPasswordFormEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsAutofillPasswordFormEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableAutofillPasswordForm(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableAutofillPasswordForm(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsFormCandidateDataEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsFormCandidateDataEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableFormCandidateData(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableFormCandidateData(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsTextSelectionEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsTextSelectionEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableTextSelection(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableTextSelection(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsTextAutosizingEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsTextAutosizingEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableTextAutosizing(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableTextAutosizing(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsArrowScrollEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsArrowScrollEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableArrowScroll(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableArrowScroll(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsClipboardEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsClipboardEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableClipboard(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableClipboard(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_WebSettings_IsImePanelEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsImePanelEnabled();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_WebSettings_EnableImePanel(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings* arg1 = (Dali::Toolkit::WebSettings*) 0;
+
+  arg1 = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      (arg1)->EnableImePanel(jarg2);
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
