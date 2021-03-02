@@ -23,14 +23,16 @@
 
 #include "web-view-signal-converter.h"
 
-#include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list-item.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
+#include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list-item.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-context.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-cookie-manager.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-form-repost-decision.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-settings.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
 #include <dali/devel-api/adaptor-framework/web-engine-certificate.h>
+#include <dali/devel-api/adaptor-framework/web-engine-context-menu.h>
+#include <dali/devel-api/adaptor-framework/web-engine-context-menu-item.h>
 #include <dali/devel-api/adaptor-framework/web-engine-console-message.h>
 #include <dali/devel-api/adaptor-framework/web-engine-frame.h>
 #include <dali/devel-api/adaptor-framework/web-engine-http-auth-handler.h>
@@ -76,7 +78,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_New() {
       result = Dali::Toolkit::WebView::New();
     } CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Toolkit::WebView((const Dali::Toolkit::WebView &)result);
+  jresult = new Dali::Toolkit::WebView((const Dali::Toolkit::WebView&)result);
   return jresult;
 }
 
@@ -107,7 +109,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_New_2(char * jarg1, char * jar
       result = Dali::Toolkit::WebView::New((std::string const &)*arg1, (std::string const &)*arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Toolkit::WebView((const Dali::Toolkit::WebView &)result);
+  jresult = new Dali::Toolkit::WebView((const Dali::Toolkit::WebView&)result);
   return jresult;
 }
 
@@ -194,7 +196,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_DownCast(void * jarg1) {
       result = Dali::Toolkit::WebView::DownCast(arg1);
     } CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Toolkit::WebView((const Dali::Toolkit::WebView &)result);
+  jresult = new Dali::Toolkit::WebView((const Dali::Toolkit::WebView&)result);
   return jresult;
 }
 
@@ -1110,6 +1112,86 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewUrlChangedSignal_Disconnect(void 
   }
 }
 
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_ContextMenuCustomized(void * jarg1) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* result = 0;
+  {
+    try {
+      result = new SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>(&webview->ContextMenuCustomizedSignal());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void*)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewContextMenuCustomizedSignal(void * jarg1) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* object = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>*)jarg1;
+  {
+    try {
+      delete object;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_Connect(void * jarg1, void * jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType)jarg2;
+  {
+    try {
+      proxy->Connect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_Disconnect(void * jarg1, void * jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType)jarg2;
+  {
+    try {
+      proxy->Disconnect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebViewContextMenuItemSelectedSignal_ContextMenuItemSelected(void * jarg1) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>* result = 0;
+  {
+    try {
+      result = new SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>(&webview->ContextMenuItemSelectedSignal());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void*)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewContextMenuItemSelectedSignal(void * jarg1) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>* object = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>*)jarg1;
+  {
+    try {
+      delete object;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuItemSelectedSignal_Connect(void * jarg1, void * jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>::CallbackType)jarg2;
+  {
+    try {
+      proxy->Connect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuItemSelectedSignal_Disconnect(void * jarg1, void * jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>::CallbackType)jarg2;
+  {
+    try {
+      proxy->Disconnect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewFormRepostDecisionSignal_FormRepostDecision(void* jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::Toolkit::WebFormRepostDecision>* result = 0;
@@ -1789,6 +1871,256 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterMimeOverriddenCallbac
           });
     } CALL_CATCH_EXCEPTION();
   }
+}
+
+//----------------------------------WebContextMenu---------------------------------------------------
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebContextMenu(void * jarg1) {
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebContextMenu is null", 0);
+    return;
+  }
+
+  Dali::WebEngineContextMenu* arg1 = (Dali::WebEngineContextMenu*)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_WebContextMenu_GetItemCount(void *jarg1) {
+  Dali::WebEngineContextMenu *arg1 = (Dali::WebEngineContextMenu *)jarg1;
+  uint32_t ret;
+  {
+    try {
+      ret = (arg1)->GetItemCount();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebContextMenu_GetItemAt(void *jarg1, uint32_t jarg2) {
+  Dali::WebEngineContextMenu *arg1 = (Dali::WebEngineContextMenu *)jarg1;
+  Dali::WebEngineContextMenuItem *result = 0;
+  {
+    try {
+      std::unique_ptr<Dali::WebEngineContextMenuItem> item = (arg1)->GetItemAt(jarg2);
+      result = item.release();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void *)result;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebContextMenu_GetItemList(void *jarg1) {
+  Dali::WebEngineContextMenu *arg1 = (Dali::WebEngineContextMenu *)jarg1;
+  std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>* result = nullptr;
+  {
+    try {
+      result = new std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>();
+      std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>> itemList = (arg1)->GetItemList();
+      result->swap(itemList);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void *)result;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebContextMenu_GetPosition(void * jarg1) {
+  Dali::WebEngineContextMenu* arg1 = (Dali::WebEngineContextMenu*)jarg1;
+  Dali::Vector2 result;
+  {
+    try {
+      result = (arg1)->GetPosition();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void *)new Dali::Vector2((const Dali::Vector2&)result);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContextMenu_RemoveItem(void *jarg1, void *jarg2) {
+  Dali::WebEngineContextMenu *arg1 = (Dali::WebEngineContextMenu *)jarg1;
+  bool result = 0;
+  {
+    try {
+      result = (arg1)->RemoveItem(*((Dali::WebEngineContextMenuItem*)jarg2));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContextMenu_AppendItemAsAction(void *jarg1, int jarg2, const char *jarg3, bool jarg4) {
+  Dali::WebEngineContextMenu *arg1 = (Dali::WebEngineContextMenu *)jarg1;
+  bool result = 0;
+  {
+    try {
+      result = (arg1)->AppendItemAsAction((Dali::WebEngineContextMenuItem::ItemTag)jarg2, jarg3, jarg4);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContextMenu_AppendItem(void *jarg1, int jarg2, const char *jarg3, const char *jarg4, bool jarg5) {
+  Dali::WebEngineContextMenu *arg1 = (Dali::WebEngineContextMenu *)jarg1;
+  bool result = 0;
+  {
+    try {
+      result = (arg1)->AppendItem((Dali::WebEngineContextMenuItem::ItemTag)jarg2, jarg3, jarg4, jarg5);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContextMenu_SelectItem(void *jarg1, void *jarg2) {
+  Dali::WebEngineContextMenu *arg1 = (Dali::WebEngineContextMenu *)jarg1;
+  bool result = 0;
+  {
+    try {
+      result = (arg1)->SelectItem(*((Dali::WebEngineContextMenuItem*)jarg2));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContextMenu_Hide(void *jarg1) {
+  Dali::WebEngineContextMenu *arg1 = (Dali::WebEngineContextMenu *)jarg1;
+  bool result = 0;
+  {
+    try {
+      result = (arg1)->Hide();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+//----------------------------------WebContextMenuItem---------------------------------------------------
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebContextMenuItem(void * jarg1) {
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebContextMenuItem is null", 0);
+    return;
+  }
+
+  Dali::WebEngineContextMenuItem* arg1 = (Dali::WebEngineContextMenuItem*)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebContextMenuItem_GetTag(void *jarg1) {
+  Dali::WebEngineContextMenuItem *arg1 = (Dali::WebEngineContextMenuItem *)jarg1;
+  int result = 0;
+  {
+    try {
+      result = (int)(arg1)->GetTag();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebContextMenuItem_GetType(void *jarg1) {
+  Dali::WebEngineContextMenuItem *arg1 = (Dali::WebEngineContextMenuItem *)jarg1;
+  int result = 0;
+  {
+    try {
+      result = (int)(arg1)->GetType();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContextMenuItem_IsEnabled(void *jarg1) {
+  Dali::WebEngineContextMenuItem *arg1 = (Dali::WebEngineContextMenuItem *)jarg1;
+  bool result = 0;
+  {
+    try {
+      result = (arg1)->IsEnabled();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContextMenuItem_GetLinkUrl(void *jarg1) {
+  Dali::WebEngineContextMenuItem *arg1 = (Dali::WebEngineContextMenuItem *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetLinkUrl();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char *jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContextMenuItem_GetImageUrl(void *jarg1) {
+  Dali::WebEngineContextMenuItem *arg1 = (Dali::WebEngineContextMenuItem *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetImageUrl();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char *jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContextMenuItem_GetTitle(void *jarg1) {
+  Dali::WebEngineContextMenuItem *arg1 = (Dali::WebEngineContextMenuItem *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetTitle();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char *jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebContextMenuItem_GetParentMenu(void *jarg1) {
+  Dali::WebEngineContextMenuItem* arg1 = (Dali::WebEngineContextMenuItem*)jarg1;
+  Dali::WebEngineContextMenu* result = 0;
+  {
+    try {
+      std::unique_ptr<Dali::WebEngineContextMenu> item = (arg1)->GetParentMenu();
+      result = item.release();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void *)result;
+}
+
+//----------------------------------WebContextMenuItemList---------------------------------------------------
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebContextMenu_ItemList(void * jarg1) {
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebContextMenu ItemList is null", 0);
+    return;
+  }
+
+  std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>*)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_WebContextMenu_ItemList_GetItemCount(void* jarg1) {
+  std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>*)jarg1;
+  uint32_t result = 0;
+  {
+    try {
+      result = (arg1)->size();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebContextMenu_ItemList_ValueOfIndex(void* jarg1, unsigned int jarg2) {
+  std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>*)jarg1;
+  Dali::WebEngineContextMenuItem* result = 0;
+  {
+    try {
+      result = ((arg1)->operator[](jarg2)).get();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
 }
 
 //----------------------------------WebCookieManager---------------------------------------------------
