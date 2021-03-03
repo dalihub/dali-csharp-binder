@@ -289,6 +289,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_KEY_EVENTS_ENABLED_get()
   return (int) Dali::Toolkit::WebView::Property::KEY_EVENTS_ENABLED;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_DOCUMENT_BACKGROUND_COLOR_get() {
+  return (int)Dali::Toolkit::WebView::Property::DOCUMENT_BACKGROUND_COLOR;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_TILES_CLEARED_WHEN_HIDDEN_get() {
+  return (int)Dali::Toolkit::WebView::Property::TILES_CLEARED_WHEN_HIDDEN;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_TILE_COVER_AREA_MULTIPLIER_get() {
+  return (int)Dali::Toolkit::WebView::Property::TILE_COVER_AREA_MULTIPLIER;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_CURSOR_ENABLED_BY_CLIENT_get() {
+  return (int)Dali::Toolkit::WebView::Property::CURSOR_ENABLED_BY_CLIENT;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_SELECTED_TEXT_get() {
+  return (int)Dali::Toolkit::WebView::Property::SELECTED_TEXT;
+}
+
 //@DEPRECATED_2_0.9.
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_CACHE_MODEL_get() {
   return 0;
