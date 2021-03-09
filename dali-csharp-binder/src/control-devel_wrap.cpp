@@ -350,6 +350,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_delete_States(void 
     });
 }
 
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Copy(void *arg1) {
+    Dali::Accessibility::States *result = nullptr;
+    GUARD_ON_NULL_RET0(arg1);
+    try_catch([&]() {
+       auto &states = *static_cast<Dali::Accessibility::States *>(arg1);
+       result = new Dali::Accessibility::States(states);
+    });
+    return result;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibilityStateChange(void *arg1, void *arg2, int arg3) {
     GUARD_ON_NULL_RET(arg1);
     GUARD_ON_NULL_RET(arg2);
@@ -361,8 +371,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibility
     });
 }
 
-//DALI_TOOLKIT_API void SetAccessibilityConstructor( Dali::Actor control, std::function<std::unique_ptr<Dali::Accessibility::Accessible>(Dali::Actor)> constructor);
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetBoundAccessibilityObject(void *arg1) {
     Dali::Accessibility::Accessible *result = nullptr;
     GUARD_ON_NULL_RET0(arg1);
@@ -373,7 +381,118 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetBoundAccessibil
     return (void*)result;
 }
 
-#ifdef __cplusplus
-}
-#endif
+/***********************************************
+ **************** Accessibility ****************
+ ***********************************************/
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityEvent(void *arg1, int arg2_event) {
+    GUARD_ON_NULL_RET(arg1);
+    try_catch([&]() {
+        Dali::Actor *control = (Dali::Actor*) arg1;
+        auto accessible = GetBoundAccessibilityObject(*control);
+        if (accessible)
+            accessible->Emit((Dali::Accessibility::ObjectPropertyChangeEvent)arg2_event);
+        else
+            SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
+    });
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityStateChangedEvent(void *arg1, int arg2_state, int arg3) {
+    GUARD_ON_NULL_RET(arg1);
+    try_catch([&]() {
+        Dali::Actor *control = (Dali::Actor*) arg1;
+        auto accessible = GetBoundAccessibilityObject(*control);
+        if (accessible)
+            accessible->EmitStateChanged((Dali::Accessibility::State)arg2_state, arg3);
+        else
+            SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
+    });
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextInsertedEvent(void *arg1, int arg2_position, int arg3_length, char *arg4_content) {
+    GUARD_ON_NULL_RET(arg1);
+    try_catch([&]() {
+        Dali::Actor *control = (Dali::Actor*) arg1;
+        auto accessible = GetBoundAccessibilityObject(*control);
+        std::string content(arg4_content ? arg4_content : "");
+        if (accessible)
+            accessible->EmitTextInserted(arg2_position, arg3_length, content);
+        else
+            SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
+    });
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextDeletedEvent(void *arg1, int arg2_position, int arg3_length, char *arg4_content) {
+    GUARD_ON_NULL_RET(arg1);
+    try_catch([&]() {
+        Dali::Actor *control = (Dali::Actor*) arg1;
+        auto accessible = GetBoundAccessibilityObject(*control);
+        std::string content(arg4_content ? arg4_content : "");
+        if (accessible)
+            accessible->EmitTextDeleted(arg2_position, arg3_length, content);
+        else
+            SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
+    });
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextCaretMovedEvent(void *arg1, int arg2_position) {
+    GUARD_ON_NULL_RET(arg1);
+    try_catch([&]() {
+        Dali::Actor *control = (Dali::Actor*) arg1;
+        auto accessible = GetBoundAccessibilityObject(*control);
+        if (accessible)
+            accessible->EmitTextCaretMoved(arg2_position);
+        else
+            SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
+    });
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Accessibility_new_Range(int arg1_start, int arg2_end, char *arg3_content) {
+    Dali::Accessibility::Range *result = nullptr;
+    try_catch([&]() {
+        result = new Dali::Accessibility::Range(arg1_start, arg2_end, arg3_content);
+    });
+    return (void*)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_delete_Range(void *arg1_range) {
+    try_catch([&]() {
+        delete static_cast<Dali::Accessibility::Range*>(arg1_range);
+    });
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Add_Popup(void *arg1_actor) {
+    GUARD_ON_NULL_RET(arg1_actor);
+    try_catch([&]() {
+        Dali::Actor *actor = (Dali::Actor*) arg1_actor;
+        auto accessible = Dali::Accessibility::Accessible::Get(*actor);
+        auto bridge = Dali::Accessibility::Bridge::GetCurrentBridge();
+
+        if (!accessible) {
+            SWIG_CSharpException(SWIG_RuntimeError, "No accessible object bind with actor.");
+            return;
+        }
+
+        bridge->AddPopup(accessible);
+    });
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Remove_Popup(void *arg1_actor) {
+    GUARD_ON_NULL_RET(arg1_actor);
+    try_catch([&]() {
+        Dali::Actor *actor = (Dali::Actor*) arg1_actor;
+        auto accessible = Dali::Accessibility::Accessible::Get(*actor);
+        auto bridge = Dali::Accessibility::Bridge::GetCurrentBridge();
+
+        if (!accessible) {
+            SWIG_CSharpException(SWIG_RuntimeError, "No accessible object bind with actor.");
+            return;
+        }
+
+        bridge->RemovePopup(accessible);
+    });
+}
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
