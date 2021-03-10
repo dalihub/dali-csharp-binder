@@ -37,6 +37,7 @@
 #include <dali/devel-api/adaptor-framework/web-engine-load-error.h>
 #include <dali/devel-api/adaptor-framework/web-engine-policy-decision.h>
 #include <dali/devel-api/adaptor-framework/web-engine-request-interceptor.h>
+#include <dali/devel-api/adaptor-framework/web-engine-security-origin.h>
 #include <dali/public-api/common/dali-common.h>
 
 #define CALL_CATCH_EXCEPTION(ret)                                              \
@@ -1616,9 +1617,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DisableCache(void * jarg1, bo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetDefaultProxyAuth(void * jarg1, const char * jarg2, const char * jarg3) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
   std::string arg2_str(jarg2);
   std::string arg3_str(jarg3);
   {
@@ -1628,32 +1627,99 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetDefaultProxyAuth(void * ja
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebDatabase(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebDatabase(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->DeleteAllWebDatabase();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebDatabaseOrigins(void *jarg1, void *jarg2) {
+  Dali::Toolkit::WebContext * arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*))jarg2;
+  bool result = false;
+  {
+    try {
+      result = (arg1)->GetWebDatabaseOrigins(
+                 [handler](std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>& originList) {
+                    std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>* webOriginList = new std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>();
+                    webOriginList->swap(originList);
+                    handler(webOriginList);
+                 });
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebDatabase(void *jarg1, void *jarg2) {
+  Dali::Toolkit::WebContext * arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineSecurityOrigin * origin = (Dali::WebEngineSecurityOrigin *)jarg2;
+  bool result = false;
+  {
+    try {
+      result = (arg1)->DeleteWebDatabase(*origin);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebStorageOrigins(void *jarg1, void *jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*))jarg2;
+  bool result = false;
+  {
+    try {
+      result = (arg1)->GetWebStorageOrigins(
+                 [handler](std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>& originList) {
+                    std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>* contextOriginList = new std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>();
+                    contextOriginList->swap(originList);
+                    handler(contextOriginList);
+                 });
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebStorageUsageForOrigin(void *jarg1, void *jarg2, void *jarg3) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineSecurityOrigin *origin = (Dali::WebEngineSecurityOrigin *)jarg2;
+  void (*callback)(uint64_t) = (void (*)(uint64_t))jarg3;
+  bool result = false;
+  {
+    try {
+      result = (arg1)->GetWebStorageUsageForOrigin(*origin, callback);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebStorage(void *jarg1) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
 
   arg1 = (Dali::Toolkit::WebContext *)jarg1;
   {
     try {
-      (arg1)->DeleteWebDatabase();
+      (arg1)->DeleteAllWebStorage();
     } CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebStorage(void * jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebStorageOrigin(void *jarg1, void *jarg2) {
+  Dali::Toolkit::WebContext * arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineSecurityOrigin * origin = (Dali::WebEngineSecurityOrigin *)jarg2;
+  bool result = false;
   {
     try {
-      (arg1)->DeleteWebStorage();
-    } CALL_CATCH_EXCEPTION();
+      result = (arg1)->DeleteWebStorageOrigin(*origin);
+    } CALL_CATCH_EXCEPTION(0);
   }
+  return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteLocalFileSystem(void * jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteLocalFileSystem(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
   {
     try {
       (arg1)->DeleteLocalFileSystem();
@@ -1662,12 +1728,65 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteLocalFileSystem(void * 
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_ClearCache(void * jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
   {
     try {
       (arg1)->ClearCache();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteApplicationCache(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebContext * arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineSecurityOrigin * origin = (Dali::WebEngineSecurityOrigin *)jarg2;
+  bool result = false;
+  {
+    try {
+      result = (arg1)->DeleteApplicationCache(*origin);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_GetFormPasswordList(void *jarg1, void *jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*))jarg2;
+  {
+    try {
+      (arg1)->GetFormPasswordList(
+                 [handler](std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>& passwordList) {
+                    std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>* contextPasswordList = new std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>();
+                    contextPasswordList->swap(passwordList);
+                    handler(contextPasswordList);
+                 });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterDownloadStartedCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  void (*handler)(char *) = (void (*)(char *))jarg2;
+  {
+    try {
+      (arg1)->RegisterDownloadStartedCallback(
+                 [handler](const std::string& url) {
+                   handler(SWIG_csharp_string_callback(url.c_str()));
+                 });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterMimeOverriddenCallback(void *jarg1, void *jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  bool (*handler)(char *, char *, char *) = (bool (*)(char *, char *, char *))jarg2;
+  {
+    try {
+      (arg1)->RegisterMimeOverriddenCallback(
+          [handler](const std::string& url, const std::string& mime, std::string& newMime) -> bool {
+            return handler(SWIG_csharp_string_callback(url.c_str()),
+                           SWIG_csharp_string_callback(mime.c_str()),
+                           SWIG_csharp_string_callback(newMime.c_str()));
+          });
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -1973,6 +2092,30 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebHttpAuthHandler_CancelCredential(void
   }
 }
 
+//----------------------------------WebPasswordData---------------------------------------------------
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebPasswordData_GetUrl(void * jarg1) {
+  Dali::WebEngineContext::PasswordData *arg1 = (Dali::WebEngineContext::PasswordData *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->url;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char * jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPasswordData_GetUseFingerprint(void * jarg1) {
+  Dali::WebEngineContext::PasswordData * arg1 = (Dali::WebEngineContext::PasswordData *)jarg1;
+  bool result = false;
+  {
+    try {
+      result = (arg1)->useFingerprint;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
 //----------------------------------WebLoadError-----------------------------------------------------
 SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebLoadError_GetUrl(void* jarg1) {
   Dali::WebEngineLoadError* arg1 = (Dali::WebEngineLoadError*)jarg1;
@@ -2017,6 +2160,107 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebLoadError_GetType(void* jarg1) {
       result = (int)arg1->GetType();
     } CALL_CATCH_EXCEPTION(0);
   }
+  return result;
+}
+
+//----------------------------------WebPasswordDataList---------------------------------------------------
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebPasswordDataList(void * jarg1) {
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebEngineContext::PasswordData List is null", 0);
+    return;
+  }
+
+  std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_WebPasswordDataList_GetItemCount(void* jarg1) {
+  std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*)jarg1;
+  uint32_t result = 0;
+  {
+    try {
+      result = (arg1)->size();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebPasswordDataList_ValueOfIndex(void * jarg1, unsigned int jarg2) {
+  std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*)jarg1;
+  Dali::WebEngineContext::PasswordData* result = 0;
+  {
+    try {
+      result = ((arg1)->operator[](jarg2)).get();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+//----------------------------------WebSecurityOrigin---------------------------------------------------
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebSecurityOrigin_GetHost(void * jarg1) {
+  Dali::WebEngineSecurityOrigin *arg1 = (Dali::WebEngineSecurityOrigin *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetHost();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char * jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebSecurityOrigin_GetProtocol(void * jarg1) {
+  Dali::WebEngineSecurityOrigin *arg1 = (Dali::WebEngineSecurityOrigin *)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetProtocol();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char * jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+//----------------------------------WebSecurityOriginList---------------------------------------------------
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebSecurityOriginList(void *jarg1) {
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebEngineSecurityOrigin List is null", 0);
+    return;
+  }
+
+  std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_WebSecurityOriginList_GetItemCount(void* jarg1) {
+  std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*)jarg1;
+  uint32_t result = 0;
+  {
+    try {
+      result = (arg1)->size();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebSecurityOriginList_ValueOfIndex(void *jarg1, unsigned int jarg2) {
+  std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*)jarg1;
+  Dali::WebEngineSecurityOrigin * result = 0;
+  {
+    try {
+      result = ((arg1)->operator[](jarg2)).get();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
   return result;
 }
 
