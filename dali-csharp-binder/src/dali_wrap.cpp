@@ -50274,6 +50274,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char * jarg1, bo
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_4(unsigned int jarg1) {
+  void * jresult ;
+  Dali::VideoSyncMode syncMode;
+  Dali::Toolkit::VideoView result;
+
+  syncMode = static_cast<Dali::VideoSyncMode>(jarg1);
+
+  {
+    try {
+      result = Dali::Toolkit::DevelVideoView::New(syncMode);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView &)result);
+
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VideoView__SWIG_0() {
   void * jresult ;
@@ -50455,7 +50472,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_FinishedSignal(void * jarg1)
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_GetNativePlayerHandle( void * jarg1 )
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_GetNativePlayerHandle(void * jarg1)
 {
   Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *)jarg1;
   if( arg1 == nullptr )
@@ -50473,6 +50490,31 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_GetNativePlayerHandle( void 
     } CALL_CATCH_EXCEPTION(0);
   }
   return ret;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_PlayAnimation(void * jarg1, void * jarg2)
+{
+  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView*)jarg1;
+  if(arg1 == nullptr)
+  {
+    DALI_LOG_ERROR("VideoView is nullptr!");
+    return;
+  }
+  Dali::Animation *arg2 = (Dali::Animation*)jarg2;
+  if(arg2 == nullptr)
+  {
+    DALI_LOG_ERROR("Animation is nullptr!");
+    return;
+  }
+
+  {
+    try{
+
+      Toolkit::DevelVideoView::PlayAnimation(*arg1, *arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
 }
 
 
