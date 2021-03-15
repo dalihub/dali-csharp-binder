@@ -24,7 +24,6 @@
 #include "web-view-signal-converter.h"
 
 #include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
-#include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list-item.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-context.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-cookie-manager.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-form-repost-decision.h>
@@ -40,6 +39,7 @@
 #include <dali/devel-api/adaptor-framework/web-engine-policy-decision.h>
 #include <dali/devel-api/adaptor-framework/web-engine-request-interceptor.h>
 #include <dali/devel-api/adaptor-framework/web-engine-security-origin.h>
+#include <dali/devel-api/adaptor-framework/web-engine-back-forward-list-item.h>
 #include <dali/public-api/common/dali-common.h>
 
 #define CALL_CATCH_EXCEPTION(ret)                                              \
@@ -1476,9 +1476,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewHttpAuthHandlerSignal_Disconnect(
 
 //----------------------------------WebBackForwardList-----------------------------------------------------
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetUrl(void * jarg1) {
-  Dali::Toolkit::WebBackForwardListItem *arg1 = (Dali::Toolkit::WebBackForwardListItem *)0;
+  Dali::WebEngineBackForwardListItem *arg1 = (Dali::WebEngineBackForwardListItem *)0;
   std::string result;
-  arg1 = (Dali::Toolkit::WebBackForwardListItem *)jarg1;
+  arg1 = (Dali::WebEngineBackForwardListItem *)jarg1;
   {
     try {
       result = arg1->GetUrl();
@@ -1489,9 +1489,9 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetUrl(vo
 }
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetTitle(void * jarg1) {
-  Dali::Toolkit::WebBackForwardListItem *arg1 = (Dali::Toolkit::WebBackForwardListItem *)0;
+  Dali::WebEngineBackForwardListItem *arg1 = (Dali::WebEngineBackForwardListItem *)0;
   std::string result;
-  arg1 = (Dali::Toolkit::WebBackForwardListItem *)jarg1;
+  arg1 = (Dali::WebEngineBackForwardListItem *)jarg1;
   {
     try {
       result = (arg1)->GetTitle();
@@ -1502,9 +1502,9 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetTitle(
 }
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetOriginalUrl(void * jarg1) {
-  Dali::Toolkit::WebBackForwardListItem *arg1 = (Dali::Toolkit::WebBackForwardListItem *)0;
+  Dali::WebEngineBackForwardListItem *arg1 = (Dali::WebEngineBackForwardListItem *)0;
   std::string result;
-  arg1 = (Dali::Toolkit::WebBackForwardListItem *)jarg1;
+  arg1 = (Dali::WebEngineBackForwardListItem *)jarg1;
   {
     try {
       result = (arg1)->GetOriginalUrl();
@@ -1526,28 +1526,120 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetItemCount(
   return result;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetCurrentItem(void * jarg1) {
-  Dali::Toolkit::WebBackForwardListItem *result = 0;
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetCurrentItem(void *jarg1) {
+  Dali::WebEngineBackForwardListItem *result = 0;
   Dali::Toolkit::WebBackForwardList *arg1 = (Dali::Toolkit::WebBackForwardList *)jarg1;
   {
     try {
-      result = (arg1)->GetCurrentItem();
+      std::unique_ptr<Dali::WebEngineBackForwardListItem> temp = (arg1)->GetCurrentItem();
+      result = temp.release();
     } CALL_CATCH_EXCEPTION(0);
   }
   return result;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetItemAtIndex(void * jarg1, int jarg2) {
-  Dali::Toolkit::WebBackForwardListItem *result = 0;
-  Dali::Toolkit::WebBackForwardList *arg1 = (Dali::Toolkit::WebBackForwardList *)jarg1;
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetPreviousItem(void* jarg1) {
+  Dali::WebEngineBackForwardListItem *result = 0;
+  Dali::Toolkit::WebBackForwardList* arg1 = (Dali::Toolkit::WebBackForwardList *)jarg1;
   {
     try {
-      result = (arg1)->GetItemAtIndex(jarg2);
+      std::unique_ptr<Dali::WebEngineBackForwardListItem> temp = (arg1)->GetPreviousItem();
+      result = temp.release();
     } CALL_CATCH_EXCEPTION(0);
   }
   return result;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetNextItem(void* jarg1) {
+  Dali::WebEngineBackForwardListItem *result = 0;
+  Dali::Toolkit::WebBackForwardList* arg1 = (Dali::Toolkit::WebBackForwardList *)jarg1;
+  {
+    try {
+      std::unique_ptr<Dali::WebEngineBackForwardListItem> temp = (arg1)->GetNextItem();
+      result = temp.release();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetItemAtIndex(void *jarg1, int jarg2) {
+  Dali::WebEngineBackForwardListItem *result = 0;
+  Dali::Toolkit::WebBackForwardList *arg1 = (Dali::Toolkit::WebBackForwardList *)jarg1;
+  {
+    try {
+      std::unique_ptr<Dali::WebEngineBackForwardListItem> temp = (arg1)->GetItemAtIndex(jarg2);
+      result = temp.release();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebBackForwardList_DeleteItem(void *jarg1) {
+  Dali::WebEngineBackForwardListItem *arg1 = (Dali::WebEngineBackForwardListItem *)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetBackwardItems(void *jarg1, int jarg2) {
+  std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>> *result = 0;
+  Dali::Toolkit::WebBackForwardList *arg1 = (Dali::Toolkit::WebBackForwardList *)jarg1;
+  {
+    try {
+      result = new std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>>();
+      std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>> temp = (arg1)->GetBackwardItems(jarg2);
+      result->swap(temp);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void *)result;
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetForwardItems(void *jarg1, int jarg2) {
+  std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>> *result = 0;
+  Dali::Toolkit::WebBackForwardList *arg1 = (Dali::Toolkit::WebBackForwardList *)jarg1;
+  {
+    try {
+      result = new std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>>();
+      std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>> temp = (arg1)->GetForwardItems(jarg2);
+      result->swap(temp);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void *)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebBackForwardList_DeleteCopiedItems(void *jarg1) {
+  std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>> *arg1 = (std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>> *)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetCopiedItemsCount(void *jarg1) {
+  unsigned int result = 0;
+  std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>> *arg1 = (std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>> *)jarg1;
+  {
+    try {
+      result = (arg1)->size();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetItemAtIndexFromCopiedItems(void *jarg1, unsigned int jarg2) {
+  Dali::WebEngineBackForwardListItem *result = 0;
+  std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>> *arg1 = (std::vector<std::unique_ptr<Dali::WebEngineBackForwardListItem>> *)jarg1;
+  {
+    try {
+      result = (arg1)->operator[](jarg2).get();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void *)result;
+}
 //----------------------------------WebConsoleMessage-----------------------------------------------------
 SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebConsoleMessage_GetSource(void* jarg1) {
   Dali::WebEngineConsoleMessage* arg1 = (Dali::WebEngineConsoleMessage*)jarg1;
