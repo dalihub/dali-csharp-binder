@@ -493,6 +493,36 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Remove_Popup(void *
     });
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Accessibility_Accessible_GetCurrentlyHighlightedActor() {
+    Dali::Actor *result = NULL;
+    try_catch([&]() {
+        Dali::Actor actor = Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor();
+        if (actor)
+            result = new Dali::Actor(actor);
+    });
+    return result;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Accessibility_Accessible_GetHighlightActor() {
+    Dali::Actor *result = NULL;
+    try_catch([&]() {
+        Dali::Actor actor = Dali::Accessibility::Accessible::GetHighlightActor();
+        if (actor)
+            result = new Dali::Actor(actor);
+    });
+    return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Accessible_SetHighlightActor(void *arg1_actor) {
+    // Passing nullptr as actor is used to remove custom highlight,
+    // what leads to the restoration of default highlight starting
+    // from next call to GrabHighlight()
+    try_catch([&]() {
+        Dali::Actor actor = arg1_actor ? *((Dali::Actor*) arg1_actor) : Dali::Actor();
+        Dali::Accessibility::Accessible::SetHighlightActor(actor);
+    });
+}
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
