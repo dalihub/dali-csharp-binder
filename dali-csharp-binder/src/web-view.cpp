@@ -2292,6 +2292,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ClearCookies(void * jar
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_ChangesWatch(void *jarg1, void *jarg2) {
+  Dali::Toolkit::WebCookieManager *arg1 = (Dali::Toolkit::WebCookieManager *)jarg1;
+  void (*callback)() = (void (*)())jarg2;
+  {
+    try {
+      (arg1)->ChangesWatch(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 //----------------------------------WebFormRepostDecision---------------------------------------------------
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebFormRepostDecision_Reply(void *jarg1, bool jarg2) {
   Dali::WebEngineFormRepostDecision* arg1 = (Dali::WebEngineFormRepostDecision*)jarg1;
