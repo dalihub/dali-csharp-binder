@@ -53,6 +53,7 @@ struct AccessibilityDelegate
     bool (*insertText)(int, const char *); // 24
     bool (*setTextContents)(const char *); // 25
     bool (*deleteText)(int, int); // 26
+    bool (*scrollToChild)(Dali::Actor *); // 27
 };
 
 inline std::string stealString(char *str)
@@ -271,10 +272,17 @@ struct AccessibleImpl_NUI : public AccessibleImpl
         return ret;
     }
 
-#if 0
-    void EnsureChildVisible(Dali::Actor child) override;
-    void EnsureSelfVisible() override;
-#endif
+    bool ScrollToChild(Dali::Actor child) override
+    {
+        bool ret{false};
+
+        if (v->scrollToChild)
+        {
+            ret = v->scrollToChild(new Dali::Actor(child));
+        }
+
+        return ret;
+    }
 };
 
 struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
