@@ -23,7 +23,8 @@
 #include "common.h"
 #include <dali/public-api/capture/capture.h>
 #include <dali/integration-api/debug.h>
-#include <dali-toolkit/public-api/image-loader/image.h>
+#include <dali/public-api/rendering/texture.h>
+#include <dali-toolkit/devel-api/image-loader/texture-manager.h>
 
 SWIGINTERN bool Dali_Capture_Signal_Empty(Dali::Capture::CaptureFinishedSignalType const* self)
 {
@@ -880,7 +881,8 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Capture_GenerateUrl(void* nuiCapture)
   {
     try
     {
-      url = Dali::Toolkit::Image::GenerateUrl(capture->GetNativeImageSource());
+      Dali::Texture texture = capture->GetTexture();
+      url = Dali::Toolkit::TextureManager::AddTexture(texture);
     }
     catch (std::out_of_range& e)
     {
