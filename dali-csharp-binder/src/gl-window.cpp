@@ -1570,7 +1570,7 @@ extern "C"
     }
   }
 
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetRenderingMode(void *jarg1)
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GlWindow_GetRenderingMode(void *jarg1)
   {
     int jresult;
     Dali::GlWindow *arg1 = (Dali::GlWindow *)0;
