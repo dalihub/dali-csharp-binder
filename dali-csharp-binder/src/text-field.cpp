@@ -614,6 +614,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_PRIMARY_CURSOR_POSITIO
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_GRAB_HANDLE_COLOR_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextField::Property::GRAB_HANDLE_COLOR;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField_Property() {
   void * jresult ;
   Dali::Toolkit::TextField::Property *result = 0 ;

@@ -615,6 +615,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_PRIMARY_CURSOR_POSITI
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_GRAB_HANDLE_COLOR_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::GRAB_HANDLE_COLOR;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_ScrollBy(void * jarg1, void * jarg2) {
   Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0;
   Dali::Vector2 *arg2 = 0 ;
