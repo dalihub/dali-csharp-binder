@@ -266,7 +266,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_delete_ReadingInfoT
     });
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoType_Get(void *arg1, int arg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoTypes_Get(void *arg1, int arg2) {
     bool result = false;
     GUARD_ON_NULL_RET0(arg1);
     try_catch([&]() {
@@ -277,7 +277,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfo
     return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoType_Set(void *arg1, int arg2, int arg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoTypes_Set(void *arg1, int arg2, int arg3) {
     GUARD_ON_NULL_RET(arg1);
     try_catch([&]() {
         Dali::Accessibility::ReadingInfoTypes *types = (Dali::Accessibility::ReadingInfoTypes*) arg1;
