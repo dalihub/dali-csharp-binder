@@ -266,7 +266,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_delete_ReadingInfoT
     });
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoType_Get(void *arg1, int arg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoTypes_Get(void *arg1, int arg2) {
     bool result = false;
     GUARD_ON_NULL_RET0(arg1);
     try_catch([&]() {
@@ -277,7 +277,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfo
     return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoType_Set(void *arg1, int arg2, int arg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoTypes_Set(void *arg1, int arg2, int arg3) {
     GUARD_ON_NULL_RET(arg1);
     try_catch([&]() {
         Dali::Accessibility::ReadingInfoTypes *types = (Dali::Accessibility::ReadingInfoTypes*) arg1;
@@ -490,6 +490,36 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Remove_Popup(void *
         }
 
         bridge->RemovePopup(accessible);
+    });
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Accessibility_Accessible_GetCurrentlyHighlightedActor() {
+    Dali::Actor *result = NULL;
+    try_catch([&]() {
+        Dali::Actor actor = Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor();
+        if (actor)
+            result = new Dali::Actor(actor);
+    });
+    return result;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Accessibility_Accessible_GetHighlightActor() {
+    Dali::Actor *result = NULL;
+    try_catch([&]() {
+        Dali::Actor actor = Dali::Accessibility::Accessible::GetHighlightActor();
+        if (actor)
+            result = new Dali::Actor(actor);
+    });
+    return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Accessible_SetHighlightActor(void *arg1_actor) {
+    // Passing nullptr as actor is used to remove custom highlight,
+    // what leads to the restoration of default highlight starting
+    // from next call to GrabHighlight()
+    try_catch([&]() {
+        Dali::Actor actor = arg1_actor ? *((Dali::Actor*) arg1_actor) : Dali::Actor();
+        Dali::Accessibility::Accessible::SetHighlightActor(actor);
     });
 }
 

@@ -27,6 +27,7 @@
 #include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-context.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-cookie-manager.h>
+#include <dali-toolkit/devel-api/controls/web-view/web-form-repost-decision.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-settings.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
 #include <dali/public-api/common/dali-common.h>
@@ -279,6 +280,34 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_TITLE_get() {
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_VIDEO_HOLE_ENABLED_get() {
   return (int)Dali::Toolkit::WebView::Property::VIDEO_HOLE_ENABLED;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_MOUSE_EVENTS_ENABLED_get() {
+  return (int) Dali::Toolkit::WebView::Property::MOUSE_EVENTS_ENABLED;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_KEY_EVENTS_ENABLED_get() {
+  return (int) Dali::Toolkit::WebView::Property::KEY_EVENTS_ENABLED;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_DOCUMENT_BACKGROUND_COLOR_get() {
+  return (int)Dali::Toolkit::WebView::Property::DOCUMENT_BACKGROUND_COLOR;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_TILES_CLEARED_WHEN_HIDDEN_get() {
+  return (int)Dali::Toolkit::WebView::Property::TILES_CLEARED_WHEN_HIDDEN;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_TILE_COVER_AREA_MULTIPLIER_get() {
+  return (int)Dali::Toolkit::WebView::Property::TILE_COVER_AREA_MULTIPLIER;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_CURSOR_ENABLED_BY_CLIENT_get() {
+  return (int)Dali::Toolkit::WebView::Property::CURSOR_ENABLED_BY_CLIENT;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_SELECTED_TEXT_get() {
+  return (int)Dali::Toolkit::WebView::Property::SELECTED_TEXT;
 }
 
 //@DEPRECATED_2_0.9.
@@ -783,7 +812,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewScrollEdgeReachedSignal_Disconnec
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WebViewUrlChangedSignal_UrlChanged(void *jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
-  SignalConverter::WebViewUrlChangedSignal *result = 0;
+  SignalConverter::WebViewUrlChangedSignal* result = 0;
   {
     try {
       result = new SignalConverter::WebViewUrlChangedSignal(&webview->UrlChangedSignal());
@@ -814,6 +843,77 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewUrlChangedSignal_Connect(void *ja
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewUrlChangedSignal_Disconnect(void *jarg1, void *jarg2) {
   SignalConverter::WebViewUrlChangedSignal *proxy = (SignalConverter::WebViewUrlChangedSignal *)jarg1;
   SignalConverter::WebViewUrlChangedSignal::CallbackType callback = (SignalConverter::WebViewUrlChangedSignal::CallbackType)jarg2;
+  {
+    try {
+      proxy->Disconnect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewFormRepostDecisionSignal_FormRepostDecision(void* jarg1) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  SignalConverter::WebViewFormRepostDecisionSignal* result = 0;
+  {
+    try {
+      result = new SignalConverter::WebViewFormRepostDecisionSignal(&webview->FormRepostDecisionSignal());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void*)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewFormRepostDecisionSignal(void* jarg1) {
+  SignalConverter::WebViewFormRepostDecisionSignal* object = (SignalConverter::WebViewFormRepostDecisionSignal*)jarg1;
+  {
+    try {
+      delete object;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewFormRepostDecisionSignal_Connect(void* jarg1, void* jarg2) {
+  SignalConverter::WebViewFormRepostDecisionSignal* proxy = (SignalConverter::WebViewFormRepostDecisionSignal*)jarg1;
+  SignalConverter::WebViewFormRepostDecisionSignal::CallbackType callback = (SignalConverter::WebViewFormRepostDecisionSignal::CallbackType)jarg2;
+  {
+    try {
+      proxy->Connect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewFormRepostDecisionSignal_Disconnect(void* jarg1, void* jarg2) {
+  SignalConverter::WebViewFormRepostDecisionSignal* proxy = (SignalConverter::WebViewFormRepostDecisionSignal*)jarg1;
+  SignalConverter::WebViewFormRepostDecisionSignal::CallbackType callback = (SignalConverter::WebViewFormRepostDecisionSignal::CallbackType)jarg2;
+  {
+    try {
+      proxy->Disconnect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebViewFrameRenderedSignal_FrameRendered(void* jarg1) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  Dali::Toolkit::WebView::WebViewFrameRenderedSignalType* result = 0;
+  {
+    try {
+      result = (Dali::Toolkit::WebView::WebViewFrameRenderedSignalType*)(&(webview->FrameRenderedSignal()));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (void *)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewFrameRenderedSignal_Connect(void* jarg1, void* jarg2) {
+  Dali::Toolkit::WebView::WebViewFrameRenderedSignalType* proxy = (Dali::Toolkit::WebView::WebViewFrameRenderedSignalType*)jarg1;
+  void (*callback)(Dali::Toolkit::WebView) = (void (*)(Dali::Toolkit::WebView))jarg2;
+  {
+    try {
+      proxy->Connect(callback);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewFrameRenderedSignal_Disconnect(void* jarg1, void* jarg2) {
+  Dali::Toolkit::WebView::WebViewFrameRenderedSignalType* proxy = (Dali::Toolkit::WebView::WebViewFrameRenderedSignalType*)jarg1;
+  void (*callback)(Dali::Toolkit::WebView) = (void (*)(Dali::Toolkit::WebView))jarg2;
   {
     try {
       proxy->Disconnect(callback);
@@ -1059,6 +1159,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ClearCookies(void *jarg
   {
     try {
       (arg1)->ClearCookies();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+//----------------------------------WebFormRepostDecision---------------------------------------------------
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebFormRepostDecision_Reply(void *jarg1, bool jarg2) {
+  Dali::Toolkit::WebFormRepostDecision* arg1 = (Dali::Toolkit::WebFormRepostDecision*)jarg1;
+  {
+    try {
+      arg1->Reply(jarg2);
     } CALL_CATCH_EXCEPTION();
   }
 }

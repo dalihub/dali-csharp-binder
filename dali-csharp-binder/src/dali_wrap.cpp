@@ -50274,6 +50274,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char * jarg1, bo
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_4(unsigned int jarg1) {
+  void * jresult ;
+  Dali::VideoSyncMode syncMode;
+  Dali::Toolkit::VideoView result;
+
+  syncMode = static_cast<Dali::VideoSyncMode>(jarg1);
+
+  {
+    try {
+      result = Dali::Toolkit::DevelVideoView::New(syncMode);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView &)result);
+
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VideoView__SWIG_0() {
   void * jresult ;
@@ -50455,7 +50472,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_FinishedSignal(void * jarg1)
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_GetNativePlayerHandle( void * jarg1 )
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_GetNativePlayerHandle(void * jarg1)
 {
   Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *)jarg1;
   if( arg1 == nullptr )
@@ -50473,6 +50490,151 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_GetNativePlayerHandle( void 
     } CALL_CATCH_EXCEPTION(0);
   }
   return ret;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraView_New__SWIG_0(void * jarg1, int jarg2) {
+  void * jresult ;
+  Dali::Toolkit::CameraView result;
+
+  Dali::Any arg1(jarg1);
+  Dali::Toolkit::CameraView::DisplayType arg2 = static_cast<Dali::Toolkit::CameraView::DisplayType>(jarg2);
+  {
+    try {
+      result = Dali::Toolkit::CameraView::New(arg1, arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::CameraView((const Dali::Toolkit::CameraView &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_CameraView__SWIG_0() {
+  void * jresult ;
+  Dali::Toolkit::CameraView *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Toolkit::CameraView *)new Dali::Toolkit::CameraView();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CameraView(void * jarg1) {
+  Dali::Toolkit::CameraView *arg1 = (Dali::Toolkit::CameraView *) 0 ;
+
+  arg1 = (Dali::Toolkit::CameraView *)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_CameraView__SWIG_1(void * jarg1) {
+  void * jresult ;
+  Dali::Toolkit::CameraView *arg1 = 0 ;
+  Dali::Toolkit::CameraView *result = 0 ;
+
+  arg1 = (Dali::Toolkit::CameraView *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::CameraView const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::Toolkit::CameraView *)new Dali::Toolkit::CameraView((Dali::Toolkit::CameraView const &)*arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraView_Assign(void * jarg1, void * jarg2) {
+  void * jresult ;
+  Dali::Toolkit::CameraView *arg1 = (Dali::Toolkit::CameraView *) 0 ;
+  Dali::Toolkit::CameraView *arg2 = 0 ;
+  Dali::Toolkit::CameraView *result = 0 ;
+
+  arg1 = (Dali::Toolkit::CameraView *)jarg1;
+  arg2 = (Dali::Toolkit::CameraView *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::CameraView const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::Toolkit::CameraView *) &(arg1)->operator =((Dali::Toolkit::CameraView const &)*arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraView_DownCast(void * jarg1) {
+  void * jresult ;
+  Dali::BaseHandle arg1 ;
+  Dali::BaseHandle *argp1 ;
+  Dali::Toolkit::CameraView result;
+
+  argp1 = (Dali::BaseHandle *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
+    return 0;
+  }
+  arg1 = *argp1;
+  {
+    try {
+      result = Dali::Toolkit::CameraView::DownCast(arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::CameraView((const Dali::Toolkit::CameraView &)result);
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CameraView_Update(void * jarg1) {
+  Dali::Toolkit::CameraView *arg1 = (Dali::Toolkit::CameraView *) 0 ;
+
+  arg1 = (Dali::Toolkit::CameraView *)jarg1;
+  {
+    try {
+      (arg1)->Update();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_PlayAnimation(void * jarg1, void * jarg2)
+{
+  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView*)jarg1;
+  if(arg1 == nullptr)
+  {
+    DALI_LOG_ERROR("VideoView is nullptr!");
+    return;
+  }
+  Dali::Animation *arg2 = (Dali::Animation*)jarg2;
+  if(arg2 == nullptr)
+  {
+    DALI_LOG_ERROR("Animation is nullptr!");
+    return;
+  }
+
+  {
+    try{
+
+      Toolkit::DevelVideoView::PlayAnimation(*arg1, *arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
 }
 
 
@@ -58026,6 +58188,10 @@ SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_Slider_SWIGUpcast(Da
 }
 
 SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_VideoView_SWIGUpcast(Dali::Toolkit::VideoView *jarg1) {
+    return (Dali::Toolkit::Control *)jarg1;
+}
+
+SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_CameraView_SWIGUpcast(Dali::Toolkit::CameraView *jarg1) {
     return (Dali::Toolkit::Control *)jarg1;
 }
 
