@@ -195,10 +195,49 @@ struct AccessibleImpl_NUI : public AccessibleImpl
 
     std::size_t GetChildCount() override
     {
+        bool highlighted = (self == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor());
+
         if (ShouldReportZeroChildren())
-            return 0;
+        {
+            std::size_t ret = 0;
+
+            // We still allow the highlight frame to be reported as a child of this actor
+            // even though its ShouldReportZeroChildren() method returned true.
+            ret += static_cast<std::size_t>(highlighted);
+
+            return ret;
+        }
         else
+        {
             return AccessibleImpl::GetChildCount();
+        }
+    }
+
+    Dali::Accessibility::Accessible *GetChildAtIndex(std::size_t index) override
+    {
+        bool highlighted = (self == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor());
+
+        if (ShouldReportZeroChildren())
+        {
+            if (highlighted && index == 0)
+            {
+                return Dali::Accessibility::Accessible::Get(currentHighlightActor.GetHandle());
+            }
+            else
+            {
+                // We should not end up here. When ShouldReportZeroChildren() returns true,
+                // there are two possible cases:
+                // (1) The actor is not highlighted, so GetChildCount() returns zero, and so
+                // GetChildAtIndex() is not called.
+                // (2) The actor is highlighted, so GetChildCount() returns one. The only valid
+                // argument for GetChildAtIndex() is zero.
+                throw std::domain_error{"Invalid index"};
+            }
+        }
+        else
+        {
+            return AccessibleImpl::GetChildAtIndex(index);
+        }
     }
 
     bool IsScrollable() override

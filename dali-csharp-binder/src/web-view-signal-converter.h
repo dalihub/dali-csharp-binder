@@ -237,6 +237,59 @@ private:
   ProxySignalType   mProxySignal;
 };
 
+// Proxy class of WebViewFormRepostDecisionSignal.
+// WebViewFormRepostDecisionSignal has an argument of std::shared_ptr type which is not supported at C# side.
+// The purpose of this class is to convert signal argument of std::shared_ptr type safely.
+class WebViewFormRepostDecisionSignal : public Dali::ConnectionTracker
+{
+public:
+  using NativeSignalType = Dali::Signal<void(Dali::Toolkit::WebView, std::shared_ptr<Dali::Toolkit::WebFormRepostDecision>)>;
+  using ProxySignalType = Dali::Signal<void(Dali::Toolkit::WebView, Dali::Toolkit::WebFormRepostDecision*)>;
+  using CallbackType = void (*)(Dali::Toolkit::WebView, Dali::Toolkit::WebFormRepostDecision*);
+
+  WebViewFormRepostDecisionSignal(NativeSignalType* signal)
+    : mNativeSignalPtr(signal)
+  {
+  }
+
+  ~WebViewFormRepostDecisionSignal()
+  {
+    if (!mProxySignal.Empty())
+    {
+      mNativeSignalPtr->Disconnect(this, &SignalConverter::WebViewFormRepostDecisionSignal::OnEmit);
+    }
+  }
+
+  void Connect(CallbackType csharpCallback)
+  {
+    if (mNativeSignalPtr->Empty())
+    {
+      mNativeSignalPtr->Connect(this, &SignalConverter::WebViewFormRepostDecisionSignal::OnEmit);
+    }
+    mProxySignal.Connect(csharpCallback);
+  }
+
+  void Disconnect(CallbackType csharpCallback)
+  {
+    mProxySignal.Disconnect(csharpCallback);
+    if (mProxySignal.Empty())
+    {
+      mNativeSignalPtr->Disconnect(this, &SignalConverter::WebViewFormRepostDecisionSignal::OnEmit);
+    }
+  }
+
+  void OnEmit(Dali::Toolkit::WebView webview, std::shared_ptr<Dali::Toolkit::WebFormRepostDecision> decision)
+  {
+    mFormRepostDecision = std::move(decision);
+    mProxySignal.Emit(webview, mFormRepostDecision.get());
+  }
+
+private:
+  NativeSignalType* mNativeSignalPtr;
+  ProxySignalType   mProxySignal;
+  std::shared_ptr<Dali::Toolkit::WebFormRepostDecision> mFormRepostDecision;
+};
+
 } // namespace SignalConverter
 
 #endif // __DALI_CSHARP_BINDER_WEB_VIEW_SIGNAL_CONVERTER_H__
