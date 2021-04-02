@@ -39,11 +39,6 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_CanvasView_New__SWIG_0(char *jarg1) {
   Dali::ImageDimensions *argp1;
   Dali::Toolkit::CanvasView result;
 
-  if (!jarg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException,
-                                           "null string", 0);
-    return 0;
-  }
   argp1 = (Dali::ImageDimensions *)jarg1;
   if (!argp1) {
     SWIG_CSharpSetPendingExceptionArgument(
@@ -74,11 +69,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CanvasView_AddDrawable(char *jarg1,
   Dali::CanvasRenderer::Drawable *argp2;
   bool result = true;
 
-  if (!jarg1 || !jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException,
-                                           "null string", 0);
-    return 0;
-  }
   argp1 = (Dali::Toolkit::CanvasView *)jarg1;
   if (!argp1) {
     SWIG_CSharpSetPendingExceptionArgument(
