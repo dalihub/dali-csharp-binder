@@ -127,7 +127,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
             // Note: Currently (2021-03-26), size negotiation between the default highlight frame
             // and NUI Components is known to be broken (and possibly in other cases, too). Please
             // remove this override for GrabHighlight() when it is fixed.
-            auto size = self.GetProperty<Dali::Vector2>(Dali::Actor::Property::SIZE);
+            auto size = Self().GetProperty<Dali::Vector2>(Dali::Actor::Property::SIZE);
             currentHighlightActor.GetHandle().SetProperty(Dali::Actor::Property::SIZE, size);
         }
 
@@ -211,7 +211,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
 
     std::size_t GetChildCount() override
     {
-        bool highlighted = (self == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor());
+        bool highlighted = (Self() == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor());
 
         if (ShouldReportZeroChildren())
         {
@@ -231,7 +231,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
 
     Dali::Accessibility::Accessible *GetChildAtIndex(std::size_t index) override
     {
-        bool highlighted = (self == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor());
+        bool highlighted = (Self() == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor());
 
         if (ShouldReportZeroChildren())
         {
