@@ -3336,6 +3336,97 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_SetDefaultTextEncodingName(v
   }
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_SetViewportMetaTag(void *jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->SetViewportMetaTag(jarg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_SetForceZoom(void *jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->SetForceZoom(jarg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsZoomForced(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsZoomForced();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_SetTextZoomEnabled(void *jarg1, bool jarg2) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->SetTextZoomEnabled(jarg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsTextZoomEnabled(void *jarg1) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsTextZoomEnabled();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_SetExtraFeature(void *jarg1, const char *jarg2, bool jarg3) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  std::string arg2(jarg2);
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      (arg1)->SetExtraFeature(arg2, jarg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsExtraFeatureEnabled(void *jarg1, const char *jarg2) {
+  Dali::Toolkit::WebSettings *arg1 = (Dali::Toolkit::WebSettings *)0;
+  std::string arg2(jarg2);
+  bool ret;
+
+  arg1 = (Dali::Toolkit::WebSettings *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsExtraFeatureEnabled(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
 #ifdef __cplusplus
 } // end extern "C"
 #endif
