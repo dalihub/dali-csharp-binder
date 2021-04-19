@@ -69,9 +69,9 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_CAPTURE_ALL_TOUCH_AFTER_START_g
   return Dali::DevelActor::Property::CAPTURE_ALL_TOUCH_AFTER_START;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_TOUCH_AREA_OFFSET_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_TOUCH_AREA_get() {
 
-  return Dali::DevelActor::Property::TOUCH_AREA_OFFSET;
+  return Dali::DevelActor::Property::TOUCH_AREA;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_BLEND_EQUATION_get() {
