@@ -8,7 +8,6 @@
 dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/dali_wrap.cpp \
   ${dali_csharp_binder_dir}/src/callbackbase_wrap.cpp \
-  ${dali_csharp_binder_dir}/src/canvas_view.cpp \
   ${dali_csharp_binder_dir}/src/keyboard_focus_manager_wrap.cpp \
   ${dali_csharp_binder_dir}/src/devel-property-wrap.cpp \
   ${dali_csharp_binder_dir}/src/version-check.cpp \
