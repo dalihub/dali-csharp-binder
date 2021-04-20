@@ -149,7 +149,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TransitionSet_Assign(void* nuiDestinati
   if (!source)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::TransitionSet const & type is null", 0);
-    return 0;CSHARP_TRANSITION_SET
+    return 0;
+  }
+  {
     try
     {
       result = (Dali::Toolkit::TransitionSet*) & (destination)->operator =((Dali::Toolkit::TransitionSet const&) * source);
