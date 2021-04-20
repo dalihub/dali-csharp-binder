@@ -1140,7 +1140,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewUrlChangedSignal_Disconnect(void 
   }
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_ContextMenuCustomized(void * jarg1) {
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_WebViewContextMenuCustomizedSignal_ContextMenuCustomized(void * jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* result = 0;
   {
@@ -1180,7 +1180,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_Disco
   }
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebViewContextMenuItemSelectedSignal_ContextMenuItemSelected(void * jarg1) {
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_WebViewContextMenuItemSelectedSignal_ContextMenuItemSelected(void * jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>* result = 0;
   {
@@ -2594,7 +2594,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ClearCookies(void * jar
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_ChangesWatch(void *jarg1, void *jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ChangesWatch(void *jarg1, void *jarg2) {
   Dali::Toolkit::WebCookieManager *arg1 = (Dali::Toolkit::WebCookieManager *)jarg1;
   void (*callback)() = (void (*)())jarg2;
   {
@@ -3028,7 +3028,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebSecurityOriginList_ValueOfIndex(voi
 }
 
 //----------------------------------WebHitTest---------------------------------------------------
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebEngineHitTest(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebHitTest(void * jarg1) {
   if (!jarg1) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebEngineHitTest is null", 0);
     return;
