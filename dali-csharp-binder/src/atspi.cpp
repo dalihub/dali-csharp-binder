@@ -113,6 +113,22 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_pause_resume(void *jarg1, 
   DALI_LOG_ERROR("csharp_dali_accessibility_pause_resume() arg2=%d", arg2);
 }
 
+SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_stop_reading(void *jarg1, bool jarg2)
+{
+  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *)jarg1;
+  bool arg2 = jarg2;
+
+  if (!arg1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control is null", 0);
+    return;
+  }
+
+  Dali::AtspiAccessibility::StopReading(arg2);
+
+  DALI_LOG_ERROR("csharp_dali_accessibility_stop_reading() arg2=%d", arg2);
+}
+
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_Enable(void *jarg1, bool jarg2)
 {
   Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *)jarg1;

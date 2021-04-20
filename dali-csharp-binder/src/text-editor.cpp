@@ -1074,6 +1074,39 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_InputStyleChangedSignal(voi
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_AnchorClickedSignal(void * jarg1) {
+  void * jresult ;
+  Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0 ;
+  Dali::Toolkit::DevelTextEditor::AnchorClickedSignalType *result = 0 ;
+
+  arg1 = (Dali::Toolkit::TextEditor *)jarg1;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextEditor::AnchorClickedSignalType *)&Dali::Toolkit::DevelTextEditor::AnchorClickedSignal(*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_SelectWholeText(void * jarg1) {
   Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0;
 

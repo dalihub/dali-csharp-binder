@@ -25559,6 +25559,21 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Stage_IsInstalled() {
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Stage_GetRenderTaskList(void * jarg1) {
+  void * jresult ;
+  Dali::Stage *arg1 = (Dali::Stage *) 0 ;
+  Dali::RenderTaskList result;
+
+  arg1 = (Dali::Stage *)jarg1;
+  {
+    try {
+      result = ((Dali::Stage const *)arg1)->GetRenderTaskList();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::RenderTaskList((const Dali::RenderTaskList &)result);
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Stage_GetDpi(void * jarg1) {
   void * jresult ;
