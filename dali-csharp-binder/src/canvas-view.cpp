@@ -461,28 +461,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_Close(char *jarg1) {
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_ResetPath(char *jarg1) {
-  Dali::CanvasRenderer::Shape *argp1;
-  bool result = false;
-
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(
-        SWIG_CSharpArgumentNullException,
-        "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
-    return false;
-  }
-
-  {
-    try {
-      result = argp1->ResetPath();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  return result;
-}
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetFillColor(char *jarg1,
                                                            char *jarg2) {
   Dali::CanvasRenderer::Shape *argp1;
