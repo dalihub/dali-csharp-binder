@@ -23521,6 +23521,32 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OnRelayoutSignal(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_SetTouchAreaOffset(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5) {
+  Dali::Actor *arg1 = (Dali::Actor *) 0 ;
+  arg1 = (Dali::Actor *)jarg1;
+  Rect<int> arg2 = Rect(jarg2, jarg3, jarg4, jarg5);
+  {
+    try {
+      (arg1)->SetProperty( Dali::DevelActor::Property::TOUCH_AREA_OFFSET, arg2 );
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_GetTouchAreaOffset(void * jarg1, int* jarg2, int* jarg3, int* jarg4, int* jarg5) {
+  Dali::Actor *arg1 = (Dali::Actor *) 0 ;
+  arg1 = (Dali::Actor *)jarg1;
+
+  Rect<int32_t> result;
+  {
+    try {
+      result = (arg1)->GetProperty<Rect<int32_t>>( Dali::DevelActor::Property::TOUCH_AREA_OFFSET);
+      *jarg2 = result.left;
+      *jarg3 = result.right;
+      *jarg4 = result.bottom;
+      *jarg5 = result.top;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_UnparentAndReset(void * jarg1) {
   Dali::Actor *arg1 = 0 ;
