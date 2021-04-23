@@ -91,11 +91,8 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_Convert_Param1(voi
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_GetResult(void *arg1) {
     GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        auto result = (std::string*)arg1;
-        return SWIG_csharp_string_callback(result->c_str());
-    });
-    return nullptr;
+    std::string *data = (std::string*)arg1;
+    return SWIG_csharp_string_callback(data->c_str());
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_SetResult(void *arg1, char *arg2) {
