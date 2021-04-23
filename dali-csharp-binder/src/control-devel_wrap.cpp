@@ -232,37 +232,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ClearAccessibilityA
     });
 }
 
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityReadingInfoType(void *arg1, void *arg2) {
-    GUARD_ON_NULL_RET(arg1);
-    GUARD_ON_NULL_RET(arg2);
-    try_catch([&]() {
-        Dali::Actor *control = (Dali::Actor*) arg1;
-        Dali::Accessibility::ReadingInfoTypes *types = (Dali::Accessibility::ReadingInfoTypes*) arg2;
-        SetAccessibilityReadingInfoType(*control, *types);
-    });
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_ReadingInfoType() {
-    Dali::Accessibility::ReadingInfoTypes *result = nullptr;
-    try_catch([&]() {
-        result = new Dali::Accessibility::ReadingInfoTypes();
-    });
-    return (void*) result;
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_GetAccessibilityReadingInfoType(void *arg1) {
-    Dali::Accessibility::ReadingInfoTypes *result = nullptr;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        Dali::Actor *control = (Dali::Actor*) arg1;
-        result = new Dali::Accessibility::ReadingInfoTypes(GetAccessibilityReadingInfoType(*control));
-    });
-    return (void*) result;
-}
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityReadingInfoType2(void *arg1, int arg2) {
     using namespace Dali::Accessibility;
     static_assert(static_cast<int>(ReadingInfoType::NAME) == 0
@@ -288,35 +257,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilityRead
         result = readingInfo.GetRawData()[0];
     });
     return result;
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_delete_ReadingInfoType(void *arg1) {
-    try_catch([&]() {
-        delete static_cast<Dali::Accessibility::ReadingInfoTypes*>(arg1);
-    });
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoTypes_Get(void *arg1, int arg2) {
-    bool result = false;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        Dali::Accessibility::ReadingInfoTypes *types = (Dali::Accessibility::ReadingInfoTypes*) arg1;
-        Dali::Accessibility::ReadingInfoType type = (Dali::Accessibility::ReadingInfoType) arg2;
-        result = types->operator[](type);
-    });
-    return result;
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoTypes_Set(void *arg1, int arg2, int arg3) {
-    GUARD_ON_NULL_RET(arg1);
-    try_catch([&]() {
-        Dali::Accessibility::ReadingInfoTypes *types = (Dali::Accessibility::ReadingInfoTypes*) arg1;
-        Dali::Accessibility::ReadingInfoType type = (Dali::Accessibility::ReadingInfoType) arg2;
-        types->operator[](type) = (bool)arg3;
-    });
 }
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ClearAccessibilityHighlight(void *arg1) {

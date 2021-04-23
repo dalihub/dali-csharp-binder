@@ -53,17 +53,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_Disconnect(void *arg
     });
 }
 
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_Emit(void *arg1, char *arg2) {
-    GUARD_ON_NULL_RET(arg1);
-    GUARD_ON_NULL_RET(arg2);
-    try_catch([&]() {
-        auto object = (StringToVoidSignal*)arg1;
-        std::string arg2_str(arg2);
-        object->Emit(arg2_str);
-    });
-}
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_new() {
     try_catch([&]() {
         return new StringToVoidSignal();
@@ -77,16 +66,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_delete(void *arg1) {
         auto object = (StringToVoidSignal*)arg1;
         delete object;
     });
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_Convert_Param1(void *arg1) {
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        auto result = (std::string*)arg1;
-        return SWIG_csharp_string_callback(result->c_str());
-    });
-    return nullptr;
 }
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_GetResult(void *arg1) {
@@ -203,4 +182,3 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_SetResult(void 
 #ifdef __cplusplus
 }
 #endif
-
