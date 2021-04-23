@@ -1140,7 +1140,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewUrlChangedSignal_Disconnect(void 
   }
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_ContextMenuCustomized(void * jarg1) {
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_WebViewContextMenuCustomizedSignal_ContextMenuCustomized(void * jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* result = 0;
   {
@@ -1180,7 +1180,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_Disco
   }
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebViewContextMenuItemSelectedSignal_ContextMenuItemSelected(void * jarg1) {
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_WebViewContextMenuItemSelectedSignal_ContextMenuItemSelected(void * jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>* result = 0;
   {
@@ -1807,17 +1807,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetCertificateFilePath(void *
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DisableCache(void * jarg1, bool jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
-  {
-    try {
-      (arg1)->DisableCache(jarg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetDefaultProxyAuth(void * jarg1, const char * jarg2, const char * jarg3) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
   std::string arg2_str(jarg2);
@@ -1908,13 +1897,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebStorage(void *jar
   }
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebStorageOrigin(void *jarg1, void *jarg2) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebStorage(void *jarg1, void *jarg2) {
   Dali::Toolkit::WebContext * arg1 = (Dali::Toolkit::WebContext *)jarg1;
   Dali::WebEngineSecurityOrigin * origin = (Dali::WebEngineSecurityOrigin *)jarg2;
   bool result = false;
   {
     try {
-      result = (arg1)->DeleteWebStorageOrigin(*origin);
+      result = (arg1)->DeleteWebStorage(*origin);
     } CALL_CATCH_EXCEPTION(0);
   }
   return result;
@@ -1991,6 +1980,319 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterMimeOverriddenCallbac
           });
     } CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_EnableCache(void * jarg1, bool jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->EnableCache(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_IsCacheEnabled(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  bool ret;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      ret = (arg1)->IsCacheEnabled();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return ret;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetContextCertificateFile(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  char *jresult;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      const std::string str = (arg1)->GetContextCertificateFile();
+      jresult = SWIG_csharp_string_callback(str.c_str());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextAppId(void *jarg1, char *jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  const std::string str(jarg2);
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->SetContextAppId(str);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_SetContextAppVersion(void *jarg1, char *jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return false;
+  }
+
+  const std::string str(jarg2);
+  bool ret;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      ret = (arg1)->SetContextAppVersion(str);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextApplicationType(void *jarg1, int jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->SetContextApplicationType((Dali::WebEngineContext::ApplicationType)jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextTimeOffset(void *jarg1, float jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->SetContextTimeOffset(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextTimeZoneOffset(void *jarg1, float jarg2, float jarg3) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->SetContextTimeZoneOffset(jarg2, jarg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterUrlSchemesAsCorsEnabled(void *jarg1, char **jarg2, unsigned int jarg3) {
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      std::vector<std::string> vecStr;
+      for (unsigned int i=0; i<jarg3; i++)
+      {
+        if (!jarg2[i]) {
+          SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+          return;
+        }
+        std::string str(jarg2[i]);
+        vecStr.push_back(str);
+      }
+      (arg1)->RegisterUrlSchemesAsCorsEnabled(vecStr);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterJsPluginMimeTypes(void *jarg1, char **jarg2, unsigned int jarg3) {
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      std::vector<std::string> vecStr;
+      for (unsigned int i=0; i<jarg3; i++)
+      {
+        if (!jarg2[i]) {
+          SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+          return;
+        }
+        std::string str(jarg2[i]);
+        vecStr.push_back(str);
+      }
+      (arg1)->RegisterJsPluginMimeTypes(vecStr);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetDefaultZoomFactor(void *jarg1, float jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->SetDefaultZoomFactor(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_WebContext_GetContextDefaultZoomFactor(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  float ret;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      ret = (arg1)->GetContextDefaultZoomFactor();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllApplicationCache(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  bool ret;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      ret = (arg1)->DeleteAllApplicationCache();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebIndexedDatabase(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  bool ret;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      ret = (arg1)->DeleteAllWebIndexedDatabase();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteFormPasswordDataList(void *jarg1, char **jarg2, unsigned int jarg3) {
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      std::vector<std::string> vecStr;
+      for (unsigned int i=0; i<jarg3; i++)
+      {
+        if (!jarg2[i]) {
+          SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+          return;
+        }
+        std::string str(jarg2[i]);
+        vecStr.push_back(str);
+      }
+      (arg1)->DeleteFormPasswordDataList(vecStr);
+    } CALL_CATCH_EXCEPTION()
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllFormPasswordData(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->DeleteAllFormPasswordData();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllFormCandidateData(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->DeleteAllFormCandidateData();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetContextProxy(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  char *jresult;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      const std::string str = (arg1)->GetContextProxy();
+      jresult = SWIG_csharp_string_callback(str.c_str());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextProxy(void *jarg1, char *jarg2, char *jarg3) {
+  if (!jarg2 || !jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  const std::string arg2(jarg2);
+  const std::string arg3(jarg3);
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->SetContextProxy(arg2, arg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyBypassRule(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  char *jresult;
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      const std::string str = (arg1)->GetProxyBypassRule();
+      jresult = SWIG_csharp_string_callback(str.c_str());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_FreeUnusedMemory(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  bool ret;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      ret = (arg1)->FreeUnusedMemory();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return ret;
 }
 
 //----------------------------------WebContextMenu---------------------------------------------------
@@ -2288,6 +2590,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ClearCookies(void * jar
   {
     try {
       (arg1)->ClearCookies();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ChangesWatch(void *jarg1, void *jarg2) {
+  Dali::Toolkit::WebCookieManager *arg1 = (Dali::Toolkit::WebCookieManager *)jarg1;
+  void (*callback)() = (void (*)())jarg2;
+  {
+    try {
+      (arg1)->ChangesWatch(callback);
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -2716,7 +3028,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebSecurityOriginList_ValueOfIndex(voi
 }
 
 //----------------------------------WebHitTest---------------------------------------------------
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebEngineHitTest(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebHitTest(void * jarg1) {
   if (!jarg1) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebEngineHitTest is null", 0);
     return;
