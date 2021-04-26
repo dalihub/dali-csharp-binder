@@ -74,7 +74,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CanvasView_AddDrawable(char *jarg1,
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::Toolkit::CanvasView", 0);
-    return 0;
+    return false;
   }
   arg1 = *argp1;
 
@@ -83,7 +83,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CanvasView_AddDrawable(char *jarg1,
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
-    return 0;
+    return false;
   }
   arg2 = *argp2;
   {
@@ -168,7 +168,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Translate(char *jarg1,
   }
   {
     try {
-      return argp1->Translate(Vector2(arg2, arg3));
+      result = argp1->Translate(Vector2(arg2, arg3));
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -190,7 +190,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Scale(char *jarg1,
   }
   {
     try {
-      argp1->Scale(arg2);
+      result = argp1->Scale(arg2);
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -212,7 +212,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Rotate(char *jarg1,
   }
   {
     try {
-      argp1->Rotate(Dali::Degree(arg2));
+      result = argp1->Rotate(Dali::Degree(arg2));
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -230,7 +230,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Transform(char *jarg1,
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
-    return 0;
+    return false;
   }
 
   argp2 = jarg2;
@@ -238,7 +238,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Transform(char *jarg1,
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException,
                                            "Dali::Matrix3 const & type is null",
                                            0);
-    return 0;
+    return false;
   }
   {
     try {
