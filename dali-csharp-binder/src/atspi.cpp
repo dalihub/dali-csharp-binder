@@ -158,6 +158,16 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_Enable(void *jarg1, bool j
   DALI_LOG_ERROR("csharp_dali_accessibility_Enable() jarg2=%d \n", jarg2);
 }
 
+SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_BridgeEnableAutoInit()
+{
+  Dali::Accessibility::Bridge::EnableAutoInit();
+}
+
+SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_BridgeDisableAutoInit()
+{
+  Dali::Accessibility::Bridge::DisableAutoInit();
+}
+
 #ifdef __cplusplus
 }
 #endif
