@@ -7,6 +7,7 @@
 // INCLUDES
 #include "common.h"
 #include <dali-toolkit/devel-api/controls/canvas-view/canvas-view.h>
+#include <dali/devel-api/adaptor-framework/canvas-renderer-drawable-group.h>
 
 using namespace Dali;
 using namespace Dali::Toolkit;
@@ -840,6 +841,82 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeJoin(char *jarg1) {
   }
 
   return (int)result;
+}
+
+// Dali::CanvasRenderer::DrawableGroup Wrapper
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_DrawableGroup_New() {
+  void *jresult;
+  Dali::CanvasRenderer::DrawableGroup result;
+
+  {
+    try {
+      result = Dali::CanvasRenderer::DrawableGroup::New();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::CanvasRenderer::DrawableGroup(
+      (const Dali::CanvasRenderer::DrawableGroup &)result);
+
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DrawableGroup_AddDrawable(char *jarg1,
+                                                                  char *jarg2) {
+  Dali::CanvasRenderer::DrawableGroup arg1;
+  Dali::CanvasRenderer::DrawableGroup *argp1;
+  Dali::CanvasRenderer::Drawable arg2;
+  Dali::CanvasRenderer::Drawable *argp2;
+  bool result = true;
+
+  argp1 = (Dali::CanvasRenderer::DrawableGroup *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::DrawableGroup", 0);
+    return false;
+  }
+  arg1 = *argp1;
+
+  argp2 = (Dali::CanvasRenderer::Drawable *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
+    return false;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      arg1.AddDrawable(arg2);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DrawableGroup_Clear(char *jarg1) {
+  Dali::CanvasRenderer::DrawableGroup *argp1;
+  bool result = false;
+
+  argp1 = (Dali::CanvasRenderer::DrawableGroup *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::DrawableGroup", 0);
+    return false;
+  }
+
+  {
+    try {
+      result = argp1->Clear();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
 }
 
 #ifdef __cplusplus
