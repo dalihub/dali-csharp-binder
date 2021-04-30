@@ -44,7 +44,7 @@ int LayoutController::GetId() const
   return mId;
 }
 
-void LayoutController::Process()
+void LayoutController::Process(bool postProcessor)
 {
   if( handler )
   {

@@ -55,7 +55,7 @@ public:
   /**
    * @copydoc Dali::Integration::Processor::Process()
    */
-  void Process() override;
+  void Process(bool postProcessor) override;
 
    /**
     * @brief Set the callback to be executed when dali-core calls the overriden Process() api.
