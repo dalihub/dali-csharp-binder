@@ -454,7 +454,11 @@ SWIGEXPORT const void * SWIGSTDCALL CSharp_Dali_WebView_GetFavicon(void * jarg1)
   Dali::Toolkit::ImageView* result = 0;
   {
     try {
-      result = (Dali::Toolkit::ImageView*)&(arg1)->GetFavicon();
+      Dali::Toolkit::ImageView favicon = (arg1)->GetFavicon();
+      if (favicon)
+      {
+        result = new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView &)favicon);
+      }
     } CALL_CATCH_EXCEPTION(0);
   }
   return result;
@@ -872,22 +876,27 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddDynamicCertificatePath(void *
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebView_GetScreenshot(void * jarg1, void * jarg2, float jarg3) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   Dali::Rect<int32_t> *arg = (Dali::Rect<int32_t> *)jarg2;
-  Dali::Toolkit::ImageView result;
+  Dali::Toolkit::ImageView* result = 0;
   {
     try {
-      result = (arg1)->GetScreenshot(*arg, jarg3);
+      Dali::Toolkit::ImageView screenshot = (arg1)->GetScreenshot(*arg, jarg3);
+      if (screenshot)
+      {
+        result = new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView &)screenshot);
+      }
     } CALL_CATCH_EXCEPTION(0);
   }
-  void * jresult =
-      new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView &)result);
-  return jresult;
+  return result;
 }
 
 using SWIG_CallbackWebViewScreenshotCaptured = void(SWIGSTDCALL *)(Dali::Toolkit::ImageView *);
 SWIG_CallbackWebViewScreenshotCaptured swig_callbackOnWebViewScreenshotCaptured;
 
 void OnWebViewScreenshotCapturedCallback(Dali::Toolkit::ImageView imageView) {
-  Dali::Toolkit::ImageView *pImageView = &imageView;
+  if (!imageView)
+    return;
+
+  Dali::Toolkit::ImageView* pImageView = &imageView;
   swig_callbackOnWebViewScreenshotCaptured(pImageView);
 }
 
