@@ -367,7 +367,11 @@ SWIGEXPORT const void* SWIGSTDCALL CSharp_Dali_WebView_GetFavicon( void* jarg1 )
   Dali::Toolkit::ImageView* result = 0;
   {
     try {
-      result = ( Dali::Toolkit::ImageView * )&( arg1 )->GetFavicon();
+      Dali::Toolkit::ImageView favicon = (arg1)->GetFavicon();
+      if (favicon)
+      {
+        result = new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView &)favicon);
+      }
     } CALL_CATCH_EXCEPTION( 0 );
   }
   return result;
