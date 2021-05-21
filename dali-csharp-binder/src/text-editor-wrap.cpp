@@ -624,6 +624,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_GRAB_HANDLE_COLOR_get
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_INPUT_FILTER_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::INPUT_FILTER;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_ScrollBy(void * jarg1, void * jarg2) {
   Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0;
   Dali::Vector2 *arg2 = 0 ;
@@ -1110,6 +1119,39 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_AnchorClickedSignal(void * 
   {
     try {
       result = (Dali::Toolkit::DevelTextEditor::AnchorClickedSignalType *)&Dali::Toolkit::DevelTextEditor::AnchorClickedSignal(*arg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_InputFilteredSignal(void * pTextEditor) {
+  void * jresult ;
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0 ;
+  Dali::Toolkit::DevelTextEditor::InputFilteredSignalType *result = 0 ;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextEditor::InputFilteredSignalType *)&Dali::Toolkit::DevelTextEditor::InputFilteredSignal(*textEditor);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
