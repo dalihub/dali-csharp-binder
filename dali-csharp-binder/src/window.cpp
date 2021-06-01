@@ -1463,7 +1463,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetNotificationLevel(void * jarg
   Dali::Window arg1 ;
   Dali::WindowNotificationLevel arg2 ;
   Dali::Window *argp1 ;
-  int result;
+  bool result;
 
   argp1 = (Dali::Window *)jarg1;
   if (!argp1) {
@@ -1474,7 +1474,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetNotificationLevel(void * jarg
   arg2 = (Dali::WindowNotificationLevel)jarg2;
   {
     try {
-      result = (int)arg1.SetNotificationLevel(arg2);
+      result = (bool)arg1.SetNotificationLevel(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1619,7 +1619,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetScreenOffMode(void * jarg1, i
   Dali::Window arg1 ;
   Dali::WindowScreenOffMode arg2 ;
   Dali::Window *argp1 ;
-  int result;
+  bool result;
 
   argp1 = (Dali::Window *)jarg1;
   if (!argp1) {
@@ -1630,7 +1630,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetScreenOffMode(void * jarg1, i
   arg2 = (Dali::WindowScreenOffMode)jarg2;
   {
     try {
-      result = (int)arg1.SetScreenOffMode(arg2);
+      result = (bool)arg1.SetScreenOffMode(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -1699,7 +1699,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetBrightness(void * jarg1, int 
   Dali::Window arg1 ;
   int arg2 ;
   Dali::Window *argp1 ;
-  int result;
+  bool result;
 
   argp1 = (Dali::Window *)jarg1;
   if (!argp1) {
@@ -1710,7 +1710,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetBrightness(void * jarg1, int 
   arg2 = (int)jarg2;
   {
     try {
-      result = (int)arg1.SetBrightness(arg2);
+      result = (bool)arg1.SetBrightness(arg2);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
