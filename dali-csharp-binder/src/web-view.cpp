@@ -454,11 +454,7 @@ SWIGEXPORT const void * SWIGSTDCALL CSharp_Dali_WebView_GetFavicon(void * jarg1)
   Dali::Toolkit::ImageView* result = 0;
   {
     try {
-      Dali::Toolkit::ImageView favicon = (arg1)->GetFavicon();
-      if (favicon)
-      {
-        result = new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView &)favicon);
-      }
+      result = (Dali::Toolkit::ImageView*)&(arg1)->GetFavicon();
     } CALL_CATCH_EXCEPTION(0);
   }
   return result;
@@ -876,27 +872,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddDynamicCertificatePath(void *
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebView_GetScreenshot(void * jarg1, void * jarg2, float jarg3) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   Dali::Rect<int32_t> *arg = (Dali::Rect<int32_t> *)jarg2;
-  Dali::Toolkit::ImageView* result = 0;
+  Dali::Toolkit::ImageView result;
   {
     try {
-      Dali::Toolkit::ImageView screenshot = (arg1)->GetScreenshot(*arg, jarg3);
-      if (screenshot)
-      {
-        result = new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView &)screenshot);
-      }
+      result = (arg1)->GetScreenshot(*arg, jarg3);
     } CALL_CATCH_EXCEPTION(0);
   }
-  return result;
+  void * jresult =
+      new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView &)result);
+  return jresult;
 }
 
 using SWIG_CallbackWebViewScreenshotCaptured = void(SWIGSTDCALL *)(Dali::Toolkit::ImageView *);
 SWIG_CallbackWebViewScreenshotCaptured swig_callbackOnWebViewScreenshotCaptured;
 
 void OnWebViewScreenshotCapturedCallback(Dali::Toolkit::ImageView imageView) {
-  if (!imageView)
-    return;
-
-  Dali::Toolkit::ImageView* pImageView = &imageView;
+  Dali::Toolkit::ImageView *pImageView = &imageView;
   swig_callbackOnWebViewScreenshotCaptured(pImageView);
 }
 
@@ -1431,18 +1422,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewCertificateSignal_Disconnect(void
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewResponsePolicyDecisionSignal_ResponsePolicyDecision(void * jarg1) {
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebViewPolicyDecisionSignal_PolicyDecision(void * jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>* result = 0;
   {
     try {
-      result = new SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>(&webview->ResponsePolicyDecisionSignal());
+      result = new SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>(&webview->PolicyDecisionSignal());
     } CALL_CATCH_EXCEPTION(0);
   }
   return (void*)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewResponsePolicyDecisionSignal(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewPolicyDecisionSignal(void * jarg1) {
   SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>* object = (SignalConverter::WebViewProxySignal<Dali::WebEnginePolicyDecision>*)jarg1;
   {
     try {
@@ -1511,7 +1502,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewHttpAuthHandlerSignal_Disconnect(
   }
 }
 
-//----------------------------------WebBackForwardListItem-----------------------------------------------------
+//----------------------------------WebBackForwardList-----------------------------------------------------
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetUrl(void * jarg1) {
   Dali::WebEngineBackForwardListItem *arg1 = (Dali::WebEngineBackForwardListItem *)0;
   std::string result;
@@ -1551,7 +1542,6 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetOrigin
   return jresult;
 }
 
-//----------------------------------WebBackForwardList-----------------------------------------------------
 SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetItemCount(void * jarg1) {
   Dali::Toolkit::WebBackForwardList *arg1 = (Dali::Toolkit::WebBackForwardList *)0;
   uint32_t result = 0;
@@ -1678,7 +1668,6 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebBackForwardList_GetItemAtIndexFromCo
   }
   return (void *)result;
 }
-
 //----------------------------------WebConsoleMessage-----------------------------------------------------
 SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebConsoleMessage_GetSource(void* jarg1) {
   Dali::WebEngineConsoleMessage* arg1 = (Dali::WebEngineConsoleMessage*)jarg1;
