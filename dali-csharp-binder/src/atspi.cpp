@@ -129,20 +129,6 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_stop_reading(void *jarg1, 
   DALI_LOG_ERROR("csharp_dali_accessibility_stop_reading() arg2=%d", arg2);
 }
 
-SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_suppress_screen_reader(void *jarg1, bool jarg2)
-{
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *)jarg1;
-  bool arg2 = jarg2;
-
-  if (!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control is null", 0);
-    return false;
-  }
-
-  return Dali::AtspiAccessibility::SuppressScreenReader(arg2);
-}
-
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_Enable(void *jarg1, bool jarg2)
 {
   Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *)jarg1;
@@ -156,16 +142,6 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_Enable(void *jarg1, bool j
   Dali::AtspiAccessibility::SetForcefully(jarg2);
 
   DALI_LOG_ERROR("csharp_dali_accessibility_Enable() jarg2=%d \n", jarg2);
-}
-
-SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_BridgeEnableAutoInit()
-{
-  Dali::Accessibility::Bridge::EnableAutoInit();
-}
-
-SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_BridgeDisableAutoInit()
-{
-  Dali::Accessibility::Bridge::DisableAutoInit();
 }
 
 #ifdef __cplusplus
