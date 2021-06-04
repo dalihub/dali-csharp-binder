@@ -232,6 +232,24 @@ extern "C"
     }
   }
 
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TransitionBase_SetAppearingTransition(void *nuiTransitionBase, bool nuiAppearingTransition)
+  {
+    Dali::Toolkit::TransitionBase *transition = (Dali::Toolkit::TransitionBase *)nuiTransitionBase;
+
+    if (!transition)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+      return;
+    }
+    {
+      try
+      {
+        (transition)->SetAppearingTransition(nuiAppearingTransition);
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+  }
+
 #ifdef __cplusplus
 }
 #endif
