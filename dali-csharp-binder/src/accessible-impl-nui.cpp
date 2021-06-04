@@ -50,6 +50,9 @@ struct AccessibilityDelegate
     bool (*setSelection)(int, int, int); // 21
     bool (*copyText)(int, int); // 22
     bool (*cutText)(int, int); // 23
+    bool (*insertText)(int, const char *); // 24
+    bool (*setTextContents)(const char *); // 25
+    bool (*deleteText)(int, int); // 26
 };
 
 inline std::string stealString(char *str)
@@ -461,6 +464,38 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
         if (v->cutText)
         {
             ret = v->cutText(static_cast<int>(startPosition), static_cast<int>(endPosition));
+        }
+
+        return ret;
+    }
+
+    bool InsertText(std::size_t startPosition, std::string text) override
+    {
+        if (v->insertText)
+        {
+            return v->insertText(static_cast<int>(startPosition), text.c_str());
+        }
+
+        return false;
+    }
+
+    bool SetTextContents(std::string newContents) override
+    {
+        if (v->setTextContents)
+        {
+            return v->setTextContents(newContents.c_str());
+        }
+
+        return false;
+    }
+
+    bool DeleteText(std::size_t startPosition, std::size_t endPosition) override
+    {
+        bool ret{false};
+
+        if (v->deleteText)
+        {
+            ret = v->deleteText(static_cast<int>(startPosition), static_cast<int>(endPosition));
         }
 
         return ret;
