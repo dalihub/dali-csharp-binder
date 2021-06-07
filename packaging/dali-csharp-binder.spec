@@ -219,7 +219,10 @@ for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{v
 mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
+%if "%{?profile}" != "mobile"
 make clean
+%endif
+
 %endif
 
 #######################################################################
@@ -245,7 +248,10 @@ for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{v
 mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
+%if "%{?profile}" != "tv"
 make clean
+%endif
+
 %endif
 
 #######################################################################
@@ -271,7 +277,10 @@ for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{v
 mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
+%if "%{?profile}" != "wearable"
 make clean
+%endif
+
 %endif
 
 #######################################################################
@@ -297,7 +306,10 @@ for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{v
 mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
+%if "%{?profile}" != "ivi"
 make clean
+%endif
+
 %endif
 
 #######################################################################
@@ -324,7 +336,10 @@ for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{v
 mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
+%if "%{?profile}" != "common"
 make clean
+%endif
+
 %endif
 
 ##############################
