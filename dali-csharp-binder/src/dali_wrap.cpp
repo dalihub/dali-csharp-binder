@@ -24957,6 +24957,28 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OnRelayoutSignal(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetNeedGesturePropagation(void * jarg1, bool jarg2) {
+  void * jresult ;
+  Dali::Actor arg1 ;
+  bool arg2;
+  Dali::Actor *argp1 = (Dali::Actor *) 0 ;
+
+
+  argp1 = (Dali::Actor *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
+    return;
+  }
+  arg1 = *argp1;
+  arg2 = jarg2;
+  {
+    try {
+      Dali::DevelActor::SetNeedGesturePropagation(arg1, arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_SetTouchAreaOffset(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   arg1 = (Dali::Actor *)jarg1;
@@ -39219,10 +39241,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_HIGHLIGHTABLE
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_ATTRIBUTES_get() {
   return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_ATTRIBUTES;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_ANIMATED_get() {
-  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_ANIMATED;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View_Property() {

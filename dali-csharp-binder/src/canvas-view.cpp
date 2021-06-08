@@ -252,6 +252,32 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Transform(char *jarg1,
   return result;
 }
 
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Drawable_GetBoundingBox(char *jarg1) {
+  Dali::CanvasRenderer::Drawable *argp1;
+  Dali::Rect<float> result;
+  void *jresult = nullptr;
+
+  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
+    return 0;
+  }
+  {
+    try {
+      result = argp1->GetBoundingBox();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  //Note: The float type Rectangle class is not ready yet.
+  //      Therefore, it transmits data in Vector4 class.
+  //      This type should later be changed to the appropriate data type.
+  jresult = new Dali::Vector4(result.x, result.y, result.width, result.height);
+  return jresult;
+}
+
 // Dali::CanvasRenderer::Shape Wrapper
 
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Shape_New() {

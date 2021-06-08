@@ -682,6 +682,33 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_FONT_SIZE_SCALE_get()
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_ENABLE_GRAB_HANDLE_get() {
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_GRAB_HANDLE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_ENABLE_GRAB_HANDLE_POPUP_get() {
+  int jresult;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_GRAB_HANDLE_POPUP;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_INPUT_METHOD_SETTINGS_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::DevelTextEditor::Property::INPUT_METHOD_SETTINGS;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextEditor_Property() {
   void * jresult ;
   Dali::Toolkit::TextEditor::Property *result = 0 ;

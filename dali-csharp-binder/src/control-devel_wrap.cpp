@@ -232,37 +232,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ClearAccessibilityA
     });
 }
 
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityReadingInfoType(void *arg1, void *arg2) {
-    GUARD_ON_NULL_RET(arg1);
-    GUARD_ON_NULL_RET(arg2);
-    try_catch([&]() {
-        Dali::Actor *control = (Dali::Actor*) arg1;
-        Dali::Accessibility::ReadingInfoTypes *types = (Dali::Accessibility::ReadingInfoTypes*) arg2;
-        SetAccessibilityReadingInfoType(*control, *types);
-    });
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_ReadingInfoType() {
-    Dali::Accessibility::ReadingInfoTypes *result = nullptr;
-    try_catch([&]() {
-        result = new Dali::Accessibility::ReadingInfoTypes();
-    });
-    return (void*) result;
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_GetAccessibilityReadingInfoType(void *arg1) {
-    Dali::Accessibility::ReadingInfoTypes *result = nullptr;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        Dali::Actor *control = (Dali::Actor*) arg1;
-        result = new Dali::Accessibility::ReadingInfoTypes(GetAccessibilityReadingInfoType(*control));
-    });
-    return (void*) result;
-}
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityReadingInfoType2(void *arg1, int arg2) {
     using namespace Dali::Accessibility;
     static_assert(static_cast<int>(ReadingInfoType::NAME) == 0
@@ -290,35 +259,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilityRead
     return result;
 }
 
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_delete_ReadingInfoType(void *arg1) {
-    try_catch([&]() {
-        delete static_cast<Dali::Accessibility::ReadingInfoTypes*>(arg1);
-    });
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoTypes_Get(void *arg1, int arg2) {
-    bool result = false;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch([&]() {
-        Dali::Accessibility::ReadingInfoTypes *types = (Dali::Accessibility::ReadingInfoTypes*) arg1;
-        Dali::Accessibility::ReadingInfoType type = (Dali::Accessibility::ReadingInfoType) arg2;
-        result = types->operator[](type);
-    });
-    return result;
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ReadingInfoTypes_Set(void *arg1, int arg2, int arg3) {
-    GUARD_ON_NULL_RET(arg1);
-    try_catch([&]() {
-        Dali::Accessibility::ReadingInfoTypes *types = (Dali::Accessibility::ReadingInfoTypes*) arg1;
-        Dali::Accessibility::ReadingInfoType type = (Dali::Accessibility::ReadingInfoType) arg2;
-        types->operator[](type) = (bool)arg3;
-    });
-}
-
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ClearAccessibilityHighlight(void *arg1) {
     bool result = false;
     GUARD_ON_NULL_RET0(arg1);
@@ -339,6 +279,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GrabAccessi
     return result;
 }
 
+// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_States() {
     Dali::Accessibility::States *result = nullptr;
     try_catch([&]() {
@@ -347,6 +288,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_States() {
     return (void*)result;
 }
 
+// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_GetAccessibilityStates(void *arg1) {
     Dali::Accessibility::States *result = nullptr;
     GUARD_ON_NULL_RET0(arg1);
@@ -357,6 +299,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_GetAccessibili
     return (void*)result;
 }
 
+// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Get(void *arg1, int arg2) {
     bool result = false;
     GUARD_ON_NULL_RET0(arg1);
@@ -368,6 +311,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Get(
     return result;
 }
 
+// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Set(void *arg1, int arg2, int arg3) {
     GUARD_ON_NULL_RET(arg1);
     try_catch([&]() {
@@ -377,12 +321,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Set(void *ar
     });
 }
 
+// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_delete_States(void *arg1) {
     try_catch([&]() {
         delete static_cast<Dali::Accessibility::States*>(arg1);
     });
 }
 
+// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Copy(void *arg1) {
     Dali::Accessibility::States *result = nullptr;
     GUARD_ON_NULL_RET0(arg1);
@@ -393,6 +339,20 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Copy(void *
     return result;
 }
 
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ConvertState(uint64_t arg1) {
+    Dali::Accessibility::States *result = nullptr;
+    GUARD_ON_NULL_RET0(arg1);
+    try_catch([&]() {
+       std::array<uint32_t, 2> data;
+       data[0] = static_cast<uint32_t>(arg1);
+       data[1] = static_cast<uint32_t>(arg1 >> 32);
+
+       result = new Dali::Accessibility::States(data);
+    });
+    return result;
+}
+
+// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibilityStateChange(void *arg1, void *arg2, int arg3) {
     GUARD_ON_NULL_RET(arg1);
     GUARD_ON_NULL_RET(arg2);
@@ -401,6 +361,33 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibility
         Dali::Accessibility::States *states = (Dali::Accessibility::States*) arg2;
         bool doRecursive = arg3 ? true : false;
         NotifyAccessibilityStateChange(*control, *states, doRecursive);
+    });
+}
+
+SWIGEXPORT uint64_t SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilityState(void *arg1) {
+    uint64_t result = 0;
+    GUARD_ON_NULL_RET0(arg1);
+    try_catch([&]() {
+        Dali::Actor *control = (Dali::Actor*) arg1;
+        auto states = GetAccessibilityStates(*control);
+        result = states.GetRawData()[0];
+        uint64_t high = states.GetRawData()[1];
+        result |= (high << 32);
+    });
+    return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibilityStateChange2(void *arg1, uint64_t arg2, int arg3) {
+    GUARD_ON_NULL_RET(arg1);
+    try_catch([&]() {
+        std::array<uint32_t, 2> data;
+        data[0] = static_cast<uint32_t>(arg2);
+        data[1] = static_cast<uint32_t>(arg2 >> 32);
+
+        Dali::Accessibility::States states(data);
+        Dali::Actor *control = (Dali::Actor*) arg1;
+        bool doRecursive = arg3 ? true : false;
+        NotifyAccessibilityStateChange(*control, states, doRecursive);
     });
 }
 
@@ -430,6 +417,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityEvent(voi
     });
 }
 
+// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityStateChangedEvent(void *arg1, int arg2_state, int arg3) {
     GUARD_ON_NULL_RET(arg1);
     try_catch([&]() {
@@ -437,6 +425,31 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityStateChan
         auto accessible = GetBoundAccessibilityObject(*control);
         if (accessible)
             accessible->EmitStateChanged((Dali::Accessibility::State)arg2_state, arg3);
+        else
+            SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
+    });
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityStateChangedEvent2(void *arg1, uint64_t arg2_state_bitfield, int arg3) {
+    GUARD_ON_NULL_RET(arg1);
+    try_catch([&]() {
+        /* Only one state may be passed with EmitStateChanged function */
+        /* TODO: replace with std::popcount() after migration to c++20 */
+        if (1 != __builtin_popcountll(arg2_state_bitfield)) {
+            SWIG_CSharpException(SWIG_RuntimeError, "Exactly one state must be set!");
+            return;
+        }
+
+        /* Now we need to convert "nui bitfield" into "dali enum State".   *
+         * Position of the bit equals value of Dali::Accessibility::State. */
+        /* TODO: replace with std::count_zero() after migration to c++20   */
+        int leading_zeros = __builtin_clzll(arg2_state_bitfield);
+        Dali::Accessibility::State state = (Dali::Accessibility::State) (63-leading_zeros);
+
+        Dali::Actor *control = (Dali::Actor*) arg1;
+        auto accessible = GetBoundAccessibilityObject(*control);
+        if (accessible)
+            accessible->EmitStateChanged((Dali::Accessibility::State)state, arg3);
         else
             SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
     });
