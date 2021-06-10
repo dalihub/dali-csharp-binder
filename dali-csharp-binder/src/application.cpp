@@ -23,6 +23,7 @@
 #include <dali/public-api/adaptor-framework/application.h>
 #include <dali/devel-api/adaptor-framework/application-devel.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
+#include <dali/public-api/adaptor-framework/window-enumerations.h>
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
@@ -2105,6 +2106,86 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, cha
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int jarg1, char * jarg3, int jarg4, void * jarg5, int jarg6) {
+  void * jresult ;
+  int *arg1 = (int *) 0 ;
+  char ***arg2 ;
+  Dali::Application::WINDOW_MODE arg4 ;
+  Dali::PositionSize arg5 ;
+  Dali::PositionSize *argp5 ;
+  Dali::WindowType arg6;
+  Dali::Application result;
+
+  {
+    // Todo generate argv data from the C# args
+    char **array;         // two dimensional array
+    int numStrings = 1;     // number of strings
+    int stringLength = 30;      // max string length.
+    array = (char **)malloc( (numStrings + 1 )* sizeof(char *) );
+    if(!array) {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "array is null", 0);
+      return 0;
+    }
+    gArgV = array;
+
+    // allocate the string data
+    for( int i=0; i < numStrings; i++)
+    {
+      array[i]=(char *)malloc( stringLength * sizeof(char) );
+    }
+    array[ numStrings ] =  NULL; // we allocated +1 for hold the NULL part
+
+    std::string temp = "dali-csharp-app";
+
+    if(!array[0]) {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "array[0] is null", 0);
+      return 0;
+    }
+    array[0][temp.copy(array[0], strlen(array[0])-1)] = '\0';
+
+    arg1 = &gArgC;
+    arg2 = &gArgV;
+  }
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg3(jarg3);
+  arg4 = (Dali::Application::WINDOW_MODE)jarg4;
+  argp5 = (Dali::PositionSize *)jarg5;
+  arg6 = (Dali::WindowType)jarg6;
+
+  if (!argp5) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
+    return 0;
+  }
+  arg5 = *argp5;
+  {
+    try {
+      result = Dali::DevelApplication::New( arg1, arg2, arg3, arg4, arg5, arg6 );
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = new Dali::Application((const Dali::Application &)result);
+
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(int jarg1, char * jarg2, char * jarg3, int jarg4, void * jarg5) {
  void * jresult ;
