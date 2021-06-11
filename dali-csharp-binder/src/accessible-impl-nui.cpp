@@ -53,6 +53,15 @@ struct AccessibilityDelegate
     bool (*insertText)(int, const char *); // 24
     bool (*setTextContents)(const char *); // 25
     bool (*deleteText)(int, int); // 26
+    bool (*scrollToChild)(Dali::Actor *); // 27
+    int (*getSelectedChildrenCount)(); // 28
+    Dali::Actor *(*getSelectedChild)(int); // 29
+    bool (*selectChild)(int); // 30
+    bool (*deselectSelectedChild)(int); // 31
+    bool (*isChildSelected)(int); // 32
+    bool (*selectAll)(); // 33
+    bool (*clearSelection)(); // 34
+    bool (*deselectChild)(int); // 35
 };
 
 inline std::string stealString(char *str)
@@ -271,10 +280,17 @@ struct AccessibleImpl_NUI : public AccessibleImpl
         return ret;
     }
 
-#if 0
-    void EnsureChildVisible(Dali::Actor child) override;
-    void EnsureSelfVisible() override;
-#endif
+    bool ScrollToChild(Dali::Actor child) override
+    {
+        bool ret{false};
+
+        if (v->scrollToChild)
+        {
+            ret = v->scrollToChild(new Dali::Actor(child));
+        }
+
+        return ret;
+    }
 };
 
 struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
@@ -502,10 +518,118 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
     }
 };
 
+struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
+                                      public virtual Dali::Accessibility::Selection
+{
+    using AccessibleImpl_NUI::AccessibleImpl_NUI;
+
+    int GetSelectedChildrenCount() override
+    {
+        int ret{0};
+
+        if (v->getSelectedChildrenCount)
+        {
+            ret = v->getSelectedChildrenCount();
+        }
+
+        return ret;
+    }
+
+    Dali::Accessibility::Accessible* GetSelectedChild(int selectedChildIndex) override
+    {
+        Dali::Accessibility::Accessible* ret{nullptr};
+
+        if (v->getSelectedChild)
+        {
+            Dali::Actor *actor = v->getSelectedChild(selectedChildIndex);
+            if (actor)
+            {
+                ret = Dali::Accessibility::Accessible::Get(*actor);
+            }
+        }
+
+        return ret;
+    }
+
+    bool SelectChild(int childIndex) override
+    {
+        bool ret{false};
+
+        if (v->selectChild)
+        {
+            ret = v->selectChild(childIndex);
+        }
+
+        return ret;
+    }
+
+    bool DeselectSelectedChild(int selectedChildIndex) override
+    {
+        bool ret{false};
+
+        if (v->deselectSelectedChild)
+        {
+            ret = v->deselectSelectedChild(selectedChildIndex);
+        }
+
+        return ret;
+    }
+
+    bool IsChildSelected(int childIndex) override
+    {
+        bool ret{false};
+
+        if (v->isChildSelected)
+        {
+            ret = v->isChildSelected(childIndex);
+        }
+
+        return ret;
+    }
+
+    bool SelectAll() override
+    {
+        bool ret{false};
+
+        if (v->selectAll)
+        {
+            ret = v->selectAll();
+        }
+
+        return ret;
+    }
+
+    bool ClearSelection() override
+    {
+        bool ret{false};
+
+        if (v->clearSelection)
+        {
+            ret = v->clearSelection();
+        }
+
+        return ret;
+    }
+
+    bool DeselectChild(int childIndex) override
+    {
+        bool ret{false};
+
+        if (v->deselectChild)
+        {
+            ret = v->deselectChild(childIndex);
+        }
+
+        return ret;
+    }
+};
+
+// Keep these enumeration values in sync with the respective C# enumeration!
 enum {
     IFACE_NONE = 0,
     IFACE_VALUE = 1,
     IFACE_EDITABLE_TEXT = 2,
+    IFACE_SELECTION = 3,
 };
 
 } // anonymous namespace
@@ -547,6 +671,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityCon
                 break;
             case IFACE_EDITABLE_TEXT:
                 accessible = new AccessibleImpl_NUI_EditableText(actor, role, vtable);
+                break;
+            case IFACE_SELECTION:
+                accessible = new AccessibleImpl_NUI_Selection(actor, role, vtable);
                 break;
             }
 
