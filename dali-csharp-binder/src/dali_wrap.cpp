@@ -27942,6 +27942,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGesture_localPoint_get(void * jarg1
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TapGesture_sourceType_get(void * jarg1) {
+  int jresult ;
+  Dali::TapGesture *arg1 = (Dali::TapGesture *) 0 ;
+  Dali::GestureSourceType result;
+
+  arg1 = (Dali::TapGesture *)jarg1;
+  {
+    try {
+      result = ((Dali::TapGesture const *)arg1)->GetSourceType();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = static_cast< int >(result);
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_AlphaFunction__SWIG_0() {
   void * jresult ;
   Dali::AlphaFunction *result = 0 ;
