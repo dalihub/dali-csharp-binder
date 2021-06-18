@@ -24450,6 +24450,36 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsKeyboardFocusable(void *
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetTouchFocusable(void * jarg1, bool jarg2) {
+  Dali::Actor *arg1 = (Dali::Actor *) 0 ;
+  bool arg2 ;
+
+  arg1 = (Dali::Actor *)jarg1;
+  arg2 = jarg2 ? true : false;
+  {
+    try {
+      (arg1)->SetProperty( DevelActor::Property::TOUCH_FOCUSABLE, arg2 );
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsTouchFocusable(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Actor *arg1 = (Dali::Actor *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Actor *)jarg1;
+  {
+    try {
+      result = (bool)((Dali::Actor const *)arg1)->GetProperty< bool >( DevelActor::Property::TOUCH_FOCUSABLE );
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetResizePolicy(void * jarg1, int jarg2, int jarg3) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
@@ -27941,6 +27971,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGesture_localPoint_get(void * jarg1
   return jresult;
 }
 
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TapGesture_sourceType_get(void * jarg1) {
+  int jresult ;
+  Dali::TapGesture *arg1 = (Dali::TapGesture *) 0 ;
+  Dali::GestureSourceType result;
+
+  arg1 = (Dali::TapGesture *)jarg1;
+  {
+    try {
+      result = ((Dali::TapGesture const *)arg1)->GetSourceType();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = static_cast< int >(result);
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_AlphaFunction__SWIG_0() {
   void * jresult ;
