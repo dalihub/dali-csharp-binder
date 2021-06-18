@@ -3801,6 +3801,105 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSizeWithOrientation(vo
 
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RequestMoveToServer(void* jarg1)
+{
+  Dali::Window* window = (Dali::Window*)jarg1;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+
+  {
+    try {
+      Dali::DevelWindow::RequestMoveToServer(*window);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RequestResizeToServer(void* jarg1, int jarg2)
+{
+  Dali::Window* window = (Dali::Window*)jarg1;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+
+  Dali::WindowResizeDirection direction = (Dali::WindowResizeDirection)jarg2;
+
+  {
+    try {
+      Dali::DevelWindow::RequestResizeToServer(*window, direction);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_EnableFloatingMode(void* jarg1, bool jarg2)
+{
+  Dali::Window* window = (Dali::Window*)jarg1;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return;
+  }
+
+  bool enable = jarg2;
+  {
+    try {
+      Dali::DevelWindow::EnableFloatingMode(*window, enable);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+}
+
 #ifdef __cplusplus
 }
 #endif
