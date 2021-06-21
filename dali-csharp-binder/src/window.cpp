@@ -726,21 +726,22 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetCurrentOrientation(void * jarg1
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAvailableOrientations(void * jarg1, int* jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAvailableOrientations(void * jarg1, void* jarg2, int jarg3) {
   Dali::Window* window = (Dali::Window*)jarg1;
-  if (!window) {
+  if(!window)
+  {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return;
   }
-  int *arg2 = (int *) 0 ;
-  int count = jarg3;
+  Dali::Property::Array *arg2 = (static_cast<Dali::Property::Array *>(jarg2));
+  unsigned int count = static_cast<unsigned int>(jarg3);
 
-  arg2 = jarg2;
   Dali::Vector< Dali::WindowOrientation> orientations;
   orientations.Resize( count );
-  for( int i = 0; i<count; ++i)
+  for(Dali::Property::Array::SizeType i = 0; i < count; ++i)
   {
-    orientations[i] = static_cast< Dali::WindowOrientation >(arg2[i]);
+    int angle = arg2->GetElementAt(i).Get<int>();
+    orientations[i] = static_cast< Dali::WindowOrientation >(angle);
   }
   {
     try {
