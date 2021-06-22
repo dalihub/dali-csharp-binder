@@ -8329,6 +8329,56 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Rotation_AngleBetween(void * jarg1, voi
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Rotate_Vector3(void * nuiRotation, void * nuiVector3) {
+  void * jresult ;
+  Dali::Quaternion *quaternion = (Dali::Quaternion *)nuiRotation;
+  Dali::Vector3 *vector3 = (Dali::Vector3 *)nuiVector3;
+  Vector3 result;
+
+  if (!quaternion) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Quaternion const & type is null", 0);
+    return 0;
+  }
+  if (!vector3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Quaternion const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = ((Dali::Quaternion const *)quaternion)->Rotate(*vector3);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Vector3((const Dali::Vector3 &)result);;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Rotate_Vector4(void * nuiRotation, void * nuiVector4) {
+  void * jresult ;
+  Dali::Quaternion *quaternion = (Dali::Quaternion *)nuiRotation;
+  Dali::Vector4 *vector4 = (Dali::Vector4 *)nuiVector4;
+  Vector3 result;
+
+  if (!quaternion) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Quaternion const & type is null", 0);
+    return 0;
+  }
+  if (!vector4) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Quaternion const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = ((Dali::Quaternion const *)quaternion)->Rotate(*vector4);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Vector4((const Dali::Vector4 &)result);;
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Matrix__SWIG_0() {
   void * jresult ;
   Dali::Matrix *result = 0 ;
