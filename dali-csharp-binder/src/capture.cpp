@@ -22,6 +22,7 @@
 #include <string.h>
 #include "common.h"
 #include <dali/public-api/capture/capture.h>
+#include <dali/devel-api/adaptor-framework/capture-devel.h>
 #include <dali/integration-api/debug.h>
 #include <dali/public-api/rendering/texture.h>
 #include <dali-toolkit/devel-api/image-loader/texture-manager.h>
@@ -906,6 +907,46 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Capture_GenerateUrl(void* nuiCapture)
     }
   }
   return SWIG_csharp_string_callback( (const char *)url.c_str() );
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Capture_GetCapturedBuffer(void *nuiCapture)
+{
+  Dali::Capture *capture = (Dali::Capture *)nuiCapture;
+  Dali::Devel::PixelBuffer pixelBuffer;
+
+  if (!capture)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      pixelBuffer = Dali::DevelCapture::GetCapturedBuffer(*capture);
+    }
+    catch (std::out_of_range &e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return 0;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return 0;
+    }
+  }
+  Dali::Devel::PixelBuffer *result = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)pixelBuffer);
+  return result;
 }
 
 #ifdef __cplusplus
