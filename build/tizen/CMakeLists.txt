@@ -90,7 +90,7 @@ set(SOURCES
   ${dali_csharp_binder_dir}/src/keyboard_focus_manager_wrap.cpp
   ${dali_csharp_binder_dir}/src/devel-property-wrap.cpp
   ${dali_csharp_binder_dir}/src/version-check.cpp
-  ${dali_csharp_binder_dir}/src/layout-controller.cpp
+  ${dali_csharp_binder_dir}/src/processor-controller.cpp
   ${dali_csharp_binder_dir}/src/flex-layout.cpp
   ${dali_csharp_binder_dir}/src/gestures.cpp
   ${dali_csharp_binder_dir}/src/view-wrapper-impl-wrap.cpp
