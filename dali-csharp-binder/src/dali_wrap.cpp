@@ -3129,8 +3129,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_GetType(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Any_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Any_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Any *arg1 = (Dali::Any *) 0 ;
   bool result;
 
@@ -3878,8 +3878,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_Subtract__SWIG_1(void * jarg1)
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Vector2_EqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Vector2_EqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Vector2 *arg1 = (Dali::Vector2 *) 0 ;
   Dali::Vector2 *arg2 = 0 ;
   bool result;
@@ -3901,8 +3901,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Vector2_EqualTo(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Vector2_NotEqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Vector2_NotEqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Vector2 *arg1 = (Dali::Vector2 *) 0 ;
   Dali::Vector2 *arg2 = 0 ;
   bool result;
@@ -4760,8 +4760,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_Subtract__SWIG_1(void * jarg1)
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Vector3_EqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Vector3_EqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Vector3 *arg1 = (Dali::Vector3 *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
   bool result;
@@ -4783,8 +4783,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Vector3_EqualTo(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Vector3_NotEqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Vector3_NotEqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Vector3 *arg1 = (Dali::Vector3 *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
   bool result;
@@ -5781,8 +5781,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_Subtract__SWIG_1(void * jarg1)
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Vector4_EqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Vector4_EqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
   Dali::Vector4 *arg2 = 0 ;
   bool result;
@@ -5804,8 +5804,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Vector4_EqualTo(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Vector4_NotEqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Vector4_NotEqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
   Dali::Vector4 *arg2 = 0 ;
   bool result;
@@ -6593,8 +6593,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Uint16Pair_Assign(void * jarg1, void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Uint16Pair_EqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Uint16Pair_EqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Uint16Pair *arg1 = (Dali::Uint16Pair *) 0 ;
   Dali::Uint16Pair *arg2 = 0 ;
   bool result;
@@ -6616,8 +6616,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Uint16Pair_EqualTo(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Uint16Pair_NotEqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Uint16Pair_NotEqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Uint16Pair *arg1 = (Dali::Uint16Pair *) 0 ;
   Dali::Uint16Pair *arg2 = 0 ;
   bool result;
@@ -6639,8 +6639,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Uint16Pair_NotEqualTo(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Uint16Pair_LessThan(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Uint16Pair_LessThan(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Uint16Pair *arg1 = (Dali::Uint16Pair *) 0 ;
   Dali::Uint16Pair *arg2 = 0 ;
   bool result;
@@ -6662,8 +6662,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Uint16Pair_LessThan(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Uint16Pair_GreaterThan(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Uint16Pair_GreaterThan(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Uint16Pair *arg1 = (Dali::Uint16Pair *) 0 ;
   Dali::Uint16Pair *arg2 = 0 ;
   bool result;
@@ -6908,8 +6908,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ANGLE_0_get() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_5(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_5(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Degree *arg1 = 0 ;
   Dali::Degree *arg2 = 0 ;
   bool result;
@@ -6935,8 +6935,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_5(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_4(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_4(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Degree *arg1 = 0 ;
   Dali::Degree *arg2 = 0 ;
   bool result;
@@ -7140,8 +7140,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Radian(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_6(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_6(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Radian arg1 ;
   Dali::Radian arg2 ;
   Dali::Radian *argp1 ;
@@ -7171,8 +7171,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_6(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_5(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_5(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Radian arg1 ;
   Dali::Radian arg2 ;
   Dali::Radian *argp1 ;
@@ -7202,8 +7202,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_5(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_7(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_7(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Radian arg1 ;
   Dali::Degree arg2 ;
   Dali::Radian *argp1 ;
@@ -7233,8 +7233,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_7(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_6(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_6(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Radian arg1 ;
   Dali::Degree arg2 ;
   Dali::Radian *argp1 ;
@@ -7264,8 +7264,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_6(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_8(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_8(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Degree arg1 ;
   Dali::Radian arg2 ;
   Dali::Degree *argp1 ;
@@ -7295,8 +7295,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_8(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_7(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_7(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Degree arg1 ;
   Dali::Radian arg2 ;
   Dali::Degree *argp1 ;
@@ -7326,8 +7326,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NotEqualTo__SWIG_7(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GreaterThan__SWIG_0(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GreaterThan__SWIG_0(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Radian arg1 ;
   Dali::Radian arg2 ;
   Dali::Radian *argp1 ;
@@ -7357,8 +7357,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GreaterThan__SWIG_0(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GreaterThan__SWIG_1(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GreaterThan__SWIG_1(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Radian arg1 ;
   Dali::Degree arg2 ;
   Dali::Radian *argp1 ;
@@ -7388,8 +7388,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GreaterThan__SWIG_1(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GreaterThan__SWIG_2(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GreaterThan__SWIG_2(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Degree arg1 ;
   Dali::Radian arg2 ;
   Dali::Degree *argp1 ;
@@ -7419,8 +7419,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GreaterThan__SWIG_2(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LessThan__SWIG_0(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LessThan__SWIG_0(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Radian arg1 ;
   Dali::Radian arg2 ;
   Dali::Radian *argp1 ;
@@ -7450,8 +7450,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LessThan__SWIG_0(void * jarg1, v
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LessThan__SWIG_1(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LessThan__SWIG_1(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Radian arg1 ;
   Dali::Degree arg2 ;
   Dali::Radian *argp1 ;
@@ -7481,8 +7481,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LessThan__SWIG_1(void * jarg1, v
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LessThan__SWIG_2(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LessThan__SWIG_2(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Degree arg1 ;
   Dali::Radian arg2 ;
   Dali::Degree *argp1 ;
@@ -7654,8 +7654,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_IDENTITY_get() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rotation_IsIdentity(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Rotation_IsIdentity(void * jarg1) {
+  bool jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   bool result;
 
@@ -7671,8 +7671,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rotation_IsIdentity(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rotation_GetAxisAngle(void * jarg1, void * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Rotation_GetAxisAngle(void * jarg1, void * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
   Dali::Radian *arg3 = 0 ;
@@ -7977,8 +7977,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_DivideAssign(void * jarg1, fl
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rotation_EqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Rotation_EqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
   bool result;
@@ -8000,8 +8000,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rotation_EqualTo(void * jarg1, v
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rotation_NotEqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Rotation_NotEqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
   bool result;
@@ -8329,6 +8329,56 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Rotation_AngleBetween(void * jarg1, voi
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Rotate_Vector3(void * nuiRotation, void * nuiVector3) {
+  void * jresult ;
+  Dali::Quaternion *quaternion = (Dali::Quaternion *)nuiRotation;
+  Dali::Vector3 *vector3 = (Dali::Vector3 *)nuiVector3;
+  Vector3 result;
+
+  if (!quaternion) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Quaternion const & type is null", 0);
+    return 0;
+  }
+  if (!vector3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Quaternion const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = ((Dali::Quaternion const *)quaternion)->Rotate(*vector3);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Vector3((const Dali::Vector3 &)result);;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Rotation_Rotate_Vector4(void * nuiRotation, void * nuiVector4) {
+  void * jresult ;
+  Dali::Quaternion *quaternion = (Dali::Quaternion *)nuiRotation;
+  Dali::Vector4 *vector4 = (Dali::Vector4 *)nuiVector4;
+  Vector3 result;
+
+  if (!quaternion) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Quaternion const & type is null", 0);
+    return 0;
+  }
+  if (!vector4) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Quaternion const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = ((Dali::Quaternion const *)quaternion)->Rotate(*vector4);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Vector4((const Dali::Vector4 &)result);;
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Matrix__SWIG_0() {
   void * jresult ;
   Dali::Matrix *result = 0 ;
@@ -8344,7 +8394,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Matrix__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Matrix__SWIG_1(unsigned int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Matrix__SWIG_1(bool jarg1) {
   void * jresult ;
   bool arg1 ;
   Dali::Matrix *result = 0 ;
@@ -8506,8 +8556,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Matrix_InvertTransform(void * jarg1, voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix_Invert(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Matrix_Invert(void * jarg1) {
+  bool jresult ;
   Dali::Matrix *arg1 = (Dali::Matrix *) 0 ;
   bool result;
 
@@ -8827,8 +8877,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Multiply__SWIG_2(void * jarg1, 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix_EqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Matrix_EqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Matrix *arg1 = (Dali::Matrix *) 0 ;
   Dali::Matrix *arg2 = 0 ;
   bool result;
@@ -8850,8 +8900,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix_EqualTo(void * jarg1, voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix_NotEqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Matrix_NotEqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Matrix *arg1 = (Dali::Matrix *) 0 ;
   Dali::Matrix *arg2 = 0 ;
   bool result;
@@ -9162,8 +9212,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix3_Assign__SWIG_1(void * jarg1, v
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix3_EqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Matrix3_EqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Matrix3 *arg1 = (Dali::Matrix3 *) 0 ;
   Dali::Matrix3 *arg2 = 0 ;
   bool result;
@@ -9185,8 +9235,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix3_EqualTo(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix3_NotEqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Matrix3_NotEqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Matrix3 *arg1 = (Dali::Matrix3 *) 0 ;
   Dali::Matrix3 *arg2 = 0 ;
   bool result;
@@ -9251,8 +9301,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix3_AsFloat__SWIG_0(void * jarg1) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix3_Invert(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Matrix3_Invert(void * jarg1) {
+  bool jresult ;
   Dali::Matrix3 *arg1 = (Dali::Matrix3 *) 0 ;
   bool result;
 
@@ -9268,8 +9318,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix3_Invert(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix3_Transpose(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Matrix3_Transpose(void * jarg1) {
+  bool jresult ;
   Dali::Matrix3 *arg1 = (Dali::Matrix3 *) 0 ;
   bool result;
 
@@ -9317,8 +9367,8 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Matrix3_Magnitude(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Matrix3_ScaledInverseTranspose(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Matrix3_ScaledInverseTranspose(void * jarg1) {
+  bool jresult ;
   Dali::Matrix3 *arg1 = (Dali::Matrix3 *) 0 ;
   bool result;
 
@@ -9498,8 +9548,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AngleAxis(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_9(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_EqualTo__SWIG_9(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::AngleAxis *arg1 = 0 ;
   Dali::AngleAxis *arg2 = 0 ;
   bool result;
@@ -9542,8 +9592,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NextPowerOfTwo(unsigned int jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsPowerOfTwo(unsigned int jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsPowerOfTwo(unsigned int jarg1) {
+  bool jresult ;
   unsigned int arg1 ;
   bool result;
 
@@ -9578,8 +9628,8 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_GetRangedEpsilon(float jarg1, float jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualsZero(float jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_EqualsZero(float jarg1) {
+  bool jresult ;
   float arg1 ;
   bool result;
 
@@ -9595,8 +9645,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_EqualsZero(float jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Equals__SWIG_0(float jarg1, float jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Equals__SWIG_0(float jarg1, float jarg2) {
+  bool jresult ;
   float arg1 ;
   float arg2 ;
   bool result;
@@ -9614,8 +9664,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Equals__SWIG_0(float jarg1, floa
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Equals__SWIG_1(float jarg1, float jarg2, float jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Equals__SWIG_1(float jarg1, float jarg2, float jarg3) {
+  bool jresult ;
   float arg1 ;
   float arg2 ;
   float arg3 ;
@@ -10006,8 +10056,8 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Property_Array_Count(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Array_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Array_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Property::Array *arg1 = (Dali::Property::Array *) 0 ;
   bool result;
 
@@ -10302,8 +10352,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Key__SWIG_1(int jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_0(void * jarg1, char * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_0(void * jarg1, char * jarg2) {
+  bool jresult ;
   Dali::Property::Key *arg1 = (Dali::Property::Key *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -10329,8 +10379,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_0(voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_1(void * jarg1, int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_1(void * jarg1, int jarg2) {
+  bool jresult ;
   Dali::Property::Key *arg1 = (Dali::Property::Key *) 0 ;
   Dali::Property::Index arg2 ;
   bool result;
@@ -10348,8 +10398,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_1(voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_2(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_2(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Key *arg1 = (Dali::Property::Key *) 0 ;
   Dali::Property::Key *arg2 = 0 ;
   bool result;
@@ -10371,8 +10421,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_2(voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_NotEqualTo__SWIG_0(void * jarg1, char * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Key_NotEqualTo__SWIG_0(void * jarg1, char * jarg2) {
+  bool jresult ;
   Dali::Property::Key *arg1 = (Dali::Property::Key *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -10398,8 +10448,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_NotEqualTo__SWIG_0(
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_NotEqualTo__SWIG_1(void * jarg1, int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Key_NotEqualTo__SWIG_1(void * jarg1, int jarg2) {
+  bool jresult ;
   Dali::Property::Key *arg1 = (Dali::Property::Key *) 0 ;
   Dali::Property::Index arg2 ;
   bool result;
@@ -10417,8 +10467,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_NotEqualTo__SWIG_1(
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Key_NotEqualTo__SWIG_2(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Key_NotEqualTo__SWIG_2(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Key *arg1 = (Dali::Property::Key *) 0 ;
   Dali::Property::Key *arg2 = 0 ;
   bool result;
@@ -10519,8 +10569,8 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Property_Map_Count(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Map_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Map_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
   bool result;
 
@@ -10972,7 +11022,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_1(unsigned int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_1(bool jarg1) {
   void * jresult ;
   bool arg1 ;
   Dali::Property::Value *result = 0 ;
@@ -11370,8 +11420,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Property_Value_GetType(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_1(void * jarg1, unsigned int * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_1(void * jarg1, bool * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   bool *arg2 = 0 ;
   bool result;
@@ -11389,8 +11439,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_1(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_2(void * jarg1, float * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_2(void * jarg1, float * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   float *arg2 = 0 ;
   bool result;
@@ -11408,8 +11458,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_2(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_3(void * jarg1, int * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_3(void * jarg1, int * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   int *arg2 = 0 ;
   bool result;
@@ -11427,8 +11477,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_3(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_4(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_4(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Dali::Rect< int > *arg2 = 0 ;
   bool result;
@@ -11450,8 +11500,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_4(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_5(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_5(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Dali::Vector2 *arg2 = 0 ;
   bool result;
@@ -11473,8 +11523,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_5(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_6(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_6(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
   bool result;
@@ -11496,8 +11546,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_6(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_7(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_7(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Dali::Vector4 *arg2 = 0 ;
   bool result;
@@ -11519,8 +11569,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_7(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_8(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_8(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Dali::Matrix3 *arg2 = 0 ;
   bool result;
@@ -11542,8 +11592,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_8(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_9(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_9(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Dali::Matrix *arg2 = 0 ;
   bool result;
@@ -11565,8 +11615,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_9(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_10(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_10(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Dali::AngleAxis *arg2 = 0 ;
   bool result;
@@ -11588,8 +11638,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_10(void
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_11(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_11(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
   bool result;
@@ -11611,8 +11661,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_11(void
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_12(void * jarg1, char** jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_12(void * jarg1, char** jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   std::string *arg2 = 0 ;
   bool result;
@@ -11639,8 +11689,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_12(void
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_13(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_13(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Dali::Property::Array *arg2 = 0 ;
   bool result;
@@ -11662,8 +11712,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_13(void
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_14(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_14(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Dali::Property::Map *arg2 = 0 ;
   bool result;
@@ -11685,8 +11735,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_14(void
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_15(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_15(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
   Extents *arg2 = 0 ;
   bool result;
@@ -11757,8 +11807,8 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_GetName(int jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseObject_DoAction(void * jarg1, char * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseObject_DoAction(void * jarg1, char * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::BaseObject *arg1 = (Dali::BaseObject *) 0 ;
   std::string *arg2 = 0 ;
   Dali::Property::Map *arg3 = 0 ;
@@ -11807,8 +11857,8 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_BaseObject_GetTypeName(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseObject_GetTypeInfo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseObject_GetTypeInfo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::BaseObject *arg1 = (Dali::BaseObject *) 0 ;
   Dali::TypeInfo *arg2 = 0 ;
   bool result;
@@ -11830,8 +11880,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseObject_GetTypeInfo(void * ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseObject_DoConnectSignal(void * jarg1, void * jarg2, char * jarg3, void * jarg4) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseObject_DoConnectSignal(void * jarg1, void * jarg2, char * jarg3, void * jarg4) {
+  bool jresult ;
   Dali::BaseObject *arg1 = (Dali::BaseObject *) 0 ;
   ConnectionTrackerInterface *arg2 = (ConnectionTrackerInterface *) 0 ;
   std::string *arg3 = 0 ;
@@ -11971,8 +12021,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BaseHandle_Assign(void * jarg1, void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseHandle_DoAction(void * jarg1, char * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseHandle_DoAction(void * jarg1, char * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::BaseHandle *arg1 = (Dali::BaseHandle *) 0 ;
   std::string *arg2 = 0 ;
   Dali::Property::Map *arg3 = 0 ;
@@ -12021,8 +12071,8 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_BaseHandle_GetTypeName(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseHandle_GetTypeInfo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseHandle_GetTypeInfo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::BaseHandle *arg1 = (Dali::BaseHandle *) 0 ;
   Dali::TypeInfo *arg2 = 0 ;
   bool result;
@@ -12074,8 +12124,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BaseHandle_Reset(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseHandle_EqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseHandle_EqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::BaseHandle *arg1 = (Dali::BaseHandle *) 0 ;
   Dali::BaseHandle *arg2 = 0 ;
   bool result;
@@ -12097,8 +12147,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseHandle_EqualTo(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseHandle_NotEqualTo(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseHandle_NotEqualTo(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::BaseHandle *arg1 = (Dali::BaseHandle *) 0 ;
   Dali::BaseHandle *arg2 = 0 ;
   bool result;
@@ -12137,8 +12187,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BaseHandle_GetObjectPtr(void * jarg1) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseHandle_HasBody(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseHandle_HasBody(void * jarg1) {
+  bool jresult ;
   Dali::BaseHandle *arg1 = (Dali::BaseHandle *) 0 ;
   bool result;
 
@@ -12154,8 +12204,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseHandle_HasBody(void * jarg1)
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseHandle_IsEqual(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseHandle_IsEqual(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::BaseHandle *arg1 = (Dali::BaseHandle *) 0 ;
   Dali::BaseHandle *arg2 = 0 ;
   bool result;
@@ -12177,8 +12227,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_BaseHandle_IsEqual(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LessThan__SWIG_3(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LessThan__SWIG_3(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::BaseHandle *arg1 = 0 ;
   Dali::BaseHandle *arg2 = 0 ;
   bool result;
@@ -12888,8 +12938,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PropertyNotification_GetNotifyMode(void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PropertyNotification_GetNotifyResult(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PropertyNotification_GetNotifyResult(void * jarg1) {
+  bool jresult ;
   Dali::PropertyNotification *arg1 = (Dali::PropertyNotification *) 0 ;
   bool result;
 
@@ -13032,8 +13082,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Handle_DownCast(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Handle_Supports(void * jarg1, int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Handle_Supports(void * jarg1, int jarg2) {
+  bool jresult ;
   Dali::Handle *arg1 = (Dali::Handle *) 0 ;
   Dali::Handle::Capability arg2 ;
   bool result;
@@ -13114,8 +13164,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_GetPropertyIndex(void * jarg1, cha
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Handle_IsPropertyWritable(void * jarg1, int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Handle_IsPropertyWritable(void * jarg1, int jarg2) {
+  bool jresult ;
   Dali::Handle *arg1 = (Dali::Handle *) 0 ;
   Dali::Property::Index arg2 ;
   bool result;
@@ -13133,8 +13183,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Handle_IsPropertyWritable(void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Handle_IsPropertyAnimatable(void * jarg1, int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Handle_IsPropertyAnimatable(void * jarg1, int jarg2) {
+  bool jresult ;
   Dali::Handle *arg1 = (Dali::Handle *) 0 ;
   Dali::Property::Index arg2 ;
   bool result;
@@ -13152,8 +13202,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Handle_IsPropertyAnimatable(void
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Handle_IsPropertyAConstraintInput(void * jarg1, int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Handle_IsPropertyAConstraintInput(void * jarg1, int jarg2) {
+  bool jresult ;
   Dali::Handle *arg1 = (Dali::Handle *) 0 ;
   Dali::Property::Index arg2 ;
   bool result;
@@ -13908,7 +13958,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_0(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_1(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_1(void * jarg1, void * jarg2, void * jarg3, bool jarg4) {
   void * jresult ;
   std::type_info *arg1 = 0 ;
   std::type_info *arg2 = 0 ;
@@ -14393,8 +14443,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ChildPropertyRegistration(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RegisterType(char * jarg1, void * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RegisterType(char * jarg1, void * jarg2, void * jarg3) {
+  bool jresult ;
   std::string *arg1 = 0 ;
   std::type_info *arg2 = 0 ;
   Dali::CSharpTypeInfo::CreateFunction arg3 = (Dali::CSharpTypeInfo::CreateFunction) 0 ;
@@ -14426,8 +14476,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RegisterType(char * jarg1, void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RegisterProperty(char * jarg1, char * jarg2, int jarg3, int jarg4, void * jarg5, void * jarg6) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RegisterProperty(char * jarg1, char * jarg2, int jarg3, int jarg4, void * jarg5, void * jarg6) {
+  bool jresult ;
   std::string *arg1 = 0 ;
   std::string *arg2 = 0 ;
   Dali::Property::Index arg3 ;
@@ -16383,8 +16433,8 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_VectorBase_Size(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_VectorBase_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VectorBase_Empty(void * jarg1) {
+  bool jresult ;
   Dali::VectorBase *arg1 = (Dali::VectorBase *) 0 ;
   bool result;
 
@@ -16450,8 +16500,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LAST_VALID_PIXEL_FORMAT_get() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_HasAlpha(int jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_HasAlpha(int jarg1) {
+  bool jresult ;
   Dali::Pixel::Format arg1 ;
   bool result;
 
@@ -16900,8 +16950,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Texture_Assign(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Texture_Upload__SWIG_0(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Texture_Upload__SWIG_0(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Texture *arg1 = (Dali::Texture *) 0 ;
   Dali::PixelData arg2 ;
   Dali::PixelData *argp2 ;
@@ -16925,8 +16975,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Texture_Upload__SWIG_0(void * ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Texture_Upload__SWIG_1(void * jarg1, void * jarg2, unsigned int jarg3, unsigned int jarg4, unsigned int jarg5, unsigned int jarg6, unsigned int jarg7, unsigned int jarg8) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Texture_Upload__SWIG_1(void * jarg1, void * jarg2, unsigned int jarg3, unsigned int jarg4, unsigned int jarg5, unsigned int jarg6, unsigned int jarg7, unsigned int jarg8) {
+  bool jresult ;
   Dali::Texture *arg1 = (Dali::Texture *) 0 ;
   Dali::PixelData arg2 ;
   unsigned int arg3 ;
@@ -19014,21 +19064,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RenderTask_FULLSCREEN_FRAMEBUFFER_FUNC
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_EXCLUSIVE_get() {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_EXCLUSIVE_get() {
+  bool jresult ;
   bool result;
 
-  result = (bool)(bool)Dali::RenderTask::DEFAULT_EXCLUSIVE;
+  result = (bool)Dali::RenderTask::DEFAULT_EXCLUSIVE;
   jresult = result;
   return jresult;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_INPUT_ENABLED_get() {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_INPUT_ENABLED_get() {
+  bool jresult ;
   bool result;
 
-  result = (bool)(bool)Dali::RenderTask::DEFAULT_INPUT_ENABLED;
+  result = (bool)Dali::RenderTask::DEFAULT_INPUT_ENABLED;
   jresult = result;
   return jresult;
 }
@@ -19044,21 +19094,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CLEAR_COLOR_get() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CLEAR_ENABLED_get() {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CLEAR_ENABLED_get() {
+  bool jresult ;
   bool result;
 
-  result = (bool)(bool)Dali::RenderTask::DEFAULT_CLEAR_ENABLED;
+  result = (bool)Dali::RenderTask::DEFAULT_CLEAR_ENABLED;
   jresult = result;
   return jresult;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CULL_MODE_get() {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CULL_MODE_get() {
+  bool jresult ;
   bool result;
 
-  result = (bool)(bool)Dali::RenderTask::DEFAULT_CULL_MODE;
+  result = (bool)Dali::RenderTask::DEFAULT_CULL_MODE;
   jresult = result;
   return jresult;
 }
@@ -19207,7 +19257,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RenderTask_GetSourceActor(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetExclusive(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetExclusive(void * jarg1, bool jarg2) {
   Dali::RenderTask *arg1 = (Dali::RenderTask *) 0 ;
   bool arg2 ;
 
@@ -19222,8 +19272,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetExclusive(void * jarg1, un
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_IsExclusive(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_IsExclusive(void * jarg1) {
+  bool jresult ;
   Dali::RenderTask *arg1 = (Dali::RenderTask *) 0 ;
   bool result;
 
@@ -19239,7 +19289,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_IsExclusive(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetInputEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetInputEnabled(void * jarg1, bool jarg2) {
   Dali::RenderTask *arg1 = (Dali::RenderTask *) 0 ;
   bool arg2 ;
 
@@ -19254,8 +19304,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetInputEnabled(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_GetInputEnabled(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_GetInputEnabled(void * jarg1) {
+  bool jresult ;
   Dali::RenderTask *arg1 = (Dali::RenderTask *) 0 ;
   bool result;
 
@@ -19567,7 +19617,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RenderTask_GetClearColor(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetClearEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetClearEnabled(void * jarg1, bool jarg2) {
   Dali::RenderTask *arg1 = (Dali::RenderTask *) 0 ;
   bool arg2 ;
 
@@ -19582,8 +19632,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetClearEnabled(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_GetClearEnabled(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_GetClearEnabled(void * jarg1) {
+  bool jresult ;
   Dali::RenderTask *arg1 = (Dali::RenderTask *) 0 ;
   bool result;
 
@@ -19599,7 +19649,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_GetClearEnabled(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetCullMode(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetCullMode(void * jarg1, bool jarg2) {
   Dali::RenderTask *arg1 = (Dali::RenderTask *) 0 ;
   bool arg2 ;
 
@@ -19614,8 +19664,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetCullMode(void * jarg1, uns
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_GetCullMode(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_GetCullMode(void * jarg1) {
+  bool jresult ;
   Dali::RenderTask *arg1 = (Dali::RenderTask *) 0 ;
   bool result;
 
@@ -19663,8 +19713,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_GetRefreshRate(void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_WorldToViewport(void * jarg1, void * jarg2, float * jarg3, float * jarg4) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_WorldToViewport(void * jarg1, void * jarg2, float * jarg3, float * jarg4) {
+  bool jresult ;
   Dali::RenderTask *arg1 = (Dali::RenderTask *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
   float *arg3 = 0 ;
@@ -19690,8 +19740,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_WorldToViewport(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_ViewportToLocal(void * jarg1, void * jarg2, float jarg3, float jarg4, float * jarg5, float * jarg6) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_ViewportToLocal(void * jarg1, void * jarg2, float jarg3, float jarg4, float * jarg5, float * jarg6) {
+  bool jresult ;
   Dali::RenderTask *arg1 = (Dali::RenderTask *) 0 ;
   Dali::Actor arg2 ;
   float arg3 ;
@@ -20915,8 +20965,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Key(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Key_IsShiftModifier(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Key_IsShiftModifier(void * jarg1) {
+  bool jresult ;
   Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
   bool result;
 
@@ -20932,8 +20982,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Key_IsShiftModifier(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Key_IsCtrlModifier(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Key_IsCtrlModifier(void * jarg1) {
+  bool jresult ;
   Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
   bool result;
 
@@ -20949,8 +20999,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Key_IsCtrlModifier(void * jarg1)
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Key_IsAltModifier(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Key_IsAltModifier(void * jarg1) {
+  bool jresult ;
   Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
   bool result;
 
@@ -21955,8 +22005,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Wheel(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Wheel_IsShiftModifier(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Wheel_IsShiftModifier(void * jarg1) {
+  bool jresult ;
   Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
   bool result;
 
@@ -21972,8 +22022,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Wheel_IsShiftModifier(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Wheel_IsCtrlModifier(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Wheel_IsCtrlModifier(void * jarg1) {
+  bool jresult ;
   Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
   bool result;
 
@@ -22005,8 +22055,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Wheel_IsCtrlModifier(void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Wheel_IsAltModifier(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Wheel_IsAltModifier(void * jarg1) {
+  bool jresult ;
   Dali::WheelEvent *arg1 = (Dali::WheelEvent *) 0 ;
   bool result;
 
@@ -23186,8 +23236,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_GetId(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsRoot(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsRoot(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -23203,8 +23253,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsRoot(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_OnStage(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_OnStage(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -23220,8 +23270,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_OnStage(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsLayer(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsLayer(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -23758,7 +23808,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldPosition(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritPosition(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritPosition(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
@@ -23773,8 +23823,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritPosition(void * jarg1, u
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsPositionInherited(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsPositionInherited(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -23945,7 +23995,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentOrientation(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritOrientation(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritOrientation(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
@@ -23960,8 +24010,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritOrientation(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsOrientationInherited(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsOrientationInherited(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -24100,7 +24150,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldScale(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritScale(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritScale(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
@@ -24115,8 +24165,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritScale(void * jarg1, unsi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsScaleInherited(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsScaleInherited(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -24149,7 +24199,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldMatrix(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetVisible(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetVisible(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
@@ -24164,8 +24214,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetVisible(void * jarg1, unsigned 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsVisible(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsVisible(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -24330,7 +24380,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetDrawMode(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSensitive(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSensitive(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
@@ -24345,8 +24395,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSensitive(void * jarg1, unsigne
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsSensitive(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsSensitive(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -24362,8 +24412,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsSensitive(void * jarg1) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_ScreenToLocal(void * jarg1, float * jarg2, float * jarg3, float jarg4, float jarg5) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_ScreenToLocal(void * jarg1, float * jarg2, float * jarg3, float jarg4, float jarg5) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   float *arg2 = 0 ;
   float *arg3 = 0 ;
@@ -24387,7 +24437,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_ScreenToLocal(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetLeaveRequired(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetLeaveRequired(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
@@ -24402,8 +24452,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetLeaveRequired(void * jarg1, uns
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_GetLeaveRequired(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_GetLeaveRequired(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -24419,7 +24469,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_GetLeaveRequired(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusable(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusable(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
@@ -24434,8 +24484,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusable(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsKeyboardFocusable(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsKeyboardFocusable(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -24465,8 +24515,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetTouchFocusable(void * jarg1, bo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsTouchFocusable(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsTouchFocusable(void * jarg1) {
+  bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
@@ -24988,7 +25038,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OnRelayoutSignal(void * jarg1) {
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetNeedGesturePropagation(void * jarg1, bool jarg2) {
-  void * jresult ;
   Dali::Actor arg1 ;
   bool arg2;
   Dali::Actor *argp1 = (Dali::Actor *) 0 ;
@@ -25406,7 +25455,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Layer_GetBehavior(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClipping(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClipping(void * jarg1, bool jarg2) {
   Dali::Layer *arg1 = (Dali::Layer *) 0 ;
   bool arg2 ;
 
@@ -25421,8 +25470,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClipping(void * jarg1, unsigned
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Layer_IsClipping(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Layer_IsClipping(void * jarg1) {
+  bool jresult ;
   Dali::Layer *arg1 = (Dali::Layer *) 0 ;
   bool result;
 
@@ -25497,7 +25546,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Layer_GetClippingBox(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetDepthTestDisabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetDepthTestDisabled(void * jarg1, bool jarg2) {
   Dali::Layer *arg1 = (Dali::Layer *) 0 ;
   bool arg2 ;
 
@@ -25512,8 +25561,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetDepthTestDisabled(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Layer_IsDepthTestDisabled(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Layer_IsDepthTestDisabled(void * jarg1) {
+  bool jresult ;
   Dali::Layer *arg1 = (Dali::Layer *) 0 ;
   bool result;
 
@@ -25544,7 +25593,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetSortFunction(void * jarg1, void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetTouchConsumed(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetTouchConsumed(void * jarg1, bool jarg2) {
   Dali::Layer *arg1 = (Dali::Layer *) 0 ;
   bool arg2 ;
 
@@ -25559,8 +25608,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetTouchConsumed(void * jarg1, uns
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Layer_IsTouchConsumed(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Layer_IsTouchConsumed(void * jarg1) {
+  bool jresult ;
   Dali::Layer *arg1 = (Dali::Layer *) 0 ;
   bool result;
 
@@ -25576,7 +25625,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Layer_IsTouchConsumed(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetHoverConsumed(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetHoverConsumed(void * jarg1, bool jarg2) {
   Dali::Layer *arg1 = (Dali::Layer *) 0 ;
   bool arg2 ;
 
@@ -25591,8 +25640,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetHoverConsumed(void * jarg1, uns
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Layer_IsHoverConsumed(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Layer_IsHoverConsumed(void * jarg1) {
+  bool jresult ;
   Dali::Layer *arg1 = (Dali::Layer *) 0 ;
   bool result;
 
@@ -25623,8 +25672,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Stage_GetCurrent() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Stage_IsInstalled() {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Stage_IsInstalled() {
+  bool jresult ;
   bool result;
 
   {
@@ -26141,8 +26190,8 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_CustomActorImpl_GetWidthForHeight(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_CustomActorImpl_RelayoutDependentOnChildren__SWIG_0(void * jarg1, int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CustomActorImpl_RelayoutDependentOnChildren__SWIG_0(void * jarg1, int jarg2) {
+  bool jresult ;
   Dali::CustomActorImpl *arg1 = (Dali::CustomActorImpl *) 0 ;
   Dali::Dimension::Type arg2 ;
   bool result;
@@ -26160,8 +26209,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_CustomActorImpl_RelayoutDependen
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_CustomActorImpl_RelayoutDependentOnChildren__SWIG_1(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CustomActorImpl_RelayoutDependentOnChildren__SWIG_1(void * jarg1) {
+  bool jresult ;
   Dali::CustomActorImpl *arg1 = (Dali::CustomActorImpl *) 0 ;
   bool result;
 
@@ -26208,8 +26257,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomActorImpl_OnLayoutNegotiated(void 
 
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_CustomActorImpl_IsRelayoutEnabled(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CustomActorImpl_IsRelayoutEnabled(void * jarg1) {
+  bool jresult ;
   Dali::CustomActorImpl *arg1 = (Dali::CustomActorImpl *) 0 ;
   bool result;
 
@@ -29256,8 +29305,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_DEFAULT_get() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageInterface_CreateResource(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageInterface_CreateResource(void * jarg1) {
+  bool jresult ;
   Dali::NativeImageInterface *arg1 = (Dali::NativeImageInterface *) 0 ;
   bool result;
 
@@ -29350,8 +29399,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageInterface_GetHeight(v
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageInterface_RequiresBlending(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageInterface_RequiresBlending(void * jarg1) {
+  bool jresult ;
   Dali::NativeImageInterface *arg1 = (Dali::NativeImageInterface *) 0 ;
   bool result;
 
@@ -29893,7 +29942,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraActor_GetTargetPosition(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CameraActor_SetInvertYAxis(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CameraActor_SetInvertYAxis(void * jarg1, bool jarg2) {
   Dali::CameraActor *arg1 = (Dali::CameraActor *) 0 ;
   bool arg2 ;
 
@@ -29908,8 +29957,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CameraActor_SetInvertYAxis(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_CameraActor_GetInvertYAxis(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CameraActor_GetInvertYAxis(void * jarg1) {
+  bool jresult ;
   Dali::CameraActor *arg1 = (Dali::CameraActor *) 0 ;
   bool result;
 
@@ -30711,8 +30760,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_Set(void * jarg1, int jarg2, i
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rectangle_IsEmpty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Rectangle_IsEmpty(void * jarg1) {
+  bool jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   bool result;
 
@@ -30813,8 +30862,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_Area(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rectangle_Intersects(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Rectangle_Intersects(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   Dali::Rect< int > *arg2 = 0 ;
   bool result;
@@ -30836,8 +30885,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rectangle_Intersects(void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Rectangle_Contains(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Rectangle_Contains(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;
   Dali::Rect< int > *arg2 = 0 ;
   bool result;
@@ -32700,8 +32749,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VoidSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_VoidSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VoidSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
   bool result;
 
@@ -32794,8 +32843,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VoidSignal_Emit(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FloatSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FloatSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (float) > *arg1 = (Dali::Signal< void (float) > *) 0 ;
   bool result;
 
@@ -32901,8 +32950,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FloatSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ObjectCreatedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ObjectCreatedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::BaseHandle) > *arg1 = (Dali::Signal< void (Dali::BaseHandle) > *) 0 ;
   bool result;
 
@@ -33014,8 +33063,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ObjectCreatedSignal(void * jarg1)
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ObjectDestroyedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ObjectDestroyedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::RefObject const *) > *arg1 = (Dali::Signal< void (Dali::RefObject const *) > *) 0 ;
   bool result;
 
@@ -33121,8 +33170,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ObjectDestroyedSignal(void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PropertyNotifySignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PropertyNotifySignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::PropertyNotification &) > *arg1 = (Dali::Signal< void (Dali::PropertyNotification &) > *) 0 ;
   bool result;
 
@@ -33260,8 +33309,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RenderTaskSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LongPressGestureDetectedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LongPressGestureDetectedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Actor,Dali::LongPressGesture const &) > *arg1 = (Dali::Signal< void (Dali::Actor,Dali::LongPressGesture const &) > *) 0 ;
   bool result;
 
@@ -33379,8 +33428,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LongPressGestureDetectedSignal(vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *) 0 ;
   bool result;
 
@@ -33443,8 +33492,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Disconnect(void * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Emit(void * jarg1, void * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ActorTouchDataSignal_Emit(void * jarg1, void * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::TouchEvent const &) > *) 0 ;
   Dali::Actor arg2 ;
   Dali::TouchEvent *arg3 = 0 ;
@@ -33502,8 +33551,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActorTouchDataSignal(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorHoverSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ActorHoverSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Actor,Dali::HoverEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::HoverEvent const &) > *) 0 ;
   bool result;
 
@@ -33566,8 +33615,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActorHoverSignal_Disconnect(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorHoverSignal_Emit(void * jarg1, void * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ActorHoverSignal_Emit(void * jarg1, void * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Actor,Dali::HoverEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::HoverEvent const &) > *) 0 ;
   Dali::Actor arg2 ;
   Dali::HoverEvent *arg3 = 0 ;
@@ -33625,8 +33674,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActorHoverSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorWheelSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ActorWheelSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Actor,Dali::WheelEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::WheelEvent const &) > *) 0 ;
   bool result;
 
@@ -33689,8 +33738,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActorWheelSignal_Disconnect(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorWheelSignal_Emit(void * jarg1, void * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ActorWheelSignal_Emit(void * jarg1, void * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Actor,Dali::WheelEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Actor,Dali::WheelEvent const &) > *) 0 ;
   Dali::Actor arg2 ;
   Dali::WheelEvent *arg3 = 0 ;
@@ -33748,8 +33797,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActorWheelSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActorSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ActorSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Actor) > *arg1 = (Dali::Signal< void (Dali::Actor) > *) 0 ;
   bool result;
 
@@ -33861,8 +33910,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActorSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyEventSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_KeyEventSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::KeyEvent const &) > *arg1 = (Dali::Signal< void (Dali::KeyEvent const &) > *) 0 ;
   bool result;
 
@@ -33972,8 +34021,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyEventSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TouchSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TouchSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
   bool result;
 
@@ -34083,8 +34132,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TouchSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_StageWheelSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_StageWheelSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::WheelEvent const &) > *arg1 = (Dali::Signal< void (Dali::WheelEvent const &) > *) 0 ;
   bool result;
 
@@ -34318,8 +34367,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AngleThresholdPair(void * jarg1) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PanGestureDetectedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PanGestureDetectedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Actor,Dali::PanGesture const &) > *arg1 = (Dali::Signal< void (Dali::Actor,Dali::PanGesture const &) > *) 0 ;
   bool result;
 
@@ -34437,8 +34486,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PanGestureDetectedSignal(void * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PinchGestureDetectedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PinchGestureDetectedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Actor,Dali::PinchGesture const &) > *arg1 = (Dali::Signal< void (Dali::Actor,Dali::PinchGesture const &) > *) 0 ;
   bool result;
 
@@ -34556,8 +34605,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PinchGestureDetectedSignal(void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TapGestureDetectedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TapGestureDetectedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Actor,Dali::TapGesture const &) > *arg1 = (Dali::Signal< void (Dali::Actor,Dali::TapGesture const &) > *) 0 ;
   bool result;
 
@@ -34675,8 +34724,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TapGestureDetectedSignal(void * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionChangedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewLayoutDirectionChangedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *arg1 = (Dali::Signal< void (Dali::Actor, Dali::LayoutDirection::Type) > *) 0 ;
   bool result = false;
 
@@ -34779,8 +34828,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ViewLayoutDirectionSignal(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewVisibilityChangedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewVisibilityChangedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > *arg1 = (Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > *) 0 ;
   bool result = false;
 
@@ -34842,7 +34891,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewVisibilityChangedSignal_Disconnect(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewVisibilityChangedSignal_Emit(void * jarg1, void * jarg2, unsigned int jarg3, int jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewVisibilityChangedSignal_Emit(void * jarg1, void * jarg2, bool jarg3, int jarg4) {
   Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > *arg1 = (Dali::Signal< void (Dali::Actor,bool,Dali::DevelActor::VisibilityChange::Type) > *) 0 ;
   Dali::Actor arg2 ;
   bool arg3 ;
@@ -35065,8 +35114,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Timer_GetInterval(void * jarg1) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Timer_IsRunning(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Timer_IsRunning(void * jarg1) {
+  bool jresult ;
   Dali::Timer *arg1 = (Dali::Timer *) 0 ;
   bool result;
 
@@ -35099,8 +35148,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Timer_TickSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TimerSignalType_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TimerSignalType_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< bool () > *arg1 = (Dali::Signal< bool () > *) 0 ;
   bool result;
 
@@ -35163,8 +35212,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TimerSignalType_Disconnect(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TimerSignalType_Emit(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TimerSignalType_Emit(void * jarg1) {
+  bool jresult ;
   Dali::Signal< bool () > *arg1 = (Dali::Signal< bool () > *) 0 ;
   bool result;
 
@@ -36642,8 +36691,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Builder_CreateFromJson(void * jarg1, c
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Builder_ApplyStyle(void * jarg1, char * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Builder_ApplyStyle(void * jarg1, char * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::Toolkit::Builder *arg1 = (Dali::Toolkit::Builder *) 0 ;
   std::string *arg2 = 0 ;
   Dali::Handle *arg3 = 0 ;
@@ -36675,8 +36724,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Builder_ApplyStyle(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Builder_ApplyFromJson(void * jarg1, void * jarg2, char * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Builder_ApplyFromJson(void * jarg1, void * jarg2, char * jarg3) {
+  bool jresult ;
   Dali::Toolkit::Builder *arg1 = (Dali::Toolkit::Builder *) 0 ;
   Dali::Handle *arg2 = 0 ;
   std::string *arg3 = 0 ;
@@ -37496,7 +37545,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetLongPressGestureDetector(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetKeyboardNavigationSupport(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetKeyboardNavigationSupport(void * jarg1, bool jarg2) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool arg2 ;
 
@@ -37511,8 +37560,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetKeyboardNavigationSupport(vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_IsKeyboardNavigationSupported(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_IsKeyboardNavigationSupported(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool result;
 
@@ -37541,8 +37590,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetKeyInputFocus(void * jarg1) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_HasKeyInputFocus(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_HasKeyInputFocus(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool result;
 
@@ -37571,7 +37620,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_ClearKeyInputFocus(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetAsKeyboardFocusGroup(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetAsKeyboardFocusGroup(void * jarg1, bool jarg2) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool arg2 ;
 
@@ -37586,8 +37635,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetAsKeyboardFocusGroup(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_IsKeyboardFocusGroup(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_IsKeyboardFocusGroup(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool result;
 
@@ -37989,8 +38038,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeAnimationSwigExplicitView
   }
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEvent(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEvent(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   Dali::KeyEvent *arg2 = 0 ;
   SwigDirector_ViewImpl *darg = 0;
@@ -38018,8 +38067,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEvent(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEventSwigExplicitViewImpl(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEventSwigExplicitViewImpl(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   Dali::KeyEvent *arg2 = 0 ;
   SwigDirector_ViewImpl *darg = 0;
@@ -38363,8 +38412,8 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ViewImpl_GetWidthForHeightSwigExplicitV
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChildren__SWIG_0(void * jarg1, int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChildren__SWIG_0(void * jarg1, int jarg2) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   Dali::Dimension::Type arg2 ;
   SwigDirector_ViewImpl *darg = 0;
@@ -38388,8 +38437,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChil
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChildrenSwigExplicitViewImpl__SWIG_0(void * jarg1, int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChildrenSwigExplicitViewImpl__SWIG_0(void * jarg1, int jarg2) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   Dali::Dimension::Type arg2 ;
   SwigDirector_ViewImpl *darg = 0;
@@ -38413,8 +38462,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChil
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChildren__SWIG_1(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChildren__SWIG_1(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   SwigDirector_ViewImpl *darg = 0;
   bool result;
@@ -38436,8 +38485,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChil
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChildrenSwigExplicitViewImpl__SWIG_1(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_RelayoutDependentOnChildrenSwigExplicitViewImpl__SWIG_1(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   SwigDirector_ViewImpl *darg = 0;
   bool result;
@@ -38619,8 +38668,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnStyleChangeSwigExplicitViewIm
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityActivated(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityActivated(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool result;
 
@@ -38636,8 +38685,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityActivate
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityActivatedSwigExplicitViewImpl(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityActivatedSwigExplicitViewImpl(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool result;
 
@@ -38653,8 +38702,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityActivate
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityPan(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityPan(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   Dali::PanGesture arg2 ;
   Dali::PanGesture *argp2 ;
@@ -38678,8 +38727,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityPan(void
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityPanSwigExplicitViewImpl(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityPanSwigExplicitViewImpl(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   Dali::PanGesture arg2 ;
   Dali::PanGesture *argp2 ;
@@ -38702,8 +38751,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityPanSwigE
   return jresult;
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityValueChange(void * jarg1, unsigned int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityValueChange(void * jarg1, bool jarg2) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool arg2 ;
   bool result;
@@ -38721,8 +38770,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityValueCha
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityValueChangeSwigExplicitViewImpl(void * jarg1, unsigned int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityValueChangeSwigExplicitViewImpl(void * jarg1, bool jarg2) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool arg2 ;
   bool result;
@@ -38740,8 +38789,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityValueCha
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityZoom(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityZoom(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool result;
 
@@ -38757,8 +38806,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityZoom(voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityZoomSwigExplicitViewImpl(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnAccessibilityZoomSwigExplicitViewImpl(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool result;
 
@@ -38826,7 +38875,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyInputFocusLostSwigExplicit
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetNextKeyboardFocusableActor(void * jarg1, void * jarg2, int jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetNextKeyboardFocusableActor(void * jarg1, void * jarg2, int jarg3, bool jarg4) {
   void * jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   Dali::Actor arg2 ;
@@ -38855,7 +38904,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetNextKeyboardFocusableActor
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetNextKeyboardFocusableActorSwigExplicitViewImpl(void * jarg1, void * jarg2, int jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetNextKeyboardFocusableActorSwigExplicitViewImpl(void * jarg1, void * jarg2, int jarg3, bool jarg4) {
   void * jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   Dali::Actor arg2 ;
@@ -38926,8 +38975,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyboardFocusChangeCommittedS
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyboardEnter(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyboardEnter(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool result;
 
@@ -38943,8 +38992,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyboardEnter(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyboardEnterSwigExplicitViewImpl(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyboardEnterSwigExplicitViewImpl(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   bool result;
 
@@ -39475,8 +39524,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_SetKeyInputFocus(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_View_HasKeyInputFocus(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_View_HasKeyInputFocus(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) 0 ;
   bool result;
 
@@ -39831,8 +39880,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsResourceReady(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsResourceReady(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Control *arg1 = 0 ;
   bool result;
 
@@ -42640,8 +42689,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Scrollable_DownCast(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Scrollable_IsOvershootEnabled(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Scrollable_IsOvershootEnabled(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Scrollable *arg1 = (Dali::Toolkit::Scrollable *) 0 ;
   bool result;
 
@@ -42657,7 +42706,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Scrollable_IsOvershootEnabled(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Scrollable_SetOvershootEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Scrollable_SetOvershootEnabled(void * jarg1, bool jarg2) {
   Dali::Toolkit::Scrollable *arg1 = (Dali::Toolkit::Scrollable *) 0 ;
   bool arg2 ;
 
@@ -42791,8 +42840,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Scrollable_ScrollCompletedSignal(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsVertical(int jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsVertical(int jarg1) {
+  bool jresult ;
   Dali::Toolkit::ControlOrientation::Type arg1 ;
   bool result;
 
@@ -42808,8 +42857,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsVertical(int jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsHorizontal(int jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsHorizontal(int jarg1) {
+  bool jresult ;
   Dali::Toolkit::ControlOrientation::Type arg1 ;
   bool result;
 
@@ -42888,8 +42937,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ItemRange_Assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ItemRange_Within(void * jarg1, unsigned int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ItemRange_Within(void * jarg1, unsigned int jarg2) {
+  bool jresult ;
   Dali::Toolkit::ItemRange *arg1 = (Dali::Toolkit::ItemRange *) 0 ;
   unsigned int arg2 ;
   bool result;
@@ -43353,7 +43402,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ItemLayout_GetItemFlickAnimationDuratio
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ItemLayout_GetNextFocusItemID(void * jarg1, int jarg2, int jarg3, int jarg4, unsigned int jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ItemLayout_GetNextFocusItemID(void * jarg1, int jarg2, int jarg3, int jarg4, bool jarg5) {
   int jresult ;
   Dali::Toolkit::ItemLayout *arg1 = (Dali::Toolkit::ItemLayout *) 0 ;
   int arg2 ;
@@ -44085,7 +44134,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ItemView_GetWheelScrollDistanceStep(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_SetAnchoring(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_SetAnchoring(void * jarg1, bool jarg2) {
   Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
   bool arg2 ;
 
@@ -44104,8 +44153,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_SetAnchoring(void * jarg1, unsi
 //// ========================== start part 4 ===============================
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ItemView_GetAnchoring(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ItemView_GetAnchoring(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
   bool result;
 
@@ -44752,7 +44801,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ClampState2D(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RulerDomain__SWIG_0(float jarg1, float jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RulerDomain__SWIG_0(float jarg1, float jarg2, bool jarg3) {
   void * jresult ;
   float arg1 ;
   float arg2 ;
@@ -44836,7 +44885,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RulerDomain_max_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RulerDomain_enabled_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RulerDomain_enabled_set(void * jarg1, bool jarg2) {
   Dali::Toolkit::RulerDomain *arg1 = (Dali::Toolkit::RulerDomain *) 0 ;
   bool arg2 ;
 
@@ -44846,8 +44895,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RulerDomain_enabled_set(void * jarg1, un
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RulerDomain_enabled_get(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RulerDomain_enabled_get(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::RulerDomain *arg1 = (Dali::Toolkit::RulerDomain *) 0 ;
   bool result;
 
@@ -45020,7 +45069,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Ruler_Snap__SWIG_1(void * jarg1, float 
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Ruler_GetPositionFromPage(void * jarg1, unsigned int jarg2, unsigned int * jarg3, unsigned int jarg4) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Ruler_GetPositionFromPage(void * jarg1, unsigned int jarg2, unsigned int * jarg3, bool jarg4) {
   float jresult ;
   Dali::Toolkit::Ruler *arg1 = (Dali::Toolkit::Ruler *) 0 ;
   unsigned int arg2 ;
@@ -45043,7 +45092,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Ruler_GetPositionFromPage(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Ruler_GetPageFromPosition(void * jarg1, float jarg2, unsigned int jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Ruler_GetPageFromPosition(void * jarg1, float jarg2, bool jarg3) {
   unsigned int jresult ;
   Dali::Toolkit::Ruler *arg1 = (Dali::Toolkit::Ruler *) 0 ;
   float arg2 ;
@@ -45098,8 +45147,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Ruler_GetType(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Ruler_IsEnabled(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Ruler_IsEnabled(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::Ruler *arg1 = (Dali::Toolkit::Ruler *) 0 ;
   bool result;
 
@@ -45439,7 +45488,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_DefaultRuler_Snap(void * jarg1, float j
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_DefaultRuler_GetPositionFromPage(void * jarg1, unsigned int jarg2, unsigned int * jarg3, unsigned int jarg4) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_DefaultRuler_GetPositionFromPage(void * jarg1, unsigned int jarg2, unsigned int * jarg3, bool jarg4) {
   float jresult ;
   Dali::Toolkit::DefaultRuler *arg1 = (Dali::Toolkit::DefaultRuler *) 0 ;
   unsigned int arg2 ;
@@ -45462,7 +45511,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_DefaultRuler_GetPositionFromPage(void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_DefaultRuler_GetPageFromPosition(void * jarg1, float jarg2, unsigned int jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_DefaultRuler_GetPageFromPosition(void * jarg1, float jarg2, bool jarg3) {
   unsigned int jresult ;
   Dali::Toolkit::DefaultRuler *arg1 = (Dali::Toolkit::DefaultRuler *) 0 ;
   float arg2 ;
@@ -45566,7 +45615,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FixedRuler_Snap(void * jarg1, float jar
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FixedRuler_GetPositionFromPage(void * jarg1, unsigned int jarg2, unsigned int * jarg3, unsigned int jarg4) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FixedRuler_GetPositionFromPage(void * jarg1, unsigned int jarg2, unsigned int * jarg3, bool jarg4) {
   float jresult ;
   Dali::Toolkit::FixedRuler *arg1 = (Dali::Toolkit::FixedRuler *) 0 ;
   unsigned int arg2 ;
@@ -45589,7 +45638,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FixedRuler_GetPositionFromPage(void * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FixedRuler_GetPageFromPosition(void * jarg1, float jarg2, unsigned int jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FixedRuler_GetPageFromPosition(void * jarg1, float jarg2, bool jarg3) {
   unsigned int jresult ;
   Dali::Toolkit::FixedRuler *arg1 = (Dali::Toolkit::FixedRuler *) 0 ;
   float arg2 ;
@@ -46407,7 +46456,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetRulerY(void * jarg1, void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetScrollSensitive(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetScrollSensitive(void * jarg1, bool jarg2) {
   Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
   bool arg2 ;
 
@@ -46475,7 +46524,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetSnapOvershootDuration(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetActorAutoSnap(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetActorAutoSnap(void * jarg1, bool jarg2) {
   Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
   bool arg2 ;
 
@@ -46490,7 +46539,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetActorAutoSnap(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetWrapMode(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetWrapMode(void * jarg1, bool jarg2) {
   Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
   bool arg2 ;
 
@@ -46537,8 +46586,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetScrollUpdateDistance(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ScrollView_GetAxisAutoLock(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ScrollView_GetAxisAutoLock(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
   bool result;
 
@@ -46554,7 +46603,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ScrollView_GetAxisAutoLock(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetAxisAutoLock(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetAxisAutoLock(void * jarg1, bool jarg2) {
   Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
   bool arg2 ;
 
@@ -47055,8 +47104,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_ScrollTo__SWIG_9(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ScrollView_ScrollToSnapPoint(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ScrollView_ScrollToSnapPoint(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
   bool result;
 
@@ -47757,8 +47806,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TableView_DownCast(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TableView_AddChild(void * jarg1, void * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TableView_AddChild(void * jarg1, void * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
   Dali::Actor arg2 ;
   Dali::Toolkit::TableView::CellPosition arg3 ;
@@ -47840,8 +47889,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TableView_RemoveChildAt(void * jarg1, 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TableView_FindChildPosition(void * jarg1, void * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TableView_FindChildPosition(void * jarg1, void * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
   Dali::Actor arg2 ;
   Dali::Toolkit::TableView::CellPosition *arg3 = 0 ;
@@ -48066,8 +48115,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_SetFitHeight(void * jarg1, uns
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TableView_IsFitHeight(void * jarg1, unsigned int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TableView_IsFitHeight(void * jarg1, unsigned int jarg2) {
+  bool jresult ;
   Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
   unsigned int arg2 ;
   bool result;
@@ -48100,8 +48149,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_SetFitWidth(void * jarg1, unsi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TableView_IsFitWidth(void * jarg1, unsigned int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TableView_IsFitWidth(void * jarg1, unsigned int jarg2) {
+  bool jresult ;
   Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
   unsigned int arg2 ;
   bool result;
@@ -48862,8 +48911,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AccessibilityManager_GetActorByFocusOr
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetCurrentFocusActor(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetCurrentFocusActor(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
   Dali::Actor arg2 ;
   Dali::Actor *argp2 ;
@@ -48938,8 +48987,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_GetCurrentF
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_MoveFocusForward(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_AccessibilityManager_MoveFocusForward(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
   bool result;
 
@@ -48955,8 +49004,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_MoveFocusFo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_MoveFocusBackward(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_AccessibilityManager_MoveFocusBackward(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
   bool result;
 
@@ -48998,7 +49047,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_Reset(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetFocusGroup(void * jarg1, void * jarg2, unsigned int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetFocusGroup(void * jarg1, void * jarg2, bool jarg3) {
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
   Dali::Actor arg2 ;
   bool arg3 ;
@@ -49021,8 +49070,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetFocusGroup(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_IsFocusGroup(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_AccessibilityManager_IsFocusGroup(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
   Dali::Actor arg2 ;
   Dali::Actor *argp2 ;
@@ -49046,7 +49095,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_IsFocusGrou
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetGroupMode(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetGroupMode(void * jarg1, bool jarg2) {
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
   bool arg2 ;
 
@@ -49061,8 +49110,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetGroupMode(void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_GetGroupMode(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_AccessibilityManager_GetGroupMode(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
   bool result;
 
@@ -49078,7 +49127,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_GetGroupMod
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetWrapMode(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetWrapMode(void * jarg1, bool jarg2) {
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
   bool arg2 ;
 
@@ -49093,8 +49142,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_SetWrapMode(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_GetWrapMode(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_AccessibilityManager_GetWrapMode(void * jarg1) {
+  bool jresult ;
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
   bool result;
 
@@ -49791,8 +49840,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_SetStyleConstant(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_StyleManager_GetStyleConstant(void * jarg1, char * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_StyleManager_GetStyleConstant(void * jarg1, char * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::Toolkit::StyleManager *arg1 = (Dali::Toolkit::StyleManager *) 0 ;
   std::string *arg2 = 0 ;
   Dali::Property::Value *arg3 = 0 ;
@@ -51677,7 +51726,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_New__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_New__SWIG_1(unsigned int jarg1, float jarg2, int jarg3, float jarg4, float jarg5, unsigned int jarg6) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_New__SWIG_1(unsigned int jarg1, float jarg2, int jarg3, float jarg4, float jarg5, bool jarg6) {
   void * jresult ;
   unsigned int arg1 ;
   float arg2 ;
@@ -53172,7 +53221,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_1(vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_2(void * jarg1, char * jarg2, void * jarg3, int jarg4, int jarg5, unsigned int jarg6) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_2(void * jarg1, char * jarg2, void * jarg3, int jarg4, int jarg5, bool jarg6) {
   unsigned int jresult ;
   Dali::Toolkit::AsyncImageLoader *arg1 = (Dali::Toolkit::AsyncImageLoader *) 0 ;
   std::string *arg2 = 0 ;
@@ -53213,8 +53262,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_2(vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Cancel(void * jarg1, unsigned int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Cancel(void * jarg1, unsigned int jarg2) {
+  bool jresult ;
   Dali::Toolkit::AsyncImageLoader *arg1 = (Dali::Toolkit::AsyncImageLoader *) 0 ;
   uint32_t arg2 ;
   bool result;
@@ -53320,7 +53369,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageSynchronously__SWIG_1(char * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageSynchronously__SWIG_2(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageSynchronously__SWIG_2(char * jarg1, void * jarg2, int jarg3, int jarg4, bool jarg5) {
   void * jresult ;
   std::string *arg1 = 0 ;
   Dali::ImageDimensions arg2 ;
@@ -54049,8 +54098,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemIdContainer_SetRange(void * jarg1, i
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ItemIdContainer_Contains(void * jarg1, unsigned int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ItemIdContainer_Contains(void * jarg1, unsigned int jarg2) {
+  bool jresult ;
   std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
   unsigned int *arg2 = 0 ;
   unsigned int temp2 ;
@@ -54112,8 +54161,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ItemIdContainer_LastIndexOf(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ItemIdContainer_Remove(void * jarg1, unsigned int jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ItemIdContainer_Remove(void * jarg1, unsigned int jarg2) {
+  bool jresult ;
   std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
   unsigned int *arg2 = 0 ;
   unsigned int temp2 ;
@@ -55244,8 +55293,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActorContainer(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityActionSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_AccessibilityActionSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Toolkit::AccessibilityManager &) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::AccessibilityManager &) > *) 0 ;
   bool result;
 
@@ -55308,8 +55357,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityActionSignal_Disconnect(voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityActionSignal_Emit(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_AccessibilityActionSignal_Emit(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Toolkit::AccessibilityManager &) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::AccessibilityManager &) > *) 0 ;
   Dali::Toolkit::AccessibilityManager *arg2 = 0 ;
   bool result;
@@ -55359,8 +55408,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AccessibilityActionSignal(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityFocusOvershotSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_AccessibilityFocusOvershotSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Actor,Dali::Toolkit::AccessibilityManager::FocusOvershotDirection) > *arg1 = (Dali::Signal< void (Dali::Actor,Dali::Toolkit::AccessibilityManager::FocusOvershotDirection) > *) 0 ;
   bool result;
 
@@ -55474,8 +55523,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AccessibilityFocusOvershotSignal(
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FocusChangedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FocusChangedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Actor,Dali::Actor) > *arg1 = (Dali::Signal< void (Dali::Actor,Dali::Actor) > *) 0 ;
   bool result;
 
@@ -55595,8 +55644,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FocusChangedSignal(void * jarg1) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FocusGroupChangedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FocusGroupChangedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Actor,bool) > *arg1 = (Dali::Signal< void (Dali::Actor,bool) > *) 0 ;
   bool result;
 
@@ -55659,7 +55708,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FocusGroupChangedSignal_Disconnect(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FocusGroupChangedSignal_Emit(void * jarg1, void * jarg2, unsigned int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FocusGroupChangedSignal_Emit(void * jarg1, void * jarg2, bool jarg3) {
   Dali::Signal< void (Dali::Actor,bool) > *arg1 = (Dali::Signal< void (Dali::Actor,bool) > *) 0 ;
   Dali::Actor arg2 ;
   bool arg3 ;
@@ -55710,8 +55759,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FocusGroupChangedSignal(void * ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_StyleChangedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_StyleChangedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Toolkit::StyleManager,Dali::StyleChange::Type) > *arg1 = (Dali::Signal< void (Dali::Toolkit::StyleManager,Dali::StyleChange::Type) > *) 0 ;
   bool result;
 
@@ -55825,8 +55874,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_StyleChangedSignal(void * jarg1) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ButtonSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ButtonSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Toolkit::Button) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Button) > *) 0 ;
   bool result;
 
@@ -55889,8 +55938,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ButtonSignal_Disconnect(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ButtonSignal_Emit(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ButtonSignal_Emit(void * jarg1, void * jarg2) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Toolkit::Button) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Button) > *) 0 ;
   Dali::Toolkit::Button arg2 ;
   Dali::Toolkit::Button *argp2 ;
@@ -55942,8 +55991,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ButtonSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GaussianBlurViewSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GaussianBlurViewSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Toolkit::GaussianBlurView) > *arg1 = (Dali::Signal< void (Dali::Toolkit::GaussianBlurView) > *) 0 ;
   bool result;
 
@@ -56055,8 +56104,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_GaussianBlurViewSignal(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PageTurnSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PageTurnSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Toolkit::PageTurnView,unsigned int,bool) > *arg1 = (Dali::Signal< void (Dali::Toolkit::PageTurnView,unsigned int,bool) > *) 0 ;
   bool result;
 
@@ -56119,7 +56168,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PageTurnSignal_Disconnect(void * jarg1, 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PageTurnSignal_Emit(void * jarg1, void * jarg2, unsigned int jarg3, unsigned int jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PageTurnSignal_Emit(void * jarg1, void * jarg2, unsigned int jarg3, bool jarg4) {
   Dali::Signal< void (Dali::Toolkit::PageTurnView,unsigned int,bool) > *arg1 = (Dali::Signal< void (Dali::Toolkit::PageTurnView,unsigned int,bool) > *) 0 ;
   Dali::Toolkit::PageTurnView arg2 ;
   unsigned int arg3 ;
@@ -56172,8 +56221,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PageTurnSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PagePanSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PagePanSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Toolkit::PageTurnView) > *arg1 = (Dali::Signal< void (Dali::Toolkit::PageTurnView) > *) 0 ;
   bool result;
 
@@ -56282,8 +56331,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PagePanSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ProgressBarValueChangedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ProgressBarValueChangedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Toolkit::ProgressBar,float,float) > *arg1 = (Dali::Signal< void (Dali::Toolkit::ProgressBar,float,float) > *) 0 ;
   bool result;
 
@@ -56399,8 +56448,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ProgressBarValueChangedSignal(voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ScrollViewSnapStartedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ScrollViewSnapStartedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Toolkit::ScrollView::SnapEvent const &) > *arg1 = (Dali::Signal< void (Dali::Toolkit::ScrollView::SnapEvent const &) > *) 0 ;
   bool result;
 
@@ -56510,8 +56559,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollViewSnapStartedSignal(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ScrollableSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ScrollableSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Vector2 const &) > *arg1 = (Dali::Signal< void (Dali::Vector2 const &) > *) 0 ;
   bool result;
 
@@ -56622,8 +56671,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollableSignal(void * jarg1) {
 
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ControlKeySignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ControlKeySignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *) 0 ;
   bool result;
 
@@ -56686,8 +56735,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ControlKeySignal_Disconnect(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ControlKeySignal_Emit(void * jarg1, void * jarg2, void * jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ControlKeySignal_Emit(void * jarg1, void * jarg2, void * jarg3) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *) 0 ;
   Dali::Toolkit::Control arg2 ;
   Dali::KeyEvent *arg3 = 0 ;
@@ -56745,8 +56794,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ControlKeySignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyInputFocusSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_KeyInputFocusSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Toolkit::Control) > *arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *) 0 ;
   bool result;
 
@@ -56858,8 +56907,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyInputFocusSignal(void * jarg1)
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_VideoViewSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoViewSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Toolkit::VideoView &) > *arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *) 0 ;
   bool result;
 
@@ -56969,8 +57018,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VideoViewSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SliderValueChangedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_SliderValueChangedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Toolkit::Slider,float) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Slider,float) > *) 0 ;
   bool result;
 
@@ -57033,8 +57082,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SliderValueChangedSignal_Disconnect(void
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SliderValueChangedSignal_Emit(void * jarg1, void * jarg2, float jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_SliderValueChangedSignal_Emit(void * jarg1, void * jarg2, float jarg3) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Toolkit::Slider,float) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Slider,float) > *) 0 ;
   Dali::Toolkit::Slider arg2 ;
   float arg3 ;
@@ -57088,8 +57137,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_SliderValueChangedSignal(void * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SliderMarkReachedSignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_SliderMarkReachedSignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Toolkit::Slider,int) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Slider,int) > *) 0 ;
   bool result;
 
@@ -57152,8 +57201,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SliderMarkReachedSignal_Disconnect(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SliderMarkReachedSignal_Emit(void * jarg1, void * jarg2, int jarg3) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_SliderMarkReachedSignal_Emit(void * jarg1, void * jarg2, int jarg3) {
+  bool jresult ;
   Dali::Signal< bool (Dali::Toolkit::Slider,int) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Slider,int) > *) 0 ;
   Dali::Toolkit::Slider arg2 ;
   int arg3 ;
@@ -57451,7 +57500,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RulerPtr_Snap__SWIG_1(void * jarg1, flo
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RulerPtr_GetPositionFromPage(void * jarg1, unsigned int jarg2, unsigned int * jarg3, unsigned int jarg4) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RulerPtr_GetPositionFromPage(void * jarg1, unsigned int jarg2, unsigned int * jarg3, bool jarg4) {
   float jresult ;
   Dali::IntrusivePtr< Dali::Toolkit::Ruler > *arg1 = (Dali::IntrusivePtr< Dali::Toolkit::Ruler > *) 0 ;
   unsigned int arg2 ;
@@ -57474,7 +57523,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RulerPtr_GetPositionFromPage(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RulerPtr_GetPageFromPosition(void * jarg1, float jarg2, unsigned int jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RulerPtr_GetPageFromPosition(void * jarg1, float jarg2, bool jarg3) {
   unsigned int jresult ;
   Dali::IntrusivePtr< Dali::Toolkit::Ruler > *arg1 = (Dali::IntrusivePtr< Dali::Toolkit::Ruler > *) 0 ;
   float arg2 ;
@@ -57529,8 +57578,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RulerPtr_GetType(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RulerPtr_IsEnabled(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RulerPtr_IsEnabled(void * jarg1) {
+  bool jresult ;
   Dali::IntrusivePtr< Dali::Toolkit::Ruler > *arg1 = (Dali::IntrusivePtr< Dali::Toolkit::Ruler > *) 0 ;
   bool result;
 
@@ -57877,8 +57926,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RulerPtr_ReferenceCount(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ViewResourceReadySignal_Empty(void * jarg1) {
-  unsigned int jresult ;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewResourceReadySignal_Empty(void * jarg1) {
+  bool jresult ;
   Dali::Signal< void (Dali::Toolkit::Control) > *arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *) 0 ;
   bool result;
 
@@ -59159,7 +59208,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetPixelFormat(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_0(void * jarg1, void * jarg2, float jarg3, unsigned int jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_0(void * jarg1, void * jarg2, float jarg3, bool jarg4) {
   Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
   Dali::Devel::PixelBuffer arg2 ;
   float arg3 ;
@@ -59288,7 +59337,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PixelBuffer_Rotate(void * jarg1, void* j
   return result;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, bool jarg5) {
   void * jresult ;
   std::string *arg1 = 0 ;
   Dali::ImageDimensions arg2 ;
@@ -59436,8 +59485,148 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_4(char * jarg1
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, bool jarg5) {
+  void * jresult ;
+  Dali::Vector<uint8_t> *arg1 = (Dali::Vector<uint8_t> *) 0;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::SamplingMode::Type arg4 ;
+  bool arg5 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null buffer", 0);
+    return 0;
+  }
+  arg1 = (Dali::Vector<uint8_t> *)jarg1;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  arg4 = (Dali::SamplingMode::Type)jarg4;
+  arg5 = jarg5 ? true : false;
+  {
+    try {
+      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1,arg2,arg3,arg4,arg5);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_1(char * jarg1, void * jarg2, int jarg3, int jarg4) {
+  void * jresult ;
+  Dali::Vector<uint8_t> *arg1 = (Dali::Vector<uint8_t> *) 0;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::SamplingMode::Type arg4 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null buffer", 0);
+    return 0;
+  }
+  arg1 = (Dali::Vector<uint8_t> *)jarg1;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  arg4 = (Dali::SamplingMode::Type)jarg4;
+  {
+    try {
+      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1,arg2,arg3,arg4);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_2(char * jarg1, void * jarg2, int jarg3) {
+  void * jresult ;
+  Dali::Vector<uint8_t> *arg1 = (Dali::Vector<uint8_t> *) 0;
+  Dali::ImageDimensions arg2 ;
+  Dali::FittingMode::Type arg3 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null buffer", 0);
+    return 0;
+  }
+  arg1 = (Dali::Vector<uint8_t> *)jarg1;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  arg3 = (Dali::FittingMode::Type)jarg3;
+  {
+    try {
+      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1, arg2, arg3);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_3(char * jarg1, void * jarg2) {
+  void * jresult ;
+  Dali::Vector<uint8_t> *arg1 = (Dali::Vector<uint8_t> *) 0;
+  Dali::ImageDimensions arg2 ;
+  Dali::ImageDimensions *argp2 ;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null buffer", 0);
+    return 0;
+  }
+  arg1 = (Dali::Vector<uint8_t> *)jarg1;
+  argp2 = (Dali::ImageDimensions *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
+    return 0;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1, arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_4(void * jarg1) {
+  void * jresult ;
+  Dali::Vector<uint8_t> *arg1 = (Dali::Vector<uint8_t> *) 0;
+  Dali::Devel::PixelBuffer result;
+
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null buffer", 0);
+    return 0;
+  }
+  arg1 = (Dali::Vector<uint8_t> *)jarg1;
+  {
+    try {
+      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
+  return jresult;
+}
+
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, bool jarg5) {
   void * jresult ;
   std::string *arg1 = 0 ;
   Dali::ImageDimensions arg2 ;
@@ -59607,7 +59796,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char * jarg1, boo
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, unsigned int jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, bool jarg5) {
   void * jresult ;
   std::string *arg1 = 0 ;
   Dali::ImageDimensions arg2 ;
