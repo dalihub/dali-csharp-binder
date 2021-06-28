@@ -59485,7 +59485,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_4(char * jarg1
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, bool jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_0(void * jarg1, void * jarg2, int jarg3, int jarg4, bool jarg5) {
   void * jresult ;
   Dali::Vector<uint8_t> *arg1 = (Dali::Vector<uint8_t> *) 0;
   Dali::ImageDimensions arg2 ;
@@ -59511,14 +59511,14 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_0(char * jar
   arg5 = jarg5 ? true : false;
   {
     try {
-      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1,arg2,arg3,arg4,arg5);
+      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1, arg2, arg3, arg4, arg5);
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_1(char * jarg1, void * jarg2, int jarg3, int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_1(void * jarg1, void * jarg2, int jarg3, int jarg4) {
   void * jresult ;
   Dali::Vector<uint8_t> *arg1 = (Dali::Vector<uint8_t> *) 0;
   Dali::ImageDimensions arg2 ;
@@ -59542,14 +59542,14 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_1(char * jar
   arg4 = (Dali::SamplingMode::Type)jarg4;
   {
     try {
-      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1,arg2,arg3,arg4);
+      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1, arg2, arg3, arg4);
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)result);
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_2(char * jarg1, void * jarg2, int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_2(void * jarg1, void * jarg2, int jarg3) {
   void * jresult ;
   Dali::Vector<uint8_t> *arg1 = (Dali::Vector<uint8_t> *) 0;
   Dali::ImageDimensions arg2 ;
@@ -59578,7 +59578,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_2(char * jar
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_3(char * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_3(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Vector<uint8_t> *arg1 = (Dali::Vector<uint8_t> *) 0;
   Dali::ImageDimensions arg2 ;
