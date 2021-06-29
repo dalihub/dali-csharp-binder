@@ -59337,6 +59337,19 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PixelBuffer_Rotate(void * jarg1, void* j
   return result;
 }
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetBrightness(void * jarg1) {
+  Dali::Devel::PixelBuffer *arg1 = (Dali::Devel::PixelBuffer *) 0 ;
+  uint32_t result = 0;
+
+  arg1 = (Dali::Devel::PixelBuffer *)jarg1;
+  {
+    try {
+      result = (arg1)->GetBrightness();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char * jarg1, void * jarg2, int jarg3, int jarg4, bool jarg5) {
   void * jresult ;
   std::string *arg1 = 0 ;
