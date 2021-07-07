@@ -710,6 +710,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewScrollEdgeReachedSignal_Disconnec
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_SetTtsFocus(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  try {
+    webview->SetTtsFocus(jarg2);
+  } CALL_CATCH_EXCEPTION();
+}
+
 //----------------------------------WebBackForwardList-----------------------------------------------------
 SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetUrl( void* jarg1 ) {
   Dali::Toolkit::WebBackForwardListItem* arg1 = (Dali::Toolkit::WebBackForwardListItem*) 0;
