@@ -42,12 +42,12 @@ struct AccessibilityDelegate
     bool (*isScrollable)(); // 13
     char *(*getText)(int, int); // 14
     int (*getCharacterCount)(); // 15
-    int (*getCaretOffset)(); // 16
-    bool (*setCaretOffset)(int); // 17
+    int (*getCursorOffset)(); // 16
+    bool (*setCursorOffset)(int); // 17
     Dali::Accessibility::Range *(*getTextAtOffset)(int, int); // 18
-    Dali::Accessibility::Range *(*getSelection)(int); // 19
+    Dali::Accessibility::Range *(*getRangeOfSelection)(int); // 19
     bool (*removeSelection)(int); // 20
-    bool (*setSelection)(int, int, int); // 21
+    bool (*setRangeOfSelection)(int, int, int); // 21
     bool (*copyText)(int, int); // 22
     bool (*cutText)(int, int); // 23
     bool (*insertText)(int, const char *); // 24
@@ -94,7 +94,7 @@ inline T stealObject(T *obj)
 struct AccessibleImpl_NUI : public AccessibleImpl
 {
     // Points to memory managed from the C# side
-    const AccessibilityDelegate *v;
+    const AccessibilityDelegate *table;
 
     AccessibleImpl_NUI() = delete;
     AccessibleImpl_NUI(const AccessibleImpl_NUI &) = delete;
@@ -104,15 +104,15 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     AccessibleImpl_NUI& operator=(AccessibleImpl_NUI &&) = delete;
 
     AccessibleImpl_NUI(Dali::Actor actor, Dali::Accessibility::Role role, const AccessibilityDelegate *vtable)
-    : AccessibleImpl(actor, role, false), v{vtable} {}
+    : AccessibleImpl(actor, role, false), table{vtable} {}
 
     std::string GetNameRaw() override
     {
         std::string ret{};
 
-        if (v->getName)
+        if (table->getName)
         {
-            ret = stealString(v->getName());
+            ret = stealString(table->getName());
         }
 
         return ret;
@@ -122,9 +122,9 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     {
         std::string ret{};
 
-        if (v->getDescription)
+        if (table->getDescription)
         {
-            ret = stealString(v->getDescription());
+            ret = stealString(table->getDescription());
         }
 
         return ret;
@@ -140,7 +140,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
             // and NUI Components is known to be broken (and possibly in other cases, too). Please
             // remove this override for GrabHighlight() when it is fixed.
             auto size = Self().GetProperty<Dali::Vector2>(Dali::Actor::Property::SIZE);
-            currentHighlightActor.GetHandle().SetProperty(Dali::Actor::Property::SIZE, size);
+            mCurrentHighlightActor.GetHandle().SetProperty(Dali::Actor::Property::SIZE, size);
         }
 
         return ret;
@@ -150,9 +150,9 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     {
         std::string ret{};
 
-        if (v->getActionName)
+        if (table->getActionName)
         {
-            ret = stealString(v->getActionName(static_cast<int>(index)));
+            ret = stealString(table->getActionName(static_cast<int>(index)));
         }
 
         return ret;
@@ -162,9 +162,9 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     {
         std::size_t ret{0};
 
-        if (v->getActionCount)
+        if (table->getActionCount)
         {
-            ret = static_cast<std::size_t>(v->getActionCount());
+            ret = static_cast<std::size_t>(table->getActionCount());
         }
 
         return ret;
@@ -179,9 +179,9 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     {
         bool ret{false};
 
-        if (v->doAction)
+        if (table->doAction)
         {
-            ret = v->doAction(name.data());
+            ret = table->doAction(name.data());
         }
 
         return ret;
@@ -191,9 +191,9 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     {
         Dali::Accessibility::States ret{};
 
-        if (v->calculateStates)
+        if (table->calculateStates)
         {
-            ret = stealObject(v->calculateStates());
+            ret = stealObject(table->calculateStates());
         }
 
         return ret;
@@ -213,9 +213,9 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     {
         bool ret{false};
 
-        if (v->shouldReportZeroChildren)
+        if (table->shouldReportZeroChildren)
         {
-            ret = v->shouldReportZeroChildren();
+            ret = table->shouldReportZeroChildren();
         }
 
         return ret;
@@ -249,7 +249,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
         {
             if (highlighted && index == 0)
             {
-                return Dali::Accessibility::Accessible::Get(currentHighlightActor.GetHandle());
+                return Dali::Accessibility::Accessible::Get(mCurrentHighlightActor.GetHandle());
             }
             else
             {
@@ -272,9 +272,9 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     {
         bool ret{false};
 
-        if (v->isScrollable)
+        if (table->isScrollable)
         {
-            ret = v->isScrollable();
+            ret = table->isScrollable();
         }
 
         return ret;
@@ -284,9 +284,9 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     {
         bool ret{false};
 
-        if (v->scrollToChild)
+        if (table->scrollToChild)
         {
-            ret = v->scrollToChild(new Dali::Actor(child));
+            ret = table->scrollToChild(new Dali::Actor(child));
         }
 
         return ret;
@@ -302,9 +302,9 @@ struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
     {
         double ret{0.0};
 
-        if (v->getMinimum)
+        if (table->getMinimum)
         {
-            ret = v->getMinimum();
+            ret = table->getMinimum();
         }
 
         return ret;
@@ -314,9 +314,9 @@ struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
     {
         double ret{0.0};
 
-        if (v->getCurrent)
+        if (table->getCurrent)
         {
-            ret = v->getCurrent();
+            ret = table->getCurrent();
         }
 
         return ret;
@@ -326,21 +326,21 @@ struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
     {
         double ret{0.0};
 
-        if (v->getMaximum)
+        if (table->getMaximum)
         {
-            ret = v->getMaximum();
+            ret = table->getMaximum();
         }
 
         return ret;
     }
 
-    bool SetCurrent(double val) override
+    bool SetCurrent(double value) override
     {
         bool ret{false};
 
-        if (v->setCurrent)
+        if (table->setCurrent)
         {
-            ret = v->setCurrent(val);
+            ret = table->setCurrent(value);
         }
 
         return ret;
@@ -350,9 +350,9 @@ struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
     {
         double ret{0.0};
 
-        if (v->getMinimumIncrement)
+        if (table->getMinimumIncrement)
         {
-            ret = v->getMinimumIncrement();
+            ret = table->getMinimumIncrement();
         }
 
         return ret;
@@ -369,9 +369,9 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
     {
         std::string ret{};
 
-        if (v->getText)
+        if (table->getText)
         {
-            ret = stealString(v->getText(static_cast<int>(startOffset), static_cast<int>(endOffset)));
+            ret = stealString(table->getText(static_cast<int>(startOffset), static_cast<int>(endOffset)));
         }
 
         return ret;
@@ -381,33 +381,33 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
     {
         std::size_t ret{0};
 
-        if (v->getCharacterCount)
+        if (table->getCharacterCount)
         {
-            ret = static_cast<std::size_t>(v->getCharacterCount());
+            ret = static_cast<std::size_t>(table->getCharacterCount());
         }
 
         return ret;
     }
 
-    std::size_t GetCaretOffset() override
+    std::size_t GetCursorOffset() override
     {
         std::size_t ret{0};
 
-        if (v->getCaretOffset)
+        if (table->getCursorOffset)
         {
-            ret = static_cast<std::size_t>(v->getCaretOffset());
+            ret = static_cast<std::size_t>(table->getCursorOffset());
         }
 
         return ret;
     }
 
-    bool SetCaretOffset(std::size_t offset) override
+    bool SetCursorOffset(std::size_t offset) override
     {
         bool ret{false};
 
-        if (v->setCaretOffset)
+        if (table->setCursorOffset)
         {
-            ret = v->setCaretOffset(static_cast<int>(offset));
+            ret = table->setCursorOffset(static_cast<int>(offset));
         }
 
         return ret;
@@ -417,45 +417,45 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
     {
         Dali::Accessibility::Range ret{};
 
-        if (v->getTextAtOffset)
+        if (table->getTextAtOffset)
         {
-            ret = stealObject(v->getTextAtOffset(static_cast<int>(offset), static_cast<int>(boundary)));
+            ret = stealObject(table->getTextAtOffset(static_cast<int>(offset), static_cast<int>(boundary)));
         }
 
         return ret;
     }
 
-    Dali::Accessibility::Range GetSelection(std::size_t selectionNum) override
+    Dali::Accessibility::Range GetRangeOfSelection(std::size_t selectionIndex) override
     {
         Dali::Accessibility::Range ret{};
 
-        if (v->getSelection)
+        if (table->getRangeOfSelection)
         {
-            ret = stealObject(v->getSelection(static_cast<int>(selectionNum)));
+            ret = stealObject(table->getRangeOfSelection(static_cast<int>(selectionIndex)));
         }
 
         return ret;
     }
 
-    bool RemoveSelection(std::size_t selectionNum) override
+    bool RemoveSelection(std::size_t selectionIndex) override
     {
         bool ret{false};
 
-        if (v->removeSelection)
+        if (table->removeSelection)
         {
-            ret = v->removeSelection(static_cast<int>(selectionNum));
+            ret = table->removeSelection(static_cast<int>(selectionIndex));
         }
 
         return ret;
     }
 
-    bool SetSelection(std::size_t selectionNum, std::size_t startOffset, std::size_t endOffset) override
+    bool SetRangeOfSelection(std::size_t selectionIndex, std::size_t startOffset, std::size_t endOffset) override
     {
         bool ret{false};
 
-        if (v->setSelection)
+        if (table->setRangeOfSelection)
         {
-            ret = v->setSelection(static_cast<int>(selectionNum), static_cast<int>(startOffset), static_cast<int>(endOffset));
+            ret = table->setRangeOfSelection(static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
         }
 
         return ret;
@@ -465,9 +465,9 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
     {
         bool ret{false};
 
-        if (v->copyText)
+        if (table->copyText)
         {
-            ret = v->copyText(static_cast<int>(startPosition), static_cast<int>(endPosition));
+            ret = table->copyText(static_cast<int>(startPosition), static_cast<int>(endPosition));
         }
 
         return ret;
@@ -477,9 +477,9 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
     {
         bool ret{false};
 
-        if (v->cutText)
+        if (table->cutText)
         {
-            ret = v->cutText(static_cast<int>(startPosition), static_cast<int>(endPosition));
+            ret = table->cutText(static_cast<int>(startPosition), static_cast<int>(endPosition));
         }
 
         return ret;
@@ -487,9 +487,9 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
 
     bool InsertText(std::size_t startPosition, std::string text) override
     {
-        if (v->insertText)
+        if (table->insertText)
         {
-            return v->insertText(static_cast<int>(startPosition), text.c_str());
+            return table->insertText(static_cast<int>(startPosition), text.c_str());
         }
 
         return false;
@@ -497,9 +497,9 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
 
     bool SetTextContents(std::string newContents) override
     {
-        if (v->setTextContents)
+        if (table->setTextContents)
         {
-            return v->setTextContents(newContents.c_str());
+            return table->setTextContents(newContents.c_str());
         }
 
         return false;
@@ -509,9 +509,9 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
     {
         bool ret{false};
 
-        if (v->deleteText)
+        if (table->deleteText)
         {
-            ret = v->deleteText(static_cast<int>(startPosition), static_cast<int>(endPosition));
+            ret = table->deleteText(static_cast<int>(startPosition), static_cast<int>(endPosition));
         }
 
         return ret;
@@ -527,9 +527,9 @@ struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
     {
         int ret{0};
 
-        if (v->getSelectedChildrenCount)
+        if (table->getSelectedChildrenCount)
         {
-            ret = v->getSelectedChildrenCount();
+            ret = table->getSelectedChildrenCount();
         }
 
         return ret;
@@ -539,9 +539,9 @@ struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
     {
         Dali::Accessibility::Accessible* ret{nullptr};
 
-        if (v->getSelectedChild)
+        if (table->getSelectedChild)
         {
-            Dali::Actor *actor = v->getSelectedChild(selectedChildIndex);
+            Dali::Actor *actor = table->getSelectedChild(selectedChildIndex);
             if (actor)
             {
                 ret = Dali::Accessibility::Accessible::Get(*actor);
@@ -555,9 +555,9 @@ struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
     {
         bool ret{false};
 
-        if (v->selectChild)
+        if (table->selectChild)
         {
-            ret = v->selectChild(childIndex);
+            ret = table->selectChild(childIndex);
         }
 
         return ret;
@@ -567,9 +567,9 @@ struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
     {
         bool ret{false};
 
-        if (v->deselectSelectedChild)
+        if (table->deselectSelectedChild)
         {
-            ret = v->deselectSelectedChild(selectedChildIndex);
+            ret = table->deselectSelectedChild(selectedChildIndex);
         }
 
         return ret;
@@ -579,9 +579,9 @@ struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
     {
         bool ret{false};
 
-        if (v->isChildSelected)
+        if (table->isChildSelected)
         {
-            ret = v->isChildSelected(childIndex);
+            ret = table->isChildSelected(childIndex);
         }
 
         return ret;
@@ -591,9 +591,9 @@ struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
     {
         bool ret{false};
 
-        if (v->selectAll)
+        if (table->selectAll)
         {
-            ret = v->selectAll();
+            ret = table->selectAll();
         }
 
         return ret;
@@ -603,9 +603,9 @@ struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
     {
         bool ret{false};
 
-        if (v->clearSelection)
+        if (table->clearSelection)
         {
-            ret = v->clearSelection();
+            ret = table->clearSelection();
         }
 
         return ret;
@@ -615,9 +615,9 @@ struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
     {
         bool ret{false};
 
-        if (v->deselectChild)
+        if (table->deselectChild)
         {
-            ret = v->deselectChild(childIndex);
+            ret = table->deselectChild(childIndex);
         }
 
         return ret;
