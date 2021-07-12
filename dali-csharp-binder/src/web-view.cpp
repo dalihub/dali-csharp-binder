@@ -904,6 +904,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterGeolocationPermissionCal
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_SetTtsFocus(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  try {
+    webview->SetTtsFocus(jarg2);
+  } CALL_CATCH_EXCEPTION();
+}
+
 SWIGEXPORT Dali::Toolkit::Control *SWIGSTDCALL CSharp_Dali_WebView_SWIGUpcast(Dali::Toolkit::WebView* jarg1) {
   return (Dali::Toolkit::Control*)jarg1;
 }
