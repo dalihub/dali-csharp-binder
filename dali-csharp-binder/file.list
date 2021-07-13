@@ -40,7 +40,8 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/web-view.cpp \
   ${dali_csharp_binder_dir}/src/control-devel_wrap.cpp \
   ${dali_csharp_binder_dir}/src/signal_wrap.cpp \
-  ${dali_csharp_binder_dir}/src/accessible-impl-nui.cpp
+  ${dali_csharp_binder_dir}/src/accessible-impl-nui.cpp \
+  ${dali_csharp_binder_dir}/src/rotation.cpp
 
 # added for key grab binding only for tizen
 # module: csharp-binder, backend: mobile,tv,ivi,watch
