@@ -359,8 +359,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibility
     try_catch([&]() {
         Dali::Actor *control = (Dali::Actor*) arg1;
         Dali::Accessibility::States *states = (Dali::Accessibility::States*) arg2;
-        bool doRecursive = arg3 ? true : false;
-        NotifyAccessibilityStateChange(*control, *states, doRecursive);
+        bool isRecursive = arg3 ? true : false;
+        NotifyAccessibilityStateChange(*control, *states, isRecursive);
     });
 }
 
@@ -481,13 +481,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextDeletedEvent(void 
     });
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextCaretMovedEvent(void *arg1, int arg2_position) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextCursorMovedEvent(void *arg1, int arg2_position) {
     GUARD_ON_NULL_RET(arg1);
     try_catch([&]() {
         Dali::Actor *control = (Dali::Actor*) arg1;
         auto accessible = GetBoundAccessibilityObject(*control);
         if (accessible)
-            accessible->EmitTextCaretMoved(arg2_position);
+            accessible->EmitTextCursorMoved(arg2_position);
         else
             SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
     });

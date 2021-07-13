@@ -333,38 +333,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_LOAD_PROGRESS_PERCENTAGE
   return (int)Dali::Toolkit::WebView::Property::LOAD_PROGRESS_PERCENTAGE;
 }
 
-//@DEPRECATED_2_0.9.
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_CACHE_MODEL_get() {
-  return 0;
-}
-
-//@DEPRECATED_2_0.9.
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_COOKIE_ACCEPT_POLICY_get() {
-  return 0;
-}
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_USER_AGENT_get() {
   return (int)Dali::Toolkit::WebView::Property::USER_AGENT;
-}
-
-//@DEPRECATED_2_0.9.
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_ENABLE_JAVASCRIPT_get() {
-  return 0;
-}
-
-//@DEPRECATED_2_0.9.
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_LOAD_IMAGES_AUTOMATICALLY_get() {
-  return 0;
-}
-
-//@DEPRECATED_2_0.9.
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_DEFAULT_TEXT_ENCODING_NAME_get() {
-  return 0;
-}
-
-//@DEPRECATED_2_0.9.
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebView_Property_DEFAULT_FONT_SIZE_get() {
-  return 0;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_LoadUrl(void * jarg1, char * jarg2) {
@@ -403,11 +373,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_LoadHtmlString(void * jarg1, cha
       (arg1)->LoadHtmlString((std::string const &)*arg2);
     } CALL_CATCH_EXCEPTION();
   }
-}
-
-//@DEPRECATED_2_0.9.
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_LoadHTMLString(void * jarg1, char * jarg2) {
-  CSharp_Dali_WebView_LoadHtmlString(jarg1, jarg2);
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_LoadHtmlStringOverrideCurrentEntry(void * jarg1, const char *jarg2, const char *jarg3, const char *jarg4) {
@@ -896,7 +861,7 @@ void OnWebViewScreenshotCapturedCallback(Dali::Toolkit::ImageView imageView) {
   if (!imageView)
     return;
 
-  Dali::Toolkit::ImageView* pImageView = &imageView;
+  Dali::Toolkit::ImageView* pImageView = new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView &)imageView);
   swig_callbackOnWebViewScreenshotCaptured(pImageView);
 }
 
@@ -939,28 +904,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterGeolocationPermissionCal
   }
 }
 
-//@DEPRECATED_2_0.9.
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ClearCache(void * jarg1) {
-  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
-
-  arg1 = (Dali::Toolkit::WebView*)jarg1;
-  {
-    try {
-      (arg1)->GetContext()->ClearCache();
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
-//@DEPRECATED_2_0.9.
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ClearCookies(void * jarg1) {
-  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
-
-  arg1 = (Dali::Toolkit::WebView*)jarg1;
-  {
-    try {
-      (arg1)->GetCookieManager()->ClearCookies();
-    } CALL_CATCH_EXCEPTION();
-  }
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_SetTtsFocus(void* jarg1, bool jarg2) {
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  try {
+    webview->SetTtsFocus(jarg2);
+  } CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT Dali::Toolkit::Control *SWIGSTDCALL CSharp_Dali_WebView_SWIGUpcast(Dali::Toolkit::WebView* jarg1) {
@@ -1149,18 +1097,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewUrlChangedSignal_Disconnect(void 
   }
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_WebViewContextMenuCustomizedSignal_ContextMenuCustomized(void * jarg1) {
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_WebViewContextMenuShownSignal_ContextMenuShown(void * jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* result = 0;
   {
     try {
-      result = new SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>(&webview->ContextMenuCustomizedSignal());
+      result = new SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>(&webview->ContextMenuShownSignal());
     } CALL_CATCH_EXCEPTION(0);
   }
   return (void*)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewContextMenuCustomizedSignal(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewContextMenuShownSignal(void * jarg1) {
   SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* object = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>*)jarg1;
   {
     try {
@@ -1169,7 +1117,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewContextMenuCustomizedSigna
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_Connect(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuShownSignal_Connect(void * jarg1, void * jarg2) {
   SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType)jarg2;
   {
@@ -1179,7 +1127,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_Conne
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_Disconnect(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuShownSignal_Disconnect(void * jarg1, void * jarg2) {
   SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>*)jarg1;
   SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType)jarg2;
   {
@@ -1189,19 +1137,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuCustomizedSignal_Disco
   }
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_WebViewContextMenuItemSelectedSignal_ContextMenuItemSelected(void * jarg1) {
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_WebViewContextMenuHiddenSignal_ContextMenuHidden(void * jarg1) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
-  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>* result = 0;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* result = 0;
   {
     try {
-      result = new SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>(&webview->ContextMenuItemSelectedSignal());
+      result = new SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>(&webview->ContextMenuHiddenSignal());
     } CALL_CATCH_EXCEPTION(0);
   }
   return (void*)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewContextMenuItemSelectedSignal(void * jarg1) {
-  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>* object = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>*)jarg1;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewContextMenuHiddenSignal(void * jarg1) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* object = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>*)jarg1;
   {
     try {
       delete object;
@@ -1209,9 +1157,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebViewContextMenuItemSelectedSig
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuItemSelectedSignal_Connect(void * jarg1, void * jarg2) {
-  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>*)jarg1;
-  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>::CallbackType)jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuHiddenSignal_Connect(void * jarg1, void * jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType)jarg2;
   {
     try {
       proxy->Connect(callback);
@@ -1219,9 +1167,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuItemSelectedSignal_Con
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuItemSelectedSignal_Disconnect(void * jarg1, void * jarg2) {
-  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>*)jarg1;
-  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenuItem>::CallbackType)jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebViewContextMenuHiddenSignal_Disconnect(void * jarg1, void * jarg2) {
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>* proxy = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>*)jarg1;
+  SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType callback = (SignalConverter::WebViewProxySignal<Dali::WebEngineContextMenu>::CallbackType)jarg2;
   {
     try {
       proxy->Disconnect(callback);
@@ -1806,6 +1754,53 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetProxyUri(void * jarg1, con
   }
 }
 
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyUri(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  char *jresult;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      const std::string str = (arg1)->GetProxyUri();
+      jresult = SWIG_csharp_string_callback(str.c_str());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetProxyBypassRule(void *jarg1, char *jarg2, char *jarg3) {
+  if (!jarg2 || !jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  const std::string arg2(jarg2);
+  const std::string arg3(jarg3);
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      (arg1)->SetProxyBypassRule(arg2, arg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyBypassRule(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  char *jresult;
+
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      const std::string str = (arg1)->GetProxyBypassRule();
+      jresult = SWIG_csharp_string_callback(str.c_str());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetCertificateFilePath(void * jarg1, const char * jarg2) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
 
@@ -1816,6 +1811,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetCertificateFilePath(void *
       (arg1)->SetCertificateFilePath(arg2_str);
     } CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetCertificateFilePath(void *jarg1) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  char *jresult;
+  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  {
+    try {
+      const std::string str = (arg1)->GetCertificateFilePath();
+      jresult = SWIG_csharp_string_callback(str.c_str());
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetDefaultProxyAuth(void * jarg1, const char * jarg2, const char * jarg3) {
@@ -2017,21 +2026,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_IsCacheEnabled(void *jarg1) {
   return ret;
 }
 
-SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetContextCertificateFile(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-  char *jresult;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
-  {
-    try {
-      const std::string str = (arg1)->GetContextCertificateFile();
-      jresult = SWIG_csharp_string_callback(str.c_str());
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  return jresult;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextAppId(void *jarg1, char *jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetAppId(void *jarg1, char *jarg2) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
@@ -2042,12 +2037,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextAppId(void *jarg1, 
   arg1 = (Dali::Toolkit::WebContext *)jarg1;
   {
     try {
-      (arg1)->SetContextAppId(str);
+      (arg1)->SetAppId(str);
     } CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_SetContextAppVersion(void *jarg1, char *jarg2) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_SetAppVersion(void *jarg1, char *jarg2) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
@@ -2059,42 +2054,42 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_SetContextAppVersion(void *ja
   arg1 = (Dali::Toolkit::WebContext *)jarg1;
   {
     try {
-      ret = (arg1)->SetContextAppVersion(str);
+      ret = (arg1)->SetAppVersion(str);
     } CALL_CATCH_EXCEPTION(0);
   }
 
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextApplicationType(void *jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetApplicationType(void *jarg1, int jarg2) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
 
   arg1 = (Dali::Toolkit::WebContext *)jarg1;
   {
     try {
-      (arg1)->SetContextApplicationType((Dali::WebEngineContext::ApplicationType)jarg2);
+      (arg1)->SetApplicationType((Dali::WebEngineContext::ApplicationType)jarg2);
     } CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextTimeOffset(void *jarg1, float jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetTimeOffset(void *jarg1, float jarg2) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
 
   arg1 = (Dali::Toolkit::WebContext *)jarg1;
   {
     try {
-      (arg1)->SetContextTimeOffset(jarg2);
+      (arg1)->SetTimeOffset(jarg2);
     } CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextTimeZoneOffset(void *jarg1, float jarg2, float jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetTimeZoneOffset(void *jarg1, float jarg2, float jarg3) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
 
   arg1 = (Dali::Toolkit::WebContext *)jarg1;
   {
     try {
-      (arg1)->SetContextTimeZoneOffset(jarg2, jarg3);
+      (arg1)->SetTimeZoneOffset(jarg2, jarg3);
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -2160,13 +2155,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetDefaultZoomFactor(void *ja
   }
 }
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_WebContext_GetContextDefaultZoomFactor(void *jarg1) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_WebContext_GetDefaultZoomFactor(void *jarg1) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
   float ret;
   arg1 = (Dali::Toolkit::WebContext *)jarg1;
   {
     try {
-      ret = (arg1)->GetContextDefaultZoomFactor();
+      ret = (arg1)->GetDefaultZoomFactor();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -2246,53 +2241,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllFormCandidateData(vo
   }
 }
 
-SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetContextProxy(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-  char *jresult;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
-  {
-    try {
-      const std::string str = (arg1)->GetContextProxy();
-      jresult = SWIG_csharp_string_callback(str.c_str());
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  return jresult;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetContextProxy(void *jarg1, char *jarg2, char *jarg3) {
-  if (!jarg2 || !jarg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return;
-  }
-
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-  const std::string arg2(jarg2);
-  const std::string arg3(jarg3);
-
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
-  {
-    try {
-      (arg1)->SetContextProxy(arg2, arg3);
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyBypassRule(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-  char *jresult;
-
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
-  {
-    try {
-      const std::string str = (arg1)->GetProxyBypassRule();
-      jresult = SWIG_csharp_string_callback(str.c_str());
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  return jresult;
-}
-
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_FreeUnusedMemory(void *jarg1) {
   Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
   bool ret;
@@ -2355,17 +2303,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebContextMenu_GetItemList(void *jarg1
     } CALL_CATCH_EXCEPTION(0);
   }
   return (void *)result;
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebContextMenu_GetPosition(void * jarg1) {
-  Dali::WebEngineContextMenu* arg1 = (Dali::WebEngineContextMenu*)jarg1;
-  Dali::Vector2 result;
-  {
-    try {
-      result = (arg1)->GetPosition();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return (void *)new Dali::Vector2((const Dali::Vector2&)result);
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContextMenu_RemoveItem(void *jarg1, void *jarg2) {

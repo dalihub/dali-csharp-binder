@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2021 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
  */
 
 // EXTERNAL INCLUDES
+#include <vector>
 #include <dali/integration-api/processor-interface.h>
 
 // INTERNAL INCLUDES
@@ -26,31 +27,24 @@
  * a Processor.  Enables the setting of a callback so dali-core can execute this callback when
  * Process() is run.
  */
-class LayoutController : public Dali::Integration::Processor
+class ProcessorController : public Dali::Integration::Processor
 {
 public:
 
-  // Function pointer matching delegate in C# LayoutController
-  using LayoutControllerProcessCallback = void (SWIGSTDCALL*)(int);
+  // Function pointer matching delegate in C# ProcessorController
+  using ProcessorControllerProcessCallback = void (SWIGSTDCALL*)();
 
 public:
   /**
-   * @brief Constructor - creates a LayoutController and registers it with dali-core.
+   * @brief Constructor - creates a ProcessorController and registers it with dali-core.
    *
    */
-  LayoutController();
+  ProcessorController();
 
   /**
    * @brief Destructor - Unregisters itself from dali-core.
    */
-  ~LayoutController();
-
-  /**
-   * @brief Gets the id of the LayoutController that was initialised during construction.
-   * @return the id of the LayoutController.
-   * @note Useful for debugging when multiple LayoutControllers are registered with dali-core.
-   */
-  int GetId() const;
+  ~ProcessorController();
 
   /**
    * @copydoc Dali::Integration::Processor::Process()
@@ -61,12 +55,16 @@ public:
     * @brief Set the callback to be executed when dali-core calls the overriden Process() api.
     * @param[in] callback, function to be called
     */
-  void SetCallback( LayoutControllerProcessCallback callback );
+  void SetCallback( ProcessorControllerProcessCallback callback );
+
+   /**
+    * @brief Remove callback on this ProcessorController.
+    * The removed callback will not be called anymore.
+    * @param[in] callback, function will be removed
+    */
+  void RemoveCallback( ProcessorControllerProcessCallback callback );
 
 private:
 
-  LayoutControllerProcessCallback handler;
-
-  int mId;
-
+  ProcessorControllerProcessCallback mHandler;
 };

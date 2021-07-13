@@ -2881,6 +2881,35 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetParent(void* jarg1)
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetWindow(void * jarg1) {
+  void * jresult ;
+  Dali::Window result;
+
+  {
+    try {
+      result = Dali::DevelWindow::Get(*(Dali::Actor*)jarg1);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  jresult = new Dali::Window((const Dali::Window &)result);
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_EventSignal(void * jarg1) {
   void * jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;

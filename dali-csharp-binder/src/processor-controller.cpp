@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2021 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,57 +15,47 @@
  *
  */
 
-#include "layout-controller.h"
+#include "processor-controller.h"
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-namespace
-{
-static int gLayoutControllerId = 1;
-} // unnamed namespace
-
-LayoutController::LayoutController() : handler(NULL), mId( gLayoutControllerId++ )
+ProcessorController::ProcessorController()
 {
   Dali::Adaptor::Get().RegisterProcessor(*this);
 }
 
 
-LayoutController::~LayoutController()
+ProcessorController::~ProcessorController()
 {
   Dali::Adaptor::Get().UnregisterProcessor(*this);
 }
 
-
-int LayoutController::GetId() const
+void ProcessorController::Process(bool postProcessor)
 {
-  return mId;
+  mHandler();
 }
 
-void LayoutController::Process(bool postProcessor)
+void ProcessorController::SetCallback(  ProcessorControllerProcessCallback callback )
 {
-  if( handler )
-  {
-    handler( mId );
-  }
+  mHandler = callback;
 }
 
-void LayoutController::SetCallback(  LayoutControllerProcessCallback callback )
+void ProcessorController::RemoveCallback(  ProcessorControllerProcessCallback callback )
 {
-  handler = callback;
+  mHandler = nullptr;
 }
 
-// LayoutController Bindings
+// ProcessorController Bindings
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ProcessorController() {
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_LayoutController() {
-
-  LayoutController *result = 0 ;
+  ProcessorController *result = 0 ;
 
   {
     try {
-      result = (LayoutController *)new LayoutController();
+      result = (ProcessorController *)new ProcessorController();
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -88,9 +78,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_LayoutController() {
   return (void *)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LayoutController(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ProcessorController(void * jarg1) {
 
-  LayoutController * arg1 = (LayoutController *)jarg1;
+  ProcessorController * arg1 = (ProcessorController *)jarg1;
   {
     try {
       delete arg1;
@@ -110,25 +100,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LayoutController(void * jarg1) {
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LayoutController_SetCallback( void* jarg1, LayoutController::LayoutControllerProcessCallback callback )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_SetCallback( void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback )
 {
-  LayoutController* layoutController = (LayoutController *) jarg1;
+  ProcessorController* processorController = (ProcessorController *) jarg1;
 
-  if( layoutController )
+  if( processorController )
   {
-    layoutController->SetCallback( callback );
+    processorController->SetCallback( callback );
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LayoutController_GetId( void* jarg1 )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_RemoveCallback( void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback )
 {
-  LayoutController * layoutController = (LayoutController *)jarg1;
-  int ret = 0;
-  if( layoutController )
+  ProcessorController* processorController = (ProcessorController *) jarg1;
+
+  if( processorController )
   {
-    ret = layoutController->GetId();
+    processorController->RemoveCallback( callback );
   }
-  return ret;
 }
 
 #ifdef __cplusplus
