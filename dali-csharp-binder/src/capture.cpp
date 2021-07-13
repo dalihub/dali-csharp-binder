@@ -25,6 +25,7 @@
 #include <dali/devel-api/adaptor-framework/capture-devel.h>
 #include <dali/integration-api/debug.h>
 #include <dali-toolkit/public-api/image-loader/image.h>
+#include <dali-toolkit/public-api/image-loader/image-url.h>
 
 SWIGINTERN bool Dali_Capture_Signal_Empty(Dali::Capture::CaptureFinishedSignalType const* self)
 {
@@ -868,10 +869,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
-SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Capture_GenerateUrl(void* nuiCapture)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GenerateUrl(void* nuiCapture)
 {
   Dali::Capture* capture = (Dali::Capture*)nuiCapture;
-  std::string url = "";
+  Dali::Toolkit::ImageUrl result;
+  void *jresult;
 
   if (!capture)
   {
@@ -881,7 +883,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Capture_GenerateUrl(void* nuiCapture)
   {
     try
     {
-      url = Dali::Toolkit::Image::GenerateUrl(capture->GetNativeImageSource());
+      result = Dali::Toolkit::Image::GenerateUrl(capture->GetNativeImageSource());
     }
     catch (std::out_of_range& e)
     {
@@ -904,7 +906,9 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Capture_GenerateUrl(void* nuiCapture)
       return 0;
     }
   }
-  return SWIG_csharp_string_callback( (const char *)url.c_str() );
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
 }
 
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Capture_GetCapturedBuffer(void *nuiCapture)
