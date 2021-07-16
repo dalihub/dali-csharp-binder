@@ -498,6 +498,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali/devel-api/update/update-proxy.h>
 
 #include <dali-toolkit/public-api/image-loader/image.h>
+#include <dali-toolkit/public-api/image-loader/image-url.h>
 
 
 // add here SWIG version check
@@ -16712,10 +16713,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelData_GetPixelFormat(void * jarg1) {
   return jresult;
 }
 
-SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* handle)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* handle)
 {
-  std::string url = "";
   Dali::PixelData* pixelData = (Dali::PixelData*)handle;
+  Dali::Toolkit::ImageUrl result;
+  void *jresult;
 
   if (!pixelData)
   {
@@ -16725,7 +16727,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* handle)
   {
     try
     {
-      url = Dali::Toolkit::Image::GenerateUrl(*pixelData);
+      result = Dali::Toolkit::Image::GenerateUrl(*pixelData);
     }
     catch (std::out_of_range& e)
     {
@@ -16748,7 +16750,9 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* handle)
       return 0;
     }
   }
-  return SWIG_csharp_string_callback( (const char *)url.c_str() );
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)result);
+  return jresult;
 }
 
 
@@ -60117,10 +60121,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageSource_ReleaseBuffer(void* ja
   return jresult;
 }
 
-SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* handle)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* handle)
 {
-  std::string url = "";
+  Dali::Toolkit::ImageUrl result;
   NativeImageSource* nativeImageSource = (NativeImageSource*)handle;
+  void *jresult;
 
   if (!nativeImageSource)
   {
@@ -60130,7 +60135,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* han
   {
     try
     {
-      url = Dali::Toolkit::Image::GenerateUrl(nativeImageSource);
+      result = Dali::Toolkit::Image::GenerateUrl(nativeImageSource);
     }
     catch (std::out_of_range& e)
     {
@@ -60153,7 +60158,80 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* han
       return 0;
     }
   }
-  return SWIG_csharp_string_callback( (const char *)url.c_str() );
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageUrl(void* jarg1)
+{
+  Dali::Toolkit::ImageUrl* imageUrl = (Dali::Toolkit::ImageUrl*) 0;
+
+  imageUrl = (Dali::Toolkit::ImageUrl*)jarg1;
+  {
+    try
+    {
+      delete imageUrl;
+    }
+    catch (std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return;
+    }
+  }
+}
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_ImageUrl_Get(void* jarg1)
+{
+  char *jresult;
+  Dali::Toolkit::ImageUrl* imageUrl = (Dali::Toolkit::ImageUrl*) 0;
+  std::string result;
+
+  imageUrl = (Dali::Toolkit::ImageUrl*)jarg1;
+  {
+    try
+    {
+      result = imageUrl->GetUrl();
+    }
+    catch (std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return 0;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return 0;
+    }
+  }
+
+  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  return jresult;
 }
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumWidth(void * jarg1) {
