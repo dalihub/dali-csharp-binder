@@ -74,7 +74,6 @@ PKG_CHECK_MODULES(DALITOOLKIT, dali2-toolkit)
 
 if test "x$enable_profile" = "xMOBILE" -o "x$enable_profile" = "xWEARABLE" -o "x$enable_profile" = "xTV" -o "x$enable_profile" = "xIVI" -o "x$enable_profile" = "xCOMMON"; then
   PKG_CHECK_MODULES(DALIWIDGET, widget_viewer_dali)
-  PKG_CHECK_MODULES(DALIEXTENSION, dali2-extension)
   if test x$enable_ecore_wayland2 = xyes; then
     PKG_CHECK_MODULES(ECORE_WL2, ecore-wl2)
   else
