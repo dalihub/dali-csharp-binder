@@ -53632,6 +53632,46 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetCustomAlgorithm(void * jarg1, void * 
 
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardFocusManager_EnableDefaultAlgorithm(void * jarg1, bool jarg2) {
+  KeyboardFocusManager arg1 ;
+  bool arg2 ;
+  KeyboardFocusManager *argp1 ;
+
+  argp1 = (KeyboardFocusManager *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null KeyboardFocusManager", 0);
+    return ;
+  }
+  arg1 = *argp1;
+  arg2 = jarg2;
+  {
+    try {
+      Dali::Toolkit::DevelKeyboardFocusManager::EnableDefaultAlgorithm(arg1, arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_KeyboardFocusManager_IsDefaultAlgorithmEnabled(void * jarg1) {
+  bool jresult ;
+  KeyboardFocusManager arg1 ;
+  KeyboardFocusManager *argp1 ;
+  bool result;
+
+  argp1 = (KeyboardFocusManager *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null KeyboardFocusManager", 0);
+    return false;
+  }
+  arg1 = *argp1;
+  {
+    try {
+      result = Dali::Toolkit::DevelKeyboardFocusManager::IsDefaultAlgorithmEnabled(arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = result;
+  return jresult;
+}
+
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemIdContainer_Clear(void * jarg1) {
   std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
