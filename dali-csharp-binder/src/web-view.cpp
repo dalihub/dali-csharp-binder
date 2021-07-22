@@ -907,6 +907,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_ClearCache(void* jarg1) {
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_GetPlainTextAsynchronously(void * nuiWebView, void * nuiCallback) {
+  Dali::Toolkit::WebView *webview = (Dali::Toolkit::WebView *)nuiWebView;
+  void (*callback)(char*) = (void (*)(char*))nuiCallback;
+  {
+    try {
+      webview->GetPlainTextAsynchronously([callback](const std::string& url) {
+            callback(SWIG_csharp_string_callback(url.c_str()));
+          });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 //----------------------------------WebCookieManager---------------------------------------------------
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebCookieManager_GetCookieAcceptPolicy(void* jarg1) {
   Dali::Toolkit::WebCookieManager* arg1 = (Dali::Toolkit::WebCookieManager*) 0;
