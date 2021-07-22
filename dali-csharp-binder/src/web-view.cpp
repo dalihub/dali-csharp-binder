@@ -1105,6 +1105,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterContextMenuHiddenCallbac
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_GetPlainTextAsynchronously(void * nuiWebView, void * nuiCallback) {
+  Dali::Toolkit::WebView *webview = (Dali::Toolkit::WebView *)nuiWebView;
+  void (*callback)(char*) = (void (*)(char*))nuiCallback;
+  {
+    try {
+      webview->GetPlainTextAsynchronously([callback](const std::string& url) {
+            callback(SWIG_csharp_string_callback(url.c_str()));
+          });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 //----------------------------------WebBackForwardListItem-----------------------------------------------------
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetUrl(void * jarg1) {
   Dali::WebEngineBackForwardListItem *arg1 = (Dali::WebEngineBackForwardListItem *)0;
