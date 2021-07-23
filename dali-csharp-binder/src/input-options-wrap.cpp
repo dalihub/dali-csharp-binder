@@ -259,6 +259,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetLongPressMinimumHoldin
   return;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapMaximumAllowedTime(uint32_t time) {
+  {
+    try {
+      Integration::SetTapMaximumAllowedTime(time);
+    } CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
 #ifdef __cplusplus
 }
 #endif
