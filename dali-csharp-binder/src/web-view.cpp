@@ -1014,9 +1014,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterRequestInterceptorCallba
   void (*handler)(Dali::WebEngineRequestInterceptor*) = (void (*)(Dali::WebEngineRequestInterceptor*))jarg2;
   {
     try {
-      (arg1)->RegisterRequestInterceptorCallback([handler](std::unique_ptr<Dali::WebEngineRequestInterceptor> interceptor) {
+      if (handler)
+      {
+        (arg1)->RegisterRequestInterceptorCallback([handler](std::unique_ptr<Dali::WebEngineRequestInterceptor> interceptor) {
             handler(interceptor.release());
           });
+      }
+      else
+      {
+        (arg1)->RegisterRequestInterceptorCallback(nullptr);
+      }
     } CALL_CATCH_EXCEPTION();
   }
 }
