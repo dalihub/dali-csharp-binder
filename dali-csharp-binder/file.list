@@ -42,7 +42,8 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/signal_wrap.cpp \
   ${dali_csharp_binder_dir}/src/accessible-impl-nui.cpp \
   ${dali_csharp_binder_dir}/src/rotation.cpp \
-  ${dali_csharp_binder_dir}/src/input-options.cpp
+  ${dali_csharp_binder_dir}/src/input-options.cpp \
+  ${dali_csharp_binder_dir}/src/native-image-queue.cpp
 
 # added for key grab binding only for tizen
 # module: csharp-binder, backend: mobile,tv,ivi,watch
