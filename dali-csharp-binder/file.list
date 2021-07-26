@@ -12,6 +12,7 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/constraint.cpp \
   ${dali_csharp_binder_dir}/src/keyboard_focus_manager_wrap.cpp \
   ${dali_csharp_binder_dir}/src/devel-property-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/encoded-image-buffer.cpp \
   ${dali_csharp_binder_dir}/src/version-check.cpp \
   ${dali_csharp_binder_dir}/src/processor-controller.cpp \
   ${dali_csharp_binder_dir}/src/fade.cpp \
@@ -40,7 +41,10 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/web-view.cpp \
   ${dali_csharp_binder_dir}/src/control-devel_wrap.cpp \
   ${dali_csharp_binder_dir}/src/signal_wrap.cpp \
-  ${dali_csharp_binder_dir}/src/accessible-impl-nui.cpp
+  ${dali_csharp_binder_dir}/src/accessible-impl-nui.cpp \
+  ${dali_csharp_binder_dir}/src/rotation.cpp \
+  ${dali_csharp_binder_dir}/src/input-options.cpp \
+  ${dali_csharp_binder_dir}/src/native-image-queue.cpp
 
 # added for key grab binding only for tizen
 # module: csharp-binder, backend: mobile,tv,ivi,watch

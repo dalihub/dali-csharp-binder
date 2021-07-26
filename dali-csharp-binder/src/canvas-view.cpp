@@ -272,11 +272,86 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Drawable_GetBoundingBox(char *jarg1) {
     CALL_CATCH_EXCEPTION(0);
   }
 
-  //Note: The float type Rectangle class is not ready yet.
+  // Note: The float type Rectangle class is not ready yet.
   //      Therefore, it transmits data in Vector4 class.
   //      This type should later be changed to the appropriate data type.
   jresult = new Dali::Vector4(result.x, result.y, result.width, result.height);
   return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_SetClipPath(char *jarg1,
+                                                             char *jarg2) {
+  Dali::CanvasRenderer::DrawableGroup arg1;
+  Dali::CanvasRenderer::DrawableGroup *argp1;
+  Dali::CanvasRenderer::Drawable arg2;
+  Dali::CanvasRenderer::Drawable *argp2;
+  bool result = false;
+
+  argp1 = (Dali::CanvasRenderer::DrawableGroup *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::DrawableGroup", 0);
+    return false;
+  }
+  arg1 = *argp1;
+
+  argp2 = (Dali::CanvasRenderer::Drawable *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
+    return false;
+  }
+  arg2 = *argp2;
+  {
+    try {
+      result = arg1.SetClipPath(arg2);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_SetMask(char *jarg1,
+                                                         char *jarg2,
+                                                         int jarg3) {
+  Dali::CanvasRenderer::DrawableGroup arg1;
+  Dali::CanvasRenderer::DrawableGroup *argp1;
+  Dali::CanvasRenderer::Drawable arg2;
+  Dali::CanvasRenderer::Drawable *argp2;
+  Dali::CanvasRenderer::Drawable::MaskType arg3;
+  bool result = false;
+
+  argp1 = (Dali::CanvasRenderer::DrawableGroup *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::DrawableGroup", 0);
+    return false;
+  }
+  arg1 = *argp1;
+
+  argp2 = (Dali::CanvasRenderer::Drawable *)jarg2;
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
+    return false;
+  }
+  arg2 = *argp2;
+
+  arg3 = static_cast<Dali::CanvasRenderer::Drawable::MaskType>(jarg3);
+
+  {
+    try {
+      result = arg1.SetMask(arg2, arg3);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
 }
 
 // Dali::CanvasRenderer::Shape Wrapper
