@@ -23,7 +23,6 @@ extern "C" {
 #endif
 
 ProcessorController::ProcessorController()
-: mHandler(nullptr)
 {
   Dali::Adaptor::Get().RegisterProcessor(*this);
 }
