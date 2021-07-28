@@ -58,6 +58,20 @@ CSharp_Dali_CanvasView_New__SWIG_0(char *pViewBox) {
       (const Dali::Toolkit::CanvasView &)result);
 }
 
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_CanvasView_New__SWIG_1() {
+  Dali::Toolkit::CanvasView result;
+
+  {
+    try {
+      result = Dali::Toolkit::CanvasView::New();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Toolkit::CanvasView(
+      (const Dali::Toolkit::CanvasView &)result);
+}
+
 SWIGEXPORT bool SWIGSTDCALL
 CSharp_Dali_CanvasView_AddDrawable(char *pCanvasView, char *pDrawable) {
   Dali::Toolkit::CanvasView canvasView;
