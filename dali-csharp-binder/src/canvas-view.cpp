@@ -34,62 +34,54 @@ using namespace Dali::Toolkit;
 extern "C" {
 #endif
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_CanvasView_New__SWIG_0(char *jarg1) {
-  void *jresult;
-  Dali::ImageDimensions arg1;
-  Dali::ImageDimensions *argp1;
+SWIGEXPORT void *SWIGSTDCALL
+CSharp_Dali_CanvasView_New__SWIG_0(char *pViewBox) {
+  Dali::ImageDimensions viewBox;
   Dali::Toolkit::CanvasView result;
 
-  argp1 = (Dali::ImageDimensions *)jarg1;
-  if (!argp1) {
+  if (!pViewBox) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::ImageDimensions", 0);
     return 0;
   }
-  arg1 = *argp1;
+  viewBox = *(Dali::ImageDimensions *)pViewBox;
   {
-    const Vector2 viewBox(arg1.GetWidth(), arg1.GetHeight());
     try {
-      result = Dali::Toolkit::CanvasView::New(viewBox);
+      result = Dali::Toolkit::CanvasView::New(
+          Vector2(viewBox.GetWidth(), viewBox.GetHeight()));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult =
-      new Dali::Toolkit::CanvasView((const Dali::Toolkit::CanvasView &)result);
-
-  return jresult;
+  return new Dali::Toolkit::CanvasView(
+      (const Dali::Toolkit::CanvasView &)result);
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CanvasView_AddDrawable(char *jarg1,
-                                                               char *jarg2) {
-  Dali::Toolkit::CanvasView arg1;
-  Dali::Toolkit::CanvasView *argp1;
-  Dali::CanvasRenderer::Drawable arg2;
-  Dali::CanvasRenderer::Drawable *argp2;
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_CanvasView_AddDrawable(char *pCanvasView, char *pDrawable) {
+  Dali::Toolkit::CanvasView canvasView;
+  Dali::CanvasRenderer::Drawable drawable;
   bool result = true;
 
-  argp1 = (Dali::Toolkit::CanvasView *)jarg1;
-  if (!argp1) {
+  if (!pCanvasView) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::Toolkit::CanvasView", 0);
     return false;
   }
-  arg1 = *argp1;
+  canvasView = *(Dali::Toolkit::CanvasView *)pCanvasView;
 
-  argp2 = (Dali::CanvasRenderer::Drawable *)jarg2;
-  if (!argp2) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
     return false;
   }
-  arg2 = *argp2;
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
   {
     try {
-      arg1.AddDrawable(arg2);
+      canvasView.AddDrawable(drawable);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -97,13 +89,21 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CanvasView_AddDrawable(char *jarg1,
   return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CanvasView(void *jarg1) {
-  Dali::Toolkit::CanvasView *arg1 = (Dali::Toolkit::CanvasView *)0;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CanvasView(void *pCanvasView) {
+  Dali::Toolkit::CanvasView *pTargetCanvasView = nullptr;
 
-  arg1 = (Dali::Toolkit::CanvasView *)jarg1;
+  if (!pCanvasView) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::Toolkit::CanvasView", 0);
+  }
+
+  pTargetCanvasView = (Dali::Toolkit::CanvasView *)pCanvasView;
   {
     try {
-      delete arg1;
+      if (pTargetCanvasView) {
+        delete pTargetCanvasView;
+      }
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -111,141 +111,137 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CanvasView(void *jarg1) {
 
 // Dali::CanvasRenderer::Drawable Wrapper
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Drawable_SetOpacity(char *jarg1,
-                                                            float jarg2) {
-  Dali::CanvasRenderer::Drawable *argp1;
-  float arg2 = jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Drawable_SetOpacity(char *pDrawable,
+                                                            float opacity) {
+  Dali::CanvasRenderer::Drawable drawable;
 
-  argp1 = (Dali::CanvasRenderer::Drawable *)jarg1;
-  if (!argp1) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
     return;
   }
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
+
   {
     try {
-      argp1->SetOpacity(arg2);
+      drawable.SetOpacity(opacity);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Drawable_GetOpacity(char *jarg1) {
-  Dali::CanvasRenderer::Drawable *argp1;
-  float result = 0.0f;
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Drawable_GetOpacity(char *pDrawable) {
+  Dali::CanvasRenderer::Drawable drawable;
+  float opacity = 0.0f;
 
-  argp1 = (Dali::CanvasRenderer::Drawable *)jarg1;
-  if (!argp1) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
     return 0.0;
   }
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
   {
     try {
-      result = argp1->GetOpacity();
+      opacity = drawable.GetOpacity();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  return result;
+  return opacity;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Translate(char *jarg1,
-                                                           float jarg2,
-                                                           float jarg3) {
-  Dali::CanvasRenderer::Drawable *argp1;
-  float arg2 = jarg2;
-  float arg3 = jarg3;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Translate(char *pDrawable,
+                                                           float x, float y) {
+  Dali::CanvasRenderer::Drawable drawable;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Drawable *)jarg1;
-  if (!argp1) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
     return false;
   }
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
   {
     try {
-      result = argp1->Translate(Vector2(arg2, arg3));
+      result = drawable.Translate(Vector2(x, y));
     }
     CALL_CATCH_EXCEPTION(false);
   }
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Scale(char *jarg1,
-                                                       float jarg2) {
-  Dali::CanvasRenderer::Drawable *argp1;
-  float arg2 = jarg2;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Scale(char *pDrawable,
+                                                       float scale) {
+  Dali::CanvasRenderer::Drawable drawable;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Drawable *)jarg1;
-  if (!argp1) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
     return false;
   }
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
+
   {
     try {
-      result = argp1->Scale(arg2);
+      result = drawable.Scale(scale);
     }
     CALL_CATCH_EXCEPTION(false);
   }
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Rotate(char *jarg1,
-                                                        float jarg2) {
-  Dali::CanvasRenderer::Drawable *argp1;
-  float arg2 = jarg2;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Rotate(char *pDrawable,
+                                                        float degree) {
+  Dali::CanvasRenderer::Drawable drawable;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Drawable *)jarg1;
-  if (!argp1) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
     return false;
   }
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
   {
     try {
-      result = argp1->Rotate(Dali::Degree(arg2));
+      result = drawable.Rotate(Dali::Degree(degree));
     }
     CALL_CATCH_EXCEPTION(false);
   }
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Transform(char *jarg1,
-                                                           float *jarg2) {
-  Dali::CanvasRenderer::Drawable *argp1;
-  float *argp2 = (float *)0;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Transform(char *pDrawable,
+                                                           float *pTransform) {
+  Dali::CanvasRenderer::Drawable drawable;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Drawable *)jarg1;
-  if (!argp1) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
     return false;
   }
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
 
-  argp2 = jarg2;
-  if (!argp2) {
+  if (!pTransform) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException,
                                            "Dali::Matrix3 const & type is null",
                                            0);
     return false;
   }
+
   {
     try {
-      result = argp1->Transform(Dali::Matrix3(argp2[0], argp2[1], argp2[2],
-                                              argp2[3], argp2[4], argp2[5],
-                                              argp2[6], argp2[7], argp2[8]));
+      result = drawable.Transform(
+          Dali::Matrix3(pTransform[0], pTransform[1], pTransform[2],
+                        pTransform[3], pTransform[4], pTransform[5],
+                        pTransform[6], pTransform[7], pTransform[8]));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -253,21 +249,21 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_Transform(char *jarg1,
   return result;
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Drawable_GetBoundingBox(char *jarg1) {
-  Dali::CanvasRenderer::Drawable *argp1;
+SWIGEXPORT void *SWIGSTDCALL
+CSharp_Dali_Drawable_GetBoundingBox(char *pDrawable) {
+  Dali::CanvasRenderer::Drawable drawable;
   Dali::Rect<float> result;
-  void *jresult = nullptr;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return 0;
   }
+  drawable = *(Dali::CanvasRenderer::Shape *)pDrawable;
   {
     try {
-      result = argp1->GetBoundingBox();
+      result = drawable.GetBoundingBox();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -275,38 +271,34 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Drawable_GetBoundingBox(char *jarg1) {
   // Note: The float type Rectangle class is not ready yet.
   //      Therefore, it transmits data in Vector4 class.
   //      This type should later be changed to the appropriate data type.
-  jresult = new Dali::Vector4(result.x, result.y, result.width, result.height);
-  return jresult;
+  return new Dali::Vector4(result.x, result.y, result.width, result.height);
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_SetClipPath(char *jarg1,
-                                                             char *jarg2) {
-  Dali::CanvasRenderer::DrawableGroup arg1;
-  Dali::CanvasRenderer::DrawableGroup *argp1;
-  Dali::CanvasRenderer::Drawable arg2;
-  Dali::CanvasRenderer::Drawable *argp2;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_SetClipPath(char *pDrawable,
+                                                             char *pClip) {
+  Dali::CanvasRenderer::Drawable drawable;
+  Dali::CanvasRenderer::Drawable clip;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::DrawableGroup *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(
-        SWIG_CSharpArgumentNullException,
-        "Attempt to dereference null Dali::CanvasRenderer::DrawableGroup", 0);
-    return false;
-  }
-  arg1 = *argp1;
-
-  argp2 = (Dali::CanvasRenderer::Drawable *)jarg2;
-  if (!argp2) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
     return false;
   }
-  arg2 = *argp2;
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
+
+  if (!pClip) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
+    return false;
+  }
+  clip = *(Dali::CanvasRenderer::Drawable *)pClip;
+
   {
     try {
-      result = arg1.SetClipPath(arg2);
+      result = drawable.SetClipPath(clip);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -314,39 +306,34 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_SetClipPath(char *jarg1,
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_SetMask(char *jarg1,
-                                                         char *jarg2,
-                                                         int jarg3) {
-  Dali::CanvasRenderer::DrawableGroup arg1;
-  Dali::CanvasRenderer::DrawableGroup *argp1;
-  Dali::CanvasRenderer::Drawable arg2;
-  Dali::CanvasRenderer::Drawable *argp2;
-  Dali::CanvasRenderer::Drawable::MaskType arg3;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_SetMask(char *pDrawable,
+                                                         char *pMask,
+                                                         int maskType) {
+  Dali::CanvasRenderer::Drawable drawable;
+  Dali::CanvasRenderer::Drawable mask;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::DrawableGroup *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(
-        SWIG_CSharpArgumentNullException,
-        "Attempt to dereference null Dali::CanvasRenderer::DrawableGroup", 0);
-    return false;
-  }
-  arg1 = *argp1;
-
-  argp2 = (Dali::CanvasRenderer::Drawable *)jarg2;
-  if (!argp2) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
     return false;
   }
-  arg2 = *argp2;
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
 
-  arg3 = static_cast<Dali::CanvasRenderer::Drawable::MaskType>(jarg3);
+  if (!pMask) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
+    return false;
+  }
+  mask = *(Dali::CanvasRenderer::Drawable *)pMask;
 
   {
     try {
-      result = arg1.SetMask(arg2, arg3);
+      result = drawable.SetMask(
+          mask,
+          static_cast<Dali::CanvasRenderer::Drawable::MaskType>(maskType));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -357,47 +344,39 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_SetMask(char *jarg1,
 // Dali::CanvasRenderer::Shape Wrapper
 
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Shape_New() {
-  void *jresult;
-  Dali::CanvasRenderer::Shape result;
+  Dali::CanvasRenderer::Shape shape;
 
   {
     try {
-      result = Dali::CanvasRenderer::Shape::New();
+      shape = Dali::CanvasRenderer::Shape::New();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::CanvasRenderer::Shape(
-      (const Dali::CanvasRenderer::Shape &)result);
-
-  return jresult;
+  return new Dali::CanvasRenderer::Shape(
+      (const Dali::CanvasRenderer::Shape &)shape);
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddRect(char *jarg1, float jarg2,
-                                                      float jarg3, float jarg4,
-                                                      float jarg5, float jarg6,
-                                                      float jarg7) {
-  Dali::CanvasRenderer::Shape *argp1;
-  float arg2 = jarg2;
-  float arg3 = jarg3;
-  float arg4 = jarg4;
-  float arg5 = jarg5;
-  float arg6 = jarg6;
-  float arg7 = jarg7;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddRect(char *pShape, float x,
+                                                      float y, float width,
+                                                      float height,
+                                                      float roundX,
+                                                      float roundY) {
+  Dali::CanvasRenderer::Shape shape;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return false;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
   {
     try {
-      result = argp1->AddRect(Rect<float>(arg2, arg3, arg4, arg5),
-                              Vector2(arg6, arg7));
+      result = shape.AddRect(Rect<float>(x, y, width, height),
+                             Vector2(roundX, roundY));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -405,25 +384,23 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddRect(char *jarg1, float jarg2,
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddCircle(
-    char *jarg1, float jarg2, float jarg3, float jarg4, float jarg5) {
-  Dali::CanvasRenderer::Shape *argp1;
-  float arg2 = jarg2;
-  float arg3 = jarg3;
-  float arg4 = jarg4;
-  float arg5 = jarg5;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddCircle(char *pShape, float x,
+                                                        float y, float radiusX,
+                                                        float radiusY) {
+  Dali::CanvasRenderer::Shape shape;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return false;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
   {
     try {
-      result = argp1->AddCircle(Vector2(arg2, arg3), Vector2(arg4, arg5));
+      result = shape.AddCircle(Vector2(x, y), Vector2(radiusX, radiusY));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -431,29 +408,24 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddCircle(
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddArc(char *jarg1, float jarg2,
-                                                     float jarg3, float jarg4,
-                                                     float jarg5, float jarg6,
-                                                     bool jarg7) {
-  Dali::CanvasRenderer::Shape *argp1;
-  float arg2 = jarg2;
-  float arg3 = jarg3;
-  float arg4 = jarg4;
-  float arg5 = jarg5;
-  float arg6 = jarg6;
-  bool arg7 = jarg7;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddArc(char *pShape, float x,
+                                                     float y, float radius,
+                                                     float startAngle,
+                                                     float sweep, bool pie) {
+  Dali::CanvasRenderer::Shape shape;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return false;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
   {
     try {
-      result = argp1->AddArc(Vector2(arg2, arg3), arg4, arg5, arg6, arg7);
+      result = shape.AddArc(Vector2(x, y), radius, startAngle, sweep, pie);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -461,24 +433,22 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddArc(char *jarg1, float jarg2,
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddMoveTo(char *jarg1,
-                                                        float jarg2,
-                                                        float jarg3) {
-  Dali::CanvasRenderer::Shape *argp1;
-  float arg2 = jarg2;
-  float arg3 = jarg3;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddMoveTo(char *pShape, float x,
+                                                        float y) {
+  Dali::CanvasRenderer::Shape shape;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return false;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
   {
     try {
-      result = argp1->AddMoveTo(Vector2(arg2, arg3));
+      result = shape.AddMoveTo(Vector2(x, y));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -486,24 +456,22 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddMoveTo(char *jarg1,
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddLineTo(char *jarg1,
-                                                        float jarg2,
-                                                        float jarg3) {
-  Dali::CanvasRenderer::Shape *argp1;
-  float arg2 = jarg2;
-  float arg3 = jarg3;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddLineTo(char *pShape, float x,
+                                                        float y) {
+  Dali::CanvasRenderer::Shape shape;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return false;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
   {
     try {
-      result = argp1->AddLineTo(Vector2(arg2, arg3));
+      result = shape.AddLineTo(Vector2(x, y));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -511,29 +479,26 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddLineTo(char *jarg1,
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL
-CSharp_Dali_Shape_AddCubicTo(char *jarg1, float jarg2, float jarg3, float jarg4,
-                             float jarg5, float jarg6, float jarg7) {
-  Dali::CanvasRenderer::Shape *argp1;
-  float arg2 = jarg2;
-  float arg3 = jarg3;
-  float arg4 = jarg4;
-  float arg5 = jarg5;
-  float arg6 = jarg6;
-  float arg7 = jarg7;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddCubicTo(
+    char *pShape, float controlPoint1X, float controlPoint1Y,
+    float controlPoint2X, float controlPoint2Y, float endPointX,
+    float endPointY) {
+  Dali::CanvasRenderer::Shape shape;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return false;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
   {
     try {
-      result = argp1->AddCubicTo(Vector2(arg2, arg3), Vector2(arg4, arg5),
-                                 Vector2(arg6, arg7));
+      result = shape.AddCubicTo(Vector2(controlPoint1X, controlPoint1Y),
+                                Vector2(controlPoint2X, controlPoint2Y),
+                                Vector2(endPointX, endPointY));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -541,21 +506,21 @@ CSharp_Dali_Shape_AddCubicTo(char *jarg1, float jarg2, float jarg3, float jarg4,
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_Close(char *jarg1) {
-  Dali::CanvasRenderer::Shape *argp1;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_Close(char *pShape) {
+  Dali::CanvasRenderer::Shape shape;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return false;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
   {
     try {
-      result = argp1->Close();
+      result = shape.Close();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -563,21 +528,21 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_Close(char *jarg1) {
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_ResetPath(char *jarg1) {
-  Dali::CanvasRenderer::Shape *argp1;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_ResetPath(char *pShape) {
+  Dali::CanvasRenderer::Shape shape;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return false;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
   {
     try {
-      result = argp1->ResetPath();
+      result = shape.ResetPath();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -585,93 +550,93 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_ResetPath(char *jarg1) {
   return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetFillColor(char *jarg1,
-                                                           char *jarg2) {
-  Dali::CanvasRenderer::Shape *argp1;
-  Dali::Vector4 *argp2 = 0;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetFillColor(char *pShape,
+                                                           char *pColor) {
+  Dali::CanvasRenderer::Shape shape;
+  Dali::Vector4 color;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
-  argp2 = (Dali::Vector4 *)jarg2;
-  if (!argp2) {
+  if (!pColor) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException,
                                            "Dali::Vector4 const & type is null",
                                            0);
     return;
   }
+  color = *(Dali::Vector4 *)pColor;
+
   {
     try {
-      argp1->SetFillColor(*argp2);
+      shape.SetFillColor(color);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Shape_GetFillColor(char *jarg1) {
-  Dali::CanvasRenderer::Shape *argp1;
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Shape_GetFillColor(char *pShape) {
+  Dali::CanvasRenderer::Shape shape;
   Dali::Vector4 result;
-  void *jresult = nullptr;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return 0;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
   {
     try {
-      result = argp1->GetFillColor();
+      result = shape.GetFillColor();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Vector4((const Dali::Vector4 &)result);
-  return jresult;
+  return new Dali::Vector4((const Dali::Vector4 &)result);
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetFillRule(char *jarg1,
-                                                          int jarg2) {
-  Dali::CanvasRenderer::Shape *argp1;
-  Dali::CanvasRenderer::Shape::FillRule arg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetFillRule(char *pShape,
+                                                          int rule) {
+  Dali::CanvasRenderer::Shape shape;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return;
   }
-  arg2 = static_cast<Dali::CanvasRenderer::Shape::FillRule>(jarg2);
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
   {
     try {
-      argp1->SetFillRule(arg2);
+      shape.SetFillRule(
+          static_cast<Dali::CanvasRenderer::Shape::FillRule>(rule));
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetFillRule(char *jarg1) {
-  Dali::CanvasRenderer::Shape *argp1;
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetFillRule(char *pShape) {
+  Dali::CanvasRenderer::Shape shape;
   Dali::CanvasRenderer::Shape::FillRule result;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return 0;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
   {
     try {
-      result = argp1->GetFillRule();
+      result = shape.GetFillRule();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -679,40 +644,41 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetFillRule(char *jarg1) {
   return (int)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeWidth(char *jarg1,
-                                                             float jarg2) {
-  Dali::CanvasRenderer::Shape *argp1;
-  float arg2 = jarg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeWidth(char *pShape,
+                                                             float width) {
+  Dali::CanvasRenderer::Shape shape;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
   {
     try {
-      argp1->SetStrokeWidth(arg2);
+      shape.SetStrokeWidth(width);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Shape_GetStrokeWidth(char *jarg1) {
-  Dali::CanvasRenderer::Shape *argp1;
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Shape_GetStrokeWidth(char *pShape) {
+  Dali::CanvasRenderer::Shape shape;
   float result;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return 0;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
   {
     try {
-      result = argp1->GetStrokeWidth();
+      result = shape.GetStrokeWidth();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -720,76 +686,69 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Shape_GetStrokeWidth(char *jarg1) {
   return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeColor(char *jarg1,
-                                                             char *jarg2) {
-  Dali::CanvasRenderer::Shape *argp1;
-  Dali::Vector4 arg2;
-  Dali::Vector4 *argp2 = 0;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeColor(char *pShape,
+                                                             char *pColor) {
+  Dali::CanvasRenderer::Shape shape;
+  Dali::Vector4 color;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
-  argp2 = (Dali::Vector4 *)jarg2;
-  if (!argp2) {
+  if (!pColor) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException,
                                            "Dali::Vector4 const & type is null",
                                            0);
     return;
   }
-  arg2 = *argp2;
+  color = *(Dali::Vector4 *)pColor;
   {
     try {
-      argp1->SetStrokeColor(arg2);
+      shape.SetStrokeColor(color);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Shape_GetStrokeColor(char *jarg1) {
-  Dali::CanvasRenderer::Shape *argp1;
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Shape_GetStrokeColor(char *pShape) {
+  Dali::CanvasRenderer::Shape shape;
   Dali::Vector4 result;
-  void *jresult = nullptr;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return 0;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
   {
     try {
-      result = argp1->GetStrokeColor();
+      result = shape.GetStrokeColor();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Vector4((const Dali::Vector4 &)result);
-  return jresult;
+  return new Dali::Vector4((const Dali::Vector4 &)result);
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(char *jarg1,
-                                                            float *jarg2,
-                                                            int jarg3) {
-  Dali::CanvasRenderer::Shape *argp1;
-  float *argp2 = (float *)0;
-  int arg3 = jarg3;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(char *pShape,
+                                                            float *pDashPattern,
+                                                            int patternLength) {
+  Dali::CanvasRenderer::Shape shape;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
-  argp2 = jarg2;
-  if (!argp2) {
+  if (!pDashPattern) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException,
                                            "Dash pattern is null", 0);
     return;
@@ -798,31 +757,31 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(char *jarg1,
   {
     try {
       Vector<float> dashPattern;
-      for (unsigned int count = 0; count < arg3; count++) {
-        dashPattern.PushBack(argp2[count]);
+      for (unsigned int count = 0; count < patternLength; count++) {
+        dashPattern.PushBack(pDashPattern[count]);
       }
-      argp1->SetStrokeDash(dashPattern);
+      shape.SetStrokeDash(dashPattern);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeDashCount(char *jarg1) {
-  Dali::CanvasRenderer::Shape *argp1;
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeDashCount(char *pShape) {
+  Dali::CanvasRenderer::Shape shape;
   int result;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return 0;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
   {
     try {
 
-      Dali::Vector<float> dashPattern = argp1->GetStrokeDash();
+      Dali::Vector<float> dashPattern = shape.GetStrokeDash();
       result = dashPattern.Size();
     }
     CALL_CATCH_EXCEPTION(0);
@@ -831,26 +790,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeDashCount(char *jarg1) {
   return result;
 }
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Shape_GetStrokeDashIndexOf(char *jarg1,
-                                                                    int jarg2) {
-  Dali::CanvasRenderer::Shape *argp1;
+SWIGEXPORT float SWIGSTDCALL
+CSharp_Dali_Shape_GetStrokeDashIndexOf(char *pShape, int index) {
+  Dali::CanvasRenderer::Shape shape;
   float result = 0.0f;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return 0;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
   {
     try {
-      Dali::Vector<float> dashPattern = argp1->GetStrokeDash();
-      if (jarg2 < 0 || jarg2 > dashPattern.Size()) {
+      Dali::Vector<float> dashPattern = shape.GetStrokeDash();
+      if (index < 0 || index > dashPattern.Size()) {
         throw std::invalid_argument("invalid index");
       }
-      result = dashPattern[jarg2];
+      result = dashPattern[index];
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -858,42 +817,42 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Shape_GetStrokeDashIndexOf(char *jarg1,
   return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeCap(char *jarg1,
-                                                           int jarg2) {
-  Dali::CanvasRenderer::Shape *argp1;
-  Dali::CanvasRenderer::Shape::StrokeCap arg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeCap(char *pShape,
+                                                           int cap) {
+  Dali::CanvasRenderer::Shape shape;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return;
   }
-  arg2 = static_cast<Dali::CanvasRenderer::Shape::StrokeCap>(jarg2);
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
   {
     try {
-      argp1->SetStrokeCap(arg2);
+      shape.SetStrokeCap(
+          static_cast<Dali::CanvasRenderer::Shape::StrokeCap>(cap));
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeCap(char *jarg1) {
-  Dali::CanvasRenderer::Shape *argp1;
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeCap(char *pShape) {
+  Dali::CanvasRenderer::Shape shape;
   Dali::CanvasRenderer::Shape::StrokeCap result;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return 0;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
   {
     try {
-      result = argp1->GetStrokeCap();
+      result = shape.GetStrokeCap();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -901,42 +860,41 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeCap(char *jarg1) {
   return (int)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeJoin(char *jarg1,
-                                                            int jarg2) {
-  Dali::CanvasRenderer::Shape *argp1;
-  Dali::CanvasRenderer::Shape::StrokeJoin arg2;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeJoin(char *pShape,
+                                                            int join) {
+  Dali::CanvasRenderer::Shape shape;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return;
   }
-  arg2 = static_cast<Dali::CanvasRenderer::Shape::StrokeJoin>(jarg2);
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
 
   {
     try {
-      argp1->SetStrokeJoin(arg2);
+      shape.SetStrokeJoin(
+          static_cast<Dali::CanvasRenderer::Shape::StrokeJoin>(join));
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeJoin(char *jarg1) {
-  Dali::CanvasRenderer::Shape *argp1;
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeJoin(char *pShape) {
+  Dali::CanvasRenderer::Shape shape;
   Dali::CanvasRenderer::Shape::StrokeJoin result;
 
-  argp1 = (Dali::CanvasRenderer::Shape *)jarg1;
-  if (!argp1) {
+  if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
     return 0;
   }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
   {
     try {
-      result = argp1->GetStrokeJoin();
+      result = shape.GetStrokeJoin();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -947,50 +905,43 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeJoin(char *jarg1) {
 // Dali::CanvasRenderer::DrawableGroup Wrapper
 
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_DrawableGroup_New() {
-  void *jresult;
-  Dali::CanvasRenderer::DrawableGroup result;
+  Dali::CanvasRenderer::DrawableGroup drawableGroup;
 
   {
     try {
-      result = Dali::CanvasRenderer::DrawableGroup::New();
+      drawableGroup = Dali::CanvasRenderer::DrawableGroup::New();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::CanvasRenderer::DrawableGroup(
-      (const Dali::CanvasRenderer::DrawableGroup &)result);
-
-  return jresult;
+  return new Dali::CanvasRenderer::DrawableGroup(
+      (const Dali::CanvasRenderer::DrawableGroup &)drawableGroup);
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DrawableGroup_AddDrawable(char *jarg1,
-                                                                  char *jarg2) {
-  Dali::CanvasRenderer::DrawableGroup arg1;
-  Dali::CanvasRenderer::DrawableGroup *argp1;
-  Dali::CanvasRenderer::Drawable arg2;
-  Dali::CanvasRenderer::Drawable *argp2;
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_DrawableGroup_AddDrawable(char *pDrawableGroup, char *pDrawable) {
+  Dali::CanvasRenderer::DrawableGroup drawableGroup;
+  Dali::CanvasRenderer::Drawable drawable;
   bool result = true;
 
-  argp1 = (Dali::CanvasRenderer::DrawableGroup *)jarg1;
-  if (!argp1) {
+  if (!pDrawableGroup) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::DrawableGroup", 0);
     return false;
   }
-  arg1 = *argp1;
+  drawableGroup = *(Dali::CanvasRenderer::DrawableGroup *)pDrawableGroup;
 
-  argp2 = (Dali::CanvasRenderer::Drawable *)jarg2;
-  if (!argp2) {
+  if (!pDrawable) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
     return false;
   }
-  arg2 = *argp2;
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
   {
     try {
-      arg1.AddDrawable(arg2);
+      drawableGroup.AddDrawable(drawable);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -998,21 +949,22 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DrawableGroup_AddDrawable(char *jarg1,
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DrawableGroup_Clear(char *jarg1) {
-  Dali::CanvasRenderer::DrawableGroup *argp1;
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_DrawableGroup_Clear(char *pDrawableGroup) {
+  Dali::CanvasRenderer::DrawableGroup drawableGroup;
   bool result = false;
 
-  argp1 = (Dali::CanvasRenderer::DrawableGroup *)jarg1;
-  if (!argp1) {
+  if (!pDrawableGroup) {
     SWIG_CSharpSetPendingExceptionArgument(
         SWIG_CSharpArgumentNullException,
         "Attempt to dereference null Dali::CanvasRenderer::DrawableGroup", 0);
     return false;
   }
+  drawableGroup = *(Dali::CanvasRenderer::DrawableGroup *)pDrawableGroup;
 
   {
     try {
-      result = argp1->Clear();
+      result = drawableGroup.Clear();
     }
     CALL_CATCH_EXCEPTION(0);
   }
