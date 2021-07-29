@@ -1089,7 +1089,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_AnchorClickedSignal(void * j
   return jresult;
 }
 
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_InputFilteredSignal(void * pTextField) {
   void * jresult ;
   Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0 ;
@@ -1122,7 +1121,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_InputFilteredSignal(void * p
   return jresult;
 }
 
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextField_SelectWholeText(void * jarg1) {
   Dali::Toolkit::TextField *arg1 = (Dali::Toolkit::TextField *) 0;
 
@@ -1154,6 +1152,36 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextField_SelectWholeText(void * jarg1) 
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextField_SelectText(void * pTextField, unsigned int start, unsigned int end) {
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try {
+      Dali::Toolkit::DevelTextField::SelectText( *textField, start, end );
+    }
+    catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextField_SelectNone(void * jarg1) {
   Dali::Toolkit::TextField *arg1 = (Dali::Toolkit::TextField *) 0;

@@ -1207,6 +1207,36 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_SelectWholeText(void * jarg1)
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_SelectText(void * pTextEditor, unsigned int start, unsigned int end) {
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      Dali::Toolkit::DevelTextEditor::SelectText( *textEditor, start, end );
+    }
+    catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      };
+    }
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_SelectNone(void * jarg1) {
   Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0;
