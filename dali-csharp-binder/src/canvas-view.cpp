@@ -89,6 +89,59 @@ CSharp_Dali_CanvasView_AddDrawable(char *pCanvasView, char *pDrawable) {
   return result;
 }
 
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_CanvasView_RemoveDrawable(char *pCanvasView, char *pDrawable) {
+  Dali::Toolkit::CanvasView canvasView;
+  Dali::CanvasRenderer::Drawable drawable;
+  bool result = true;
+
+  if (!pCanvasView) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::Toolkit::CanvasView", 0);
+    return false;
+  }
+  canvasView = *(Dali::Toolkit::CanvasView *)pCanvasView;
+
+  if (!pDrawable) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
+    return false;
+  }
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
+  {
+    try {
+      canvasView.RemoveDrawable(drawable);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_CanvasView_RemoveAllDrawables(char *pCanvasView) {
+  Dali::Toolkit::CanvasView canvasView;
+  Dali::CanvasRenderer::Drawable drawable;
+  bool result = true;
+
+  if (!pCanvasView) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::Toolkit::CanvasView", 0);
+    return;
+  }
+  canvasView = *(Dali::Toolkit::CanvasView *)pCanvasView;
+
+  {
+    try {
+      canvasView.RemoveAllDrawables();
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CanvasView(void *pCanvasView) {
   Dali::Toolkit::CanvasView *pTargetCanvasView = nullptr;
 
