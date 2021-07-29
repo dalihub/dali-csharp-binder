@@ -45,7 +45,7 @@ BuildRequires: pkgconfig
 BuildRequires: pkgconfig(dali2-core)
 BuildRequires: pkgconfig(dali2-adaptor)
 BuildRequires: pkgconfig(dali2-toolkit)
-BuildRequires: pkgconfig(dali2-extension)
+BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
 BuildRequires: pkgconfig(widget_viewer_dali)
 BuildRequires: pkgconfig(watch_viewer_dali)
 BuildRequires: pkgconfig(watch-holder-base)
