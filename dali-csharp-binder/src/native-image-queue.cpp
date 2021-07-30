@@ -26,13 +26,13 @@ struct NativeImageSourceQueuePtrHandle
   Dali::NativeImageSourceQueuePtr Ptr;
 };
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_NativeImageQueuePtr(unsigned int width, unsigned int height, int depth)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_NativeImageQueuePtr(unsigned int width, unsigned int height, int colorFormat)
 {
   void* jresult;
   NativeImageSourceQueuePtrHandle* queue = new NativeImageSourceQueuePtrHandle();
   {
     try {
-      queue->Ptr = Dali::NativeImageSourceQueue::New(width, height, (Dali::NativeImageSourceQueue::ColorDepth)depth);
+      queue->Ptr = Dali::NativeImageSourceQueue::New(width, height, (Dali::NativeImageSourceQueue::ColorFormat)colorFormat);
     }
     catch (std::out_of_range & e) {
       {
