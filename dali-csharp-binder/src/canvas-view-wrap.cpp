@@ -998,6 +998,37 @@ CSharp_Dali_DrawableGroup_AddDrawable(char *pDrawableGroup, char *pDrawable) {
 }
 
 SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_DrawableGroup_RemoveDrawable(char *pDrawableGroup, char *pDrawable) {
+  Dali::CanvasRenderer::DrawableGroup drawableGroup;
+  Dali::CanvasRenderer::Drawable drawable;
+  bool result = true;
+
+  if (!pDrawableGroup) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::DrawableGroup", 0);
+    return false;
+  }
+  drawableGroup = *(Dali::CanvasRenderer::DrawableGroup *)pDrawableGroup;
+
+  if (!pDrawable) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
+    return false;
+  }
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
+  {
+    try {
+      drawableGroup.RemoveDrawable(drawable);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL
 CSharp_Dali_DrawableGroup_RemoveAllDrawables(char *pDrawableGroup) {
   Dali::CanvasRenderer::DrawableGroup drawableGroup;
   bool result = false;
