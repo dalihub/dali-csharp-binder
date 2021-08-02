@@ -1017,7 +1017,7 @@ CSharp_Dali_DrawableGroup_AddDrawable(char *pDrawableGroup, char *pDrawable) {
 }
 
 SWIGEXPORT bool SWIGSTDCALL
-CSharp_Dali_DrawableGroup_Clear(char *pDrawableGroup) {
+CSharp_Dali_DrawableGroup_RemoveAllDrawables(char *pDrawableGroup) {
   Dali::CanvasRenderer::DrawableGroup drawableGroup;
   bool result = false;
 
@@ -1031,7 +1031,7 @@ CSharp_Dali_DrawableGroup_Clear(char *pDrawableGroup) {
 
   {
     try {
-      result = drawableGroup.Clear();
+      result = drawableGroup.RemoveAllDrawables();
     }
     CALL_CATCH_EXCEPTION(0);
   }
