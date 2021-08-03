@@ -284,6 +284,26 @@ SWIGEXPORT void CSharp_Dali_RiveAnimationView_SetNodePosition(char * jarg1, char
   }
 }
 
+SWIGEXPORT void CSharp_Dali_RiveAnimationView_SetAnimationElapsedTime(char * jarg1, char * jarg2, float jarg3)
+{
+  RiveAnimationView *arg1 = (RiveAnimationView *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return;
+  }
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "jarg2 is null string", 0);
+    return;
+  }
+  std::string arg2_str(jarg2);
+  {
+    try {
+      arg1->SetAnimationElapsedTime(arg2_str, jarg3);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 #ifdef __cplusplus
 } // end extern "C"
 #endif
