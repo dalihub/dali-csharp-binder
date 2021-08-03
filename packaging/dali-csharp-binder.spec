@@ -21,7 +21,7 @@
 
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 2.0.36
+Version: 2.0.37
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -45,7 +45,7 @@ BuildRequires: pkgconfig
 BuildRequires: pkgconfig(dali2-core)
 BuildRequires: pkgconfig(dali2-adaptor)
 BuildRequires: pkgconfig(dali2-toolkit)
-BuildRequires: pkgconfig(dali2-extension)
+BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
 BuildRequires: pkgconfig(widget_viewer_dali)
 BuildRequires: pkgconfig(watch_viewer_dali)
 BuildRequires: pkgconfig(watch-holder-base)
