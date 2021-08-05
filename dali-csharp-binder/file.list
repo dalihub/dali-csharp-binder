@@ -6,64 +6,64 @@
 
 # module: csharp-binder, backend: common
 dali_csharp_binder_common_src_files = \
-  ${dali_csharp_binder_dir}/src/dali_wrap.cpp \
-  ${dali_csharp_binder_dir}/src/callbackbase_wrap.cpp \
-  ${dali_csharp_binder_dir}/src/canvas-view.cpp \
-  ${dali_csharp_binder_dir}/src/constraint.cpp \
-  ${dali_csharp_binder_dir}/src/keyboard_focus_manager_wrap.cpp \
+  ${dali_csharp_binder_dir}/src/dali-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/callbackbase-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/canvas-view-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/constraint-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/keyboard-focus-manager-wrap.cpp \
   ${dali_csharp_binder_dir}/src/devel-property-wrap.cpp \
-  ${dali_csharp_binder_dir}/src/encoded-image-buffer.cpp \
+  ${dali_csharp_binder_dir}/src/encoded-image-buffer-wrap.cpp \
   ${dali_csharp_binder_dir}/src/version-check.cpp \
   ${dali_csharp_binder_dir}/src/processor-controller.cpp \
-  ${dali_csharp_binder_dir}/src/fade.cpp \
-  ${dali_csharp_binder_dir}/src/flex-layout.cpp \
-  ${dali_csharp_binder_dir}/src/gestures.cpp \
+  ${dali_csharp_binder_dir}/src/fade-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/flex-layout-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/gestures-wrap.cpp \
   ${dali_csharp_binder_dir}/src/view-wrapper-impl-wrap.cpp \
   ${dali_csharp_binder_dir}/src/event-thread-callback-wrap.cpp \
-  ${dali_csharp_binder_dir}/src/application.cpp \
-  ${dali_csharp_binder_dir}/src/text-editor.cpp \
-  ${dali_csharp_binder_dir}/src/text-field.cpp \
-  ${dali_csharp_binder_dir}/src/transition-base.cpp \
-  ${dali_csharp_binder_dir}/src/transition.cpp \
-  ${dali_csharp_binder_dir}/src/transition-set.cpp \
-  ${dali_csharp_binder_dir}/src/window.cpp \
-  ${dali_csharp_binder_dir}/src/tts-player.cpp \
-  ${dali_csharp_binder_dir}/src/input-method-context.cpp \
-  ${dali_csharp_binder_dir}/src/input-method-options.cpp \
-  ${dali_csharp_binder_dir}/src/animation.cpp \
-  ${dali_csharp_binder_dir}/src/adaptor.cpp \
-  ${dali_csharp_binder_dir}/src/extents.cpp \
-  ${dali_csharp_binder_dir}/src/text-label.cpp \
-  ${dali_csharp_binder_dir}/src/text-utils.cpp \
-  ${dali_csharp_binder_dir}/src/capabilities.cpp \
-  ${dali_csharp_binder_dir}/src/capture.cpp \
-  ${dali_csharp_binder_dir}/src/gl-window.cpp \
-  ${dali_csharp_binder_dir}/src/web-view.cpp \
-  ${dali_csharp_binder_dir}/src/control-devel_wrap.cpp \
-  ${dali_csharp_binder_dir}/src/signal_wrap.cpp \
+  ${dali_csharp_binder_dir}/src/application-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/text-editor-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/text-field-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/transition-base-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/transition-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/transition-set-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/window-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/tts-player-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/input-method-context-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/input-method-options-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/animation-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/adaptor-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/extents-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/text-label-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/text-utils-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/capabilities-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/capture-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/gl-window-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/web-view-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/control-devel-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/signal-wrap.cpp \
   ${dali_csharp_binder_dir}/src/accessible-impl-nui.cpp \
-  ${dali_csharp_binder_dir}/src/rotation.cpp \
-  ${dali_csharp_binder_dir}/src/input-options.cpp \
-  ${dali_csharp_binder_dir}/src/native-image-queue.cpp
+  ${dali_csharp_binder_dir}/src/rotation-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/input-options-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/native-image-queue-wrap.cpp
 
 # added for key grab binding only for tizen
 # module: csharp-binder, backend: mobile,tv,ivi,watch
 dali_csharp_binder_tizen_src_files = \
-  ${dali_csharp_binder_dir}/src/key-grab.cpp \
-  ${dali_csharp_binder_dir}/src/keyboard.cpp \
-  ${dali_csharp_binder_dir}/src/widget_view.cpp \
-  ${dali_csharp_binder_dir}/src/widget_view_manager.cpp \
-  ${dali_csharp_binder_dir}/src/font-client.cpp \
-  ${dali_csharp_binder_dir}/src/transition-effects.cpp \
-  ${dali_csharp_binder_dir}/src/atspi.cpp \
+  ${dali_csharp_binder_dir}/src/key-grab-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/keyboard-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/widget-view-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/widget-view-manager-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/font-client-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/transition-effects-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/atspi-wrap.cpp \
   ${dali_csharp_binder_dir}/src/component-application-wrap.cpp \
   ${dali_csharp_binder_dir}/src/tizen-dependency-wrap.cpp \
-  ${dali_csharp_binder_dir}/src/rive-animation-view.cpp
+  ${dali_csharp_binder_dir}/src/rive-animation-view-wrap.cpp
 
 # module: csharp-binder, backend: tizen-wearable
 dali_csharp_binder_tizen_wearable_src_files = \
-  ${dali_csharp_binder_dir}/src/watch.cpp \
-  ${dali_csharp_binder_dir}/src/watch_view.cpp
+  ${dali_csharp_binder_dir}/src/watch-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/watch-view-wrap.cpp
 
 dali_csharp_binder_header_files = \
   ${dali_csharp_binder_dir}/src/common.h
