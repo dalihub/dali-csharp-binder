@@ -1671,7 +1671,7 @@ SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Slider_Sc_int_SP__Sg__Emit(D
  * C++ director class methods
  * --------------------------------------------------- */
 
-#include "dali_wrap.h"
+#include "dali-wrap.h"
 
 /*
  *  Widget director

@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-#include "control-devel_wrap.h"
+#include "control-devel-wrap.h"
 
 #include <dali/devel-api/adaptor-framework/accessibility.h>
 #include <dali/devel-api/adaptor-framework/accessibility-impl.h>
