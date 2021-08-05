@@ -138,7 +138,6 @@ SWIGEXPORT void SWIGSTDCALL
 CSharp_Dali_CanvasView_RemoveAllDrawables(char *pCanvasView) {
   Dali::Toolkit::CanvasView canvasView;
   Dali::CanvasRenderer::Drawable drawable;
-  bool result = true;
 
   if (!pCanvasView) {
     SWIG_CSharpSetPendingExceptionArgument(
@@ -828,7 +827,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(char *pShape,
   {
     try {
       Vector<float> dashPattern;
-      for (unsigned int count = 0; count < patternLength; count++) {
+      for (int count = 0; count < patternLength; count++) {
         dashPattern.PushBack(pDashPattern[count]);
       }
       shape.SetStrokeDash(dashPattern);
@@ -877,7 +876,7 @@ CSharp_Dali_Shape_GetStrokeDashIndexOf(char *pShape, int index) {
   {
     try {
       Dali::Vector<float> dashPattern = shape.GetStrokeDash();
-      if (index < 0 || index > dashPattern.Size()) {
+      if (index < 0 || static_cast<uint32_t>(index) > dashPattern.Size()) {
         throw std::invalid_argument("invalid index");
       }
       result = dashPattern[index];
