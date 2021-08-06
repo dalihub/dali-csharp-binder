@@ -176,6 +176,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CanvasView(void *pCanvasView) {
   }
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CanvasView_Property_VIEWBOX_get() {
+  return (int)Toolkit::CanvasView::Property::VIEW_BOX;
+}
+
 // Dali::CanvasRenderer::Drawable Wrapper
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Drawable_SetOpacity(char *pDrawable,
@@ -1017,7 +1021,7 @@ CSharp_Dali_DrawableGroup_AddDrawable(char *pDrawableGroup, char *pDrawable) {
 }
 
 SWIGEXPORT bool SWIGSTDCALL
-CSharp_Dali_DrawableGroup_Clear(char *pDrawableGroup) {
+CSharp_Dali_DrawableGroup_RemoveAllDrawables(char *pDrawableGroup) {
   Dali::CanvasRenderer::DrawableGroup drawableGroup;
   bool result = false;
 
@@ -1031,7 +1035,7 @@ CSharp_Dali_DrawableGroup_Clear(char *pDrawableGroup) {
 
   {
     try {
-      result = drawableGroup.Clear();
+      result = drawableGroup.RemoveAllDrawables();
     }
     CALL_CATCH_EXCEPTION(0);
   }
