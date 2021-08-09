@@ -1,7 +1,3 @@
-#ifndef CSHARP_ROTATION
-#define CSHARP_ROTATION
-#endif
-
 /*
  * Copyright (c) 2021 Samsung Electronics Co., Ltd.
  *

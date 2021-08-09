@@ -13,9 +13,6 @@
 * limitations under the License.
 *
 */
-#ifndef CSHARP_FONT_CLIENT
-#define CSHARP_FONT_CLIENT
-#endif
 
 #include "common.h"
 #include <dali/public-api/common/type-traits.h>

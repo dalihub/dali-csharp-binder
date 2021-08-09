@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_WIDGET_VIEW_MANAGER
-#define CSHARP_WIDGET_VIEW_MANAGER
-#endif
-
 #include "common.h"
 #include <widget_viewer_dali/public_api/widget_view_manager/widget_view_manager.h>
 #include <widget_viewer_dali/public_api/widget_view/widget_view.h>

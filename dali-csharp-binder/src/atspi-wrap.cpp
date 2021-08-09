@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_ATSPI
-#define CSHARP_ATSPI
-#endif
-
 #include "common.h"
 #include <dali/devel-api/adaptor-framework/atspi-accessibility.h>
 #include <dali/integration-api/debug.h>

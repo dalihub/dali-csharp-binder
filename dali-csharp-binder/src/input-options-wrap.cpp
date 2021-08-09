@@ -1,7 +1,3 @@
-#ifndef CSHARP_INPUT_OPTIONS
-#define CSHARP_INPUT_OPTIONS
-#endif
-
 /*
  * Copyright (c) 2021 Samsung Electronics Co., Ltd.
  *

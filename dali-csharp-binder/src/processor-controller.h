@@ -1,3 +1,6 @@
+#ifndef CSHARP_PROCESSOR_CONTROLLER_H
+#define CSHARP_PROCESSOR_CONTROLLER_H
+
 /*
  * Copyright (c) 2021 Samsung Electronics Co., Ltd.
  *
@@ -68,3 +71,5 @@ private:
 
   ProcessorControllerProcessCallback mHandler;
 };
+
+#endif // CSHARP_PROCESSOR_CONTROLLER_H

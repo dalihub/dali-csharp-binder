@@ -1,5 +1,5 @@
-#ifndef __CONTROL_DEVEL_WRAP_H__
-#define __CONTROL_DEVEL_WRAP_H__
+#ifndef CONTROL_DEVEL_WRAP_H
+#define CONTROL_DEVEL_WRAP_H
 /*
  * Copyright (c) 2020 Samsung Electronics Co., Ltd.
  *
@@ -64,5 +64,5 @@ inline void try_catch(const std::function<void(void)> &func) {
 
 } // anonymous namespace
 
-#endif // __CONTROL_DEVEL_WRAP_H__
+#endif // CONTROL_DEVEL_WRAP_H
 

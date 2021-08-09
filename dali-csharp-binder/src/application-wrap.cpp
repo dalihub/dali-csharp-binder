@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_APPLICATION
-#define CSHARP_APPLICATION
-#endif
-
 #include "common.h"
 #include "string"
 #include <dali/public-api/adaptor-framework/application.h>

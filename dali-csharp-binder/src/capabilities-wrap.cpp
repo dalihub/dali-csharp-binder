@@ -1,5 +1,3 @@
-#ifndef CSHARP_CAPABILITIES
-#define CSHARP_CAPABILITIES
 
 /*
  * Copyright (c) 2020 Samsung Electronics Co., Ltd.
@@ -58,6 +56,4 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsBlendEquationSupported( int blendEquat
 
 #ifdef __cplusplus
 }
-#endif
-
 #endif

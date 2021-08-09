@@ -1,8 +1,3 @@
-
-#ifndef CSHARP_TEXT_LABEL
-#define CSHARP_TEXT_LABEL
-#endif
-
 #include "common.h"
 #include <dali-toolkit/public-api/controls/text-controls/text-label.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>

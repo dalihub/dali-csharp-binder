@@ -1,7 +1,3 @@
-#ifndef CSHARP_CANVAS_VIEW
-#define CSHARP_CANVAS_VIEW
-#endif
-
 #define SWIGSTDCALL
 
 // INCLUDES

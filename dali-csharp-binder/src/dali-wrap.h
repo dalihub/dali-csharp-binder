@@ -8,8 +8,8 @@
  * interface file instead.
  * ----------------------------------------------------------------------------- */
 
-#ifndef SWIG_NDalic_WRAP_H_
-#define SWIG_NDalic_WRAP_H_
+#ifndef SWIG_NDalic_WRAP_H
+#define SWIG_NDalic_WRAP_H
 
 class SwigDirector_WidgetImpl : public Dali::Internal::Adaptor::Widget, public Swig::Director {
 

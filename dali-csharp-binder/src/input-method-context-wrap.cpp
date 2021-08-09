@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_INPUT_METHOD_CONTEXT
-#define CSHARP_INPUT_METHOD_CONTEXT
-#endif
-
 #include "common.h"
 #include <dali/devel-api/adaptor-framework/input-method-context.h>
 #include <dali/devel-api/common/stage.h>

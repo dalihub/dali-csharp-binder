@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_TTS_PLAYER
-#define CSHARP_TTS_PLAYER
-#endif
-
 #include "common.h"
 #include <dali/public-api/adaptor-framework/tts-player.h>
 

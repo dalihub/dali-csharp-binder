@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_ADAPTOR
-#define CSHARP_ADAPTOR
-#endif
-
 #include "common.h"
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 // #include <dali/public-api/adaptor-framework/application-configuration.h>

@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_TRANSITION_BASE
-#define CSHARP_TRANSITION_BASE
-#endif
-
 #include <string.h>
 #include "common.h"
 #include <dali-toolkit/public-api/transition/transition-base.h>

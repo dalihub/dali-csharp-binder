@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_FADE
-#define CSHARP_FADE
-#endif
-
 #include <string.h>
 #include "common.h"
 #include <dali-toolkit/public-api/transition/fade.h>
