@@ -986,6 +986,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_TextChangedSignal(void * jar
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_CursorPositionChangedSignal(void * pTextField) {
+  void * jresult ;
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0 ;
+  Dali::Toolkit::DevelTextField::CursorPositionChangedSignalType *result = 0 ;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextField::CursorPositionChangedSignalType *)&Dali::Toolkit::DevelTextField::CursorPositionChangedSignal(*textField);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_MaxLengthReachedSignal(void * jarg1) {
   void * jresult ;
