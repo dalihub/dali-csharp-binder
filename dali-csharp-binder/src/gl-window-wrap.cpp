@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_GL_WINDOW
-#define CSHARP_GL_WINDOW
-#endif
-
 #include "common.h"
 #include <dali/devel-api/adaptor-framework/gl-window.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>

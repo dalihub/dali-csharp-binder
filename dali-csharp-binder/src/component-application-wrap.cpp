@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_COMPONENT_APPLICATION_WRAP
-#define CSHARP_COMPONENT_APPLICATION_WRAP
-#endif
-
 #include "common.h"
 #include <dali/dali.h>
 #include <dali/devel-api/adaptor-framework/component-application.h>

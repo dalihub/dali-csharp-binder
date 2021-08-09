@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_TEXT_EDITOR
-#define CSHARP_TEXT_EDITOR
-#endif
-
 #include "common.h"
 #include <dali-toolkit/public-api/controls/text-controls/text-editor.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>

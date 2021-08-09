@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_WINDOW
-#define CSHARP_WINDOW
-#endif
-
 #include "common.h"
 #include <dali/devel-api/adaptor-framework/window-devel.h>
 #include <dali/public-api/adaptor-framework/window.h>

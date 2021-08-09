@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_ANIMATION
-#define CSHARP_ANIMATION
-#endif
-
 #include "common.h"
 #include <dali/public-api/animation/animation.h>
 #include <dali/devel-api/animation/animation-devel.h>

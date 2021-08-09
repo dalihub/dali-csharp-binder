@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_WIDGET_VIEW
-#define CSHARP_WIDGET_VIEW
-#endif
-
 #include "common.h"
 
 #include <widget_viewer_dali/public_api/widget_view/widget_view.h>

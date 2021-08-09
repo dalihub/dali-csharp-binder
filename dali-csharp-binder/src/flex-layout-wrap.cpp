@@ -1,7 +1,3 @@
-#ifndef CSHARP_FLEX_LAYOUT
-#define CSHARP_FLEX_LAYOUT
-#endif
-
 #include "common.h"
 #include <dali-toolkit/devel-api/layouting/flex-node.h>
 #include <iostream>

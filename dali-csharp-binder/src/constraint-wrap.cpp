@@ -1,7 +1,3 @@
-#ifndef CSHARP_CONSTRAINT
-#define CSHARP_CONSTRAINT
-#endif
-
 /*
  * Copyright (c) 2021 Samsung Electronics Co., Ltd.
  *

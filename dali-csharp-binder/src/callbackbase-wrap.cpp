@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_CALLBACK_BASE
-#define CSHARP_CALLBACK_BASE
-#endif
-
 #include "common.h"
 
 #ifdef __cplusplus

@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_TEXT_UTILS
-#define CSHARP_TEXT_UTILS
-#endif
-
 #include "common.h"
 #include <dali/dali.h>
 #include <dali-toolkit/devel-api/text/text-utils-devel.h>

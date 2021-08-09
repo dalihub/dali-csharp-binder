@@ -14,10 +14,6 @@
  *
  */
 
-#ifndef CSHARP_WEB_VIEW
-#define CSHARP_WEB_VIEW
-#endif
-
 // EXTERNAL INCLUDES
 #include "common.h"
 

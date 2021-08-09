@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_TEXT_FIELD
-#define CSHARP_TEXT_FIELD
-#endif
-
 #include "common.h"
 #include <dali-toolkit/public-api/controls/text-controls/text-field.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>

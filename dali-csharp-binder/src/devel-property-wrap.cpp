@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_DEVEL_PROPERTY
-#define CSHARP_DEVEL_PROPERTY
-#endif
-
 #include "common.h"
 
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>

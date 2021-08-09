@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_TRANSITION_EFFECTS
-#define CSHARP_TRANSITION_EFFECTS
-#endif
-
 #include "common.h"
 #include <dali-toolkit/devel-api/transition-effects/cube-transition-effect.h>
 #include <dali-toolkit/devel-api/transition-effects/cube-transition-cross-effect.h>
