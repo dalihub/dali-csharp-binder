@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_TIZEN_DEPENDENCY_WRAP
-#define CSHARP_TIZEN_DEPENDENCY_WRAP
-#endif
-
 #include "common.h"
 #include <dali/dali.h>
 

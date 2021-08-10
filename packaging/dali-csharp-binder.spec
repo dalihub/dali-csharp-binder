@@ -21,7 +21,7 @@
 
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 2.0.37
+Version: 2.0.38
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -219,7 +219,10 @@ for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{v
 mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
+%if "%{?profile}" != "mobile"
 make clean
+%endif
+
 %endif
 
 #######################################################################
@@ -245,7 +248,10 @@ for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{v
 mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
+%if "%{?profile}" != "tv"
 make clean
+%endif
+
 %endif
 
 #######################################################################
@@ -271,7 +277,10 @@ for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{v
 mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
+%if "%{?profile}" != "wearable"
 make clean
+%endif
+
 %endif
 
 #######################################################################
@@ -297,7 +306,10 @@ for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{v
 mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
+%if "%{?profile}" != "ivi"
 make clean
+%endif
+
 %endif
 
 #######################################################################
@@ -324,7 +336,10 @@ for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{v
 mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
 popd
 
+%if "%{?profile}" != "common"
 make clean
+%endif
+
 %endif
 
 ##############################

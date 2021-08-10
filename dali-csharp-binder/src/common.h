@@ -168,4 +168,29 @@ extern void SWIG_CSharpException(int code, const char *msg);
 #include <dali-toolkit/devel-api/controls/control-wrapper-impl.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 
+
+
+// Define Catch exception
+#define CALL_CATCH_EXCEPTION(ret)                                          \
+  catch (std::out_of_range & e)                                            \
+  {                                                                        \
+    SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));   \
+    return ret;                                                            \
+  }                                                                        \
+  catch (std::exception & e)                                               \
+  {                                                                        \
+    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what())); \
+    return ret;                                                            \
+  }                                                                        \
+  catch (Dali::DaliException e)                                            \
+  {                                                                        \
+    SWIG_CSharpException(SWIG_UnknownError, e.condition);                  \
+    return ret;                                                            \
+  }                                                                        \
+  catch (...)                                                              \
+  {                                                                        \
+    SWIG_CSharpException(SWIG_UnknownError, "unknown error");              \
+    return ret;                                                            \
+  }
+
 #endif // CSHARP_COMMON_H
