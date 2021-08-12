@@ -24,6 +24,7 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/text-field-wrap.cpp \
   ${dali_csharp_binder_dir}/src/fade-transition-wrap.cpp \
   ${dali_csharp_binder_dir}/src/slide-transition-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/scale-transition-wrap.cpp \
   ${dali_csharp_binder_dir}/src/transition-base-wrap.cpp \
   ${dali_csharp_binder_dir}/src/transition-wrap.cpp \
   ${dali_csharp_binder_dir}/src/transition-set-wrap.cpp \
