@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_EVENT_THREAD_CALLBACK
-#define CSHARP_EVENT_THREAD_CALLBACK
-#endif
-
 #include "common.h"
 #include <dali/devel-api/adaptor-framework/event-thread-callback.h>
 

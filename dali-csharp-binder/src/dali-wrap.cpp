@@ -646,30 +646,27 @@ unsigned int int_to_uint(int x) {
    return (unsigned int) x;
 }
 
-
-#define CALL_CATCH_EXCEPTION(ret)          \
-	 catch (std::out_of_range& e)            \
-         {                                                                                                                                  \
-             SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));   \
-             return ret;\
-          }                                                                                                                                 \
-          catch (std::exception& e)                                                                                         \
-          {                                                                                                                                 \
-            SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));\
-            return ret;\
-          }                                                                                                                                 \
-          catch (DaliException e)                                                                                            \
-          {                                                                                                                                 \
-            SWIG_CSharpException(SWIG_UnknownError, e.condition);                            \
-            return ret;\
-          }                                                                                                                                 \
-          catch (...)                                                                                                                  \
-          {                                                                                                                                 \
-            SWIG_CSharpException(SWIG_UnknownError, "unknown error");                  \
-            return ret;\
-          }
-
-
+#define CALL_CATCH_EXCEPTION(ret)                                          \
+  catch (std::out_of_range & e)                                            \
+  {                                                                        \
+    SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));   \
+    return ret;                                                            \
+  }                                                                        \
+  catch (std::exception & e)                                               \
+  {                                                                        \
+    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what())); \
+    return ret;                                                            \
+  }                                                                        \
+  catch (DaliException e)                                                  \
+  {                                                                        \
+    SWIG_CSharpException(SWIG_UnknownError, e.condition);                  \
+    return ret;                                                            \
+  }                                                                        \
+  catch (...)                                                              \
+  {                                                                        \
+    SWIG_CSharpException(SWIG_UnknownError, "unknown error");              \
+    return ret;                                                            \
+  }
 
 using namespace Dali;
 using namespace Dali::Toolkit;

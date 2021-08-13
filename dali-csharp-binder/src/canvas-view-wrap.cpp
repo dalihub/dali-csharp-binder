@@ -1,7 +1,3 @@
-#ifndef CSHARP_CANVAS_VIEW
-#define CSHARP_CANVAS_VIEW
-#endif
-
 #define SWIGSTDCALL
 
 // INCLUDES
@@ -11,24 +7,6 @@
 
 using namespace Dali;
 using namespace Dali::Toolkit;
-
-#define CALL_CATCH_EXCEPTION(ret)                                              \
-  catch (std::out_of_range & e) {                                              \
-    SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));       \
-    return ret;                                                                \
-  }                                                                            \
-  catch (std::exception & e) {                                                 \
-    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what()));     \
-    return ret;                                                                \
-  }                                                                            \
-  catch (Dali::DaliException e) {                                              \
-    SWIG_CSharpException(SWIG_UnknownError, e.condition);                      \
-    return ret;                                                                \
-  }                                                                            \
-  catch (...) {                                                                \
-    SWIG_CSharpException(SWIG_UnknownError, "unknown error");                  \
-    return ret;                                                                \
-  }
 
 #ifdef __cplusplus
 extern "C" {
@@ -138,7 +116,6 @@ SWIGEXPORT void SWIGSTDCALL
 CSharp_Dali_CanvasView_RemoveAllDrawables(char *pCanvasView) {
   Dali::Toolkit::CanvasView canvasView;
   Dali::CanvasRenderer::Drawable drawable;
-  bool result = true;
 
   if (!pCanvasView) {
     SWIG_CSharpSetPendingExceptionArgument(
@@ -828,7 +805,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(char *pShape,
   {
     try {
       Vector<float> dashPattern;
-      for (unsigned int count = 0; count < patternLength; count++) {
+      for (int count = 0; count < patternLength; count++) {
         dashPattern.PushBack(pDashPattern[count]);
       }
       shape.SetStrokeDash(dashPattern);
@@ -877,7 +854,7 @@ CSharp_Dali_Shape_GetStrokeDashIndexOf(char *pShape, int index) {
   {
     try {
       Dali::Vector<float> dashPattern = shape.GetStrokeDash();
-      if (index < 0 || index > dashPattern.Size()) {
+      if (index < 0 || static_cast<uint32_t>(index) > dashPattern.Size()) {
         throw std::invalid_argument("invalid index");
       }
       result = dashPattern[index];
@@ -1013,6 +990,37 @@ CSharp_Dali_DrawableGroup_AddDrawable(char *pDrawableGroup, char *pDrawable) {
   {
     try {
       drawableGroup.AddDrawable(drawable);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_DrawableGroup_RemoveDrawable(char *pDrawableGroup, char *pDrawable) {
+  Dali::CanvasRenderer::DrawableGroup drawableGroup;
+  Dali::CanvasRenderer::Drawable drawable;
+  bool result = true;
+
+  if (!pDrawableGroup) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::DrawableGroup", 0);
+    return false;
+  }
+  drawableGroup = *(Dali::CanvasRenderer::DrawableGroup *)pDrawableGroup;
+
+  if (!pDrawable) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Drawable", 0);
+    return false;
+  }
+  drawable = *(Dali::CanvasRenderer::Drawable *)pDrawable;
+  {
+    try {
+      drawableGroup.RemoveDrawable(drawable);
     }
     CALL_CATCH_EXCEPTION(0);
   }

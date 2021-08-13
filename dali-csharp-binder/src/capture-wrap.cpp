@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_CAPTURE
-#define CSHARP_CAPTURE
-#endif
-
 #include <string.h>
 #include "common.h"
 #include <dali/public-api/capture/capture.h>

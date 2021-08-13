@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_TRANSITION_SET
-#define CSHARP_TRANSITION_SET
-#endif
-
 #include <string.h>
 #include "common.h"
 #include <dali-toolkit/public-api/transition/transition-set.h>
@@ -48,28 +44,6 @@ SWIGINTERN void Dali_TransitionSet_Signal_Disconnect(Dali::Toolkit::TransitionSe
 extern "C"
 {
 #endif
-
-#define CALL_CATCH_EXCEPTION(ret)                                          \
-  catch (std::out_of_range & e)                                            \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));   \
-    return ret;                                                            \
-  }                                                                        \
-  catch (std::exception & e)                                               \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what())); \
-    return ret;                                                            \
-  }                                                                        \
-  catch (Dali::DaliException e)                                            \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_UnknownError, e.condition);                  \
-    return ret;                                                            \
-  }                                                                        \
-  catch (...)                                                              \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_UnknownError, "unknown error");              \
-    return ret;                                                            \
-  }
 
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_TransitionSet()
   {
@@ -249,7 +223,6 @@ extern "C"
   SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TransitionSet_Signal_Empty(void *nuiTransitionSet)
   {
     Dali::Toolkit::TransitionSet *transitionSet = (Dali::Toolkit::TransitionSet *)nuiTransitionSet;
-    Dali::Toolkit::TransitionSet::TransitionSetSignalType *transitionSetSignalType = (Dali::Toolkit::TransitionSet::TransitionSetSignalType *)0;
     bool reselt;
     {
       try
@@ -264,7 +237,6 @@ extern "C"
   SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TransitionSet_Signal_GetConnectionCount(void *nuiTransitionSet)
   {
     Dali::Toolkit::TransitionSet *transitionSet = (Dali::Toolkit::TransitionSet *)nuiTransitionSet;
-    Dali::Toolkit::TransitionSet::TransitionSetSignalType *transitionSetSignalType = (Dali::Toolkit::TransitionSet::TransitionSetSignalType *)0;
     std::size_t reselt;
     {
       try
@@ -280,7 +252,6 @@ extern "C"
   {
     Dali::Toolkit::TransitionSet *transitionSet = (Dali::Toolkit::TransitionSet *)nuiTransitionSet;
     void (*func)(Dali::Toolkit::TransitionSet &) = (void (*)(Dali::Toolkit::TransitionSet &))nuiFunc;
-    Dali::Toolkit::TransitionSet::TransitionSetSignalType *transitionSetSignalType = (Dali::Toolkit::TransitionSet::TransitionSetSignalType *)0;
     {
       try
       {
@@ -294,7 +265,6 @@ extern "C"
   {
     Dali::Toolkit::TransitionSet *transitionSet = (Dali::Toolkit::TransitionSet *)nuiTransitionSet;
     void (*func)(Dali::Toolkit::TransitionSet &) = (void (*)(Dali::Toolkit::TransitionSet &))nuiFunc;
-    Dali::Toolkit::TransitionSet::TransitionSetSignalType *transitionSetSignalType = (Dali::Toolkit::TransitionSet::TransitionSetSignalType *)0;
     {
       try
       {

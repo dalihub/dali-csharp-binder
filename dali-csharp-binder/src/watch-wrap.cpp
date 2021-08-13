@@ -14,10 +14,6 @@
 *
 */
 
-#ifndef CSHARP_WATCH
-#define CSHARP_WATCH
-#endif
-
 #include "common.h"
 #include <dali/public-api/watch/watch-time.h>
 #include <dali/public-api/watch/watch-application.h>

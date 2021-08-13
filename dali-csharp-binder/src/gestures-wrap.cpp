@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_GESTURES
-#define CSHARP_GESTURES
-#endif
-
 #include "common.h"
 #include <dali/public-api/events/rotation-gesture.h>
 #include <dali/public-api/events/rotation-gesture-detector.h>

@@ -15,10 +15,6 @@
  *
  */
 
-#ifndef CSHARP_FADE
-#define CSHARP_FADE
-#endif
-
 #include <string.h>
 #include "common.h"
 #include <dali-toolkit/public-api/transition/fade.h>
@@ -27,28 +23,6 @@
 extern "C"
 {
 #endif
-
-#define CALL_CATCH_EXCEPTION(ret)                                          \
-  catch (std::out_of_range & e)                                            \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));   \
-    return ret;                                                            \
-  }                                                                        \
-  catch (std::exception & e)                                               \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what())); \
-    return ret;                                                            \
-  }                                                                        \
-  catch (Dali::DaliException e)                                            \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_UnknownError, e.condition);                  \
-    return ret;                                                            \
-  }                                                                        \
-  catch (...)                                                              \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_UnknownError, "unknown error");              \
-    return ret;                                                            \
-  }
 
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_Fade()
   {

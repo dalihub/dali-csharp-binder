@@ -14,10 +14,6 @@
  *
  */
 
-#ifndef CSHARP_WEB_VIEW
-#define CSHARP_WEB_VIEW
-#endif
-
 // EXTERNAL INCLUDES
 #include "common.h"
 
@@ -40,24 +36,6 @@
 #include <dali/devel-api/adaptor-framework/web-engine-security-origin.h>
 #include <dali/devel-api/adaptor-framework/web-engine-back-forward-list-item.h>
 #include <dali/public-api/common/dali-common.h>
-
-#define CALL_CATCH_EXCEPTION(ret)                                              \
-  catch (std::out_of_range & e) {                                              \
-    SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));       \
-    return ret;                                                                \
-  }                                                                            \
-  catch (std::exception & e) {                                                 \
-    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what()));     \
-    return ret;                                                                \
-  }                                                                            \
-  catch (Dali::DaliException e) {                                              \
-    SWIG_CSharpException(SWIG_UnknownError, e.condition);                      \
-    return ret;                                                                \
-  }                                                                            \
-  catch (...) {                                                                \
-    SWIG_CSharpException(SWIG_UnknownError, "unknown error");                  \
-    return ret;                                                                \
-  }
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char *(SWIGSTDCALL *SWIG_CSharpStringHelperCallback)(const char*);

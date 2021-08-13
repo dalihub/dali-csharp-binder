@@ -1,7 +1,3 @@
-#ifndef CSHARP_INPUT_OPTIONS
-#define CSHARP_INPUT_OPTIONS
-#endif
-
 /*
  * Copyright (c) 2021 Samsung Electronics Co., Ltd.
  *
@@ -27,28 +23,6 @@
 extern "C"
 {
 #endif
-
-#define CALL_CATCH_EXCEPTION(ret)                                          \
-  catch (std::out_of_range & e)                                            \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));   \
-    return ret;                                                            \
-  }                                                                        \
-  catch (std::exception & e)                                               \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what())); \
-    return ret;                                                            \
-  }                                                                        \
-  catch (Dali::DaliException e)                                            \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_UnknownError, e.condition);                  \
-    return ret;                                                            \
-  }                                                                        \
-  catch (...)                                                              \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_UnknownError, "unknown error");              \
-    return ret;                                                            \
-  }
 
 using namespace Dali;
 
@@ -254,6 +228,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetLongPressMinimumHoldin
   {
     try {
       Integration::SetLongPressMinimumHoldingTime(time);
+    } CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapMaximumAllowedTime(uint32_t time) {
+  {
+    try {
+      Integration::SetTapMaximumAllowedTime(time);
     } CALL_CATCH_EXCEPTION();
   }
   return;

@@ -1,7 +1,3 @@
-#ifndef CSHARP_EXTENTS
-#define CSHARP_EXTENTS
-#endif
-
 #include "common.h"
 #include <dali/public-api/common/extents.h>
 
