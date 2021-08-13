@@ -79,6 +79,10 @@ LIBDALI_CSHARP_BINDER_LA_SOURCES = \
                         $(dali_csharp_binder_tizen_wearable_src_files)
 endif
 
+if RIVE_ANIMATION
+LIBDALI_CSHARP_BINDER_RIVE_LA_SOURCES = \
+                        $(dali_csharp_binder_tizen_rive_src_files)
+endif
 
 LIBDALI_CSHARP_BINDER_LA_includes = \
         -I../../
@@ -112,12 +116,6 @@ endif
 
 endif
 
-if MOBILE_PROFILE
-LIBDALI_CSHARP_BINDER_LA_CXXFLAGS += -DTIZEN_BUILD \
-                            $(DALIRIVEVIEW_CFLAGS)
-LIBDALI_CSHARP_BINDER_LA_LIBADD += $(DALIRIVEVIEW_LIBS)
-endif
-
 if WEARABLE_PROFILE
 LIBDALI_CSHARP_BINDER_LA_CXXFLAGS += -DTIZEN_BUILD \
                             $(DALIWATCHVIEW_CFLAGS)
@@ -126,19 +124,9 @@ LIBDALI_CSHARP_BINDER_LA_LIBADD += $(DALIWATCHVIEW_LIBS)
 LIBDALI_CSHARP_BINDER_LA_CXXFLAGS += -DTIZEN_BUILD \
                             $(DALIWATCHHOLDERBASE_CFLAGS)
 LIBDALI_CSHARP_BINDER_LA_LIBADD += $(DALIWATCHHOLDERBASE_LIBS)
-
-LIBDALI_CSHARP_BINDER_LA_CXXFLAGS += -DTIZEN_BUILD \
-                            $(DALIRIVEVIEW_CFLAGS)
-LIBDALI_CSHARP_BINDER_LA_LIBADD += $(DALIRIVEVIEW_LIBS)
 endif
 
-if TV_PROFILE
-LIBDALI_CSHARP_BINDER_LA_CXXFLAGS += -DTIZEN_BUILD \
-                            $(DALIRIVEVIEW_CFLAGS)
-LIBDALI_CSHARP_BINDER_LA_LIBADD += $(DALIRIVEVIEW_LIBS)
-endif
-
-if COMMON_PROFILE
+if RIVE_ANIMATION
 LIBDALI_CSHARP_BINDER_LA_CXXFLAGS += -DTIZEN_BUILD \
                             $(DALIRIVEVIEW_CFLAGS)
 LIBDALI_CSHARP_BINDER_LA_LIBADD += $(DALIRIVEVIEW_LIBS)
@@ -147,6 +135,9 @@ endif
 lib_LTLIBRARIES = libdali2-csharp-binder.la
 
 libdali2_csharp_binder_la_SOURCES = $(LIBDALI_CSHARP_BINDER_LA_SOURCES)
+if RIVE_ANIMATION
+libdali2_csharp_binder_la_SOURCES += $(LIBDALI_CSHARP_BINDER_RIVE_LA_SOURCES)
+endif
 libdali2_csharp_binder_la_includes = $(LIBDALI_CSHARP_BINDER_LA_INCLUDES)
 libdali2_csharp_binder_ladir = $(libdir)
 libdali2_csharp_binder_la_LDFLAGS = ${LDFLAGS}
