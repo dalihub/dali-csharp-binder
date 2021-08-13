@@ -3,10 +3,10 @@
 // INCLUDES
 #include "common.h"
 #include <dali-toolkit/devel-api/controls/canvas-view/canvas-view.h>
-#include <dali/devel-api/adaptor-framework/canvas-renderer-picture.h>
 #include <dali/devel-api/adaptor-framework/canvas-renderer-drawable-group.h>
 #include <dali/devel-api/adaptor-framework/canvas-renderer-gradient.h>
 #include <dali/devel-api/adaptor-framework/canvas-renderer-linear-gradient.h>
+#include <dali/devel-api/adaptor-framework/canvas-renderer-picture.h>
 #include <dali/devel-api/adaptor-framework/canvas-renderer-radial-gradient.h>
 
 using namespace Dali;
@@ -409,7 +409,8 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Picture_New() {
       (const Dali::CanvasRenderer::Picture &)picture);
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_Load(char *pPicture, char* pUrl) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_Load(char *pPicture,
+                                                     char *pUrl) {
   Dali::CanvasRenderer::Picture picture;
   bool result = false;
 
@@ -422,9 +423,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_Load(char *pPicture, char* pUrl)
   picture = *(Dali::CanvasRenderer::Picture *)pPicture;
 
   if (!pUrl) {
-    SWIG_CSharpSetPendingExceptionArgument(
-        SWIG_CSharpArgumentNullException,
-        "Attempt to dereference null string", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException,
+                                           "Attempt to dereference null string",
+                                           0);
     return false;
   }
   std::string url(pUrl);
@@ -439,7 +440,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_Load(char *pPicture, char* pUrl)
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_SetSize(char *pPicture, void* pSize) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_SetSize(char *pPicture,
+                                                        void *pSize) {
   Dali::CanvasRenderer::Picture picture;
   bool result = false;
 
@@ -460,7 +462,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_SetSize(char *pPicture, void* pS
 
   {
     try {
-      result = picture.SetSize(*(Dali::Vector2*)pSize);
+      result = picture.SetSize(*(Dali::Vector2 *)pSize);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -468,7 +470,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_SetSize(char *pPicture, void* pS
   return result;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Picture_GetSize(char *pPicture) {
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Picture_GetSize(char *pPicture) {
   Dali::CanvasRenderer::Picture picture;
   Dali::Vector2 result;
 
@@ -489,7 +491,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Picture_GetSize(char *pPicture) {
 
   return new Dali::Vector2((const Dali::Vector2 &)result);
 }
-
 
 // Dali::CanvasRenderer::Shape Wrapper
 
@@ -1083,8 +1084,7 @@ CSharp_Dali_Shapep_SetFillGradient(char *pShape, char *pGradient) {
   return result;
 }
 
-SWIGEXPORT void* SWIGSTDCALL
-CSharp_Dali_Shapep_GetFillGradient(char *pShape) {
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Shapep_GetFillGradient(char *pShape) {
   Dali::CanvasRenderer::Shape shape;
   Dali::CanvasRenderer::Gradient gradient;
 
@@ -1103,7 +1103,8 @@ CSharp_Dali_Shapep_GetFillGradient(char *pShape) {
     CALL_CATCH_EXCEPTION(nullptr);
   }
 
-  return new Dali::CanvasRenderer::Gradient((const Dali::CanvasRenderer::Gradient &)gradient);
+  return new Dali::CanvasRenderer::Gradient(
+      (const Dali::CanvasRenderer::Gradient &)gradient);
 }
 
 SWIGEXPORT bool SWIGSTDCALL
@@ -1137,7 +1138,7 @@ CSharp_Dali_Shapep_SetStrokeGradient(char *pShape, char *pGradient) {
   return result;
 }
 
-SWIGEXPORT void* SWIGSTDCALL
+SWIGEXPORT void *SWIGSTDCALL
 CSharp_Dali_Shapep_GetStrokeGradient(char *pShape) {
   Dali::CanvasRenderer::Shape shape;
   Dali::CanvasRenderer::Gradient gradient;
@@ -1157,7 +1158,8 @@ CSharp_Dali_Shapep_GetStrokeGradient(char *pShape) {
     CALL_CATCH_EXCEPTION(nullptr);
   }
 
-  return new Dali::CanvasRenderer::Gradient((const Dali::CanvasRenderer::Gradient &)gradient);
+  return new Dali::CanvasRenderer::Gradient(
+      (const Dali::CanvasRenderer::Gradient &)gradient);
 }
 
 // Dali::CanvasRenderer::DrawableGroup Wrapper
@@ -1207,8 +1209,8 @@ CSharp_Dali_DrawableGroup_AddDrawable(char *pDrawableGroup, char *pDrawable) {
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL
-CSharp_Dali_DrawableGroup_RemoveDrawable(char *pDrawableGroup, char *pDrawable) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DrawableGroup_RemoveDrawable(
+    char *pDrawableGroup, char *pDrawable) {
   Dali::CanvasRenderer::DrawableGroup drawableGroup;
   Dali::CanvasRenderer::Drawable drawable;
   bool result = true;
@@ -1263,9 +1265,8 @@ CSharp_Dali_DrawableGroup_RemoveAllDrawables(char *pDrawableGroup) {
 
 // Dali::CanvasRenderer::Gradient Wrapper
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Gradient_SetColorStops(char *pGradient,
-                                                            float *pStops,
-                                                            int stopsLength) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Gradient_SetColorStops(
+    char *pGradient, float *pStops, int stopsLength) {
   Dali::CanvasRenderer::Gradient gradient;
 
   if (!pGradient) {
@@ -1288,10 +1289,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Gradient_SetColorStops(char *pGradient,
       for (unsigned int count = 0; count < stopsLength; count++) {
         Dali::CanvasRenderer::Gradient::ColorStop stop;
         stop.offset = pStops[count * 5];
-        stop.color = Vector4( pStops[(count * 5) + 1],
-                              pStops[(count * 5) + 2],
-                              pStops[(count * 5) + 3],
-                              pStops[(count * 5) + 4] );
+        stop.color = Vector4(pStops[(count * 5) + 1], pStops[(count * 5) + 2],
+                             pStops[(count * 5) + 3], pStops[(count * 5) + 4]);
         stops.PushBack(stop);
       }
       gradient.SetColorStops(stops);
@@ -1300,7 +1299,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Gradient_SetColorStops(char *pGradient,
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gradient_GetColorStopsCount(char *pGradient) {
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_Gradient_GetColorStopsCount(char *pGradient) {
   Dali::CanvasRenderer::Gradient gradient;
   int result = 0;
 
@@ -1314,7 +1314,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gradient_GetColorStopsCount(char *pGradie
 
   {
     try {
-      Dali::CanvasRenderer::Gradient::ColorStops colorStops = gradient.GetColorStops();
+      Dali::CanvasRenderer::Gradient::ColorStops colorStops =
+          gradient.GetColorStops();
       result = colorStops.Size();
     }
     CALL_CATCH_EXCEPTION(0);
@@ -1338,7 +1339,8 @@ CSharp_Dali_Gradient_GetColorStopsOffsetIndexOf(char *pGradient, int index) {
 
   {
     try {
-      Dali::CanvasRenderer::Gradient::ColorStops colorStops = gradient.GetColorStops();
+      Dali::CanvasRenderer::Gradient::ColorStops colorStops =
+          gradient.GetColorStops();
       if (index < 0 || index > colorStops.Size()) {
         throw std::invalid_argument("invalid index");
       }
@@ -1365,7 +1367,8 @@ CSharp_Dali_Gradient_GetColorStopsColorIndexOf(char *pGradient, int index) {
 
   {
     try {
-      Dali::CanvasRenderer::Gradient::ColorStops colorStops = gradient.GetColorStops();
+      Dali::CanvasRenderer::Gradient::ColorStops colorStops =
+          gradient.GetColorStops();
       if (index < 0 || index > colorStops.Size()) {
         throw std::invalid_argument("invalid index");
       }
@@ -1378,7 +1381,7 @@ CSharp_Dali_Gradient_GetColorStopsColorIndexOf(char *pGradient, int index) {
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Gradient_SetSpread(char *pGradient,
-                                                          int spread) {
+                                                           int spread) {
   Dali::CanvasRenderer::Gradient gradient;
 
   if (!pGradient) {
@@ -1436,8 +1439,8 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_LinearGradient_New() {
       (const Dali::CanvasRenderer::LinearGradient &)linearGradient);
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LinearGradient_SetBounds(char *pLinearGradient,
-                                                           void* pFirstPoint, void* pSecondPoint) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LinearGradient_SetBounds(
+    char *pLinearGradient, void *pFirstPoint, void *pSecondPoint) {
   Dali::CanvasRenderer::LinearGradient linearGradient;
   bool result = false;
 
@@ -1465,15 +1468,16 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LinearGradient_SetBounds(char *pLinearGr
 
   {
     try {
-      result = linearGradient.SetBounds(*(Dali::Vector2*)pFirstPoint, *(Dali::Vector2*)pSecondPoint);
+      result = linearGradient.SetBounds(*(Dali::Vector2 *)pFirstPoint,
+                                        *(Dali::Vector2 *)pSecondPoint);
     }
     CALL_CATCH_EXCEPTION(false);
   }
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LinearGradient_GetBounds(char *pLinearGradient,
-                                                           void* pFirstPoint, void* pSecondPoint) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LinearGradient_GetBounds(
+    char *pLinearGradient, void *pFirstPoint, void *pSecondPoint) {
   Dali::CanvasRenderer::LinearGradient linearGradient;
   bool result = false;
 
@@ -1501,7 +1505,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LinearGradient_GetBounds(char *pLinearGr
 
   {
     try {
-      result = linearGradient.GetBounds(*(Dali::Vector2*)pFirstPoint, *(Dali::Vector2*)pSecondPoint);
+      result = linearGradient.GetBounds(*(Dali::Vector2 *)pFirstPoint,
+                                        *(Dali::Vector2 *)pSecondPoint);
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -1524,8 +1529,8 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_RadialGradient_New() {
       (const Dali::CanvasRenderer::RadialGradient &)radialGradient);
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RadialGradient_SetBounds(char *pRadialGradient,
-                                                           void* pCenterPoint, float radius) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RadialGradient_SetBounds(
+    char *pRadialGradient, void *pCenterPoint, float radius) {
   Dali::CanvasRenderer::RadialGradient radialGradient;
   bool result = false;
 
@@ -1546,15 +1551,15 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RadialGradient_SetBounds(char *pRadialGr
 
   {
     try {
-      result = radialGradient.SetBounds(*(Dali::Vector2*)pCenterPoint, radius);
+      result = radialGradient.SetBounds(*(Dali::Vector2 *)pCenterPoint, radius);
     }
     CALL_CATCH_EXCEPTION(false);
   }
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RadialGradient_GetBounds(char *pRadialGradient,
-                                                           void* pCenterPoint, void* radius) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RadialGradient_GetBounds(
+    char *pRadialGradient, void *pCenterPoint, void *radius) {
   Dali::CanvasRenderer::RadialGradient radialGradient;
   bool result = false;
 
@@ -1575,7 +1580,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RadialGradient_GetBounds(char *pRadialGr
 
   {
     try {
-      result = radialGradient.GetBounds(*(Dali::Vector2*)pCenterPoint, *(float*)radius);
+      result = radialGradient.GetBounds(*(Dali::Vector2 *)pCenterPoint,
+                                        *(float *)radius);
     }
     CALL_CATCH_EXCEPTION(false);
   }
