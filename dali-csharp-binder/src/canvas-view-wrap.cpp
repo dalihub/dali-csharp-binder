@@ -3,6 +3,7 @@
 // INCLUDES
 #include "common.h"
 #include <dali-toolkit/devel-api/controls/canvas-view/canvas-view.h>
+#include <dali/devel-api/adaptor-framework/canvas-renderer-picture.h>
 #include <dali/devel-api/adaptor-framework/canvas-renderer-drawable-group.h>
 #include <dali/devel-api/adaptor-framework/canvas-renderer-gradient.h>
 #include <dali/devel-api/adaptor-framework/canvas-renderer-linear-gradient.h>
@@ -391,6 +392,104 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Drawable_SetMask(char *pDrawable,
 
   return result;
 }
+
+// Dali::CanvasRenderer::Picture Wrapper
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Picture_New() {
+  Dali::CanvasRenderer::Picture picture;
+
+  {
+    try {
+      picture = Dali::CanvasRenderer::Picture::New();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::CanvasRenderer::Picture(
+      (const Dali::CanvasRenderer::Picture &)picture);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_Load(char *pPicture, char* pUrl) {
+  Dali::CanvasRenderer::Picture picture;
+  bool result = false;
+
+  if (!pPicture) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Picture", 0);
+    return false;
+  }
+  picture = *(Dali::CanvasRenderer::Picture *)pPicture;
+
+  if (!pUrl) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null string", 0);
+    return false;
+  }
+  std::string url(pUrl);
+
+  {
+    try {
+      result = picture.Load(url);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_SetSize(char *pPicture, void* pSize) {
+  Dali::CanvasRenderer::Picture picture;
+  bool result = false;
+
+  if (!pPicture) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Picture", 0);
+    return false;
+  }
+  picture = *(Dali::CanvasRenderer::Picture *)pPicture;
+
+  if (!pSize) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::Vector2", 0);
+    return false;
+  }
+
+  {
+    try {
+      result = picture.SetSize(*(Dali::Vector2*)pSize);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Picture_GetSize(char *pPicture) {
+  Dali::CanvasRenderer::Picture picture;
+  Dali::Vector2 result;
+
+  if (!pPicture) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Picture", 0);
+    return nullptr;
+  }
+  picture = *(Dali::CanvasRenderer::Picture *)pPicture;
+
+  {
+    try {
+      result = picture.GetSize();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Vector2((const Dali::Vector2 &)result);
+}
+
 
 // Dali::CanvasRenderer::Shape Wrapper
 
