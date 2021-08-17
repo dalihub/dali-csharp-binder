@@ -52,13 +52,6 @@ AC_ARG_ENABLE(ecore_wayland2,
               enable_ecore_wayland2=yes,
               enable_ecore_wayland2=no)
 
-AC_ARG_ENABLE([rive-animation-view],
-              [AC_HELP_STRING([--enable-rive-animation-view],
-              [enables the rive animation view])],
-              [enable_rive_animation_view=yes],
-              [enable_rive_animation_view=no])
-
-
 DALI_CSHARP_BINDER_CFLAGS="$DALI_CSHARP_BINDER_CFLAGS -DDALI_PROFILE_${enable_profile}"
 DALI_PROFILE_CFLAGS=" -DDALI_PROFILE_${enable_profile}"
 AM_CONDITIONAL([COMMON_PROFILE], [test x$enable_profile = xCOMMON])
@@ -70,7 +63,7 @@ AM_CONDITIONAL([UBUNTU_PROFILE], [test x$enable_profile = xUBUNTU])
 AM_CONDITIONAL([WAYLAND], [test x$enable_wayland = xyes])
 AM_CONDITIONAL([ECORE_WAYLAND2], [test x$enable_ecore_wayland2 = xyes])
 AM_CONDITIONAL([ENABLE_RENAME_SO], [test x$enable_rename_so = xyes])
-AM_CONDITIONAL([RIVE_ANIMATION], [test x$enable_rive_animation_view = xyes])
+
 
 ### AM_CONDITIONAL([TIZENBUILD], [test x$enable_tizenBuild = xyes])
 ### AM_CONDITIONAL([ECOREWL2], [test x$enable_ecoreWl2 = xyes])
@@ -81,10 +74,7 @@ PKG_CHECK_MODULES(DALITOOLKIT, dali2-toolkit)
 
 if test "x$enable_profile" = "xMOBILE" -o "x$enable_profile" = "xWEARABLE" -o "x$enable_profile" = "xTV" -o "x$enable_profile" = "xIVI" -o "x$enable_profile" = "xCOMMON"; then
   PKG_CHECK_MODULES(DALIWIDGET, widget_viewer_dali)
-  if test "x$enable_rive_animation_view" = "xyes"; then
-    PKG_CHECK_MODULES(DALIRIVEVIEW, dali2-extension-rive-animation-view)
-  fi
-
+  PKG_CHECK_MODULES(DALIRIVEVIEW, dali2-extension-rive-animation-view)
   if test x$enable_ecore_wayland2 = xyes; then
     PKG_CHECK_MODULES(ECORE_WL2, ecore-wl2)
   else
