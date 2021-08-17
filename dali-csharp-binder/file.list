@@ -57,7 +57,8 @@ dali_csharp_binder_tizen_src_files = \
   ${dali_csharp_binder_dir}/src/transition-effects-wrap.cpp \
   ${dali_csharp_binder_dir}/src/atspi-wrap.cpp \
   ${dali_csharp_binder_dir}/src/component-application-wrap.cpp \
-  ${dali_csharp_binder_dir}/src/tizen-dependency-wrap.cpp
+  ${dali_csharp_binder_dir}/src/tizen-dependency-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/rive-animation-view-wrap.cpp
 
 # module: csharp-binder, backend: tizen-wearable
 dali_csharp_binder_tizen_wearable_src_files = \
