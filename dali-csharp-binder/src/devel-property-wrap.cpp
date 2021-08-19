@@ -112,6 +112,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_DOWN_FOCUSABLE_ACTOR_ID_get() {
   return Dali::Toolkit::DevelControl::Property::DOWN_FOCUSABLE_ACTOR_ID;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_DISPATCH_KEY_EVENTS_get() {
+  return Dali::Toolkit::DevelControl::Property::DISPATCH_KEY_EVENTS;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_ItemView_Property_LAYOUT_get() {
   int jresult ;
   int result;

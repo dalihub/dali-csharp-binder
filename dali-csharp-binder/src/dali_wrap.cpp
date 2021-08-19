@@ -23014,6 +23014,30 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_IsKeyboardFocusable(void *
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusableChildren(void * actor, bool keyboardFocusableChildren) {
+  Dali::Actor *arg1 = (Dali::Actor *) 0 ;
+  arg1 = (Dali::Actor *)actor;
+  {
+    try {
+      (arg1)->SetProperty( DevelActor::Property::KEYBOARD_FOCUSABLE_CHILDREN, keyboardFocusableChildren );
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_AreChildrenKeyBoardFocusable(void * actor) {
+  Dali::Actor *arg1 = (Dali::Actor *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Actor *)actor;
+  {
+    try {
+      result = (bool)((Dali::Actor const *)arg1)->GetProperty< bool >( DevelActor::Property::KEYBOARD_FOCUSABLE_CHILDREN );
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetTouchFocusable(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
