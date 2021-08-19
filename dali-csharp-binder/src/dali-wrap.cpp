@@ -15765,32 +15765,50 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GetAlphaOffsetAndMask(int jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelData_New(unsigned char* jarg1, unsigned int jarg2, unsigned int jarg3, unsigned int jarg4, int jarg5, int jarg6) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelData_New(unsigned char* nuiBuffer, unsigned int nuiBufferSize, unsigned int nuiWidth, unsigned int nuiHeight, int nuiPixelFormat) {
   void * jresult ;
-  unsigned char *arg1 = (unsigned char *) 0 ;
-  unsigned int arg2 ;
-  unsigned int arg3 ;
-  unsigned int arg4 ;
-  Dali::Pixel::Format arg5 ;
-  Dali::PixelData::ReleaseFunction arg6 ;
   Dali::PixelData result;
 
-  arg1 = jarg1;
-  arg2 = (unsigned int)jarg2;
-  arg3 = (unsigned int)jarg3;
-  arg4 = (unsigned int)jarg4;
-  arg5 = (Dali::Pixel::Format)jarg5;
-  arg6 = (Dali::PixelData::ReleaseFunction)jarg6;
   {
-    try {
-      auto pixelBuffer = new unsigned char[jarg2];
-      memcpy( pixelBuffer, arg1, arg2);
-      result = Dali::PixelData::New(pixelBuffer,arg2,arg3,arg4,arg5,arg6);
+    unsigned char *copiedBuffer;
+    try
+    {
+      copiedBuffer = new unsigned char[nuiBufferSize];
     } CALL_CATCH_EXCEPTION(0);
+
+    try
+    {
+      // Note : copiedBuffer created by 'new' method. So ReleaseFunction always be DELETE_ARRAY.
+      memcpy(copiedBuffer, nuiBuffer, nuiBufferSize);
+      result = Dali::PixelData::New(copiedBuffer, nuiBufferSize, nuiWidth, nuiHeight, (Dali::Pixel::Format)nuiPixelFormat, Dali::PixelData::ReleaseFunction::DELETE_ARRAY);
+    }
+    catch (std::out_of_range & e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));
+      delete[] copiedBuffer;
+      return 0;
+    }
+    catch (std::exception & e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what()));
+      delete[] copiedBuffer;
+      return 0;
+    }
+    catch (DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      delete[] copiedBuffer;
+      return 0;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      delete[] copiedBuffer;
+      return 0;
+    };
   }
 
   jresult = new Dali::PixelData((const Dali::PixelData &)result);
-
 
   return jresult;
 }
@@ -15811,32 +15829,32 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PixelData__SWIG_0() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PixelData(void * jarg1) {
-  Dali::PixelData *arg1 = (Dali::PixelData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PixelData(void * nuiHandle) {
+  Dali::PixelData *pixelData = (Dali::PixelData *) 0 ;
 
-  arg1 = (Dali::PixelData *)jarg1;
+  pixelData = (Dali::PixelData *)nuiHandle;
   {
     try {
-      delete arg1;
+      delete pixelData;
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PixelData__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PixelData__SWIG_1(void * nuiHandle) {
   void * jresult ;
-  Dali::PixelData *arg1 = 0 ;
+  Dali::PixelData *pixelData = 0 ;
   Dali::PixelData *result = 0 ;
 
-  arg1 = (Dali::PixelData *)jarg1;
-  if (!arg1) {
+  pixelData = (Dali::PixelData *)nuiHandle;
+  if (!pixelData) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::PixelData const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (Dali::PixelData *)new Dali::PixelData((Dali::PixelData const &)*arg1);
+      result = (Dali::PixelData *)new Dali::PixelData((Dali::PixelData const &)*pixelData);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -15845,21 +15863,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PixelData__SWIG_1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelData_Assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelData_Assign(void * nuiHandle, void * nuiHandleSource) {
   void * jresult ;
-  Dali::PixelData *arg1 = (Dali::PixelData *) 0 ;
-  Dali::PixelData *arg2 = 0 ;
+  Dali::PixelData *pixelData = (Dali::PixelData *) 0 ;
+  Dali::PixelData *pixelDataSource = 0 ;
   Dali::PixelData *result = 0 ;
 
-  arg1 = (Dali::PixelData *)jarg1;
-  arg2 = (Dali::PixelData *)jarg2;
-  if (!arg2) {
+  pixelData = (Dali::PixelData *)nuiHandle;
+  pixelDataSource = (Dali::PixelData *)nuiHandleSource;
+  if (!pixelDataSource) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::PixelData const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (Dali::PixelData *) &(arg1)->operator =((Dali::PixelData const &)*arg2);
+      result = (Dali::PixelData *) &(pixelData)->operator =((Dali::PixelData const &)*pixelDataSource);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -15868,15 +15886,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelData_Assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelData_GetWidth(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelData_GetWidth(void * nuiHandle) {
   unsigned int jresult ;
-  Dali::PixelData *arg1 = (Dali::PixelData *) 0 ;
+  Dali::PixelData *pixelData = (Dali::PixelData *) 0 ;
   unsigned int result;
 
-  arg1 = (Dali::PixelData *)jarg1;
+  pixelData = (Dali::PixelData *)nuiHandle;
   {
     try {
-      result = (unsigned int)((Dali::PixelData const *)arg1)->GetWidth();
+      result = (unsigned int)((Dali::PixelData const *)pixelData)->GetWidth();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -15885,15 +15903,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelData_GetWidth(void * jarg1)
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelData_GetHeight(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelData_GetHeight(void * nuiHandle) {
   unsigned int jresult ;
-  Dali::PixelData *arg1 = (Dali::PixelData *) 0 ;
+  Dali::PixelData *pixelData = (Dali::PixelData *) 0 ;
   unsigned int result;
 
-  arg1 = (Dali::PixelData *)jarg1;
+  pixelData = (Dali::PixelData *)nuiHandle;
   {
     try {
-      result = (unsigned int)((Dali::PixelData const *)arg1)->GetHeight();
+      result = (unsigned int)((Dali::PixelData const *)pixelData)->GetHeight();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -15902,15 +15920,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelData_GetHeight(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelData_GetPixelFormat(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelData_GetPixelFormat(void * nuiHandle) {
   int jresult ;
-  Dali::PixelData *arg1 = (Dali::PixelData *) 0 ;
+  Dali::PixelData *pixelData = (Dali::PixelData *) 0 ;
   Dali::Pixel::Format result;
 
-  arg1 = (Dali::PixelData *)jarg1;
+  pixelData = (Dali::PixelData *)nuiHandle;
   {
     try {
-      result = (Dali::Pixel::Format)((Dali::PixelData const *)arg1)->GetPixelFormat();
+      result = (Dali::Pixel::Format)((Dali::PixelData const *)pixelData)->GetPixelFormat();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -15918,9 +15936,9 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelData_GetPixelFormat(void * jarg1) {
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* handle)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* nuiHandle)
 {
-  Dali::PixelData* pixelData = (Dali::PixelData*)handle;
+  Dali::PixelData *pixelData = (Dali::PixelData*)nuiHandle;
   Dali::Toolkit::ImageUrl result;
   void *jresult;
 
@@ -15933,27 +15951,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* handle)
     try
     {
       result = Dali::Toolkit::Image::GenerateUrl(*pixelData);
-    }
-    catch (std::out_of_range& e)
-    {
-      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
-      return 0;
-    }
-    catch (std::exception& e)
-    {
-      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
-      return 0;
-    }
-    catch (Dali::DaliException e)
-    {
-      SWIG_CSharpException(SWIG_UnknownError, e.condition);
-      return 0;
-    }
-    catch (...)
-    {
-      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
-      return 0;
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)result);
