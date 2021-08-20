@@ -21,7 +21,7 @@
 
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 2.0.39
+Version: 2.0.40
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -45,7 +45,12 @@ BuildRequires: pkgconfig
 BuildRequires: pkgconfig(dali2-core)
 BuildRequires: pkgconfig(dali2-adaptor)
 BuildRequires: pkgconfig(dali2-toolkit)
+%if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
+%define rive_animation_view 1
 BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
+%endif
+
+
 BuildRequires: pkgconfig(widget_viewer_dali)
 BuildRequires: pkgconfig(watch_viewer_dali)
 BuildRequires: pkgconfig(watch-holder-base)
@@ -205,6 +210,9 @@ TIZEN_PLATFORM_CONFIG_SUPPORTED="%{tizen_platform_config_supported}" ; export TI
 %if 0%{?enable_debug}
            --enable-debug \
 %endif
+%if 0%{?rive_animation_view}
+           --enable-rive-animation-view \
+%endif
            $configure_flags --libdir=%{_libdir}
 
 # Build.
@@ -233,6 +241,9 @@ make clean
            --enable-tizen-major-version=%{tizen_version_major} \
 %if 0%{?enable_debug}
            --enable-debug \
+%endif
+%if 0%{?rive_animation_view}
+           --enable-rive-animation-view \
 %endif
            $configure_flags --libdir=%{_libdir}
 
@@ -263,6 +274,9 @@ make clean
 %if 0%{?enable_debug}
            --enable-debug \
 %endif
+%if 0%{?rive_animation_view}
+           --enable-rive-animation-view \
+%endif
            $configure_flags --libdir=%{_libdir}
 
 # Build.
@@ -291,6 +305,9 @@ make clean
            --enable-tizen-major-version=%{tizen_version_major} \
 %if 0%{?enable_debug}
            --enable-debug \
+%endif
+%if 0%{?rive_animation_view}
+           --enable-rive-animation-view \
 %endif
            $configure_flags --libdir=%{_libdir}
 
@@ -321,6 +338,9 @@ make clean
            --enable-tizen-major-version=%{tizen_version_major} \
 %if 0%{?enable_debug}
            --enable-debug \
+%endif
+%if 0%{?rive_animation_view}
+           --enable-rive-animation-view \
 %endif
            $configure_flags --libdir=%{_libdir}
 
