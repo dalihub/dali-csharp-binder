@@ -22,6 +22,7 @@
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
 #include <dali-toolkit/devel-api/visuals/animated-image-visual-actions-devel.h>
 #include <dali-toolkit/devel-api/visuals/image-visual-actions-devel.h>
 #include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
@@ -538,6 +539,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_ELLIPSIS_POSITION_get() {
   result = (int)Dali::Toolkit::DevelTextEditor::Property::ELLIPSIS_POSITION;
   jresult = (int)result;
   return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_MIN_LINE_SIZE_get() {
+  return (int)Dali::Toolkit::DevelTextEditor::Property::MIN_LINE_SIZE;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_TextEditor_Property_ELLIPSIS_get() {

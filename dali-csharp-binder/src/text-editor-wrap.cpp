@@ -1804,6 +1804,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_GetInputMethodContext(void 
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_CursorPositionChangedSignal(void * pTextEditor) {
+  void * jresult ;
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0 ;
+  Dali::Toolkit::DevelTextEditor::CursorPositionChangedSignalType *result = 0 ;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextEditor::CursorPositionChangedSignalType *)&Dali::Toolkit::DevelTextEditor::CursorPositionChangedSignal(*textEditor);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_MaxLengthReachedSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0 ;
@@ -1835,6 +1851,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_MaxLengthReachedSignal(void
   jresult = (void *)result;
   return jresult;
 }
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_SelectionChangedSignal(void * pTextEditor) {
+  void * jresult ;
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0 ;
+  Dali::Toolkit::DevelTextEditor::SelectionChangedSignalType *result = 0 ;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextEditor::SelectionChangedSignalType *)&Dali::Toolkit::DevelTextEditor::SelectionChangedSignal(*textEditor);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
 #ifdef __cplusplus
 }
 #endif
