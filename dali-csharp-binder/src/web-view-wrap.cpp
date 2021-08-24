@@ -987,25 +987,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFrameRenderedCallback(vo
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterRequestInterceptorCallback(void * jarg1, void * jarg2) {
-  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  void (*handler)(Dali::WebEngineRequestInterceptor*) = (void (*)(Dali::WebEngineRequestInterceptor*))jarg2;
-  {
-    try {
-      if (handler)
-      {
-        (arg1)->RegisterRequestInterceptorCallback([handler](std::unique_ptr<Dali::WebEngineRequestInterceptor> interceptor) {
-            handler(interceptor.release());
-          });
-      }
-      else
-      {
-        (arg1)->RegisterRequestInterceptorCallback(nullptr);
-      }
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterConsoleMessageReceivedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   void (*handler)(Dali::WebEngineConsoleMessage*) = (void (*)(Dali::WebEngineConsoleMessage*))jarg2;
@@ -1669,6 +1650,26 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterMimeOverriddenCallbac
                            SWIG_csharp_string_callback(mime.c_str()),
                            SWIG_csharp_string_callback(newMime.c_str()));
           });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterRequestInterceptedCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  void (*handler)(Dali::WebEngineRequestInterceptorPtr*) = (void (*)(Dali::WebEngineRequestInterceptorPtr*))jarg2;
+  {
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterRequestInterceptedCallback([handler](Dali::WebEngineRequestInterceptorPtr interceptor) {
+            Dali::WebEngineRequestInterceptorPtr* interceptorPtr = new Dali::WebEngineRequestInterceptorPtr((const Dali::WebEngineRequestInterceptorPtr&)interceptor);
+            handler(interceptorPtr);
+          });
+      }
+      else
+      {
+        (arg1)->RegisterRequestInterceptedCallback(nullptr);
+      }
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -2399,14 +2400,14 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Suspend(void* jarg1) {
   return result;
 }
 
-//----------------------------------WebRequestInterceptor---------------------------------------------------
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebRequestInterceptor(void * jarg1) {
+//----------------------------------WebRequestInterceptorPtr---------------------------------------------------
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebRequestInterceptorPtr(void * jarg1) {
   if (!jarg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebRequestInterceptor is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebRequestInterceptorPtr is null", 0);
     return;
   }
 
-  Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
+  Dali::WebEngineRequestInterceptorPtr* arg1 = (Dali::WebEngineRequestInterceptorPtr*)jarg1;
   {
     try {
       delete arg1;
@@ -2414,6 +2415,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebRequestInterceptor(void * jarg
   }
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebRequestInterceptorPtr_Get(void * jarg1) {
+  Dali::WebEngineRequestInterceptorPtr* arg1 = (Dali::WebEngineRequestInterceptorPtr*)jarg1;
+  Dali::WebEngineRequestInterceptor* result = 0;
+  {
+    try {
+      result = arg1->Get();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+//----------------------------------WebRequestInterceptor---------------------------------------------------
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_GetUrl(void * jarg1) {
   Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
   std::string result;
@@ -2424,6 +2437,30 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_GetUrl(voi
   }
   char* jresult = SWIG_csharp_string_callback(result.c_str());
   return jresult;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_GetMethod(void * jarg1) {
+  Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
+  std::string result;
+  {
+    try {
+      result = (arg1)->GetMethod();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char* jresult = SWIG_csharp_string_callback(result.c_str());
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_GetHeaders(void * jarg1) {
+  Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
+  Dali::Property::Map * result = 0;
+  {
+    try {
+      Dali::Property::Map headers = (arg1)->GetHeaders();
+      result = new Dali::Property::Map(headers);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_Ignore(void * jarg1) {
@@ -2449,7 +2486,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_SetResponseStatus(
   return ret;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponseHeader(void * jarg1, const char *jarg2, const char *jarg3) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponseHeader(void * jarg1, const char * jarg2, const char * jarg3) {
   Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
   bool ret = false;
   std::string arg2_str(jarg2);
@@ -2462,13 +2499,50 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponseHeader(
   return ret;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponseBody(void * jarg1, const char *jarg2, uint32_t length) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponseHeaders(void * jarg1, void * jarg2) {
+  Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
+  Dali::Property::Map* arg2 = (Dali::Property::Map*)jarg2;
+  bool ret = false;
+  {
+    try {
+      ret = (arg1)->AddResponseHeaders(*arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponseBody(void * jarg1, const char *jarg2, uint32_t jarg3) {
   Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
   bool ret = false;
   std::string arg2_str(jarg2);
   {
     try {
-      ret = (arg1)->AddResponseBody(arg2_str, length);
+      ret = (arg1)->AddResponseBody(arg2_str, jarg3);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponse(void * jarg1, const char * jarg2, const char * jarg3, uint32_t jarg4) {
+  Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
+  bool ret = false;
+  std::string arg2_str(jarg2);
+  std::string arg3_str(jarg3);
+  {
+    try {
+      ret = (arg1)->AddResponse(arg2_str, arg3_str, jarg4);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_WriteResponseChunk(void * jarg1, const char * jarg2, uint32_t jarg3) {
+  Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
+  bool ret = false;
+  std::string arg2_str(jarg2);
+  {
+    try {
+      ret = (arg1)->WriteResponseChunk(arg2_str, jarg3);
     } CALL_CATCH_EXCEPTION(0);
   }
   return ret;
@@ -2827,11 +2901,12 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebHitTest_GetNodeValue(void * j
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebHitTest_GetAttributes(void * jarg1) {
-  Dali::WebEngineHitTest *arg1 = (Dali::WebEngineHitTest *)jarg1;
-  Dali::Property::Map *result = 0;
+  Dali::WebEngineHitTest * arg1 = (Dali::WebEngineHitTest *)jarg1;
+  Dali::Property::Map * result = 0;
   {
     try {
-      result = &(arg1)->GetAttributes();
+      Dali::Property::Map attributes = (arg1)->GetAttributes();
+      result = new Dali::Property::Map(attributes);
     } CALL_CATCH_EXCEPTION(0);
   }
   return (void *)result;
