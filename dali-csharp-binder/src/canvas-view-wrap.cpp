@@ -657,6 +657,48 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddCubicTo(
   return result;
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddPath(
+    char *pShape, int *pCommands, unsigned int commandCount, float *pPoints,
+    unsigned int pointCount) {
+  Dali::CanvasRenderer::Shape shape;
+  bool result = false;
+
+  if (!pShape) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::CanvasRenderer::Shape", 0);
+    return false;
+  }
+  shape = *(Dali::CanvasRenderer::Shape *)pShape;
+
+  if (!pCommands) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Commands", 0);
+    return false;
+  }
+
+  if (!pPoints) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException,
+                                           "Attempt to dereference null Points",
+                                           0);
+    return false;
+  }
+
+  {
+    try {
+      Dali::CanvasRenderer::Shape::PathCommands pathCommands = {
+          (Dali::CanvasRenderer::Shape::PathCommandType *)pCommands,
+          commandCount, pPoints, pointCount};
+
+      result = shape.AddPath(pathCommands);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_Close(char *pShape) {
   Dali::CanvasRenderer::Shape shape;
   bool result = false;

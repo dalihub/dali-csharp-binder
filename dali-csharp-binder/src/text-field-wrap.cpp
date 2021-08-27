@@ -18,6 +18,10 @@
 #include <dali-toolkit/public-api/controls/text-controls/text-field.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
 
+/* Callback for returning strings to C# without leaking memory */
+typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
+extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
+
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextField_SP__Sg__Empty(Dali::Signal< void (Dali::Toolkit::TextField) > const *self){
   return self->Empty();
 }
@@ -986,6 +990,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_TextChangedSignal(void * jar
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_CursorPositionChangedSignal(void * pTextField) {
+  void * jresult ;
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0 ;
+  Dali::Toolkit::DevelTextField::CursorPositionChangedSignalType *result = 0 ;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextField::CursorPositionChangedSignalType *)&Dali::Toolkit::DevelTextField::CursorPositionChangedSignal(*textField);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_MaxLengthReachedSignal(void * jarg1) {
   void * jresult ;
@@ -1210,6 +1229,52 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextField_SelectNone(void * jarg1) {
   }
 }
 
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TextField_CopyText(void *pTextField)
+{
+  char *csCopiedText;
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *)0;
+  std::string copiedText;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try {
+      copiedText = Dali::Toolkit::DevelTextField::CopyText(*textField);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  csCopiedText = SWIG_csharp_string_callback((&copiedText)->c_str());
+  return csCopiedText;
+}
+
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TextField_CutText(void *pTextField)
+{
+  char *csCutText;
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *)0;
+  std::string cutText;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try {
+      cutText = Dali::Toolkit::DevelTextField::CutText(*textField);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  csCutText = SWIG_csharp_string_callback((&cutText)->c_str());
+  return csCutText;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextField_PasteText(void *pTextField)
+{
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *)0;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try {
+      Dali::Toolkit::DevelTextField::PasteText(*textField);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TextFieldSignal_Empty(void * jarg1) {
   unsigned int jresult ;
@@ -1473,6 +1538,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_GetInputMethodContext(void *
     }
   }
   jresult = new Dali::InputMethodContext((const Dali::InputMethodContext &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_SelectionChangedSignal(void * pTextField) {
+  void * jresult ;
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0 ;
+  Dali::Toolkit::DevelTextField::SelectionChangedSignalType *result = 0 ;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextField::SelectionChangedSignalType *)&Dali::Toolkit::DevelTextField::SelectionChangedSignal(*textField);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
   return jresult;
 }
 
