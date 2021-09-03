@@ -1902,6 +1902,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_MaxLengthReachedSignal(void
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_SelectionClearedSignal(void * pTextEditor) {
+  void * jresult ;
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0 ;
+  Dali::Toolkit::DevelTextEditor::SelectionClearedSignalType *result = 0 ;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextEditor::SelectionClearedSignalType *)&Dali::Toolkit::DevelTextEditor::SelectionClearedSignal(*textEditor);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_SelectionChangedSignal(void * pTextEditor) {
   void * jresult ;
   Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0 ;

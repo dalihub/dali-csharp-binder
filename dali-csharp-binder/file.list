@@ -15,7 +15,7 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/encoded-image-buffer-wrap.cpp \
   ${dali_csharp_binder_dir}/src/version-check.cpp \
   ${dali_csharp_binder_dir}/src/processor-controller.cpp \
-  ${dali_csharp_binder_dir}/src/fade-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/fade-transition-wrap.cpp \
   ${dali_csharp_binder_dir}/src/flex-layout-wrap.cpp \
   ${dali_csharp_binder_dir}/src/gestures-wrap.cpp \
   ${dali_csharp_binder_dir}/src/view-wrapper-impl-wrap.cpp \
