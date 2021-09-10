@@ -930,7 +930,7 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Shape_GetStrokeColor(char *pShape) {
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(char *pShape,
                                                             float *pDashPattern,
-                                                            int patternLength) {
+                                                            unsigned int patternLength) {
   Dali::CanvasRenderer::Shape shape;
 
   if (!pShape) {
@@ -950,7 +950,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(char *pShape,
   {
     try {
       Vector<float> dashPattern;
-      for (int count = 0; count < patternLength; count++) {
+      for (unsigned int count = 0; count < patternLength; count++) {
         dashPattern.PushBack(pDashPattern[count]);
       }
       shape.SetStrokeDash(dashPattern);
@@ -959,9 +959,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(char *pShape,
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeDashCount(char *pShape) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeDashCount(char *pShape) {
   Dali::CanvasRenderer::Shape shape;
-  int result;
+  unsigned int result;
 
   if (!pShape) {
     SWIG_CSharpSetPendingExceptionArgument(
@@ -984,7 +984,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeDashCount(char *pShape) {
 }
 
 SWIGEXPORT float SWIGSTDCALL
-CSharp_Dali_Shape_GetStrokeDashIndexOf(char *pShape, int index) {
+CSharp_Dali_Shape_GetStrokeDashIndexOf(char *pShape, unsigned int index) {
   Dali::CanvasRenderer::Shape shape;
   float result = 0.0f;
 
@@ -1308,7 +1308,7 @@ CSharp_Dali_DrawableGroup_RemoveAllDrawables(char *pDrawableGroup) {
 // Dali::CanvasRenderer::Gradient Wrapper
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Gradient_SetColorStops(
-    char *pGradient, float *pStops, int stopsLength) {
+    char *pGradient, float *pStops, unsigned int stopsLength) {
   Dali::CanvasRenderer::Gradient gradient;
 
   if (!pGradient) {
@@ -1341,10 +1341,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Gradient_SetColorStops(
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL
+SWIGEXPORT unsigned int SWIGSTDCALL
 CSharp_Dali_Gradient_GetColorStopsCount(char *pGradient) {
   Dali::CanvasRenderer::Gradient gradient;
-  int result = 0;
+  unsigned int result = 0;
 
   if (!pGradient) {
     SWIG_CSharpSetPendingExceptionArgument(
@@ -1367,7 +1367,7 @@ CSharp_Dali_Gradient_GetColorStopsCount(char *pGradient) {
 }
 
 SWIGEXPORT float SWIGSTDCALL
-CSharp_Dali_Gradient_GetColorStopsOffsetIndexOf(char *pGradient, int index) {
+CSharp_Dali_Gradient_GetColorStopsOffsetIndexOf(char *pGradient, unsigned int index) {
   Dali::CanvasRenderer::Gradient gradient;
   float result = 0.0f;
 
@@ -1395,7 +1395,7 @@ CSharp_Dali_Gradient_GetColorStopsOffsetIndexOf(char *pGradient, int index) {
 }
 
 SWIGEXPORT void *SWIGSTDCALL
-CSharp_Dali_Gradient_GetColorStopsColorIndexOf(char *pGradient, int index) {
+CSharp_Dali_Gradient_GetColorStopsColorIndexOf(char *pGradient, unsigned int index) {
   Dali::CanvasRenderer::Gradient gradient;
   Dali::Vector4 result;
 
