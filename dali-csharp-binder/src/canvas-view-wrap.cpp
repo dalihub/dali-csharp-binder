@@ -657,9 +657,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddCubicTo(
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddPath(
-    char *pShape, int *pCommands, unsigned int commandCount, float *pPoints,
-    unsigned int pointCount) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddPath(char *pShape,
+                                                      int *pCommands,
+                                                      unsigned int commandCount,
+                                                      float *pPoints,
+                                                      unsigned int pointCount) {
   Dali::CanvasRenderer::Shape shape;
   bool result = false;
 
@@ -928,9 +930,8 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Shape_GetStrokeColor(char *pShape) {
   return new Dali::Vector4((const Dali::Vector4 &)result);
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(char *pShape,
-                                                            float *pDashPattern,
-                                                            unsigned int patternLength) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(
+    char *pShape, float *pDashPattern, unsigned int patternLength) {
   Dali::CanvasRenderer::Shape shape;
 
   if (!pShape) {
@@ -959,7 +960,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Shape_SetStrokeDash(char *pShape,
   }
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Shape_GetStrokeDashCount(char *pShape) {
+SWIGEXPORT unsigned int SWIGSTDCALL
+CSharp_Dali_Shape_GetStrokeDashCount(char *pShape) {
   Dali::CanvasRenderer::Shape shape;
   unsigned int result;
 
@@ -999,7 +1001,7 @@ CSharp_Dali_Shape_GetStrokeDashIndexOf(char *pShape, unsigned int index) {
   {
     try {
       Dali::Vector<float> dashPattern = shape.GetStrokeDash();
-      if (index < 0 || static_cast<uint32_t>(index) > dashPattern.Size()) {
+      if (index >= dashPattern.Size()) {
         throw std::invalid_argument("invalid index");
       }
       result = dashPattern[index];
@@ -1366,8 +1368,8 @@ CSharp_Dali_Gradient_GetColorStopsCount(char *pGradient) {
   return result;
 }
 
-SWIGEXPORT float SWIGSTDCALL
-CSharp_Dali_Gradient_GetColorStopsOffsetIndexOf(char *pGradient, unsigned int index) {
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Gradient_GetColorStopsOffsetIndexOf(
+    char *pGradient, unsigned int index) {
   Dali::CanvasRenderer::Gradient gradient;
   float result = 0.0f;
 
@@ -1383,7 +1385,7 @@ CSharp_Dali_Gradient_GetColorStopsOffsetIndexOf(char *pGradient, unsigned int in
     try {
       Dali::CanvasRenderer::Gradient::ColorStops colorStops =
           gradient.GetColorStops();
-      if (index < 0 || index > colorStops.Size()) {
+      if (index >= colorStops.Size()) {
         throw std::invalid_argument("invalid index");
       }
       result = colorStops[index].offset;
@@ -1394,8 +1396,8 @@ CSharp_Dali_Gradient_GetColorStopsOffsetIndexOf(char *pGradient, unsigned int in
   return result;
 }
 
-SWIGEXPORT void *SWIGSTDCALL
-CSharp_Dali_Gradient_GetColorStopsColorIndexOf(char *pGradient, unsigned int index) {
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Gradient_GetColorStopsColorIndexOf(
+    char *pGradient, unsigned int index) {
   Dali::CanvasRenderer::Gradient gradient;
   Dali::Vector4 result;
 
@@ -1411,7 +1413,7 @@ CSharp_Dali_Gradient_GetColorStopsColorIndexOf(char *pGradient, unsigned int ind
     try {
       Dali::CanvasRenderer::Gradient::ColorStops colorStops =
           gradient.GetColorStops();
-      if (index < 0 || index > colorStops.Size()) {
+      if (index >= colorStops.Size()) {
         throw std::invalid_argument("invalid index");
       }
       result = colorStops[index].color;
