@@ -2775,22 +2775,59 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_TouchSignal(void * jarg1) {
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent(void* jarg1, void* jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent(void* child, void* parent)
 {
-  Dali::Window* window = (Dali::Window*)jarg1;
-  if (!window) {
+  Dali::Window* childWindow = (Dali::Window*)child;
+  if (!childWindow) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return ;
   }
 
-  Dali::Window* parent = (Dali::Window*)jarg2;
-  if (!parent) {
+  Dali::Window* parentWindow = (Dali::Window*)parent;
+  if (!parentWindow) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return ;
   }
   {
     try {
-      Dali::DevelWindow::SetParent(*window, *parent);
+      Dali::DevelWindow::SetParent(*childWindow, *parentWindow);
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
+      };
+    }
+  }
+
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent_With_Stack(void* child, void* parent, bool belowParent)
+{
+  Dali::Window* childWindow = (Dali::Window*)child;
+  if (!childWindow) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+
+  Dali::Window* parentWindow = (Dali::Window*)parent;
+  if (!parentWindow) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+  {
+    try {
+      Dali::DevelWindow::SetParent(*childWindow, *parentWindow, belowParent);
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;

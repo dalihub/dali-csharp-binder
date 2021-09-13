@@ -2539,7 +2539,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponse(void *
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_WriteResponseChunk(void * jarg1, const char * jarg2, uint32_t jarg3) {
   Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
   bool ret = false;
-  std::string arg2_str(jarg2);
+  std::string arg2_str;
+  if (jarg2)
+  {
+    arg2_str = std::string(jarg2);
+  }
   {
     try {
       ret = (arg1)->WriteResponseChunk(arg2_str, jarg3);
