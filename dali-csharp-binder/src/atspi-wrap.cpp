@@ -164,6 +164,11 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_BridgeDisableAutoInit()
   Dali::Accessibility::Bridge::DisableAutoInit();
 }
 
+SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_IsEnabled()
+{
+  return Dali::AtspiAccessibility::IsEnabled();
+}
+
 #ifdef __cplusplus
 }
 #endif

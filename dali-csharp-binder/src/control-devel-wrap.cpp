@@ -569,16 +569,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Accessible_SetHighlightAct
     });
 }
 
-// atspi-wrap.cpp build only tizen profile, but this API could called for common profile.
-// TODO : It may need to moved some other file. Need to checkup
-SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_IsEnabled()
-{
-  // TODO : This file doesn't have Atspi namespace. In this file, It just call IsUp function.
-  //return Dali::AtspiAccessibility::IsEnabled();
-  return Dali::Accessibility::IsUp();
-}
-
-
 #ifdef __cplusplus
 } // extern "C"
 #endif

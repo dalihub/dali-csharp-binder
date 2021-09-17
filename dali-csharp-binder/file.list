@@ -44,6 +44,7 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/control-devel-wrap.cpp \
   ${dali_csharp_binder_dir}/src/signal-wrap.cpp \
   ${dali_csharp_binder_dir}/src/accessible-impl-nui.cpp \
+  ${dali_csharp_binder_dir}/src/atspi-wrap.cpp \
   ${dali_csharp_binder_dir}/src/rotation-wrap.cpp \
   ${dali_csharp_binder_dir}/src/input-options-wrap.cpp \
   ${dali_csharp_binder_dir}/src/native-image-queue-wrap.cpp
@@ -57,7 +58,6 @@ dali_csharp_binder_tizen_src_files = \
   ${dali_csharp_binder_dir}/src/widget-view-manager-wrap.cpp \
   ${dali_csharp_binder_dir}/src/font-client-wrap.cpp \
   ${dali_csharp_binder_dir}/src/transition-effects-wrap.cpp \
-  ${dali_csharp_binder_dir}/src/atspi-wrap.cpp \
   ${dali_csharp_binder_dir}/src/component-application-wrap.cpp \
   ${dali_csharp_binder_dir}/src/tizen-dependency-wrap.cpp
 
