@@ -47,6 +47,7 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/atspi-wrap.cpp \
   ${dali_csharp_binder_dir}/src/rotation-wrap.cpp \
   ${dali_csharp_binder_dir}/src/input-options-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/model3d-view-wrap.cpp \
   ${dali_csharp_binder_dir}/src/native-image-queue-wrap.cpp
 
 # added for key grab binding only for tizen
