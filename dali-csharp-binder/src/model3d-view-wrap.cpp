@@ -94,7 +94,7 @@ extern "C"
     }
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Model3dView_New__SWIG_0()
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Model3dView_New_SWIG_0()
   {
     Dali::Toolkit::Model3dView result;
 
@@ -109,7 +109,7 @@ extern "C"
     return new Dali::Toolkit::Model3dView((const Dali::Toolkit::Model3dView &)result);
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Model3dView_New__SWIG_1(char *csModelUrl, char *csMaterialUrl, char *csTextureDirectoryUrl)
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Model3dView_New_SWIG_1(char *csModelUrl, char *csMaterialUrl, char *csTextureDirectoryUrl)
   {
     Dali::Toolkit::Model3dView result;
 
@@ -145,7 +145,7 @@ extern "C"
     return new Dali::Toolkit::Model3dView((const Dali::Toolkit::Model3dView &)result);
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_Model3dView__SWIG_0()
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_Model3dView_SWIG_0()
   {
     Dali::Toolkit::Model3dView *result = 0;
 
@@ -160,19 +160,7 @@ extern "C"
     return (void *)result;
   }
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Model3dView(void *csModel3dView)
-  {
-    Dali::Toolkit::Model3dView *model3dView = (Dali::Toolkit::Model3dView *)csModel3dView;
-    {
-      try
-      {
-        delete model3dView;
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_Model3dView__SWIG_1(void *csModel3dView)
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_Model3dView_SWIG_1(void *csModel3dView)
   {
     Dali::Toolkit::Model3dView *model3dView = (Dali::Toolkit::Model3dView *)csModel3dView;
     Dali::Toolkit::Model3dView *result = 0;
@@ -191,6 +179,18 @@ extern "C"
     }
 
     return (void *)result;
+  }
+
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Model3dView(void *csModel3dView)
+  {
+    Dali::Toolkit::Model3dView *model3dView = (Dali::Toolkit::Model3dView *)csModel3dView;
+    {
+      try
+      {
+        delete model3dView;
+      }
+      CALL_CATCH_EXCEPTION();
+    }
   }
 
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Model3dView_Assign(void *csDestination, void *csSource)
