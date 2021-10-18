@@ -23,8 +23,6 @@
 #include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
-#include <dali-toolkit/devel-api/visuals/animated-image-visual-actions-devel.h>
-#include <dali-toolkit/devel-api/visuals/image-visual-actions-devel.h>
 #include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
 #include <dali/devel-api/actors/actor-devel.h>
@@ -561,22 +559,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ELLIPSIS_POSITION_get() {
   result = (int)Dali::Toolkit::DevelTextField::Property::ELLIPSIS_POSITION;
   jresult = (int)result;
   return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_RELOAD_get() {
-  return (int)Dali::Toolkit::DevelImageVisual::Action::RELOAD;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_PLAY_get() {
-  return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::PLAY;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_PAUSE_get() {
-  return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::PAUSE;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_ImageView_IMAGE_VISUAL_ACTION_STOP_get() {
-  return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::STOP;
 }
 
 SWIGEXPORT unsigned int SWIGSTDCALL
