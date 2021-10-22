@@ -18,6 +18,7 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/flex-layout-wrap.cpp \
   ${dali_csharp_binder_dir}/src/gestures-wrap.cpp \
   ${dali_csharp_binder_dir}/src/view-wrapper-impl-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/visual-actions-wrap.cpp \
   ${dali_csharp_binder_dir}/src/event-thread-callback-wrap.cpp \
   ${dali_csharp_binder_dir}/src/application-wrap.cpp \
   ${dali_csharp_binder_dir}/src/text-editor-wrap.cpp \
@@ -40,6 +41,7 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/capabilities-wrap.cpp \
   ${dali_csharp_binder_dir}/src/capture-wrap.cpp \
   ${dali_csharp_binder_dir}/src/gl-window-wrap.cpp \
+  ${dali_csharp_binder_dir}/src/gl-view-wrap.cpp \
   ${dali_csharp_binder_dir}/src/web-view-wrap.cpp \
   ${dali_csharp_binder_dir}/src/control-devel-wrap.cpp \
   ${dali_csharp_binder_dir}/src/signal-wrap.cpp \
