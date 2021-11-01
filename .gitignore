@@ -13,6 +13,7 @@ missing
 *.o
 *.lo
 *.la
+*.swp
 *~
 Makefile
 autom4te.cache/

@@ -41,7 +41,7 @@ extern "C"
     return jresult;
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Transition_New(void *nuiSource, void *nuiDestination, void *nuiTimePeriod)
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Transition_New(void *nuiSource, void *nuiDestination, bool useDestinationTarget, void *nuiTimePeriod)
   {
     void *jresult;
     Dali::Toolkit::Control *source = (Dali::Toolkit::Control *)nuiSource;
@@ -53,7 +53,7 @@ extern "C"
     {
       try
       {
-        result = Dali::Toolkit::Transition::New(*source, *destination, *timePeriod);
+        result = Dali::Toolkit::Transition::New(*source, *destination, useDestinationTarget, *timePeriod);
       }
       CALL_CATCH_EXCEPTION(0);
     }
