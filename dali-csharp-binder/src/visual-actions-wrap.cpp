@@ -38,6 +38,21 @@ extern "C"
     return (int)Dali::Toolkit::DevelImageVisual::Action::RELOAD;
   }
 
+  SWIGEXPORT int SWIGSTDCALL CSharp_ImageVisual_Actions_PLAY_get()
+  {
+    return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::PLAY;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_ImageVisual_Actions_PAUSE_get()
+  {
+    return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::PAUSE;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_ImageVisual_Actions_STOP_get()
+  {
+    return (int)Dali::Toolkit::DevelAnimatedImageVisual::Action::STOP;
+  }
+
   // Animated Image Visual action
   SWIGEXPORT int SWIGSTDCALL CSharp_AnimatedImageVisual_Actions_PLAY_get()
   {
