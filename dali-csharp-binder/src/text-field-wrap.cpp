@@ -639,23 +639,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField_Property() {
   {
     try {
       result = (Dali::Toolkit::TextField::Property *)new Dali::Toolkit::TextField::Property();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -670,23 +654,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextField_Property(void * jarg1) 
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -699,23 +667,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField_InputStyle() {
   {
     try {
       result = (Dali::Toolkit::TextField::InputStyle *)new Dali::Toolkit::TextField::InputStyle();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -730,23 +682,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextField_InputStyle(void * jarg1
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -759,23 +695,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_New() {
   {
     try {
       result = Dali::Toolkit::TextField::New();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Toolkit::TextField((const Dali::Toolkit::TextField &)result);
@@ -790,23 +710,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField__SWIG_0() {
   {
     try {
       result = (Dali::Toolkit::TextField *)new Dali::Toolkit::TextField();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -827,23 +731,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField__SWIG_1(void * jarg1) {
   {
     try {
       result = (Dali::Toolkit::TextField *)new Dali::Toolkit::TextField((Dali::Toolkit::TextField const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -866,23 +754,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_Assign(void * jarg1, void * 
   {
     try {
       result = (Dali::Toolkit::TextField *) &(arg1)->operator =((Dali::Toolkit::TextField const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -897,23 +769,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextField(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -934,23 +790,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_DownCast(void * jarg1) {
   {
     try {
       result = Dali::Toolkit::TextField::DownCast(arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Toolkit::TextField((const Dali::Toolkit::TextField &)result);
@@ -967,23 +807,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_TextChangedSignal(void * jar
   {
     try {
       result = (Dali::Toolkit::TextField::TextChangedSignalType *) &(arg1)->TextChangedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -1015,23 +839,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_MaxLengthReachedSignal(void 
   {
     try {
       result = (Dali::Toolkit::TextField::MaxLengthReachedSignalType *) &(arg1)->MaxLengthReachedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -1048,23 +856,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_InputStyleChangedSignal(void
   {
     try {
       result = (Dali::Toolkit::TextField::InputStyleChangedSignalType *) &(arg1)->InputStyleChangedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -1081,23 +873,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_AnchorClickedSignal(void * j
   {
     try {
       result = (Dali::Toolkit::DevelTextField::AnchorClickedSignalType *)&Dali::Toolkit::DevelTextField::AnchorClickedSignal(*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -1113,23 +889,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_InputFilteredSignal(void * p
   {
     try {
       result = (Dali::Toolkit::DevelTextField::InputFilteredSignalType *)&Dali::Toolkit::DevelTextField::InputFilteredSignal(*textField);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -1143,27 +903,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextField_SelectWholeText(void * jarg1) 
   {
     try {
       Dali::Toolkit::DevelTextField::SelectWholeText( *arg1 );
-    }
-    catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
-      };
-    }
-    catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition);
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1174,27 +914,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextField_SelectText(void * pTextField, 
   {
     try {
       Dali::Toolkit::DevelTextField::SelectText( *textField, start, end );
-    }
-    catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
-      };
-    }
-    catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition);
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1205,27 +925,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextField_SelectNone(void * jarg1) {
   {
     try {
       Dali::Toolkit::DevelTextField::SelectNone( *arg1 );
-    }
-    catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
-      };
-    }
-    catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition);
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1285,23 +985,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TextFieldSignal_Empty(void * jar
   {
     try {
       result = (bool)Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextField_SP__Sg__Empty((Dali::Signal< void (Dali::Toolkit::TextField) > const *)arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
@@ -1318,23 +1002,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_TextFieldSignal_GetConnectionCo
   {
     try {
       result = Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextField_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Toolkit::TextField) > const *)arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (unsigned long)result;
@@ -1351,23 +1019,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextFieldSignal_Connect(void * jarg1, vo
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextField_SP__Sg__Connect(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -1382,23 +1034,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextFieldSignal_Disconnect(void * jarg1,
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextField_SP__Sg__Disconnect(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -1419,23 +1055,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextFieldSignal_Emit(void * jarg1, void 
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextField_SP__Sg__Emit(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -1448,23 +1068,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextFieldSignal() {
   {
     try {
       result = (Dali::Signal< void (Dali::Toolkit::TextField) > *)new Dali::Signal< void (Dali::Toolkit::TextField) >();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -1479,23 +1083,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextFieldSignal(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -1523,19 +1111,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_GetInputMethodContext(void *
   {
     try {
       result = Dali::Toolkit::DevelTextField::GetInputMethodContext(*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::InputMethodContext((const Dali::InputMethodContext &)result);
   return jresult;

@@ -30,7 +30,7 @@ struct AccessibilityDelegate
     char *(*getName)(); // 1
     char *(*getDescription)(); // 2
     bool (*doAction)(const char *); // 3
-    Dali::Accessibility::States *(*calculateStates)(); // 4
+    Dali::Accessibility::States *(*calculateStates)(uint64_t states); // 4
     int (*getActionCount)(); // 5
     char *(*getActionName)(int); // 6
     bool (*shouldReportZeroChildren)(); // 7
@@ -190,10 +190,14 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     Dali::Accessibility::States CalculateStates() override
     {
         Dali::Accessibility::States ret{};
+        auto states = AccessibleImpl::CalculateStates();
 
+        uint64_t baseStates = states.GetRawData()[0];
+        uint64_t high = states.GetRawData()[1];
+        baseStates |= (high << 32);
         if (table->calculateStates)
         {
-            ret = stealObject(table->calculateStates());
+            ret = stealObject(table->calculateStates(baseStates));
         }
 
         return ret;
