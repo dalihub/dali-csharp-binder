@@ -169,6 +169,46 @@ SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_IsEnabled()
   return Dali::AtspiAccessibility::IsEnabled();
 }
 
+SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterEnabledDisabledSignalHandler(void (*newEnabledSignalHandler)(), void (*newDisabledSignalHandler)())
+{
+  using Dali::Accessibility::Bridge;
+
+  static void (*enabledSignalHandler)();
+  static void (*disabledSignalHandler)();
+
+  // Replace EnabledSignal
+  if (newEnabledSignalHandler != enabledSignalHandler)
+  {
+    if (enabledSignalHandler)
+    {
+      Bridge::EnabledSignal().Disconnect(enabledSignalHandler);
+    }
+
+    enabledSignalHandler = newEnabledSignalHandler;
+
+    if (enabledSignalHandler)
+    {
+      Bridge::EnabledSignal().Connect(enabledSignalHandler);
+    }
+  }
+
+  // Replace DisabledSignal
+  if (newDisabledSignalHandler != disabledSignalHandler)
+  {
+    if (disabledSignalHandler)
+    {
+      Bridge::DisabledSignal().Disconnect(disabledSignalHandler);
+    }
+
+    disabledSignalHandler = newDisabledSignalHandler;
+
+    if (disabledSignalHandler)
+    {
+      Bridge::DisabledSignal().Connect(disabledSignalHandler);
+    }
+  }
+}
+
 #ifdef __cplusplus
 }
 #endif

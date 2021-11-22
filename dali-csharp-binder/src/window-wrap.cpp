@@ -3200,6 +3200,194 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_Event_Signal_de
 
 }
 
+
+////////////////////////////////////////////////////////////////////
+/// Auxiliary Message event
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Auxiliary_Message_Signal(void * jarg1) {
+  void * jresult ;
+  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::DevelWindow::AuxiliaryMessageSignalType *result = 0 ;
+
+  window = (Dali::Window *)jarg1;
+  {
+    try {
+      result = (Dali::DevelWindow::AuxiliaryMessageSignalType *) &(Dali::DevelWindow::AuxiliaryMessageSignal(*window));
+    } catch (std::out_of_range& e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    } catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    } catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_Auxiliary_Message_Signal_Empty(void * jarg1) {
+  bool result;
+  Dali::DevelWindow::AuxiliaryMessageSignalType* arg1 = (Dali::DevelWindow::AuxiliaryMessageSignalType*) jarg1;
+
+  if (arg1 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+    return false;
+  }
+
+  {
+    try {
+      result = arg1->Empty();
+    }
+    catch (std::out_of_range & e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
+      };
+    }
+    catch (std::exception & e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return false;
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return false;
+      };
+    }
+  }
+  return result;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_Auxiliary_Message_Signal_GetConnectionCount(void * jarg1) {
+  unsigned int result;
+  Dali::DevelWindow::AuxiliaryMessageSignalType* arg1 = (Dali::DevelWindow::AuxiliaryMessageSignalType *) jarg1;
+
+  if (arg1 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+    return 0;
+  }
+
+  {
+    try {
+      result = arg1->GetConnectionCount();
+    }
+    catch (std::out_of_range & e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+      };
+    }
+    catch (std::exception & e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+      };
+    }
+  }
+  return result;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Auxiliary_Message_Signal_Connect(void * jarg1, void * jarg2) {
+  Dali::DevelWindow::AuxiliaryMessageSignalType* arg1 = (Dali::DevelWindow::AuxiliaryMessageSignalType *)jarg1;
+  void (*arg2)(const std::string&, const std::string&, const Dali::Property::Array&) = ( void (*)(const std::string&, const std::string&, const Dali::Property::Array&) )jarg2;
+
+  if (arg1 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+    return ;
+  }
+
+  {
+    try {
+      arg1->Connect(arg2);
+    }
+    catch (std::out_of_range & e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return;
+      };
+    }
+    catch (std::exception & e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return;
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return;
+      };
+    }
+  }
+  return ;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Auxiliary_Message_Signal_Disconnect(void * jarg1, void * jarg2) {
+  Dali::DevelWindow::AuxiliaryMessageSignalType* arg1 = (Dali::DevelWindow::AuxiliaryMessageSignalType *)jarg1;
+  void (*arg2)(const std::string&, const std::string&, const Dali::Property::Array&) = ( void (*)(const std::string&, const std::string&, const Dali::Property::Array&) )jarg2;
+
+  if (arg1 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+    return;
+  }
+
+  {
+    try {
+      arg1->Disconnect(arg2);
+    }
+    catch (std::out_of_range & e) {
+      {
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return;
+      };
+    }
+    catch (std::exception & e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
+      };
+    }
+    catch (Dali::DaliException e) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, e.condition); return;
+      };
+    }
+    catch (...) {
+      {
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return;
+      };
+    }
+  }
+  return;
+}
+
+/////////////////
 // Keyboard Repeat Settings Changed
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_ChangedSignal(void * jarg1) {
   void * jresult ;
