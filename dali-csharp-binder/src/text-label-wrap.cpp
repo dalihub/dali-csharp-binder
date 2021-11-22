@@ -58,6 +58,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_AnchorClickedSignal(void * j
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_TextFitChangedSignal(void * jarg1) {
+  void * jresult ;
+  Dali::Toolkit::TextLabel *arg1 = (Dali::Toolkit::TextLabel *) 0 ;
+  Dali::Toolkit::DevelTextLabel::TextFitChangedSignalType *result = 0 ;
+
+  arg1 = (Dali::Toolkit::TextLabel *)jarg1;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextLabel::TextFitChangedSignalType *) &Dali::Toolkit::DevelTextLabel::TextFitChangedSignal(*arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TextLabelSignal_Empty(void * jarg1) {
   unsigned int jresult ;
