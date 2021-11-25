@@ -53,23 +53,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Keyboard_SetRepeatInfo(float rate, float
   {
     try {
       ret = Dali::Keyboard::SetRepeatInfo(rate, delay);
-    } catch (std::out_of_range& e) {
-    {
-      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
-    };
-    } catch (std::exception& e) {
-    {
-      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
-    };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
 
@@ -87,23 +71,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Keyboard_GetRepeatInfo(float& rate, floa
   {
     try {
       ret = Dali::Keyboard::GetRepeatInfo(rate, delay);
-    } catch (std::out_of_range& e) {
-    {
-      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
-    };
-    } catch (std::exception& e) {
-    {
-      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
-    };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
 

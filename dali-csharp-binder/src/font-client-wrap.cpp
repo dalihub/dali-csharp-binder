@@ -91,19 +91,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontDescription() {
   {
     try {
       result = (Dali::TextAbstraction::FontDescription *)new Dali::TextAbstraction::FontDescription();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -117,19 +105,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FontDescription(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -261,19 +237,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontMetrics__SWIG_0() {
   {
     try {
       result = (Dali::TextAbstraction::FontMetrics *)new Dali::TextAbstraction::FontMetrics();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -297,19 +261,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontMetrics__SWIG_1(float jarg1, f
   {
     try {
       result = (Dali::TextAbstraction::FontMetrics *)new Dali::TextAbstraction::FontMetrics(arg1,arg2,arg3,arg4,arg5);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -433,19 +385,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FontMetrics(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -457,19 +397,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LINE_MUST_BREAK_get() {
   {
     try {
       result = (int)Dali::TextAbstraction::LINE_MUST_BREAK;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -483,19 +411,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LINE_ALLOW_BREAK_get() {
   {
     try {
       result = (int)Dali::TextAbstraction::LINE_ALLOW_BREAK;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -509,19 +425,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LINE_NO_BREAK_get() {
   {
     try {
       result = (int)Dali::TextAbstraction::LINE_NO_BREAK;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -535,19 +439,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WORD_BREAK_get() {
   {
     try {
       result = (int)Dali::TextAbstraction::WORD_BREAK;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -561,19 +453,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WORD_NO_BREAK_get() {
   {
     try {
       result = (int)Dali::TextAbstraction::WORD_NO_BREAK;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -675,19 +555,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VectorBlob() {
   {
     try {
       result = (Dali::TextAbstraction::VectorBlob *)new Dali::TextAbstraction::VectorBlob();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -701,19 +569,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VectorBlob(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -725,19 +581,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_GlyphInfo__SWIG_0() {
   {
     try {
       result = (Dali::TextAbstraction::GlyphInfo *)new Dali::TextAbstraction::GlyphInfo();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -755,19 +599,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_GlyphInfo__SWIG_1(unsigned int jar
   {
     try {
       result = (Dali::TextAbstraction::GlyphInfo *)new Dali::TextAbstraction::GlyphInfo(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -957,19 +789,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_GlyphInfo(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -991,19 +811,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontClient_GlyphBufferData() {
   {
     try {
       result = (Dali::TextAbstraction::FontClient::GlyphBufferData *)new Dali::TextAbstraction::FontClient::GlyphBufferData();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -1017,19 +825,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FontClient_GlyphBufferData(void *
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1131,19 +927,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FontClient_Get() {
   {
     try {
       result = Dali::TextAbstraction::FontClient::Get();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::TextAbstraction::FontClient((const Dali::TextAbstraction::FontClient &)result);
   return jresult;
@@ -1157,19 +941,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontClient__SWIG_0() {
   {
     try {
       result = (Dali::TextAbstraction::FontClient *)new Dali::TextAbstraction::FontClient();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -1183,19 +955,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FontClient(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1213,19 +973,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontClient__SWIG_1(void * jarg1) {
   {
     try {
       result = (Dali::TextAbstraction::FontClient *)new Dali::TextAbstraction::FontClient((Dali::TextAbstraction::FontClient const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -1247,19 +995,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FontClient_Assign(void * jarg1, void *
   {
     try {
       result = (Dali::TextAbstraction::FontClient *) &(arg1)->operator =((Dali::TextAbstraction::FontClient const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -1277,19 +1013,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_SetDpi(void * jarg1, unsigned
   {
     try {
       (arg1)->SetDpi(arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1313,19 +1037,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetDpi(void * jarg1, void * j
   {
     try {
       (arg1)->GetDpi(*arg2,*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1339,19 +1051,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FontClient_GetDefaultFontSize(void * jarg
   {
     try {
       result = (int)(arg1)->GetDefaultFontSize();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1365,19 +1065,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_ResetSystemDefaults(void * ja
   {
     try {
       (arg1)->ResetSystemDefaults();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1395,19 +1083,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetDefaultFonts(void * jarg1,
   {
     try {
       (arg1)->GetDefaultFonts(*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1425,19 +1101,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetDefaultPlatformFontDescrip
   {
     try {
       (arg1)->GetDefaultPlatformFontDescription(*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1455,19 +1119,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetSystemFonts(void * jarg1, 
   {
     try {
       (arg1)->GetSystemFonts(*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1487,19 +1139,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetDescription(void * jarg1, 
   {
     try {
       (arg1)->GetDescription(arg2,*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1515,19 +1155,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetPointSize(void * j
   {
     try {
       result = (arg1)->GetPointSize(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1547,19 +1175,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_IsCharacterSupportedB
   {
     try {
       result = (bool)(arg1)->IsCharacterSupportedByFont(arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1581,19 +1197,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_FindDefaultFont__SWIG
   {
     try {
       result = (arg1)->FindDefaultFont(arg2,arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1613,19 +1217,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_FindDefaultFont__SWIG
   {
     try {
       result = (arg1)->FindDefaultFont(arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1643,19 +1235,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_FindDefaultFont__SWIG
   {
     try {
       result = (arg1)->FindDefaultFont(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1683,19 +1263,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_FindFallbackFont__SWI
   {
     try {
       result = (arg1)->FindFallbackFont(arg2,(Dali::TextAbstraction::FontDescription const &)*arg3,arg4,arg5);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1721,19 +1289,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_FindFallbackFont__SWI
   {
     try {
       result = (arg1)->FindFallbackFont(arg2,(Dali::TextAbstraction::FontDescription const &)*arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1757,19 +1313,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_FindFallbackFont__SWI
   {
     try {
       result = (arg1)->FindFallbackFont(arg2,(Dali::TextAbstraction::FontDescription const &)*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1796,19 +1340,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetFontId__SWIG_0(voi
   {
     try {
       result = (arg1)->GetFontId((Dali::TextAbstraction::FontPath const &)*arg2,arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1833,19 +1365,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetFontId__SWIG_1(voi
   {
     try {
       result = (arg1)->GetFontId((Dali::TextAbstraction::FontPath const &)*arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1868,19 +1388,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetFontId__SWIG_2(voi
   {
     try {
       result = (arg1)->GetFontId((Dali::TextAbstraction::FontPath const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1906,19 +1414,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetFontId__SWIG_3(voi
   {
     try {
       result = (arg1)->GetFontId((Dali::TextAbstraction::FontDescription const &)*arg2,arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1942,19 +1438,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetFontId__SWIG_4(voi
   {
     try {
       result = (arg1)->GetFontId((Dali::TextAbstraction::FontDescription const &)*arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1976,19 +1460,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetFontId__SWIG_5(voi
   {
     try {
       result = (arg1)->GetFontId((Dali::TextAbstraction::FontDescription const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -2011,19 +1483,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_IsScalable__SWIG_0(vo
   {
     try {
       result = (bool)(arg1)->IsScalable((Dali::TextAbstraction::FontPath const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -2045,19 +1505,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_IsScalable__SWIG_1(vo
   {
     try {
       result = (bool)(arg1)->IsScalable((Dali::TextAbstraction::FontDescription const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -2084,19 +1532,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetFixedSizes__SWIG_0(void * 
   {
     try {
       (arg1)->GetFixedSizes((Dali::TextAbstraction::FontPath const &)*arg2,*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -2120,19 +1556,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetFixedSizes__SWIG_1(void * 
   {
     try {
       (arg1)->GetFixedSizes((Dali::TextAbstraction::FontDescription const &)*arg2,*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -2152,19 +1576,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetFontMetrics(void * jarg1, 
   {
     try {
       (arg1)->GetFontMetrics(arg2,*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -2182,19 +1594,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetGlyphIndex(void * 
   {
     try {
       result = (arg1)->GetGlyphIndex(arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -2218,19 +1618,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetGlyphMetrics__SWIG
   {
     try {
       result = (bool)(arg1)->GetGlyphMetrics(arg2,arg3,arg4,arg5);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -2252,19 +1640,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GetGlyphMetrics__SWIG
   {
     try {
       result = (bool)(arg1)->GetGlyphMetrics(arg2,arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -2294,19 +1670,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_CreateBitmap__SWIG_0(void * j
   {
     try {
       (arg1)->CreateBitmap(arg2,arg3,arg4,arg5,*arg6,arg7);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -2326,19 +1690,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FontClient_CreateBitmap__SWIG_1(void *
   {
     try {
       result = (arg1)->CreateBitmap(arg2,arg3,arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::PixelData((const Dali::PixelData &)result);
   return jresult;
@@ -2380,19 +1732,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_CreateVectorBlob(void * jarg1
   {
     try {
       (arg1)->CreateVectorBlob(arg2,arg3,*arg4,*arg5,*arg6,*arg7);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -2408,19 +1748,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FontClient_GetEllipsisGlyph(void * jar
   {
     try {
       result = (Dali::TextAbstraction::GlyphInfo *) &(arg1)->GetEllipsisGlyph(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -2440,19 +1768,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_IsColorGlyph(void * j
   {
     try {
       result = (bool)(arg1)->IsColorGlyph(arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -2475,19 +1791,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_AddCustomFontDirector
   {
     try {
       result = (bool)(arg1)->AddCustomFontDirectory((Dali::TextAbstraction::FontPath const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
