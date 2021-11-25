@@ -13,19 +13,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Extents__SWIG_0() {
   {
     try {
       result = (Dali::Extents *)new Dali::Extents();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -45,19 +33,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Extents__SWIG_1(void * jarg1) {
   {
     try {
       result = (Dali::Extents *)new Dali::Extents((Dali::Extents const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -79,19 +55,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Extents__SWIG_2(unsigned short jar
   {
     try {
       result = (Dali::Extents *)new Dali::Extents(arg1, arg2, arg3, arg4);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -113,19 +77,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Extents_Assign__SWIG_0(void * jarg1, v
   {
     try {
       result = (Dali::Extents *) &(arg1)->operator =((Dali::Extents const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -143,19 +95,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Extents_Assign__SWIG_1(void * jarg1, v
   {
     try {
       result = (Dali::Extents *) &(arg1)->operator =((uint16_t const *)arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -177,19 +117,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Extents_EqualTo(void * jarg1, vo
   {
     try {
       result = (bool)((Dali::Extents const *)arg1)->operator ==((Dali::Extents const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -211,19 +139,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Extents_NotEqualTo(void * jarg1,
   {
     try {
       result = (bool)((Dali::Extents const *)arg1)->operator !=((Dali::Extents const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -325,19 +241,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Extents(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 

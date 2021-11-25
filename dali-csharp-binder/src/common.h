@@ -171,26 +171,42 @@ extern void SWIG_CSharpException(int code, const char *msg);
 
 
 // Define Catch exception
-#define CALL_CATCH_EXCEPTION(ret)                                          \
-  catch (std::out_of_range & e)                                            \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));   \
-    return ret;                                                            \
-  }                                                                        \
-  catch (std::exception & e)                                               \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what())); \
-    return ret;                                                            \
-  }                                                                        \
-  catch (Dali::DaliException e)                                            \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_UnknownError, e.condition);                  \
-    return ret;                                                            \
-  }                                                                        \
-  catch (...)                                                              \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_UnknownError, "unknown error");              \
-    return ret;                                                            \
+#define CALL_CATCH_EXCEPTION(ret)                                                               \
+  catch (std::out_of_range & e)                                                                 \
+  {                                                                                             \
+    std::string message(const_cast<char *>(e.what()));                                          \
+    std::stringstream fileAndLine;                                                              \
+    fileAndLine << " file: " << __FILE__ << " line: " << __LINE__ << " func: " << __FUNCTION__; \
+    message += fileAndLine.str();                                                               \
+    SWIG_CSharpException(SWIG_IndexError, message.c_str());                                     \
+    return ret;                                                                                 \
+  }                                                                                             \
+  catch (std::exception & e)                                                                    \
+  {                                                                                             \
+    std::string message(const_cast<char *>(e.what()));                                          \
+    std::stringstream fileAndLine;                                                              \
+    fileAndLine << " file: " << __FILE__ << " line: " << __LINE__ << " func: " << __FUNCTION__; \
+    message += fileAndLine.str();                                                               \
+    SWIG_CSharpException(SWIG_RuntimeError, message.c_str());                                   \
+    return ret;                                                                                 \
+  }                                                                                             \
+  catch (Dali::DaliException e)                                                                 \
+  {                                                                                             \
+    std::string message(e.condition);                                                           \
+    std::stringstream fileAndLine;                                                              \
+    fileAndLine << " file: " << __FILE__ << " line: " << __LINE__ << " func: " << __FUNCTION__; \
+    message += fileAndLine.str();                                                               \
+    SWIG_CSharpException(SWIG_SystemError, message.c_str());                                    \
+    return ret;                                                                                 \
+  }                                                                                             \
+  catch (...)                                                                                   \
+  {                                                                                             \
+    std::string message("unknown error");                                                       \
+    std::stringstream fileAndLine;                                                              \
+    fileAndLine << " file: " << __FILE__ << " line: " << __LINE__ << " func: " << __FUNCTION__; \
+    message += fileAndLine.str();                                                               \
+    SWIG_CSharpException(SWIG_UnknownError, message.c_str());                                   \
+    return ret;                                                                                 \
   }
 
 #endif // CSHARP_COMMON_H
