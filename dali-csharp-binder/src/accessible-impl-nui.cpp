@@ -645,7 +645,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityCon
 {
     GUARD_ON_NULL_RET(arg1_self);
     GUARD_ON_NULL_RET(arg4_vtable);
-    try_catch([&]()
+    try_catch(([&]()
     {
         Dali::Actor self = *(Dali::Actor *)arg1_self;
         auto role = static_cast<Dali::Accessibility::Role>(arg2_role);
@@ -683,7 +683,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityCon
 
             return std::unique_ptr<Dali::Accessibility::Accessible>(accessible);
         });
-    });
+    }));
 }
 
 SWIGEXPORT char *SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibleImpl_NUI_DuplicateString(const char *arg)
