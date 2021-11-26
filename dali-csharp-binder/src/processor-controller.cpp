@@ -41,7 +41,7 @@ ProcessorController::~ProcessorController()
     {
       Dali::Adaptor::Get().UnregisterProcessor(*this);
     }
-    CALL_CATCH_EXCEPTION();
+    CALL_CATCH_EXCEPTION_ALWAYS(); ///< We should not throw anything in deconstructor
   }
 }
 
