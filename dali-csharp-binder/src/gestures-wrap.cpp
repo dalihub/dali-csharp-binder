@@ -59,23 +59,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGestureDetector__SWIG_0()
   {
     try {
       result = (Dali::RotationGestureDetector *)new Dali::RotationGestureDetector();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -89,23 +73,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGestureDetector_New() {
   {
     try {
       result = Dali::RotationGestureDetector::New();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::RotationGestureDetector((const Dali::RotationGestureDetector &)result);
@@ -128,23 +96,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGestureDetector_DownCast(void 
   {
     try {
       result = Dali::RotationGestureDetector::DownCast(arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::RotationGestureDetector((const Dali::RotationGestureDetector &)result);
@@ -159,23 +111,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RotationGestureDetector(void * ja
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -194,23 +130,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGestureDetector__SWIG_1(vo
   {
     try {
       result = (Dali::RotationGestureDetector *)new Dali::RotationGestureDetector((Dali::RotationGestureDetector const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -233,23 +153,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGestureDetector_Assign(void * 
   {
     try {
       result = (Dali::RotationGestureDetector *) &(arg1)->operator =((Dali::RotationGestureDetector const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -266,23 +170,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGestureDetector_DetectedSignal
   {
     try {
       result = (Dali::RotationGestureDetector::DetectedSignalType *) &(arg1)->DetectedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -297,23 +185,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGesture__SWIG_0() {
   {
     try {
       result = (Dali::RotationGesture *)new Dali::RotationGesture();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -330,23 +202,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_New(int jarg1) {
   {
     try {
       result = DevelRotationGesture::New(arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::RotationGesture((const Dali::RotationGesture &)result);
@@ -367,23 +223,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGesture__SWIG_1(void * jar
   {
     try {
       result = (Dali::RotationGesture *)new Dali::RotationGesture((Dali::RotationGesture const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -406,23 +246,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_Assign(void * jarg1, v
   {
     try {
       result = (Dali::RotationGesture *) &(arg1)->operator =((Dali::RotationGesture const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -437,23 +261,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RotationGesture(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -478,23 +286,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_screenCenterPoint_get(
   {
     try {
       result = ((Dali::RotationGesture const *)arg1)->GetScreenCenterPoint();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::Vector2((const Dali::Vector2 &)result);
   return jresult;
@@ -509,23 +301,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_localCenterPoint_get(v
   {
     try {
       result = ((Dali::RotationGesture const *)arg1)->GetLocalCenterPoint();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::Vector2((const Dali::Vector2 &)result);
   return jresult;
@@ -540,23 +316,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Em
   {
     try {
       result = (bool)Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Empty((Dali::Signal< void (Dali::Actor,Dali::RotationGesture const &) > const *)arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
@@ -573,23 +333,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_G
   {
     try {
       result = Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Actor,Dali::RotationGesture const &) > const *)arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (unsigned long)result;
@@ -606,23 +350,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Connect(vo
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Connect(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -637,23 +365,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Disconnect
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -680,23 +392,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Emit(void 
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Emit(arg1,arg2,(Dali::RotationGesture const &)*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }
@@ -709,23 +405,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGestureDetectedSignal() {
   {
     try {
       result = (Dali::Signal< void (Dali::Actor,Dali::RotationGesture const &) > *)new Dali::Signal< void (Dali::Actor,Dali::RotationGesture const &) >();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -740,23 +420,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RotationGestureDetectedSignal(voi
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException& e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 
 }

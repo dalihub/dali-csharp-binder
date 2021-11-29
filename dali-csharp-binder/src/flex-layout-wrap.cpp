@@ -304,19 +304,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexDirection(void * jarg1)
   {
     try {
       result = (Dali::Toolkit::Flex::FlexDirection)arg1->Dali::Toolkit::Flex::Node::GetFlexDirection();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -333,19 +321,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexJustification(void * j
   {
     try {
       arg1->Dali::Toolkit::Flex::Node::SetFlexJustification(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -360,19 +336,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexJustification(void * ja
   {
     try {
       result = (Dali::Toolkit::Flex::Justification)arg1->Dali::Toolkit::Flex::Node::GetFlexJustification();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -387,19 +351,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexWrap(void * jarg1, int
   {
     try {
       arg1->Dali::Toolkit::Flex::Node::SetFlexWrap(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -414,19 +366,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexWrap(void * jarg1)
   {
     try {
       result = (Dali::Toolkit::Flex::WrapType)arg1->Dali::Toolkit::Flex::Node::GetFlexWrap();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -443,19 +383,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexAlignment(void * jarg1
   {
     try {
       arg1->Dali::Toolkit::Flex::Node::SetFlexAlignment(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -470,19 +398,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexAlignment(void * jarg1)
   {
     try {
       result = (Dali::Toolkit::Flex::Alignment)arg1->Dali::Toolkit::Flex::Node::GetFlexAlignment();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -499,19 +415,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexItemsAlignment(void * 
   {
     try {
       arg1->Dali::Toolkit::Flex::Node::SetFlexItemsAlignment(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -526,19 +430,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexItemsAlignment(void * j
   {
     try {
       result = (Dali::Toolkit::Flex::Alignment)arg1->Dali::Toolkit::Flex::Node::GetFlexItemsAlignment();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -555,19 +447,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexAlignmentSelf(void * j
   {
     try {
       arg1->Dali::Toolkit::Flex::Node::SetFlexAlignmentSelf(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -582,19 +462,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexAlignmentSelf(void * ja
   {
     try {
       result = (Dali::Toolkit::Flex::Alignment)arg1->Dali::Toolkit::Flex::Node::GetFlexAlignmentSelf();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -611,19 +479,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexPositionType(void * ja
   {
     try {
       arg1->Dali::Toolkit::Flex::Node::SetFlexPositionType(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -638,19 +494,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexPositionType(void * jar
   {
     try {
       result = (Dali::Toolkit::Flex::PositionType)arg1->Dali::Toolkit::Flex::Node::GetFlexPositionType();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (int)result;
   return jresult;
@@ -667,19 +511,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexAspectRatio(void * jar
   {
     try {
       arg1->Dali::Toolkit::Flex::Node::SetFlexAspectRatio(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -694,19 +526,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexAspectRatio(void * ja
   {
     try {
       result = (float)arg1->Dali::Toolkit::Flex::Node::GetFlexAspectRatio();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (float)result;
   return jresult;
@@ -723,19 +543,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexBasis(void * jarg1, fl
   {
     try {
       arg1->Dali::Toolkit::Flex::Node::SetFlexBasis(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -750,19 +558,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexBasis(void * jarg1)
   {
     try {
       result = (float)arg1->Dali::Toolkit::Flex::Node::GetFlexBasis();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (float)result;
   return jresult;
@@ -779,19 +575,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexShrink(void * jarg1, f
   {
     try {
       arg1->Dali::Toolkit::Flex::Node::SetFlexShrink(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -806,19 +590,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexShrink(void * jarg1)
   {
     try {
       result = (float)arg1->Dali::Toolkit::Flex::Node::GetFlexShrink();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (float)result;
   return jresult;
@@ -835,19 +607,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_SetFlexGrow(void * jarg1, flo
   {
     try {
       arg1->Dali::Toolkit::Flex::Node::SetFlexGrow(arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -862,19 +622,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexGrow(void * jarg1)
   {
     try {
       result = (float)arg1->Dali::Toolkit::Flex::Node::GetFlexGrow();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (float)result;
   return jresult;

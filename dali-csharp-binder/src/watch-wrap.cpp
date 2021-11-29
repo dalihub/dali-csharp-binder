@@ -72,23 +72,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WatchTime() {
   {
     try {
       result = (Dali::WatchTime *)new Dali::WatchTime();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -102,23 +86,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WatchTime(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -132,23 +100,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WatchTime_GetHour(void * jarg1) {
   {
     try {
       result = (int)((Dali::WatchTime const *)arg1)->GetHour();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -164,23 +116,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WatchTime_GetHour24(void * jarg1) {
   {
     try {
       result = (int)((Dali::WatchTime const *)arg1)->GetHour24();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -196,23 +132,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WatchTime_GetMinute(void * jarg1) {
   {
     try {
       result = (int)((Dali::WatchTime const *)arg1)->GetMinute();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -228,23 +148,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WatchTime_GetSecond(void * jarg1) {
   {
     try {
       result = (int)((Dali::WatchTime const *)arg1)->GetSecond();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -260,23 +164,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WatchTime_GetMillisecond(void * jarg1) {
   {
     try {
       result = (int)((Dali::WatchTime const *)arg1)->GetMillisecond();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -292,23 +180,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WatchTime_GetYear(void * jarg1) {
   {
     try {
       result = (int)((Dali::WatchTime const *)arg1)->GetYear();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -324,23 +196,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WatchTime_GetMonth(void * jarg1) {
   {
     try {
       result = (int)((Dali::WatchTime const *)arg1)->GetMonth();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -356,23 +212,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WatchTime_GetDay(void * jarg1) {
   {
     try {
       result = (int)((Dali::WatchTime const *)arg1)->GetDay();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -388,23 +228,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WatchTime_GetDayOfWeek(void * jarg1) {
   {
     try {
       result = (int)((Dali::WatchTime const *)arg1)->GetDayOfWeek();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -420,23 +244,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchTime_GetUtcTime(void * jarg1) {
   {
     try {
       result = ((Dali::WatchTime const *)arg1)->GetUtcTime();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new tm((const tm &)result);
   return jresult;
@@ -452,23 +260,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchTime_GetUtcTimeStamp(void * jarg1
   {
     try {
       result = ((Dali::WatchTime const *)arg1)->GetUtcTimeStamp();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new time_t((const time_t &)result);
   return jresult;
@@ -484,23 +276,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_WatchTime_GetTimeZone(void * jarg1) {
   {
     try {
       result = (char *)((Dali::WatchTime const *)arg1)->GetTimeZone();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = SWIG_csharp_string_callback((const char *)result);
   return jresult;
@@ -516,23 +292,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WatchTime_GetDaylightSavingTimeS
   {
     try {
       result = (bool)((Dali::WatchTime const *)arg1)->GetDaylightSavingTimeStatus();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -546,23 +306,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_0() {
   {
     try {
       result = Dali::WatchApplication::New();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::WatchApplication((const Dali::WatchApplication &)result);
   return jresult;
@@ -620,23 +364,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_1(int jarg1
   {
     try {
       result = Dali::WatchApplication::New(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::WatchApplication((const Dali::WatchApplication &)result);
   return jresult;
@@ -701,23 +429,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_2(int jarg1
   {
     try {
       result = Dali::WatchApplication::New(arg1,arg2,(std::string const &)*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = new Dali::WatchApplication((const Dali::WatchApplication &)result);
 
@@ -734,23 +446,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WatchApplication__SWIG_0() {
   {
     try {
       result = (Dali::WatchApplication *)new Dali::WatchApplication();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -770,23 +466,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WatchApplication__SWIG_1(void * ja
   {
     try {
       result = (Dali::WatchApplication *)new Dali::WatchApplication((Dali::WatchApplication const &)*arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -808,23 +488,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_Assign(void * jarg1, 
   {
     try {
       result = (Dali::WatchApplication *) &(arg1)->operator =((Dali::WatchApplication const &)*arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -847,23 +511,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WatchApplication(void * jarg1) {
         }
         delete [] argWatchV;
       }
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -877,23 +525,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_TimeTickSignal(void *
   {
     try {
       result = (Dali::WatchApplication::WatchTimeSignal *) &(arg1)->TimeTickSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -909,23 +541,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_AmbientTickSignal(voi
   {
     try {
       result = (Dali::WatchApplication::WatchTimeSignal *) &(arg1)->AmbientTickSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -941,23 +557,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_AmbientChangedSignal(
   {
     try {
       result = (Dali::WatchApplication::WatchBoolSignal *) &(arg1)->AmbientChangedSignal();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -973,23 +573,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WatchTimeSignal_Empty(void * jar
   {
     try {
       result = (bool)Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_Dali_WatchTime_SS_const_SA__SP__Sg__Empty((Dali::Signal< void (Dali::Application &,Dali::WatchTime const &) > const *)arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1005,23 +589,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WatchTimeSignal_GetConnectionCo
   {
     try {
       result = Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_Dali_WatchTime_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Application &,Dali::WatchTime const &) > const *)arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (unsigned long)result;
   return jresult;
@@ -1037,23 +605,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WatchTimeSignal_Connect(void * jarg1, vo
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_Dali_WatchTime_SS_const_SA__SP__Sg__Connect(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1067,23 +619,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WatchTimeSignal_Disconnect(void * jarg1,
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_Dali_WatchTime_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1107,23 +643,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WatchTimeSignal_Emit(void * jarg1, void 
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_Dali_WatchTime_SS_const_SA__SP__Sg__Emit(arg1,*arg2,(Dali::WatchTime const &)*arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1135,23 +655,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WatchTimeSignal() {
   {
     try {
       result = (Dali::Signal< void (Dali::Application &,Dali::WatchTime const &) > *)new Dali::Signal< void (Dali::Application &,Dali::WatchTime const &) >();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -1165,23 +669,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WatchTimeSignal(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1195,23 +683,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WatchBoolSignal_Empty(void * jar
   {
     try {
       result = (bool)Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_bool_SP__Sg__Empty((Dali::Signal< void (Dali::Application &,bool) > const *)arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = result;
   return jresult;
@@ -1227,23 +699,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WatchBoolSignal_GetConnectionCo
   {
     try {
       result = Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_bool_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Application &,bool) > const *)arg1);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (unsigned long)result;
   return jresult;
@@ -1259,23 +715,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WatchBoolSignal_Connect(void * jarg1, vo
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_bool_SP__Sg__Connect(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1289,23 +729,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WatchBoolSignal_Disconnect(void * jarg1,
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_bool_SP__Sg__Disconnect(arg1,arg2);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1325,23 +749,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WatchBoolSignal_Emit(void * jarg1, void 
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_bool_SP__Sg__Emit(arg1,*arg2,arg3);
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1353,23 +761,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WatchBoolSignal() {
   {
     try {
       result = (Dali::Signal< void (Dali::Application &,bool) > *)new Dali::Signal< void (Dali::Application &,bool) >();
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
   return jresult;
@@ -1383,23 +775,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WatchBoolSignal(void * jarg1) {
   {
     try {
       delete arg1;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return ;
-      };
-    } catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return ;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return ;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 

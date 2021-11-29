@@ -14,28 +14,6 @@
 
 #define SWIG_DIRECTORS
 
-#ifdef __cplusplus
-/* SwigValueWrapper is described in swig.swg */
-template<typename T> class SwigValueWrapper {
-  struct SwigMovePointer {
-    T *ptr;
-    SwigMovePointer(T *p) : ptr(p) { }
-    ~SwigMovePointer() { delete ptr; }
-    SwigMovePointer& operator=(SwigMovePointer& rhs) { T* oldptr = ptr; ptr = 0; delete oldptr; ptr = rhs.ptr; rhs.ptr = 0; return *this; }
-  } pointer;
-  SwigValueWrapper& operator=(const SwigValueWrapper<T>& rhs);
-  SwigValueWrapper(const SwigValueWrapper<T>& rhs);
-public:
-  SwigValueWrapper() : pointer(0) { }
-  SwigValueWrapper& operator=(const T& t) { SwigMovePointer tmp(new T(t)); pointer = tmp; return *this; }
-  operator T&() const { return *pointer.ptr; }
-  T *operator&() { return pointer.ptr; }
-};
-
-template <typename T> T SwigValueInit() {
-  return T();
-}
-#endif
 
 /* -----------------------------------------------------------------------------
  *  This section contains generic SWIG labels for method/variable
@@ -167,40 +145,7 @@ template <typename T> T SwigValueInit() {
 #include <string_view>
 #include <stdio.h>
 
-/* Support for throwing C# exceptions from C/C++. There are two types:
- * Exceptions that take a message and ArgumentExceptions that take a message and a parameter name. */
-typedef enum {
-  SWIG_CSharpApplicationException,
-  SWIG_CSharpArithmeticException,
-  SWIG_CSharpDivideByZeroException,
-  SWIG_CSharpIndexOutOfRangeException,
-  SWIG_CSharpInvalidCastException,
-  SWIG_CSharpInvalidOperationException,
-  SWIG_CSharpIOException,
-  SWIG_CSharpNullReferenceException,
-  SWIG_CSharpOutOfMemoryException,
-  SWIG_CSharpOverflowException,
-  SWIG_CSharpSystemException
-} SWIG_CSharpExceptionCodes;
-
-typedef enum {
-  SWIG_CSharpArgumentException,
-  SWIG_CSharpArgumentNullException,
-  SWIG_CSharpArgumentOutOfRangeException
-} SWIG_CSharpExceptionArgumentCodes;
-
-typedef void (SWIGSTDCALL* SWIG_CSharpExceptionCallback_t)(const char *);
-typedef void (SWIGSTDCALL* SWIG_CSharpExceptionArgumentCallback_t)(const char *, const char *);
-
-typedef struct {
-  SWIG_CSharpExceptionCodes code;
-  SWIG_CSharpExceptionCallback_t callback;
-} SWIG_CSharpException_t;
-
-typedef struct {
-  SWIG_CSharpExceptionArgumentCodes code;
-  SWIG_CSharpExceptionArgumentCallback_t callback;
-} SWIG_CSharpExceptionArgument_t;
+#include "common.h"
 
 SWIG_CSharpException_t SWIG_csharp_exceptions[] = {
   { SWIG_CSharpApplicationException, NULL },
@@ -646,27 +591,6 @@ unsigned int int_to_uint(int x) {
    return (unsigned int) x;
 }
 
-#define CALL_CATCH_EXCEPTION(ret)                                          \
-  catch (std::out_of_range & e)                                            \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));   \
-    return ret;                                                            \
-  }                                                                        \
-  catch (std::exception & e)                                               \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what())); \
-    return ret;                                                            \
-  }                                                                        \
-  catch (DaliException e)                                                  \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_UnknownError, e.condition);                  \
-    return ret;                                                            \
-  }                                                                        \
-  catch (...)                                                              \
-  {                                                                        \
-    SWIG_CSharpException(SWIG_UnknownError, "unknown error");              \
-    return ret;                                                            \
-  }
 
 using namespace Dali;
 using namespace Dali::Toolkit;

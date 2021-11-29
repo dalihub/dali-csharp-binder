@@ -34,26 +34,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_NativeImageQueuePtr(unsigned int wi
     try {
       queue->Ptr = Dali::NativeImageSourceQueue::New(width, height, (Dali::NativeImageSourceQueue::ColorFormat)colorFormat);
     }
-    catch (std::out_of_range & e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (std::exception & e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)queue;
   return jresult;
@@ -74,26 +55,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_NativeImageQueuePtr(void* nuiqueu
     try {
       delete queue;
     }
-    catch (std::out_of_range & e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return;
-      };
-    }
-    catch (std::exception & e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return;
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return;
-      };
-    }
+    CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -105,26 +67,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageQueue_CanDequeueBuffer(void* 
     try {
       jresult = queue->CanDequeueBuffer();
     }
-    catch (std::out_of_range & e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (std::exception & e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    CALL_CATCH_EXCEPTION(0);
   }
   return jresult;
 }
@@ -140,26 +83,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_DequeueBuffer(void* nu
     try {
       jresult = (void *)queue->DequeueBuffer( *width, *height, *stride );
     }
-    catch (std::out_of_range & e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (std::exception & e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    CALL_CATCH_EXCEPTION(0);
   }
   return jresult;
 }
@@ -173,26 +97,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageQueue_EnqueueBuffer(void* nui
     try {
       jresult = queue->EnqueueBuffer(buffer);
     }
-    catch (std::out_of_range & e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (std::exception & e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    CALL_CATCH_EXCEPTION(0);
   }
   return jresult;
 }
