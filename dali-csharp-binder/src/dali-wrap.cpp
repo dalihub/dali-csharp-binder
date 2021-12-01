@@ -59186,6 +59186,353 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumHeight(void * 
   return result;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VectorVector2_BaseType_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Vector< Dali::Vector2 >::BaseType;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VectorVector2__SWIG_0() {
+  void * jresult ;
+  Dali::Vector< Dali::Vector2 > *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Vector< Dali::Vector2 > *)new Dali::Vector< Dali::Vector2 >();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VectorVector2(void * jarg1) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VectorVector2__SWIG_1(void * jarg1) {
+  void * jresult ;
+  Dali::Vector< Dali::Vector2 > *arg1 = 0 ;
+  Dali::Vector< Dali::Vector2 > *result = 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector< Dali::Vector2 > const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::Vector< Dali::Vector2 > *)new Dali::Vector< Dali::Vector2 >((Dali::Vector< Dali::Vector2 > const &)*arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VectorVector2_Assign(void * jarg1, void * jarg2) {
+  void * jresult ;
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 > *arg2 = 0 ;
+  Dali::Vector< Dali::Vector2 > *result = 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector< Dali::Vector2 > const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::Vector< Dali::Vector2 > *) &(arg1)->operator =((Dali::Vector< Dali::Vector2 > const &)*arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VectorVector2_Begin(void * jarg1) {
+  void * jresult ;
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator result;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  {
+    try {
+      result = (Dali::Vector< Dali::Vector2 >::Iterator)((Dali::Vector< Dali::Vector2 > const *)arg1)->Begin();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VectorVector2_End(void * jarg1) {
+  void * jresult ;
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator result;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  {
+    try {
+      result = (Dali::Vector< Dali::Vector2 >::Iterator)((Dali::Vector< Dali::Vector2 > const *)arg1)->End();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VectorVector2_ValueOfIndex__SWIG_0(void * jarg1, unsigned long jarg2) {
+  void * jresult ;
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::SizeType arg2 ;
+  Dali::Vector< Dali::Vector2 >::ItemType *result = 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 >::SizeType)jarg2;
+  {
+    try {
+      result = (Dali::Vector< Dali::Vector2 >::ItemType *) &(arg1)->operator [](arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorVector2_PushBack(void * jarg1, void * jarg2) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::ItemType *arg2 = 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 >::ItemType *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector< Dali::Vector2 >::ItemType const & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      (arg1)->PushBack((Dali::Vector< Dali::Vector2 >::ItemType const &)*arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorVector2_Insert__SWIG_0(void * jarg1, void * jarg2, void * jarg3) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator arg2 = (Dali::Vector< Dali::Vector2 >::Iterator) 0 ;
+  Dali::Vector< Dali::Vector2 >::ItemType *arg3 = 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 >::Iterator)jarg2;
+  arg3 = (Dali::Vector< Dali::Vector2 >::ItemType *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector< Dali::Vector2 >::ItemType const & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      (arg1)->Insert(arg2,(Dali::Vector< Dali::Vector2 >::ItemType const &)*arg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorVector2_Insert__SWIG_1(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator arg2 = (Dali::Vector< Dali::Vector2 >::Iterator) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator arg3 = (Dali::Vector< Dali::Vector2 >::Iterator) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator arg4 = (Dali::Vector< Dali::Vector2 >::Iterator) 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 >::Iterator)jarg2;
+  arg3 = (Dali::Vector< Dali::Vector2 >::Iterator)jarg3;
+  arg4 = (Dali::Vector< Dali::Vector2 >::Iterator)jarg4;
+  {
+    try {
+      (arg1)->Insert(arg2,arg3,arg4);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorVector2_Reserve(void * jarg1, unsigned long jarg2) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::SizeType arg2 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 >::SizeType)jarg2;
+  {
+    try {
+      (arg1)->Reserve(arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorVector2_Resize__SWIG_0(void * jarg1, unsigned long jarg2) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::SizeType arg2 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 >::SizeType)jarg2;
+  {
+    try {
+      (arg1)->Resize(arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorVector2_Resize__SWIG_1(void * jarg1, unsigned long jarg2, void * jarg3) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::SizeType arg2 ;
+  Dali::Vector< Dali::Vector2 >::ItemType *arg3 = 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 >::SizeType)jarg2;
+  arg3 = (Dali::Vector< Dali::Vector2 >::ItemType *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector< Dali::Uint16Pair >::ItemType const & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      (arg1)->Resize(arg2,(Dali::Vector< Dali::Vector2 >::ItemType const &)*arg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VectorVector2_Erase__SWIG_0(void * jarg1, void * jarg2) {
+  void * jresult ;
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator arg2 = (Dali::Vector< Dali::Vector2 >::Iterator) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator result;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 >::Iterator)jarg2;
+  {
+    try {
+      result = (Dali::Vector< Dali::Vector2 >::Iterator)(arg1)->Erase(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VectorVector2_Erase__SWIG_1(void * jarg1, void * jarg2, void * jarg3) {
+  void * jresult ;
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator arg2 = (Dali::Vector< Dali::Vector2 >::Iterator) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator arg3 = (Dali::Vector< Dali::Vector2 >::Iterator) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator result;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 >::Iterator)jarg2;
+  arg3 = (Dali::Vector< Dali::Vector2 >::Iterator)jarg3;
+  {
+    try {
+      result = (Dali::Vector< Dali::Vector2 >::Iterator)(arg1)->Erase(arg2,arg3);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorVector2_Remove(void * jarg1, void * jarg2) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 >::Iterator arg2 = (Dali::Vector< Dali::Vector2 >::Iterator) 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 >::Iterator)jarg2;
+  {
+    try {
+      (arg1)->Remove(arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorVector2_Swap(void * jarg1, void * jarg2) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  Dali::Vector< Dali::Vector2 > *arg2 = 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  arg2 = (Dali::Vector< Dali::Vector2 > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector< Dali::Vector2 > & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      (arg1)->Swap(*arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorVector2_Clear(void * jarg1) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  {
+    try {
+      (arg1)->Clear();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorVector2_Release(void * jarg1) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  {
+    try {
+      (arg1)->Release();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VectorVector2_Size(void * jarg1) {
+  Dali::Vector< Dali::Vector2 > *arg1 = (Dali::Vector< Dali::Vector2 > *) 0 ;
+  int size;
+
+  arg1 = (Dali::Vector< Dali::Vector2 > *)jarg1;
+  {
+    try {
+      size = (arg1)->Size();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return size;
+}
+
 #ifdef __cplusplus
 }
 #endif

@@ -965,6 +965,40 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_SelectNone(void * jarg1) {
   }
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_GetTextSize(void * pTextEditor, unsigned int start, unsigned int end)
+{
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0;
+  void* sizeList;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      sizeList = new Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true >
+      ((const Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true > &)(Dali::Toolkit::DevelTextEditor::GetTextSize( *textEditor, start, end )));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return sizeList;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_GetTextPosition(void * pTextEditor, unsigned int start, unsigned int end)
+{
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0;
+  void* sizeList;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      sizeList = new Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true >
+      ((const Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true > &)(Dali::Toolkit::DevelTextEditor::GetTextPosition( *textEditor, start, end )));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return sizeList;
+}
+
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TextEditor_CopyText(void *pTextEditor)
 {
   char *csCopiedText;
