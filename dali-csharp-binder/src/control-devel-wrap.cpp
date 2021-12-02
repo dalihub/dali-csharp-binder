@@ -513,7 +513,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_delete_Range(void *arg1_ra
     }));
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Add_Popup(void *arg1_actor) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_RegisterDefaultLabel(void *arg1_actor) {
     GUARD_ON_NULL_RET(arg1_actor);
     try_catch(([&]() {
         Dali::Actor *actor = (Dali::Actor*) arg1_actor;
@@ -525,11 +525,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Add_Popup(void *arg
             return;
         }
 
-        bridge->AddPopup(accessible);
+        bridge->RegisterDefaultLabel(accessible);
     }));
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Remove_Popup(void *arg1_actor) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_UnregisterDefaultLabel(void *arg1_actor) {
     GUARD_ON_NULL_RET(arg1_actor);
     try_catch(([&]() {
         Dali::Actor *actor = (Dali::Actor*) arg1_actor;
@@ -541,7 +541,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Remove_Popup(void *
             return;
         }
 
-        bridge->RemovePopup(accessible);
+        bridge->UnregisterDefaultLabel(accessible);
     }));
 }
 
