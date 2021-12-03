@@ -98,22 +98,22 @@ inline T stealObject(T *obj)
     return ret;
 }
 
-struct AccessibleImpl_NUI : public AccessibleImpl
+struct NUIViewAccessible : public ControlAccessible
 {
     // Points to memory managed from the C# side
     const AccessibilityDelegate *table;
 
-    AccessibleImpl_NUI() = delete;
-    AccessibleImpl_NUI(const AccessibleImpl_NUI &) = delete;
-    AccessibleImpl_NUI(AccessibleImpl_NUI &&) = delete;
+    NUIViewAccessible() = delete;
+    NUIViewAccessible(const NUIViewAccessible &) = delete;
+    NUIViewAccessible(NUIViewAccessible &&) = delete;
 
-    AccessibleImpl_NUI& operator=(const AccessibleImpl_NUI &) = delete;
-    AccessibleImpl_NUI& operator=(AccessibleImpl_NUI &&) = delete;
+    NUIViewAccessible& operator=(const NUIViewAccessible &) = delete;
+    NUIViewAccessible& operator=(NUIViewAccessible &&) = delete;
 
-    AccessibleImpl_NUI(Dali::Actor actor, Dali::Accessibility::Role role, const AccessibilityDelegate *vtable)
-    : AccessibleImpl(actor, role, false), table{vtable} {}
+    NUIViewAccessible(Dali::Actor actor, Dali::Accessibility::Role role, const AccessibilityDelegate *vtable)
+    : ControlAccessible(actor, role, false), table{vtable} {}
 
-    std::string GetNameRaw() override
+    std::string GetNameRaw() const override
     {
         std::string ret{};
 
@@ -125,7 +125,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
         return ret;
     }
 
-    std::string GetDescriptionRaw() override
+    std::string GetDescriptionRaw() const override
     {
         std::string ret{};
 
@@ -139,7 +139,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
 
     bool GrabHighlight() override
     {
-        bool ret = AccessibleImpl::GrabHighlight();
+        bool ret = ControlAccessible::GrabHighlight();
 
         if (ret)
         {
@@ -153,7 +153,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
         return ret;
     }
 
-    std::string GetActionName(std::size_t index) override
+    std::string GetActionName(std::size_t index) const override
     {
         std::string ret{};
 
@@ -165,7 +165,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
         return ret;
     }
 
-    std::size_t GetActionCount() override
+    std::size_t GetActionCount() const override
     {
         std::size_t ret{0};
 
@@ -197,7 +197,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     Dali::Accessibility::States CalculateStates() override
     {
         Dali::Accessibility::States ret{};
-        auto states = AccessibleImpl::CalculateStates();
+        auto states = ControlAccessible::CalculateStates();
 
         uint64_t baseStates = states.GetRawData()[0];
         uint64_t high = states.GetRawData()[1];
@@ -220,7 +220,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
         return Dali::Property::INVALID_INDEX;
     }
 
-    virtual bool ShouldReportZeroChildren()
+    virtual bool ShouldReportZeroChildren() const
     {
         bool ret{false};
 
@@ -232,7 +232,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
         return ret;
     }
 
-    std::size_t GetChildCount() override
+    std::size_t GetChildCount() const override
     {
         bool highlighted = (Self() == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor());
 
@@ -248,7 +248,7 @@ struct AccessibleImpl_NUI : public AccessibleImpl
         }
         else
         {
-            return AccessibleImpl::GetChildCount();
+            return ControlAccessible::GetChildCount();
         }
     }
 
@@ -275,11 +275,11 @@ struct AccessibleImpl_NUI : public AccessibleImpl
         }
         else
         {
-            return AccessibleImpl::GetChildAtIndex(index);
+            return ControlAccessible::GetChildAtIndex(index);
         }
     }
 
-    bool IsScrollable() override
+    bool IsScrollable() const override
     {
         bool ret{false};
 
@@ -304,12 +304,12 @@ struct AccessibleImpl_NUI : public AccessibleImpl
     }
 };
 
-struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
-                                  public virtual Dali::Accessibility::Value
+struct NUIViewAccessible_Value : public NUIViewAccessible,
+                                 public virtual Dali::Accessibility::Value
 {
-    using AccessibleImpl_NUI::AccessibleImpl_NUI;
+    using NUIViewAccessible::NUIViewAccessible;
 
-    double GetMinimum() override
+    double GetMinimum() const override
     {
         double ret{0.0};
 
@@ -321,7 +321,7 @@ struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
         return ret;
     }
 
-    double GetCurrent() override
+    double GetCurrent() const override
     {
         double ret{0.0};
 
@@ -333,7 +333,7 @@ struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
         return ret;
     }
 
-    double GetMaximum() override
+    double GetMaximum() const override
     {
         double ret{0.0};
 
@@ -357,7 +357,7 @@ struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
         return ret;
     }
 
-    double GetMinimumIncrement() override
+    double GetMinimumIncrement() const override
     {
         double ret{0.0};
 
@@ -370,13 +370,12 @@ struct AccessibleImpl_NUI_Value : public AccessibleImpl_NUI,
     }
 };
 
-struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
-                                         public virtual Dali::Accessibility::Text,
-                                         public virtual Dali::Accessibility::EditableText
+struct NUIViewAccessible_EditableText : public NUIViewAccessible,
+                                        public virtual Dali::Accessibility::EditableText
 {
-    using AccessibleImpl_NUI::AccessibleImpl_NUI;
+    using NUIViewAccessible::NUIViewAccessible;
 
-    std::string GetText(std::size_t startOffset, std::size_t endOffset) override
+    std::string GetText(std::size_t startOffset, std::size_t endOffset) const override
     {
         std::string ret{};
 
@@ -388,7 +387,7 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
         return ret;
     }
 
-    std::size_t GetCharacterCount() override
+    std::size_t GetCharacterCount() const override
     {
         std::size_t ret{0};
 
@@ -400,7 +399,7 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
         return ret;
     }
 
-    std::size_t GetCursorOffset() override
+    std::size_t GetCursorOffset() const override
     {
         std::size_t ret{0};
 
@@ -424,7 +423,7 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
         return ret;
     }
 
-    Dali::Accessibility::Range GetTextAtOffset(std::size_t offset, Dali::Accessibility::TextBoundary boundary) override
+    Dali::Accessibility::Range GetTextAtOffset(std::size_t offset, Dali::Accessibility::TextBoundary boundary) const override
     {
         Dali::Accessibility::Range ret{};
 
@@ -436,7 +435,7 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
         return ret;
     }
 
-    Dali::Accessibility::Range GetRangeOfSelection(std::size_t selectionIndex) override
+    Dali::Accessibility::Range GetRangeOfSelection(std::size_t selectionIndex) const override
     {
         Dali::Accessibility::Range ret{};
 
@@ -529,12 +528,12 @@ struct AccessibleImpl_NUI_EditableText : public AccessibleImpl_NUI,
     }
 };
 
-struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
-                                      public virtual Dali::Accessibility::Selection
+struct NUIViewAccessible_Selection : public NUIViewAccessible,
+                                    public virtual Dali::Accessibility::Selection
 {
-    using AccessibleImpl_NUI::AccessibleImpl_NUI;
+    using NUIViewAccessible::NUIViewAccessible;
 
-    int GetSelectedChildrenCount() override
+    int GetSelectedChildrenCount() const override
     {
         int ret{0};
 
@@ -586,7 +585,7 @@ struct AccessibleImpl_NUI_Selection : public AccessibleImpl_NUI,
         return ret;
     }
 
-    bool IsChildSelected(int childIndex) override
+    bool IsChildSelected(int childIndex) const override
     {
         bool ret{false};
 
@@ -675,16 +674,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityCon
                 DALI_LOG_ERROR("SetAccessibilityConstructor_NUI error: unknown interface %d", iface);
                 // fall-through
             case IFACE_NONE:
-                accessible = new AccessibleImpl_NUI(actor, role, vtable);
+                accessible = new NUIViewAccessible(actor, role, vtable);
                 break;
             case IFACE_VALUE:
-                accessible = new AccessibleImpl_NUI_Value(actor, role, vtable);
+                accessible = new NUIViewAccessible_Value(actor, role, vtable);
                 break;
             case IFACE_EDITABLE_TEXT:
-                accessible = new AccessibleImpl_NUI_EditableText(actor, role, vtable);
+                accessible = new NUIViewAccessible_EditableText(actor, role, vtable);
                 break;
             case IFACE_SELECTION:
-                accessible = new AccessibleImpl_NUI_Selection(actor, role, vtable);
+                accessible = new NUIViewAccessible_Selection(actor, role, vtable);
                 break;
             }
 
