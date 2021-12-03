@@ -26,19 +26,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeVersionCheck(int * ver1, int * ver
       *ver1 = Dali::CORE_MAJOR_VERSION;
       *ver2 = Dali::CORE_MINOR_VERSION;
       *ver3 = Dali::CORE_MICRO_VERSION;
-    } catch (std::out_of_range& e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return false;
-      };
-    } catch (std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return false;
-      };
-    } catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return false;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(false);
   }
   return true;
 }
@@ -141,21 +129,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_NUI_InternalAPIVersionCheck(int * version, in
       return false;
     }
   }
-  catch (std::out_of_range& e)
-  {
-    SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
-    return false;
-  }
-  catch (std::exception& e)
-  {
-    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
-    return false;
-   }
-  catch (...)
-  {
-    SWIG_CSharpException(SWIG_UnknownError, "unknown error");
-    return false;
-  }
+  CALL_CATCH_EXCEPTION(false);
   return false;
 }
 
