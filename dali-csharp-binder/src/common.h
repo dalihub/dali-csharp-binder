@@ -203,8 +203,8 @@ SWIG_EXCEPTION_MESSAGE(code, what, __FILE__, __LINE__, __FUNCTION__)
   }                                                                                     \
   catch (abi::__forced_unwind & e)                                                      \
   {                                                                                     \
-    /* Throwed by pthread API. just igore and rethrow */                                \
-    throw;                                                                              \
+    DALI_LOG_ERROR("abi::__forced_unwind occured\n");                                   \
+    return ret;                                                                         \
   }                                                                                     \
   catch (...)                                                                           \
   {                                                                                     \
@@ -254,8 +254,8 @@ SWIG_EXCEPTION_MESSAGE(code, what, __FILE__, __LINE__, __FUNCTION__)
   }                                                                                                                \
   catch (abi::__forced_unwind & e)                                                                                 \
   {                                                                                                                \
-    /* Throwed by pthread API. just igore and rethrow */                                                           \
-    throw;                                                                                                         \
+    DALI_LOG_ERROR("abi::__forced_unwind occured\n");                                                              \
+    return ret;                                                                                                    \
   }                                                                                                                \
   catch (...)                                                                                                      \
   {                                                                                                                \
@@ -285,8 +285,9 @@ SWIG_EXCEPTION_MESSAGE(code, what, __FILE__, __LINE__, __FUNCTION__)
   }                                                                                     \
   catch (abi::__forced_unwind & e)                                                      \
   {                                                                                     \
-    /* Throwed by pthread API. just igore and rethrow */                                \
-    throw;                                                                              \
+    DALI_LOG_ERROR("abi::__forced_unwind occured\n");                                   \
+    (*(func))(__VA_ARGS__);                                                             \
+    return ret;                                                                         \
   }                                                                                     \
   catch (...)                                                                           \
   {                                                                                     \
