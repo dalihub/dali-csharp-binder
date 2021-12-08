@@ -15694,7 +15694,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelData_New(unsigned char* nuiBuffer
   Dali::PixelData result;
 
   {
-    unsigned char *copiedBuffer;
+    unsigned char* copiedBuffer;
     try
     {
       copiedBuffer = new unsigned char[nuiBufferSize];
@@ -15705,31 +15705,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PixelData_New(unsigned char* nuiBuffer
       // Note : copiedBuffer created by 'new' method. So ReleaseFunction always be DELETE_ARRAY.
       memcpy(copiedBuffer, nuiBuffer, nuiBufferSize);
       result = Dali::PixelData::New(copiedBuffer, nuiBufferSize, nuiWidth, nuiHeight, (Dali::Pixel::Format)nuiPixelFormat, Dali::PixelData::ReleaseFunction::DELETE_ARRAY);
-    }
-    catch (std::out_of_range & e)
-    {
-      SWIG_CSharpException(SWIG_IndexError, const_cast<char *>(e.what()));
-      delete[] copiedBuffer;
-      return 0;
-    }
-    catch (std::exception & e)
-    {
-      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char *>(e.what()));
-      delete[] copiedBuffer;
-      return 0;
-    }
-    catch (DaliException e)
-    {
-      SWIG_CSharpException(SWIG_UnknownError, e.condition);
-      delete[] copiedBuffer;
-      return 0;
-    }
-    catch (...)
-    {
-      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
-      delete[] copiedBuffer;
-      return 0;
-    };
+    } CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](unsigned char* buffer){delete[] buffer;}, copiedBuffer);
   }
 
   jresult = new Dali::PixelData((const Dali::PixelData &)result);
