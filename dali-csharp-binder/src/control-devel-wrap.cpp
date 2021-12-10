@@ -18,7 +18,7 @@
 // EXTERNAL INCLUDES
 #include <vector>
 #include <dali/devel-api/adaptor-framework/accessibility.h>
-#include <dali/devel-api/adaptor-framework/accessibility-impl.h>
+#include <dali/devel-api/adaptor-framework/accessibility-bridge.h>
 
 // INTERNAL INCLUDES
 #include "control-devel-wrap.h"
