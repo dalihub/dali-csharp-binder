@@ -42,6 +42,40 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_FONT_SIZE_SCALE_get()
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextSize(void * pTextLabel, unsigned int start, unsigned int end)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+  void* sizeList;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try {
+      sizeList = new Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true >
+      ((const Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true > &)(Dali::Toolkit::DevelTextLabel::GetTextSize( *textLabel, start, end )));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return sizeList;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextPosition(void * pTextLabel, unsigned int start, unsigned int end)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+  void* sizeList;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try {
+      sizeList = new Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true >
+      ((const Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true > &)(Dali::Toolkit::DevelTextLabel::GetTextPosition( *textLabel, start, end )));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return sizeList;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_AnchorClickedSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::TextLabel *arg1 = (Dali::Toolkit::TextLabel *) 0 ;
