@@ -147,6 +147,8 @@
 
 #include "common.h"
 
+#include <dali-toolkit/dali-toolkit.h>
+
 SWIG_CSharpException_t SWIG_csharp_exceptions[] = {
   { SWIG_CSharpApplicationException, NULL },
   { SWIG_CSharpArithmeticException, NULL },

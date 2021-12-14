@@ -2,6 +2,7 @@
 
 // INCLUDES
 #include "common.h"
+#include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/controls/canvas-view/canvas-view.h>
 #include <dali/devel-api/adaptor-framework/canvas-renderer-drawable-group.h>
 #include <dali/devel-api/adaptor-framework/canvas-renderer-gradient.h>

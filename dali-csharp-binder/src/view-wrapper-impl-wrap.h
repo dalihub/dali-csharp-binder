@@ -20,6 +20,9 @@
 
 #include "common.h"
 
+#include <dali-toolkit/devel-api/controls/control-wrapper.h>
+#include <dali-toolkit/devel-api/controls/control-wrapper-impl.h>
+
 class SwigDirector_ViewWrapperImpl : public Dali::Toolkit::Internal::ControlWrapper
 {
 public:

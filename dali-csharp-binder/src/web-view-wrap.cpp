@@ -14,9 +14,10 @@
  *
  */
 
-// EXTERNAL INCLUDES
 #include "common.h"
 
+// EXTERNAL INCLUDES
+#include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-context.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-cookie-manager.h>

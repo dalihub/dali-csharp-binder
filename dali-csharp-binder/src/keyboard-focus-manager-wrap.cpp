@@ -16,6 +16,7 @@
  */
 
 #include "common.h"
+#include <dali-toolkit/dali-toolkit.h>
 
 SWIGINTERN bool Dali_Signal_Sl_Dali_Actor_Sp_Dali_Actor_Sc_Dali_Actor_Sc_Dali_Toolkit_Control_KeyboardFocus_Direction_SP__Sg__Empty(Dali::Signal< Dali::Actor (Dali::Actor,Dali::Actor,Dali::Toolkit::Control::KeyboardFocus::Direction) > const *self){
          return self->Empty();

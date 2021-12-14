@@ -16,6 +16,7 @@
 
 #include "common.h"
 #include <dali/devel-api/adaptor-framework/atspi-accessibility.h>
+#include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali/integration-api/debug.h>
 
 #ifdef __cplusplus
