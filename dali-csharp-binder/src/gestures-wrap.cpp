@@ -15,10 +15,13 @@
  *
  */
 
-#include "common.h"
+// EXTERNAL INCLUDES
 #include <dali/public-api/events/rotation-gesture.h>
 #include <dali/public-api/events/rotation-gesture-detector.h>
 #include <dali/devel-api/events/rotation-gesture-devel.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -15,8 +15,10 @@
  *
  */
 
-#include "common.h"
-
+// EXTERNAL INCLUDES
+#include <dali/devel-api/actors/actor-devel.h>
+#include <dali/devel-api/rendering/renderer-devel.h>
+#include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
@@ -25,8 +27,9 @@
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
 #include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
-#include <dali/devel-api/actors/actor-devel.h>
-#include <dali/devel-api/rendering/renderer-devel.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 using namespace Dali;
 using namespace Dali::Toolkit;

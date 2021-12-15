@@ -18,9 +18,9 @@
 // CLASS HEADER
 #include "view-wrapper-impl-wrap.h"
 
-// INTERNAL INCLUDES
+// EXTERNAL INCLUDES
+#include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
-
 
 #ifdef __cplusplus
 extern "C" {

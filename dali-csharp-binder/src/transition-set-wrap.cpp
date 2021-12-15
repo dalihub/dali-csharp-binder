@@ -15,10 +15,11 @@
  *
  */
 
-#include <string.h>
-#include "common.h"
+// EXTERNAL INCLUDES
 #include <dali-toolkit/public-api/transition/transition-set.h>
-#include <dali/integration-api/debug.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 SWIGINTERN bool Dali_TransitionSet_Signal_Empty(Dali::Toolkit::TransitionSet::TransitionSetSignalType const *self)
 {

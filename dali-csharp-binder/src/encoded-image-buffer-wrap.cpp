@@ -15,10 +15,13 @@
  *
  */
 
-#include "common.h"
+// EXTERNAL INCLUDES
+#include <dali/public-api/adaptor-framework/encoded-image-buffer.h>
 #include <dali-toolkit/public-api/image-loader/image.h>
 #include <dali-toolkit/public-api/image-loader/image-url.h>
-#include <dali/public-api/adaptor-framework/encoded-image-buffer.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 #ifdef __cplusplus
 extern "C"

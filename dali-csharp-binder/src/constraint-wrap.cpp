@@ -15,8 +15,11 @@
  *
  */
 
-#include "common.h"
+// EXTERNAL INCLUDES
 #include <dali/public-api/animation/constraint.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 #ifdef __cplusplus
 extern "C"
