@@ -14,11 +14,13 @@
  * limitations under the License.
  *
  */
-#include "control-devel-wrap.h"
 
+// EXTERNAL INCLUDES
 #include <dali/devel-api/adaptor-framework/accessibility.h>
 #include <dali/devel-api/adaptor-framework/accessibility-impl.h>
-#include <stdexcept>
+
+// INTERNAL INCLUDES
+#include "control-devel-wrap.h"
 
 using namespace Dali::Toolkit::DevelControl;
 

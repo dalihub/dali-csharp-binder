@@ -15,10 +15,12 @@
  *
  */
 
-#include "common.h"
+// EXTERNAL INCLUDES
 #include <dali/public-api/animation/animation.h>
 #include <dali/devel-api/animation/animation-devel.h>
 
+// INTERNAL INCLUDES
+#include "common.h"
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Animation_SA__SP__Sg__Empty(Dali::Signal< void (Dali::Animation &) > const *self){
   return self->Empty();

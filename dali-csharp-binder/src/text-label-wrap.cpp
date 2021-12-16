@@ -1,6 +1,26 @@
-#include "common.h"
+/*
+ * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+// EXTERNAL INCLUDES
 #include <dali-toolkit/public-api/controls/text-controls/text-label.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextLabel_SP__Sg__Empty(Dali::Signal< void (Dali::Toolkit::TextLabel) > const *self){
   return self->Empty();

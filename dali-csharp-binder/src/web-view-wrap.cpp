@@ -1,4 +1,5 @@
-/** Copyright (c) 2021 Samsung Electronics Co., Ltd.
+/*
+ * Copyright (c) 2021 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +15,8 @@
  *
  */
 
-#include "common.h"
-
 // EXTERNAL INCLUDES
-#include <dali-toolkit/dali-toolkit.h>
-#include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
-#include <dali-toolkit/devel-api/controls/web-view/web-context.h>
-#include <dali-toolkit/devel-api/controls/web-view/web-cookie-manager.h>
-#include <dali-toolkit/devel-api/controls/web-view/web-settings.h>
-#include <dali-toolkit/devel-api/controls/web-view/web-view.h>
+#include <dali/public-api/common/dali-common.h>
 #include <dali/devel-api/adaptor-framework/web-engine-certificate.h>
 #include <dali/devel-api/adaptor-framework/web-engine-context-menu.h>
 #include <dali/devel-api/adaptor-framework/web-engine-context-menu-item.h>
@@ -36,7 +30,15 @@
 #include <dali/devel-api/adaptor-framework/web-engine-request-interceptor.h>
 #include <dali/devel-api/adaptor-framework/web-engine-security-origin.h>
 #include <dali/devel-api/adaptor-framework/web-engine-back-forward-list-item.h>
-#include <dali/public-api/common/dali-common.h>
+#include <dali-toolkit/dali-toolkit.h>
+#include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
+#include <dali-toolkit/devel-api/controls/web-view/web-context.h>
+#include <dali-toolkit/devel-api/controls/web-view/web-cookie-manager.h>
+#include <dali-toolkit/devel-api/controls/web-view/web-settings.h>
+#include <dali-toolkit/devel-api/controls/web-view/web-view.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char *(SWIGSTDCALL *SWIG_CSharpStringHelperCallback)(const char*);

@@ -15,7 +15,10 @@
  *
  */
 
+// CLASS HEADER
 #include "processor-controller.h"
+
+// EXTERNAL INCLUDES
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 
 #ifdef __cplusplus

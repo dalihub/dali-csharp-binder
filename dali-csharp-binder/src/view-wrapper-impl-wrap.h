@@ -18,10 +18,12 @@
  *
  */
 
-#include "common.h"
-
+// EXTERNAL INCLUDES
 #include <dali-toolkit/devel-api/controls/control-wrapper.h>
 #include <dali-toolkit/devel-api/controls/control-wrapper-impl.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 class SwigDirector_ViewWrapperImpl : public Dali::Toolkit::Internal::ControlWrapper
 {

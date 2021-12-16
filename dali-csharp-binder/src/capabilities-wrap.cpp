@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2020 Samsung Electronics Co., Ltd.
  *
@@ -16,8 +15,11 @@
  *
  */
 
-#include "common.h"
+// EXTERNAL INCLUDES
 #include <dali/devel-api/common/capabilities.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 #ifdef __cplusplus
 extern "C" {
