@@ -17,7 +17,12 @@
 
 // EXTERNAL INCLUDES
 #include <dali/devel-api/adaptor-framework/accessibility.h>
-#include <dali/devel-api/adaptor-framework/accessibility-impl.h>
+#include <dali/devel-api/adaptor-framework/accessibility-bridge.h>
+#include <dali/devel-api/atspi-interfaces/editable-text.h>
+#include <dali/devel-api/atspi-interfaces/text.h>
+#include <dali/devel-api/atspi-interfaces/selection.h>
+#include <dali/devel-api/atspi-interfaces/value.h>
+#include <dali/integration-api/debug.h>
 
 // INTERNAL INCLUDES
 #include "control-devel-wrap.h"
