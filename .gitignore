@@ -14,8 +14,11 @@ missing
 *.lo
 *.la
 *.swp
+*.orig
 *~
 Makefile
+CMakeCache.txt
+CMakeFiles/
 autom4te.cache/
 config.h
 config.log

@@ -19,7 +19,6 @@
  */
 
 // EXTERNAL INCLUDES
-#include <vector>
 #include <dali/integration-api/processor-interface.h>
 
 // INTERNAL INCLUDES

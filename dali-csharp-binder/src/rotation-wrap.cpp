@@ -15,9 +15,11 @@
  *
  */
 
-#include <string.h>
-#include "common.h"
+// EXTERNAL INCLUDES
 #include <dali/public-api/math/quaternion.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 #ifdef __cplusplus
 extern "C"

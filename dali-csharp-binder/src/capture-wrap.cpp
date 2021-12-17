@@ -15,13 +15,14 @@
  *
  */
 
-#include <string.h>
-#include "common.h"
+// EXTERNAL INCLUDES
 #include <dali/public-api/capture/capture.h>
 #include <dali/devel-api/adaptor-framework/capture-devel.h>
-#include <dali/integration-api/debug.h>
 #include <dali-toolkit/public-api/image-loader/image.h>
 #include <dali-toolkit/public-api/image-loader/image-url.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 SWIGINTERN bool Dali_Capture_Signal_Empty(Dali::Capture::CaptureFinishedSignalType const* self)
 {

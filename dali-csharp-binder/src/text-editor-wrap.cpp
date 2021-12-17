@@ -1,22 +1,26 @@
-/** Copyright (c) 2020 Samsung Electronics Co., Ltd.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*
-*/
+/*
+ * Copyright (c) 2020 Samsung Electronics Co., Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
 
-#include "common.h"
+// EXTERNAL INCLUDES
 #include <dali-toolkit/public-api/controls/text-controls/text-editor.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
@@ -963,6 +967,40 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_SelectNone(void * jarg1) {
       Dali::Toolkit::DevelTextEditor::SelectNone( *arg1 );
     } CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_GetTextSize(void * pTextEditor, unsigned int start, unsigned int end)
+{
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0;
+  void* sizeList;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      sizeList = new Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true >
+      ((const Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true > &)(Dali::Toolkit::DevelTextEditor::GetTextSize( *textEditor, start, end )));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return sizeList;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_GetTextPosition(void * pTextEditor, unsigned int start, unsigned int end)
+{
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0;
+  void* sizeList;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      sizeList = new Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true >
+      ((const Dali::Vector< Dali::Vector2, Dali::TypeTraits< Dali::Vector2 >::IS_TRIVIAL_TYPE==true > &)(Dali::Toolkit::DevelTextEditor::GetTextPosition( *textEditor, start, end )));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return sizeList;
 }
 
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TextEditor_CopyText(void *pTextEditor)

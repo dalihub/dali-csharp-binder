@@ -15,7 +15,10 @@
  *
  */
 
+// CLASS HEADER
 #include "processor-controller.h"
+
+// EXTERNAL INCLUDES
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 
 #ifdef __cplusplus
@@ -41,7 +44,7 @@ ProcessorController::~ProcessorController()
     {
       Dali::Adaptor::Get().UnregisterProcessor(*this);
     }
-    CALL_CATCH_EXCEPTION_ALWAYS(); ///< We should not throw anything in deconstructor
+    CALL_CATCH_EXCEPTION();
   }
 }
 

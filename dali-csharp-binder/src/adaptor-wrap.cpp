@@ -15,10 +15,11 @@
  *
  */
 
-#include "common.h"
+// EXTERNAL INCLUDES
 #include <dali/integration-api/adaptor-framework/adaptor.h>
-// #include <dali/public-api/adaptor-framework/application-configuration.h>
 
+// INTERNAL INCLUDES
+#include "common.h"
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Adaptor_SA__SP__Sg__Empty(Dali::Signal< void (Dali::Adaptor &) > const *self){
     return self->Empty();

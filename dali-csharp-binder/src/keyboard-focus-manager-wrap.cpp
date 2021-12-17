@@ -15,6 +15,11 @@
  *
  */
 
+// EXTERNAL INCLUDES
+#include <dali-toolkit/dali-toolkit.h>
+#include <dali-toolkit/devel-api/focus-manager/focus-finder.h>
+
+// INTERNAL INCLUDES
 #include "common.h"
 
 SWIGINTERN bool Dali_Signal_Sl_Dali_Actor_Sp_Dali_Actor_Sc_Dali_Actor_Sc_Dali_Toolkit_Control_KeyboardFocus_Direction_SP__Sg__Empty(Dali::Signal< Dali::Actor (Dali::Actor,Dali::Actor,Dali::Toolkit::Control::KeyboardFocus::Direction) > const *self){
@@ -503,6 +508,19 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Emit(void * ja
     } CALL_CATCH_EXCEPTION(0);
   }
 
+  jresult = new Dali::Actor((const Dali::Actor &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_GetNearestFocusableActor(Dali::Actor rootActor, Dali::Actor currentFocusedActor, Dali::Toolkit::Control::KeyboardFocus::Direction direction) {
+  void * jresult;
+  Dali::Actor result;
+  {
+    try {
+      result = Dali::Toolkit::FocusFinder::GetNearestFocusableActor(rootActor, currentFocusedActor, direction);
+    } CALL_CATCH_EXCEPTION(0);
+  }
   jresult = new Dali::Actor((const Dali::Actor &)result);
   return jresult;
 }
