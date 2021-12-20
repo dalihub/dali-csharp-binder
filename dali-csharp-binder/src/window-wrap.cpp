@@ -1275,6 +1275,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizeSignal_Disconnect(void * jarg1, vo
 
   arg1 = (Dali::Signal< void (Dali::Window, Dali::Window::WindowSize) > *)jarg1;
   arg2 = (void (*)(Dali::Window, Dali::Window::WindowSize))jarg2;
+
+  if (arg1 == nullptr || arg2 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == %p or arg2 == %p \n",arg1,arg2);
+    return;
+  }
+
   {
     try {
       Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Disconnect(arg1,arg2);
