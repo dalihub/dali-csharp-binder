@@ -15,17 +15,14 @@
  *
  */
 
-#include "common.h"
-
+// EXTERNAL INCLUDES
 #include <dali/dali.h>
-#include <dali-toolkit/dali-toolkit.h>
 #include <dali/public-api/common/dali-common.h>
-#include <dali/integration-api/debug.h>
 #include <dali/devel-api/adaptor-framework/keyboard.h>
+#include <dali-toolkit/dali-toolkit.h>
 
-#include <stdexcept>
-#include <exception>
-
+// INTERNAL INCLUDES
+#include "common.h"
 
 #ifdef TIZEN_BUILD
 #ifdef ECORE_WL2

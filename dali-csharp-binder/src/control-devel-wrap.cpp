@@ -14,11 +14,14 @@
  * limitations under the License.
  *
  */
-#include "control-devel-wrap.h"
 
-#include <dali/devel-api/adaptor-framework/accessibility.h>
-#include <dali/devel-api/adaptor-framework/accessibility-impl.h>
+// EXTERNAL INCLUDES
 #include <vector>
+#include <dali/devel-api/adaptor-framework/accessibility.h>
+#include <dali/devel-api/adaptor-framework/accessibility-bridge.h>
+
+// INTERNAL INCLUDES
+#include "control-devel-wrap.h"
 
 using namespace Dali::Toolkit::DevelControl;
 
@@ -513,7 +516,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_delete_Range(void *arg1_ra
     }));
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Add_Popup(void *arg1_actor) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_RegisterDefaultLabel(void *arg1_actor) {
     GUARD_ON_NULL_RET(arg1_actor);
     try_catch(([&]() {
         Dali::Actor *actor = (Dali::Actor*) arg1_actor;
@@ -525,11 +528,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Add_Popup(void *arg
             return;
         }
 
-        bridge->AddPopup(accessible);
+        bridge->RegisterDefaultLabel(accessible);
     }));
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Remove_Popup(void *arg1_actor) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_UnregisterDefaultLabel(void *arg1_actor) {
     GUARD_ON_NULL_RET(arg1_actor);
     try_catch(([&]() {
         Dali::Actor *actor = (Dali::Actor*) arg1_actor;
@@ -541,7 +544,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_Remove_Popup(void *
             return;
         }
 
-        bridge->RemovePopup(accessible);
+        bridge->UnregisterDefaultLabel(accessible);
     }));
 }
 

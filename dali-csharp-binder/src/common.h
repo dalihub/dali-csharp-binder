@@ -2,7 +2,7 @@
 #define CSHARP_COMMON_H
 
 /*
- * Copyright (c) 2018 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2021 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,19 +91,19 @@ template <typename T> T SwigValueInit()
 #include <stdio.h>
 
 /*  Errors in SWIG */
-#define  SWIG_UnknownError         -1
-#define  SWIG_IOError            -2
-#define  SWIG_RuntimeError       -3
-#define  SWIG_IndexError         -4
-#define  SWIG_TypeError          -5
-#define  SWIG_DivisionByZero     -6
-#define  SWIG_OverflowError      -7
-#define  SWIG_SyntaxError        -8
-#define  SWIG_ValueError         -9
-#define  SWIG_SystemError        -10
-#define  SWIG_AttributeError     -11
-#define  SWIG_MemoryError        -12
-#define  SWIG_NullReferenceError   -13
+constexpr static int SWIG_UnknownError       = -1;
+constexpr static int SWIG_IOError            = -2;
+constexpr static int SWIG_RuntimeError       = -3;
+constexpr static int SWIG_IndexError         = -4;
+constexpr static int SWIG_TypeError          = -5;
+constexpr static int SWIG_DivisionByZero     = -6;
+constexpr static int SWIG_OverflowError      = -7;
+constexpr static int SWIG_SyntaxError        = -8;
+constexpr static int SWIG_ValueError         = -9;
+constexpr static int SWIG_SystemError        = -10;
+constexpr static int SWIG_AttributeError     = -11;
+constexpr static int SWIG_MemoryError        = -12;
+constexpr static int SWIG_NullReferenceError = -13;
 
 /* Support for throwing C# exceptions from C/C++. There are two types:
  * Exceptions that take a message and ArgumentExceptions that take a message and a parameter name. */
@@ -156,33 +156,18 @@ extern void SWIGUNUSED SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpExcepti
 extern void SWIG_CSharpException(int code, const char *msg);
 
 
-
-#include <stdexcept>
+#include <cxxabi.h>
 
 #define SWIGSTDCALL
 
 #include <dali/dali.h>
-#include <dali-toolkit/dali-toolkit.h>
+#include <dali/integration-api/debug.h>
 
-#include <dali-toolkit/devel-api/controls/control-wrapper.h>
-#include <dali-toolkit/devel-api/controls/control-wrapper-impl.h>
-#include <dali-toolkit/devel-api/controls/control-devel.h>
-
-// Macro to append SWIG_CSharpException message file/line/function.
-#define SWIG_EXCEPTION_MESSAGE(code, what, filename, linenumber, funcname)                          \
-do                                                                                                  \
-{                                                                                                   \
-  std::string message(what);                                                                        \
-  std::stringstream fileAndLine;                                                                    \
-  fileAndLine << " file: " << (filename) << " line: " << (linenumber) << " func: " << (funcname);   \
-  message += fileAndLine.str();                                                                     \
-  SWIG_CSharpException((code), message.c_str());                                                    \
-} while (0)
+// Function to append SWIG_CSharpException message file/line/function.
+extern void SWIG_ExceptionMessageWithFileAndLine(const int& code, const char* what, const char* filename, const int& linenumber, const char* funcname);
 
 #define SWIG_EXCEPTION_WITH_FILE_AND_LINE(code, what) \
-SWIG_EXCEPTION_MESSAGE(code, what, __FILE__, __LINE__, __FUNCTION__)
-
-#include <cxxabi.h>
+SWIG_ExceptionMessageWithFileAndLine((code), (what), __FILE__, __LINE__, __FUNCTION__)
 
 // Define Catch exception
 #define CALL_CATCH_EXCEPTION(ret)                                                       \
@@ -201,32 +186,9 @@ SWIG_EXCEPTION_MESSAGE(code, what, __FILE__, __LINE__, __FUNCTION__)
     SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_SystemError, e.condition);                   \
     return ret;                                                                         \
   }                                                                                     \
-  catch (abi::__forced_unwind & e)                                                      \
+  catch (abi::__forced_unwind &)                                                        \
   {                                                                                     \
-    /* Throwed by pthread API. just igore and rethrow */                                \
-    throw;                                                                              \
-  }                                                                                     \
-  catch (...)                                                                           \
-  {                                                                                     \
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_UnknownError, "unknown error");              \
-    return ret;                                                                         \
-  }
-
-// Define Catch exception without rethrow
-#define CALL_CATCH_EXCEPTION_ALWAYS(ret)                                                \
-  catch (std::out_of_range & e)                                                         \
-  {                                                                                     \
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_IndexError, const_cast<char *>(e.what()));   \
-    return ret;                                                                         \
-  }                                                                                     \
-  catch (std::exception & e)                                                            \
-  {                                                                                     \
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_RuntimeError, const_cast<char *>(e.what())); \
-    return ret;                                                                         \
-  }                                                                                     \
-  catch (Dali::DaliException e)                                                         \
-  {                                                                                     \
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_SystemError, e.condition);                   \
+    DALI_LOG_ERROR("abi::__forced_unwind occured\n");                                   \
     return ret;                                                                         \
   }                                                                                     \
   catch (...)                                                                           \
@@ -236,31 +198,31 @@ SWIG_EXCEPTION_MESSAGE(code, what, __FILE__, __LINE__, __FUNCTION__)
   }
 
 // Define Catch exception with inputed file and line infomations
-#define CALL_CATCH_EXCEPTION_WITH_CUSTOM_FILE_AND_LINE(ret, filename, linenumber, funcname)                        \
-  catch (std::out_of_range & e)                                                                                    \
-  {                                                                                                                \
-    SWIG_EXCEPTION_MESSAGE(SWIG_IndexError, const_cast<char *>(e.what()), (filename), (linenumber), (funcname));   \
-    return ret;                                                                                                    \
-  }                                                                                                                \
-  catch (std::exception & e)                                                                                       \
-  {                                                                                                                \
-    SWIG_EXCEPTION_MESSAGE(SWIG_RuntimeError, const_cast<char *>(e.what()), (filename), (linenumber), (funcname)); \
-    return ret;                                                                                                    \
-  }                                                                                                                \
-  catch (Dali::DaliException e)                                                                                    \
-  {                                                                                                                \
-    SWIG_EXCEPTION_MESSAGE(SWIG_SystemError, e.condition, (filename), (linenumber), (funcname));                   \
-    return ret;                                                                                                    \
-  }                                                                                                                \
-  catch (abi::__forced_unwind & e)                                                                                 \
-  {                                                                                                                \
-    /* Throwed by pthread API. just igore and rethrow */                                                           \
-    throw;                                                                                                         \
-  }                                                                                                                \
-  catch (...)                                                                                                      \
-  {                                                                                                                \
-    SWIG_EXCEPTION_MESSAGE(SWIG_UnknownError, "unknown error", (filename), (linenumber), (funcname));              \
-    return ret;                                                                                                    \
+#define CALL_CATCH_EXCEPTION_WITH_CUSTOM_FILE_AND_LINE(ret, filename, linenumber, funcname)                                      \
+  catch (std::out_of_range & e)                                                                                                  \
+  {                                                                                                                              \
+    SWIG_ExceptionMessageWithFileAndLine(SWIG_IndexError, const_cast<char *>(e.what()), (filename), (linenumber), (funcname));   \
+    return ret;                                                                                                                  \
+  }                                                                                                                              \
+  catch (std::exception & e)                                                                                                     \
+  {                                                                                                                              \
+    SWIG_ExceptionMessageWithFileAndLine(SWIG_RuntimeError, const_cast<char *>(e.what()), (filename), (linenumber), (funcname)); \
+    return ret;                                                                                                                  \
+  }                                                                                                                              \
+  catch (Dali::DaliException e)                                                                                                  \
+  {                                                                                                                              \
+    SWIG_ExceptionMessageWithFileAndLine(SWIG_SystemError, e.condition, (filename), (linenumber), (funcname));                   \
+    return ret;                                                                                                                  \
+  }                                                                                                                              \
+  catch (abi::__forced_unwind &)                                                                                                 \
+  {                                                                                                                              \
+    DALI_LOG_ERROR("abi::__forced_unwind occured\n");                                                                            \
+    return ret;                                                                                                                  \
+  }                                                                                                                              \
+  catch (...)                                                                                                                    \
+  {                                                                                                                              \
+    SWIG_ExceptionMessageWithFileAndLine(SWIG_UnknownError, "unknown error", (filename), (linenumber), (funcname));              \
+    return ret;                                                                                                                  \
   }
 
 // Define Catch exception if we need extra job before return
@@ -283,10 +245,11 @@ SWIG_EXCEPTION_MESSAGE(code, what, __FILE__, __LINE__, __FUNCTION__)
     (*(func))(__VA_ARGS__);                                                             \
     return ret;                                                                         \
   }                                                                                     \
-  catch (abi::__forced_unwind & e)                                                      \
+  catch (abi::__forced_unwind &)                                                        \
   {                                                                                     \
-    /* Throwed by pthread API. just igore and rethrow */                                \
-    throw;                                                                              \
+    DALI_LOG_ERROR("abi::__forced_unwind occured\n");                                   \
+    (*(func))(__VA_ARGS__);                                                             \
+    return ret;                                                                         \
   }                                                                                     \
   catch (...)                                                                           \
   {                                                                                     \
@@ -311,23 +274,12 @@ SWIG_EXCEPTION_MESSAGE(code, what, __FILE__, __LINE__, __FUNCTION__)
         return 0;                                                                                                  \
     }
 
-namespace {
-
 // Define useful utils with lambda function
-inline void internal_try_catch(const std::function<void(void)>& func, const char* filename, const int& linenumber, const char* funcname) {
-    try {
-        func();
-    } CALL_CATCH_EXCEPTION_WITH_CUSTOM_FILE_AND_LINE(, filename, linenumber, funcname);
-}
+extern void internal_try_catch(const std::function<void(void)>& func, const char* filename, const int& linenumber, const char* funcname);
 
-#ifdef try_catch
-#undef try_catch
-#endif
 // Define try_catch macro to get correct line and function_name
 // NOTE: when lamda function use comma(,) at template, compiler think this is kind of argment divisor.
 // This is compiler bug. So we need to cover the function by additional parentheses.
 #define try_catch(func) internal_try_catch((func), __FILE__, __LINE__, __FUNCTION__)
-
-} // anonymous namespace
 
 #endif // CSHARP_COMMON_H

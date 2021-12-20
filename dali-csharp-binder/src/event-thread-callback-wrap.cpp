@@ -15,8 +15,11 @@
  *
  */
 
-#include "common.h"
+// EXTERNAL INCLUDES
 #include <dali/devel-api/adaptor-framework/event-thread-callback.h>
+
+// INTERNAL INCLUDES
+#include "common.h"
 
 #ifdef __cplusplus
 extern "C" {

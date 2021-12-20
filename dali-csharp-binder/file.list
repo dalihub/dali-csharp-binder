@@ -6,6 +6,7 @@
 
 # module: csharp-binder, backend: common
 dali_csharp_binder_common_src_files = \
+  ${dali_csharp_binder_dir}/src/common.cpp \
   ${dali_csharp_binder_dir}/src/dali-wrap.cpp \
   ${dali_csharp_binder_dir}/src/callbackbase-wrap.cpp \
   ${dali_csharp_binder_dir}/src/canvas-view-wrap.cpp \
