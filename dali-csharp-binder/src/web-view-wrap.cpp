@@ -1014,6 +1014,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterResponsePolicyDecidedCal
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNavigationPolicyDecidedCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(Dali::WebEnginePolicyDecision*) = (void (*)(Dali::WebEnginePolicyDecision*))jarg2;
+  {
+    try {
+      (arg1)->RegisterNavigationPolicyDecidedCallback([handler](std::unique_ptr<Dali::WebEnginePolicyDecision> decision) {
+            handler(decision.release());
+          });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterCertificateConfirmedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   void (*handler)(Dali::WebEngineCertificate*) = (void (*)(Dali::WebEngineCertificate*))jarg2;
