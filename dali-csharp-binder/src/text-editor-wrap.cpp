@@ -675,6 +675,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_FONT_SIZE_SCALE_get()
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_ENABLE_FONT_SIZE_SCALE_get()
+{
+  return (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_FONT_SIZE_SCALE;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_ENABLE_GRAB_HANDLE_get() {
   int jresult;
   int result;

@@ -62,6 +62,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_FONT_SIZE_SCALE_get()
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ENABLE_FONT_SIZE_SCALE_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::ENABLE_FONT_SIZE_SCALE;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextSize(void * pTextLabel, unsigned int start, unsigned int end)
 {
   Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
