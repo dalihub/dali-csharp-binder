@@ -19,6 +19,7 @@
 #include "processor-controller.h"
 
 // EXTERNAL INCLUDES
+#include <dali/devel-api/common/stage-devel.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 
 #ifdef __cplusplus
@@ -26,7 +27,8 @@ extern "C" {
 #endif
 
 ProcessorController::ProcessorController()
-: mHandler(nullptr)
+: mHandler(nullptr),
+  mKeepRenderingApplied(false)
 {
   {
     try
@@ -51,6 +53,7 @@ ProcessorController::~ProcessorController()
 void ProcessorController::Process(bool postProcessor)
 {
   mHandler();
+  mKeepRenderingApplied = false;
 }
 
 void ProcessorController::SetCallback(  ProcessorControllerProcessCallback callback )
@@ -61,6 +64,19 @@ void ProcessorController::SetCallback(  ProcessorControllerProcessCallback callb
 void ProcessorController::RemoveCallback(  ProcessorControllerProcessCallback callback )
 {
   mHandler = nullptr;
+}
+
+void ProcessorController::Awake()
+{
+  if(DALI_UNLIKELY(!mKeepRenderingApplied))
+  {
+    if(DALI_LIKELY(Dali::Stage::IsInstalled()))
+    {
+      auto stage = Dali::Stage::GetCurrent();
+      stage.KeepRendering(0.0f);
+      mKeepRenderingApplied = true;
+    }
+  }
 }
 
 // ProcessorController Bindings
@@ -104,6 +120,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_RemoveCallback( void
   if( processorController )
   {
     processorController->RemoveCallback( callback );
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_Awake( void* jarg1 )
+{
+  ProcessorController* processorController = (ProcessorController *) jarg1;
+
+  if( processorController )
+  {
+    processorController->Awake();
   }
 }
 

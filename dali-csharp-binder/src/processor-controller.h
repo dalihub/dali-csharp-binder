@@ -66,9 +66,15 @@ public:
     */
   void RemoveCallback( ProcessorControllerProcessCallback callback );
 
+   /**
+    * @brief Awake update thread so dali-core calls the overriden Process() api.
+    */
+  void Awake();
+
 private:
 
   ProcessorControllerProcessCallback mHandler;
+  bool                               mKeepRenderingApplied; ///< True if we call Stage::KeepRendering(0.0f). It need to avoid duplicated keep rendering call
 };
 
 #endif // CSHARP_PROCESSOR_CONTROLLER_H
