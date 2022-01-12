@@ -609,6 +609,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_FONT_SIZE_SCALE_get()
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_ENABLE_FONT_SIZE_SCALE_get()
+{
+  return (int)Dali::Toolkit::DevelTextField::Property::ENABLE_FONT_SIZE_SCALE;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_PRIMARY_CURSOR_POSITION_get() {
   int jresult ;
   int result;

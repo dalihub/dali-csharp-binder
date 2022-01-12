@@ -16,17 +16,16 @@
  */
 
 // EXTERNAL INCLUDES
-#include <dali/devel-api/actors/actor-devel.h>
-#include <dali/devel-api/rendering/renderer-devel.h>
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
-#include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
 #include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
+#include <dali/devel-api/actors/actor-devel.h>
+#include <dali/devel-api/rendering/renderer-devel.h>
 
 // INTERNAL INCLUDES
 #include "common.h"
@@ -315,7 +314,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_MODE_get() {
   {
     try {
       result = (int)Dali::Toolkit::HiddenInput::Property::MODE;
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (int)result;
@@ -330,7 +330,8 @@ CSharp_HIDDENINPUT_PROPERTY_SUBSTITUTE_CHARACTER_get() {
   {
     try {
       result = (int)Dali::Toolkit::HiddenInput::Property::SUBSTITUTE_CHARACTER;
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (int)result;
@@ -344,7 +345,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HIDDENINPUT_PROPERTY_SUBSTITUTE_COUNT_get() {
   {
     try {
       result = (int)Dali::Toolkit::HiddenInput::Property::SUBSTITUTE_COUNT;
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (int)result;
@@ -360,7 +362,8 @@ CSharp_HIDDENINPUT_PROPERTY_SHOW_LAST_CHARACTER_DURATION_get() {
     try {
       result = (int)
           Dali::Toolkit::HiddenInput::Property::SHOW_LAST_CHARACTER_DURATION;
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (int)result;
@@ -484,6 +487,18 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextField_Property_ELLIPSIS_POSITION_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_STRIKETHROUGH_get() {
+  return (int)Dali::Toolkit::DevelTextEditor::Property::STRIKETHROUGH;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_STRIKETHROUGH_get() {
+  return (int)Dali::Toolkit::DevelTextField::Property::STRIKETHROUGH;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_STRIKETHROUGH_get() {
+  return (int)Dali::Toolkit::DevelTextLabel::Property::STRIKETHROUGH;
+}
+
 SWIGEXPORT unsigned int SWIGSTDCALL
 CSharp_Dali_VisualEventSignal_Empty(void *jarg1) {
   unsigned int jresult;
@@ -494,7 +509,8 @@ CSharp_Dali_VisualEventSignal_Empty(void *jarg1) {
   {
     try {
       result = (bool)_CSharp_Dali_VisualEventSignal_Empty((signalType *)arg1);
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
@@ -512,7 +528,8 @@ CSharp_Dali_VisualEventSignal_GetConnectionCount(void *jarg1) {
     try {
       result =
           _CSharp_Dali_VisualEventSignal_GetConnectionCount((signalType *)arg1);
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (unsigned long)result;
@@ -529,7 +546,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualEventSignal_Connect(void *jarg1,
   {
     try {
       _CSharp_Dali_VisualEventSignal_Connect(arg1, arg2);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -543,7 +561,8 @@ CSharp_Dali_VisualEventSignal_Disconnect(void *jarg1, void *jarg2) {
   {
     try {
       _CSharp_Dali_VisualEventSignal_Disconnect(arg1, arg2);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -563,7 +582,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualEventSignal_Emit(void *jarg1,
   {
     try {
       _CSharp_Dali_VisualEventSignal_Emit(arg1, *arg2, arg3, arg4);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -574,7 +594,8 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_VisualEventSignal() {
   {
     try {
       result = (signalType *)new Dali::Signal<signalType>();
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)result;
@@ -588,7 +609,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VisualEventSignal(void *jarg1) {
   {
     try {
       delete arg1;
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -601,7 +623,8 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_View_VisualEventSignal(void *jarg1) {
   {
     try {
       result = (visualSignalType *)&(DevelControl::VisualEventSignal(*arg1));
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void *)(result);
