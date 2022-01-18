@@ -2343,6 +2343,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_ExcludeInputRegion(void* winHandl
 
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsWindowRotating(void* winHandle)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  bool result = false;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return result;
+  }
+  {
+    try {
+      result = Dali::DevelWindow::IsWindowRotating(*window);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+
+  return result;
+}
 
 #ifdef __cplusplus
 }
