@@ -1176,6 +1176,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_SelectionClearedSignal(void 
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_SelectionStartedSignal(void * pTextField) {
+  void * jresult ;
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0 ;
+  Dali::Toolkit::DevelTextField::SelectionStartedSignalType *result = 0 ;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextField::SelectionStartedSignalType *)&Dali::Toolkit::DevelTextField::SelectionStartedSignal(*textField);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_SelectionChangedSignal(void * pTextField) {
   void * jresult ;
   Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0 ;
