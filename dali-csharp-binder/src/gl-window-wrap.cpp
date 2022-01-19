@@ -225,7 +225,7 @@ extern "C"
     return jresult;
   }
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetEglConfig(void *jarg1, unsigned int jarg2, unsigned int jarg3, int jarg4, int jarg5)
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetGraphicsConfig(void *jarg1, unsigned int jarg2, unsigned int jarg3, int jarg4, int jarg5)
   {
     Dali::GlWindow *arg1 = (Dali::GlWindow *)0;
     bool arg2;
@@ -241,7 +241,7 @@ extern "C"
     {
       try
       {
-        (arg1)->SetEglConfig(arg2, arg3, arg4, arg5);
+        (arg1)->SetGraphicsConfig(arg2, arg3, arg4, arg5);
       }
       CALL_CATCH_EXCEPTION();
     }
@@ -755,7 +755,7 @@ extern "C"
     }
   }
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_RegisterGlCallback(void *jarg1, void *initCallback, int *RenderFrameCallback, void *terminateCallback)
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_RegisterGlCallbacks(void *jarg1, void *initCallback, int *RenderFrameCallback, void *terminateCallback)
   {
     Dali::GlWindow *argp1 = (Dali::GlWindow *)jarg1;
     void (*initCB)() = (void (*)())initCallback;
@@ -770,7 +770,7 @@ extern "C"
     Dali::GlWindow arg1 = *argp1;
     try
     {
-      arg1.RegisterGlCallback(Dali::MakeCallback(initCB), Dali::MakeCallback(renderFrameCB), Dali::MakeCallback(terminateCB));
+      arg1.RegisterGlCallbacks(Dali::MakeCallback(initCB), Dali::MakeCallback(renderFrameCB), Dali::MakeCallback(terminateCB));
     }
     CALL_CATCH_EXCEPTION();
   }

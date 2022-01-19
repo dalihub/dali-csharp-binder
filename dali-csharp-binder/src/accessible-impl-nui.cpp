@@ -220,6 +220,9 @@ struct NUIViewAccessible : public ControlAccessible
         return Dali::Property::INVALID_INDEX;
     }
 
+    // Ideally, this could be removed along with the DoGetChildren() override below if NUI controls
+    // switch to setting the AccessibilityHidden property instead. It can be used for the same
+    // purpose, and it offers more fine-grained control.
     virtual bool ShouldReportZeroChildren() const
     {
         bool ret{false};
@@ -230,53 +233,6 @@ struct NUIViewAccessible : public ControlAccessible
         }
 
         return ret;
-    }
-
-    std::size_t GetChildCount() const override
-    {
-        bool highlighted = (Self() == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor());
-
-        if (ShouldReportZeroChildren())
-        {
-            std::size_t ret = 0;
-
-            // We still allow the highlight frame to be reported as a child of this actor
-            // even though its ShouldReportZeroChildren() method returned true.
-            ret += static_cast<std::size_t>(highlighted);
-
-            return ret;
-        }
-        else
-        {
-            return ControlAccessible::GetChildCount();
-        }
-    }
-
-    Dali::Accessibility::Accessible *GetChildAtIndex(std::size_t index) override
-    {
-        bool highlighted = (Self() == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor());
-
-        if (ShouldReportZeroChildren())
-        {
-            if (highlighted && index == 0)
-            {
-                return Dali::Accessibility::Accessible::Get(mCurrentHighlightActor.GetHandle());
-            }
-            else
-            {
-                // We should not end up here. When ShouldReportZeroChildren() returns true,
-                // there are two possible cases:
-                // (1) The actor is not highlighted, so GetChildCount() returns zero, and so
-                // GetChildAtIndex() is not called.
-                // (2) The actor is highlighted, so GetChildCount() returns one. The only valid
-                // argument for GetChildAtIndex() is zero.
-                throw std::domain_error{"Invalid index"};
-            }
-        }
-        else
-        {
-            return ControlAccessible::GetChildAtIndex(index);
-        }
     }
 
     bool IsScrollable() const override
@@ -301,6 +257,23 @@ struct NUIViewAccessible : public ControlAccessible
         }
 
         return ret;
+    }
+
+    void DoGetChildren(std::vector<Accessible*>& children) override
+    {
+        if (ShouldReportZeroChildren())
+        {
+            // We still allow the highlight frame to be reported as a child of this actor
+            // even though its ShouldReportZeroChildren() method returned true.
+            if (Self() == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor())
+            {
+                children.push_back(Dali::Accessibility::Accessible::Get(mCurrentHighlightActor.GetHandle()));
+            }
+        }
+        else
+        {
+            Dali::Accessibility::ActorAccessible::DoGetChildren(children);
+        }
     }
 };
 
