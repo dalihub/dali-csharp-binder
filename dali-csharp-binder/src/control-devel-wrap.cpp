@@ -288,112 +288,21 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GrabAccessi
     return result;
 }
 
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_States() {
-    Dali::Accessibility::States *result = nullptr;
-    try_catch(([&]() {
-        result = new Dali::Accessibility::States();
-    }));
-    return (void*)result;
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_GetAccessibilityStates(void *arg1) {
-    Dali::Accessibility::States *result = nullptr;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch(([&]() {
-        Dali::Actor *control = (Dali::Actor*) arg1;
-        result = new Dali::Accessibility::States(GetAccessibilityStates(*control));
-    }));
-    return (void*)result;
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Get(void *arg1, int arg2) {
-    bool result = false;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch(([&]() {
-        Dali::Accessibility::States *states = (Dali::Accessibility::States*) arg1;
-        Dali::Accessibility::State state = (Dali::Accessibility::State) arg2;
-        result = states->operator[](state);
-    }));
-    return result;
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Set(void *arg1, int arg2, int arg3) {
-    GUARD_ON_NULL_RET(arg1);
-    try_catch(([&]() {
-        Dali::Accessibility::States *states = (Dali::Accessibility::States*) arg1;
-        Dali::Accessibility::State state = (Dali::Accessibility::State) arg2;
-        states->operator[](state) = (bool)arg3;
-    }));
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_delete_States(void *arg1) {
-    try_catch(([&]() {
-        delete static_cast<Dali::Accessibility::States*>(arg1);
-    }));
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_States_Copy(void *arg1) {
-    Dali::Accessibility::States *result = nullptr;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch(([&]() {
-       auto &states = *static_cast<Dali::Accessibility::States *>(arg1);
-       result = new Dali::Accessibility::States(states);
-    }));
-    return result;
-}
-
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ConvertState(uint64_t arg1) {
-    Dali::Accessibility::States *result = nullptr;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch(([&]() {
-       std::array<uint32_t, 2> data;
-       data[0] = static_cast<uint32_t>(arg1);
-       data[1] = static_cast<uint32_t>(arg1 >> 32);
-
-       result = new Dali::Accessibility::States(data);
-    }));
-    return result;
-}
-
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibilityStateChange(void *arg1, void *arg2, int arg3) {
-    GUARD_ON_NULL_RET(arg1);
-    GUARD_ON_NULL_RET(arg2);
-    try_catch(([&]() {
-        Dali::Actor *control = (Dali::Actor*) arg1;
-        Dali::Accessibility::States *states = (Dali::Accessibility::States*) arg2;
-        bool isRecursive = arg3 ? true : false;
-        NotifyAccessibilityStateChange(*control, *states, isRecursive);
-    }));
-}
-
-SWIGEXPORT uint64_t SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilityState(void *arg1) {
+SWIGEXPORT uint64_t SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilityStates(void *arg1) {
     uint64_t result = 0;
     GUARD_ON_NULL_RET0(arg1);
     try_catch(([&]() {
         Dali::Actor *control = (Dali::Actor*) arg1;
         auto states = GetAccessibilityStates(*control);
-        result = states.GetRawData()[0];
-        uint64_t high = states.GetRawData()[1];
-        result |= (high << 32);
+        result = states.GetRawData64();
     }));
     return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibilityStateChange2(void *arg1, uint64_t arg2, int arg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibilityStateChange(void *arg1, uint64_t arg2, int arg3) {
     GUARD_ON_NULL_RET(arg1);
     try_catch(([&]() {
-        std::array<uint32_t, 2> data;
-        data[0] = static_cast<uint32_t>(arg2);
-        data[1] = static_cast<uint32_t>(arg2 >> 32);
-
-        Dali::Accessibility::States states(data);
+        Dali::Accessibility::States states(arg2);
         Dali::Actor *control = (Dali::Actor*) arg1;
         bool doRecursive = arg3 ? true : false;
         NotifyAccessibilityStateChange(*control, states, doRecursive);
@@ -416,39 +325,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityEvent(voi
     }));
 }
 
-// TODO - DEPRECATED - REMOVE AFTER TIZENFX MERGE
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityStateChangedEvent(void *arg1, int arg2_state, int arg3) {
     GUARD_ON_NULL_RET(arg1);
     try_catch(([&]() {
-        Dali::Actor *control = (Dali::Actor*) arg1;
-        auto accessible = Dali::Accessibility::Accessible::Get(*control);
-        if (accessible)
-            accessible->EmitStateChanged((Dali::Accessibility::State)arg2_state, arg3);
-        else
-            SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
-    }));
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityStateChangedEvent2(void *arg1, uint64_t arg2_state_bitfield, int arg3) {
-    GUARD_ON_NULL_RET(arg1);
-    try_catch(([&]() {
-        /* Only one state may be passed with EmitStateChanged function */
-        /* TODO: replace with std::popcount() after migration to c++20 */
-        if (1 != __builtin_popcountll(arg2_state_bitfield)) {
-            SWIG_CSharpException(SWIG_RuntimeError, "Exactly one state must be set!");
-            return;
-        }
-
-        /* Now we need to convert "nui bitfield" into "dali enum State".   *
-         * Position of the bit equals value of Dali::Accessibility::State. */
-        /* TODO: replace with std::count_zero() after migration to c++20   */
-        int leading_zeros = __builtin_clzll(arg2_state_bitfield);
-        Dali::Accessibility::State state = (Dali::Accessibility::State) (63-leading_zeros);
+        auto state = static_cast<Dali::Accessibility::State>(arg2_state);
 
         Dali::Actor *control = (Dali::Actor*) arg1;
         auto accessible = Dali::Accessibility::Accessible::Get(*control);
         if (accessible)
-            accessible->EmitStateChanged((Dali::Accessibility::State)state, arg3);
+            accessible->EmitStateChanged(state, arg3);
         else
             SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
     }));
