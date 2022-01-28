@@ -59,11 +59,17 @@ void ProcessorController::Process(bool postProcessor)
   {
     // We will ignore Awake events during Process running
     mKeepRenderingApplied = true;
-    mHandler();
+    if(DALI_LIKELY(mHandler != nullptr))
+    {
+      mHandler();
+    }
   }
   else
   {
-    mPostHandler();
+    if(DALI_LIKELY(mPostHandler != nullptr))
+    {
+      mPostHandler();
+    }
     // Make awake events can be applied after PostProcess done.
     mKeepRenderingApplied = false;
   }
