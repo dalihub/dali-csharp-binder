@@ -499,6 +499,21 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_STRIKETHROUGH_get() {
   return (int)Dali::Toolkit::DevelTextLabel::Property::STRIKETHROUGH;
 }
 
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextEditor_Property_CHARACTER_SPACING_get() {
+  return (int)Dali::Toolkit::DevelTextEditor::Property::CHARACTER_SPACING;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextField_Property_CHARACTER_SPACING_get() {
+  return (int)Dali::Toolkit::DevelTextField::Property::CHARACTER_SPACING;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextLabel_Property_CHARACTER_SPACING_get() {
+  return (int)Dali::Toolkit::DevelTextLabel::Property::CHARACTER_SPACING;
+}
+
 SWIGEXPORT unsigned int SWIGSTDCALL
 CSharp_Dali_VisualEventSignal_Empty(void *jarg1) {
   unsigned int jresult;
