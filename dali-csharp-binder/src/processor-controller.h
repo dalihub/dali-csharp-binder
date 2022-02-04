@@ -60,11 +60,24 @@ public:
   void SetCallback( ProcessorControllerProcessCallback callback );
 
    /**
+    * @brief Set the postcallback to be executed when dali-core calls the overriden Process(true) api.
+    * @param[in] postCallback, function to be called
+    */
+  void SetPostCallback( ProcessorControllerProcessCallback postCallback );
+
+   /**
     * @brief Remove callback on this ProcessorController.
     * The removed callback will not be called anymore.
     * @param[in] callback, function will be removed
     */
   void RemoveCallback( ProcessorControllerProcessCallback callback );
+
+   /**
+    * @brief Remove postcallback on this ProcessorController.
+    * The removed callback will not be called anymore.
+    * @param[in] postCallback, function will be removed
+    */
+  void RemovePostCallback( ProcessorControllerProcessCallback postCallback );
 
    /**
     * @brief Awake update thread so dali-core calls the overriden Process() api.
@@ -73,7 +86,8 @@ public:
 
 private:
 
-  ProcessorControllerProcessCallback mHandler;
+  ProcessorControllerProcessCallback mHandler;              ///< PreProcessHandler before Relayout
+  ProcessorControllerProcessCallback mPostHandler;          ///< PostProcessHandler after Relayout
   bool                               mKeepRenderingApplied; ///< True if we call Stage::KeepRendering(0.0f). It need to avoid duplicated keep rendering call
 };
 

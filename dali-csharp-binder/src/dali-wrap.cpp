@@ -422,7 +422,6 @@ void SWIG_CSharpException(int code, const char *msg) {
 
 #include <dali-toolkit/devel-api/text/rendering-backend.h>
 
-
 #include <dali/devel-api/update/frame-callback-interface.h>
 #include <dali/devel-api/update/update-proxy.h>
 
@@ -36433,7 +36432,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_New() {
 
   {
     try {
-      result = Dali::Toolkit::Internal::Control::New();
+      result = Dali::Toolkit::Internal::Control::New(Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -38519,7 +38518,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_New() {
 
   {
     try {
-      result = Dali::Toolkit::Control::New();
+      result = Dali::Toolkit::Control::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -40517,7 +40516,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_0() {
 
   {
     try {
-      result = Dali::Toolkit::ImageView::New();
+      result = Dali::Toolkit::ImageView::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -40539,7 +40538,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_2(char * jarg1) {
   arg1 = &arg1_str;
   {
     try {
-      result = Dali::Toolkit::ImageView::New((std::string const &)*arg1);
+      result = Dali::Toolkit::ImageView::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const &)*arg1);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -40572,7 +40571,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_3(char * jarg1, vo
   arg2 = *argp2;
   {
     try {
-      result = Dali::Toolkit::ImageView::New((std::string const &)*arg1,arg2);
+      result = Dali::Toolkit::ImageView::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const &)*arg1,arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -47451,7 +47450,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_0() {
 
   {
     try {
-      result = Dali::Toolkit::TextLabel::New();
+      result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -47473,7 +47472,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_1(char * jarg1) {
   arg1 = &arg1_str;
   {
     try {
-      result = Dali::Toolkit::TextLabel::New((std::string const &)*arg1);
+      result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const &)*arg1);
     } CALL_CATCH_EXCEPTION(0);
   }
 

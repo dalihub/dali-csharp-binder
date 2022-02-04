@@ -28,12 +28,14 @@ extern "C" {
 
 ProcessorController::ProcessorController()
 : mHandler(nullptr),
+  mPostHandler(nullptr),
   mKeepRenderingApplied(false)
 {
   {
     try
     {
       Dali::Adaptor::Get().RegisterProcessor(*this);
+      Dali::Adaptor::Get().RegisterProcessor(*this, true);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -45,6 +47,7 @@ ProcessorController::~ProcessorController()
     try
     {
       Dali::Adaptor::Get().UnregisterProcessor(*this);
+      Dali::Adaptor::Get().UnregisterProcessor(*this, true);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -52,8 +55,24 @@ ProcessorController::~ProcessorController()
 
 void ProcessorController::Process(bool postProcessor)
 {
-  mHandler();
-  mKeepRenderingApplied = false;
+  if(!postProcessor)
+  {
+    // We will ignore Awake events during Process running
+    mKeepRenderingApplied = true;
+    if(DALI_LIKELY(mHandler != nullptr))
+    {
+      mHandler();
+    }
+  }
+  else
+  {
+    if(DALI_LIKELY(mPostHandler != nullptr))
+    {
+      mPostHandler();
+    }
+    // Make awake events can be applied after PostProcess done.
+    mKeepRenderingApplied = false;
+  }
 }
 
 void ProcessorController::SetCallback(  ProcessorControllerProcessCallback callback )
@@ -61,9 +80,18 @@ void ProcessorController::SetCallback(  ProcessorControllerProcessCallback callb
   mHandler = callback;
 }
 
+void ProcessorController::SetPostCallback(  ProcessorControllerProcessCallback postCallback )
+{
+  mPostHandler = postCallback;
+}
+
 void ProcessorController::RemoveCallback(  ProcessorControllerProcessCallback callback )
 {
   mHandler = nullptr;
+}
+void ProcessorController::RemovePostCallback(  ProcessorControllerProcessCallback postCallback )
+{
+  mPostHandler = nullptr;
 }
 
 void ProcessorController::Awake()
@@ -113,6 +141,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_SetCallback( void* j
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_SetPostCallback( void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback )
+{
+  ProcessorController* processorController = (ProcessorController *) jarg1;
+
+  if( processorController )
+  {
+    processorController->SetPostCallback( callback );
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_RemoveCallback( void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback )
 {
   ProcessorController* processorController = (ProcessorController *) jarg1;
@@ -120,6 +158,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_RemoveCallback( void
   if( processorController )
   {
     processorController->RemoveCallback( callback );
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_RemovePostCallback( void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback )
+{
+  ProcessorController* processorController = (ProcessorController *) jarg1;
+
+  if( processorController )
+  {
+    processorController->RemovePostCallback( callback );
   }
 }
 
