@@ -1389,6 +1389,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_SelectionClearedSignal(void
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_SelectionStartedSignal(void * pTextEditor) {
+  void * jresult ;
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0 ;
+  Dali::Toolkit::DevelTextEditor::SelectionStartedSignalType *result = 0 ;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      result = (Dali::Toolkit::DevelTextEditor::SelectionStartedSignalType *)&Dali::Toolkit::DevelTextEditor::SelectionStartedSignal(*textEditor);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_SelectionChangedSignal(void * pTextEditor) {
   void * jresult ;
   Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0 ;
