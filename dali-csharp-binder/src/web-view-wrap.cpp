@@ -2526,42 +2526,35 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponseHeaders
   return ret;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponseBody(void * jarg1, const char *jarg2, uint32_t jarg3) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponseBody(void * jarg1, const int8_t * jarg2, uint32_t jarg3) {
   Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
   bool ret = false;
-  std::string arg2_str(jarg2);
   {
     try {
-      ret = (arg1)->AddResponseBody(arg2_str, jarg3);
+      ret = (arg1)->AddResponseBody(jarg2, jarg3);
     } CALL_CATCH_EXCEPTION(0);
   }
   return ret;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponse(void * jarg1, const char * jarg2, const char * jarg3, uint32_t jarg4) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_AddResponse(void * jarg1, const char * jarg2, const int8_t * jarg3, uint32_t jarg4) {
   Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
   bool ret = false;
   std::string arg2_str(jarg2);
-  std::string arg3_str(jarg3);
   {
     try {
-      ret = (arg1)->AddResponse(arg2_str, arg3_str, jarg4);
+      ret = (arg1)->AddResponse(arg2_str, jarg3, jarg4);
     } CALL_CATCH_EXCEPTION(0);
   }
   return ret;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_WriteResponseChunk(void * jarg1, const char * jarg2, uint32_t jarg3) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_WriteResponseChunk(void * jarg1, const int8_t * jarg2, uint32_t jarg3) {
   Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
   bool ret = false;
-  std::string arg2_str;
-  if (jarg2)
-  {
-    arg2_str = std::string(jarg2);
-  }
   {
     try {
-      ret = (arg1)->WriteResponseChunk(arg2_str, jarg3);
+      ret = (arg1)->WriteResponseChunk(jarg2, jarg3);
     } CALL_CATCH_EXCEPTION(0);
   }
   return ret;
