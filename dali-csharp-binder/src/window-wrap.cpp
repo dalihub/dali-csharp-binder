@@ -1477,18 +1477,77 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetTransparency(void * jarg1, uns
   }
 
 }
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedKey_Default_Window(void * event) {
+  Dali::KeyEvent *keyEvent = 0 ;
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedKeyEvent(void * jarg1) {
-  Dali::KeyEvent *arg1 = 0 ;
-
-  arg1 = (Dali::KeyEvent *)jarg1;
-  if (!arg1) {
+  keyEvent = (Dali::KeyEvent *)event;
+  if (!keyEvent) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent & type is null", 0);
     return ;
   }
   {
     try {
-      Dali::Adaptor::Get().FeedKeyEvent(*arg1);
+      Dali::Adaptor::Get().FeedKeyEvent(*keyEvent);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedKey(void * window, void * event) {
+  Dali::Window* win = (Dali::Window*)window;
+  if (!win) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+
+  Dali::KeyEvent *keyEvent = 0 ;
+  keyEvent = (Dali::KeyEvent *)event;
+  if (!keyEvent) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      Dali::DevelWindow::FeedKeyEvent(*win, *keyEvent);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedTouch(void * window, void * event, int timeStamp) {
+  Dali::Window* win = (Dali::Window*)window;
+  if (!win) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+
+  Dali::TouchPoint *touchPoint = 0 ;
+  touchPoint = (Dali::TouchPoint *)event;
+  if (!touchPoint) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchPoint & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      Dali::DevelWindow::FeedTouchPoint(*win, *touchPoint, timeStamp);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedWheel(void * window, void * event) {
+  Dali::Window* win = (Dali::Window*)window;
+  if (!win) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+
+  Dali::WheelEvent *wheelEvent = 0 ;
+  wheelEvent = (Dali::WheelEvent *)event;
+  if (!wheelEvent) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::WheelEvent & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      Dali::DevelWindow::FeedWheelEvent(*win, *wheelEvent);
     } CALL_CATCH_EXCEPTION();
   }
 }
