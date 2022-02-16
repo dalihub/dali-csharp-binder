@@ -57691,6 +57691,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetImpl_SetContentInfo(void * jarg1, 
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetImpl_SetUsingKeyEvent(void * jwidget, bool jflag) {
+  Dali::Internal::Adaptor::Widget *widget = (Dali::Internal::Adaptor::Widget *) 0 ;
+  bool flag;
+
+  widget = (Dali::Internal::Adaptor::Widget *)jwidget;
+  flag = jflag ? true : false;
+  {
+    try {
+      (widget)->SetUsingKeyEvent(flag);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetImpl_SetImpl(void * jarg1, void * jarg2) {
   Dali::Internal::Adaptor::Widget *arg1 = (Dali::Internal::Adaptor::Widget *) 0 ;
   Dali::Internal::Adaptor::Widget::Impl *arg2 = (Dali::Internal::Adaptor::Widget::Impl *) 0 ;
