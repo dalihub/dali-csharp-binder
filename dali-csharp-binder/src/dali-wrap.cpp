@@ -21942,6 +21942,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_SENSITIVE_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_USER_INTERACTION_ENABLED_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::DevelActor::Property::USER_INTERACTION_ENABLED;
+  jresult = (int)result;
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_LEAVE_REQUIRED_get() {
   int jresult ;
   int result;
