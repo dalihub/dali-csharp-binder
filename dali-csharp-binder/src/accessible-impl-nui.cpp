@@ -27,49 +27,53 @@
 // INTERNAL INCLUDES
 #include "control-devel-wrap.h"
 
-using namespace Dali::Toolkit::DevelControl;
+using namespace Dali;
+using namespace Dali::Toolkit;
 
 namespace {
 
 // Keep this structure layout binary compatible with the respective C# structure!
 struct AccessibilityDelegate
 {
-    char *(*getName)(); // 1
-    char *(*getDescription)(); // 2
-    bool (*doAction)(const char *); // 3
-    std::uint64_t (*calculateStates)(std::uint64_t); // 4
-    int (*getActionCount)(); // 5
-    char *(*getActionName)(int); // 6
-    bool (*shouldReportZeroChildren)(); // 7
-    double (*getMinimum)(); // 8
-    double (*getCurrent)(); // 9
-    double (*getMaximum)(); // 10
-    bool (*setCurrent)(double); // 11
-    double (*getMinimumIncrement)(); // 12
-    bool (*isScrollable)(); // 13
-    char *(*getText)(int, int); // 14
-    int (*getCharacterCount)(); // 15
-    int (*getCursorOffset)(); // 16
-    bool (*setCursorOffset)(int); // 17
-    Dali::Accessibility::Range *(*getTextAtOffset)(int, int); // 18
-    Dali::Accessibility::Range *(*getRangeOfSelection)(int); // 19
-    bool (*removeSelection)(int); // 20
-    bool (*setRangeOfSelection)(int, int, int); // 21
-    bool (*copyText)(int, int); // 22
-    bool (*cutText)(int, int); // 23
-    bool (*insertText)(int, const char *); // 24
-    bool (*setTextContents)(const char *); // 25
-    bool (*deleteText)(int, int); // 26
-    bool (*scrollToChild)(Dali::Actor *); // 27
-    int (*getSelectedChildrenCount)(); // 28
-    Dali::Actor *(*getSelectedChild)(int); // 29
-    bool (*selectChild)(int); // 30
-    bool (*deselectSelectedChild)(int); // 31
-    bool (*isChildSelected)(int); // 32
-    bool (*selectAll)(); // 33
-    bool (*clearSelection)(); // 34
-    bool (*deselectChild)(int); // 35
+    char *                  (*getName)                      (RefObject *);                      //  1
+    char *                  (*getDescription)               (RefObject *);                      //  2
+    bool                    (*doAction)                     (RefObject *, const char *);        //  3
+    std::uint64_t           (*calculateStates)              (RefObject *, std::uint64_t);       //  4
+    int                     (*getActionCount)               (RefObject *);                      //  5
+    char *                  (*getActionName)                (RefObject *, int);                 //  6
+    bool                    (*shouldReportZeroChildren)     (RefObject *);                      //  7
+    double                  (*getMinimum)                   (RefObject *);                      //  8
+    double                  (*getCurrent)                   (RefObject *);                      //  9
+    double                  (*getMaximum)                   (RefObject *);                      // 10
+    bool                    (*setCurrent)                   (RefObject *, double);              // 11
+    double                  (*getMinimumIncrement)          (RefObject *);                      // 12
+    bool                    (*isScrollable)                 (RefObject *);                      // 13
+    char *                  (*getText)                      (RefObject *, int, int);            // 14
+    int                     (*getCharacterCount)            (RefObject *);                      // 15
+    int                     (*getCursorOffset)              (RefObject *);                      // 16
+    bool                    (*setCursorOffset)              (RefObject *, int);                 // 17
+    Accessibility::Range *  (*getTextAtOffset)              (RefObject *, int, int);            // 18
+    Accessibility::Range *  (*getRangeOfSelection)          (RefObject *, int);                 // 19
+    bool                    (*removeSelection)              (RefObject *, int);                 // 20
+    bool                    (*setRangeOfSelection)          (RefObject *, int, int, int);       // 21
+    bool                    (*copyText)                     (RefObject *, int, int);            // 22
+    bool                    (*cutText)                      (RefObject *, int, int);            // 23
+    bool                    (*insertText)                   (RefObject *, int, const char *);   // 24
+    bool                    (*setTextContents)              (RefObject *, const char *);        // 25
+    bool                    (*deleteText)                   (RefObject *, int, int);            // 26
+    bool                    (*scrollToChild)                (RefObject *, Actor *);             // 27
+    int                     (*getSelectedChildrenCount)     (RefObject *);                      // 28
+    Actor *                 (*getSelectedChild)             (RefObject *, int);                 // 29
+    bool                    (*selectChild)                  (RefObject *, int);                 // 30
+    bool                    (*deselectSelectedChild)        (RefObject *, int);                 // 31
+    bool                    (*isChildSelected)              (RefObject *, int);                 // 32
+    bool                    (*selectAll)                    (RefObject *);                      // 33
+    bool                    (*clearSelection)               (RefObject *);                      // 34
+    bool                    (*deselectChild)                (RefObject *, int);                 // 35
 };
+
+// Points to memory managed from the C# side
+const AccessibilityDelegate *gAccessibilityDelegate = nullptr;
 
 inline std::string stealString(char *str)
 {
@@ -98,10 +102,16 @@ inline T stealObject(T *obj)
     return ret;
 }
 
-struct NUIViewAccessible : public ControlAccessible
+struct NUIViewAccessible : public DevelControl::ControlAccessible
 {
-    // Points to memory managed from the C# side
-    const AccessibilityDelegate *table;
+    // Create an alias so that we don't have to use the long name everywhere
+    static inline const AccessibilityDelegate *const &table = gAccessibilityDelegate;
+
+    // NUI will use the RefObject to reroute the method call to the right View instance
+    RefObject *SelfRef() const
+    {
+        return Self().GetObjectPtr();
+    }
 
     NUIViewAccessible() = delete;
     NUIViewAccessible(const NUIViewAccessible &) = delete;
@@ -110,8 +120,10 @@ struct NUIViewAccessible : public ControlAccessible
     NUIViewAccessible& operator=(const NUIViewAccessible &) = delete;
     NUIViewAccessible& operator=(NUIViewAccessible &&) = delete;
 
-    NUIViewAccessible(Dali::Actor actor, Dali::Accessibility::Role role, const AccessibilityDelegate *vtable)
-    : ControlAccessible(actor, role, false), table{vtable} {}
+    NUIViewAccessible(Actor actor, Accessibility::Role role)
+    : ControlAccessible(actor, role, false)
+    {
+    }
 
     std::string GetNameRaw() const override
     {
@@ -119,7 +131,7 @@ struct NUIViewAccessible : public ControlAccessible
 
         if (table->getName)
         {
-            ret = stealString(table->getName());
+            ret = stealString(table->getName(SelfRef()));
         }
 
         return ret;
@@ -131,7 +143,7 @@ struct NUIViewAccessible : public ControlAccessible
 
         if (table->getDescription)
         {
-            ret = stealString(table->getDescription());
+            ret = stealString(table->getDescription(SelfRef()));
         }
 
         return ret;
@@ -146,8 +158,8 @@ struct NUIViewAccessible : public ControlAccessible
             // Note: Currently (2021-03-26), size negotiation between the default highlight frame
             // and NUI Components is known to be broken (and possibly in other cases, too). Please
             // remove this override for GrabHighlight() when it is fixed.
-            auto size = Self().GetProperty<Dali::Vector2>(Dali::Actor::Property::SIZE);
-            mCurrentHighlightActor.GetHandle().SetProperty(Dali::Actor::Property::SIZE, size);
+            auto size = Self().GetProperty<Vector2>(Actor::Property::SIZE);
+            mCurrentHighlightActor.GetHandle().SetProperty(Actor::Property::SIZE, size);
         }
 
         return ret;
@@ -159,7 +171,7 @@ struct NUIViewAccessible : public ControlAccessible
 
         if (table->getActionName)
         {
-            ret = stealString(table->getActionName(static_cast<int>(index)));
+            ret = stealString(table->getActionName(SelfRef(), static_cast<int>(index)));
         }
 
         return ret;
@@ -171,7 +183,7 @@ struct NUIViewAccessible : public ControlAccessible
 
         if (table->getActionCount)
         {
-            ret = static_cast<std::size_t>(table->getActionCount());
+            ret = static_cast<std::size_t>(table->getActionCount(SelfRef()));
         }
 
         return ret;
@@ -188,13 +200,13 @@ struct NUIViewAccessible : public ControlAccessible
 
         if (table->doAction)
         {
-            ret = table->doAction(name.data());
+            ret = table->doAction(SelfRef(), name.data());
         }
 
         return ret;
     }
 
-    Dali::Accessibility::States CalculateStates() override
+    Accessibility::States CalculateStates() override
     {
         using Dali::Accessibility::States;
 
@@ -202,20 +214,20 @@ struct NUIViewAccessible : public ControlAccessible
 
         if (table->calculateStates)
         {
-            ret = States{table->calculateStates(ret.GetRawData64())};
+            ret = States{table->calculateStates(SelfRef(), ret.GetRawData64())};
         }
 
         return ret;
     }
 
-    Dali::Property::Index GetNamePropertyIndex() override
+    Property::Index GetNamePropertyIndex() override
     {
-        return Dali::Property::INVALID_INDEX;
+        return Property::INVALID_INDEX;
     }
 
-    Dali::Property::Index GetDescriptionPropertyIndex() override
+    Property::Index GetDescriptionPropertyIndex() override
     {
-        return Dali::Property::INVALID_INDEX;
+        return Property::INVALID_INDEX;
     }
 
     // Ideally, this could be removed along with the DoGetChildren() override below if NUI controls
@@ -227,7 +239,7 @@ struct NUIViewAccessible : public ControlAccessible
 
         if (table->shouldReportZeroChildren)
         {
-            ret = table->shouldReportZeroChildren();
+            ret = table->shouldReportZeroChildren(SelfRef());
         }
 
         return ret;
@@ -239,19 +251,19 @@ struct NUIViewAccessible : public ControlAccessible
 
         if (table->isScrollable)
         {
-            ret = table->isScrollable();
+            ret = table->isScrollable(SelfRef());
         }
 
         return ret;
     }
 
-    bool ScrollToChild(Dali::Actor child) override
+    bool ScrollToChild(Actor child) override
     {
         bool ret{false};
 
         if (table->scrollToChild)
         {
-            ret = table->scrollToChild(new Dali::Actor(child));
+            ret = table->scrollToChild(SelfRef(), new Actor(child));
         }
 
         return ret;
@@ -263,20 +275,20 @@ struct NUIViewAccessible : public ControlAccessible
         {
             // We still allow the highlight frame to be reported as a child of this actor
             // even though its ShouldReportZeroChildren() method returned true.
-            if (Self() == Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor())
+            if (Self() == Accessibility::Accessible::GetCurrentlyHighlightedActor())
             {
-                children.push_back(Dali::Accessibility::Accessible::Get(mCurrentHighlightActor.GetHandle()));
+                children.push_back(Accessibility::Accessible::Get(mCurrentHighlightActor.GetHandle()));
             }
         }
         else
         {
-            Dali::Accessibility::ActorAccessible::DoGetChildren(children);
+            Accessibility::ActorAccessible::DoGetChildren(children);
         }
     }
 };
 
 struct NUIViewAccessible_Value : public NUIViewAccessible,
-                                 public virtual Dali::Accessibility::Value
+                                 public virtual Accessibility::Value
 {
     using NUIViewAccessible::NUIViewAccessible;
 
@@ -286,7 +298,7 @@ struct NUIViewAccessible_Value : public NUIViewAccessible,
 
         if (table->getMinimum)
         {
-            ret = table->getMinimum();
+            ret = table->getMinimum(SelfRef());
         }
 
         return ret;
@@ -298,7 +310,7 @@ struct NUIViewAccessible_Value : public NUIViewAccessible,
 
         if (table->getCurrent)
         {
-            ret = table->getCurrent();
+            ret = table->getCurrent(SelfRef());
         }
 
         return ret;
@@ -310,7 +322,7 @@ struct NUIViewAccessible_Value : public NUIViewAccessible,
 
         if (table->getMaximum)
         {
-            ret = table->getMaximum();
+            ret = table->getMaximum(SelfRef());
         }
 
         return ret;
@@ -322,7 +334,7 @@ struct NUIViewAccessible_Value : public NUIViewAccessible,
 
         if (table->setCurrent)
         {
-            ret = table->setCurrent(value);
+            ret = table->setCurrent(SelfRef(), value);
         }
 
         return ret;
@@ -334,7 +346,7 @@ struct NUIViewAccessible_Value : public NUIViewAccessible,
 
         if (table->getMinimumIncrement)
         {
-            ret = table->getMinimumIncrement();
+            ret = table->getMinimumIncrement(SelfRef());
         }
 
         return ret;
@@ -342,7 +354,7 @@ struct NUIViewAccessible_Value : public NUIViewAccessible,
 };
 
 struct NUIViewAccessible_EditableText : public NUIViewAccessible,
-                                        public virtual Dali::Accessibility::EditableText
+                                        public virtual Accessibility::EditableText
 {
     using NUIViewAccessible::NUIViewAccessible;
 
@@ -352,7 +364,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
 
         if (table->getText)
         {
-            ret = stealString(table->getText(static_cast<int>(startOffset), static_cast<int>(endOffset)));
+            ret = stealString(table->getText(SelfRef(), static_cast<int>(startOffset), static_cast<int>(endOffset)));
         }
 
         return ret;
@@ -364,7 +376,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
 
         if (table->getCharacterCount)
         {
-            ret = static_cast<std::size_t>(table->getCharacterCount());
+            ret = static_cast<std::size_t>(table->getCharacterCount(SelfRef()));
         }
 
         return ret;
@@ -376,7 +388,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
 
         if (table->getCursorOffset)
         {
-            ret = static_cast<std::size_t>(table->getCursorOffset());
+            ret = static_cast<std::size_t>(table->getCursorOffset(SelfRef()));
         }
 
         return ret;
@@ -388,31 +400,31 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
 
         if (table->setCursorOffset)
         {
-            ret = table->setCursorOffset(static_cast<int>(offset));
+            ret = table->setCursorOffset(SelfRef(), static_cast<int>(offset));
         }
 
         return ret;
     }
 
-    Dali::Accessibility::Range GetTextAtOffset(std::size_t offset, Dali::Accessibility::TextBoundary boundary) const override
+    Accessibility::Range GetTextAtOffset(std::size_t offset, Accessibility::TextBoundary boundary) const override
     {
-        Dali::Accessibility::Range ret{};
+        Accessibility::Range ret{};
 
         if (table->getTextAtOffset)
         {
-            ret = stealObject(table->getTextAtOffset(static_cast<int>(offset), static_cast<int>(boundary)));
+            ret = stealObject(table->getTextAtOffset(SelfRef(), static_cast<int>(offset), static_cast<int>(boundary)));
         }
 
         return ret;
     }
 
-    Dali::Accessibility::Range GetRangeOfSelection(std::size_t selectionIndex) const override
+    Accessibility::Range GetRangeOfSelection(std::size_t selectionIndex) const override
     {
-        Dali::Accessibility::Range ret{};
+        Accessibility::Range ret{};
 
         if (table->getRangeOfSelection)
         {
-            ret = stealObject(table->getRangeOfSelection(static_cast<int>(selectionIndex)));
+            ret = stealObject(table->getRangeOfSelection(SelfRef(), static_cast<int>(selectionIndex)));
         }
 
         return ret;
@@ -424,7 +436,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
 
         if (table->removeSelection)
         {
-            ret = table->removeSelection(static_cast<int>(selectionIndex));
+            ret = table->removeSelection(SelfRef(), static_cast<int>(selectionIndex));
         }
 
         return ret;
@@ -436,7 +448,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
 
         if (table->setRangeOfSelection)
         {
-            ret = table->setRangeOfSelection(static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
+            ret = table->setRangeOfSelection(SelfRef(), static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
         }
 
         return ret;
@@ -448,7 +460,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
 
         if (table->copyText)
         {
-            ret = table->copyText(static_cast<int>(startPosition), static_cast<int>(endPosition));
+            ret = table->copyText(SelfRef(), static_cast<int>(startPosition), static_cast<int>(endPosition));
         }
 
         return ret;
@@ -460,7 +472,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
 
         if (table->cutText)
         {
-            ret = table->cutText(static_cast<int>(startPosition), static_cast<int>(endPosition));
+            ret = table->cutText(SelfRef(), static_cast<int>(startPosition), static_cast<int>(endPosition));
         }
 
         return ret;
@@ -470,7 +482,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
     {
         if (table->insertText)
         {
-            return table->insertText(static_cast<int>(startPosition), text.c_str());
+            return table->insertText(SelfRef(), static_cast<int>(startPosition), text.c_str());
         }
 
         return false;
@@ -480,7 +492,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
     {
         if (table->setTextContents)
         {
-            return table->setTextContents(newContents.c_str());
+            return table->setTextContents(SelfRef(), newContents.c_str());
         }
 
         return false;
@@ -492,7 +504,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
 
         if (table->deleteText)
         {
-            ret = table->deleteText(static_cast<int>(startPosition), static_cast<int>(endPosition));
+            ret = table->deleteText(SelfRef(), static_cast<int>(startPosition), static_cast<int>(endPosition));
         }
 
         return ret;
@@ -500,7 +512,7 @@ struct NUIViewAccessible_EditableText : public NUIViewAccessible,
 };
 
 struct NUIViewAccessible_Selection : public NUIViewAccessible,
-                                    public virtual Dali::Accessibility::Selection
+                                     public virtual Accessibility::Selection
 {
     using NUIViewAccessible::NUIViewAccessible;
 
@@ -510,22 +522,22 @@ struct NUIViewAccessible_Selection : public NUIViewAccessible,
 
         if (table->getSelectedChildrenCount)
         {
-            ret = table->getSelectedChildrenCount();
+            ret = table->getSelectedChildrenCount(SelfRef());
         }
 
         return ret;
     }
 
-    Dali::Accessibility::Accessible* GetSelectedChild(int selectedChildIndex) override
+    Accessibility::Accessible* GetSelectedChild(int selectedChildIndex) override
     {
-        Dali::Accessibility::Accessible* ret{nullptr};
+        Accessibility::Accessible* ret{nullptr};
 
         if (table->getSelectedChild)
         {
-            Dali::Actor *actor = table->getSelectedChild(selectedChildIndex);
+            Actor *actor = table->getSelectedChild(SelfRef(), selectedChildIndex);
             if (actor)
             {
-                ret = Dali::Accessibility::Accessible::Get(*actor);
+                ret = Accessibility::Accessible::Get(*actor);
             }
         }
 
@@ -538,7 +550,7 @@ struct NUIViewAccessible_Selection : public NUIViewAccessible,
 
         if (table->selectChild)
         {
-            ret = table->selectChild(childIndex);
+            ret = table->selectChild(SelfRef(), childIndex);
         }
 
         return ret;
@@ -550,7 +562,7 @@ struct NUIViewAccessible_Selection : public NUIViewAccessible,
 
         if (table->deselectSelectedChild)
         {
-            ret = table->deselectSelectedChild(selectedChildIndex);
+            ret = table->deselectSelectedChild(SelfRef(), selectedChildIndex);
         }
 
         return ret;
@@ -562,7 +574,7 @@ struct NUIViewAccessible_Selection : public NUIViewAccessible,
 
         if (table->isChildSelected)
         {
-            ret = table->isChildSelected(childIndex);
+            ret = table->isChildSelected(SelfRef(), childIndex);
         }
 
         return ret;
@@ -574,7 +586,7 @@ struct NUIViewAccessible_Selection : public NUIViewAccessible,
 
         if (table->selectAll)
         {
-            ret = table->selectAll();
+            ret = table->selectAll(SelfRef());
         }
 
         return ret;
@@ -586,7 +598,7 @@ struct NUIViewAccessible_Selection : public NUIViewAccessible,
 
         if (table->clearSelection)
         {
-            ret = table->clearSelection();
+            ret = table->clearSelection(SelfRef());
         }
 
         return ret;
@@ -598,7 +610,7 @@ struct NUIViewAccessible_Selection : public NUIViewAccessible,
 
         if (table->deselectChild)
         {
-            ret = table->deselectChild(childIndex);
+            ret = table->deselectChild(SelfRef(), childIndex);
         }
 
         return ret;
@@ -617,55 +629,69 @@ enum {
 
 extern "C" {
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityConstructor_NUI
-    (void *arg1_self, int arg2_role, int arg3_iface, const void *arg4_vtable, int arg5_vtableSize)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityConstructor_NUI(void *arg1_self, int arg2_role, int arg3_iface)
 {
     GUARD_ON_NULL_RET(arg1_self);
-    GUARD_ON_NULL_RET(arg4_vtable);
     try_catch(([&]()
     {
-        Dali::Actor self = *(Dali::Actor *)arg1_self;
-        auto role = static_cast<Dali::Accessibility::Role>(arg2_role);
+        Actor self = *(Actor *)arg1_self;
+        auto role = static_cast<Accessibility::Role>(arg2_role);
         int iface = arg3_iface;
-        const auto *vtable = static_cast<const AccessibilityDelegate *>(arg4_vtable);
-        auto vtableSize = static_cast<std::size_t>(arg5_vtableSize);
 
-        if (vtableSize != sizeof(*vtable))
+        DevelControl::SetAccessibilityConstructor(self, [=](Actor actor)
         {
-            throw std::runtime_error("SetAccessibilityConstructor_NUI interop error: Marshal.SizeOf<AccessibilityDelegate>() != sizeof(AccessibilityDelegate)");
-        }
-
-        SetAccessibilityConstructor(self, [=](Dali::Actor actor)
-        {
-            Dali::Accessibility::Accessible *accessible{};
+            Accessibility::Accessible *accessible{};
 
             switch (iface)
             {
             default:
                 DALI_LOG_ERROR("SetAccessibilityConstructor_NUI error: unknown interface %d", iface);
-                // fall-through
+                [[fallthrough]];
             case IFACE_NONE:
-                accessible = new NUIViewAccessible(actor, role, vtable);
+                accessible = new NUIViewAccessible(actor, role);
                 break;
             case IFACE_VALUE:
-                accessible = new NUIViewAccessible_Value(actor, role, vtable);
+                accessible = new NUIViewAccessible_Value(actor, role);
                 break;
             case IFACE_EDITABLE_TEXT:
-                accessible = new NUIViewAccessible_EditableText(actor, role, vtable);
+                accessible = new NUIViewAccessible_EditableText(actor, role);
                 break;
             case IFACE_SELECTION:
-                accessible = new NUIViewAccessible_Selection(actor, role, vtable);
+                accessible = new NUIViewAccessible_Selection(actor, role);
                 break;
             }
 
-            return std::unique_ptr<Dali::Accessibility::Accessible>(accessible);
+            return std::unique_ptr<Accessibility::Accessible>(accessible);
         });
     }));
 }
 
-SWIGEXPORT char *SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibleImpl_NUI_DuplicateString(const char *arg)
+SWIGEXPORT char *SWIGSTDCALL CSharp_Dali_Accessibility_DuplicateString(const char *arg)
 {
     return strdup(arg);
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(const void *arg1_accessibilityDelegate, int arg2_accessibilityDelegateSize)
+{
+    GUARD_ON_NULL_RET(arg1_accessibilityDelegate);
+
+    const auto *accessibilityDelegate = static_cast<const AccessibilityDelegate *>(arg1_accessibilityDelegate);
+    auto accessibilityDelegateSize = static_cast<std::size_t>(arg2_accessibilityDelegateSize);
+
+    try_catch(([&]()
+    {
+        if (accessibilityDelegateSize != sizeof(*accessibilityDelegate))
+        {
+            throw std::runtime_error("SetAccessibilityDelegate error: Marshal.SizeOf<AccessibilityDelegate>() != sizeof(AccessibilityDelegate)");
+        }
+
+        if (gAccessibilityDelegate)
+        {
+            DALI_LOG_ERROR("Overwriting global AccessibilityDelegate");
+        }
+
+        gAccessibilityDelegate = accessibilityDelegate;
+    }));
 }
 
 } // extern "C"
