@@ -71,6 +71,7 @@ struct AccessibilityDelegate
     bool                    (*clearSelection)               (RefObject *);                      // 34
     bool                    (*deselectChild)                (RefObject *, int);                 // 35
     std::uint32_t           (*getInterfaces)                (RefObject *);                      // 36
+    Rect<int> *             (*getRangeExtents)              (RefObject *, int, int, int);       // 37
 };
 
 // Points to memory managed from the C# side
@@ -372,6 +373,14 @@ public:
     bool SetRangeOfSelection(std::size_t selectionIndex, std::size_t startOffset, std::size_t endOffset) override
     {
         return CallMethod<Interface::TEXT>(table->setRangeOfSelection, static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
+    }
+
+    Rect<> GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Accessibility::CoordinateType type) override
+    {
+        auto rectPtr   = CallMethod<Interface::TEXT>(table->getRangeExtents, static_cast<int>(startOffset), static_cast<int>(endOffset), static_cast<int>(type));
+        Rect<int> rect = StealObject(rectPtr);
+
+        return {(float)rect.x, (float)rect.y, (float)rect.width, (float)rect.height};
     }
 
     //
