@@ -70,49 +70,81 @@ struct AccessibilityDelegate
     bool                    (*selectAll)                    (RefObject *);                      // 33
     bool                    (*clearSelection)               (RefObject *);                      // 34
     bool                    (*deselectChild)                (RefObject *, int);                 // 35
+    std::uint32_t           (*getInterfaces)                (RefObject *);                      // 36
 };
 
 // Points to memory managed from the C# side
 const AccessibilityDelegate *gAccessibilityDelegate = nullptr;
 
-inline std::string stealString(char *str)
+class NUIViewAccessible : public DevelControl::ControlAccessible,
+                          public virtual Accessibility::EditableText, // includes Text
+                          public virtual Accessibility::Selection,
+                          public virtual Accessibility::Value
+
 {
-    std::string ret{};
+private:
+    using Interface = Accessibility::AtspiInterface;
 
-    if (str)
-    {
-        ret = {str};
-        free(str);
-    }
-
-    return ret;
-}
-
-template <typename T>
-inline T stealObject(T *obj)
-{
-    T ret{};
-
-    if (obj)
-    {
-        ret = *obj;
-        delete obj;
-    }
-
-    return ret;
-}
-
-struct NUIViewAccessible : public DevelControl::ControlAccessible
-{
     // Create an alias so that we don't have to use the long name everywhere
     static inline const AccessibilityDelegate *const &table = gAccessibilityDelegate;
 
-    // NUI will use the RefObject to reroute the method call to the right View instance
-    RefObject *SelfRef() const
+    // Frees memory allocated in C# via a call to CSharp_Dali_Accessibility_DuplicateString
+    static std::string StealString(char *str)
     {
-        return Self().GetObjectPtr();
+        std::string ret{};
+
+        if (str)
+        {
+            ret = {str};
+            free(str);
+        }
+
+        return ret;
     }
 
+    // Frees memory allocated in C# via a call to an interop that calls 'operator new'
+    template <typename T>
+    static T StealObject(T *obj)
+    {
+        T ret{};
+
+        if (obj)
+        {
+            ret = std::move(*obj);
+            delete obj;
+        }
+
+        return ret;
+    }
+
+    /**
+     * @brief Safely calls a virtual C# method through AccessibilityDelegate.
+     *
+     * This verifies that the specified function pointer is not null and that
+     * the specified interface is implemented by the target object. This is due
+     * to the fact that dynamic_cast can see more interfaces than this object
+     * is meant to represent (dynamic_cast cannot be used to examine C# objects,
+     * so we have to rely on a set of AtspiInterfaces returned by GetInterfaces).
+     *
+     * @tparam I The interface that the method belongs to
+     * @tparam R The return type of the method (deduced automatically)
+     * @tparam Args The parameter types of the method (deduced automatically)
+     *
+     * @param method The method (function pointer from AccessibilityDelegate)
+     * @param args Method arguments
+     *
+     * @return Value returned by the chosen method
+     */
+    template <Interface I, typename R, typename... Args>
+    R CallMethod(R (*method)(RefObject *, Args...), Args... args) const
+    {
+        DALI_ASSERT_DEBUG(method);
+        DALI_ASSERT_ALWAYS(GetInterfaces()[I]);
+
+        return method(Self().GetObjectPtr(), args...);
+    }
+
+public:
     NUIViewAccessible() = delete;
     NUIViewAccessible(const NUIViewAccessible &) = delete;
     NUIViewAccessible(NUIViewAccessible &&) = delete;
@@ -123,30 +155,25 @@ struct NUIViewAccessible : public DevelControl::ControlAccessible
     NUIViewAccessible(Actor actor, Accessibility::Role role)
     : ControlAccessible(actor, role, false)
     {
+        DALI_ASSERT_DEBUG(gAccessibilityDelegate);
     }
+
+    //
+    // Standard interfaces (Accessible, Action, Component)
+    //
 
     std::string GetNameRaw() const override
     {
-        std::string ret{};
+        char *name = CallMethod<Interface::ACCESSIBLE>(table->getName);
 
-        if (table->getName)
-        {
-            ret = stealString(table->getName(SelfRef()));
-        }
-
-        return ret;
+        return StealString(name);
     }
 
     std::string GetDescriptionRaw() const override
     {
-        std::string ret{};
+        char *description = CallMethod<Interface::ACCESSIBLE>(table->getDescription);
 
-        if (table->getDescription)
-        {
-            ret = stealString(table->getDescription(SelfRef()));
-        }
-
-        return ret;
+        return StealString(description);
     }
 
     bool GrabHighlight() override
@@ -167,26 +194,16 @@ struct NUIViewAccessible : public DevelControl::ControlAccessible
 
     std::string GetActionName(std::size_t index) const override
     {
-        std::string ret{};
+        char *name = CallMethod<Interface::ACTION>(table->getActionName, static_cast<int>(index));
 
-        if (table->getActionName)
-        {
-            ret = stealString(table->getActionName(SelfRef(), static_cast<int>(index)));
-        }
-
-        return ret;
+        return StealString(name);
     }
 
     std::size_t GetActionCount() const override
     {
-        std::size_t ret{0};
+        int count = CallMethod<Interface::ACTION>(table->getActionCount);
 
-        if (table->getActionCount)
-        {
-            ret = static_cast<std::size_t>(table->getActionCount(SelfRef()));
-        }
-
-        return ret;
+        return static_cast<std::size_t>(count);
     }
 
     bool DoAction(std::size_t index) override
@@ -196,28 +213,16 @@ struct NUIViewAccessible : public DevelControl::ControlAccessible
 
     bool DoAction(const std::string &name) override
     {
-        bool ret{false};
-
-        if (table->doAction)
-        {
-            ret = table->doAction(SelfRef(), name.data());
-        }
-
-        return ret;
+        return CallMethod<Interface::ACTION>(table->doAction, name.c_str());
     }
 
     Accessibility::States CalculateStates() override
     {
-        using Dali::Accessibility::States;
+        std::uint64_t states = ControlAccessible::CalculateStates().GetRawData64();
 
-        States ret = ControlAccessible::CalculateStates();
+        states = CallMethod<Interface::ACCESSIBLE>(table->calculateStates, states);
 
-        if (table->calculateStates)
-        {
-            ret = States{table->calculateStates(SelfRef(), ret.GetRawData64())};
-        }
-
-        return ret;
+        return Accessibility::States{states};
     }
 
     Property::Index GetNamePropertyIndex() override
@@ -235,38 +240,17 @@ struct NUIViewAccessible : public DevelControl::ControlAccessible
     // purpose, and it offers more fine-grained control.
     virtual bool ShouldReportZeroChildren() const
     {
-        bool ret{false};
-
-        if (table->shouldReportZeroChildren)
-        {
-            ret = table->shouldReportZeroChildren(SelfRef());
-        }
-
-        return ret;
+        return CallMethod<Interface::ACCESSIBLE>(table->shouldReportZeroChildren);
     }
 
     bool IsScrollable() const override
     {
-        bool ret{false};
-
-        if (table->isScrollable)
-        {
-            ret = table->isScrollable(SelfRef());
-        }
-
-        return ret;
+        return CallMethod<Interface::COMPONENT>(table->isScrollable);
     }
 
     bool ScrollToChild(Actor child) override
     {
-        bool ret{false};
-
-        if (table->scrollToChild)
-        {
-            ret = table->scrollToChild(SelfRef(), new Actor(child));
-        }
-
-        return ret;
+        return CallMethod<Interface::ACCESSIBLE>(table->scrollToChild, new Actor(child));
     }
 
     void DoGetChildren(std::vector<Accessible*>& children) override
@@ -285,383 +269,202 @@ struct NUIViewAccessible : public DevelControl::ControlAccessible
             Accessibility::ActorAccessible::DoGetChildren(children);
         }
     }
-};
 
-struct NUIViewAccessible_Value : public NUIViewAccessible,
-                                 public virtual Accessibility::Value
-{
-    using NUIViewAccessible::NUIViewAccessible;
+    Accessibility::AtspiInterfaces DoGetInterfaces() const override
+    {
+        using Interfaces = Accessibility::AtspiInterfaces;
+
+        Interfaces baseInterfaces;
+        Interfaces extraInterfaces;
+
+        // These are always implemented
+        baseInterfaces[Interface::ACCESSIBLE] = true;
+        baseInterfaces[Interface::ACTION] = true;
+        baseInterfaces[Interface::COLLECTION] = true;
+        baseInterfaces[Interface::COMPONENT] = true;
+
+        // We cannot use CallMethod() here as that would cause recursion.
+        // Note that the result will be cached and subsequent calls to GetInterfaces()
+        // will not involve calling this virtual method or jumping into C# code.
+        extraInterfaces = Interfaces{table->getInterfaces(Self().GetObjectPtr())};
+
+        return baseInterfaces | extraInterfaces;
+    }
+
+    //
+    // Value interface
+    //
 
     double GetMinimum() const override
     {
-        double ret{0.0};
-
-        if (table->getMinimum)
-        {
-            ret = table->getMinimum(SelfRef());
-        }
-
-        return ret;
+        return CallMethod<Interface::VALUE>(table->getMinimum);
     }
 
     double GetCurrent() const override
     {
-        double ret{0.0};
-
-        if (table->getCurrent)
-        {
-            ret = table->getCurrent(SelfRef());
-        }
-
-        return ret;
+        return CallMethod<Interface::VALUE>(table->getCurrent);
     }
 
     double GetMaximum() const override
     {
-        double ret{0.0};
-
-        if (table->getMaximum)
-        {
-            ret = table->getMaximum(SelfRef());
-        }
-
-        return ret;
+        return CallMethod<Interface::VALUE>(table->getMaximum);
     }
 
     bool SetCurrent(double value) override
     {
-        bool ret{false};
-
-        if (table->setCurrent)
-        {
-            ret = table->setCurrent(SelfRef(), value);
-        }
-
-        return ret;
+        return CallMethod<Interface::VALUE>(table->setCurrent, value);
     }
 
     double GetMinimumIncrement() const override
     {
-        double ret{0.0};
-
-        if (table->getMinimumIncrement)
-        {
-            ret = table->getMinimumIncrement(SelfRef());
-        }
-
-        return ret;
+        return CallMethod<Interface::VALUE>(table->getMinimumIncrement);
     }
-};
 
-struct NUIViewAccessible_EditableText : public NUIViewAccessible,
-                                        public virtual Accessibility::EditableText
-{
-    using NUIViewAccessible::NUIViewAccessible;
+    //
+    // Text interface
+    //
 
     std::string GetText(std::size_t startOffset, std::size_t endOffset) const override
     {
-        std::string ret{};
+        char *text = CallMethod<Interface::TEXT>(table->getText, static_cast<int>(startOffset), static_cast<int>(endOffset));
 
-        if (table->getText)
-        {
-            ret = stealString(table->getText(SelfRef(), static_cast<int>(startOffset), static_cast<int>(endOffset)));
-        }
-
-        return ret;
+        return StealString(text);
     }
 
     std::size_t GetCharacterCount() const override
     {
-        std::size_t ret{0};
+        int count = CallMethod<Interface::TEXT>(table->getCharacterCount);
 
-        if (table->getCharacterCount)
-        {
-            ret = static_cast<std::size_t>(table->getCharacterCount(SelfRef()));
-        }
-
-        return ret;
+        return static_cast<std::size_t>(count);
     }
 
     std::size_t GetCursorOffset() const override
     {
-        std::size_t ret{0};
+        int offset = CallMethod<Interface::TEXT>(table->getCursorOffset);
 
-        if (table->getCursorOffset)
-        {
-            ret = static_cast<std::size_t>(table->getCursorOffset(SelfRef()));
-        }
-
-        return ret;
+        return static_cast<std::size_t>(offset);
     }
 
     bool SetCursorOffset(std::size_t offset) override
     {
-        bool ret{false};
-
-        if (table->setCursorOffset)
-        {
-            ret = table->setCursorOffset(SelfRef(), static_cast<int>(offset));
-        }
-
-        return ret;
+        return CallMethod<Interface::TEXT>(table->setCursorOffset, static_cast<int>(offset));
     }
 
     Accessibility::Range GetTextAtOffset(std::size_t offset, Accessibility::TextBoundary boundary) const override
     {
-        Accessibility::Range ret{};
+        Accessibility::Range *range = CallMethod<Interface::TEXT>(table->getTextAtOffset, static_cast<int>(offset), static_cast<int>(boundary));
 
-        if (table->getTextAtOffset)
-        {
-            ret = stealObject(table->getTextAtOffset(SelfRef(), static_cast<int>(offset), static_cast<int>(boundary)));
-        }
-
-        return ret;
+        return StealObject(range);
     }
 
     Accessibility::Range GetRangeOfSelection(std::size_t selectionIndex) const override
     {
-        Accessibility::Range ret{};
+        Accessibility::Range *range = CallMethod<Interface::TEXT>(table->getRangeOfSelection, static_cast<int>(selectionIndex));
 
-        if (table->getRangeOfSelection)
-        {
-            ret = stealObject(table->getRangeOfSelection(SelfRef(), static_cast<int>(selectionIndex)));
-        }
-
-        return ret;
+        return StealObject(range);
     }
 
     bool RemoveSelection(std::size_t selectionIndex) override
     {
-        bool ret{false};
-
-        if (table->removeSelection)
-        {
-            ret = table->removeSelection(SelfRef(), static_cast<int>(selectionIndex));
-        }
-
-        return ret;
+        return CallMethod<Interface::TEXT>(table->removeSelection, static_cast<int>(selectionIndex));
     }
 
     bool SetRangeOfSelection(std::size_t selectionIndex, std::size_t startOffset, std::size_t endOffset) override
     {
-        bool ret{false};
-
-        if (table->setRangeOfSelection)
-        {
-            ret = table->setRangeOfSelection(SelfRef(), static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
-        }
-
-        return ret;
+        return CallMethod<Interface::TEXT>(table->setRangeOfSelection, static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
     }
+
+    //
+    // EditableText interface
+    //
 
     bool CopyText(std::size_t startPosition, std::size_t endPosition) override
     {
-        bool ret{false};
-
-        if (table->copyText)
-        {
-            ret = table->copyText(SelfRef(), static_cast<int>(startPosition), static_cast<int>(endPosition));
-        }
-
-        return ret;
+        return CallMethod<Interface::EDITABLE_TEXT>(table->copyText, static_cast<int>(startPosition), static_cast<int>(endPosition));
     }
 
     bool CutText(std::size_t startPosition, std::size_t endPosition) override
     {
-        bool ret{false};
-
-        if (table->cutText)
-        {
-            ret = table->cutText(SelfRef(), static_cast<int>(startPosition), static_cast<int>(endPosition));
-        }
-
-        return ret;
+        return CallMethod<Interface::EDITABLE_TEXT>(table->cutText, static_cast<int>(startPosition), static_cast<int>(endPosition));
     }
 
     bool InsertText(std::size_t startPosition, std::string text) override
     {
-        if (table->insertText)
-        {
-            return table->insertText(SelfRef(), static_cast<int>(startPosition), text.c_str());
-        }
-
-        return false;
+        return CallMethod<Interface::EDITABLE_TEXT>(table->insertText, static_cast<int>(startPosition), text.c_str());
     }
 
     bool SetTextContents(std::string newContents) override
     {
-        if (table->setTextContents)
-        {
-            return table->setTextContents(SelfRef(), newContents.c_str());
-        }
-
-        return false;
+        return CallMethod<Interface::EDITABLE_TEXT>(table->setTextContents, newContents.c_str());
     }
 
     bool DeleteText(std::size_t startPosition, std::size_t endPosition) override
     {
-        bool ret{false};
-
-        if (table->deleteText)
-        {
-            ret = table->deleteText(SelfRef(), static_cast<int>(startPosition), static_cast<int>(endPosition));
-        }
-
-        return ret;
+        return CallMethod<Interface::EDITABLE_TEXT>(table->deleteText, static_cast<int>(startPosition), static_cast<int>(endPosition));
     }
-};
 
-struct NUIViewAccessible_Selection : public NUIViewAccessible,
-                                     public virtual Accessibility::Selection
-{
-    using NUIViewAccessible::NUIViewAccessible;
+    //
+    // Selection interface
+    //
 
     int GetSelectedChildrenCount() const override
     {
-        int ret{0};
-
-        if (table->getSelectedChildrenCount)
-        {
-            ret = table->getSelectedChildrenCount(SelfRef());
-        }
-
-        return ret;
+        return CallMethod<Interface::SELECTION>(table->getSelectedChildrenCount);
     }
 
     Accessibility::Accessible* GetSelectedChild(int selectedChildIndex) override
     {
-        Accessibility::Accessible* ret{nullptr};
+        Actor *actor = CallMethod<Interface::SELECTION>(table->getSelectedChild, selectedChildIndex);
 
-        if (table->getSelectedChild)
-        {
-            Actor *actor = table->getSelectedChild(SelfRef(), selectedChildIndex);
-            if (actor)
-            {
-                ret = Accessibility::Accessible::Get(*actor);
-            }
-        }
-
-        return ret;
+        return actor ? Accessibility::Accessible::Get(*actor) : nullptr;
     }
 
     bool SelectChild(int childIndex) override
     {
-        bool ret{false};
-
-        if (table->selectChild)
-        {
-            ret = table->selectChild(SelfRef(), childIndex);
-        }
-
-        return ret;
+        return CallMethod<Interface::SELECTION>(table->selectChild, childIndex);
     }
 
     bool DeselectSelectedChild(int selectedChildIndex) override
     {
-        bool ret{false};
-
-        if (table->deselectSelectedChild)
-        {
-            ret = table->deselectSelectedChild(SelfRef(), selectedChildIndex);
-        }
-
-        return ret;
+        return CallMethod<Interface::SELECTION>(table->deselectSelectedChild, selectedChildIndex);
     }
 
     bool IsChildSelected(int childIndex) const override
     {
-        bool ret{false};
-
-        if (table->isChildSelected)
-        {
-            ret = table->isChildSelected(SelfRef(), childIndex);
-        }
-
-        return ret;
+        return CallMethod<Interface::SELECTION>(table->isChildSelected, childIndex);
     }
 
     bool SelectAll() override
     {
-        bool ret{false};
-
-        if (table->selectAll)
-        {
-            ret = table->selectAll(SelfRef());
-        }
-
-        return ret;
+        return CallMethod<Interface::SELECTION>(table->selectAll);
     }
 
     bool ClearSelection() override
     {
-        bool ret{false};
-
-        if (table->clearSelection)
-        {
-            ret = table->clearSelection(SelfRef());
-        }
-
-        return ret;
+        return CallMethod<Interface::SELECTION>(table->clearSelection);
     }
 
     bool DeselectChild(int childIndex) override
     {
-        bool ret{false};
-
-        if (table->deselectChild)
-        {
-            ret = table->deselectChild(SelfRef(), childIndex);
-        }
-
-        return ret;
+        return CallMethod<Interface::SELECTION>(table->deselectChild, childIndex);
     }
-};
-
-// Keep these enumeration values in sync with the respective C# enumeration!
-enum {
-    IFACE_NONE = 0,
-    IFACE_VALUE = 1,
-    IFACE_EDITABLE_TEXT = 2,
-    IFACE_SELECTION = 3,
 };
 
 } // anonymous namespace
 
 extern "C" {
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityConstructor_NUI(void *arg1_self, int arg2_role, int arg3_iface)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityConstructor_NUI(void *arg1_self, int arg2_role)
 {
     GUARD_ON_NULL_RET(arg1_self);
     try_catch(([&]()
     {
         Actor self = *(Actor *)arg1_self;
         auto role = static_cast<Accessibility::Role>(arg2_role);
-        int iface = arg3_iface;
 
-        DevelControl::SetAccessibilityConstructor(self, [=](Actor actor)
+        DevelControl::SetAccessibilityConstructor(self, [role](Actor actor)
         {
-            Accessibility::Accessible *accessible{};
-
-            switch (iface)
-            {
-            default:
-                DALI_LOG_ERROR("SetAccessibilityConstructor_NUI error: unknown interface %d", iface);
-                [[fallthrough]];
-            case IFACE_NONE:
-                accessible = new NUIViewAccessible(actor, role);
-                break;
-            case IFACE_VALUE:
-                accessible = new NUIViewAccessible_Value(actor, role);
-                break;
-            case IFACE_EDITABLE_TEXT:
-                accessible = new NUIViewAccessible_EditableText(actor, role);
-                break;
-            case IFACE_SELECTION:
-                accessible = new NUIViewAccessible_Selection(actor, role);
-                break;
-            }
-
-            return std::unique_ptr<Accessibility::Accessible>(accessible);
+            return std::make_unique<NUIViewAccessible>(actor, role);
         });
     }));
 }
