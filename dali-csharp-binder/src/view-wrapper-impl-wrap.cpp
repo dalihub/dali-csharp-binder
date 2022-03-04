@@ -20,7 +20,11 @@
 
 // EXTERNAL INCLUDES
 #include <dali-toolkit/dali-toolkit.h>
+#include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
+
+// INTERNAL INCLUDES
+#include "nui-view-accessible.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -224,6 +228,10 @@ void SwigDirector_ViewWrapperImpl::OnInitialize() {
   swig_callbackOnInitialize();
 
   Dali::Toolkit::Internal::Control::OnInitialize();
+
+  Dali::Toolkit::DevelControl::SetAccessibilityConstructor(Self(), [](Dali::Actor actor) {
+    return std::make_unique<NUIViewAccessible>(actor);
+  });
 }
 
 void SwigDirector_ViewWrapperImpl::OnStyleChange(Dali::Toolkit::StyleManager styleManager, Dali::StyleChange::Type change) {
