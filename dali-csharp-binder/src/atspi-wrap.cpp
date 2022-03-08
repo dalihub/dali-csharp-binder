@@ -16,29 +16,21 @@
  */
 
 // EXTERNAL INCLUDES
+#include <dali/devel-api/adaptor-framework/accessibility-bridge.h>
 #include <dali/devel-api/adaptor-framework/atspi-accessibility.h>
-#include <dali-toolkit/devel-api/controls/control-devel.h>
 
 // INTERNAL INCLUDES
 #include "common.h"
+
+#define NAMEOF(x) #x
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-SWIGEXPORT int SWIGSTDCALL csharp_dali_accessibility_GetStatus(void *jarg1)
-{
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *)jarg1;
-  if (!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control is null", 0);
-    return -1;
-  }
-  return Dali::AtspiAccessibility::GetStatus();
-}
-
 using callbackFuncType = void(*)(int);
 callbackFuncType callBack;
+
 void sayTestCallback(std::string result)
 {
   DALI_LOG_ERROR("sayTestCallback() result=%s ", result.c_str());
@@ -72,36 +64,16 @@ void sayTestCallback(std::string result)
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_say(void *jarg1, char* jarg2, bool jarg3, void *jarg4)
+SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_say(char* arg1_text, bool arg2_discardable, void *arg3_callback)
 {
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *)jarg1;
-  std::string arg2(jarg2);
-  bool arg3 = jarg3;
-  callBack = (callbackFuncType)jarg4;
+  callBack = (callbackFuncType)arg3_callback;
 
-  if (!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control is null", 0);
-    return;
-  }
-
-  Dali::AtspiAccessibility::Say(arg2, jarg3, sayTestCallback);
-
-  DALI_LOG_ERROR("csharp_dali_accessibility_say() arg3=%d", arg3);
+  Dali::AtspiAccessibility::Say(std::string{arg1_text}, arg2_discardable, sayTestCallback);
 }
 
-SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_pause_resume(void *jarg1, bool jarg2)
+SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_pause_resume(bool arg1_pause)
 {
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *)jarg1;
-  bool arg2 = jarg2;
-
-  if (!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control is null", 0);
-    return;
-  }
-
-  if(arg2 == true)
+  if(arg1_pause)
   {
     Dali::AtspiAccessibility::Pause();
   }
@@ -109,53 +81,16 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_pause_resume(void *jarg1, 
   {
     Dali::AtspiAccessibility::Resume();
   }
-
-  DALI_LOG_ERROR("csharp_dali_accessibility_pause_resume() arg2=%d", arg2);
 }
 
-SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_stop_reading(void *jarg1, bool jarg2)
+SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_stop_reading(bool arg1_alsoNonDiscardable)
 {
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *)jarg1;
-  bool arg2 = jarg2;
-
-  if (!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control is null", 0);
-    return;
-  }
-
-  Dali::AtspiAccessibility::StopReading(arg2);
-
-  DALI_LOG_ERROR("csharp_dali_accessibility_stop_reading() arg2=%d", arg2);
+  Dali::AtspiAccessibility::StopReading(arg1_alsoNonDiscardable);
 }
 
-SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_suppress_screen_reader(void *jarg1, bool jarg2)
+SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_suppress_screen_reader(bool arg1_suppress)
 {
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *)jarg1;
-  bool arg2 = jarg2;
-
-  if (!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control is null", 0);
-    return false;
-  }
-
-  return Dali::AtspiAccessibility::SuppressScreenReader(arg2);
-}
-
-SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_Enable(void *jarg1, bool jarg2)
-{
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *)jarg1;
-
-  if (!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control is null", 0);
-    return;
-  }
-
-  Dali::AtspiAccessibility::SetForcefully(jarg2);
-
-  DALI_LOG_ERROR("csharp_dali_accessibility_Enable() jarg2=%d \n", jarg2);
+  return Dali::AtspiAccessibility::SuppressScreenReader(arg1_suppress);
 }
 
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_BridgeEnableAutoInit()
@@ -173,44 +108,24 @@ SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_IsEnabled()
   return Dali::AtspiAccessibility::IsEnabled();
 }
 
-SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterEnabledDisabledSignalHandler(void (*newEnabledSignalHandler)(), void (*newDisabledSignalHandler)())
+SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterEnabledDisabledSignalHandler(void (*enabledSignalHandler)(), void (*disabledSignalHandler)())
 {
   using Dali::Accessibility::Bridge;
 
-  static void (*enabledSignalHandler)();
-  static void (*disabledSignalHandler)();
-
-  // Replace EnabledSignal
-  if (newEnabledSignalHandler != enabledSignalHandler)
+  if (!enabledSignalHandler)
   {
-    if (enabledSignalHandler)
-    {
-      Bridge::EnabledSignal().Disconnect(enabledSignalHandler);
-    }
-
-    enabledSignalHandler = newEnabledSignalHandler;
-
-    if (enabledSignalHandler)
-    {
-      Bridge::EnabledSignal().Connect(enabledSignalHandler);
-    }
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Signal handler is null", NAMEOF(enabledSignalHandler));
+    return;
   }
 
-  // Replace DisabledSignal
-  if (newDisabledSignalHandler != disabledSignalHandler)
+  if (!disabledSignalHandler)
   {
-    if (disabledSignalHandler)
-    {
-      Bridge::DisabledSignal().Disconnect(disabledSignalHandler);
-    }
-
-    disabledSignalHandler = newDisabledSignalHandler;
-
-    if (disabledSignalHandler)
-    {
-      Bridge::DisabledSignal().Connect(disabledSignalHandler);
-    }
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Signal handler is null", NAMEOF(disabledSignalHandler));
+    return;
   }
+
+  Bridge::EnabledSignal().Connect(enabledSignalHandler);
+  Bridge::DisabledSignal().Connect(disabledSignalHandler);
 }
 
 #ifdef __cplusplus
