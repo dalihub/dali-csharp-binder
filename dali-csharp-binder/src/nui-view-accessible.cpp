@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2022 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,10 @@
  *
  */
 
+// CLASS HEADER
+#include "nui-view-accessible.h"
+
 // EXTERNAL INCLUDES
-#include <dali/devel-api/adaptor-framework/accessibility.h>
-#include <dali/devel-api/adaptor-framework/accessibility-bridge.h>
-#include <dali/devel-api/atspi-interfaces/editable-text.h>
-#include <dali/devel-api/atspi-interfaces/text.h>
-#include <dali/devel-api/atspi-interfaces/selection.h>
-#include <dali/devel-api/atspi-interfaces/value.h>
 #include <dali/integration-api/debug.h>
 
 // INTERNAL INCLUDES
@@ -30,11 +27,13 @@
 using namespace Dali;
 using namespace Dali::Toolkit;
 
-namespace {
+using Interface = Accessibility::AtspiInterface;
 
 // Keep this structure layout binary compatible with the respective C# structure!
-struct AccessibilityDelegate
+struct NUIViewAccessible::AccessibilityDelegate
 {
+    AccessibilityDelegate() = delete;
+
     char *                  (*getName)                      (RefObject *);                      //  1
     char *                  (*getDescription)               (RefObject *);                      //  2
     bool                    (*doAction)                     (RefObject *, const char *);        //  3
@@ -74,392 +73,356 @@ struct AccessibilityDelegate
     Rect<int> *             (*getRangeExtents)              (RefObject *, int, int, int);       // 37
 };
 
-// Points to memory managed from the C# side
-const AccessibilityDelegate *gAccessibilityDelegate = nullptr;
-
-class NUIViewAccessible : public DevelControl::ControlAccessible,
-                          public virtual Accessibility::EditableText, // includes Text
-                          public virtual Accessibility::Selection,
-                          public virtual Accessibility::Value
-
+NUIViewAccessible::NUIViewAccessible(Actor actor, Accessibility::Role role)
+: ControlAccessible(actor, role, false)
 {
-private:
-    using Interface = Accessibility::AtspiInterface;
+    DALI_ASSERT_DEBUG(mTable);
+}
 
-    // Create an alias so that we don't have to use the long name everywhere
-    static inline const AccessibilityDelegate *const &table = gAccessibilityDelegate;
-
-    // Frees memory allocated in C# via a call to CSharp_Dali_Accessibility_DuplicateString
-    static std::string StealString(char *str)
+void NUIViewAccessible::SetAccessibilityDelegate(const AccessibilityDelegate *accessibilityDelegate)
+{
+    if (mTable)
     {
-        std::string ret{};
+        DALI_LOG_ERROR("Overwriting global AccessibilityDelegate");
+    }
 
-        if (str)
+    mTable = accessibilityDelegate;
+}
+
+std::string NUIViewAccessible::StealString(char *str)
+{
+    std::string ret{};
+
+    if (str)
+    {
+        ret = {str};
+        free(str);
+    }
+
+    return ret;
+}
+
+template <typename T>
+T NUIViewAccessible::StealObject(T *obj)
+{
+    T ret{};
+
+    if (obj)
+    {
+        ret = std::move(*obj);
+        delete obj;
+    }
+
+    return ret;
+}
+
+template <Interface I, typename R, typename... Args>
+R NUIViewAccessible::CallMethod(R (*method)(RefObject *, Args...), Args... args) const
+{
+    DALI_ASSERT_DEBUG(method);
+    DALI_ASSERT_ALWAYS(GetInterfaces()[I]);
+
+    return method(Self().GetObjectPtr(), args...);
+}
+
+//
+// Standard interfaces (Accessible, Action, Component)
+//
+
+std::string NUIViewAccessible::GetNameRaw() const
+{
+    char *name = CallMethod<Interface::ACCESSIBLE>(mTable->getName);
+
+    return StealString(name);
+}
+
+std::string NUIViewAccessible::GetDescriptionRaw() const
+{
+    char *description = CallMethod<Interface::ACCESSIBLE>(mTable->getDescription);
+
+    return StealString(description);
+}
+
+bool NUIViewAccessible::GrabHighlight()
+{
+    bool ret = ControlAccessible::GrabHighlight();
+
+    if (ret)
+    {
+        // Note: Currently (2021-03-26), size negotiation between the default highlight frame
+        // and NUI Components is known to be broken (and possibly in other cases, too). Please
+        // remove this for GrabHighlight() when it is fixed.
+        auto size = Self().GetProperty<Vector2>(Actor::Property::SIZE);
+        mCurrentHighlightActor.GetHandle().SetProperty(Actor::Property::SIZE, size);
+    }
+
+    return ret;
+}
+
+std::string NUIViewAccessible::GetActionName(std::size_t index) const
+{
+    char *name = CallMethod<Interface::ACTION>(mTable->getActionName, static_cast<int>(index));
+
+    return StealString(name);
+}
+
+std::size_t NUIViewAccessible::GetActionCount() const
+{
+    int count = CallMethod<Interface::ACTION>(mTable->getActionCount);
+
+    return static_cast<std::size_t>(count);
+}
+
+bool NUIViewAccessible::DoAction(std::size_t index)
+{
+    return DoAction(GetActionName(index));
+}
+
+bool NUIViewAccessible::DoAction(const std::string &name)
+{
+    return CallMethod<Interface::ACTION>(mTable->doAction, name.c_str());
+}
+
+Accessibility::States NUIViewAccessible::CalculateStates()
+{
+    std::uint64_t states = ControlAccessible::CalculateStates().GetRawData64();
+
+    states = CallMethod<Interface::ACCESSIBLE>(mTable->calculateStates, states);
+
+    return Accessibility::States{states};
+}
+
+Property::Index NUIViewAccessible::GetNamePropertyIndex()
+{
+    return Property::INVALID_INDEX;
+}
+
+Property::Index NUIViewAccessible::GetDescriptionPropertyIndex()
+{
+    return Property::INVALID_INDEX;
+}
+
+// Ideally, this could be removed along with the DoGetChildren() below if NUI controls
+// switch to setting the AccessibilityHidden property instead. It can be used for the same
+// purpose, and it offers more fine-grained control.
+bool NUIViewAccessible::ShouldReportZeroChildren() const
+{
+    return CallMethod<Interface::ACCESSIBLE>(mTable->shouldReportZeroChildren);
+}
+
+bool NUIViewAccessible::IsScrollable() const
+{
+    return CallMethod<Interface::COMPONENT>(mTable->isScrollable);
+}
+
+bool NUIViewAccessible::ScrollToChild(Actor child)
+{
+    return CallMethod<Interface::ACCESSIBLE>(mTable->scrollToChild, new Actor(child));
+}
+
+void NUIViewAccessible::DoGetChildren(std::vector<Accessible*>& children)
+{
+    if (ShouldReportZeroChildren())
+    {
+        // We still allow the highlight frame to be reported as a child of this actor
+        // even though its ShouldReportZeroChildren() method returned true.
+        if (Self() == Accessibility::Accessible::GetCurrentlyHighlightedActor())
         {
-            ret = {str};
-            free(str);
-        }
-
-        return ret;
-    }
-
-    // Frees memory allocated in C# via a call to an interop that calls 'operator new'
-    template <typename T>
-    static T StealObject(T *obj)
-    {
-        T ret{};
-
-        if (obj)
-        {
-            ret = std::move(*obj);
-            delete obj;
-        }
-
-        return ret;
-    }
-
-    /**
-     * @brief Safely calls a virtual C# method through AccessibilityDelegate.
-     *
-     * This verifies that the specified function pointer is not null and that
-     * the specified interface is implemented by the target object. This is due
-     * to the fact that dynamic_cast can see more interfaces than this object
-     * is meant to represent (dynamic_cast cannot be used to examine C# objects,
-     * so we have to rely on a set of AtspiInterfaces returned by GetInterfaces).
-     *
-     * @tparam I The interface that the method belongs to
-     * @tparam R The return type of the method (deduced automatically)
-     * @tparam Args The parameter types of the method (deduced automatically)
-     *
-     * @param method The method (function pointer from AccessibilityDelegate)
-     * @param args Method arguments
-     *
-     * @return Value returned by the chosen method
-     */
-    template <Interface I, typename R, typename... Args>
-    R CallMethod(R (*method)(RefObject *, Args...), Args... args) const
-    {
-        DALI_ASSERT_DEBUG(method);
-        DALI_ASSERT_ALWAYS(GetInterfaces()[I]);
-
-        return method(Self().GetObjectPtr(), args...);
-    }
-
-public:
-    NUIViewAccessible() = delete;
-    NUIViewAccessible(const NUIViewAccessible &) = delete;
-    NUIViewAccessible(NUIViewAccessible &&) = delete;
-
-    NUIViewAccessible& operator=(const NUIViewAccessible &) = delete;
-    NUIViewAccessible& operator=(NUIViewAccessible &&) = delete;
-
-    NUIViewAccessible(Actor actor, Accessibility::Role role)
-    : ControlAccessible(actor, role, false)
-    {
-        DALI_ASSERT_DEBUG(gAccessibilityDelegate);
-    }
-
-    //
-    // Standard interfaces (Accessible, Action, Component)
-    //
-
-    std::string GetNameRaw() const override
-    {
-        char *name = CallMethod<Interface::ACCESSIBLE>(table->getName);
-
-        return StealString(name);
-    }
-
-    std::string GetDescriptionRaw() const override
-    {
-        char *description = CallMethod<Interface::ACCESSIBLE>(table->getDescription);
-
-        return StealString(description);
-    }
-
-    bool GrabHighlight() override
-    {
-        bool ret = ControlAccessible::GrabHighlight();
-
-        if (ret)
-        {
-            // Note: Currently (2021-03-26), size negotiation between the default highlight frame
-            // and NUI Components is known to be broken (and possibly in other cases, too). Please
-            // remove this override for GrabHighlight() when it is fixed.
-            auto size = Self().GetProperty<Vector2>(Actor::Property::SIZE);
-            mCurrentHighlightActor.GetHandle().SetProperty(Actor::Property::SIZE, size);
-        }
-
-        return ret;
-    }
-
-    std::string GetActionName(std::size_t index) const override
-    {
-        char *name = CallMethod<Interface::ACTION>(table->getActionName, static_cast<int>(index));
-
-        return StealString(name);
-    }
-
-    std::size_t GetActionCount() const override
-    {
-        int count = CallMethod<Interface::ACTION>(table->getActionCount);
-
-        return static_cast<std::size_t>(count);
-    }
-
-    bool DoAction(std::size_t index) override
-    {
-        return DoAction(GetActionName(index));
-    }
-
-    bool DoAction(const std::string &name) override
-    {
-        return CallMethod<Interface::ACTION>(table->doAction, name.c_str());
-    }
-
-    Accessibility::States CalculateStates() override
-    {
-        std::uint64_t states = ControlAccessible::CalculateStates().GetRawData64();
-
-        states = CallMethod<Interface::ACCESSIBLE>(table->calculateStates, states);
-
-        return Accessibility::States{states};
-    }
-
-    Property::Index GetNamePropertyIndex() override
-    {
-        return Property::INVALID_INDEX;
-    }
-
-    Property::Index GetDescriptionPropertyIndex() override
-    {
-        return Property::INVALID_INDEX;
-    }
-
-    // Ideally, this could be removed along with the DoGetChildren() override below if NUI controls
-    // switch to setting the AccessibilityHidden property instead. It can be used for the same
-    // purpose, and it offers more fine-grained control.
-    virtual bool ShouldReportZeroChildren() const
-    {
-        return CallMethod<Interface::ACCESSIBLE>(table->shouldReportZeroChildren);
-    }
-
-    bool IsScrollable() const override
-    {
-        return CallMethod<Interface::COMPONENT>(table->isScrollable);
-    }
-
-    bool ScrollToChild(Actor child) override
-    {
-        return CallMethod<Interface::ACCESSIBLE>(table->scrollToChild, new Actor(child));
-    }
-
-    void DoGetChildren(std::vector<Accessible*>& children) override
-    {
-        if (ShouldReportZeroChildren())
-        {
-            // We still allow the highlight frame to be reported as a child of this actor
-            // even though its ShouldReportZeroChildren() method returned true.
-            if (Self() == Accessibility::Accessible::GetCurrentlyHighlightedActor())
-            {
-                children.push_back(Accessibility::Accessible::Get(mCurrentHighlightActor.GetHandle()));
-            }
-        }
-        else
-        {
-            Accessibility::ActorAccessible::DoGetChildren(children);
+            children.push_back(Accessibility::Accessible::Get(mCurrentHighlightActor.GetHandle()));
         }
     }
-
-    Accessibility::AtspiInterfaces DoGetInterfaces() const override
+    else
     {
-        using Interfaces = Accessibility::AtspiInterfaces;
-
-        Interfaces baseInterfaces;
-        Interfaces extraInterfaces;
-
-        // These are always implemented
-        baseInterfaces[Interface::ACCESSIBLE] = true;
-        baseInterfaces[Interface::ACTION] = true;
-        baseInterfaces[Interface::COLLECTION] = true;
-        baseInterfaces[Interface::COMPONENT] = true;
-
-        // We cannot use CallMethod() here as that would cause recursion.
-        // Note that the result will be cached and subsequent calls to GetInterfaces()
-        // will not involve calling this virtual method or jumping into C# code.
-        extraInterfaces = Interfaces{table->getInterfaces(Self().GetObjectPtr())};
-
-        return baseInterfaces | extraInterfaces;
+        Accessibility::ActorAccessible::DoGetChildren(children);
     }
+}
 
-    //
-    // Value interface
-    //
+Accessibility::AtspiInterfaces NUIViewAccessible::DoGetInterfaces() const
+{
+    using Interfaces = Accessibility::AtspiInterfaces;
 
-    double GetMinimum() const override
-    {
-        return CallMethod<Interface::VALUE>(table->getMinimum);
-    }
+    Interfaces baseInterfaces;
+    Interfaces extraInterfaces;
 
-    double GetCurrent() const override
-    {
-        return CallMethod<Interface::VALUE>(table->getCurrent);
-    }
+    // These are always implemented
+    baseInterfaces[Interface::ACCESSIBLE] = true;
+    baseInterfaces[Interface::ACTION] = true;
+    baseInterfaces[Interface::COLLECTION] = true;
+    baseInterfaces[Interface::COMPONENT] = true;
 
-    double GetMaximum() const override
-    {
-        return CallMethod<Interface::VALUE>(table->getMaximum);
-    }
+    // We cannot use CallMethod() here as that would cause recursion.
+    // Note that the result will be cached and subsequent calls to GetInterfaces()
+    // will not involve calling this virtual method or jumping into C# code.
+    extraInterfaces = Interfaces{mTable->getInterfaces(Self().GetObjectPtr())};
 
-    bool SetCurrent(double value) override
-    {
-        return CallMethod<Interface::VALUE>(table->setCurrent, value);
-    }
+    return baseInterfaces | extraInterfaces;
+}
 
-    double GetMinimumIncrement() const override
-    {
-        return CallMethod<Interface::VALUE>(table->getMinimumIncrement);
-    }
+//
+// Value interface
+//
 
-    //
-    // Text interface
-    //
+double NUIViewAccessible::GetMinimum() const
+{
+    return CallMethod<Interface::VALUE>(mTable->getMinimum);
+}
 
-    std::string GetText(std::size_t startOffset, std::size_t endOffset) const override
-    {
-        char *text = CallMethod<Interface::TEXT>(table->getText, static_cast<int>(startOffset), static_cast<int>(endOffset));
+double NUIViewAccessible::GetCurrent() const
+{
+    return CallMethod<Interface::VALUE>(mTable->getCurrent);
+}
 
-        return StealString(text);
-    }
+double NUIViewAccessible::GetMaximum() const
+{
+    return CallMethod<Interface::VALUE>(mTable->getMaximum);
+}
 
-    std::size_t GetCharacterCount() const override
-    {
-        int count = CallMethod<Interface::TEXT>(table->getCharacterCount);
+bool NUIViewAccessible::SetCurrent(double value)
+{
+    return CallMethod<Interface::VALUE>(mTable->setCurrent, value);
+}
 
-        return static_cast<std::size_t>(count);
-    }
+double NUIViewAccessible::GetMinimumIncrement() const
+{
+    return CallMethod<Interface::VALUE>(mTable->getMinimumIncrement);
+}
 
-    std::size_t GetCursorOffset() const override
-    {
-        int offset = CallMethod<Interface::TEXT>(table->getCursorOffset);
+//
+// Text interface
+//
 
-        return static_cast<std::size_t>(offset);
-    }
+std::string NUIViewAccessible::GetText(std::size_t startOffset, std::size_t endOffset) const
+{
+    char *text = CallMethod<Interface::TEXT>(mTable->getText, static_cast<int>(startOffset), static_cast<int>(endOffset));
 
-    bool SetCursorOffset(std::size_t offset) override
-    {
-        return CallMethod<Interface::TEXT>(table->setCursorOffset, static_cast<int>(offset));
-    }
+    return StealString(text);
+}
 
-    Accessibility::Range GetTextAtOffset(std::size_t offset, Accessibility::TextBoundary boundary) const override
-    {
-        Accessibility::Range *range = CallMethod<Interface::TEXT>(table->getTextAtOffset, static_cast<int>(offset), static_cast<int>(boundary));
+std::size_t NUIViewAccessible::GetCharacterCount() const
+{
+    int count = CallMethod<Interface::TEXT>(mTable->getCharacterCount);
 
-        return StealObject(range);
-    }
+    return static_cast<std::size_t>(count);
+}
 
-    Accessibility::Range GetRangeOfSelection(std::size_t selectionIndex) const override
-    {
-        Accessibility::Range *range = CallMethod<Interface::TEXT>(table->getRangeOfSelection, static_cast<int>(selectionIndex));
+std::size_t NUIViewAccessible::GetCursorOffset() const
+{
+    int offset = CallMethod<Interface::TEXT>(mTable->getCursorOffset);
 
-        return StealObject(range);
-    }
+    return static_cast<std::size_t>(offset);
+}
 
-    bool RemoveSelection(std::size_t selectionIndex) override
-    {
-        return CallMethod<Interface::TEXT>(table->removeSelection, static_cast<int>(selectionIndex));
-    }
+bool NUIViewAccessible::SetCursorOffset(std::size_t offset)
+{
+    return CallMethod<Interface::TEXT>(mTable->setCursorOffset, static_cast<int>(offset));
+}
 
-    bool SetRangeOfSelection(std::size_t selectionIndex, std::size_t startOffset, std::size_t endOffset) override
-    {
-        return CallMethod<Interface::TEXT>(table->setRangeOfSelection, static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
-    }
+Accessibility::Range NUIViewAccessible::GetTextAtOffset(std::size_t offset, Accessibility::TextBoundary boundary) const
+{
+    Accessibility::Range *range = CallMethod<Interface::TEXT>(mTable->getTextAtOffset, static_cast<int>(offset), static_cast<int>(boundary));
 
-    Rect<> GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Accessibility::CoordinateType type) override
-    {
-        auto rectPtr   = CallMethod<Interface::TEXT>(table->getRangeExtents, static_cast<int>(startOffset), static_cast<int>(endOffset), static_cast<int>(type));
-        Rect<int> rect = StealObject(rectPtr);
+    return StealObject(range);
+}
 
-        return {(float)rect.x, (float)rect.y, (float)rect.width, (float)rect.height};
-    }
+Accessibility::Range NUIViewAccessible::GetRangeOfSelection(std::size_t selectionIndex) const
+{
+    Accessibility::Range *range = CallMethod<Interface::TEXT>(mTable->getRangeOfSelection, static_cast<int>(selectionIndex));
 
-    //
-    // EditableText interface
-    //
+    return StealObject(range);
+}
 
-    bool CopyText(std::size_t startPosition, std::size_t endPosition) override
-    {
-        return CallMethod<Interface::EDITABLE_TEXT>(table->copyText, static_cast<int>(startPosition), static_cast<int>(endPosition));
-    }
+bool NUIViewAccessible::RemoveSelection(std::size_t selectionIndex)
+{
+    return CallMethod<Interface::TEXT>(mTable->removeSelection, static_cast<int>(selectionIndex));
+}
 
-    bool CutText(std::size_t startPosition, std::size_t endPosition) override
-    {
-        return CallMethod<Interface::EDITABLE_TEXT>(table->cutText, static_cast<int>(startPosition), static_cast<int>(endPosition));
-    }
+bool NUIViewAccessible::SetRangeOfSelection(std::size_t selectionIndex, std::size_t startOffset, std::size_t endOffset)
+{
+    return CallMethod<Interface::TEXT>(mTable->setRangeOfSelection, static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
+}
 
-    bool InsertText(std::size_t startPosition, std::string text) override
-    {
-        return CallMethod<Interface::EDITABLE_TEXT>(table->insertText, static_cast<int>(startPosition), text.c_str());
-    }
+Rect<> NUIViewAccessible::GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Accessibility::CoordinateType type)
+{
+    auto rectPtr   = CallMethod<Interface::TEXT>(mTable->getRangeExtents, static_cast<int>(startOffset), static_cast<int>(endOffset), static_cast<int>(type));
+    Rect<int> rect = StealObject(rectPtr);
 
-    bool SetTextContents(std::string newContents) override
-    {
-        return CallMethod<Interface::EDITABLE_TEXT>(table->setTextContents, newContents.c_str());
-    }
+    return {(float)rect.x, (float)rect.y, (float)rect.width, (float)rect.height};
+}
 
-    bool DeleteText(std::size_t startPosition, std::size_t endPosition) override
-    {
-        return CallMethod<Interface::EDITABLE_TEXT>(table->deleteText, static_cast<int>(startPosition), static_cast<int>(endPosition));
-    }
+//
+// EditableText interface
+//
 
-    //
-    // Selection interface
-    //
+bool NUIViewAccessible::CopyText(std::size_t startPosition, std::size_t endPosition)
+{
+    return CallMethod<Interface::EDITABLE_TEXT>(mTable->copyText, static_cast<int>(startPosition), static_cast<int>(endPosition));
+}
 
-    int GetSelectedChildrenCount() const override
-    {
-        return CallMethod<Interface::SELECTION>(table->getSelectedChildrenCount);
-    }
+bool NUIViewAccessible::CutText(std::size_t startPosition, std::size_t endPosition)
+{
+    return CallMethod<Interface::EDITABLE_TEXT>(mTable->cutText, static_cast<int>(startPosition), static_cast<int>(endPosition));
+}
 
-    Accessibility::Accessible* GetSelectedChild(int selectedChildIndex) override
-    {
-        Actor *actor = CallMethod<Interface::SELECTION>(table->getSelectedChild, selectedChildIndex);
+bool NUIViewAccessible::InsertText(std::size_t startPosition, std::string text)
+{
+    return CallMethod<Interface::EDITABLE_TEXT>(mTable->insertText, static_cast<int>(startPosition), text.c_str());
+}
 
-        return actor ? Accessibility::Accessible::Get(*actor) : nullptr;
-    }
+bool NUIViewAccessible::SetTextContents(std::string newContents)
+{
+    return CallMethod<Interface::EDITABLE_TEXT>(mTable->setTextContents, newContents.c_str());
+}
 
-    bool SelectChild(int childIndex) override
-    {
-        return CallMethod<Interface::SELECTION>(table->selectChild, childIndex);
-    }
+bool NUIViewAccessible::DeleteText(std::size_t startPosition, std::size_t endPosition)
+{
+    return CallMethod<Interface::EDITABLE_TEXT>(mTable->deleteText, static_cast<int>(startPosition), static_cast<int>(endPosition));
+}
 
-    bool DeselectSelectedChild(int selectedChildIndex) override
-    {
-        return CallMethod<Interface::SELECTION>(table->deselectSelectedChild, selectedChildIndex);
-    }
+//
+// Selection interface
+//
 
-    bool IsChildSelected(int childIndex) const override
-    {
-        return CallMethod<Interface::SELECTION>(table->isChildSelected, childIndex);
-    }
+int NUIViewAccessible::GetSelectedChildrenCount() const
+{
+    return CallMethod<Interface::SELECTION>(mTable->getSelectedChildrenCount);
+}
 
-    bool SelectAll() override
-    {
-        return CallMethod<Interface::SELECTION>(table->selectAll);
-    }
+Accessibility::Accessible* NUIViewAccessible::GetSelectedChild(int selectedChildIndex)
+{
+    Actor *actor = CallMethod<Interface::SELECTION>(mTable->getSelectedChild, selectedChildIndex);
 
-    bool ClearSelection() override
-    {
-        return CallMethod<Interface::SELECTION>(table->clearSelection);
-    }
+    return actor ? Accessibility::Accessible::Get(*actor) : nullptr;
+}
 
-    bool DeselectChild(int childIndex) override
-    {
-        return CallMethod<Interface::SELECTION>(table->deselectChild, childIndex);
-    }
-};
+bool NUIViewAccessible::SelectChild(int childIndex)
+{
+    return CallMethod<Interface::SELECTION>(mTable->selectChild, childIndex);
+}
 
-} // anonymous namespace
+bool NUIViewAccessible::DeselectSelectedChild(int selectedChildIndex)
+{
+    return CallMethod<Interface::SELECTION>(mTable->deselectSelectedChild, selectedChildIndex);
+}
+
+bool NUIViewAccessible::IsChildSelected(int childIndex) const
+{
+    return CallMethod<Interface::SELECTION>(mTable->isChildSelected, childIndex);
+}
+
+bool NUIViewAccessible::SelectAll()
+{
+    return CallMethod<Interface::SELECTION>(mTable->selectAll);
+}
+
+bool NUIViewAccessible::ClearSelection()
+{
+    return CallMethod<Interface::SELECTION>(mTable->clearSelection);
+}
+
+bool NUIViewAccessible::DeselectChild(int childIndex)
+{
+    return CallMethod<Interface::SELECTION>(mTable->deselectChild, childIndex);
+}
 
 extern "C" {
 
@@ -487,7 +450,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(c
 {
     GUARD_ON_NULL_RET(arg1_accessibilityDelegate);
 
-    const auto *accessibilityDelegate = static_cast<const AccessibilityDelegate *>(arg1_accessibilityDelegate);
+    const auto *accessibilityDelegate = static_cast<const NUIViewAccessible::AccessibilityDelegate *>(arg1_accessibilityDelegate);
     auto accessibilityDelegateSize = static_cast<std::size_t>(arg2_accessibilityDelegateSize);
 
     try_catch(([&]()
@@ -497,12 +460,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(c
             throw std::runtime_error("SetAccessibilityDelegate error: Marshal.SizeOf<AccessibilityDelegate>() != sizeof(AccessibilityDelegate)");
         }
 
-        if (gAccessibilityDelegate)
-        {
-            DALI_LOG_ERROR("Overwriting global AccessibilityDelegate");
-        }
-
-        gAccessibilityDelegate = accessibilityDelegate;
+        NUIViewAccessible::SetAccessibilityDelegate(accessibilityDelegate);
     }));
 }
 
