@@ -46,7 +46,7 @@ dali_csharp_binder_common_src_files = \
   ${dali_csharp_binder_dir}/src/web-view-wrap.cpp \
   ${dali_csharp_binder_dir}/src/control-devel-wrap.cpp \
   ${dali_csharp_binder_dir}/src/signal-wrap.cpp \
-  ${dali_csharp_binder_dir}/src/accessible-impl-nui.cpp \
+  ${dali_csharp_binder_dir}/src/nui-view-accessible.cpp \
   ${dali_csharp_binder_dir}/src/atspi-wrap.cpp \
   ${dali_csharp_binder_dir}/src/rotation-wrap.cpp \
   ${dali_csharp_binder_dir}/src/input-options-wrap.cpp \
