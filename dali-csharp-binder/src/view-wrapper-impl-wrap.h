@@ -118,6 +118,9 @@ public:
     virtual bool OnAccessibilityPan(Dali::PanGesture gesture);
     virtual bool OnAccessibilityValueChange(bool isIncrease);
     virtual bool OnAccessibilityZoom();
+
+    Dali::Toolkit::DevelControl::ControlAccessible* CreateAccessibleObject() override;
+
     virtual void OnKeyInputFocusGained();
     virtual void OnKeyInputFocusLost();
     virtual Dali::Actor GetNextKeyboardFocusableActor(Dali::Actor currentFocusedActor, Dali::Toolkit::Control::KeyboardFocus::Direction direction, bool loopEnabled);
