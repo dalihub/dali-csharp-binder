@@ -43,7 +43,7 @@ public:
     NUIViewAccessible& operator=(const NUIViewAccessible &) = delete;
     NUIViewAccessible& operator=(NUIViewAccessible &&) = delete;
 
-    NUIViewAccessible(Dali::Actor actor, Dali::Accessibility::Role role);
+    NUIViewAccessible(Dali::Actor actor);
 
     static void SetAccessibilityDelegate(const AccessibilityDelegate *accessibilityDelegate);
 

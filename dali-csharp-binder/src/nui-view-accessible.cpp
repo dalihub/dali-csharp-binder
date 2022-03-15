@@ -73,8 +73,8 @@ struct NUIViewAccessible::AccessibilityDelegate
     Rect<int> *             (*getRangeExtents)              (RefObject *, int, int, int);       // 37
 };
 
-NUIViewAccessible::NUIViewAccessible(Actor actor, Accessibility::Role role)
-: ControlAccessible(actor, role, false)
+NUIViewAccessible::NUIViewAccessible(Actor actor)
+: ControlAccessible(actor, Accessibility::Role::UNKNOWN, false)
 {
     DALI_ASSERT_DEBUG(mTable);
 }
@@ -425,21 +425,6 @@ bool NUIViewAccessible::DeselectChild(int childIndex)
 }
 
 extern "C" {
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityConstructor_NUI(void *arg1_self, int arg2_role)
-{
-    GUARD_ON_NULL_RET(arg1_self);
-    try_catch(([&]()
-    {
-        Actor self = *(Actor *)arg1_self;
-        auto role = static_cast<Accessibility::Role>(arg2_role);
-
-        DevelControl::SetAccessibilityConstructor(self, [role](Actor actor)
-        {
-            return std::make_unique<NUIViewAccessible>(actor, role);
-        });
-    }));
-}
 
 SWIGEXPORT char *SWIGSTDCALL CSharp_Dali_Accessibility_DuplicateString(const char *arg)
 {
