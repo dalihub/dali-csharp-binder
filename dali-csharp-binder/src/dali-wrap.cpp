@@ -24026,6 +24026,29 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_RemoveRenderer__SWIG_1(void * jarg
 
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_HitTestResultSignal(void * jarg1) {
+  void * jresult ;
+  Dali::Actor arg1 ;
+  Dali::Actor *argp1 = (Dali::Actor *) 0 ;
+  Dali::Actor::TouchEventSignalType *result = 0 ;
+
+
+  argp1 = (Dali::Actor *)jarg1;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
+    return 0;
+  }
+  arg1 = *argp1;
+  {
+    try {
+      result = (Dali::Actor::TouchEventSignalType *) &Dali::DevelActor::HitTestResultSignal(arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_InterceptTouchSignal(void * jarg1) {
   void * jresult ;
   Dali::Actor arg1 ;
