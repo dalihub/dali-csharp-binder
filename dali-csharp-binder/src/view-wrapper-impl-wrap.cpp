@@ -20,7 +20,11 @@
 
 // EXTERNAL INCLUDES
 #include <dali-toolkit/dali-toolkit.h>
+#include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
+
+// INTERNAL INCLUDES
+#include "nui-view-accessible.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -291,6 +295,10 @@ bool SwigDirector_ViewWrapperImpl::OnAccessibilityZoom() {
     c_result = jresult ? true : false;
   }
   return c_result;
+}
+
+Dali::Toolkit::DevelControl::ControlAccessible* SwigDirector_ViewWrapperImpl::CreateAccessibleObject() {
+  return new NUIViewAccessible(Self());
 }
 
 void SwigDirector_ViewWrapperImpl::OnKeyInputFocusGained() {
