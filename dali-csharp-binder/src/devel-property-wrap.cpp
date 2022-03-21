@@ -125,6 +125,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_DOWN_FOCUSABLE_ACTOR_ID_get() {
   return Dali::Toolkit::DevelControl::Property::DOWN_FOCUSABLE_ACTOR_ID;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_CLOCKWISE_FOCUSABLE_ACTOR_ID_get() {
+  return Dali::Toolkit::DevelControl::Property::CLOCKWISE_FOCUSABLE_ACTOR_ID;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_COUNTER_CLOCKWISE_FOCUSABLE_ACTOR_ID_get() {
+  return Dali::Toolkit::DevelControl::Property::COUNTER_CLOCKWISE_FOCUSABLE_ACTOR_ID;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_ItemView_Property_LAYOUT_get() {
   int jresult;
   int result;
