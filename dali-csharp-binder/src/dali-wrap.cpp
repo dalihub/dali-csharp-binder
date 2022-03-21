@@ -2338,7 +2338,7 @@ SwigDirector_CustomAlgorithmInterface::~SwigDirector_CustomAlgorithmInterface() 
 }
 
 
-Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction) {
+Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction, const std::string& deviceName) {
   Dali::Actor c_result ;
   void * jresult = 0 ;
   void * jcurrent  ;
@@ -2351,7 +2351,7 @@ Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::A
     jcurrent = (void *)new Dali::Actor((const Dali::Actor &)current);
     jproposed = (void *)new Dali::Actor((const Dali::Actor &)proposed);
     jdirection = (int)direction;
-    jresult = (void *) swig_callbackGetNextFocusableActor(jcurrent, jproposed, jdirection);
+    jresult = (void *) swig_callbackGetNextFocusableActor(jcurrent, jproposed, jdirection, deviceName.c_str());
     if (!jresult) {
       DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::Actor! Next focus will be NULL, please be cautious to handle the keyboard foucs! ", __FILE__, __LINE__);
       return c_result;
@@ -52309,33 +52309,38 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CustomAlgorithmInterface(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CustomAlgorithmInterface_GetNextFocusableActor(void * jarg1, void * jarg2, void * jarg3, int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CustomAlgorithmInterface_GetNextFocusableActor(void * customAlgorithmInterface, void * currentFocusedActor, void * proposedActorToFocus, int direction, char * deviceName) {
   void * jresult ;
   Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *arg1 = (Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *) 0 ;
   Dali::Actor arg2 ;
   Dali::Actor arg3 ;
   Dali::Toolkit::Control::KeyboardFocus::Direction arg4 ;
+  std::string *arg5 = 0 ;
   Dali::Actor *argp2 ;
   Dali::Actor *argp3 ;
   Dali::Actor result;
 
-  arg1 = (Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *)jarg1;
-  argp2 = (Dali::Actor *)jarg2;
+  arg1 = (Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *)customAlgorithmInterface;
+  argp2 = (Dali::Actor *)currentFocusedActor;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
     return 0;
   }
   arg2 = *argp2;
-  argp3 = (Dali::Actor *)jarg3;
+  argp3 = (Dali::Actor *)proposedActorToFocus;
   if (!argp3) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
     return 0;
   }
   arg3 = *argp3;
-  arg4 = (Dali::Toolkit::Control::KeyboardFocus::Direction)jarg4;
+  arg4 = (Dali::Toolkit::Control::KeyboardFocus::Direction)direction;
+
+  std::string arg5_str(deviceName);
+  arg5 = &arg5_str;
+
   {
     try {
-      result = (arg1)->GetNextFocusableActor(arg2,arg3,arg4);
+      result = (arg1)->GetNextFocusableActor(arg2,arg3,arg4,(std::string const &)*arg5);
     } CALL_CATCH_EXCEPTION(0);
   }
 
