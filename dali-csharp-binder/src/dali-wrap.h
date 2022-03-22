@@ -245,9 +245,9 @@ class SwigDirector_CustomAlgorithmInterface : public Dali::Toolkit::DevelKeyboar
 public:
     SwigDirector_CustomAlgorithmInterface();
     virtual ~SwigDirector_CustomAlgorithmInterface();
-    virtual Dali::Actor GetNextFocusableActor(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction);
+    virtual Dali::Actor GetNextFocusableActor(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction, const std::string& deviceName = "");
 
-    typedef void * (SWIGSTDCALL* SWIG_Callback0_t)(void *, void *, int);
+    typedef void * (SWIGSTDCALL* SWIG_Callback0_t)(void *, void *, int, const char*);
     void swig_connect_director(SWIG_Callback0_t callbackGetNextFocusableActor);
 
 private:

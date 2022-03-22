@@ -74,7 +74,7 @@ struct NUIViewAccessible::AccessibilityDelegate
 };
 
 NUIViewAccessible::NUIViewAccessible(Actor actor)
-: ControlAccessible(actor, Accessibility::Role::UNKNOWN, false)
+: ControlAccessible(actor)
 {
     DALI_ASSERT_DEBUG(mTable);
 }

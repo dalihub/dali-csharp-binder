@@ -228,10 +228,6 @@ void SwigDirector_ViewWrapperImpl::OnInitialize() {
   swig_callbackOnInitialize();
 
   Dali::Toolkit::Internal::Control::OnInitialize();
-
-  Dali::Toolkit::DevelControl::SetAccessibilityConstructor(Self(), [](Dali::Actor actor) {
-    return std::make_unique<NUIViewAccessible>(actor);
-  });
 }
 
 void SwigDirector_ViewWrapperImpl::OnStyleChange(Dali::Toolkit::StyleManager styleManager, Dali::StyleChange::Type change) {
@@ -299,6 +295,10 @@ bool SwigDirector_ViewWrapperImpl::OnAccessibilityZoom() {
     c_result = jresult ? true : false;
   }
   return c_result;
+}
+
+Dali::Toolkit::DevelControl::ControlAccessible* SwigDirector_ViewWrapperImpl::CreateAccessibleObject() {
+  return new NUIViewAccessible(Self());
 }
 
 void SwigDirector_ViewWrapperImpl::OnKeyInputFocusGained() {
