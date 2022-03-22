@@ -9997,6 +9997,32 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Clear(void * jarg1) {
 }
 
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Map_Remove__SWIG_0(void * map, int key) {
+  Dali::Property::Map *propertyMap = (Dali::Property::Map *)map;
+  Dali::Property::Index intKey = (Dali::Property::Index)key;
+  bool isRemoved = false;
+  {
+    try {
+      isRemoved = propertyMap->Remove(intKey);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return isRemoved;
+}
+
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Map_Remove__SWIG_1(void * map, char * key) {
+  Dali::Property::Map *propertyMap = (Dali::Property::Map *)map;
+  std::string strKey(key);
+  bool isRemoved = false;
+  {
+    try {
+      isRemoved = propertyMap->Remove(strKey);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return isRemoved;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Merge(void * jarg1, void * jarg2) {
   Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
   Dali::Property::Map *arg2 = 0 ;
@@ -59574,3 +59600,4 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VectorVector2_Size(void * jarg1) {
 #ifdef __cplusplus
 }
 #endif
+
