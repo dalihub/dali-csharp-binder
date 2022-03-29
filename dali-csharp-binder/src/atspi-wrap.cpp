@@ -108,6 +108,11 @@ SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_IsEnabled()
   return Dali::AtspiAccessibility::IsEnabled();
 }
 
+SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_IsScreenReaderEnabled()
+{
+  return Dali::AtspiAccessibility::IsScreenReaderEnabled();
+}
+
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterEnabledDisabledSignalHandler(void (*enabledSignalHandler)(), void (*disabledSignalHandler)())
 {
   using Dali::Accessibility::Bridge;
@@ -126,6 +131,26 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterEnabledDisabledSig
 
   Bridge::EnabledSignal().Connect(enabledSignalHandler);
   Bridge::DisabledSignal().Connect(disabledSignalHandler);
+}
+
+SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterScreenReaderEnabledDisabledSignalHandler(void (*screenReaderEnabledSignalHandler)(), void (*screenReaderDisabledSignalHandler)())
+{
+  using Dali::Accessibility::Bridge;
+
+  if (!screenReaderEnabledSignalHandler)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Signal handler is null", NAMEOF(screenReaderEnabledSignalHandler));
+    return;
+  }
+
+  if (!screenReaderDisabledSignalHandler)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Signal handler is null", NAMEOF(screenReaderDisabledSignalHandler));
+    return;
+  }
+
+  Bridge::ScreenReaderEnabledSignal().Connect(screenReaderEnabledSignalHandler);
+  Bridge::ScreenReaderDisabledSignal().Connect(screenReaderDisabledSignalHandler);
 }
 
 #ifdef __cplusplus
