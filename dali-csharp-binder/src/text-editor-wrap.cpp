@@ -137,6 +137,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_HORIZONTAL_ALIGNMENT_
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_VERTICAL_ALIGNMENT_get() {
+
+  return (int)Dali::Toolkit::DevelTextEditor::Property::VERTICAL_ALIGNMENT;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_SCROLL_THRESHOLD_get() {
   int jresult ;
   int result;
