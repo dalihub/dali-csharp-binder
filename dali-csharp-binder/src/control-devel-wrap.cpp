@@ -374,6 +374,30 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextCursorMovedEvent(v
     }));
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Accessibility_IsSuppressedEvent(void *arg1, int32_t atspiEvent) {
+    bool result = false;
+    GUARD_ON_NULL_RET0(arg1);
+    try_catch(([&]() {
+        Dali::Actor *control = (Dali::Actor*) arg1;
+        auto accessible = Dali::Accessibility::Accessible::Get(*control);
+        if (accessible) {
+            result = accessible->GetSuppressedEvents()[static_cast<Dali::Accessibility::AtspiEvent>(atspiEvent)];
+        }
+    }));
+    return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetSuppressedEvent(void *arg1, int32_t atspiEvent, bool isSuppressed) {
+    GUARD_ON_NULL_RET(arg1);
+    try_catch(([&]() {
+        Dali::Actor *control = (Dali::Actor*) arg1;
+        auto accessible = Dali::Accessibility::Accessible::Get(*control);
+        if (accessible) {
+            accessible->GetSuppressedEvents()[static_cast<Dali::Accessibility::AtspiEvent>(atspiEvent)] = isSuppressed;
+        }
+    }));
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Accessibility_new_Range(int arg1_start, int arg2_end, char *arg3_content) {
     Dali::Accessibility::Range *result = nullptr;
     try_catch(([&]() {
