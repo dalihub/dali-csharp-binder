@@ -2449,6 +2449,102 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_ExcludeInputRegion(void* winHandl
 
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Accessibility_Highlight_Signal(void* winHandle) {
+  Dali::Window* window = (Dali::Window*) winHandle;
+  Dali::DevelWindow::AccessibilityHighlightSignalType* result = 0;
+
+  {
+    try {
+      result = (Dali::DevelWindow::AccessibilityHighlightSignalType*) &( Dali::DevelWindow::AccessibilityHighlightSignal(*window) );
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return (void*)result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_Accessibility_Highlight_Signal_Empty(void* accessibilityHighlightSignalTypeHandle) {
+  bool result;
+  Dali::DevelWindow::AccessibilityHighlightSignalType* accessibilityHighlightSignalType = (Dali::DevelWindow::AccessibilityHighlightSignalType*) accessibilityHighlightSignalTypeHandle;
+
+  if (accessibilityHighlightSignalType == nullptr) {
+    DALI_LOG_ERROR("[ERR] accessibilityHighlightSignalType == nullptr");
+    return false;
+  }
+
+  {
+    try {
+      result = accessibilityHighlightSignalType->Empty();
+    }
+    CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Accessibility_Highlight_Signal_GetConnectionCount(void* accessibilityHighlightSignalTypeHandle) {
+  unsigned int result;
+  Dali::DevelWindow::AccessibilityHighlightSignalType* accessibilityHighlightSignalType = (Dali::DevelWindow::AccessibilityHighlightSignalType *) accessibilityHighlightSignalTypeHandle;
+
+  if (accessibilityHighlightSignalType == nullptr) {
+    DALI_LOG_ERROR("[ERR] accessibilityHighlightSignalType == nullptr");
+    return 0;
+  }
+
+  {
+    try {
+      result = accessibilityHighlightSignalType->GetConnectionCount();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Accessibility_Highlight_Signal_Connect(void* accessibilityHighlightSignalTypeHandle, void* winHandle) {
+  Dali::DevelWindow::AccessibilityHighlightSignalType* accessibilityHighlightSignalType = (Dali::DevelWindow::AccessibilityHighlightSignalType *)accessibilityHighlightSignalTypeHandle;
+  void (*window)(Dali::Window, bool) = ( void (*)(Dali::Window, bool) )winHandle;
+
+  if (accessibilityHighlightSignalType == nullptr) {
+    DALI_LOG_ERROR("[ERR] accessibilityHighlightSignalType == nullptr");
+    return ;
+  }
+
+  {
+    try {
+      accessibilityHighlightSignalType->Connect(window);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+  return ;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Accessibility_Highlight_Signal_Disconnect(void* accessibilityHighlightSignalTypeHandle, void* winHandle) {
+  Dali::DevelWindow::AccessibilityHighlightSignalType* accessibilityHighlightSignalType = (Dali::DevelWindow::AccessibilityHighlightSignalType*)accessibilityHighlightSignalTypeHandle;
+  void (*window)(Dali::Window, bool) = (void (*)(Dali::Window, bool))winHandle;
+
+  if (accessibilityHighlightSignalType == nullptr) {
+    DALI_LOG_ERROR("[ERR] accessibilityHighlightSignalType == nullptr");
+    return;
+  }
+
+  {
+    try {
+      accessibilityHighlightSignalType->Disconnect(window);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Accessibility_Highlight_Signal_delete(void* accessibilityHighlightSignalTypeHandle) {
+  Dali::DevelWindow::AccessibilityHighlightSignalType* accessibilityHighlightSignalType = (Dali::DevelWindow::AccessibilityHighlightSignalType*)accessibilityHighlightSignalTypeHandle;
+
+  {
+    try {
+      delete accessibilityHighlightSignalType;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
 
 #ifdef __cplusplus
 }
