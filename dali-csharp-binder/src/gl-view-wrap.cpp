@@ -33,13 +33,33 @@ extern "C"
     Dali::Toolkit::GlView result;
 
     Dali::Toolkit::GlView::ColorFormat colorFormat;
-
     colorFormat = static_cast<Dali::Toolkit::GlView::ColorFormat>(nuiColorFormat);
     {
       try
       {
-
         result = Dali::Toolkit::GlView::New(colorFormat);
+      }
+      CALL_CATCH_EXCEPTION(0);
+    }
+
+    jresult = new Dali::Toolkit::GlView((const Dali::Toolkit::GlView &)result);
+    return jresult;
+  }
+
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_GlView_New2_SWIG(int nuiBackendMode, int nuiColorFormat)
+  {
+    void *jresult;
+    Dali::Toolkit::GlView result;
+
+    Dali::Toolkit::GlView::ColorFormat colorFormat;
+    Dali::Toolkit::GlView::BackendMode backendMode;
+    colorFormat = static_cast<Dali::Toolkit::GlView::ColorFormat>(nuiColorFormat);
+    backendMode = static_cast<Dali::Toolkit::GlView::BackendMode>(nuiBackendMode);
+    {
+      try
+      {
+
+        result = Dali::Toolkit::GlView::New(backendMode, colorFormat);
       }
       CALL_CATCH_EXCEPTION(0);
     }
@@ -242,6 +262,30 @@ extern "C"
       }
       CALL_CATCH_EXCEPTION();
     }
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GlView_GetBackendMode(void *nuiGlView) {
+    int jresult;
+    Dali::Toolkit::GlView *glView = nullptr;
+    Dali::Toolkit::GlView::BackendMode result;
+
+    glView = (Dali::Toolkit::GlView *)nuiGlView;
+    if (!glView) {
+      SWIG_CSharpSetPendingExceptionArgument(
+          SWIG_CSharpArgumentNullException,
+          "Attempt to dereference null Dali::Toolkit::GlView", 0);
+      return 0;
+    }
+
+    {
+      try {
+        result = (Dali::Toolkit::GlView::BackendMode)(glView)->GetBackendMode();
+      }
+      CALL_CATCH_EXCEPTION(0);
+    }
+
+    jresult = (int)result;
+    return jresult;
   }
 
 #ifdef __cplusplus
