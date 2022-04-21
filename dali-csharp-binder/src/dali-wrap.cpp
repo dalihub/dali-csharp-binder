@@ -59207,6 +59207,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumWidth(void * j
   Dali::Vector2 maximumSize;
   Dali::Vector2 minimumSize;
   Dali::Vector3 naturalSize;
+  bool widthForHeight;
   float result;
   {
     try {
@@ -59214,9 +59215,18 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumWidth(void * j
       maximumSize = arg1->GetProperty< Vector2 >( Actor::Property::MAXIMUM_SIZE );
       minimumSize = arg1->GetProperty< Vector2 >( Actor::Property::MINIMUM_SIZE );
       naturalSize = arg1->GetNaturalSize();
+      widthForHeight = arg1->GetProperty< bool >( Actor::Property::WIDTH_FOR_HEIGHT );
 
-      float baseHeight = maximumSize.height > 0 ? std::min(maximumSize.height, naturalSize.height) : naturalSize.height;
-      float baseWidth = arg1->GetWidthForHeight(baseHeight);
+      float baseWidth;
+      if (widthForHeight)
+      {
+        float baseHeight = maximumSize.height > 0 ? std::min(maximumSize.height, naturalSize.height) : naturalSize.height;
+        baseWidth = arg1->GetWidthForHeight(baseHeight);
+      }
+      else
+      {
+        baseWidth = naturalSize.width;
+      }
 
       result = minimumSize.width > 0 ? std::max(baseWidth, minimumSize.width) : baseWidth;
       result = maximumSize.width > 0 ? std::min(result, maximumSize.width) : result;
@@ -59231,6 +59241,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumHeight(void * 
   Dali::Vector2 maximumSize;
   Dali::Vector2 minimumSize;
   Dali::Vector3 naturalSize;
+  bool heightForWidth;
   float result;
   {
     try {
@@ -59238,9 +59249,18 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumHeight(void * 
       maximumSize = arg1->GetProperty< Vector2 >( Actor::Property::MAXIMUM_SIZE );
       minimumSize = arg1->GetProperty< Vector2 >( Actor::Property::MINIMUM_SIZE );
       naturalSize = arg1->GetNaturalSize();
+      heightForWidth = arg1->GetProperty< bool >( Actor::Property::HEIGHT_FOR_WIDTH );
 
-      float baseWidth = maximumSize.width > 0 ? std::min(maximumSize.width, naturalSize.width) : naturalSize.width;
-      float baseHeight = arg1->GetHeightForWidth(baseWidth);
+      float baseHeight;
+      if (heightForWidth)
+      {
+        float baseWidth = maximumSize.width > 0 ? std::min(maximumSize.width, naturalSize.width) : naturalSize.width;
+        baseHeight = arg1->GetHeightForWidth(baseWidth);
+      }
+      else
+      {
+        baseHeight = naturalSize.height;
+      }
 
       result = minimumSize.height > 0 ? std::max(baseHeight, minimumSize.height) : baseHeight;
       result = maximumSize.height > 0 ? std::min(result, maximumSize.height) : result;
