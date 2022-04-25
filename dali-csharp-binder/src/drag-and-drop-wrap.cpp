@@ -35,6 +35,9 @@ static const char * nullExceptMsg = "Attempt to dereference null Dali::Adaptor::
 using DnDCallback = void(SWIGSTDCALL *)(const Dali::DragAndDrop::DragEvent&);
 DnDCallback dndCallback;
 
+using SourceCallback = void(SWIGSTDCALL *)(enum Dali::DragAndDrop::SourceEventType);
+SourceCallback sourceCallback;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -51,7 +54,7 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_DragAndDrop_New__SWIG_0() {
  return jresult;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_StartDragAndDrop(void * argDnD, void * argSource, void * argShadow, void * argMimeType, char * argData) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_StartDragAndDrop(void * argDnD, void * argSource, void * argShadowWindow, void * argMimeType, char * argData, void * argSourceCallback) {
   Dali::DragAndDrop *dnd = (Dali::DragAndDrop *)argDnD;
 
   if (!dnd) {
@@ -60,9 +63,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_StartDragAndDrop(void * argD
   }
 
   Dali::Actor *pSource;
-  Dali::Actor *pShadow;
+  Dali::Window *pShadow;
   Dali::Actor source;
-  Dali::Actor shadow;
+  Dali::Window shadow;
 
   pSource = (Dali::Actor *)argSource;
   if (!pSource) {
@@ -70,7 +73,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_StartDragAndDrop(void * argD
     return false;
   }
 
-  pShadow = (Dali::Actor *)argShadow;
+  pShadow = (Dali::Window *)argShadowWindow;
   if (!pShadow) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
     return false;
@@ -86,7 +89,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_StartDragAndDrop(void * argD
   bool result = false;
   {
     try {
-      result = dnd->StartDragAndDrop(source, shadow, dragData);
+      sourceCallback = (SourceCallback)argSourceCallback;
+      result = dnd->StartDragAndDrop(source, shadow, dragData, sourceCallback);
     }
     CALL_CATCH_EXCEPTION(0);
   }
