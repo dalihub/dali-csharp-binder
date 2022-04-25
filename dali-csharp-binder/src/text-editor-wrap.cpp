@@ -393,6 +393,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_INPUT_LINE_SPACING_ge
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_RELATIVE_LINE_SIZE_get() {
+
+  return (int)Dali::Toolkit::DevelTextEditor::Property::RELATIVE_LINE_SIZE;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_UNDERLINE_get() {
   int jresult ;
   int result;
