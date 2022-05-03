@@ -52587,6 +52587,33 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_KeyboardFocusManager_IsDefaultAlgorithmE
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardFocusManager_SetFocusFinderRootActor(void * manager, void * actor) {
+  if (!manager) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null KeyboardFocusManager", 0);
+    return ;
+  }
+  if (!actor) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Actor & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      Dali::Toolkit::DevelKeyboardFocusManager::SetFocusFinderRootActor(*(KeyboardFocusManager *)manager, *(Dali::Actor *)actor);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardFocusManager_ResetFocusFinderRootActor(void * manager) {
+  if (!manager) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null KeyboardFocusManager", 0);
+    return ;
+  }
+  {
+    try {
+      Dali::Toolkit::DevelKeyboardFocusManager::ResetFocusFinderRootActor(*(KeyboardFocusManager *)manager);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemIdContainer_Clear(void * jarg1) {
   std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
