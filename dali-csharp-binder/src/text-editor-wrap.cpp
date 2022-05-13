@@ -649,6 +649,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_INPUT_FILTER_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_SELECTION_POPUP_STYLE_get()
+{
+  return (int)Dali::Toolkit::DevelTextEditor::Property::SELECTION_POPUP_STYLE;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextEditor_ScrollBy(void * jarg1, void * jarg2) {
   Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0;
   Dali::Vector2 *arg2 = 0 ;
