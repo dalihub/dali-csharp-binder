@@ -446,6 +446,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(c
         }
 
         NUIViewAccessible::SetAccessibilityDelegate(accessibilityDelegate);
+        Accessibility::Bridge::GetCurrentBridge()->SetToolkitName("nui(dali)");
     }));
 }
 
