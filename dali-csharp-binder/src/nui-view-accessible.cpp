@@ -40,7 +40,7 @@ struct NUIViewAccessible::AccessibilityDelegate
     std::uint64_t           (*calculateStates)              (RefObject *, std::uint64_t);       //  4
     int                     (*getActionCount)               (RefObject *);                      //  5
     char *                  (*getActionName)                (RefObject *, int);                 //  6
-    bool                    (*shouldReportZeroChildren)     (RefObject *);                      //  7
+    std::uint32_t           (*getInterfaces)                (RefObject *);                      //  7
     double                  (*getMinimum)                   (RefObject *);                      //  8
     double                  (*getCurrent)                   (RefObject *);                      //  9
     double                  (*getMaximum)                   (RefObject *);                      // 10
@@ -69,8 +69,7 @@ struct NUIViewAccessible::AccessibilityDelegate
     bool                    (*selectAll)                    (RefObject *);                      // 33
     bool                    (*clearSelection)               (RefObject *);                      // 34
     bool                    (*deselectChild)                (RefObject *, int);                 // 35
-    std::uint32_t           (*getInterfaces)                (RefObject *);                      // 36
-    Rect<int> *             (*getRangeExtents)              (RefObject *, int, int, int);       // 37
+    Rect<int> *             (*getRangeExtents)              (RefObject *, int, int, int);       // 36
 };
 
 NUIViewAccessible::NUIViewAccessible(Actor actor)
@@ -202,14 +201,6 @@ Property::Index NUIViewAccessible::GetDescriptionPropertyIndex()
     return Property::INVALID_INDEX;
 }
 
-// Ideally, this could be removed along with the DoGetChildren() below if NUI controls
-// switch to setting the AccessibilityHidden property instead. It can be used for the same
-// purpose, and it offers more fine-grained control.
-bool NUIViewAccessible::ShouldReportZeroChildren() const
-{
-    return CallMethod<Interface::ACCESSIBLE>(mTable->shouldReportZeroChildren);
-}
-
 bool NUIViewAccessible::IsScrollable() const
 {
     return CallMethod<Interface::COMPONENT>(mTable->isScrollable);
@@ -218,23 +209,6 @@ bool NUIViewAccessible::IsScrollable() const
 bool NUIViewAccessible::ScrollToChild(Actor child)
 {
     return CallMethod<Interface::ACCESSIBLE>(mTable->scrollToChild, new Actor(child));
-}
-
-void NUIViewAccessible::DoGetChildren(std::vector<Accessible*>& children)
-{
-    if (ShouldReportZeroChildren())
-    {
-        // We still allow the highlight frame to be reported as a child of this actor
-        // even though its ShouldReportZeroChildren() method returned true.
-        if (Self() == Accessibility::Accessible::GetCurrentlyHighlightedActor())
-        {
-            children.push_back(Accessibility::Accessible::Get(mCurrentHighlightActor.GetHandle()));
-        }
-    }
-    else
-    {
-        Accessibility::ActorAccessible::DoGetChildren(children);
-    }
 }
 
 Accessibility::AtspiInterfaces NUIViewAccessible::DoGetInterfaces() const
@@ -446,6 +420,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(c
         }
 
         NUIViewAccessible::SetAccessibilityDelegate(accessibilityDelegate);
+        Accessibility::Bridge::GetCurrentBridge()->SetToolkitName("nui(dali)");
     }));
 }
 

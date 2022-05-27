@@ -69,13 +69,9 @@ public:
 
     Dali::Property::Index GetDescriptionPropertyIndex() override;
 
-    virtual bool ShouldReportZeroChildren() const;
-
     bool IsScrollable() const override;
 
     bool ScrollToChild(Dali::Actor child) override;
-
-    void DoGetChildren(std::vector<Accessible*>& children) override;
 
     Dali::Accessibility::AtspiInterfaces DoGetInterfaces() const override;
 
