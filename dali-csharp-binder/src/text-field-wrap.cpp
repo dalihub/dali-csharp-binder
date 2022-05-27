@@ -641,6 +641,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_INPUT_FILTER_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SELECTION_POPUP_STYLE_get()
+{
+  return (int)Dali::Toolkit::DevelTextField::Property::SELECTION_POPUP_STYLE;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField_Property() {
   void * jresult ;
   Dali::Toolkit::TextField::Property *result = 0 ;

@@ -147,59 +147,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_RemoveAccessibility
     }));
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_GetAccessibilityRelations(void *arg1) {
-    std::vector<std::vector<Dali::Accessibility::Address>> *result = nullptr;
-    GUARD_ON_NULL_RET0(arg1);
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilityRelations(void* arg1_control, void (*arg2_callback)(int, void*, void*), void* arg3_userData) {
+    using namespace Dali::Accessibility;
+
+    GUARD_ON_NULL_RET(arg1_control);
+    GUARD_ON_NULL_RET(arg2_callback);
+
     try_catch(([&]() {
-        auto *control = (Dali::Toolkit::Control*)arg1;
-        result = new std::vector<std::vector<Dali::Accessibility::Address>>(GetAccessibilityRelations(*control));
-    }));
-    return (void*)result;
-}
+        auto*                 control   = static_cast<Dali::Toolkit::Control*>(arg1_control);
+        std::vector<Relation> relations = GetAccessibilityRelations(*control);
 
-//SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityRelations_Size(void *arg1) {
-//    unsigned int result = 0;
-//    GUARD_ON_NULL_RET0(arg1);
-//    try_catch(([&]() {
-//        auto *vect = (std::vector<std::vector<Dali::Accessibility::Address>>*) arg1;
-//        result = vect->size();
-//    }));
-//    return result;
-//}
+        for(Relation& relation : relations) {
+            for(Accessible* target : relation.mTargets) {
+                // NUI is unaware of Accessible objects, so we only report those convertible to Control.
+                // Note that it is currently impossible to make a relation with anything other than Control (View)
+                // using NUI API, so there should not be any loss of information for typical NUI applications.
+                auto targetControl = Dali::Toolkit::Control::DownCast(target->GetInternalActor());
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityRelations_RelationSize(void *arg1, int rel) {
-    unsigned int result = 0;
-    GUARD_ON_NULL_RET0(arg1);
-    try_catch(([&]() {
-        auto *vect = (std::vector<std::vector<Dali::Accessibility::Address>>*) arg1;
-        if (((unsigned int) rel) >= vect->size())
-            result = 0;
-        else
-            result = vect->at(rel).size();
-    }));
-    return result;
-}
-
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_new_GetAccessibilityRelations_At(void *arg1, int rel, int pos, int id) {
-    GUARD_ON_NULL_RET0(arg1);
-    char *result = nullptr;
-    try_catch(([&]() {
-        auto *vect = (std::vector<std::vector<Dali::Accessibility::Address>>*) arg1;
-        const auto &r = vect->at(rel);
-        const auto &e = r.at(pos);
-
-        if (id == 0)
-            result = SWIG_csharp_string_callback(e.GetBus().c_str());
-
-        if (id == 1)
-            result = SWIG_csharp_string_callback(e.GetPath().c_str());
-    }));
-    return result;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_delete_AccessibilityRelations(void *arg1) {
-    try_catch(([&]() {
-        delete static_cast<std::vector<std::vector<Dali::Accessibility::Address>>*>(arg1);
+                if(targetControl) {
+                    arg2_callback(static_cast<int>(relation.mRelationType), static_cast<void*>(new Dali::Actor(targetControl)), arg3_userData);
+                }
+            }
+        }
     }));
 }
 

@@ -22,10 +22,12 @@
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
+#include <dali-toolkit/devel-api/controls/text-controls/text-selection-popup.h>
 #include <dali-toolkit/public-api/controls/text-controls/hidden-input-properties.h>
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
 #include <dali/devel-api/actors/actor-devel.h>
 #include <dali/devel-api/rendering/renderer-devel.h>
+
 
 // INTERNAL INCLUDES
 #include "common.h"
@@ -520,6 +522,76 @@ CSharp_Dali_TextField_Property_CHARACTER_SPACING_get() {
 SWIGEXPORT int SWIGSTDCALL
 CSharp_Dali_TextLabel_Property_CHARACTER_SPACING_get() {
   return (int)Dali::Toolkit::DevelTextLabel::Property::CHARACTER_SPACING;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_POPUP_MAX_SIZE_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::POPUP_MAX_SIZE;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_OPTION_DIVIDER_SIZE_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::OPTION_DIVIDER_SIZE;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_OPTION_DIVIDER_PADDING_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::OPTION_DIVIDER_PADDING;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_LABEL_MINIMUM_SIZE_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::LABEL_MINIMUM_SIZE;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_LABEL_PADDING_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::LABEL_PADDING;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_LABEL_TEXT_VISUAL_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::LABEL_TEXT_VISUAL;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_ENABLE_SCROLL_BAR_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::ENABLE_SCROLL_BAR;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_POPUP_DIVIDER_COLOR_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::POPUP_DIVIDER_COLOR;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_POPUP_PRESSED_COLOR_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::POPUP_PRESSED_COLOR;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_POPUP_PRESSED_CORNER_RADIUS_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::POPUP_PRESSED_CORNER_RADIUS;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_POPUP_FADE_IN_DURATION_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::POPUP_FADE_IN_DURATION;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_POPUP_FADE_OUT_DURATION_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::POPUP_FADE_OUT_DURATION;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_BACKGROUND_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::BACKGROUND;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_TextSelectionPopup_Property_BACKGROUND_BORDER_get() {
+  return (int)Dali::Toolkit::TextSelectionPopup::Property::BACKGROUND_BORDER;
 }
 
 SWIGEXPORT unsigned int SWIGSTDCALL
