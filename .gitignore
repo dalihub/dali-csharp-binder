@@ -35,3 +35,5 @@ build/tizen/m4/
 build/tizen/.deps/
 build/tizen/.libs/
 build/tizen/build/
+build/tizen/cmake_install.cmake
+build/tizen/install_manifest.txt

@@ -42,6 +42,8 @@ BuildRequires:  pkgconfig(screen_connector_provider)
 %endif
 
 BuildRequires: pkgconfig
+BuildRequires: cmake
+BuildRequires: gawk
 BuildRequires: pkgconfig(dali2-core)
 BuildRequires: pkgconfig(dali2-adaptor)
 BuildRequires: pkgconfig(dali2-toolkit)
@@ -162,8 +164,8 @@ This package includes developer files common to all packages.
 %prep
 %setup -q
 
-%define dali_data_rw_dir         %TZ_SYS_RO_SHARE/dali/
-%define dali_data_ro_dir         %TZ_SYS_RO_SHARE/dali/
+# %define dali_data_rw_dir         %TZ_SYS_RO_SHARE/dali/
+# %define dali_data_ro_dir         %TZ_SYS_RO_SHARE/dali/
 
 ##############################
 # Build
@@ -176,189 +178,127 @@ LDFLAGS+=" -Wl,--rpath=%{_libdir} "
 %if %{with wayland}
 CFLAGS+=" -DWAYLAND"
 CXXFLAGS+=" -DWAYLAND"
-configure_flags="--enable-wayland"
+cmake_flags=" -DENABLE_WAYLAND=ON"
+
+# Use this conditional when Tizen version is 5.x or greater
+%if 0%{?tizen_version_major} >= 5
+CXXFLAGS+=" -DOVER_TIZEN_VERSION_5"
 
 # Need Ecore-Wayland2 when Tizen version is 5.x or greater
-%if 0%{?tizen_version_major} >= 5
 CFLAGS+=" -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
 CXXFLAGS+=" -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
-configure_flags+=" --enable-ecore-wayland2"
+cmake_flags+=" -DENABLE_ECORE_WAYLAND2=ON"
 %endif
+
+# Use this conditional when Tizen version is 7.x or greater
+%if 0%{?tizen_version_major} >= 7
+CXXFLAGS+=" -DOVER_TIZEN_VERSION_7"
+%endif
+
+%endif
+
+%if 0%{?enable_debug}
+cmake_flags+=" -DCMAKE_BUILD_TYPE=Debug"
+%endif
+
+%if 0%{?rive_animation_view}
+cmake_flags+=" -DENABLE_RIVE_ANIMATION=ON"
 %endif
 
 # autogen
 libtoolize --force
 cd %{_builddir}/%{name}-%{version}/build/tizen
-autoreconf --install
 
-DALI_DATA_RW_DIR="%{dali_data_rw_dir}" ; export DALI_DATA_RW_DIR
-DALI_DATA_RO_DIR="%{dali_data_ro_dir}"  ; export DALI_DATA_RO_DIR
+# DALI_DATA_RW_DIR="%{dali_data_rw_dir}" ; export DALI_DATA_RW_DIR
+# DALI_DATA_RO_DIR="%{dali_data_ro_dir}"  ; export DALI_DATA_RO_DIR
 %if 0%{?tizen_platform_config_supported}
 TIZEN_PLATFORM_CONFIG_SUPPORTED="%{tizen_platform_config_supported}" ; export TIZEN_PLATFORM_CONFIG_SUPPORTED
 %endif
 
-# added for key grab binding only for tizen
-# Do not merge this on tizen branch!
+cmake_flags+=" -DCMAKE_INSTALL_PREFIX=$PREFIX"
+cmake_flags+=" -DCMAKE_INSTALL_LIBDIR=%{_libdir}"
+cmake_flags+=" -DCMAKE_INSTALL_INCLUDEDIR=%{_includedir}"
+cmake_flags+=" -DENABLE_TIZEN_MAJOR_VERSION=%{tizen_version_major}"
 
-# Set up the build via configure.
+# Set up the build via Cmake
 #######################################################################
-# If the profile is selected, the line below is repquired.
+# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
 # if mobile || "undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-%configure --prefix=$PREFIX --enable-profile=MOBILE \
-           --enable-tizen-major-version=%{tizen_version_major} \
-%if 0%{?enable_debug}
-           --enable-debug \
-%endif
-%if 0%{?rive_animation_view}
-           --enable-rive-animation-view \
-%endif
-           $configure_flags --libdir=%{_libdir}
+
+mkdir -p mobile
+pushd mobile
+
+cmake -DENABLE_PROFILE=MOBILE $cmake_flags ..
 
 # Build.
 make %{?jobs:-j%jobs}
-
-pushd %{_builddir}/%{name}-%{version}/build/tizen
-%make_install DALI_DATA_RW_DIR="%{dali_data_rw_dir}" DALI_DATA_RO_DIR="%{dali_data_ro_dir}"
 popd
-
-pushd %{buildroot}%{_libdir}
-for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.mobile"; done
-mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
-popd
-
-%if "%{?profile}" != "mobile"
-make clean
-%endif
 
 %endif
 
 #######################################################################
-# If the profile is selected, the line below is repquired.
+# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
 # if tv ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
-%configure --prefix=$PREFIX --enable-profile=TV \
-           --enable-tizen-major-version=%{tizen_version_major} \
-%if 0%{?enable_debug}
-           --enable-debug \
-%endif
-%if 0%{?rive_animation_view}
-           --enable-rive-animation-view \
-%endif
-           $configure_flags --libdir=%{_libdir}
+
+mkdir -p tv
+pushd tv
+
+cmake -DENABLE_PROFILE=TV $cmake_flags ..
 
 # Build.
 make %{?jobs:-j%jobs}
-
-pushd %{_builddir}/%{name}-%{version}/build/tizen
-%make_install DALI_DATA_RW_DIR="%{dali_data_rw_dir}" DALI_DATA_RO_DIR="%{dali_data_ro_dir}"
 popd
-
-pushd %{buildroot}%{_libdir}
-for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.tv"; done
-mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
-popd
-
-%if "%{?profile}" != "tv"
-make clean
-%endif
 
 %endif
 
 #######################################################################
-# If the profile is selected, the line below is repquired.
+# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
 # if wearable || "undefined"
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-%configure --prefix=$PREFIX --enable-profile=WEARABLE \
-           --enable-tizen-major-version=%{tizen_version_major} \
-%if 0%{?enable_debug}
-           --enable-debug \
-%endif
-%if 0%{?rive_animation_view}
-           --enable-rive-animation-view \
-%endif
-           $configure_flags --libdir=%{_libdir}
+
+mkdir -p wearable
+pushd wearable
+
+cmake -DENABLE_PROFILE=WEARABLE $cmake_flags ..
 
 # Build.
 make %{?jobs:-j%jobs}
-
-pushd %{_builddir}/%{name}-%{version}/build/tizen
-%make_install DALI_DATA_RW_DIR="%{dali_data_rw_dir}" DALI_DATA_RO_DIR="%{dali_data_ro_dir}"
 popd
-
-pushd %{buildroot}%{_libdir}
-for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.wearable"; done
-mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
-popd
-
-%if "%{?profile}" != "wearable"
-make clean
-%endif
 
 %endif
 
 #######################################################################
-# If the profile is selected, the line below is repquired.
+# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
-%configure --prefix=$PREFIX --enable-profile=IVI \
-           --enable-tizen-major-version=%{tizen_version_major} \
-%if 0%{?enable_debug}
-           --enable-debug \
-%endif
-%if 0%{?rive_animation_view}
-           --enable-rive-animation-view \
-%endif
-           $configure_flags --libdir=%{_libdir}
+
+mkdir -p ivi
+pushd ivi
+
+cmake -DENABLE_PROFILE=IVI $cmake_flags ..
 
 # Build.
 make %{?jobs:-j%jobs}
-
-pushd %{_builddir}/%{name}-%{version}/build/tizen
-%make_install DALI_DATA_RW_DIR="%{dali_data_rw_dir}" DALI_DATA_RO_DIR="%{dali_data_ro_dir}"
 popd
-
-pushd %{buildroot}%{_libdir}
-for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE.ivi"; done
-mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
-popd
-
-%if "%{?profile}" != "ivi"
-make clean
-%endif
 
 %endif
 
 #######################################################################
 # common
-# If the profile is selected, the line below is repquired.
+# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
 # if common ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
-%configure --prefix=$PREFIX --enable-profile=COMMON \
-           --enable-tizen-major-version=%{tizen_version_major} \
-%if 0%{?enable_debug}
-           --enable-debug \
-%endif
-%if 0%{?rive_animation_view}
-           --enable-rive-animation-view \
-%endif
-           $configure_flags --libdir=%{_libdir}
+
+mkdir -p common
+pushd common
+
+cmake -DENABLE_PROFILE=COMMON $cmake_flags ..
 
 # Build.
 make %{?jobs:-j%jobs}
-
-pushd %{_builddir}/%{name}-%{version}/build/tizen
-%make_install DALI_DATA_RW_DIR="%{dali_data_rw_dir}" DALI_DATA_RO_DIR="%{dali_data_ro_dir}"
 popd
-
-pushd %{buildroot}%{_libdir}
-for FILE in libdali2-csharp-binder*.so*; do mv "$FILE" "%{_builddir}/%{name}-%{version}/build/tizen/$FILE"; done
-mv pkgconfig/dali2-csharp-binder*pc %{_builddir}/%{name}-%{version}/build/tizen/
-popd
-
-%if "%{?profile}" != "common"
-make clean
-%endif
 
 %endif
 
@@ -369,63 +309,66 @@ make clean
 rm -rf %{buildroot}
 
 pushd %{_builddir}/%{name}-%{version}/build/tizen
-%make_install DALI_DATA_RW_DIR="%{dali_data_rw_dir}" DALI_DATA_RO_DIR="%{dali_data_ro_dir}"
 
-
-# If the profile is selected, the line below is repquired.
-# !unified && (wearable || tv || ivi || mobile)
-%if "%{?profile}" == "wearable" || "%{?profile}" == "tv" || "%{?profile}" == "ivi" || "%{?profile}" == "mobile"
-rm -rf %{buildroot}%{_libdir}/libdali2-csharp-binder*.so*
-%endif
-
-# If the profile is selected, the line below is repquired.
-# wearable || tv || ivi || mobile || unified
-%if "%{?profile}" != "common"
-for FILE in libdali2-*.so*; do mv "$FILE" "%{buildroot}%{_libdir}/$FILE"; done
-mv dali2-csharp-binder*.pc %{buildroot}%{_libdir}/pkgconfig/
-%endif
-popd
-
-################################################
-#rename
-###############################################
-pushd %{buildroot}%{_libdir}
-
-# If the profile is selected, the line below is repquired.
-# if common ||"undefined"
-#%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
-rm -rf libdali2-csharp-binder*.so
-ln -s libdali2-csharp-binder.so.0.0.0 libdali2-csharp-binder.so
-#%endif
-
-# If the profile is selected, the line below is repquired.
-# if wearable || "undefined"
-%if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-rm -rf libdali2-csharp-binder*.so.wearable
-ln -s libdali2-csharp-binder.so.0.0.*.wearable libdali2-csharp-binder.so.wearable
-%endif
-
-# If the profile is selected, the line below is repquired.
-# if tv ||"undefined"
-%if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
-rm -rf libdali2-csharp-binder*.so.tv
-ln -s libdali2-csharp-binder.so.0.0.*.tv libdali2-csharp-binder.so.tv
-%endif
-
-# If the profile is selected, the line below is repquired.
-# if ivi ||"undefined"
-%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
-rm -rf libdali2-csharp-binder*.so.ivi
-ln -s libdali2-csharp-binder.so.0.0.*.ivi libdali2-csharp-binder.so.ivi
-%endif
-
-# If the profile is selected, the line below is repquired.
 # if mobile || "undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-rm -rf libdali2-csharp-binder*.so.mobile
-ln -s libdali2-csharp-binder.so.0.0.*.mobile libdali2-csharp-binder.so.mobile
+pushd mobile
+%make_install
+%if "%{?profile}" != "mobile"
+pushd  %{buildroot}%{_libdir}
+cp libdali2-csharp-binder.so.*.*.* libdali2-csharp-binder.so.mobile # If we're only building this profile, then there's no need to copy the lib
+popd
+make clean # So that we can gather symbol/size information for only one profile if we're building all profiles
 %endif
 popd
+%endif
+
+# if tv ||"undefined"
+%if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
+pushd tv
+%make_install
+%if "%{?profile}" != "tv"
+pushd  %{buildroot}%{_libdir}
+cp libdali2-csharp-binder.so.*.*.* libdali2-csharp-binder.so.tv # If we're only building this profile, then there's no need to copy the lib
+popd
+make clean # So that we can gather symbol/size information for only one profile if we're building all profiles
+%endif
+popd
+%endif
+
+# if wearable || "undefined"
+%if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
+pushd wearable
+%make_install
+%if "%{?profile}" != "wearable"
+pushd  %{buildroot}%{_libdir}
+cp libdali2-csharp-binder.so.*.*.* libdali2-csharp-binder.so.wearable # If we're only building this profile, then there's no need to copy the lib
+popd
+make clean # So that we can gather symbol/size information for only one profile if we're building all profiles
+%endif
+popd
+%endif
+
+# if ivi ||"undefined"
+%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
+pushd ivi
+%make_install
+%if "%{?profile}" != "ivi"
+pushd  %{buildroot}%{_libdir}
+cp libdali2-csharp-binder.so.*.*.* libdali2-csharp-binder.so.ivi # If we're only building this profile, then there's no need to copy the lib
+popd
+make clean # So that we can gather symbol/size information for only one profile if we're building all profiles
+%endif
+popd
+%endif
+
+# if common ||"undefined"
+%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
+pushd common
+%make_install
+# No clean so we can gather symbol/size information for the common profile
+popd
+%endif
 
 ##############################
 # Upgrade order:
@@ -444,6 +387,9 @@ exit 0
 #  Post Install new package
 ##############################
 %post
+pushd %{_libdir}
+for i in mobile tv wearable ivi; do [[ -f libdali2-csharp-binder.so.$i ]] && ln -sf libdali2-csharp-binder.so.$i libdali2-csharp-binder.so.2.0.0; done
+popd
 /sbin/ldconfig
 exit 0
 
@@ -461,14 +407,16 @@ exit 0
 exit 0
 
 ##############################
-
-# If the profile is selected, the line below is repquired.
+# Mobile Profile Commands
+# No need to create a symbolic link on install required if only building this profile
 # if mobile || "undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %post profile_mobile
+%if "%{?profile}" != "mobile"
 pushd %{_libdir}
-for FILE in libdali2-csharp-binder.so*.mobile; do ln -sf "$FILE" "${FILE%.mobile}"; done
+ln -sf libdali2-csharp-binder.so.mobile libdali2-csharp-binder.so.2.0.0
 popd
+%endif
 /sbin/ldconfig
 exit 0
 
@@ -478,14 +426,16 @@ exit 0
 %endif
 
 ##############################
-
-# If the profile is selected, the line below is repquired.
+# TV Profile Commands
+# No need to create a symbolic link on install required if only building this profile
 # if tv ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "common" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %post profile_tv
+%if "%{?profile}" != "tv"
 pushd %{_libdir}
-for FILE in libdali2-csharp-binder.so*.tv; do ln -sf "$FILE" "${FILE%.tv}"; done
+ln -sf libdali2-csharp-binder.so.tv libdali2-csharp-binder.so.2.0.0
 popd
+%endif
 /sbin/ldconfig
 exit 0
 
@@ -495,14 +445,16 @@ exit 0
 %endif
 
 ##############################
-
-# If the profile is selected, the line below is repquired.
+# Wearable Profile Commands
+# No need to create a symbolic link on install required if only building this profile
 # if wearable || "undefined"
 %if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
 %post profile_wearable
+%if "%{?profile}" != "wearable"
 pushd %{_libdir}
-for FILE in libdali2-csharp-binder.so*.wearable; do ln -sf "$FILE" "${FILE%.wearable}"; done
+ln -sf libdali2-csharp-binder.so.wearable libdali2-csharp-binder.so.2.0.0
 popd
+%endif
 /sbin/ldconfig
 exit 0
 
@@ -512,14 +464,16 @@ exit 0
 %endif
 
 ##############################
-
-# If the profile is selected, the line below is repquired.
+# IVI Profile Commands
+# No need to create a symbolic link on install required if only building this profile
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 %post profile_ivi
+%if "%{?profile}" != "ivi"
 pushd %{_libdir}
-for FILE in libdali2-csharp-binder.so*.ivi; do ln -sf "$FILE" "${FILE%.ivi}"; done
+ln -sf libdali2-csharp-binder.so.ivi libdali2-csharp-binder.so.2.0.0
 popd
+%endif
 /sbin/ldconfig
 exit 0
 
@@ -528,30 +482,36 @@ exit 0
 exit 0
 %endif
 
+##############################
+# Common Profile Commands
+%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
+%post profile_common
+/sbin/ldconfig
+exit 0
+
+%postun profile_common
+/sbin/ldconfig
+exit 0
+%endif
 
 ##############################
 # Files in Binary Packages
 ##############################
 %files
 %manifest dali-csharp-binder.manifest
-%defattr(-,root,root,-)
 %license LICENSE
-
-# If the profile is selected, the line below is repquired.
-# if common ||"undefined"
-#%if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %defattr(-,root,root,-)
-%{_libdir}/libdali2-csharp-binder.so*
-%exclude %{_libdir}/libdali2-csharp-binder*.so*.mobile
-%exclude %{_libdir}/libdali2-csharp-binder*.so*.wearable
-%exclude %{_libdir}/libdali2-csharp-binder*.so*.tv
-%exclude %{_libdir}/libdali2-csharp-binder*.so*.ivi
-#%endif
+%{_libdir}/libdali2-csharp-binder.so
+%{_libdir}/libdali2-csharp-binder.so.2
+%{_libdir}/libdali2-csharp-binder.so.2.0.0
+
+#################################################
 
 # If the profile is selected, the line below is repquired.
 # if common ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
 %files profile_common
+%manifest dali-csharp-binder.manifest
 # default .so files are housed in the main pkg.
 %endif
 
@@ -561,7 +521,9 @@ exit 0
 %files profile_mobile
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
+%if "%{?profile}" != "mobile"
 %{_libdir}/libdali2-csharp-binder.so.*mobile
+%endif
 %endif
 
 # If the profile is selected, the line below is repquired.
@@ -570,7 +532,9 @@ exit 0
 %files profile_tv
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
+%if "%{?profile}" != "tv"
 %{_libdir}/libdali2-csharp-binder.so.*tv
+%endif
 %endif
 
 # If the profile is selected, the line below is repquired.
@@ -579,7 +543,9 @@ exit 0
 %files profile_wearable
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
+%if "%{?profile}" != "wearable"
 %{_libdir}/libdali2-csharp-binder.so.*wearable
+%endif
 %endif
 
 # If the profile is selected, the line below is repquired.
@@ -588,7 +554,9 @@ exit 0
 %files profile_ivi
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
+%if "%{?profile}" != "ivi"
 %{_libdir}/libdali2-csharp-binder.so.*ivi
+%endif
 %endif
 
 %files devel
