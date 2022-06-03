@@ -397,6 +397,27 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMaximized(void * winHandle) {
   return isMaximized;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Maximum_Size(void * winHandle, void * size) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::Window::WindowSize *winSize;
+  Dali::Window::WindowSize maximumSize;
+
+  window = (Dali::Window *)winHandle;
+
+  winSize = (Dali::Window::WindowSize *)size;
+  if (!winSize) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
+    return ;
+  }
+  maximumSize = *winSize;
+
+  {
+    try {
+      Dali::DevelWindow::SetMaximumSize(*window, maximumSize);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Minimize(void * winHandle, bool minimize) {
   Dali::Window *window = (Dali::Window *) 0 ;
 
@@ -419,6 +440,28 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMinimized(void * winHandle) {
     } CALL_CATCH_EXCEPTION(false);
   }
   return isMinimized;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Minimum_Size(void * winHandle, void * size) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::Window::WindowSize *winSize;
+  Dali::Window::WindowSize minimumSize;
+
+  window = (Dali::Window *)winHandle;
+
+  winSize = (Dali::Window::WindowSize *)size;
+  if (!winSize) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
+    return ;
+  }
+  minimumSize = *winSize;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      Dali::DevelWindow::SetMimimumSize(*window, minimumSize);
+    } CALL_CATCH_EXCEPTION();
+  }
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddAvailableOrientation(void * jarg1, int jarg2) {
