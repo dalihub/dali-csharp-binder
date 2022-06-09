@@ -176,7 +176,7 @@ LDFLAGS+=" -Wl,--rpath=%{_libdir} "
 %if %{with wayland}
 CFLAGS+=" -DWAYLAND"
 CXXFLAGS+=" -DWAYLAND"
-configure_flags="--enable-wayland"
+configure_flags="--enable-wayland LIBDIR=%{_libdir} INCLUDEDIR=%{_includedir}"
 
 # Need Ecore-Wayland2 when Tizen version is 5.x or greater
 %if 0%{?tizen_version_major} >= 5
