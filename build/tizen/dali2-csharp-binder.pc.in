@@ -2,8 +2,8 @@
 
 prefix=@PREFIX@
 exec_prefix=@EXEC_DIR@
-libdir=@LIBDIR@
-includedir=@INCLUDEDIR@
+libdir=@LIB_DIR@
+includedir=@INC_DIR@
 
 Name: DALi C# binder
 Description: DALi C# binder Libaray
