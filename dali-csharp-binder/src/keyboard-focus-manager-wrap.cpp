@@ -513,8 +513,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Emit(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_GetNearestFocusableActor(Dali::Actor rootActor, Dali::Actor currentFocusedActor, Dali::Toolkit::Control::KeyboardFocus::Direction direction) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_GetNearestFocusableActor(void * jarg1, void * jarg2, Dali::Toolkit::Control::KeyboardFocus::Direction direction) {
   void * jresult;
+  Dali::Actor *argp1 = (Dali::Actor *)jarg1;
+  Dali::Actor *argp2 = (Dali::Actor *)jarg2;
+  Dali::Actor rootActor;
+  Dali::Actor currentFocusedActor;
+  if (argp1) {
+    rootActor = *argp1;
+  }
+  if (argp2) {
+    currentFocusedActor = *argp2;
+  }
   Dali::Actor result;
   {
     try {

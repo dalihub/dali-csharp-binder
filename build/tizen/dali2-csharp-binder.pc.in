@@ -1,13 +1,14 @@
 # Package Information for pkg-config
 
 prefix=@PREFIX@
-exec_prefix=@EXEC_DIR@
+exec_prefix=@EXEC_PREFIX@
+apiversion=@DALI_CSHARP_BINDER_VERSION@
 libdir=@LIB_DIR@
-includedir=@INC_DIR@
+includedir=@DEV_INCLUDE_PATH@
 
 Name: DALi C# binder
 Description: DALi C# binder Libaray
-Version: @VERSION@
+Version: ${apiversion}
 Requires: dali-core dali-adaptor dali-toolkit
 Libs: -L${libdir} -ldali2-csharp-binder
 Cflags: -I${includedir}/dali-csharp-binder

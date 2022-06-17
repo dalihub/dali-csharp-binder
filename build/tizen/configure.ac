@@ -109,10 +109,38 @@ else
   dataReadOnlyDir=${prefix}/share/dali/
 fi
 
+if test x$includedir != x; then
+  INCLUDE_DIR=$includedir
+else
+  INCLUDE_DIR=$prefix/include/
+fi
+if test x$libdir != x; then
+  LIB_DIR=$libdir
+else
+  LIB_DIR=$prefix/lib/
+fi
+if test x$bindir != x; then
+  BIN_DIR=$bindir
+else
+  BIN_DIR=$prefix/bin/
+fi
+
+PREFIX=$prefix
+EXEC_PREFIX=$exec_prefix
+DEV_INCLUDE_PATH=$INCLUDE_DIR
+
 AC_SUBST(dataReadWriteDir)
 AC_SUBST(dataReadOnlyDir)
 AC_SUBST(DALI_CSHARP_BINDER_CFLAGS)
 AC_SUBST(DALI_PROFILE_CFLAGS)
+
+AC_SUBST(INCLUDE_DIR)
+AC_SUBST(LIB_DIR)
+AC_SUBST(BIN_DIR)
+
+AC_SUBST(PREFIX)
+AC_SUBST(EXEC_PREFIX)
+AC_SUBST(DEV_INCLUDE_PATH)
 
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([dali2-csharp-binder.pc])
@@ -124,6 +152,10 @@ echo "
 Configuration
 -------------
   Prefix:                           $prefix
+  EXEC_PREFIX:                      $EXEC_PREFIX
+  INCLUDE_DIR:                      $INCLUDE_DIR
+  LIB_DIR:                          $LIB_DIR
+  BIN_DIR:                          $BIN_DIR
   Debug Build:                      $enable_debug
   Compile flags:                    $DALI_CSHARP_BINDER_CFLAGS
   Profile:                          $enable_profile
