@@ -137,7 +137,12 @@ Dali::Vector3 SwigDirector_ViewWrapperImpl::GetNaturalSize() {
       SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Unexpected null return for type Dali::Vector3", 0);
       return c_result;
     }
-    c_result = *(Dali::Vector3 *)jresult;
+
+    // Tizen.NUI.ViewWrapperImpl.DirectorGetNaturalSize() is assigned to swig_callbackGetNaturalSize().
+    // Tizen.NUI.ViewWrapperImpl.DirectorGetNaturalSize() returns Dali::Vector2.
+    // Moreover, Dali::Vector3 supports operator '=' with Dali::Vector2.
+    // Not to cause ASAN heap-buffer-overflow issue here, casting Dali::Vector2 and assigning it to Dali::Vector3 is required.
+    c_result = *(Dali::Vector2 *)jresult;
   }
   return c_result;
 }

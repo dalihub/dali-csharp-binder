@@ -25886,6 +25886,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetector_SetMaximumTouchesRequ
 
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetector_SetMaximumMotionEventAge(void * jarg1, unsigned int jarg2) {
+  Dali::PanGestureDetector *arg1 = (Dali::PanGestureDetector *) 0 ;
+  uint32_t arg2 ;
+
+  arg1 = (Dali::PanGestureDetector *)jarg1;
+  arg2 = (uint32_t)jarg2;
+  {
+    try {
+      (arg1)->SetMaximumMotionEventAge(arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PanGestureDetector_GetMinimumTouchesRequired(void * jarg1) {
   unsigned int jresult ;
@@ -25913,6 +25927,22 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PanGestureDetector_GetMaximumTou
   {
     try {
       result = (unsigned int)((Dali::PanGestureDetector const *)arg1)->GetMaximumTouchesRequired();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PanGestureDetector_GetMaximumMotionEventAge(void * jarg1) {
+  unsigned int jresult ;
+  Dali::PanGestureDetector *arg1 = (Dali::PanGestureDetector *) 0 ;
+  uint32_t result;
+
+  arg1 = (Dali::PanGestureDetector *)jarg1;
+  {
+    try {
+      result = (uint32_t)((Dali::PanGestureDetector const *)arg1)->GetMaximumMotionEventAge();
     } CALL_CATCH_EXCEPTION(0);
   }
 
