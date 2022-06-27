@@ -1661,6 +1661,26 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_KeyEventSignal(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_InterceptKeyEventSignal(void * winHandle) {
+  void * jresult ;
+  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::DevelWindow::InterceptKeyEventSignalType *result = 0 ;
+
+  window = (Dali::Window *)winHandle;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::DevelWindow::InterceptKeyEventSignalType *) &(Dali::DevelWindow::InterceptKeyEventSignal(*window));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_TouchSignal(void * jarg1) {
   void * jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;
