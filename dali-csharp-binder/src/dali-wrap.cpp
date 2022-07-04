@@ -27030,6 +27030,21 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TapGestureDetector_GetMaximumTap
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TapGestureDetector_ReceiveAllTapEvents(void * tapGestureDetector, bool isReceive) {
+  Dali::TapGestureDetector *detector = (Dali::TapGestureDetector *) 0 ;
+
+  detector = (Dali::TapGestureDetector *)tapGestureDetector;
+  if (!detector) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TapGestureDetector const & type is null", 0);
+    return;
+  }
+  {
+    try {
+      (detector)->ReceiveAllTapEvents(isReceive);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGestureDetector_DetectedSignal(void * jarg1) {
   void * jresult ;
