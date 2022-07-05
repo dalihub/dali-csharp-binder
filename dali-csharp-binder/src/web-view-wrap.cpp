@@ -355,15 +355,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_LoadHtmlString(void * jarg1, cha
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_LoadHtmlStringOverrideCurrentEntry(void * jarg1, const char *jarg2, const char *jarg3, const char *jarg4) {
-  if (!jarg2 || !jarg3 || !jarg4) {
+  if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return false;
   }
 
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   std::string jarg2str = std::string(jarg2);
-  std::string jarg3str = std::string(jarg3);
-  std::string jarg4str = std::string(jarg4);
+  std::string jarg3str = jarg3 ? std::string(jarg3) : std::string();
+  std::string jarg4str = jarg4 ? std::string(jarg4) : std::string();
   bool result = false;
   {
     try {
@@ -374,16 +374,16 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_LoadHtmlStringOverrideCurrentEnt
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_LoadContents(void * jarg1, const char *jarg2, uint32_t jarg3, const char *jarg4, const char *jarg5, const char *jarg6) {
-  if (!jarg2 || !jarg4 || !jarg5 || !jarg6) {
+  if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return false;
   }
 
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   std::string jarg2str = std::string(jarg2);
-  std::string jarg4str = std::string(jarg4);
-  std::string jarg5str = std::string(jarg5);
-  std::string jarg6str = std::string(jarg6);
+  std::string jarg4str = jarg4 ? std::string(jarg4) : std::string();
+  std::string jarg5str = jarg5 ? std::string(jarg5) : std::string();
+  std::string jarg6str = jarg6 ? std::string(jarg6) : std::string();
   bool result = false;
   {
     try {
