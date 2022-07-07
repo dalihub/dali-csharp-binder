@@ -674,6 +674,121 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_LowMemorySignal(void * jar
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_TaskInitSignal(void * app) {
+  void * jresult ;
+  Dali::Application *application = (Dali::Application *) 0 ;
+  Dali::Application::AppSignalType *result = 0 ;
+
+  application = (Dali::Application *)app;
+  {
+    try {
+      result = (Dali::Application::AppSignalType *) &(application)->TaskInitSignal();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_TaskTerminateSignal(void * app) {
+  void * jresult ;
+  Dali::Application *application = (Dali::Application *) 0 ;
+  Dali::Application::AppSignalType *result = 0 ;
+
+  application = (Dali::Application *)app;
+  {
+    try {
+      result = (Dali::Application::AppSignalType *) &(application)->TaskTerminateSignal();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_TaskAppControlSignal(void * app) {
+  void * jresult ;
+  Dali::Application *application = (Dali::Application *) 0 ;
+  Dali::Application::AppControlSignalType *result = 0 ;
+
+  application = (Dali::Application *)app;
+  {
+    try {
+      result = (Dali::Application::AppControlSignalType *) &(application)->TaskAppControlSignal();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_TaskLanguageChangedSignal(void * app) {
+  void * jresult ;
+  Dali::Application *application = (Dali::Application *) 0 ;
+  Dali::Application::AppSignalType *result = 0 ;
+
+  application = (Dali::Application *)app;
+  {
+    try {
+      result = (Dali::Application::AppSignalType *) &(application)->TaskLanguageChangedSignal();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_TaskRegionChangedSignal(void * app) {
+  void * jresult ;
+  Dali::Application *application = (Dali::Application *) 0 ;
+  Dali::Application::AppSignalType *result = 0 ;
+
+  application = (Dali::Application *)app;
+  {
+    try {
+      result = (Dali::Application::AppSignalType *) &(application)->TaskRegionChangedSignal();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_TaskLowBatterySignal(void * app) {
+  void * jresult ;
+  Dali::Application *application = (Dali::Application *) 0 ;
+  Dali::Application::LowBatterySignalType *result = 0 ;
+
+  application = (Dali::Application *)app;
+  {
+    try {
+      result = (Dali::Application::LowBatterySignalType *) &(application)->TaskLowBatterySignal();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_TaskLowMemorySignal(void * app) {
+  void * jresult ;
+  Dali::Application *application = (Dali::Application *) 0 ;
+  Dali::Application::LowMemorySignalType *result = 0 ;
+
+  application = (Dali::Application *)app;
+  {
+    try {
+      result = (Dali::Application::LowMemorySignalType *) &(application)->TaskLowMemorySignal();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = (void *)result;
+  return jresult;
+}
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Application_LowBatterySignalType_Empty(void * jarg1) {
   unsigned int jresult ;
@@ -781,7 +896,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_delete_LowBatterySignalType(
     } CALL_CATCH_EXCEPTION();
   }
 }
-
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Application_LowMemorySignalType_Empty(void * jarg1) {
   unsigned int jresult ;
@@ -1112,7 +1226,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ApplicationControlSignal(void * j
 
 }
 
-
 /*application-devel binding*/
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char * jarg3, int jarg4, void * jarg5) {
@@ -1234,6 +1347,72 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int jarg1, cha
   {
     try {
       result = Dali::DevelApplication::New( arg1, arg2, arg3, arg4, arg5, arg6 );
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Application((const Dali::Application &)result);
+
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, char * nuiStyleSheet, int nuiWindowMode, void * nuiPositionSize, bool nuiUseUiThread) {
+  void * jresult ;
+  int *argc = (int *) 0 ;
+  char ***argv ;
+  Dali::Application::WINDOW_MODE windowMode ;
+  Dali::PositionSize positionSize ;
+  Dali::PositionSize *positionSizeP ;
+  bool useUiThread;
+  Dali::Application result;
+
+  {
+    // Todo generate argv data from the C# args
+    char **array;         // two dimensional array
+    int numStrings = 1;     // number of strings
+    int stringLength = 30;      // max string length.
+    array = (char **)malloc( (numStrings + 1 )* sizeof(char *) );
+    if(!array) {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "array is null", 0);
+      return 0;
+    }
+    gArgV = array;
+
+    // allocate the string data
+    for( int i=0; i < numStrings; i++)
+    {
+      array[i]=(char *)malloc( stringLength * sizeof(char) );
+    }
+    array[ numStrings ] =  NULL; // we allocated +1 for hold the NULL part
+
+    std::string temp = "dali-csharp-app";
+
+    if(!array[0]) {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "array[0] is null", 0);
+      return 0;
+    }
+    array[0][temp.copy(array[0], strlen(array[0])-1)] = '\0';
+
+    argc = &gArgC;
+    argv = &gArgV;
+  }
+  if (!nuiStyleSheet) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string styleSheet(nuiStyleSheet);
+  windowMode = (Dali::Application::WINDOW_MODE)nuiWindowMode;
+  positionSizeP = (Dali::PositionSize *)nuiPositionSize;
+  useUiThread = nuiUseUiThread;
+
+  if (!positionSizeP) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
+    return 0;
+  }
+
+  positionSize = *positionSizeP;
+  {
+    try {
+      result = Dali::Application::New(argc, argv, styleSheet, windowMode, positionSize, useUiThread);
     } CALL_CATCH_EXCEPTION(0);
   }
 
