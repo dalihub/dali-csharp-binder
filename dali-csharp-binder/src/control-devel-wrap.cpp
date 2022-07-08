@@ -202,39 +202,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ClearAccessibilityR
   }));
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AppendAccessibilityAttribute(void* arg1, char* arg2, char* arg3)
-{
-  GUARD_ON_NULL_RET(arg1);
-  GUARD_ON_NULL_RET(arg2);
-  GUARD_ON_NULL_RET(arg3);
-  try_catch(([&]() {
-    auto*             control = (Dali::Toolkit::Control*)arg1;
-    const std::string key(arg2);
-    const std::string value(arg3);
-    AppendAccessibilityAttribute(*control, key, value);
-  }));
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_RemoveAccessibilityAttribute(void* arg1, char* arg2)
-{
-  GUARD_ON_NULL_RET(arg1);
-  GUARD_ON_NULL_RET(arg2);
-  try_catch(([&]() {
-    auto*             control = (Dali::Toolkit::Control*)arg1;
-    const std::string key(arg2);
-    RemoveAccessibilityAttribute(*control, key);
-  }));
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ClearAccessibilityAttributes(void* arg1)
-{
-  GUARD_ON_NULL_RET(arg1);
-  try_catch(([&]() {
-    auto* control = (Dali::Toolkit::Control*)arg1;
-    ClearAccessibilityAttributes(*control);
-  }));
-}
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityReadingInfoType2(void* arg1, int arg2)
 {
   using namespace Dali::Accessibility;

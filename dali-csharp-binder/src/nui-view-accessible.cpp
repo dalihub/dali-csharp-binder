@@ -29,6 +29,17 @@ using namespace Dali::Toolkit;
 
 using Interface = Accessibility::AtspiInterface;
 
+namespace
+{
+void GetAttributesCallback(const char* key, const char* value, Accessibility::Attributes* attributes)
+{
+  attributes->insert_or_assign(key, value);
+}
+
+using GetAttributesCallbackType = decltype(&GetAttributesCallback);
+
+} // unnamed namespace
+
 // Keep this structure layout binary compatible with the respective C# structure!
 struct NUIViewAccessible::AccessibilityDelegate
 {
@@ -71,6 +82,7 @@ struct NUIViewAccessible::AccessibilityDelegate
   bool                  (*clearSelection)          (RefObject*);                   // 34
   bool                  (*deselectChild)           (RefObject*, int);              // 35
   Rect<int>*            (*getRangeExtents)         (RefObject*, int, int, int);    // 36
+  void                  (*getAttributes)           (RefObject*, GetAttributesCallbackType, Accessibility::Attributes*); // 37
   // clang-format on
 };
 
@@ -191,6 +203,15 @@ Accessibility::States NUIViewAccessible::CalculateStates()
   states = CallMethod<Interface::ACCESSIBLE>(mTable->calculateStates, states);
 
   return Accessibility::States{states};
+}
+
+Accessibility::Attributes NUIViewAccessible::GetAttributes() const
+{
+  auto attributes = ControlAccessible::GetAttributes();
+
+  CallMethod<Interface::ACCESSIBLE>(mTable->getAttributes, &GetAttributesCallback, &attributes);
+
+  return attributes;
 }
 
 Property::Index NUIViewAccessible::GetNamePropertyIndex()
