@@ -3824,6 +3824,102 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Resize_Completed_Signal(void * si
 }
 
 
+
+////////////////////////////////////////////////////////////////////
+/// InsetsChanged event
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal(void * windowHandle) {
+  void * jresult ;
+  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::DevelWindow::InsetsChangedSignalType *result = 0 ;
+
+  window = (Dali::Window *)windowHandle;
+  {
+    try {
+      result = (Dali::DevelWindow::InsetsChangedSignalType *) &(Dali::DevelWindow::InsetsChangedSignal(*window));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_Empty(void * signal) {
+  bool result;
+  Dali::DevelWindow::InsetsChangedSignalType* arg1 = (Dali::DevelWindow::InsetsChangedSignalType*) signal;
+
+  if (arg1 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+    return false;
+  }
+
+  {
+    try {
+      result = arg1->Empty();
+    }
+    CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_GetConnectionCount(void * signal) {
+  unsigned int result;
+  Dali::DevelWindow::InsetsChangedSignalType* arg1 = (Dali::DevelWindow::InsetsChangedSignalType *) signal;
+
+  if (arg1 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+    return 0;
+  }
+
+  {
+    try {
+      result = arg1->GetConnectionCount();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_Connect(void * signal, void * func) {
+  Dali::DevelWindow::InsetsChangedSignalType* arg1 = (Dali::DevelWindow::InsetsChangedSignalType *)signal;
+  void (*arg2)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&) = ( void (*)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&) )func;
+
+  if (arg1 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+    return ;
+  }
+
+  {
+    try {
+      arg1->Connect(arg2);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+  return ;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_Disconnect(void * signal, void * func) {
+  Dali::DevelWindow::InsetsChangedSignalType* arg1 = (Dali::DevelWindow::InsetsChangedSignalType *)signal;
+  void (*arg2)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&) = ( void (*)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&) )func;
+
+  if (arg1 == nullptr) {
+    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+    return;
+  }
+
+  {
+    try {
+      arg1->Disconnect(arg2);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
+
 #ifdef __cplusplus
 }
 #endif
