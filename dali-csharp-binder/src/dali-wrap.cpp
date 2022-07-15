@@ -10529,6 +10529,50 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Property_Value_Assign(void * jarg1, vo
 }
 
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_EqualTo(void * jarg1, void * jarg2) {
+  bool jresult;
+  Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
+  Dali::Property::Value *arg2 = 0 ;
+  bool result;
+
+  arg1 = (Dali::Property::Value *)jarg1;
+  arg2 = (Dali::Property::Value *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Property::Value const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (bool)((Dali::Property::Value const *)arg1)->operator ==((Dali::Property::Value const &)*arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_NotEqualTo(void * jarg1, void * jarg2) {
+  bool jresult;
+  Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
+  Dali::Property::Value *arg2 = 0 ;
+  bool result;
+
+  arg1 = (Dali::Property::Value *)jarg1;
+  arg2 = (Dali::Property::Value *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Property::Value const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (bool)((Dali::Property::Value const *)arg1)->operator !=((Dali::Property::Value const &)*arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Property_Value(void * jarg1) {
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
 

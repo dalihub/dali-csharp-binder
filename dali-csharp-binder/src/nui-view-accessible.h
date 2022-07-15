@@ -65,6 +65,8 @@ public:
 
   Dali::Accessibility::States CalculateStates() override;
 
+  Dali::Accessibility::Attributes GetAttributes() const override;
+
   Dali::Property::Index GetNamePropertyIndex() override;
 
   Dali::Property::Index GetDescriptionPropertyIndex() override;
