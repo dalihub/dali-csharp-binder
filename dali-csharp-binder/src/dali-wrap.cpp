@@ -38604,6 +38604,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_HIDDEN_get() 
   return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_HIDDEN;
 }
 
+SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_AUTOMATION_ID_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::AUTOMATION_ID;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View_Property() {
   void * jresult ;
   Dali::Toolkit::Control::Property *result = 0 ;
