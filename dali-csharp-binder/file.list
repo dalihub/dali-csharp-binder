@@ -82,8 +82,11 @@ SET( dali_csharp_binder_tizen_wearable_src_files
   ${dali_csharp_binder_dir}/src/watch-view-wrap.cpp
 )
 
+# module: scene3d
+SET( dali_csharp_binder_scene3d_src_files
+  ${dali_csharp_binder_dir}/src/model-view-wrap.cpp
+)
+
 SET( dali_csharp_binder_header_files
   ${dali_csharp_binder_dir}/src/common.h
 )
-
-

@@ -47,6 +47,7 @@ BuildRequires: gawk
 BuildRequires: pkgconfig(dali2-core)
 BuildRequires: pkgconfig(dali2-adaptor)
 BuildRequires: pkgconfig(dali2-toolkit)
+BuildRequires: pkgconfig(dali2-scene3d)
 %if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
 %define rive_animation_view 1
 BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
@@ -158,6 +159,18 @@ Requires: %{name} = %{version}-%{release}
 %description devel
 This package includes developer files common to all packages.
 
+
+##############################
+# Dali Scene3D
+##############################
+%package scene3d
+Summary:    build dali csharp binder scene3d
+Group:      System/Libraries
+Requires:   %{name} = %{version}-%{release}
+%description scene3d
+Scene 3D for Dali
+
+
 ##############################
 # Preparation
 ##############################
@@ -219,6 +232,7 @@ cmake_flags+=" -DCMAKE_INSTALL_PREFIX=$PREFIX"
 cmake_flags+=" -DCMAKE_INSTALL_LIBDIR=%{_libdir}"
 cmake_flags+=" -DCMAKE_INSTALL_INCLUDEDIR=%{_includedir}"
 cmake_flags+=" -DENABLE_TIZEN_MAJOR_VERSION=%{tizen_version_major}"
+cmake_flags+=" -DENABLE_SCENE3D=ON"
 
 # Set up the build via Cmake
 #######################################################################
@@ -504,6 +518,13 @@ exit 0
 %{_libdir}/libdali2-csharp-binder.so
 %{_libdir}/libdali2-csharp-binder.so.2
 %{_libdir}/libdali2-csharp-binder.so.2.0.0
+
+#################################################
+
+%files scene3d
+%manifest dali-csharp-binder.manifest
+%defattr(-,root,root,-)
+%{_libdir}/libdali2-csharp-binder-scene3d.so*
 
 #################################################
 
