@@ -18,9 +18,11 @@
 // EXTERNAL INCLUDES
 #include <dali/public-api/common/dali-common.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-certificate.h>
+#include <dali/devel-api/adaptor-framework/web-engine/web-engine-console-message.h>
+#include <dali/devel-api/adaptor-framework/web-engine/web-engine-context.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-context-menu.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-context-menu-item.h>
-#include <dali/devel-api/adaptor-framework/web-engine/web-engine-console-message.h>
+#include <dali/devel-api/adaptor-framework/web-engine/web-engine-cookie-manager.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-form-repost-decision.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-frame.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-hit-test.h>
@@ -32,8 +34,6 @@
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-back-forward-list-item.h>
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
-#include <dali-toolkit/devel-api/controls/web-view/web-context.h>
-#include <dali-toolkit/devel-api/controls/web-view/web-cookie-manager.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-settings.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-view.h>
 
@@ -106,6 +106,34 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_New_3(uint32_t jarg1, char ** 
     } CALL_CATCH_EXCEPTION(0);
   }
   void * jresult = new Dali::Toolkit::WebView((const Dali::Toolkit::WebView &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_GetContext() {
+  void * jresult;
+  Dali::WebEngineContext *result = 0;
+
+  {
+    try {
+      result = Dali::Toolkit::WebView::GetContext();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager() {
+  void * jresult;
+  Dali::WebEngineCookieManager *result = 0;
+
+  {
+    try {
+      result = Dali::Toolkit::WebView::GetCookieManager();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -190,40 +218,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_GetBackForwardList(void * jarg
   {
     try {
       result = arg1->GetBackForwardList();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_GetContext(void * jarg1) {
-  void * jresult;
-  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
-  Dali::Toolkit::WebContext *result = 0;
-
-  arg1 = (Dali::Toolkit::WebView*)jarg1;
-
-  {
-    try {
-      result = arg1->GetContext();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager(void * jarg1) {
-  void * jresult;
-  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
-  Dali::Toolkit::WebCookieManager *result = 0;
-
-  arg1 = (Dali::Toolkit::WebView*)jarg1;
-
-  {
-    try {
-      result = arg1->GetCookieManager();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1387,9 +1381,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebCertificate_IsContextSecure(void * ja
 
 //----------------------------------WebContext-----------------------------------------------------
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebContext_GetCacheModel(void * jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   int ret;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       ret = (int)(arg1)->GetCacheModel();
@@ -1399,9 +1393,9 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebContext_GetCacheModel(void * jarg1) {
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetCacheModel(void * jarg1, int jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->SetCacheModel((Dali::WebEngineContext::CacheModel)jarg2);
@@ -1410,9 +1404,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetCacheModel(void * jarg1, i
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetProxyUri(void * jarg1, const char * jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   std::string arg2_str(jarg2);
   {
     try {
@@ -1422,9 +1416,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetProxyUri(void * jarg1, con
 }
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyUri(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   char *jresult;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       const std::string str = (arg1)->GetProxyUri();
@@ -1441,11 +1435,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetProxyBypassRule(void *jarg
     return;
   }
 
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   const std::string arg2(jarg2);
   const std::string arg3(jarg3);
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->SetProxyBypassRule(arg2, arg3);
@@ -1454,10 +1448,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetProxyBypassRule(void *jarg
 }
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyBypassRule(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   char *jresult;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       const std::string str = (arg1)->GetProxyBypassRule();
@@ -1469,9 +1463,9 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyBypassRule(vo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetCertificateFilePath(void * jarg1, const char * jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   std::string arg2_str(jarg2);
   {
     try {
@@ -1481,9 +1475,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetCertificateFilePath(void *
 }
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetCertificateFilePath(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   char *jresult;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       const std::string str = (arg1)->GetCertificateFilePath();
@@ -1495,7 +1489,7 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetCertificateFilePat
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetDefaultProxyAuth(void * jarg1, const char * jarg2, const char * jarg3) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   std::string arg2_str(jarg2);
   std::string arg3_str(jarg3);
   {
@@ -1506,7 +1500,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetDefaultProxyAuth(void * ja
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebDatabase(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->DeleteAllWebDatabase();
@@ -1515,7 +1509,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebDatabase(void *ja
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebDatabaseOrigins(void *jarg1, void *jarg2) {
-  Dali::Toolkit::WebContext * arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext * arg1 = (Dali::WebEngineContext *)jarg1;
   void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*))jarg2;
   bool result = false;
   {
@@ -1532,7 +1526,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebDatabaseOrigins(void *j
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebDatabase(void *jarg1, void *jarg2) {
-  Dali::Toolkit::WebContext * arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext * arg1 = (Dali::WebEngineContext *)jarg1;
   Dali::WebEngineSecurityOrigin * origin = (Dali::WebEngineSecurityOrigin *)jarg2;
   bool result = false;
   {
@@ -1544,7 +1538,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebDatabase(void *jarg1
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebStorageOrigins(void *jarg1, void *jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*))jarg2;
   bool result = false;
   {
@@ -1561,7 +1555,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebStorageOrigins(void *ja
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebStorageUsageForOrigin(void *jarg1, void *jarg2, void *jarg3) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   Dali::WebEngineSecurityOrigin *origin = (Dali::WebEngineSecurityOrigin *)jarg2;
   void (*callback)(uint64_t) = (void (*)(uint64_t))jarg3;
   bool result = false;
@@ -1574,9 +1568,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebStorageUsageForOrigin(v
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebStorage(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->DeleteAllWebStorage();
@@ -1585,7 +1579,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebStorage(void *jar
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebStorage(void *jarg1, void *jarg2) {
-  Dali::Toolkit::WebContext * arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext * arg1 = (Dali::WebEngineContext *)jarg1;
   Dali::WebEngineSecurityOrigin * origin = (Dali::WebEngineSecurityOrigin *)jarg2;
   bool result = false;
   {
@@ -1597,7 +1591,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebStorage(void *jarg1,
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteLocalFileSystem(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->DeleteLocalFileSystem();
@@ -1606,7 +1600,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteLocalFileSystem(void *j
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_ClearCache(void * jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->ClearCache();
@@ -1615,7 +1609,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_ClearCache(void * jarg1) {
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteApplicationCache(void * jarg1, void * jarg2) {
-  Dali::Toolkit::WebContext * arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext * arg1 = (Dali::WebEngineContext *)jarg1;
   Dali::WebEngineSecurityOrigin * origin = (Dali::WebEngineSecurityOrigin *)jarg2;
   bool result = false;
   {
@@ -1627,7 +1621,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteApplicationCache(void *
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_GetFormPasswordList(void *jarg1, void *jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*))jarg2;
   {
     try {
@@ -1642,7 +1636,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_GetFormPasswordList(void *jar
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterDownloadStartedCallback(void * jarg1, void * jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   void (*handler)(char *) = (void (*)(char *))jarg2;
   {
     try {
@@ -1655,7 +1649,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterDownloadStartedCallba
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterMimeOverriddenCallback(void *jarg1, void *jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   bool (*handler)(char *, char *, char *) = (bool (*)(char *, char *, char *))jarg2;
   {
     try {
@@ -1670,7 +1664,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterMimeOverriddenCallbac
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterRequestInterceptedCallback(void * jarg1, void * jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   void (*handler)(Dali::WebEngineRequestInterceptorPtr*) = (void (*)(Dali::WebEngineRequestInterceptorPtr*))jarg2;
   {
     try {
@@ -1690,9 +1684,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterRequestInterceptedCal
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_EnableCache(void * jarg1, bool jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->EnableCache(jarg2);
@@ -1701,9 +1695,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_EnableCache(void * jarg1, boo
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_IsCacheEnabled(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   bool ret;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       ret = (arg1)->IsCacheEnabled();
@@ -1714,14 +1708,14 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_IsCacheEnabled(void *jarg1) {
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetAppId(void *jarg1, char *jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
 
   const std::string str(jarg2);
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->SetAppId(str);
@@ -1730,7 +1724,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetAppId(void *jarg1, char *j
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_SetAppVersion(void *jarg1, char *jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return false;
@@ -1738,7 +1732,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_SetAppVersion(void *jarg1, ch
 
   const std::string str(jarg2);
   bool ret;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       ret = (arg1)->SetAppVersion(str);
@@ -1749,9 +1743,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_SetAppVersion(void *jarg1, ch
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetApplicationType(void *jarg1, int jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->SetApplicationType((Dali::WebEngineContext::ApplicationType)jarg2);
@@ -1760,9 +1754,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetApplicationType(void *jarg
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetTimeOffset(void *jarg1, float jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->SetTimeOffset(jarg2);
@@ -1771,9 +1765,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetTimeOffset(void *jarg1, fl
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetTimeZoneOffset(void *jarg1, float jarg2, float jarg3) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->SetTimeZoneOffset(jarg2, jarg3);
@@ -1787,8 +1781,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterUrlSchemesAsCorsEnabl
     return;
   }
 
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       std::vector<std::string> vecStr;
@@ -1812,8 +1806,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterJsPluginMimeTypes(voi
     return;
   }
 
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       std::vector<std::string> vecStr;
@@ -1832,9 +1826,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterJsPluginMimeTypes(voi
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetDefaultZoomFactor(void *jarg1, float jarg2) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->SetDefaultZoomFactor(jarg2);
@@ -1843,9 +1837,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetDefaultZoomFactor(void *ja
 }
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_WebContext_GetDefaultZoomFactor(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   float ret;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       ret = (arg1)->GetDefaultZoomFactor();
@@ -1856,9 +1850,9 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_WebContext_GetDefaultZoomFactor(void *j
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllApplicationCache(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   bool ret;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       ret = (arg1)->DeleteAllApplicationCache();
@@ -1869,9 +1863,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllApplicationCache(voi
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebIndexedDatabase(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   bool ret;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       ret = (arg1)->DeleteAllWebIndexedDatabase();
@@ -1887,8 +1881,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteFormPasswordDataList(vo
     return;
   }
 
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       std::vector<std::string> vecStr;
@@ -1907,9 +1901,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteFormPasswordDataList(vo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllFormPasswordData(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->DeleteAllFormPasswordData();
@@ -1918,9 +1912,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllFormPasswordData(voi
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllFormCandidateData(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
 
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       (arg1)->DeleteAllFormCandidateData();
@@ -1929,9 +1923,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllFormCandidateData(vo
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_FreeUnusedMemory(void *jarg1) {
-  Dali::Toolkit::WebContext *arg1 = (Dali::Toolkit::WebContext *)0;
+  Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
   bool ret;
-  arg1 = (Dali::Toolkit::WebContext *)jarg1;
+  arg1 = (Dali::WebEngineContext *)jarg1;
   {
     try {
       ret = (arg1)->FreeUnusedMemory();
@@ -2182,10 +2176,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebContextMenu_ItemList_ValueOfIndex(v
 
 //----------------------------------WebCookieManager---------------------------------------------------
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebCookieManager_GetCookieAcceptPolicy(void * jarg1) {
-  Dali::Toolkit::WebCookieManager* arg1 = (Dali::Toolkit::WebCookieManager*)0;
+  Dali::WebEngineCookieManager* arg1 = (Dali::WebEngineCookieManager*)0;
   int ret;
 
-  arg1 = (Dali::Toolkit::WebCookieManager*)jarg1;
+  arg1 = (Dali::WebEngineCookieManager*)jarg1;
   {
     try {
       ret = (int)(arg1)->GetCookieAcceptPolicy();
@@ -2195,8 +2189,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebCookieManager_GetCookieAcceptPolicy(vo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_SetCookieAcceptPolicy(void * jarg1, int jarg2) {
-  Dali::Toolkit::WebCookieManager* arg1 = (Dali::Toolkit::WebCookieManager*)0;
-  arg1 = (Dali::Toolkit::WebCookieManager*)jarg1;
+  Dali::WebEngineCookieManager* arg1 = (Dali::WebEngineCookieManager*)0;
+  arg1 = (Dali::WebEngineCookieManager*)jarg1;
   {
     try {
       (arg1)->SetCookieAcceptPolicy(
@@ -2206,9 +2200,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_SetCookieAcceptPolicy(v
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_SetPersistentStorage(void * jarg1, const char * jarg2, int jarg3) {
-  Dali::Toolkit::WebCookieManager* arg1 = (Dali::Toolkit::WebCookieManager*)0;
+  Dali::WebEngineCookieManager* arg1 = (Dali::WebEngineCookieManager*)0;
 
-  arg1 = (Dali::Toolkit::WebCookieManager*)jarg1;
+  arg1 = (Dali::WebEngineCookieManager*)jarg1;
   std::string arg2_str(jarg2);
   Dali::WebEngineCookieManager::CookiePersistentStorage arg3_enum = (Dali::WebEngineCookieManager::CookiePersistentStorage)jarg3;
   {
@@ -2219,9 +2213,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_SetPersistentStorage(vo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ClearCookies(void * jarg1) {
-  Dali::Toolkit::WebCookieManager* arg1 = (Dali::Toolkit::WebCookieManager*)0;
+  Dali::WebEngineCookieManager* arg1 = (Dali::WebEngineCookieManager*)0;
 
-  arg1 = (Dali::Toolkit::WebCookieManager*)jarg1;
+  arg1 = (Dali::WebEngineCookieManager*)jarg1;
   {
     try {
       (arg1)->ClearCookies();
@@ -2230,7 +2224,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ClearCookies(void * jar
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebCookieManager_ChangesWatch(void *jarg1, void *jarg2) {
-  Dali::Toolkit::WebCookieManager *arg1 = (Dali::Toolkit::WebCookieManager *)jarg1;
+  Dali::WebEngineCookieManager *arg1 = (Dali::WebEngineCookieManager *)jarg1;
   void (*callback)() = (void (*)())jarg2;
   {
     try {
