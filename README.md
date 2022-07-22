@@ -49,13 +49,17 @@ e.g. it avoids spurious 'defined but not used' warnings in header files.
 
 To build the repository enter the 'build/tizen' folder:
 
- cd dali-csharp-binder/build/tizen
+         $ cd dali-csharp-binder/build/tizen
 
-Then run the following commands:
+Then run the following command to set up the build:
 
- autoreconf --install
- ./configure --prefix=$DESKTOP_PREFIX
- make install -j8
+         $ cmake -DCMAKE_INSTALL_PREFIX=$DESKTOP_PREFIX .
+
+If a Debug build is required, then add -DCMAKE_BUILD_TYPE=Debug
+
+To build run:
+
+         $ make install -j8
 
 3. Building for Windows
 =======================
