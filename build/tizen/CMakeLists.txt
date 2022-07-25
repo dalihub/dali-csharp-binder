@@ -1,135 +1,260 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.8.2)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_C_STANDARD 99)
+SET(CMAKE_CXX_STANDARD 17)
+SET(CMAKE_C_STANDARD 99)
 
-set(name "dali2-csharp-binder")
+SET(name "dali2-csharp-binder")
 
 project(${name} CXX)
 
-set(${name}_VERSION_MAJOR 2)
-set(${name}_VERSION_MINOR 0)
-set(${name}_VERSION_PATCH 0)
-set(${name}_VERSION ${${name}_VERSION_MAJOR}.${${name}_VERSION_MINOR}.${${name}_VERSION_PATCH})
+SET(GCC_COMPILER_VERSION_REQUIRED "6")
+IF(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  IF(CMAKE_CXX_COMPILER_VERSION VERSION_LESS GCC_COMPILER_VERSION_REQUIRED)
+    MESSAGE(FATAL_ERROR "The GCC required compiler version is " ${GCC_COMPILER_VERSION_REQUIRED})
+  ENDIF()
+ENDIF()
 
-add_definitions(-DDALI_PROFILE_WINDOWS)
-add_compile_options( /FIdali-windows-dependencies.h ) # Adds missing definitions.
-add_compile_options( /vmg ) # Avoids a 'reinterpret_cast' compile error while compiling signals and callbacks.
-add_compile_options( /wd4251 ) # Ignores warning C4251: "'identifier' : class 'type' needs to have dll-interface to be used by clients of class 'type2'"
+SET(${name}_VERSION_MAJOR 2)
+SET(${name}_VERSION_MINOR 0)
+SET(${name}_VERSION_PATCH 0)
+SET(${name}_VERSION ${${name}_VERSION_MAJOR}.${${name}_VERSION_MINOR}.${${name}_VERSION_PATCH})
 
-add_definitions(-D_USE_MATH_DEFINES)
+SET(DALI_CSHARP_BINDER_VERSION ${${name}_VERSION} )
 
-set(VCPKG_INCLUDE_DIR "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/include")
+# Define options to CMake
+OPTION(ENABLE_EXPORTALL          "Enable Export all symbols" OFF)
+OPTION(ENABLE_DEBUG              "Enable Debug" OFF)
+OPTION(ENABLE_PROFILE            "Enable Profile" OFF)
+OPTION(ENABLE_TRACE              "Enable Trace" ON)
+OPTION(ENABLE_PKG_CONFIGURE      "Use pkgconfig" ON)
+OPTION(ENABLE_SCENE3D            "Enable scene3d" ON)
+OPTION(ENABLE_RIVE_ANIMATION     "Enable rive animation" OFF)
+OPTION(ENABLE_ECORE_WAYLAND2     "Enable ecore wayland2" OFF)
 
-find_package( pthreads REQUIRED )
-find_package( curl REQUIRED )
-find_library( GETOPT_LIBRARY NAMES getopt )
-find_library( EXIF_LIBRARY NAMES libexif )
+# Set up compiler definitions
+IF(CMAKE_BUILD_TYPE MATCHES Debug)
+  SET( ENABLE_DEBUG ON )
+ENDIF()
 
-find_package( png REQUIRED )
-find_package( gif REQUIRED )
-find_package( jpeg REQUIRED )
-find_library( TURBO_JPEG_LIBRARY NAMES turbojpeg )
+IF( ENABLE_DEBUG )
+  MESSAGE( STATUS "CMAKE_BUILD_TYPE: " Debug )
+  ADD_DEFINITIONS( "-DDEBUG_ENABLED" )
+  SET( ENABLE_EXPORTALL ON )
+ELSE()
+  MESSAGE( STATUS "CMAKE_BUILD_TYPE: " Release )
+ENDIF()
 
-find_package( unofficial-fontconfig REQUIRED )
-find_package( freetype REQUIRED )
-find_package( harfbuzz REQUIRED )
-find_library( FRIBIDI_LIBRARY NAMES fribidi )
+IF( NOT ENABLE_PROFILE )
+  IF( ANDROID )
+    SET( ENABLE_PROFILE ANDROID )
+  ELSE()
+    SET( ENABLE_PROFILE UBUNTU )
+  ENDIF()
+ENDIF()
 
-find_package( unofficial-angle REQUIRED )
-find_package( unofficial-cairo REQUIRED )
+# from root/build/tizen, get back to root.
+# set the variable only if it's not set yet. it allows to access build script
+# from top-level directory
+IF( NOT ROOT_SRC_DIR )
+  SET(ROOT_SRC_DIR ${CMAKE_SOURCE_DIR}/../..)
+ENDIF()
+# Make sure the path is absolute
+GET_FILENAME_COMPONENT(ROOT_SRC_DIR ${ROOT_SRC_DIR} ABSOLUTE)
 
-find_package( WebP REQUIRED )
 
-find_package( dali-windows-dependencies REQUIRED )
-find_package( dali2-core REQUIRED )
-find_package( dali2-adaptor REQUIRED )
-find_package( dali2-toolkit REQUIRED )
+# Test for profile and exit if something wrong
+SET( VALID_PROFILES COMMON MOBILE WEARABLE TV IVI UBUNTU ANDROID WINDOWS MACOS )
+LIST( FIND VALID_PROFILES ${ENABLE_PROFILE} RESULT )
+IF( RESULT EQUAL -1 )
+  MESSAGE( FATAL_ERROR "Invalid profile!" )
+ENDIF()
 
-# Set up the include dir
-set( INCLUDE_DIR ${CMAKE_INSTALL_PREFIX}/include )
-set( LIB_DIR ${CMAKE_INSTALL_PREFIX}/lib )
-set( BIN_DIR ${CMAKE_INSTALL_PREFIX}/bin )
+# Defines profile specific variable
+SET( ${ENABLE_PROFILE}_PROFILE 1 )
 
-set( REQUIRED_LIBS
-  PThreads4W::PThreads4W
-  CURL::libcurl
-  ${GETOPT_LIBRARY}
-  ${EXIF_LIBRARY}
-  ${PNG_LIBRARIES}
-  ${GIF_LIBRARIES}
-  JPEG::JPEG
-  ${TURBO_JPEG_LIBRARY}
-  unofficial::fontconfig::fontconfig
-  Freetype::Freetype
-  harfbuzz::harfbuzz
-  ${FRIBIDI_LIBRARY}
-  unofficial::angle::libEGL
-  unofficial::angle::libGLESv2
-  unofficial::cairo::cairo
-  WebP::webp
-  WebP::webpdemux
-  dali-windows-dependencies::dali-windows-dependencies
-  dali2-core::dali2-core
-  dali2-adaptor::dali2-adaptor
-  dali2-toolkit::dali2-toolkit
+IF( ENABLE_PKG_CONFIGURE )
+  FIND_PACKAGE( PkgConfig REQUIRED )
+
+  PKG_CHECK_MODULES(DALICORE REQUIRED dali2-core)
+  PKG_CHECK_MODULES(DALIADAPTOR REQUIRED dali2-adaptor)
+  PKG_CHECK_MODULES(DALITOOLKIT REQUIRED dali2-toolkit)
+  PKG_CHECK_MODULES(DALISCENE3D REQUIRED dali2-scene3d)
+ENDIF()
+
+ADD_DEFINITIONS(-DDALI_PROFILE_WINDOWS)
+
+IF( WIN32 ) # WIN32 includes x64 as well according to the cmake doc.
+  FIND_PACKAGE( dali-windows-dependencies REQUIRED )
+  FIND_PACKAGE( dali2-core REQUIRED )
+  FIND_PACKAGE( dali2-adaptor REQUIRED )
+  FIND_PACKAGE( dali2-toolkit REQUIRED )
+  FIND_PACKAGE( dali2-scene3d REQUIRED )
+  FIND_PACKAGE( pthreads REQUIRED )
+ENDIF()
+
+SET( DALI_CFLAGS
+  ${DALICORE_CFLAGS}
+  ${DALIADAPTOR_CFLAGS}
+  ${DALITOOLKIT_CFLAGS}
 )
 
-include_directories(
+SET( DALI_LDFLAGS
+    ${DALICORE_LDFLAGS}
+    ${DALIADAPTOR_LDFLAGS}
+    ${DALITOOLKIT_LDFLAGS}
+)
+
+ADD_DEFINITIONS(-D_USE_MATH_DEFINES)
+
+SET(VCPKG_INCLUDE_DIR "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/include")
+
+# set lowercase profile name
+STRING( TOLOWER ${ENABLE_PROFILE} PROFILE_LCASE )
+
+
+# Deployment folder should come from spec file or command line:
+SET( PREFIX ${CMAKE_INSTALL_PREFIX})
+SET( EXEC_PREFIX ${CMAKE_INSTALL_PREFIX})
+
+# Set up the include dir
+SET( INCLUDE_DIR $ENV{includedir} )
+IF( NOT INCLUDE_DIR )
+  SET( INCLUDE_DIR ${CMAKE_INSTALL_INCLUDEDIR} )
+ENDIF()
+IF( NOT INCLUDE_DIR )
+  SET( INCLUDE_DIR ${PREFIX}/include )
+ENDIF()
+
+# Set up the lib dir
+SET( LIB_DIR $ENV{libdir} )
+IF( NOT LIB_DIR )
+  SET( LIB_DIR ${CMAKE_INSTALL_LIBDIR} )
+ENDIF()
+IF( NOT LIB_DIR )
+  SET( LIB_DIR ${PREFIX}/lib )
+ENDIF()
+
+# Set up the bin dir
+SET( BIN_DIR $ENV{bindir} )
+IF( NOT BIN_DIR )
+  SET( BIN_DIR ${CMAKE_INSTALL_BINDIR} )
+ENDIF()
+IF( NOT BIN_DIR )
+  SET( BIN_DIR ${PREFIX}/bin )
+ENDIF()
+
+# Set up compiler flags and warnings
+IF( UNIX )
+  ADD_COMPILE_OPTIONS( -Wall ${DALI_CFLAGS} )# -Wextra -Wno-unused-parameter )# -Wfloat-equal )
+ELSEIF( WIN32 ) # WIN32 includes x64 as well according to the cmake doc.
+  ADD_COMPILE_OPTIONS( /FIdali-windows-dependencies.h ) # Adds missing definitions.
+  ADD_COMPILE_OPTIONS( /vmg ) # Avoids a 'reinterpret_cast' compile error while compiling signals and callbacks.
+  ADD_COMPILE_OPTIONS( /wd4251 ) # Ignores warning C4251: "'identifier' : class 'type' needs to have dll-interface to be used by clients of class 'type2'"
+ENDIF()
+
+# from root/build/tizen, get back to root
+SET(ROOT_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../)
+
+# Make sure the path is absolute
+GET_FILENAME_COMPONENT(ROOT_SRC_DIR ${ROOT_SRC_DIR} ABSOLUTE)
+
+SET(dali_csharp_binder_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../dali-csharp-binder)
+INCLUDE( ${dali_csharp_binder_dir}/file.list )
+
+# Include profile specific setup
+INCLUDE( profiles/${PROFILE_LCASE}-profile.cmake )
+
+IF( ENABLE_PKG_CONFIGURE )
+  # Configure the pkg-config file
+  # Requires the following variables to be setup:
+  # @PREFIX@ @EXEC_PREFIX@ @DALI_VERSION@ @LIB_DIR@ @DEV_INCLUDE_PATH@
+  SET( DEV_INCLUDE_PATH ${INCLUDE_DIR} )
+  SET( CORE_PKG_CFG_FILE ${CMAKE_CURRENT_SOURCE_DIR}/dali2-csharp-binder.pc )
+  CONFIGURE_FILE( ${CORE_PKG_CFG_FILE}.in ${CORE_PKG_CFG_FILE} @ONLY )
+ENDIF()
+
+INCLUDE_DIRECTORIES(
+  ${ROOT_SRC_DIR}
+  ${PROFILE_INCLUDE_DIRECTORIES}
   ${VCPKG_INCLUDE_DIR}
   ${CMAKE_INSTALL_PREFIX}/include
   ${INCLUDE_DIR}
 )
 
-link_directories(${LIB_DIR})
+ADD_LIBRARY(${name} SHARED ${SOURCES})
 
-set(dali_csharp_binder_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../dali-csharp-binder)
+TARGET_LINK_LIBRARIES(${name}
+                      ${DALI_LDFLAGS}
+                      ${REQUIRED_LIBS})
 
-set(SOURCES
-  ${dali_csharp_binder_dir}/src/callbackbase_wrap.cpp
-  ${dali_csharp_binder_dir}/src/keyboard_focus_manager_wrap.cpp
-  ${dali_csharp_binder_dir}/src/devel-property-wrap.cpp
-  ${dali_csharp_binder_dir}/src/version-check.cpp
-  ${dali_csharp_binder_dir}/src/processor-controller.cpp
-  ${dali_csharp_binder_dir}/src/flex-layout.cpp
-  ${dali_csharp_binder_dir}/src/gestures.cpp
-  ${dali_csharp_binder_dir}/src/view-wrapper-impl-wrap.cpp
-  ${dali_csharp_binder_dir}/src/event-thread-callback-wrap.cpp
-  ${dali_csharp_binder_dir}/src/application.cpp
-  ${dali_csharp_binder_dir}/src/text-editor.cpp
-  ${dali_csharp_binder_dir}/src/text-field.cpp
-  ${dali_csharp_binder_dir}/src/window.cpp
-  ${dali_csharp_binder_dir}/src/tts-player.cpp
-  ${dali_csharp_binder_dir}/src/input-method-context.cpp
-  ${dali_csharp_binder_dir}/src/input-method-options.cpp
-  ${dali_csharp_binder_dir}/src/animation.cpp
-  ${dali_csharp_binder_dir}/src/adaptor.cpp
-  ${dali_csharp_binder_dir}/src/extents.cpp
-  ${dali_csharp_binder_dir}/src/text-label.cpp
-  ${dali_csharp_binder_dir}/src/text-utils.cpp
-  ${dali_csharp_binder_dir}/src/dali_wrap.cpp
-)
-
-add_library(${name} SHARED ${SOURCES})
-target_link_libraries(${name} ${REQUIRED_LIBS})
-
-set_target_properties(${name}
+SET_TARGET_PROPERTIES(${name}
   PROPERTIES
   VERSION ${${name}_VERSION}
   SOVERSION ${${name}_VERSION_MAJOR}
   CLEAN_DIRECT_OUPUT 1
 )
 
-# Install the pdb file.
-if( ${CMAKE_BUILD_TYPE} MATCHES Debug )
-  set(BIN_DIR ${BIN_DIR}/debug)
-  set(LIB_DIR ${LIB_DIR}/debug)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Debug/${name}.pdb DESTINATION ${BIN_DIR} )
-endif()
+IF( INSTALL_CMAKE_MODULES )
+  # Install the pdb file.
+  IF( ENABLE_DEBUG )
+    SET(BIN_DIR "${BIN_DIR}/debug")
+    SET(LIB_DIR "${LIB_DIR}/debug")
+  ENDIF()
 
-# Install the library so file and symlinks
-install( TARGETS ${name}
-  LIBRARY DESTINATION ${LIB_DIR}
-  ARCHIVE DESTINATION ${LIB_DIR}
-  RUNTIME DESTINATION ${BIN_DIR}
-)
+  # Install the library so file and symlinks
+  INSTALL( TARGETS ${name}
+    EXPORT ${name}-targets
+    LIBRARY DESTINATION ${LIB_DIR}
+    ARCHIVE DESTINATION ${LIB_DIR}
+    RUNTIME DESTINATION ${BIN_DIR}
+  )
+
+  # Install the cmake modules.
+  INSTALL(
+    EXPORT ${name}-targets
+    NAMESPACE ${name}::
+    FILE ${name}-targets.cmake
+    DESTINATION share/${name}
+  )
+
+  FILE(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${name}-config.cmake "
+    include(CMakeFindDependencyMacro)
+    include(\${CMAKE_CURRENT_LIST_DIR}/${name}-targets.cmake)
+  ")
+
+  INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${name}-config.cmake DESTINATION share/${name})
+
+  # Install the pdb file.
+  IF( ENABLE_DEBUG AND WIN32 )
+    INSTALL( FILES ${CMAKE_CURRENT_BINARY_DIR}/Debug/${name}.pdb DESTINATION ${BIN_DIR} )
+  ENDIF()
+ELSE()
+  # Install the library so file and symlinks
+  INSTALL( TARGETS ${name} DESTINATION ${LIB_DIR} )
+ENDIF()
+
+# Install the pkg-config file
+IF( ENABLE_PKG_CONFIGURE )
+  INSTALL( FILES ${CORE_PKG_CFG_FILE} DESTINATION ${LIB_DIR}/pkgconfig )
+ENDIF()
+
+# Install headers
+INSTALL( FILES ${dali_csharp_binder_header_files} DESTINATION ${INCLUDE_DIR}/dali-csharp-binder )
+
+# Configuration Messages
+MESSAGE( STATUS "Configuration:\n" )
+MESSAGE( STATUS "Prefix:                        " ${PREFIX} )
+MESSAGE( STATUS "Lib Dir:                       " ${LIB_DIR} )
+MESSAGE( STATUS "Include Dir:                   " ${INCLUDE_DIR} )
+MESSAGE( STATUS "Debug build:                   " ${ENABLE_DEBUG} )
+MESSAGE( STATUS "Profile:                       " ${ENABLE_PROFILE} )
+MESSAGE( STATUS "Export all symbols:            " ${ENABLE_EXPORTALL} )
+MESSAGE( STATUS "Trace:                         " ${ENABLE_TRACE} )
+MESSAGE( STATUS "Use pkg configure:             " ${ENABLE_PKG_CONFIGURE} )
+MESSAGE( STATUS "Use scene 3d:                  " ${ENABLE_SCENE3D} )
+MESSAGE( STATUS "CXXFLAGS:                      " ${CMAKE_CXX_FLAGS} )
+MESSAGE( STATUS "LDFLAGS:                       " ${CMAKE_SHARED_LINKER_FLAGS_INIT}${CMAKE_SHARED_LINKER_FLAGS} )
+
+IF( ENABLE_SCENE3D )
+  ADD_SUBDIRECTORY( dali-scene3d )
+ENDIF()
