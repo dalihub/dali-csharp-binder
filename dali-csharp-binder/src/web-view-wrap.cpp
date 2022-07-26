@@ -2436,6 +2436,36 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebRequestInterceptorPtr_Get(void * ja
 }
 
 //----------------------------------WebRequestInterceptor---------------------------------------------------
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_GetWebView(void * jarg1) {
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebRequestInterceptor is null", 0);
+    return 0;
+  }
+
+  Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
+  Dali::Toolkit::WebView result;
+
+  Dali::WebEnginePlugin* plugin = nullptr;
+  {
+    try {
+      plugin = (arg1)->GetWebEngine();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  if (!plugin) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebEnginePlugin is null", 0);
+    return 0;
+  }
+
+  {
+    try {
+      result = Dali::Toolkit::WebView::FindWebView(plugin);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  void* jresult = new Dali::Toolkit::WebView((const Dali::Toolkit::WebView&)result);
+  return jresult;
+}
+
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebRequestInterceptor_GetUrl(void * jarg1) {
   Dali::WebEngineRequestInterceptor* arg1 = (Dali::WebEngineRequestInterceptor*)jarg1;
   std::string result;
