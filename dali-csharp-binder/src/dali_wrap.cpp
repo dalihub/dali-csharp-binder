@@ -48246,6 +48246,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AccessibilityManager_ActionScrollSigna
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AccessibilityManager_ActionForwardSignal(void * jarg1) {
+  void * jresult ;
+  Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
+  Dali::Toolkit::AccessibilityManager::AccessibilityActionSignalType *result = 0 ;
+
+  arg1 = (Dali::Toolkit::AccessibilityManager *)jarg1;
+  {
+    try {
+      result = (Dali::Toolkit::AccessibilityManager::AccessibilityActionSignalType *) &(arg1)->ActionForwardSignal();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_StyleManager() {
   void * jresult ;
