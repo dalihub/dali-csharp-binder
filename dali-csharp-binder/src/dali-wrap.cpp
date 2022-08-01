@@ -22181,6 +22181,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_CLIPPING_MODE_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_UPDATE_AREA_HINT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Actor::Property::UPDATE_AREA_HINT;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_OPACITY_get() {
 
   return Dali::Actor::Property::OPACITY;
