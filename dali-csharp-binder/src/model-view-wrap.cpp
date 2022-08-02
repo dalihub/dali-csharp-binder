@@ -203,23 +203,23 @@ extern "C"
     }
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ModelView_SetImageBasedLightSource(void *csModelView, char* csDiffuse, char* csSpecular, float scaleFactor)
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelView_SetImageBasedLightSource(void *csModelView, char* csDiffuse, char* csSpecular, float scaleFactor)
   {
     Dali::Scene3D::ModelView *modelView = (Dali::Scene3D::ModelView *)csModelView;
 
     if (!modelView)
     {
       SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelView", 0);
-      return 0;
+      return;
     }
     if (!csDiffuse) {
       SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-      return 0;
+      return;
     }
     std::string diffuse(csDiffuse);
     if (!csSpecular) {
       SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-      return 0;
+      return;
     }
     std::string specular(csSpecular);
     {
@@ -227,7 +227,7 @@ extern "C"
       {
         modelView->SetImageBasedLightSource(diffuse, specular, scaleFactor);
       }
-      CALL_CATCH_EXCEPTION(0);
+      CALL_CATCH_EXCEPTION();
     }
   }
 
