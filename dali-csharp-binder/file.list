@@ -1,11 +1,11 @@
 #
 # Add source files here
-# backend: common - ubuntu,mobile,tv,ivi,tizen-wearable
+# backend: common - ubuntu,mobile,tv,ivi,tizen-wearable,common
 # backend: tizen - mobile,tv,ivi,tizen-wearable
 # backend: tizen-wearable - tizen-wearable
 SET( dali_csharp_binder_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../dali-csharp-binder )
 
-# module: csharp-binder, backend: common
+# module: csharp-binder, backend: common - ubuntu,mobile,tv,ivi,tizen-wearable,common
 SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/src/common.cpp
   ${dali_csharp_binder_dir}/src/dali-wrap.cpp
@@ -51,14 +51,13 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/src/atspi-wrap.cpp
   ${dali_csharp_binder_dir}/src/rotation-wrap.cpp
   ${dali_csharp_binder_dir}/src/input-options-wrap.cpp
-  ${dali_csharp_binder_dir}/src/model3d-view-wrap.cpp
   ${dali_csharp_binder_dir}/src/native-image-queue-wrap.cpp
   ${dali_csharp_binder_dir}/src/style-manager-wrap.cpp
   ${dali_csharp_binder_dir}/src/drag-and-drop-wrap.cpp
 )
 
 # added for key grab binding only for tizen
-# module: csharp-binder, backend: mobile,tv,ivi,watch
+# module: csharp-binder, backend: mobile,tv,ivi,watch,common
 SET( dali_csharp_binder_tizen_src_files
   ${dali_csharp_binder_dir}/src/key-grab-wrap.cpp
   ${dali_csharp_binder_dir}/src/keyboard-wrap.cpp
