@@ -80,6 +80,23 @@ SWIGINTERN void Dali_Signal_Window_Transition_Effect_Event_Signal_Emit(Dali::Sig
   self->Emit( arg, state, type );
 }
 
+/* Moved signal */
+SWIGINTERN bool Dali_Signal_Window_Moved_Signal_Empty(Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > const *self){
+  return self->Empty();
+}
+SWIGINTERN std::size_t Dali_Signal_Window_Moved_Signal_GetConnectionCount(Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > const *self){
+return self->GetConnectionCount();
+}
+SWIGINTERN void Dali_Signal_Window_Moved_Signal_Connect(Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *self, void (*func)(Dali::Window, Dali::Window::WindowPosition)){
+  self->Connect( func );
+}
+SWIGINTERN void Dali_Signal_Window_Moved_Signal_Disconnect(Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *self,void (*func)(Dali::Window, Dali::Window::WindowPosition)){
+  self->Disconnect( func );
+}
+SWIGINTERN void Dali_Signal_Window_Moved_Signal_Emit(Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *self,Dali::Window window, Dali::Window::WindowPosition position){
+  self->Emit( window, position );
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -2661,6 +2678,153 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetLastTouchEvent(void* winHand
   jresult = (void *)result;
   return result;
 }
+
+/* Moved signal binding */
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Moved_Signal(void* winHandle)
+{
+  void *result;
+  Dali::Window window;
+  Dali::Window *win;
+  Dali::DevelWindow::MovedSignalType* movedSignal;
+
+  win = (Dali::Window *)winHandle;
+  if (!win) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return 0;
+  }
+  window = *win;
+  {
+    try {
+      movedSignal = (Dali::DevelWindow::MovedSignalType *) &Dali::DevelWindow::MovedSignal(window);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  result = (void *)movedSignal;
+  return result;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Moved_Signal_Empty(void * signal)
+{
+  unsigned int result;
+  Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *) 0 ;
+  bool flag;
+
+  movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *)signal;
+  {
+    try {
+      flag = (bool)Dali_Signal_Window_Moved_Signal_Empty((Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > const *)movedSignal);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  result = (unsigned int)flag;
+  return result;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Moved_Signal_GetConnectionCount(void * signal) {
+  unsigned long result;
+  Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *) 0 ;
+  std::size_t count;
+
+  movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *)signal;
+  {
+    try {
+      count = Dali_Signal_Window_Moved_Signal_GetConnectionCount((Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > const *)movedSignal);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  result = (unsigned long)count;
+  return result;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Moved_Signal_Connect(void * signal, void * func) {
+  Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *) 0 ;
+  void (*functionPtr)(Dali::Window, Dali::Window::WindowPosition) = (void (*)(Dali::Window, Dali::Window::WindowPosition)) 0 ;
+
+  movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *)signal;
+  functionPtr = (void (*)(Dali::Window, Dali::Window::WindowPosition))func;
+  {
+    try {
+      Dali_Signal_Window_Moved_Signal_Connect(movedSignal, functionPtr);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Moved_Signal_Disconnect(void * signal, void * func) {
+  Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *) 0 ;
+  void (*functionPtr)(Dali::Window, Dali::Window::WindowPosition) = (void (*)(Dali::Window, Dali::Window::WindowPosition)) 0 ;
+
+  movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *)signal;
+  functionPtr = (void (*)(Dali::Window, Dali::Window::WindowPosition))func;
+  {
+    try {
+      Dali_Signal_Window_Moved_Signal_Disconnect(movedSignal, functionPtr);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Moved_Signal_Emit(void * signal, void* winHandle, void * position) {
+  Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *) 0 ;
+  Dali::Window* win = (Dali::Window*)winHandle;
+  Dali::Window window;
+  Dali::Window::WindowPosition windowPosiztion;
+  Dali::Window::WindowPosition *pPosition;
+
+  movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *)signal;
+  if (movedSignal == nullptr || window == nullptr) {
+    DALI_LOG_ERROR("[ERR] movedSignal == nullptr or window == nullptr");
+    return;
+  }
+
+  pPosition = (Dali::Window::WindowPosition *)position;
+  if (!pPosition) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowPosition", 0);
+    return ;
+  }
+  window = *win;
+  windowPosiztion = *pPosition;
+  {
+    try {
+      Dali_Signal_Window_Moved_Signal_Emit(movedSignal, window, windowPosiztion);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Moved_Signal() {
+  void * result ;
+  Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *movedSignal = 0 ;
+
+  {
+    try {
+      movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *)new Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) >();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  result = (void *)movedSignal;
+  return result;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Moved_Signal(void * signal) {
+  Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *) 0 ;
+
+  movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *)signal;
+  {
+    try {
+      delete movedSignal;
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
 
 #ifdef __cplusplus
 }
