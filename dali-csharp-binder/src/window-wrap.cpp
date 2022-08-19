@@ -2658,7 +2658,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetLastKeyEvent(void* winHandle
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
-  return result;
+  return jresult;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetLastTouchEvent(void* winHandle)
@@ -2676,7 +2676,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetLastTouchEvent(void* winHand
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
-  return result;
+  return jresult;
 }
 
 /* Moved signal binding */

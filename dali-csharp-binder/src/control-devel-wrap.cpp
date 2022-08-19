@@ -22,8 +22,58 @@
 
 // INTERNAL INCLUDES
 #include "control-devel-wrap.h"
+#include <dali-toolkit/devel-api/visuals/animated-vector-image-visual-actions-devel.h>
+#include <dali-toolkit/dali-toolkit.h>
+#include <dali-toolkit/devel-api/controls/control-devel.h>
+#include <dali-toolkit/devel-api/visuals/animated-vector-image-visual-signals-devel.h>
+#include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
+#include <dali/devel-api/adaptor-framework/vector-animation-renderer.h>
+#include <string>
 
+using namespace Dali;
+using namespace Dali::Toolkit;
 using namespace Dali::Toolkit::DevelControl;
+
+namespace
+{
+typedef void (*SavedCallbackType)(int32_t, int32_t, uint32_t, float *val1, float *val2, float *val3);
+SavedCallbackType gSavedRootCallback = nullptr;
+
+Dali::Property::Value RootCallback(int32_t id, VectorAnimationRenderer::VectorProperty property, uint32_t frameNumber)
+{
+  float val1, val2, val3;
+  if(gSavedRootCallback != nullptr)
+  {
+    gSavedRootCallback(id, (int)property, frameNumber, &val1, &val2, &val3);
+  }
+
+  switch(property)
+  {
+    case VectorAnimationRenderer::VectorProperty::FILL_COLOR :
+    case VectorAnimationRenderer::VectorProperty::STROKE_COLOR :
+      return Dali::Vector3(val1, val2, val3);
+      break;
+
+    case VectorAnimationRenderer::VectorProperty::TRANSFORM_ANCHOR :
+    case VectorAnimationRenderer::VectorProperty::TRANSFORM_POSITION :
+    case VectorAnimationRenderer::VectorProperty::TRANSFORM_SCALE :
+      return Dali::Vector2(val1, val2);
+      break;
+
+    case VectorAnimationRenderer::VectorProperty::FILL_OPACITY :
+    case VectorAnimationRenderer::VectorProperty::STROKE_OPACITY :
+    case VectorAnimationRenderer::VectorProperty::STROKE_WIDTH :
+    case VectorAnimationRenderer::VectorProperty::TRANSFORM_ROTATION :
+    case VectorAnimationRenderer::VectorProperty::TRANSFORM_OPACITY :
+      return val1;
+      break;
+
+    default:
+      return 0;
+      break;
+  }
+}
+} //unnamed namespace
 
 #ifdef __cplusplus
 extern "C" {
@@ -486,6 +536,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Accessible_SetHighlightAct
     Dali::Actor actor = arg1_actor ? *((Dali::Actor*)arg1_actor) : Dali::Actor();
     Dali::Accessibility::Accessible::SetHighlightActor(actor);
   }));
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoActionExtension(void * control, int visualIndex, int actionId, int callbackId, char* keyPath, int property, void * callback)
+{
+  DevelAnimatedVectorImageVisual::DynamicPropertyInfo info;
+  info.id = callbackId;
+  std::string path(keyPath);
+  info.keyPath = path;
+  info.property = property;
+  gSavedRootCallback = (void (*)(int32_t, int32_t, uint32_t, float *val1, float *val2, float *val3))callback;
+  info.callback = Dali::MakeCallback((Dali::Property::Value (*)(int32_t, int32_t, uint32_t))RootCallback);
+
+  try
+  {
+    DevelControl::DoActionExtension(*((Dali::Toolkit::Control *)control), (Dali::Property::Index)visualIndex, (Dali::Property::Index)actionId, Dali::Any(info));
+  } CALL_CATCH_EXCEPTION();
 }
 
 #ifdef __cplusplus

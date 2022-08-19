@@ -2054,38 +2054,40 @@ void SwigDirector_ViewImpl::OnKeyInputFocusLost() {
   }
 }
 
-Dali::Actor SwigDirector_ViewImpl::GetNextKeyboardFocusableActor(Dali::Actor currentFocusedActor, Dali::Toolkit::Control::KeyboardFocus::Direction direction, bool loopEnabled) {
-  Dali::Actor c_result ;
-  void * jresult = 0 ;
-  void * jcurrentFocusedActor  ;
-  int jdirection  ;
-  unsigned int jloopEnabled  ;
 
-  if (!swig_callbackGetNextKeyboardFocusableActor) {
+Dali::Actor SwigDirector_ViewImpl::GetNextKeyboardFocusableActor(Dali::Actor currentFocusedActor, Dali::Toolkit::Control::KeyboardFocus::Direction direction, bool loopEnabled)
+{
+  Dali::Actor c_result;
+  void* jresult = 0;
+
+  if(!swig_callbackGetNextKeyboardFocusableActor)
+  {
     return Dali::Toolkit::Internal::Control::GetNextKeyboardFocusableActor(currentFocusedActor,direction,loopEnabled);
-  } else {
-    jcurrentFocusedActor = (void *)new Dali::Actor((const Dali::Actor &)currentFocusedActor);
-    jdirection = (int)direction;
-    jloopEnabled = loopEnabled;
-    jresult = (void *) swig_callbackGetNextKeyboardFocusableActor(jcurrentFocusedActor, jdirection, jloopEnabled);
-    if (!jresult) {
+  }
+  else
+  {
+    jresult = (void*)swig_callbackGetNextKeyboardFocusableActor((void*)(&currentFocusedActor), (int)direction, loopEnabled);
+
+    if(!jresult)
+    {
       SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Unexpected null return for type Dali::Actor", 0);
       return c_result;
     }
-    c_result = *(Dali::Actor *)jresult;
+    c_result = *(Dali::Actor*)jresult;
   }
   return c_result;
 }
 
-void SwigDirector_ViewImpl::OnKeyboardFocusChangeCommitted(Dali::Actor commitedFocusableActor) {
-  void * jcommitedFocusableActor  ;
-
-  if (!swig_callbackOnKeyboardFocusChangeCommitted) {
+void SwigDirector_ViewImpl::OnKeyboardFocusChangeCommitted(Dali::Actor commitedFocusableActor)
+{
+  if(!swig_callbackOnKeyboardFocusChangeCommitted)
+  {
     Dali::Toolkit::Internal::Control::OnKeyboardFocusChangeCommitted(commitedFocusableActor);
     return;
-  } else {
-    jcommitedFocusableActor = (void *)new Dali::Actor((const Dali::Actor &)commitedFocusableActor);
-    swig_callbackOnKeyboardFocusChangeCommitted(jcommitedFocusableActor);
+  }
+  else
+  {
+    swig_callbackOnKeyboardFocusChangeCommitted((void*)(&commitedFocusableActor));
   }
 }
 
@@ -2299,17 +2301,16 @@ Dali::Actor SwigDirector_ItemFactory::NewItem(unsigned int itemId) {
   return c_result;
 }
 
-void SwigDirector_ItemFactory::ItemReleased(unsigned int itemId, Dali::Actor actor) {
-  unsigned int jitemId  ;
-  void * jactor  ;
-
-  if (!swig_callbackItemReleased) {
-    Dali::Toolkit::ItemFactory::ItemReleased(itemId,actor);
+void SwigDirector_ItemFactory::ItemReleased(unsigned int itemId, Dali::Actor actor)
+{
+  if(!swig_callbackItemReleased)
+  {
+    Dali::Toolkit::ItemFactory::ItemReleased(itemId, actor);
     return;
-  } else {
-    jitemId = itemId;
-    jactor = (void *)new Dali::Actor((const Dali::Actor &)actor);
-    swig_callbackItemReleased(jitemId, jactor);
+  }
+  else
+  {
+    swig_callbackItemReleased(itemId, (void*)(&actor));
   }
 }
 
@@ -2338,25 +2339,24 @@ SwigDirector_CustomAlgorithmInterface::~SwigDirector_CustomAlgorithmInterface() 
 }
 
 
-Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction, const std::string& deviceName) {
-  Dali::Actor c_result ;
-  void * jresult = 0 ;
-  void * jcurrent  ;
-  void * jproposed  ;
-  int jdirection  ;
+Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction, const std::string& deviceName)
+{
+  Dali::Actor c_result;
+  void* jresult = 0;
 
-  if (!swig_callbackGetNextFocusableActor) {
+  if(!swig_callbackGetNextFocusableActor)
+  {
     throw Swig::DirectorPureVirtualException("Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface::GetNextFocusableActor");
-  } else {
-    jcurrent = (void *)new Dali::Actor((const Dali::Actor &)current);
-    jproposed = (void *)new Dali::Actor((const Dali::Actor &)proposed);
-    jdirection = (int)direction;
-    jresult = (void *) swig_callbackGetNextFocusableActor(jcurrent, jproposed, jdirection, deviceName.c_str());
-    if (!jresult) {
-      DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::Actor! Next focus will be NULL, please be cautious to handle the keyboard foucs! ", __FILE__, __LINE__);
+  }
+  else
+  {
+    jresult = (void*)swig_callbackGetNextFocusableActor((void*)(&current), (void*)(&proposed), direction, deviceName.c_str());
+    if(!jresult)
+    {
+      DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::Actor! Next focus will be NULL, please be cautious to handle the keyboard foucs!", __FILE__, __LINE__);
       return c_result;
     }
-    c_result = *(Dali::Actor *)jresult;
+    c_result = *(Dali::Actor*)jresult;
   }
   return c_result;
 }
