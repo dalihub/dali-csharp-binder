@@ -41,7 +41,7 @@ SavedCallbackType gSavedRootCallback = nullptr;
 
 Dali::Property::Value RootCallback(int32_t id, VectorAnimationRenderer::VectorProperty property, uint32_t frameNumber)
 {
-  float val1, val2, val3;
+  float val1 = 0.0f, val2 = 0.0f, val3 = 0.0f;
   if(gSavedRootCallback != nullptr)
   {
     gSavedRootCallback(id, (int)property, frameNumber, &val1, &val2, &val3);
