@@ -27,7 +27,9 @@
 using namespace Dali;
 using namespace Dali::Toolkit;
 
-using Interface = Accessibility::AtspiInterface;
+using Interface     = Accessibility::AtspiInterface;
+using IntPairType   = NUIViewAccessible::IntPairType;
+using IntVectorType = NUIViewAccessible::IntVectorType;
 
 namespace
 {
@@ -36,7 +38,13 @@ void GetAttributesCallback(const char* key, const char* value, Accessibility::At
   attributes->insert_or_assign(key, value);
 }
 
-using GetAttributesCallbackType = decltype(&GetAttributesCallback);
+void GetSelectedRowsColumnsCallback(int index, IntVectorType* vector)
+{
+  vector->push_back(index);
+}
+
+using GetAttributesCallbackType          = decltype(&GetAttributesCallback);
+using GetSelectedRowsColumnsCallbackType = decltype(&GetSelectedRowsColumnsCallback);
 
 } // unnamed namespace
 
@@ -84,6 +92,32 @@ struct NUIViewAccessible::AccessibilityDelegate
   Rect<int>*            (*getRangeExtents)         (RefObject*, int, int, int);    // 36
   void                  (*getAttributes)           (RefObject*, GetAttributesCallbackType, Accessibility::Attributes*); // 37
   char*                 (*getValueText)            (RefObject*);                   // 38
+  int                   (*getRowCount)             (RefObject*);                   // 39
+  int                   (*getColumnCount)          (RefObject*);                   // 40
+  int                   (*getSelectedRowCount)     (RefObject*);                   // 41
+  int                   (*getSelectedColumnCount)  (RefObject*);                   // 42
+  Actor*                (*getCaption)              (RefObject*);                   // 43
+  Actor*                (*getSummary)              (RefObject*);                   // 44
+  Actor*                (*getCell)                 (RefObject*, int, int);         // 45
+  std::uint64_t         (*getChildIndex)           (RefObject*, int, int);         // 46
+  IntPairType*          (*getPositionByChildIndex) (RefObject*, std::uint64_t);    // 47
+  char*                 (*getRowDescription)       (RefObject*, int);              // 48
+  char*                 (*getColumnDescription)    (RefObject*, int);              // 49
+  Actor*                (*getRowHeader)            (RefObject*, int);              // 50
+  Actor*                (*getColumnHeader)         (RefObject*, int);              // 51
+  void                  (*getSelectedRows)         (RefObject*, GetSelectedRowsColumnsCallbackType, IntVectorType*); // 52
+  void                  (*getSelectedColumns)      (RefObject*, GetSelectedRowsColumnsCallbackType, IntVectorType*); // 53
+  bool                  (*isRowSelected)           (RefObject*, int);              // 54
+  bool                  (*isColumnSelected)        (RefObject*, int);              // 55
+  bool                  (*isCellSelected)          (RefObject*, int, int);         // 56
+  bool                  (*addRowSelection)         (RefObject*, int);              // 57
+  bool                  (*addColumnSelection)      (RefObject*, int);              // 58
+  bool                  (*removeRowSelection)      (RefObject*, int);              // 59
+  bool                  (*removeColumnSelection)   (RefObject*, int);              // 60
+  Actor*                (*getTable)                (RefObject*);                   // 61
+  IntPairType*          (*getCellPosition)         (RefObject*);                   // 62
+  int                   (*getCellRowSpan)          (RefObject*);                   // 63
+  int                   (*getCellColumnSpan)       (RefObject*);                   // 64
   // clang-format on
 };
 
@@ -429,6 +463,228 @@ bool NUIViewAccessible::DeselectChild(int childIndex)
   return CallMethod<Interface::SELECTION>(mTable->deselectChild, childIndex);
 }
 
+//
+// Table interface
+//
+
+int NUIViewAccessible::GetRowCount() const
+{
+  return CallMethod<Interface::TABLE>(mTable->getRowCount);
+}
+
+int NUIViewAccessible::GetColumnCount() const
+{
+  return CallMethod<Interface::TABLE>(mTable->getColumnCount);
+}
+
+int NUIViewAccessible::GetSelectedRowCount() const
+{
+  return CallMethod<Interface::TABLE>(mTable->getSelectedRowCount);
+}
+
+int NUIViewAccessible::GetSelectedColumnCount() const
+{
+  return CallMethod<Interface::TABLE>(mTable->getSelectedColumnCount);
+}
+
+Accessibility::Accessible* NUIViewAccessible::GetCaption() const
+{
+  Actor* caption = CallMethod<Interface::TABLE>(mTable->getCaption);
+
+  return caption ? Accessibility::Accessible::Get(*caption) : nullptr;
+}
+
+Accessibility::Accessible* NUIViewAccessible::GetSummary() const
+{
+  Actor* summary = CallMethod<Interface::TABLE>(mTable->getSummary);
+
+  return summary ? Accessibility::Accessible::Get(*summary) : nullptr;
+}
+
+Accessibility::TableCell* NUIViewAccessible::GetCell(int row, int column) const
+{
+  Actor* cell = CallMethod<Interface::TABLE>(mTable->getCell, row, column);
+
+  return cell ? Accessibility::TableCell::DownCast(Accessibility::Accessible::Get(*cell)) : nullptr;
+}
+
+std::size_t NUIViewAccessible::GetChildIndex(int row, int column) const
+{
+  std::uint64_t index = CallMethod<Interface::TABLE>(mTable->getChildIndex, row, column);
+
+  return static_cast<std::size_t>(index);
+}
+
+IntPairType NUIViewAccessible::GetPositionByChildIndex(std::size_t childIndex) const
+{
+  IntPairType* position = CallMethod<Interface::TABLE>(mTable->getPositionByChildIndex, static_cast<std::uint64_t>(childIndex));
+
+  return StealObject(position);
+}
+
+int NUIViewAccessible::GetRowByChildIndex(std::size_t childIndex) const
+{
+  return GetPositionByChildIndex(childIndex).first;
+}
+
+int NUIViewAccessible::GetColumnByChildIndex(std::size_t childIndex) const
+{
+  return GetPositionByChildIndex(childIndex).second;
+}
+
+std::string NUIViewAccessible::GetRowDescription(int row) const
+{
+  char* description = CallMethod<Interface::TABLE>(mTable->getRowDescription, row);
+
+  return StealString(description);
+}
+
+std::string NUIViewAccessible::GetColumnDescription(int column) const
+{
+  char* description = CallMethod<Interface::TABLE>(mTable->getColumnDescription, column);
+
+  return StealString(description);
+}
+
+int NUIViewAccessible::GetRowSpan(int row, int column) const
+{
+  Accessibility::TableCell* cell = GetCell(row, column);
+
+  return cell ? cell->GetCellRowSpan() : -1;
+}
+
+int NUIViewAccessible::GetColumnSpan(int row, int column) const
+{
+  Accessibility::TableCell* cell = GetCell(row, column);
+
+  return cell ? cell->GetCellColumnSpan() : -1;
+}
+
+Accessibility::Accessible* NUIViewAccessible::GetRowHeader(int row) const
+{
+  Actor* header = CallMethod<Interface::TABLE>(mTable->getRowHeader, row);
+
+  return header ? Accessibility::Accessible::Get(*header) : nullptr;
+}
+
+Accessibility::Accessible* NUIViewAccessible::GetColumnHeader(int column) const
+{
+  Actor* header = CallMethod<Interface::TABLE>(mTable->getColumnHeader, column);
+
+  return header ? Accessibility::Accessible::Get(*header) : nullptr;
+}
+
+IntVectorType NUIViewAccessible::GetSelectedRows() const
+{
+  IntVectorType result;
+
+  CallMethod<Interface::TABLE>(mTable->getSelectedRows, &GetSelectedRowsColumnsCallback, &result);
+
+  return result;
+}
+
+IntVectorType NUIViewAccessible::GetSelectedColumns() const
+{
+  IntVectorType result;
+
+  CallMethod<Interface::TABLE>(mTable->getSelectedColumns, &GetSelectedRowsColumnsCallback, &result);
+
+  return result;
+}
+
+bool NUIViewAccessible::IsRowSelected(int row) const
+{
+  return CallMethod<Interface::TABLE>(mTable->isRowSelected, row);
+}
+
+bool NUIViewAccessible::IsColumnSelected(int column) const
+{
+  return CallMethod<Interface::TABLE>(mTable->isColumnSelected, column);
+}
+
+bool NUIViewAccessible::IsCellSelected(int row, int column) const
+{
+  return CallMethod<Interface::TABLE>(mTable->isCellSelected, row, column);
+}
+
+bool NUIViewAccessible::AddRowSelection(int row)
+{
+  return CallMethod<Interface::TABLE>(mTable->addRowSelection, row);
+}
+
+bool NUIViewAccessible::AddColumnSelection(int column)
+{
+  return CallMethod<Interface::TABLE>(mTable->addColumnSelection, column);
+}
+
+bool NUIViewAccessible::RemoveRowSelection(int row)
+{
+  return CallMethod<Interface::TABLE>(mTable->removeRowSelection, row);
+}
+
+bool NUIViewAccessible::RemoveColumnSelection(int column)
+{
+  return CallMethod<Interface::TABLE>(mTable->removeColumnSelection, column);
+}
+
+Accessibility::Table::RowColumnSpanType NUIViewAccessible::GetRowColumnSpan(std::size_t childIndex) const
+{
+  Accessibility::Table::RowColumnSpanType span{.success = false};
+
+  std::tie(span.row, span.column) = GetPositionByChildIndex(childIndex);
+  Accessibility::TableCell* cell  = GetCell(span.row, span.column);
+  if (!cell)
+  {
+    return span;
+  }
+
+  span.success    = true;
+  span.isSelected = IsCellSelected(span.row, span.column);
+  span.rowSpan    = cell->GetCellRowSpan();
+  span.columnSpan = cell->GetCellColumnSpan();
+
+  return span;
+}
+
+//
+// TableCell interface
+//
+
+Accessibility::Table* NUIViewAccessible::GetTable() const
+{
+  Actor* table = CallMethod<Interface::TABLE_CELL>(mTable->getTable);
+
+  return table ? Accessibility::Table::DownCast(Accessibility::Accessible::Get(*table)) : nullptr;
+}
+
+IntPairType NUIViewAccessible::GetCellPosition() const
+{
+  IntPairType* position = CallMethod<Interface::TABLE_CELL>(mTable->getCellPosition);
+
+  return StealObject(position);
+}
+
+int NUIViewAccessible::GetCellRowSpan() const
+{
+  return CallMethod<Interface::TABLE_CELL>(mTable->getCellRowSpan);
+}
+
+int NUIViewAccessible::GetCellColumnSpan() const
+{
+  return CallMethod<Interface::TABLE_CELL>(mTable->getCellColumnSpan);
+}
+
+Accessibility::TableCell::RowColumnSpanType NUIViewAccessible::GetCellRowColumnSpan() const
+{
+  Accessibility::TableCell::RowColumnSpanType span{};
+
+  std::tie(span.row, span.column) = GetCellPosition();
+  span.rowSpan                    = GetCellRowSpan();
+  span.columnSpan                 = GetCellColumnSpan();
+
+  return span;
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -436,6 +692,11 @@ extern "C" {
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Accessibility_DuplicateString(const char* arg)
 {
   return strdup(arg);
+}
+
+SWIGEXPORT IntPairType* SWIGSTDCALL CSharp_Dali_Accessibility_MakeIntPair(int first, int second)
+{
+  return new IntPairType(first, second);
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(const void* arg1_accessibilityDelegate, uint32_t arg2_accessibilityDelegateSize)
