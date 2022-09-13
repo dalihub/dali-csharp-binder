@@ -25,8 +25,7 @@
 extern "C"
 {
 #endif
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_New_SWIG_1()
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_New_SWIG_0()
   {
     Dali::Scene3D::SceneView result;
     {
