@@ -22334,6 +22334,16 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_Assign(void * jarg1, void * jarg
   Dali::Actor *arg2 = 0 ;
   Dali::Actor *result = 0 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
+  if (!jarg2) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg2 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Actor *)jarg2;
   if (!arg2) {
@@ -22357,6 +22367,11 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Actor_GetName(void * jarg1) {
   std::string *result = 0 ;
   std::string name = "";
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22372,6 +22387,11 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Actor_GetName(void * jarg1) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetName(void * jarg1, char * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   std::string *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   if (!jarg2) {
@@ -22420,6 +22440,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsRoot(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22436,6 +22461,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_OnStage(void * jarg1) {
   bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -22454,6 +22484,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsLayer(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22471,6 +22506,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetLayer(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Layer result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22487,6 +22527,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Add(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Actor arg2 ;
   Dali::Actor *argp2 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+  if (!jarg2) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg2 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   argp2 = (Dali::Actor *)jarg2;
@@ -22509,6 +22558,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Remove(void * jarg1, void * jarg2)
   Dali::Actor arg2 ;
   Dali::Actor *argp2 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+  if (!jarg2) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg2 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   argp2 = (Dali::Actor *)jarg2;
   if (!argp2) {
@@ -22528,6 +22586,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Remove(void * jarg1, void * jarg2)
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Unparent(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22542,6 +22605,11 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_GetChildCount(void * jarg1
   unsigned int jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   unsigned int result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -22561,6 +22629,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetChildAt(void * jarg1, unsigne
   unsigned int arg2 ;
   Dali::Actor result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (unsigned int)jarg2;
   {
@@ -22579,6 +22652,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_FindChildByName(void * jarg1, ch
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   std::string *arg2 = 0 ;
   Dali::Actor result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   if (!jarg2) {
@@ -22607,6 +22685,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_FindChildById(void * jarg1, unsi
   unsigned int arg2 ;
   Dali::Actor result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (unsigned int)jarg2;
   {
@@ -22625,6 +22708,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetParent(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Actor result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22640,6 +22728,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetParent(void * jarg1) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetParentOrigin(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector3 *)jarg2;
@@ -22661,6 +22754,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentParentOrigin(void * ja
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22676,6 +22774,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentParentOrigin(void * ja
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetAnchorPoint(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector3 *)jarg2;
@@ -22697,6 +22800,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentAnchorPoint(void * jar
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22713,6 +22821,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_0(void * jarg1, floa
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   float arg2 ;
   float arg3 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
@@ -22732,6 +22845,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_1(void * jarg1, floa
   float arg3 ;
   float arg4 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
   arg3 = (float)jarg3;
@@ -22748,6 +22866,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_1(void * jarg1, floa
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_2(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector2 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector2 *)jarg2;
@@ -22767,6 +22890,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_2(void * jarg1, void
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_3(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector3 *)jarg2;
@@ -22788,6 +22916,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetTargetSize(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22804,6 +22937,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentSize(void * jarg1) {
   void * jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -22822,6 +22960,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetNaturalSize(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22838,6 +22981,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPosition__SWIG_0(void * jarg1, 
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   float arg2 ;
   float arg3 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
@@ -22857,6 +23005,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPosition__SWIG_1(void * jarg1, 
   float arg3 ;
   float arg4 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
   arg3 = (float)jarg3;
@@ -22873,6 +23026,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPosition__SWIG_1(void * jarg1, 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPosition__SWIG_2(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector3 *)jarg2;
@@ -22893,6 +23051,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetX(void * jarg1, float jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   float arg2 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
   {
@@ -22907,6 +23070,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetX(void * jarg1, float jarg2) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetY(void * jarg1, float jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   float arg2 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
@@ -22923,6 +23091,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetZ(void * jarg1, float jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   float arg2 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
   {
@@ -22937,6 +23110,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetZ(void * jarg1, float jarg2) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_TranslateBy(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector3 *)jarg2;
@@ -22958,6 +23136,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentPosition(void * jarg1)
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22975,6 +23158,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldPosition(void * j
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -22990,6 +23178,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldPosition(void * j
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritPosition(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = jarg2 ? true : false;
@@ -23007,6 +23200,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsPositionInherited(void * jarg1) 
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23023,6 +23221,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetOrientation__SWIG_0(void * jarg
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Degree *arg2 = 0 ;
   Dali::Vector3 *arg3 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Degree *)jarg2;
@@ -23049,6 +23252,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetOrientation__SWIG_1(void * jarg
   Dali::Radian *arg2 = 0 ;
   Dali::Vector3 *arg3 = 0 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Radian *)jarg2;
   if (!arg2) {
@@ -23073,6 +23281,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetOrientation__SWIG_2(void * jarg
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Quaternion *)jarg2;
   if (!arg2) {
@@ -23092,6 +23305,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_RotateBy__SWIG_0(void * jarg1, voi
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Degree *arg2 = 0 ;
   Dali::Vector3 *arg3 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Degree *)jarg2;
@@ -23118,6 +23336,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_RotateBy__SWIG_1(void * jarg1, voi
   Dali::Radian *arg2 = 0 ;
   Dali::Vector3 *arg3 = 0 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Radian *)jarg2;
   if (!arg2) {
@@ -23142,6 +23365,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_RotateBy__SWIG_2(void * jarg1, voi
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Quaternion *arg2 = 0 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Quaternion *)jarg2;
   if (!arg2) {
@@ -23162,6 +23390,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentOrientation(void * jar
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Quaternion result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23178,6 +23411,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritOrientation(void * jarg1
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = jarg2 ? true : false;
   {
@@ -23193,6 +23431,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsOrientationInherited(void * jarg
   bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -23211,6 +23454,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldOrientation(void 
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Quaternion result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23226,6 +23474,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldOrientation(void 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetScale__SWIG_0(void * jarg1, float jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   float arg2 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
@@ -23244,6 +23497,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetScale__SWIG_1(void * jarg1, flo
   float arg3 ;
   float arg4 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
   arg3 = (float)jarg3;
@@ -23260,6 +23518,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetScale__SWIG_1(void * jarg1, flo
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetScale__SWIG_2(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector3 *)jarg2;
@@ -23279,6 +23542,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetScale__SWIG_2(void * jarg1, voi
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_ScaleBy(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector3 *)jarg2;
@@ -23300,6 +23568,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentScale(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23317,6 +23590,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldScale(void * jarg
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23333,6 +23611,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritScale(void * jarg1, bool
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = jarg2 ? true : false;
   {
@@ -23348,6 +23631,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsScaleInherited(void * jarg1) {
   bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -23366,6 +23654,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldMatrix(void * jar
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Matrix result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23381,6 +23674,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldMatrix(void * jar
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetVisible(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = jarg2 ? true : false;
@@ -23398,6 +23696,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsVisible(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23413,6 +23716,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsVisible(void * jarg1) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetOpacity(void * jarg1, float jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   float arg2 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
@@ -23430,6 +23738,11 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetCurrentOpacity(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   float result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23445,6 +23758,11 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetCurrentOpacity(void * jarg1) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColor(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector4 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector4 *)jarg2;
@@ -23466,6 +23784,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentColor(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector4 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23482,6 +23805,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColorMode(void * jarg1, int jar
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::ColorMode arg2 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::ColorMode)jarg2;
   {
@@ -23497,6 +23825,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetColorMode(void * jarg1) {
   int jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::ColorMode result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -23515,6 +23848,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldColor(void * jarg
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector4 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23530,6 +23868,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldColor(void * jarg
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetDrawMode(void * jarg1, int jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::DrawMode::Type arg2 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::DrawMode::Type)jarg2;
@@ -23547,6 +23890,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetDrawMode(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::DrawMode::Type result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23563,6 +23911,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSensitive(void * jarg1, bool ja
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = jarg2 ? true : false;
   {
@@ -23578,6 +23931,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsSensitive(void * jarg1) {
   bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -23600,6 +23958,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_ScreenToLocal(void * jarg1, float 
   float arg5 ;
   bool result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float *)jarg2;
   arg3 = (float *)jarg3;
@@ -23620,6 +23983,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetLeaveRequired(void * jarg1, boo
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = jarg2 ? true : false;
   {
@@ -23635,6 +24003,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_GetLeaveRequired(void * jarg1) {
   bool jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -23652,6 +24025,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusable(void * jarg1,
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = jarg2 ? true : false;
   {
@@ -23668,6 +24046,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsKeyboardFocusable(void * jarg1) 
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23681,6 +24064,12 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsKeyboardFocusable(void * jarg1) 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusableChildren(void * actor, bool keyboardFocusableChildren) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
+
+  if (!actor) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)actor;
   {
     try {
@@ -23694,6 +24083,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_AreChildrenKeyBoardFocusable(void 
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
+  if (!actor) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)actor;
   {
     try {
@@ -23706,6 +24100,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_AreChildrenKeyBoardFocusable(void 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetTouchFocusable(void * jarg1, bool jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool arg2 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = jarg2 ? true : false;
@@ -23723,6 +24122,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsTouchFocusable(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   bool result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23738,6 +24142,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetResizePolicy(void * jarg1, int 
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::ResizePolicy::Type arg2 ;
   Dali::Dimension::Type arg3 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::ResizePolicy::Type)jarg2;
@@ -23757,6 +24166,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetResizePolicy(void * jarg1, int j
   Dali::Dimension::Type arg2 ;
   Dali::ResizePolicy::Type result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Dimension::Type)jarg2;
   {
@@ -23774,6 +24188,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSizeScalePolicy(void * jarg1, i
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::SizeScalePolicy::Type arg2 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::SizeScalePolicy::Type)jarg2;
   {
@@ -23790,6 +24209,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetSizeScalePolicy(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::SizeScalePolicy::Type result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23805,6 +24229,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetSizeScalePolicy(void * jarg1) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSizeModeFactor(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector3 *)jarg2;
@@ -23826,6 +24255,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetSizeModeFactor(void * jarg1) 
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector3 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23843,6 +24277,11 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetHeightForWidth(void * jarg1, f
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   float arg2 ;
   float result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
@@ -23863,6 +24302,11 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetWidthForHeight(void * jarg1, f
   float arg2 ;
   float result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (float)jarg2;
   {
@@ -23882,6 +24326,11 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetRelayoutSize(void * jarg1, int
   Dali::Dimension::Type arg2 ;
   float result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Dimension::Type)jarg2;
   {
@@ -23898,6 +24347,11 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetRelayoutSize(void * jarg1, int
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPadding(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Padding *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Padding *)jarg2;
@@ -23918,6 +24372,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_GetPadding(void * jarg1, void * ja
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Padding *arg2 = 0 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Padding *)jarg2;
   if (!arg2) {
@@ -23936,6 +24395,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_GetPadding(void * jarg1, void * ja
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetMinimumSize(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector2 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector2 *)jarg2;
@@ -23957,6 +24421,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetMinimumSize(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector2 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -23972,6 +24441,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetMinimumSize(void * jarg1) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetMaximumSize(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector2 *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Vector2 *)jarg2;
@@ -23993,6 +24467,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetMaximumSize(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Vector2 result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -24009,6 +24488,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetHierarchyDepth(void * jarg1) {
   int jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   int result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -24028,6 +24512,11 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_AddRenderer(void * jarg1, 
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Renderer *arg2 = 0 ;
   unsigned int result;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Renderer *)jarg2;
@@ -24051,6 +24540,11 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_GetRendererCount(void * ja
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   unsigned int result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -24069,6 +24563,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetRendererAt(void * jarg1, unsi
   unsigned int arg2 ;
   Dali::Renderer result;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (unsigned int)jarg2;
   {
@@ -24085,6 +24584,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetRendererAt(void * jarg1, unsi
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_RemoveRenderer__SWIG_0(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Renderer *arg2 = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Renderer *)jarg2;
@@ -24104,6 +24608,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_RemoveRenderer__SWIG_0(void * jarg
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_RemoveRenderer__SWIG_1(void * jarg1, unsigned int jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   unsigned int arg2 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return ;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (unsigned int)jarg2;
@@ -24167,6 +24676,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_TouchSignal(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Actor::TouchEventSignalType *result = 0 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -24183,6 +24697,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_HoveredSignal(void * jarg1) {
   void * jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Actor::HoverSignalType *result = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -24201,6 +24720,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_WheelEventSignal(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Actor::WheelEventSignalType *result = 0 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -24217,6 +24741,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OnSceneSignal(void * jarg1) {
   void * jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Actor::OnSceneSignalType *result = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
@@ -24235,6 +24764,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OffSceneSignal(void * jarg1) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Actor::OffSceneSignalType *result = 0 ;
 
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
   arg1 = (Dali::Actor *)jarg1;
   {
     try {
@@ -24251,6 +24785,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_OnRelayoutSignal(void * jarg1) {
   void * jresult ;
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Actor::OnRelayoutSignalType *result = 0 ;
+
+  if (!jarg1) {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
 
   arg1 = (Dali::Actor *)jarg1;
   {
