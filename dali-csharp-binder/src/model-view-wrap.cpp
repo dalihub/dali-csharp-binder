@@ -231,6 +231,44 @@ extern "C"
     }
   }
 
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelView_SetImageBasedLightScaleFactor(void *csModelView, float scaleFactor)
+  {
+    Dali::Scene3D::ModelView *modelView = (Dali::Scene3D::ModelView *)csModelView;
+
+    if (!modelView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelView", 0);
+      return;
+    }
+    {
+      try
+      {
+        modelView->SetImageBasedLightScaleFactor(scaleFactor);
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+  }
+
+  SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ModelView_GetImageBasedLightScaleFactor(void *csModelView)
+  {
+    Dali::Scene3D::ModelView *modelView = (Dali::Scene3D::ModelView *)csModelView;
+    float scaleFactor = 1.0f;
+
+    if (!modelView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelView", 0);
+      return scaleFactor;
+    }
+    {
+      try
+      {
+        scaleFactor = modelView->GetImageBasedLightScaleFactor();
+      }
+      CALL_CATCH_EXCEPTION(0.0f);
+    }
+    return scaleFactor;
+  }
+
   SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ModelView_GetAnimationCount(void *csModelView)
   {
     Dali::Scene3D::ModelView *modelView = (Dali::Scene3D::ModelView *)csModelView;
