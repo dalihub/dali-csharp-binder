@@ -22346,10 +22346,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_Assign(void * jarg1, void * jarg
 
   arg1 = (Dali::Actor *)jarg1;
   arg2 = (Dali::Actor *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Actor const & type is null", 0);
-    return 0;
-  }
   {
     try {
       result = (Dali::Actor *) &(arg1)->operator =((Dali::Actor const &)*arg2);
@@ -22526,7 +22522,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_GetLayer(void * jarg1) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Add(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Actor arg2 ;
-  Dali::Actor *argp2 ;
 
   if (!jarg1) {
     SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
@@ -22538,12 +22533,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Add(void * jarg1, void * jarg2) {
   }
 
   arg1 = (Dali::Actor *)jarg1;
-  argp2 = (Dali::Actor *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
-    return ;
-  }
-  arg2 = *argp2;
+  arg2 = *((Dali::Actor *)jarg2);
   {
     try {
       (arg1)->Add(arg2);
@@ -22556,7 +22546,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Add(void * jarg1, void * jarg2) {
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Remove(void * jarg1, void * jarg2) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   Dali::Actor arg2 ;
-  Dali::Actor *argp2 ;
 
   if (!jarg1) {
     SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
@@ -22568,12 +22557,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Remove(void * jarg1, void * jarg2)
   }
 
   arg1 = (Dali::Actor *)jarg1;
-  argp2 = (Dali::Actor *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
-    return ;
-  }
-  arg2 = *argp2;
+  arg2 = *((Dali::Actor *)jarg2);
   {
     try {
       (arg1)->Remove(arg2);

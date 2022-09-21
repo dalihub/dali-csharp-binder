@@ -83,7 +83,7 @@ SET( dali_csharp_binder_tizen_wearable_src_files
 
 # module: scene3d
 SET( dali_csharp_binder_scene3d_src_files
-  ${dali_csharp_binder_dir}/src/model-view-wrap.cpp
+  ${dali_csharp_binder_dir}/src/model-wrap.cpp
   ${dali_csharp_binder_dir}/src/scene-view-wrap.cpp
 )
 

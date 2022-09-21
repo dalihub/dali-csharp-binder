@@ -25,8 +25,7 @@
 extern "C"
 {
 #endif
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_New_SWIG_1()
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_New_SWIG_0()
   {
     Dali::Scene3D::SceneView result;
     {
@@ -314,6 +313,44 @@ extern "C"
       }
       CALL_CATCH_EXCEPTION();
     }
+  }
+
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetImageBasedLightScaleFactor(void *csSceneView, float scaleFactor)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return;
+    }
+    {
+      try
+      {
+        sceneView->SetImageBasedLightScaleFactor(scaleFactor);
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+  }
+
+  SWIGEXPORT float SWIGSTDCALL CSharp_Dali_SceneView_GetImageBasedLightScaleFactor(void *csSceneView)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    float scaleFactor = 1.0f;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelView", 0);
+      return scaleFactor;
+    }
+    {
+      try
+      {
+        scaleFactor = sceneView->GetImageBasedLightScaleFactor();
+      }
+      CALL_CATCH_EXCEPTION(0.0f);
+    }
+    return scaleFactor;
   }
 
   SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_UseFramebuffer(void *csSceneView, bool useFramebuffer)
