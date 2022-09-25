@@ -6471,6 +6471,97 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Uint16Pair(void * jarg1) {
 
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Int32Pair__SWIG_0() {
+  void * jresult ;
+  Dali::Int32Pair *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Int32Pair *)new Dali::Int32Pair();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Int32Pair__SWIG_1(int32_t x, int32_t y) {
+  void * jresult ;
+  Dali::Int32Pair *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Int32Pair *)new Dali::Int32Pair(x,y);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Int32Pair_SetX(void * int32Pair, int32_t x) {
+  Dali::Int32Pair *pInt32Pair = (Dali::Int32Pair *) (int32Pair) ;
+
+  {
+    try {
+      (pInt32Pair)->SetX(x);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Int32Pair_GetX(void * int32Pair) {
+  int result ;
+  Dali::Int32Pair *pInt32Pair = (Dali::Int32Pair *) (int32Pair);
+
+  {
+    try {
+      result = ((Dali::Int32Pair const *)pInt32Pair)->GetX();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Int32Pair_SetY(void * int32Pair, int32_t y) {
+  Dali::Int32Pair *pInt32Pair = (Dali::Int32Pair *) (int32Pair) ;
+
+  {
+    try {
+      (pInt32Pair)->SetY(y);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Int32Pair_GetY(void * int32Pair) {
+  Dali::Int32Pair *pInt32Pair = (Dali::Int32Pair *) (int32Pair) ;
+  int result;
+
+  {
+    try {
+      result = ((Dali::Int32Pair const *)pInt32Pair)->GetY();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Int32Pair(void * int32Pair) {
+  Dali::Int32Pair *pInt32Pair = (Dali::Int32Pair *) (int32Pair) ;
+
+  {
+    try {
+      delete pInt32Pair;
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Degree__SWIG_0() {
   void * jresult ;
