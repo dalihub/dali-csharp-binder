@@ -54,6 +54,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/src/native-image-queue-wrap.cpp
   ${dali_csharp_binder_dir}/src/style-manager-wrap.cpp
   ${dali_csharp_binder_dir}/src/drag-and-drop-wrap.cpp
+  ${dali_csharp_binder_dir}/src/internal-property-get-set-wrap.cpp
 )
 
 # added for key grab binding only for tizen
