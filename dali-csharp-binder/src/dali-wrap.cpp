@@ -354,6 +354,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/dali-toolkit.h>
 
 #include <dali/devel-api/actors/actor-devel.h>
+#include <dali/devel-api/actors/camera-actor-devel.h>
 #include <dali/devel-api/animation/key-frames-devel.h>
 #include <dali/devel-api/common/stage-devel.h>
 #include <dali/devel-api/events/key-event-devel.h>
@@ -29344,6 +29345,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CameraActor_Property_INVERT_Y_AXIS_get() 
   int result;
 
   result = (int)Dali::CameraActor::Property::INVERT_Y_AXIS;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CameraActor_Property_PROJECTION_DIRECTION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::DevelCameraActor::Property::PROJECTION_DIRECTION;
   jresult = (int)result;
   return jresult;
 }
