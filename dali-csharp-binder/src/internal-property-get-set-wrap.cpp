@@ -31,6 +31,9 @@ extern "C"
 {
 #endif
 
+  typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
+  extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
+
   enum InternalPropertyReturnType
   {
     NO_ERROR = 0,
@@ -151,6 +154,68 @@ extern "C"
     try
     {
       pActor->SetProperty((Dali::Property::Index)propertyType, valFloat);
+    }
+    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
+
+    return (int)InternalPropertyReturnType::NO_ERROR;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyBool(void *actor, int propertyType, bool valBool)
+  {
+    Dali::Actor *pActor = (Dali::Actor *)actor;
+
+    if (!pActor)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    try
+    {
+      pActor->SetProperty((Dali::Property::Index)propertyType, valBool);
+    }
+    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
+
+    return (int)InternalPropertyReturnType::NO_ERROR;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyString(void *actor, int propertyType, char *valString)
+  {
+    Dali::Actor *pActor = (Dali::Actor *)actor;
+
+    if (!pActor)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+    if (!valString)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "valString is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    try
+    {
+      pActor->SetProperty((Dali::Property::Index)propertyType, (std::string const &)std::string(valString));
+    }
+    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
+
+    return (int)InternalPropertyReturnType::NO_ERROR;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyInt(void *actor, int propertyType, int valInt)
+  {
+    Dali::Actor *pActor = (Dali::Actor *)actor;
+
+    if (!pActor)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    try
+    {
+      pActor->SetProperty((Dali::Property::Index)propertyType, valInt);
     }
     CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
 
@@ -294,6 +359,88 @@ extern "C"
     CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
 
     return (int)InternalPropertyReturnType::NO_ERROR;
+  }
+
+  SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyFloat(void *actor, int propertyType)
+  {
+    Dali::Actor *pActor = (Dali::Actor *)actor;
+    float ret = 0;
+
+    if (!pActor)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+      return ret;
+    }
+
+    try
+    {
+      ret = ((Dali::Actor const *)pActor)->GetProperty<float>((Dali::Property::Index)propertyType);
+    }
+    CALL_CATCH_EXCEPTION(ret);
+
+    return ret;
+  }
+
+  SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyBool(void *actor, int propertyType)
+  {
+    Dali::Actor *pActor = (Dali::Actor *)actor;
+    bool ret = false;
+
+    if (!pActor)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+      return ret;
+    }
+
+    try
+    {
+      ret = ((Dali::Actor const *)pActor)->GetProperty<bool>((Dali::Property::Index)propertyType);
+    }
+    CALL_CATCH_EXCEPTION(ret);
+
+    return ret;
+  }
+
+  SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyString(void *actor, int propertyType)
+  {
+    Dali::Actor *pActor = (Dali::Actor *)actor;
+    std::string result = "";
+    char *ret = nullptr;
+
+    if (!pActor)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+      return ret;
+    }
+
+    try
+    {
+      result = ((Dali::Actor const *)pActor)->GetProperty<std::string>((Dali::Property::Index)propertyType);
+      ret = SWIG_csharp_string_callback(result.c_str());
+    }
+    CALL_CATCH_EXCEPTION(ret);
+
+    return ret;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyInt(void *actor, int propertyType)
+  {
+    Dali::Actor *pActor = (Dali::Actor *)actor;
+    int ret = 0;
+
+    if (!pActor)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+      return ret;
+    }
+
+    try
+    {
+      ret = ((Dali::Actor const *)pActor)->GetProperty<int>((Dali::Property::Index)propertyType);
+    }
+    CALL_CATCH_EXCEPTION(ret);
+
+    return ret;
   }
 
 #ifdef __cplusplus
