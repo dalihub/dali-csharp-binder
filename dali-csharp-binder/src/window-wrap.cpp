@@ -1495,52 +1495,55 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetSize(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPosition(void * jarg1, void * jarg2) {
-  Dali::Window arg1 ;
-  Dali::Window::WindowPosition arg2 ;
-  Dali::Window *argp1 ;
-  Dali::Window::WindowPosition *argp2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPosition(void * handle, void * position) {
+  Dali::Window *pWindow;
+  Dali::Window window;
+  Dali::Window::WindowPosition *pPosition;
+  Dali::Window::WindowPosition windowPosition;
 
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
+  pWindow = (Dali::Window *)handle;
+  if (!pWindow) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return ;
   }
-  arg1 = *argp1;
-  argp2 = (Dali::Window::WindowPosition *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowPosition", 0);
+  window = *pWindow;
+
+  pPosition = (Dali::Window::WindowPosition *)position;
+  if (!pPosition) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowPosition", 0);
     return ;
   }
-  arg2 = *argp2;
+  windowPosition = *pPosition;
+
   {
     try {
-      arg1.SetPosition(arg2);
+      window.SetPosition(windowPosition);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetPosition(void * jarg1) {
-  void * jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetPosition(void * handle) {
+  Dali::Window *pWindow ;
+  Dali::Window window ;
+  Dali::Window::WindowPosition windowPosition;
   Dali::Window::WindowPosition result;
+  void * jresult ;
 
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
+  pWindow = (Dali::Window *)handle;
+  if (!pWindow) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return 0;
   }
-  arg1 = *argp1;
+  window = *pWindow;
   {
     try {
-      result = arg1.GetPosition();
+      windowPosition = window.GetPosition();
     } CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Window::WindowPosition((const Dali::Window::WindowPosition &)result);
+  jresult = new Dali::Window::WindowPosition((const Dali::Window::WindowPosition &)windowPosition);
   return jresult;
 }
 
@@ -2773,7 +2776,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Moved_Signal_Emit(void * signal, void* w
   Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *) 0 ;
   Dali::Window* win = (Dali::Window*)winHandle;
   Dali::Window window;
-  Dali::Window::WindowPosition windowPosiztion;
+  Dali::Window::WindowPosition windowPosition;
   Dali::Window::WindowPosition *pPosition;
 
   movedSignal = (Dali::Signal< void (Dali::Window, Dali::Window::WindowPosition) > *)signal;
@@ -2788,10 +2791,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Moved_Signal_Emit(void * signal, void* w
     return ;
   }
   window = *win;
-  windowPosiztion = *pPosition;
+  windowPosition = *pPosition;
   {
     try {
-      Dali_Signal_Window_Moved_Signal_Emit(movedSignal, window, windowPosiztion);
+      Dali_Signal_Window_Moved_Signal_Emit(movedSignal, window, windowPosition);
     } CALL_CATCH_EXCEPTION();
   }
 
@@ -2825,6 +2828,96 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Moved_Signal(void * signal) {
 
 }
 
+// intPair binding for Dali::Window::WindowPosition
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_IntPair__SWIG_0() {
+  void * jresult ;
+  Dali::Window::IntPair *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Window::IntPair *)new Dali::Window::IntPair();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_IntPair__SWIG_1(int x, int y) {
+  void * jresult ;
+  Dali::Window::IntPair *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Window::IntPair *)new Dali::Window::IntPair(x,y);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_IntPair_SetX(void * intPair, int x) {
+  Dali::Window::IntPair *pIntPair = (Dali::Window::IntPair *) (intPair) ;
+
+  {
+    try {
+      (pIntPair)->SetX(x);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IntPair_GetX(void * intPair) {
+  int result ;
+  Dali::Window::IntPair *pIntPair = (Dali::Window::IntPair *) (intPair);
+
+  {
+    try {
+      result = ((Dali::Window::IntPair const *)pIntPair)->GetX();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_IntPair_SetY(void * intPair, int y) {
+  Dali::Window::IntPair *pIntPair = (Dali::Window::IntPair *) (intPair) ;
+
+  {
+    try {
+      (pIntPair)->SetY(y);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IntPair_GetY(void * intPair) {
+  Dali::Window::IntPair *pIntPair = (Dali::Window::IntPair *) (intPair) ;
+  int result;
+
+  {
+    try {
+      result = ((Dali::Window::IntPair const *)pIntPair)->GetY();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_IntPair(void * intPair) {
+  Dali::Window::IntPair *pIntPair = (Dali::Window::IntPair *) (intPair) ;
+
+  {
+    try {
+      delete pIntPair;
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
 
 #ifdef __cplusplus
 }
