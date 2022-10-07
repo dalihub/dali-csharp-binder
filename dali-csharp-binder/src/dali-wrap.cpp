@@ -7843,6 +7843,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Multiply__SWIG_2(void * jarg1, 
   Dali::Vector4 result;
 
   arg1 = (Dali::Matrix *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix const & type is null", 0);
+    return 0;
+  }
   arg2 = (Dali::Vector4 *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type is null", 0);
@@ -7855,6 +7859,61 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Multiply__SWIG_2(void * jarg1, 
   }
 
   jresult = new Dali::Vector4((const Dali::Vector4 &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Multiply__SWIG_3(void * nuiMatrixLhs, void * nuiMatrixRhs) {
+  void * jresult ;
+  Dali::Matrix *lhsPtr = (Dali::Matrix *) 0 ;
+  Dali::Matrix *rhsPtr = (Dali::Matrix *) 0 ;
+  Dali::Matrix result(false);
+
+  lhsPtr = (Dali::Matrix *)nuiMatrixLhs;
+  if (!lhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "lhs Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  rhsPtr = (Dali::Matrix *)nuiMatrixRhs;
+  if (!rhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rhs Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = ((Dali::Matrix const *)lhsPtr)->operator *((Dali::Matrix const &)*rhsPtr);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Matrix((const Dali::Matrix &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Multiply__SWIG_4(void * nuiMatrixLhs, void * nuiMatrixRhs) {
+  // Faster mulitply operation without memcpy
+
+  Dali::Matrix *jresult = (Dali::Matrix *)0;
+  Dali::Matrix *lhsPtr  = (Dali::Matrix *)0;
+  Dali::Matrix *rhsPtr  = (Dali::Matrix *)0;
+
+  lhsPtr = (Dali::Matrix *)nuiMatrixLhs;
+  if (!lhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "lhs Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  rhsPtr = (Dali::Matrix *)nuiMatrixRhs;
+  if (!rhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rhs Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      jresult = new Dali::Matrix(false);
+      Dali::Matrix::Multiply((Dali::Matrix &)*jresult,(Dali::Matrix const &)*rhsPtr,(Dali::Quaternion const &)*lhsPtr);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
   return jresult;
 }
 
@@ -8392,6 +8451,88 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Matrix3_Multiply(void * jarg1, void * ja
     } CALL_CATCH_EXCEPTION();
   }
 
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix3_Multiply__SWIG_1(void * jarg1, void * jarg2) {
+  void * jresult ;
+  Dali::Matrix3 *arg1 = 0 ;
+  Dali::Vector3 *arg2 = 0 ;
+  Dali::Vector3 result;
+
+  arg1 = (Dali::Matrix3 *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  arg2 = (Dali::Vector3 *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = ((Dali::Matrix3 const *)arg1)->operator *((Dali::Vector3 const &)*arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Vector3((const Dali::Vector3 &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix3_Multiply__SWIG_2(void * nuiMatrix3Lhs, void * nuiMatrix3Rhs) {
+  void * jresult ;
+  Dali::Matrix3 *lhsPtr = 0 ;
+  Dali::Matrix3 *rhsPtr = 0 ;
+  Dali::Matrix3 result;
+
+  lhsPtr = (Dali::Matrix3 *)nuiMatrix3Lhs;
+  if (!lhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "lhs Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  rhsPtr = (Dali::Matrix3 *)nuiMatrix3Rhs;
+  if (!rhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rhs Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = ((Dali::Matrix3 const *)lhsPtr)->operator *((Dali::Matrix3 const &)*rhsPtr);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Matrix3((const Dali::Matrix3 &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix3_Multiply__SWIG_3(void * nuiMatrix3Lhs, void * nuiMatrix3Rhs) {
+  // Faster mulitply operation without memcpy
+
+  Dali::Matrix3 *jresult = 0;
+  Dali::Matrix3 *lhsPtr  = 0;
+  Dali::Matrix3 *rhsPtr  = 0;
+
+  lhsPtr = (Dali::Matrix3 *)nuiMatrix3Lhs;
+  if (!lhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "lhs Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  rhsPtr = (Dali::Matrix3 *)nuiMatrix3Rhs;
+  if (!rhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rhs Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      jresult = new Dali::Matrix3();
+      Dali::Matrix3::Multiply((Dali::Matrix3 &)*jresult,(Dali::Matrix3 const &)*rhsPtr,(Dali::Matrix3 const &)*lhsPtr);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
 }
 
 
