@@ -82,6 +82,57 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TextGeometry_TextEditor_GetLineBoundingRect
   return resultRect;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_TextGeometry_TextLabel_GetCharacterBoundingRectangle(void * pTextLabel, uint32_t charIndex)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+  void* resultRect;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try {
+      resultRect = new Dali::Rect<>
+      ((const Dali::Rect<> &)(Dali::Toolkit::Text::TextGeometry::GetCharacterBoundingRectangle( *textLabel, charIndex)));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return resultRect;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_TextGeometry_TextField_GetCharacterBoundingRectangle(void * pTextField, uint32_t charIndex)
+{
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0;
+  void* resultRect;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try {
+      resultRect = new Dali::Rect<>
+      ((const Dali::Rect<> &)(Dali::Toolkit::Text::TextGeometry::GetCharacterBoundingRectangle( *textField, charIndex)));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return resultRect;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_TextGeometry_TextEditor_GetCharacterBoundingRectangle(void * pTextEditor, uint32_t charIndex)
+{
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0;
+  void* resultRect;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      resultRect = new Dali::Rect<>
+      ((const Dali::Rect<> &)(Dali::Toolkit::Text::TextGeometry::GetCharacterBoundingRectangle( *textEditor, charIndex)));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return resultRect;
+}
+
 #ifdef __cplusplus
 }
 #endif
