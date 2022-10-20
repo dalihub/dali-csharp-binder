@@ -121,6 +121,7 @@ extern "C"
 
     if (!pControl) {
       SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control & type is null", 0);
+      return;
     }
     {
       try {
