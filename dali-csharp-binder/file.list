@@ -35,6 +35,8 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/src/tts-player-wrap.cpp
   ${dali_csharp_binder_dir}/src/input-method-context-wrap.cpp
   ${dali_csharp_binder_dir}/src/input-method-options-wrap.cpp
+  ${dali_csharp_binder_dir}/src/internal-property-get-set-wrap.cpp
+  ${dali_csharp_binder_dir}/src/internal-visual-property-get-set-wrap.cpp
   ${dali_csharp_binder_dir}/src/animation-wrap.cpp
   ${dali_csharp_binder_dir}/src/adaptor-wrap.cpp
   ${dali_csharp_binder_dir}/src/extents-wrap.cpp
@@ -54,7 +56,6 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/src/native-image-queue-wrap.cpp
   ${dali_csharp_binder_dir}/src/style-manager-wrap.cpp
   ${dali_csharp_binder_dir}/src/drag-and-drop-wrap.cpp
-  ${dali_csharp_binder_dir}/src/internal-property-get-set-wrap.cpp
 )
 
 # added for key grab binding only for tizen
