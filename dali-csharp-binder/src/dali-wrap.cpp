@@ -29496,6 +29496,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CameraActor_Property_INVERT_Y_AXIS_get() 
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CameraActor_Property_ORTHOGRAPHIC_SIZE_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::DevelCameraActor::Property::ORTHOGRAPHIC_SIZE;
+  jresult = (int)result;
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CameraActor_Property_PROJECTION_DIRECTION_get() {
   int jresult ;
   int result;
@@ -29957,31 +29967,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CameraActor_SetOrthographicProjection__S
   {
     try {
       (arg1)->SetOrthographicProjection((Dali::Size const &)*arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CameraActor_SetOrthographicProjection__SWIG_1(void * jarg1, float jarg2, float jarg3, float jarg4, float jarg5, float jarg6, float jarg7) {
-  Dali::CameraActor *arg1 = (Dali::CameraActor *) 0 ;
-  float arg2 ;
-  float arg3 ;
-  float arg4 ;
-  float arg5 ;
-  float arg6 ;
-  float arg7 ;
-
-  arg1 = (Dali::CameraActor *)jarg1;
-  arg2 = (float)jarg2;
-  arg3 = (float)jarg3;
-  arg4 = (float)jarg4;
-  arg5 = (float)jarg5;
-  arg6 = (float)jarg6;
-  arg7 = (float)jarg7;
-  {
-    try {
-      (arg1)->SetOrthographicProjection(arg2,arg3,arg4,arg5,arg6,arg7);
     } CALL_CATCH_EXCEPTION();
   }
 
