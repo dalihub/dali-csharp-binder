@@ -121,7 +121,6 @@ extern "C"
 
     if (!pControl) {
       SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control & type is null", 0);
-      return;
     }
     {
       try {
@@ -186,12 +185,6 @@ extern "C"
 
     try
     {
-      // Copy inputed initialized string.
-      // Note : C# side inputed string reference count become reduced.
-      // So, If we want to keep life when we fail to get result,
-      // We should re-convert by SWIG_csharp_string_callback.
-      std::string temp = (*valString == nullptr) ? "" : *valString;
-
       Dali::Toolkit::Internal::Control& internalControl = Dali::Toolkit::Internal::GetImplementation(*pControl);
       Dali::Toolkit::Visual::Base       visualBase      = Dali::Toolkit::DevelControl::GetVisual(internalControl, visualIndex);
       if(visualBase)
@@ -202,13 +195,13 @@ extern "C"
         if(retValuePtr)
         {
           //typemap in
-          temp = retValuePtr->Get<std::string>();
+          std::string temp = retValuePtr->Get<std::string>();
+
+          //Typemap argout in c++ file.
+          //This will convert c++ string to c# string
+          *valString = SWIG_csharp_string_callback(temp.c_str());
         }
       }
-
-      //Typemap argout in c++ file.
-      //This will convert c++ string to c# string
-      *valString = SWIG_csharp_string_callback(temp.c_str());
     }
     CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
 
