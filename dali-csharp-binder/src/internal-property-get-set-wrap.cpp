@@ -31,7 +31,7 @@ extern "C"
 {
 #endif
 
-  typedef char *(SWIGSTDCALL *SWIG_CSharpStringHelperCallback)(const char *);
+  typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
   extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
   enum InternalPropertyReturnType
@@ -401,7 +401,7 @@ extern "C"
     return ret;
   }
 
-  SWIGEXPORT char *SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyString(void *actor, int propertyType)
+  SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyString(void *actor, int propertyType)
   {
     Dali::Actor *pActor = (Dali::Actor *)actor;
     std::string result = "";
@@ -441,151 +441,6 @@ extern "C"
     CALL_CATCH_EXCEPTION(ret);
 
     return ret;
-  }
-
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_RetrieveTargetSize(void *actor, void *retrievingVector3)
-  {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
-    Dali::Vector3 *pVector3 = (Dali::Vector3 *)retrievingVector3;
-
-    if (!pActor)
-    {
-      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
-      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
-    }
-    if (!pVector3)
-    {
-      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "vector3 is null!");
-      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
-    }
-
-    try
-    {
-      Dali::Vector3 result;
-      result = ((Dali::Actor const *)pActor)->GetTargetSize();
-      pVector3->x = result.x;
-      pVector3->y = result.y;
-      pVector3->z = result.z;
-    }
-    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
-
-    return (int)InternalPropertyReturnType::NO_ERROR;
-  }
-
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_RetrieveCurrentPropertyVector3(void *actor, int propertyType, void *retrievingVector3)
-  {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
-    Dali::Vector3 *pVector3 = (Dali::Vector3 *)retrievingVector3;
-
-    if (!pActor)
-    {
-      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
-      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
-    }
-    if (!pVector3)
-    {
-      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "vector3 is null!");
-      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
-    }
-
-    try
-    {
-      Dali::Vector3 result;
-      result = ((Dali::Actor const *)pActor)->GetCurrentProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
-      pVector3->x = result.x;
-      pVector3->y = result.y;
-      pVector3->z = result.z;
-    }
-    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
-
-    return (int)InternalPropertyReturnType::NO_ERROR;
-  }
-
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_RetrieveCurrentPropertyVector2ActualVector3(void *actor, int propertyType, void *retrievingVector2)
-  {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
-    Dali::Vector2 *pVector2 = (Dali::Vector2 *)retrievingVector2;
-
-    if (!pActor)
-    {
-      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
-      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
-    }
-    if (!pVector2)
-    {
-      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "vector2 is null!");
-      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
-    }
-
-    try
-    {
-      Dali::Vector3 result;
-      result = ((Dali::Actor const *)pActor)->GetProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
-      pVector2->x = result.x;
-      pVector2->y = result.y;
-    }
-    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
-
-    return (int)InternalPropertyReturnType::NO_ERROR;
-  }
-
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_RetrieveNaturalSize(void *actor, void *retrievingVector3)
-  {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
-    Dali::Vector3 *pVector3 = (Dali::Vector3 *)retrievingVector3;
-
-    if (!pActor)
-    {
-      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
-      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
-    }
-    if (!pVector3)
-    {
-      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "vector3 is null!");
-      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
-    }
-
-    try
-    {
-      Dali::Vector3 result;
-      result = ((Dali::Actor const *)pActor)->GetNaturalSize();
-      pVector3->x = result.x;
-      pVector3->y = result.y;
-      pVector3->z = result.z;
-    }
-    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
-
-    return (int)InternalPropertyReturnType::NO_ERROR;
-  }
-
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_RetrieveCurrentPropertyVector4(void *actor, int propertyType, void *retrievingVector4)
-  {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
-    Dali::Vector4 *pVector4 = (Dali::Vector4 *)retrievingVector4;
-
-    if (!pActor)
-    {
-      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
-      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
-    }
-    if (!pVector4)
-    {
-      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "vector4 is null!");
-      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
-    }
-
-    try
-    {
-      Dali::Vector4 result;
-      result = ((Dali::Actor const *)pActor)->GetCurrentProperty<Dali::Vector4>((Dali::Property::Index)propertyType);
-      pVector4->x = result.x;
-      pVector4->y = result.y;
-      pVector4->z = result.z;
-      pVector4->w = result.w;
-    }
-    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
-
-    return (int)InternalPropertyReturnType::NO_ERROR;
   }
 
 #ifdef __cplusplus
