@@ -354,6 +354,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/dali-toolkit.h>
 
 #include <dali/devel-api/actors/actor-devel.h>
+#include <dali/devel-api/actors/camera-actor-devel.h>
 #include <dali/devel-api/animation/key-frames-devel.h>
 #include <dali/devel-api/common/stage-devel.h>
 #include <dali/devel-api/events/key-event-devel.h>
@@ -3050,138 +3051,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Any_Empty(void * jarg1) {
   return jresult;
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Any_AnyContainerBase(void * jarg1, void * jarg2, void * jarg3) {
-  void * jresult ;
-  std::type_info *arg1 = 0 ;
-  Dali::Any::CloneFunc arg2 = (Dali::Any::CloneFunc) 0 ;
-  Dali::Any::DeleteFunc arg3 = (Dali::Any::DeleteFunc) 0 ;
-  Dali::Any::AnyContainerBase *result = 0 ;
-
-  arg1 = (std::type_info *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg2 = (Dali::Any::CloneFunc)jarg2;
-  arg3 = (Dali::Any::DeleteFunc)jarg3;
-  {
-    try {
-      result = (Dali::Any::AnyContainerBase *)new Dali::Any::AnyContainerBase((std::type_info const &)*arg1,arg2,arg3);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_GetType(void * jarg1) {
-  void * jresult ;
-  Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
-  std::type_info *result = 0 ;
-
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
-  {
-    try {
-      result = (std::type_info *) &((Dali::Any::AnyContainerBase const *)arg1)->GetType();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mType_get(void * jarg1) {
-  void * jresult ;
-  Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
-  ::std::type_info *result = 0 ;
-
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
-  result = (::std::type_info *) &(::std::type_info const &) ((arg1)->mType);
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mCloneFunc_set(void * jarg1, void * jarg2) {
-  Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
-  Dali::Any::CloneFunc arg2 = (Dali::Any::CloneFunc) 0 ;
-
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
-  arg2 = (Dali::Any::CloneFunc)jarg2;
-  if (arg1) (arg1)->mCloneFunc = arg2;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mCloneFunc_get(void * jarg1) {
-  void * jresult ;
-  Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
-  Dali::Any::CloneFunc result;
-
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
-  result = (Dali::Any::CloneFunc) ((arg1)->mCloneFunc);
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mDeleteFunc_set(void * jarg1, void * jarg2) {
-  Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
-  Dali::Any::DeleteFunc arg2 = (Dali::Any::DeleteFunc) 0 ;
-
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
-  arg2 = (Dali::Any::DeleteFunc)jarg2;
-  if (arg1) (arg1)->mDeleteFunc = arg2;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_AnyContainerBase_mDeleteFunc_get(void * jarg1) {
-  void * jresult ;
-  Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
-  Dali::Any::DeleteFunc result;
-
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
-  result = (Dali::Any::DeleteFunc) ((arg1)->mDeleteFunc);
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Any_AnyContainerBase(void * jarg1) {
-  Dali::Any::AnyContainerBase *arg1 = (Dali::Any::AnyContainerBase *) 0 ;
-
-  arg1 = (Dali::Any::AnyContainerBase *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Any_mContainer_set(void * jarg1, void * jarg2) {
-  Dali::Any *arg1 = (Dali::Any *) 0 ;
-  Dali::Any::AnyContainerBase *arg2 = (Dali::Any::AnyContainerBase *) 0 ;
-
-  arg1 = (Dali::Any *)jarg1;
-  arg2 = (Dali::Any::AnyContainerBase *)jarg2;
-  if (arg1) (arg1)->mContainer = arg2;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Any_mContainer_get(void * jarg1) {
-  void * jresult ;
-  Dali::Any *arg1 = (Dali::Any *) 0 ;
-  Dali::Any::AnyContainerBase *result = 0 ;
-
-  arg1 = (Dali::Any *)jarg1;
-  result = (Dali::Any::AnyContainerBase *) ((arg1)->mContainer);
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_DaliAssertMessage(char * jarg1, char * jarg2) {
@@ -6602,6 +6471,97 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Uint16Pair(void * jarg1) {
 
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Int32Pair__SWIG_0() {
+  void * jresult ;
+  Dali::Int32Pair *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Int32Pair *)new Dali::Int32Pair();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Int32Pair__SWIG_1(int32_t x, int32_t y) {
+  void * jresult ;
+  Dali::Int32Pair *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Int32Pair *)new Dali::Int32Pair(x,y);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Int32Pair_SetX(void * int32Pair, int32_t x) {
+  Dali::Int32Pair *pInt32Pair = (Dali::Int32Pair *) (int32Pair) ;
+
+  {
+    try {
+      (pInt32Pair)->SetX(x);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Int32Pair_GetX(void * int32Pair) {
+  int result ;
+  Dali::Int32Pair *pInt32Pair = (Dali::Int32Pair *) (int32Pair);
+
+  {
+    try {
+      result = ((Dali::Int32Pair const *)pInt32Pair)->GetX();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Int32Pair_SetY(void * int32Pair, int32_t y) {
+  Dali::Int32Pair *pInt32Pair = (Dali::Int32Pair *) (int32Pair) ;
+
+  {
+    try {
+      (pInt32Pair)->SetY(y);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Int32Pair_GetY(void * int32Pair) {
+  Dali::Int32Pair *pInt32Pair = (Dali::Int32Pair *) (int32Pair) ;
+  int result;
+
+  {
+    try {
+      result = ((Dali::Int32Pair const *)pInt32Pair)->GetY();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Int32Pair(void * int32Pair) {
+  Dali::Int32Pair *pInt32Pair = (Dali::Int32Pair *) (int32Pair) ;
+
+  {
+    try {
+      delete pInt32Pair;
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Degree__SWIG_0() {
   void * jresult ;
@@ -7974,6 +7934,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Multiply__SWIG_2(void * jarg1, 
   Dali::Vector4 result;
 
   arg1 = (Dali::Matrix *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix const & type is null", 0);
+    return 0;
+  }
   arg2 = (Dali::Vector4 *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type is null", 0);
@@ -7986,6 +7950,61 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Multiply__SWIG_2(void * jarg1, 
   }
 
   jresult = new Dali::Vector4((const Dali::Vector4 &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Multiply__SWIG_3(void * nuiMatrixLhs, void * nuiMatrixRhs) {
+  void * jresult ;
+  Dali::Matrix *lhsPtr = (Dali::Matrix *) 0 ;
+  Dali::Matrix *rhsPtr = (Dali::Matrix *) 0 ;
+  Dali::Matrix result(false);
+
+  lhsPtr = (Dali::Matrix *)nuiMatrixLhs;
+  if (!lhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "lhs Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  rhsPtr = (Dali::Matrix *)nuiMatrixRhs;
+  if (!rhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rhs Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = ((Dali::Matrix const *)lhsPtr)->operator *((Dali::Matrix const &)*rhsPtr);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Matrix((const Dali::Matrix &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Multiply__SWIG_4(void * nuiMatrixLhs, void * nuiMatrixRhs) {
+  // Faster mulitply operation without memcpy
+
+  Dali::Matrix *jresult = (Dali::Matrix *)0;
+  Dali::Matrix *lhsPtr  = (Dali::Matrix *)0;
+  Dali::Matrix *rhsPtr  = (Dali::Matrix *)0;
+
+  lhsPtr = (Dali::Matrix *)nuiMatrixLhs;
+  if (!lhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "lhs Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  rhsPtr = (Dali::Matrix *)nuiMatrixRhs;
+  if (!rhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rhs Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      jresult = new Dali::Matrix(false);
+      Dali::Matrix::Multiply((Dali::Matrix &)*jresult,(Dali::Matrix const &)*rhsPtr,(Dali::Quaternion const &)*lhsPtr);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
   return jresult;
 }
 
@@ -8523,6 +8542,88 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Matrix3_Multiply(void * jarg1, void * ja
     } CALL_CATCH_EXCEPTION();
   }
 
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix3_Multiply__SWIG_1(void * jarg1, void * jarg2) {
+  void * jresult ;
+  Dali::Matrix3 *arg1 = 0 ;
+  Dali::Vector3 *arg2 = 0 ;
+  Dali::Vector3 result;
+
+  arg1 = (Dali::Matrix3 *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  arg2 = (Dali::Vector3 *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = ((Dali::Matrix3 const *)arg1)->operator *((Dali::Vector3 const &)*arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Vector3((const Dali::Vector3 &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix3_Multiply__SWIG_2(void * nuiMatrix3Lhs, void * nuiMatrix3Rhs) {
+  void * jresult ;
+  Dali::Matrix3 *lhsPtr = 0 ;
+  Dali::Matrix3 *rhsPtr = 0 ;
+  Dali::Matrix3 result;
+
+  lhsPtr = (Dali::Matrix3 *)nuiMatrix3Lhs;
+  if (!lhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "lhs Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  rhsPtr = (Dali::Matrix3 *)nuiMatrix3Rhs;
+  if (!rhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rhs Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = ((Dali::Matrix3 const *)lhsPtr)->operator *((Dali::Matrix3 const &)*rhsPtr);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Matrix3((const Dali::Matrix3 &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix3_Multiply__SWIG_3(void * nuiMatrix3Lhs, void * nuiMatrix3Rhs) {
+  // Faster mulitply operation without memcpy
+
+  Dali::Matrix3 *jresult = 0;
+  Dali::Matrix3 *lhsPtr  = 0;
+  Dali::Matrix3 *rhsPtr  = 0;
+
+  lhsPtr = (Dali::Matrix3 *)nuiMatrix3Lhs;
+  if (!lhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "lhs Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  rhsPtr = (Dali::Matrix3 *)nuiMatrix3Rhs;
+  if (!rhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rhs Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      jresult = new Dali::Matrix3();
+      Dali::Matrix3::Multiply((Dali::Matrix3 &)*jresult,(Dali::Matrix3 const &)*rhsPtr,(Dali::Matrix3 const &)*lhsPtr);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
 }
 
 
@@ -19694,6 +19795,44 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Gesture_time_get(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceType_get(void * gesture) {
+  int jresult ;
+  Dali::Gesture *jGesture = (Dali::Gesture *) gesture;
+  Dali::GestureSourceType result;
+
+  if (!jGesture) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Gesture const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::GestureSourceType)jGesture->GetSourceType();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceData_get(void * gesture) {
+  int jresult ;
+  Dali::Gesture *jGesture = (Dali::Gesture *) gesture;
+  Dali::GestureSourceData result;
+
+  if (!jGesture) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::gesture const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::GestureSourceData)jGesture->GetSourceData();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Hover__SWIG_0() {
   void * jresult ;
@@ -27815,22 +27954,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGesture_localPoint_get(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TapGesture_sourceType_get(void * jarg1) {
-  int jresult ;
-  Dali::TapGesture *arg1 = (Dali::TapGesture *) 0 ;
-  Dali::GestureSourceType result;
-
-  arg1 = (Dali::TapGesture *)jarg1;
-  {
-    try {
-      result = ((Dali::TapGesture const *)arg1)->GetSourceType();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = static_cast< int >(result);
-  return jresult;
-}
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_AlphaFunction__SWIG_0() {
   void * jresult ;
   Dali::AlphaFunction *result = 0 ;
@@ -29344,6 +29467,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CameraActor_Property_INVERT_Y_AXIS_get() 
   int result;
 
   result = (int)Dali::CameraActor::Property::INVERT_Y_AXIS;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CameraActor_Property_PROJECTION_DIRECTION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::DevelCameraActor::Property::PROJECTION_DIRECTION;
   jresult = (int)result;
   return jresult;
 }
@@ -48134,7 +48267,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_0() {
 
   {
     try {
-      result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
+      result = Dali::Toolkit::TextLabel::New();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -48156,7 +48289,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_1(char * jarg1) {
   arg1 = &arg1_str;
   {
     try {
-      result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const &)*arg1);
+      result = Dali::Toolkit::TextLabel::New((std::string const &)*arg1);
     } CALL_CATCH_EXCEPTION(0);
   }
 
