@@ -19795,6 +19795,44 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Gesture_time_get(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceType_get(void * gesture) {
+  int jresult ;
+  Dali::Gesture *jGesture = (Dali::Gesture *) gesture;
+  Dali::GestureSourceType result;
+
+  if (!jGesture) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Gesture const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::GestureSourceType)jGesture->GetSourceType();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceData_get(void * gesture) {
+  int jresult ;
+  Dali::Gesture *jGesture = (Dali::Gesture *) gesture;
+  Dali::GestureSourceData result;
+
+  if (!jGesture) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::gesture const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::GestureSourceData)jGesture->GetSourceData();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Hover__SWIG_0() {
   void * jresult ;
@@ -27915,22 +27953,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGesture_localPoint_get(void * jarg1
   return jresult;
 }
 
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TapGesture_sourceType_get(void * jarg1) {
-  int jresult ;
-  Dali::TapGesture *arg1 = (Dali::TapGesture *) 0 ;
-  Dali::GestureSourceType result;
-
-  arg1 = (Dali::TapGesture *)jarg1;
-  {
-    try {
-      result = ((Dali::TapGesture const *)arg1)->GetSourceType();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = static_cast< int >(result);
-  return jresult;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_AlphaFunction__SWIG_0() {
   void * jresult ;
