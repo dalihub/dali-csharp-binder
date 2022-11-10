@@ -420,6 +420,40 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextCursorMovedEvent(
   }));
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitScrollStartedEvent(void* arg1_actor)
+{
+  GUARD_ON_NULL_RET(arg1_actor);
+  try_catch(([&]() {
+    Dali::Actor* control    = (Dali::Actor*)arg1_actor;
+    auto         accessible = Dali::Accessibility::Accessible::Get(*control);
+    if(accessible)
+    {
+      accessible->EmitScrollStarted();
+    }
+    else
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
+    }
+  }));
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitScrollFinishedEvent(void* arg1_actor)
+{
+  GUARD_ON_NULL_RET(arg1_actor);
+  try_catch(([&]() {
+    Dali::Actor* control    = (Dali::Actor*)arg1_actor;
+    auto         accessible = Dali::Accessibility::Accessible::Get(*control);
+    if(accessible)
+    {
+      accessible->EmitScrollFinished();
+    }
+    else
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
+    }
+  }));
+}
+
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Accessibility_IsSuppressedEvent(void* arg1, int32_t atspiEvent)
 {
   bool result = false;
