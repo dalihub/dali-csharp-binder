@@ -391,6 +391,115 @@ extern "C"
     return result;
   }
 
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkybox(void *csSceneView, char *skyboxUrl)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return;
+    }
+    if (!skyboxUrl)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null string", 0);
+      return;
+    }
+    {
+      try
+      {
+        sceneView->SetSkybox(std::string(skyboxUrl));
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+    return;
+  }
+
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxIntensity(void *csSceneView, float intensity)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return;
+    }
+    {
+      try
+      {
+        sceneView->SetSkyboxIntensity(intensity);
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+    return;
+  }
+
+  SWIGEXPORT float SWIGSTDCALL CSharp_Dali_SceneView_GetSkyboxIntensity(void *csSceneView)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    float intensity = 1.0f;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return intensity;
+    }
+    {
+      try
+      {
+        intensity = sceneView->GetSkyboxIntensity();
+      }
+      CALL_CATCH_EXCEPTION(0.0f);
+    }
+    return intensity;
+  }
+
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxOrientation(void *csSceneView, void *csOrientation)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    Dali::Quaternion *orientation = (Dali::Quaternion *)csOrientation;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return;
+    }
+    if (!orientation)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Quaternion", 0);
+      return;
+    }
+    {
+      try
+      {
+        sceneView->SetSkyboxOrientation(*orientation);
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+    return;
+  }
+
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_GetSkyboxOrientation(void *csSceneView)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    Dali::Quaternion orientation;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return 0;
+    }
+    {
+      try
+      {
+        orientation = sceneView->GetSkyboxOrientation();
+      }
+      CALL_CATCH_EXCEPTION(0);
+    }
+    Dali::Quaternion *result = new Dali::Quaternion((const Dali::Quaternion &)orientation);
+    return result;
+  }
+
 #ifdef __cplusplus
 }
 #endif
