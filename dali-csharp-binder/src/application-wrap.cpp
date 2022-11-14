@@ -92,6 +92,27 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Memory_Status_SP__Sg__E
   self->Emit(arg);
 }
 
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__Sg__Empty(Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)> const* self)
+{
+  return self->Empty();
+}
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)> const* self)
+{
+  return self->GetConnectionCount();
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__Sg__Connect(Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* self, void (*func)(Dali::DeviceStatus::Orientation::Status))
+{
+  self->Connect(func);
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__Sg__Disconnect(Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* self, void (*func)(Dali::DeviceStatus::Orientation::Status))
+{
+  self->Disconnect(func);
+}
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__Sg__Emit(Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* self, Dali::DeviceStatus::Orientation::Status arg)
+{
+  self->Emit(arg);
+}
+
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Empty(Dali::Signal<void(Dali::Application&)> const* self)
 {
   return self->Empty();
@@ -735,6 +756,24 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_LowMemorySignal(void* jarg1
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationChangedSignal(void* jarg1)
+{
+  void*                                   jresult;
+  Dali::Application*                      arg1   = (Dali::Application*)0;
+  Dali::Application::DeviceOrientationChangedSignalType* result = 0;
+
+  arg1 = (Dali::Application*)jarg1;
+  {
+    try
+    {
+      result = (Dali::Application::DeviceOrientationChangedSignalType*)&(arg1)->DeviceOrientationChangedSignal();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = (void*)result;
+  return jresult;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_TaskInitSignal(void* app)
 {
   void*                             jresult;
@@ -860,6 +899,24 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_TaskLowMemorySignal(void* a
     try
     {
       result = (Dali::Application::LowMemorySignalType*)&(application)->TaskLowMemorySignal();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = (void*)result;
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_TaskDeviceOrientationChangedSignal(void* app)
+{
+  void*                                   jresult;
+  Dali::Application*                      application = (Dali::Application*)0;
+  Dali::Application::DeviceOrientationChangedSignalType* result      = 0;
+
+  application = (Dali::Application*)app;
+  {
+    try
+    {
+      result = (Dali::Application::DeviceOrientationChangedSignalType*)&(application)->TaskDeviceOrientationChangedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1102,6 +1159,127 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_delete_LowMemorySignalType(v
   Dali::Signal<void(Dali::DeviceStatus::Memory::Status)>* arg1 = (Dali::Signal<void(Dali::DeviceStatus::Memory::Status)>*)0;
 
   arg1 = (Dali::Signal<void(Dali::DeviceStatus::Memory::Status)>*)jarg1;
+  {
+    try
+    {
+      delete arg1;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationChangedSignalType_Empty(void* jarg1)
+{
+  unsigned int                                            jresult;
+  Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)0;
+  bool                                                    result;
+
+  arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)jarg1;
+  {
+    try
+    {
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__Sg__Empty((Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)> const*)arg1);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = result;
+  return jresult;
+}
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationChangedSignalType_GetConnectionCount(void* jarg1)
+{
+  unsigned long                                           jresult;
+  Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)0;
+  std::size_t                                             result;
+
+  arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)jarg1;
+  {
+    try
+    {
+      result = Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)> const*)arg1);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = (unsigned long)result;
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationChangedSignalType_Connect(void* jarg1, void* jarg2)
+{
+  Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)0;
+  void (*arg2)(Dali::DeviceStatus::Orientation::Status)             = (void (*)(Dali::DeviceStatus::Orientation::Status))0;
+
+  arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)jarg1;
+  arg2 = (void (*)(Dali::DeviceStatus::Orientation::Status))jarg2;
+  {
+    try
+    {
+      Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__Sg__Connect(arg1, arg2);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationChangedSignalType_Disconnect(void* jarg1, void* jarg2)
+{
+  Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)0;
+  void (*arg2)(Dali::DeviceStatus::Orientation::Status)             = (void (*)(Dali::DeviceStatus::Orientation::Status))0;
+
+  arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)jarg1;
+  arg2 = (void (*)(Dali::DeviceStatus::Orientation::Status))jarg2;
+  {
+    try
+    {
+      Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__Sg__Disconnect(arg1, arg2);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationChangedSignalType_Emit(void* jarg1, void* jarg2)
+{
+  Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)0;
+  Dali::DeviceStatus::Orientation::Status                      arg2;
+  Dali::DeviceStatus::Orientation::Status*                     argp2;
+
+  arg1  = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)jarg1;
+  argp2 = (Dali::DeviceStatus::Orientation::Status*)jarg2;
+  if(!argp2)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::DeviceStatus::Orientation::Status", 0);
+    return;
+  }
+  arg2 = *argp2;
+  {
+    try
+    {
+      Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__Sg__Emit(arg1, arg2);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_new_DeviceOrientationChangedSignalType()
+{
+  void*                                                   jresult;
+  Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* result = 0;
+
+  {
+    try
+    {
+      result = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)new Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = (void*)result;
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_delete_DeviceOrientationChangedSignalType(void* jarg1)
+{
+  Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)0;
+
+  arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)jarg1;
   {
     try
     {
