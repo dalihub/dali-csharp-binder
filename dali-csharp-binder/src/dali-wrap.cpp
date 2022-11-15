@@ -8001,10 +8001,37 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Multiply__SWIG_4(void * nuiMatr
   {
     try {
       jresult = new Dali::Matrix(false);
-      Dali::Matrix::Multiply((Dali::Matrix &)*jresult,(Dali::Matrix const &)*rhsPtr,(Dali::Quaternion const &)*lhsPtr);
+      Dali::Matrix::Multiply((Dali::Matrix &)*jresult,(Dali::Matrix const &)*rhsPtr,(Dali::Matrix const &)*lhsPtr);
     } CALL_CATCH_EXCEPTION(0);
   }
 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_MultiplyAssign(void * nuiMatrix, void * nuiMatrixRhs) {
+  void * jresult = 0;
+  Dali::Matrix *lhsPtr = (Dali::Matrix *) 0 ;
+  Dali::Matrix *rhsPtr = (Dali::Matrix *) 0 ;
+  Dali::Matrix *retPtr = (Dali::Matrix *) 0 ;
+
+  lhsPtr = (Dali::Matrix *)nuiMatrix;
+  if (!lhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "lhs Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  rhsPtr = (Dali::Matrix *)nuiMatrixRhs;
+  if (!rhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rhs Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      retPtr = (Dali::Matrix *) &(lhsPtr)->operator *=((Dali::Matrix const &)*rhsPtr);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)retPtr;
   return jresult;
 }
 
@@ -8054,6 +8081,97 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Matrix_NotEqualTo(void * jarg1, void * j
   return jresult;
 }
 
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Matrix_ValueOfIndex__SWIG_0(void * nuiMatrix, unsigned int index) {
+  float jresult ;
+  Dali::Matrix *pMatrix = (Dali::Matrix *) 0 ;
+
+  pMatrix = (Dali::Matrix *)nuiMatrix;
+  if (!pMatrix) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  if (index >= 16) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "index is out of range. (Check whether index >= 16.)", 0);
+    return 0;
+  }
+  {
+    try {
+      const float* temp = ((Dali::Matrix const *)pMatrix)->AsFloat();
+      jresult = temp[index];
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return jresult;
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Matrix_ValueOfIndex__SWIG_1(void * nuiMatrix, unsigned int indexRow, unsigned int indexColumn) {
+  float jresult ;
+  Dali::Matrix *pMatrix = (Dali::Matrix *) 0 ;
+
+  pMatrix = (Dali::Matrix *)nuiMatrix;
+  if (!pMatrix) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix const & type is null", 0);
+    return 0;
+  }
+  if (indexRow >= 4) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "indexRow is out of range. (Check whether indexRow >= 4.)", 0);
+    return 0;
+  }
+  if (indexColumn >= 4) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "indexColumn is out of range. (Check whether indexColumn >= 4.)", 0);
+    return 0;
+  }
+  {
+    try {
+      const float* temp = ((Dali::Matrix const *)pMatrix)->AsFloat();
+      jresult = temp[(indexColumn << 2) | indexRow];
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Matrix_SetValueAtIndex__SWIG_0(void * nuiMatrix, unsigned int index, float value) {
+  Dali::Matrix *pMatrix = (Dali::Matrix *) 0 ;
+
+  pMatrix = (Dali::Matrix *)nuiMatrix;
+  if (!pMatrix) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix const & type is null", 0);
+    return;
+  }
+  if (index >= 16) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "index is out of range. (Check whether index >= 16.)", 0);
+    return;
+  }
+  {
+    try {
+      float* temp = ((Dali::Matrix *)pMatrix)->AsFloat();
+      temp[index] = value;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Matrix_SetValueAtIndex__SWIG_1(void * nuiMatrix, unsigned int indexRow, unsigned int indexColumn, float value) {
+  Dali::Matrix *pMatrix = (Dali::Matrix *) 0 ;
+
+  pMatrix = (Dali::Matrix *)nuiMatrix;
+  if (!pMatrix) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix const & type is null", 0);
+    return;
+  }
+  if (indexRow >= 4) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "indexRow is out of range. (Check whether indexRow >= 4.)", 0);
+    return;
+  }
+  if (indexColumn >= 4) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "indexColumn is out of range. (Check whether indexColumn >= 4.)", 0);
+    return;
+  }
+  {
+    try {
+      float* temp = ((Dali::Matrix *)pMatrix)->AsFloat();
+      temp[(indexColumn << 2) | indexRow] = value;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Matrix_SetTransformComponents(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
   Dali::Matrix *arg1 = (Dali::Matrix *) 0 ;
@@ -8390,6 +8508,99 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Matrix3_NotEqualTo(void * jarg1, void * 
 }
 
 
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Matrix3_ValueOfIndex__SWIG_0(void * nuiMatrix, unsigned int index) {
+  float jresult ;
+  Dali::Matrix3 *pMatrix = (Dali::Matrix3 *) 0 ;
+
+  pMatrix = (Dali::Matrix3 *)nuiMatrix;
+  if (!pMatrix) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  if (index >= 9) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "index is out of range. (Check whether index >= 9.)", 0);
+    return 0;
+  }
+  {
+    try {
+      const float* temp = ((Dali::Matrix3 const *)pMatrix)->AsFloat();
+      jresult = temp[index];
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return jresult;
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Matrix3_ValueOfIndex__SWIG_1(void * nuiMatrix, unsigned int indexRow, unsigned int indexColumn) {
+  float jresult ;
+  Dali::Matrix3 *pMatrix = (Dali::Matrix3 *) 0 ;
+
+  pMatrix = (Dali::Matrix3 *)nuiMatrix;
+  if (!pMatrix) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  if (indexRow >= 3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "indexRow is out of range. (Check whether indexRow >= 3.)", 0);
+    return 0;
+  }
+  if (indexColumn >= 3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "indexColumn is out of range. (Check whether indexColumn >= 3.)", 0);
+    return 0;
+  }
+  {
+    try {
+      const float* temp = ((Dali::Matrix3 const *)pMatrix)->AsFloat();
+      jresult = temp[indexColumn * 3 + indexRow];
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Matrix3_SetValueAtIndex__SWIG_0(void * nuiMatrix, unsigned int index, float value) {
+  Dali::Matrix3 *pMatrix = (Dali::Matrix3 *) 0 ;
+
+  pMatrix = (Dali::Matrix3 *)nuiMatrix;
+  if (!pMatrix) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix3 const & type is null", 0);
+    return;
+  }
+  if (index >= 9) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "index is out of range. (Check whether index >= 9.)", 0);
+    return;
+  }
+  {
+    try {
+      float* temp = ((Dali::Matrix3 *)pMatrix)->AsFloat();
+      temp[index] = value;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Matrix3_SetValueAtIndex__SWIG_1(void * nuiMatrix, unsigned int indexRow, unsigned int indexColumn, float value) {
+  Dali::Matrix3 *pMatrix = (Dali::Matrix3 *) 0 ;
+
+  pMatrix = (Dali::Matrix3 *)nuiMatrix;
+  if (!pMatrix) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix3 const & type is null", 0);
+    return;
+  }
+  if (indexRow >= 3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "indexRow is out of range. (Check whether indexRow >= 3.)", 0);
+    return;
+  }
+  if (indexColumn >= 3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, "indexColumn is out of range. (Check whether indexColumn >= 3.)", 0);
+    return;
+  }
+  {
+    try {
+      float* temp = ((Dali::Matrix3 *)pMatrix)->AsFloat();
+      temp[indexColumn * 3 + indexRow] = value;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Matrix3(void * jarg1) {
   Dali::Matrix3 *arg1 = (Dali::Matrix3 *) 0 ;
 
@@ -8623,6 +8834,32 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix3_Multiply__SWIG_3(void * nuiMat
     } CALL_CATCH_EXCEPTION(0);
   }
 
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix3_MultiplyAssign(void * nuiMatrix, void * nuiMatrixRhs) {
+  void * jresult = 0;
+  Dali::Matrix3 *lhsPtr = (Dali::Matrix3 *) 0 ;
+  Dali::Matrix3 *rhsPtr = (Dali::Matrix3 *) 0 ;
+  Dali::Matrix3 *retPtr = (Dali::Matrix3 *) 0 ;
+
+  lhsPtr = (Dali::Matrix3 *)nuiMatrix;
+  if (!lhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "lhs Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  rhsPtr = (Dali::Matrix3 *)nuiMatrixRhs;
+  if (!rhsPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rhs Dali::Matrix3 const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      retPtr = (Dali::Matrix3 *) &(lhsPtr)->operator *=((Dali::Matrix3 const &)*rhsPtr);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)retPtr;
   return jresult;
 }
 
