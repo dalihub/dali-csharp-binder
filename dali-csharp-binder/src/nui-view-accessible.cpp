@@ -430,7 +430,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Accessibility_DuplicateString(const cha
   return strdup(arg);
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(const void* arg1_accessibilityDelegate, int arg2_accessibilityDelegateSize)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(const void* arg1_accessibilityDelegate, uint32_t arg2_accessibilityDelegateSize)
 {
   GUARD_ON_NULL_RET(arg1_accessibilityDelegate);
 

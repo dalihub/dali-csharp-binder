@@ -520,7 +520,7 @@ extern "C"
     try
     {
       Dali::Vector3 result;
-      result = ((Dali::Actor const *)pActor)->GetProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
+      result = ((Dali::Actor const *)pActor)->GetCurrentProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
       pVector2->x = result.x;
       pVector2->y = result.y;
     }
