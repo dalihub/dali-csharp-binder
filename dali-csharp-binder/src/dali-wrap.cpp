@@ -25183,6 +25183,30 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetNeedGesturePropagation(void * j
   return;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenExtents(void * actor) {
+  Dali::Actor arg1 ;
+  Dali::Actor *argp1 = (Dali::Actor *) 0 ;
+  Dali::Rect<float> result;
+
+  argp1 = (Dali::Actor *)actor;
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
+    return 0;
+  }
+  arg1 = *argp1;
+  {
+    try {
+      result = Dali::DevelActor::CalculateScreenExtents(arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  // Note: The float type Rectangle class is not ready yet.
+  //      Therefore, it transmits data in Vector4 class.
+  //      This type should later be changed to the appropriate data type.
+  return new Dali::Vector4(result.x, result.y, result.width, result.height);
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_SetTouchAreaOffset(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5) {
   Dali::Actor *arg1 = (Dali::Actor *) 0 ;
   arg1 = (Dali::Actor *)jarg1;
