@@ -20,6 +20,7 @@
 
 // INTERNAL INCLUDES
 #include "common.h"
+#include <dali/public-api/signals/render-callback.h>
 
 #ifdef __cplusplus
 extern "C"
@@ -218,6 +219,31 @@ extern "C"
     }
   }
 
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlView_BindTextureResources(void *nuiGlView, void *textures, int size)
+  {
+    Dali::Toolkit::GlView *glView = (Dali::Toolkit::GlView *)nuiGlView;
+    Dali::Texture **texPtr = (Dali::Texture **)textures;
+    if (!glView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::GlView", 0);
+      return;
+    }
+    {
+      try
+      {
+        // Convert array to vector
+        std::vector<Dali::Texture> vTex;
+        for (int i = 0; i < size; i++)
+        {
+          Dali::Texture texture = *texPtr[i];
+          vTex.push_back(texture);
+        }
+        glView->BindTextureResources(vTex);
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+  }
+
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GlView_GetRenderingMode(void *nuiGlView)
   {
     int jresult;
@@ -264,13 +290,15 @@ extern "C"
     }
   }
 
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GlView_GetBackendMode(void *nuiGlView) {
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GlView_GetBackendMode(void *nuiGlView)
+  {
     int jresult;
     Dali::Toolkit::GlView *glView = nullptr;
     Dali::Toolkit::GlView::BackendMode result;
 
     glView = (Dali::Toolkit::GlView *)nuiGlView;
-    if (!glView) {
+    if (!glView)
+    {
       SWIG_CSharpSetPendingExceptionArgument(
           SWIG_CSharpArgumentNullException,
           "Attempt to dereference null Dali::Toolkit::GlView", 0);
@@ -278,13 +306,70 @@ extern "C"
     }
 
     {
-      try {
+      try
+      {
         result = (Dali::Toolkit::GlView::BackendMode)(glView)->GetBackendMode();
       }
       CALL_CATCH_EXCEPTION(0);
     }
 
     jresult = (int)result;
+    return jresult;
+  }
+
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_RenderCallbackInput_Size_get(void *input)
+  {
+    void *jresult;
+    Dali::Size *result = 0;
+    Dali::RenderCallbackInput *renderInput = (Dali::RenderCallbackInput *)input;
+
+    result = &(renderInput->size);
+    jresult = (void *)result;
+    return jresult;
+  }
+
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_RenderCallbackInput_Mvp_get(void *input)
+  {
+    void *jresult;
+    Dali::Matrix *result = 0;
+    Dali::RenderCallbackInput *renderInput = (Dali::RenderCallbackInput *)input;
+
+    result = &(renderInput->mvp);
+    jresult = (void *)result;
+    return jresult;
+  }
+
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_RenderCallbackInput_Projection_get(void *input)
+  {
+    void *jresult;
+    Dali::Matrix *result = 0;
+    Dali::RenderCallbackInput *renderInput = (Dali::RenderCallbackInput *)input;
+
+    result = &(renderInput->projection);
+    jresult = (void *)result;
+    return jresult;
+  }
+
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_RenderCallbackInput_ClippingBox_get(void *input)
+  {
+    void *jresult;
+    Dali::Rect<int> *result = 0;
+    Dali::RenderCallbackInput *renderInput = (Dali::RenderCallbackInput *)input;
+
+    result = &(renderInput->clippingBox);
+    jresult = (void *)result;
+    return jresult;
+  }
+
+  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_RenderCallbackInput_TextureBindings_get(void *input, int *size)
+  {
+    void *jresult;
+    uint *result = 0;
+    Dali::RenderCallbackInput *renderInput = (Dali::RenderCallbackInput *)input;
+
+    result = renderInput->textureBindings.data();
+    *size = renderInput->textureBindings.size();
+    jresult = (void *)result;
     return jresult;
   }
 
