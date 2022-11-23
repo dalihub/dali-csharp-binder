@@ -717,6 +717,25 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_New() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_New_With_Style(bool hasStyle) {
+  void * jresult ;
+  Dali::Toolkit::TextField result;
+
+  {
+    try {
+      if (hasStyle) {
+        result = Dali::Toolkit::TextField::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
+      } else {
+        result = Dali::Toolkit::TextField::New();
+      }
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::TextField((const Dali::Toolkit::TextField &)result);
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField__SWIG_0() {
   void * jresult ;
   Dali::Toolkit::TextField *result = 0 ;
