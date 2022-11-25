@@ -48522,20 +48522,68 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_1(char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_1(char * text) {
   void * jresult ;
   std::string *arg1 = 0 ;
   Dali::Toolkit::TextLabel result;
 
-  if (!jarg1) {
+  if (!text) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(jarg1);
+  std::string arg1_str(text);
   arg1 = &arg1_str;
   {
     try {
       result = Dali::Toolkit::TextLabel::New((std::string const &)*arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::TextLabel((const Dali::Toolkit::TextLabel &)result);
+
+  //argout typemap for const std::string&
+
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New_With_Style(bool hasStyle) {
+  void * jresult ;
+  Dali::Toolkit::TextLabel result;
+
+  {
+    try {
+      if (hasStyle) {
+        result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
+      } else {
+        result = Dali::Toolkit::TextLabel::New();
+      }
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::TextLabel((const Dali::Toolkit::TextLabel &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New_With_String_Style(char * text, bool hasStyle) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  Dali::Toolkit::TextLabel result;
+
+  if (!text) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(text);
+  arg1 = &arg1_str;
+  {
+    try {
+      if (hasStyle) {
+        result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const &)*arg1);
+      } else {
+        result = Dali::Toolkit::TextLabel::New((std::string const &)*arg1);
+      }
     } CALL_CATCH_EXCEPTION(0);
   }
 
