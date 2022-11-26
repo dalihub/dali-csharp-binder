@@ -41,6 +41,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/src/adaptor-wrap.cpp
   ${dali_csharp_binder_dir}/src/extents-wrap.cpp
   ${dali_csharp_binder_dir}/src/text-label-wrap.cpp
+  ${dali_csharp_binder_dir}/src/text-range-wrap.cpp
   ${dali_csharp_binder_dir}/src/text-utils-wrap.cpp
   ${dali_csharp_binder_dir}/src/capabilities-wrap.cpp
   ${dali_csharp_binder_dir}/src/capture-wrap.cpp
