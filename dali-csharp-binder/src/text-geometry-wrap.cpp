@@ -133,6 +133,54 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TextGeometry_TextEditor_GetCharacterBoundin
   return resultRect;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TextGeometry_TextLabel_GetCharacterIndexAtPosition(void * pTextLabel, float visualX, float visualY)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+  int charIndex;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try {
+      charIndex = (int)(Dali::Toolkit::Text::TextGeometry::GetCharacterIndexAtPosition( *textLabel, visualX, visualY));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return charIndex;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextGeometry_TextField_GetCharacterIndexAtPosition(void * pTextField, float visualX, float visualY)
+{
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0;
+  int charIndex;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try {
+      charIndex = (int)(Dali::Toolkit::Text::TextGeometry::GetCharacterIndexAtPosition( *textField, visualX, visualY));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return charIndex;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TextGeometry_TextEditor_GetCharacterIndexAtPosition(void * pTextEditor, float visualX, float visualY)
+{
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0;
+  int charIndex;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      charIndex = (int)(Dali::Toolkit::Text::TextGeometry::GetCharacterIndexAtPosition( *textEditor, visualX, visualY));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return charIndex;
+}
+
 #ifdef __cplusplus
 }
 #endif
