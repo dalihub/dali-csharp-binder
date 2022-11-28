@@ -1044,6 +1044,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_GetTextPosition(void * pTex
   return sizeList;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_TextGeometry_TextEditor_GetTextBoundingRectangle(void * pTextEditor, uint32_t startIndex, uint32_t endIndex)
+{
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0;
+  void* boundingRect;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try {
+      boundingRect = new Dali::Rect<>
+      ((const Dali::Rect<> &)(Dali::Toolkit::DevelTextEditor::GetTextBoundingRectangle( *textEditor, startIndex, endIndex)));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return boundingRect;
+}
+
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TextEditor_CopyText(void *pTextEditor)
 {
   char *csCopiedText;
