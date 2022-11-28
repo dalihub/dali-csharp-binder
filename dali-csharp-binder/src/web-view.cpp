@@ -623,6 +623,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterScrollEdgeReachedCallbac
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUrlChangedCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(char*) = (void (*)(char*))jarg2;
+  {
+    try {
+      (arg1)->RegisterUrlChangedCallback([handler](const std::string& url) {
+            handler(SWIG_csharp_string_callback(url.c_str()));
+          });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNavigationPolicyDecidedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   void (*handler)(Dali::WebEnginePolicyDecision*) = (void (*)(Dali::WebEnginePolicyDecision*))jarg2;
