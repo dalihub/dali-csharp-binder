@@ -22,6 +22,7 @@
 #include <dali-toolkit/devel-api/text/spans/character-spacing-span.h>
 #include <dali-toolkit/devel-api/text/spans/background-color-span.h>
 #include <dali-toolkit/devel-api/text/spans/italic-span.h>
+#include <dali-toolkit/devel-api/text/spans/bold-span.h>
 #include <dali/dali.h>
 
 // INTERNAL INCLUDES
@@ -322,6 +323,34 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ItalicSpan_New()
     try
     {
       spanPtr = (ItalicSpan *)new ItalicSpan(ItalicSpan::New());
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
+}
+
+//Bold span
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_BoldSpan(void *refSpan) {
+
+  BoldSpan *spanPtr = (BoldSpan *)0;
+  spanPtr = (BoldSpan *)refSpan;
+
+  {
+    try {
+      delete spanPtr;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_BoldSpan_New() {
+  BoldSpan *spanPtr = 0;
+
+  {
+    try {
+      spanPtr = (BoldSpan *)new BoldSpan(BoldSpan::New());
     }
     CALL_CATCH_EXCEPTION(0);
   }
