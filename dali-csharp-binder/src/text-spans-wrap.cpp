@@ -20,6 +20,7 @@
 #include <dali-toolkit/devel-api/text/spans/base-span.h>
 #include <dali-toolkit/devel-api/text/spans/foreground-color-span.h>
 #include <dali-toolkit/devel-api/text/spans/character-spacing-span.h>
+#include <dali-toolkit/devel-api/text/spans/background-color-span.h>
 #include <dali/dali.h>
 
 // INTERNAL INCLUDES
@@ -201,6 +202,94 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CharacterSpacingSpan_IsCharacterSpacingD
   {
     try {
       result = spanPtr->IsCharacterSpacingDefined();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+// BackgroundColorSpan
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_delete_BackgroundColorSpan(void *refSpan) {
+  BackgroundColorSpan *spanPtr = (BackgroundColorSpan *)0;
+  spanPtr = (BackgroundColorSpan *)refSpan;
+
+  {
+    try {
+      delete spanPtr;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void *SWIGSTDCALL
+CSharp_Dali_BackgroundColorSpan_New(void *argColor) {
+
+  Dali::Vector4 *colorPtr = 0;
+  colorPtr = (Dali::Vector4 *)argColor;
+  if (!colorPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::Vector4", 0);
+    return 0;
+  }
+
+  BackgroundColorSpan *spanPtr = 0;
+  {
+    try {
+      spanPtr = (BackgroundColorSpan *)new BackgroundColorSpan(
+          BackgroundColorSpan::New((Dali::Vector4 const &)*colorPtr));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
+}
+
+SWIGEXPORT void *SWIGSTDCALL
+CSharp_Dali_BackgroundColorSpan_GetBackgroundColor(void *refSpan) {
+
+  BackgroundColorSpan *spanPtr;
+  Dali::Vector4 result;
+
+  spanPtr = (BackgroundColorSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null BackgroundColorSpan", 0);
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->GetBackgroundColor();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Vector4((const Dali::Vector4 &)result);
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_BackgroundColorSpan_IsBackgroundColorDefined(void *refSpan) {
+
+  BackgroundColorSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (BackgroundColorSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null BackgroundColorSpan", 0);
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsBackgroundColorDefined();
     }
     CALL_CATCH_EXCEPTION(0);
   }
