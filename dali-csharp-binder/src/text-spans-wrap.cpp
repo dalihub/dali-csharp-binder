@@ -21,6 +21,7 @@
 #include <dali-toolkit/devel-api/text/spans/foreground-color-span.h>
 #include <dali-toolkit/devel-api/text/spans/character-spacing-span.h>
 #include <dali-toolkit/devel-api/text/spans/background-color-span.h>
+#include <dali-toolkit/devel-api/text/spans/italic-span.h>
 #include <dali/dali.h>
 
 // INTERNAL INCLUDES
@@ -295,6 +296,37 @@ CSharp_Dali_BackgroundColorSpan_IsBackgroundColorDefined(void *refSpan) {
   }
 
   return result;
+}
+
+//Italic span
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ItalicSpan(void *refSpan)
+{
+  ItalicSpan *spanPtr = (ItalicSpan *)0;
+  spanPtr = (ItalicSpan *)refSpan;
+
+  {
+    try
+    {
+      delete spanPtr;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ItalicSpan_New()
+{
+  ItalicSpan *spanPtr = 0;
+
+  {
+    try
+    {
+      spanPtr = (ItalicSpan *)new ItalicSpan(ItalicSpan::New());
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
 }
 
 #ifdef __cplusplus
