@@ -1109,24 +1109,35 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetDefaultPlatformFontDescrip
   }
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FontClient_GetSystemFonts(void* fontClient) {
+  void* jresult;
+  Dali::Property::Array *array = 0;
+  Dali::TextAbstraction::FontClient *arg1 = (Dali::TextAbstraction::FontClient *) 0;
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetSystemFonts(void * jarg1, void * jarg2) {
-  Dali::TextAbstraction::FontClient *arg1 = (Dali::TextAbstraction::FontClient *) 0 ;
-  Dali::TextAbstraction::FontList *arg2 = 0 ;
-
-  arg1 = (Dali::TextAbstraction::FontClient *)jarg1;
-  arg2 = (Dali::TextAbstraction::FontList *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TextAbstraction::FontList & type is null", 0);
-    return ;
-  }
+  arg1 = (Dali::TextAbstraction::FontClient *)fontClient;
   {
     try {
-      (arg1)->GetSystemFonts(*arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-}
+      FontList fontList;
+      (arg1)->GetSystemFonts(fontList);
 
+      Dali::Property::Array systemFonts;
+      for(size_t i = 0; i < fontList.size(); i++)
+      {
+        Dali::Property::Map font;
+        font.Add("family", fontList[i].family);
+        font.Add("path", fontList[i].path);
+        font.Add("width", fontList[i].width);
+        font.Add("weight", fontList[i].weight);
+        font.Add("slant", fontList[i].slant);
+        systemFonts.PushBack(font);
+      }
+
+      array = (Dali::Property::Array *)new Dali::Property::Array((Dali::Property::Array const &)systemFonts);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = (void *)array;
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetDescription(void * jarg1, unsigned int jarg2, void * jarg3) {
   Dali::TextAbstraction::FontClient *arg1 = (Dali::TextAbstraction::FontClient *) 0 ;
