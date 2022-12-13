@@ -17,12 +17,13 @@
 
 // EXTERNAL INCLUDES
 #include <dali-toolkit/dali-toolkit.h>
-#include <dali-toolkit/devel-api/text/spans/base-span.h>
-#include <dali-toolkit/devel-api/text/spans/foreground-color-span.h>
-#include <dali-toolkit/devel-api/text/spans/character-spacing-span.h>
 #include <dali-toolkit/devel-api/text/spans/background-color-span.h>
-#include <dali-toolkit/devel-api/text/spans/italic-span.h>
+#include <dali-toolkit/devel-api/text/spans/base-span.h>
 #include <dali-toolkit/devel-api/text/spans/bold-span.h>
+#include <dali-toolkit/devel-api/text/spans/character-spacing-span.h>
+#include <dali-toolkit/devel-api/text/spans/font-span.h>
+#include <dali-toolkit/devel-api/text/spans/foreground-color-span.h>
+#include <dali-toolkit/devel-api/text/spans/italic-span.h>
 #include <dali/dali.h>
 
 // INTERNAL INCLUDES
@@ -140,7 +141,8 @@ CSharp_Dali_ForegroundColorSpan_IsForegroundColorDefined(void *refSpan) {
 
 // CharacterSpacing span
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CharacterSpacingSpan(void *refSpan){
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_delete_CharacterSpacingSpan(void *refSpan) {
   CharacterSpacingSpan *spanPtr = (CharacterSpacingSpan *)0;
   spanPtr = (CharacterSpacingSpan *)refSpan;
   {
@@ -151,8 +153,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CharacterSpacingSpan(void *refSpa
   }
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CharacterSpacingSpan_New(float argCharSpacing){
-  float charSpacingPtr = (float) argCharSpacing;
+SWIGEXPORT void *SWIGSTDCALL
+CSharp_Dali_CharacterSpacingSpan_New(float argCharSpacing) {
+  float charSpacingPtr = (float)argCharSpacing;
 
   CharacterSpacingSpan *spanPtr = 0;
   {
@@ -166,7 +169,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CharacterSpacingSpan_New(float argChar
   return (void *)spanPtr;
 }
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_CharacterSpacingSpan_GetCharacterSpacing(void *refSpan) {
+SWIGEXPORT float SWIGSTDCALL
+CSharp_Dali_CharacterSpacingSpan_GetCharacterSpacing(void *refSpan) {
 
   CharacterSpacingSpan *spanPtr;
   float result = 0;
@@ -189,7 +193,8 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_CharacterSpacingSpan_GetCharacterSpacin
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CharacterSpacingSpan_IsCharacterSpacingDefined(void *refSpan) {
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_CharacterSpacingSpan_IsCharacterSpacingDefined(void *refSpan) {
   CharacterSpacingSpan *spanPtr;
   bool result = false;
 
@@ -299,29 +304,25 @@ CSharp_Dali_BackgroundColorSpan_IsBackgroundColorDefined(void *refSpan) {
   return result;
 }
 
-//Italic span
+// Italic span
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ItalicSpan(void *refSpan)
-{
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ItalicSpan(void *refSpan) {
   ItalicSpan *spanPtr = (ItalicSpan *)0;
   spanPtr = (ItalicSpan *)refSpan;
 
   {
-    try
-    {
+    try {
       delete spanPtr;
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ItalicSpan_New()
-{
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ItalicSpan_New() {
   ItalicSpan *spanPtr = 0;
 
   {
-    try
-    {
+    try {
       spanPtr = (ItalicSpan *)new ItalicSpan(ItalicSpan::New());
     }
     CALL_CATCH_EXCEPTION(0);
@@ -330,7 +331,7 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ItalicSpan_New()
   return (void *)spanPtr;
 }
 
-//Bold span
+// Bold span
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_BoldSpan(void *refSpan) {
 
@@ -356,6 +357,327 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_BoldSpan_New() {
   }
 
   return (void *)spanPtr;
+}
+
+// FontSpan
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FontSpan(void *refSpan) {
+
+  FontSpan *spanPtr = (FontSpan *)0;
+  spanPtr = (FontSpan *)refSpan;
+
+  {
+    try {
+      delete spanPtr;
+    }
+
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_FontSpan_New(char *argFamilyName,
+                                                      float argSize,
+                                                      int argWeight,
+                                                      int argWidth,
+                                                      int argSlant) {
+
+  std::string *familyName = 0;
+  if (!argFamilyName) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException,
+                                           "null string", 0);
+
+    return 0;
+  }
+
+  std::string argFamilyName_str(argFamilyName);
+  familyName = &argFamilyName_str;
+  float size = (float)argSize;
+
+  Dali::TextAbstraction::FontWeight::Type weight;
+  weight = (Dali::TextAbstraction::FontWeight::Type)argWeight;
+  Dali::TextAbstraction::FontWidth::Type width;
+  width = (Dali::TextAbstraction::FontWidth::Type)argWidth;
+  Dali::TextAbstraction::FontSlant::Type slant;
+  slant = (Dali::TextAbstraction::FontSlant::Type)argSlant;
+
+  FontSpan *spanPtr = 0;
+  {
+    try {
+      spanPtr = (FontSpan *)new FontSpan(FontSpan::New(
+          (std::string const &)*familyName, size, weight, width, slant));
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_FontSpan_GetFamilyName(void *refSpan) {
+
+  FontSpan *spanPtr;
+  std::string result;
+  spanPtr = (FontSpan *)refSpan;
+
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null FontSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->GetFamilyName();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  char *nuiResult = SWIG_csharp_string_callback(result.c_str());
+
+  return nuiResult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+
+CSharp_Dali_FontSpan_IsFamilyNameDefined(void *refSpan) {
+
+  FontSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (FontSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null FontSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsFamilyNameDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FontSpan_GetWeight(void *refSpan) {
+
+  FontSpan *spanPtr;
+  Dali::TextAbstraction::FontWeight::Type result;
+
+  spanPtr = (FontSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null FontSpan", 0);
+
+    return 0;
+  }
+
+  {
+
+    try {
+      result = (Dali::TextAbstraction::FontWeight::Type)spanPtr->GetWeight();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  int nuiResult = (int)result;
+  return nuiResult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_FontSpan_IsWeightDefined(void *refSpan) {
+
+  FontSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (FontSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null FontSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsWeightDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FontSpan_GetWidth(void *refSpan) {
+
+  FontSpan *spanPtr;
+
+  Dali::TextAbstraction::FontWidth::Type result;
+
+  spanPtr = (FontSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null FontSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = (Dali::TextAbstraction::FontWidth::Type)spanPtr->GetWidth();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  int nuiResult = (int)result;
+  return nuiResult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FontSpan_IsWidthDefined(void *refSpan) {
+
+  FontSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (FontSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null FontSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsWidthDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FontSpan_GetSlant(void *refSpan) {
+
+  FontSpan *spanPtr;
+  Dali::TextAbstraction::FontSlant::Type result;
+
+  spanPtr = (FontSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null FontSpan", 0);
+
+    return 0;
+  }
+
+  {
+
+    try {
+      result = (Dali::TextAbstraction::FontSlant::Type)spanPtr->GetSlant();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  int nuiResult = (int)result;
+  return nuiResult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FontSpan_IsSlantDefined(void *refSpan) {
+
+  FontSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (FontSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null FontSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsSlantDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FontSpan_GetSize(void *refSpan) {
+
+  FontSpan *spanPtr;
+  float result;
+
+  spanPtr = (FontSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null FontSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->GetSize();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FontSpan_IsSizeDefined(void *refSpan) {
+
+  FontSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (FontSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null FontSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsSizeDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
 }
 
 #ifdef __cplusplus
