@@ -415,6 +415,30 @@ extern "C"
     return;
   }
 
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxWithType(void *csSceneView, char *skyboxUrl, int skyboxType)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return;
+    }
+    if (!skyboxUrl)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null string", 0);
+      return;
+    }
+    {
+      try
+      {
+        sceneView->SetSkybox(std::string(skyboxUrl), (Dali::Scene3D::SceneView::SkyboxType)skyboxType);
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+    return;
+  }
+
   SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxIntensity(void *csSceneView, float intensity)
   {
     Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
