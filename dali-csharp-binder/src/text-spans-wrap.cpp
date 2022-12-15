@@ -19,6 +19,7 @@
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/text/spans/base-span.h>
 #include <dali-toolkit/devel-api/text/spans/foreground-color-span.h>
+#include <dali-toolkit/devel-api/text/spans/character-spacing-span.h>
 #include <dali/dali.h>
 
 // INTERNAL INCLUDES
@@ -127,6 +128,79 @@ CSharp_Dali_ForegroundColorSpan_IsForegroundColorDefined(void *refSpan) {
   {
     try {
       result = spanPtr->IsForegroundColorDefined();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+// CharacterSpacing span
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CharacterSpacingSpan(void *refSpan){
+  CharacterSpacingSpan *spanPtr = (CharacterSpacingSpan *)0;
+  spanPtr = (CharacterSpacingSpan *)refSpan;
+  {
+    try {
+      delete spanPtr;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CharacterSpacingSpan_New(float argCharSpacing){
+  float charSpacingPtr = (float) argCharSpacing;
+
+  CharacterSpacingSpan *spanPtr = 0;
+  {
+    try {
+      spanPtr = (CharacterSpacingSpan *)new CharacterSpacingSpan(
+          CharacterSpacingSpan::New(charSpacingPtr));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_CharacterSpacingSpan_GetCharacterSpacing(void *refSpan) {
+
+  CharacterSpacingSpan *spanPtr;
+  float result = 0;
+
+  spanPtr = (CharacterSpacingSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null CharacterSpacingSpan", 0);
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->GetCharacterSpacing();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_CharacterSpacingSpan_IsCharacterSpacingDefined(void *refSpan) {
+  CharacterSpacingSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (CharacterSpacingSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null CharacterSpacingSpan", 0);
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsCharacterSpacingDefined();
     }
     CALL_CATCH_EXCEPTION(0);
   }
