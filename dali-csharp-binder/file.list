@@ -41,6 +41,13 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/src/adaptor-wrap.cpp
   ${dali_csharp_binder_dir}/src/extents-wrap.cpp
   ${dali_csharp_binder_dir}/src/text-label-wrap.cpp
+  ${dali_csharp_binder_dir}/src/text-range-wrap.cpp
+  ${dali_csharp_binder_dir}/src/text-spans-wrap.cpp
+  ${dali_csharp_binder_dir}/src/text-character-sequence-wrap.cpp
+  ${dali_csharp_binder_dir}/src/text-spanned-wrap.cpp
+  ${dali_csharp_binder_dir}/src/text-spannable-wrap.cpp
+  ${dali_csharp_binder_dir}/src/text-spannable-string-wrap.cpp
+  ${dali_csharp_binder_dir}/src/text-spannable-api-wrap.cpp
   ${dali_csharp_binder_dir}/src/text-utils-wrap.cpp
   ${dali_csharp_binder_dir}/src/capabilities-wrap.cpp
   ${dali_csharp_binder_dir}/src/capture-wrap.cpp
