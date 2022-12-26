@@ -1544,6 +1544,19 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(
   return jresult;
 }
 
+SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Application_GetRenderThreadId(void* jarg1)
+{
+  Dali::Application* arg1 = (Dali::Application*)jarg1;
+
+  int32_t result;
+  try
+  {
+    result = Dali::DevelApplication::GetRenderThreadId(*arg1);
+  }
+  CALL_CATCH_EXCEPTION(0);
+  return result;
+}
+
 #ifdef __cplusplus
 }
 #endif
