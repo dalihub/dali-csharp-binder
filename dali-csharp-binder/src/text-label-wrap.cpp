@@ -106,6 +106,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextPosition(void * pText
   return sizeList;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_TextGeometry_TextLabel_GetTextBoundingRectangle(void * pTextLabel, uint32_t startIndex, uint32_t endIndex)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+  void* boundingRect;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try {
+      boundingRect = new Dali::Rect<>
+      ((const Dali::Rect<> &)(Dali::Toolkit::DevelTextLabel::GetTextBoundingRectangle( *textLabel,  startIndex, endIndex)));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return boundingRect;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_AnchorClickedSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::TextLabel *arg1 = (Dali::Toolkit::TextLabel *) 0 ;
