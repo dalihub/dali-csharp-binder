@@ -41,7 +41,7 @@
 #include "common.h"
 
 /* Callback for returning strings to C# without leaking memory */
-typedef char *(SWIGSTDCALL *SWIG_CSharpStringHelperCallback)(const char*);
+using SWIG_CSharpStringHelperCallback = char* (SWIGSTDCALL*)(const char*);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
 #ifdef __cplusplus
@@ -1015,6 +1015,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNavigationPolicyDecidedC
     try {
       (arg1)->RegisterNavigationPolicyDecidedCallback([handler](std::unique_ptr<Dali::WebEnginePolicyDecision> decision) {
             handler(decision.release());
+          });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNewWindowCreatedCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(Dali::Toolkit::WebView*&) = (void (*)(Dali::Toolkit::WebView*&))jarg2;
+  {
+    try {
+      (arg1)->RegisterNewWindowCreatedCallback([handler](Dali::WebEnginePlugin*& plugin) {
+            Dali::Toolkit::WebView* outView = nullptr;
+            handler(outView);
+            if (outView != nullptr)
+            {
+              plugin = outView->GetPlugin();
+            }
           });
     } CALL_CATCH_EXCEPTION();
   }
