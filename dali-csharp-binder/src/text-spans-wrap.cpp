@@ -24,6 +24,7 @@
 #include <dali-toolkit/devel-api/text/spans/font-span.h>
 #include <dali-toolkit/devel-api/text/spans/foreground-color-span.h>
 #include <dali-toolkit/devel-api/text/spans/italic-span.h>
+#include <dali-toolkit/devel-api/text/spans/strikethrough-span.h>
 #include <dali-toolkit/devel-api/text/spans/underline-span.h>
 #include <dali/dali.h>
 
@@ -816,7 +817,6 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_UnderlineSpan_GetColor(void *refSpan) {
     try {
       result = spanPtr->GetColor();
     }
-
     CALL_CATCH_EXCEPTION(0);
   }
 
@@ -920,14 +920,12 @@ CSharp_Dali_UnderlineSpan_GetHeight(void *refSpan) {
   }
 
   {
-
     try {
       result = spanPtr->GetHeight();
     }
 
     CALL_CATCH_EXCEPTION(0);
   }
-
   return result;
 }
 
@@ -1056,6 +1054,169 @@ CSharp_Dali_UnderlineSpan_IsDashWidthDefined(void *refSpan) {
   {
     try {
       result = spanPtr->IsDashWidthDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+// StrikethroughSpan
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_delete_StrikethroughSpan(void *refSpan) {
+
+  StrikethroughSpan *spanPtr = (StrikethroughSpan *)0;
+  spanPtr = (StrikethroughSpan *)refSpan;
+  {
+    try {
+      delete spanPtr;
+    }
+
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_StrikethroughSpan_New() {
+
+  StrikethroughSpan *spanPtr = 0;
+  {
+    try {
+      spanPtr =
+          (StrikethroughSpan *)new StrikethroughSpan(StrikethroughSpan::New());
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_StrikethroughSpan_New_color_height(
+    void *argColor, float argHeight) {
+
+  float height = (float)argHeight;
+  Dali::Vector4 *colorPtr = 0;
+  colorPtr = (Dali::Vector4 *)argColor;
+
+  if (!colorPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::Vector4", 0);
+
+    return 0;
+  }
+
+  StrikethroughSpan *spanPtr = 0;
+  {
+    try {
+      spanPtr = (StrikethroughSpan *)new StrikethroughSpan(
+          StrikethroughSpan::New((Dali::Vector4 const &)*colorPtr, height));
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
+}
+
+SWIGEXPORT void *SWIGSTDCALL
+CSharp_Dali_StrikethroughSpan_GetColor(void *refSpan) {
+
+  StrikethroughSpan *spanPtr;
+  Dali::Vector4 result;
+
+  spanPtr = (StrikethroughSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null StrikethroughSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->GetColor();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Vector4((const Dali::Vector4 &)result);
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_StrikethroughSpan_IsColorDefined(void *refSpan) {
+
+  StrikethroughSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (StrikethroughSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null StrikethroughSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsColorDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT float SWIGSTDCALL
+CSharp_Dali_StrikethroughSpan_GetHeight(void *refSpan) {
+
+  StrikethroughSpan *spanPtr;
+  float result;
+
+  spanPtr = (StrikethroughSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null StrikethroughSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->GetHeight();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_StrikethroughSpan_IsHeightDefined(void *refSpan) {
+
+  StrikethroughSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (StrikethroughSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null StrikethroughSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsHeightDefined();
     }
 
     CALL_CATCH_EXCEPTION(0);
