@@ -9,6 +9,8 @@ SET( dali_csharp_binder_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../dali-csharp-binder
 SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/src/common.cpp
   ${dali_csharp_binder_dir}/src/dali-wrap.cpp
+  ${dali_csharp_binder_dir}/src/actor-wrap.cpp
+  ${dali_csharp_binder_dir}/src/layer-wrap.cpp
   ${dali_csharp_binder_dir}/src/callbackbase-wrap.cpp
   ${dali_csharp_binder_dir}/src/canvas-view-wrap.cpp
   ${dali_csharp_binder_dir}/src/constraint-wrap.cpp
