@@ -53,6 +53,30 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_BaseSpan(void *refBaseSpan) {
   }
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_BaseSpan_GetSpanType(void *refBaseSpan) {
+
+  Dali::Toolkit::Text::SpanType::Value result;
+
+  BaseSpan *spanPtr = (BaseSpan *)0;
+  spanPtr = (BaseSpan *)refBaseSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null BaseSpan", 0);
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->GetSpanType();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  int nuiResult = (int)result;
+  return nuiResult;
+}
+
 // ForegroundColorSpan
 
 SWIGEXPORT void SWIGSTDCALL
