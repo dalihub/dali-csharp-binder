@@ -24,6 +24,7 @@
 #include <dali-toolkit/devel-api/text/spans/font-span.h>
 #include <dali-toolkit/devel-api/text/spans/foreground-color-span.h>
 #include <dali-toolkit/devel-api/text/spans/italic-span.h>
+#include <dali-toolkit/devel-api/text/spans/underline-span.h>
 #include <dali/dali.h>
 
 // INTERNAL INCLUDES
@@ -672,6 +673,389 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FontSpan_IsSizeDefined(void *refSpan) {
   {
     try {
       result = spanPtr->IsSizeDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+// UnderlineSpan
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_UnderlineSpan(void *refSpan) {
+
+  UnderlineSpan *spanPtr = (UnderlineSpan *)0;
+  spanPtr = (UnderlineSpan *)refSpan;
+  {
+    try {
+      delete spanPtr;
+    }
+
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_UnderlineSpan_New() {
+
+  UnderlineSpan *spanPtr = 0;
+
+  {
+    try {
+      spanPtr = (UnderlineSpan *)new UnderlineSpan(UnderlineSpan::New());
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
+}
+
+SWIGEXPORT void *SWIGSTDCALL
+CSharp_Dali_UnderlineSpan_NewSolid(void *argColor, float argHeight) {
+
+  float height = (float)argHeight;
+  Dali::Vector4 *colorPtr = 0;
+  colorPtr = (Dali::Vector4 *)argColor;
+
+  if (!colorPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::Vector4", 0);
+
+    return 0;
+  }
+
+  UnderlineSpan *spanPtr = 0;
+  {
+    try {
+      spanPtr = (UnderlineSpan *)new UnderlineSpan(
+          UnderlineSpan::NewSolid((Dali::Vector4 const &)*colorPtr, height));
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_UnderlineSpan_NewDashed(
+    void *argColor, float argHeight, float argDashGap, float argDashWidth) {
+
+  float height = (float)argHeight;
+  float dashGap = (float)argDashGap;
+  float dashWidth = (float)argDashWidth;
+
+  Dali::Vector4 *colorPtr = 0;
+  colorPtr = (Dali::Vector4 *)argColor;
+
+  if (!colorPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::Vector4", 0);
+
+    return 0;
+  }
+
+  UnderlineSpan *spanPtr = 0;
+  {
+    try {
+      spanPtr = (UnderlineSpan *)new UnderlineSpan(UnderlineSpan::NewDashed(
+          (Dali::Vector4 const &)*colorPtr, height, dashGap, dashWidth));
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
+}
+
+SWIGEXPORT void *SWIGSTDCALL
+CSharp_Dali_UnderlineSpan_NewDouble(void *argColor, float argHeight) {
+
+  float height = (float)argHeight;
+  Dali::Vector4 *colorPtr = 0;
+  colorPtr = (Dali::Vector4 *)argColor;
+
+  if (!colorPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::Vector4", 0);
+
+    return 0;
+  }
+
+  UnderlineSpan *spanPtr = 0;
+  {
+    try {
+      spanPtr = (UnderlineSpan *)new UnderlineSpan(
+          UnderlineSpan::NewDouble((Dali::Vector4 const &)*colorPtr, height));
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)spanPtr;
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_UnderlineSpan_GetColor(void *refSpan) {
+
+  UnderlineSpan *spanPtr;
+  Dali::Vector4 result;
+
+  spanPtr = (UnderlineSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null UnderlineSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->GetColor();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Vector4((const Dali::Vector4 &)result);
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+
+CSharp_Dali_UnderlineSpan_IsColorDefined(void *refSpan) {
+
+  UnderlineSpan *spanPtr;
+  bool result = false;
+  spanPtr = (UnderlineSpan *)refSpan;
+
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null UnderlineSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsColorDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_UnderlineSpan_GetType(void *refSpan) {
+
+  UnderlineSpan *spanPtr;
+  Dali::Toolkit::Text::Underline::Type result;
+
+  spanPtr = (UnderlineSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null UnderlineSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = (Dali::Toolkit::Text::Underline::Type)spanPtr->GetType();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  int nuiResult = (int)result;
+  return nuiResult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_UnderlineSpan_IsTypeDefined(void *refSpan) {
+
+  UnderlineSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (UnderlineSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null UnderlineSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsTypeDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT float SWIGSTDCALL
+CSharp_Dali_UnderlineSpan_GetHeight(void *refSpan) {
+
+  UnderlineSpan *spanPtr;
+  float result;
+
+  spanPtr = (UnderlineSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null UnderlineSpan", 0);
+
+    return 0;
+  }
+
+  {
+
+    try {
+      result = spanPtr->GetHeight();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_UnderlineSpan_IsHeightDefined(void *refSpan) {
+
+  UnderlineSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (UnderlineSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null UnderlineSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsHeightDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT float SWIGSTDCALL
+CSharp_Dali_UnderlineSpan_GetDashGap(void *refSpan) {
+
+  UnderlineSpan *spanPtr;
+  float result;
+
+  spanPtr = (UnderlineSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null UnderlineSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->GetDashGap();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_UnderlineSpan_IsDashGapDefined(void *refSpan) {
+
+  UnderlineSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (UnderlineSpan *)refSpan;
+  if (!spanPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null UnderlineSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsDashGapDefined();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT float SWIGSTDCALL
+CSharp_Dali_UnderlineSpan_GetDashWidth(void *refSpan) {
+
+  UnderlineSpan *spanPtr;
+  float result;
+
+  spanPtr = (UnderlineSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null UnderlineSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->GetDashWidth();
+    }
+
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL
+CSharp_Dali_UnderlineSpan_IsDashWidthDefined(void *refSpan) {
+
+  UnderlineSpan *spanPtr;
+  bool result = false;
+
+  spanPtr = (UnderlineSpan *)refSpan;
+  if (!spanPtr) {
+
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null UnderlineSpan", 0);
+
+    return 0;
+  }
+
+  {
+    try {
+      result = spanPtr->IsDashWidthDefined();
     }
 
     CALL_CATCH_EXCEPTION(0);
