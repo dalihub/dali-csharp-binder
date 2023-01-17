@@ -40,6 +40,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/src/animation-wrap.cpp
   ${dali_csharp_binder_dir}/src/adaptor-wrap.cpp
   ${dali_csharp_binder_dir}/src/extents-wrap.cpp
+  ${dali_csharp_binder_dir}/src/text-geometry-wrap.cpp
   ${dali_csharp_binder_dir}/src/text-label-wrap.cpp
   ${dali_csharp_binder_dir}/src/text-range-wrap.cpp
   ${dali_csharp_binder_dir}/src/text-spans-wrap.cpp
