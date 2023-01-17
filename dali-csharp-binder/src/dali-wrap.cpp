@@ -420,6 +420,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 #include <dali-toolkit/devel-api/controls/video-view/video-view-devel.h>
 
 #include <dali/devel-api/adaptor-framework/native-image-source-devel.h>
+#include <dali/devel-api/adaptor-framework/window-system-devel.h>
 
 #include <dali-toolkit/devel-api/text/rendering-backend.h>
 
@@ -61068,6 +61069,18 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VectorUnsignedInteger_Size(void *jarg1) {
   }
 
   return size;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetScreenSize() {
+  void * jresult ;
+  int width, height;
+
+  try {
+    Dali::DevelWindowSystem::GetScreenSize(width, height);
+  } CALL_CATCH_EXCEPTION(0);
+
+  jresult = new Dali::Size(width, height);
+  return jresult;
 }
 
 #ifdef __cplusplus
