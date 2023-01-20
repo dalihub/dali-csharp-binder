@@ -45,6 +45,222 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Spanned(void *refSpanned) {
   }
 }
 
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Spanned_GetAllSpans(void *refSpanned) {
+
+  Spanned *spannedPtr;
+  void *result = nullptr;
+
+  spannedPtr = (Spanned *)refSpanned;
+  if (!spannedPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException, "Attempt to dereference null Spanned",
+        0);
+    return 0;
+  }
+
+  {
+    try {
+      result = new std::vector<BaseSpan>(
+          (const std::vector<BaseSpan> &)(spannedPtr->GetAllSpans()));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Spanned_RetrieveAllSpansAndRanges(
+    void *refSpanned, void *refVectorSpans, void *refVectorRanges) {
+
+  std::vector<BaseSpan> *spanVectorPtr = (std::vector<BaseSpan> *)0;
+  spanVectorPtr = (std::vector<BaseSpan> *)refVectorSpans;
+  if (!spanVectorPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null vector<BaseSpan>", 0);
+    return;
+  }
+
+  std::vector<Range> *rangeVectorPtr = (std::vector<Range> *)0;
+  rangeVectorPtr = (std::vector<Range> *)refVectorRanges;
+  if (!rangeVectorPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null vector<Range>", 0);
+    return;
+  }
+
+  Spanned *spannedPtr;
+  spannedPtr = (Spanned *)refSpanned;
+  if (!spannedPtr) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException, "Attempt to dereference null Spanned",
+        0);
+    return;
+  }
+
+  {
+    try {
+      spannedPtr->RetrieveAllSpansAndRanges(*spanVectorPtr, *rangeVectorPtr);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+
+  return;
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_std_vector_BaseSpan_Create() {
+  void *nuiResult;
+  std::vector<BaseSpan> *result = 0;
+
+  {
+    try {
+      result = (std::vector<BaseSpan> *)new std::vector<BaseSpan>();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  nuiResult = (void *)result;
+  return nuiResult;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_std_vector_BaseSpan_Release(void *refVector) {
+  std::vector<BaseSpan> *spanPtr = (std::vector<BaseSpan> *)0;
+
+  spanPtr = (std::vector<BaseSpan> *)refVector;
+  {
+    try {
+      delete spanPtr;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_std_vector_BaseSpan_ValueOfIndex(
+    void *refVector, unsigned long argIndex) {
+  void *nuiResult;
+  std::vector<BaseSpan> *spanPtr = (std::vector<BaseSpan> *)0;
+  std::vector<BaseSpan>::size_type itemSize;
+  std::vector<BaseSpan>::value_type *result = 0;
+
+  spanPtr = (std::vector<BaseSpan> *)refVector;
+  itemSize = (std::vector<BaseSpan>::size_type)argIndex;
+  {
+    try {
+      result =
+          (std::vector<BaseSpan>::value_type *)&(spanPtr)->operator[](itemSize);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  nuiResult = (void *)result;
+  return nuiResult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_std_vector_BaseSpan_TypeOfIndex(
+    void *refVector, unsigned long argIndex) {
+
+  Dali::Toolkit::Text::SpanType::Value result;
+  std::vector<BaseSpan> *item = (std::vector<BaseSpan> *)0;
+  std::vector<BaseSpan>::size_type itemSize;
+  std::vector<BaseSpan>::value_type *spanPtr = 0;
+
+  item = (std::vector<BaseSpan> *)refVector;
+  itemSize = (std::vector<BaseSpan>::size_type)argIndex;
+  {
+    try {
+      spanPtr =
+          (std::vector<BaseSpan>::value_type *)&(item)->operator[](itemSize);
+      result = spanPtr->GetSpanType();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  int nuiResult = (int)result;
+  return nuiResult;
+}
+
+SWIGEXPORT int SWIGSTDCALL
+CSharp_Dali_std_vector_BaseSpan_Size(void *refVector) {
+  std::vector<BaseSpan> *spanVectorPtr = (std::vector<BaseSpan> *)0;
+  int size;
+
+  spanVectorPtr = (std::vector<BaseSpan> *)refVector;
+  {
+    try {
+      size = (spanVectorPtr)->size();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return size;
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_std_vector_Range_Create() {
+  void *nuiResult;
+  std::vector<Range> *result = 0;
+
+  {
+    try {
+      result = (std::vector<Range> *)new std::vector<Range>();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  nuiResult = (void *)result;
+  return nuiResult;
+}
+
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_std_vector_Range_Release(void *refVector) {
+  std::vector<Range> *rangePtr = (std::vector<Range> *)0;
+
+  rangePtr = (std::vector<Range> *)refVector;
+  {
+    try {
+      delete rangePtr;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_std_vector_Range_ValueOfIndex(
+    void *refVector, unsigned long argIndex) {
+  void *nuiResult;
+  std::vector<Range> *rangePtr = (std::vector<Range> *)0;
+  std::vector<Range>::size_type itemSize;
+  std::vector<Range>::value_type *result = 0;
+
+  rangePtr = (std::vector<Range> *)refVector;
+  itemSize = (std::vector<Range>::size_type)argIndex;
+  {
+    try {
+      result =
+          (std::vector<Range>::value_type *)&(rangePtr)->operator[](itemSize);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  nuiResult = (void *)result;
+  return nuiResult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_std_vector_Range_Size(void *refVector) {
+  std::vector<Range> *rangePtr = (std::vector<Range> *)0;
+  int size;
+
+  rangePtr = (std::vector<Range> *)refVector;
+  {
+    try {
+      size = (rangePtr)->size();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return size;
+}
+
 #ifdef __cplusplus
 }
 #endif
