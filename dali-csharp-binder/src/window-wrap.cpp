@@ -1756,15 +1756,31 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetBackgroundColor(void * jarg1
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetRootLayer(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetRootLayer(void * csWindow) {
   void * jresult ;
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
+  Dali::Window *window = (Dali::Window *) 0 ;
   Dali::Layer result;
 
-  arg1 = (Dali::Window *)jarg1;
+  window = (Dali::Window *)csWindow;
   {
     try {
-      result = ((Dali::Window const *)arg1)->GetRootLayer();
+      result = ((Dali::Window const *)window)->GetRootLayer();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Layer((const Dali::Layer &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetOverlayLayer(void * csWindow) {
+  void * jresult ;
+  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::Layer result;
+
+  window = (Dali::Window *)csWindow;
+  {
+    try {
+      result = ((Dali::Window *)window)->GetOverlayLayer();
     } CALL_CATCH_EXCEPTION(0);
   }
 
