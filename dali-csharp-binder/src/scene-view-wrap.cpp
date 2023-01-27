@@ -415,7 +415,7 @@ extern "C"
     return;
   }
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxWithType(void *csSceneView, char *skyboxUrl, int skyboxType)
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxEnvironmentMapType(void *csSceneView, int skyboxEnvironmentMapType)
   {
     Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
 
@@ -424,15 +424,10 @@ extern "C"
       SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
       return;
     }
-    if (!skyboxUrl)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null string", 0);
-      return;
-    }
     {
       try
       {
-        sceneView->SetSkybox(std::string(skyboxUrl), (Dali::Scene3D::SceneView::SkyboxType)skyboxType);
+        sceneView->SetSkyboxEnvironmentMapType((Dali::Scene3D::EnvironmentMapType)skyboxEnvironmentMapType);
       }
       CALL_CATCH_EXCEPTION();
     }
