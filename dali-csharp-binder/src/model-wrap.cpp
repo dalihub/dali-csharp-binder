@@ -17,6 +17,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali-scene3d/public-api/controls/model/model.h>
+#include <dali-scene3d/public-api/loader/bvh-loader.h>
 
 // INTERNAL INCLUDES
 #include "common.h"
@@ -334,6 +335,44 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_GetAnimation_2(void* csModel, cha
     try
     {
       result = model->GetAnimation(name);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Animation((const Dali::Animation&)result);
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel, char* csFileName, void* csScale)
+{
+  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
+  Dali::Animation       result;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return 0;
+  }
+  if(!csFileName)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string for filename", 0);
+    return 0;
+  }
+
+  Dali::Vector3 scale = Dali::Vector3::ONE;
+  // csScale is option.
+  if(csScale != nullptr)
+  {
+    scale = Dali::Vector3(*static_cast<const Dali::Vector3 *>(csScale));
+  }
+  std::string filename(csFileName);
+  {
+    try
+    {
+      Dali::Scene3D::Loader::AnimationDefinition animationDefinition = Dali::Scene3D::Loader::LoadBvh(filename, "LoadedBvhAnimation", scale);
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property)->Dali::Actor{
+        return model->FindChildByName(property.mNodeName);
+      };
+      result = animationDefinition.ReAnimate(getActor);
     }
     CALL_CATCH_EXCEPTION(0);
   }
