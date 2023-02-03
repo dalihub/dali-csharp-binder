@@ -279,6 +279,126 @@ SWIGEXPORT void CSharp_Dali_RiveAnimationView_SetNodePosition(char * jarg1, char
   }
 }
 
+SWIGEXPORT void CSharp_Dali_RiveAnimationView_PointerMove(char * jarg1, float jarg2, float jarg3)
+{
+  RiveAnimationView *arg1 = (RiveAnimationView *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return;
+  }
+  {
+    try {
+      arg1->PointerMove(jarg2, jarg3);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void CSharp_Dali_RiveAnimationView_PointerDown(char * jarg1, float jarg2, float jarg3)
+{
+  RiveAnimationView *arg1 = (RiveAnimationView *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return;
+  }
+  {
+    try {
+      arg1->PointerDown(jarg2, jarg3);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void CSharp_Dali_RiveAnimationView_PointerUp(char * jarg1, float jarg2, float jarg3)
+{
+  RiveAnimationView *arg1 = (RiveAnimationView *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return;
+  }
+  {
+    try {
+      arg1->PointerUp(jarg2, jarg3);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool CSharp_Dali_RiveAnimationView_SetNumberState(char * jarg1, char * jarg2, char * jarg3, float jarg4)
+{
+  RiveAnimationView *arg1 = (RiveAnimationView *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return false;
+  }
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "jarg2 is null string", 0);
+    return false;
+  }
+  std::string arg2_str(jarg2);
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "jarg3 is null string", 0);
+    return false;
+  }
+  std::string arg3_str(jarg3);
+  {
+    try {
+      return arg1->SetNumberState(arg2_str, arg3_str, jarg4);
+    }
+    CALL_CATCH_EXCEPTION(false);
+  }
+}
+
+SWIGEXPORT bool CSharp_Dali_RiveAnimationView_SetBooleanState(char * jarg1, char * jarg2, char * jarg3, bool jarg4)
+{
+  RiveAnimationView *arg1 = (RiveAnimationView *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return false;
+  }
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "jarg2 is null string", 0);
+    return false;
+  }
+  std::string arg2_str(jarg2);
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "jarg3 is null string", 0);
+    return false;
+  }
+  std::string arg3_str(jarg3);
+  {
+    try {
+      return arg1->SetBooleanState(arg2_str, arg3_str, jarg4);
+    }
+    CALL_CATCH_EXCEPTION(false);
+  }
+}
+
+SWIGEXPORT bool CSharp_Dali_RiveAnimationView_FireState(char * jarg1, char * jarg2, char * jarg3)
+{
+  RiveAnimationView *arg1 = (RiveAnimationView *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return false;
+  }
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "jarg2 is null string", 0);
+    return false;
+  }
+  std::string arg2_str(jarg2);
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "jarg3 is null string", 0);
+    return false;
+  }
+  std::string arg3_str(jarg3);
+  {
+    try {
+      return arg1->FireState(arg2_str, arg3_str);
+    }
+    CALL_CATCH_EXCEPTION(false);
+  }
+}
+
 SWIGEXPORT void CSharp_Dali_RiveAnimationView_SetAnimationElapsedTime(char * jarg1, char * jarg2, float jarg3)
 {
   RiveAnimationView *arg1 = (RiveAnimationView *)jarg1;

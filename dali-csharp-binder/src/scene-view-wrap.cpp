@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2023 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -385,6 +385,44 @@ extern "C"
       try
       {
         result = sceneView->IsUsingFramebuffer();
+      }
+      CALL_CATCH_EXCEPTION(0);
+    }
+    return result;
+  }
+
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetFramebufferMultiSamplingLevel(void *csSceneView, uint32_t multiSamplingLevel)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return;
+    }
+    {
+      try
+      {
+        sceneView->SetFramebufferMultiSamplingLevel(static_cast<uint8_t>(multiSamplingLevel));
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+  }
+
+  SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetFramebufferMultiSamplingLevel(void *csSceneView)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    uint32_t result = 0u;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return 0;
+    }
+    {
+      try
+      {
+        result = static_cast<uint32_t>(sceneView->GetFramebufferMultiSamplingLevel());
       }
       CALL_CATCH_EXCEPTION(0);
     }
