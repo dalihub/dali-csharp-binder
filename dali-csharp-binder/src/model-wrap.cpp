@@ -342,6 +342,75 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_GetAnimation_2(void* csModel, cha
   return new Dali::Animation((const Dali::Animation&)result);
 }
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Model_GetCameraCount(void* csModel)
+{
+  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
+  unsigned int          result;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = model->GetCameraCount();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_GenerateCamera(void* csModel, unsigned int index)
+{
+  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
+  Dali::CameraActor     result;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = model->GenerateCamera(index);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::CameraActor((const Dali::CameraActor&)result);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Model_ApplyCamera(void* csModel, unsigned int index, void* csCameraActor)
+{
+  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
+  Dali::CameraActor*    cameraActor = (Dali::CameraActor*)csCameraActor;
+  bool                  result;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return 0;
+  }
+  if(!cameraActor)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::CameraActor", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = model->ApplyCamera(index, *cameraActor);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel, char* csFileName, void* csScale)
 {
   Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
