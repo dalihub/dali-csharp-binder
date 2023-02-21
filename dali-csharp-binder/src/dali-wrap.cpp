@@ -25813,6 +25813,20 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraActor_New__SWIG_1(void * jarg1) 
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraActor_New3DCamera() {
+  void * jresult ;
+  Dali::CameraActor result;
+
+  {
+    try {
+      result = Dali::CameraActor::New3DCamera();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::CameraActor((const Dali::CameraActor &)result);
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraActor_DownCast(void * jarg1) {
   void * jresult ;
   Dali::BaseHandle arg1 ;
