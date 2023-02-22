@@ -47754,6 +47754,21 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AccessibilityManager_IsEnabled(v
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AccessibilityManager_ShowInsideFridge(void * jarg1, unsigned int jarg2) {
+  Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
+  bool arg2 ;
+
+  arg1 = (Dali::Toolkit::AccessibilityManager *)jarg1;
+  arg2 = jarg2 ? true : false;
+  {
+    try {
+      (arg1)->ShowInsideFridge(arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AccessibilityManager_FocusChangedSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
