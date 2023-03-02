@@ -17,6 +17,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali/public-api/adaptor-framework/window.h>
+#include <dali/devel-api/adaptor-framework/mouse-in-out-event.h>
 #include <dali/devel-api/adaptor-framework/window-devel.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
@@ -113,6 +114,24 @@ SWIGINTERN void Dali_Signal_Window_Orientation_Changed_Signal_Disconnect(Dali::S
 SWIGINTERN void Dali_Signal_Window_Orientation_Changed_Signal_Emit(Dali::Signal< void (Dali::Window, Dali::WindowOrientation) > *self, Dali::Window arg, Dali::WindowOrientation orientation){
   self->Emit( arg, orientation );
 }
+
+//input
+SWIGINTERN bool Dali_Signal_Window_MouseInOutEvent_Signal_Empty(Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > const *self){
+  return self->Empty();
+}
+SWIGINTERN std::size_t Dali_Signal_Window_MouseInOutEvent_Signal_GetConnectionCount(Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > const *self){
+return self->GetConnectionCount();
+}
+SWIGINTERN void Dali_Signal_Window_MouseInOutEvent_Signal_Connect(Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *self, void (*func)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const &)){
+  self->Connect( func );
+}
+SWIGINTERN void Dali_Signal_Window_MouseInOutEvent_Signal_Disconnect(Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *self, void (*func)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const &)){
+  self->Disconnect( func );
+}
+SWIGINTERN void Dali_Signal_Window_MouseInOutEvent_Signal_Emit(Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *self, Dali::Window arg, Dali::DevelWindow::MouseInOutEvent const &mouseInOutEvent){
+  self->Emit( arg, mouseInOutEvent );
+}
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -1807,6 +1826,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetOverlayLayer(void * csWindow
   return jresult;
 }
 
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_KeyEventSignal(void * jarg1) {
   void * jresult ;
   Dali::Window *arg1 = (Dali::Window *) 0 ;
@@ -3048,7 +3068,306 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Orientation_Changed_Signal(void *
 
 }
 
+//
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal(void* winHandle)
+{
+  void *result;
+  Dali::Window window;
+  Dali::Window *win;
+  Dali::DevelWindow::MouseInOutEventSignalType* mouseInOutSignal;
+
+  win = (Dali::Window *)winHandle;
+  if (!win) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return 0;
+  }
+  window = *win;
+  {
+    try {
+      mouseInOutSignal = (Dali::DevelWindow::MouseInOutEventSignalType *) &Dali::DevelWindow::MouseInOutEventSignal(window);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  result = (void *)mouseInOutSignal;
+  return result;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Empty(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *)jarg1;
+  {
+    try {
+      result = (bool)Dali_Signal_Window_MouseInOutEvent_Signal_Empty((Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > const *)arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_GetConnectionCount(void * jarg1) {
+  unsigned long jresult ;
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *) 0 ;
+  std::size_t result;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *)jarg1;
+  {
+    try {
+      result = Dali_Signal_Window_MouseInOutEvent_Signal_GetConnectionCount((Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > const *)arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (unsigned long)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *) 0 ;
+  void (*arg2)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) = (void (*)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const &)) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *)jarg1;
+  arg2 = (void (*)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const &))jarg2;
+  {
+    try {
+      Dali_Signal_Window_MouseInOutEvent_Signal_Connect(arg1,arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *) 0 ;
+  void (*arg2)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) = (void (*)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const &)) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *)jarg1;
+  arg2 = (void (*)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const &))jarg2;
+  {
+    try {
+      Dali_Signal_Window_MouseInOutEvent_Signal_Disconnect(arg1,arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Emit(void * jarg1, void* jarg2, void* jarg3) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *)jarg1;
+  Dali::Window* arg2 = (Dali::Window*)jarg2;
+  Dali::DevelWindow::MouseInOutEvent* arg3 = (Dali::DevelWindow::MouseInOutEvent*)jarg3;
+
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Signal", 0);
+    return ;
+  }
+
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::DevelWindow::MouseInOutEvent", 0);
+    return ;
+  }
+
+  {
+    try {
+      Dali_Signal_Window_MouseInOutEvent_Signal_Emit(arg1,*arg2,*arg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WindowMouseInOutEventSignal() {
+  void * jresult ;
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *)new Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) >();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowMouseInOutEventSignal(void * jarg1) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseInOutEvent const &) > *)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_MouseInOutEvent__SWIG_0(int jarg1, unsigned int jarg2, void * jarg3, unsigned int jarg4) {
+  void * jresult ;
+  Dali::DevelWindow::MouseInOutEvent::Type arg1 ;
+  unsigned int arg2 ;
+  Dali::Vector2 arg3 ;
+  unsigned int arg4 ;
+
+  Dali::Vector2 *argp3 ;
+
+  Dali::DevelWindow::MouseInOutEvent *result = 0;
+
+  arg1 = static_cast<Dali::DevelWindow::MouseInOutEvent::Type>(jarg1);
+  arg2 = (unsigned int)jarg2;
+  argp3 = (Dali::Vector2 *)jarg3;
+  if (!argp3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Vector2", 0);
+    return 0;
+  }
+  arg3 = *argp3;
+  arg4 = (unsigned int)jarg4;
+  {
+    try {
+      result = (Dali::DevelWindow::MouseInOutEvent *)new Dali::DevelWindow::MouseInOutEvent(arg1, arg2, arg3, arg4, Dali::Device::Class::NONE, Dali::Device::Subclass::NONE);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_MouseInOutEvent(void * jarg1) {
+  Dali::DevelWindow::MouseInOutEvent *arg1 = (Dali::DevelWindow::MouseInOutEvent *) 0 ;
+
+  arg1 = (Dali::DevelWindow::MouseInOutEvent *)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_type_get(void * jarg1) {
+  int jresult ;
+  Dali::DevelWindow::MouseInOutEvent *arg1 = (Dali::DevelWindow::MouseInOutEvent *) 0 ;
+  Dali::DevelWindow::MouseInOutEvent::Type result;
+
+  arg1 = (Dali::DevelWindow::MouseInOutEvent *)jarg1;
+  {
+    try {
+      result = ((Dali::DevelWindow::MouseInOutEvent const *)arg1)->type;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_modifiers_get(void * jarg1) {
+  unsigned int jresult ;
+  Dali::DevelWindow::MouseInOutEvent *arg1 = (Dali::DevelWindow::MouseInOutEvent *) 0 ;
+  unsigned int result;
+
+  arg1 = (Dali::DevelWindow::MouseInOutEvent *)jarg1;
+  {
+    try {
+      result = ((Dali::DevelWindow::MouseInOutEvent const *)arg1)->modifiers;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MouseInOutEvent_point_get(void * jarg1) {
+  void * jresult ;
+  Dali::DevelWindow::MouseInOutEvent *arg1 = (Dali::DevelWindow::MouseInOutEvent *) 0 ;
+  Dali::Vector2 *result = 0 ;
+
+  arg1 = (Dali::DevelWindow::MouseInOutEvent *)jarg1;
+  {
+    try {
+      result = (Dali::Vector2 *) &((Dali::DevelWindow::MouseInOutEvent const *)arg1)->point;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_timeStamp_get(void * jarg1) {
+  unsigned int jresult ;
+  Dali::DevelWindow::MouseInOutEvent *arg1 = (Dali::DevelWindow::MouseInOutEvent *) 0 ;
+  unsigned int result;
+
+  arg1 = (Dali::DevelWindow::MouseInOutEvent *)jarg1;
+  {
+    try {
+      result = ((Dali::DevelWindow::MouseInOutEvent const *)arg1)->timeStamp;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_GetDeviceClass(void * jarg1) {
+  int jresult ;
+  Dali::DevelWindow::MouseInOutEvent *arg1 = 0 ;
+  Dali::Device::Class::Type result;
+
+  arg1 = (Dali::DevelWindow::MouseInOutEvent *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::DevelWindow::MouseInOutEvent const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::Device::Class::Type)arg1->deviceClass;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_GetDeviceSubClass(void * jarg1) {
+  int jresult ;
+  Dali::DevelWindow::MouseInOutEvent *arg1 = 0 ;
+  Dali::Device::Subclass::Type result;
+
+  arg1 = (Dali::DevelWindow::MouseInOutEvent *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::DevelWindow::MouseInOutEvent const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::Device::Subclass::Type)arg1->deviceSubclass;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+
+
 #ifdef __cplusplus
 }
 #endif
-
