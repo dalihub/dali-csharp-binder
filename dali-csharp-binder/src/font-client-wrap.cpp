@@ -19,6 +19,7 @@
 #include <dali/public-api/common/type-traits.h>
 #include <dali/devel-api/text-abstraction/font-metrics.h>
 #include <dali/devel-api/text-abstraction/font-list.h>
+#include <dali/devel-api/text-abstraction/glyph-buffer-data.h>
 #include <dali/devel-api/text-abstraction/glyph-info.h>
 #include <dali/devel-api/text-abstraction/text-abstraction-definitions.h>
 #include <dali/devel-api/text-abstraction/font-client.h>
@@ -810,11 +811,11 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_DEFAULT_POINT_SIZE_ge
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontClient_GlyphBufferData() {
   void * jresult ;
-  Dali::TextAbstraction::FontClient::GlyphBufferData *result = 0 ;
+  Dali::TextAbstraction::GlyphBufferData *result = 0 ;
 
   {
     try {
-      result = (Dali::TextAbstraction::FontClient::GlyphBufferData *)new Dali::TextAbstraction::FontClient::GlyphBufferData();
+      result = (Dali::TextAbstraction::GlyphBufferData *)new Dali::TextAbstraction::GlyphBufferData();
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
@@ -823,9 +824,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontClient_GlyphBufferData() {
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FontClient_GlyphBufferData(void * jarg1) {
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *) 0 ;
+  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
 
-  arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg1;
+  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
   {
     try {
       delete arg1;
@@ -835,10 +836,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FontClient_GlyphBufferData(void *
 
 /*
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_buffer_set(void * jarg1, unsigned char* jarg2) {
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *) 0 ;
+  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
   unsigned char *arg2 = (unsigned char *) 0 ;
 
-  arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg1;
+  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
   arg2 = jarg2;
   if (arg1) (arg1)->buffer = arg2;
 
@@ -848,10 +849,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_buffer_set(vo
 
 SWIGEXPORT unsigned char* SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_buffer_get(void * jarg1) {
   unsigned char* jresult ;
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *) 0 ;
+  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
   unsigned char *result = 0 ;
 
-  arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg1;
+  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
   result = (unsigned char *) ((arg1)->buffer);
   jresult = (void *)result;
   return jresult;
@@ -859,10 +860,10 @@ SWIGEXPORT unsigned char* SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_buf
 */
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_width_set(void * jarg1, unsigned int jarg2) {
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *) 0 ;
+  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
   unsigned int arg2 ;
 
-  arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg1;
+  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
   arg2 = (unsigned int)jarg2;
   if (arg1) (arg1)->width = arg2;
 }
@@ -870,10 +871,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_width_set(voi
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_width_get(void * jarg1) {
   unsigned int jresult ;
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *) 0 ;
+  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
   unsigned int result;
 
-  arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg1;
+  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
   result = (unsigned int) ((arg1)->width);
   jresult = result;
   return jresult;
@@ -881,10 +882,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_width
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_height_set(void * jarg1, unsigned int jarg2) {
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *) 0 ;
+  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
   unsigned int arg2 ;
 
-  arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg1;
+  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
   arg2 = (unsigned int)jarg2;
   if (arg1) (arg1)->height = arg2;
 }
@@ -892,10 +893,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_height_set(vo
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_height_get(void * jarg1) {
   unsigned int jresult ;
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *) 0 ;
+  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
   unsigned int result;
 
-  arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg1;
+  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
   result = (unsigned int) ((arg1)->height);
   jresult = result;
   return jresult;
@@ -903,10 +904,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_heigh
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_format_set(void * jarg1, int jarg2) {
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *) 0 ;
+  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
   Dali::Pixel::Format arg2 ;
 
-  arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg1;
+  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
   arg2 = (Dali::Pixel::Format)jarg2;
   if (arg1) (arg1)->format = arg2;
 }
@@ -914,10 +915,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_format_set(vo
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_format_get(void * jarg1) {
   int jresult ;
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *) 0 ;
+  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
   Dali::Pixel::Format result;
 
-  arg1 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg1;
+  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
   result = (Dali::Pixel::Format) ((arg1)->format);
   jresult = (int)result;
   return jresult;
@@ -1668,7 +1669,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_CreateBitmap__SWIG_0(void * j
   Dali::TextAbstraction::GlyphIndex arg3 ;
   bool arg4;
   bool arg5;
-  Dali::TextAbstraction::FontClient::GlyphBufferData *arg6 = 0 ;
+  Dali::TextAbstraction::GlyphBufferData *arg6 = 0 ;
   int arg7 ;
 
   arg1 = (Dali::TextAbstraction::FontClient *)jarg1;
@@ -1676,9 +1677,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_CreateBitmap__SWIG_0(void * j
   arg3 = (Dali::TextAbstraction::GlyphIndex)jarg3;
   arg4 = jarg4;
   arg5 = jarg5;
-  arg6 = (Dali::TextAbstraction::FontClient::GlyphBufferData *)jarg6;
+  arg6 = (Dali::TextAbstraction::GlyphBufferData *)jarg6;
   if (!arg6) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TextAbstraction::FontClient::GlyphBufferData & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TextAbstraction::GlyphBufferData & type is null", 0);
     return ;
   }
   arg7 = (int)jarg7;
