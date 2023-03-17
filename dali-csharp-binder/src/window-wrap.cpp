@@ -2715,6 +2715,34 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetLastTouchEvent(void* winHand
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetNeedsRotationCompletedAcknowledgement(void* winHandle, bool needAcknowledgement)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return;
+  }
+  {
+    try {
+      Dali::DevelWindow::SetNeedsRotationCompletedAcknowledgement(*window, needAcknowledgement);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SendRotationCompletedAcknowledgement(void* winHandle)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return;
+  }
+  {
+    try {
+      Dali::DevelWindow::SendRotationCompletedAcknowledgement(*window);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 /* Moved signal binding */
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Moved_Signal(void* winHandle)
 {
