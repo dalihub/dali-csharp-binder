@@ -146,6 +146,7 @@
 #include <stdio.h>
 
 #include "common.h"
+#include "slim-custom-view-impl.h"
 
 SWIG_CSharpException_t SWIG_csharp_exceptions[] = {
   { SWIG_CSharpApplicationException, NULL },
@@ -35102,6 +35103,19 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_New() {
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_NewCustom() {
+  void * jresult;
+  Dali::Toolkit::Control result;
+
+  {
+    try {
+      result = SlimCustomViewImpl::New(Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control &)result);
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View__SWIG_0() {
   void * jresult ;
