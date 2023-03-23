@@ -1585,6 +1585,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSize(void* jarg1, void
 
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetLayout(void* handle, unsigned int numCols, unsigned int numRows, unsigned int column, unsigned int row, unsigned int colSpan, unsigned int rowSpan)
+{
+  Dali::Window *pWindow;
+  Dali::Window window;
+
+  pWindow = (Dali::Window *)handle;
+  if (!pWindow) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+  window = *pWindow;
+
+  {
+    try {
+      window.SetLayout(numCols, numRows, column, row, colSpan, rowSpan);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetTransparency(void * jarg1, unsigned int jarg2) {
   Dali::Window arg1 ;
   bool arg2 ;
