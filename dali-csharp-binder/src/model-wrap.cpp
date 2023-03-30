@@ -55,6 +55,21 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_New_SWIG_0(char* csModelPath, cha
   return new Dali::Scene3D::Model((const Dali::Scene3D::Model&)result);
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_New_SWIG_1()
+{
+  Dali::Scene3D::Model result;
+
+  {
+    try
+    {
+      result = Dali::Scene3D::Model::New();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Scene3D::Model((const Dali::Scene3D::Model&)result);
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Model_SWIG_0()
 {
   Dali::Scene3D::Model* result = 0;
@@ -148,8 +163,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_DownCast(void* csHandle)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_GetModelRoot(void* csModel)
 {
-  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
-  Dali::Actor           result;
+  Dali::Scene3D::Model*    model = (Dali::Scene3D::Model*)csModel;
+  Dali::Scene3D::ModelNode result;
 
   if(!model)
   {
@@ -164,7 +179,43 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_GetModelRoot(void* csModel)
     CALL_CATCH_EXCEPTION(0);
   }
 
-  return new Dali::Actor((const Dali::Actor&)result);
+  return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_AddModelNode(void* csModel, void* csModelNode)
+{
+  Dali::Scene3D::Model*     model     = (Dali::Scene3D::Model*)csModel;
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return;
+  }
+
+  try
+  {
+    model->AddModelNode(*modelNode);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_RemoveModelNode(void* csModel, void* csModelNode)
+{
+  Dali::Scene3D::Model*     model     = (Dali::Scene3D::Model*)csModel;
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return;
+  }
+
+  try
+  {
+    model->RemoveModelNode(*modelNode);
+  }
+  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_SetChildrenSensitive(void* csModel, bool enable)
@@ -409,6 +460,26 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Model_ApplyCamera(void* csModel, unsigne
   }
 
   return result;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_FindChildModelNodeByName(void* csModel, char* nodeName)
+{
+  Dali::Scene3D::Model*    model = (Dali::Scene3D::Model*)csModel;
+  Dali::Scene3D::ModelNode result;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return nullptr;
+  }
+
+  try
+  {
+    result = model->FindChildModelNodeByName(std::string_view(nodeName));
+  }
+  CALL_CATCH_EXCEPTION(nullptr);
+
+  return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel, char* csFileName, void* csScale)
