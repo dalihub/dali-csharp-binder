@@ -29707,118 +29707,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyEventSignal(void * jarg1) {
 
 }
 
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TouchSignal_Empty(void * jarg1) {
-  bool jresult ;
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
-  bool result;
-
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
-  {
-    try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Empty((Dali::Signal< void (Dali::TouchEvent const &) > const *)arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_TouchSignal_GetConnectionCount(void * jarg1) {
-  unsigned long jresult ;
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
-  std::size_t result;
-
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
-  {
-    try {
-      result = Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::TouchEvent const &) > const *)arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (unsigned long)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchSignal_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
-  void (*arg2)(Dali::TouchEvent const &) = (void (*)(Dali::TouchEvent const &)) 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
-  arg2 = (void (*)(Dali::TouchEvent const &))jarg2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Connect(arg1,arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchSignal_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
-  void (*arg2)(Dali::TouchEvent const &) = (void (*)(Dali::TouchEvent const &)) 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
-  arg2 = (void (*)(Dali::TouchEvent const &))jarg2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TouchSignal_Emit(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
-  Dali::TouchEvent *arg2 = 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
-  arg2 = (Dali::TouchEvent *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchEvent const & type is null", 0);
-    return ;
-  }
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_TouchEvent_SS_const_SA__SP__Sg__Emit(arg1,(Dali::TouchEvent const &)*arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TouchSignal() {
-  void * jresult ;
-  Dali::Signal< void (Dali::TouchEvent const &) > *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Signal< void (Dali::TouchEvent const &) > *)new Dali::Signal< void (Dali::TouchEvent const &) >();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TouchSignal(void * jarg1) {
-  Dali::Signal< void (Dali::TouchEvent const &) > *arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *) 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::TouchEvent const &) > *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_StageWheelSignal_Empty(void * jarg1) {
   bool jresult ;
   Dali::Signal< void (Dali::WheelEvent const &) > *arg1 = (Dali::Signal< void (Dali::WheelEvent const &) > *) 0 ;
@@ -35400,57 +35288,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_ClearBackground(void * jarg1) {
 
 }
 
+#ifndef GENERATE_CONTROL_SIGNAL
+#define GENERATE_CONTROL_SIGNAL(HType, SignalName) GENERATE_SIGNAL(Dali::Toolkit::Control*, HType, Dali_View, SignalName)
+#endif
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_KeyEventSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) 0 ;
-  Dali::Toolkit::Control::KeyEventSignalType *result = 0 ;
+GENERATE_CONTROL_SIGNAL(bool(*)(Dali::Toolkit::Control, Dali::KeyEvent const&), KeyEventSignal)
+// CSharp_Dali_View_KeyEventSignal_Connect
+// CSharp_Dali_View_KeyEventSignal_Disconnect
 
-  arg1 = (Dali::Toolkit::Control *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::Control::KeyEventSignalType *) &(arg1)->KeyEventSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
+GENERATE_CONTROL_SIGNAL(void(*)(Dali::Toolkit::Control), KeyInputFocusGainedSignal)
+// CSharp_Dali_View_KeyInputFocusGainedSignal_Connect
+// CSharp_Dali_View_KeyInputFocusGainedSignal_Disconnect
 
-  jresult = (void *)result;
-  return jresult;
-}
+GENERATE_CONTROL_SIGNAL(void(*)(Dali::Toolkit::Control), KeyInputFocusLostSignal)
+// CSharp_Dali_View_KeyInputFocusLostSignal_Connect
+// CSharp_Dali_View_KeyInputFocusLostSignal_Disconnect
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_KeyInputFocusGainedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) 0 ;
-  Dali::Toolkit::Control::KeyInputFocusSignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Control *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::Control::KeyInputFocusSignalType *) &(arg1)->KeyInputFocusGainedSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_KeyInputFocusLostSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) 0 ;
-  Dali::Toolkit::Control::KeyInputFocusSignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Control *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::Control::KeyInputFocusSignalType *) &(arg1)->KeyInputFocusLostSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
+GENERATE_CONTROL_SIGNAL(void(*)(Dali::Toolkit::Control), ResourceReadySignal)
+// CSharp_Dali_View_ResourceReadySignal_Connect
+// CSharp_Dali_View_ResourceReadySignal_Disconnect
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View__SWIG_2(void * jarg1) {
   void * jresult ;
@@ -35566,27 +35422,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_GetVisualProperty(void* control, i
 
   return result;
 }
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Control *arg1 = 0 ;
-  Dali::Toolkit::Control::ResourceReadySignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Control *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::Control::ResourceReadySignalType *) &arg1->ResourceReadySignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsResourceReady(void * jarg1) {
   bool jresult ;
@@ -44765,23 +44600,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AccessibilityManager_FocusOvershotSign
   return jresult;
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AccessibilityManager_FocusedActorActivatedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::AccessibilityManager *arg1 = (Dali::Toolkit::AccessibilityManager *) 0 ;
-  Dali::Toolkit::AccessibilityManager::FocusedActorActivatedSignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::AccessibilityManager *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::AccessibilityManager::FocusedActorActivatedSignalType *) &(arg1)->FocusedActorActivatedSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
+GENERATE_SIGNAL(Dali::Toolkit::AccessibilityManager*, void(*)(Dali::Actor), Dali_AccessibilityManager, FocusedActorActivatedSignal)
+// CSharp_Dali_AccessibilityManager_FocusedActorActivatedSignal_Connect
+// CSharp_Dali_AccessibilityManager_FocusedActorActivatedSignal_Disconnect
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AccessibilityManager_StatusChangedSignal(void * jarg1) {
   void * jresult ;
@@ -52233,244 +52054,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollableSignal(void * jarg1) {
   }
 
 }
-
-
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ControlKeySignal_Empty(void * jarg1) {
-  bool jresult ;
-  Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *) 0 ;
-  bool result;
-
-  arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *)jarg1;
-  {
-    try {
-      result = (bool)Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Empty((Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > const *)arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ControlKeySignal_GetConnectionCount(void * jarg1) {
-  unsigned long jresult ;
-  Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *) 0 ;
-  std::size_t result;
-
-  arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *)jarg1;
-  {
-    try {
-      result = Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > const *)arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (unsigned long)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ControlKeySignal_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *) 0 ;
-  bool (*arg2)(Dali::Toolkit::Control,Dali::KeyEvent const &) = (bool (*)(Dali::Toolkit::Control,Dali::KeyEvent const &)) 0 ;
-
-  arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *)jarg1;
-  arg2 = (bool (*)(Dali::Toolkit::Control,Dali::KeyEvent const &))jarg2;
-  {
-    try {
-      Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Connect(arg1,arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ControlKeySignal_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *) 0 ;
-  bool (*arg2)(Dali::Toolkit::Control,Dali::KeyEvent const &) = (bool (*)(Dali::Toolkit::Control,Dali::KeyEvent const &)) 0 ;
-
-  arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *)jarg1;
-  arg2 = (bool (*)(Dali::Toolkit::Control,Dali::KeyEvent const &))jarg2;
-  {
-    try {
-      Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Disconnect(arg1,arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ControlKeySignal_Emit(void * jarg1, void * jarg2, void * jarg3) {
-  bool jresult ;
-  Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *) 0 ;
-  Dali::Toolkit::Control arg2 ;
-  Dali::KeyEvent *arg3 = 0 ;
-  Dali::Toolkit::Control *argp2 ;
-  bool result;
-
-  arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *)jarg1;
-  argp2 = (Dali::Toolkit::Control *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::Control", 0);
-    return 0;
-  }
-  arg2 = *argp2;
-  arg3 = (Dali::KeyEvent *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (bool)Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Emit(arg1,arg2,(Dali::KeyEvent const &)*arg3);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ControlKeySignal() {
-  void * jresult ;
-  Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *)new Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) >();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ControlKeySignal(void * jarg1) {
-  Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *) 0 ;
-
-  arg1 = (Dali::Signal< bool (Dali::Toolkit::Control,Dali::KeyEvent const &) > *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_KeyInputFocusSignal_Empty(void * jarg1) {
-  bool jresult ;
-  Dali::Signal< void (Dali::Toolkit::Control) > *arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *) 0 ;
-  bool result;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *)jarg1;
-  {
-    try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Toolkit_Control_SP__Sg__Empty((Dali::Signal< void (Dali::Toolkit::Control) > const *)arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyInputFocusSignal_GetConnectionCount(void * jarg1) {
-  unsigned long jresult ;
-  Dali::Signal< void (Dali::Toolkit::Control) > *arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *) 0 ;
-  std::size_t result;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *)jarg1;
-  {
-    try {
-      result = Dali_Signal_Sl_void_Sp_Dali_Toolkit_Control_SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Toolkit::Control) > const *)arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (unsigned long)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyInputFocusSignal_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Toolkit::Control) > *arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *) 0 ;
-  void (*arg2)(Dali::Toolkit::Control) = (void (*)(Dali::Toolkit::Control)) 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *)jarg1;
-  arg2 = (void (*)(Dali::Toolkit::Control))jarg2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_Toolkit_Control_SP__Sg__Connect(arg1,arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyInputFocusSignal_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Toolkit::Control) > *arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *) 0 ;
-  void (*arg2)(Dali::Toolkit::Control) = (void (*)(Dali::Toolkit::Control)) 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *)jarg1;
-  arg2 = (void (*)(Dali::Toolkit::Control))jarg2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_Toolkit_Control_SP__Sg__Disconnect(arg1,arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyInputFocusSignal_Emit(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Toolkit::Control) > *arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *) 0 ;
-  Dali::Toolkit::Control arg2 ;
-  Dali::Toolkit::Control *argp2 ;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *)jarg1;
-  argp2 = (Dali::Toolkit::Control *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::Control", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_Toolkit_Control_SP__Sg__Emit(arg1,arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_KeyInputFocusSignal() {
-  void * jresult ;
-  Dali::Signal< void (Dali::Toolkit::Control) > *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Signal< void (Dali::Toolkit::Control) > *)new Dali::Signal< void (Dali::Toolkit::Control) >();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyInputFocusSignal(void * jarg1) {
-  Dali::Signal< void (Dali::Toolkit::Control) > *arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *) 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::Control) > *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoViewSignal_Empty(void * jarg1) {
   bool jresult ;

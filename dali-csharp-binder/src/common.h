@@ -282,4 +282,86 @@ extern void internal_try_catch(const std::function<void(void)>& func, const char
 // This is compiler bug. So we need to cover the function by additional parentheses.
 #define try_catch(func) internal_try_catch((func), __FILE__, __LINE__, __FUNCTION__)
 
+
+// This macro generates 2 functions for signal:
+//  1. CSharp_Someclass_SomeSignal_Connect(void* caller, void* handler)
+//  2. CSharp_Someclass_SomeSignal_Disconnect(void* caller, void* handler)
+//
+// Arguments
+//  - CType: Type of Caller. For example, "Dali::Actor*"
+//  - HType: Type of Handler. For example, "void(*)(Dali::Actor*)"
+//  - Prefix: It can be a class name or namespace. This value determines the function name.
+//  - SignalName: The signal name to be called. For example, "TouchedSignal"
+//
+#ifndef GENERATE_SIGNAL
+#define GENERATE_SIGNAL(CType, HType, Prefix, SignalName)                                                               \
+  SWIGEXPORT void SWIGSTDCALL CSharp_##Prefix##_##SignalName##_Connect(void* caller, void* handler)                     \
+  {                                                                                                                     \
+    if(!caller)                                                                                                         \
+    {                                                                                                                   \
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Caller (Type :" #CType ") is null", 0); \
+      return;                                                                                                           \
+    }                                                                                                                   \
+    try                                                                                                                 \
+    {                                                                                                                   \
+      ((CType)caller)->SignalName().Connect((HType)handler);                                                            \
+    }                                                                                                                   \
+    CALL_CATCH_EXCEPTION();                                                                                             \
+  }                                                                                                                     \
+  SWIGEXPORT void SWIGSTDCALL CSharp_##Prefix##_##SignalName##_Disconnect(void* caller, void* handler)                  \
+  {                                                                                                                     \
+    if(!caller)                                                                                                         \
+    {                                                                                                                   \
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Caller (Type :" #CType ") is null", 0); \
+      return;                                                                                                           \
+    }                                                                                                                   \
+    try                                                                                                                 \
+    {                                                                                                                   \
+      ((CType)caller)->SignalName().Disconnect((HType)handler);                                                         \
+    }                                                                                                                   \
+    CALL_CATCH_EXCEPTION();                                                                                             \
+  }
+#endif
+
+// This macro generates 2 functions for signal declared in Devel class:
+//  1. CSharp_Someclass_SomeSignal_Connect(void* caller, void* handler)
+//  2. CSharp_Someclass_SomeSignal_Disconnect(void* caller, void* handler)
+//
+// Arguments
+//  - CType: Type of Caller. For example, "Dali::Actor*"
+//  - HType: Type of Handler. For example, "void(*)(Dali::Actor*)"
+//  - DevelType: Devel namespace. For example, "Dali::DevelActor"
+//  - Prefix: It can be a class name or namespace. This value determines the function name.
+//  - SignalName: The signal name to be called. For example, "TouchedSignal"
+//
+#ifndef GENERATE_DEVEL_SIGNAL
+#define GENERATE_DEVEL_SIGNAL(CType, HType, DevelType, Prefix, SignalName)                                              \
+  SWIGEXPORT void SWIGSTDCALL CSharp_##Prefix##_##SignalName##_Connect(void* caller, void* handler)                     \
+  {                                                                                                                     \
+    if(!caller)                                                                                                         \
+    {                                                                                                                   \
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Caller (Type :" #CType ") is null", 0); \
+      return;                                                                                                           \
+    }                                                                                                                   \
+    try                                                                                                                 \
+    {                                                                                                                   \
+      DevelType::SignalName(*((CType)caller)).Connect((HType)handler);                                                  \
+    }                                                                                                                   \
+    CALL_CATCH_EXCEPTION();                                                                                             \
+  }                                                                                                                     \
+  SWIGEXPORT void SWIGSTDCALL CSharp_##Prefix##_##SignalName##_Disconnect(void* caller, void* handler)                  \
+  {                                                                                                                     \
+    if(!caller)                                                                                                         \
+    {                                                                                                                   \
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Caller (Type :" #CType ") is null", 0); \
+      return;                                                                                                           \
+    }                                                                                                                   \
+    try                                                                                                                 \
+    {                                                                                                                   \
+      DevelType::SignalName(*((CType)caller)).Disconnect((HType)handler);                                               \
+    }                                                                                                                   \
+    CALL_CATCH_EXCEPTION();                                                                                             \
+  }
+#endif
+
 #endif // CSHARP_COMMON_H
