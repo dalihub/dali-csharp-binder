@@ -361,24 +361,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_FocusGroupChangedSigna
   return jresult;
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_FocusedActorEnterKeySignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::KeyboardFocusManager *arg1 = (Dali::Toolkit::KeyboardFocusManager *) 0 ;
-  Dali::Toolkit::KeyboardFocusManager::FocusedActorEnterKeySignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::KeyboardFocusManager *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::KeyboardFocusManager::FocusedActorEnterKeySignalType *) &(arg1)->FocusedActorEnterKeySignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
+GENERATE_SIGNAL(Dali::Toolkit::KeyboardFocusManager*, void(*)(Dali::Actor), KeyboardFocusManager, FocusedActorEnterKeySignal)
+// CSharp_KeyboardFocusManager_FocusedActorEnterKeySignal_Connect
+// CSharp_KeyboardFocusManager_FocusedActorEnterKeySignal_Disconnect
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Empty(void * jarg1) {
   unsigned int jresult ;

@@ -35,6 +35,7 @@ extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 typedef std::string FontPath;
 typedef std::string FontFamily;
 typedef std::string FontStyle;
+typedef std::vector<FontFamily> FontFamilyList;
 typedef std::vector<Dali::TextAbstraction::FontDescription> FontList;
 
 typedef uint32_t FontId;
@@ -58,6 +59,26 @@ extern "C" {
 SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_FontClient_SWIGUpcast(Dali::TextAbstraction::FontClient *jarg1) {
     return (Dali::BaseHandle *)jarg1;
 }
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_PreCache(char ** fallbackFamilyArray, int fallbackFamilySize, char ** extraFamilyArray, int extraFamilySize, char * localeFamilyString, bool useThread) {
+  FontFamilyList fallbackFamilyList;
+  FontFamilyList extraFamilyList;
+  FontFamily localeFamily = localeFamilyString ? localeFamilyString : "";
+
+  if(fallbackFamilyArray)
+  {
+    fallbackFamilyList.assign(fallbackFamilyArray, fallbackFamilyArray + fallbackFamilySize);
+  }
+
+  if(extraFamilyArray)
+  {
+    extraFamilyList.assign(extraFamilyArray, extraFamilyArray + extraFamilySize);
+  }
+
+  Dali::TextAbstraction::FontClientPreCache(fallbackFamilyList, extraFamilyList, localeFamily, useThread);
+}
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FontWidthName_get() {
   void * jresult ;
