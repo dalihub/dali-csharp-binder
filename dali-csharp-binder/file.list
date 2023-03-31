@@ -68,6 +68,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/src/drag-and-drop-wrap.cpp
   ${dali_csharp_binder_dir}/src/font-client-wrap.cpp
   ${dali_csharp_binder_dir}/src/slim-custom-view-impl.cpp
+  ${dali_csharp_binder_dir}/src/window-data-wrap.cpp
 )
 
 # added for key grab binding only for tizen
