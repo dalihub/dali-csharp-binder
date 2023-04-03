@@ -17,7 +17,6 @@
 
 // EXTERNAL INCLUDES
 #include <dali-toolkit/dali-toolkit.h>
-#include <dali-toolkit/devel-api/controls/buttons/button-devel.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
@@ -146,114 +145,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ItemView_Property_LAYOUT_get() {
   int result;
 
   result = (int)Dali::Toolkit::ItemView::Property::LAYOUT;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_UNSELECTED_VISUAL_get() {
-  int jresult;
-  int result;
-
-  result = (int)Dali::Toolkit::Button::Property::UNSELECTED_VISUAL;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_SELECTED_VISUAL_get() {
-  int jresult;
-  int result;
-
-  result = (int)Dali::Toolkit::Button::Property::SELECTED_VISUAL;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL
-CSharp_Button_Property_DISABLED_SELECTED_VISUAL_get() {
-  int jresult;
-  int result;
-
-  result = (int)Dali::Toolkit::Button::Property::DISABLED_SELECTED_VISUAL;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL
-CSharp_Button_Property_DISABLED_UNSELECTED_VISUAL_get() {
-  int jresult;
-  int result;
-
-  result = (int)Dali::Toolkit::Button::Property::DISABLED_UNSELECTED_VISUAL;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL
-CSharp_Button_Property_UNSELECTED_BACKGROUND_VISUAL_get() {
-  int jresult;
-  int result;
-
-  result = (int)Dali::Toolkit::Button::Property::UNSELECTED_BACKGROUND_VISUAL;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL
-CSharp_Button_Property_SELECTED_BACKGROUND_VISUAL_get() {
-  int jresult;
-  int result;
-
-  result = (int)Dali::Toolkit::Button::Property::SELECTED_BACKGROUND_VISUAL;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL
-CSharp_Button_Property_DISABLED_UNSELECTED_BACKGROUND_VISUAL_get() {
-  int jresult;
-  int result;
-
-  result = (int)
-      Dali::Toolkit::Button::Property::DISABLED_UNSELECTED_BACKGROUND_VISUAL;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL
-CSharp_Button_Property_DISABLED_SELECTED_BACKGROUND_VISUAL_get() {
-  int jresult;
-  int result;
-
-  result =
-      (int)Dali::Toolkit::Button::Property::DISABLED_SELECTED_BACKGROUND_VISUAL;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL
-CSharp_Button_Property_LABEL_RELATIVE_ALIGNMENT_get() {
-  int jresult;
-  int result;
-
-  result = (int)Dali::Toolkit::DevelButton::Property::LABEL_RELATIVE_ALIGNMENT;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_LABEL_PADDING_get() {
-  int jresult;
-  int result;
-
-  result = (int)Dali::Toolkit::DevelButton::Property::LABEL_PADDING;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Button_Property_VISUAL_PADDING_get() {
-  int jresult;
-  int result;
-
-  result = (int)Dali::Toolkit::DevelButton::Property::VISUAL_PADDING;
   jresult = (int)result;
   return jresult;
 }
