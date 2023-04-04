@@ -367,21 +367,20 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_LoadHtmlStringOverrideCurrentEnt
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_LoadContents(void * jarg1, const char *jarg2, uint32_t jarg3, const char *jarg4, const char *jarg5, const char *jarg6) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_LoadContents(void * jarg1, const int8_t *jarg2, uint32_t jarg3, const char *jarg4, const char *jarg5, const char *jarg6) {
   if (!jarg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return false;
   }
 
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  std::string jarg2str = std::string(jarg2);
   std::string jarg4str = jarg4 ? std::string(jarg4) : std::string();
   std::string jarg5str = jarg5 ? std::string(jarg5) : std::string();
   std::string jarg6str = jarg6 ? std::string(jarg6) : std::string();
   bool result = false;
   {
     try {
-      result = (arg1)->LoadContents(jarg2str, jarg3, jarg4str, jarg5str, jarg6str);
+      result = (arg1)->LoadContents(jarg2, jarg3, jarg4str, jarg5str, jarg6str);
     } CALL_CATCH_EXCEPTION(0);
   }
   return result;
