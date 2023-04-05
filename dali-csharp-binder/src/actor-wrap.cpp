@@ -3594,6 +3594,56 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenExtents(void* acto
   return new Dali::Vector4(result.x, result.y, result.width, result.height);
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_LookAt(void* csActor, void* csTarget, void* csUp, void* csLocalForward, void* csLocalUp)
+{
+  Dali::Actor   actor;
+  Dali::Vector3 target;
+  Dali::Vector3 up           = Vector3::YAXIS;
+  Dali::Vector3 localForward = Vector3::ZAXIS;
+  Dali::Vector3 localUp      = Vector3::YAXIS;
+
+  if(!csActor)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
+    return;
+  }
+
+  if(!csTarget)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null target Dali::Vector3", 0);
+    return;
+  }
+
+  actor  = *(Dali::Actor*)csActor;
+  target = *(Dali::Vector3*)csTarget;
+
+  // Use default value if csUp is null
+  if(csUp)
+  {
+    up = *(Dali::Vector3*)csUp;
+  }
+
+  // Use default value if csLocalForward is null
+  if(csLocalForward)
+  {
+    localForward = *(Dali::Vector3*)csLocalForward;
+  }
+
+  // Use default value if csLocalForward is null
+  if(csLocalUp)
+  {
+    localUp = *(Dali::Vector3*)csLocalUp;
+  }
+
+  {
+    try
+    {
+      Dali::DevelActor::LookAt(actor, target, up, localForward, localUp);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_SetTouchAreaOffset(void* jarg1, int jarg2, int jarg3, int jarg4, int jarg5)
 {
   Dali::Actor* arg1 = (Dali::Actor*)0;
