@@ -993,24 +993,9 @@ extern "C"
   }
 
   /* Touch Event Binding */
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_GlWindow_TouchSignal(void *jarg1)
-  {
-    void *jresult;
-    Dali::GlWindow *arg1 = (Dali::GlWindow *)0;
-    Dali::GlWindow::TouchEventSignalType *result = 0;
-
-    arg1 = (Dali::GlWindow *)jarg1;
-    {
-      try
-      {
-        result = (Dali::GlWindow::TouchEventSignalType *)&(arg1->TouchedSignal());
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
+  GENERATE_SIGNAL(Dali::GlWindow*, void(*)(Dali::TouchEvent const&), Dali_GlWindow, TouchedSignal)
+  // CSharp_Dali_GLWindow_TouchedSignal_Connect
+  // CSharp_Dali_GLWindow_TouchedSignal_Disconnect
 
   /*Key Event Binding */
 
