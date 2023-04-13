@@ -83,6 +83,7 @@ struct NUIViewAccessible::AccessibilityDelegate
   bool                  (*deselectChild)           (RefObject*, int);              // 35
   Rect<int>*            (*getRangeExtents)         (RefObject*, int, int, int);    // 36
   void                  (*getAttributes)           (RefObject*, GetAttributesCallbackType, Accessibility::Attributes*); // 37
+  char*                 (*getValueText)            (RefObject*);                   // 38
   // clang-format on
 };
 
@@ -267,6 +268,13 @@ double NUIViewAccessible::GetMinimum() const
 double NUIViewAccessible::GetCurrent() const
 {
   return CallMethod<Interface::VALUE>(mTable->getCurrent);
+}
+
+std::string NUIViewAccessible::GetValueText() const
+{
+  char *text = CallMethod<Interface::VALUE>(mTable->getValueText);
+
+  return StealString(text);
 }
 
 double NUIViewAccessible::GetMaximum() const
