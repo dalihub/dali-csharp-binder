@@ -83,6 +83,8 @@ public:
 
   double GetCurrent() const override;
 
+  std::string GetValueText() const override;
+
   double GetMaximum() const override;
 
   bool SetCurrent(double value) override;
