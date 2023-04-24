@@ -244,6 +244,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapMaximumAllowedTime(
   return;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapRecognizerTime(uint32_t time) {
+  {
+    try {
+      Integration::SetTapRecognizerTime(time);
+    } CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
 #ifdef __cplusplus
 }
 #endif
