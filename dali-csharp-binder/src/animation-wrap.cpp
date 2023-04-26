@@ -587,6 +587,38 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_Clear(void * jarg1) {
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_SetLoopingMode(void * jarg1, int jarg2) {
+  Dali::Animation *arg1 = (Dali::Animation *) 0 ;
+  Dali::Animation::LoopingMode arg2 ;
+
+  arg1 = (Dali::Animation *)jarg1;
+  arg2 = (Dali::Animation::LoopingMode)jarg2;
+  {
+    try {
+      (arg1)->SetLoopingMode(arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Animation_GetLoopingMode(void * jarg1) {
+  int jresult ;
+  Dali::Animation *arg1 = (Dali::Animation *) 0 ;
+  Dali::Animation::LoopingMode result;
+
+  arg1 = (Dali::Animation *)jarg1;
+  {
+    try {
+      result = (Dali::Animation::LoopingMode)((Dali::Animation const *)arg1)->GetLoopingMode();
+    } CALL_CATCH_EXCEPTION(0);
+
+  }
+  jresult = (int)result;
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Animation_FinishedSignal(void * jarg1) {
   void * jresult ;
   Dali::Animation *arg1 = (Dali::Animation *) 0 ;
