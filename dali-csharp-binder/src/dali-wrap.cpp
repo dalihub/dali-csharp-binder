@@ -31155,6 +31155,22 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_DESIRED_HEIGHT_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImageView_Property_PLACEHOLDER_IMAGE_get() {
+  int jresult;
+  int result;
+  result = (int)Dali::Toolkit::ImageView::Property::PLACEHOLDER_IMAGE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImageView_Property_TRANSITION_EFFECT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::ImageView::Property::ENABLE_TRANSITION_EFFECT;
+  jresult = (int)result;
+  return jresult;
+}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_SYNCHRONOUS_LOADING_get() {
   int jresult ;
