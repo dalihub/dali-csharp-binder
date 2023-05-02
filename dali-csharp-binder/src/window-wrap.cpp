@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2023 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2732,6 +2732,46 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetLastTouchEvent(void* winHand
   }
   jresult = (void *)result;
   return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastKeyEvent(void* winHandle, void* keyHandle)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  Dali::KeyEvent* keyEvent = (Dali::KeyEvent*)keyHandle;
+
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return;
+  }
+  if (!keyEvent) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::KeyEvent", 0);
+    return;
+  }
+  {
+    try {
+      (*keyEvent) = *((Dali::KeyEvent *)&Dali::DevelWindow::GetLastKeyEvent(*window));
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastTouchEvent(void* winHandle, void* touchHandle)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  Dali::TouchEvent* touchEvent = (Dali::TouchEvent*)touchHandle;
+
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return;
+  }
+  if (!touchEvent) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::TouchEvent", 0);
+    return;
+  }
+  {
+    try {
+      (*touchEvent) = *((Dali::TouchEvent *)&Dali::DevelWindow::GetLastTouchEvent(*window));
+    } CALL_CATCH_EXCEPTION();
+  }
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetNeedsRotationCompletedAcknowledgement(void* winHandle, bool needAcknowledgement)

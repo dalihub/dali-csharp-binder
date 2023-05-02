@@ -18175,6 +18175,29 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FrameBuffer_GetColorTexture(void * jar
   return jresult;
 }
 
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_FrameBuffer_GenerateUrl(void *jFrameBuffer, int pixelFormat, int width, int height)
+{
+  void *jresult;
+  Dali::Toolkit::ImageUrl result;
+  Dali::FrameBuffer *frameBuffer = (Dali::FrameBuffer*)jFrameBuffer;;
+
+  if (!frameBuffer)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::FrameBuffer is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = Dali::Toolkit::Image::GenerateUrl((const Dali::FrameBuffer&)*frameBuffer, (Pixel::Format)pixelFormat, (uint32_t)width, (uint32_t)height);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RenderTaskList__SWIG_0() {
   void * jresult ;
@@ -31155,6 +31178,22 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_DESIRED_HEIGHT_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImageView_Property_PLACEHOLDER_IMAGE_get() {
+  int jresult;
+  int result;
+  result = (int)Dali::Toolkit::ImageView::Property::PLACEHOLDER_IMAGE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImageView_Property_TRANSITION_EFFECT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::ImageView::Property::ENABLE_TRANSITION_EFFECT;
+  jresult = (int)result;
+  return jresult;
+}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_SYNCHRONOUS_LOADING_get() {
   int jresult ;
