@@ -26,6 +26,7 @@
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
+// Signals
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Empty(Dali::Signal< void (Dali::InputMethodContext &) > const *self){
   return self->Empty();
@@ -123,6 +124,8 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_string_string_string_SP__Sg__Emit(Dali::S
   self->Emit( arg1, arg2, arg3 );
 }
 
+// Functions
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -133,39 +136,39 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_InputMethodContext_SWIGUpc
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_EventData__SWIG_0() {
   void * jresult ;
-  Dali::InputMethodContext::EventData *result = 0 ;
+  Dali::InputMethodContext::EventData *eventData = 0 ;
 
   {
     try {
-      result = (Dali::InputMethodContext::EventData *)new Dali::InputMethodContext::EventData();
+      eventData = (Dali::InputMethodContext::EventData *)new Dali::InputMethodContext::EventData();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (void *)result;
+  jresult = (void *)eventData;
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_EventData__SWIG_1(int jarg1, char * jarg2, int jarg3, int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_EventData__SWIG_1(int csEventType, char * csPredictiveString, int csCursorOffset, int csNumberOfChars) {
   void * jresult ;
-  Dali::InputMethodContext::EventType arg1 ;
-  std::string *arg2 = 0 ;
-  int arg3 ;
-  int arg4 ;
-  Dali::InputMethodContext::EventData *result = 0 ;
+  Dali::InputMethodContext::EventType eventType ;
+  std::string *predictiveString = 0 ;
+  int cursorOffset ;
+  int numberOfChars ;
+  Dali::InputMethodContext::EventData *eventData = 0 ;
 
-  arg1 = (Dali::InputMethodContext::EventType)jarg1;
-  if (!jarg2) {
+  eventType = (Dali::InputMethodContext::EventType)csEventType;
+  if (!csPredictiveString) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
-  arg3 = (int)jarg3;
-  arg4 = (int)jarg4;
+  std::string predictiveStringStr(csPredictiveString);
+  predictiveString = &predictiveStringStr;
+  cursorOffset = (int)csCursorOffset;
+  numberOfChars = (int)csNumberOfChars;
   {
     try {
-      result = (Dali::InputMethodContext::EventData *)new Dali::InputMethodContext::EventData(arg1,(std::string const &)*arg2,arg3,arg4);
+      eventData = (Dali::InputMethodContext::EventData *)new Dali::InputMethodContext::EventData(eventType,(std::string const &)*predictiveString,cursorOffset,numberOfChars);
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (void *)result;
+  jresult = (void *)eventData;
 
   //argout typemap for const std::string&
 
@@ -173,146 +176,159 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_EventData__SWIG
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_predictiveString_set(void * jarg1, char * jarg2) {
-  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
-  std::string *arg2 = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_predictiveString_set(void* csEventData, char* csPredictiveString) {
+  Dali::InputMethodContext::EventData *eventData = (Dali::InputMethodContext::EventData *) 0;
+  std::string *resultString = 0;
 
-  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
-  if (!jarg2) {
+  eventData = (Dali::InputMethodContext::EventData *)csEventData;
+  if (!csPredictiveString)
+  {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return ;
+    return;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
-  if (arg1) (arg1)->predictiveString = *arg2;
+  std::string pPredictiveString(csPredictiveString);
+  resultString = &pPredictiveString;
+  if (eventData)
+  {
+    (eventData)->predictiveString = *resultString;
+  }
 
   //argout typemap for const std::string&
 
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_predictiveString_get(void * jarg1) {
-  char * jresult ;
-  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
-  std::string *result = 0 ;
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_predictiveString_get(void* csEventData) {
+  char* jresult;
+  Dali::InputMethodContext::EventData *eventData = (Dali::InputMethodContext::EventData *) 0;
+  std::string *result = 0;
 
-  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
-  result = (std::string *) & ((arg1)->predictiveString);
+  eventData = (Dali::InputMethodContext::EventData *)csEventData;
+  result = (std::string *) & ((eventData)->predictiveString);
   jresult = SWIG_csharp_string_callback(result->c_str());
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_eventName_set(void * jarg1, int jarg2) {
-  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
-  Dali::InputMethodContext::EventType arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_eventName_set(void* csEventData, int csEventType) {
+  Dali::InputMethodContext::EventData *eventData = (Dali::InputMethodContext::EventData *) 0;
+  Dali::InputMethodContext::EventType eventType;
 
-  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
-  arg2 = (Dali::InputMethodContext::EventType)jarg2;
-  if (arg1) (arg1)->eventName = arg2;
+  eventData = (Dali::InputMethodContext::EventData *)csEventData;
+  eventType = (Dali::InputMethodContext::EventType)csEventType;
+  if (eventData)
+  {
+    (eventData)->eventName = eventType;
+  }
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_eventName_get(void * jarg1) {
-  int jresult ;
-  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
-  Dali::InputMethodContext::EventType result;
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_eventName_get(void* csEventData) {
+  int jresult;
+  Dali::InputMethodContext::EventData *eventData = (Dali::InputMethodContext::EventData *) 0;
+  Dali::InputMethodContext::EventType eventType;
 
-  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
-  result = (Dali::InputMethodContext::EventType) ((arg1)->eventName);
-  jresult = (int)result;
+  eventData = (Dali::InputMethodContext::EventData *)csEventData;
+  eventType = (Dali::InputMethodContext::EventType) ((eventData)->eventName);
+  jresult = (int)eventType;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_cursorOffset_set(void * jarg1, int jarg2) {
-  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
-  int arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_cursorOffset_set(void* csEventData, int csCursorOffset) {
+  Dali::InputMethodContext::EventData *eventData = (Dali::InputMethodContext::EventData *) 0;
+  int pCursorOffset;
 
-  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
-  arg2 = (int)jarg2;
-  if (arg1) (arg1)->cursorOffset = arg2;
+  eventData = (Dali::InputMethodContext::EventData *)csEventData;
+  pCursorOffset = (int)csCursorOffset;
+  if (eventData)
+  {
+    (eventData)->cursorOffset = pCursorOffset;
+  }
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_cursorOffset_get(void * jarg1) {
-  int jresult ;
-  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
-  int result;
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_cursorOffset_get(void* csEventData) {
+  int jresult;
+  Dali::InputMethodContext::EventData *eventData = (Dali::InputMethodContext::EventData *) 0;
+  int pCursorOffset;
 
-  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
-  result = (int) ((arg1)->cursorOffset);
-  jresult = result;
+  eventData = (Dali::InputMethodContext::EventData *)csEventData;
+  pCursorOffset = (int) ((eventData)->cursorOffset);
+  jresult = pCursorOffset;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_numberOfChars_set(void * jarg1, int jarg2) {
-  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
-  int arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_numberOfChars_set(void * csEventData, int csNumberOfChars) {
+  Dali::InputMethodContext::EventData *eventData = (Dali::InputMethodContext::EventData *) 0;
+  int pNumberOfChars;
 
-  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
-  arg2 = (int)jarg2;
-  if (arg1) (arg1)->numberOfChars = arg2;
+  eventData = (Dali::InputMethodContext::EventData *)csEventData;
+  pNumberOfChars = (int)csNumberOfChars;
+  if (eventData)
+  {
+    (eventData)->numberOfChars = pNumberOfChars;
+  }
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_numberOfChars_get(void * jarg1) {
-  int jresult ;
-  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
-  int result;
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_EventData_numberOfChars_get(void * csEventData) {
+  int jresult;
+  Dali::InputMethodContext::EventData *eventData = (Dali::InputMethodContext::EventData *) 0;
+  int pNumberOfChars;
 
-  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
-  result = (int) ((arg1)->numberOfChars);
-  jresult = result;
+  eventData = (Dali::InputMethodContext::EventData *)csEventData;
+  pNumberOfChars = (int) ((eventData)->numberOfChars);
+  jresult = pNumberOfChars;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext_EventData(void * jarg1) {
-  Dali::InputMethodContext::EventData *arg1 = (Dali::InputMethodContext::EventData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext_EventData(void * csEventData) {
+  Dali::InputMethodContext::EventData *eventData = (Dali::InputMethodContext::EventData *) 0 ;
 
-  arg1 = (Dali::InputMethodContext::EventData *)jarg1;
+  eventData = (Dali::InputMethodContext::EventData *)csEventData;
   {
     try {
-      delete arg1;
+      delete eventData;
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_CallbackData__SWIG_0() {
   void * jresult ;
-  Dali::InputMethodContext::CallbackData *result = 0 ;
+  Dali::InputMethodContext::CallbackData *callbackData = 0 ;
 
   {
     try {
-      result = (Dali::InputMethodContext::CallbackData *)new Dali::InputMethodContext::CallbackData();
+      callbackData = (Dali::InputMethodContext::CallbackData *)new Dali::InputMethodContext::CallbackData();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (void *)result;
+  jresult = (void *)callbackData;
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_CallbackData__SWIG_1(unsigned int jarg1, int jarg2, char * jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_CallbackData__SWIG_1(unsigned int csUpdate, int csCursorPosition, char * csCurrentText, unsigned int csPreeditResetRequired) {
   void * jresult ;
-  bool arg1 ;
-  int arg2 ;
-  std::string *arg3 = 0 ;
-  bool arg4 ;
+  bool isUpdated ;
+  int cursorPosition ;
+  std::string *currentText = 0 ;
+  bool isPreeditResetRequired ;
   Dali::InputMethodContext::CallbackData *result = 0 ;
 
-  arg1 = jarg1 ? true : false;
-  arg2 = (int)jarg2;
-  if (!jarg3) {
+  isUpdated = csUpdate ? true : false;
+  cursorPosition = (int)csCursorPosition;
+  if (!csCurrentText) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg3_str(jarg3);
-  arg3 = &arg3_str;
-  arg4 = jarg4 ? true : false;
+  std::string currentTextStr(csCurrentText);
+  currentText = &currentTextStr;
+  isPreeditResetRequired = csPreeditResetRequired ? true : false;
   {
     try {
-      result = (Dali::InputMethodContext::CallbackData *)new Dali::InputMethodContext::CallbackData(arg1,arg2,(std::string const &)*arg3,arg4);
+      result = (Dali::InputMethodContext::CallbackData *)new Dali::InputMethodContext::CallbackData(isUpdated,cursorPosition,(std::string const &)*currentText,isPreeditResetRequired);
     } CALL_CATCH_EXCEPTION(0);  }
   jresult = (void *)result;
 
@@ -322,143 +338,143 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_CallbackData__S
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_currentText_set(void * jarg1, char * jarg2) {
-  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
-  std::string *arg2 = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_currentText_set(void * csCallbackData, char * csCurrentText) {
+  Dali::InputMethodContext::CallbackData *callbackData = (Dali::InputMethodContext::CallbackData *) 0 ;
+  std::string *currentText = 0 ;
 
-  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
-  if (!jarg2) {
+  callbackData = (Dali::InputMethodContext::CallbackData *)csCallbackData;
+  if (!csCurrentText) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
-  if (arg1) (arg1)->currentText = *arg2;
+  std::string currentTextStr(csCurrentText);
+  currentText = &currentTextStr;
+  if (callbackData) (callbackData)->currentText = *currentText;
 
   //argout typemap for const std::string&
 
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_currentText_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_currentText_get(void * csCallbackData) {
   char * jresult ;
-  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
-  std::string *result = 0 ;
+  Dali::InputMethodContext::CallbackData *callbackData = (Dali::InputMethodContext::CallbackData *) 0 ;
+  std::string *currentText = 0 ;
 
-  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
-  result = (std::string *) & ((arg1)->currentText);
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  callbackData = (Dali::InputMethodContext::CallbackData *)csCallbackData;
+  currentText = (std::string *) & ((callbackData)->currentText);
+  jresult = SWIG_csharp_string_callback(currentText->c_str());
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_cursorPosition_set(void * jarg1, int jarg2) {
-  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
-  int arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_cursorPosition_set(void * csCallbackData, int csCursorPosition) {
+  Dali::InputMethodContext::CallbackData *callbackData = (Dali::InputMethodContext::CallbackData *) 0 ;
+  int cursorPosition ;
 
-  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
-  arg2 = (int)jarg2;
-  if (arg1) (arg1)->cursorPosition = arg2;
+  callbackData = (Dali::InputMethodContext::CallbackData *)csCallbackData;
+  cursorPosition = (int)csCursorPosition;
+  if (callbackData) (callbackData)->cursorPosition = cursorPosition;
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_cursorPosition_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_cursorPosition_get(void * csCallbackData) {
   int jresult ;
-  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
+  Dali::InputMethodContext::CallbackData *callbackData = (Dali::InputMethodContext::CallbackData *) 0 ;
   int result;
 
-  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
-  result = (int) ((arg1)->cursorPosition);
+  callbackData = (Dali::InputMethodContext::CallbackData *)csCallbackData;
+  result = (int) ((callbackData)->cursorPosition);
   jresult = result;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_update_set(void * jarg1, unsigned int jarg2) {
-  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
-  bool arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_update_set(void * csCallbackData, unsigned int csUpdate) {
+  Dali::InputMethodContext::CallbackData *callbackData = (Dali::InputMethodContext::CallbackData *) 0 ;
+  bool isUpdated ;
 
-  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
-  arg2 = jarg2 ? true : false;
-  if (arg1) (arg1)->update = arg2;
+  callbackData = (Dali::InputMethodContext::CallbackData *)csCallbackData;
+  isUpdated = csUpdate ? true : false;
+  if (callbackData) (callbackData)->update = isUpdated;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_update_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_update_get(void * csCallbackData) {
   unsigned int jresult ;
-  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
-  bool result;
+  Dali::InputMethodContext::CallbackData *callbackData = (Dali::InputMethodContext::CallbackData *) 0 ;
+  bool isUpdated;
 
-  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
-  result = (bool) ((arg1)->update);
-  jresult = result;
+  callbackData = (Dali::InputMethodContext::CallbackData *)csCallbackData;
+  isUpdated = (bool) ((callbackData)->update);
+  jresult = isUpdated;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_preeditResetRequired_set(void * jarg1, unsigned int jarg2) {
-  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
-  bool arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_preeditResetRequired_set(void * csCallbackData, unsigned int csPreeditResetRequired) {
+  Dali::InputMethodContext::CallbackData *callbackData = (Dali::InputMethodContext::CallbackData *) 0 ;
+  bool isPreeditResetRequired ;
 
-  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
-  arg2 = jarg2 ? true : false;
-  if (arg1) (arg1)->preeditResetRequired = arg2;
+  callbackData = (Dali::InputMethodContext::CallbackData *)csCallbackData;
+  isPreeditResetRequired = csPreeditResetRequired ? true : false;
+  if (callbackData) (callbackData)->preeditResetRequired = isPreeditResetRequired;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_preeditResetRequired_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_CallbackData_preeditResetRequired_get(void * csCallbackData) {
   unsigned int jresult ;
-  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
-  bool result;
+  Dali::InputMethodContext::CallbackData *callbackData = (Dali::InputMethodContext::CallbackData *) 0 ;
+  bool isPreeditResetRequired;
 
-  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
-  result = (bool) ((arg1)->preeditResetRequired);
-  jresult = result;
+  callbackData = (Dali::InputMethodContext::CallbackData *)csCallbackData;
+  isPreeditResetRequired = (bool) ((callbackData)->preeditResetRequired);
+  jresult = isPreeditResetRequired;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext_CallbackData(void * jarg1) {
-  Dali::InputMethodContext::CallbackData *arg1 = (Dali::InputMethodContext::CallbackData *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext_CallbackData(void * csCallbackData) {
+  Dali::InputMethodContext::CallbackData *callbackData = (Dali::InputMethodContext::CallbackData *) 0 ;
 
-  arg1 = (Dali::InputMethodContext::CallbackData *)jarg1;
+  callbackData = (Dali::InputMethodContext::CallbackData *)csCallbackData;
   {
     try {
-      delete arg1;
+      delete callbackData;
     } CALL_CATCH_EXCEPTION();  }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Finalize(void * jarg1) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Finalize(void * csInputMethodContext) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      (arg1)->Finalize();
+      (inputMethodContext)->Finalize();
     } CALL_CATCH_EXCEPTION();  }
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext__SWIG_0() {
   void * jresult ;
-  Dali::InputMethodContext *result = 0 ;
+  Dali::InputMethodContext *inputMethodContext = 0 ;
 
   {
     try {
-      result = (Dali::InputMethodContext *)new Dali::InputMethodContext();
+      inputMethodContext = (Dali::InputMethodContext *)new Dali::InputMethodContext();
     } CALL_CATCH_EXCEPTION(0);
   }
-  jresult = (void *)result;
+  jresult = (void *)inputMethodContext;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext(void * jarg1) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext(void * csInputMethodContext) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      delete arg1;
+      delete inputMethodContext;
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -466,31 +482,31 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext(void * jarg1) 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_New() {
   void * jresult ;
-  Dali::InputMethodContext result;
+  Dali::InputMethodContext inputMethodContext;
 
   {
     try {
-      result = Dali::InputMethodContext::New( Dali::Stage::GetCurrent().GetRootLayer() );
+      inputMethodContext = Dali::InputMethodContext::New( Dali::Stage::GetCurrent().GetRootLayer() );
     } CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::InputMethodContext((const Dali::InputMethodContext &)result);
+  jresult = new Dali::InputMethodContext((const Dali::InputMethodContext &)inputMethodContext);
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext__SWIG_1(void * csInputMethodContext) {
   void * jresult ;
-  Dali::InputMethodContext *arg1 = 0 ;
+  Dali::InputMethodContext *inputMethodContext = 0 ;
   Dali::InputMethodContext *result = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  if (!arg1) {
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  if (!inputMethodContext) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::InputMethodContext const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (Dali::InputMethodContext *)new Dali::InputMethodContext((Dali::InputMethodContext const &)*arg1);
+      result = (Dali::InputMethodContext *)new Dali::InputMethodContext((Dali::InputMethodContext const &)*inputMethodContext);
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
@@ -498,21 +514,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext__SWIG_1(void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_Assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_Assign(void * csInputMethodContext, void * rInputMethodContext) {
   void * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext *arg2 = 0 ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext *assignedInputMethodContext = 0 ;
   Dali::InputMethodContext *result = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  arg2 = (Dali::InputMethodContext *)jarg2;
-  if (!arg2) {
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  assignedInputMethodContext = (Dali::InputMethodContext *)rInputMethodContext;
+  if (!assignedInputMethodContext) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::InputMethodContext const & type is null", 0);
     return 0;
   }
   {
     try {
-      result = (Dali::InputMethodContext *) &(arg1)->operator =((Dali::InputMethodContext const &)*arg2);
+      result = (Dali::InputMethodContext *) &(inputMethodContext)->operator =((Dali::InputMethodContext const &)*assignedInputMethodContext);
     } CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)result;
@@ -542,120 +558,120 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_DownCast(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Activate(void * jarg1) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Activate(void * csInputMethodContext) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      (arg1)->Activate();
+      (inputMethodContext)->Activate();
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Deactivate(void * jarg1) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Deactivate(void * csInputMethodContext) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      (arg1)->Deactivate();
+      (inputMethodContext)->Deactivate();
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_RestoreAfterFocusLost(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_RestoreAfterFocusLost(void * csInputMethodContext) {
   unsigned int jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  bool result;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  bool status ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (bool)((Dali::InputMethodContext const *)arg1)->RestoreAfterFocusLost();
+      status = (bool)((Dali::InputMethodContext const *)inputMethodContext)->RestoreAfterFocusLost();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = result;
+  jresult = status;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetRestoreAfterFocusLost(void * jarg1, unsigned int jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  bool arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetRestoreAfterFocusLost(void * csInputMethodContext, unsigned int csToggle) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  bool toggle ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  arg2 = jarg2 ? true : false;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  toggle = csToggle ? true : false;
   {
     try {
-      (arg1)->SetRestoreAfterFocusLost(arg2);
+      (inputMethodContext)->SetRestoreAfterFocusLost(toggle);
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Reset(void * jarg1) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Reset(void * csInputMethodContext) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      (arg1)->Reset();
+      (inputMethodContext)->Reset();
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_NotifyCursorPosition(void * jarg1) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_NotifyCursorPosition(void * csInputMethodContext) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      (arg1)->NotifyCursorPosition();
+      (inputMethodContext)->NotifyCursorPosition();
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetCursorPosition(void * jarg1, unsigned int jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  unsigned int arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetCursorPosition(void * csInputMethodContext, unsigned int csCursorPosition) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  unsigned int cursorPosition ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  arg2 = (unsigned int)jarg2;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  cursorPosition = (unsigned int)csCursorPosition;
   {
     try {
-      (arg1)->SetCursorPosition(arg2);
+      (inputMethodContext)->SetCursorPosition(cursorPosition);
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetCursorPosition(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetCursorPosition(void * csInputMethodContext) {
   unsigned int jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  unsigned int result;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  unsigned int cursorPosition;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (unsigned int)((Dali::InputMethodContext const *)arg1)->GetCursorPosition();
+      cursorPosition = (unsigned int)((Dali::InputMethodContext const *)inputMethodContext)->GetCursorPosition();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = result;
+  jresult = cursorPosition;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetSurroundingText(void * jarg1, char * jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  std::string *arg2 = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetSurroundingText(void * csInputMethodContext, char * csText) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  std::string *text = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  if (!jarg2) {
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  if (!csText) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
+  std::string textStr(csText);
+  text = &textStr;
   {
     try {
-      (arg1)->SetSurroundingText((std::string const &)*arg2);
+      (inputMethodContext)->SetSurroundingText((std::string const &)*text);
     } CALL_CATCH_EXCEPTION();  }
 
   //argout typemap for const std::string&
@@ -663,95 +679,95 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetSurroundingText(vo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_GetSurroundingText(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_GetSurroundingText(void * csInputMethodContext) {
   char * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  std::string *result = 0 ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  std::string *text = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (std::string *) &((Dali::InputMethodContext const *)arg1)->GetSurroundingText();
+      text = (std::string *) &((Dali::InputMethodContext const *)inputMethodContext)->GetSurroundingText();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  jresult = SWIG_csharp_string_callback(text->c_str());
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_NotifyTextInputMultiLine(void * jarg1, unsigned int jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  bool arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_NotifyTextInputMultiLine(void * csInputMethodContext, unsigned int csMultiLine) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  bool isMultiLine ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  arg2 = jarg2 ? true : false;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  isMultiLine = csMultiLine ? true : false;
   {
     try {
-      (arg1)->NotifyTextInputMultiLine(arg2);
+      (inputMethodContext)->NotifyTextInputMultiLine(isMultiLine);
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetTextDirection(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetTextDirection(void * csInputMethodContext) {
   int jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::TextDirection result;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::TextDirection direction;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (Dali::InputMethodContext::TextDirection)(arg1)->GetTextDirection();
+      direction = (Dali::InputMethodContext::TextDirection)(inputMethodContext)->GetTextDirection();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (int)result;
+  jresult = (int)direction;
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputMethodArea(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputMethodArea(void * csInputMethodContext) {
   void * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::Rect< int > result;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::Rect< int > area;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (arg1)->GetInputMethodArea();
+      area = (inputMethodContext)->GetInputMethodArea();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = new Dali::Rect< int >((const Dali::Rect< int > &)result);
+  jresult = new Dali::Rect< int >((const Dali::Rect< int > &)area);
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_ApplyOptions(void * jarg1, void * jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodOptions *arg2 = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_ApplyOptions(void * csInputMethodContext, void * csInputMethodOptions) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodOptions *inputMethodOptions = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  arg2 = (Dali::InputMethodOptions *)jarg2;
-  if (!arg2) {
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  inputMethodOptions = (Dali::InputMethodOptions *)csInputMethodOptions;
+  if (!inputMethodOptions) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "InputMethodOptions const & type is null", 0);
     return ;
   }
   {
     try {
-      (arg1)->ApplyOptions((Dali::InputMethodOptions const &)*arg2);
+      (inputMethodContext)->ApplyOptions((Dali::InputMethodOptions const &)*inputMethodOptions);
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelUserData(void * jarg1, char * jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  std::string *arg2 = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelUserData(void * csInputMethodContext, char * csData) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  std::string *data = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  if (!jarg2) {
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  if (!csData) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
+  std::string dataStr(csData);
+  data = &dataStr;
   {
     try {
-      (arg1)->SetInputPanelData((std::string const &)*arg2);
+      (inputMethodContext)->SetInputPanelData((std::string const &)*data);
     } CALL_CATCH_EXCEPTION();  }
 
   //argout typemap for const std::string&
@@ -759,389 +775,389 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelUserData
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelUserData(void * jarg1, char** jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  std::string *arg2 = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelUserData(void * csInputMethodContext, char** csData) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  std::string *data = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
 
   //typemap in
   std::string temp;
-  arg2 = &temp;
+  data = &temp;
 
   {
     try {
-      (arg1)->GetInputPanelData(*arg2);
+      (inputMethodContext)->GetInputPanelData(*data);
     } CALL_CATCH_EXCEPTION();  }
 
   //Typemap argout in c++ file.
   //This will convert c++ string to c# string
-  *jarg2 = SWIG_csharp_string_callback(arg2->c_str());
+  *csData = SWIG_csharp_string_callback(data->c_str());
 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelState(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelState(void * csInputMethodContext) {
   int jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
   Dali::InputMethodContext::State result;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (Dali::InputMethodContext::State)(arg1)->GetInputPanelState();
+      result = (Dali::InputMethodContext::State)(inputMethodContext)->GetInputPanelState();
     } CALL_CATCH_EXCEPTION(0);  }
   jresult = (int)result;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetReturnKeyState(void * jarg1, unsigned int jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  bool arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetReturnKeyState(void * csInputMethodContext, unsigned int csVisible) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  bool isVisible ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  arg2 = jarg2 ? true : false;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  isVisible = csVisible ? true : false;
   {
     try {
-      (arg1)->SetReturnKeyState(arg2);
+      (inputMethodContext)->SetReturnKeyState(isVisible);
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_AutoEnableInputPanel(void * jarg1, unsigned int jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  bool arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_AutoEnableInputPanel(void * csInputMethodContext, unsigned int csEnabled) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  bool isEnabled ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  arg2 = jarg2 ? true : false;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  isEnabled = csEnabled ? true : false;
   {
     try {
-      (arg1)->AutoEnableInputPanel(arg2);
+      (inputMethodContext)->AutoEnableInputPanel(isEnabled);
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_ShowInputPanel(void * jarg1) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_ShowInputPanel(void * csInputMethodContext) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      (arg1)->ShowInputPanel();
+      (inputMethodContext)->ShowInputPanel();
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_HideInputPanel(void * jarg1) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_HideInputPanel(void * csInputMethodContext) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      (arg1)->HideInputPanel();
+      (inputMethodContext)->HideInputPanel();
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetKeyboardType(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetKeyboardType(void * csInputMethodContext) {
   int jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::KeyboardType result;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::KeyboardType type;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (Dali::InputMethodContext::KeyboardType)(arg1)->GetKeyboardType();
+      type = (Dali::InputMethodContext::KeyboardType)(inputMethodContext)->GetKeyboardType();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (int)result;
+  jresult = (int)type;
   return jresult;
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelLocale(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelLocale(void * csInputMethodContext) {
   char * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  std::string result;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  std::string locale;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (arg1)->GetInputPanelLocale();
+      locale = (inputMethodContext)->GetInputPanelLocale();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback((&locale)->c_str());
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_AllowTextPrediction(void * jarg1, unsigned int jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  bool arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_AllowTextPrediction(void * csInputMethodContext, unsigned int csPrediction) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  bool prediction ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  arg2 = jarg2 ? true : false;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  prediction = csPrediction ? true : false;
   {
     try {
-      (arg1)->AllowTextPrediction(arg2);
+      (inputMethodContext)->AllowTextPrediction(prediction);
     } CALL_CATCH_EXCEPTION();  }
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_IsTextPredictionAllowed(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_IsTextPredictionAllowed(void * csInputMethodContext) {
   unsigned int jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  bool result;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  bool prediction;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (bool)((Dali::InputMethodContext const *)arg1)->IsTextPredictionAllowed();
+      prediction = (bool)((Dali::InputMethodContext const *)inputMethodContext)->IsTextPredictionAllowed();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = result;
+  jresult = prediction;
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetMIMEType(void * jarg1, char * jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  std::string *arg2 = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetMIMEType(void * csInputMethodContext, char * csMimeTypes) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  std::string *mimeTypes = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  if (!jarg2) {
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  if (!csMimeTypes) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
+  std::string mimeTypesString(csMimeTypes);
+  mimeTypes = &mimeTypesString;
   {
     try {
-      (arg1)->SetContentMIMETypes((std::string const &)*arg2);
+      (inputMethodContext)->SetContentMIMETypes((std::string const &)*mimeTypes);
     } CALL_CATCH_EXCEPTION();  }
 
   //argout typemap for const std::string&
 
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelLanguage(void * jarg1, int jarg2) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::InputPanelLanguage arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelLanguage(void * csInputMethodContext, int csLanguage) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::InputPanelLanguage language ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  if (arg1 == nullptr) {
-    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  if (inputMethodContext == nullptr) {
+    DALI_LOG_ERROR("[ERR] inputMethodContext == nullptr");
     return;
   }
 
-  arg2 = (Dali::InputMethodContext::InputPanelLanguage)jarg2;
+  language = (Dali::InputMethodContext::InputPanelLanguage)csLanguage;
   {
     try {
-      (arg1)->SetInputPanelLanguage(arg2);
+      (inputMethodContext)->SetInputPanelLanguage(language);
     } CALL_CATCH_EXCEPTION();  }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelLanguage(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputPanelLanguage(void * csInputMethodContext) {
   int jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::InputPanelLanguage result;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::InputPanelLanguage language;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  if (arg1 == nullptr) {
-    DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  if (inputMethodContext == nullptr) {
+    DALI_LOG_ERROR("[ERR] inputMethodContext == nullptr");
     return false;
   }
   {
     try {
-      result = (Dali::InputMethodContext::InputPanelLanguage)(arg1)->GetInputPanelLanguage();
+      language = (Dali::InputMethodContext::InputPanelLanguage)(inputMethodContext)->GetInputPanelLanguage();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (int)result;
+  jresult = (int)language;
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelPosition(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  unsigned int arg2 ;
-  unsigned int arg3 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelPosition(void * csInputMethodContext, unsigned int csXCoord, unsigned int csYCoord) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  unsigned int x ;
+  unsigned int y ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
-  arg2 = (unsigned int)jarg2;
-  arg3 = (unsigned int)jarg3;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  x = (unsigned int)csXCoord;
+  y = (unsigned int)csYCoord;
   {
     try {
-      (arg1)->SetInputPanelPosition(arg2, arg3);
+      (inputMethodContext)->SetInputPanelPosition(x, y);
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
 // Signals
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ActivatedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ActivatedSignal(void * csInputMethodContext) {
   void * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::ActivatedSignalType *result = 0 ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::ActivatedSignalType *type = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (Dali::InputMethodContext::ActivatedSignalType *) &(arg1)->ActivatedSignal();
+      type = (Dali::InputMethodContext::ActivatedSignalType *) &(inputMethodContext)->ActivatedSignal();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (void *)result;
+  jresult = (void *)type;
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_EventReceivedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_EventReceivedSignal(void * csInputMethodContext) {
   void * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::KeyboardEventSignalType *result = 0 ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::KeyboardEventSignalType *type = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (Dali::InputMethodContext::KeyboardEventSignalType *) &(arg1)->EventReceivedSignal();
+      type = (Dali::InputMethodContext::KeyboardEventSignalType *) &(inputMethodContext)->EventReceivedSignal();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (void *)result;
+  jresult = (void *)type;
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_StatusChangedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_StatusChangedSignal(void * csInputMethodContext) {
   void * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::StatusSignalType *result = 0 ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::StatusSignalType *type = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (Dali::InputMethodContext::StatusSignalType *) &(arg1)->StatusChangedSignal();
+      type = (Dali::InputMethodContext::StatusSignalType *) &(inputMethodContext)->StatusChangedSignal();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (void *)result;
+  jresult = (void *)type;
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ResizedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ResizedSignal(void * csInputMethodContext) {
   void * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::KeyboardResizedSignalType *result = 0 ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::KeyboardResizedSignalType *type = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (Dali::InputMethodContext::KeyboardResizedSignalType *) &(arg1)->ResizedSignal();
+      type = (Dali::InputMethodContext::KeyboardResizedSignalType *) &(inputMethodContext)->ResizedSignal();
     } CALL_CATCH_EXCEPTION(0);
   }
-  jresult = (void *)result;
+  jresult = (void *)type;
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_LanguageChangedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_LanguageChangedSignal(void * csInputMethodContext) {
   void * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::LanguageChangedSignalType *result = 0 ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::LanguageChangedSignalType *type = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (Dali::InputMethodContext::LanguageChangedSignalType *) &(arg1)->LanguageChangedSignal();
+      type = (Dali::InputMethodContext::LanguageChangedSignalType *) &(inputMethodContext)->LanguageChangedSignal();
     } CALL_CATCH_EXCEPTION(0);
   }
-  jresult = (void *)result;
+  jresult = (void *)type;
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_KeyboardTypeChangedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_KeyboardTypeChangedSignal(void * csInputMethodContext) {
   void * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::KeyboardTypeSignalType *result = 0 ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::KeyboardTypeSignalType *type = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (Dali::InputMethodContext::KeyboardTypeSignalType *) &(arg1)->KeyboardTypeChangedSignal();
+      type = (Dali::InputMethodContext::KeyboardTypeSignalType *) &(inputMethodContext)->KeyboardTypeChangedSignal();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (void *)result;
+  jresult = (void *)type;
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ContentReceivedSignal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ContentReceivedSignal(void * csInputMethodContext) {
   void * jresult ;
-  Dali::InputMethodContext *arg1 = (Dali::InputMethodContext *) 0 ;
-  Dali::InputMethodContext::ContentReceivedSignalType *result = 0 ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  Dali::InputMethodContext::ContentReceivedSignalType *type = 0 ;
 
-  arg1 = (Dali::InputMethodContext *)jarg1;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
   {
     try {
-      result = (Dali::InputMethodContext::ContentReceivedSignalType *) &(arg1)->ContentReceivedSignal();
+      type = (Dali::InputMethodContext::ContentReceivedSignalType *) &(inputMethodContext)->ContentReceivedSignal();
     } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (void *)result;
+  jresult = (void *)type;
   return jresult;
 }
 
 // ActivatedSignalType
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Empty(void * csSignal) {
   unsigned int jresult ;
-  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext &) > *signal = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
+  signal = (Dali::Signal< void (Dali::InputMethodContext &) > *)csSignal;
   {
     try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Empty((Dali::Signal< void (Dali::InputMethodContext &) > const *)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Empty((Dali::Signal< void (Dali::InputMethodContext &) > const *)signal);
     } CALL_CATCH_EXCEPTION(0);  }
   jresult = result;
   return jresult;
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ActivatedSignalType_GetConnectionCount(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ActivatedSignalType_GetConnectionCount(void * csSignal) {
   unsigned long jresult ;
-  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
+  Dali::Signal< void (Dali::InputMethodContext &) > *signal = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
+  signal = (Dali::Signal< void (Dali::InputMethodContext &) > *)csSignal;
   {
     try {
-      result = Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::InputMethodContext &) > const *)arg1);
+      result = Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::InputMethodContext &) > const *)signal);
     } CALL_CATCH_EXCEPTION(0);  }
   jresult = (unsigned long)result;
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
-  void (*arg2)(Dali::InputMethodContext &) = (void (*)(Dali::InputMethodContext &)) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Connect(void * csSignal, void * csInputMethodContext) {
+  Dali::Signal< void (Dali::InputMethodContext &) > *signal = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
+  void (*inputMethodContext)(Dali::InputMethodContext &) = (void (*)(Dali::InputMethodContext &)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
-  arg2 = (void (*)(Dali::InputMethodContext &))jarg2;
+  signal = (Dali::Signal< void (Dali::InputMethodContext &) > *)csSignal;
+  inputMethodContext = (void (*)(Dali::InputMethodContext &))csInputMethodContext;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Connect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Connect(signal,inputMethodContext);
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
-  void (*arg2)(Dali::InputMethodContext &) = (void (*)(Dali::InputMethodContext &)) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Disconnect(void * csSignal, void * csInputMethodContext) {
+  Dali::Signal< void (Dali::InputMethodContext &) > *signal = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
+  void (*inputMethodContext)(Dali::InputMethodContext &) = (void (*)(Dali::InputMethodContext &)) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
-  arg2 = (void (*)(Dali::InputMethodContext &))jarg2;
+  signal = (Dali::Signal< void (Dali::InputMethodContext &) > *)csSignal;
+  inputMethodContext = (void (*)(Dali::InputMethodContext &))csInputMethodContext;
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Disconnect(arg1,arg2);
+      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Disconnect(signal,inputMethodContext);
     } CALL_CATCH_EXCEPTION();  }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Emit(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
-  Dali::InputMethodContext *arg2 = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Emit(void * csSignal, void * csInputMethodContext) {
+  Dali::Signal< void (Dali::InputMethodContext &) > *signal = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
+  Dali::InputMethodContext *inputMethodContext = 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
-  arg2 = (Dali::InputMethodContext *)jarg2;
-  if (!arg2) {
+  signal = (Dali::Signal< void (Dali::InputMethodContext &) > *)csSignal;
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  if (!inputMethodContext) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::InputMethodContext & type is null", 0);
     return ;
   }
   {
     try {
-      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Emit(arg1,*arg2);
+      Dali_Signal_Sl_void_Sp_Dali_InputMethodContext_SA__SP__Sg__Emit(signal,*inputMethodContext);
     } CALL_CATCH_EXCEPTION();  }
 }
 
@@ -1159,23 +1175,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ActivatedSignalType() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActivatedSignalType(void * jarg1) {
-  Dali::Signal< void (Dali::InputMethodContext &) > *arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActivatedSignalType(void * csSignal) {
+  Dali::Signal< void (Dali::InputMethodContext &) > *signal = (Dali::Signal< void (Dali::InputMethodContext &) > *) 0 ;
 
-  arg1 = (Dali::Signal< void (Dali::InputMethodContext &) > *)jarg1;
+  signal = (Dali::Signal< void (Dali::InputMethodContext &) > *)csSignal;
   {
     try {
-      delete arg1;
+      delete signal;
     } CALL_CATCH_EXCEPTION();  }
 }
 
 // KeyboardEventSignalType
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Empty(void * csEventData) {
   unsigned int jresult ;
   Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *) 0 ;
   bool result;
 
-  arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)jarg1;
+  arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)csEventData;
   {
     try {
       result = (bool)Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__Empty((Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > const *)arg1);
@@ -1185,12 +1201,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Empty(vo
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_GetConnectionCount(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_GetConnectionCount(void * csEventData) {
   unsigned long jresult ;
   Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *) 0 ;
   std::size_t result;
 
-  arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)jarg1;
+  arg1 = (Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > *)csEventData;
   {
     try {
       result = Dali_Signal_Sl_Dali_InputMethodContext_CallbackData_Sp_Dali_InputMethodContext_SA__Sc_Dali_InputMethodContext_EventData_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal< Dali::InputMethodContext::CallbackData (Dali::InputMethodContext &,Dali::InputMethodContext::EventData const &) > const *)arg1);
