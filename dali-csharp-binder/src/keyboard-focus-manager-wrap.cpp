@@ -18,6 +18,7 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/focus-manager/focus-finder.h>
+#include <dali-toolkit/devel-api/focus-manager/keyboard-focus-manager-devel.h>
 
 // INTERNAL INCLUDES
 #include "common.h"
@@ -311,6 +312,35 @@ SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardFocusManager_MoveFocusBackward(void *
   }
 }
 
+
+SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardFocusManager_EnableFocusIndicator(void * manager, bool enable) {
+  if (!manager) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null KeyboardFocusManager", 0);
+    return ;
+  }
+  {
+    try {
+      Dali::Toolkit::DevelKeyboardFocusManager::EnableFocusIndicator(*(Dali::Toolkit::KeyboardFocusManager *)manager, enable);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_KeyboardFocusManager_IsFocusIndicatorEnabled(void * manager) {
+  bool result;
+  if (!manager) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null KeyboardFocusManager", 0);
+    return 0;
+  }
+  {
+    try {
+      result = Dali::Toolkit::DevelKeyboardFocusManager::IsFocusIndicatorEnabled(*(Dali::Toolkit::KeyboardFocusManager *)manager);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_PreFocusChangeSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::KeyboardFocusManager *arg1 = (Dali::Toolkit::KeyboardFocusManager *) 0 ;
@@ -555,4 +585,3 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_KeyboardFocusManager_SWIGUpcast
 #ifdef __cplusplus
 }
 #endif
-
