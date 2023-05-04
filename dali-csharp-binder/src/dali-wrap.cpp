@@ -19331,6 +19331,44 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetAngle(void * jarg1, unsigned 
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetDeviceClass(void * jarg1, unsigned long jarg2) {
+  int jresult ;
+  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  std::size_t arg2 ;
+  Dali::Device::Class::Type result;
+
+  arg1 = (Dali::TouchEvent *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::TouchEvent const *)arg1)->GetDeviceClass(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetDeviceSubclass(void * jarg1, unsigned long jarg2) {
+  int jresult ;
+  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  std::size_t arg2 ;
+  Dali::Device::Subclass::Type result;
+
+  arg1 = (Dali::TouchEvent *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::TouchEvent const *)arg1)->GetDeviceSubclass(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetMouseButton(void * jarg1, unsigned long jarg2) {
   int jresult ;
   Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
