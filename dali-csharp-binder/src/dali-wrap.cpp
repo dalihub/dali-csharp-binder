@@ -18175,6 +18175,29 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FrameBuffer_GetColorTexture(void * jar
   return jresult;
 }
 
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_FrameBuffer_GenerateUrl(void *jFrameBuffer, int pixelFormat, int width, int height)
+{
+  void *jresult;
+  Dali::Toolkit::ImageUrl result;
+  Dali::FrameBuffer *frameBuffer = (Dali::FrameBuffer*)jFrameBuffer;;
+
+  if (!frameBuffer)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::FrameBuffer is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = Dali::Toolkit::Image::GenerateUrl((const Dali::FrameBuffer&)*frameBuffer, (Pixel::Format)pixelFormat, (uint32_t)width, (uint32_t)height);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RenderTaskList__SWIG_0() {
   void * jresult ;
@@ -19609,6 +19632,44 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetAngle(void * jarg1, unsigned 
   }
 
   jresult = new Dali::Degree((const Dali::Degree &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetDeviceClass(void * jarg1, unsigned long jarg2) {
+  int jresult ;
+  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  std::size_t arg2 ;
+  Dali::Device::Class::Type result;
+
+  arg1 = (Dali::TouchEvent *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::TouchEvent const *)arg1)->GetDeviceClass(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetDeviceSubclass(void * jarg1, unsigned long jarg2) {
+  int jresult ;
+  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  std::size_t arg2 ;
+  Dali::Device::Subclass::Type result;
+
+  arg1 = (Dali::TouchEvent *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::TouchEvent const *)arg1)->GetDeviceSubclass(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
   return jresult;
 }
 
@@ -53489,4 +53550,3 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetScreenSize() {
 #ifdef __cplusplus
 }
 #endif
-
