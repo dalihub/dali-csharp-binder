@@ -557,7 +557,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_SetProgressNotification(void* 
 
 }
 
-
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Animation_GetProgressNotification(void * jarg1) {
   float jresult ;
   Dali::Animation* argp1 = (Dali::Animation *) jarg1 ;
@@ -572,6 +571,30 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Animation_GetProgressNotification(void 
   }
   jresult = result;
   return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_SetBlendPoint(void* csAnimation, float blendPoint) {
+  Dali::Animation* animation = (Dali::Animation *) csAnimation ;
+
+  {
+    try {
+      animation->SetBlendPoint(blendPoint);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Animation_GetBlendPoint(void * csAnimation) {
+  Dali::Animation* animation = (Dali::Animation *) csAnimation ;
+  float result;
+
+  {
+    try {
+      result = animation->GetBlendPoint();
+    } CALL_CATCH_EXCEPTION(0);
+
+  }
+  return result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_Clear(void * jarg1) {
