@@ -12725,6 +12725,25 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Handle_GetProperty(void * jarg1, int j
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Handle_GetCurrentProperty(void * jarg1, int jarg2) {
+  void * jresult ;
+  Dali::Handle *arg1 = (Dali::Handle *) 0 ;
+  Dali::Property::Index arg2 ;
+  Dali::Property::Value result;
+
+  arg1 = (Dali::Handle *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  {
+    try {
+      result = ((Dali::Handle const *)arg1)->GetCurrentProperty(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Property::Value((const Dali::Property::Value &)result);
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Handle_GetPropertyIndices(void * jarg1, void * jarg2) {
   Dali::Handle *arg1 = (Dali::Handle *) 0 ;
   Dali::Property::IndexContainer *arg2 = 0 ;
