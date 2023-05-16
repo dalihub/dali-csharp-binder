@@ -44,6 +44,27 @@ extern "C"
 
   // Update visual property by Action::UPDATE_PROPERTY.
 
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_InternalUpdateVisualPropertyBool(void *view, int visualIndex, int visualPropertyIndex, bool valBool)
+  {
+    Dali::Toolkit::Control *pControl = (Dali::Toolkit::Control *)view;
+
+    if (!pControl)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "view is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    try
+    {
+      Dali::Property::Map tempMap;
+      tempMap.Insert(visualPropertyIndex, valBool);
+      Dali::Toolkit::DevelControl::DoAction(*pControl, visualIndex, Dali::Toolkit::DevelVisual::Action::UPDATE_PROPERTY, std::move(tempMap));
+    }
+    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
+
+    return (int)InternalPropertyReturnType::NO_ERROR;
+  }
+
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_InternalUpdateVisualPropertyFloat(void *view, int visualIndex, int visualPropertyIndex, float valFloat)
   {
     Dali::Toolkit::Control *pControl = (Dali::Toolkit::Control *)view;
@@ -86,6 +107,93 @@ extern "C"
     return (int)InternalPropertyReturnType::NO_ERROR;
   }
 
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_InternalUpdateVisualPropertyIntPair(void *view, int visualIndex, int visualPropertyIndex, int valInt1, int valInt2)
+  {
+    Dali::Toolkit::Control *pControl  = (Dali::Toolkit::Control *)view;
+
+    if (!pControl)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "view is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    try
+    {
+      Dali::Property::Array tempArray;
+      tempArray.Add(Dali::Property::Value(valInt1));
+      tempArray.Add(Dali::Property::Value(valInt2));
+      Dali::Property::Map tempMap;
+      tempMap.Insert(visualPropertyIndex, std::move(tempArray));
+      Dali::Toolkit::DevelControl::DoAction(*pControl, visualIndex, Dali::Toolkit::DevelVisual::Action::UPDATE_PROPERTY, std::move(tempMap));
+    }
+    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
+
+    return (int)InternalPropertyReturnType::NO_ERROR;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_InternalUpdateVisualPropertyString(void *view, int visualIndex, int visualPropertyIndex, char* valString)
+  {
+    Dali::Toolkit::Control *pControl  = (Dali::Toolkit::Control *)view;
+
+    if (!pControl)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "view is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    if (!valString)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "valString1 is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    try
+    {
+      Dali::Property::Map tempMap;
+      tempMap.Insert(visualPropertyIndex, std::move(valString));
+      Dali::Toolkit::DevelControl::DoAction(*pControl, visualIndex, Dali::Toolkit::DevelVisual::Action::UPDATE_PROPERTY, std::move(tempMap));
+    }
+    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
+
+    return (int)InternalPropertyReturnType::NO_ERROR;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_InternalUpdateVisualPropertyStringPair(void *view, int visualIndex, int visualPropertyIndex, char* valString1, char* valString2)
+  {
+    Dali::Toolkit::Control *pControl  = (Dali::Toolkit::Control *)view;
+
+    if (!pControl)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "view is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    if (!valString1)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "valString1 is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    if (!valString2)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "valString2 is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    try
+    {
+      Dali::Property::Array tempArray;
+      tempArray.Add(Dali::Property::Value(valString1));
+      tempArray.Add(Dali::Property::Value(valString2));
+      Dali::Property::Map tempMap;
+      tempMap.Insert(visualPropertyIndex, std::move(tempArray));
+      Dali::Toolkit::DevelControl::DoAction(*pControl, visualIndex, Dali::Toolkit::DevelVisual::Action::UPDATE_PROPERTY, std::move(tempMap));
+    }
+    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
+
+    return (int)InternalPropertyReturnType::NO_ERROR;
+  }
+
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_InternalUpdateVisualPropertyVector4(void *view, int visualIndex, int visualPropertyIndex, void *vector4)
   {
     Dali::Toolkit::Control *pControl = (Dali::Toolkit::Control *)view;
@@ -115,7 +223,7 @@ extern "C"
 
   // Other Actions witch is not Action::UPDATE_PROPERTY.
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoActionWithEmptyAttributes(void *view, int visualIndex, int actionId, void *vector4)
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoActionWithEmptyAttributes(void *view, int visualIndex, int actionId)
   {
     Dali::Toolkit::Control *pControl  = (Dali::Toolkit::Control *)view;
 
@@ -126,6 +234,21 @@ extern "C"
     {
       try {
         Dali::Toolkit::DevelControl::DoAction(*pControl, visualIndex, actionId, Dali::Property::Value());
+      } CALL_CATCH_EXCEPTION();
+    }
+  }
+
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoActionWithSingleIntAttributes(void *view, int visualIndex, int actionId, int actionValue)
+  {
+    Dali::Toolkit::Control *pControl  = (Dali::Toolkit::Control *)view;
+
+    if (!pControl) {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control & type is null", 0);
+      return;
+    }
+    {
+      try {
+        Dali::Toolkit::DevelControl::DoAction(*pControl, visualIndex, actionId, Dali::Property::Value(actionValue));
       } CALL_CATCH_EXCEPTION();
     }
   }
