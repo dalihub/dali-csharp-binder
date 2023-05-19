@@ -35,6 +35,7 @@ extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 typedef std::string FontPath;
 typedef std::string FontFamily;
 typedef std::string FontStyle;
+typedef std::vector<FontPath>   FontPathList;
 typedef std::vector<FontFamily> FontFamilyList;
 typedef std::vector<Dali::TextAbstraction::FontDescription> FontList;
 
@@ -77,6 +78,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_PreCache(char ** fallbackFami
   }
 
   Dali::TextAbstraction::FontClientPreCache(fallbackFamilyList, extraFamilyList, localeFamily, useThread);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_FontPreLoad(char ** fontPathArray, int fontPathSize, char ** memoryFontPathArray, int memoryFontPathSize, bool useThread) {
+  FontPathList fontPathList;
+  FontPathList memoryFontPathList;
+
+  if(fontPathArray)
+  {
+    fontPathList.assign(fontPathArray, fontPathArray + fontPathSize);
+  }
+
+  if(memoryFontPathArray)
+  {
+    memoryFontPathList.assign(memoryFontPathArray, memoryFontPathArray + memoryFontPathSize);
+  }
+
+  Dali::TextAbstraction::FontClientFontPreLoad(fontPathList, memoryFontPathList, useThread);
 }
 
 
