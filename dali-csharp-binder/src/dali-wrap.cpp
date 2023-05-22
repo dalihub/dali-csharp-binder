@@ -139,14 +139,98 @@
 # pragma warning disable 592
 #endif
 
-
+// EXTERNAL INCLUDES
+#include <algorithm>
+#include <exception>
+#include <map>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include <string_view>
-#include <stdio.h>
+#include <string>
+#include <stdexcept>
+#include <utility>
+#include <vector>
 
+
+// INTERNAL INCLUDES
 #include "common.h"
 #include "slim-custom-view-impl.h"
+
+#include <time.h>
+
+#include <dali/dali.h>
+#include <dali-toolkit/dali-toolkit.h>
+
+#include <dali/integration-api/debug.h>
+
+#include <dali/devel-api/actors/actor-devel.h>
+#include <dali/devel-api/actors/camera-actor-devel.h>
+#include <dali/devel-api/animation/key-frames-devel.h>
+#include <dali/devel-api/common/stage-devel.h>
+#include <dali/devel-api/events/key-event-devel.h>
+#include <dali/devel-api/events/wheel-event-devel.h>
+#include <dali/devel-api/events/hover-event-devel.h>
+#include <dali/devel-api/events/touch-point.h>
+#include <dali/devel-api/events/pan-gesture-devel.h>
+#include <dali/devel-api/events/pinch-gesture-devel.h>
+#include <dali/devel-api/events/long-press-gesture-devel.h>
+#include <dali/devel-api/events/tap-gesture-devel.h>
+#include <dali/devel-api/object/csharp-type-info.h>
+#include <dali/devel-api/object/csharp-type-registry.h>
+#include <dali/devel-api/update/frame-callback-interface.h>
+#include <dali/devel-api/update/update-proxy.h>
+
+#include <dali/public-api/events/mouse-button.h>
+#include <dali/public-api/math/matrix.h>
+#include <dali/public-api/math/matrix3.h>
+#include <dali/public-api/math/viewport.h>
+#include <dali/public-api/object/property-key.h>
+
+#include <dali/public-api/adaptor-framework/timer.h>
+#include <dali/public-api/adaptor-framework/style-change.h>
+
+#include <dali/devel-api/adaptor-framework/environment-variable.h>
+#include <dali/devel-api/adaptor-framework/image-loading.h>
+#include <dali/devel-api/adaptor-framework/native-image-source-devel.h>
+#include <dali/devel-api/adaptor-framework/pixel-buffer.h>
+#include <dali/devel-api/adaptor-framework/window-system-devel.h>
+
+#include <dali-toolkit/devel-api/accessibility-manager/accessibility-manager.h>
+#include <dali-toolkit/devel-api/builder/builder.h>
+#include <dali-toolkit/devel-api/focus-manager/keyinput-focus-manager.h>
+#include <dali-toolkit/devel-api/focus-manager/keyboard-focus-manager-devel.h>
+
+#include <dali-toolkit/devel-api/controls/control-devel.h>
+#include <dali-toolkit/devel-api/controls/control-depth-index-ranges.h>
+#include <dali-toolkit/devel-api/controls/gaussian-blur-view/gaussian-blur-view.h>
+#include <dali-toolkit/devel-api/controls/page-turn-view/page-factory.h>
+#include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-view.h>
+#include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-landscape-view.h>
+#include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-portrait-view.h>
+#include <dali-toolkit/devel-api/controls/alignment/alignment.h>
+#include <dali-toolkit/devel-api/controls/scroll-bar/scroll-bar.h>
+#include <dali-toolkit/devel-api/controls/table-view/table-view.h>
+#include <dali-toolkit/devel-api/controls/tooltip/tooltip-properties.h>
+#include <dali-toolkit/devel-api/controls/video-view/video-view-devel.h>
+
+#include <dali-toolkit/devel-api/visual-factory/visual-base.h>
+#include <dali-toolkit/devel-api/visual-factory/visual-factory.h>
+#include <dali-toolkit/devel-api/visual-factory/transition-data.h>
+
+#include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
+
+#include <dali-toolkit/devel-api/text/rendering-backend.h>
+
+#include <dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h>
+
+#include <dali-toolkit/public-api/visuals/visual-properties.h>
+#include <dali-toolkit/public-api/visuals/text-visual-properties.h>
+#include <dali-toolkit/public-api/visuals/image-visual-properties.h>
+
+#include <dali-toolkit/public-api/image-loader/image.h>
+#include <dali-toolkit/public-api/image-loader/image-url.h>
+
 
 SWIG_CSharpException_t SWIG_csharp_exceptions[] = {
   { SWIG_CSharpApplicationException, NULL },
@@ -271,8 +355,6 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_NDalic(SWIG_CSharpStringH
 #if defined(DEBUG_DIRECTOR_OWNED)
 #include <iostream>
 #endif
-#include <string>
-#include <exception>
 
 namespace Swig {
   /* Director base class - not currently used in C# directors */
@@ -344,91 +426,7 @@ void SWIG_CSharpException(int code, const char *msg) {
 }
 
 
-#include <stdexcept>
-
-
 #define SWIGSTDCALL
-
-#include <time.h>
-
-#include <dali/dali.h>
-#include <dali-toolkit/dali-toolkit.h>
-
-#include <dali/devel-api/actors/actor-devel.h>
-#include <dali/devel-api/actors/camera-actor-devel.h>
-#include <dali/devel-api/animation/key-frames-devel.h>
-#include <dali/devel-api/common/stage-devel.h>
-#include <dali/devel-api/events/key-event-devel.h>
-#include <dali/devel-api/events/wheel-event-devel.h>
-#include <dali/devel-api/events/hover-event-devel.h>
-#include <dali/devel-api/events/touch-point.h>
-#include <dali/devel-api/events/pan-gesture-devel.h>
-#include <dali/devel-api/events/pinch-gesture-devel.h>
-#include <dali/devel-api/events/long-press-gesture-devel.h>
-#include <dali/devel-api/events/tap-gesture-devel.h>
-
-#include <dali/public-api/math/matrix.h>
-#include <dali/public-api/math/matrix3.h>
-#include <dali/public-api/math/viewport.h>
-#include <dali/public-api/object/property-key.h>
-#include <dali/devel-api/object/csharp-type-info.h>
-#include <dali/devel-api/object/csharp-type-registry.h>
-
-#include <dali/public-api/adaptor-framework/timer.h>
-#include <dali/public-api/adaptor-framework/style-change.h>
-#include <dali/devel-api/adaptor-framework/environment-variable.h>
-
-#include <dali-toolkit/devel-api/accessibility-manager/accessibility-manager.h>
-
-#include <dali-toolkit/devel-api/builder/builder.h>
-
-#include <dali-toolkit/devel-api/focus-manager/keyinput-focus-manager.h>
-#include <dali-toolkit/devel-api/focus-manager/keyboard-focus-manager-devel.h>
-
-#include <dali-toolkit/devel-api/controls/control-devel.h>
-#include <dali-toolkit/devel-api/controls/gaussian-blur-view/gaussian-blur-view.h>
-#include <dali-toolkit/devel-api/controls/page-turn-view/page-factory.h>
-#include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-view.h>
-#include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-landscape-view.h>
-#include <dali-toolkit/devel-api/controls/page-turn-view/page-turn-portrait-view.h>
-#include <dali-toolkit/devel-api/controls/alignment/alignment.h>
-#include <dali-toolkit/devel-api/controls/scroll-bar/scroll-bar.h>
-#include <dali-toolkit/devel-api/controls/table-view/table-view.h>
-
-#include <dali-toolkit/devel-api/visual-factory/visual-base.h>
-#include <dali-toolkit/devel-api/visual-factory/visual-factory.h>
-#include <dali-toolkit/devel-api/visual-factory/transition-data.h>
-
-#include <dali-toolkit/public-api/visuals/visual-properties.h>
-#include <dali-toolkit/public-api/visuals/text-visual-properties.h>
-#include <dali-toolkit/public-api/visuals/image-visual-properties.h>
-
-#include <dali-toolkit/devel-api/controls/tooltip/tooltip-properties.h>
-#include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
-#include <dali-toolkit/devel-api/controls/control-depth-index-ranges.h>
-
-#include <dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h>
-
-#include <dali/devel-api/adaptor-framework/pixel-buffer.h>
-#include <dali/devel-api/adaptor-framework/image-loading.h>
-
-#include <dali/public-api/events/mouse-button.h>
-
-#include <dali/integration-api/debug.h>
-
-#include <dali-toolkit/devel-api/controls/video-view/video-view-devel.h>
-
-#include <dali/devel-api/adaptor-framework/native-image-source-devel.h>
-#include <dali/devel-api/adaptor-framework/window-system-devel.h>
-
-#include <dali-toolkit/devel-api/text/rendering-backend.h>
-
-#include <dali/devel-api/update/frame-callback-interface.h>
-#include <dali/devel-api/update/update-proxy.h>
-
-#include <dali-toolkit/public-api/image-loader/image.h>
-#include <dali-toolkit/public-api/image-loader/image-url.h>
-
 
 // add here SWIG version check
 
@@ -445,26 +443,6 @@ void SWIG_CSharpException(int code, const char *msg) {
 // debug info too long etc etc
 #pragma warning(disable: 4786)
 #endif
-
-
-#include <stdexcept>
-
-
-#include <string>
-
-
-#include <vector>
-#include <algorithm>
-#include <stdexcept>
-
-
-#include <map>
-#include <algorithm>
-#include <stdexcept>
-
-
-#include <utility>
-
 
 typedef float floatp;
 
@@ -12747,6 +12725,25 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Handle_GetProperty(void * jarg1, int j
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Handle_GetCurrentProperty(void * jarg1, int jarg2) {
+  void * jresult ;
+  Dali::Handle *arg1 = (Dali::Handle *) 0 ;
+  Dali::Property::Index arg2 ;
+  Dali::Property::Value result;
+
+  arg1 = (Dali::Handle *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  {
+    try {
+      result = ((Dali::Handle const *)arg1)->GetCurrentProperty(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Property::Value((const Dali::Property::Value &)result);
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Handle_GetPropertyIndices(void * jarg1, void * jarg2) {
   Dali::Handle *arg1 = (Dali::Handle *) 0 ;
   Dali::Property::IndexContainer *arg2 = 0 ;
@@ -19632,6 +19629,44 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Touch_GetAngle(void * jarg1, unsigned 
   }
 
   jresult = new Dali::Degree((const Dali::Degree &)result);
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetDeviceClass(void * jarg1, unsigned long jarg2) {
+  int jresult ;
+  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  std::size_t arg2 ;
+  Dali::Device::Class::Type result;
+
+  arg1 = (Dali::TouchEvent *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::TouchEvent const *)arg1)->GetDeviceClass(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetDeviceSubclass(void * jarg1, unsigned long jarg2) {
+  int jresult ;
+  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  std::size_t arg2 ;
+  Dali::Device::Subclass::Type result;
+
+  arg1 = (Dali::TouchEvent *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::TouchEvent const *)arg1)->GetDeviceSubclass(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
   return jresult;
 }
 
@@ -53532,4 +53567,3 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetScreenSize() {
 #ifdef __cplusplus
 }
 #endif
-

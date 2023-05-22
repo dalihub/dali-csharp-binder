@@ -19,6 +19,7 @@
 #include <dali-scene3d/public-api/controls/model/model.h>
 #include <dali-scene3d/public-api/loader/bvh-loader.h>
 #include <dali-scene3d/public-api/loader/facial-animation-loader.h>
+#include <dali/devel-api/animation/key-frames-devel.h>
 
 // INTERNAL INCLUDES
 #include "common.h"
@@ -483,7 +484,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_FindChildModelNodeByName(void* cs
   return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel, char* csFileName, void* csScale)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel, char* csFileName, void* csScale, bool csUseRootNodeTranslate)
 {
   Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
   Dali::Animation       result;
@@ -505,12 +506,47 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel,
   {
     scale = Dali::Vector3(*static_cast<const Dali::Vector3*>(csScale));
   }
+
   std::string filename(csFileName);
   {
     try
     {
-      Dali::Scene3D::Loader::AnimationDefinition        animationDefinition = Dali::Scene3D::Loader::LoadBvh(filename, "LoadedBvhAnimation", scale);
-      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor            = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
+      Dali::Scene3D::Loader::AnimationDefinition animationDefinition = Dali::Scene3D::Loader::LoadBvh(filename, "LoadedBvhAnimation", scale);
+
+      if(csUseRootNodeTranslate && animationDefinition.GetPropertyCount() > 0u)
+      {
+        // We can assume that 0's property is for root translate
+        auto& property = animationDefinition.GetPropertyAt(0u);
+        auto& keyFrames = property.mKeyFrames;
+
+        // Let we check that we can change animatable property
+        // TODO : If AnimateBetweenBy feature prepared, we can remove below logic.
+        if(keyFrames)
+        {
+          auto rootNode = model->FindChildByName(property.mNodeName);
+          if(rootNode)
+          {
+            // Get root node's current position and apply it into property animation.
+            auto rootNodePosition = rootNode.GetProperty<Dali::Vector3>(Dali::Actor::Property::POSITION);
+
+            auto frameCount = Dali::DevelKeyFrames::GetKeyFrameCount(keyFrames);
+            for(auto i = 0u; i < frameCount; ++i)
+            {
+              float                 keyFrameProgress;
+              Dali::Property::Value keyFrameValue;
+              Dali::Vector3         valuePosition;
+
+              Dali::DevelKeyFrames::GetKeyFrame(keyFrames, i, keyFrameProgress, keyFrameValue);
+              if(DALI_LIKELY(keyFrameValue.Get(valuePosition)))
+              {
+                Dali::DevelKeyFrames::SetKeyFrameValue(keyFrames, i, rootNodePosition + valuePosition);
+              }
+            }
+          }
+        }
+      }
+
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
         return model->FindChildByName(property.mNodeName);
       };
       result = animationDefinition.ReAnimate(getActor);
@@ -521,7 +557,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel,
   return new Dali::Animation((const Dali::Animation&)result);
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_2(void* csModel, char* csBuffer, int csBufferLength, void* csScale)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_2(void* csModel, char* csBuffer, int csBufferLength, void* csScale, bool csUseRootNodeTranslate)
 {
   Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
   Dali::Animation       result;
@@ -548,8 +584,41 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_2(void* csModel,
   {
     try
     {
-      Dali::Scene3D::Loader::AnimationDefinition        animationDefinition = Dali::Scene3D::Loader::LoadBvhFromBuffer(rawBuffer, csBufferLength, "LoadedBvhAnimation", scale);
-      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor            = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
+      Dali::Scene3D::Loader::AnimationDefinition animationDefinition = Dali::Scene3D::Loader::LoadBvhFromBuffer(rawBuffer, csBufferLength, "LoadedBvhAnimation", scale);
+
+      if(csUseRootNodeTranslate && animationDefinition.GetPropertyCount() > 0u)
+      {
+        // We can assume that 0's property is for root translate
+        auto& property = animationDefinition.GetPropertyAt(0u);
+        auto& keyFrames = property.mKeyFrames;
+
+        // Let we check that we can change animatable property
+        // TODO : If AnimateBetweenBy feature prepared, we can remove below logic.
+        if(keyFrames)
+        {
+          auto rootNode = model->FindChildByName(property.mNodeName);
+          if(rootNode)
+          {
+            // Get root node's current position and apply it into property animation.
+            auto rootNodePosition = rootNode.GetProperty<Dali::Vector3>(Dali::Actor::Property::POSITION);
+
+            auto frameCount = Dali::DevelKeyFrames::GetKeyFrameCount(keyFrames);
+            for(auto i = 0u; i < frameCount; ++i)
+            {
+              float                 keyFrameProgress;
+              Dali::Property::Value keyFrameValue;
+              Dali::Vector3         valuePosition;
+              Dali::DevelKeyFrames::GetKeyFrame(keyFrames, i, keyFrameProgress, keyFrameValue);
+              if(DALI_LIKELY(keyFrameValue.Get(valuePosition)))
+              {
+                Dali::DevelKeyFrames::SetKeyFrameValue(keyFrames, i, rootNodePosition + valuePosition);
+              }
+            }
+          }
+        }
+      }
+
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
         return model->FindChildByName(property.mNodeName);
       };
       result = animationDefinition.ReAnimate(getActor);
