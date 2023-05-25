@@ -62,7 +62,7 @@ SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_FontClient_SWIGUpcast(Dali
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_PreCache(char ** fallbackFamilyArray, int fallbackFamilySize, char ** extraFamilyArray, int extraFamilySize, char * localeFamilyString, bool useThread) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_PreCache(char ** fallbackFamilyArray, int fallbackFamilySize, char ** extraFamilyArray, int extraFamilySize, char * localeFamilyString, bool useThread, bool syncCreation) {
   FontFamilyList fallbackFamilyList;
   FontFamilyList extraFamilyList;
   FontFamily localeFamily = localeFamilyString ? localeFamilyString : "";
@@ -77,11 +77,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_PreCache(char ** fallbackFami
     extraFamilyList.assign(extraFamilyArray, extraFamilyArray + extraFamilySize);
   }
 
-  Dali::TextAbstraction::FontClientPreCache(fallbackFamilyList, extraFamilyList, localeFamily, useThread);
+  Dali::TextAbstraction::FontClientPreCache(fallbackFamilyList, extraFamilyList, localeFamily, useThread, syncCreation);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_FontPreLoad(char ** fontPathArray, int fontPathSize, char ** memoryFontPathArray, int memoryFontPathSize, bool useThread) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_FontPreLoad(char ** fontPathArray, int fontPathSize, char ** memoryFontPathArray, int memoryFontPathSize, bool useThread, bool syncCreation) {
   FontPathList fontPathList;
   FontPathList memoryFontPathList;
 
@@ -95,7 +95,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_FontPreLoad(char ** fontPathA
     memoryFontPathList.assign(memoryFontPathArray, memoryFontPathArray + memoryFontPathSize);
   }
 
-  Dali::TextAbstraction::FontClientFontPreLoad(fontPathList, memoryFontPathList, useThread);
+  Dali::TextAbstraction::FontClientFontPreLoad(fontPathList, memoryFontPathList, useThread, syncCreation);
 }
 
 
