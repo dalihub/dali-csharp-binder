@@ -135,6 +135,29 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Rotation_3(void* nuiPitchRadian, vo
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Rotation_4(void* nuiVector4)
+{
+  void*             jresult;
+  Dali::Vector4*    vector4    = (Dali::Vector4*)nuiVector4;
+  Dali::Quaternion* result = 0;
+
+  if(!vector4)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type vector4 is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = (Dali::Quaternion*)new Dali::Quaternion((Dali::Vector4 const&)*vector4);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void*)result;
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Rotation(void* nuiRotation)
 {
   Dali::Quaternion* quaternion = (Dali::Quaternion*)0;
