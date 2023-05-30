@@ -2638,6 +2638,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_ExcludeInputRegion(void* winHandl
 
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_KeepRendering(void* winHandle, float durationSeconds)
+{
+  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
+  if(!window)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return;
+  }
+  {
+    try
+    {
+      window->KeepRendering(durationSeconds);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Accessibility_Highlight_Signal(void* winHandle) {
   Dali::Window* window = (Dali::Window*) winHandle;
   Dali::DevelWindow::AccessibilityHighlightSignalType* result = 0;
