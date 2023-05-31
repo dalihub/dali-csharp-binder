@@ -35168,26 +35168,6 @@ GENERATE_CONTROL_SIGNAL(void(*)(Dali::Toolkit::Control), ResourceReadySignal)
 // CSharp_Dali_View_ResourceReadySignal_Connect
 // CSharp_Dali_View_ResourceReadySignal_Disconnect
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Control *arg1 = 0 ;
-  Dali::Toolkit::Control::ResourceReadySignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Control *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::Control::ResourceReadySignalType *) &arg1->ResourceReadySignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View__SWIG_2(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::Internal::Control *arg1 = 0 ;
