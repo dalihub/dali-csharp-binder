@@ -12640,6 +12640,55 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Handle_GetPropertyCount(void * j
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_LookAt(void* csActor, void* csTarget, void* csUp, void* csLocalForward, void* csLocalUp)
+{
+  Dali::Actor   actor;
+  Dali::Vector3 target;
+  Dali::Vector3 up           = Vector3::YAXIS;
+  Dali::Vector3 localForward = Vector3::ZAXIS;
+  Dali::Vector3 localUp      = Vector3::YAXIS;
+
+  if(!csActor)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
+    return;
+  }
+
+  if(!csTarget)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null target Dali::Vector3", 0);
+    return;
+  }
+
+  actor  = *(Dali::Actor*)csActor;
+  target = *(Dali::Vector3*)csTarget;
+
+  // Use default value if csUp is null
+  if(csUp)
+  {
+    up = *(Dali::Vector3*)csUp;
+  }
+
+  // Use default value if csLocalForward is null
+  if(csLocalForward)
+  {
+    localForward = *(Dali::Vector3*)csLocalForward;
+  }
+
+  // Use default value if csLocalForward is null
+  if(csLocalUp)
+  {
+    localUp = *(Dali::Vector3*)csLocalUp;
+  }
+
+  {
+    try
+    {
+      Dali::DevelActor::LookAt(actor, target, up, localForward, localUp);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Handle_GetPropertyName(void * jarg1, int jarg2) {
   char * jresult ;
