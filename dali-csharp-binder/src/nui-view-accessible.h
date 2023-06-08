@@ -1,6 +1,5 @@
-
 /*
- * Copyright (c) 2022 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2023 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,17 +23,24 @@
 #include <dali/devel-api/adaptor-framework/accessibility.h>
 #include <dali/devel-api/atspi-interfaces/editable-text.h>
 #include <dali/devel-api/atspi-interfaces/selection.h>
+#include <dali/devel-api/atspi-interfaces/table.h>
+#include <dali/devel-api/atspi-interfaces/table-cell.h>
 #include <dali/devel-api/atspi-interfaces/text.h>
 #include <dali/devel-api/atspi-interfaces/value.h>
 
 class NUIViewAccessible : public Dali::Toolkit::DevelControl::ControlAccessible,
                           public virtual Dali::Accessibility::EditableText, // includes Text
                           public virtual Dali::Accessibility::Selection,
-                          public virtual Dali::Accessibility::Value
+                          public virtual Dali::Accessibility::Value,
+                          public virtual Dali::Accessibility::Table,
+                          public virtual Dali::Accessibility::TableCell
 
 {
 public:
   struct AccessibilityDelegate; // Forward declaration
+
+  using IntPairType   = std::pair<int, int>;
+  using IntVectorType = std::vector<int>;
 
   NUIViewAccessible()                         = delete;
   NUIViewAccessible(const NUIViewAccessible&) = delete;
@@ -140,6 +146,75 @@ public:
   bool ClearSelection() override;
 
   bool DeselectChild(int childIndex) override;
+
+  // Table interface
+
+  int GetRowCount() const override;
+
+  int GetColumnCount() const override;
+
+  int GetSelectedRowCount() const override;
+
+  int GetSelectedColumnCount() const override;
+
+  Dali::Accessibility::Accessible* GetCaption() const override;
+
+  Dali::Accessibility::Accessible* GetSummary() const override;
+
+  Dali::Accessibility::TableCell* GetCell(int row, int column) const override;
+
+  std::size_t GetChildIndex(int row, int column) const override;
+
+  // Non-virtual helper. Inverse of GetChildIndex().
+  IntPairType GetPositionByChildIndex(std::size_t childIndex) const;
+
+  int GetRowByChildIndex(std::size_t childIndex) const override;
+
+  int GetColumnByChildIndex(std::size_t childIndex) const override;
+
+  std::string GetRowDescription(int row) const override;
+
+  std::string GetColumnDescription(int column) const override;
+
+  int GetRowSpan(int row, int column) const override;
+
+  int GetColumnSpan(int row, int column) const override;
+
+  Dali::Accessibility::Accessible* GetRowHeader(int row) const override;
+
+  Dali::Accessibility::Accessible* GetColumnHeader(int column) const override;
+
+  IntVectorType GetSelectedRows() const override;
+
+  IntVectorType GetSelectedColumns() const override;
+
+  bool IsRowSelected(int row) const override;
+
+  bool IsColumnSelected(int column) const override;
+
+  bool IsCellSelected(int row, int column) const override;
+
+  bool AddRowSelection(int row) override;
+
+  bool AddColumnSelection(int column) override;
+
+  bool RemoveRowSelection(int row) override;
+
+  bool RemoveColumnSelection(int column) override;
+
+  Dali::Accessibility::Table::RowColumnSpanType GetRowColumnSpan(std::size_t childIndex) const override;
+
+  // TableCell interface
+
+  Dali::Accessibility::Table* GetTable() const override;
+
+  IntPairType GetCellPosition() const override;
+
+  int GetCellRowSpan() const override;
+
+  int GetCellColumnSpan() const override;
+
+  Dali::Accessibility::TableCell::RowColumnSpanType GetCellRowColumnSpan() const override;
 
 private:
   // Points to memory managed from the C# side
