@@ -52586,9 +52586,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_AcquireBuffer(void* j
 {
   void* jresult;
   NativeImageSource* arg1 = (NativeImageSource*)jarg1;
-  uint16_t* arg2 = (uint16_t*)(jarg2);
-  uint16_t* arg3 = (uint16_t*)(jarg3);
-  uint16_t* arg4 = (uint16_t*)(jarg4);
+  uint32_t* arg2 = (uint32_t*)(jarg2);
+  uint32_t* arg3 = (uint32_t*)(jarg3);
+  uint32_t* arg4 = (uint32_t*)(jarg4);
   {
     try {
       jresult = (void *)Dali::DevelNativeImageSource::AcquireBuffer( *arg1, *arg2, *arg3, *arg4 );
@@ -52624,7 +52624,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageSource_ReleaseBuffer(void* ja
 
   {
     try {
-      jresult = Dali::DevelNativeImageSource::ReleaseBuffer( *arg1 );
+      jresult = Dali::DevelNativeImageSource::ReleaseBuffer(*arg1, Rect<uint32_t>{});
     }
     catch (std::out_of_range & e) {
       {
@@ -52690,6 +52690,24 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* han
 
   jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
   return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_EnableBackBuffer(void* nativeImageHandle, bool enable)
+{
+  NativeImageSource* nativeImage = static_cast<NativeImageSource*>(nativeImageHandle);
+
+  if(!nativeImage)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "nativeImageHandle is null", 0);
+    return;
+  }
+  {
+    try
+    {
+      Dali::DevelNativeImageSource::EnableBackBuffer(*nativeImage, enable);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageUrl(void* jarg1)

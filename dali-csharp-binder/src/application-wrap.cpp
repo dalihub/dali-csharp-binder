@@ -1722,6 +1722,70 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowData(int nuiArgc, char* nuiArgv, char* nuiStyleSheet, bool nuiUIThread, void* nuiWindowData)
+{
+  void*             jresult;
+  int*              argc = nullptr;
+  char***           argv = nullptr;
+  Dali::WindowData* pWindowData;
+  Dali::Application result;
+
+  {
+    // TODO : What should we do if already generated argv exist?
+    ReleaseArgVMemory();
+    // generate argv data from the C# args
+    int   index  = 0;
+    int   length = 0;
+    char* retPtr = NULL;
+    char* nextPtr;
+
+    gArgV = new char*[nuiArgc + 1];
+
+    for(retPtr = strtok_r(nuiArgv, " ", &nextPtr);
+        retPtr != NULL && index < nuiArgc;
+        retPtr = strtok_r(NULL, " ", &nextPtr))
+    {
+      length       = 0;
+      length       = strlen(retPtr);
+      gArgV[index] = new char[length + 1];
+      strncpy(gArgV[index], retPtr, length);
+      gArgV[index][length] = '\0';
+      index++;
+    }
+
+    while(index < nuiArgc)
+    {
+      // if nuiArgc - index >1, maybe cause error.
+      gArgV[index] = NULL;
+      index++;
+    }
+
+    gArgV[nuiArgc] = NULL;
+    gArgC          = nuiArgc;
+
+    argc = &gArgC;
+    argv = &gArgV;
+  }
+
+  std::string styleSheet(nuiStyleSheet);
+  pWindowData = (Dali::WindowData*)nuiWindowData;
+  if(!pWindowData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
+    return 0;
+  }
+
+  {
+    try
+    {
+      result = Dali::Application::New(argc, argv, styleSheet, nuiUIThread, *pWindowData);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = new Dali::Application((const Dali::Application&)result);
+  return jresult;
+}
+
 SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Application_GetRenderThreadId(void* jarg1)
 {
   Dali::Application* arg1 = (Dali::Application*)jarg1;
