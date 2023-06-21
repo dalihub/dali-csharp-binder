@@ -24531,12 +24531,35 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyFrames_Add__SWIG_1(void * jarg1, floa
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyFrames_GetKeyFrameCount(void* keyFrames)
 {
-  return (unsigned int) Dali::DevelKeyFrames::GetKeyFrameCount(*((Dali::KeyFrames*)keyFrames));
+  unsigned int jresult;
+  {
+    try {
+      jresult = Dali::DevelKeyFrames::GetKeyFrameCount(*((Dali::KeyFrames*)keyFrames));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return jresult;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyFrames_GetKeyFrame(void* keyFrames, unsigned int index, float* time, void* value)
 {
-  Dali::DevelKeyFrames::GetKeyFrame(*((Dali::KeyFrames*)keyFrames), (size_t)index, *time, *((Property::Value*)value));
+  if (!value) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Property::Value", 0);
+    return ;
+  }
+  try {
+    Dali::DevelKeyFrames::GetKeyFrame(*((Dali::KeyFrames*)keyFrames), (size_t)index, *time, *((Property::Value*)value));
+  } CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyFrames_SetKeyFrameValue(void* keyFrames, unsigned int index, void* value)
+{
+  if (!value) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Property::Value", 0);
+    return ;
+  }
+  try {
+    Dali::DevelKeyFrames::SetKeyFrameValue(*((Dali::KeyFrames*)keyFrames), (size_t)index, *((const Property::Value*)value));
+  } CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Path_Property_POINTS_get() {
