@@ -49,6 +49,42 @@ void ReleaseArgVMemory()
   }
   gArgC = 0;
 }
+
+void GenerationArgV(int argc, char* argv)
+{
+  // TODO : What should we do if already generated argv exist?
+  ReleaseArgVMemory();
+  // generate argv data from the C# args
+  int   index  = 0;
+  int   length = 0;
+  char* retPtr = NULL;
+  char* nextPtr;
+
+  gArgV = new char*[argc + 1];
+
+  for(retPtr = strtok_r(argv, " ", &nextPtr);
+      retPtr != NULL && index < argc;
+      retPtr = strtok_r(NULL, " ", &nextPtr))
+  {
+    length       = 0;
+    length       = strlen(retPtr);
+    gArgV[index] = new char[length + 1];
+    strncpy(gArgV[index], retPtr, length);
+    gArgV[index][length] = '\0';
+    index++;
+  }
+
+  while(index < argc)
+  {
+    //if jarg1 - index >1, maybe cause error.
+    gArgV[index] = NULL;
+    index++;
+  }
+
+  gArgV[argc] = NULL;
+  gArgC        = argc;
+}
+
 } // unnamed namespace
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Battery_Status_SP__Sg__Empty(Dali::Signal<void(Dali::DeviceStatus::Battery::Status)> const* self)
@@ -1614,7 +1650,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int jarg1, char
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, char* nuiStyleSheet, int nuiWindowMode, void* nuiPositionSize, bool nuiUseUiThread)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, char* nuiArgv, char* nuiStyleSheet, int nuiWindowMode, void* nuiPositionSize, bool nuiUseUiThread)
 {
   void*                          jresult;
   int*                           argc = nullptr;
@@ -1640,6 +1676,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, ch
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
     return 0;
   }
+
+  GenerationArgV(nuiArgc, nuiArgv);
+  argc = &gArgC;
+  argv = &gArgV;
 
   positionSize = *positionSizeP;
   {
