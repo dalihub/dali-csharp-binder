@@ -2655,6 +2655,42 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_KeepRendering(void* winHandle, fl
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPartialUpdateEnabled(void* winHandle, bool enabled)
+{
+  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
+  if(!window)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return;
+  }
+  {
+    try
+    {
+      window->SetPartialUpdateEnabled(enabled);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsPartialUpdateEnabled(void* winHandle)
+{
+  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
+  bool enabled = false;
+  if(!window)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return false;
+  }
+  {
+    try
+    {
+      enabled = window->IsPartialUpdateEnabled();
+    }
+    CALL_CATCH_EXCEPTION(false);
+  }
+  return enabled;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Accessibility_Highlight_Signal(void* winHandle) {
   Dali::Window* window = (Dali::Window*) winHandle;
   Dali::DevelWindow::AccessibilityHighlightSignalType* result = 0;
