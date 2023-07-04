@@ -88,9 +88,12 @@ SET( dali_csharp_binder_tizen_wearable_src_files
 SET( dali_csharp_binder_scene3d_src_files
   ${dali_csharp_binder_dir}/src/light-wrap.cpp
   ${dali_csharp_binder_dir}/src/material-wrap.cpp
-  ${dali_csharp_binder_dir}/src/model-primitive-wrap.cpp
   ${dali_csharp_binder_dir}/src/model-node-wrap.cpp
+  ${dali_csharp_binder_dir}/src/model-primitive-wrap.cpp
   ${dali_csharp_binder_dir}/src/model-wrap.cpp
+  ${dali_csharp_binder_dir}/src/motion-data-wrap.cpp
+  ${dali_csharp_binder_dir}/src/motion-index-wrap.cpp
+  ${dali_csharp_binder_dir}/src/motion-value-wrap.cpp
   ${dali_csharp_binder_dir}/src/scene-view-wrap.cpp
 )
 
