@@ -3777,6 +3777,10 @@ GENERATE_ACTOR_SIGNAL(bool(*)(Dali::Actor, Dali::WheelEvent const&), WheelEventS
 // CSharp_Dali_Actor_WheelEventSignal_Connect
 // CSharp_Dali_Actor_WheelEventSignal_Disconnect
 
+GENERATE_DEVEL_ACTOR_SIGNAL(bool(*)(Dali::Actor, Dali::WheelEvent const&), InterceptWheelSignal)
+// CSharp_Dali_Actor_InterceptWheelSignal_Connect
+// CSharp_Dali_Actor_InterceptWheelSignal_Disconnect
+
 GENERATE_ACTOR_SIGNAL(void(*)(Dali::Actor), OnSceneSignal)
 // CSharp_Dali_Actor_OnSceneSignal_Connect
 // CSharp_Dali_Actor_OnSceneSignal_Disconnect
