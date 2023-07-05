@@ -89,6 +89,7 @@ template <typename T> T SwigValueInit()
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <functional>
 
 /*  Errors in SWIG */
 constexpr static int SWIG_UnknownError       = -1;

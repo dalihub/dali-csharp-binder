@@ -1751,6 +1751,26 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedWheel(void * window, void * e
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedHover(void * window, void * touchPoint) {
+  Dali::Window* win = (Dali::Window*)window;
+  if (!win) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+
+  Dali::TouchPoint *aTouchPoint = 0 ;
+  aTouchPoint = (Dali::TouchPoint *)touchPoint;
+  if (!aTouchPoint) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TouchPoint & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      Dali::DevelWindow::FeedHoverEvent(*win, *aTouchPoint);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_RenderOnce(void * /* jarg1 */) {
   try {
     Dali::Adaptor::Get().RenderOnce();
