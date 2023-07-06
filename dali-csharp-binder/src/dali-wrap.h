@@ -259,7 +259,7 @@ class SwigDirector_FrameCallbackInterface : public Dali::FrameCallbackInterface,
 public:
     SwigDirector_FrameCallbackInterface();
     virtual ~SwigDirector_FrameCallbackInterface();
-    virtual void Update( Dali::UpdateProxy& updateProxy, float elapsedSeconds );
+    virtual bool Update( Dali::UpdateProxy& updateProxy, float elapsedSeconds );
 
     typedef void (SWIGSTDCALL* SWIG_Callback0_t)( void*  updateProxy, float elapsedSeconds );
     void swig_connect_director( SWIG_Callback0_t callbackUpdate );
