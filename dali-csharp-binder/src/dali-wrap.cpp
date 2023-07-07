@@ -2239,7 +2239,7 @@ void SwigDirector_FrameCallbackInterface::swig_connect_director(SWIG_Callback0_t
 }
 
 
-void SwigDirector_FrameCallbackInterface::Update(Dali::UpdateProxy& updateProxy, float elapsedSeconds) {
+bool SwigDirector_FrameCallbackInterface::Update(Dali::UpdateProxy& updateProxy, float elapsedSeconds) {
   void * jcurrent  ;
 
   if (!swig_callbackOnUpdate) {
@@ -2250,10 +2250,10 @@ void SwigDirector_FrameCallbackInterface::Update(Dali::UpdateProxy& updateProxy,
     swig_callbackOnUpdate(jcurrent, elapsedSeconds);
     if (!jcurrent) {
       DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::UpdateProxy! ", __FILE__, __LINE__);
-      return;
+      return false;
     }
   }
-  return;
+  return false;
 }
 
 
