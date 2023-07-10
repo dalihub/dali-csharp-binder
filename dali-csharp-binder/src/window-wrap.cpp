@@ -2626,6 +2626,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_EnableFloatingMode(void* jarg1, b
 
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsFloatingModeEnabled(void* winHandle)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  bool result = false;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return false;
+  }
+
+  {
+    try {
+      result = Dali::DevelWindow::IsFloatingModeEnabled(*window);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_IncludeInputRegion(void* winHandle, void* region)
 {
   Dali::Window* window = (Dali::Window*)winHandle;
