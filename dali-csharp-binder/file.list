@@ -36,6 +36,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/dali-adaptor/application-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/atspi-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/capture-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/clipboard-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/drag-and-drop-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/encoded-image-buffer-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/event-thread-callback-wrap.cpp
