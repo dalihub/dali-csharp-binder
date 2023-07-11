@@ -19,6 +19,7 @@
 #include <dali-scene3d/public-api/controls/model/model.h>
 #include <dali-scene3d/public-api/loader/bvh-loader.h>
 #include <dali-scene3d/public-api/loader/facial-animation-loader.h>
+#include <dali-scene3d/public-api/model-motion/motion-data.h>
 #include <dali/devel-api/animation/key-frames-devel.h>
 
 // INTERNAL INCLUDES
@@ -482,6 +483,55 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_FindChildModelNodeByName(void* cs
   CALL_CATCH_EXCEPTION(nullptr);
 
   return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_GenerateMotionDataAnimation(void* csModel, void* csMotionData)
+{
+  Dali::Scene3D::Model*      model      = (Dali::Scene3D::Model*)csModel;
+  Dali::Scene3D::MotionData* motionData = (Dali::Scene3D::MotionData*)csMotionData;
+  Dali::Animation            result;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return nullptr;
+  }
+  if(!motionData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::MotionData", 0);
+    return nullptr;
+  }
+
+  try
+  {
+    result = model->GenerateMotionDataAnimation(*motionData);
+  }
+  CALL_CATCH_EXCEPTION(nullptr);
+
+  return new Dali::Animation((const Dali::Animation&)result);
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_SetMotionData(void* csModel, void* csMotionData)
+{
+  Dali::Scene3D::Model*      model      = (Dali::Scene3D::Model*)csModel;
+  Dali::Scene3D::MotionData* motionData = (Dali::Scene3D::MotionData*)csMotionData;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return;
+  }
+  if(!motionData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::MotionData", 0);
+    return;
+  }
+
+  try
+  {
+    model->SetMotionData(*motionData);
+  }
+  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel, char* csFileName, void* csScale, bool csUseRootNodeTranslate)
