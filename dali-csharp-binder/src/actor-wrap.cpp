@@ -3609,7 +3609,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenExtents(void* acto
   {
     try
     {
-      result = Dali::DevelActor::CalculateScreenExtentsAtEvent(arg1); ///< TODO : Change API name
+      result = Dali::DevelActor::CalculateScreenExtents(arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
