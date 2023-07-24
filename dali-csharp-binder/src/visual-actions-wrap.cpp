@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2023 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,11 @@ extern "C"
   SWIGEXPORT int SWIGSTDCALL CSharp_AnimatedVectorImageVisual_Actions_JUMP_TO_get()
   {
     return (int)Dali::Toolkit::DevelAnimatedVectorImageVisual::Action::JUMP_TO;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_AnimatedVectorImageVisual_Actions_SET_DYNAMIC_PROPERTY_get()
+  {
+    return (int)Dali::Toolkit::DevelAnimatedVectorImageVisual::Action::SET_DYNAMIC_PROPERTY;
   }
 #ifdef __cplusplus
 }
