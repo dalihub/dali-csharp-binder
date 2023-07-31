@@ -102,6 +102,11 @@ extern "C"
   {
     return (int)Dali::Toolkit::DevelAnimatedVectorImageVisual::Action::SET_DYNAMIC_PROPERTY;
   }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_AnimatedVectorImageVisual_Actions_FLUSH_get()
+  {
+    return (int)Dali::Toolkit::DevelAnimatedVectorImageVisual::Action::FLUSH;
+  }
 #ifdef __cplusplus
 }
 #endif
