@@ -7,107 +7,116 @@ SET( dali_csharp_binder_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../dali-csharp-binder
 
 # module: csharp-binder, backend: common - ubuntu,mobile,tv,ivi,tizen-wearable,common
 SET( dali_csharp_binder_common_src_files
-  ${dali_csharp_binder_dir}/src/common.cpp
-  ${dali_csharp_binder_dir}/src/dali-wrap.cpp
-  ${dali_csharp_binder_dir}/src/actor-wrap.cpp
-  ${dali_csharp_binder_dir}/src/layer-wrap.cpp
-  ${dali_csharp_binder_dir}/src/callbackbase-wrap.cpp
-  ${dali_csharp_binder_dir}/src/canvas-view-wrap.cpp
-  ${dali_csharp_binder_dir}/src/constraint-wrap.cpp
-  ${dali_csharp_binder_dir}/src/keyboard-focus-manager-wrap.cpp
-  ${dali_csharp_binder_dir}/src/devel-property-wrap.cpp
-  ${dali_csharp_binder_dir}/src/encoded-image-buffer-wrap.cpp
-  ${dali_csharp_binder_dir}/src/version-check.cpp
-  ${dali_csharp_binder_dir}/src/processor-controller.cpp
-  ${dali_csharp_binder_dir}/src/flex-layout-wrap.cpp
-  ${dali_csharp_binder_dir}/src/gestures-wrap.cpp
-  ${dali_csharp_binder_dir}/src/view-wrapper-impl-wrap.cpp
-  ${dali_csharp_binder_dir}/src/visual-actions-wrap.cpp
-  ${dali_csharp_binder_dir}/src/event-thread-callback-wrap.cpp
-  ${dali_csharp_binder_dir}/src/application-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-editor-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-field-wrap.cpp
-  ${dali_csharp_binder_dir}/src/fade-transition-wrap.cpp
-  ${dali_csharp_binder_dir}/src/slide-transition-wrap.cpp
-  ${dali_csharp_binder_dir}/src/scale-transition-wrap.cpp
-  ${dali_csharp_binder_dir}/src/transition-base-wrap.cpp
-  ${dali_csharp_binder_dir}/src/transition-wrap.cpp
-  ${dali_csharp_binder_dir}/src/transition-set-wrap.cpp
-  ${dali_csharp_binder_dir}/src/window-wrap.cpp
-  ${dali_csharp_binder_dir}/src/tts-player-wrap.cpp
-  ${dali_csharp_binder_dir}/src/input-method-context-wrap.cpp
-  ${dali_csharp_binder_dir}/src/input-method-options-wrap.cpp
-  ${dali_csharp_binder_dir}/src/internal-property-get-set-wrap.cpp
-  ${dali_csharp_binder_dir}/src/internal-visual-property-get-set-wrap.cpp
-  ${dali_csharp_binder_dir}/src/animation-wrap.cpp
-  ${dali_csharp_binder_dir}/src/adaptor-wrap.cpp
-  ${dali_csharp_binder_dir}/src/extents-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-geometry-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-label-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-range-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-spans-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-character-sequence-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-spanned-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-spannable-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-spannable-string-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-spannable-api-wrap.cpp
-  ${dali_csharp_binder_dir}/src/text-utils-wrap.cpp
-  ${dali_csharp_binder_dir}/src/capabilities-wrap.cpp
-  ${dali_csharp_binder_dir}/src/capture-wrap.cpp
-  ${dali_csharp_binder_dir}/src/gl-window-wrap.cpp
-  ${dali_csharp_binder_dir}/src/gl-view-wrap.cpp
-  ${dali_csharp_binder_dir}/src/web-view-wrap.cpp
-  ${dali_csharp_binder_dir}/src/control-devel-wrap.cpp
-  ${dali_csharp_binder_dir}/src/signal-wrap.cpp
-  ${dali_csharp_binder_dir}/src/nui-view-accessible.cpp
-  ${dali_csharp_binder_dir}/src/atspi-wrap.cpp
-  ${dali_csharp_binder_dir}/src/rotation-wrap.cpp
-  ${dali_csharp_binder_dir}/src/input-options-wrap.cpp
-  ${dali_csharp_binder_dir}/src/native-image-queue-wrap.cpp
-  ${dali_csharp_binder_dir}/src/style-manager-wrap.cpp
-  ${dali_csharp_binder_dir}/src/drag-and-drop-wrap.cpp
-  ${dali_csharp_binder_dir}/src/font-client-wrap.cpp
-  ${dali_csharp_binder_dir}/src/slim-custom-view-impl.cpp
-  ${dali_csharp_binder_dir}/src/window-data-wrap.cpp
+  ${dali_csharp_binder_dir}/common/common.cpp
+  ${dali_csharp_binder_dir}/common/dali-wrap.cpp
+  ${dali_csharp_binder_dir}/common/callbackbase-wrap.cpp
+  ${dali_csharp_binder_dir}/common/nui-view-accessible.cpp
+  ${dali_csharp_binder_dir}/common/processor-controller.cpp
+  ${dali_csharp_binder_dir}/common/signal-wrap.cpp
+  ${dali_csharp_binder_dir}/common/slim-custom-view-impl.cpp
+  ${dali_csharp_binder_dir}/common/version-check.cpp
+  ${dali_csharp_binder_dir}/common/view-wrapper-impl-wrap.cpp
+
+  ${dali_csharp_binder_dir}/dali-core/dali-core-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/actor-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/animation-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/capabilities-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/constraint-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/extents-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/gestures-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/input-options-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/internal-property-get-set-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/layer-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/ref-object-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/rotation-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/vector-wrap.cpp
+
+  ${dali_csharp_binder_dir}/dali-adaptor/dali-adaptor-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/adaptor-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/application-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/atspi-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/capture-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/clipboard-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/drag-and-drop-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/encoded-image-buffer-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/event-thread-callback-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/font-client-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/gl-window-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/input-method-context-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/input-method-options-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/native-image-queue-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/tts-player-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/window-data-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/window-wrap.cpp
+
+  ${dali_csharp_binder_dir}/dali-toolkit/dali-toolkit-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/canvas-view-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/control-devel-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/devel-property-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/fade-transition-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/flex-layout-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/gl-view-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/internal-visual-property-get-set-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/keyboard-focus-manager-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/scale-transition-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/slide-transition-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/style-manager-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-character-sequence-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-editor-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-field-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-geometry-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-label-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-range-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-spans-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-spanned-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-spannable-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-spannable-string-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-spannable-api-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/text-utils-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/transition-base-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/transition-set-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/transition-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/visual-actions-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/web-view-wrap.cpp
 )
 
 # added for key grab binding only for tizen
 # module: csharp-binder, backend: mobile,tv,ivi,watch,common
 SET( dali_csharp_binder_tizen_src_files
-  ${dali_csharp_binder_dir}/src/key-grab-wrap.cpp
-  ${dali_csharp_binder_dir}/src/keyboard-wrap.cpp
-  ${dali_csharp_binder_dir}/src/widget-view-wrap.cpp
-  ${dali_csharp_binder_dir}/src/widget-view-manager-wrap.cpp
-  ${dali_csharp_binder_dir}/src/transition-effects-wrap.cpp
-  ${dali_csharp_binder_dir}/src/component-application-wrap.cpp
-  ${dali_csharp_binder_dir}/src/tizen-dependency-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/component-application-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/keyboard-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/key-grab-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/transition-effects-wrap.cpp
+  ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-wrap.cpp
+  ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-manager-wrap.cpp
+  ${dali_csharp_binder_dir}/common/tizen-dependency-wrap.cpp
 )
 
 # added for rive animation view for tizen
 # module: csharp-binder, backend: mobile,tv,ivi,watch
 SET( dali_csharp_binder_tizen_rive_src_files
-  ${dali_csharp_binder_dir}/src/rive-animation-view-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-extension/rive-animation-view-wrap.cpp
 )
 
 # module: csharp-binder, backend: tizen-wearable
 SET( dali_csharp_binder_tizen_wearable_src_files
-  ${dali_csharp_binder_dir}/src/watch-wrap.cpp
-  ${dali_csharp_binder_dir}/src/watch-view-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/watch-wrap.cpp
+  ${dali_csharp_binder_dir}/widget-viewer-dali/watch-view-wrap.cpp
 )
 
 # module: scene3d
 SET( dali_csharp_binder_scene3d_src_files
-  ${dali_csharp_binder_dir}/src/light-wrap.cpp
-  ${dali_csharp_binder_dir}/src/material-wrap.cpp
-  ${dali_csharp_binder_dir}/src/model-node-wrap.cpp
-  ${dali_csharp_binder_dir}/src/model-primitive-wrap.cpp
-  ${dali_csharp_binder_dir}/src/model-wrap.cpp
-  ${dali_csharp_binder_dir}/src/motion-data-wrap.cpp
-  ${dali_csharp_binder_dir}/src/motion-index-wrap.cpp
-  ${dali_csharp_binder_dir}/src/motion-value-wrap.cpp
-  ${dali_csharp_binder_dir}/src/scene-view-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-scene3d/light-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-scene3d/material-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-scene3d/model-node-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-scene3d/model-primitive-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-scene3d/model-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-scene3d/motion-data-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-scene3d/motion-index-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-scene3d/motion-value-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-scene3d/scene-view-wrap.cpp
 )
 
 SET( dali_csharp_binder_header_files
-  ${dali_csharp_binder_dir}/src/common.h
+  ${dali_csharp_binder_dir}/common/common.h
 )
