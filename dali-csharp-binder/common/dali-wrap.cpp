@@ -2006,34 +2006,6 @@ bool SwigDirector_FrameCallbackInterface::Update(Dali::UpdateProxy& updateProxy,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_AddFrameCallback(void * jarg1, void* jarg2, void* jarg3) {
-  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;
-  SwigDirector_FrameCallbackInterface *arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
-
-  Dali::Stage *arg1 = (Dali::Stage *) 0;
-  Dali::Actor *arg3 = 0;
-
-  arg1 = (Dali::Stage *)jarg1;
-  arg3 = (Dali::Actor *)jarg3;
-
-  DevelStage::AddFrameCallback( *arg1, *arg2, *arg3 );
-  return;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_RemoveFrameCallback(void * jarg1, void* jarg2) {
-
-  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;
-  SwigDirector_FrameCallbackInterface *arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
-
-  Dali::Stage *arg1 = (Dali::Stage *) 0;
-
-  arg1 = (Dali::Stage *)jarg1;
-
-  DevelStage::RemoveFrameCallback( *arg1, *arg2 );
-  return;
-}
-
 
 /*******************************************/
 /*                 Binding                 */
@@ -24992,6 +24964,35 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FrameCallbackInterface() {
 
   jresult = (void *)result;
   return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_AddFrameCallback(void * jarg1, void* jarg2, void* jarg3) {
+  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;
+  SwigDirector_FrameCallbackInterface *arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
+
+  Dali::Stage *arg1 = (Dali::Stage *) 0;
+  Dali::Actor *arg3 = 0;
+
+  arg1 = (Dali::Stage *)jarg1;
+  arg3 = (Dali::Actor *)jarg3;
+
+  DevelStage::AddFrameCallback( *arg1, *arg2, *arg3 );
+  return;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_RemoveFrameCallback(void * jarg1, void* jarg2) {
+
+  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;
+  SwigDirector_FrameCallbackInterface *arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
+
+  Dali::Stage *arg1 = (Dali::Stage *) 0;
+
+  arg1 = (Dali::Stage *)jarg1;
+
+  DevelStage::RemoveFrameCallback( *arg1, *arg2 );
+  return;
 }
 
 
