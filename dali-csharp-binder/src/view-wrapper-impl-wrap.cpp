@@ -245,9 +245,11 @@ void SwigDirector_ViewWrapperImpl::OnStyleChange(Dali::Toolkit::StyleManager sty
 
   jstyleManager = (void *)new Dali::Toolkit::StyleManager((const Dali::Toolkit::StyleManager &)styleManager);
   jchange = (int)change;
-  swig_callbackOnStyleChange(jstyleManager, jchange);
-
-  Dali::Toolkit::Internal::Control::OnStyleChange(styleManager,change);
+  if (!swig_callbackOnStyleChange) {
+    Dali::Toolkit::Internal::Control::OnStyleChange(styleManager,change);
+  } else {
+    swig_callbackOnStyleChange(jstyleManager, jchange);
+  }
 }
 
 bool SwigDirector_ViewWrapperImpl::OnAccessibilityActivated() {
