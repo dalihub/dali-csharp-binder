@@ -70,7 +70,7 @@ public:
   static SourceInitCallbackInvoker   mOnInitInvoker;
   static SourceUpdateCallbackInvoker mOnUpdateInvoker;
 
-  void* mBaseObjectPtr;
+  void* mBaseObjectPtr{nullptr};
 };
 
 typedef void (*ModifierUpdateCallbackInvoker)(void*, void*, uint32_t, uint32_t); // delegate, parameters
@@ -101,7 +101,7 @@ public:
   }
 
   static ModifierUpdateCallbackInvoker mOnUpdateInvoker;
-  void*                                mBaseObjectPtr;
+  void*                                mBaseObjectPtr{nullptr};
 };
 
 extern "C++" SourceInitCallbackInvoker     ParticleSourceNUI::mOnInitInvoker;
@@ -239,9 +239,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ParticleEmitter_SetSource(void* csThis, 
   {
     try
     {
-      puts("Setting source");
       emitter->SetSource(*source);
-      puts("souirce set");
     }
     CALL_CATCH_EXCEPTION();
   }
