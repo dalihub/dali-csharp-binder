@@ -1945,22 +1945,6 @@ SwigDirector_CustomAlgorithmInterface::~SwigDirector_CustomAlgorithmInterface() 
 
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_CustomAlgorithmInterface() {
-  void * jresult ;
-  Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *)new SwigDirector_CustomAlgorithmInterface();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
 Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction, const std::string& deviceName)
 {
   Dali::Actor c_result;
@@ -2021,34 +2005,6 @@ bool SwigDirector_FrameCallbackInterface::Update(Dali::UpdateProxy& updateProxy,
   return false;
 }
 
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_AddFrameCallback(void * jarg1, void* jarg2, void* jarg3) {
-  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;
-  SwigDirector_FrameCallbackInterface *arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
-
-  Dali::Stage *arg1 = (Dali::Stage *) 0;
-  Dali::Actor *arg3 = 0;
-
-  arg1 = (Dali::Stage *)jarg1;
-  arg3 = (Dali::Actor *)jarg3;
-
-  DevelStage::AddFrameCallback( *arg1, *arg2, *arg3 );
-  return;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_RemoveFrameCallback(void * jarg1, void* jarg2) {
-
-  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;
-  SwigDirector_FrameCallbackInterface *arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
-
-  Dali::Stage *arg1 = (Dali::Stage *) 0;
-
-  arg1 = (Dali::Stage *)jarg1;
-
-  DevelStage::RemoveFrameCallback( *arg1, *arg2 );
-  return;
-}
 
 
 /*******************************************/
@@ -25011,12 +24967,56 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FrameCallbackInterface() {
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_AddFrameCallback(void * jarg1, void* jarg2, void* jarg3) {
+  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;
+  SwigDirector_FrameCallbackInterface *arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
+
+  Dali::Stage *arg1 = (Dali::Stage *) 0;
+  Dali::Actor *arg3 = 0;
+
+  arg1 = (Dali::Stage *)jarg1;
+  arg3 = (Dali::Actor *)jarg3;
+
+  DevelStage::AddFrameCallback( *arg1, *arg2, *arg3 );
+  return;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_RemoveFrameCallback(void * jarg1, void* jarg2) {
+
+  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;
+  SwigDirector_FrameCallbackInterface *arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
+
+  Dali::Stage *arg1 = (Dali::Stage *) 0;
+
+  arg1 = (Dali::Stage *)jarg1;
+
+  DevelStage::RemoveFrameCallback( *arg1, *arg2 );
+  return;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomAlgorithmInterface_director_connect(void *objarg, SwigDirector_CustomAlgorithmInterface::SWIG_Callback0_t callback0) {
   Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *obj = (Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *)objarg;
   SwigDirector_CustomAlgorithmInterface *director = dynamic_cast<SwigDirector_CustomAlgorithmInterface *>(obj);
   if (director) {
     director->swig_connect_director(callback0);
   }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_CustomAlgorithmInterface() {
+  void * jresult ;
+  Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *)new SwigDirector_CustomAlgorithmInterface();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
 }
 
 
