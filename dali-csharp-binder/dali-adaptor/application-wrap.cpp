@@ -1839,6 +1839,17 @@ SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Application_GetRenderThreadId(void* j
   return result;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_FlushUpdateMessages(void* jarg1)
+{
+  Dali::Application* arg1 = (Dali::Application*)jarg1;
+
+  try
+  {
+    Dali::DevelApplication::FlushUpdateMessages(*arg1);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
 #ifdef __cplusplus
 }
 #endif
