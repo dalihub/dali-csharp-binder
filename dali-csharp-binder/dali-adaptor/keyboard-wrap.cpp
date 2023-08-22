@@ -77,6 +77,76 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Keyboard_GetRepeatInfo(float& rate, floa
   return ret;
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Keyboard_Set_Horizental_RepeatInfo(float rate, float delay)
+{
+  bool ret;
+
+  LOG("CSharp_Dali_Keyboard_Set_Horizental_RepeatInfo() [DP1] rate=%f, delay=%f", rate, delay);
+
+  {
+    try {
+      ret = Dali::Keyboard::SetHorizontalRepeatInfo(rate, delay);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+
+  LOG("CSharp_Dali_Keyboard_Set_Horizental_RepeatInfo() [DP2] ret=%d", ret);
+
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Keyboard_Get_Horizental_RepeatInfo(float& rate, float& delay)
+{
+  bool ret;
+
+  LOG("CSharp_Dali_Keyboard_Get_Horizental_RepeatInfo() [DP1] rate=%f, delay=%f", rate, delay);
+
+  {
+    try {
+      ret = Dali::Keyboard::GetHorizontalRepeatInfo(rate, delay);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+
+  LOG("CSharp_Dali_Keyboard_Get_Horizental_RepeatInfo() [DP2] ret=%d", ret);
+
+  return ret;
+}
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Keyboard_Set_Vertical_RepeatInfo(float rate, float delay)
+{
+  bool ret;
+
+  LOG("CSharp_Dali_Keyboard_Set_Vertical_RepeatInfo() [DP1] rate=%f, delay=%f", rate, delay);
+
+  {
+    try {
+      ret = Dali::Keyboard::SetVerticalRepeatInfo(rate, delay);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+
+  LOG("CSharp_Dali_Keyboard_Set_Vertical_RepeatInfo() [DP2] ret=%d", ret);
+
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Keyboard_Get_Vertical_RepeatInfo(float& rate, float& delay)
+{
+  bool ret;
+
+  LOG("CSharp_Dali_Keyboard_Get_Vertical_RepeatInfo() [DP1] rate=%f, delay=%f", rate, delay);
+
+  {
+    try {
+      ret = Dali::Keyboard::GetVerticalRepeatInfo(rate, delay);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+
+  LOG("CSharp_Dali_Keyboard_Get_Vertical_RepeatInfo() [DP2] ret=%d", ret);
+
+  return ret;
+}
 
 #ifdef __cplusplus
 }
