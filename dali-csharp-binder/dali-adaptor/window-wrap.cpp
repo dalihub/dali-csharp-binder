@@ -3930,6 +3930,17 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_PointerWarp(void * winHandle, int
   return result;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_CursorVisibleSet(void * winHandle, bool visible) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      Dali::DevelWindow::CursorVisibleSet(*window, visible);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 /* Move Completed signal binding */
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Move_Completed_Signal(void* winHandle)
 {
