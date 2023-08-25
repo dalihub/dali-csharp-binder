@@ -3941,6 +3941,31 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_CursorVisibleSet(void * winHandle
   }
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_KeyboardGrab(void * winHandle, unsigned int deviceSubclass) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  bool result = false;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      result = Dali::DevelWindow::KeyboardGrab(*window, (Dali::Device::Subclass::Type)deviceSubclass);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_KeyboardUnGrab(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  bool result = false;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      result = Dali::DevelWindow::KeyboardUnGrab(*window);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
 /* Move Completed signal binding */
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Move_Completed_Signal(void* winHandle)
 {
