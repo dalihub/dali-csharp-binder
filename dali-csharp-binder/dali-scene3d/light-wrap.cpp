@@ -168,12 +168,160 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Light_IsEnabled(void* csLight)
   return result;
 }
 
-SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetMaximumEnabledLightCount()
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_Light_GetMaximumEnabledLightCount()
 {
   uint32_t result = 0u;
   try
   {
     result = static_cast<uint32_t>(Dali::Scene3D::Light::GetMaximumEnabledLightCount());
+  }
+  CALL_CATCH_EXCEPTION(0);
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Light_EnableShadow(void* csLight, bool enable)
+{
+  Dali::Scene3D::Light* light = (Dali::Scene3D::Light*)csLight;
+
+  if(!light)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Light", 0);
+    return;
+  }
+
+  try
+  {
+    light->EnableShadow(enable);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Light_IsShadowEnabled(void* csLight)
+{
+  Dali::Scene3D::Light* light = (Dali::Scene3D::Light*)csLight;
+  bool                  result;
+
+  if(!light)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Light", 0);
+    return false;
+  }
+
+  try
+  {
+    result = light->IsShadowEnabled();
+  }
+  CALL_CATCH_EXCEPTION(0);
+
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Light_EnableShadowSoftFiltering(void* csLight, bool enable)
+{
+  Dali::Scene3D::Light* light = (Dali::Scene3D::Light*)csLight;
+
+  if(!light)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Light", 0);
+    return;
+  }
+
+  try
+  {
+    light->EnableShadowSoftFiltering(enable);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Light_IsShadowSoftFilteringEnabled(void* csLight)
+{
+  Dali::Scene3D::Light* light = (Dali::Scene3D::Light*)csLight;
+  bool                  result;
+
+  if(!light)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Light", 0);
+    return false;
+  }
+
+  try
+  {
+    result = light->IsShadowSoftFilteringEnabled();
+  }
+  CALL_CATCH_EXCEPTION(0);
+
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Light_SetShadowIntensity(void* csLight, float shadowIntensity)
+{
+  Dali::Scene3D::Light* light = (Dali::Scene3D::Light*)csLight;
+
+  if(!light)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Light", 0);
+    return;
+  }
+
+  try
+  {
+    light->SetShadowIntensity(shadowIntensity);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Light_GetShadowIntensity(void* csLight)
+{
+  float result = 0.0f;
+
+  Dali::Scene3D::Light* light = (Dali::Scene3D::Light*)csLight;
+
+  if(!light)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Light", 0);
+    return 0.0f;
+  }
+
+  try
+  {
+    result = light->GetShadowIntensity();
+  }
+  CALL_CATCH_EXCEPTION(0);
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Light_SetShadowBias(void* csLight, float shadowBias)
+{
+  Dali::Scene3D::Light* light = (Dali::Scene3D::Light*)csLight;
+
+  if(!light)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Light", 0);
+    return;
+  }
+
+  try
+  {
+    light->SetShadowBias(shadowBias);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Light_GetShadowBias(void* csLight)
+{
+  float result = 0.0f;
+
+  Dali::Scene3D::Light* light = (Dali::Scene3D::Light*)csLight;
+
+  if(!light)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Light", 0);
+    return 0.0f;
+  }
+
+  try
+  {
+    result = light->GetShadowBias();
   }
   CALL_CATCH_EXCEPTION(0);
   return result;
