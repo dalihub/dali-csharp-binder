@@ -19,6 +19,7 @@
 #include <dali/public-api/adaptor-framework/window.h>
 #include <dali/devel-api/adaptor-framework/mouse-in-out-event.h>
 #include <dali/devel-api/adaptor-framework/mouse-relative-event.h>
+#include <dali/devel-api/adaptor-framework/pointer-constraints-event.h>
 #include <dali/devel-api/adaptor-framework/window-devel.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
@@ -146,8 +147,8 @@ SWIGINTERN void Dali_Signal_Window_MouseRelativeEvent_Signal_Connect(Dali::Signa
 SWIGINTERN void Dali_Signal_Window_MouseRelativeEvent_Signal_Disconnect(Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseRelativeEvent const &) > *self, void (*func)(Dali::Window, Dali::DevelWindow::MouseRelativeEvent const &)){
   self->Disconnect( func );
 }
-SWIGINTERN void Dali_Signal_Window_MouseRelativeEvent_Signal_Emit(Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseRelativeEvent const &) > *self, Dali::Window arg, Dali::DevelWindow::MouseRelativeEvent const &MouseRelativeEvent){
-  self->Emit( arg, MouseRelativeEvent );
+SWIGINTERN void Dali_Signal_Window_MouseRelativeEvent_Signal_Emit(Dali::Signal< void (Dali::Window, Dali::DevelWindow::MouseRelativeEvent const &) > *self, Dali::Window arg, Dali::DevelWindow::MouseRelativeEvent const &mouseRelativeEvent){
+  self->Emit( arg, mouseRelativeEvent );
 }
 
 /* Move Completed signal */
@@ -184,6 +185,22 @@ SWIGINTERN void Dali_Signal_Window_Resize_Completed_Signal_Emit(Dali::Signal< vo
   self->Emit( window, size );
 }
 
+//pointer constraints
+SWIGINTERN bool Dali_Signal_Window_PointerConstraintsEvent_Signal_Empty(Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > const *self){
+  return self->Empty();
+}
+SWIGINTERN std::size_t Dali_Signal_Window_PointerConstraintsEvent_Signal_GetConnectionCount(Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > const *self){
+return self->GetConnectionCount();
+}
+SWIGINTERN void Dali_Signal_Window_PointerConstraintsEvent_Signal_Connect(Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *self, void (*func)(Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &)){
+  self->Connect( func );
+}
+SWIGINTERN void Dali_Signal_Window_PointerConstraintsEvent_Signal_Disconnect(Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *self, void (*func)(Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &)){
+  self->Disconnect( func );
+}
+SWIGINTERN void Dali_Signal_Window_PointerConstraintsEvent_Signal_Emit(Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *self, Dali::Window arg, Dali::DevelWindow::PointerConstraintsEvent const &pointerConstraintsEvent){
+  self->Emit( arg, pointerConstraintsEvent );
+}
 
 #ifdef __cplusplus
 extern "C" {
@@ -3966,6 +3983,249 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_KeyboardUnGrab(void * winHandle) 
   }
   return result;
 }
+
+/* pointer constraints event */
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal(void* winHandle)
+{
+  void *result;
+  Dali::Window window;
+  Dali::Window *win;
+  Dali::DevelWindow::PointerConstraintsSignalType* pointerConstraintsSignal;
+
+  win = (Dali::Window *)winHandle;
+  if (!win) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return 0;
+  }
+  window = *win;
+  {
+    try {
+      pointerConstraintsSignal = (Dali::DevelWindow::PointerConstraintsSignalType *) &Dali::DevelWindow::PointerConstraintsSignal(window);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  result = (void *)pointerConstraintsSignal;
+  return result;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal_Empty(void * jarg1) {
+  unsigned int jresult ;
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *) 0 ;
+  bool result;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *)jarg1;
+  {
+    try {
+      result = (bool)Dali_Signal_Window_PointerConstraintsEvent_Signal_Empty((Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > const *)arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal_GetConnectionCount(void * jarg1) {
+  unsigned long jresult ;
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *) 0 ;
+  std::size_t result;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *)jarg1;
+  {
+    try {
+      result = Dali_Signal_Window_PointerConstraintsEvent_Signal_GetConnectionCount((Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > const *)arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (unsigned long)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal_Connect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *) 0 ;
+  void (*arg2)(Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) = (void (*)(Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &)) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *)jarg1;
+  arg2 = (void (*)(Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &))jarg2;
+  {
+    try {
+      Dali_Signal_Window_PointerConstraintsEvent_Signal_Connect(arg1,arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal_Disconnect(void * jarg1, void * jarg2) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *) 0 ;
+  void (*arg2)(Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) = (void (*)(Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &)) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *)jarg1;
+  arg2 = (void (*)(Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &))jarg2;
+  {
+    try {
+      Dali_Signal_Window_PointerConstraintsEvent_Signal_Disconnect(arg1,arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal_Emit(void * jarg1, void* jarg2, void* jarg3) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *)jarg1;
+  Dali::Window* arg2 = (Dali::Window*)jarg2;
+  Dali::DevelWindow::PointerConstraintsEvent* arg3 = (Dali::DevelWindow::PointerConstraintsEvent*)jarg3;
+
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Signal", 0);
+    return ;
+  }
+
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return ;
+  }
+
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::DevelWindow::PointerConstraintsEvent", 0);
+    return ;
+  }
+
+  {
+    try {
+      Dali_Signal_Window_PointerConstraintsEvent_Signal_Emit(arg1,*arg2,*arg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WindowPointerConstraintsEventSignal() {
+  void * jresult ;
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *)new Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) >();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowPointerConstraintsEventSignal(void * jarg1) {
+  Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *) 0 ;
+
+  arg1 = (Dali::Signal< void (Dali::Window, Dali::DevelWindow::PointerConstraintsEvent const &) > *)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PointerConstraintsEvent__SWIG_0(int jarg1, int jarg2, bool jarg3, bool jarg4) {
+  void * jresult ;
+  int arg1 ;
+  int arg2 ;
+  bool arg3 ;
+  bool arg4 ;
+
+  Dali::DevelWindow::PointerConstraintsEvent *result = 0;
+
+  arg1 = jarg1;
+  arg2 = jarg2;
+  arg3 = jarg3;
+  arg4 = jarg4;
+  {
+    try {
+      result = (Dali::DevelWindow::PointerConstraintsEvent *)new Dali::DevelWindow::PointerConstraintsEvent(arg1, arg2, arg3, arg4);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PointerConstraintsEvent(void * jarg1) {
+  Dali::DevelWindow::PointerConstraintsEvent *arg1 = (Dali::DevelWindow::PointerConstraintsEvent *) 0 ;
+
+  arg1 = (Dali::DevelWindow::PointerConstraintsEvent *)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PointerConstraintsEvent_x_get(void * jarg1) {
+  int jresult ;
+  Dali::DevelWindow::PointerConstraintsEvent *arg1 = (Dali::DevelWindow::PointerConstraintsEvent *) 0 ;
+
+  arg1 = (Dali::DevelWindow::PointerConstraintsEvent *)jarg1;
+  {
+    try {
+      jresult = ((Dali::DevelWindow::PointerConstraintsEvent const *)arg1)->x;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PointerConstraintsEvent_y_get(void * jarg1) {
+  int jresult ;
+  Dali::DevelWindow::PointerConstraintsEvent *arg1 = (Dali::DevelWindow::PointerConstraintsEvent *) 0 ;
+
+  arg1 = (Dali::DevelWindow::PointerConstraintsEvent *)jarg1;
+  {
+    try {
+      jresult = ((Dali::DevelWindow::PointerConstraintsEvent const *)arg1)->y;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
+}
+
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PointerConstraintsEvent_locked_get(void * jarg1) {
+  bool jresult = false;
+  Dali::DevelWindow::PointerConstraintsEvent *arg1 = (Dali::DevelWindow::PointerConstraintsEvent *) 0 ;
+
+  arg1 = (Dali::DevelWindow::PointerConstraintsEvent *)jarg1;
+  {
+    try {
+      jresult = ((Dali::DevelWindow::PointerConstraintsEvent const *)arg1)->locked;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PointerConstraintsEvent_confined_get(void * jarg1) {
+  bool jresult = false;
+  Dali::DevelWindow::PointerConstraintsEvent *arg1 = (Dali::DevelWindow::PointerConstraintsEvent *) 0 ;
+
+  arg1 = (Dali::DevelWindow::PointerConstraintsEvent *)jarg1;
+  {
+    try {
+      jresult = ((Dali::DevelWindow::PointerConstraintsEvent const *)arg1)->confined;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return jresult;
+}
+
+
 /* Move Completed signal binding */
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Move_Completed_Signal(void* winHandle)
 {
