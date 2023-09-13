@@ -2914,6 +2914,24 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetLastTouchEvent(void* winHand
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetLastHoverEvent(void* winHandle)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  void * jresult;
+  Dali::HoverEvent *result = 0;
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::HoverEvent *)&Dali::DevelWindow::GetLastHoverEvent(*window);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = (void *)result;
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastKeyEvent(void* winHandle, void* keyHandle)
 {
   Dali::Window* window = (Dali::Window*)winHandle;
@@ -2953,6 +2971,27 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastTouchEvent(
     } CALL_CATCH_EXCEPTION();
   }
 }
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastHoverEvent(void* winHandle, void* hoverHandle)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  Dali::HoverEvent* hoverEvent = (Dali::HoverEvent*)hoverHandle;
+
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return;
+  }
+  if (!hoverEvent) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::HoverEvent", 0);
+    return;
+  }
+  {
+    try {
+      (*hoverEvent) = *((Dali::HoverEvent *)&Dali::DevelWindow::GetLastHoverEvent(*window));
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetNeedsRotationCompletedAcknowledgement(void* winHandle, bool needAcknowledgement)
 {
