@@ -9,6 +9,6 @@ includedir=@DEV_INCLUDE_PATH@
 Name: DALi C# binder
 Description: DALi C# binder Libaray
 Version: ${apiversion}
-Requires: dali2-core dali2-adaptor dali2-toolkit dali2-scene3d
+Requires: dali2-core dali2-adaptor dali2-toolkit dali2-scene3d dali2-physics-2d dali2-physics-3d
 Libs: -L${libdir} -ldali2-csharp-binder
 Cflags: -I${includedir}/dali-csharp-binder

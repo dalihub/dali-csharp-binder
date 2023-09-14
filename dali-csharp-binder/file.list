@@ -118,6 +118,18 @@ SET( dali_csharp_binder_scene3d_src_files
   ${dali_csharp_binder_dir}/dali-scene3d/scene-view-wrap.cpp
 )
 
+# module: physics-2d
+SET( dali_csharp_binder_physics_2d_src_files
+  ${dali_csharp_binder_dir}/dali-physics-2d/physics-adaptor-2d-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-physics-2d/physics-actor-2d-wrap.cpp
+)
+
+# module: physics-3d
+SET( dali_csharp_binder_physics_3d_src_files
+  ${dali_csharp_binder_dir}/dali-physics-3d/physics-adaptor-3d-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-physics-3d/physics-actor-3d-wrap.cpp
+)
+
 SET( dali_csharp_binder_header_files
   ${dali_csharp_binder_dir}/common/common.h
 )

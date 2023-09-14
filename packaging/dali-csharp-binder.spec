@@ -48,6 +48,8 @@ BuildRequires: pkgconfig(dali2-core)
 BuildRequires: pkgconfig(dali2-adaptor)
 BuildRequires: pkgconfig(dali2-toolkit)
 BuildRequires: pkgconfig(dali2-scene3d)
+BuildRequires: pkgconfig(dali2-physics-2d)
+BuildRequires: pkgconfig(dali2-physics-3d)
 %if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
 %define rive_animation_view 1
 BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
@@ -170,6 +172,15 @@ Requires:   %{name} = %{version}-%{release}
 %description scene3d
 Scene 3D for Dali
 
+##############################
+# Dali Physics2D
+##############################
+%package physics2d
+Summary:    build dali csharp binder physics2d
+Group:      System/Libraries
+Requires:   %{name} = %{version}-%{release}
+%description physics2d
+Physics 2D for Dali
 
 ##############################
 # Preparation
@@ -233,6 +244,7 @@ cmake_flags+=" -DCMAKE_INSTALL_LIBDIR=%{_libdir}"
 cmake_flags+=" -DCMAKE_INSTALL_INCLUDEDIR=%{_includedir}"
 cmake_flags+=" -DENABLE_TIZEN_MAJOR_VERSION=%{tizen_version_major}"
 cmake_flags+=" -DENABLE_SCENE3D=ON"
+cmake_flags+=" -DENABLE_PHYSICS_2D=ON"
 
 # Set up the build via Cmake
 #######################################################################
@@ -525,6 +537,13 @@ exit 0
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libdali2-csharp-binder-scene3d.so*
+
+#################################################
+
+%files physics2d
+%manifest dali-csharp-binder.manifest
+%defattr(-,root,root,-)
+%{_libdir}/libdali2-csharp-binder-physics-2d.so*
 
 #################################################
 
