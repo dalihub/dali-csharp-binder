@@ -153,6 +153,62 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_RemoveListener(void * argDnD
   return result;
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_Window_AddListener(void * argDnD, void * argTarget, void * argCallback) {
+  Dali::DragAndDrop *dnd = (Dali::DragAndDrop *)argDnD;
+  if (!dnd) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return false;
+  }
+
+  Dali::Window *pTarget;
+  Dali::Window target;
+
+  pTarget = (Dali::Window *)argTarget;
+  if (!pTarget) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return false;
+  }
+
+  target = *pTarget;
+  bool result = false;
+  {
+    try {
+      dndCallback = (DnDCallback)argCallback;
+      result = dnd->AddListener(target, dndCallback);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_Window_RemoveListener(void * argDnD, void * argTarget, void * argCallback) {
+  Dali::DragAndDrop *dnd = (Dali::DragAndDrop *)argDnD;
+  if (!dnd) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return false;
+  }
+
+  Dali::Window *pTarget;
+  Dali::Window target;
+
+  pTarget = (Dali::Window *)argTarget;
+  if (!pTarget) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return false;
+  }
+
+  target = *pTarget;
+  bool result = false;
+  {
+    try {
+      //TODO: use argCallback to remove target listener
+      result = dnd->RemoveListener(target);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_DragEvent_GetAction(void * jarg) {
   int jresult;
   Dali::DragAndDrop::DragEvent *dragEvent = (Dali::DragAndDrop::DragEvent *)jarg;
