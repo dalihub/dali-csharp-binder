@@ -1,0 +1,14 @@
+# Package Information for pkg-config
+
+prefix=@PREFIX@
+exec_prefix=@EXEC_PREFIX@
+apiversion=@DALI_CSHARP_BINDER_VERSION@
+libdir=@LIB_DIR@
+includedir=@DEV_INCLUDE_PATH@
+
+Name: DALi C# binder
+Description: DALi C# binder Library for 2D Physics
+Version: ${apiversion}
+Requires: chipmunk2d dali2-physics-2d
+Libs: -L${libdir} -ldali2-csharp-binder-physics-2d
+Cflags: -I${includedir}/dali-csharp-binder

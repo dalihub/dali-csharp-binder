@@ -21,7 +21,7 @@
 
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 2.2.43
+Version: 2.2.44
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -170,6 +170,26 @@ Requires:   %{name} = %{version}-%{release}
 %description scene3d
 Scene 3D for Dali
 
+##############################
+# Dali Physics 2D
+##############################
+%package physics2d
+Summary:    build dali csharp binder physics2d
+Group:      System/Libraries
+Requires:   %{name} = %{version}-%{release}
+%description physics2d
+2D Physics for Dali
+
+##############################
+# Dali Physics 3D
+##############################
+%package physics3d
+Summary:    build dali csharp binder physics3d
+Group:      System/Libraries
+Requires:   %{name} = %{version}-%{release}
+%description physics3d
+3D Physics for Dali
+
 
 ##############################
 # Preparation
@@ -233,6 +253,9 @@ cmake_flags+=" -DCMAKE_INSTALL_LIBDIR=%{_libdir}"
 cmake_flags+=" -DCMAKE_INSTALL_INCLUDEDIR=%{_includedir}"
 cmake_flags+=" -DENABLE_TIZEN_MAJOR_VERSION=%{tizen_version_major}"
 cmake_flags+=" -DENABLE_SCENE3D=ON"
+cmake_flags+=" -DENABLE_PHYSICS_2D=ON"
+cmake_flags+=" -DENABLE_PHYSICS_3D=ON"
+
 
 # Set up the build via Cmake
 #######################################################################
@@ -528,6 +551,20 @@ exit 0
 
 #################################################
 
+%files physics2d
+%manifest dali-csharp-binder.manifest
+%defattr(-,root,root,-)
+%{_libdir}/libdali2-csharp-binder-physics-2d.so*
+
+#################################################
+
+%files physics3d
+%manifest dali-csharp-binder.manifest
+%defattr(-,root,root,-)
+%{_libdir}/libdali2-csharp-binder-physics-3d.so*
+
+#################################################
+
 # If the profile is selected, the line below is repquired.
 # if common ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "mobile"
@@ -585,4 +622,5 @@ exit 0
 %dir %{_includedir}/dali-csharp-binder/
 %{_includedir}/dali-csharp-binder/*
 %{_libdir}/pkgconfig/%{name}.pc
-
+%{_libdir}/pkgconfig/%{name}-physics-2d.pc
+%{_libdir}/pkgconfig/%{name}-physics-3d.pc
