@@ -41,8 +41,6 @@ install_manifest.txt
 /build/tizen/doc
 /build/tizen/.cov
 /build/desktop
-/build/tizen/*.ninja
-/build/tizen/.ninja*
 /packaging/home*
 compile_commands.json
 .clangd
