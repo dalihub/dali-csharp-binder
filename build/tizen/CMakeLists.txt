@@ -28,6 +28,8 @@ OPTION(ENABLE_PROFILE            "Enable Profile" OFF)
 OPTION(ENABLE_TRACE              "Enable Trace" ON)
 OPTION(ENABLE_PKG_CONFIGURE      "Use pkgconfig" ON)
 OPTION(ENABLE_SCENE3D            "Enable scene3d" ON)
+OPTION(ENABLE_PHYSICS_2D         "Enable 2d physics" ON)
+OPTION(ENABLE_PHYSICS_3D         "Enable 3d physics" ON)
 OPTION(ENABLE_RIVE_ANIMATION     "Enable rive animation" OFF)
 OPTION(ENABLE_ECORE_WAYLAND2     "Enable ecore wayland2" OFF)
 
@@ -79,6 +81,8 @@ IF( ENABLE_PKG_CONFIGURE )
   PKG_CHECK_MODULES(DALIADAPTOR REQUIRED dali2-adaptor)
   PKG_CHECK_MODULES(DALITOOLKIT REQUIRED dali2-toolkit)
   PKG_CHECK_MODULES(DALISCENE3D REQUIRED dali2-scene3d)
+  PKG_CHECK_MODULES(DALIPHYSICS2D REQUIRED dali2-physics-2d)
+  PKG_CHECK_MODULES(DALIPHYSICS3D REQUIRED dali2-physics-3d)
 ENDIF()
 
 ADD_DEFINITIONS(-DDALI_PROFILE_WINDOWS)
@@ -89,6 +93,8 @@ IF( WIN32 ) # WIN32 includes x64 as well according to the cmake doc.
   FIND_PACKAGE( dali2-adaptor REQUIRED )
   FIND_PACKAGE( dali2-toolkit REQUIRED )
   FIND_PACKAGE( dali2-scene3d REQUIRED )
+  FIND_PACKAGE( dali2-physics-2d REQUIRED )
+  FIND_PACKAGE( dali2-physics-3d REQUIRED )
   FIND_PACKAGE( pthreads REQUIRED )
 ENDIF()
 
@@ -170,7 +176,11 @@ IF( ENABLE_PKG_CONFIGURE )
   # @PREFIX@ @EXEC_PREFIX@ @DALI_VERSION@ @LIB_DIR@ @DEV_INCLUDE_PATH@
   SET( DEV_INCLUDE_PATH ${INCLUDE_DIR} )
   SET( CORE_PKG_CFG_FILE ${CMAKE_CURRENT_SOURCE_DIR}/dali2-csharp-binder.pc )
+  SET( PHYS2D_PKG_CFG_FILE ${CMAKE_CURRENT_SOURCE_DIR}/dali2-csharp-binder-physics-2d.pc )
+  SET( PHYS3D_PKG_CFG_FILE ${CMAKE_CURRENT_SOURCE_DIR}/dali2-csharp-binder-physics-3d.pc )
   CONFIGURE_FILE( ${CORE_PKG_CFG_FILE}.in ${CORE_PKG_CFG_FILE} @ONLY )
+  CONFIGURE_FILE( ${PHYS2D_PKG_CFG_FILE}.in ${PHYS2D_PKG_CFG_FILE} @ONLY )
+  CONFIGURE_FILE( ${PHYS3D_PKG_CFG_FILE}.in ${PHYS3D_PKG_CFG_FILE} @ONLY )
 ENDIF()
 
 INCLUDE_DIRECTORIES(
@@ -235,7 +245,11 @@ ENDIF()
 
 # Install the pkg-config file
 IF( ENABLE_PKG_CONFIGURE )
-  INSTALL( FILES ${CORE_PKG_CFG_FILE} DESTINATION ${LIB_DIR}/pkgconfig )
+  INSTALL( FILES
+    ${CORE_PKG_CFG_FILE}
+    ${PHYS2D_PKG_CFG_FILE}
+    ${PHYS3D_PKG_CFG_FILE}
+    DESTINATION ${LIB_DIR}/pkgconfig )
 ENDIF()
 
 # Install headers
@@ -251,10 +265,20 @@ MESSAGE( STATUS "Profile:                       " ${ENABLE_PROFILE} )
 MESSAGE( STATUS "Export all symbols:            " ${ENABLE_EXPORTALL} )
 MESSAGE( STATUS "Trace:                         " ${ENABLE_TRACE} )
 MESSAGE( STATUS "Use pkg configure:             " ${ENABLE_PKG_CONFIGURE} )
+MESSAGE( STATUS "Use 2d physics:                " ${ENABLE_PHYSICS_2D} )
+MESSAGE( STATUS "Use 3d physics:                " ${ENABLE_PHYSICS_3D} )
 MESSAGE( STATUS "Use scene 3d:                  " ${ENABLE_SCENE3D} )
 MESSAGE( STATUS "CXXFLAGS:                      " ${CMAKE_CXX_FLAGS} )
 MESSAGE( STATUS "LDFLAGS:                       " ${CMAKE_SHARED_LINKER_FLAGS_INIT}${CMAKE_SHARED_LINKER_FLAGS} )
 
 IF( ENABLE_SCENE3D )
   ADD_SUBDIRECTORY( dali-scene3d )
+ENDIF()
+
+IF( ENABLE_PHYSICS_2D )
+  ADD_SUBDIRECTORY( dali-physics-2d )
+ENDIF()
+
+IF( ENABLE_PHYSICS_3D )
+  ADD_SUBDIRECTORY( dali-physics-3d )
 ENDIF()
