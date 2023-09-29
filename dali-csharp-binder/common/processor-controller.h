@@ -2,7 +2,7 @@
 #define CSHARP_PROCESSOR_CONTROLLER_H
 
 /*
- * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2023 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ public:
   void RemovePostCallback( ProcessorControllerProcessCallback postCallback );
 
    /**
-    * @brief Awake update thread so dali-core calls the overriden Process() api.
+    * @brief Layout and awake update thread, or re-run registered processor.
     */
   void Awake();
 
@@ -88,7 +88,10 @@ private:
 
   ProcessorControllerProcessCallback mHandler;              ///< PreProcessHandler before Relayout
   ProcessorControllerProcessCallback mPostHandler;          ///< PostProcessHandler after Relayout
-  bool                               mKeepRenderingApplied; ///< True if we call Stage::KeepRendering(0.0f). It need to avoid duplicated keep rendering call
+
+  bool mKeepRenderingApplied : 1;       ///< True if we call Stage::KeepRendering(0.0f). It need to avoid duplicated keep rendering call
+  bool mProcessingEvents : 1;           ///< True if we are running Process now.
+  bool mProcessEventsIdleRequested : 1; ///< True if we call Adaptor::RequestProcessEventsOnIdle(). It need to avoid duplicated request call.
 };
 
 #endif // CSHARP_PROCESSOR_CONTROLLER_H
