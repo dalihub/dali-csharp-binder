@@ -28,47 +28,13 @@
 extern "C" {
 #endif
 
-using callbackFuncType = void(*)(int);
-callbackFuncType callBack;
+using SayCallbackType = void(*)(const char*);
 
-void sayTestCallback(std::string result)
+SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_say(const char* arg1_text, bool arg2_discardable, SayCallbackType arg3_callback)
 {
-  DALI_LOG_ERROR("sayTestCallback() result=%s ", result.c_str());
-
-  if(callBack)
-  {
-    if(result == "ReadingCancelled")
-    {
-      callBack(1);
-    }
-    else if(result == "ReadingStopped")
-    {
-      callBack(2);
-    }
-    else if(result == "ReadingSkipped")
-    {
-      callBack(3);
-    }
-    else if(result == "ReadingPaused")
-    {
-      callBack(4);
-    }
-    else if(result == "ReadingResumed")
-    {
-      callBack(5);
-    }
-    else
-    {
-      callBack(-1);
-    }
-  }
-}
-
-SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_say(char* arg1_text, bool arg2_discardable, void *arg3_callback)
-{
-  callBack = (callbackFuncType)arg3_callback;
-
-  Dali::AtspiAccessibility::Say(std::string{arg1_text}, arg2_discardable, sayTestCallback);
+  Dali::AtspiAccessibility::Say(std::string{arg1_text}, arg2_discardable, [arg3_callback](std::string status) {
+    arg3_callback(status.c_str());
+  });
 }
 
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_pause_resume(bool arg1_pause)
