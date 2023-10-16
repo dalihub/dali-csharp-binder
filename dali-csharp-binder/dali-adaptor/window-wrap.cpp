@@ -4038,6 +4038,30 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_KeyboardUnGrab(void * winHandle) 
   return result;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetFullScreen(void * winHandle, bool fullscreen) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      Dali::DevelWindow::SetFullScreen(*window, fullscreen);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_GetFullScreen(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  bool result = false;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      result = Dali::DevelWindow::GetFullScreen(*window);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
 /* pointer constraints event */
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal(void* winHandle)
 {
