@@ -14899,6 +14899,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GestureDetector_GetAttachedActor(void 
   return jresult;
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GestureDetector_FeedTouch(void * jdetector, void * jactor, void * jtouch) {
+  bool result = false;
+  Dali::GestureDetector *detector = (Dali::GestureDetector *)jdetector;
+  Dali::Actor *actor = (Dali::Actor *)jactor;
+  Dali::TouchEvent *touchEvent = (Dali::TouchEvent *)jtouch;
+
+  {
+    try {
+      result = ((Dali::GestureDetector *)detector)->FeedTouch(*actor, *touchEvent);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Gesture(void * jarg1) {
   void * jresult ;
