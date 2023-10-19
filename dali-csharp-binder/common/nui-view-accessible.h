@@ -53,6 +53,8 @@ public:
 
   static void SetAccessibilityDelegate(const AccessibilityDelegate* accessibilityDelegate);
 
+  void Detach();
+
   // Standard interfaces (Accessible, Action, Component)
 
   std::string GetNameRaw() const override;
@@ -247,6 +249,9 @@ private:
    */
   template<Dali::Accessibility::AtspiInterface I, typename R, typename... Args>
   R CallMethod(R (*method)(Dali::RefObject*, Args...), Args... args) const;
+
+  // Prevents calling C# methods if the View has been disposed
+  bool mIsDetached = false;
 };
 
 #endif // NUI_VIEW_ACCESSIBLE_H
