@@ -1610,41 +1610,74 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int nuiArgc, char* nuiArgv, char* nuiStyleSheet, int nuiWindowMode, void* initRectangle, int nuiWindowType)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int jarg1, char* jarg2, char* jarg3, int jarg4, void* jarg5, int jarg6)
 {
   void*                          jresult;
   int*                           argc = nullptr;
   char***                        argv = nullptr;
-  Dali::Application::WINDOW_MODE windowMode;
-  Dali::PositionSize             rect;
-  Dali::PositionSize*            rectp;
-  Dali::WindowType               windowType;
+  Dali::Application::WINDOW_MODE arg4;
+  Dali::PositionSize             arg5;
+  Dali::PositionSize*            argp5;
+  Dali::WindowType               arg6;
   Dali::Application              result;
 
-  GenerationArgV(nuiArgc, nuiArgv);
-  argc = &gArgC;
-  argv = &gArgV;
+  {
+    // TODO : What should we do if already generated argv exist?
+    ReleaseArgVMemory();
+    // generate argv data from the C# args
+    int   index  = 0;
+    int   length = 0;
+    char* retPtr = NULL;
+    char* nextPtr;
 
-  if(!nuiStyleSheet)
+    gArgV = new char*[jarg1 + 1];
+
+    for(retPtr = strtok_r(jarg2, " ", &nextPtr);
+        retPtr != NULL && index < jarg1;
+        retPtr = strtok_r(NULL, " ", &nextPtr))
+    {
+      length       = 0;
+      length       = strlen(retPtr);
+      gArgV[index] = new char[length + 1];
+      strncpy(gArgV[index], retPtr, length);
+      gArgV[index][length] = '\0';
+      index++;
+    }
+
+    while(index < jarg1)
+    {
+      //if jarg1 - index >1, maybe cause error.
+      gArgV[index] = NULL;
+      index++;
+    }
+
+    gArgV[jarg1] = NULL;
+    gArgC        = jarg1;
+
+    argc = &gArgC;
+    argv = &gArgV;
+  }
+
+  if(!jarg3)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string styleSheet(nuiStyleSheet);
-  windowMode  = (Dali::Application::WINDOW_MODE)nuiWindowMode;
-  rectp = (Dali::PositionSize*)initRectangle;
-  windowType  = (Dali::WindowType)nuiWindowType;
+  std::string arg3(jarg3);
+  arg4  = (Dali::Application::WINDOW_MODE)jarg4;
+  argp5 = (Dali::PositionSize*)jarg5;
+  arg6  = (Dali::WindowType)jarg6;
 
-  if(!rectp)
+  if(!argp5)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
     return 0;
   }
-  rect = *rectp;
+  arg5 = *argp5;
   {
     try
     {
-      result = Dali::DevelApplication::New(argc, argv, styleSheet, windowMode, rect, windowType);
+      result = Dali::DevelApplication::New(argc, argv, arg3, arg4, arg5, arg6);
     }
     CALL_CATCH_EXCEPTION(0);
   }
