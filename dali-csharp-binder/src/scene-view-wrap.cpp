@@ -557,6 +557,36 @@ extern "C"
     return result;
   }
 
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_AlphaMaskURL_get()
+  {
+    int jresult;
+    int result;
+
+    result = (int)Dali::Scene3D::SceneView::Property::ALPHA_MASK_URL;
+    jresult = (int)result;
+    return jresult;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_MaskContentScale_get()
+  {
+    int jresult;
+    int result;
+
+    result = (int)Dali::Scene3D::SceneView::Property::MASK_CONTENT_SCALE;
+    jresult = (int)result;
+    return jresult;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CropToMask_get()
+  {
+    int jresult;
+    int result;
+
+    result = (int)Dali::Scene3D::SceneView::Property::CROP_TO_MASK;
+    jresult = (int)result;
+    return jresult;
+  }
+
 #ifdef __cplusplus
 }
 #endif
