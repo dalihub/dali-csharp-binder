@@ -17,6 +17,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali/devel-api/adaptor-framework/native-image-source-queue.h>
+#include <dali-toolkit/public-api/image-loader/image.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -103,6 +104,22 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageQueue_EnqueueBuffer(void* nui
     }
     CALL_CATCH_EXCEPTION(0);
   }
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_GenerateUrl(void* nuiqueue)
+{
+  Dali::Toolkit::ImageUrl result;
+  Dali::NativeImageSourceQueue* queue = (Dali::NativeImageSourceQueue*)nuiqueue;
+  void *jresult;
+  {
+    try {
+      result = Dali::Toolkit::Image::GenerateUrl(queue);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
   return jresult;
 }
 
