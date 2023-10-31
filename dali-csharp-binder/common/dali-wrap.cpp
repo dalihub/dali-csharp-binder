@@ -15044,6 +15044,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Key_New(char * jarg1, char * jarg2, in
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Key_New__SWIG_1()
+{
+  void* jresult;
+  Dali::KeyEvent result;
+
+  {
+    try
+    {
+      result = DevelKeyEvent::New();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::KeyEvent((const Dali::KeyEvent &)result);
+
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Key(void * jarg1) {
   Dali::KeyEvent *arg1 = (Dali::KeyEvent *) 0 ;
 
@@ -20215,6 +20232,24 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageInterface_RequiresBlending(vo
   jresult = result;
   return jresult;
 }
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageInterface_GenerateUrl(void* nuiHandle)
+{
+  Dali::Toolkit::ImageUrl result;
+  Dali::NativeImageInterface* nativeImage = (Dali::NativeImageInterface*)nuiHandle;
+  void *jresult;
+
+  {
+    try {
+      result = Dali::Toolkit::Image::GenerateUrl(nativeImage);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
+
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CameraActor_Property_TYPE_get() {
   int jresult ;

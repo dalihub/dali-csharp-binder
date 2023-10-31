@@ -123,6 +123,55 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TextGeometry_TextLabel_GetTextBoundingRecta
   return boundingRect;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_SetTextFitArray(void * argTextLabel, bool argEnable, uint32_t argArraySize, float * argPointSizeArray, float * argMinLineSizeArray)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+  textLabel = (Dali::Toolkit::TextLabel *)argTextLabel;
+  {
+    try
+    {
+      std::vector<Dali::Toolkit::DevelTextLabel::FitOption> fitOptions;
+      for(size_t i = 0u; i < argArraySize; i++)
+      {
+        fitOptions.push_back(Dali::Toolkit::DevelTextLabel::FitOption(argPointSizeArray[i], argMinLineSizeArray[i]));
+      }
+      Dali::Toolkit::DevelTextLabel::SetTextFitArray(*textLabel, argEnable, fitOptions);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextFitArray(void * argTextLabel)
+{
+  void* result;
+  Dali::Property::Map *map = 0;
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+  textLabel = (Dali::Toolkit::TextLabel *)argTextLabel;
+  {
+    try
+    {
+      Dali::Property::Map textFitArray;
+      bool enable = Dali::Toolkit::DevelTextLabel::IsTextFitArrayEnabled(*textLabel);
+      textFitArray.Add("enable", enable);
+
+      std::vector<Dali::Toolkit::DevelTextLabel::FitOption> fitOptions = Dali::Toolkit::DevelTextLabel::GetTextFitArray(*textLabel);
+      Dali::Property::Array pointSizeArray;
+      Dali::Property::Array minLineSizeArray;
+      for(Dali::Toolkit::DevelTextLabel::FitOption& option : fitOptions)
+      {
+        pointSizeArray.PushBack(option.GetPointSize());
+        minLineSizeArray.PushBack(option.GetMinLineSize());
+      }
+
+      textFitArray.Add("pointSizeArray", pointSizeArray);
+      textFitArray.Add("minLineSizeArray", minLineSizeArray);
+
+      map = (Dali::Property::Map *)new Dali::Property::Map((Dali::Property::Map const &)textFitArray);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  result = (void *)map;
+  return result;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_AnchorClickedSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::TextLabel *arg1 = (Dali::Toolkit::TextLabel *) 0 ;

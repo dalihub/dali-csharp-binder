@@ -2947,7 +2947,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastKeyEvent(vo
   }
   {
     try {
-      (*keyEvent) = *((Dali::KeyEvent *)&Dali::DevelWindow::GetLastKeyEvent(*window));
+      // TODO : To make ensure that inputed handle have body, let we retrieving last event only if it exist.
+      auto& lastKeyEvent = Dali::DevelWindow::GetLastKeyEvent(*window);
+      if(lastKeyEvent)
+      {
+        (*keyEvent) = *((Dali::KeyEvent *)&lastKeyEvent);
+      }
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -2967,7 +2972,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastTouchEvent(
   }
   {
     try {
-      (*touchEvent) = *((Dali::TouchEvent *)&Dali::DevelWindow::GetLastTouchEvent(*window));
+      // TODO : To make ensure that key handle have body, let we retrieving last event only if it exist.
+      auto& lastTouchEvent = Dali::DevelWindow::GetLastTouchEvent(*window);
+      if(lastTouchEvent)
+      {
+        (*touchEvent) = *((Dali::TouchEvent *)&lastTouchEvent);
+      }
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -2987,7 +2997,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastHoverEvent(
   }
   {
     try {
-      (*hoverEvent) = *((Dali::HoverEvent *)&Dali::DevelWindow::GetLastHoverEvent(*window));
+      // TODO : To make ensure that key handle have body, let we retrieving last event only if it exist.
+      auto& lastHoverEvent = Dali::DevelWindow::GetLastHoverEvent(*window);
+      if(lastHoverEvent)
+      {
+        (*hoverEvent) = *((Dali::HoverEvent *)&lastHoverEvent);
+      }
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -4018,6 +4033,30 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_KeyboardUnGrab(void * winHandle) 
   {
     try {
       result = Dali::DevelWindow::KeyboardUnGrab(*window);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetFullScreen(void * winHandle, bool fullscreen) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      Dali::DevelWindow::SetFullScreen(*window, fullscreen);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_GetFullScreen(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  bool result = false;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      result = Dali::DevelWindow::GetFullScreen(*window);
     } CALL_CATCH_EXCEPTION(false);
   }
   return result;

@@ -715,6 +715,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_BLEND_EQUATION_get()
   return Dali::DevelActor::Property::BLEND_EQUATION;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_DISPATCH_TOUCH_MOTION_get()
+{
+  return Dali::DevelActor::Property::DISPATCH_TOUCH_MOTION;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_DISPATCH_HOVER_MOTION_get()
+{
+  return Dali::DevelActor::Property::DISPATCH_HOVER_MOTION;
+}
+
+
 // Creation
 
 SWIGEXPORT Dali::Handle* SWIGSTDCALL CSharp_Dali_Actor_SWIGUpcast(Dali::Actor* jarg1)
