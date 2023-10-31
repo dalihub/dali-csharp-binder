@@ -1610,7 +1610,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int jarg1, char* jarg2, char* jarg3, int jarg4, void* jarg5, int jarg6)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int jarg1, char* jarg3, int jarg4, void* jarg5, int jarg6)
 {
   void*                          jresult;
   int*                           argc = nullptr;
@@ -1620,43 +1620,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int jarg1, char
   Dali::PositionSize*            argp5;
   Dali::WindowType               arg6;
   Dali::Application              result;
-
-  {
-    // TODO : What should we do if already generated argv exist?
-    ReleaseArgVMemory();
-    // generate argv data from the C# args
-    int   index  = 0;
-    int   length = 0;
-    char* retPtr = NULL;
-    char* nextPtr;
-
-    gArgV = new char*[jarg1 + 1];
-
-    for(retPtr = strtok_r(jarg2, " ", &nextPtr);
-        retPtr != NULL && index < jarg1;
-        retPtr = strtok_r(NULL, " ", &nextPtr))
-    {
-      length       = 0;
-      length       = strlen(retPtr);
-      gArgV[index] = new char[length + 1];
-      strncpy(gArgV[index], retPtr, length);
-      gArgV[index][length] = '\0';
-      index++;
-    }
-
-    while(index < jarg1)
-    {
-      //if jarg1 - index >1, maybe cause error.
-      gArgV[index] = NULL;
-      index++;
-    }
-
-    gArgV[jarg1] = NULL;
-    gArgC        = jarg1;
-
-    argc = &gArgC;
-    argv = &gArgV;
-  }
 
   if(!jarg3)
   {
