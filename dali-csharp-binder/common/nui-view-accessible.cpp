@@ -137,11 +137,6 @@ void NUIViewAccessible::SetAccessibilityDelegate(const AccessibilityDelegate* ac
   mTable = accessibilityDelegate;
 }
 
-void NUIViewAccessible::Detach()
-{
-  mIsDetached = true;
-}
-
 std::string NUIViewAccessible::StealString(char* str)
 {
   std::string ret{};
@@ -172,16 +167,6 @@ T NUIViewAccessible::StealObject(T* obj)
 template<Interface I, typename R, typename... Args>
 R NUIViewAccessible::CallMethod(R (*method)(RefObject*, Args...), Args... args) const
 {
-  if(mIsDetached)
-  {
-    DALI_LOG_ERROR("Method called on detached NUIViewAccessible[%p]", static_cast<const void*>(this));
-
-    if constexpr(std::is_same_v<R, void>)
-      return;
-    else
-      return R{};
-  }
-
   DALI_ASSERT_DEBUG(method);
   DALI_ASSERT_ALWAYS(GetInterfaces()[I]);
 
@@ -730,21 +715,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(c
 
     NUIViewAccessible::SetAccessibilityDelegate(accessibilityDelegate);
     Accessibility::Bridge::GetCurrentBridge()->SetToolkitName("nui(dali)");
-  }));
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dali::Toolkit::Control* arg1_control)
-{
-  GUARD_ON_NULL_RET(arg1_control);
-
-  try_catch(([&]() {
-    auto* actorAccessible = Dali::Accessibility::Accessible::Get(*arg1_control);
-    auto* viewAccessible  = dynamic_cast<NUIViewAccessible*>(actorAccessible);
-
-    if(viewAccessible)
-    {
-      viewAccessible->Detach();
-    }
   }));
 }
 
