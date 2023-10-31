@@ -48,6 +48,8 @@ BuildRequires: pkgconfig(dali2-core)
 BuildRequires: pkgconfig(dali2-adaptor)
 BuildRequires: pkgconfig(dali2-toolkit)
 BuildRequires: pkgconfig(dali2-scene3d)
+BuildRequires: pkgconfig(dali2-physics-2d)
+BuildRequires: pkgconfig(dali2-physics-3d)
 %if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
 %define rive_animation_view 1
 BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
