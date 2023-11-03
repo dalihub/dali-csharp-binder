@@ -20233,6 +20233,24 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageInterface_RequiresBlending(vo
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageInterface_GenerateUrl(void* nuiHandle)
+{
+  Dali::Toolkit::ImageUrl result;
+  Dali::NativeImageInterface* nativeImage = (Dali::NativeImageInterface*)nuiHandle;
+  void *jresult;
+
+  {
+    try {
+      result = Dali::Toolkit::Image::GenerateUrl(nativeImage);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CameraActor_Property_TYPE_get() {
   int jresult ;
   int result;
