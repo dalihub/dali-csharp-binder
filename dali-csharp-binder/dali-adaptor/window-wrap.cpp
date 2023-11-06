@@ -202,6 +202,15 @@ SWIGINTERN void Dali_Signal_Window_PointerConstraintsEvent_Signal_Emit(Dali::Sig
   self->Emit( arg, pointerConstraintsEvent );
 }
 
+int CheckingWindowHandle(Dali::Window *window)
+{
+    if (!window) {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Window const & type is null", 0);
+      return 0;
+    }
+    return 1;
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -360,6 +369,51 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_New__SWIG_3(void * jarg1, char 
 }
 
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_New__WithWindowData(char* nuiName, char* nuiClassName, void* nuiWindowData)
+{
+  void*             jresult;
+  std::string*      name      = 0;
+  std::string*      className = 0;
+  Dali::WindowData* pWindowData;
+  Dali::Window      result;
+
+  if(!nuiName)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "String NUI Name is NULL", 0);
+    return 0;
+  }
+  std::string name_str(nuiName);
+  name = &name_str;
+
+  if(!nuiClassName)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "String NUI Class Name is NULL", 0);
+    return 0;
+  }
+  std::string className_str(nuiClassName);
+  className = &className_str;
+
+  pWindowData = (Dali::WindowData*)nuiWindowData;
+  if(!pWindowData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowData", 0);
+    return 0;
+  }
+
+  {
+    try
+    {
+      result = Dali::Window::New((std::string const&)*name, (std::string const&)*className, *pWindowData);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Window((const Dali::Window&)result);
+
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Window__SWIG_0() {
   void * jresult ;
   Dali::Window *result = 0 ;
@@ -375,130 +429,146 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Window__SWIG_0() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Window(void * jarg1) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Window(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) winHandle ;
 
-  arg1 = (Dali::Window *)jarg1;
+  if(!CheckingWindowHandle(window)) {
+   return;
+  }
+
   {
     try {
-      delete arg1;
+      delete window;
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Window__SWIG_1(void * jarg1) {
+// need not sample
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Window__SWIG_1(void * winHandle) {
   void * jresult ;
-  Dali::Window *arg1 = 0 ;
-  Dali::Window *result = 0 ;
+  Dali::Window *window = (Dali::Window *)winHandle;
+  Dali::Window *newWindow = 0 ;
 
-  arg1 = (Dali::Window *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Window const & type is null", 0);
-    return 0;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
   }
   {
     try {
-      result = (Dali::Window *)new Dali::Window((Dali::Window const &)*arg1);
+      newWindow = (Dali::Window *)new Dali::Window((Dali::Window const &)*window);
     } CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (void *)result;
+  jresult = (void *)newWindow;
+  return jresult;
+}
+
+// need not sample
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Assign(void * winHandle1, void * winHandle2) {
+  void * jresult ;
+  Dali::Window *window1 = (Dali::Window *) winHandle1;
+  Dali::Window *window2 = (Dali::Window *) winHandle2;
+  Dali::Window *newWindow = 0;
+
+  if(!CheckingWindowHandle(window1)) {
+   return 0;
+  }
+
+  if(!CheckingWindowHandle(window2)) {
+   return 0;
+  }
+
+  {
+    try {
+      newWindow = (Dali::Window *) &(window1)->operator =((Dali::Window const &)*window2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)newWindow;
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Window *arg2 = 0 ;
-  Dali::Window *result = 0 ;
-
-  arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::Window *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Window const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Window *) &(arg1)->operator =((Dali::Window const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetClass(void * winHandle, char * pName, char * pClassName) {
+  Dali::Window *window = (Dali::Window *)winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
 
-  jresult = (void *)result;
-  return jresult;
-}
+  std::string name;
+  std::string className;
 
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetClass(void * jarg1, char * jarg2, char * jarg3) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-
-  arg1 = (Dali::Window *)jarg1;
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+  if (!pName) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "name is null string", 0);
     return ;
   }
-  (&arg2)->assign(jarg2);
-  if (!jarg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+  (&name)->assign(pName);
+
+  if (!pClassName) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "className is null string", 0);
     return ;
   }
-  (&arg3)->assign(jarg3);
+
+  (&className)->assign(pClassName);
   {
     try {
-      (arg1)->SetClass(arg2,arg3);
+      (window)->SetClass(name,className);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Raise(void * jarg1) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Raise(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  arg1 = (Dali::Window *)jarg1;
   {
     try {
-      (arg1)->Raise();
+      (window)->Raise();
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Lower(void * jarg1) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Lower(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  arg1 = (Dali::Window *)jarg1;
   {
     try {
-      (arg1)->Lower();
+      (window)->Lower();
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Activate(void * jarg1) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Activate(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  arg1 = (Dali::Window *)jarg1;
   {
     try {
-      (arg1)->Activate();
+      (window)->Activate();
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Maximize(void * winHandle, bool maximize) {
-  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  window = (Dali::Window *)winHandle;
   {
     try {
       Dali::DevelWindow::Maximize(*window, maximize);
@@ -507,10 +577,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Maximize(void * winHandle, bool m
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMaximized(void * winHandle) {
-  Dali::Window *window = (Dali::Window *) 0 ;
-  bool isMaximized = false;
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return false;
+  }
 
-  window = (Dali::Window *)winHandle;
+  bool isMaximized = false;
   {
     try {
       isMaximized = Dali::DevelWindow::IsMaximized(*window);
@@ -520,11 +592,13 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMaximized(void * winHandle) {
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Maximum_Size(void * winHandle, void * size) {
-  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
+
   Dali::Window::WindowSize *winSize;
   Dali::Window::WindowSize maximumSize;
-
-  window = (Dali::Window *)winHandle;
 
   winSize = (Dali::Window::WindowSize *)size;
   if (!winSize) {
@@ -541,9 +615,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Maximum_Size(void * winHandle
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Minimize(void * winHandle, bool minimize) {
-  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  window = (Dali::Window *)winHandle;
   {
     try {
       Dali::DevelWindow::Minimize(*window, minimize);
@@ -552,10 +628,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Minimize(void * winHandle, bool m
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMinimized(void * winHandle) {
-  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return false;
+  }
+
   bool isMinimized = false;
 
-  window = (Dali::Window *)winHandle;
   {
     try {
       isMinimized = Dali::DevelWindow::IsMinimized(*window);
@@ -565,11 +644,13 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMinimized(void * winHandle) {
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Minimum_Size(void * winHandle, void * size) {
-  Dali::Window *window = (Dali::Window *) 0 ;
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
+
   Dali::Window::WindowSize *winSize;
   Dali::Window::WindowSize minimumSize;
-
-  window = (Dali::Window *)winHandle;
 
   winSize = (Dali::Window::WindowSize *)size;
   if (!winSize) {
@@ -578,7 +659,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Minimum_Size(void * winHandle
   }
   minimumSize = *winSize;
 
-  window = (Dali::Window *)winHandle;
   {
     try {
       Dali::DevelWindow::SetMimimumSize(*window, minimumSize);
@@ -586,100 +666,110 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Minimum_Size(void * winHandle
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddAvailableOrientation(void * jarg1, int jarg2) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::WindowOrientation arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddAvailableOrientation(void * winHandle, int orientation) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::WindowOrientation)jarg2;
+  Dali::WindowOrientation windowOrientation = (Dali::WindowOrientation)orientation;
+
   {
     try {
-      (arg1)->AddAvailableOrientation(arg2);
+      (window)->AddAvailableOrientation(windowOrientation);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RemoveAvailableOrientation(void * jarg1, int jarg2) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::WindowOrientation arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RemoveAvailableOrientation(void * winHandle, int orientation) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::WindowOrientation)jarg2;
+  Dali::WindowOrientation windowOrientation = (Dali::WindowOrientation)orientation;
+
   {
     try {
-      (arg1)->RemoveAvailableOrientation(arg2);
+      (window)->RemoveAvailableOrientation(windowOrientation);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPreferredOrientation(void * jarg1, int jarg2) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::WindowOrientation arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPreferredOrientation(void * winHandle, int orientation) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::WindowOrientation)jarg2;
+  Dali::WindowOrientation windowOrientation = (Dali::WindowOrientation)orientation;
+
   {
     try {
-      (arg1)->SetPreferredOrientation(arg2);
+      window->SetPreferredOrientation(windowOrientation);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetPreferredOrientation(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetPreferredOrientation(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
+  }
+
+  Dali::WindowOrientation windowOrientation;
+
   int jresult ;
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::WindowOrientation result;
 
-  arg1 = (Dali::Window *)jarg1;
   {
     try {
-      result = (Dali::WindowOrientation)(arg1)->GetPreferredOrientation();
+      windowOrientation = (Dali::WindowOrientation)(window)->GetPreferredOrientation();
     } CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (int)result;
+  jresult = (int)windowOrientation;
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetCurrentOrientation(void * jarg1) {
-  int jresult ;
-  Dali::WindowOrientation result;
-  Dali::Window* window = (Dali::Window*)jarg1;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetCurrentOrientation(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
   }
+
+  Dali::WindowOrientation windowOrientation;
+
+  int jresult ;
   {
     try {
-      result = Dali::DevelWindow::GetCurrentOrientation(*window);
+      windowOrientation = Dali::DevelWindow::GetCurrentOrientation(*window);
     } CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (int)result;
+  jresult = (int)windowOrientation;
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAvailableOrientations(void * jarg1, void* jarg2, int jarg3) {
-  Dali::Window* window = (Dali::Window*)jarg1;
-  if(!window)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAvailableOrientations(void * winHandle, void* pArray, int arrayCount) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return;
   }
-  Dali::Property::Array *arg2 = (static_cast<Dali::Property::Array *>(jarg2));
-  unsigned int count = static_cast<unsigned int>(jarg3);
+
+  Dali::Property::Array *array = (static_cast<Dali::Property::Array *>(pArray));
+  unsigned int count = static_cast<unsigned int>(arrayCount);
 
   Dali::Vector< Dali::WindowOrientation> orientations;
   orientations.Resize( count );
   for(Dali::Property::Array::SizeType i = 0; i < count; ++i)
   {
-    int angle = arg2->GetElementAt(i).Get<int>();
+    int angle = array->GetElementAt(i).Get<int>();
     orientations[i] = static_cast< Dali::WindowOrientation >(angle);
   }
   {
@@ -690,20 +780,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAvailableOrientations(void * j
 
 }
 
+// Need not
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetNativeHandle(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
+  }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetNativeHandle(void * jarg1) {
+  Dali::Any nativeHandle;
   void * jresult ;
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Any result;
 
-  arg1 = (Dali::Window *)jarg1;
   {
     try {
-      result = ((Dali::Window const *)arg1)->GetNativeHandle();
+      nativeHandle = ((Dali::Window const *)window)->GetNativeHandle();
     } CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Any((const Dali::Any &)result);
+  jresult = new Dali::Any((const Dali::Any &)nativeHandle);
   return jresult;
 }
 
@@ -732,42 +825,35 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FocusChangedSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetAcceptFocus(void * jarg1, unsigned int jarg2) {
-  Dali::Window arg1 ;
-  bool arg2 ;
-  Dali::Window *argp1 ;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetAcceptFocus(void * winHandle, unsigned int flag) {
+  Dali::Window *window = (Dali::Window *) winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return;
   }
-  arg1 = *argp1;
-  arg2 = jarg2 ? true : false;
+
+  bool focus ;
+
+  focus = flag ? true : false;
   {
     try {
-      arg1.SetAcceptFocus(arg2);
+      window->SetAcceptFocus(focus);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsFocusAcceptable(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsFocusAcceptable(void * winHandle) {
   unsigned int jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
   bool result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return false;
   }
-  arg1 = *argp1;
+
   {
     try {
-      result = (bool)arg1.IsFocusAcceptable();
+      result = (bool)window->IsFocusAcceptable();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -776,59 +862,47 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsFocusAcceptable(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Show(void * jarg1) {
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Show(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
-  arg1 = *argp1;
+
   {
     try {
-      arg1.Show();
+      window->Show();
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Hide(void * jarg1) {
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Hide(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
-  arg1 = *argp1;
+
   {
     try {
-      arg1.Hide();
+      window->Hide();
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsVisible(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsVisible(void * winHandle) {
   unsigned int jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
   bool result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
   }
-  arg1 = *argp1;
+
   {
     try {
-      result = (bool)arg1.IsVisible();
+      result = (bool)window->IsVisible();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1041,17 +1115,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GetAuxiliaryHintId(void * jarg1,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetInputRegion(void * jarg1, void * jarg2) {
-  Dali::Window arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetInputRegion(void * winHandle, void * jarg2) {
   Dali::Rect< int > *arg2 = 0 ;
-  Dali::Window *argp1 ;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
-  arg1 = *argp1;
+
   arg2 = (Dali::Rect< int > *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< int > const & type is null", 0);
@@ -1059,49 +1129,41 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetInputRegion(void * jarg1, void * jarg
   }
   {
     try {
-      arg1.SetInputRegion((Dali::Rect< int > const &)*arg2);
+      window->SetInputRegion((Dali::Rect< int > const &)*arg2);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetType(void * jarg1, int jarg2) {
-  Dali::Window arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetType(void * winHandle, int jarg2) {
   Dali::WindowType arg2 ;
-  Dali::Window *argp1 ;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
-  arg1 = *argp1;
+
   arg2 = (Dali::WindowType)jarg2;
   {
     try {
-      arg1.SetType(arg2);
+      window->SetType(arg2);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetType(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetType(void * winHandle) {
   int jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
   Dali::WindowType result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return -1;
   }
-  arg1 = *argp1;
+
   {
     try {
-      result = (Dali::WindowType)arg1.GetType();
+      result = (Dali::WindowType)window->GetType();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1110,23 +1172,19 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetType(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetNotificationLevel(void * jarg1, int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetNotificationLevel(void * winHandle, int jarg2) {
   unsigned int jresult ;
-  Dali::Window arg1 ;
   Dali::WindowNotificationLevel arg2 ;
-  Dali::Window *argp1 ;
   int result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
   }
-  arg1 = *argp1;
+
   arg2 = (Dali::WindowNotificationLevel)jarg2;
   {
     try {
-      result = (int)arg1.SetNotificationLevel(arg2);
+      result = (int)window->SetNotificationLevel(arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1135,21 +1193,17 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetNotificationLevel(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetNotificationLevel(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetNotificationLevel(void * winHandle) {
   int jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
   Dali::WindowNotificationLevel result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
   }
-  arg1 = *argp1;
+
   {
     try {
-      result = (Dali::WindowNotificationLevel)arg1.GetNotificationLevel();
+      result = (Dali::WindowNotificationLevel)window->GetNotificationLevel();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1158,42 +1212,34 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetNotificationLevel(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetOpaqueState(void * jarg1, unsigned int jarg2) {
-  Dali::Window arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetOpaqueState(void * winHandle, unsigned int jarg2) {
   bool arg2 ;
-  Dali::Window *argp1 ;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
-  arg1 = *argp1;
+
   arg2 = jarg2 ? true : false;
   {
     try {
-      arg1.SetOpaqueState(arg2);
+      window->SetOpaqueState(arg2);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsOpaqueState(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsOpaqueState(void * winHandle) {
   unsigned int jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
   bool result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
   }
-  arg1 = *argp1;
+
   {
     try {
-      result = (bool)arg1.IsOpaqueState();
+      result = (bool)window->IsOpaqueState();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1202,23 +1248,19 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_IsOpaqueState(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetScreenOffMode(void * jarg1, int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetScreenOffMode(void * winHandle, int jarg2) {
   unsigned int jresult ;
-  Dali::Window arg1 ;
   Dali::WindowScreenOffMode arg2 ;
-  Dali::Window *argp1 ;
   int result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
   }
-  arg1 = *argp1;
+
   arg2 = (Dali::WindowScreenOffMode)jarg2;
   {
     try {
-      result = (int)arg1.SetScreenOffMode(arg2);
+      result = (int)window->SetScreenOffMode(arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1227,21 +1269,17 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetScreenOffMode(void * jarg1, i
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetScreenOffMode(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetScreenOffMode(void * winHandle) {
   int jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
   Dali::WindowScreenOffMode result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
   }
-  arg1 = *argp1;
+
   {
     try {
-      result = (Dali::WindowScreenOffMode)arg1.GetScreenOffMode();
+      result = (Dali::WindowScreenOffMode)window->GetScreenOffMode();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1250,23 +1288,19 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetScreenOffMode(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetBrightness(void * jarg1, int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetBrightness(void * winHandle, int jarg2) {
   unsigned int jresult ;
-  Dali::Window arg1 ;
   int arg2 ;
-  Dali::Window *argp1 ;
   int result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
   }
-  arg1 = *argp1;
+
   arg2 = (int)jarg2;
   {
     try {
-      result = (int)arg1.SetBrightness(arg2);
+      result = (int)window->SetBrightness(arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1275,21 +1309,17 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetBrightness(void * jarg1, int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetBrightness(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetBrightness(void * winHandle) {
   int jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
   int result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0 ;
   }
-  arg1 = *argp1;
+
   {
     try {
-      result = (int)arg1.GetBrightness();
+      result = (int)window->GetBrightness();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1550,18 +1580,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ResizeSignal(void * jarg1) {
 
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetSize(void * jarg1, void * jarg2) {
-  Dali::Window arg1 ;
-  Dali::Window::WindowSize arg2 ;
-  Dali::Window *argp1 ;
-  Dali::Window::WindowSize *argp2 ;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetSize(void * winHandle, void * jarg2) {
+  Dali::Window::WindowSize arg2;
+  Dali::Window::WindowSize *argp2;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
-  arg1 = *argp1;
+
   argp2 = (Dali::Window::WindowSize *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
@@ -1570,28 +1596,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetSize(void * jarg1, void * jarg
   arg2 = *argp2;
   {
     try {
-      arg1.SetSize(arg2);
+      window->SetSize(arg2);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetSize(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetSize(void * winHandle) {
   void * jresult ;
-  Dali::Window arg1 ;
-  Dali::Window *argp1 ;
   Dali::Window::WindowSize result;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0 ;
   }
-  arg1 = *argp1;
+
   {
     try {
-      result = arg1.GetSize();
+      result = window->GetSize();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1600,18 +1622,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetSize(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPosition(void * handle, void * position) {
-  Dali::Window *pWindow;
-  Dali::Window window;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPosition(void * winHandle, void * position) {
   Dali::Window::WindowPosition *pPosition;
   Dali::Window::WindowPosition windowPosition;
-
-  pWindow = (Dali::Window *)handle;
-  if (!pWindow) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
-  window = *pWindow;
 
   pPosition = (Dali::Window::WindowPosition *)position;
   if (!pPosition) {
@@ -1622,29 +1639,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPosition(void * handle, void *
 
   {
     try {
-      window.SetPosition(windowPosition);
+      window->SetPosition(windowPosition);
     } CALL_CATCH_EXCEPTION();
   }
 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetPosition(void * handle) {
-  Dali::Window *pWindow ;
-  Dali::Window window ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetPosition(void * winHandle) {
   Dali::Window::WindowPosition windowPosition;
   Dali::Window::WindowPosition result;
   void * jresult ;
-
-  pWindow = (Dali::Window *)handle;
-  if (!pWindow) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
   }
-  window = *pWindow;
+
   {
     try {
-      windowPosition = window.GetPosition();
+      windowPosition = window->GetPosition();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1652,12 +1665,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetPosition(void * handle) {
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSize(void* jarg1, void* jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSize(void* winHandle, void* jarg2)
 {
-  Dali::Window* window = (Dali::Window*)jarg1;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
 
   Dali::Rect<int>* positionSize = (Dali::Rect<int>*)jarg2;
@@ -1673,40 +1685,32 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSize(void* jarg1, void
 
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetLayout(void* handle, unsigned int numCols, unsigned int numRows, unsigned int column, unsigned int row, unsigned int colSpan, unsigned int rowSpan)
+// NUI LayoutSamples
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetLayout(void* winHandle, unsigned int numCols, unsigned int numRows, unsigned int column, unsigned int row, unsigned int colSpan, unsigned int rowSpan)
 {
-  Dali::Window *pWindow;
-  Dali::Window window;
-
-  pWindow = (Dali::Window *)handle;
-  if (!pWindow) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
-  window = *pWindow;
 
   {
     try {
-      window.SetLayout(numCols, numRows, column, row, colSpan, rowSpan);
+      window->SetLayout(numCols, numRows, column, row, colSpan, rowSpan);
     } CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetTransparency(void * jarg1, unsigned int jarg2) {
-  Dali::Window arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetTransparency(void * winHandle, unsigned int jarg2) {
   bool arg2 ;
-  Dali::Window *argp1 ;
-
-  argp1 = (Dali::Window *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
-  arg1 = *argp1;
+
   arg2 = jarg2 ? true : false;
   {
     try {
-      arg1.SetTransparency(arg2);
+      window->SetTransparency(arg2);
     } CALL_CATCH_EXCEPTION();
   }
 
@@ -1812,12 +1816,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_RenderOnce(void * /* jarg1 */) {
   } CALL_CATCH_EXCEPTION();
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Add(void * jarg1, void * jarg2) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Add(void * winHandle, void * jarg2) {
   Dali::Actor arg2 ;
   Dali::Actor *argp2 ;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  arg1 = (Dali::Window *)jarg1;
   argp2 = (Dali::Actor *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
@@ -1826,35 +1832,37 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Add(void * jarg1, void * jarg2) {
   arg2 = *argp2;
   {
     try {
-      (arg1)->Add(arg2);
+      window->Add(arg2);
     } CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Remove(void * jarg1, void * jarg2) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
-  Dali::Actor *arg2 = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Remove(void * winHandle, void * jarg2) {
+  Dali::Actor *arg2 = (Dali::Actor *)jarg2;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  arg1 = (Dali::Window *)jarg1;
-  arg2 = (Dali::Actor *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Actor & type is null", 0);
     return ;
   }
   {
     try {
-      (arg1)->Remove(*arg2);
+      window->Remove(*arg2);
     } CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetBackgroundColor(void * jarg1, void * jarg2) {
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetBackgroundColor(void * winHandle, void * jarg2) {
   Dali::Vector4 arg2 ;
-  Dali::Vector4 *argp2 ;
+  Dali::Vector4 *argp2 = (Dali::Vector4 *)jarg2;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  arg1 = (Dali::Window *)jarg1;
-  argp2 = (Dali::Vector4 *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Vector4", 0);
     return ;
@@ -1862,20 +1870,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetBackgroundColor(void * jarg1, 
   arg2 = *argp2;
   {
     try {
-      (arg1)->SetBackgroundColor(arg2);
+      window->SetBackgroundColor(arg2);
     } CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetBackgroundColor(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetBackgroundColor(void * winHandle) {
   void * jresult ;
-  Dali::Window *arg1 = (Dali::Window *) 0 ;
   Dali::Vector4 result;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
+  }
 
-  arg1 = (Dali::Window *)jarg1;
   {
     try {
-      result = ((Dali::Window const *)arg1)->GetBackgroundColor();
+      result = window->GetBackgroundColor();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1883,15 +1893,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetBackgroundColor(void * jarg1
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetRootLayer(void * csWindow) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetRootLayer(void * winHandle) {
   void * jresult ;
-  Dali::Window *window = (Dali::Window *) 0 ;
   Dali::Layer result;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
+  }
 
-  window = (Dali::Window *)csWindow;
   {
     try {
-      result = ((Dali::Window const *)window)->GetRootLayer();
+      result = window->GetRootLayer();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1899,15 +1911,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetRootLayer(void * csWindow) {
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetOverlayLayer(void * csWindow) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetOverlayLayer(void * winHandle) {
   void * jresult ;
-  Dali::Window *window = (Dali::Window *) 0 ;
   Dali::Layer result;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
+  }
 
-  window = (Dali::Window *)csWindow;
   {
     try {
-      result = ((Dali::Window *)window)->GetOverlayLayer();
+      result = window->GetOverlayLayer();
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -1968,19 +1982,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_TouchSignal(void * jarg1) {
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent(void* child, void* parent)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent(void* childWinHandle, void* parentWinHandle)
 {
-  Dali::Window* childWindow = (Dali::Window*)child;
-  if (!childWindow) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window* childWindow = (Dali::Window*)childWinHandle;
+  if(!CheckingWindowHandle(childWindow)) {
+   return ;
   }
 
-  Dali::Window* parentWindow = (Dali::Window*)parent;
-  if (!parentWindow) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window* parentWindow = (Dali::Window*)parentWinHandle;
+  if(!CheckingWindowHandle(parentWindow)) {
+   return ;
   }
+
   {
     try {
       Dali::DevelWindow::SetParent(*childWindow, *parentWindow);
@@ -1989,19 +2002,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent(void* child, void* pare
 
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent_With_Stack(void* child, void* parent, bool belowParent)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent_With_Stack(void* childWinHandle, void* parentWinHandle, bool belowParent)
 {
-  Dali::Window* childWindow = (Dali::Window*)child;
-  if (!childWindow) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window* childWindow = (Dali::Window*)childWinHandle;
+  if(!CheckingWindowHandle(childWindow)) {
+   return ;
   }
 
-  Dali::Window* parentWindow = (Dali::Window*)parent;
-  if (!parentWindow) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window* parentWindow = (Dali::Window*)parentWinHandle;
+  if(!CheckingWindowHandle(parentWindow)) {
+   return ;
   }
+
   {
     try {
       Dali::DevelWindow::SetParent(*childWindow, *parentWindow, belowParent);
@@ -2010,13 +2022,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent_With_Stack(void* child,
 
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Unparent(void* jarg1)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Unparent(void* winHandle)
 {
-  Dali::Window* window = (Dali::Window*)jarg1;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
+
   {
     try {
       Dali::DevelWindow::Unparent(*window);
@@ -2025,21 +2037,21 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Unparent(void* jarg1)
 
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetParent(void* jarg1)
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetParent(void* winHandle)
 {
   void * jresult ;
-  Dali::Window* window = (Dali::Window*)jarg1;
-  Dali::Window result;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return 0;
+  Dali::Window parentWindow;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return 0 ;
   }
+
   {
     try {
-      result = Dali::DevelWindow::GetParent(*window);
+      parentWindow = Dali::DevelWindow::GetParent(*window);
     } CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Window((const Dali::Window &)result);
+  jresult = new Dali::Window((const Dali::Window &)parentWindow);
   return jresult;
 }
 
@@ -2532,14 +2544,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_delete(
   return;
 }
 
-SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Window_GetNativeId( void* jarg1 )
+SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Window_GetNativeId( void* winHandle )
 {
-  Dali::Window* window = (Dali::Window*)jarg1;
   int32_t ret = -1;
-  if( !window )
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ret;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return -1 ;
   }
 
   {
@@ -2551,12 +2561,15 @@ SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Window_GetNativeId( void* jarg1 )
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFrameRenderedCallback( void* nuiWindow, void* nuiCallback, int nuiFrameId )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFrameRenderedCallback( void* winHandle, void* nuiCallback, int nuiFrameId )
 {
-  Dali::Window* window = (Dali::Window*)nuiWindow;
   void (*callback)(int32_t) = (void (*)(int32_t))nuiCallback;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  if( !window || !callback )
+  if( !callback )
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null", 0);
     return;
@@ -2569,12 +2582,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFrameRenderedCallback( void* n
   CALL_CATCH_EXCEPTION();
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFramePresentedCallback( void* nuiWindow, void* nuiCallback, int nuiFrameId )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFramePresentedCallback( void* winHandle, void* nuiCallback, int nuiFrameId )
 {
-  Dali::Window* window = (Dali::Window*)nuiWindow;
   void (*callback)(int32_t) = (void (*)(int32_t))nuiCallback;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
 
-  if( !window || !callback )
+  if( !callback )
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null", 0);
     return;
@@ -2587,12 +2603,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFramePresentedCallback( void* 
   CALL_CATCH_EXCEPTION();
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSizeWithOrientation(void* jarg1, void* jarg2, int jarg3)
+// need not
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSizeWithOrientation(void* winHandle, void* jarg2, int jarg3)
 {
-  Dali::Window* window = (Dali::Window*)jarg1;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
 
   Dali::Rect<int>* positionSize = (Dali::Rect<int>*)jarg2;
@@ -2610,12 +2626,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSizeWithOrientation(vo
 
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RequestMoveToServer(void* jarg1)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RequestMoveToServer(void* winHandle)
 {
-  Dali::Window* window = (Dali::Window*)jarg1;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
 
   {
@@ -2626,12 +2641,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RequestMoveToServer(void* jarg1)
 
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RequestResizeToServer(void* jarg1, int jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RequestResizeToServer(void* winHandle, int jarg2)
 {
-  Dali::Window* window = (Dali::Window*)jarg1;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return ;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
 
   Dali::WindowResizeDirection direction = (Dali::WindowResizeDirection)jarg2;
@@ -2644,12 +2658,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RequestResizeToServer(void* jarg1
 
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_EnableFloatingMode(void* jarg1, bool jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_EnableFloatingMode(void* winHandle, bool jarg2)
 {
-  Dali::Window* window = (Dali::Window*)jarg1;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
 
   bool enable = jarg2;
@@ -2663,11 +2676,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_EnableFloatingMode(void* jarg1, b
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsFloatingModeEnabled(void* winHandle)
 {
-  Dali::Window* window = (Dali::Window*)winHandle;
   bool result = false;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return false;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return false ;
   }
 
   {
@@ -2681,12 +2693,12 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsFloatingModeEnabled(void* winHa
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_IncludeInputRegion(void* winHandle, void* region)
 {
-  Dali::Window* window = (Dali::Window*)winHandle;
   Dali::Rect<int> *addedRegion = (Dali::Rect<int> *)region;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
+
   {
     try {
       Dali::DevelWindow::IncludeInputRegion(*window, *addedRegion);
@@ -2697,12 +2709,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_IncludeInputRegion(void* winHandl
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_ExcludeInputRegion(void* winHandle, void* region)
 {
-  Dali::Window* window = (Dali::Window*)winHandle;
   Dali::Rect<int> *subtractedRegion = (Dali::Rect<int> *)region;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
+
   {
     try {
       Dali::DevelWindow::ExcludeInputRegion(*window, *subtractedRegion);
@@ -2713,12 +2725,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_ExcludeInputRegion(void* winHandl
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_KeepRendering(void* winHandle, float durationSeconds)
 {
-  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
-  if(!window)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
+
   {
     try
     {
@@ -2730,12 +2741,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_KeepRendering(void* winHandle, fl
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPartialUpdateEnabled(void* winHandle, bool enabled)
 {
-  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
-  if(!window)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
+
   {
     try
     {
@@ -2747,13 +2757,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPartialUpdateEnabled(void* win
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsPartialUpdateEnabled(void* winHandle)
 {
-  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
   bool enabled = false;
-  if(!window)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return false;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return false ;
   }
+
   {
     try
     {
@@ -2863,12 +2872,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Accessibility_Highlight_Signal_de
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsWindowRotating(void* winHandle)
 {
-  Dali::Window* window = (Dali::Window*)winHandle;
   bool result = false;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return result;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return false ;
   }
+
   {
     try {
       result = Dali::DevelWindow::IsWindowRotating(*window);
@@ -3010,11 +3019,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastHoverEvent(
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetNeedsRotationCompletedAcknowledgement(void* winHandle, bool needAcknowledgement)
 {
-  Dali::Window* window = (Dali::Window*)winHandle;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
+
   {
     try {
       Dali::DevelWindow::SetNeedsRotationCompletedAcknowledgement(*window, needAcknowledgement);
@@ -3024,11 +3033,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetNeedsRotationCompletedAcknowle
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SendRotationCompletedAcknowledgement(void* winHandle)
 {
-  Dali::Window* window = (Dali::Window*)winHandle;
-  if (!window) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
-    return;
+  Dali::Window *window = (Dali::Window *) winHandle ;
+  if(!CheckingWindowHandle(window)) {
+   return ;
   }
+
   {
     try {
       Dali::DevelWindow::SendRotationCompletedAcknowledgement(*window);
