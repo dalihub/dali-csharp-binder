@@ -188,6 +188,26 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_Primitive_SetMaterial(void* csMode
    CALL_CATCH_EXCEPTION();
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Primitive_GetMaterial(void* csModelPrimitive)
+{
+  Dali::Scene3D::ModelPrimitive* modelPrimitive = (Dali::Scene3D::ModelPrimitive*)csModelPrimitive;
+  Dali::Scene3D::Material result;
+
+  if(!modelPrimitive)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelPrimitive", 0);
+    return nullptr;
+  }
+  {
+    try
+    {
+      result = modelPrimitive->GetMaterial();
+    }
+    CALL_CATCH_EXCEPTION(nullptr);
+  }
+  return new Dali::Scene3D::Material((const Dali::Scene3D::Material&)result);
+}
+
 
 #ifdef __cplusplus
 }
