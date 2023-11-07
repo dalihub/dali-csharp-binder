@@ -197,6 +197,50 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WindowData_GetTransparency(void* nuiWind
   return result;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowData_SetFrontBufferRendering(void* nuiWindowData, bool nuiEnable)
+{
+  Dali::WindowData* pWindowData;
+
+  pWindowData = (Dali::WindowData*)nuiWindowData;
+  if(!pWindowData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowData", 0);
+    return;
+  }
+
+  {
+    try
+    {
+      pWindowData->SetFrontBufferRendering(nuiEnable);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WindowData_GetFrontBufferRendering(void* nuiWindowData)
+{
+  Dali::WindowData* pWindowData;
+  bool              result;
+
+  pWindowData = (Dali::WindowData*)nuiWindowData;
+  if(!pWindowData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowData", 0);
+    return 0;
+  }
+
+  {
+    try
+    {
+      result = (bool)pWindowData->GetFrontBufferRendering();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+
 #ifdef __cplusplus
 }
 #endif
