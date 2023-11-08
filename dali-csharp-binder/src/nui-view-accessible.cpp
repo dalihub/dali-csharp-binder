@@ -738,12 +738,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dal
   GUARD_ON_NULL_RET(arg1_control);
 
   try_catch(([&]() {
-    auto* actorAccessible = Dali::Accessibility::Accessible::Get(*arg1_control);
-    auto* viewAccessible  = dynamic_cast<NUIViewAccessible*>(actorAccessible);
-
-    if(viewAccessible)
+    Dali::Toolkit::Control control = *arg1_control;
+    if(DALI_LIKELY(control))
     {
-      viewAccessible->Detach();
+      // Call detach only if accessible was created before.
+      if(DevelControl::IsAccessibleCreated(control))
+      {
+        auto* actorAccessible = Dali::Accessibility::Accessible::Get(control);
+        auto* viewAccessible  = dynamic_cast<NUIViewAccessible*>(actorAccessible);
+
+        if(viewAccessible)
+        {
+          viewAccessible->Detach();
+        }
+      }
+
+      // Make that we will not create new NUIViewAccessible anymore.
+      DevelControl::EnableCreateAccessible(control, false);
     }
   }));
 }
