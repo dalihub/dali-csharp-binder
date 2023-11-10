@@ -369,6 +369,51 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_New__SWIG_3(void * jarg1, char 
 }
 
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_New__WithWindowData(char* nuiName, char* nuiClassName, void* nuiWindowData)
+{
+  void*             jresult;
+  std::string*      name      = 0;
+  std::string*      className = 0;
+  Dali::WindowData* pWindowData;
+  Dali::Window      result;
+
+  if(!nuiName)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "String NUI Name is NULL", 0);
+    return 0;
+  }
+  std::string name_str(nuiName);
+  name = &name_str;
+
+  if(!nuiClassName)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "String NUI Class Name is NULL", 0);
+    return 0;
+  }
+  std::string className_str(nuiClassName);
+  className = &className_str;
+
+  pWindowData = (Dali::WindowData*)nuiWindowData;
+  if(!pWindowData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowData", 0);
+    return 0;
+  }
+
+  {
+    try
+    {
+      result = Dali::Window::New((std::string const&)*name, (std::string const&)*className, *pWindowData);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Window((const Dali::Window&)result);
+
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Window__SWIG_0() {
   void * jresult ;
   Dali::Window *result = 0 ;
