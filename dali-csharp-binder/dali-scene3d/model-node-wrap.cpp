@@ -17,6 +17,8 @@
 
 // EXTERNAL INCLUDES
 #include <dali-scene3d/public-api/model-components/model-node.h>
+#include <dali-scene3d/public-api/algorithm/navigation-mesh.h>
+#include <dali-scene3d/public-api/loader/navigation-mesh-factory.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -291,6 +293,18 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_GetChildModelNodeAt(void* cs
     CALL_CATCH_EXCEPTION(nullptr);
   }
   return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_SetColliderMesh(void *modelNodePtr, void* vertexPtr, void* normalPtr, unsigned long vertexCount, void* indexPtr, unsigned long indexCount) {
+  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
+  auto vertices = reinterpret_cast<Dali::Vector3*>(vertexPtr);
+  auto normals = reinterpret_cast<Dali::Vector3*>(normalPtr);
+  auto indices = reinterpret_cast<uint32_t*>(indexPtr);
+
+  try {
+    auto colliderMesh = Dali::Scene3D::Loader::NavigationMeshFactory::CreateFromVertexFaceList(vertices, normals, vertexCount, indices, indexCount);
+    modelNode->SetColliderMesh(std::move(colliderMesh));
+  } CALL_CATCH_EXCEPTION();
 }
 
 #ifdef __cplusplus

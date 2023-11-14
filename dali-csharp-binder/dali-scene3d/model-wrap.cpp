@@ -743,6 +743,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadFacialAnimation_2(void* csMod
   return new Dali::Animation((const Dali::Animation&)result);
 }
 
+GENERATE_SIGNAL(Dali::Scene3D::Model*, bool (*)(Dali::Scene3D::Model, Dali::Scene3D::ModelNode), Dali_Model, MeshHitSignal);
+
 #ifdef __cplusplus
 }
 #endif
