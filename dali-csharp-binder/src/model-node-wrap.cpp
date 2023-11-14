@@ -17,6 +17,8 @@
 
 // EXTERNAL INCLUDES
 #include <dali-scene3d/public-api/model-components/model-node.h>
+#include <dali-scene3d/public-api/algorithm/navigation-mesh.h>
+#include <dali-scene3d/public-api/loader/navigation-mesh-factory.h>
 
 // INTERNAL INCLUDES
 #include "common.h"
@@ -252,6 +254,57 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_FindChildModelNodeByName(voi
     CALL_CATCH_EXCEPTION(nullptr);
   }
   return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Model_Node_GetChildModelNodeCount(void* csModelNode)
+{
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
+
+  if(!modelNode)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelNode", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      return modelNode->GetChildCount();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_GetChildModelNodeAt(void* csModelNode, uint32_t index)
+{
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
+  Dali::Scene3D::ModelNode result;
+
+  if(!modelNode)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelNode", 0);
+    return nullptr;
+  }
+  {
+    try
+    {
+      Dali::Actor actor = modelNode->GetChildAt(index);
+      result = Dali::Scene3D::ModelNode::DownCast(actor);
+    }
+    CALL_CATCH_EXCEPTION(nullptr);
+  }
+  return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_SetColliderMesh(void *modelNodePtr, void* vertexPtr, void* normalPtr, unsigned long vertexCount, void* indexPtr, unsigned long indexCount) {
+  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
+  auto vertices = reinterpret_cast<Dali::Vector3*>(vertexPtr);
+  auto normals = reinterpret_cast<Dali::Vector3*>(normalPtr);
+  auto indices = reinterpret_cast<uint32_t*>(indexPtr);
+
+  try {
+    auto colliderMesh = Dali::Scene3D::Loader::NavigationMeshFactory::CreateFromVertexFaceList(vertices, normals, vertexCount, indices, indexCount);
+    modelNode->SetColliderMesh(std::move(colliderMesh));
+  } CALL_CATCH_EXCEPTION();
 }
 
 #ifdef __cplusplus
