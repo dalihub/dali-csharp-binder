@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2023 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,6 +92,30 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_EncodedImageBuffer_New(void *nuiRawBuff
   return jresult;
 }
 
+// note: nuiRawBuffer is same as Dali::Vector<unsigned char>, which created by CSharp_Dali_new_VectorUnsignedChar__SWIG_0
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_EncodedImageBuffer_New__SWIG_1(void *nuiRawBuffer, int nuiImageType)
+{
+  void *jresult;
+  Dali::EncodedImageBuffer::RawBufferType *buffer = (Dali::EncodedImageBuffer::RawBufferType *)nuiRawBuffer;
+  Dali::EncodedImageBuffer result;
+
+  if (!buffer)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null buffer", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = Dali::EncodedImageBuffer::New((const Dali::EncodedImageBuffer::RawBufferType &)*buffer, static_cast<Dali::EncodedImageBuffer::ImageType>(nuiImageType));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::EncodedImageBuffer((const Dali::EncodedImageBuffer &)result);
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_EncodedImageBuffer(void *nuiEncodedImageBuffer)
 {
   Dali::EncodedImageBuffer *encodedImageBuffer = (Dali::EncodedImageBuffer *)nuiEncodedImageBuffer;;
@@ -102,6 +126,44 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_EncodedImageBuffer(void *nuiEncod
     }
     CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_EncodedImageBuffer_SetImageType(void *nuiEncodedImageBuffer, int nuiImageType)
+{
+  Dali::EncodedImageBuffer *encodedImageBuffer = (Dali::EncodedImageBuffer *)nuiEncodedImageBuffer;;
+
+  if (!encodedImageBuffer)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::EncodedImageBuffer & type is null", 0);
+  }
+  {
+    try
+    {
+      encodedImageBuffer->SetImageType(static_cast<Dali::EncodedImageBuffer::ImageType>(nuiImageType));
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_EncodedImageBuffer_GetImageType(void *nuiEncodedImageBuffer)
+{
+  Dali::EncodedImageBuffer::ImageType result;
+  Dali::EncodedImageBuffer *encodedImageBuffer = (Dali::EncodedImageBuffer *)nuiEncodedImageBuffer;;
+
+  if (!encodedImageBuffer)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::EncodedImageBuffer const & type is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = ((const Dali::EncodedImageBuffer*)encodedImageBuffer)->GetImageType();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return static_cast<int>(result);
 }
 
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_EncodedImageBuffer_GetRawBuffer(void *nuiEncodedImageBuffer)

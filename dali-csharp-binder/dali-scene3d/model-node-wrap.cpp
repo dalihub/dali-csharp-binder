@@ -254,6 +254,45 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_FindChildModelNodeByName(voi
   return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
 }
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Model_Node_GetChildModelNodeCount(void* csModelNode)
+{
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
+
+  if(!modelNode)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelNode", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      return modelNode->GetChildCount();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_GetChildModelNodeAt(void* csModelNode, uint32_t index)
+{
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
+  Dali::Scene3D::ModelNode result;
+
+  if(!modelNode)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelNode", 0);
+    return nullptr;
+  }
+  {
+    try
+    {
+      Dali::Actor actor = modelNode->GetChildAt(index);
+      result = Dali::Scene3D::ModelNode::DownCast(actor);
+    }
+    CALL_CATCH_EXCEPTION(nullptr);
+  }
+  return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
+}
+
 #ifdef __cplusplus
 }
 #endif
