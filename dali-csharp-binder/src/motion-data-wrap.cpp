@@ -302,7 +302,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_MotionData_GetDuration(void* csMotionDa
   return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionData_LoadBvh(void* csMotionData, char* csFileName, void* csScale, bool csSynchronousLoad)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionData_LoadBvh(void* csMotionData, char* csFileName, bool csUseRootTranslationOnly, void* csScale, bool csSynchronousLoad)
 {
   Dali::Scene3D::MotionData* motionData = (Dali::Scene3D::MotionData*)csMotionData;
 
@@ -328,13 +328,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionData_LoadBvh(void* csMotionData, c
   {
     try
     {
-      motionData->LoadBvh(filename, scale, csSynchronousLoad);
+      motionData->LoadBvh(filename, csUseRootTranslationOnly, scale, csSynchronousLoad);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionData_LoadBvhFromBuffer(void* csMotionData, char* csBuffer, int csBufferLength, void* csScale, bool csSynchronousLoad)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionData_LoadBvhFromBuffer(void* csMotionData, char* csBuffer, int csBufferLength, bool csUseRootTranslationOnly, void* csScale, bool csSynchronousLoad)
 {
   Dali::Scene3D::MotionData* motionData = (Dali::Scene3D::MotionData*)csMotionData;
 
@@ -360,7 +360,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionData_LoadBvhFromBuffer(void* csMot
   {
     try
     {
-      motionData->LoadBvhFromBuffer(rawBuffer, csBufferLength, scale, csSynchronousLoad);
+      motionData->LoadBvhFromBuffer(rawBuffer, csBufferLength, csUseRootTranslationOnly, scale, csSynchronousLoad);
     }
     CALL_CATCH_EXCEPTION();
   }
