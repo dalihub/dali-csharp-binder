@@ -561,7 +561,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel,
   {
     try
     {
-      Dali::Scene3D::Loader::AnimationDefinition animationDefinition = Dali::Scene3D::Loader::LoadBvh(filename, "LoadedBvhAnimation", scale);
+      Dali::Scene3D::Loader::AnimationDefinition animationDefinition = Dali::Scene3D::Loader::LoadBvh(filename, "LoadedBvhAnimation", false, scale);
 
       if(csUseRootNodeTranslate && animationDefinition.GetPropertyCount() > 0u)
       {
@@ -634,7 +634,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_2(void* csModel,
   {
     try
     {
-      Dali::Scene3D::Loader::AnimationDefinition animationDefinition = Dali::Scene3D::Loader::LoadBvhFromBuffer(rawBuffer, csBufferLength, "LoadedBvhAnimation", scale);
+      Dali::Scene3D::Loader::AnimationDefinition animationDefinition = Dali::Scene3D::Loader::LoadBvhFromBuffer(rawBuffer, csBufferLength, "LoadedBvhAnimation", false, scale);
 
       if(csUseRootNodeTranslate && animationDefinition.GetPropertyCount() > 0u)
       {
