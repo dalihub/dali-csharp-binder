@@ -14986,21 +14986,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VisualFactory_CreateVisual__SWIG_2(voi
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualFactory_UsePreCompiledShader(void* csVisualFactory)
-{
-  Dali::Toolkit::VisualFactory* visualFactory = (Dali::Toolkit::VisualFactory*)csVisualFactory;
-
-  if(!visualFactory)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return;
-  }
-  try
-  {
-    (visualFactory)->UsePreCompiledShader();
-  }
-  CALL_CATCH_EXCEPTION();
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_AsyncImageLoader__SWIG_0() {
   void * jresult ;
