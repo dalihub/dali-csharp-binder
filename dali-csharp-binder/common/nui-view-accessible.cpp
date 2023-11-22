@@ -733,12 +733,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(c
   }));
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dali::BaseHandle* arg1_control)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dali::Toolkit::Control* arg1_control)
 {
   GUARD_ON_NULL_RET(arg1_control);
 
   try_catch(([&]() {
-    Dali::Toolkit::Control control = Dali::Toolkit::Control::DownCast(*arg1_control);
+    Dali::Toolkit::Control control = *arg1_control;
     if(DALI_LIKELY(control))
     {
       // Call detach only if accessible was created before.
