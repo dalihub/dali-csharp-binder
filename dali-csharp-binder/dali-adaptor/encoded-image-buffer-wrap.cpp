@@ -135,6 +135,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_EncodedImageBuffer_SetImageType(void *nu
   if (!encodedImageBuffer)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::EncodedImageBuffer & type is null", 0);
+    return;
   }
   {
     try
