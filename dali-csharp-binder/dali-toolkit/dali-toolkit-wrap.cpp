@@ -14992,7 +14992,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualFactory_UsePreCompiledShader(void*
 
   if(!visualFactory)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null visualFactory", 0);
     return;
   }
   try
