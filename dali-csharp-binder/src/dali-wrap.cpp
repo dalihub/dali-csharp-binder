@@ -36192,6 +36192,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_WRAP_MODE_V_get() {
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_USE_FIXED_CACHE_get() {
+  int jresult ;
+  int result;
+
+  {
+    try {
+      result = (int)Dali::Toolkit::DevelImageVisual::Property::USE_FIXED_CACHE;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Image_Visual_BORDER_get() {
   int jresult ;
   int result;
