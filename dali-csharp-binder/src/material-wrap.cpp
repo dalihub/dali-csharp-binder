@@ -233,6 +233,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Material_property_SPECULAR_COLOR_FACTOR_g
   return (int)Dali::Scene3D::Material::Property::SPECULAR_COLOR_FACTOR;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Material_property_DEPTH_INDEX_get()
+{
+  return (int)Dali::Scene3D::Material::Property::DEPTH_INDEX;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Material_SetProperty(void* csMaterial, int index, void* csPropertyValue)
 {
   Dali::Scene3D::Material* material      = (Dali::Scene3D::Material*)csMaterial;
