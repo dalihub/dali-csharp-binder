@@ -38,7 +38,7 @@ public:
 
 public:
   /**
-   * @brief Constructor - creates a ProcessorController and registers it with dali-core.
+   * @brief Constructor - creates a ProcessorController.
    *
    */
   ProcessorController();
@@ -47,6 +47,11 @@ public:
    * @brief Destructor - Unregisters itself from dali-core.
    */
   ~ProcessorController();
+
+  /**
+   * @brief Register this processor into dali-core.
+   */
+  void RegisterProcess();
 
   /**
    * @copydoc Dali::Integration::Processor::Process()
@@ -89,6 +94,7 @@ private:
   ProcessorControllerProcessCallback mHandler;              ///< PreProcessHandler before Relayout
   ProcessorControllerProcessCallback mPostHandler;          ///< PostProcessHandler after Relayout
 
+  bool mProcessRegistered : 1;          ///< True if we call RegisterProcess. False otherwise.
   bool mKeepRenderingApplied : 1;       ///< True if we call Stage::KeepRendering(0.0f). It need to avoid duplicated keep rendering call
   bool mProcessingEvents : 1;           ///< True if we are running Process now.
   bool mProcessEventsIdleRequested : 1; ///< True if we call Adaptor::RequestProcessEventsOnIdle(). It need to avoid duplicated request call.
