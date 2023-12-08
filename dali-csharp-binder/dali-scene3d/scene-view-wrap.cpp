@@ -391,6 +391,82 @@ extern "C"
     return result;
   }
 
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetResolution(void *csSceneView, uint32_t width, uint32_t height)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return;
+    }
+    {
+      try
+      {
+        sceneView->SetResolution(width, height);
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+  }
+
+  SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetResolutionWidth(void *csSceneView)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    uint32_t result = 0u;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return 0;
+    }
+    {
+      try
+      {
+        result = static_cast<uint32_t>(sceneView->GetResolutionWidth());
+      }
+      CALL_CATCH_EXCEPTION(0);
+    }
+    return result;
+  }
+
+  SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetResolutionHeight(void *csSceneView)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    uint32_t result = 0u;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return 0;
+    }
+    {
+      try
+      {
+        result = static_cast<uint32_t>(sceneView->GetResolutionHeight());
+      }
+      CALL_CATCH_EXCEPTION(0);
+    }
+    return result;
+  }
+
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_ResetResolution(void *csSceneView)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return;
+    }
+    {
+      try
+      {
+        sceneView->ResetResolution();
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+  }
+
   SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetFramebufferMultiSamplingLevel(void *csSceneView, uint32_t multiSamplingLevel)
   {
     Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
@@ -555,6 +631,36 @@ extern "C"
     }
     Dali::Quaternion *result = new Dali::Quaternion((const Dali::Quaternion &)orientation);
     return result;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_AlphaMaskURL_get()
+  {
+    int jresult;
+    int result;
+
+    result = (int)Dali::Scene3D::SceneView::Property::ALPHA_MASK_URL;
+    jresult = (int)result;
+    return jresult;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_MaskContentScale_get()
+  {
+    int jresult;
+    int result;
+
+    result = (int)Dali::Scene3D::SceneView::Property::MASK_CONTENT_SCALE;
+    jresult = (int)result;
+    return jresult;
+  }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CropToMask_get()
+  {
+    int jresult;
+    int result;
+
+    result = (int)Dali::Scene3D::SceneView::Property::CROP_TO_MASK;
+    jresult = (int)result;
+    return jresult;
   }
 
 #ifdef __cplusplus
