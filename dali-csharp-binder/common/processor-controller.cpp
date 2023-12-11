@@ -21,26 +21,22 @@
 // EXTERNAL INCLUDES
 #include <dali/devel-api/common/stage-devel.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
+#include <dali/integration-api/debug.h>
+#include <dali/integration-api/trace.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+namespace
+{
+DALI_INIT_TRACE_FILTER(gTraceFilter, DALI_TRACE_PERFORMANCE_MARKER, false);
+}
 
 ProcessorController::ProcessorController()
 : mHandler(nullptr),
   mPostHandler(nullptr),
+  mProcessRegistered(false),
   mKeepRenderingApplied(false),
   mProcessingEvents(false),
   mProcessEventsIdleRequested(false)
 {
-  {
-    try
-    {
-      Dali::Adaptor::Get().RegisterProcessor(*this);
-      Dali::Adaptor::Get().RegisterProcessor(*this, true);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
 }
 
 ProcessorController::~ProcessorController()
@@ -48,8 +44,13 @@ ProcessorController::~ProcessorController()
   {
     try
     {
-      Dali::Adaptor::Get().UnregisterProcessor(*this);
-      Dali::Adaptor::Get().UnregisterProcessor(*this, true);
+      if(mProcessRegistered)
+      {
+        Dali::Adaptor::Get().UnregisterProcessor(*this);
+        Dali::Adaptor::Get().UnregisterProcessor(*this, true);
+
+        mProcessRegistered = false;
+      }
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -67,13 +68,15 @@ void ProcessorController::Process(bool postProcessor)
 
     if(DALI_LIKELY(mHandler != nullptr))
     {
+      DALI_TRACE_SCOPE(gTraceFilter, "NUI_PROCESS");
       mHandler();
     }
   }
   else
   {
-    if(DALI_LIKELY(mPostHandler != nullptr))
+    if(mPostHandler != nullptr)
     {
+      DALI_TRACE_SCOPE(gTraceFilter, "NUI_POST_PROCESS");
       mPostHandler();
     }
     // Make awake events can be applied after PostProcess done.
@@ -106,6 +109,8 @@ void ProcessorController::RemovePostCallback(  ProcessorControllerProcessCallbac
 
 void ProcessorController::Awake()
 {
+  DALI_ASSERT_ALWAYS(mProcessRegistered && "ProcessorController should be initialized before call Awake");
+
   if(!mProcessingEvents && !mKeepRenderingApplied)
   {
     if(DALI_LIKELY(Dali::Stage::IsInstalled())) ///< Avoid worker thread calling.
@@ -125,6 +130,25 @@ void ProcessorController::Awake()
     }
   }
 }
+
+void ProcessorController::RegisterProcess()
+{
+  if(!mProcessRegistered)
+  {
+    try
+    {
+      Dali::Adaptor::Get().RegisterProcessor(*this);
+      Dali::Adaptor::Get().RegisterProcessor(*this, true);
+
+      mProcessRegistered = true;
+    }
+    CALL_CATCH_EXCEPTION(); 
+  }
+}
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 // ProcessorController Bindings
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ProcessorController() {
@@ -147,6 +171,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ProcessorController(void * jarg1)
     try {
       delete arg1;
     } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_Initialize(void* jarg1)
+{
+  ProcessorController* processorController = (ProcessorController *) jarg1;
+
+  if( processorController )
+  {
+    processorController->RegisterProcess();
   }
 }
 
