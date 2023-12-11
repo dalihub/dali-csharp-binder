@@ -142,7 +142,7 @@ void ProcessorController::RegisterProcess()
 
       mProcessRegistered = true;
     }
-    CALL_CATCH_EXCEPTION(); 
+    CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -152,6 +152,20 @@ extern "C" {
 
 // ProcessorController Bindings
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ProcessorController() {
+
+  ProcessorController *result = 0 ;
+
+  {
+    try {
+      result = (ProcessorController *)new ProcessorController();
+      result->RegisterProcess();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void *)result;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ProcessorController_Without_Initialize() {
 
   ProcessorController *result = 0 ;
 
