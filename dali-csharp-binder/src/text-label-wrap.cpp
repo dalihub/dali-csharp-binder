@@ -67,9 +67,19 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ENABLE_FONT_SIZE_SCALE
   return (int)Dali::Toolkit::DevelTextLabel::Property::ENABLE_FONT_SIZE_SCALE;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_RELATIVE_LINE_SIZE_get() {
-
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_RELATIVE_LINE_SIZE_get()
+{
   return (int)Dali::Toolkit::DevelTextLabel::Property::RELATIVE_LINE_SIZE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ANCHOR_COLOR_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::ANCHOR_COLOR;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ANCHOR_CLICKED_COLOR_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::ANCHOR_CLICKED_COLOR;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextSize(void * pTextLabel, unsigned int start, unsigned int end)
