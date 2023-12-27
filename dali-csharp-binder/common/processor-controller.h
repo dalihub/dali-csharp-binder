@@ -53,11 +53,6 @@ public:
    */
   void RegisterProcess();
 
-  /**
-   * @copydoc Dali::Integration::Processor::Process()
-   */
-  void Process(bool postProcessor) override;
-
    /**
     * @brief Set the callback to be executed when dali-core calls the overriden Process() api.
     * @param[in] callback, function to be called
@@ -88,6 +83,20 @@ public:
     * @brief Layout and awake update thread, or re-run registered processor.
     */
   void Awake();
+
+protected: // Implementation of Processor
+  /**
+   * @copydoc Dali::Integration::Processor::Process()
+   */
+  void Process(bool postProcessor) override;
+
+  /**
+   * @copydoc Dali::Integration::Processor::GetProcessorName()
+   */
+  std::string_view GetProcessorName() const override
+  {
+    return "ProcessorController";
+  }
 
 private:
 
