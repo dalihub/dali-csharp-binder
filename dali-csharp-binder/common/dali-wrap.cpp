@@ -1990,6 +1990,7 @@ void SwigDirector_FrameCallbackInterface::swig_connect_director(SWIG_Callback0_t
 
 bool SwigDirector_FrameCallbackInterface::Update(Dali::UpdateProxy& updateProxy, float elapsedSeconds) {
   void * jcurrent  ;
+  bool jresult = false;
 
   if (!swig_callbackOnUpdate) {
     throw Swig::DirectorPureVirtualException("Dali::FrameCallbackInterface::Update");
@@ -1997,12 +1998,13 @@ bool SwigDirector_FrameCallbackInterface::Update(Dali::UpdateProxy& updateProxy,
     Dali::UpdateProxy* proxy = &updateProxy;
     jcurrent = (void *)proxy;
     swig_callbackOnUpdate(jcurrent, elapsedSeconds);
+    jresult = true; ///< TODO : Keep rendering always if we use FrameCallback at CSharp.
     if (!jcurrent) {
       DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::UpdateProxy! ", __FILE__, __LINE__);
       return false;
     }
   }
-  return false;
+  return jresult;
 }
 
 
