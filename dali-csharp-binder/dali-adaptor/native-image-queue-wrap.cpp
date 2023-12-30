@@ -45,6 +45,20 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_NativeImageQueuePtr(unsigned int wi
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_NativeImageQueuePtr_2(unsigned int queueCount, unsigned int width, unsigned int height, int colorFormat)
+{
+  void* jresult;
+  NativeImageSourceQueuePtrHandle* queue = new NativeImageSourceQueuePtrHandle();
+  {
+    try {
+      queue->Ptr = Dali::NativeImageSourceQueue::New(queueCount, width, height, (Dali::NativeImageSourceQueue::ColorFormat)colorFormat);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = (void *)queue;
+  return jresult;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_GetPtr(void* nuiqueue)
 {
   void* jresult;
@@ -101,6 +115,19 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageQueue_EnqueueBuffer(void* nui
   {
     try {
       jresult = queue->EnqueueBuffer(buffer);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return jresult;
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageQueue_GetQueueCount(void* nuiqueue)
+{
+  unsigned int jresult;
+  Dali::NativeImageSourceQueue* queue = (Dali::NativeImageSourceQueue*)nuiqueue;
+  {
+    try {
+      jresult = static_cast<unsigned int>(queue->GetQueueCount());
     }
     CALL_CATCH_EXCEPTION(0);
   }
