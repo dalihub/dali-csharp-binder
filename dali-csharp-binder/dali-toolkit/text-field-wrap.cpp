@@ -46,19 +46,8 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextField_SP__Sg__Emit(Dali:
 extern "C" {
 #endif
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_TextField_SWIGUpcast(Dali::Toolkit::TextField *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
 
 /*TextField property binding*/
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_RENDERING_BACKEND_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::DevelTextField::Property::RENDERING_BACKEND;
-  jresult = (int)result;
-  return jresult;
-}
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_TEXT_get() {
@@ -646,75 +635,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_SELECTION_POPUP_STYLE_
   return (int)Dali::Toolkit::DevelTextField::Property::SELECTION_POPUP_STYLE;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField_Property() {
-  void * jresult ;
-  Dali::Toolkit::TextField::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TextField::Property *)new Dali::Toolkit::TextField::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextField_Property(void * jarg1) {
-  Dali::Toolkit::TextField::Property *arg1 = (Dali::Toolkit::TextField::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::TextField::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField_InputStyle() {
-  void * jresult ;
-  Dali::Toolkit::TextField::InputStyle *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TextField::InputStyle *)new Dali::Toolkit::TextField::InputStyle();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextField_InputStyle(void * jarg1) {
-  Dali::Toolkit::TextField::InputStyle *arg1 = (Dali::Toolkit::TextField::InputStyle *) 0 ;
-
-  arg1 = (Dali::Toolkit::TextField::InputStyle *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_New() {
-  void * jresult ;
-  Dali::Toolkit::TextField result;
-
-  {
-    try {
-      result = Dali::Toolkit::TextField::New();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::TextField((const Dali::Toolkit::TextField &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_New_With_Style(bool hasStyle) {
@@ -736,63 +664,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_New_With_Style(bool hasStyle
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::TextField *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TextField *)new Dali::Toolkit::TextField();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextField__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::TextField *arg1 = 0 ;
-  Dali::Toolkit::TextField *result = 0 ;
-
-  arg1 = (Dali::Toolkit::TextField *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::TextField const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::TextField *)new Dali::Toolkit::TextField((Dali::Toolkit::TextField const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::TextField *arg1 = (Dali::Toolkit::TextField *) 0 ;
-  Dali::Toolkit::TextField *arg2 = 0 ;
-  Dali::Toolkit::TextField *result = 0 ;
-
-  arg1 = (Dali::Toolkit::TextField *)jarg1;
-  arg2 = (Dali::Toolkit::TextField *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::TextField const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::TextField *) &(arg1)->operator =((Dali::Toolkit::TextField const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextField(void * jarg1) {
@@ -808,27 +683,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextField(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::TextField result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::TextField::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::TextField((const Dali::Toolkit::TextField &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_TextChangedSignal(void * jarg1) {

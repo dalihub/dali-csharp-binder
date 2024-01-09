@@ -62,19 +62,8 @@ SWIGINTERN void Dali_Signal_void_TextEditor_Scroll_Type__Emit(Dali::Signal< void
 extern "C" {
 #endif
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_TextEditor_SWIGUpcast(Dali::Toolkit::TextEditor *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
 
 /*TextEditor Property binding*/
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_RENDERING_BACKEND_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::DevelTextEditor::Property::RENDERING_BACKEND;
-  jresult = (int)result;
-  return jresult;
-}
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_TEXT_get() {
@@ -724,75 +713,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_INPUT_METHOD_SETTINGS
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextEditor_Property() {
-  void * jresult ;
-  Dali::Toolkit::TextEditor::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TextEditor::Property *)new Dali::Toolkit::TextEditor::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextEditor_Property(void * jarg1) {
-  Dali::Toolkit::TextEditor::Property *arg1 = (Dali::Toolkit::TextEditor::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::TextEditor::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextEditor_InputStyle() {
-  void * jresult ;
-  Dali::Toolkit::TextEditor::InputStyle *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TextEditor::InputStyle *)new Dali::Toolkit::TextEditor::InputStyle();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextEditor_InputStyle(void * jarg1) {
-  Dali::Toolkit::TextEditor::InputStyle *arg1 = (Dali::Toolkit::TextEditor::InputStyle *) 0 ;
-
-  arg1 = (Dali::Toolkit::TextEditor::InputStyle *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_New() {
-  void * jresult ;
-  Dali::Toolkit::TextEditor result;
-
-  {
-    try {
-      result = Dali::Toolkit::TextEditor::New();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::TextEditor((const Dali::Toolkit::TextEditor &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_New_With_Style(bool hasStyle) {
@@ -814,63 +742,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_New_With_Style(bool hasStyl
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextEditor__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::TextEditor *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TextEditor *)new Dali::Toolkit::TextEditor();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextEditor__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::TextEditor *arg1 = 0 ;
-  Dali::Toolkit::TextEditor *result = 0 ;
-
-  arg1 = (Dali::Toolkit::TextEditor *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::TextEditor const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::TextEditor *)new Dali::Toolkit::TextEditor((Dali::Toolkit::TextEditor const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::TextEditor *arg1 = (Dali::Toolkit::TextEditor *) 0 ;
-  Dali::Toolkit::TextEditor *arg2 = 0 ;
-  Dali::Toolkit::TextEditor *result = 0 ;
-
-  arg1 = (Dali::Toolkit::TextEditor *)jarg1;
-  arg2 = (Dali::Toolkit::TextEditor *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::TextEditor const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::TextEditor *) &(arg1)->operator =((Dali::Toolkit::TextEditor const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextEditor(void * jarg1) {
@@ -886,27 +761,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextEditor(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::TextEditor result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::TextEditor::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::TextEditor((const Dali::Toolkit::TextEditor &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextEditor_TextChangedSignal(void * jarg1) {

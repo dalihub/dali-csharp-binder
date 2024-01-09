@@ -106,21 +106,6 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Clipboard_GetData(void * argClip
   return (unsigned int) id;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Clipboard_DataSentSignal(void * argClipboard)
-{
-  Dali::Clipboard *clipboard = (Dali::Clipboard *) 0 ;
-  Dali::Clipboard::DataSentSignalType *signal = 0 ;
-
-  clipboard = (Dali::Clipboard *)argClipboard;
-  {
-    try
-    {
-      signal = (Dali::Clipboard::DataSentSignalType *) &(clipboard)->DataSentSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  return (void *)signal;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Clipboard_DataReceivedSignal(void * argClipboard)
 {

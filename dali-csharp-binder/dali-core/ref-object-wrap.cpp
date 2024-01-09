@@ -56,9 +56,6 @@ extern "C" {
 
 // Creation
 
-SWIGEXPORT Dali::RefObject * SWIGSTDCALL CSharp_Dali_BaseObject_SWIGUpcast(Dali::BaseObject *jarg1) {
-    return (Dali::RefObject *)jarg1;
-}
 
 
 SWIGEXPORT Dali::RefObject * SWIGSTDCALL CSharp_Dali_GetRefObjectPtr(Dali::BaseHandle *arg1) {

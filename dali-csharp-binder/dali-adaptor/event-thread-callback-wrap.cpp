@@ -69,17 +69,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_EventThreadCallback(SWIG_CallbackM
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_EventThreadCallback(void * jarg1) {
-  Dali::EventThreadCallback *arg1 = (Dali::EventThreadCallback *) 0 ;
-
-  arg1 = (Dali::EventThreadCallback *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_EventThreadCallback_Trigger(void * jarg1) {

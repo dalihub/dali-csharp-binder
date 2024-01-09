@@ -29,22 +29,6 @@ extern "C" {
   using Dali::Toolkit::Physics::PhysicsActor;
   using Dali::Toolkit::Physics::PhysicsAdaptor;
 
-  SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_PhysicsActor__SWIG_0()
-  {
-    void*        jresult;
-    PhysicsActor* result = 0;
-
-    {
-      try
-      {
-        result = (PhysicsActor*)new PhysicsActor();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void*)result;
-    return jresult;
-  }
 
   SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PhysicsActor_New(void* csActor, void* csBody, void* csAdaptor)
   {
@@ -79,25 +63,6 @@ extern "C" {
     return new PhysicsActor((const PhysicsActor&)result);
   }
 
-  SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PhysicsActor_DownCast(void* csHandle)
-  {
-    Dali::BaseHandle* handle = (Dali::BaseHandle*)csHandle;
-    PhysicsActor result;
-
-    if(!handle)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = PhysicsActor::DownCast(*handle);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-    return new PhysicsActor((const PhysicsActor&)result);
-  }
 
   SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PhysicsActor(void* csPhysicsActor)
   {

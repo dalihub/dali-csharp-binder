@@ -53,27 +53,7 @@ SWIGINTERN void Dali_Capture_Signal_Emit(Dali::Capture::CaptureFinishedSignalTyp
 extern "C" {
 #endif
 
-SWIGEXPORT Dali::BaseHandle* SWIGSTDCALL CSharp_Dali_Capture_Upcast(Dali::Capture* jarg1)
-{
-  return (Dali::BaseHandle*)jarg1;
-}
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Capture()
-{
-  void* jresult;
-  Dali::Capture* result = 0;
-
-  {
-    try
-    {
-      result = (Dali::Capture*)new Dali::Capture();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
-}
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_New()
 {
@@ -92,30 +72,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_New()
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_DownCast(void* jarg1)
-{
-  void* jresult;
-  Dali::BaseHandle arg1;
-  Dali::BaseHandle* argp1;
-  Dali::Capture result;
-
-  argp1 = (Dali::BaseHandle*)jarg1;
-  if (!argp1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try
-    {
-      result = Dali::Capture::DownCast(arg1);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-  jresult = new Dali::Capture((const Dali::Capture&)result);
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Capture(void* jarg1)
 {
@@ -131,56 +87,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Capture(void* jarg1)
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_New_With_CameraActor(void* jarg1)
-{
-  void* jresult;
-  Dali::CameraActor* arg1 = 0;
-  Dali::Capture result;
 
-  arg1 = (Dali::CameraActor*)jarg1;
-  if (!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::CameraActor is null", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = Dali::Capture::New(*arg1);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Capture((const Dali::Capture&)result);
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_Assign(void* jarg1, void* jarg2)
-{
-  void* jresult;
-  Dali::Capture* arg1 = (Dali::Capture*) 0;
-  Dali::Capture* arg2 = 0;
-  Dali::Capture* result = 0;
-
-  arg1 = (Dali::Capture*)jarg1;
-  arg2 = (Dali::Capture*)jarg2;
-
-  if (!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Capture const & type is null", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = (Dali::Capture*) & (arg1)->operator =((Dali::Capture const&) * arg2);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_1(void* nuiCapture, void* nuiSource, void* nuiSize, char* nuiPath, void* nuiClearColor)
 {
@@ -407,32 +314,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Signal_Emit(void* jarg1, void* j
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Capture_Signal()
-{
-  Dali::Capture::CaptureFinishedSignalType* result = 0;
 
-  {
-    try
-    {
-      result = (Dali::Capture::CaptureFinishedSignalType*)new Dali::Capture::CaptureFinishedSignalType();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-  return (void*)result;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Capture_Signal(void* jarg1)
-{
-  Dali::Capture::CaptureFinishedSignalType* arg1 = (Dali::Capture::CaptureFinishedSignalType*)jarg1;
-
-  {
-    try
-    {
-      delete arg1;
-    }
-    CALL_CATCH_EXCEPTION();
-  }
-}
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_Signal_Get(void* jarg1)
 {
@@ -505,28 +387,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GenerateUrl(void* nuiCapture)
-{
-  Dali::Capture* capture = (Dali::Capture*)nuiCapture;
-  Dali::Toolkit::ImageUrl result;
-  void *jresult;
-
-  if (!capture)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = Dali::Toolkit::Image::GenerateUrl(capture->GetNativeImageSource());
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
-  return jresult;
-}
 
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Capture_GetCapturedBuffer(void *nuiCapture)
 {
