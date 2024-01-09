@@ -79,6 +79,14 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetScreenSize() {
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetGeometryHittestEnabled(bool enable) {
+
+  try {
+    Dali::DevelWindowSystem::SetGeometryHittestEnabled(enable);
+  } CALL_CATCH_EXCEPTION();
+
+}
+
 
 // Timer
 
