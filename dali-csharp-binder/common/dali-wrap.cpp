@@ -1976,7 +1976,8 @@ void SwigDirector_CustomAlgorithmInterface::swig_init_callbacks() {
 }
 
 SwigDirector_FrameCallbackInterface::SwigDirector_FrameCallbackInterface() : Dali::FrameCallbackInterface(), Swig::Director() {
-  swig_callbackOnUpdate = 0;
+  swig_callbackOnUpdate = nullptr;
+  swig_callbackOnUpdateWithReturn = nullptr;
 }
 
 SwigDirector_FrameCallbackInterface::~SwigDirector_FrameCallbackInterface() {
@@ -1985,24 +1986,39 @@ SwigDirector_FrameCallbackInterface::~SwigDirector_FrameCallbackInterface() {
 
 void SwigDirector_FrameCallbackInterface::swig_connect_director(SWIG_Callback0_t callbackUpdate) {
   swig_callbackOnUpdate = callbackUpdate;
+  swig_callbackOnUpdateWithReturn = nullptr;
 }
 
+void SwigDirector_FrameCallbackInterface::swig_connect_director_with_return(SWIG_Callback1_t callbackUpdate) {
+  swig_callbackOnUpdateWithReturn = callbackUpdate;
+  swig_callbackOnUpdate = nullptr;
+}
 
 bool SwigDirector_FrameCallbackInterface::Update(Dali::UpdateProxy& updateProxy, float elapsedSeconds) {
   void * jcurrent  ;
+  bool jresult = false;
 
-  if (!swig_callbackOnUpdate) {
+  if (!swig_callbackOnUpdate && !swig_callbackOnUpdateWithReturn) {
     throw Swig::DirectorPureVirtualException("Dali::FrameCallbackInterface::Update");
   } else {
     Dali::UpdateProxy* proxy = &updateProxy;
     jcurrent = (void *)proxy;
-    swig_callbackOnUpdate(jcurrent, elapsedSeconds);
+
+    if(swig_callbackOnUpdateWithReturn)
+    {
+      jresult = swig_callbackOnUpdateWithReturn(jcurrent, elapsedSeconds);
+    }
+    else
+    {
+      swig_callbackOnUpdate(jcurrent, elapsedSeconds);
+    }
+
     if (!jcurrent) {
       DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::UpdateProxy! ", __FILE__, __LINE__);
       return false;
     }
   }
-  return false;
+  return jresult;
 }
 
 
@@ -14498,6 +14514,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GestureDetector_GetAttachedActor(void 
   return jresult;
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GestureDetector_FeedTouch(void * jdetector, void * jactor, void * jtouch) {
+  bool result = false;
+  Dali::GestureDetector *detector = (Dali::GestureDetector *)jdetector;
+  Dali::Actor *actor = (Dali::Actor *)jactor;
+  Dali::TouchEvent *touchEvent = (Dali::TouchEvent *)jtouch;
+
+  {
+    try {
+      result = ((Dali::GestureDetector *)detector)->FeedTouch(*actor, *touchEvent);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Gesture(void * jarg1) {
   void * jresult ;
@@ -24986,6 +25017,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_director_connect(
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_director_connect_with_return(void *objarg, SwigDirector_FrameCallbackInterface::SWIG_Callback1_t callback1) {
+  Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)objarg;
+  SwigDirector_FrameCallbackInterface *director = dynamic_cast<SwigDirector_FrameCallbackInterface *>(obj);
+  if (director) {
+    director->swig_connect_director_with_return(callback1);
+  }
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FrameCallbackInterface() {
   void * jresult ;

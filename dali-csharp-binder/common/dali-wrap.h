@@ -264,9 +264,12 @@ public:
     typedef void (SWIGSTDCALL* SWIG_Callback0_t)( void*  updateProxy, float elapsedSeconds );
     void swig_connect_director( SWIG_Callback0_t callbackUpdate );
 
+    typedef bool (SWIGSTDCALL* SWIG_Callback1_t)( void*  updateProxy, float elapsedSeconds );
+    void swig_connect_director_with_return( SWIG_Callback1_t callbackUpdate );
 
 private:
     SWIG_Callback0_t swig_callbackOnUpdate;
+    SWIG_Callback1_t swig_callbackOnUpdateWithReturn;
 };
 
 #endif
