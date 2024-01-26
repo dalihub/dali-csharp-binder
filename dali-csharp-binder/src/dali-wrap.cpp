@@ -38065,14 +38065,13 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_TAIL_BELOW_VISUAL_get() {
   return jresult;
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_New() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_New_With_Behaviour(int behaviour) {
   void * jresult ;
   Dali::Toolkit::Control result;
 
   {
     try {
-      result = Dali::Toolkit::Internal::Control::New(Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
+      result = Dali::Toolkit::Internal::Control::New((Dali::Toolkit::Internal::Control::ControlBehaviour)behaviour);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -38080,6 +38079,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_New() {
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_New() {
+  return CSharp_Dali_ViewImpl_New_With_Behaviour((int)Dali::Toolkit::Internal::Control::ControlBehaviour::CONTROL_BEHAVIOUR_DEFAULT);
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetStyleName(void * jarg1, char * jarg2) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
@@ -40155,14 +40157,31 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_View_KeyboardFocus(void * jarg1) 
 
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_New() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_New_With_Behaviour(int behaviour) {
   void * jresult ;
   Dali::Toolkit::Control result;
 
   {
     try {
-      result = Dali::Toolkit::Control::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
+      result = Dali::Toolkit::Control::New((Dali::Toolkit::Control::ControlBehaviour)behaviour);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_New() {
+  return CSharp_Dali_View_New_With_Behaviour((int)Dali::Toolkit::Control::ControlBehaviour::CONTROL_BEHAVIOUR_DEFAULT);
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_NewCustom_With_Behaviour(int behaviour) {
+  void * jresult;
+  Dali::Toolkit::Control result;
+
+  {
+    try {
+      result = SlimCustomViewImpl::New((Dali::Toolkit::Internal::Control::ControlBehaviour)behaviour);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -40171,17 +40190,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_New() {
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_NewCustom() {
-  void * jresult;
-  Dali::Toolkit::Control result;
-
-  {
-    try {
-      result = SlimCustomViewImpl::New(Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control &)result);
-  return jresult;
+  return CSharp_Dali_View_NewCustom_With_Behaviour((int)Dali::Toolkit::Internal::Control::ControlBehaviour::CONTROL_BEHAVIOUR_DEFAULT);
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View__SWIG_0() {
@@ -42166,14 +42175,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImageView__SWIG_0() {
   return jresult;
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_0_With_Behaviour(int behaviour) {
   void * jresult ;
   Dali::Toolkit::ImageView result;
 
   {
     try {
-      result = Dali::Toolkit::ImageView::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
+      result = Dali::Toolkit::ImageView::New((Dali::Toolkit::Control::ControlBehaviour)behaviour);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -42181,8 +42189,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_0() {
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_0() {
+  return CSharp_Dali_ImageView_New__SWIG_0_With_Behaviour((int)Dali::Toolkit::Control::ControlBehaviour::CONTROL_BEHAVIOUR_DEFAULT);
+}
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_2(char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_2_With_Behaviour(int behaviour, char * jarg1) {
   void * jresult ;
   std::string *arg1 = 0 ;
   Dali::Toolkit::ImageView result;
@@ -42195,7 +42206,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_2(char * jarg1) {
   arg1 = &arg1_str;
   {
     try {
-      result = Dali::Toolkit::ImageView::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const &)*arg1);
+      result = Dali::Toolkit::ImageView::New((Dali::Toolkit::Control::ControlBehaviour)behaviour, (std::string const &)*arg1);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -42206,8 +42217,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_2(char * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_2(char * jarg1) {
+  return CSharp_Dali_ImageView_New__SWIG_2_With_Behaviour((int)Dali::Toolkit::Control::ControlBehaviour::CONTROL_BEHAVIOUR_DEFAULT, jarg1);
+}
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_3(char * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_3_With_Behaviour(int behaviour, char * jarg1, void * jarg2) {
   void * jresult ;
   std::string *arg1 = 0 ;
   Dali::ImageDimensions arg2 ;
@@ -42228,7 +42242,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_3(char * jarg1, vo
   arg2 = *argp2;
   {
     try {
-      result = Dali::Toolkit::ImageView::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const &)*arg1,arg2);
+      result = Dali::Toolkit::ImageView::New((Dali::Toolkit::Control::ControlBehaviour)behaviour, (std::string const &)*arg1,arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -42239,6 +42253,9 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_3(char * jarg1, vo
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_3(char * jarg1, void * jarg2) {
+  return CSharp_Dali_ImageView_New__SWIG_3_With_Behaviour((int)Dali::Toolkit::Control::ControlBehaviour::CONTROL_BEHAVIOUR_DEFAULT, jarg1, jarg2);
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageView(void * jarg1) {
   Dali::Toolkit::ImageView *arg1 = (Dali::Toolkit::ImageView *) 0 ;
@@ -50489,7 +50506,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_StyleManager_StyleChangedSignal(void *
   jresult = (void *)result;
   return jresult;
 }
-
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Slider_Property_LOWER_BOUND_get() {
   int jresult ;
