@@ -25050,7 +25050,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_AddFrameCallback(
   arg1 = (Dali::Stage *)jarg1;
   arg3 = (Dali::Actor *)jarg3;
 
-  DevelStage::AddFrameCallback( *arg1, *arg2, *arg3 );
+  if(arg3 == nullptr)
+  {
+    DevelStage::AddFrameCallback( *arg1, *arg2, Dali::Actor() );
+  }
+  else
+  {
+    DevelStage::AddFrameCallback( *arg1, *arg2, *arg3 );
+  }
   return;
 }
 
