@@ -7099,11 +7099,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_IntValue
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  Dali::Property::Index arg3 = (Dali::Property::Index)jarg3;
 
   {
     try {
-      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const &)(arg3);
+      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const &)((int32_t)jarg3);
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -7205,7 +7204,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_Rect(voi
 
   {
     try {
-      arg1->operator[](std::string(jarg2)) = (Dali::Property::Value const &)(Dali::Rect< int >(jarg3, jarg4, jarg5, jarg6));
+      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const &)(Dali::Rect< int >(jarg3, jarg4, jarg5, jarg6));
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -7228,12 +7227,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey(void* jarg1
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_IntValue(void* jarg1, int jarg2, int jarg3) {
 
   Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
-  Dali::Property::Index arg2 = (Dali::Property::Index)jarg2;
-  Dali::Property::Index arg3 = (Dali::Property::Index)jarg3;
 
   {
     try {
-      arg1->operator[](arg2) = (Dali::Property::Value const &)(arg3);
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)((int32_t)jarg3);
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -7242,12 +7239,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_IntValue(vo
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_BoolValue(void* jarg1, int jarg2, bool jarg3) {
 
   Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
-  Dali::Property::Index arg2 = (Dali::Property::Index)jarg2;
-  bool arg3 = (bool)jarg3;
 
   {
     try {
-      arg1->operator[](arg2) = (Dali::Property::Value const &)(arg3);
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(jarg3);
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -7256,26 +7251,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_BoolValue(v
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_FloatValue(void* jarg1, int jarg2, float jarg3) {
 
   Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
-  Dali::Property::Index arg2 = (Dali::Property::Index)jarg2;
-  float arg3 = (float)jarg3;
 
   {
     try {
-      arg1->operator[](arg2) = (Dali::Property::Value const &)(arg3);
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(jarg3);
     } CALL_CATCH_EXCEPTION();
   }
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_StringValue(void* jarg1, int jarg2, char* jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_StringValue(void* jarg1, int jarg2, const char* jarg3) {
 
   Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
-  Dali::Property::Index arg2 = (Dali::Property::Index)jarg2;
-  char *arg3 = (char *)jarg3;
 
   {
     try {
-      arg1->operator[](arg2) = (Dali::Property::Value const &)(arg3);
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(jarg3);
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -7284,11 +7275,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_StringValue
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_Vector2(void* jarg1, int jarg2, float jarg3, float jarg4) {
 
   Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
-  Dali::Property::Index arg2 = (Dali::Property::Index)jarg2;
 
   {
     try {
-      arg1->operator[](arg2) = (Dali::Property::Value const &)(Dali::Vector2(jarg3, jarg4));
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(Dali::Vector2(jarg3, jarg4));
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -7297,11 +7287,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_Vector2(voi
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_Vector4(void* jarg1, int jarg2, float jarg3, float jarg4, float jarg5, float jarg6) {
 
   Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
-  Dali::Property::Index arg2 = (Dali::Property::Index)jarg2;
 
   {
     try {
-      arg1->operator[](arg2) = (Dali::Property::Value const &)(Dali::Vector4(jarg3, jarg4, jarg5, jarg6));
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(Dali::Vector4(jarg3, jarg4, jarg5, jarg6));
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -7310,14 +7299,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_Vector4(voi
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_Rect(void* jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6) {
 
   Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
-  Dali::Property::Index arg2 = (Dali::Property::Index)jarg2;
-  Dali::Rect< int > *arg3 = 0 ;
-
-  arg3 = (Dali::Rect< int > *)new Dali::Rect< int >(jarg3, jarg4, jarg5, jarg6);
 
   {
     try {
-      arg1->operator[](arg2) = (Dali::Property::Value const &)(*arg3);
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(Dali::Rect< int >(jarg3, jarg4, jarg5, jarg6));
     } CALL_CATCH_EXCEPTION();
   }
 }
