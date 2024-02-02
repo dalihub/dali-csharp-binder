@@ -225,6 +225,16 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_GetBackForwardList(void * jarg
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ChangeOrientation(void * jarg1, int orientation) {
+  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)jarg1;
+
+  {
+    try {
+      arg1->ChangeOrientation(orientation);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_GetSettings(void * jarg1) {
   void * jresult;
   Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
