@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2024 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15470,6 +15470,23 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetPositionAndSiz
   return proxy->GetPositionAndSize(id, *vector3_pos, *vector3_size);
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetWorldPositionScaleAndSize(void * updateProxy, unsigned int id, void* position, void* scale, void* size) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3_pos = (Dali::Vector3 *)position;
+  Dali::Vector3* vector3_scale = (Dali::Vector3 *)scale;
+  Dali::Vector3* vector3_size = (Dali::Vector3 *)size;
+  return proxy->GetWorldPositionScaleAndSize(id, *vector3_pos, *vector3_scale, *vector3_size);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetWorldTransformAndSize(void * updateProxy, unsigned int id, void* position, void* scale, void* orientation, void* size) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3* vector3_pos = (Dali::Vector3 *)position;
+  Dali::Vector3* vector3_scale = (Dali::Vector3 *)scale;
+  Dali::Quaternion* quaternion_orientation = (Dali::Quaternion *)orientation;
+  Dali::Vector3* vector3_size = (Dali::Vector3 *)size;
+  return proxy->GetWorldTransformAndSize(id, *vector3_pos, *vector3_scale, *quaternion_orientation, *vector3_size);
+}
+
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetScale(void * updateProxy, unsigned int id, void* scale) {
   Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
   Dali::Vector3* vector3 = (Dali::Vector3 *)scale;
@@ -15505,7 +15522,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeColor(void * 
   Dali::Vector4* vector4 = (Dali::Vector4 *)color;
   return proxy->BakeColor(id, *vector4);
 }
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetCustomAlgorithm(void * jarg1, void * jarg2) {
   KeyboardFocusManager arg1 ;
