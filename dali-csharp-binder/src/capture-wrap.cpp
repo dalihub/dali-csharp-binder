@@ -519,7 +519,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GenerateUrl(void* nuiCapture)
   {
     try
     {
-      result = Dali::Toolkit::Image::GenerateUrl(capture->GetNativeImageSource());
+      Dali::Texture texture = capture->GetTexture();
+      result = Dali::Toolkit::Image::GenerateUrl(texture);
     }
     CALL_CATCH_EXCEPTION(0);
   }
