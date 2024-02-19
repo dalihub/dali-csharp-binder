@@ -1374,15 +1374,13 @@ void SwigDirector_ViewImpl::OnChildRemove(Dali::Actor &child) {
 
 void SwigDirector_ViewImpl::OnPropertySet(Dali::Property::Index index, const Dali::Property::Value& propertyValue) {
   int jindex  ;
-  void * jpropertyValue  ;
 
   if (!swig_callbackOnPropertySet) {
     Dali::Toolkit::Internal::Control::OnPropertySet(index,propertyValue);
     return;
   } else {
     jindex = index;
-    jpropertyValue = (void *)new Dali::Property::Value((const Dali::Property::Value &)propertyValue);
-    swig_callbackOnPropertySet(jindex, jpropertyValue);
+    swig_callbackOnPropertySet(jindex, (Dali::Property::Value*)&propertyValue);
   }
 }
 
@@ -1574,16 +1572,14 @@ void SwigDirector_ViewImpl::OnInitialize() {
 }
 
 void SwigDirector_ViewImpl::OnStyleChange(Dali::Toolkit::StyleManager styleManager, Dali::StyleChange::Type change) {
-  void * jstyleManager  ;
   int jchange  ;
 
   if (!swig_callbackOnStyleChange) {
     Dali::Toolkit::Internal::Control::OnStyleChange(styleManager,change);
     return;
   } else {
-    jstyleManager = (void *)new Dali::Toolkit::StyleManager((const Dali::Toolkit::StyleManager &)styleManager);
     jchange = (int)change;
-    swig_callbackOnStyleChange(jstyleManager, jchange);
+    swig_callbackOnStyleChange((Dali::Toolkit::StyleManager*)&styleManager, jchange);
   }
 }
 
@@ -1603,13 +1599,11 @@ bool SwigDirector_ViewImpl::OnAccessibilityActivated() {
 bool SwigDirector_ViewImpl::OnAccessibilityPan(Dali::PanGesture gesture) {
   bool c_result = SwigValueInit< bool >() ;
   unsigned int jresult = 0 ;
-  void * jgesture  ;
 
   if (!swig_callbackOnAccessibilityPan) {
     return Dali::Toolkit::Internal::Control::OnAccessibilityPan(gesture);
   } else {
-    jgesture = (void *)new Dali::PanGesture((const Dali::PanGesture &)gesture);
-    jresult = (unsigned int) swig_callbackOnAccessibilityPan(jgesture);
+    jresult = (unsigned int) swig_callbackOnAccessibilityPan((Dali::PanGesture*)&gesture);
     c_result = jresult ? true : false;
   }
   return c_result;
@@ -27561,6 +27555,34 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnPropertySet(void * jarg1, int
   {
     try {
       (darg)->OnPropertySet(arg2,arg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnPropertySetSwigExplicitViewImpl(void * jarg1, int jarg2, void * jarg3) {
+  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
+  Dali::Property::Index arg2 ;
+  Dali::Property::Value arg3 ;
+  Dali::Property::Value *argp3 ;
+  SwigDirector_ViewImpl *darg = 0;
+
+  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  argp3 = (Dali::Property::Value *)jarg3;
+  if (!argp3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Property::Value", 0);
+    return ;
+  }
+  arg3 = *argp3;
+  darg = dynamic_cast<SwigDirector_ViewImpl *>(arg1);
+  if (!darg) {
+    SWIG_CSharpException(SWIG_TypeError, "dynamic_cast<SwigDirector_ViewImpl> error. darg is null");
+    return;
+  }
+  {
+    try {
+      (darg)->OnPropertySetSwigPublic(arg2,arg3);
     } CALL_CATCH_EXCEPTION();
   }
 
