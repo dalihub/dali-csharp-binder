@@ -79,13 +79,11 @@ void SwigDirector_ViewWrapperImpl::OnChildRemove(Dali::Actor &child) {
 
 void SwigDirector_ViewWrapperImpl::OnPropertySet(Dali::Property::Index index, const Dali::Property::Value& propertyValue) {
   int jindex  ;
-  void * jpropertyValue  ;
 
   jindex = index;
-  jpropertyValue = (void *)new Dali::Property::Value((const Dali::Property::Value &)propertyValue);
   if(swig_callbackOnPropertySet)
   {
-    swig_callbackOnPropertySet(jindex, jpropertyValue);
+    swig_callbackOnPropertySet(jindex, (Dali::Property::Value*)&propertyValue);
   }
 
   Dali::Toolkit::Internal::ControlWrapper::OnPropertySet(index,propertyValue);
@@ -103,7 +101,7 @@ void SwigDirector_ViewWrapperImpl::OnSizeSet(Dali::Vector3 const &targetSize) {
 void SwigDirector_ViewWrapperImpl::OnSizeAnimation(Dali::Animation &animation, Dali::Vector3 const &targetSize) {
   if(swig_callbackOnSizeAnimation)
   {
-    swig_callbackOnSizeAnimation(new Dali::Animation(animation), (Dali::Vector3 *) &targetSize);
+    swig_callbackOnSizeAnimation((Dali::Animation*)&animation, (Dali::Vector3 *) &targetSize);
   }
 
   Dali::Toolkit::Internal::Control::OnSizeAnimation(animation,targetSize);
@@ -272,14 +270,12 @@ void SwigDirector_ViewWrapperImpl::OnInitialize() {
 }
 
 void SwigDirector_ViewWrapperImpl::OnStyleChange(Dali::Toolkit::StyleManager styleManager, Dali::StyleChange::Type change) {
-  void * jstyleManager  ;
   int jchange  ;
 
-  jstyleManager = (void *)new Dali::Toolkit::StyleManager((const Dali::Toolkit::StyleManager &)styleManager);
   jchange = (int)change;
   if(swig_callbackOnStyleChange)
   {
-    swig_callbackOnStyleChange(jstyleManager, jchange);
+    swig_callbackOnStyleChange((Dali::Toolkit::StyleManager*)&styleManager, jchange);
   }
 
   Dali::Toolkit::Internal::Control::OnStyleChange(styleManager,change);
@@ -301,13 +297,11 @@ bool SwigDirector_ViewWrapperImpl::OnAccessibilityActivated() {
 bool SwigDirector_ViewWrapperImpl::OnAccessibilityPan(Dali::PanGesture gesture) {
   bool c_result = SwigValueInit< bool >() ;
   unsigned int jresult = 0 ;
-  void * jgesture  ;
 
   if (!swig_callbackOnAccessibilityPan) {
     return Dali::Toolkit::Internal::Control::OnAccessibilityPan(gesture);
   } else {
-    jgesture = (void *)new Dali::PanGesture((const Dali::PanGesture &)gesture);
-    jresult = (unsigned int) swig_callbackOnAccessibilityPan(jgesture);
+    jresult = (unsigned int) swig_callbackOnAccessibilityPan((Dali::PanGesture*)&gesture);
     c_result = jresult ? true : false;
   }
   return c_result;
