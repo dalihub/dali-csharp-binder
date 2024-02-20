@@ -273,14 +273,14 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionArgumentCallbacks_NDalic(
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
-SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = NULL;
+SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = strdup; ///< Use strdup instead of SWIGRegisterStringCallback_NDalic.
 
 
 #ifdef __cplusplus
 extern "C"
 #endif
 SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_NDalic(SWIG_CSharpStringHelperCallback callback) {
-  SWIG_csharp_string_callback = callback;
+  // Let we don't use registered string callback. Instead, use strdup. Since 2024-02-21.
 }
 
 
