@@ -615,9 +615,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1,
   {
     try {
       if (jarg3) {
-        void (*handler)(char *) = (void (*)(char *))jarg3;
+        void (*handler)(const char *) = (void (*)(const char *))jarg3;
         (arg1)->EvaluateJavaScript((std::string const &)*arg2, [handler](const std::string &result) {
-              handler(SWIG_csharp_string_callback(result.c_str()));
+              handler(result.c_str());
             });
       }
       else {
@@ -635,12 +635,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void
 
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   std::string exposedObjectName = jarg2;
-  void (*handler)(char*) = (void (*)(char*))jarg3;
+  void (*handler)(const char*) = (void (*)(const char*))jarg3;
 
   {
     try {
       webview->AddJavaScriptMessageHandler(exposedObjectName, [handler](const std::string &message) {
-            handler(SWIG_csharp_string_callback(message.c_str()));
+            handler(message.c_str());
           });
     } CALL_CATCH_EXCEPTION();
   }
@@ -648,13 +648,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptAlertCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
-  bool (*handler)(char*) = (bool (*)(char*))jarg2;
+  bool (*handler)(const char*) = (bool (*)(const char*))jarg2;
   {
     try {
       if (handler)
       {
         webview->RegisterJavaScriptAlertCallback([handler](const std::string &message) -> bool {
-            return handler(SWIG_csharp_string_callback(message.c_str()));
+            return handler(message.c_str());
           });
       }
       else
@@ -676,14 +676,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptAlertReply(void * jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptConfirmCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
-  bool (*handler)(char*) = (bool (*)(char*))jarg2;
+  bool (*handler)(const char*) = (bool (*)(const char*))jarg2;
 
   {
     try {
       if (handler)
       {
         webview->RegisterJavaScriptConfirmCallback([handler](const std::string &message) -> bool {
-            return handler(SWIG_csharp_string_callback(message.c_str()));
+            return handler(message.c_str());
           });
       }
       else
@@ -705,7 +705,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptConfirmReply(void * ja
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptPromptCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
-  bool (*handler)(char *, char*) = (bool (*)(char *, char*))jarg2;
+  bool (*handler)(const char *, const char*) = (bool (*)(const char *, const char*))jarg2;
 
   {
     try {
@@ -713,8 +713,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptPromptCallback
       {
         webview->RegisterJavaScriptPromptCallback([handler](const std::string &message1,
                     const std::string &message2) -> bool {
-            return handler(SWIG_csharp_string_callback(message1.c_str()),
-                           SWIG_csharp_string_callback(message2.c_str()));
+            return handler(message1.c_str(),
+                           message2.c_str());
           });
       }
       else
@@ -907,14 +907,14 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CheckVideoPlayingAsynchronously(
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterGeolocationPermissionCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  bool (*handler)(char *, char *) = (bool (*)(char *, char *))jarg2;
+  bool (*handler)(const char *, const char *) = (bool (*)(const char *, const char *))jarg2;
   {
     try {
       if (handler)
       {
         (arg1)->RegisterGeolocationPermissionCallback([handler](const std::string &host, const std::string &protocol) -> bool {
-            return handler(SWIG_csharp_string_callback(host.c_str()),
-                           SWIG_csharp_string_callback(protocol.c_str()));
+            return handler(host.c_str(),
+                           protocol.c_str());
           });
       }
       else
@@ -938,13 +938,13 @@ SWIGEXPORT Dali::Toolkit::Control *SWIGSTDCALL CSharp_Dali_WebView_SWIGUpcast(Da
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadStartedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  void (*handler)(char*) = (void (*)(char*))jarg2;
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
   {
     try {
       if (handler)
       {
         (arg1)->RegisterPageLoadStartedCallback([handler](const std::string& url) {
-            handler(SWIG_csharp_string_callback(url.c_str()));
+            handler(url.c_str());
           });
       }
       else
@@ -957,13 +957,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadStartedCallback(
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadInProgressCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  void (*handler)(char*) = (void (*)(char*))jarg2;
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
   {
     try {
       if (handler)
       {
         (arg1)->RegisterPageLoadInProgressCallback([handler](const std::string& url) {
-            handler(SWIG_csharp_string_callback(url.c_str()));
+            handler(url.c_str());
           });
       }
       else
@@ -976,13 +976,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadInProgressCallba
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadFinishedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  void (*handler)(char*) = (void (*)(char*))jarg2;
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
   {
     try {
       if (handler)
       {
         (arg1)->RegisterPageLoadFinishedCallback([handler](const std::string& url) {
-            handler(SWIG_csharp_string_callback(url.c_str()));
+            handler(url.c_str());
           });
       }
       else
@@ -1033,13 +1033,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterScrollEdgeReachedCallbac
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUrlChangedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  void (*handler)(char*) = (void (*)(char*))jarg2;
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
   {
     try {
       if (handler)
       {
         (arg1)->RegisterUrlChangedCallback([handler](const std::string& url) {
-            handler(SWIG_csharp_string_callback(url.c_str()));
+            handler(url.c_str());
           });
       }
       else
@@ -1342,11 +1342,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterTextFoundCallback(void *
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_GetPlainTextAsynchronously(void * nuiWebView, void * nuiCallback) {
   Dali::Toolkit::WebView *webview = (Dali::Toolkit::WebView *)nuiWebView;
-  void (*callback)(char*) = (void (*)(char*))nuiCallback;
+  void (*callback)(const char*) = (void (*)(const char*))nuiCallback;
   {
     try {
       webview->GetPlainTextAsynchronously([callback](const std::string& url) {
-            callback(SWIG_csharp_string_callback(url.c_str()));
+            callback(url.c_str());
           });
     } CALL_CATCH_EXCEPTION();
   }
@@ -1897,14 +1897,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_GetFormPasswordList(void *jar
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterDownloadStartedCallback(void * jarg1, void * jarg2) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
-  void (*handler)(char *) = (void (*)(char *))jarg2;
+  void (*handler)(const char *) = (void (*)(const char *))jarg2;
   {
     try {
       if (handler)
       {
         (arg1)->RegisterDownloadStartedCallback(
                  [handler](const std::string& url) {
-                   handler(SWIG_csharp_string_callback(url.c_str()));
+                   handler(url.c_str());
                  });
       }
       else
@@ -1917,16 +1917,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterDownloadStartedCallba
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterMimeOverriddenCallback(void *jarg1, void *jarg2) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
-  bool (*handler)(char *, char *, char *) = (bool (*)(char *, char *, char *))jarg2;
+  bool (*handler)(const char *, const char *, const char *) = (bool (*)(const char *, const char *, const char *))jarg2;
   {
     try {
       if (handler)
       {
         (arg1)->RegisterMimeOverriddenCallback(
           [handler](const std::string& url, const std::string& mime, std::string& newMime) -> bool {
-            return handler(SWIG_csharp_string_callback(url.c_str()),
-                           SWIG_csharp_string_callback(mime.c_str()),
-                           SWIG_csharp_string_callback(newMime.c_str()));
+            return handler(url.c_str(),
+                           mime.c_str(),
+                           newMime.c_str());
           });
       }
       else

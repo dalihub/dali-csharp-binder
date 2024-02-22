@@ -25,12 +25,12 @@ public:
     virtual void SignalConnected(Dali::SlotObserver *slotObserver, Dali::CallbackBase *callback);
     virtual void SignalDisconnected(Dali::SlotObserver *slotObserver, Dali::CallbackBase *callback);
 
-    typedef void (SWIGSTDCALL* SWIG_Callback0_t)(char *, void *);
-    typedef void (SWIGSTDCALL* SWIG_Callback1_t)(char *, int);
+    typedef void (SWIGSTDCALL* SWIG_Callback0_t)(const char *, void *);
+    typedef void (SWIGSTDCALL* SWIG_Callback1_t)(const char *, int);
     typedef void (SWIGSTDCALL* SWIG_Callback2_t)();
     typedef void (SWIGSTDCALL* SWIG_Callback3_t)();
     typedef void (SWIGSTDCALL* SWIG_Callback4_t)(void *);
-    typedef void (SWIGSTDCALL* SWIG_Callback5_t)(char *, int);
+    typedef void (SWIGSTDCALL* SWIG_Callback5_t)(const char *, int);
     typedef void (SWIGSTDCALL* SWIG_Callback6_t)(void *, void *);
     typedef void (SWIGSTDCALL* SWIG_Callback7_t)(void *, void *);
     void swig_connect_director(SWIG_Callback0_t callbackOnCreate, SWIG_Callback1_t callbackOnTerminate, SWIG_Callback2_t callbackOnPause, SWIG_Callback3_t callbackOnResume, SWIG_Callback4_t callbackOnResize, SWIG_Callback5_t callbackOnUpdate, SWIG_Callback6_t callbackSignalConnected, SWIG_Callback7_t callbackSignalDisconnected);
