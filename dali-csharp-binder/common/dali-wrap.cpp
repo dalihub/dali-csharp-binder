@@ -273,14 +273,14 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionArgumentCallbacks_NDalic(
 
 /* Callback for returning strings to C# without leaking memory */
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
-SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = NULL;
+SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = strdup; ///< Use strdup instead of SWIGRegisterStringCallback_NDalic.
 
 
 #ifdef __cplusplus
 extern "C"
 #endif
 SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_NDalic(SWIG_CSharpStringHelperCallback callback) {
-  SWIG_csharp_string_callback = callback;
+  // Let we don't use registered string callback. Instead, use strdup. Since 2024-02-21.
 }
 
 
@@ -1195,30 +1195,26 @@ SwigDirector_WidgetImpl::~SwigDirector_WidgetImpl() {
 }
 
 void SwigDirector_WidgetImpl::OnCreate(std::string const &contentInfo, Dali::Window window) {
-  char * jcontentInfo = 0 ;
   void * jwindow  ;
 
   if (!swig_callbackOnCreate) {
     Dali::Internal::Adaptor::Widget::OnCreate(contentInfo,window);
     return;
   } else {
-    jcontentInfo = SWIG_csharp_string_callback((&contentInfo)->c_str());
     jwindow = (void *)new Dali::Window((const Dali::Window &)window);
-    swig_callbackOnCreate(jcontentInfo, jwindow);
+    swig_callbackOnCreate(contentInfo.c_str(), jwindow);
   }
 }
 
 void SwigDirector_WidgetImpl::OnTerminate(std::string const &contentInfo, Dali::Widget::Termination type) {
-  char * jcontentInfo = 0 ;
   int jtype  ;
 
   if (!swig_callbackOnTerminate) {
     Dali::Internal::Adaptor::Widget::OnTerminate(contentInfo,type);
     return;
   } else {
-    jcontentInfo = SWIG_csharp_string_callback((&contentInfo)->c_str());
     jtype = (int)type;
-    swig_callbackOnTerminate(jcontentInfo, jtype);
+    swig_callbackOnTerminate(contentInfo.c_str(), jtype);
   }
 }
 
@@ -1253,16 +1249,14 @@ void SwigDirector_WidgetImpl::OnResize(Dali::Window window) {
 }
 
 void SwigDirector_WidgetImpl::OnUpdate(std::string const &contentInfo, int force) {
-  char * jcontentInfo = 0 ;
   int jforce  ;
 
   if (!swig_callbackOnUpdate) {
     Dali::Internal::Adaptor::Widget::OnUpdate(contentInfo,force);
     return;
   } else {
-    jcontentInfo = SWIG_csharp_string_callback((&contentInfo)->c_str());
     jforce = force;
-    swig_callbackOnUpdate(jcontentInfo, jforce);
+    swig_callbackOnUpdate(contentInfo.c_str(), jforce);
   }
 }
 
