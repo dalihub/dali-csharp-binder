@@ -47,18 +47,21 @@ Dali::InputMethodContext::CallbackData OnEventReceivedCallback(Dali::InputMethod
 
   eventDataP = (Dali::InputMethodContext::EventData *)&eventData;
 
-  auto* keyboardEventSignal = &inputMethodContextP->EventReceivedSignal();
-
-  auto iter = swig_callbackOnEventReceivedMapper.find(keyboardEventSignal);
-  if(iter != swig_callbackOnEventReceivedMapper.end())
+  if(DALI_LIKELY(inputMethodContextP))
   {
-    auto callbackEventReceived = iter->second;
-    if(callbackEventReceived)
+    auto* keyboardEventSignal = &inputMethodContextP->EventReceivedSignal();
+
+    auto iter = swig_callbackOnEventReceivedMapper.find(keyboardEventSignal);
+    if(iter != swig_callbackOnEventReceivedMapper.end())
     {
-      callbackDataP = (Dali::InputMethodContext::CallbackData *)callbackEventReceived(inputMethodContextP, eventDataP);
-      if (callbackDataP)
+      auto callbackEventReceived = iter->second;
+      if(callbackEventReceived)
       {
-        callbackData = *callbackDataP;
+        callbackDataP = (Dali::InputMethodContext::CallbackData *)callbackEventReceived(inputMethodContextP, eventDataP);
+        if (callbackDataP)
+        {
+          callbackData = *callbackDataP;
+        }
       }
     }
   }
