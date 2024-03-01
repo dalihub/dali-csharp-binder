@@ -15523,6 +15523,18 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeColor(void * 
   return proxy->BakeColor(id, *vector4);
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetUpdateArea(void * updateProxy, unsigned int id, void* updateArea) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector4* vector4 = (Dali::Vector4 *)updateArea;
+  return proxy->SetUpdateArea(id, *vector4);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetUpdateArea(void * updateProxy, unsigned int id, void* updateArea) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector4* vector4 = (Dali::Vector4 *)updateArea;
+  return proxy->GetUpdateArea(id, *vector4);
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetCustomAlgorithm(void * jarg1, void * jarg2) {
   KeyboardFocusManager arg1 ;
   Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *arg2 = 0 ;
