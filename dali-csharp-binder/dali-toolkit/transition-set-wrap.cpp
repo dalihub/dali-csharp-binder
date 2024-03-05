@@ -46,21 +46,6 @@ extern "C"
 {
 #endif
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_TransitionSet()
-  {
-    void *jresult;
-    Dali::Toolkit::TransitionSet *result = 0;
-    {
-      try
-      {
-        result = (Dali::Toolkit::TransitionSet *)new Dali::Toolkit::TransitionSet();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
 
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_TransitionSet_New()
   {

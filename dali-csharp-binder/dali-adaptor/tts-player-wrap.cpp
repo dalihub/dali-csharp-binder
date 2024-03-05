@@ -41,9 +41,6 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_TtsPlayer_State_SS_const_Sc_Dali_Tts
 extern "C" {
 #endif
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_TtsPlayer_SWIGUpcast(Dali::TtsPlayer *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TtsPlayer__SWIG_0() {
   void * jresult ;
@@ -92,17 +89,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TtsPlayer_Get__SWIG_1() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TtsPlayer(void * jarg1) {
-  Dali::TtsPlayer *arg1 = (Dali::TtsPlayer *) 0 ;
-
-  arg1 = (Dali::TtsPlayer *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TtsPlayer__SWIG_1(void * jarg1) {

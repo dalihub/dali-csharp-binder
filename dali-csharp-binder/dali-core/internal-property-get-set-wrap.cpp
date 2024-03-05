@@ -334,6 +334,7 @@ extern "C"
     return (int)InternalPropertyReturnType::NO_ERROR;
   }
 
+
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingPropertyFloat(void *actor, int propertyType, float *valFloat)
   {
     Dali::Actor *pActor = (Dali::Actor *)actor;
@@ -357,6 +358,7 @@ extern "C"
 
     return (int)InternalPropertyReturnType::NO_ERROR;
   }
+
 
   SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyFloat(void *actor, int propertyType)
   {

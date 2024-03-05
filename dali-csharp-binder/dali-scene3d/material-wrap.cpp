@@ -42,20 +42,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Material_New_SWIG_0()
   return new Dali::Scene3D::Material((const Dali::Scene3D::Material&)result);
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Material_SWIG_0()
-{
-  Dali::Scene3D::Material* result = 0;
-
-  {
-    try
-    {
-      result = (Dali::Scene3D::Material*)new Dali::Scene3D::Material();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  return (void*)result;
-}
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Material_SWIG_1(void* csModel)
 {
@@ -112,26 +98,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Material_Assign(void* csDestination, vo
   return (void*)result;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Material_DownCast(void* csHandle)
-{
-  Dali::BaseHandle*       handle = (Dali::BaseHandle*)csHandle;
-  Dali::Scene3D::Material result;
-
-  if(!handle)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Material", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = Dali::Scene3D::Material::DownCast(*handle);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  return new Dali::Scene3D::Material((const Dali::Scene3D::Material&)result);
-}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Material_property_NAME_get()
 {

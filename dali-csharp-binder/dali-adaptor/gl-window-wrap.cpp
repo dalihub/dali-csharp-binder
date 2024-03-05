@@ -77,10 +77,6 @@ extern "C"
 #endif
 
   /*Window binding*/
-  SWIGEXPORT Dali::BaseHandle *SWIGSTDCALL CSharp_Dali_GlWindow_SWIGUpcast(Dali::GlWindow *jarg1)
-  {
-    return (Dali::BaseHandle *)jarg1;
-  }
 
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_GlWindow_New__SWIG_0()
   {
@@ -144,86 +140,9 @@ extern "C"
     return jresult;
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_GlWindow__SWIG_0()
-  {
-    void *jresult;
-    Dali::GlWindow *result = 0;
 
-    {
-      try
-      {
-        result = (Dali::GlWindow *)new Dali::GlWindow();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
 
-    jresult = (void *)result;
-    return jresult;
-  }
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_GlWindow(void *jarg1)
-  {
-    Dali::GlWindow *arg1 = (Dali::GlWindow *)0;
-
-    arg1 = (Dali::GlWindow *)jarg1;
-    {
-      try
-      {
-        delete arg1;
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_GlWindow__SWIG_1(void *jarg1)
-  {
-    void *jresult;
-    Dali::GlWindow *arg1 = 0;
-    Dali::GlWindow *result = 0;
-
-    arg1 = (Dali::GlWindow *)jarg1;
-    if (!arg1)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::GlWindow const & type is null", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = (Dali::GlWindow *)new Dali::GlWindow((Dali::GlWindow const &)*arg1);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_GlWindow_Assign(void *jarg1, void *jarg2)
-  {
-    void *jresult;
-    Dali::GlWindow *arg1 = (Dali::GlWindow *)0;
-    Dali::GlWindow *arg2 = 0;
-    Dali::GlWindow *result = 0;
-
-    arg1 = (Dali::GlWindow *)jarg1;
-    arg2 = (Dali::GlWindow *)jarg2;
-    if (!arg2)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::GlWindow const & type is null", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = (Dali::GlWindow *)&(arg1)->operator=((Dali::GlWindow const &)*arg2);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
 
   SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetGraphicsConfig(void *jarg1, unsigned int jarg2, unsigned int jarg3, int jarg4, int jarg5)
   {
@@ -869,128 +788,12 @@ extern "C"
     return jresult;
   }
 
-  SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GlWindow_FocusSignalType_Empty(void *jarg1)
-  {
-    unsigned int jresult;
-    Dali::Signal<void(Dali::GlWindow, bool)> *arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)0;
-    bool result;
 
-    arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)jarg1;
-    {
-      try
-      {
-        result = (bool)Dali_Signal_Sl_void_Sp_bool_SP__Sg__Empty((Dali::Signal<void(Dali::GlWindow, bool)> const *)arg1);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
 
-    jresult = result;
-    return jresult;
-  }
 
-  SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_GlWindow_FocusSignalType_GetConnectionCount(void *jarg1)
-  {
-    unsigned long jresult;
-    Dali::Signal<void(Dali::GlWindow, bool)> *arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)0;
-    std::size_t result;
 
-    arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)jarg1;
-    {
-      try
-      {
-        result = Dali_Signal_Sl_void_Sp_bool_SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::GlWindow, bool)> const *)arg1);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
 
-    jresult = (unsigned long)result;
-    return jresult;
-  }
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_FocusSignalType_Connect(void *jarg1, void *jarg2)
-  {
-    Dali::Signal<void(Dali::GlWindow, bool)> *arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)0;
-    void (*arg2)(Dali::GlWindow, bool) = (void (*)(Dali::GlWindow, bool))0;
-
-    arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)jarg1;
-    arg2 = (void (*)(Dali::GlWindow, bool))jarg2;
-    {
-      try
-      {
-        Dali_Signal_Sl_void_Sp_bool_SP__Sg__Connect(arg1, arg2);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_FocusSignalType_Disconnect(void *jarg1, void *jarg2)
-  {
-    Dali::Signal<void(Dali::GlWindow, bool)> *arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)0;
-    void (*arg2)(Dali::GlWindow, bool) = (void (*)(Dali::GlWindow, bool))0;
-
-    arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)jarg1;
-    arg2 = (void (*)(Dali::GlWindow, bool))jarg2;
-    {
-      try
-      {
-        Dali_Signal_Sl_void_Sp_bool_SP__Sg__Disconnect(arg1, arg2);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_FocusSignalType_Emit(void *jarg1, void *jarg2, unsigned int jarg3)
-  {
-    Dali::Signal<void(Dali::GlWindow, bool)> *arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)jarg1;
-    Dali::GlWindow *arg2 = (Dali::GlWindow *)jarg2;
-    bool arg3 = jarg3 ? true : false;
-    ;
-
-    if (arg1 == nullptr || arg2 == nullptr)
-    {
-      DALI_LOG_ERROR("[ERR] arg1 == nullptr or arg2 == nullptr");
-      return;
-    }
-
-    {
-      try
-      {
-        Dali_Signal_Sl_void_Sp_bool_SP__Sg__Emit(arg1, *arg2, arg3);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_GlWindow_FocusSignalType()
-  {
-    void *jresult;
-    Dali::Signal<void(Dali::GlWindow, bool)> *result = 0;
-
-    {
-      try
-      {
-        result = (Dali::Signal<void(Dali::GlWindow, bool)> *)new Dali::Signal<void(Dali::GlWindow, bool)>();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_GlWindow_FocusSignalType(void *jarg1)
-  {
-    Dali::Signal<void(Dali::GlWindow, bool)> *arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)0;
-
-    arg1 = (Dali::Signal<void(Dali::GlWindow, bool)> *)jarg1;
-    {
-      try
-      {
-        delete arg1;
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
 
   /* Touch Event Binding */
   GENERATE_SIGNAL(Dali::GlWindow*, void(*)(Dali::TouchEvent const&), Dali_GlWindow, TouchedSignal)

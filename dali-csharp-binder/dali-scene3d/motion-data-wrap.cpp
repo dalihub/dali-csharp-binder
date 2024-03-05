@@ -57,20 +57,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionData_New_SWIG_1(float durationSec
   return new Dali::Scene3D::MotionData((const Dali::Scene3D::MotionData&)result);
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MotionData_SWIG_0()
-{
-  Dali::Scene3D::MotionData* result = 0;
-
-  {
-    try
-    {
-      result = (Dali::Scene3D::MotionData*)new Dali::Scene3D::MotionData();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  return (void*)result;
-}
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MotionData_SWIG_1(void* csMotionData)
 {
@@ -127,26 +113,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionData_Assign(void* csDestination, 
   return (void*)result;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionData_DownCast(void* csHandle)
-{
-  Dali::BaseHandle*         handle = (Dali::BaseHandle*)csHandle;
-  Dali::Scene3D::MotionData result;
-
-  if(!handle)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = Dali::Scene3D::MotionData::DownCast(*handle);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  return new Dali::Scene3D::MotionData((const Dali::Scene3D::MotionData&)result);
-}
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_MotionData_GetMotionCount(void* csMotionData)
 {

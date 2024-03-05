@@ -54,20 +54,6 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_con
   self->Emit( arg1, arg2 );
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGestureDetector__SWIG_0()
-{
-  void * jresult ;
-  Dali::RotationGestureDetector *result = 0 ;
-
-  {
-    try {
-      result = (Dali::RotationGestureDetector *)new Dali::RotationGestureDetector();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGestureDetector_New() {
   void * jresult ;
@@ -84,27 +70,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGestureDetector_New() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGestureDetector_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::RotationGestureDetector result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::RotationGestureDetector::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::RotationGestureDetector((const Dali::RotationGestureDetector &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RotationGestureDetector(void * jarg1) {
@@ -181,19 +146,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGestureDetector_DetectedSignal
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGesture__SWIG_0() {
-  void * jresult ;
-  Dali::RotationGesture *result = 0 ;
-
-  {
-    try {
-      result = (Dali::RotationGesture *)new Dali::RotationGesture();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_New(int jarg1) {
@@ -213,48 +165,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_New(int jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_RotationGesture__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::RotationGesture *arg1 = 0 ;
-  Dali::RotationGesture *result = 0 ;
-
-  arg1 = (Dali::RotationGesture *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::RotationGesture const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::RotationGesture *)new Dali::RotationGesture((Dali::RotationGesture const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::RotationGesture *arg1 = (Dali::RotationGesture *) 0 ;
-  Dali::RotationGesture *arg2 = 0 ;
-  Dali::RotationGesture *result = 0 ;
-
-  arg1 = (Dali::RotationGesture *)jarg1;
-  arg2 = (Dali::RotationGesture *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::RotationGesture const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::RotationGesture *) &(arg1)->operator =((Dali::RotationGesture const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RotationGesture(void * jarg1) {
@@ -428,13 +340,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RotationGestureDetectedSignal(voi
 
 }
 
-SWIGEXPORT Dali::GestureDetector * SWIGSTDCALL CSharp_Dali_RotationGestureDetector_SWIGUpcast(Dali::RotationGestureDetector *jarg1) {
-    return (Dali::GestureDetector *)jarg1;
-}
 
-SWIGEXPORT Dali::Gesture * SWIGSTDCALL CSharp_Dali_RotationGesture_SWIGUpcast(Dali::RotationGesture *jarg1) {
-    return (Dali::Gesture *)jarg1;
-}
 
 #ifdef __cplusplus
 }

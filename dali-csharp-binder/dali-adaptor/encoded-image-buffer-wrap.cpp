@@ -28,69 +28,9 @@ extern "C"
 {
 #endif
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_EncodedImageBuffer__SWIG_0()
-{
-  void *jresult;
-  Dali::EncodedImageBuffer *result = 0;
 
-  {
-    try
-    {
-      result = new Dali::EncodedImageBuffer();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_EncodedImageBuffer__SWIG_1(void *nuiEncodedImageBuffer)
-{
-  void *jresult;
-  Dali::EncodedImageBuffer *result = (Dali::EncodedImageBuffer *)0;
-  Dali::EncodedImageBuffer *encodedImageBuffer = (Dali::EncodedImageBuffer *)nuiEncodedImageBuffer;;
-
-  if (!encodedImageBuffer)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::EncodedImageBuffer const & type is null", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = new Dali::EncodedImageBuffer((Dali::EncodedImageBuffer const &)*encodedImageBuffer);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 // note: nuiRawBuffer is same as Dali::Vector<unsigned char>, which created by CSharp_Dali_new_VectorUnsignedChar__SWIG_0
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_EncodedImageBuffer_New(void *nuiRawBuffer)
-{
-  void *jresult;
-  Dali::EncodedImageBuffer::RawBufferType *buffer = (Dali::EncodedImageBuffer::RawBufferType *)nuiRawBuffer;
-  Dali::EncodedImageBuffer result;
-
-  if (!buffer)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null buffer", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = Dali::EncodedImageBuffer::New((const Dali::EncodedImageBuffer::RawBufferType &)*buffer);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::EncodedImageBuffer((const Dali::EncodedImageBuffer &)result);
-  return jresult;
-}
 
 // note: nuiRawBuffer is same as Dali::Vector<unsigned char>, which created by CSharp_Dali_new_VectorUnsignedChar__SWIG_0
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_EncodedImageBuffer_New__SWIG_1(void *nuiRawBuffer, int nuiImageType)

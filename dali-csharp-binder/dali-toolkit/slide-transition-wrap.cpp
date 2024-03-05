@@ -26,23 +26,6 @@ extern "C"
 {
 #endif
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_SlideTransition()
-  {
-    void *jresult;
-    Dali::Toolkit::SlideTransition *result = 0;
-
-    {
-      try
-      {
-        result = (Dali::Toolkit::SlideTransition *)new Dali::Toolkit::SlideTransition();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
-
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SlideTransition_New(void *nuiControl, void *nuiDirection, void *nuiTimePeriod)
   {
     void *jresult;
