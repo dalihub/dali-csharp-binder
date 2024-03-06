@@ -48,9 +48,6 @@ extern "C" {
 
 // cube-transition-effect.h
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_CubeTransitionEffect_SWIGUpcast(Dali::Toolkit::CubeTransitionEffect *jarg1) {
-  return (Dali::Toolkit::Control *)jarg1;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_CubeTransitionEffect() {
   Dali::Toolkit::CubeTransitionEffect* result;
@@ -343,26 +340,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CubeTransitionEffectSignal_Disconnect(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CubeTransitionEffectSignal_Emit(void * jarg1, void * jarg2) {
-  Dali::Signal< void(Dali::Toolkit::CubeTransitionEffect) > *arg1 = (Dali::Signal< void(Dali::Toolkit::CubeTransitionEffect) > *) 0;
-  Dali::Toolkit::CubeTransitionEffect arg2;
-  Dali::Toolkit::CubeTransitionEffect *argp2;
-
-  arg1 = (Dali::Signal< void(Dali::Toolkit::CubeTransitionEffect) > *)jarg1;
-  argp2 = (Dali::Toolkit::CubeTransitionEffect *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::CubeTransitionEffect", 0);
-    return;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_Toolkit_CubeTransitionEffect_SP__Sg__Emit(arg1, arg2);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_CubeTransitionEffectSignal() {
@@ -397,9 +374,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CubeTransitionEffectSignal(void *
 
 // cube-transition-cross-effect.h
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_CubeTransitionCrossEffect_SWIGUpcast(Dali::Toolkit::CubeTransitionCrossEffect *jarg1) {
-  return (Dali::Toolkit::Control *)jarg1;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CubeTransitionCrossEffect_New(unsigned int numRows, unsigned int numColumns) {
   void * jresult;
@@ -431,9 +405,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CubeTransitionCrossEffect(void * 
 
 // cube-transition-fold-effect.h
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_CubeTransitionFoldEffect_SWIGUpcast(Dali::Toolkit::CubeTransitionFoldEffect *jarg1) {
-  return (Dali::Toolkit::Control *)jarg1;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CubeTransitionFoldEffect_New(unsigned int numRows, unsigned int numColumns) {
   void * jresult;
@@ -465,9 +436,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CubeTransitionFoldEffect(void * j
 
 // cube-transition-wave-effect.h
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_CubeTransitionWaveEffect_SWIGUpcast(Dali::Toolkit::CubeTransitionWaveEffect *jarg1) {
-  return (Dali::Toolkit::Control *)jarg1;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CubeTransitionWaveEffect_New(unsigned int numRows, unsigned int numColumns) {
   void * jresult;

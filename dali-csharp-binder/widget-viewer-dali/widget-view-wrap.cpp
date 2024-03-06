@@ -41,9 +41,6 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WidgetView_WidgetView_SP__Sg__Emit(D
 extern "C" {
 #endif
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_WidgetView_SWIGUpcast(Dali::WidgetView::WidgetView *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WidgetView_Property_WIDGET_ID_get() {
   int jresult ;
@@ -161,32 +158,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WidgetView_Property_KEEP_WIDGET_SIZE_get(
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetView_Property() {
-  void * jresult ;
-  Dali::WidgetView::WidgetView::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::WidgetView::WidgetView::Property *)new Dali::WidgetView::WidgetView::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetView_Property(void * jarg1) {
-  Dali::WidgetView::WidgetView::Property *arg1 = (Dali::WidgetView::WidgetView::Property *) 0 ;
-
-  arg1 = (Dali::WidgetView::WidgetView::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetView_New(char * jarg1, char * jarg2, int jarg3, int jarg4, float jarg5) {
@@ -253,19 +226,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WidgetView_DownCast(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetView__SWIG_0() {
-  void * jresult ;
-  Dali::WidgetView::WidgetView *result = 0 ;
-
-  {
-    try {
-      result = (Dali::WidgetView::WidgetView *)new Dali::WidgetView::WidgetView();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WidgetView__SWIG_1(void * jarg1) {

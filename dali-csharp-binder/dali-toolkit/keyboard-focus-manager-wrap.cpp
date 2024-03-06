@@ -58,17 +58,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_KeyboardFocusManager() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_KeyboardFocusManager(void * jarg1) {
-  Dali::Toolkit::KeyboardFocusManager *arg1 = (Dali::Toolkit::KeyboardFocusManager *) 0 ;
-
-  arg1 = (Dali::Toolkit::KeyboardFocusManager *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_KeyboardFocusManager_Get() {
@@ -578,9 +567,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_KeyboardPreFocusChangeSignal(void * ja
 
 }
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_KeyboardFocusManager_SWIGUpcast(Dali::Toolkit::KeyboardFocusManager *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
 #ifdef __cplusplus
 }

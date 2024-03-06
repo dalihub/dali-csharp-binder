@@ -69,86 +69,9 @@ extern "C"
     return jresult;
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_GlView_SWIG_0()
-  {
-    void *jresult;
-    Dali::Toolkit::GlView *result = nullptr;
 
-    {
-      try
-      {
-        result = (Dali::Toolkit::GlView *)new Dali::Toolkit::GlView();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
 
-    jresult = (void *)result;
-    return jresult;
-  }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_GlView_SWIG_1(void *nuiGlView)
-  {
-    void *jresult;
-    Dali::Toolkit::GlView *glView = nullptr;
-    Dali::Toolkit::GlView *result = nullptr;
-
-    glView = (Dali::Toolkit::GlView *)nuiGlView;
-    if (!glView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::GlView const & type is null", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = (Dali::Toolkit::GlView *)new Dali::Toolkit::GlView((Dali::Toolkit::GlView const &)*glView);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_GlView(void *nuiGlView)
-  {
-    Dali::Toolkit::GlView *glView = nullptr;
-
-    glView = (Dali::Toolkit::GlView *)nuiGlView;
-    {
-      try
-      {
-        delete glView;
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_GlView_Assign(void *nuiGlView1, void *nuiGlView2)
-  {
-    void *jresult;
-    Dali::Toolkit::GlView *glView1 = nullptr;
-    Dali::Toolkit::GlView *glView2 = nullptr;
-    Dali::Toolkit::GlView *result = nullptr;
-
-    glView1 = (Dali::Toolkit::GlView *)nuiGlView1;
-    glView2 = (Dali::Toolkit::GlView *)nuiGlView2;
-    if (!glView2)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::GlView const & type is null", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = (Dali::Toolkit::GlView *)&(glView1)->operator=((Dali::Toolkit::GlView const &)*glView2);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
 
   SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlView_SetGraphicsConfig(void *nuiGlView, bool nuiDepth, bool nuiStencil, int nuiMsaa, int nuiVersion)
   {
@@ -290,32 +213,6 @@ extern "C"
     }
   }
 
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GlView_GetBackendMode(void *nuiGlView)
-  {
-    int jresult;
-    Dali::Toolkit::GlView *glView = nullptr;
-    Dali::Toolkit::GlView::BackendMode result;
-
-    glView = (Dali::Toolkit::GlView *)nuiGlView;
-    if (!glView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(
-          SWIG_CSharpArgumentNullException,
-          "Attempt to dereference null Dali::Toolkit::GlView", 0);
-      return 0;
-    }
-
-    {
-      try
-      {
-        result = (Dali::Toolkit::GlView::BackendMode)(glView)->GetBackendMode();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (int)result;
-    return jresult;
-  }
 
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_RenderCallbackInput_Size_get(void *input)
   {

@@ -443,18 +443,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_2(int jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WatchApplication__SWIG_0() {
-  void * jresult ;
-  Dali::WatchApplication *result = 0 ;
-
-  {
-    try {
-      result = (Dali::WatchApplication *)new Dali::WatchApplication();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WatchApplication__SWIG_1(void * jarg1) {
@@ -477,26 +465,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WatchApplication__SWIG_1(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::WatchApplication *arg1 = (Dali::WatchApplication *) 0 ;
-  Dali::WatchApplication *arg2 = 0 ;
-  Dali::WatchApplication *result = 0 ;
-
-  arg1 = (Dali::WatchApplication *)jarg1;
-  arg2 = (Dali::WatchApplication *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::WatchApplication const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::WatchApplication *) &(arg1)->operator =((Dali::WatchApplication const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WatchApplication(void * jarg1) {

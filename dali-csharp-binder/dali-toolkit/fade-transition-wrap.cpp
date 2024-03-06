@@ -26,22 +26,6 @@ extern "C"
 {
 #endif
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_FadeTransition()
-  {
-    void *jresult;
-    Dali::Toolkit::FadeTransition *result = 0;
-
-    {
-      try
-      {
-        result = (Dali::Toolkit::FadeTransition *)new Dali::Toolkit::FadeTransition();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
 
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_FadeTransition_New(void *nuiControl, float nuiOpaicty, void *nuiTimePeriod)
   {
