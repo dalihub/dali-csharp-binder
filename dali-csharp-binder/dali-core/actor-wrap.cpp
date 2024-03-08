@@ -435,15 +435,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_COLOR_BLUE_get()
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_COLOR_ALPHA_get()
-{
-  int jresult;
-  int result;
-
-  result  = (int)Dali::Actor::Property::COLOR_ALPHA;
-  jresult = (int)result;
-  return jresult;
-}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_WORLD_COLOR_get()
 {
@@ -525,15 +516,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_INHERIT_SCALE_get()
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_COLOR_MODE_get()
-{
-  int jresult;
-  int result;
-
-  result  = (int)Dali::Actor::Property::COLOR_MODE;
-  jresult = (int)result;
-  return jresult;
-}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_DRAW_MODE_get()
 {
@@ -605,15 +587,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_HEIGHT_FOR_WIDTH_get()
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_PADDING_get()
-{
-  int jresult;
-  int result;
-
-  result  = (int)Dali::Actor::Property::PADDING;
-  jresult = (int)result;
-  return jresult;
-}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_MINIMUM_SIZE_get()
 {
@@ -728,101 +701,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_DISPATCH_HOVER_MOTION_get()
 
 // Creation
 
-SWIGEXPORT Dali::Handle* SWIGSTDCALL CSharp_Dali_Actor_SWIGUpcast(Dali::Actor* jarg1)
-{
-  return (Dali::Handle*)jarg1;
-}
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Actor_Property()
-{
-  void*                  jresult;
-  Dali::Actor::Property* result = 0;
 
-  {
-    try
-    {
-      result = (Dali::Actor::Property*)new Dali::Actor::Property();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
 
-  jresult = (void*)result;
-  return jresult;
-}
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Actor_Property(void* jarg1)
-{
-  Dali::Actor::Property* arg1 = (Dali::Actor::Property*)0;
 
-  arg1 = (Dali::Actor::Property*)jarg1;
-  {
-    try
-    {
-      delete arg1;
-    }
-    CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Actor__SWIG_0()
-{
-  void*        jresult;
-  Dali::Actor* result = 0;
-
-  {
-    try
-    {
-      result = (Dali::Actor*)new Dali::Actor();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_New()
-{
-  void*       jresult;
-  Dali::Actor result;
-
-  {
-    try
-    {
-      result = Dali::Actor::New();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Actor((const Dali::Actor&)result);
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_DownCast(void* jarg1)
-{
-  void*             jresult;
-  Dali::BaseHandle  arg1;
-  Dali::BaseHandle* argp1;
-  Dali::Actor       result;
-
-  argp1 = (Dali::BaseHandle*)jarg1;
-  if(!argp1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try
-    {
-      result = Dali::Actor::DownCast(arg1);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Actor((const Dali::Actor&)result);
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Actor(void* jarg1)
 {
@@ -838,62 +721,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Actor(void* jarg1)
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Actor__SWIG_1(void* jarg1)
-{
-  void*        jresult;
-  Dali::Actor* arg1   = 0;
-  Dali::Actor* result = 0;
 
-  arg1 = (Dali::Actor*)jarg1;
-  if(!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Actor const & type is null", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = (Dali::Actor*)new Dali::Actor((Dali::Actor const&)*arg1);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_Assign(void* jarg1, void* jarg2)
-{
-  void*        jresult;
-  Dali::Actor* arg1   = (Dali::Actor*)0;
-  Dali::Actor* arg2   = 0;
-  Dali::Actor* result = 0;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  if(!jarg2)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg2 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  arg2 = (Dali::Actor*)jarg2;
-  {
-    try
-    {
-      result = (Dali::Actor*)&(arg1)->operator=((Dali::Actor const&)*arg2);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
-}
 
 // Method
 
@@ -1029,30 +857,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_OnStage(void* jarg1)
   return jresult;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsLayer(void* jarg1)
-{
-  bool         jresult;
-  Dali::Actor* arg1 = (Dali::Actor*)0;
-  bool         result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = (bool)((Dali::Actor const*)arg1)->GetProperty<bool>(Actor::Property::IS_LAYER);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetLayer(void* jarg1)
 {
@@ -1133,50 +937,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Remove(void* jarg1, void* jarg2)
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Unparent(void* jarg1)
-{
-  Dali::Actor* arg1 = (Dali::Actor*)0;
 
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      (arg1)->Unparent();
-    }
-    CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_GetChildCount(void* jarg1)
-{
-  unsigned int jresult;
-  Dali::Actor* arg1 = (Dali::Actor*)0;
-  unsigned int result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = (unsigned int)((Dali::Actor const*)arg1)->GetChildCount();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetChildAt(void* jarg1, unsigned int jarg2)
 {
@@ -1320,30 +1081,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetParentOrigin(void* jarg1, void*
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetCurrentParentOrigin(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector3 result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Actor const*)arg1)->GetCurrentProperty<Vector3>(Actor::Property::PARENT_ORIGIN);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector3((const Dali::Vector3&)result);
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetAnchorPoint(void* jarg1, void* jarg2)
 {
@@ -1372,30 +1109,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetAnchorPoint(void* jarg1, void* 
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetCurrentAnchorPoint(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector3 result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Actor const*)arg1)->GetCurrentProperty<Vector3>(Actor::Property::ANCHOR_POINT);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector3((const Dali::Vector3&)result);
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_0(void* jarg1, float jarg2, float jarg3)
 {
@@ -1501,30 +1214,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_3(void* jarg1, void*
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetTargetSize(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector3 result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Actor const*)arg1)->GetTargetSize();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector3((const Dali::Vector3&)result);
-  return jresult;
-}
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetCurrentSize(void* jarg1)
 {
@@ -1746,55 +1435,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_TranslateBy(void* jarg1, void* jar
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetCurrentPosition(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector3 result;
 
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Actor const*)arg1)->GetCurrentProperty<Vector3>(Actor::Property::POSITION);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector3((const Dali::Vector3&)result);
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldPosition(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector3 result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Actor const*)arg1)->GetCurrentProperty<Vector3>(Actor::Property::WORLD_POSITION);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector3((const Dali::Vector3&)result);
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritPosition(void* jarg1, bool jarg2)
 {
@@ -2232,55 +1873,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_ScaleBy(void* jarg1, void* jarg2)
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetCurrentScale(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector3 result;
 
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Actor const*)arg1)->GetCurrentProperty<Vector3>(Actor::Property::SCALE);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector3((const Dali::Vector3&)result);
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldScale(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector3 result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Actor const*)arg1)->GetCurrentProperty<Vector3>(Actor::Property::WORLD_SCALE);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector3((const Dali::Vector3&)result);
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritScale(void* jarg1, bool jarg2)
 {
@@ -2619,30 +2212,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColor(void* jarg1, void* jarg2)
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetCurrentColor(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector4 result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Actor const*)arg1)->GetCurrentProperty<Vector4>(Actor::Property::COLOR);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector4((const Dali::Vector4&)result);
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColorMode(void* jarg1, int jarg2)
 {
@@ -2691,30 +2260,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetColorMode(void* jarg1)
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetCurrentWorldColor(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector4 result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Actor const*)arg1)->GetCurrentProperty<Vector4>(Actor::Property::WORLD_COLOR);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector4((const Dali::Vector4&)result);
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetDrawMode(void* jarg1, int jarg2)
 {
@@ -2763,52 +2308,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetDrawMode(void* jarg1)
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSensitive(void* jarg1, bool jarg2)
-{
-  Dali::Actor* arg1 = (Dali::Actor*)0;
-  bool         arg2;
 
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  arg2 = jarg2 ? true : false;
-  {
-    try
-    {
-      (arg1)->SetProperty(Actor::Property::SENSITIVE, arg2);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsSensitive(void* jarg1)
-{
-  bool         jresult;
-  Dali::Actor* arg1 = (Dali::Actor*)0;
-  bool         result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = (bool)((Dali::Actor const*)arg1)->GetProperty<bool>(Actor::Property::SENSITIVE);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_ScreenToLocal(void* jarg1, float* jarg2, float* jarg3, float jarg4, float jarg5)
 {
@@ -2843,52 +2343,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_ScreenToLocal(void* jarg1, float* 
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetLeaveRequired(void* jarg1, bool jarg2)
-{
-  Dali::Actor* arg1 = (Dali::Actor*)0;
-  bool         arg2;
 
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  arg2 = jarg2 ? true : false;
-  {
-    try
-    {
-      (arg1)->SetProperty(Actor::Property::LEAVE_REQUIRED, arg2);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_GetLeaveRequired(void* jarg1)
-{
-  bool         jresult;
-  Dali::Actor* arg1 = (Dali::Actor*)0;
-  bool         result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = (bool)((Dali::Actor const*)arg1)->GetProperty<bool>(Actor::Property::LEAVE_REQUIRED);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusable(void* jarg1, bool jarg2)
 {
@@ -3077,52 +2532,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetResizePolicy(void* jarg1, int ja
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSizeScalePolicy(void* jarg1, int jarg2)
-{
-  Dali::Actor*                arg1 = (Dali::Actor*)0;
-  Dali::SizeScalePolicy::Type arg2;
 
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  arg2 = (Dali::SizeScalePolicy::Type)jarg2;
-  {
-    try
-    {
-      (arg1)->SetProperty(Actor::Property::SIZE_SCALE_POLICY, arg2);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetSizeScalePolicy(void* jarg1)
-{
-  int                         jresult;
-  Dali::Actor*                arg1 = (Dali::Actor*)0;
-  Dali::SizeScalePolicy::Type result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = (Dali::SizeScalePolicy::Type)((Dali::Actor const*)arg1)->GetProperty<SizeScalePolicy::Type>(Actor::Property::SIZE_SCALE_POLICY);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (int)result;
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSizeModeFactor(void* jarg1, void* jarg2)
 {
@@ -3151,30 +2561,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSizeModeFactor(void* jarg1, voi
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetSizeModeFactor(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector3 result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Actor const*)arg1)->GetProperty<Vector3>(Actor::Property::SIZE_MODE_FACTOR);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector3((const Dali::Vector3&)result);
-  return jresult;
-}
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetHeightForWidth(void* jarg1, float jarg2)
 {
@@ -3338,30 +2724,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetMinimumSize(void* jarg1, void* 
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetMinimumSize(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector2 result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = (arg1)->GetProperty<Vector2>(Actor::Property::MINIMUM_SIZE);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector2((const Dali::Vector2&)result);
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetMaximumSize(void* jarg1, void* jarg2)
 {
@@ -3390,30 +2752,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetMaximumSize(void* jarg1, void* 
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetMaximumSize(void* jarg1)
-{
-  void*         jresult;
-  Dali::Actor*  arg1 = (Dali::Actor*)0;
-  Dali::Vector2 result;
-
-  if(!jarg1)
-  {
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
-    return 0;
-  }
-
-  arg1 = (Dali::Actor*)jarg1;
-  {
-    try
-    {
-      result = (arg1)->GetProperty<Vector2>(Actor::Property::MAXIMUM_SIZE);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector2((const Dali::Vector2&)result);
-  return jresult;
-}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetHierarchyDepth(void* jarg1)
 {
@@ -3761,24 +3099,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_GetTouchAreaOffset(void* 
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_UnparentAndReset(void* jarg1)
-{
-  Dali::Actor* arg1 = 0;
-
-  arg1 = (Dali::Actor*)jarg1;
-  if(!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Actor & type is null", 0);
-    return;
-  }
-  {
-    try
-    {
-      Dali::UnparentAndReset(*arg1);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
-}
 
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumWidth(void * jarg1) {

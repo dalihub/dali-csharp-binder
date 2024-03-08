@@ -40,20 +40,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Primitive_New_SWIG_0()
   return new Dali::Scene3D::ModelPrimitive((const Dali::Scene3D::ModelPrimitive&)result);
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Model_Primitive_SWIG_0()
-{
-  Dali::Scene3D::ModelPrimitive* result = 0;
-
-  {
-    try
-    {
-      result = (Dali::Scene3D::ModelPrimitive*)new Dali::Scene3D::ModelPrimitive();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  return (void*)result;
-}
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Model_Primitive_SWIG_1(void* csModel)
 {
@@ -110,26 +96,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Primitive_Assign(void* csDestinat
   return (void*)result;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Primitive_DownCast(void* csHandle)
-{
-  Dali::BaseHandle*    handle = (Dali::BaseHandle*)csHandle;
-  Dali::Scene3D::ModelPrimitive result;
-
-  if(!handle)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelPrimitive", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = Dali::Scene3D::ModelPrimitive::DownCast(*handle);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  return new Dali::Scene3D::ModelPrimitive((const Dali::Scene3D::ModelPrimitive&)result);
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_Primitive_SetGeometry(void* csModelPrimitive, void* csGeometry)
 {

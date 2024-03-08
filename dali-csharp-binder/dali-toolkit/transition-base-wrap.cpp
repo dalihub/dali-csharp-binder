@@ -26,22 +26,6 @@ extern "C"
 {
 #endif
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_TransitionBase()
-  {
-    void *jresult;
-    Dali::Toolkit::TransitionBase *result = 0;
-
-    {
-      try
-      {
-        result = (Dali::Toolkit::TransitionBase *)new Dali::Toolkit::TransitionBase();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
 
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_TransitionBase_New()
   {

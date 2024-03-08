@@ -26,23 +26,6 @@ extern "C"
 {
 #endif
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_ScaleTransition()
-  {
-    void *jresult;
-    Dali::Toolkit::ScaleTransition *result = 0;
-
-    {
-      try
-      {
-        result = (Dali::Toolkit::ScaleTransition *)new Dali::Toolkit::ScaleTransition();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
-
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ScaleTransition_New_1(void *nuiControl, float scale, void *nuiTimePeriod)
   {
     void *jresult;

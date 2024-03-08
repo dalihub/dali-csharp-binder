@@ -1696,32 +1696,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexContainer_Property_ALIGN_CONTENT_get(
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FlexContainer_Property() {
-  void * jresult ;
-  Dali::Toolkit::FlexContainer::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::FlexContainer::Property *)new Dali::Toolkit::FlexContainer::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FlexContainer_Property(void * jarg1) {
-  Dali::Toolkit::FlexContainer::Property *arg1 = (Dali::Toolkit::FlexContainer::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::FlexContainer::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexContainer_ChildProperty_FLEX_get() {
@@ -1802,94 +1778,22 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImageView_Property_TRANSITION_EFFECT_get(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_Property_SCROLL_DIRECTION_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::ScrollBar::Property::SCROLL_DIRECTION;
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_Property_INDICATOR_HEIGHT_POLICY_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::ScrollBar::Property::INDICATOR_HEIGHT_POLICY;
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_Property_INDICATOR_FIXED_HEIGHT_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::ScrollBar::Property::INDICATOR_FIXED_HEIGHT;
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_Property_INDICATOR_SHOW_DURATION_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::ScrollBar::Property::INDICATOR_SHOW_DURATION;
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_Property_INDICATOR_HIDE_DURATION_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::ScrollBar::Property::INDICATOR_HIDE_DURATION;
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_Property_SCROLL_POSITION_INTERVALS_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::ScrollBar::Property::SCROLL_POSITION_INTERVALS;
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_Property_INDICATOR_MINIMUM_HEIGHT_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::ScrollBar::Property::INDICATOR_MINIMUM_HEIGHT;
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_Property_INDICATOR_START_PADDING_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::ScrollBar::Property::INDICATOR_START_PADDING;
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_Property_INDICATOR_END_PADDING_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::ScrollBar::Property::INDICATOR_END_PADDING;
-  jresult = (int)result;
-  return jresult;
-}
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Scrollable_Property_OVERSHOOT_EFFECT_COLOR_get() {
@@ -2501,14 +2405,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TableView_ChildProperty_CELL_VERTICAL_ALI
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_DEFAULT_RENDERING_BACKEND_get() {
-  unsigned int jresult ;
-  unsigned int result;
-
-  result = (unsigned int)(unsigned int)Dali::Toolkit::DevelText::DEFAULT_RENDERING_BACKEND;
-  jresult = result;
-  return jresult;
-}
 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_TEXT_get() {
@@ -2823,19 +2719,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Range_FOREGROUND_EFFECT_get() {
 // Method
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Builder() {
-  void * jresult ;
-  Dali::Toolkit::Builder *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::Builder *)new Dali::Toolkit::Builder();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Builder_New() {
@@ -3468,19 +3351,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Builder_QuitSignal(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TransitionData__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::TransitionData *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TransitionData *)new Dali::Toolkit::TransitionData();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TransitionData(void * jarg1) {
   Dali::Toolkit::TransitionData *arg1 = (Dali::Toolkit::TransitionData *) 0 ;
@@ -3537,27 +3407,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TransitionData_New__SWIG_1(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TransitionData_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::TransitionData result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::TransitionData::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::TransitionData((const Dali::Toolkit::TransitionData &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TransitionData__SWIG_1(void * jarg1) {
@@ -3581,27 +3430,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TransitionData__SWIG_1(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TransitionData_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::TransitionData *arg1 = (Dali::Toolkit::TransitionData *) 0 ;
-  Dali::Toolkit::TransitionData *arg2 = 0 ;
-  Dali::Toolkit::TransitionData *result = 0 ;
-
-  arg1 = (Dali::Toolkit::TransitionData *)jarg1;
-  arg2 = (Dali::Toolkit::TransitionData *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::TransitionData const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::TransitionData *) &(arg1)->operator =((Dali::Toolkit::TransitionData const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_TransitionData_Count(void * jarg1) {
@@ -4634,60 +4462,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetImplementation__SWIG_0(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View_Property() {
-  void * jresult ;
-  Dali::Toolkit::Control::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::Control::Property *)new Dali::Toolkit::Control::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_View_Property(void * jarg1) {
-  Dali::Toolkit::Control::Property *arg1 = (Dali::Toolkit::Control::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::Control::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View_KeyboardFocus() {
-  void * jresult ;
-  Dali::Toolkit::Control::KeyboardFocus *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::Control::KeyboardFocus *)new Dali::Toolkit::Control::KeyboardFocus();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_View_KeyboardFocus(void * jarg1) {
-  Dali::Toolkit::Control::KeyboardFocus *arg1 = (Dali::Toolkit::Control::KeyboardFocus *) 0 ;
-
-  arg1 = (Dali::Toolkit::Control::KeyboardFocus *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_New() {
@@ -4718,40 +4498,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_NewCustom() {
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::Control *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::Control *)new Dali::Toolkit::Control();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Control *arg1 = 0 ;
-  Dali::Toolkit::Control *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Control *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::Control *)new Dali::Toolkit::Control((Dali::Toolkit::Control const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_View(void * jarg1) {
@@ -4767,27 +4515,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_View(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) 0 ;
-  Dali::Toolkit::Control *arg2 = 0 ;
-  Dali::Toolkit::Control *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Control *)jarg1;
-  arg2 = (Dali::Toolkit::Control *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::Control *) &(arg1)->operator =((Dali::Toolkit::Control const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_DownCast(void * jarg1) {
@@ -4812,12 +4539,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_DownCast(void * jarg1) {
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Control(void * jarg1) {
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) jarg1;
-  try {
-    delete arg1;
-  } CALL_CATCH_EXCEPTION();
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_SetKeyInputFocus(void * jarg1) {
@@ -4971,23 +4692,6 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_View_GetStyleName(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_SetBackgroundColor(void * jarg1, void * jarg2) {
-  Dali::Toolkit::Control *arg1 = (Dali::Toolkit::Control *) 0 ;
-  Dali::Vector4 *arg2 = 0 ;
-
-  arg1 = (Dali::Toolkit::Control *)jarg1;
-  arg2 = (Dali::Vector4 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type is null", 0);
-    return ;
-  }
-  {
-    try {
-      (arg1)->SetBackgroundColor((Dali::Vector4 const &)*arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_ClearBackground(void * jarg1) {
@@ -5397,19 +5101,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Alignment_Padding(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Alignment__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::Alignment *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::Alignment *)new Dali::Toolkit::Alignment();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Alignment_New__SWIG_0(int jarg1, int jarg2) {
@@ -5497,27 +5188,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Alignment(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Alignment_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::Alignment result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::Alignment::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::Alignment((const Dali::Toolkit::Alignment &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Alignment_SetAlignmentType(void * jarg1, int jarg2) {
@@ -5687,99 +5357,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_KeyEventSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::Toolkit::Control::KeyEventSignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::Control::KeyEventSignalType *) &(arg1)->KeyEventSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_KeyInputFocusGainedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::Toolkit::Control::KeyInputFocusSignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::Control::KeyInputFocusSignalType *) &(arg1)->KeyInputFocusGainedSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FlexContainer__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::FlexContainer *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::FlexContainer *)new Dali::Toolkit::FlexContainer();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FlexContainer__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::FlexContainer *arg1 = 0 ;
-  Dali::Toolkit::FlexContainer *result = 0 ;
-
-  arg1 = (Dali::Toolkit::FlexContainer *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::FlexContainer const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::FlexContainer *)new Dali::Toolkit::FlexContainer((Dali::Toolkit::FlexContainer const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FlexContainer_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::FlexContainer *arg1 = (Dali::Toolkit::FlexContainer *) 0 ;
-  Dali::Toolkit::FlexContainer *arg2 = 0 ;
-  Dali::Toolkit::FlexContainer *result = 0 ;
-
-  arg1 = (Dali::Toolkit::FlexContainer *)jarg1;
-  arg2 = (Dali::Toolkit::FlexContainer *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::FlexContainer const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::FlexContainer *) &(arg1)->operator =((Dali::Toolkit::FlexContainer const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FlexContainer(void * jarg1) {
   Dali::Toolkit::FlexContainer *arg1 = (Dali::Toolkit::FlexContainer *) 0 ;
 
@@ -5807,73 +5384,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FlexContainer_New() {
   return jresult;
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FlexContainer_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::FlexContainer result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::FlexContainer::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::FlexContainer((const Dali::Toolkit::FlexContainer &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FlexContainer_ChildProperty() {
-  void * jresult ;
-  Dali::Toolkit::FlexContainer::ChildProperty *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::FlexContainer::ChildProperty *)new Dali::Toolkit::FlexContainer::ChildProperty();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FlexContainer_ChildProperty(void * jarg1) {
-  Dali::Toolkit::FlexContainer::ChildProperty *arg1 = (Dali::Toolkit::FlexContainer::ChildProperty *) 0 ;
-
-  arg1 = (Dali::Toolkit::FlexContainer::ChildProperty *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImageView_Property() {
-  void * jresult ;
-  Dali::Toolkit::ImageView::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ImageView::Property *)new Dali::Toolkit::ImageView::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageView_Property(void * jarg1) {
   Dali::Toolkit::ImageView::Property *arg1 = (Dali::Toolkit::ImageView::Property *) 0 ;
 
@@ -5885,22 +5395,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageView_Property(void * jarg1) 
   }
 
 }
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImageView__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::ImageView *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ImageView *)new Dali::Toolkit::ImageView();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_0() {
   void * jresult ;
@@ -5988,73 +5482,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageView(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ImageView__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ImageView *arg1 = 0 ;
-  Dali::Toolkit::ImageView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ImageView *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ImageView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::ImageView *)new Dali::Toolkit::ImageView((Dali::Toolkit::ImageView const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::ImageView *arg1 = (Dali::Toolkit::ImageView *) 0 ;
-  Dali::Toolkit::ImageView *arg2 = 0 ;
-  Dali::Toolkit::ImageView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ImageView *)jarg1;
-  arg2 = (Dali::Toolkit::ImageView *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ImageView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::ImageView *) &(arg1)->operator =((Dali::Toolkit::ImageView const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::ImageView result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::ImageView::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView &)result);
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImageView_SetImage__SWIG_1(void * jarg1, char * jarg2) {
   Dali::Toolkit::ImageView *arg1 = (Dali::Toolkit::ImageView *) 0 ;
   std::string *arg2 = 0 ;
@@ -6108,509 +5535,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImageView_SetImage__SWIG_2(void * jarg1,
 
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollBar_Property() {
-  void * jresult ;
-  Dali::Toolkit::ScrollBar::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ScrollBar::Property *)new Dali::Toolkit::ScrollBar::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollBar_Property(void * jarg1) {
-  Dali::Toolkit::ScrollBar::Property *arg1 = (Dali::Toolkit::ScrollBar::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollBar__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::ScrollBar *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ScrollBar *)new Dali::Toolkit::ScrollBar();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollBar__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = 0 ;
-  Dali::Toolkit::ScrollBar *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScrollBar const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::ScrollBar *)new Dali::Toolkit::ScrollBar((Dali::Toolkit::ScrollBar const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollBar_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Toolkit::ScrollBar *arg2 = 0 ;
-  Dali::Toolkit::ScrollBar *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  arg2 = (Dali::Toolkit::ScrollBar *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScrollBar const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::ScrollBar *) &(arg1)->operator =((Dali::Toolkit::ScrollBar const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollBar(void * jarg1) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollBar_New__SWIG_0(int jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ScrollBar::Direction arg1 ;
-  Dali::Toolkit::ScrollBar result;
-
-  arg1 = (Dali::Toolkit::ScrollBar::Direction)jarg1;
-  {
-    try {
-      result = Dali::Toolkit::ScrollBar::New(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ScrollBar((const Dali::Toolkit::ScrollBar &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollBar_New__SWIG_1() {
-  void * jresult ;
-  Dali::Toolkit::ScrollBar result;
-
-  {
-    try {
-      result = Dali::Toolkit::ScrollBar::New();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ScrollBar((const Dali::Toolkit::ScrollBar &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollBar_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::ScrollBar result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::ScrollBar::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ScrollBar((const Dali::Toolkit::ScrollBar &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_SetScrollPropertySource(void * jarg1, void * jarg2, int jarg3, int jarg4, int jarg5, int jarg6) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Handle arg2 ;
-  Dali::Property::Index arg3 ;
-  Dali::Property::Index arg4 ;
-  Dali::Property::Index arg5 ;
-  Dali::Property::Index arg6 ;
-  Dali::Handle *argp2 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  argp2 = (Dali::Handle *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Handle", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  arg3 = (Dali::Property::Index)jarg3;
-  arg4 = (Dali::Property::Index)jarg4;
-  arg5 = (Dali::Property::Index)jarg5;
-  arg6 = (Dali::Property::Index)jarg6;
-  {
-    try {
-      (arg1)->SetScrollPropertySource(arg2,arg3,arg4,arg5,arg6);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_SetScrollIndicator(void * jarg1, void * jarg2) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Actor arg2 ;
-  Dali::Actor *argp2 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  argp2 = (Dali::Actor *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      (arg1)->SetScrollIndicator(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollBar_GetScrollIndicator(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Actor result;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      result = (arg1)->GetScrollIndicator();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Actor((const Dali::Actor &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_SetScrollPositionIntervals(void * jarg1, void * jarg2) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true > *arg2 = 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  arg2 = (Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true > const & type is null", 0);
-    return ;
-  }
-  {
-    try {
-      (arg1)->SetScrollPositionIntervals((Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true > const &)*arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollBar_GetScrollPositionIntervals(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      jresult = new Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true >((const Dali::Vector< float,TypeTraits< float >::IS_TRIVIAL_TYPE==true > &)(((Dali::Toolkit::ScrollBar const *)arg1)->GetScrollPositionIntervals()));
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return jresult;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_SetScrollDirection(void * jarg1, int jarg2) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Toolkit::ScrollBar::Direction arg2 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  arg2 = (Dali::Toolkit::ScrollBar::Direction)jarg2;
-  {
-    try {
-      (arg1)->SetScrollDirection(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_GetScrollDirection(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Toolkit::ScrollBar::Direction result;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::ScrollBar::Direction)((Dali::Toolkit::ScrollBar const *)arg1)->GetScrollDirection();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_SetIndicatorHeightPolicy(void * jarg1, int jarg2) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Toolkit::ScrollBar::IndicatorHeightPolicy arg2 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  arg2 = (Dali::Toolkit::ScrollBar::IndicatorHeightPolicy)jarg2;
-  {
-    try {
-      (arg1)->SetIndicatorHeightPolicy(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollBar_GetIndicatorHeightPolicy(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Toolkit::ScrollBar::IndicatorHeightPolicy result;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::ScrollBar::IndicatorHeightPolicy)((Dali::Toolkit::ScrollBar const *)arg1)->GetIndicatorHeightPolicy();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_SetIndicatorFixedHeight(void * jarg1, float jarg2) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  float arg2 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  arg2 = (float)jarg2;
-  {
-    try {
-      (arg1)->SetIndicatorFixedHeight(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ScrollBar_GetIndicatorFixedHeight(void * jarg1) {
-  float jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  float result;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      result = (float)((Dali::Toolkit::ScrollBar const *)arg1)->GetIndicatorFixedHeight();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_SetIndicatorShowDuration(void * jarg1, float jarg2) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  float arg2 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  arg2 = (float)jarg2;
-  {
-    try {
-      (arg1)->SetIndicatorShowDuration(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ScrollBar_GetIndicatorShowDuration(void * jarg1) {
-  float jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  float result;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      result = (float)((Dali::Toolkit::ScrollBar const *)arg1)->GetIndicatorShowDuration();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_SetIndicatorHideDuration(void * jarg1, float jarg2) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  float arg2 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  arg2 = (float)jarg2;
-  {
-    try {
-      (arg1)->SetIndicatorHideDuration(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ScrollBar_GetIndicatorHideDuration(void * jarg1) {
-  float jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  float result;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      result = (float)((Dali::Toolkit::ScrollBar const *)arg1)->GetIndicatorHideDuration();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_ShowIndicator(void * jarg1) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      (arg1)->ShowIndicator();
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollBar_HideIndicator(void * jarg1) {
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      (arg1)->HideIndicator();
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollBar_PanFinishedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Toolkit::ScrollBar::PanFinishedSignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::ScrollBar::PanFinishedSignalType *) &(arg1)->PanFinishedSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollBar_ScrollPositionIntervalReachedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ScrollBar *arg1 = (Dali::Toolkit::ScrollBar *) 0 ;
-  Dali::Toolkit::ScrollBar::ScrollPositionIntervalReachedSignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollBar *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::ScrollBar::ScrollPositionIntervalReachedSignalType *) &(arg1)->ScrollPositionIntervalReachedSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Scrollable_Property() {
-  void * jresult ;
-  Dali::Toolkit::Scrollable::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::Scrollable::Property *)new Dali::Toolkit::Scrollable::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Scrollable_Property(void * jarg1) {
-  Dali::Toolkit::Scrollable::Property *arg1 = (Dali::Toolkit::Scrollable::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::Scrollable::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Scrollable__SWIG_0() {
   void * jresult ;
   Dali::Toolkit::Scrollable *result = 0 ;
@@ -6618,50 +5542,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Scrollable__SWIG_0() {
   {
     try {
       result = (Dali::Toolkit::Scrollable *)new Dali::Toolkit::Scrollable();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Scrollable__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Scrollable *arg1 = 0 ;
-  Dali::Toolkit::Scrollable *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Scrollable *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Scrollable const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::Scrollable *)new Dali::Toolkit::Scrollable((Dali::Toolkit::Scrollable const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Scrollable_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::Scrollable *arg1 = (Dali::Toolkit::Scrollable *) 0 ;
-  Dali::Toolkit::Scrollable *arg2 = 0 ;
-  Dali::Toolkit::Scrollable *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Scrollable *)jarg1;
-  arg2 = (Dali::Toolkit::Scrollable *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Scrollable const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::Scrollable *) &(arg1)->operator =((Dali::Toolkit::Scrollable const &)*arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -6680,29 +5560,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Scrollable(void * jarg1) {
     } CALL_CATCH_EXCEPTION();
   }
 
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Scrollable_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::Scrollable result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::Scrollable::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::Scrollable((const Dali::Toolkit::Scrollable &)result);
-  return jresult;
 }
 
 
@@ -6857,38 +5714,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Scrollable_ScrollCompletedSignal(void 
 }
 
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsVertical(int jarg1) {
-  bool jresult ;
-  Dali::Toolkit::ControlOrientation::Type arg1 ;
-  bool result;
-
-  arg1 = (Dali::Toolkit::ControlOrientation::Type)jarg1;
-  {
-    try {
-      result = (bool)Dali::Toolkit::IsVertical(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
 
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsHorizontal(int jarg1) {
-  bool jresult ;
-  Dali::Toolkit::ControlOrientation::Type arg1 ;
-  bool result;
-
-  arg1 = (Dali::Toolkit::ControlOrientation::Type)jarg1;
-  {
-    try {
-      result = (bool)Dali::Toolkit::IsHorizontal(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ItemRange__SWIG_0(unsigned int jarg1, unsigned int jarg2) {
@@ -7066,36 +5893,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ItemLayout(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemLayout_SetOrientation(void * jarg1, int jarg2) {
-  Dali::Toolkit::ItemLayout *arg1 = (Dali::Toolkit::ItemLayout *) 0 ;
-  Dali::Toolkit::ControlOrientation::Type arg2 ;
-
-  arg1 = (Dali::Toolkit::ItemLayout *)jarg1;
-  arg2 = (Dali::Toolkit::ControlOrientation::Type)jarg2;
-  {
-    try {
-      (arg1)->SetOrientation(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ItemLayout_GetOrientation(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::ItemLayout *arg1 = (Dali::Toolkit::ItemLayout *) 0 ;
-  Dali::Toolkit::ControlOrientation::Type result;
-
-  arg1 = (Dali::Toolkit::ItemLayout *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::ControlOrientation::Type)((Dali::Toolkit::ItemLayout const *)arg1)->GetOrientation();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (int)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemLayout_SetLayoutProperties(void * jarg1, void * jarg2) {
@@ -7633,93 +6432,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemFactory_ItemReleasedSwigExplicitItem
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ItemView_Property() {
-  void * jresult ;
-  Dali::Toolkit::ItemView::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ItemView::Property *)new Dali::Toolkit::ItemView::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ItemView_Property(void * jarg1) {
-  Dali::Toolkit::ItemView::Property *arg1 = (Dali::Toolkit::ItemView::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::ItemView::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ItemView__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::ItemView *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ItemView *)new Dali::Toolkit::ItemView();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ItemView__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ItemView *arg1 = 0 ;
-  Dali::Toolkit::ItemView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ItemView *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ItemView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::ItemView *)new Dali::Toolkit::ItemView((Dali::Toolkit::ItemView const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ItemView_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
-  Dali::Toolkit::ItemView *arg2 = 0 ;
-  Dali::Toolkit::ItemView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ItemView *)jarg1;
-  arg2 = (Dali::Toolkit::ItemView *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ItemView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::ItemView *) &(arg1)->operator =((Dali::Toolkit::ItemView const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ItemView(void * jarg1) {
   Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
 
@@ -7746,29 +6458,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ItemView_New(void * jarg1) {
   {
     try {
       result = Dali::Toolkit::ItemView::New(*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ItemView((const Dali::Toolkit::ItemView &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ItemView_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::ItemView result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::ItemView::DownCast(arg1);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -7921,102 +6610,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_DeactivateCurrentLayout(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_SetMinimumSwipeSpeed(void * jarg1, float jarg2) {
-  Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
-  float arg2 ;
-
-  arg1 = (Dali::Toolkit::ItemView *)jarg1;
-  arg2 = (float)jarg2;
-  {
-    try {
-      (arg1)->SetMinimumSwipeSpeed(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ItemView_GetMinimumSwipeSpeed(void * jarg1) {
-  float jresult ;
-  Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
-  float result;
-
-  arg1 = (Dali::Toolkit::ItemView *)jarg1;
-  {
-    try {
-      result = (float)((Dali::Toolkit::ItemView const *)arg1)->GetMinimumSwipeSpeed();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_SetMinimumSwipeDistance(void * jarg1, float jarg2) {
-  Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
-  float arg2 ;
-
-  arg1 = (Dali::Toolkit::ItemView *)jarg1;
-  arg2 = (float)jarg2;
-  {
-    try {
-      (arg1)->SetMinimumSwipeDistance(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ItemView_GetMinimumSwipeDistance(void * jarg1) {
-  float jresult ;
-  Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
-  float result;
-
-  arg1 = (Dali::Toolkit::ItemView *)jarg1;
-  {
-    try {
-      result = (float)((Dali::Toolkit::ItemView const *)arg1)->GetMinimumSwipeDistance();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_SetWheelScrollDistanceStep(void * jarg1, float jarg2) {
-  Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
-  float arg2 ;
-
-  arg1 = (Dali::Toolkit::ItemView *)jarg1;
-  arg2 = (float)jarg2;
-  {
-    try {
-      (arg1)->SetWheelScrollDistanceStep(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ItemView_GetWheelScrollDistanceStep(void * jarg1) {
-  float jresult ;
-  Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
-  float result;
-
-  arg1 = (Dali::Toolkit::ItemView *)jarg1;
-  {
-    try {
-      result = (float)((Dali::Toolkit::ItemView const *)arg1)->GetWheelScrollDistanceStep();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_SetAnchoring(void * jarg1, bool jarg2) {
   Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
   bool arg2 ;
@@ -8095,38 +6688,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_ScrollToItem(void * jarg1, unsi
     } CALL_CATCH_EXCEPTION();
   }
 
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_SetRefreshInterval(void * jarg1, float jarg2) {
-  Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
-  float arg2 ;
-
-  arg1 = (Dali::Toolkit::ItemView *)jarg1;
-  arg2 = (float)jarg2;
-  {
-    try {
-      (arg1)->SetRefreshInterval(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_ItemView_GetRefreshInterval(void * jarg1) {
-  float jresult ;
-  Dali::Toolkit::ItemView *arg1 = (Dali::Toolkit::ItemView *) 0 ;
-  float result;
-
-  arg1 = (Dali::Toolkit::ItemView *)jarg1;
-  {
-    try {
-      result = (float)((Dali::Toolkit::ItemView const *)arg1)->GetRefreshInterval();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
 }
 
 
@@ -8421,50 +6982,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ItemView_LayoutActivatedSignal(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MoveActorConstraint(void * jarg1, void * jarg2) {
-  Dali::Vector3 *arg1 = 0 ;
-  PropertyInputContainer *arg2 = 0 ;
-
-  arg1 = (Dali::Vector3 *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 & type is null", 0);
-    return ;
-  }
-  arg2 = (PropertyInputContainer *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "PropertyInputContainer const & type is null", 0);
-    return ;
-  }
-  {
-    try {
-      Dali::Toolkit::MoveActorConstraint(*arg1,(PropertyInputContainer const &)*arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WrapActorConstraint(void * jarg1, void * jarg2) {
-  Dali::Vector3 *arg1 = 0 ;
-  PropertyInputContainer *arg2 = 0 ;
-
-  arg1 = (Dali::Vector3 *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 & type is null", 0);
-    return ;
-  }
-  arg2 = (PropertyInputContainer *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "PropertyInputContainer const & type is null", 0);
-    return ;
-  }
-  {
-    try {
-      Dali::Toolkit::WrapActorConstraint(*arg1,(PropertyInputContainer const &)*arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollViewEffect() {
@@ -8534,44 +7053,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollViewPagePathEffect_New(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollViewPagePathEffect() {
-  void * jresult ;
-  Dali::Toolkit::ScrollViewPagePathEffect *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ScrollViewPagePathEffect *)new Dali::Toolkit::ScrollViewPagePathEffect();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollViewPagePathEffect_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::ScrollViewPagePathEffect result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::ScrollViewPagePathEffect::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ScrollViewPagePathEffect((const Dali::Toolkit::ScrollViewPagePathEffect &)result);
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollViewPagePathEffect_ApplyToPage(void * jarg1, void * jarg2, unsigned int jarg3) {
   Dali::Toolkit::ScrollViewPagePathEffect *arg1 = (Dali::Toolkit::ScrollViewPagePathEffect *) 0 ;
   Dali::Actor arg2 ;
@@ -8599,78 +7080,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollViewPagePathEffect(void * j
   Dali::Toolkit::ScrollViewPagePathEffect *arg1 = (Dali::Toolkit::ScrollViewPagePathEffect *) 0 ;
 
   arg1 = (Dali::Toolkit::ScrollViewPagePathEffect *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ClampState2D_x_set(void * jarg1, int jarg2) {
-  Dali::Toolkit::ClampState2D *arg1 = (Dali::Toolkit::ClampState2D *) 0 ;
-  Dali::Toolkit::ClampState arg2 ;
-
-  arg1 = (Dali::Toolkit::ClampState2D *)jarg1;
-  arg2 = (Dali::Toolkit::ClampState)jarg2;
-  if (arg1) (arg1)->x = arg2;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ClampState2D_x_get(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::ClampState2D *arg1 = (Dali::Toolkit::ClampState2D *) 0 ;
-  Dali::Toolkit::ClampState result;
-
-  arg1 = (Dali::Toolkit::ClampState2D *)jarg1;
-  result = (Dali::Toolkit::ClampState) ((arg1)->x);
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ClampState2D_y_set(void * jarg1, int jarg2) {
-  Dali::Toolkit::ClampState2D *arg1 = (Dali::Toolkit::ClampState2D *) 0 ;
-  Dali::Toolkit::ClampState arg2 ;
-
-  arg1 = (Dali::Toolkit::ClampState2D *)jarg1;
-  arg2 = (Dali::Toolkit::ClampState)jarg2;
-  if (arg1) (arg1)->y = arg2;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ClampState2D_y_get(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::ClampState2D *arg1 = (Dali::Toolkit::ClampState2D *) 0 ;
-  Dali::Toolkit::ClampState result;
-
-  arg1 = (Dali::Toolkit::ClampState2D *)jarg1;
-  result = (Dali::Toolkit::ClampState) ((arg1)->y);
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ClampState2D() {
-  void * jresult ;
-  Dali::Toolkit::ClampState2D *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ClampState2D *)new Dali::Toolkit::ClampState2D();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ClampState2D(void * jarg1) {
-  Dali::Toolkit::ClampState2D *arg1 = (Dali::Toolkit::ClampState2D *) 0 ;
-
-  arg1 = (Dali::Toolkit::ClampState2D *)jarg1;
   {
     try {
       delete arg1;
@@ -9568,100 +7977,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FixedRuler(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_ClampEvent_scale_set(void * jarg1, void * jarg2) {
-  Dali::Toolkit::ScrollView::ClampEvent *arg1 = (Dali::Toolkit::ScrollView::ClampEvent *) 0 ;
-  Dali::Toolkit::ClampState2D *arg2 = (Dali::Toolkit::ClampState2D *) 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollView::ClampEvent *)jarg1;
-  arg2 = (Dali::Toolkit::ClampState2D *)jarg2;
-  if (arg1) (arg1)->scale = *arg2;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollView_ClampEvent_scale_get(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ScrollView::ClampEvent *arg1 = (Dali::Toolkit::ScrollView::ClampEvent *) 0 ;
-  Dali::Toolkit::ClampState2D *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollView::ClampEvent *)jarg1;
-  result = (Dali::Toolkit::ClampState2D *)& ((arg1)->scale);
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_ClampEvent_position_set(void * jarg1, void * jarg2) {
-  Dali::Toolkit::ScrollView::ClampEvent *arg1 = (Dali::Toolkit::ScrollView::ClampEvent *) 0 ;
-  Dali::Toolkit::ClampState2D *arg2 = (Dali::Toolkit::ClampState2D *) 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollView::ClampEvent *)jarg1;
-  arg2 = (Dali::Toolkit::ClampState2D *)jarg2;
-  if (arg1) (arg1)->position = *arg2;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollView_ClampEvent_position_get(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ScrollView::ClampEvent *arg1 = (Dali::Toolkit::ScrollView::ClampEvent *) 0 ;
-  Dali::Toolkit::ClampState2D *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollView::ClampEvent *)jarg1;
-  result = (Dali::Toolkit::ClampState2D *)& ((arg1)->position);
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_ClampEvent_rotation_set(void * jarg1, int jarg2) {
-  Dali::Toolkit::ScrollView::ClampEvent *arg1 = (Dali::Toolkit::ScrollView::ClampEvent *) 0 ;
-  Dali::Toolkit::ClampState arg2 ;
-
-  arg1 = (Dali::Toolkit::ScrollView::ClampEvent *)jarg1;
-  arg2 = (Dali::Toolkit::ClampState)jarg2;
-  if (arg1) (arg1)->rotation = arg2;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ScrollView_ClampEvent_rotation_get(void * jarg1) {
-  int jresult ;
-  Dali::Toolkit::ScrollView::ClampEvent *arg1 = (Dali::Toolkit::ScrollView::ClampEvent *) 0 ;
-  Dali::Toolkit::ClampState result;
-
-  arg1 = (Dali::Toolkit::ScrollView::ClampEvent *)jarg1;
-  result = (Dali::Toolkit::ClampState) ((arg1)->rotation);
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollView_ClampEvent() {
-  void * jresult ;
-  Dali::Toolkit::ScrollView::ClampEvent *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ScrollView::ClampEvent *)new Dali::Toolkit::ScrollView::ClampEvent();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollView_ClampEvent(void * jarg1) {
-  Dali::Toolkit::ScrollView::ClampEvent *arg1 = (Dali::Toolkit::ScrollView::ClampEvent *) 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollView::ClampEvent *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SnapEvent_type_set(void * jarg1, int jarg2) {
   Dali::Toolkit::ScrollView::SnapEvent *arg1 = (Dali::Toolkit::ScrollView::SnapEvent *) 0 ;
   Dali::Toolkit::SnapType arg2 ;
@@ -9756,93 +8071,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollView_SnapEvent(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollView_Property() {
-  void * jresult ;
-  Dali::Toolkit::ScrollView::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ScrollView::Property *)new Dali::Toolkit::ScrollView::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollView_Property(void * jarg1) {
-  Dali::Toolkit::ScrollView::Property *arg1 = (Dali::Toolkit::ScrollView::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollView::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollView__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::ScrollView *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ScrollView *)new Dali::Toolkit::ScrollView();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ScrollView__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ScrollView *arg1 = 0 ;
-  Dali::Toolkit::ScrollView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollView *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScrollView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::ScrollView *)new Dali::Toolkit::ScrollView((Dali::Toolkit::ScrollView const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollView_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
-  Dali::Toolkit::ScrollView *arg2 = 0 ;
-  Dali::Toolkit::ScrollView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollView *)jarg1;
-  arg2 = (Dali::Toolkit::ScrollView *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScrollView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::ScrollView *) &(arg1)->operator =((Dali::Toolkit::ScrollView const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollView(void * jarg1) {
   Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
 
@@ -9871,27 +8099,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollView_New() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollView_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::ScrollView result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::ScrollView::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ScrollView((const Dali::Toolkit::ScrollView &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollView_GetScrollSnapAlphaFunction(void * jarg1) {
@@ -10434,44 +8641,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetMaxFlickSpeed(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollView_GetWheelScrollDistanceStep(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
-  Dali::Vector2 result;
-
-  arg1 = (Dali::Toolkit::ScrollView *)jarg1;
-  {
-    try {
-      result = ((Dali::Toolkit::ScrollView const *)arg1)->GetWheelScrollDistanceStep();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_SetWheelScrollDistanceStep(void * jarg1, void * jarg2) {
-  Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
-  Dali::Vector2 arg2 ;
-  Dali::Vector2 *argp2 ;
-
-  arg1 = (Dali::Toolkit::ScrollView *)jarg1;
-  argp2 = (Dali::Vector2 *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Vector2", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      (arg1)->SetWheelScrollDistanceStep(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollView_GetCurrentScrollPosition(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
@@ -10762,17 +8931,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_ApplyConstraintToChildren(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_RemoveConstraintsFromChildren(void * jarg1) {
-  Dali::Toolkit::ScrollView *arg1 = (Dali::Toolkit::ScrollView *) 0 ;
-
-  arg1 = (Dali::Toolkit::ScrollView *)jarg1;
-  {
-    try {
-      (arg1)->RemoveConstraintsFromChildren();
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScrollView_ApplyEffect(void * jarg1, void * jarg2) {
@@ -10957,62 +9115,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ScrollView_SnapStartedSignal(void * ja
 
   jresult = (void *)result;
   return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TableView_Property() {
-  void * jresult ;
-  Dali::Toolkit::TableView::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TableView::Property *)new Dali::Toolkit::TableView::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TableView_Property(void * jarg1) {
-  Dali::Toolkit::TableView::Property *arg1 = (Dali::Toolkit::TableView::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::TableView::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TableView_ChildProperty() {
-  void * jresult ;
-  Dali::Toolkit::TableView::ChildProperty *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TableView::ChildProperty *)new Dali::Toolkit::TableView::ChildProperty();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TableView_ChildProperty(void * jarg1) {
-  Dali::Toolkit::TableView::ChildProperty *arg1 = (Dali::Toolkit::TableView::ChildProperty *) 0 ;
-
-  arg1 = (Dali::Toolkit::TableView::ChildProperty *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
 }
 
 
@@ -11212,21 +9314,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TableView_CellPosition(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TableView__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::TableView *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TableView *)new Dali::Toolkit::TableView();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TableView__SWIG_1(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::TableView *arg1 = 0 ;
@@ -11240,29 +9327,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TableView__SWIG_1(void * jarg1) {
   {
     try {
       result = (Dali::Toolkit::TableView *)new Dali::Toolkit::TableView((Dali::Toolkit::TableView const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TableView_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
-  Dali::Toolkit::TableView *arg2 = 0 ;
-  Dali::Toolkit::TableView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::TableView *)jarg1;
-  arg2 = (Dali::Toolkit::TableView *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::TableView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::TableView *) &(arg1)->operator =((Dali::Toolkit::TableView const &)*arg2);
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -11303,27 +9367,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TableView_New(unsigned int jarg1, unsi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TableView_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::TableView result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::TableView::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::TableView((const Dali::Toolkit::TableView &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TableView_AddChild(void * jarg1, void * jarg2, void * jarg3) {
@@ -11470,27 +9513,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_DeleteRow__SWIG_0(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_DeleteRow__SWIG_1(void * jarg1, unsigned int jarg2, void * jarg3) {
-  Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
-  unsigned int arg2 ;
-  std::vector< Dali::Actor > *arg3 = 0 ;
-
-  arg1 = (Dali::Toolkit::TableView *)jarg1;
-  arg2 = (unsigned int)jarg2;
-  arg3 = (std::vector< Dali::Actor > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Dali::Actor > & type is null", 0);
-    return ;
-  }
-  {
-    try {
-      (arg1)->DeleteRow(arg2,*arg3);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_InsertColumn(void * jarg1, unsigned int jarg2) {
   Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
   unsigned int arg2 ;
@@ -11521,27 +9543,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_DeleteColumn__SWIG_0(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_DeleteColumn__SWIG_1(void * jarg1, unsigned int jarg2, void * jarg3) {
-  Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
-  unsigned int arg2 ;
-  std::vector< Dali::Actor > *arg3 = 0 ;
-
-  arg1 = (Dali::Toolkit::TableView *)jarg1;
-  arg2 = (unsigned int)jarg2;
-  arg3 = (std::vector< Dali::Actor > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Dali::Actor > & type is null", 0);
-    return ;
-  }
-  {
-    try {
-      (arg1)->DeleteColumn(arg2,*arg3);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_Resize__SWIG_0(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
   Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
   unsigned int arg2 ;
@@ -11553,29 +9554,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_Resize__SWIG_0(void * jarg1, u
   {
     try {
       (arg1)->Resize(arg2,arg3);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_Resize__SWIG_1(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4) {
-  Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
-  unsigned int arg2 ;
-  unsigned int arg3 ;
-  std::vector< Dali::Actor > *arg4 = 0 ;
-
-  arg1 = (Dali::Toolkit::TableView *)jarg1;
-  arg2 = (unsigned int)jarg2;
-  arg3 = (unsigned int)jarg3;
-  arg4 = (std::vector< Dali::Actor > *)jarg4;
-  if (!arg4) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Dali::Actor > & type is null", 0);
-    return ;
-  }
-  {
-    try {
-      (arg1)->Resize(arg2,arg3,*arg4);
     } CALL_CATCH_EXCEPTION();
   }
 
@@ -11832,38 +9810,8 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_TableView_GetRelativeWidth(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TableView_GetRows(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
-  unsigned int result;
-
-  arg1 = (Dali::Toolkit::TableView *)jarg1;
-  {
-    try {
-      result = (unsigned int)(arg1)->GetRows();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TableView_GetColumns(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Toolkit::TableView *arg1 = (Dali::Toolkit::TableView *) 0 ;
-  unsigned int result;
-
-  arg1 = (Dali::Toolkit::TableView *)jarg1;
-  {
-    try {
-      result = (unsigned int)(arg1)->GetColumns();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_SetCellAlignment(void * jarg1, void * jarg2, int jarg3, int jarg4) {
@@ -11890,35 +9838,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TableView_SetCellAlignment(void * jarg1,
 
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextLabel_Property() {
-  void * jresult ;
-  Dali::Toolkit::TextLabel::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TextLabel::Property *)new Dali::Toolkit::TextLabel::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextLabel_Property(void * jarg1) {
-  Dali::Toolkit::TextLabel::Property *arg1 = (Dali::Toolkit::TextLabel::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::TextLabel::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_0() {
   void * jresult ;
   Dali::Toolkit::TextLabel result;
@@ -11932,32 +9851,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_0() {
   jresult = new Dali::Toolkit::TextLabel((const Dali::Toolkit::TextLabel &)result);
   return jresult;
 }
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_1(char * text) {
-  void * jresult ;
-  std::string *arg1 = 0 ;
-  Dali::Toolkit::TextLabel result;
-
-  if (!text) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(text);
-  arg1 = &arg1_str;
-  {
-    try {
-      result = Dali::Toolkit::TextLabel::New((std::string const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::TextLabel((const Dali::Toolkit::TextLabel &)result);
-
-  //argout typemap for const std::string&
-
-  return jresult;
-}
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New_With_Style(bool hasStyle) {
   void * jresult ;
@@ -12007,65 +9900,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_New_With_String_Style(char *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextLabel__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::TextLabel *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::TextLabel *)new Dali::Toolkit::TextLabel();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_TextLabel__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::TextLabel *arg1 = 0 ;
-  Dali::Toolkit::TextLabel *result = 0 ;
-
-  arg1 = (Dali::Toolkit::TextLabel *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::TextLabel const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::TextLabel *)new Dali::Toolkit::TextLabel((Dali::Toolkit::TextLabel const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::TextLabel *arg1 = (Dali::Toolkit::TextLabel *) 0 ;
-  Dali::Toolkit::TextLabel *arg2 = 0 ;
-  Dali::Toolkit::TextLabel *result = 0 ;
-
-  arg1 = (Dali::Toolkit::TextLabel *)jarg1;
-  arg2 = (Dali::Toolkit::TextLabel *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::TextLabel const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::TextLabel *) &(arg1)->operator =((Dali::Toolkit::TextLabel const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextLabel(void * jarg1) {
   Dali::Toolkit::TextLabel *arg1 = (Dali::Toolkit::TextLabel *) 0 ;
 
@@ -12076,29 +9910,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextLabel(void * jarg1) {
     } CALL_CATCH_EXCEPTION();
   }
 
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::TextLabel result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::TextLabel::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::TextLabel((const Dali::Toolkit::TextLabel &)result);
-  return jresult;
 }
 
 
@@ -13295,32 +11106,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_StyleManager_StyleChangedSignal(void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VideoView_Property() {
-  void * jresult ;
-  Dali::Toolkit::VideoView::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::VideoView::Property *)new Dali::Toolkit::VideoView::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VideoView_Property(void * jarg1) {
-  Dali::Toolkit::VideoView::Property *arg1 = (Dali::Toolkit::VideoView::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::VideoView::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_0() {
@@ -13404,38 +11191,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char * jarg1, bo
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_4(unsigned int jarg1) {
-  void * jresult ;
-  Dali::VideoSyncMode syncMode;
-  Dali::Toolkit::VideoView result;
-
-  syncMode = static_cast<Dali::VideoSyncMode>(jarg1);
-
-  {
-    try {
-      result = Dali::Toolkit::DevelVideoView::New(syncMode);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView &)result);
-
-  return jresult;
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VideoView__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::VideoView *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::VideoView *)new Dali::Toolkit::VideoView();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VideoView(void * jarg1) {
   Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
@@ -13447,73 +11202,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VideoView(void * jarg1) {
     } CALL_CATCH_EXCEPTION();
   }
 
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VideoView__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::VideoView *arg1 = 0 ;
-  Dali::Toolkit::VideoView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::VideoView *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::VideoView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::VideoView *)new Dali::Toolkit::VideoView((Dali::Toolkit::VideoView const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
-  Dali::Toolkit::VideoView *arg2 = 0 ;
-  Dali::Toolkit::VideoView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::VideoView *)jarg1;
-  arg2 = (Dali::Toolkit::VideoView *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::VideoView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::VideoView *) &(arg1)->operator =((Dali::Toolkit::VideoView const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::VideoView result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::VideoView::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView &)result);
-  return jresult;
 }
 
 
@@ -13638,19 +11326,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraView_New__SWIG_0(void * jarg1, i
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_CameraView__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::CameraView *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::CameraView *)new Dali::Toolkit::CameraView();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CameraView(void * jarg1) {
@@ -13687,51 +11362,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_CameraView__SWIG_1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraView_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::CameraView *arg1 = (Dali::Toolkit::CameraView *) 0 ;
-  Dali::Toolkit::CameraView *arg2 = 0 ;
-  Dali::Toolkit::CameraView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::CameraView *)jarg1;
-  arg2 = (Dali::Toolkit::CameraView *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::CameraView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::CameraView *) &(arg1)->operator =((Dali::Toolkit::CameraView const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraView_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::CameraView result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::CameraView::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::CameraView((const Dali::Toolkit::CameraView &)result);
-  return jresult;
-}
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CameraView_Update(void * jarg1) {
   Dali::Toolkit::CameraView *arg1 = (Dali::Toolkit::CameraView *) 0 ;
 
@@ -13741,44 +11371,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CameraView_Update(void * jarg1) {
       (arg1)->Update();
     } CALL_CATCH_EXCEPTION();
   }
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_PlayAnimation(void * jarg1, void * jarg2)
-{
-  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView*)jarg1;
-  if(arg1 == nullptr)
-  {
-    DALI_LOG_ERROR("VideoView is nullptr!");
-    return;
-  }
-  Dali::Animation *arg2 = (Dali::Animation*)jarg2;
-  if(arg2 == nullptr)
-  {
-    DALI_LOG_ERROR("Animation is nullptr!");
-    return;
-  }
-
-  {
-    try{
-
-      Toolkit::DevelVideoView::PlayAnimation(*arg1, *arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_GaussianBlurView__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::GaussianBlurView *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::GaussianBlurView *)new Dali::Toolkit::GaussianBlurView();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
 }
 
 
@@ -13803,29 +11395,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_GaussianBlurView__SWIG_1(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::Toolkit::GaussianBlurView *arg2 = 0 ;
-  Dali::Toolkit::GaussianBlurView *result = 0 ;
-
-  arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
-  arg2 = (Dali::Toolkit::GaussianBlurView *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::GaussianBlurView const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::GaussianBlurView *) &(arg1)->operator =((Dali::Toolkit::GaussianBlurView const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_GaussianBlurView(void * jarg1) {
   Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
 
@@ -13836,29 +11405,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_GaussianBlurView(void * jarg1) {
     } CALL_CATCH_EXCEPTION();
   }
 
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::GaussianBlurView result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::GaussianBlurView::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::GaussianBlurView((const Dali::Toolkit::GaussianBlurView &)result);
-  return jresult;
 }
 
 
@@ -13901,73 +11447,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_New__SWIG_1(unsigned 
 
   jresult = new Dali::Toolkit::GaussianBlurView((const Dali::Toolkit::GaussianBlurView &)result);
   return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_New__SWIG_2(unsigned int jarg1, float jarg2, int jarg3, float jarg4, float jarg5) {
-  void * jresult ;
-  unsigned int arg1 ;
-  float arg2 ;
-  Dali::Pixel::Format arg3 ;
-  float arg4 ;
-  float arg5 ;
-  Dali::Toolkit::GaussianBlurView result;
-
-  arg1 = (unsigned int)jarg1;
-  arg2 = (float)jarg2;
-  arg3 = (Dali::Pixel::Format)jarg3;
-  arg4 = (float)jarg4;
-  arg5 = (float)jarg5;
-  {
-    try {
-      result = Dali::Toolkit::GaussianBlurView::New(arg1,arg2,arg3,arg4,arg5);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::GaussianBlurView((const Dali::Toolkit::GaussianBlurView &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurView_Add(void * jarg1, void * jarg2) {
-  Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::Actor arg2 ;
-  Dali::Actor *argp2 ;
-
-  arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
-  argp2 = (Dali::Actor *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      (arg1)->Add(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurView_Remove(void * jarg1, void * jarg2) {
-  Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::Actor arg2 ;
-  Dali::Actor *argp2 ;
-
-  arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
-  argp2 = (Dali::Actor *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
-    return ;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      (arg1)->Remove(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
 }
 
 
@@ -14052,23 +11531,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBlurStrengthPropertyI
   }
 
   jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurView_GetBlurredRenderTarget(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::GaussianBlurView *arg1 = (Dali::Toolkit::GaussianBlurView *) 0 ;
-  Dali::FrameBuffer result;
-
-  arg1 = (Dali::Toolkit::GaussianBlurView *)jarg1;
-  {
-    try {
-      result = ((Dali::Toolkit::GaussianBlurView const *)arg1)->GetBlurredRenderTarget();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::FrameBuffer((const Dali::FrameBuffer &)result);
   return jresult;
 }
 
@@ -14175,34 +11637,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PageFactory_NewPage(void * jarg1, unsi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PageTurnView_Property() {
-  void * jresult ;
-  Dali::Toolkit::PageTurnView::Property *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::PageTurnView::Property *)new Dali::Toolkit::PageTurnView::Property();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PageTurnView_Property(void * jarg1) {
-  Dali::Toolkit::PageTurnView::Property *arg1 = (Dali::Toolkit::PageTurnView::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::PageTurnView::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PageTurnView__SWIG_0() {
   void * jresult ;
   Dali::Toolkit::PageTurnView *result = 0 ;
@@ -14275,27 +11709,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PageTurnView(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PageTurnView_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::PageTurnView result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::PageTurnView::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::PageTurnView((const Dali::Toolkit::PageTurnView &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PageTurnView_PageTurnStartedSignal(void * jarg1) {
@@ -14366,19 +11779,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PageTurnView_PagePanFinishedSignal(voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PageTurnLandscapeView__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::PageTurnLandscapeView *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::PageTurnLandscapeView *)new Dali::Toolkit::PageTurnLandscapeView();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PageTurnLandscapeView__SWIG_1(void * jarg1) {
@@ -14465,42 +11865,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PageTurnLandscapeView_New(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PageTurnLandscapeView_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::PageTurnLandscapeView result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::PageTurnLandscapeView::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::PageTurnLandscapeView((const Dali::Toolkit::PageTurnLandscapeView &)result);
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PageTurnPortraitView__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::PageTurnPortraitView *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::PageTurnPortraitView *)new Dali::Toolkit::PageTurnPortraitView();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_PageTurnPortraitView__SWIG_1(void * jarg1) {
@@ -14587,27 +11953,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PageTurnPortraitView_New(void * jarg1,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PageTurnPortraitView_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::PageTurnPortraitView result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::PageTurnPortraitView::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::PageTurnPortraitView((const Dali::Toolkit::PageTurnPortraitView &)result);
-  return jresult;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VisualBase__SWIG_0() {
   void * jresult ;
@@ -14658,27 +12003,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VisualBase__SWIG_1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VisualBase_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::Visual::Base *arg1 = (Dali::Toolkit::Visual::Base *) 0 ;
-  Dali::Toolkit::Visual::Base *arg2 = 0 ;
-  Dali::Toolkit::Visual::Base *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Visual::Base *)jarg1;
-  arg2 = (Dali::Toolkit::Visual::Base *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Visual::Base const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::Visual::Base *) &(arg1)->operator =((Dali::Toolkit::Visual::Base const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualBase_SetName(void * jarg1, char * jarg2) {
@@ -14886,61 +12210,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VisualFactory__SWIG_0() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VisualFactory(void * jarg1) {
-  Dali::Toolkit::VisualFactory *arg1 = (Dali::Toolkit::VisualFactory *) 0 ;
-
-  arg1 = (Dali::Toolkit::VisualFactory *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VisualFactory__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::VisualFactory *arg1 = 0 ;
-  Dali::Toolkit::VisualFactory *result = 0 ;
-
-  arg1 = (Dali::Toolkit::VisualFactory *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::VisualFactory const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::VisualFactory *)new Dali::Toolkit::VisualFactory((Dali::Toolkit::VisualFactory const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VisualFactory_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::VisualFactory *arg1 = (Dali::Toolkit::VisualFactory *) 0 ;
-  Dali::Toolkit::VisualFactory *arg2 = 0 ;
-  Dali::Toolkit::VisualFactory *result = 0 ;
-
-  arg1 = (Dali::Toolkit::VisualFactory *)jarg1;
-  arg2 = (Dali::Toolkit::VisualFactory *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::VisualFactory const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::VisualFactory *) &(arg1)->operator =((Dali::Toolkit::VisualFactory const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VisualFactory_CreateVisual__SWIG_0(void * jarg1, void * jarg2) {
@@ -14966,39 +12239,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VisualFactory_CreateVisual__SWIG_0(voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VisualFactory_CreateVisual__SWIG_2(void * jarg1, char * jarg2, void * jarg3) {
-  void * jresult ;
-  Dali::Toolkit::VisualFactory *arg1 = (Dali::Toolkit::VisualFactory *) 0 ;
-  std::string *arg2 = 0 ;
-  Dali::ImageDimensions arg3 ;
-  Dali::ImageDimensions *argp3 ;
-  Dali::Toolkit::Visual::Base result;
-
-  arg1 = (Dali::Toolkit::VisualFactory *)jarg1;
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
-  argp3 = (Dali::ImageDimensions *)jarg3;
-  if (!argp3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
-    return 0;
-  }
-  arg3 = *argp3;
-  {
-    try {
-      result = (arg1)->CreateVisual((std::string const &)*arg2,arg3);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::Visual::Base((const Dali::Toolkit::Visual::Base &)result);
-
-  //argout typemap for const std::string&
-
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualFactory_UsePreCompiledShader(void* csVisualFactory)
 {
@@ -15016,19 +12256,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualFactory_UsePreCompiledShader(void*
   CALL_CATCH_EXCEPTION();
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_AsyncImageLoader__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::AsyncImageLoader *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::AsyncImageLoader *)new Dali::Toolkit::AsyncImageLoader();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AsyncImageLoader(void * jarg1) {
@@ -15103,27 +12330,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AsyncImageLoader_New() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AsyncImageLoader_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::AsyncImageLoader result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::AsyncImageLoader::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::AsyncImageLoader((const Dali::Toolkit::AsyncImageLoader &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_0(void * jarg1, char * jarg2) {
@@ -15278,101 +12484,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AsyncImageLoader_ImageLoadedSignal(voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageSynchronously__SWIG_0(char * jarg1) {
-  void * jresult ;
-  std::string *arg1 = 0 ;
-  Dali::PixelData result;
-
-  if (!jarg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
-  {
-    try {
-      result = Dali::Toolkit::SyncImageLoader::Load((std::string const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::PixelData((const Dali::PixelData &)result);
-
-  //argout typemap for const std::string&
-
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageSynchronously__SWIG_1(char * jarg1, void * jarg2) {
-  void * jresult ;
-  std::string *arg1 = 0 ;
-  Dali::ImageDimensions arg2 ;
-  Dali::ImageDimensions *argp2 ;
-  Dali::PixelData result;
-
-  if (!jarg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
-  argp2 = (Dali::ImageDimensions *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
-    return 0;
-  }
-  arg2 = *argp2;
-  {
-    try {
-      result = Dali::Toolkit::SyncImageLoader::Load((std::string const &)*arg1,arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::PixelData((const Dali::PixelData &)result);
-
-  //argout typemap for const std::string&
-
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LoadImageSynchronously__SWIG_2(char * jarg1, void * jarg2, int jarg3, int jarg4, bool jarg5) {
-  void * jresult ;
-  std::string *arg1 = 0 ;
-  Dali::ImageDimensions arg2 ;
-  Dali::FittingMode::Type arg3 ;
-  Dali::SamplingMode::Type arg4 ;
-  bool arg5 ;
-  Dali::ImageDimensions *argp2 ;
-  Dali::PixelData result;
-
-  if (!jarg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
-  argp2 = (Dali::ImageDimensions *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ImageDimensions", 0);
-    return 0;
-  }
-  arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
-  arg4 = (Dali::SamplingMode::Type)jarg4;
-  arg5 = jarg5 ? true : false;
-  {
-    try {
-      result = Dali::Toolkit::SyncImageLoader::Load((std::string const &)*arg1,arg2,arg3,arg4,arg5);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::PixelData((const Dali::PixelData &)result);
-
-  //argout typemap for const std::string&
-
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CustomAlgorithmInterface(void * jarg1) {
@@ -17422,56 +14537,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ViewResourceReadySignal(void * ja
 }
 
 // Method
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Builder_SWIGUpcast(Dali::Toolkit::Builder *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_TransitionData_SWIGUpcast(Dali::Toolkit::TransitionData *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
-SWIGEXPORT Dali::CustomActorImpl * SWIGSTDCALL CSharp_Dali_ViewImpl_SWIGUpcast(Dali::Toolkit::Internal::Control *jarg1) {
-    return (Dali::CustomActorImpl *)jarg1;
-}
 
-SWIGEXPORT Dali::CustomActor * SWIGSTDCALL CSharp_Dali_View_SWIGUpcast(Dali::Toolkit::Control *jarg1) {
-    return (Dali::CustomActor *)jarg1;
-}
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_KeyInputFocusManager_SWIGUpcast(Dali::Toolkit::KeyInputFocusManager *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_Alignment_SWIGUpcast(Dali::Toolkit::Alignment *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_FlexContainer_SWIGUpcast(Dali::Toolkit::FlexContainer *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
+
+
+
+
 
 SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_ImageView_SWIGUpcast(Dali::Toolkit::ImageView *jarg1) {
     return (Dali::Toolkit::Control *)jarg1;
-}
-
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_Model3dView_SWIGUpcast(Dali::Toolkit::Model3dView *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
-
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_ScrollBar_SWIGUpcast(Dali::Toolkit::ScrollBar *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
-
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_Scrollable_SWIGUpcast(Dali::Toolkit::Scrollable *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
-
-SWIGEXPORT Dali::RefObject * SWIGSTDCALL CSharp_Dali_ItemLayout_SWIGUpcast(Dali::Toolkit::ItemLayout *jarg1) {
-    return (Dali::RefObject *)jarg1;
-}
-
-SWIGEXPORT Dali::Toolkit::Scrollable * SWIGSTDCALL CSharp_Dali_ItemView_SWIGUpcast(Dali::Toolkit::ItemView *jarg1) {
-    return (Dali::Toolkit::Scrollable *)jarg1;
 }
 
 SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_ScrollViewEffect_SWIGUpcast(Dali::Toolkit::ScrollViewEffect *jarg1) {
@@ -17482,74 +14560,26 @@ SWIGEXPORT Dali::Toolkit::ScrollViewEffect * SWIGSTDCALL CSharp_Dali_ScrollViewP
     return (Dali::Toolkit::ScrollViewEffect *)jarg1;
 }
 
-SWIGEXPORT Dali::RefObject * SWIGSTDCALL CSharp_Dali_Ruler_SWIGUpcast(Dali::Toolkit::Ruler *jarg1) {
-    return (Dali::RefObject *)jarg1;
-}
-
-SWIGEXPORT Dali::Toolkit::Ruler * SWIGSTDCALL CSharp_Dali_DefaultRuler_SWIGUpcast(Dali::Toolkit::DefaultRuler *jarg1) {
-    return (Dali::Toolkit::Ruler *)jarg1;
-}
-
-SWIGEXPORT Dali::Toolkit::Ruler * SWIGSTDCALL CSharp_Dali_FixedRuler_SWIGUpcast(Dali::Toolkit::FixedRuler *jarg1) {
-    return (Dali::Toolkit::Ruler *)jarg1;
-}
-
-SWIGEXPORT Dali::Toolkit::Scrollable * SWIGSTDCALL CSharp_Dali_ScrollView_SWIGUpcast(Dali::Toolkit::ScrollView *jarg1) {
-    return (Dali::Toolkit::Scrollable *)jarg1;
-}
-
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_TableView_SWIGUpcast(Dali::Toolkit::TableView *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
 
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_TextLabel_SWIGUpcast(Dali::Toolkit::TextLabel *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_AccessibilityManager_SWIGUpcast(Dali::Toolkit::AccessibilityManager *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_StyleManager_SWIGUpcast(Dali::Toolkit::StyleManager *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_VideoView_SWIGUpcast(Dali::Toolkit::VideoView *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_CameraView_SWIGUpcast(Dali::Toolkit::CameraView *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_GaussianBlurView_SWIGUpcast(Dali::Toolkit::GaussianBlurView *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
 
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_PageTurnView_SWIGUpcast(Dali::Toolkit::PageTurnView *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
+
+
+
+
 
 SWIGEXPORT Dali::Toolkit::PageTurnView * SWIGSTDCALL CSharp_Dali_PageTurnLandscapeView_SWIGUpcast(Dali::Toolkit::PageTurnLandscapeView *jarg1) {
     return (Dali::Toolkit::PageTurnView *)jarg1;
 }
 
-SWIGEXPORT Dali::Toolkit::PageTurnView * SWIGSTDCALL CSharp_Dali_PageTurnPortraitView_SWIGUpcast(Dali::Toolkit::PageTurnPortraitView *jarg1) {
-    return (Dali::Toolkit::PageTurnView *)jarg1;
-}
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_VisualBase_SWIGUpcast(Dali::Toolkit::Visual::Base *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_VisualFactory_SWIGUpcast(Dali::Toolkit::VisualFactory *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_AsyncImageLoader_SWIGUpcast(Dali::Toolkit::AsyncImageLoader *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
 #ifdef __cplusplus
 } // extern "C"

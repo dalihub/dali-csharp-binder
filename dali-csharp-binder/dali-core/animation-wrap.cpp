@@ -42,23 +42,7 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Animation_SA__SP__Sg__Emit(Dali::Sig
 extern "C" {
 #endif
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_Animation_SWIGUpcast(Dali::Animation *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Animation__SWIG_0() {
-  void * jresult ;
-  Dali::Animation *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Animation *)new Dali::Animation();
-    } CALL_CATCH_EXCEPTION(0);
-
-  }
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Animation_New(float jarg1) {
@@ -78,27 +62,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Animation_New(float jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Animation_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Animation result;
-
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Animation::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-
-  }
-  jresult = new Dali::Animation((const Dali::Animation &)result);
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Animation(void * jarg1) {

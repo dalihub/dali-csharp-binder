@@ -575,20 +575,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewWrapperImpl_New(char * jarg1, void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ViewWrapperImpl(void * jarg1) {
-  Dali::Toolkit::Internal::ControlWrapper *arg1 = (Dali::Toolkit::Internal::ControlWrapper *) 0 ;
-
-  arg1 = (Dali::Toolkit::Internal::ControlWrapper *)jarg1;
-  {
-    try {
-      if (arg1)
-      {
-        arg1->Unreference();
-      }
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewWrapperImpl_director_connect(void *objarg, SwigDirector_ViewWrapperImpl::SWIG_Callback0_t callback0, SwigDirector_ViewWrapperImpl::SWIG_Callback1_t callback1, SwigDirector_ViewWrapperImpl::SWIG_Callback2_t callback2, SwigDirector_ViewWrapperImpl::SWIG_Callback3_t callback3, SwigDirector_ViewWrapperImpl::SWIG_Callback4_t callback4, SwigDirector_ViewWrapperImpl::SWIG_Callback5_t callback5, SwigDirector_ViewWrapperImpl::SWIG_Callback6_t callback6, SwigDirector_ViewWrapperImpl::SWIG_Callback9_t callback9, SwigDirector_ViewWrapperImpl::SWIG_Callback11_t callback11, SwigDirector_ViewWrapperImpl::SWIG_Callback12_t callback12, SwigDirector_ViewWrapperImpl::SWIG_Callback13_t callback13, SwigDirector_ViewWrapperImpl::SWIG_Callback14_t callback14, SwigDirector_ViewWrapperImpl::SWIG_Callback15_t callback15, SwigDirector_ViewWrapperImpl::SWIG_Callback16_t callback16, SwigDirector_ViewWrapperImpl::SWIG_Callback17_t callback17, SwigDirector_ViewWrapperImpl::SWIG_Callback18_t callback18, SwigDirector_ViewWrapperImpl::SWIG_Callback19_t callback19, SwigDirector_ViewWrapperImpl::SWIG_Callback20_t callback20, SwigDirector_ViewWrapperImpl::SWIG_Callback21_t callback21, SwigDirector_ViewWrapperImpl::SWIG_Callback24_t callback24, SwigDirector_ViewWrapperImpl::SWIG_Callback25_t callback25, SwigDirector_ViewWrapperImpl::SWIG_Callback26_t callback26, SwigDirector_ViewWrapperImpl::SWIG_Callback28_t callback28, SwigDirector_ViewWrapperImpl::SWIG_Callback29_t callback29, SwigDirector_ViewWrapperImpl::SWIG_Callback30_t callback30, SwigDirector_ViewWrapperImpl::SWIG_Callback31_t callback31, SwigDirector_ViewWrapperImpl::SWIG_Callback32_t callback32, SwigDirector_ViewWrapperImpl::SWIG_Callback33_t callback33, SwigDirector_ViewWrapperImpl::SWIG_Callback34_t callback34, SwigDirector_ViewWrapperImpl::SWIG_Callback35_t callback35, SwigDirector_ViewWrapperImpl::SWIG_Callback36_t callback36, SwigDirector_ViewWrapperImpl::SWIG_Callback37_t callback37, SwigDirector_ViewWrapperImpl::SWIG_Callback38_t callback38, SwigDirector_ViewWrapperImpl::SWIG_Callback39_t callback39, SwigDirector_ViewWrapperImpl::SWIG_Callback40_t callback40) {
@@ -600,25 +586,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewWrapperImpl_director_connect(void *o
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetControlWrapperImpl__SWIG_0(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ControlWrapper *arg1 = 0 ;
-  Dali::Toolkit::Internal::ControlWrapper *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ControlWrapper *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ControlWrapper & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::Internal::ControlWrapper *) &Dali::Toolkit::GetControlWrapperImpl(*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewWrapper_New(char * jarg1, void * jarg2) {
@@ -648,19 +615,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewWrapper_New(char * jarg1, void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ViewWrapper__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::ControlWrapper *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Toolkit::ControlWrapper *)new Dali::Toolkit::ControlWrapper();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ViewWrapper(void * jarg1) {
@@ -676,79 +630,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ViewWrapper(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ViewWrapper__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::ControlWrapper *arg1 = 0 ;
-  Dali::Toolkit::ControlWrapper *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ControlWrapper *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ControlWrapper const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::ControlWrapper *)new Dali::Toolkit::ControlWrapper((Dali::Toolkit::ControlWrapper const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewWrapper_Assign(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Toolkit::ControlWrapper *arg1 = (Dali::Toolkit::ControlWrapper *) 0 ;
-  Dali::Toolkit::ControlWrapper *arg2 = 0 ;
-  Dali::Toolkit::ControlWrapper *result = 0 ;
-
-  arg1 = (Dali::Toolkit::ControlWrapper *)jarg1;
-  arg2 = (Dali::Toolkit::ControlWrapper *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ControlWrapper const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Toolkit::ControlWrapper *) &(arg1)->operator =((Dali::Toolkit::ControlWrapper const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewWrapper_DownCast(void * jarg1) {
-  void * jresult ;
-  Dali::BaseHandle arg1 ;
-  Dali::BaseHandle *argp1 ;
-  Dali::Toolkit::ControlWrapper result;
 
-  argp1 = (Dali::BaseHandle *)jarg1;
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
-    return 0;
-  }
-  arg1 = *argp1;
-  {
-    try {
-      result = Dali::Toolkit::ControlWrapper::DownCast(arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
 
-  jresult = new Dali::Toolkit::ControlWrapper((const Dali::Toolkit::ControlWrapper &)result);
-  return jresult;
-}
-
-SWIGEXPORT Dali::Toolkit::Internal::Control * SWIGSTDCALL CSharp_Dali_ViewWrapperImpl_SWIGUpcast(Dali::Toolkit::Internal::ControlWrapper *jarg1) {
-    return (Dali::Toolkit::Internal::Control *)jarg1;
-}
-
-SWIGEXPORT Dali::Toolkit::Control * SWIGSTDCALL CSharp_Dali_ViewWrapper_SWIGUpcast(Dali::Toolkit::ControlWrapper *jarg1) {
-    return (Dali::Toolkit::Control *)jarg1;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_ViewWrapperImpl_RelayoutRequest(void * jarg1) {
   Dali::Toolkit::Internal::ControlWrapper *arg1 = (Dali::Toolkit::Internal::ControlWrapper *) 0 ;

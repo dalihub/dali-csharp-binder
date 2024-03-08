@@ -47,18 +47,21 @@ Dali::InputMethodContext::CallbackData OnEventReceivedCallback(Dali::InputMethod
 
   eventDataP = (Dali::InputMethodContext::EventData *)&eventData;
 
-  auto* keyboardEventSignal = &inputMethodContextP->EventReceivedSignal();
-
-  auto iter = swig_callbackOnEventReceivedMapper.find(keyboardEventSignal);
-  if(iter != swig_callbackOnEventReceivedMapper.end())
+  if(DALI_LIKELY(inputMethodContextP))
   {
-    auto callbackEventReceived = iter->second;
-    if(callbackEventReceived)
+    auto* keyboardEventSignal = &inputMethodContextP->EventReceivedSignal();
+
+    auto iter = swig_callbackOnEventReceivedMapper.find(keyboardEventSignal);
+    if(iter != swig_callbackOnEventReceivedMapper.end())
     {
-      callbackDataP = (Dali::InputMethodContext::CallbackData *)callbackEventReceived(inputMethodContextP, eventDataP);
-      if (callbackDataP)
+      auto callbackEventReceived = iter->second;
+      if(callbackEventReceived)
       {
-        callbackData = *callbackDataP;
+        callbackDataP = (Dali::InputMethodContext::CallbackData *)callbackEventReceived(inputMethodContextP, eventDataP);
+        if (callbackDataP)
+        {
+          callbackData = *callbackDataP;
+        }
       }
     }
   }
@@ -170,9 +173,6 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_string_string_string_SP__Sg__Emit(Dali::S
 extern "C" {
 #endif
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_InputMethodContext_SWIGUpcast(Dali::InputMethodContext *jarg1) {
-  return (Dali::BaseHandle *)jarg1;
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext_EventData__SWIG_0() {
   void * jresult ;
@@ -500,18 +500,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_Finalize(void * csInp
     } CALL_CATCH_EXCEPTION();  }
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodContext__SWIG_0() {
-  void * jresult ;
-  Dali::InputMethodContext *inputMethodContext = 0 ;
-
-  {
-    try {
-      inputMethodContext = (Dali::InputMethodContext *)new Dali::InputMethodContext();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  jresult = (void *)inputMethodContext;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodContext(void * csInputMethodContext) {
@@ -1368,110 +1356,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyboardEventSignalType(void * ja
 
 
 // VoidSignalType
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VoidSignalType() {
-  void * jresult ;
-  Dali::Signal< void () > *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Signal< void () > *)new Dali::Signal< void () >();
-    } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (void *)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VoidSignalType(void * jarg1) {
-  Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
-
-  arg1 = (Dali::Signal< void () > *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();  }
-}
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_VoidSignalType_Empty(void * jarg1) {
-  unsigned int jresult ;
-  Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
-  bool result;
-
-  arg1 = (Dali::Signal< void () > *)jarg1;
-  {
-    try {
-      result = (bool)((Dali::Signal< void () > const *)arg1)->Empty();
-    } CALL_CATCH_EXCEPTION(0);  }
-  jresult = result;
-  return jresult;
-}
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_VoidSignalType_GetConnectionCount(void * jarg1) {
-  unsigned long jresult ;
-  Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
-  std::size_t result;
-
-  arg1 = (Dali::Signal< void () > *)jarg1;
-  {
-    try {
-      result = ((Dali::Signal< void () > const *)arg1)->GetConnectionCount();
-    } CALL_CATCH_EXCEPTION(0);  }
-  jresult = (unsigned long)result;
-  return jresult;
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VoidSignalType_Connect__SWIG_0(void * jarg1, void * jarg2) {
-  Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
-  void (*arg2)() = (void (*)()) 0 ;
-
-  arg1 = (Dali::Signal< void () > *)jarg1;
-  arg2 = (void (*)())jarg2;
-  {
-    try {
-      (arg1)->Connect(arg2);
-    } CALL_CATCH_EXCEPTION();  }
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VoidSignalType_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
-  void (*arg2)() = (void (*)()) 0 ;
-
-  arg1 = (Dali::Signal< void () > *)jarg1;
-  arg2 = (void (*)())jarg2;
-  {
-    try {
-      (arg1)->Disconnect(arg2);
-    } CALL_CATCH_EXCEPTION();  }
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VoidSignalType_Connect__SWIG_4(void * jarg1, void * jarg2, void * jarg3) {
-  Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
-  Dali::ConnectionTrackerInterface *arg2 = (Dali::ConnectionTrackerInterface *) 0 ;
-  Dali::FunctorDelegate *arg3 = (Dali::FunctorDelegate *) 0 ;
-
-  arg1 = (Dali::Signal< void () > *)jarg1;
-  arg2 = (Dali::ConnectionTrackerInterface *)jarg2;
-  arg3 = (Dali::FunctorDelegate *)jarg3;
-  {
-    try {
-      (arg1)->Connect(arg2,arg3);
-    } CALL_CATCH_EXCEPTION();  }
-}
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VoidSignalType_Emit(void * jarg1) {
-  Dali::Signal< void () > *arg1 = (Dali::Signal< void () > *) 0 ;
-
-  arg1 = (Dali::Signal< void () > *)jarg1;
-  {
-    try {
-      (arg1)->Emit();
-    } CALL_CATCH_EXCEPTION();  }
-}
 
 //StatusSignalType
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_StatusSignalType_Empty(void * jarg1) {

@@ -189,71 +189,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_ZERO_get() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_Assign__SWIG_0(void * jarg1, float* jarg2) {
-  void * jresult ;
-  Dali::Vector2 *arg1 = (Dali::Vector2 *) 0 ;
-  float *arg2 = (float *) 0 ;
-  Dali::Vector2 *result = 0 ;
-
-  arg1 = (Dali::Vector2 *)jarg1;
-  arg2 = jarg2;
-  {
-    try {
-      result = (Dali::Vector2 *) &(arg1)->operator =((float const *)arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
 
 
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_Assign__SWIG_1(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Vector2 *arg1 = (Dali::Vector2 *) 0 ;
-  Dali::Vector3 *arg2 = 0 ;
-  Dali::Vector2 *result = 0 ;
-
-  arg1 = (Dali::Vector2 *)jarg1;
-  arg2 = (Dali::Vector3 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Vector2 *) &(arg1)->operator =((Dali::Vector3 const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_Assign__SWIG_2(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Vector2 *arg1 = (Dali::Vector2 *) 0 ;
-  Dali::Vector4 *arg2 = 0 ;
-  Dali::Vector2 *result = 0 ;
-
-  arg1 = (Dali::Vector2 *)jarg1;
-  arg2 = (Dali::Vector4 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Vector2 *) &(arg1)->operator =((Dali::Vector4 const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_Add(void * jarg1, void * jarg2) {
@@ -1050,71 +989,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_ZERO_get() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_Assign__SWIG_0(void * jarg1, float* jarg2) {
-  void * jresult ;
-  Dali::Vector3 *arg1 = (Dali::Vector3 *) 0 ;
-  float *arg2 = (float *) 0 ;
-  Dali::Vector3 *result = 0 ;
-
-  arg1 = (Dali::Vector3 *)jarg1;
-  arg2 = jarg2;
-  {
-    try {
-      result = (Dali::Vector3 *) &(arg1)->operator =((float const *)arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
 
 
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_Assign__SWIG_1(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Vector3 *arg1 = (Dali::Vector3 *) 0 ;
-  Dali::Vector2 *arg2 = 0 ;
-  Dali::Vector3 *result = 0 ;
-
-  arg1 = (Dali::Vector3 *)jarg1;
-  arg2 = (Dali::Vector2 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector2 const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Vector3 *) &(arg1)->operator =((Dali::Vector2 const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_Assign__SWIG_2(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Vector3 *arg1 = (Dali::Vector3 *) 0 ;
-  Dali::Vector4 *arg2 = 0 ;
-  Dali::Vector3 *result = 0 ;
-
-  arg1 = (Dali::Vector3 *)jarg1;
-  arg2 = (Dali::Vector4 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Vector3 *) &(arg1)->operator =((Dali::Vector4 const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_Add(void * jarg1, void * jarg2) {
@@ -2096,71 +1974,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_ZERO_get() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_Assign__SWIG_0(void * jarg1, float* jarg2) {
-  void * jresult ;
-  Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
-  float *arg2 = (float *) 0 ;
-  Dali::Vector4 *result = 0 ;
-
-  arg1 = (Dali::Vector4 *)jarg1;
-  arg2 = jarg2;
-  {
-    try {
-      result = (Dali::Vector4 *) &(arg1)->operator =((float const *)arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
 
 
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_Assign__SWIG_1(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
-  Dali::Vector2 *arg2 = 0 ;
-  Dali::Vector4 *result = 0 ;
-
-  arg1 = (Dali::Vector4 *)jarg1;
-  arg2 = (Dali::Vector2 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector2 const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Vector4 *) &(arg1)->operator =((Dali::Vector2 const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_Assign__SWIG_2(void * jarg1, void * jarg2) {
-  void * jresult ;
-  Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
-  Dali::Vector3 *arg2 = 0 ;
-  Dali::Vector4 *result = 0 ;
-
-  arg1 = (Dali::Vector4 *)jarg1;
-  arg2 = (Dali::Vector3 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector3 const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::Vector4 *) &(arg1)->operator =((Dali::Vector3 const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_Add(void * jarg1, void * jarg2) {

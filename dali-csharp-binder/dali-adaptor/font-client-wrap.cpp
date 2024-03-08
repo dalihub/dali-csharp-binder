@@ -57,9 +57,6 @@ extern "C" {
 #endif
 
 
-SWIGEXPORT Dali::BaseHandle * SWIGSTDCALL CSharp_Dali_FontClient_SWIGUpcast(Dali::TextAbstraction::FontClient *jarg1) {
-    return (Dali::BaseHandle *)jarg1;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_PreCache(char ** fallbackFamilyArray, int fallbackFamilySize, char ** extraFamilyArray, int extraFamilySize, char * localeFamilyString, bool useThread, bool syncCreation) {
@@ -99,34 +96,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_FontPreLoad(char ** fontPathA
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FontWidthName_get() {
-  void * jresult ;
-  char **result = 0 ;
-
-  result = (char **)(char **)Dali::TextAbstraction::FontWidth::Name;
-  jresult = result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FontWeightName_get() {
-  void * jresult ;
-  char **result = 0 ;
-
-  result = (char **)(char **)Dali::TextAbstraction::FontWeight::Name;
-  jresult = result;
-  return jresult;
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FontSlantName_get() {
-  void * jresult ;
-  char **result = 0 ;
-
-  result = (char **)(char **)Dali::TextAbstraction::FontSlant::Name;
-  jresult = result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontDescription() {
@@ -435,74 +408,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FontMetrics(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LINE_MUST_BREAK_get() {
-  int jresult ;
-  int result;
-
-  {
-    try {
-      result = (int)Dali::TextAbstraction::LINE_MUST_BREAK;
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LINE_ALLOW_BREAK_get() {
-  int jresult ;
-  int result;
-
-  {
-    try {
-      result = (int)Dali::TextAbstraction::LINE_ALLOW_BREAK;
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_LINE_NO_BREAK_get() {
-  int jresult ;
-  int result;
-
-  {
-    try {
-      result = (int)Dali::TextAbstraction::LINE_NO_BREAK;
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WORD_BREAK_get() {
-  int jresult ;
-  int result;
-
-  {
-    try {
-      result = (int)Dali::TextAbstraction::WORD_BREAK;
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  jresult = (int)result;
-  return jresult;
-}
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WORD_NO_BREAK_get() {
-  int jresult ;
-  int result;
-
-  {
-    try {
-      result = (int)Dali::TextAbstraction::WORD_NO_BREAK;
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  jresult = (int)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VectorBlob_r_set(void * jarg1, unsigned char jarg2) {
@@ -875,28 +788,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FontClient_GlyphBufferData(void *
 }
 
 /*
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_buffer_set(void * jarg1, unsigned char* jarg2) {
-  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
-  unsigned char *arg2 = (unsigned char *) 0 ;
-
-  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
-  arg2 = jarg2;
-  if (arg1) (arg1)->buffer = arg2;
 
 
-}
-
-
-SWIGEXPORT unsigned char* SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_buffer_get(void * jarg1) {
-  unsigned char* jresult ;
-  Dali::TextAbstraction::GlyphBufferData *arg1 = (Dali::TextAbstraction::GlyphBufferData *) 0 ;
-  unsigned char *result = 0 ;
-
-  arg1 = (Dali::TextAbstraction::GlyphBufferData *)jarg1;
-  result = (unsigned char *) ((arg1)->buffer);
-  jresult = (void *)result;
-  return jresult;
-}
 */
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GlyphBufferData_width_set(void * jarg1, unsigned int jarg2) {
@@ -993,36 +886,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontClient__SWIG_0() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FontClient(void * jarg1) {
-  Dali::TextAbstraction::FontClient *arg1 = (Dali::TextAbstraction::FontClient *) 0 ;
-
-  arg1 = (Dali::TextAbstraction::FontClient *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-}
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontClient__SWIG_1(void * jarg1) {
-  void * jresult ;
-  Dali::TextAbstraction::FontClient *arg1 = 0 ;
-  Dali::TextAbstraction::FontClient *result = 0 ;
-
-  arg1 = (Dali::TextAbstraction::FontClient *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TextAbstraction::FontClient const & type is null", 0);
-    return 0;
-  }
-  {
-    try {
-      result = (Dali::TextAbstraction::FontClient *)new Dali::TextAbstraction::FontClient((Dali::TextAbstraction::FontClient const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  jresult = (void *)result;
-  return jresult;
-}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FontClient_Assign(void * jarg1, void * jarg2) {

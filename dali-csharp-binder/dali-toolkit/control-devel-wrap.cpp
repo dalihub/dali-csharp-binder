@@ -492,12 +492,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Accessibility_new_Range(
   return (void*)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_delete_Range(void* arg1_range)
-{
-  try_catch(([&]() {
-    delete static_cast<Dali::Accessibility::Range*>(arg1_range);
-  }));
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_RegisterDefaultLabel(void* arg1_actor)
 {

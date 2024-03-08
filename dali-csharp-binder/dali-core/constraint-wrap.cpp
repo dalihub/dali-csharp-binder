@@ -124,47 +124,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Constraint_Remove(void * nuiConstraint)
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Constraint_REMOVE_ACTION_BAKE_get()
-{
-  int jresult = 0;
 
-  {
-    try
-    {
-      jresult = (int)Dali::Constraint::BAKE;
-    } CALL_CATCH_EXCEPTION(0);
-  }
 
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Constraint_REMOVE_ACTION_DISCARD_get()
-{
-  int jresult = 0;
-
-  {
-    try
-    {
-      jresult = (int)Dali::Constraint::DISCARD;
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Constraint_DEFAULT_REMOVE_ACTION_get()
-{
-  int jresult = 0;
-
-  {
-    try
-    {
-      jresult = (int)Dali::Constraint::DEFAULT_REMOVE_ACTION;
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Constraint_SetRemoveAction(void * nuiConstraint, int nuiRemoveAction)
 {
@@ -300,29 +261,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Constraint_GetTargetProperty(void * nuiCo
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Constraint(void * nuiConstraint)
-{
-  Dali::Constraint *constraint = (Dali::Constraint *) 0;
-  Dali::Constraint *result;
-  void * jresult;
-
-  constraint = (Dali::Constraint *)nuiConstraint;
-  if (!constraint)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Constraint is null", 0);
-    return 0;
-  }
-
-  {
-    try
-    {
-      result = new Dali::Constraint(*constraint);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Constraint(void * nuiConstraint)
 {
