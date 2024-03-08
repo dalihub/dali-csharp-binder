@@ -464,6 +464,78 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_SetMotionData(void* csModel, void*
   CALL_CATCH_EXCEPTION();
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_CastShadow(void* csModel, bool csCastShadow)
+{
+  Dali::Scene3D::Model*      model      = (Dali::Scene3D::Model*)csModel;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return;
+  }
+
+  try
+  {
+    model->CastShadow(csCastShadow);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Model_IsShadowCasting(void* csModel)
+{
+  Dali::Scene3D::Model*      model      = (Dali::Scene3D::Model*)csModel;
+  bool                       result;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return 0;
+  }
+
+  try
+  {
+    result = model->IsShadowCasting();
+  }
+  CALL_CATCH_EXCEPTION(0);
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_ReceiveShadow(void* csModel, bool csReceiveShadow)
+{
+  Dali::Scene3D::Model*      model      = (Dali::Scene3D::Model*)csModel;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return;
+  }
+
+  try
+  {
+    model->ReceiveShadow(csReceiveShadow);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Model_IsShadowReceiving(void* csModel)
+{
+  Dali::Scene3D::Model*      model      = (Dali::Scene3D::Model*)csModel;
+  bool                       result;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return 0;
+  }
+
+  try
+  {
+    result = model->IsShadowReceiving();
+  }
+  CALL_CATCH_EXCEPTION(0);
+  return result;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel, char* csFileName, void* csScale, bool csUseRootNodeTranslate)
 {
   Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
