@@ -101,6 +101,41 @@ extern "C"
     return jresult;
   }
 
+  SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Rotation_3(void* nuiPitchRadian, void* nuiYawRadian, void* nuiRollRadian)
+  {
+    void*             jresult;
+    Dali::Radian*     pitch  = (Dali::Radian*)nuiPitchRadian;
+    Dali::Radian*     yaw    = (Dali::Radian*)nuiYawRadian;
+    Dali::Radian*     roll   = (Dali::Radian*)nuiRollRadian;
+    Dali::Quaternion* result = 0;
+
+    if(!pitch)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Radian const & type pitch is null", 0);
+      return 0;
+    }
+    if(!yaw)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Radian const & type yaw is null", 0);
+      return 0;
+    }
+    if(!roll)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Radian const & type roll is null", 0);
+      return 0;
+    }
+    {
+      try
+      {
+        result = (Dali::Quaternion*)new Dali::Quaternion((Dali::Radian const&)*pitch, (Dali::Radian const&)*yaw, (Dali::Radian const&)*roll);
+      }
+      CALL_CATCH_EXCEPTION(0);
+    }
+
+    jresult = (void*)result;
+    return jresult;
+  }
+
   SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Rotation(void *nuiRotation)
   {
     Dali::Quaternion *quaternion = (Dali::Quaternion *)0;
