@@ -1249,6 +1249,16 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_SelectionChangedSignal(void 
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_REMOVE_FRONT_INSET_get()
+{
+  return (int)Dali::Toolkit::DevelTextField::Property::REMOVE_FRONT_INSET;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_REMOVE_BACK_INSET_get()
+{
+  return (int)Dali::Toolkit::DevelTextField::Property::REMOVE_BACK_INSET;
+}
+
 #ifdef __cplusplus
 }
 #endif
