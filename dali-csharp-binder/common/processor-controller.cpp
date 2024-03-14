@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2024 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ ProcessorController::~ProcessorController()
   {
     try
     {
-      if(mProcessRegistered)
+      if(mProcessRegistered && Dali::Adaptor::IsAvailable())
       {
         Dali::Adaptor::Get().UnregisterProcessor(*this);
         Dali::Adaptor::Get().UnregisterProcessor(*this, true);

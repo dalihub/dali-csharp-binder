@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2024 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -525,6 +525,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Application_GetWindowsListSize()
   {
     try
     {
+      // Note : We should not check Dali::Adaptor::IsAvailable() here. Since this API could be called at OnTerminate time.
       result  = Dali::Adaptor::Get().GetWindows();
       jresult = result.size();
     }
@@ -542,6 +543,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_GetWindowsFromList(unsigned
   {
     try
     {
+      // Note : We should not check Dali::Adaptor::IsAvailable() here. Since this API could be called at OnTerminate time.
       result = Dali::Adaptor::Get().GetWindows();
     }
     CALL_CATCH_EXCEPTION(0);
