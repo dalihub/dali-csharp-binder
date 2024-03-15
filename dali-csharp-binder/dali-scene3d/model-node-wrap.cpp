@@ -273,6 +273,77 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_SetColliderMesh(void *modelNod
   } CALL_CATCH_EXCEPTION();
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_CastShadow(void* modelNodePtr, bool csCastShadow)
+{
+  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
+
+  if(!modelNode)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::MoModelNodedel", 0);
+    return;
+  }
+
+  try
+  {
+    modelNode->CastShadow(csCastShadow);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ModelNode_IsShadowCasting(void* modelNodePtr)
+{
+  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
+  bool                      result;
+
+  if(!modelNode)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelNode", 0);
+    return 0;
+  }
+
+  try
+  {
+    result = modelNode->IsShadowCasting();
+  }
+  CALL_CATCH_EXCEPTION(0);
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_ReceiveShadow(void* modelNodePtr, bool csReceiveShadow)
+{
+  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
+
+  if(!modelNode)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelNode", 0);
+    return;
+  }
+
+  try
+  {
+    modelNode->ReceiveShadow(csReceiveShadow);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ModelNode_IsShadowReceiving(void* modelNodePtr)
+{
+  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
+  bool                      result;
+
+  if(!modelNode)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelNode", 0);
+    return 0;
+  }
+
+  try
+  {
+    result = modelNode->IsShadowReceiving();
+  }
+  CALL_CATCH_EXCEPTION(0);
+  return result;
+}
 #ifdef __cplusplus
 }
 #endif
