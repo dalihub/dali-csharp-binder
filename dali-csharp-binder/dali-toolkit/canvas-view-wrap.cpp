@@ -179,6 +179,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CanvasView_Property_VIEWBOX_get() {
   return (int)Toolkit::CanvasView::Property::VIEW_BOX;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CanvasView_Property_SYNCHRONOUS_LOADING_get() {
+  return (int)Toolkit::CanvasView::Property::SYNCHRONOUS_LOADING;
+}
+
 // Dali::CanvasRenderer::Drawable Wrapper
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Drawable_SetOpacity(char *pDrawable,
