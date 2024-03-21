@@ -750,6 +750,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dal
         if(viewAccessible)
         {
           viewAccessible->Detach();
+
+          // In case someone forgot View.UnregisterDefaultLabel() before View.Dispose()...
+          Dali::Accessibility::Bridge::GetCurrentBridge()->UnregisterDefaultLabel(viewAccessible);
         }
       }
 
