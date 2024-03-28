@@ -253,6 +253,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapRecognizerTime(uint
   return;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapMaximumMotionAllowedDistance(float distance) {
+  {
+    try {
+      Integration::SetTapMaximumMotionAllowedDistance(distance);
+    } CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
 #ifdef __cplusplus
 }
 #endif
