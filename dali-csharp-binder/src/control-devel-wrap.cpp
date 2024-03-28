@@ -252,7 +252,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_ClearAccessibilityR
   }));
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityReadingInfoType2(void* arg1, int arg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetReadingInfoTypes(Dali::Actor* arg1_actor, int arg2)
 {
   using namespace Dali::Accessibility;
   static_assert(static_cast<int>(ReadingInfoType::NAME) == 0 &&
@@ -261,21 +261,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityRea
                   static_cast<int>(ReadingInfoType::STATE) == 3,
                 "C++ and C# bindings does not match");
 
-  GUARD_ON_NULL_RET(arg1);
+  GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]() {
-    auto* control = (Dali::Toolkit::Control*)arg1;
-    SetAccessibilityReadingInfoType(*control, ReadingInfoTypes{static_cast<std::uint32_t>(arg2)});
+    ReadingInfoTypes readingInfoTypes(static_cast<std::uint32_t>(arg2));
+    Accessible::Get(*arg1_actor)->SetReadingInfoTypes(readingInfoTypes);
   }));
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilityReadingInfoType2(void* arg1)
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Accessibility_GetReadingInfoTypes(Dali::Actor* arg1_actor)
 {
+  using namespace Dali::Accessibility;
+
   int result = 0;
-  GUARD_ON_NULL_RET0(arg1);
+  GUARD_ON_NULL_RET0(arg1_actor);
   try_catch(([&]() {
-    auto* control     = (Dali::Toolkit::Control*)arg1;
-    auto  readingInfo = GetAccessibilityReadingInfoType(*control);
-    result            = readingInfo.GetRawData()[0];
+    ReadingInfoTypes readingInfoTypes = Accessible::Get(*arg1_actor)->GetReadingInfoTypes();
+    result = static_cast<int>(readingInfoTypes.GetRawData()[0]);
   }));
   return result;
 }
