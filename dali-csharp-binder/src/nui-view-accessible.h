@@ -28,6 +28,7 @@
 #include <dali/devel-api/atspi-interfaces/table-cell.h>
 #include <dali/devel-api/atspi-interfaces/text.h>
 #include <dali/devel-api/atspi-interfaces/value.h>
+#include <set>
 
 class NUIViewAccessible : public Dali::Toolkit::DevelControl::ControlAccessible,
                           public virtual Dali::Accessibility::EditableText, // includes Text
@@ -74,7 +75,7 @@ public:
 
   Dali::Accessibility::States CalculateStates() override;
 
-  Dali::Accessibility::Attributes GetAttributes() const override;
+  void UpdateAttributes(Dali::Accessibility::Attributes& attributes) const override;
 
   Dali::Property::Index GetNamePropertyIndex() override;
 
@@ -250,6 +251,9 @@ private:
    */
   template<Dali::Accessibility::AtspiInterface I, typename R, typename... Args>
   R CallMethod(R (*method)(Dali::RefObject*, Args...), Args... args) const;
+
+  // Set of attribute keys to clean up in UpdateAttributes()
+  mutable std::set<std::string> mExtraAttributeKeys;
 
   // Prevents calling C# methods if the View has been disposed
   bool mIsDetached = false;

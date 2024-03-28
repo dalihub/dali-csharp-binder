@@ -40084,10 +40084,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_HIGHLIGHTABLE
   return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_HIGHLIGHTABLE;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_ATTRIBUTES_get() {
-  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_ATTRIBUTES;
-}
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_HIDDEN_get() {
   return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_HIDDEN;
 }

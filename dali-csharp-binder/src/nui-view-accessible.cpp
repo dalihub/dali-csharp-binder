@@ -255,13 +255,26 @@ Accessibility::States NUIViewAccessible::CalculateStates()
   return Accessibility::States{states};
 }
 
-Accessibility::Attributes NUIViewAccessible::GetAttributes() const
+void NUIViewAccessible::UpdateAttributes(Accessibility::Attributes& attributes) const
 {
-  auto attributes = ControlAccessible::GetAttributes();
+  ControlAccessible::UpdateAttributes(attributes);
 
-  CallMethod<Interface::ACCESSIBLE>(mTable->getAttributes, &GetAttributesCallback, &attributes);
+  // Clear attributes previously received from C#. Otherwise we would store all C#
+  // attributes forever, ever if they were removed at the C# end at some point.
+  for(auto& key : mExtraAttributeKeys)
+  {
+    attributes.erase(key);
+  }
+  mExtraAttributeKeys.clear();
 
-  return attributes;
+  Dali::Accessibility::Attributes extraAttributes;
+  CallMethod<Interface::ACCESSIBLE>(mTable->getAttributes, &GetAttributesCallback, &extraAttributes);
+
+  for(auto& extraAttribute : extraAttributes)
+  {
+    attributes.insert_or_assign(extraAttribute.first, extraAttribute.second);
+    mExtraAttributeKeys.emplace(extraAttribute.first);
+  }
 }
 
 Property::Index NUIViewAccessible::GetNamePropertyIndex()
