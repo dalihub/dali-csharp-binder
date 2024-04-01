@@ -169,6 +169,7 @@
 #include <dali/devel-api/animation/path-constrainer.h>
 #include <dali/devel-api/common/stage-devel.h>
 #include <dali/devel-api/events/key-event-devel.h>
+#include <dali/devel-api/events/touch-event-devel.h>
 #include <dali/devel-api/events/wheel-event-devel.h>
 #include <dali/devel-api/events/hover-event-devel.h>
 #include <dali/devel-api/events/touch-point.h>
@@ -17297,6 +17298,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CustomActorImpl_OnSetResizePolicy(void *
     } CALL_CATCH_EXCEPTION();
   }
 
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Touch_SetTime(void * touchEvent, unsigned long time) {
+  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  unsigned long arg2 = time;
+
+  arg1 = (Dali::TouchEvent *)touchEvent;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "TouchEvent is null", 0);
+    return ;
+  }
+
+  {
+    try {
+      Dali::DevelTouchEvent::SetTime(*arg1, arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
 }
 
 
