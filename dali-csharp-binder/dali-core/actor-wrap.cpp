@@ -3072,6 +3072,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_SetTouchAreaOffset(void* 
   arg1              = (Dali::Actor*)jarg1;
   Rect<int> arg2    = Rect(jarg2, jarg3, jarg4, jarg5);
   {
+    if(!arg1)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "Dali::Actor & type is null");
+      return;
+    }
     try
     {
       (arg1)->SetProperty(Dali::DevelActor::Property::TOUCH_AREA_OFFSET, arg2);
@@ -3086,6 +3091,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_GetTouchAreaOffset(void* 
   arg1              = (Dali::Actor*)jarg1;
 
   Rect<int32_t> result;
+  if(!arg1)
+  {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "Dali::Actor & type is null");
+    return;
+  }
   {
     try
     {
