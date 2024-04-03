@@ -82,6 +82,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ANCHOR_CLICKED_COLOR_g
   return (int)Dali::Toolkit::DevelTextLabel::Property::ANCHOR_CLICKED_COLOR;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_REMOVE_FRONT_INSET_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::REMOVE_FRONT_INSET;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_REMOVE_BACK_INSET_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::REMOVE_BACK_INSET;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextSize(void * pTextLabel, unsigned int start, unsigned int end)
 {
   Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
@@ -326,6 +336,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TextLabelSignal(void * jarg1) {
   }
 
 }
+
 
 #ifdef __cplusplus
 }
