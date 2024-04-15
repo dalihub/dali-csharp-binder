@@ -192,7 +192,6 @@ Requires:   %{name} = %{version}-%{release}
 %description physics3d
 3D Physics for Dali
 
-
 ##############################
 # Preparation
 ##############################
@@ -543,6 +542,7 @@ exit 0
 %{_libdir}/libdali2-csharp-binder.so
 %{_libdir}/libdali2-csharp-binder.so.2
 %{_libdir}/libdali2-csharp-binder.so.2.0.0
+%{_libdir}/libdali2-csharp-binder-rive-animation.so*
 
 #################################################
 
