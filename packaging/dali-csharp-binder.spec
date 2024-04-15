@@ -256,6 +256,7 @@ cmake_flags+=" -DENABLE_TIZEN_MAJOR_VERSION=%{tizen_version_major}"
 cmake_flags+=" -DENABLE_SCENE3D=ON"
 cmake_flags+=" -DENABLE_PHYSICS_2D=ON"
 cmake_flags+=" -DENABLE_PHYSICS_3D=ON"
+cmake_flags+=" -DENABLE_WIDGET_VIEWER_DALI=ON"
 
 
 # Set up the build via Cmake
@@ -543,6 +544,7 @@ exit 0
 %{_libdir}/libdali2-csharp-binder.so.2
 %{_libdir}/libdali2-csharp-binder.so.2.0.0
 %{_libdir}/libdali2-csharp-binder-rive-animation.so*
+%{_libdir}/libdali2-csharp-binder-widget-viewer-dali.so*
 
 #################################################
 
