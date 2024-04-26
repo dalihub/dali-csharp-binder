@@ -268,11 +268,16 @@ MESSAGE( STATUS "Use pkg configure:             " ${ENABLE_PKG_CONFIGURE} )
 MESSAGE( STATUS "Use 2d physics:                " ${ENABLE_PHYSICS_2D} )
 MESSAGE( STATUS "Use 3d physics:                " ${ENABLE_PHYSICS_3D} )
 MESSAGE( STATUS "Use scene 3d:                  " ${ENABLE_SCENE3D} )
+MESSAGE( STATUS "Use rive animation   :         " ${ENABLE_RIVE_ANIMATION} )
 MESSAGE( STATUS "CXXFLAGS:                      " ${CMAKE_CXX_FLAGS} )
 MESSAGE( STATUS "LDFLAGS:                       " ${CMAKE_SHARED_LINKER_FLAGS_INIT}${CMAKE_SHARED_LINKER_FLAGS} )
 
 IF( ENABLE_SCENE3D )
   ADD_SUBDIRECTORY( dali-scene3d )
+ENDIF()
+
+IF( ENABLE_RIVE_ANIMATION )
+  ADD_SUBDIRECTORY( dali-rive-animation )
 ENDIF()
 
 IF( ENABLE_PHYSICS_2D )

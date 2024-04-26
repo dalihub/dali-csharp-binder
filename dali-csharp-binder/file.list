@@ -94,8 +94,8 @@ SET( dali_csharp_binder_tizen_src_files
 )
 
 # added for rive animation view for tizen
-# module: csharp-binder, backend: mobile,tv,ivi,watch
-SET( dali_csharp_binder_tizen_rive_src_files
+# module: csharp-binder(rive-animation.so), backend: mobile,tv,ivi,watch
+SET( dali_csharp_binder_rive_animation_src_files
   ${dali_csharp_binder_dir}/dali-extension/rive-animation-view-wrap.cpp
 )
 

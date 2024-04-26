@@ -21,7 +21,7 @@
 
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 2.3.20
+Version: 2.3.21
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -191,7 +191,6 @@ Group:      System/Libraries
 Requires:   %{name} = %{version}-%{release}
 %description physics3d
 3D Physics for Dali
-
 
 ##############################
 # Preparation
@@ -543,6 +542,7 @@ exit 0
 %{_libdir}/libdali2-csharp-binder.so
 %{_libdir}/libdali2-csharp-binder.so.2
 %{_libdir}/libdali2-csharp-binder.so.2.0.0
+%{_libdir}/libdali2-csharp-binder-rive-animation.so*
 
 #################################################
 
