@@ -92,6 +92,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_REMOVE_BACK_INSET_get(
   return (int)Dali::Toolkit::DevelTextLabel::Property::REMOVE_BACK_INSET;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_CUTOUT_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::CUTOUT;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextSize(void * pTextLabel, unsigned int start, unsigned int end)
 {
   Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
