@@ -1036,6 +1036,29 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelPosition
     } CALL_CATCH_EXCEPTION();  }
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_InputMethodContext_SetInputPanelPositionAlign(void * csInputMethodContext, int csXCoord, int csYCoord, int csAlign) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0;
+  int x;
+  int y;
+  Dali::InputMethodContext::InputPanelAlign align;
+  bool result = false;
+
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  if (inputMethodContext == nullptr) {
+    DALI_LOG_ERROR("inputMethodContext == nullptr\n");
+    return false;
+  }
+
+  x = (int)csXCoord;
+  y = (int)csYCoord;
+  align = (Dali::InputMethodContext::InputPanelAlign)csAlign;
+  {
+    try {
+      result = (inputMethodContext)->SetInputPanelPositionAlign(x, y, align);
+    } CALL_CATCH_EXCEPTION(false);  }
+
+  return result;
+}
 
 // Signals
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_InputMethodContext_ActivatedSignal(void * csInputMethodContext) {
