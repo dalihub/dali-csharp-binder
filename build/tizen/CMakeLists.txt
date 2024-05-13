@@ -31,6 +31,7 @@ OPTION(ENABLE_SCENE3D            "Enable scene3d" ON)
 OPTION(ENABLE_PHYSICS_2D         "Enable 2d physics" ON)
 OPTION(ENABLE_PHYSICS_3D         "Enable 3d physics" ON)
 OPTION(ENABLE_RIVE_ANIMATION     "Enable rive animation" OFF)
+OPTION(ENABLE_WIDGET_VIEWER_DALI "Enable widget viewer dali" OFF)
 OPTION(ENABLE_ECORE_WAYLAND2     "Enable ecore wayland2" OFF)
 
 # Set up compiler definitions
@@ -268,11 +269,21 @@ MESSAGE( STATUS "Use pkg configure:             " ${ENABLE_PKG_CONFIGURE} )
 MESSAGE( STATUS "Use 2d physics:                " ${ENABLE_PHYSICS_2D} )
 MESSAGE( STATUS "Use 3d physics:                " ${ENABLE_PHYSICS_3D} )
 MESSAGE( STATUS "Use scene 3d:                  " ${ENABLE_SCENE3D} )
+MESSAGE( STATUS "Use rive animation   :         " ${ENABLE_RIVE_ANIMATION} )
+MESSAGE( STATUS "Use widget viewer dali:        " ${ENABLE_WIDGET_VIEWER_DALI} )
 MESSAGE( STATUS "CXXFLAGS:                      " ${CMAKE_CXX_FLAGS} )
 MESSAGE( STATUS "LDFLAGS:                       " ${CMAKE_SHARED_LINKER_FLAGS_INIT}${CMAKE_SHARED_LINKER_FLAGS} )
 
 IF( ENABLE_SCENE3D )
   ADD_SUBDIRECTORY( dali-scene3d )
+ENDIF()
+
+IF( ENABLE_RIVE_ANIMATION )
+  ADD_SUBDIRECTORY( dali-rive-animation )
+ENDIF()
+
+IF( ENABLE_WIDGET_VIEWER_DALI )
+  ADD_SUBDIRECTORY( dali-widget-viewer-dali )
 ENDIF()
 
 IF( ENABLE_PHYSICS_2D )
