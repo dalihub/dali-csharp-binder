@@ -16,6 +16,7 @@
  */
 
 // EXTERNAL INCLUDES
+#include <cstdint>
 #include <dali/public-api/animation/animation.h>
 #include <dali/devel-api/animation/animation-devel.h>
 
@@ -604,6 +605,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Animation_GetLoopingMode(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_Animation_GetAnimationId(void *nuiAnimation) {
+  uint32_t jresult = 0u;
+  Dali::Animation *animation = (Dali::Animation *) 0 ;
+
+  GUARD_ON_NULL_RET0(nuiAnimation);
+
+  animation = (Dali::Animation *)nuiAnimation;
+  {
+    try {
+      jresult = ((Dali::Animation const *)animation)->GetAnimationId();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Animation_FinishedSignal(void * jarg1) {
   void * jresult ;
