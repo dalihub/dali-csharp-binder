@@ -5649,6 +5649,97 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert__SWIG_0(void * jarg1
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Int__SWIG_0(void * jarg1, const char * jarg2, int jarg3) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  {
+    try {
+      (arg1)->Insert(jarg2,(Dali::Property::Value const &)(jarg3));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Bool__SWIG_0(void * jarg1, const char * jarg2, bool jarg3) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  {
+    try {
+      (arg1)->Insert(jarg2,(Dali::Property::Value const &)(jarg3));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Float__SWIG_0(void * jarg1, const char * jarg2, float jarg3) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  {
+    try {
+      (arg1)->Insert(jarg2,(Dali::Property::Value const &)(jarg3));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_String__SWIG_0(void * jarg1, const char * jarg2, const char * jarg3) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  {
+    try {
+      (arg1)->Insert(jarg2,(Dali::Property::Value const &)(jarg3));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Vector2__SWIG_0(void * jarg1, const char * jarg2, float jarg3, float jarg4) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  {
+    try {
+      (arg1)->Insert(jarg2,(Dali::Property::Value const &)(Dali::Vector2(jarg3, jarg4)));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Vector3__SWIG_0(void * jarg1, const char * jarg2, float jarg3, float jarg4, float jarg5) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  {
+    try {
+      (arg1)->Insert(jarg2,(Dali::Property::Value const &)(Dali::Vector3(jarg3, jarg4, jarg5)));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Vector4__SWIG_0(void * jarg1, const char * jarg2, float jarg3, float jarg4, float jarg5, float jarg6) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  {
+    try {
+      (arg1)->Insert(jarg2,(Dali::Property::Value const &)(Dali::Vector4(jarg3, jarg4, jarg5, jarg6)));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert__SWIG_2(void * jarg1, int jarg2, void * jarg3) {
   Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
   Dali::Property::Index arg2 ;
@@ -5664,6 +5755,111 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert__SWIG_2(void * jarg1
   {
     try {
       (arg1)->Insert(arg2,(Dali::Property::Value const &)*arg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Int__SWIG_2(void * jarg1, int jarg2, int jarg3) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+  Dali::Property::Index arg2 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  {
+    try {
+      (arg1)->Insert(arg2,(Dali::Property::Value const &)(jarg3));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Bool__SWIG_2(void * jarg1, int jarg2, bool jarg3) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+  Dali::Property::Index arg2 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  {
+    try {
+      (arg1)->Insert(arg2,(Dali::Property::Value const &)(jarg3));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Float__SWIG_2(void * jarg1, int jarg2, float jarg3) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+  Dali::Property::Index arg2 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  {
+    try {
+      (arg1)->Insert(arg2,(Dali::Property::Value const &)(jarg3));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_String__SWIG_2(void * jarg1, int jarg2, char * jarg3) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+  Dali::Property::Index arg2 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  {
+    try {
+      (arg1)->Insert(arg2,(Dali::Property::Value const &)(jarg3));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Vector2__SWIG_2(void * jarg1, int jarg2, float jarg3, float jarg4) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+  Dali::Property::Index arg2 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  {
+    try {
+      (arg1)->Insert(arg2,(Dali::Property::Value const &)(Dali::Vector2(jarg3, jarg4)));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Vector3__SWIG_2(void * jarg1, int jarg2, float jarg3, float jarg4, float jarg5) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+  Dali::Property::Index arg2 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  {
+    try {
+      (arg1)->Insert(arg2,(Dali::Property::Value const &)(Dali::Vector3(jarg3, jarg4, jarg5)));
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Insert_Vector4__SWIG_2(void * jarg1, int jarg2, float jarg3, float jarg4, float jarg5, float jarg6) {
+  Dali::Property::Map *arg1 = (Dali::Property::Map *) 0 ;
+  Dali::Property::Index arg2 ;
+
+  arg1 = (Dali::Property::Map *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  {
+    try {
+      (arg1)->Insert(arg2,(Dali::Property::Value const &)(Dali::Vector4(jarg3, jarg4, jarg5, jarg6)));
     } CALL_CATCH_EXCEPTION();
   }
 
@@ -5976,6 +6172,125 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey(void* ja
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_IntValue(void* jarg1, const char* jarg2, int jarg3) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  {
+    try {
+      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const &)((int32_t)jarg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_BoolValue(void* jarg1, const char* jarg2, bool jarg3) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  {
+    try {
+      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const &)(jarg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_FloatValue(void* jarg1, const char* jarg2, float jarg3) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  {
+    try {
+      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const &)(jarg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_StringValue(void* jarg1, const char* jarg2, const char* jarg3) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  {
+    try {
+      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const &)(jarg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_Vector2(void* jarg1, const char* jarg2, float jarg3, float jarg4) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  {
+    try {
+      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const &)(Dali::Vector2(jarg3, jarg4));
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_Vector4(void* jarg1, const char* jarg2, float jarg3, float jarg4, float jarg5, float jarg6) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  {
+    try {
+      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const &)(Dali::Vector4(jarg3, jarg4, jarg5, jarg6));
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_Rect(void* jarg1, char* jarg2, int jarg3, int jarg4, int jarg5, int jarg6) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  {
+    try {
+      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const &)(Dali::Rect< int >(jarg3, jarg4, jarg5, jarg6));
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey(void* jarg1, int jarg2, void* jarg3) {
 
@@ -5986,6 +6301,90 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey(void* jarg1
   {
     try {
       arg1->operator[](arg2) = *arg3;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_IntValue(void* jarg1, int jarg2, int jarg3) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  {
+    try {
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)((int32_t)jarg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_BoolValue(void* jarg1, int jarg2, bool jarg3) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  {
+    try {
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(jarg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_FloatValue(void* jarg1, int jarg2, float jarg3) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  {
+    try {
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(jarg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_StringValue(void* jarg1, int jarg2, const char* jarg3) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  {
+    try {
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(jarg3);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_Vector2(void* jarg1, int jarg2, float jarg3, float jarg4) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  {
+    try {
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(Dali::Vector2(jarg3, jarg4));
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_Vector4(void* jarg1, int jarg2, float jarg3, float jarg4, float jarg5, float jarg6) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  {
+    try {
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(Dali::Vector4(jarg3, jarg4, jarg5, jarg6));
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_Rect(void* jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6) {
+
+  Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;
+
+  {
+    try {
+      arg1->operator[]((Dali::Property::Index)jarg2) = (Dali::Property::Value const &)(Dali::Rect< int >(jarg3, jarg4, jarg5, jarg6));
     } CALL_CATCH_EXCEPTION();
   }
 }
