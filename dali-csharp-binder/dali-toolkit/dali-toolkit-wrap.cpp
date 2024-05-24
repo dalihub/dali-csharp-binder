@@ -1777,6 +1777,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImageView_Property_TRANSITION_EFFECT_get(
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ImageView_Property_TRANSITION_EFFECT_OPTION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Toolkit::ImageView::Property::TRANSITION_EFFECT_OPTION;
+  jresult = (int)result;
+  return jresult;
+}
+
+
 
 
 
