@@ -234,6 +234,27 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Layer_IsClipping(void* jarg1)
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_0(void* jarg1, int jarg2, int jarg3, int jarg4, int jarg5)
+{
+  Dali::Layer* arg1 = (Dali::Layer*)0;
+  int          arg2;
+  int          arg3;
+  int          arg4;
+  int          arg5;
+
+  arg1 = (Dali::Layer*)jarg1;
+  arg2 = (int)jarg2;
+  arg3 = (int)jarg3;
+  arg4 = (int)jarg4;
+  arg5 = (int)jarg5;
+  {
+    try
+    {
+      (arg1)->SetProperty(Dali::Layer::Property::CLIPPING_BOX, Rect<int32_t>(arg2, arg3, arg4, arg5));
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_1(void* jarg1, void* jarg2)
 {
