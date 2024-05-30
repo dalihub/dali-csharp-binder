@@ -21868,12 +21868,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_LongPressGesture_numberOfTouches
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LongPressGesture_screenPoint_get(void * jarg1) {
   void * jresult ;
   Dali::LongPressGesture *arg1 = (Dali::LongPressGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::LongPressGesture *)jarg1;
   {
     try {
-      result = ((Dali::LongPressGesture const *)arg1)->GetScreenPoint();
+      result = (Dali::Vector2 *)&(((Dali::LongPressGesture const *)arg1)->GetScreenPoint());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -21892,7 +21892,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LongPressGesture_screenPoint_get(void 
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -21900,12 +21900,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LongPressGesture_screenPoint_get(void 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LongPressGesture_localPoint_get(void * jarg1) {
   void * jresult ;
   Dali::LongPressGesture *arg1 = (Dali::LongPressGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::LongPressGesture *)jarg1;
   {
     try {
-      result = ((Dali::LongPressGesture const *)arg1)->GetLocalPoint();
+      result = (Dali::Vector2 *)&(((Dali::LongPressGesture const *)arg1)->GetLocalPoint());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -21924,7 +21924,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_LongPressGesture_localPoint_get(void *
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -27768,12 +27768,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PanGesture(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_velocity_get(void * jarg1) {
   void * jresult ;
   Dali::PanGesture *arg1 = (Dali::PanGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::PanGesture *)jarg1;
   {
     try {
-      result = ((Dali::PanGesture const *)arg1)->GetVelocity();
+      result = (Dali::Vector2 *)&(((Dali::PanGesture const *)arg1)->GetVelocity());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -27792,7 +27792,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_velocity_get(void * jarg1) 
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -27800,12 +27800,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_velocity_get(void * jarg1) 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_displacement_get(void * jarg1) {
   void * jresult ;
   Dali::PanGesture *arg1 = (Dali::PanGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::PanGesture *)jarg1;
   {
     try {
-      result = ((Dali::PanGesture const *)arg1)->GetDisplacement();
+      result = (Dali::Vector2 *)&(((Dali::PanGesture const *)arg1)->GetDisplacement());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -27824,7 +27824,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_displacement_get(void * jar
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -27832,12 +27832,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_displacement_get(void * jar
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_position_get(void * jarg1) {
   void * jresult ;
   Dali::PanGesture *arg1 = (Dali::PanGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::PanGesture *)jarg1;
   {
     try {
-      result = ((Dali::PanGesture const *)arg1)->GetPosition();
+      result = (Dali::Vector2 *)&(((Dali::PanGesture const *)arg1)->GetPosition());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -27856,19 +27856,19 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_position_get(void * jarg1) 
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_screenVelocity_get(void * jarg1) {
   void * jresult ;
   Dali::PanGesture *arg1 = (Dali::PanGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::PanGesture *)jarg1;
   {
     try {
-      result = ((Dali::PanGesture const *)arg1)->GetScreenVelocity();
+      result = (Dali::Vector2 *)&(((Dali::PanGesture const *)arg1)->GetScreenVelocity());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -27887,7 +27887,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_screenVelocity_get(void * j
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -27895,12 +27895,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_screenVelocity_get(void * j
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_screenDisplacement_get(void * jarg1) {
   void * jresult ;
   Dali::PanGesture *arg1 = (Dali::PanGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::PanGesture *)jarg1;
   {
     try {
-      result = ((Dali::PanGesture const *)arg1)->GetScreenDisplacement();
+      result = (Dali::Vector2 *)&(((Dali::PanGesture const *)arg1)->GetScreenDisplacement());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -27919,7 +27919,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_screenDisplacement_get(void
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -27927,12 +27927,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_screenDisplacement_get(void
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_screenPosition_get(void * jarg1) {
   void * jresult ;
   Dali::PanGesture *arg1 = (Dali::PanGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::PanGesture *)jarg1;
   {
     try {
-      result = ((Dali::PanGesture const *)arg1)->GetScreenPosition();
+      result = (Dali::Vector2 *)&(((Dali::PanGesture const *)arg1)->GetScreenPosition());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -27951,7 +27951,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PanGesture_screenPosition_get(void * j
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -28279,12 +28279,12 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PinchGesture_speed_get(void * jarg1) {
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PinchGesture_screenCenterPoint_get(void * jarg1) {
   void * jresult ;
   Dali::PinchGesture *arg1 = (Dali::PinchGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::PinchGesture *)jarg1;
   {
     try {
-      result = ((Dali::PinchGesture const *)arg1)->GetScreenCenterPoint();
+      result = (Dali::Vector2 *)&(((Dali::PinchGesture const *)arg1)->GetScreenCenterPoint());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -28303,7 +28303,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PinchGesture_screenCenterPoint_get(voi
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -28311,12 +28311,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PinchGesture_screenCenterPoint_get(voi
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PinchGesture_localCenterPoint_get(void * jarg1) {
   void * jresult ;
   Dali::PinchGesture *arg1 = (Dali::PinchGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::PinchGesture *)jarg1;
   {
     try {
-      result = ((Dali::PinchGesture const *)arg1)->GetLocalCenterPoint();
+      result = (Dali::Vector2 *)&(((Dali::PinchGesture const *)arg1)->GetLocalCenterPoint());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -28335,7 +28335,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_PinchGesture_localCenterPoint_get(void
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -28678,12 +28678,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TapGesture_numberOfTouches_get(v
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGesture_screenPoint_get(void * jarg1) {
   void * jresult ;
   Dali::TapGesture *arg1 = (Dali::TapGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::TapGesture *)jarg1;
   {
     try {
-      result = ((Dali::TapGesture const *)arg1)->GetScreenPoint();
+      result = (Dali::Vector2 *)&(((Dali::TapGesture const *)arg1)->GetScreenPoint());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -28702,7 +28702,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGesture_screenPoint_get(void * jarg
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -28710,12 +28710,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGesture_screenPoint_get(void * jarg
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGesture_localPoint_get(void * jarg1) {
   void * jresult ;
   Dali::TapGesture *arg1 = (Dali::TapGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::TapGesture *)jarg1;
   {
     try {
-      result = ((Dali::TapGesture const *)arg1)->GetLocalPoint();
+      result = (Dali::Vector2 *)&(((Dali::TapGesture const *)arg1)->GetLocalPoint());
     } catch (std::out_of_range& e) {
       {
         SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
@@ -28734,7 +28734,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TapGesture_localPoint_get(void * jarg1
       };
     }
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
