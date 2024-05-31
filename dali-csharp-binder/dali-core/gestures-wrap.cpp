@@ -195,30 +195,30 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_RotationGesture_rotation_get(void * jar
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_screenCenterPoint_get(void * jarg1) {
   void * jresult ;
   Dali::RotationGesture *arg1 = (Dali::RotationGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::RotationGesture *)jarg1;
   {
     try {
-      result = ((Dali::RotationGesture const *)arg1)->GetScreenCenterPoint();
+      result = (Dali::Vector2 *)&(((Dali::RotationGesture const *)arg1)->GetScreenCenterPoint());
     } CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_RotationGesture_localCenterPoint_get(void * jarg1) {
   void * jresult ;
   Dali::RotationGesture *arg1 = (Dali::RotationGesture *) 0 ;
-  Dali::Vector2 result;
+  Dali::Vector2 *result;
 
   arg1 = (Dali::RotationGesture *)jarg1;
   {
     try {
-      result = ((Dali::RotationGesture const *)arg1)->GetLocalCenterPoint();
+      result = (Dali::Vector2 *)&(((Dali::RotationGesture const *)arg1)->GetLocalCenterPoint());
     } CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Vector2((const Dali::Vector2 &)result);
+  jresult = (void *)result;
   return jresult;
 }
 
@@ -345,4 +345,3 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RotationGestureDetectedSignal(voi
 #ifdef __cplusplus
 }
 #endif
-
