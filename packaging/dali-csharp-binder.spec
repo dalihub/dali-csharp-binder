@@ -543,7 +543,9 @@ exit 0
 %{_libdir}/libdali2-csharp-binder.so
 %{_libdir}/libdali2-csharp-binder.so.2
 %{_libdir}/libdali2-csharp-binder.so.2.0.0
+%if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
 %{_libdir}/libdali2-csharp-binder-rive-animation.so*
+%endif
 %{_libdir}/libdali2-csharp-binder-widget-viewer-dali.so*
 
 #################################################
