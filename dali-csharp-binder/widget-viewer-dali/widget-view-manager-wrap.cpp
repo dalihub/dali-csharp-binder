@@ -27,27 +27,6 @@ extern "C"
 {
 #endif
 
-  SWIGEXPORT Dali::BaseHandle *SWIGSTDCALL CSharp_Dali_WidgetViewManager_SWIGUpcast(Dali::WidgetView::WidgetViewManager *jarg1)
-  {
-    return (Dali::BaseHandle *)jarg1;
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_WidgetViewManager__SWIG_0()
-  {
-    void *jresult;
-    Dali::WidgetView::WidgetViewManager *result = 0;
-
-    {
-      try
-      {
-        result = (Dali::WidgetView::WidgetViewManager *)new Dali::WidgetView::WidgetViewManager();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
 
   SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WidgetViewManager_New(void *jarg1, char *jarg2)
   {
