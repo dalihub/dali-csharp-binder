@@ -7,6 +7,11 @@ SET( dali_csharp_binder_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../dali-csharp-binder
 
 # module: csharp-binder, backend: common - ubuntu,mobile,tv,ivi,tizen-wearable,common
 SET( dali_csharp_binder_common_src_files
+  ${dali_csharp_binder_dir}/common/visual-objects/visual-object-impl.cpp
+  ${dali_csharp_binder_dir}/common/visual-objects/visual-object.cpp
+  ${dali_csharp_binder_dir}/common/visual-objects/visual-objects-container-impl.cpp
+  ${dali_csharp_binder_dir}/common/visual-objects/visual-objects-container.cpp
+
   ${dali_csharp_binder_dir}/common/common.cpp
   ${dali_csharp_binder_dir}/common/dali-wrap.cpp
   ${dali_csharp_binder_dir}/common/callbackbase-wrap.cpp

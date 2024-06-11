@@ -21,7 +21,7 @@
 
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 2.3.24
+Version: 2.3.27
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -543,7 +543,9 @@ exit 0
 %{_libdir}/libdali2-csharp-binder.so
 %{_libdir}/libdali2-csharp-binder.so.2
 %{_libdir}/libdali2-csharp-binder.so.2.0.0
+%if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
 %{_libdir}/libdali2-csharp-binder-rive-animation.so*
+%endif
 %{_libdir}/libdali2-csharp-binder-widget-viewer-dali.so*
 
 #################################################
