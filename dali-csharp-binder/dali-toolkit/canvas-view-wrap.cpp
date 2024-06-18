@@ -155,6 +155,27 @@ CSharp_Dali_CanvasView_RemoveAllDrawables(char *pCanvasView) {
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL
+CSharp_Dali_CanvasView_RequestRasterization(char *pCanvasView) {
+  Dali::Toolkit::CanvasView canvasView;
+  Dali::CanvasRenderer::Drawable drawable;
+
+  if (!pCanvasView) {
+    SWIG_CSharpSetPendingExceptionArgument(
+        SWIG_CSharpArgumentNullException,
+        "Attempt to dereference null Dali::Toolkit::CanvasView", 0);
+    return;
+  }
+  canvasView = *(Dali::Toolkit::CanvasView *)pCanvasView;
+
+  {
+    try {
+      canvasView.RequestRasterization();
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_CanvasView(void *pCanvasView) {
   Dali::Toolkit::CanvasView *pTargetCanvasView = nullptr;
 
@@ -181,6 +202,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CanvasView_Property_VIEWBOX_get() {
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CanvasView_Property_SYNCHRONOUS_LOADING_get() {
   return (int)Toolkit::CanvasView::Property::SYNCHRONOUS_LOADING;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CanvasView_Property_RASTERIZATION_REQUEST_MANUALLY_get() {
+  return (int)Toolkit::CanvasView::Property::RASTERIZATION_REQUEST_MANUALLY;
 }
 
 // Dali::CanvasRenderer::Drawable Wrapper
