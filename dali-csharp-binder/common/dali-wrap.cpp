@@ -12642,41 +12642,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GestureDetector_GetAttachedActor(void 
 }
 
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GestureDetector_HandleEvent(void * jdetector, void * jactor, void * jtouch) {
-  bool result = false;
-  Dali::GestureDetector *detector = (Dali::GestureDetector *)jdetector;
-  Dali::Actor *actor = (Dali::Actor *)jactor;
-  Dali::TouchEvent *touchEvent = (Dali::TouchEvent *)jtouch;
-
-  if (!detector) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::GestureDetector const & type is null", 0);
-    return false;
-  }
-  {
-    try {
-      result = ((Dali::GestureDetector *)detector)->HandleEvent(*actor, *touchEvent);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  return result;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureDetector_CancelAllOtherGestureDetectors(void * jdetector) {
-  Dali::GestureDetector *detector = (Dali::GestureDetector *)jdetector;
-
-  if (!detector) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::GestureDetector const & type is null", 0);
-    return;
-  }
-  {
-    try {
-      ((Dali::GestureDetector *)detector)->CancelAllOtherGestureDetectors();
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Gesture(void * jarg1) {
   void * jresult ;
   Dali::Gesture *arg1 = 0 ;
@@ -14710,6 +14675,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CustomActorImpl_GetNaturalSize(void * 
 
   jresult = new Dali::Vector3((const Dali::Vector3 &)result);
   return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GestureDetector_FeedTouch(void * jdetector, void * jactor, void * jtouch) {
+  bool result = false;
+  Dali::GestureDetector *detector = (Dali::GestureDetector *)jdetector;
+  Dali::Actor *actor = (Dali::Actor *)jactor;
+  Dali::TouchEvent *touchEvent = (Dali::TouchEvent *)jtouch;
+
+  {
+    try {
+      result = ((Dali::GestureDetector *)detector)->FeedTouch(*actor, *touchEvent);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
 }
 
 
