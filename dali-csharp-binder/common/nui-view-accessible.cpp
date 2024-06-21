@@ -20,6 +20,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali/integration-api/debug.h>
+#include <dali/devel-api/atspi-interfaces/accessible.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/dali-toolkit/control-devel-wrap.h>
@@ -744,8 +745,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dal
       // Call detach only if accessible was created before.
       if(DevelControl::IsAccessibleCreated(control))
       {
-        auto* actorAccessible = Dali::Accessibility::Accessible::Get(control);
-        auto* viewAccessible  = dynamic_cast<NUIViewAccessible*>(actorAccessible);
+        auto actorAccessible = Dali::Accessibility::Accessible::GetOwningPtr(control);
+        auto viewAccessible  = std::dynamic_pointer_cast<NUIViewAccessible>(actorAccessible);
 
         if(viewAccessible)
         {

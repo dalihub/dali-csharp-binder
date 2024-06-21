@@ -87,6 +87,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetGeometryHittestEnabled(bool enable) {
 
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsGeometryHittestEnabled() {
+  bool ret = false;
+  try {
+    ret = Dali::DevelWindowSystem::IsGeometryHittestEnabled();
+  } CALL_CATCH_EXCEPTION(0);
+  return ret;
+}
+
 
 // Timer
 
