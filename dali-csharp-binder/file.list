@@ -64,6 +64,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/dali-toolkit/internal-visual-property-get-set-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/keyboard-focus-manager-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/particle-system-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/render-effects-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/scale-transition-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/slide-transition-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/style-manager-wrap.cpp
