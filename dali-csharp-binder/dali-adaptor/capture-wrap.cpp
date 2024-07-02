@@ -387,6 +387,28 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetImageUrl(void *nuiCapture)
+{
+  Dali::Toolkit::ImageUrl result;
+  Dali::Capture *capture = (Dali::Capture *)nuiCapture;
+  void *jresult;
+
+  if (!capture)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return 0;
+  }
+  {
+    try {
+      Dali::Texture texture = capture->GetTexture();
+      result = Dali::Toolkit::ImageUrl::New(texture);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
 
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Capture_GetCapturedBuffer(void *nuiCapture)
 {
