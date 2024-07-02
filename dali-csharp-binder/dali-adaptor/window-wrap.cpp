@@ -3751,6 +3751,54 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_GetFullScreen(void * winHandle) {
   return result;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetModal(void * winHandle, bool modal) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      Dali::DevelWindow::SetModal(*window, modal);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsModal(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  bool result = false;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      result = Dali::DevelWindow::IsModal(*window);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAlwaysOnTop(void * winHandle, bool alwaysOnTop) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      Dali::DevelWindow::SetAlwaysOnTop(*window, alwaysOnTop);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsAlwaysOnTop(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  bool result = false;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      result = Dali::DevelWindow::IsAlwaysOnTop(*window);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
 /* pointer constraints event */
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal(void* winHandle)
 {
