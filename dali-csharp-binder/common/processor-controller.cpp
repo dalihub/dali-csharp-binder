@@ -83,26 +83,26 @@ void ProcessorController::Process(bool postProcessor)
     mKeepRenderingApplied = false;
 
     // Clean up processing and events idle request flag.
-    mProcessingEvents = false;
+    mProcessingEvents           = false;
     mProcessEventsIdleRequested = false;
   }
 }
 
-void ProcessorController::SetCallback(  ProcessorControllerProcessCallback callback )
+void ProcessorController::SetCallback(ProcessorControllerProcessCallback callback)
 {
   mHandler = callback;
 }
 
-void ProcessorController::SetPostCallback(  ProcessorControllerProcessCallback postCallback )
+void ProcessorController::SetPostCallback(ProcessorControllerProcessCallback postCallback)
 {
   mPostHandler = postCallback;
 }
 
-void ProcessorController::RemoveCallback(  ProcessorControllerProcessCallback callback )
+void ProcessorController::RemoveCallback(ProcessorControllerProcessCallback callback)
 {
   mHandler = nullptr;
 }
-void ProcessorController::RemovePostCallback(  ProcessorControllerProcessCallback postCallback )
+void ProcessorController::RemovePostCallback(ProcessorControllerProcessCallback postCallback)
 {
   mPostHandler = nullptr;
 }
@@ -137,10 +137,13 @@ void ProcessorController::RegisterProcess()
   {
     try
     {
-      Dali::Adaptor::Get().RegisterProcessor(*this);
-      Dali::Adaptor::Get().RegisterProcessor(*this, true);
+      if(DALI_LIKELY(Dali::Adaptor::IsAvailable()))
+      {
+        Dali::Adaptor::Get().RegisterProcessor(*this);
+        Dali::Adaptor::Get().RegisterProcessor(*this, true);
 
-      mProcessRegistered = true;
+        mProcessRegistered = true;
+      }
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -151,98 +154,104 @@ extern "C" {
 #endif
 
 // ProcessorController Bindings
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ProcessorController() {
-
-  ProcessorController *result = 0 ;
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ProcessorController()
+{
+  ProcessorController* result = 0;
 
   {
-    try {
-      result = (ProcessorController *)new ProcessorController();
+    try
+    {
+      result = (ProcessorController*)new ProcessorController();
       result->RegisterProcess();
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  return (void *)result;
+  return (void*)result;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ProcessorController_Without_Initialize() {
-
-  ProcessorController *result = 0 ;
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ProcessorController_Without_Initialize()
+{
+  ProcessorController* result = 0;
 
   {
-    try {
-      result = (ProcessorController *)new ProcessorController();
-    } CALL_CATCH_EXCEPTION(0);
+    try
+    {
+      result = (ProcessorController*)new ProcessorController();
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  return (void *)result;
+  return (void*)result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ProcessorController(void * jarg1) {
-
-  ProcessorController * arg1 = (ProcessorController *)jarg1;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ProcessorController(void* jarg1)
+{
+  ProcessorController* arg1 = (ProcessorController*)jarg1;
   {
-    try {
+    try
+    {
       delete arg1;
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_Initialize(void* jarg1)
 {
-  ProcessorController* processorController = (ProcessorController *) jarg1;
+  ProcessorController* processorController = (ProcessorController*)jarg1;
 
-  if( processorController )
+  if(processorController)
   {
     processorController->RegisterProcess();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_SetCallback( void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_SetCallback(void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback)
 {
-  ProcessorController* processorController = (ProcessorController *) jarg1;
+  ProcessorController* processorController = (ProcessorController*)jarg1;
 
-  if( processorController )
+  if(processorController)
   {
-    processorController->SetCallback( callback );
+    processorController->SetCallback(callback);
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_SetPostCallback( void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_SetPostCallback(void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback)
 {
-  ProcessorController* processorController = (ProcessorController *) jarg1;
+  ProcessorController* processorController = (ProcessorController*)jarg1;
 
-  if( processorController )
+  if(processorController)
   {
-    processorController->SetPostCallback( callback );
+    processorController->SetPostCallback(callback);
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_RemoveCallback( void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_RemoveCallback(void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback)
 {
-  ProcessorController* processorController = (ProcessorController *) jarg1;
+  ProcessorController* processorController = (ProcessorController*)jarg1;
 
-  if( processorController )
+  if(processorController)
   {
-    processorController->RemoveCallback( callback );
+    processorController->RemoveCallback(callback);
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_RemovePostCallback( void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_RemovePostCallback(void* jarg1, ProcessorController::ProcessorControllerProcessCallback callback)
 {
-  ProcessorController* processorController = (ProcessorController *) jarg1;
+  ProcessorController* processorController = (ProcessorController*)jarg1;
 
-  if( processorController )
+  if(processorController)
   {
-    processorController->RemovePostCallback( callback );
+    processorController->RemovePostCallback(callback);
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_Awake( void* jarg1 )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ProcessorController_Awake(void* jarg1)
 {
-  ProcessorController* processorController = (ProcessorController *) jarg1;
+  ProcessorController* processorController = (ProcessorController*)jarg1;
 
-  if( processorController )
+  if(processorController)
   {
     processorController->Awake();
   }
