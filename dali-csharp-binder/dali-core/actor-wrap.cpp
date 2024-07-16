@@ -3228,6 +3228,10 @@ GENERATE_DEVEL_ACTOR_SIGNAL(void(*)(Dali::Actor, bool, Dali::DevelActor::Visibil
 // CSharp_Dali_Actor_VisibilityChangedSignal_Connect
 // CSharp_Dali_Actor_VisibilityChangedSignal_Disconnect
 
+GENERATE_ACTOR_SIGNAL(void(*)(Dali::Actor, bool), InheritedVisibilityChangedSignal)
+// CSharp_Dali_Actor_InheritedVisibilityChangedSignal_Connect
+// CSharp_Dali_Actor_InheritedVisibilityChangedSignal_Disconnect
+
 GENERATE_ACTOR_SIGNAL(void(*)(Dali::Actor, LayoutDirection::Type), LayoutDirectionChangedSignal)
 // CSharp_Dali_Actor_LayoutDirectionChangedSignal_Connect
 // CSharp_Dali_Actor_LayoutDirectionChangedSignal_Disconnect
