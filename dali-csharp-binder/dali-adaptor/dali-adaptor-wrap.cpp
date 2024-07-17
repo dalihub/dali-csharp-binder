@@ -1362,6 +1362,36 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_Delete(void* jarg1) {
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_SetSource(void* jarg1, void* jarg2)
+{
+  NativeImageSource* pImage = (NativeImageSource*)jarg1;
+  Any source = (Any)jarg2;
+
+  try {
+    pImage->SetSource(source);
+  }
+  catch (std::out_of_range & e) {
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return;
+    };
+  }
+  catch (std::exception & e) {
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
+    };
+  }
+  catch (Dali::DaliException e) {
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition); return;
+    };
+  }
+  catch (...) {
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return;
+    };
+  }
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_AcquireBuffer(void* jarg1, int* jarg2, int* jarg3, int* jarg4)
 {
   void* jresult;
