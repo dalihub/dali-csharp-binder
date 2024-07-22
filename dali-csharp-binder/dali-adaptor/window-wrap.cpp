@@ -3817,6 +3817,32 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsAlwaysOnTop(void * winHandle) {
   return result;
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_RelativeMotionGrab(void * winHandle, unsigned int boundary) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  bool result = false;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      result = Dali::DevelWindow::RelativeMotionGrab(*window, boundary);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_RelativeMotionUnGrab(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  bool result = false;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      result = Dali::DevelWindow::RelativeMotionUnGrab(*window);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
 /* pointer constraints event */
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal(void* winHandle)
 {
