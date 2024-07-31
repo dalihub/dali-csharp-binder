@@ -16,10 +16,10 @@
  */
 
 // EXTERNAL INCLUDES
-#include <dali/public-api/capture/capture.h>
-#include <dali/devel-api/adaptor-framework/capture-devel.h>
-#include <dali-toolkit/public-api/image-loader/image.h>
 #include <dali-toolkit/public-api/image-loader/image-url.h>
+#include <dali-toolkit/public-api/image-loader/image.h>
+#include <dali/devel-api/adaptor-framework/capture-devel.h>
+#include <dali/public-api/capture/capture.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -53,11 +53,9 @@ SWIGINTERN void Dali_Capture_Signal_Emit(Dali::Capture::CaptureFinishedSignalTyp
 extern "C" {
 #endif
 
-
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_New()
 {
-  void* jresult;
+  void*         jresult;
   Dali::Capture result;
 
   {
@@ -72,10 +70,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_New()
   return jresult;
 }
 
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Capture(void* jarg1)
 {
-  Dali::Capture* arg1 = (Dali::Capture*) 0;
+  Dali::Capture* arg1 = (Dali::Capture*)0;
 
   arg1 = (Dali::Capture*)jarg1;
   {
@@ -87,24 +84,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Capture(void* jarg1)
   }
 }
 
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_1(void* nuiCapture, void* nuiSource, void* nuiSize, char* nuiPath, void* nuiClearColor)
 {
   Dali::Capture* capture = (Dali::Capture*)0;
-  Dali::Actor* source = (Dali::Actor*)0;
-  Dali::Vector2* size = (Dali::Vector2*)0;
-  std::string* path;
-  std::string path_str(nuiPath);
+  Dali::Actor*   source  = (Dali::Actor*)0;
+  Dali::Vector2* size    = (Dali::Vector2*)0;
+  std::string*   path;
+  std::string    path_str(nuiPath);
   Dali::Vector4* clearColor = (Dali::Vector4*)0;
 
-  capture = (Dali::Capture*)nuiCapture;
-  source = (Dali::Actor*)nuiSource;
-  size = (Dali::Vector2*)nuiSize;
-  path = &path_str;
+  capture    = (Dali::Capture*)nuiCapture;
+  source     = (Dali::Actor*)nuiSource;
+  size       = (Dali::Vector2*)nuiSize;
+  path       = &path_str;
   clearColor = (Dali::Vector4*)nuiClearColor;
 
-  if (!capture || !source || !size || !path || !clearColor)
+  if(!capture || !source || !size || !path || !clearColor)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return;
@@ -113,7 +108,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_1(void* nuiCapture, void* 
   {
     try
     {
-      (capture)->Start(*source, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&) * clearColor);
+      (capture)->Start(*source, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&)*clearColor);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -122,17 +117,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_1(void* nuiCapture, void* 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_2(void* nuiCapture, void* nuiSource, void* nuiSize, char* nuiPath)
 {
   Dali::Capture* capture = (Dali::Capture*)0;
-  Dali::Actor* source = (Dali::Actor*)0;
-  Dali::Vector2* size = (Dali::Vector2*)0;
-  std::string* path;
-  std::string path_str(nuiPath);
+  Dali::Actor*   source  = (Dali::Actor*)0;
+  Dali::Vector2* size    = (Dali::Vector2*)0;
+  std::string*   path;
+  std::string    path_str(nuiPath);
 
   capture = (Dali::Capture*)nuiCapture;
-  source = (Dali::Actor*)nuiSource;
-  size = (Dali::Vector2*)nuiSize;
-  path = &path_str;
+  source  = (Dali::Actor*)nuiSource;
+  size    = (Dali::Vector2*)nuiSize;
+  path    = &path_str;
 
-  if (!capture || !source || !size || !path)
+  if(!capture || !source || !size || !path)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return;
@@ -150,21 +145,21 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_2(void* nuiCapture, void* 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_3(void* nuiCapture, void* nuiSource, void* nuiSize, char* nuiPath, void* nuiClearColor, uint32_t nuiQuality)
 {
   Dali::Capture* capture = (Dali::Capture*)0;
-  Dali::Actor* source = (Dali::Actor*)0;
-  Dali::Vector2* size = (Dali::Vector2*)0;
-  std::string* path;
-  std::string path_str(nuiPath);
+  Dali::Actor*   source  = (Dali::Actor*)0;
+  Dali::Vector2* size    = (Dali::Vector2*)0;
+  std::string*   path;
+  std::string    path_str(nuiPath);
   Dali::Vector4* clearColor = (Dali::Vector4*)0;
-  uint32_t quality;
+  uint32_t       quality;
 
-  capture = (Dali::Capture*)nuiCapture;
-  source = (Dali::Actor*)nuiSource;
-  size = (Dali::Vector2*)nuiSize;
-  path = &path_str;
+  capture    = (Dali::Capture*)nuiCapture;
+  source     = (Dali::Actor*)nuiSource;
+  size       = (Dali::Vector2*)nuiSize;
+  path       = &path_str;
   clearColor = (Dali::Vector4*)nuiClearColor;
-  quality = nuiQuality;
+  quality    = nuiQuality;
 
-  if (!capture || !source || !size || !path || !clearColor)
+  if(!capture || !source || !size || !path || !clearColor)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return;
@@ -173,30 +168,30 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_3(void* nuiCapture, void* 
   {
     try
     {
-      (capture)->Start(*source, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&) * clearColor, quality);
+      (capture)->Start(*source, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&)*clearColor, quality);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_4( void* nuiCapture, void* nuiSource, void* nuiPosition, void* nuiSize, char* nuiPath, void* nuiClearColor )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_4(void* nuiCapture, void* nuiSource, void* nuiPosition, void* nuiSize, char* nuiPath, void* nuiClearColor)
 {
-  Dali::Capture* capture = (Dali::Capture*)0;
-  Dali::Actor* source = (Dali::Actor*)0;
+  Dali::Capture* capture  = (Dali::Capture*)0;
+  Dali::Actor*   source   = (Dali::Actor*)0;
   Dali::Vector2* position = (Dali::Vector2*)0;
-  Dali::Vector2* size = (Dali::Vector2*)0;
-  std::string* path;
-  std::string path_str(nuiPath);
+  Dali::Vector2* size     = (Dali::Vector2*)0;
+  std::string*   path;
+  std::string    path_str(nuiPath);
   Dali::Vector4* clearColor = (Dali::Vector4*)0;
 
-  capture = (Dali::Capture*)nuiCapture;
-  source = (Dali::Actor*)nuiSource;
-  position = (Dali::Vector2*)nuiPosition;
-  size = (Dali::Vector2*)nuiSize;
-  path = &path_str;
+  capture    = (Dali::Capture*)nuiCapture;
+  source     = (Dali::Actor*)nuiSource;
+  position   = (Dali::Vector2*)nuiPosition;
+  size       = (Dali::Vector2*)nuiSize;
+  path       = &path_str;
   clearColor = (Dali::Vector4*)nuiClearColor;
 
-  if (!capture || !source || !size || !position || !path || !clearColor)
+  if(!capture || !source || !size || !position || !path || !clearColor)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return;
@@ -205,38 +200,82 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_4( void* nuiCapture, void*
   {
     try
     {
-      (capture)->Start(*source, (const Dali::Vector2&)*position, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&) * clearColor);
+      (capture)->Start(*source, (const Dali::Vector2&)*position, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&)*clearColor);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_SetImageQuality( void* nuiCapture, uint32_t nuiQuality )
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_SetImageQuality(void* nuiCapture, uint32_t nuiQuality)
 {
   Dali::Capture* capture = (Dali::Capture*)0;
-  uint32_t quality = nuiQuality;
+  uint32_t       quality = nuiQuality;
 
   capture = (Dali::Capture*)nuiCapture;
 
-  if ( !capture )
+  if(!capture)
   {
-    SWIG_CSharpSetPendingExceptionArgument( SWIG_CSharpArgumentNullException, "some argument is null", 0 );
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return;
   }
 
   {
     try
     {
-      ( capture )->SetImageQuality( quality );
+      (capture)->SetImageQuality(quality);
     }
     CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_SetExclusive(void* nuiCapture, bool exclusive)
+{
+  Dali::Capture* capture = (Dali::Capture*)0;
+
+  capture = (Dali::Capture*)nuiCapture;
+
+  if(!capture)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return;
+  }
+
+  {
+    try
+    {
+      (capture)->SetExclusive(exclusive);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Capture_IsExclusive(void* nuiCapture)
+{
+  Dali::Capture* capture = (Dali::Capture*)0;
+  bool           result;
+
+  capture = (Dali::Capture*)nuiCapture;
+
+  if(!capture)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return false;
+  }
+
+  {
+    try
+    {
+      result = (capture)->IsExclusive();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Capture_Signal_Empty(void* jarg1)
 {
   Dali::Capture::CaptureFinishedSignalType* arg1 = (Dali::Capture::CaptureFinishedSignalType*)jarg1;
-  bool result;
+  bool                                      result;
 
   {
     try
@@ -251,7 +290,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Capture_Signal_Empty(void* jarg1)
 SWIGEXPORT std::size_t SWIGSTDCALL CSharp_Dali_Capture_Signal_GetConnectionCount(void* jarg1)
 {
   Dali::Capture::CaptureFinishedSignalType* arg1 = (Dali::Capture::CaptureFinishedSignalType*)jarg1;
-  std::size_t result;
+  std::size_t                               result;
 
   {
     try
@@ -265,7 +304,7 @@ SWIGEXPORT std::size_t SWIGSTDCALL CSharp_Dali_Capture_Signal_GetConnectionCount
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Signal_Connect(void* jarg1, void* jarg2)
 {
-  Dali::Capture::CaptureFinishedSignalType* arg1 = (Dali::Capture::CaptureFinishedSignalType*)jarg1;
+  Dali::Capture::CaptureFinishedSignalType* arg1          = (Dali::Capture::CaptureFinishedSignalType*)jarg1;
   void (*arg2)(Dali::Capture, Dali::Capture::FinishState) = (void (*)(Dali::Capture, Dali::Capture::FinishState))jarg2;
 
   {
@@ -279,7 +318,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Signal_Connect(void* jarg1, void
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Signal_Disconnect(void* jarg1, void* jarg2)
 {
-  Dali::Capture::CaptureFinishedSignalType* arg1 = (Dali::Capture::CaptureFinishedSignalType*)jarg1;
+  Dali::Capture::CaptureFinishedSignalType* arg1          = (Dali::Capture::CaptureFinishedSignalType*)jarg1;
   void (*arg2)(Dali::Capture, Dali::Capture::FinishState) = (void (*)(Dali::Capture, Dali::Capture::FinishState))jarg2;
 
   {
@@ -294,14 +333,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Signal_Disconnect(void* jarg1, v
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Signal_Emit(void* jarg1, void* jarg2, int jarg3)
 {
   Dali::Capture::CaptureFinishedSignalType* arg1 = (Dali::Capture::CaptureFinishedSignalType*)jarg1;
-  Dali::Capture* arg2 = (Dali::Capture*)jarg2;
-  Dali::Capture::FinishState arg3;
+  Dali::Capture*                            arg2 = (Dali::Capture*)jarg2;
+  Dali::Capture::FinishState                arg3;
 
-  if (jarg3 == 0)
+  if(jarg3 == 0)
   {
     arg3 = Dali::Capture::FinishState::SUCCEEDED;
   }
-  else {
+  else
+  {
     arg3 = Dali::Capture::FinishState::FAILED;
   }
 
@@ -314,13 +354,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Signal_Emit(void* jarg1, void* j
   }
 }
 
-
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_Signal_Get(void* jarg1)
 {
-  Dali::Capture* arg1 = (Dali::Capture*)jarg1;
+  Dali::Capture*                            arg1 = (Dali::Capture*)jarg1;
   Dali::Capture::CaptureFinishedSignalType* result;
-  if (!arg1)
+  if(!arg1)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return 0;
@@ -342,10 +380,10 @@ struct NativeImageSourcePtrHandle
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg1)
 {
-  Dali::Capture* arg1 = (Dali::Capture*)jarg1;
+  Dali::Capture*              arg1   = (Dali::Capture*)jarg1;
   NativeImageSourcePtrHandle* handle = new NativeImageSourcePtrHandle();
 
-  if (!arg1)
+  if(!arg1)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     delete handle;
@@ -356,25 +394,25 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg
     {
       handle->Ptr = arg1->GetNativeImageSource();
     }
-    catch (std::out_of_range &e)
+    catch(std::out_of_range& e)
     {
       SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
       delete handle;
       return 0;
     }
-    catch (std::exception& e)
+    catch(std::exception& e)
     {
       SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
       delete handle;
       return 0;
     }
-    catch (Dali::DaliException e)
+    catch(Dali::DaliException e)
     {
       SWIG_CSharpException(SWIG_UnknownError, e.condition);
       delete handle;
       return 0;
     }
-    catch (...)
+    catch(...)
     {
       SWIG_CSharpException(SWIG_UnknownError, "unknown error");
       delete handle;
@@ -384,38 +422,39 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg
   return (void*)handle;
 }
 
-typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
+typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetImageUrl(void *nuiCapture)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetImageUrl(void* nuiCapture)
 {
   Dali::Toolkit::ImageUrl result;
-  Dali::Capture *capture = (Dali::Capture *)nuiCapture;
-  void *jresult;
+  Dali::Capture*          capture = (Dali::Capture*)nuiCapture;
+  void*                   jresult;
 
-  if (!capture)
+  if(!capture)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return 0;
   }
   {
-    try {
+    try
+    {
       Dali::Texture texture = capture->GetTexture();
-      result = Dali::Toolkit::ImageUrl::New(texture);
+      result                = Dali::Toolkit::ImageUrl::New(texture);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)result);
   return jresult;
 }
 
-SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Capture_GetCapturedBuffer(void *nuiCapture)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetCapturedBuffer(void* nuiCapture)
 {
-  Dali::Capture *capture = (Dali::Capture *)nuiCapture;
+  Dali::Capture*           capture = (Dali::Capture*)nuiCapture;
   Dali::Devel::PixelBuffer pixelBuffer;
 
-  if (!capture)
+  if(!capture)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return 0;
@@ -427,7 +466,7 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_Capture_GetCapturedBuffer(void *nuiCapt
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  Dali::Devel::PixelBuffer *result = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer &)pixelBuffer);
+  Dali::Devel::PixelBuffer* result = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)pixelBuffer);
   return result;
 }
 
