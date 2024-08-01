@@ -2748,6 +2748,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastHoverEvent(
   }
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastPanGestureState(void* winHandle)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  Dali::GestureState result;
+
+  if (!window) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
+    return 0;
+  }
+  {
+    try {
+      result = Dali::DevelWindow::GetLastPanGestureState(*window);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return (int)result;
+}
+
+
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetNeedsRotationCompletedAcknowledgement(void* winHandle, bool needAcknowledgement)
 {
