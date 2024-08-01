@@ -3179,6 +3179,22 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumHeight(void * 
   return result;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetVisiblityChangedActor()
+{
+  void*       jresult;
+  Dali::Actor result;
+
+  {
+    try
+    {
+      result = DevelActor::GetVisiblityChangedActor();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Actor((const Dali::Actor&)result);
+  return jresult;
+}
 
 // Signals
 #ifndef GENERATE_DEVEL_ACTOR_SIGNAL
