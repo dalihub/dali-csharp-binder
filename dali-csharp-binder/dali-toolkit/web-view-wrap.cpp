@@ -1639,6 +1639,28 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebCertificate_IsContextSecure(void * ja
   return ret;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebCertificate_GetPolicyDecisionError(void * jarg1) {
+  Dali::WebEngineCertificate* arg1 = (Dali::WebEngineCertificate*)jarg1;
+  int ret = 1000;
+  {
+    try {
+      ret = (arg1)->GetPolicyDecisionError();
+    } CALL_CATCH_EXCEPTION(1000);
+  }
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebCertificate_SuspendPolicyDecision(void * jarg1) {
+  Dali::WebEngineCertificate* arg1 = (Dali::WebEngineCertificate*)jarg1;
+  bool ret = false;
+  {
+    try {
+      ret = (arg1)->SuspendPolicyDecision();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
 //----------------------------------WebContext-----------------------------------------------------
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebContext_GetCacheModel(void * jarg1) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
