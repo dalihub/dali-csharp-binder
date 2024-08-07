@@ -646,6 +646,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptEntireMessageHandler(void * jarg1, char * jarg2, void * jarg3) {
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  std::string exposedObjectName = jarg2;
+  void (*handler)(char*, char*) = (void (*)(char*, char*))jarg3;
+
+  {
+    try {
+      webview->AddJavaScriptEntireMessageHandler(exposedObjectName, [handler](const std::string &messageName, const std::string &messageBody) {
+            handler(SWIG_csharp_string_callback(messageName.c_str()), SWIG_csharp_string_callback(messageBody.c_str()));
+          });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptAlertCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   bool (*handler)(const char*) = (bool (*)(const char*))jarg2;
