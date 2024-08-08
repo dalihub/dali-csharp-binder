@@ -97,6 +97,21 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_CUTOUT_get()
   return (int)Dali::Toolkit::DevelTextLabel::Property::CUTOUT;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_RENDER_MODE_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::RENDER_MODE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_MANUAL_RENDERED_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::MANUAL_RENDERED;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ASYNC_LINE_COUNT_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::ASYNC_LINE_COUNT;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextSize(void * pTextLabel, unsigned int start, unsigned int end)
 {
   Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
@@ -196,6 +211,94 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextFitArray(void * argTe
   result = (void *)map;
   return result;
 }
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncRenderWithFixedSize(void * pTextLabel, float width, float height)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try
+    {
+      Dali::Toolkit::DevelTextLabel::RequestAsyncRenderWithFixedSize(*textLabel, width, height);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncRenderWithFixedWidth(void * pTextLabel, float width, float heightConstraint)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try
+    {
+      Dali::Toolkit::DevelTextLabel::RequestAsyncRenderWithFixedWidth(*textLabel, width, heightConstraint);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncRenderWithConstraint(void * pTextLabel, float widthConstraint, float heightConstraint)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try
+    {
+      Dali::Toolkit::DevelTextLabel::RequestAsyncRenderWithConstraint(*textLabel, widthConstraint, heightConstraint);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncNaturalSize(void * pTextLabel)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try
+    {
+      Dali::Toolkit::DevelTextLabel::RequestAsyncNaturalSize(*textLabel);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncHeightForWidth(void * pTextLabel, float width)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try
+    {
+      Dali::Toolkit::DevelTextLabel::RequestAsyncHeightForWidth(*textLabel, width);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+// Signals
+#ifndef GENERATE_DEVEL_TEXT_LABEL_SIGNAL
+#define GENERATE_DEVEL_TEXT_LABEL_SIGNAL(HType, SignalName) GENERATE_DEVEL_SIGNAL(Dali::Toolkit::TextLabel*, HType, Dali::Toolkit::DevelTextLabel, Dali_TextLabel, SignalName)
+#endif
+#ifndef GENERATE_TEXT_LABEL_SIGNAL
+#define GENERATE_TEXT_LABEL_SIGNAL(HType, SignalName) GENERATE_SIGNAL(Dali::Toolkit::TextLabel*, HType, Dali_TextLabel, SignalName)
+#endif
+
+// TODO: Other signals also need to be redefined using macros.
+
+GENERATE_DEVEL_TEXT_LABEL_SIGNAL(void(*)(Dali::Toolkit::TextLabel, float, float), AsyncTextRenderedSignal)
+// CSharp_Dali_TextLabel_AsyncTextRenderedSignal_Connect
+// CSharp_Dali_TextLabel_AsyncTextRenderedSignal_Disconnect
+
+GENERATE_DEVEL_TEXT_LABEL_SIGNAL(void(*)(Dali::Toolkit::TextLabel, float, float), AsyncNaturalSizeComputedSignal)
+// CSharp_Dali_TextLabel_AsyncNaturalSizeComputedSignal_Connect
+// CSharp_Dali_TextLabel_AsyncNaturalSizeComputedSignal_Disconnect
+
+GENERATE_DEVEL_TEXT_LABEL_SIGNAL(void(*)(Dali::Toolkit::TextLabel, float, float), AsyncHeightForWidthComputedSignal)
+// CSharp_Dali_TextLabel_AsyncHeightForWidthComputedSignal_Connect
+// CSharp_Dali_TextLabel_AsyncHeightForWidthComputedSignal_Disconnect
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_AnchorClickedSignal(void * jarg1) {
   void * jresult ;
