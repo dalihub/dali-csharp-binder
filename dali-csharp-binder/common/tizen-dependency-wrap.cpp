@@ -47,6 +47,33 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Texture_TbmSurface(tbm_surface_h tb
   return (void*)jresult;
 }
 
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_SetSource(void* jarg1, tbm_surface_h jarg2)
+{
+  Dali::NativeImageSource* pImage = (Dali::NativeImageSource*)jarg1;
+  Dali::Any source = (Dali::Any)jarg2;
+
+  try {
+    pImage->SetSource(source);
+  }
+  catch (std::out_of_range & e) {
+    SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+    return;
+  }
+  catch (std::exception & e) {
+    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+    return;
+  }
+  catch (Dali::DaliException e) {
+    SWIG_CSharpException(SWIG_UnknownError, e.condition);
+    return;
+  }
+  catch (...) {
+    SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+    return;
+  }
+}
+
 #ifdef __cplusplus
 }
 #endif
