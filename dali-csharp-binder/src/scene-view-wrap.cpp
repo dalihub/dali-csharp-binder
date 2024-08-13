@@ -663,6 +663,48 @@ extern "C"
     return jresult;
   }
 
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Capture(void *csSceneView, void *csCamera, void *csSize)
+  {
+    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    Dali::CameraActor *camera = (Dali::CameraActor *)csCamera;
+    Dali::Vector2 *size = (Dali::Vector2 *)csSize;
+    int captureId = 0;
+
+    if (!sceneView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+      return 0;
+    }
+    if (!camera)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::CameraActor", 0);
+      return 0;
+    }
+    if (!size)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Vector2", 0);
+      return 0;
+    }
+    {
+      try
+      {
+        captureId = sceneView->Capture(*camera, *size);
+      }
+      CALL_CATCH_EXCEPTION(0);
+    }
+    return captureId;
+  }
+
+
+// Signals
+#ifndef GENERATE_SCENE_VIEW_SIGNAL
+#define GENERATE_SCENE_VIEW_SIGNAL(HType, SignalName) GENERATE_SIGNAL(Dali::Scene3D::SceneView*, HType, Dali_SceneView, SignalName)
+#endif
+
+GENERATE_SCENE_VIEW_SIGNAL(void (*)(Dali::Scene3D::SceneView, int32_t, Dali::Toolkit::ImageUrl const&), CaptureFinishedSignal)
+// CSharp_Dali_SceneView_CaptureFinishedSignal_Connect
+// CSharp_Dali_SceneView_CaptureFinishedSignal_Disconnect
+
 #ifdef __cplusplus
 }
 #endif
