@@ -1635,6 +1635,10 @@ SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_AUTOMATION_ID_get() {
   return (int)Dali::Toolkit::DevelControl::Property::AUTOMATION_ID;
 }
 
+SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_ACESSIBILITY_VALUE_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_VALUE;
+}
+
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexContainer_Property_CONTENT_DIRECTION_get() {
   int jresult ;
