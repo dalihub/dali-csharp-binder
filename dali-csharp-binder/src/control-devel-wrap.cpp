@@ -85,6 +85,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_DISPATCH_KEY_EVENTS_get()
   return (int)Dali::Toolkit::DevelControl::Property::DISPATCH_KEY_EVENTS;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityActionSignal(void* arg1)
+{
+  Dali::Toolkit::DevelControl::AccessibilityActionSignalType* result = nullptr;
+  GUARD_ON_NULL_RET0(arg1);
+  try_catch(([&]() {
+    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
+    result                          = &(AccessibilityActionSignal(*control));
+  }));
+  return (void*)result;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityActivateSignal(void* arg1)
 {
   Dali::Toolkit::DevelControl::AccessibilityActivateSignalType* result = nullptr;

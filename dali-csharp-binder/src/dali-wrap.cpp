@@ -40092,6 +40092,22 @@ SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_AUTOMATION_ID_get() {
   return (int)Dali::Toolkit::DevelControl::Property::AUTOMATION_ID;
 }
 
+SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_ACCESSIBILITY_VALUE_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_VALUE;
+}
+
+SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_ACCESSIBILITY_SCROLLABLE_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_SCROLLABLE;
+}
+
+SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_ACCESSIBILITY_STATES_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_STATES;
+}
+
+SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_ACCESSIBILITY_IS_MODAL_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_IS_MODAL;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View_Property() {
   void * jresult ;
   Dali::Toolkit::Control::Property *result = 0 ;
