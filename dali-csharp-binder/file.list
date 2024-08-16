@@ -126,6 +126,7 @@ SET( dali_csharp_binder_scene3d_src_files
   ${dali_csharp_binder_dir}/dali-scene3d/motion-data-wrap.cpp
   ${dali_csharp_binder_dir}/dali-scene3d/motion-index-wrap.cpp
   ${dali_csharp_binder_dir}/dali-scene3d/motion-value-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-scene3d/panel-wrap.cpp
   ${dali_csharp_binder_dir}/dali-scene3d/scene-view-wrap.cpp
 )
 
