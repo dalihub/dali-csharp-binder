@@ -185,6 +185,17 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityDoGes
   return (void*)result;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityActionSignal(void* arg1)
+{
+  Dali::Toolkit::DevelControl::AccessibilityActionSignalType* result = nullptr;
+  GUARD_ON_NULL_RET0(arg1);
+  try_catch(([&]() {
+    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
+    result                          = &(AccessibilityActionSignal(*control));
+  }));
+  return (void*)result;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AppendAccessibilityRelation(void* arg1, void* arg2, int arg3)
 {
   GUARD_ON_NULL_RET(arg1);
