@@ -107,29 +107,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Model(void* csModel)
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Assign(void* csDestination, void* csSource)
-{
-  Dali::Scene3D::Model* destination = (Dali::Scene3D::Model*)csDestination;
-  Dali::Scene3D::Model* source      = (Dali::Scene3D::Model*)csSource;
-  Dali::Scene3D::Model* result      = 0;
-
-  if(!source)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Scene3D::Model const & type is null", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = (Dali::Scene3D::Model*)&(destination)->operator=((Dali::Scene3D::Model const&)*source);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  return (void*)result;
-}
-
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_GetModelRoot(void* csModel)
 {
   Dali::Scene3D::Model*    model = (Dali::Scene3D::Model*)csModel;
