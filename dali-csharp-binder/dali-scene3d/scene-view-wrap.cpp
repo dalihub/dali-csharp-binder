@@ -22,610 +22,704 @@
 #include <dali-csharp-binder/common/common.h>
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_New_SWIG_0()
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_SceneView_New_SWIG_0()
+{
+  Dali::Scene3D::SceneView result;
   {
-    Dali::Scene3D::SceneView result;
+    try
     {
-      try
-      {
-        result = Dali::Scene3D::SceneView::New();
-      }
-      CALL_CATCH_EXCEPTION(0);
+      result = Dali::Scene3D::SceneView::New();
     }
-
-    return new Dali::Scene3D::SceneView((const Dali::Scene3D::SceneView &)result);
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_SceneView_SWIG_1(void *csSceneView)
+  return new Dali::Scene3D::SceneView((const Dali::Scene3D::SceneView&)result);
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_SceneView_SWIG_1(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::Scene3D::SceneView* result    = 0;
+
+  if(!sceneView)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    Dali::Scene3D::SceneView *result = 0;
-
-    if (!sceneView)
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Scene3D::SceneView const & type is null", 0);
+    return 0;
+  }
+  {
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Scene3D::SceneView const & type is null", 0);
-      return 0;
+      result = (Dali::Scene3D::SceneView*)new Dali::Scene3D::SceneView((Dali::Scene3D::SceneView const&)*sceneView);
     }
-    {
-      try
-      {
-        result = (Dali::Scene3D::SceneView *)new Dali::Scene3D::SceneView((Dali::Scene3D::SceneView const &)*sceneView);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    return (void *)result;
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_SceneView(void *csSceneView)
+  return (void*)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_SceneView(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    try
     {
-      try
-      {
-        delete sceneView;
-      }
-      CALL_CATCH_EXCEPTION();
+      delete sceneView;
     }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_SceneView_Assign(void* csDestination, void* csSource)
+{
+  Dali::Scene3D::SceneView* destination = (Dali::Scene3D::SceneView*)csDestination;
+  Dali::Scene3D::SceneView* source      = (Dali::Scene3D::SceneView*)csSource;
+  Dali::Scene3D::SceneView* result      = 0;
+
+  if(!source)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Scene3D::SceneView const & type is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = (Dali::Scene3D::SceneView*)&(destination)->operator=((Dali::Scene3D::SceneView const&)*source);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_Assign(void *csDestination, void *csSource)
+  return (void*)result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_AddCamera(void* csSceneView, void* csCamera)
+{
+  Dali::Scene3D::SceneView* sceneView   = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::CameraActor*        cameraActor = (Dali::CameraActor*)csCamera;
+
+  if(!sceneView)
   {
-    Dali::Scene3D::SceneView *destination = (Dali::Scene3D::SceneView *)csDestination;
-    Dali::Scene3D::SceneView *source = (Dali::Scene3D::SceneView *)csSource;
-    Dali::Scene3D::SceneView *result = 0;
-
-    if (!source)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Scene3D::SceneView const & type is null", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = (Dali::Scene3D::SceneView *)&(destination)->operator=((Dali::Scene3D::SceneView const &)*source);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    return (void *)result;
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
   }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_AddCamera(void *csSceneView, void *csCamera)
+  if(!cameraActor)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    Dali::CameraActor *cameraActor = (Dali::CameraActor *)csCamera;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
-    }
-    if (!cameraActor)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::CameraActor", 0);
-      return;
-    }
-    {
-      try
-      {
-        sceneView->AddCamera(*cameraActor);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::CameraActor", 0);
+    return;
   }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_RemoveCamera(void *csSceneView, void *csCamera)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    Dali::CameraActor *cameraActor = (Dali::CameraActor *)csCamera;
-
-    if (!sceneView)
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
+      sceneView->AddCamera(*cameraActor);
     }
-    if (!cameraActor)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::CameraActor", 0);
-      return;
-    }
-    {
-      try
-      {
-        sceneView->RemoveCamera(*cameraActor);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
+    CALL_CATCH_EXCEPTION();
   }
+}
 
-  SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetCameraCount(void *csSceneView)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_RemoveCamera(void* csSceneView, void* csCamera)
+{
+  Dali::Scene3D::SceneView* sceneView   = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::CameraActor*        cameraActor = (Dali::CameraActor*)csCamera;
+
+  if(!sceneView)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    uint32_t result = 0;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = sceneView->GetCameraCount();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-    return result;
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
   }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_GetSelectedCamera(void *csSceneView)
+  if(!cameraActor)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    Dali::CameraActor cameraActor;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        cameraActor = sceneView->GetSelectedCamera();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-    Dali::CameraActor *result = new Dali::CameraActor((const Dali::CameraActor &)cameraActor);
-    return result;
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::CameraActor", 0);
+    return;
   }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_GetCamera_0(void *csSceneView, uint32_t index)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    Dali::CameraActor cameraActor;
-
-    if (!sceneView)
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return 0;
+      sceneView->RemoveCamera(*cameraActor);
     }
-    {
-      try
-      {
-        cameraActor = sceneView->GetCamera(index);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-    Dali::CameraActor *result = new Dali::CameraActor((const Dali::CameraActor &)cameraActor);
-    return result;
+    CALL_CATCH_EXCEPTION();
   }
+}
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_GetCamera_1(void *csSceneView, char *name)
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetCameraCount(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  uint32_t                  result    = 0;
+
+  if(!sceneView)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    Dali::CameraActor cameraActor;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        cameraActor = sceneView->GetCamera(std::string(name));
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-    Dali::CameraActor *result = new Dali::CameraActor((const Dali::CameraActor &)cameraActor);
-    return result;
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return 0;
   }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SelectCamera_0(void *csSceneView, uint32_t index)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-
-    if (!sceneView)
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
+      result = sceneView->GetCameraCount();
     }
-    {
-      try
-      {
-        sceneView->SelectCamera(index);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
+    CALL_CATCH_EXCEPTION(0);
   }
+  return result;
+}
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SelectCamera_1(void *csSceneView, char *name)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_SceneView_GetSelectedCamera(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::CameraActor         cameraActor;
+
+  if(!sceneView)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
-    }
-    {
-      try
-      {
-        sceneView->SelectCamera(std::string(name));
-      }
-      CALL_CATCH_EXCEPTION();
-    }
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return 0;
   }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetImageBasedLightSource(void *csSceneView, char *diffuseUrl, char *specularUrl, float scaleFactor)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-
-    if (!sceneView)
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
+      cameraActor = sceneView->GetSelectedCamera();
     }
-    {
-      try
-      {
-        sceneView->SetImageBasedLightSource(std::string(diffuseUrl), std::string(specularUrl), scaleFactor);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
+    CALL_CATCH_EXCEPTION(0);
   }
+  Dali::CameraActor* result = new Dali::CameraActor((const Dali::CameraActor&)cameraActor);
+  return result;
+}
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetImageBasedLightScaleFactor(void *csSceneView, float scaleFactor)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_SceneView_GetCamera_0(void* csSceneView, uint32_t index)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::CameraActor         cameraActor;
+
+  if(!sceneView)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
-    }
-    {
-      try
-      {
-        sceneView->SetImageBasedLightScaleFactor(scaleFactor);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return 0;
   }
-
-  SWIGEXPORT float SWIGSTDCALL CSharp_Dali_SceneView_GetImageBasedLightScaleFactor(void *csSceneView)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    float scaleFactor = 1.0f;
+    try
+    {
+      cameraActor = sceneView->GetCamera(index);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  Dali::CameraActor* result = new Dali::CameraActor((const Dali::CameraActor&)cameraActor);
+  return result;
+}
 
-    if (!sceneView)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_SceneView_GetCamera_1(void* csSceneView, char* name)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::CameraActor         cameraActor;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return 0;
+  }
+  {
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelView", 0);
-      return scaleFactor;
+      cameraActor = sceneView->GetCamera(std::string(name));
     }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  Dali::CameraActor* result = new Dali::CameraActor((const Dali::CameraActor&)cameraActor);
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SelectCamera_0(void* csSceneView, uint32_t index)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
+  }
+  {
+    try
     {
-      try
-      {
-        scaleFactor = sceneView->GetImageBasedLightScaleFactor();
-      }
-      CALL_CATCH_EXCEPTION(0.0f);
+      sceneView->SelectCamera(index);
     }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SelectCamera_1(void* csSceneView, char* name)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
+  }
+  {
+    try
+    {
+      sceneView->SelectCamera(std::string(name));
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetImageBasedLightSource(void* csSceneView, char* diffuseUrl, char* specularUrl, float scaleFactor)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
+  }
+  {
+    try
+    {
+      sceneView->SetImageBasedLightSource(std::string(diffuseUrl), std::string(specularUrl), scaleFactor);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetImageBasedLightScaleFactor(void* csSceneView, float scaleFactor)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
+  }
+  {
+    try
+    {
+      sceneView->SetImageBasedLightScaleFactor(scaleFactor);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_SceneView_GetImageBasedLightScaleFactor(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView   = (Dali::Scene3D::SceneView*)csSceneView;
+  float                     scaleFactor = 1.0f;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelView", 0);
     return scaleFactor;
   }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_UseFramebuffer(void *csSceneView, bool useFramebuffer)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-
-    if (!sceneView)
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
+      scaleFactor = sceneView->GetImageBasedLightScaleFactor();
     }
-    {
-      try
-      {
-        sceneView->UseFramebuffer(useFramebuffer);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
+    CALL_CATCH_EXCEPTION(0.0f);
   }
+  return scaleFactor;
+}
 
-  SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_SceneView_IsUsingFramebuffer(void *csSceneView)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_UseFramebuffer(void* csSceneView, bool useFramebuffer)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    bool result = false;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return false;
-    }
-    {
-      try
-      {
-        result = sceneView->IsUsingFramebuffer();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-    return result;
-  }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetResolution(void *csSceneView, uint32_t width, uint32_t height)
-  {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
-    }
-    {
-      try
-      {
-        sceneView->SetResolution(width, height);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
-
-  SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetResolutionWidth(void *csSceneView)
-  {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    uint32_t result = 0u;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = static_cast<uint32_t>(sceneView->GetResolutionWidth());
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-    return result;
-  }
-
-  SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetResolutionHeight(void *csSceneView)
-  {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    uint32_t result = 0u;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = static_cast<uint32_t>(sceneView->GetResolutionHeight());
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-    return result;
-  }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_ResetResolution(void *csSceneView)
-  {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
-    }
-    {
-      try
-      {
-        sceneView->ResetResolution();
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetFramebufferMultiSamplingLevel(void *csSceneView, uint32_t multiSamplingLevel)
-  {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
-    }
-    {
-      try
-      {
-        sceneView->SetFramebufferMultiSamplingLevel(static_cast<uint8_t>(multiSamplingLevel));
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
-
-  SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetFramebufferMultiSamplingLevel(void *csSceneView)
-  {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    uint32_t result = 0u;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = static_cast<uint32_t>(sceneView->GetFramebufferMultiSamplingLevel());
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-    return result;
-  }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkybox(void *csSceneView, char *skyboxUrl)
-  {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
-    }
-    if (!skyboxUrl)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null string", 0);
-      return;
-    }
-    {
-      try
-      {
-        sceneView->SetSkybox(std::string(skyboxUrl));
-      }
-      CALL_CATCH_EXCEPTION();
-    }
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
     return;
   }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxEnvironmentMapType(void *csSceneView, int skyboxEnvironmentMapType)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    try
+    {
+      sceneView->UseFramebuffer(useFramebuffer);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
-    if (!sceneView)
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_SceneView_IsUsingFramebuffer(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  bool                      result    = false;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return false;
+  }
+  {
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
+      result = sceneView->IsUsingFramebuffer();
     }
-    {
-      try
-      {
-        sceneView->SetSkyboxEnvironmentMapType((Dali::Scene3D::EnvironmentMapType)skyboxEnvironmentMapType);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetResolution(void* csSceneView, uint32_t width, uint32_t height)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
     return;
   }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxIntensity(void *csSceneView, float intensity)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
+    try
+    {
+      sceneView->SetResolution(width, height);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
-    if (!sceneView)
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetResolutionWidth(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  uint32_t                  result    = 0u;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return 0;
+  }
+  {
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
+      result = static_cast<uint32_t>(sceneView->GetResolutionWidth());
     }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetResolutionHeight(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  uint32_t                  result    = 0u;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return 0;
+  }
+  {
+    try
     {
-      try
-      {
-        sceneView->SetSkyboxIntensity(intensity);
-      }
-      CALL_CATCH_EXCEPTION();
+      result = static_cast<uint32_t>(sceneView->GetResolutionHeight());
     }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_ResetResolution(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
     return;
   }
-
-  SWIGEXPORT float SWIGSTDCALL CSharp_Dali_SceneView_GetSkyboxIntensity(void *csSceneView)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    float intensity = 1.0f;
+    try
+    {
+      sceneView->ResetResolution();
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
-    if (!sceneView)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetFramebufferMultiSamplingLevel(void* csSceneView, uint32_t multiSamplingLevel)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
+  }
+  {
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return intensity;
+      sceneView->SetFramebufferMultiSamplingLevel(static_cast<uint8_t>(multiSamplingLevel));
     }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_SceneView_GetFramebufferMultiSamplingLevel(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  uint32_t                  result    = 0u;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return 0;
+  }
+  {
+    try
     {
-      try
-      {
-        intensity = sceneView->GetSkyboxIntensity();
-      }
-      CALL_CATCH_EXCEPTION(0.0f);
+      result = static_cast<uint32_t>(sceneView->GetFramebufferMultiSamplingLevel());
     }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkybox(void* csSceneView, char* skyboxUrl)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
+  }
+  if(!skyboxUrl)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null string", 0);
+    return;
+  }
+  {
+    try
+    {
+      sceneView->SetSkybox(std::string(skyboxUrl));
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxEnvironmentMapType(void* csSceneView, int skyboxEnvironmentMapType)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
+  }
+  {
+    try
+    {
+      sceneView->SetSkyboxEnvironmentMapType((Dali::Scene3D::EnvironmentMapType)skyboxEnvironmentMapType);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxIntensity(void* csSceneView, float intensity)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
+  }
+  {
+    try
+    {
+      sceneView->SetSkyboxIntensity(intensity);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_SceneView_GetSkyboxIntensity(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  float                     intensity = 1.0f;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
     return intensity;
   }
-
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxOrientation(void *csSceneView, void *csOrientation)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    Dali::Quaternion *orientation = (Dali::Quaternion *)csOrientation;
+    try
+    {
+      intensity = sceneView->GetSkyboxIntensity();
+    }
+    CALL_CATCH_EXCEPTION(0.0f);
+  }
+  return intensity;
+}
 
-    if (!sceneView)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return;
-    }
-    if (!orientation)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Quaternion", 0);
-      return;
-    }
-    {
-      try
-      {
-        sceneView->SetSkyboxOrientation(*orientation);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkyboxOrientation(void* csSceneView, void* csOrientation)
+{
+  Dali::Scene3D::SceneView* sceneView   = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::Quaternion*         orientation = (Dali::Quaternion*)csOrientation;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
     return;
   }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SceneView_GetSkyboxOrientation(void *csSceneView)
+  if(!orientation)
   {
-    Dali::Scene3D::SceneView *sceneView = (Dali::Scene3D::SceneView *)csSceneView;
-    Dali::Quaternion orientation;
-
-    if (!sceneView)
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Quaternion", 0);
+    return;
+  }
+  {
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
-      return 0;
+      sceneView->SetSkyboxOrientation(*orientation);
     }
+    CALL_CATCH_EXCEPTION();
+  }
+  return;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_SceneView_GetSkyboxOrientation(void* csSceneView)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::Quaternion          orientation;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return 0;
+  }
+  {
+    try
     {
-      try
-      {
-        orientation = sceneView->GetSkyboxOrientation();
-      }
-      CALL_CATCH_EXCEPTION(0);
+      orientation = sceneView->GetSkyboxOrientation();
     }
-    Dali::Quaternion *result = new Dali::Quaternion((const Dali::Quaternion &)orientation);
-    return result;
+    CALL_CATCH_EXCEPTION(0);
   }
+  Dali::Quaternion* result = new Dali::Quaternion((const Dali::Quaternion&)orientation);
+  return result;
+}
 
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_AlphaMaskURL_get()
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_AlphaMaskURL_get()
+{
+  int jresult;
+  int result;
+
+  result  = (int)Dali::Scene3D::SceneView::Property::ALPHA_MASK_URL;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_MaskContentScale_get()
+{
+  int jresult;
+  int result;
+
+  result  = (int)Dali::Scene3D::SceneView::Property::MASK_CONTENT_SCALE;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CropToMask_get()
+{
+  int jresult;
+  int result;
+
+  result  = (int)Dali::Scene3D::SceneView::Property::CROP_TO_MASK;
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_StartCameraTransition_Index(void* csSceneView, uint32_t index, int durationMilliSeconds, void* csAlphaFunction)
+{
+  Dali::Scene3D::SceneView* sceneView       = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::AlphaFunction*      alphaFunction   = (Dali::AlphaFunction*)csAlphaFunction;
+  float                     durationSeconds = (float)durationMilliSeconds / 1000.0f;
+
+  if(!sceneView)
   {
-    int jresult;
-    int result;
-
-    result = (int)Dali::Scene3D::SceneView::Property::ALPHA_MASK_URL;
-    jresult = (int)result;
-    return jresult;
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
   }
-
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_MaskContentScale_get()
+  if(!alphaFunction)
   {
-    int jresult;
-    int result;
-
-    result = (int)Dali::Scene3D::SceneView::Property::MASK_CONTENT_SCALE;
-    jresult = (int)result;
-    return jresult;
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::AlphaFunction", 0);
+    return;
   }
-
-  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CropToMask_get()
   {
-    int jresult;
-    int result;
-
-    result = (int)Dali::Scene3D::SceneView::Property::CROP_TO_MASK;
-    jresult = (int)result;
-    return jresult;
+    try
+    {
+      sceneView->StartCameraTransition(index, durationSeconds, *alphaFunction);
+    }
+    CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_StartCameraTransition_Name(void* csSceneView, char* name, int durationMilliSeconds, void* csAlphaFunction)
+{
+  Dali::Scene3D::SceneView* sceneView       = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::AlphaFunction*      alphaFunction   = (Dali::AlphaFunction*)csAlphaFunction;
+  float                     durationSeconds = (float)durationMilliSeconds / 1000.0f;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return;
+  }
+  if(!alphaFunction)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::AlphaFunction", 0);
+    return;
+  }
+  {
+    try
+    {
+      sceneView->StartCameraTransition(std::string(name), durationSeconds, *alphaFunction);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Capture(void* csSceneView, void* csCamera, void* csSize)
+{
+  Dali::Scene3D::SceneView* sceneView = (Dali::Scene3D::SceneView*)csSceneView;
+  Dali::CameraActor*        camera    = (Dali::CameraActor*)csCamera;
+  Dali::Vector2*            size      = (Dali::Vector2*)csSize;
+  int                       captureId = 0;
+
+  if(!sceneView)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::SceneView", 0);
+    return 0;
+  }
+  if(!camera)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::CameraActor", 0);
+    return 0;
+  }
+  if(!size)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Vector2", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      captureId = sceneView->Capture(*camera, *size);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return captureId;
+}
+
+// Signals
+#ifndef GENERATE_SCENE_VIEW_SIGNAL
+#define GENERATE_SCENE_VIEW_SIGNAL(HType, SignalName) GENERATE_SIGNAL(Dali::Scene3D::SceneView*, HType, Dali_SceneView, SignalName)
+#endif
+
+GENERATE_SCENE_VIEW_SIGNAL(void (*)(Dali::Scene3D::SceneView), CameraTransitionFinishedSignal)
+// CSharp_Dali_SceneView_CameraTransitionFinishedSignal_Connect
+// CSharp_Dali_SceneView_CameraTransitionFinishedSignal_Disconnect
+
+GENERATE_SCENE_VIEW_SIGNAL(void (*)(Dali::Scene3D::SceneView, int32_t, Dali::Toolkit::ImageUrl const&), CaptureFinishedSignal)
+// CSharp_Dali_SceneView_CaptureFinishedSignal_Connect
+// CSharp_Dali_SceneView_CaptureFinishedSignal_Disconnect
 
 #ifdef __cplusplus
 }
