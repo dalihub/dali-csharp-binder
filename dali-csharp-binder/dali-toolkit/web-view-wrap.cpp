@@ -225,6 +225,16 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_GetBackForwardList(void * jarg
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ChangeOrientation(void * jarg1, int orientation) {
+  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)jarg1;
+
+  {
+    try {
+      arg1->ChangeOrientation(orientation);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_GetSettings(void * jarg1) {
   void * jresult;
   Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
@@ -636,6 +646,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptEntireMessageHandler(void * jarg1, char * jarg2, void * jarg3) {
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
+
+  Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  std::string exposedObjectName = jarg2;
+  void (*handler)(char*, char*) = (void (*)(char*, char*))jarg3;
+
+  {
+    try {
+      webview->AddJavaScriptEntireMessageHandler(exposedObjectName, [handler](const std::string &messageName, const std::string &messageBody) {
+            handler(SWIG_csharp_string_callback(messageName.c_str()), SWIG_csharp_string_callback(messageBody.c_str()));
+          });
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptAlertCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   bool (*handler)(const char*) = (bool (*)(const char*))jarg2;
@@ -750,6 +779,17 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CreateHitTestAsynchronously(void
     } CALL_CATCH_EXCEPTION(0);
   }
   return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ExitFullscreen(void * jarg1) {
+  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
+
+  arg1 = (Dali::Toolkit::WebView*)jarg1;
+  {
+    try {
+      (arg1)->ExitFullscreen();
+    } CALL_CATCH_EXCEPTION();
+  }
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ClearHistory(void * jarg1) {
@@ -1124,6 +1164,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNavigationPolicyDecidedC
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNewWindowPolicyDecidedCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(Dali::WebEnginePolicyDecision*) = (void (*)(Dali::WebEnginePolicyDecision*))jarg2;
+  {
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterNewWindowPolicyDecidedCallback([handler](std::unique_ptr<Dali::WebEnginePolicyDecision> decision) {
+            handler(decision.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterNewWindowPolicyDecidedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNewWindowCreatedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   void (*handler)(Dali::Toolkit::WebView*&) = (void (*)(Dali::Toolkit::WebView*&))jarg2;
@@ -1238,6 +1297,63 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterContextMenuHiddenCallbac
       else
       {
         (arg1)->RegisterContextMenuHiddenCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFullscreenEnteredCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(void) = (void (*)(void))jarg2;
+  {
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterFullscreenEnteredCallback([handler](void) {
+            handler();
+          });
+      }
+      else
+      {
+        (arg1)->RegisterFullscreenEnteredCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFullscreenExitedCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(void) = (void (*)(void))jarg2;
+  {
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterFullscreenExitedCallback([handler](void) {
+            handler();
+          });
+      }
+      else
+      {
+        (arg1)->RegisterFullscreenExitedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterTextFoundCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(uint32_t) = (void (*)(uint32_t))jarg2;
+  {
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterTextFoundCallback([handler](uint32_t count) {
+            handler(count);
+          });
+      }
+      else
+      {
+        (arg1)->RegisterTextFoundCallback(nullptr);
       }
     } CALL_CATCH_EXCEPTION();
   }
@@ -1537,6 +1653,28 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebCertificate_IsContextSecure(void * ja
   {
     try {
       ret = (arg1)->IsContextSecure();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebCertificate_GetPolicyDecisionError(void * jarg1) {
+  Dali::WebEngineCertificate* arg1 = (Dali::WebEngineCertificate*)jarg1;
+  int ret = 1000;
+  {
+    try {
+      ret = (arg1)->GetPolicyDecisionError();
+    } CALL_CATCH_EXCEPTION(1000);
+  }
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebCertificate_SuspendPolicyDecision(void * jarg1) {
+  Dali::WebEngineCertificate* arg1 = (Dali::WebEngineCertificate*)jarg1;
+  bool ret = false;
+  {
+    try {
+      ret = (arg1)->SuspendPolicyDecision();
     } CALL_CATCH_EXCEPTION(0);
   }
   return ret;
