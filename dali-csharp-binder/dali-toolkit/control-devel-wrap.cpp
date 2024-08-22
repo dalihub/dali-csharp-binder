@@ -58,6 +58,7 @@ Dali::Property::Value RootCallback(int32_t id, VectorAnimationRenderer::VectorPr
     case VectorAnimationRenderer::VectorProperty::TRANSFORM_ANCHOR :
     case VectorAnimationRenderer::VectorProperty::TRANSFORM_POSITION :
     case VectorAnimationRenderer::VectorProperty::TRANSFORM_SCALE :
+    case VectorAnimationRenderer::VectorProperty::TRIM_END :
       return Dali::Vector2(val1, val2);
       break;
 
@@ -66,6 +67,7 @@ Dali::Property::Value RootCallback(int32_t id, VectorAnimationRenderer::VectorPr
     case VectorAnimationRenderer::VectorProperty::STROKE_WIDTH :
     case VectorAnimationRenderer::VectorProperty::TRANSFORM_ROTATION :
     case VectorAnimationRenderer::VectorProperty::TRANSFORM_OPACITY :
+    case VectorAnimationRenderer::VectorProperty::TRIM_START :
       return val1;
       break;
 
