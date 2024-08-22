@@ -12609,6 +12609,24 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakePosition(void
   return proxy->BakePosition(id, *vector3);
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetOrientation(void * updateProxy, unsigned int id,  void* orientation) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Quaternion* quaternion = (Dali::Quaternion *)orientation;
+  return proxy->GetOrientation(id, *quaternion);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetOrientation(void * updateProxy, unsigned int id, void* orientation) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Quaternion* quaternion = (Dali::Quaternion *)orientation;
+  return proxy->SetOrientation(id, *quaternion);
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeOrientation(void * updateProxy, unsigned int id, void* orientation) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Quaternion* quaternion = (Dali::Quaternion *)orientation;
+  return proxy->BakeOrientation(id, *quaternion);
+}
+
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetSize(void * updateProxy, unsigned int id, void* size) {
   Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
   Dali::Vector3* vector3 = (Dali::Vector3 *)size;
@@ -12620,6 +12638,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetSize(void * up
   Dali::Vector3* vector3 = (Dali::Vector3 *)size;
   return proxy->SetSize(id, *vector3);
 }
+
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeSize(void * updateProxy, unsigned int id, void* size) {
   Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
   Dali::Vector3* vector3 = (Dali::Vector3 *)size;
