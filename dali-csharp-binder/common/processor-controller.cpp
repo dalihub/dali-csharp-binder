@@ -113,7 +113,7 @@ void ProcessorController::Awake()
 
   if(!mProcessingEvents && !mKeepRenderingApplied)
   {
-    if(DALI_LIKELY(Dali::Stage::IsInstalled())) ///< Avoid worker thread calling.
+    if(DALI_LIKELY(Dali::Adaptor::IsAvailable())) ///< Avoid worker thread calling.
     {
       auto stage = Dali::Stage::GetCurrent();
       stage.KeepRendering(0.0f);
@@ -122,7 +122,7 @@ void ProcessorController::Awake()
   }
   else if(mProcessingEvents && !mProcessEventsIdleRequested)
   {
-    if(DALI_LIKELY(Dali::Stage::IsInstalled())) ///< Avoid worker thread calling.
+    if(DALI_LIKELY(Dali::Adaptor::IsAvailable())) ///< Avoid worker thread calling.
     {
       // Request ProcessEvents on idle when we are processing now.
       Dali::Adaptor::Get().RequestProcessEventsOnIdle();
