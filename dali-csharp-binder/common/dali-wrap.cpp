@@ -22784,6 +22784,26 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* han
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ImageUrl_Copy(void* csImageUrl)
+{
+  Dali::Toolkit::ImageUrl* imageUrl = (Dali::Toolkit::ImageUrl*)csImageUrl;
+  Dali::Toolkit::ImageUrl* result    = 0;
+
+  if(!imageUrl)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ImageUrl const & type is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = (Dali::Toolkit::ImageUrl*)new Dali::Toolkit::ImageUrl((Dali::Toolkit::ImageUrl const&)*imageUrl);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void*)result;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageUrl(void* jarg1)
 {
