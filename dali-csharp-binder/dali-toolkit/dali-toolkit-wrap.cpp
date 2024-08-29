@@ -12275,7 +12275,24 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VisualFactory_CreateVisual__SWIG_0(voi
   return jresult;
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VisualFactory_AddPrecompileShader(void* csVisualFactory, void * csOptionPropertyMap)
+{
+  bool result = false;
+  Dali::Toolkit::VisualFactory* visualFactory = (Dali::Toolkit::VisualFactory*)csVisualFactory;
+  Dali::Property::Map *optionPropertyMap = (Dali::Property::Map *)csOptionPropertyMap ;
+  if(!visualFactory)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Property::Map const & type is null", 0);
+    return result;
+  }
+  try
+  {
+    result = (visualFactory)->AddPrecompileShader((Dali::Property::Map const &)*optionPropertyMap);
+  }
+  CALL_CATCH_EXCEPTION(false);
 
+  return result;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualFactory_UsePreCompiledShader(void* csVisualFactory)
 {
@@ -12292,8 +12309,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualFactory_UsePreCompiledShader(void*
   }
   CALL_CATCH_EXCEPTION();
 }
-
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AsyncImageLoader(void * jarg1) {
   Dali::Toolkit::AsyncImageLoader *arg1 = (Dali::Toolkit::AsyncImageLoader *) 0 ;
