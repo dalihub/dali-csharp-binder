@@ -363,18 +363,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityStateChan
 {
   GUARD_ON_NULL_RET(arg1);
   try_catch(([&]() {
+    auto* actor = (Dali::Actor*)arg1;
     auto state = static_cast<Dali::Accessibility::State>(arg2_state);
-
-    Dali::Actor* control    = (Dali::Actor*)arg1;
-    auto         accessible = Dali::Accessibility::Accessible::Get(*control);
-    if(accessible)
-    {
-      accessible->EmitStateChanged(state, arg3);
-    }
-    else
-    {
-      SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
-    }
+    EmitAccessibilityStateChanged(*actor, state, arg3);
   }));
 }
 
