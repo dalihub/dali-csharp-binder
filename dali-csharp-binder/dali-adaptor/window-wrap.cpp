@@ -3843,6 +3843,44 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_RelativeMotionUnGrab(void * winHa
   return result;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetBlur(void * winHandle, void * nuiBlurInfo) {
+  Dali::WindowBlurInfo blurInfo ;
+  Dali::WindowBlurInfo *pBlurInfo = (Dali::WindowBlurInfo *)nuiBlurInfo;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return ;
+  }
+
+  if (!pBlurInfo) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowBlurInfo", 0);
+    return ;
+  }
+  blurInfo = *pBlurInfo;
+  {
+    try {
+      Dali::DevelWindow::SetBlur(*window, blurInfo);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetBlur(void * winHandle) {
+  void * jresult ;
+  Dali::WindowBlurInfo result;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window)) {
+   return 0;
+  }
+
+  {
+    try {
+      result = Dali::DevelWindow::GetBlur(*window);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::WindowBlurInfo((const Dali::WindowBlurInfo &)result);
+  return jresult;
+}
+
 /* pointer constraints event */
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal(void* winHandle)
 {
