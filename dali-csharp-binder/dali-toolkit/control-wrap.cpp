@@ -635,7 +635,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_GetVisualProperty(void* control, i
   try
   {
     Dali::Property property = DevelControl::GetVisualProperty(*((Dali::Toolkit::Control*)control), (Dali::Property::Index)propertyIndex, (Dali::Property::Index)visualPropertyIndex);
-    result                  = new Dali::Property(property.object, property.propertyIndex, property.componentIndex);
+    result                  = new Dali::Property(property.object, property.propertyIndex);
   }
   CALL_CATCH_EXCEPTION(0);
 
