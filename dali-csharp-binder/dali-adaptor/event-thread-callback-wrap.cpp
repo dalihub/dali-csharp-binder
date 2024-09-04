@@ -70,6 +70,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_EventThreadCallback(SWIG_CallbackM
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_EventThreadCallback(void * csEventThreadCallback) {
+  Dali::EventThreadCallback *eventThreadCallback = (Dali::EventThreadCallback *) 0 ;
+
+  eventThreadCallback = (Dali::EventThreadCallback *)csEventThreadCallback;
+  {
+    try {
+      delete eventThreadCallback;
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_EventThreadCallback_Trigger(void * jarg1) {
   Dali::EventThreadCallback *arg1 = (Dali::EventThreadCallback *) 0 ;
