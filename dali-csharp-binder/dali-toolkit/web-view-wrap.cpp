@@ -32,6 +32,7 @@
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-request-interceptor.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-security-origin.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-back-forward-list-item.h>
+#include <dali/devel-api/adaptor-framework/web-engine/web-engine-user-media-permission-request.h>
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-settings.h>
@@ -1370,6 +1371,107 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_GetPlainTextAsynchronously(void 
     } CALL_CATCH_EXCEPTION();
   }
 }
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_WebAuthenticationCancel(void * nuiWebView) {
+  Dali::Toolkit::WebView *webview = (Dali::Toolkit::WebView *)nuiWebView;
+  {
+    try {
+      webview->WebAuthenticationCancel();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthDisplayQRCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
+  {
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterWebAuthDisplayQRCallback([handler](const std::string& url) {
+            handler(url.c_str());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterWebAuthDisplayQRCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthResponseCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(void) = (void (*)(void))jarg2;
+  {
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterWebAuthResponseCallback([handler](void) {
+            handler();
+          });
+      }
+      else
+      {
+        (arg1)->RegisterWebAuthResponseCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUserMediaPermissionRequestCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(Dali::WebEngineUserMediaPermissionRequest*, const char *) = (void (*)(Dali::WebEngineUserMediaPermissionRequest*, const char *))jarg2;
+  {
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterUserMediaPermissionRequestCallback([handler](std::unique_ptr<Dali::WebEngineUserMediaPermissionRequest> permission, const std::string &message) {
+            handler(permission.release(), message.c_str());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterUserMediaPermissionRequestCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_UserMediaPermissionRequest(void * jarg1) {
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "UserMediaPermissionRequest is null", 0);
+    return;
+  }
+
+  Dali::WebEngineUserMediaPermissionRequest* arg1 = (Dali::WebEngineUserMediaPermissionRequest*)jarg1;
+  {
+    try {
+      delete arg1;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_UserMediaPermissionRequest_Set(void * jarg1, bool jarg2) {
+  Dali::WebEngineUserMediaPermissionRequest *arg1 = (Dali::WebEngineUserMediaPermissionRequest*)jarg1;
+  {
+    try {
+      (arg1)->Set(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UserMediaPermissionRequest_Suspend(void * jarg1) {
+  Dali::WebEngineUserMediaPermissionRequest* arg1 = (Dali::WebEngineUserMediaPermissionRequest*)jarg1;
+  bool ret;
+  {
+    try {
+      ret = (arg1)->Suspend();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
 
 //----------------------------------WebBackForwardListItem-----------------------------------------------------
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebBackForwardListItem_GetUrl(void * jarg1) {
