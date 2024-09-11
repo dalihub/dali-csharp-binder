@@ -21233,6 +21233,16 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FrameCallbackInterface() {
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FrameCallbackInterface(void* csFrameCallbackInterface) {
+  SwigDirector_FrameCallbackInterface *frameCallbackInterface = (SwigDirector_FrameCallbackInterface *) 0 ;
+
+  frameCallbackInterface = (SwigDirector_FrameCallbackInterface *)csFrameCallbackInterface;
+  {
+    try {
+      delete frameCallbackInterface;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_AddFrameCallback(void * jarg1, void* jarg2, void* jarg3) {
   Dali::FrameCallbackInterface *obj = (Dali::FrameCallbackInterface *)jarg2;

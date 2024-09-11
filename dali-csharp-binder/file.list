@@ -52,6 +52,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/dali-adaptor/native-image-queue-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/tts-player-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/window-data-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/window-blur-info-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/window-wrap.cpp
 
   ${dali_csharp_binder_dir}/dali-toolkit/dali-toolkit-wrap.cpp

@@ -54,7 +54,7 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_DragAndDrop_New__SWIG_0() {
  return jresult;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_StartDragAndDrop(void * argDnD, void * argSource, void * argShadowWindow, void * argMimeType, char * argData, void * argSourceCallback) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_StartDragAndDrop(void * argDnD, void * argSource, void * argShadowWindow, char ** argMimeTypes, int argMimeTypesSize, char ** argDataSet, int argDataSetSize, void * argSourceCallback) {
   Dali::DragAndDrop *dnd = (Dali::DragAndDrop *)argDnD;
 
   if (!dnd) {
@@ -83,8 +83,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_StartDragAndDrop(void * argD
   shadow = *pShadow;
 
   Dali::DragAndDrop::DragData dragData;
-  dragData.SetMimeType((const char*)argMimeType);
-  dragData.SetData(argData);
+  dragData.SetMimeTypes((const char**)argMimeTypes, argMimeTypesSize);
+  dragData.SetDataSet((const char**)argDataSet, argDataSetSize);
 
   bool result = false;
   {
@@ -97,8 +97,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_StartDragAndDrop(void * argD
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_AddListener(void * jarg1, void * jarg2, void * jarg3) {
-  Dali::DragAndDrop *dnd = (Dali::DragAndDrop *)jarg1;
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_AddListener(void * argDnD, void * argTarget, char * argMimeType, void * argCallback) {
+  Dali::DragAndDrop *dnd = (Dali::DragAndDrop *)argDnD;
   if (!dnd) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
     return false;
@@ -107,7 +107,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_AddListener(void * jarg1, vo
   Dali::Actor *argp2;
   Dali::Actor target;
 
-  argp2 = (Dali::Actor *)jarg2;
+  argp2 = (Dali::Actor *)argTarget;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
     return false;
@@ -117,8 +117,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_AddListener(void * jarg1, vo
   bool result = false;
   {
     try {
-      dndCallback = (DnDCallback)jarg3;
-      result = dnd->AddListener(target, dndCallback);
+      dndCallback = (DnDCallback)argCallback;
+      result = dnd->AddListener(target, argMimeType, dndCallback);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -153,7 +153,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_RemoveListener(void * argDnD
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_Window_AddListener(void * argDnD, void * argTarget, void * argCallback) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_Window_AddListener(void * argDnD, void * argTarget, char * argMimeType, void * argCallback) {
   Dali::DragAndDrop *dnd = (Dali::DragAndDrop *)argDnD;
   if (!dnd) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
@@ -174,7 +174,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_Window_AddListener(void * ar
   {
     try {
       dndCallback = (DnDCallback)argCallback;
-      result = dnd->AddListener(target, dndCallback);
+      result = dnd->AddListener(target, argMimeType, dndCallback);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -258,10 +258,11 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_DragEvent_GetMimeType(void * argDragEv
   }
   {
     try {
-      const char* mimeType = ((Dali::DragAndDrop::DragEvent &)*dragEvent).GetMimeType();
-      if (mimeType != nullptr)
+
+      char** mimeTypes = (char**)((Dali::DragAndDrop::DragEvent &)*dragEvent).GetMimeTypes();
+      if (mimeTypes != nullptr)
       {
-        result = mimeType;
+        result = mimeTypes[0];
       }
       else
       {
@@ -273,6 +274,23 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_DragEvent_GetMimeType(void * argDragEv
 
   jresult = SWIG_csharp_string_callback((&result)->c_str());
   return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragEvent_GetMimeTypes(void * argDragEvent, char *** argMimeTypes, int * argMimeTypesSize) {
+  Dali::DragAndDrop::DragEvent *dragEvent = (Dali::DragAndDrop::DragEvent *)argDragEvent;
+
+  if (!dragEvent) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
+    return false;
+  }
+  {
+    try {
+      *argMimeTypes = (char**)((Dali::DragAndDrop::DragEvent &)*dragEvent).GetMimeTypes();
+      *argMimeTypesSize = ((Dali::DragAndDrop::DragEvent &)*dragEvent).GetMimeTypesSize();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return true;
 }
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_DragEvent_GetData(void * argDragEvent) {
