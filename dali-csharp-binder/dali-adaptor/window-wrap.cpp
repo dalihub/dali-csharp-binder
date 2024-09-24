@@ -3817,6 +3817,30 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsAlwaysOnTop(void * winHandle) {
   return result;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetToBottom(void * winHandle, bool toBottom) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      Dali::DevelWindow::SetToBottom(*window, toBottom);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsBottom(void * winHandle) {
+  Dali::Window *window = (Dali::Window *) 0 ;
+  bool result = false;
+
+  window = (Dali::Window *)winHandle;
+  {
+    try {
+      result = Dali::DevelWindow::IsBottom(*window);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_RelativeMotionGrab(void * winHandle, unsigned int boundary) {
   Dali::Window *window = (Dali::Window *) 0 ;
   bool result = false;
