@@ -198,6 +198,55 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_SetResult(void 
   }));
 }
 
+/*
+ * AccessibilityActionSignalType
+ */
+using ActionInfoFunc = bool (*)(const Dali::Accessibility::ActionInfo &);
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Signal_AccessibilityActionSignal_Empty(void *arg1) {
+  bool result = false;
+  GUARD_ON_NULL_RET0(arg1);
+  try_catch(([&]() {
+      auto object = (Dali::Toolkit::DevelControl::AccessibilityActionSignalType*)arg1;
+      result = object->Empty();
+  }));
+  return result;
+}
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Signal_AccessibilityActionSignal_GetConnectionCount(void *arg1) {
+  std::size_t result = 0;
+  GUARD_ON_NULL_RET0(arg1);
+  try_catch(([&]() {
+      auto object = (Dali::Toolkit::DevelControl::AccessibilityActionSignalType*)arg1;
+      result = object->GetConnectionCount();
+  }));
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_AccessibilityActionSignal_Connect(void *arg1, void *arg2) {
+  GUARD_ON_NULL_RET(arg1);
+  GUARD_ON_NULL_RET(arg2);
+  try_catch(([&]() {
+      auto object = (Dali::Toolkit::DevelControl::AccessibilityActionSignalType*)arg1;
+      auto func = (ActionInfoFunc)arg2;
+      object->Connect(func);
+  }));
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_AccessibilityActionSignal_Disconnect(void *arg1, void *arg2) {
+  GUARD_ON_NULL_RET(arg1);
+  GUARD_ON_NULL_RET(arg2);
+  try_catch(([&]() {
+      auto object = (Dali::Toolkit::DevelControl::AccessibilityActionSignalType*)arg1;
+      auto func = (ActionInfoFunc)arg2;
+      object->Disconnect(func);
+  }));
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Signal_AccessibilityActionSignal_GetSizeOfActionInfo(void) {
+  return sizeof(Dali::Accessibility::ActionInfo);
+}
+
 #ifdef __cplusplus
 }
 #endif
