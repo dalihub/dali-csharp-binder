@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2024 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,11 @@
 // EXTERNAL INCLUDES
 #include <dali/dali.h>
 #include <dali/devel-api/adaptor-framework/native-image-source-devel.h>
+#include <dali/devel-api/adaptor-framework/native-image-source-queue.h>
+
+// Tizen dependency header
 #include <tbm_surface.h>
+#include <tbm_surface_queue.h>
 
 // INTERNAL INCLUDES
 #include "common.h"
@@ -41,37 +45,59 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Texture_TbmSurface(tbm_surface_h tb
     Dali::Any source(tbm_surface);
     mNativeImageSrc = Dali::NativeImageSource::New(source);
     mNativeTexture = Dali::Texture::New( *mNativeImageSrc );
-    } CALL_CATCH_EXCEPTION(0);
+  } CALL_CATCH_EXCEPTION(0);
 
   jresult = new Dali::Texture((const Dali::Texture &)mNativeTexture);
   return (void*)jresult;
 }
 
+struct NativeImageSourcePtrHandle
+{
+  Dali::NativeImageSourcePtr Ptr;
+};
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_SetSource(void* jarg1, tbm_surface_h jarg2)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New_Handle_With_TbmSurface(tbm_surface_h csTbmSurface)
+{
+  void* jresult;
+  NativeImageSourcePtrHandle* handle = new NativeImageSourcePtrHandle();
+  Dali::Any tbmSurface = (Dali::Any)csTbmSurface;
+  {
+    try {
+      handle->Ptr = NativeImageSource::New(tbmSurface);
+    } CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourcePtrHandle* ptr){delete ptr;}, handle);
+  }
+  jresult = (void *)handle;
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_SetSource(void* jarg1, tbm_surface_h csTbmSurface)
 {
   Dali::NativeImageSource* pImage = (Dali::NativeImageSource*)jarg1;
-  Dali::Any source = (Dali::Any)jarg2;
+  Dali::Any tbmSurface = (Dali::Any)csTbmSurface;
 
   try {
-    pImage->SetSource(source);
+    pImage->SetSource(tbmSurface);
+  } CALL_CATCH_EXCEPTION();
+}
+
+struct NativeImageSourceQueuePtrHandle
+{
+  Dali::NativeImageSourceQueuePtr Ptr;
+};
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueuePtr_New_Handle_With_TbmQueue(tbm_queue_h csTbmQueue)
+{
+  void* jresult;
+  NativeImageSourceQueuePtrHandle* queue = new NativeImageSourceQueuePtrHandle();
+  Dali::Any tbmQueue = (Dali::Any)csTbmQueue;
+  {
+    try {
+      queue->Ptr = Dali::NativeImageSourceQueue::New(tbmQueue);
+    }
+    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourceQueuePtrHandle* ptr){delete ptr;}, queue);
   }
-  catch (std::out_of_range & e) {
-    SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
-    return;
-  }
-  catch (std::exception & e) {
-    SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
-    return;
-  }
-  catch (Dali::DaliException e) {
-    SWIG_CSharpException(SWIG_UnknownError, e.condition);
-    return;
-  }
-  catch (...) {
-    SWIG_CSharpException(SWIG_UnknownError, "unknown error");
-    return;
-  }
+  jresult = (void *)queue;
+  return jresult;
 }
 
 #ifdef __cplusplus
