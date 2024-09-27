@@ -109,6 +109,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_New_3(uint32_t jarg1, char ** 
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_New_4(uint32_t argc, char ** argv, int32_t type) {
+  if (!argv) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "argv is null string", 0);
+    return 0;
+  }
+
+  Dali::Toolkit::WebView result;
+  {
+    try {
+      result = Dali::Toolkit::WebView::New(argc, argv, type);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  void * jresult = new Dali::Toolkit::WebView((const Dali::Toolkit::WebView &)result);
+  return jresult;
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebView_GetContext() {
   void * jresult;
   Dali::WebEngineContext *result = 0;
