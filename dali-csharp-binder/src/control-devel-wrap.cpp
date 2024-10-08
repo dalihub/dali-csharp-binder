@@ -28,7 +28,6 @@
 #include <dali-toolkit/devel-api/visuals/animated-vector-image-visual-signals-devel.h>
 #include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
 #include <dali/devel-api/adaptor-framework/vector-animation-renderer.h>
-#include <dali/devel-api/atspi-interfaces/accessible.h>
 #include <string>
 
 using namespace Dali;
@@ -474,7 +473,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_RegisterDefaultLabe
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]() {
     Dali::Actor* actor      = (Dali::Actor*)arg1_actor;
-    auto         accessible = Dali::Accessibility::Accessible::GetOwningPtr(*actor);
+    auto         accessible = Dali::Accessibility::Accessible::Get(*actor);
     auto         bridge     = Dali::Accessibility::Bridge::GetCurrentBridge();
 
     if(!accessible)
@@ -492,7 +491,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_UnregisterDefaultLa
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]() {
     Dali::Actor* actor      = (Dali::Actor*)arg1_actor;
-    auto         accessible = Dali::Accessibility::Accessible::GetOwningPtr(*actor);
+    auto         accessible = Dali::Accessibility::Accessible::Get(*actor);
     auto         bridge     = Dali::Accessibility::Bridge::GetCurrentBridge();
 
     if(!accessible)
