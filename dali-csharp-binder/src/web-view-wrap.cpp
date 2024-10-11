@@ -3835,6 +3835,53 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsExtraFeatureEnabled(void *
   return ret;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_WebAuthenticationCancel(void * nuiWebView) {
+  Dali::Toolkit::WebView *webview = (Dali::Toolkit::WebView *)nuiWebView;
+  {
+    try {
+      webview->WebAuthenticationCancel();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthDisplayQRCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
+  {
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterWebAuthDisplayQRCallback([handler](const std::string& url) {
+            handler(url.c_str());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterWebAuthDisplayQRCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthResponseCallback(void * jarg1, void * jarg2) {
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+  void (*handler)(void) = (void (*)(void))jarg2;
+  {
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterWebAuthResponseCallback([handler](void) {
+            handler();
+          });
+      }
+      else
+      {
+        (arg1)->RegisterWebAuthResponseCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 #ifdef __cplusplus
 } // end extern "C"
 #endif
