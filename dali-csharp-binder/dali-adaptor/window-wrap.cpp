@@ -3817,13 +3817,13 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsAlwaysOnTop(void * winHandle) {
   return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetBottom(void * winHandle, bool enable) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetToBottom(void * winHandle, bool toBottom) {
   Dali::Window *window = (Dali::Window *) 0 ;
 
   window = (Dali::Window *)winHandle;
   {
     try {
-      Dali::DevelWindow::SetBottom(*window, enable);
+      Dali::DevelWindow::SetToBottom(*window, toBottom);
     } CALL_CATCH_EXCEPTION();
   }
 }
