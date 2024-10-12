@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2024 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1291,7 +1291,6 @@ struct NativeImageSourcePtrHandle
   NativeImageSourcePtr Ptr;
 };
 
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New_Handle(unsigned int jarg1, unsigned int jarg2, int jarg3)
 {
   void* jresult;
@@ -1299,27 +1298,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New_Handle(unsigned i
   {
     try {
       handle->Ptr = ( NativeImageSource::New(jarg1, jarg2, (NativeImageSource::ColorDepth)jarg3) );
-    }
-    catch (std::out_of_range & e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (std::exception & e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourcePtrHandle* ptr){delete ptr;}, handle);
   }
   jresult = (void *)handle;
   return jresult;
@@ -1329,7 +1308,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New(void* jarg1)
 {
   void* jresult;
   NativeImageSourcePtrHandle* handle = (NativeImageSourcePtrHandle*)jarg1;
-  jresult = (void*)( handle->Ptr.Get() );
+  {
+    try {
+      jresult = (void*)( handle->Ptr.Get() );
+    } CALL_CATCH_EXCEPTION(0);
+  }
   return jresult;
 }
 
@@ -1338,27 +1321,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_Delete(void* jarg1) {
   {
     try {
       delete arg1;
-    }
-    catch (std::out_of_range & e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return;
-      };
-    }
-    catch (std::exception & e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return;
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return;
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return;
-      };
-    }
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -1372,27 +1335,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_AcquireBuffer(void* j
   {
     try {
       jresult = (void *)Dali::DevelNativeImageSource::AcquireBuffer( *arg1, *arg2, *arg3, *arg4 );
-    }
-    catch (std::out_of_range & e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (std::exception & e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   return jresult;
 }
@@ -1405,27 +1348,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageSource_ReleaseBuffer(void* ja
   {
     try {
       jresult = Dali::DevelNativeImageSource::ReleaseBuffer(*arg1, Rect<uint32_t>{});
-    }
-    catch (std::out_of_range & e) {
-      {
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (std::exception & e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
-      };
-    }
-    catch (Dali::DaliException e) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
-      };
-    }
-    catch (...) {
-      {
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
-      };
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
   return jresult;
 }
@@ -1444,8 +1367,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_EnableBackBuffer(void*
     try
     {
       Dali::DevelNativeImageSource::EnableBackBuffer(*nativeImage, enable);
-    }
-    CALL_CATCH_EXCEPTION();
+    } CALL_CATCH_EXCEPTION();
   }
 }
 
