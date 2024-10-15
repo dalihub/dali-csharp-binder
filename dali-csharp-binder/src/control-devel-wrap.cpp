@@ -28,6 +28,7 @@
 #include <dali-toolkit/devel-api/visuals/animated-vector-image-visual-signals-devel.h>
 #include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
 #include <dali/devel-api/adaptor-framework/vector-animation-renderer.h>
+#include <dali/devel-api/atspi-interfaces/accessible.h>
 #include <string>
 
 using namespace Dali;
@@ -275,7 +276,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetReadingInfoTypes(Dali::
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]() {
     ReadingInfoTypes readingInfoTypes(static_cast<std::uint32_t>(arg2));
-    Accessible::Get(*arg1_actor)->SetReadingInfoTypes(readingInfoTypes);
+    if(auto accessible = Accessible::Get(*arg1_actor))
+    {
+      accessible->SetReadingInfoTypes(readingInfoTypes);
+    }
   }));
 }
 
@@ -286,8 +290,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Accessibility_GetReadingInfoTypes(Dali::A
   int result = 0;
   GUARD_ON_NULL_RET0(arg1_actor);
   try_catch(([&]() {
-    ReadingInfoTypes readingInfoTypes = Accessible::Get(*arg1_actor)->GetReadingInfoTypes();
-    result = static_cast<int>(readingInfoTypes.GetRawData()[0]);
+    if(auto accessible = Accessible::Get(*arg1_actor))
+    {
+      ReadingInfoTypes readingInfoTypes = accessible->GetReadingInfoTypes();
+      result = static_cast<int>(readingInfoTypes.GetRawData()[0]);
+    }
   }));
   return result;
 }
@@ -473,7 +480,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_RegisterDefaultLabe
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]() {
     Dali::Actor* actor      = (Dali::Actor*)arg1_actor;
-    auto         accessible = Dali::Accessibility::Accessible::Get(*actor);
+    auto         accessible = Dali::Accessibility::Accessible::GetOwningPtr(*actor);
     auto         bridge     = Dali::Accessibility::Bridge::GetCurrentBridge();
 
     if(!accessible)
@@ -491,7 +498,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_UnregisterDefaultLa
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]() {
     Dali::Actor* actor      = (Dali::Actor*)arg1_actor;
-    auto         accessible = Dali::Accessibility::Accessible::Get(*actor);
+    auto         accessible = Dali::Accessibility::Accessible::GetOwningPtr(*actor);
     auto         bridge     = Dali::Accessibility::Bridge::GetCurrentBridge();
 
     if(!accessible)
