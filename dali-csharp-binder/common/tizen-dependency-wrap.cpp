@@ -63,7 +63,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New_Handle_With_TbmSu
   Dali::Any tbmSurface = (Dali::Any)csTbmSurface;
   {
     try {
-      handle->Ptr = NativeImageSource::New(tbmSurface);
+      handle->Ptr = Dali::NativeImageSource::New(tbmSurface);
     } CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourcePtrHandle* ptr){delete ptr;}, handle);
   }
   jresult = (void *)handle;
@@ -85,7 +85,7 @@ struct NativeImageSourceQueuePtrHandle
   Dali::NativeImageSourceQueuePtr Ptr;
 };
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueuePtr_New_Handle_With_TbmQueue(tbm_queue_h csTbmQueue)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueuePtr_New_Handle_With_TbmQueue(tbm_surface_queue_h csTbmQueue)
 {
   void* jresult;
   NativeImageSourceQueuePtrHandle* queue = new NativeImageSourceQueuePtrHandle();
