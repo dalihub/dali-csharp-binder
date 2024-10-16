@@ -503,16 +503,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_RegisterDefaultLabe
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]() {
     Dali::Actor* actor      = (Dali::Actor*)arg1_actor;
-    auto         accessible = Dali::Accessibility::Accessible::GetOwningPtr(*actor);
     auto         bridge     = Dali::Accessibility::Bridge::GetCurrentBridge();
-
-    if(!accessible)
-    {
-      SWIG_CSharpException(SWIG_RuntimeError, "No accessible object bind with actor.");
-      return;
-    }
-
-    bridge->RegisterDefaultLabel(accessible);
+    bridge->RegisterDefaultLabel(*actor);
   }));
 }
 
@@ -521,16 +513,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_UnregisterDefaultLa
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]() {
     Dali::Actor* actor      = (Dali::Actor*)arg1_actor;
-    auto         accessible = Dali::Accessibility::Accessible::GetOwningPtr(*actor);
     auto         bridge     = Dali::Accessibility::Bridge::GetCurrentBridge();
-
-    if(!accessible)
-    {
-      SWIG_CSharpException(SWIG_RuntimeError, "No accessible object bind with actor.");
-      return;
-    }
-
-    bridge->UnregisterDefaultLabel(accessible);
+    bridge->UnregisterDefaultLabel(*actor);
   }));
 }
 
