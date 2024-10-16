@@ -42,7 +42,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_New__SWIG_1(unsig
   Dali::Toolkit::BackgroundBlurEffect blurEffect;
   {
     try {
-      blurEffect = Dali::Toolkit::BackgroundBlurEffect::New(0.25f, pixelRadius);
+      blurEffect = Dali::Toolkit::BackgroundBlurEffect::New(0.4f, pixelRadius);
     } CALL_CATCH_EXCEPTION(0);
   }
 
