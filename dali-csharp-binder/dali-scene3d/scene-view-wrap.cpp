@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2023 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -622,56 +622,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CropToMask_get()
   int result;
 
   result  = (int)Dali::Scene3D::SceneView::Property::CROP_TO_MASK;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CornerRadius_get()
-{
-  int jresult;
-  int result;
-
-  result  = (int)Dali::Scene3D::SceneView::Property::CORNER_RADIUS;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CornerRadiusPolicy_get()
-{
-  int jresult;
-  int result;
-
-  result  = (int)Dali::Scene3D::SceneView::Property::CORNER_RADIUS_POLICY;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_BorderlineWidth_get()
-{
-  int jresult;
-  int result;
-
-  result  = (int)Dali::Scene3D::SceneView::Property::BORDERLINE_WIDTH;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_BorderlineColor_get()
-{
-  int jresult;
-  int result;
-
-  result  = (int)Dali::Scene3D::SceneView::Property::BORDERLINE_COLOR;
-  jresult = (int)result;
-  return jresult;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_BorderlineOffset_get()
-{
-  int jresult;
-  int result;
-
-  result  = (int)Dali::Scene3D::SceneView::Property::BORDERLINE_OFFSET;
   jresult = (int)result;
   return jresult;
 }

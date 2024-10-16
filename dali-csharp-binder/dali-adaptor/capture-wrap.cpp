@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2020 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -381,19 +381,43 @@ struct NativeImageSourcePtrHandle
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg1)
 {
   Dali::Capture*              arg1   = (Dali::Capture*)jarg1;
+  NativeImageSourcePtrHandle* handle = new NativeImageSourcePtrHandle();
 
   if(!arg1)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    delete handle;
     return 0;
   }
-
-  NativeImageSourcePtrHandle* handle = new NativeImageSourcePtrHandle();
   {
     try
     {
       handle->Ptr = arg1->GetNativeImageSource();
-    } CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourcePtrHandle* ptr){delete ptr;}, handle);
+    }
+    catch(std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      delete handle;
+      return 0;
+    }
+    catch(std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      delete handle;
+      return 0;
+    }
+    catch(Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      delete handle;
+      return 0;
+    }
+    catch(...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      delete handle;
+      return 0;
+    }
   }
   return (void*)handle;
 }

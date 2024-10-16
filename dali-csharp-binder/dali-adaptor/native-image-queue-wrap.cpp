@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2021 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_NativeImageQueuePtr_2(unsigned int 
     try {
       queue->Ptr = Dali::NativeImageSourceQueue::New(queueCount, width, height, (Dali::NativeImageSourceQueue::ColorFormat)colorFormat);
     }
-    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourceQueuePtrHandle* ptr){delete ptr;}, queue);
+    CALL_CATCH_EXCEPTION(0);
   }
   jresult = (void *)queue;
   return jresult;

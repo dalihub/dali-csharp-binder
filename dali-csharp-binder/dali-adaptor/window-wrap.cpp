@@ -2689,10 +2689,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastKeyEvent(vo
   {
     try {
       // TODO : To make ensure that inputed handle have body, let we retrieving last event only if it exist.
-      Dali::KeyEvent lastKeyEvent = Dali::DevelWindow::GetLastKeyEvent(*window);
+      auto& lastKeyEvent = Dali::DevelWindow::GetLastKeyEvent(*window);
       if(lastKeyEvent)
       {
-        (*keyEvent) = lastKeyEvent;
+        (*keyEvent) = *((Dali::KeyEvent *)&lastKeyEvent);
       }
     } CALL_CATCH_EXCEPTION();
   }
@@ -2714,10 +2714,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastTouchEvent(
   {
     try {
       // TODO : To make ensure that key handle have body, let we retrieving last event only if it exist.
-      Dali::TouchEvent lastTouchEvent = Dali::DevelWindow::GetLastTouchEvent(*window);
+      auto& lastTouchEvent = Dali::DevelWindow::GetLastTouchEvent(*window);
       if(lastTouchEvent)
       {
-        (*touchEvent) = lastTouchEvent;
+        (*touchEvent) = *((Dali::TouchEvent *)&lastTouchEvent);
       }
     } CALL_CATCH_EXCEPTION();
   }
@@ -2739,10 +2739,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastHoverEvent(
   {
     try {
       // TODO : To make ensure that key handle have body, let we retrieving last event only if it exist.
-      Dali::HoverEvent lastHoverEvent = Dali::DevelWindow::GetLastHoverEvent(*window);
+      auto& lastHoverEvent = Dali::DevelWindow::GetLastHoverEvent(*window);
       if(lastHoverEvent)
       {
-        (*hoverEvent) = lastHoverEvent;
+        (*hoverEvent) = *((Dali::HoverEvent *)&lastHoverEvent);
       }
     } CALL_CATCH_EXCEPTION();
   }
@@ -3812,30 +3812,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsAlwaysOnTop(void * winHandle) {
   {
     try {
       result = Dali::DevelWindow::IsAlwaysOnTop(*window);
-    } CALL_CATCH_EXCEPTION(false);
-  }
-  return result;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetBottom(void * winHandle, bool enable) {
-  Dali::Window *window = (Dali::Window *) 0 ;
-
-  window = (Dali::Window *)winHandle;
-  {
-    try {
-      Dali::DevelWindow::SetBottom(*window, enable);
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsBottom(void * winHandle) {
-  Dali::Window *window = (Dali::Window *) 0 ;
-  bool result = false;
-
-  window = (Dali::Window *)winHandle;
-  {
-    try {
-      result = Dali::DevelWindow::IsBottom(*window);
     } CALL_CATCH_EXCEPTION(false);
   }
   return result;
