@@ -25,18 +25,6 @@
 extern "C" {
 #endif
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_New__SWIG_0() {
-  Dali::Toolkit::BackgroundBlurEffect blurEffect;
-  {
-    try {
-      blurEffect = Dali::Toolkit::BackgroundBlurEffect::New();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  return new Dali::Toolkit::BackgroundBlurEffect((const Dali::Toolkit::BackgroundBlurEffect &)blurEffect);
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_New__SWIG_1(unsigned int pixelRadius) {
 
   Dali::Toolkit::BackgroundBlurEffect blurEffect;
@@ -48,17 +36,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_New__SWIG_1(unsig
 
   return new Dali::Toolkit::BackgroundBlurEffect((const Dali::Toolkit::BackgroundBlurEffect &)blurEffect);
 }
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_BackgroundBlurEffect(void * handle) {
-  Dali::Toolkit::BackgroundBlurEffect *blurEffect = (Dali::Toolkit::BackgroundBlurEffect *)handle;
-  {
-    try {
-      delete blurEffect;
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
 
 #ifdef __cplusplus
 }
