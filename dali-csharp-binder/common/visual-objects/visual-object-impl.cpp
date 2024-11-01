@@ -194,6 +194,17 @@ void VisualObject::LowerBelow(Dali::Internal::VisualObject& target)
   }
 }
 
+Dali::Property VisualObject::GetPropertyObject(Dali::Property::Key visualPropertyKey)
+{
+  if(mVisual)
+  {
+    return mVisual.GetPropertyObject(std::move(visualPropertyKey));
+  }
+
+  Handle handle;
+  return Dali::Property(handle, Property::INVALID_INDEX);
+}
+
 // Private and internal
 
 void VisualObject::AttachToContainerInternal(Dali::VisualObjectsContainer container)

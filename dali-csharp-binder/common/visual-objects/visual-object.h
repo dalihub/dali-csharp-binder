@@ -207,6 +207,17 @@ public: ///< Public API
    */
   void LowerBelow(VisualObject target);
 
+  /**
+   * @brief Retrieve the property object associated with the given visual property key.
+   * It will return invalid property if visual object is not be attached to any control.
+   * @note Returned Property will be invalidated after we call CreateVisual method.
+   *
+   * @SINCE_2_3.50
+   * @param[in] visualPropertyKey The key of the visual's property.
+   * @return The Property object
+   */
+  Dali::Property GetPropertyObject(Dali::Property::Key visualPropertyKey);
+
 public:
   VisualObject()                           = default;
   ~VisualObject()                          = default;
