@@ -109,25 +109,26 @@ void ProcessorController::RemovePostCallback(ProcessorControllerProcessCallback 
 
 void ProcessorController::Awake()
 {
-  DALI_ASSERT_ALWAYS(mProcessRegistered && "ProcessorController should be initialized before call Awake");
-
-  if(!mProcessingEvents && !mKeepRenderingApplied)
+  if(DALI_LIKELY(Dali::Adaptor::IsAvailable()))
   {
-    if(DALI_LIKELY(Dali::Adaptor::IsAvailable())) ///< Avoid worker thread calling.
+    DALI_ASSERT_ALWAYS(mProcessRegistered && "ProcessorController should be initialized before call Awake");
+
+    if(!mProcessingEvents && !mKeepRenderingApplied)
     {
       auto stage = Dali::Stage::GetCurrent();
       stage.KeepRendering(0.0f);
       mKeepRenderingApplied = true;
     }
-  }
-  else if(mProcessingEvents && !mProcessEventsIdleRequested)
-  {
-    if(DALI_LIKELY(Dali::Adaptor::IsAvailable())) ///< Avoid worker thread calling.
+    else if(mProcessingEvents && !mProcessEventsIdleRequested)
     {
       // Request ProcessEvents on idle when we are processing now.
       Dali::Adaptor::Get().RequestProcessEventsOnIdle();
       mProcessEventsIdleRequested = true;
     }
+  }
+  else
+  {
+    DALI_LOG_ERROR("Awake() failed, Adaptore is not available.\n");
   }
 }
 
