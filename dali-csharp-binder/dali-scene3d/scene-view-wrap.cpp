@@ -676,6 +676,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_BorderlineOffset_get()
   return jresult;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CornerSquareness_get()
+{
+  int jresult;
+  int result;
+
+  result  = (int)Dali::Scene3D::SceneView::Property::CORNER_SQUARENESS;
+  jresult = (int)result;
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_StartCameraTransition_Index(void* csSceneView, uint32_t index, int durationMilliSeconds, void* csAlphaFunction)
 {
   Dali::Scene3D::SceneView* sceneView       = (Dali::Scene3D::SceneView*)csSceneView;
