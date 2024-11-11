@@ -1443,8 +1443,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUserMediaPermissionReque
     try {
       if (handler)
       {
-        (arg1)->RegisterUserMediaPermissionRequestCallback([handler](Dali::WebEngineUserMediaPermissionRequest* permission, const std::string &message) {
-            handler(permission, message.c_str());
+        (arg1)->RegisterUserMediaPermissionRequestCallback([handler](std::unique_ptr<Dali::WebEngineUserMediaPermissionRequest> permission, const std::string &message) {
+            handler(permission.release(), message.c_str());
           });
       }
       else
