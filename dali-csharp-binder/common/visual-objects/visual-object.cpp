@@ -108,6 +108,11 @@ void VisualObject::LowerBelow(Dali::VisualObject target)
   GetImplementation(*this).LowerBelow(GetImplementation(target));
 }
 
+Dali::Property VisualObject::GetPropertyObject(Dali::Property::Key visualPropertyKey)
+{
+  return GetImplementation(*this).GetPropertyObject(std::move(visualPropertyKey));
+}
+
 } // namespace Dali
 
 #ifdef __cplusplus
@@ -350,6 +355,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_LowerBelow(void* nuiVisualO
   try_catch(([&]() {
     visualObject->LowerBelow(*targetVisualObject);
   }));
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VisualObject_GetPropertyObject(void* nuiVisualObject, int visualPropertyIndex)
+{
+  Dali::VisualObject* visualObject = (Dali::VisualObject*)0;
+
+  GUARD_ON_NULL_RET0(nuiVisualObject);
+  visualObject = (Dali::VisualObject*)nuiVisualObject;
+
+  void* result = 0;
+  try_catch(([&]() {
+    Dali::Property property = visualObject->GetPropertyObject((Dali::Property::Index)visualPropertyIndex);
+    result = new Dali::Property(property.object, property.propertyIndex, property.componentIndex);
+  }));
+
+  return result;
 }
 
 #ifdef __cplusplus

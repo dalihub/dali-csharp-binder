@@ -745,17 +745,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dal
       // Call detach only if accessible was created before.
       if(DevelControl::IsAccessibleCreated(control))
       {
-        auto actorAccessible = Dali::Accessibility::Accessible::GetOwningPtr(control);
-        auto viewAccessible  = std::dynamic_pointer_cast<NUIViewAccessible>(actorAccessible);
+        auto actorAccessible = Dali::Accessibility::Accessible::Get(control);
+        auto viewAccessible  = dynamic_cast<NUIViewAccessible*>(actorAccessible);
 
         if(viewAccessible)
         {
           viewAccessible->Detach();
-
-          // In case someone forgot View.UnregisterDefaultLabel() before View.Dispose()...
-          Dali::Accessibility::Bridge::GetCurrentBridge()->UnregisterDefaultLabel(viewAccessible);
         }
       }
+
+      // In case someone forgot View.UnregisterDefaultLabel() before View.Dispose()...
+      Dali::Accessibility::Bridge::GetCurrentBridge()->UnregisterDefaultLabel(control);
 
       // Make that we will not create new NUIViewAccessible anymore.
       DevelControl::EnableCreateAccessible(control, false);
