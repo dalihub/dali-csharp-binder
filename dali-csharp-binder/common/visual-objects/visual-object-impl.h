@@ -120,6 +120,11 @@ public: ///< Public API
    */
   void LowerBelow(Dali::Internal::VisualObject& target);
 
+  /**
+   * @copydoc Dali::VisualObject::GetPropertyObject()
+   */
+  Dali::Property GetPropertyObject(Dali::Property::Key visualPropertyKey);
+
 public: ///< Called from Internal::VisualObjectsContainer
   /**
    * @brief Set the container who contain this visual object.
