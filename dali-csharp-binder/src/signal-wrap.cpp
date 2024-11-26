@@ -72,10 +72,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_Disconnect(void *arg
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_new() {
+  StringToVoidSignal* ret = nullptr;
   try_catch(([&]() {
-      return new StringToVoidSignal();
+      ret = new StringToVoidSignal();
   }));
-  return nullptr;
+  return ret;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_delete(void *arg1) {
@@ -161,10 +162,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_Emit(void *arg1
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_new() {
+  GesturePairSignal* ret = nullptr;
   try_catch(([&]() {
-      return new GesturePairSignal();
+      ret = new GesturePairSignal();
   }));
-  return nullptr;
+  return ret;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_delete(void *arg1) {
