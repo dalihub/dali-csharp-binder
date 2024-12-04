@@ -347,7 +347,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityEvent(voi
   GUARD_ON_NULL_RET(arg1);
   try_catch(([&]() {
     Dali::Actor* control    = (Dali::Actor*)arg1;
-    auto         accessible = Dali::Accessibility::Accessible::Get(*control);
+    auto         accessible = dynamic_cast<Dali::Accessibility::ActorAccessible*>(Dali::Accessibility::Accessible::Get(*control));
     if(accessible)
     {
       accessible->Emit((Dali::Accessibility::ObjectPropertyChangeEvent)arg2_event);
@@ -375,7 +375,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextInsertedEvent(
   GUARD_ON_NULL_RET(arg1);
   try_catch(([&]() {
     Dali::Actor* control    = (Dali::Actor*)arg1;
-    auto         accessible = Dali::Accessibility::Accessible::Get(*control);
+    auto         accessible = dynamic_cast<Dali::Accessibility::ActorAccessible*>(Dali::Accessibility::Accessible::Get(*control));
     std::string  content(arg4_content ? arg4_content : "");
     if(accessible)
     {
@@ -394,7 +394,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextDeletedEvent(
   GUARD_ON_NULL_RET(arg1);
   try_catch(([&]() {
     Dali::Actor* control    = (Dali::Actor*)arg1;
-    auto         accessible = Dali::Accessibility::Accessible::Get(*control);
+    auto         accessible = dynamic_cast<Dali::Accessibility::ActorAccessible*>(Dali::Accessibility::Accessible::Get(*control));
     std::string  content(arg4_content ? arg4_content : "");
     if(accessible)
     {
@@ -413,7 +413,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitTextCursorMovedEvent(
   GUARD_ON_NULL_RET(arg1);
   try_catch(([&]() {
     Dali::Actor* control    = (Dali::Actor*)arg1;
-    auto         accessible = Dali::Accessibility::Accessible::Get(*control);
+    auto         accessible = dynamic_cast<Dali::Accessibility::ActorAccessible*>(Dali::Accessibility::Accessible::Get(*control));
     if(accessible)
     {
       accessible->EmitTextCursorMoved(arg2_position);
@@ -430,7 +430,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitScrollStartedEvent(voi
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]() {
     Dali::Actor* control    = (Dali::Actor*)arg1_actor;
-    auto         accessible = Dali::Accessibility::Accessible::Get(*control);
+    auto         accessible = dynamic_cast<Dali::Accessibility::ActorAccessible*>(Dali::Accessibility::Accessible::Get(*control));
     if(accessible)
     {
       accessible->EmitScrollStarted();
@@ -447,7 +447,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitScrollFinishedEvent(vo
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]() {
     Dali::Actor* control    = (Dali::Actor*)arg1_actor;
-    auto         accessible = Dali::Accessibility::Accessible::Get(*control);
+    auto         accessible = dynamic_cast<Dali::Accessibility::ActorAccessible*>(Dali::Accessibility::Accessible::Get(*control));
     if(accessible)
     {
       accessible->EmitScrollFinished();
