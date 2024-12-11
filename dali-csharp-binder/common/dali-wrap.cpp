@@ -7115,8 +7115,108 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_15(void * jarg1
   return jresult;
 }
 
+// For internal managed memory optimization
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property_Value_Vector2_Componentwise(float x, float y) {
+  void* jresult;
+  Dali::Property::Value* result = 0;
+  {
+    try {
+      result = (Dali::Property::Value *)new Dali::Property::Value(Dali::Vector2(x, y));
+    } CALL_CATCH_EXCEPTION(0);
+  }
 
+  jresult = (void*)result;
+  return jresult;
+}
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property_Value_Vector3_Componentwise(float x, float y, float z) {
+  void* jresult;
+  Dali::Property::Value* result = 0;
+  {
+    try {
+      result = (Dali::Property::Value *)new Dali::Property::Value(Dali::Vector3(x, y, z));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void*)result;
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value_Vector4_Componentwise(float x, float y, float z, float w) {
+  void* jresult;
+  Dali::Property::Value* result = 0;
+  {
+    try {
+      result = (Dali::Property::Value *)new Dali::Property::Value(Dali::Vector4(x, y, z, w));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void*)result;
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get_Vector2_Componentwise(void* csPropertyValue, float* outX, float* outY) {
+  Dali::Property::Value* arg1 = (Dali::Property::Value*) 0 ;
+  bool result;
+
+  arg1 = (Dali::Property::Value*)csPropertyValue;
+  {
+    try {
+      Dali::Vector2 value;
+      result = (bool)((Dali::Property::Value const *)arg1)->Get(value);
+      if(result)
+      {
+        *outX = value.x;
+        *outY = value.y;
+      }
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get_Vector3_Componentwise(void* csPropertyValue, float* outX, float* outY, float* outZ) {
+  Dali::Property::Value* arg1 = (Dali::Property::Value*) 0 ;
+  bool result;
+
+  arg1 = (Dali::Property::Value*)csPropertyValue;
+  {
+    try {
+      Dali::Vector3 value;
+      result = (bool)((Dali::Property::Value const *)arg1)->Get(value);
+      if(result)
+      {
+        *outX = value.x;
+        *outY = value.y;
+        *outZ = value.z;
+      }
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get_Vector4_Componentwise(void* csPropertyValue, float* outX, float* outY, float* outZ, float* outW) {
+  Dali::Property::Value* arg1 = (Dali::Property::Value*) 0 ;
+  bool result;
+
+  arg1 = (Dali::Property::Value*)csPropertyValue;
+  {
+    try {
+      Dali::Vector4 value;
+      result = (bool)((Dali::Property::Value const *)arg1)->Get(value);
+      if(result)
+      {
+        *outX = value.x;
+        *outY = value.y;
+        *outZ = value.z;
+        *outW = value.w;
+      }
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
 
 
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_GetName(int jarg1) {
