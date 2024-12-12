@@ -371,13 +371,18 @@ void SWIG_CSharpException(int code, const char *msg) {
     case SWIG_OverflowError:
       exception_code = SWIG_CSharpOverflowException;
       break;
+    case SWIG_DaliError: ///< Dali::Exception
+      exception_code = SWIG_CSharpApplicationException;
+      break;
     case SWIG_RuntimeError:
+      exception_code = SWIG_CSharpInvalidOperationException;
+      break;
     case SWIG_TypeError:
     case SWIG_SyntaxError:
     case SWIG_SystemError:
     case SWIG_UnknownError:
     default:
-      exception_code = SWIG_CSharpApplicationException;
+      exception_code = SWIG_CSharpSystemException;
       break;
     }
     SWIG_CSharpSetPendingException(exception_code, msg);
