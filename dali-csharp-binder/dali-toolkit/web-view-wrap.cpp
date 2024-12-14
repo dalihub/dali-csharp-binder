@@ -1476,6 +1476,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUserMediaPermissionReque
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_FeedMouseWheel(void * objPtr, bool yDirec, int step, int x, int y) {
+  Dali::Toolkit::WebView *webView = (Dali::Toolkit::WebView *)objPtr;
+  {
+    try {
+      (webView)->FeedMouseWheel(yDirec, step, x, y);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_UserMediaPermissionRequest(void * jarg1) {
   if (!jarg1) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "UserMediaPermissionRequest is null", 0);
