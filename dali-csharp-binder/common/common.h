@@ -2,7 +2,7 @@
 #define CSHARP_COMMON_H
 
 /*
- * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2024 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,7 @@ constexpr static int SWIG_SystemError        = -10;
 constexpr static int SWIG_AttributeError     = -11;
 constexpr static int SWIG_MemoryError        = -12;
 constexpr static int SWIG_NullReferenceError = -13;
+constexpr static int SWIG_DaliError          = -14;
 
 /* Support for throwing C# exceptions from C/C++. There are two types:
  * Exceptions that take a message and ArgumentExceptions that take a message and a parameter name. */
@@ -184,7 +185,7 @@ SWIG_ExceptionMessageWithFileAndLine((code), (what), __FILE__, __LINE__, __FUNCT
   }                                                                                     \
   catch (Dali::DaliException e)                                                         \
   {                                                                                     \
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_SystemError, e.condition);                   \
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_DaliError, e.condition);                     \
     return ret;                                                                         \
   }                                                                                     \
   catch (abi::__forced_unwind &)                                                        \
@@ -212,7 +213,7 @@ SWIG_ExceptionMessageWithFileAndLine((code), (what), __FILE__, __LINE__, __FUNCT
   }                                                                                                                              \
   catch (Dali::DaliException e)                                                                                                  \
   {                                                                                                                              \
-    SWIG_ExceptionMessageWithFileAndLine(SWIG_SystemError, e.condition, (filename), (linenumber), (funcname));                   \
+    SWIG_ExceptionMessageWithFileAndLine(SWIG_DaliError, e.condition, (filename), (linenumber), (funcname));                     \
     return ret;                                                                                                                  \
   }                                                                                                                              \
   catch (abi::__forced_unwind &)                                                                                                 \
@@ -242,7 +243,7 @@ SWIG_ExceptionMessageWithFileAndLine((code), (what), __FILE__, __LINE__, __FUNCT
   }                                                                                     \
   catch (Dali::DaliException e)                                                         \
   {                                                                                     \
-    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_SystemError, e.condition);                   \
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_DaliError, e.condition);                     \
     (*(func))(__VA_ARGS__);                                                             \
     return ret;                                                                         \
   }                                                                                     \

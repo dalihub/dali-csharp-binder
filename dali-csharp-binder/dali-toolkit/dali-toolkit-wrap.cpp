@@ -1610,6 +1610,10 @@ SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_ACCESSIBILITY_IS_MODAL_get
   return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_IS_MODAL;
 }
 
+SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_OFFSCREEN_RENDERING_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::OFFSCREEN_RENDERING;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexContainer_Property_CONTENT_DIRECTION_get() {
   int jresult ;
   int result;
