@@ -5873,6 +5873,148 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Property_Map_Add__SWIG_2(void * jarg1,
   return jresult;
 }
 
+// Macro generating add/set method of PropertyMap
+#ifndef GENERATE_PROPERTYMAP_ADD
+#define GENERATE_PROPERTYMAP_ADD(Name, PassedArgs, PassingArgs) \
+  SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Property_Map_Add_Str_##Name(void* jarg1, char* jarg2 PassedArgs) \
+  { \
+    Dali::Property::Map *arg1 = (Dali::Property::Map*)jarg1; \
+    try \
+    { \
+        arg1->Add((char const*)jarg2, Dali::Property::Value(PassingArgs)); \
+    } \
+    CALL_CATCH_EXCEPTION(0); \
+    return jarg1; \
+  } \
+  SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Property_Map_Add_Int_##Name(void* jarg1, int jarg2 PassedArgs) \
+  { \
+    Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1; \
+    try \
+    { \
+      arg1->Add((Dali::Property::Index)jarg2, Dali::Property::Value(PassingArgs)); \
+    } \
+    CALL_CATCH_EXCEPTION(0); \
+    return jarg1; \
+  } \
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Set_Str_##Name(void* jarg1, const char* jarg2 PassedArgs) \
+  { \
+    Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1; \
+    try \
+    { \
+      arg1->operator[](std::string_view(jarg2)) = Dali::Property::Value(PassingArgs); \
+    } \
+    CALL_CATCH_EXCEPTION(); \
+  } \
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_Set_Int_##Name(void* jarg1, int jarg2 PassedArgs) \
+  { \
+    Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1; \
+    try \
+    { \
+      arg1->operator[]((Dali::Property::Index)jarg2) = Dali::Property::Value(PassingArgs); \
+    } \
+    CALL_CATCH_EXCEPTION(); \
+  }
+#endif
+
+#ifndef GENERATE_PROPERTYMAP_ADD_VALTYPE
+#define GENERATE_PROPERTYMAP_ADD_VALTYPE(Name, Type) GENERATE_PROPERTYMAP_ADD(Name, COMMA Type jarg3, jarg3)
+#endif
+
+#ifndef GENERATE_PROPERTYMAP_ADD_REFTYPE
+#define GENERATE_PROPERTYMAP_ADD_REFTYPE(Name, Type) GENERATE_PROPERTYMAP_ADD(Name, COMMA void* jarg3, (Type const &)*(Type*)jarg3)
+#endif
+
+#ifndef GENERATE_PROPERTYMAP_ADD_NREFTYPE2
+#define GENERATE_PROPERTYMAP_ADD_NREFTYPE2(Name, Type, AtomicType) \
+  GENERATE_PROPERTYMAP_ADD(N##Name, COMMA AtomicType jarg3 COMMA AtomicType jarg4, Type(jarg3, jarg4))
+#endif
+
+#ifndef GENERATE_PROPERTYMAP_ADD_NREFTYPE3
+#define GENERATE_PROPERTYMAP_ADD_NREFTYPE3(Name, Type, AtomicType) \
+  GENERATE_PROPERTYMAP_ADD(N##Name, COMMA AtomicType jarg3 COMMA AtomicType jarg4 COMMA AtomicType jarg5, Type(jarg3, jarg4, jarg5))
+#endif
+
+#ifndef GENERATE_PROPERTYMAP_ADD_NREFTYPE4
+#define GENERATE_PROPERTYMAP_ADD_NREFTYPE4(Name, Type, AtomicType) \
+  GENERATE_PROPERTYMAP_ADD(N##Name, COMMA AtomicType jarg3 COMMA AtomicType jarg4 COMMA AtomicType jarg5 COMMA AtomicType jarg6, Type(jarg3, jarg4, jarg5, jarg6))
+#endif
+
+#ifndef COMMA
+#define COMMA ,
+#endif
+
+// CSharp_Dali_Property_Map_Add_Str_None(void*, char*)
+// CSharp_Dali_Property_Map_Add_Int_None(void*, int)
+// CSharp_Dali_Property_Map_Set_Str_None(void*, char*)
+// CSharp_Dali_Property_Map_Set_Int_None(void*, int)
+GENERATE_PROPERTYMAP_ADD(None, , )
+
+// CSharp_Dali_Property_Map_Add_Str_Bool(void*, char*, bool)
+// CSharp_Dali_Property_Map_Add_Int_Bool(void*, int, bool)
+// CSharp_Dali_Property_Map_Set_Str_Bool(void*, char*, bool)
+// CSharp_Dali_Property_Map_Set_Int_Bool(void*, int, bool)
+GENERATE_PROPERTYMAP_ADD_VALTYPE(Bool, bool)
+
+// CSharp_Dali_Property_Map_Add_Str_Int(void*, char*, int)
+// CSharp_Dali_Property_Map_Add_Int_Int(void*, int, int)
+// CSharp_Dali_Property_Map_Set_Str_Int(void*, char*, int)
+// CSharp_Dali_Property_Map_Set_Int_Int(void*, int, int)
+GENERATE_PROPERTYMAP_ADD_VALTYPE(Int, int)
+
+// CSharp_Dali_Property_Map_Add_Str_Float(void*, char*, float)
+// CSharp_Dali_Property_Map_Add_Int_Float(void*, int, float)
+// CSharp_Dali_Property_Map_Set_Str_Float(void*, char*, float)
+// CSharp_Dali_Property_Map_Set_Int_Float(void*, int, float)
+GENERATE_PROPERTYMAP_ADD_VALTYPE(Float, float)
+
+// CSharp_Dali_Property_Map_Add_Str_Str(void*, char*, char*)
+// CSharp_Dali_Property_Map_Add_Int_Str(void*, int, char*)
+// CSharp_Dali_Property_Map_Set_Str_Str(void*, char*, char*)
+// CSharp_Dali_Property_Map_Set_Int_Str(void*, int, char*)
+GENERATE_PROPERTYMAP_ADD_VALTYPE(Str, char*)
+
+// CSharp_Dali_Property_Map_Add_Str_Vector2(void*, char*, void*)
+// CSharp_Dali_Property_Map_Add_Int_Vector2(void*, int, void*)
+// CSharp_Dali_Property_Map_Set_Str_Vector2(void*, char*, void*)
+// CSharp_Dali_Property_Map_Set_Int_Vector2(void*, int, void*)
+GENERATE_PROPERTYMAP_ADD_REFTYPE(Vector2, Dali::Vector2)
+
+// CSharp_Dali_Property_Map_Add_Str_NVector2(void*, char*, float, float)
+// CSharp_Dali_Property_Map_Add_Int_NVector2(void*, int, float, float)
+// CSharp_Dali_Property_Map_Set_Str_NVector2(void*, char*, float, float)
+// CSharp_Dali_Property_Map_Set_Int_NVector2(void*, int, float, float)
+GENERATE_PROPERTYMAP_ADD_NREFTYPE2(Vector2, Dali::Vector2, float)
+
+// CSharp_Dali_Property_Map_Add_Str_Vector3(void*, char*, void*)
+// CSharp_Dali_Property_Map_Add_Int_Vector3(void*, int, void*)
+// CSharp_Dali_Property_Map_Set_Str_Vector3(void*, char*, void*)
+// CSharp_Dali_Property_Map_Set_Int_Vector3(void*, int, void*)
+GENERATE_PROPERTYMAP_ADD_REFTYPE(Vector3, Dali::Vector3)
+
+// CSharp_Dali_Property_Map_Add_Str_Vector4(void*, char*, void*)
+// CSharp_Dali_Property_Map_Add_Int_Vector4(void*, int, void*)
+// CSharp_Dali_Property_Map_Set_Str_Vector4(void*, char*, void*)
+// CSharp_Dali_Property_Map_Set_Int_Vector4(void*, int, void*)
+GENERATE_PROPERTYMAP_ADD_REFTYPE(Vector4, Dali::Vector4)
+
+// CSharp_Dali_Property_Map_Add_Str_NVector4(void*, char*, float, float, float, float)
+// CSharp_Dali_Property_Map_Add_Int_NVector4(void*, int, float, float, float, float)
+// CSharp_Dali_Property_Map_Set_Str_NVector4(void*, char*, float, float, float, float)
+// CSharp_Dali_Property_Map_Set_Int_NVector4(void*, int, float, float, float, float)
+GENERATE_PROPERTYMAP_ADD_NREFTYPE4(Vector4, Dali::Vector4, float)
+
+// CSharp_Dali_Property_Map_Add_Str_Rectangle(void*, char*, void*)
+// CSharp_Dali_Property_Map_Add_Int_Rectangle(void*, int, void*)
+// CSharp_Dali_Property_Map_Set_Str_Rectangle(void*, char*, void*)
+// CSharp_Dali_Property_Map_Set_Int_Rectangle(void*, int, void*)
+GENERATE_PROPERTYMAP_ADD_REFTYPE(Rectangle, Dali::Rect<int>)
+
+// CSharp_Dali_Property_Map_Add_Str_Map(void*, char*, void*)
+// CSharp_Dali_Property_Map_Add_Int_Map(void*, int, void*)
+// CSharp_Dali_Property_Map_Set_Str_Map(void*, char*, void*)
+// CSharp_Dali_Property_Map_Set_Int_Map(void*, int, void*)
+GENERATE_PROPERTYMAP_ADD_REFTYPE(Map, Dali::Property::Map)
+
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Property_Map_GetValue(void * jarg1, unsigned long jarg2) {
   void * jresult ;
@@ -6262,7 +6404,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey(void* jarg1
     } CALL_CATCH_EXCEPTION();
   }
 }
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_IntKey_IntValue(void* jarg1, int jarg2, int jarg3) {
 
@@ -6707,9 +6848,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_18(void * jar
   return jresult;
 }
 
-
-
-
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_EqualTo(void * jarg1, void * jarg2) {
   bool jresult;
   Dali::Property::Value *arg1 = (Dali::Property::Value *) 0 ;
@@ -7153,6 +7291,20 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value_Vector4_Componentwi
   {
     try {
       result = (Dali::Property::Value *)new Dali::Property::Value(Dali::Vector4(x, y, z, w));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void*)result;
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property_Value_Extents_Componentwise(unsigned short start, unsigned short end, unsigned short top, unsigned short bottom) {
+  void * jresult ;
+  Dali::Property::Value *result = 0 ;
+
+  {
+    try {
+      result = (Dali::Property::Value *)new Dali::Property::Value(Dali::Extents(start, end, top, bottom));
     } CALL_CATCH_EXCEPTION(0);
   }
 
@@ -8414,7 +8566,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Handle_SetProperty(void * jarg1, int jar
   }
 
 }
-
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_RegisterProperty__SWIG_0(void * jarg1, char * jarg2, void * jarg3) {
   int jresult ;
@@ -18982,6 +19133,18 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_top_get(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_set_all(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5)
+{
+  Dali::Rect<int>* arg1 = (Dali::Rect<int>*)jarg1;
+
+  if (arg1)
+  {
+    (arg1)->x = jarg2;
+    (arg1)->y = jarg3;
+    (arg1)->width = jarg4;
+    (arg1)->height = jarg5;
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Rectangle(void * jarg1) {
   Dali::Rect< int > *arg1 = (Dali::Rect< int > *) 0 ;

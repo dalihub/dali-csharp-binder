@@ -713,6 +713,17 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector2_Height_get(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Vector2_set_all(void * jarg1, float jarg2, float jarg3) {
+  Dali::Vector2 *arg1 = (Dali::Vector2 *) 0 ;
+
+  arg1 = (Dali::Vector2 *)jarg1;
+  if (arg1)
+  {
+    (arg1)->x = jarg2;
+    (arg1)->y = jarg3;
+  }
+}
+
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Vector2(void * jarg1) {
   Dali::Vector2 *arg1 = (Dali::Vector2 *) 0 ;
@@ -1726,6 +1737,18 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector3_b_get(void * jarg1) {
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Vector3_set_all(void * jarg1, float jarg2, float jarg3, float jarg4) {
+  Dali::Vector3 *arg1 = (Dali::Vector3 *) 0 ;
+
+  arg1 = (Dali::Vector3 *)jarg1;
+  if (arg1)
+  {
+    (arg1)->x = jarg2;
+    (arg1)->y = jarg3;
+    (arg1)->z = jarg4;
+  }
+}
+
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Vector3(void * jarg1) {
   Dali::Vector3 *arg1 = (Dali::Vector3 *) 0 ;
@@ -2732,7 +2755,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Vector4_a_set(void * jarg1, float jarg2)
   if (arg1) (arg1)->a = arg2;
 }
 
-
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector4_a_get(void * jarg1) {
   float jresult ;
   Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
@@ -2764,6 +2786,19 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector4_q_get(void * jarg1) {
   result = (float) ((arg1)->q);
   jresult = result;
   return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Vector4_set_all(void * jarg1, float jarg2, float jarg3, float jarg4, float jarg5) {
+  Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
+
+  arg1 = (Dali::Vector4 *)jarg1;
+  if (arg1)
+  {
+    (arg1)->x = jarg2;
+    (arg1)->y = jarg3;
+    (arg1)->z = jarg4;
+    (arg1)->w = jarg5;
+  }
 }
 
 
