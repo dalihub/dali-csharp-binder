@@ -33,6 +33,7 @@
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-security-origin.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-back-forward-list-item.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-user-media-permission-request.h>
+#include <dali/devel-api/adaptor-framework/web-engine/web-engine-device-list-get.h>
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-settings.h>
@@ -1516,6 +1517,106 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UserMediaPermissionRequest_Suspend(void 
       ret = (arg1)->Suspend();
     } CALL_CATCH_EXCEPTION(0);
   }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterDeviceConnectionChangedCallback(void * view, void * callback) {
+  Dali::Toolkit::WebView *webView = (Dali::Toolkit::WebView *)view;
+  void (*eventHandler)(int32_t) = (void (*)(int32_t))callback;
+  {
+    try {
+      if (eventHandler)
+      {
+        (webView)->RegisterDeviceConnectionChangedCallback([eventHandler](int32_t deviceType) {
+            eventHandler(deviceType);
+          });
+      }
+      else
+      {
+        (webView)->RegisterDeviceConnectionChangedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterDeviceListGetCallback(void * view, void * callback) {
+  Dali::Toolkit::WebView *webView = (Dali::Toolkit::WebView *)view;
+  void (*eventHandler)(Dali::WebEngineDeviceListGet*, int32_t) = (void (*)(Dali::WebEngineDeviceListGet*, int32_t))callback;
+  {
+    try {
+      if (eventHandler)
+      {
+        (webView)->RegisterDeviceListGetCallback([eventHandler](Dali::WebEngineDeviceListGet* list, int32_t size) {
+            eventHandler(list, size);
+          });
+      }
+      else
+      {
+        (webView)->RegisterDeviceListGetCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_DeviceListGet(void * obj) {
+  if (!obj) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "DeviceListGet is null", 0);
+    return;
+  }
+
+  Dali::WebEngineDeviceListGet* me = (Dali::WebEngineDeviceListGet*)obj;
+  {
+    try {
+      delete me;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_DeviceListGet_GetTypeAndConnect(void * obj, int * type, bool * connect, int idx) {
+  if (!obj) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "DeviceListGet is null", 0);
+    return;
+  }
+
+  Dali::WebEngineDeviceListGet* me = (Dali::WebEngineDeviceListGet*)obj;
+  {
+    try {
+      me->GetTypeAndConnect(type, connect, idx);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_DeviceListGet_GetDeviceId(void * obj, int idx) {
+  std::string result;
+  if (!obj) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "DeviceListGet is null", 0);
+    return "";
+  }
+
+  Dali::WebEngineDeviceListGet* me = (Dali::WebEngineDeviceListGet*)obj;
+  {
+    try {
+      result = me->GetDeviceId(idx);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char * ret = SWIG_csharp_string_callback(result.c_str());
+  return ret;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_DeviceListGet_GetDeviceLabel(void * obj, int idx) {
+  std::string result;
+  if (!obj) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "DeviceListGet is null", 0);
+    return "";
+  }
+
+  Dali::WebEngineDeviceListGet* me = (Dali::WebEngineDeviceListGet*)obj;
+  {
+    try {
+      result = me->GetDeviceLabel(idx);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char * ret = SWIG_csharp_string_callback(result.c_str());
   return ret;
 }
 
@@ -4021,6 +4122,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebSettings_GetImeStyle(void *jarg1) {
     } CALL_CATCH_EXCEPTION(0);
   }
   return style;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_SetDefaultAudioInputDevice(void *setting, const char *id) {
+  Dali::Toolkit::WebSettings* settings = (Dali::Toolkit::WebSettings*)setting;
+  std::string deviceId(id);
+  {
+    try {
+      settings->SetDefaultAudioInputDevice(deviceId);
+    } CALL_CATCH_EXCEPTION();
+  }
 }
 
 #ifdef __cplusplus
