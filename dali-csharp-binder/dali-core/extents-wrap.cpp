@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -254,7 +254,6 @@ SWIGEXPORT unsigned short SWIGSTDCALL CSharp_Dali_Extents_bottom_get(void * jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_set_all(void * jarg1, unsigned short jarg2, unsigned short jarg3, unsigned short jarg4, unsigned short jarg5) {
   Dali::Extents *arg1 = (Dali::Extents *) 0 ;
-  uint16_t arg2 ;
 
   arg1 = (Dali::Extents *)jarg1;
   if (arg1)
