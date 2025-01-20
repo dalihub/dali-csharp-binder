@@ -952,6 +952,32 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_IsTextPredict
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetFullScreenMode(void * csInputMethodContext, unsigned int csFullScreen) {
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  bool fullScreen ;
+
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  fullScreen = csFullScreen ? true : false;
+  {
+    try {
+      (inputMethodContext)->SetFullScreenMode(fullScreen);
+    } CALL_CATCH_EXCEPTION();  }
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodContext_IsFullScreenMode(void * csInputMethodContext) {
+  unsigned int jresult ;
+  Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
+  bool fullScreen;
+
+  inputMethodContext = (Dali::InputMethodContext *)csInputMethodContext;
+  {
+    try {
+      fullScreen = (bool)((Dali::InputMethodContext const *)inputMethodContext)->IsFullScreenMode();
+    } CALL_CATCH_EXCEPTION(0);  }
+  jresult = fullScreen;
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodContext_SetMIMEType(void * csInputMethodContext, char * csMimeTypes) {
   Dali::InputMethodContext *inputMethodContext = (Dali::InputMethodContext *) 0 ;
   std::string *mimeTypes = 0 ;
