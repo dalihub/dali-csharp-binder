@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -10170,6 +10170,55 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_Backward(void * jarg1, int jar
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetAutoRotationEnabled(void * view, bool enable) {
+  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
+
+  videoView = (Dali::Toolkit::VideoView *)view;
+  {
+    try {
+      Toolkit::DevelVideoView::SetAutoRotationEnabled(*videoView, enable);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoView_IsAutoRotationEnabled(void * view) {
+  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
+  bool ret = false;
+
+  videoView = (Dali::Toolkit::VideoView *)view;
+  {
+    try {
+      ret = Toolkit::DevelVideoView::IsAutoRotationEnabled(*videoView);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetLetterBoxEnabled(void * view, bool enable) {
+  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
+
+  videoView = (Dali::Toolkit::VideoView *)view;
+  {
+    try {
+      Toolkit::DevelVideoView::SetLetterBoxEnabled(*videoView, enable);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoView_IsLetterBoxEnabled(void * view) {
+  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
+  bool ret = false;
+
+  videoView = (Dali::Toolkit::VideoView *)view;
+  {
+    try {
+      ret = Toolkit::DevelVideoView::IsLetterBoxEnabled(*videoView);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return ret;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_FinishedSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
@@ -11578,6 +11627,65 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetUpdateArea(voi
   Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
   Dali::Vector4* vector4 = (Dali::Vector4 *)updateArea;
   return proxy->GetUpdateArea(id, *vector4);
+}
+
+/// UIVector2 and UIColor
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetPositionVector2Componentwise(void * updateProxy, unsigned int id,  float* x, float* y) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3 vector3;
+  bool ret = proxy->GetPosition(id, vector3);
+  *x = vector3.x;
+  *y = vector3.y;
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakePositionVector2Componentwise(void * updateProxy, unsigned int id, float x, float y) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  return proxy->BakePosition(id, Vector3(x, y, 0.0f));
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetSizeVector2Componentwise(void * updateProxy, unsigned int id, float* x, float* y) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3 vector3;
+  bool ret = proxy->GetSize(id, vector3);
+  *x = vector3.x;
+  *y = vector3.y;
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeSizeVector2Componentwise(void * updateProxy, unsigned int id, float x, float y) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  return proxy->BakeSize(id, Vector3(x, y, 0.0f));
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetScaleVector2Componentwise(void * updateProxy, unsigned int id, float* x, float* y) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector3 vector3;
+  bool ret = proxy->GetScale(id, vector3);
+  *x = vector3.x;
+  *y = vector3.y;
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeScaleVector2Componentwise(void * updateProxy, unsigned int id, float x, float y) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  return proxy->BakeScale(id, Vector3(x, y, 1.0f));
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetColorVector4Componentwise(void * updateProxy, unsigned int id, float* r, float* g, float* b, float* a) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  Dali::Vector4 vector4;
+  bool ret = proxy->GetColor(id, vector4);
+  *r = vector4.r;
+  *g = vector4.g;
+  *b = vector4.b;
+  *a = vector4.a;
+  return ret;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeColorVector4Componentwise(void * updateProxy, unsigned int id, float r, float g, float b, float a) {
+  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
+  return proxy->BakeColor(id, Vector4(r, g, b, a));
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetCustomAlgorithm(void * jarg1, void * jarg2) {
