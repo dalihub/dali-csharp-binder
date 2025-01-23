@@ -3111,6 +3111,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Radian_ConvertToFloat(void * jarg1) {
   float result;
 
   arg1 = (Dali::Radian *)jarg1;
+  CHECK_NULL_WITH_RETURN(arg1, "Radian object is null!", 0);
   {
     try {
       result = (float)((Dali::Radian const *)arg1)->operator float();
@@ -3138,6 +3139,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Radian_radian_get(void * jarg1) {
   float result;
 
   arg1 = (Dali::Radian *)jarg1;
+  CHECK_NULL_WITH_RETURN(arg1, "Radian object is null!", 0);
   result = (float) ((arg1)->radian);
   jresult = result;
   return jresult;
@@ -3258,6 +3260,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Matrix_Assign(void * jarg1, void * jar
 
   arg1 = (Dali::Matrix *)jarg1;
   arg2 = (Dali::Matrix *)jarg2;
+
+  CHECK_NULL_WITH_RETURN(arg1, "Matrix object is null!", 0);
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Matrix const & type is null", 0);
     return 0;
@@ -3288,6 +3292,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Matrix_SetIdentity(void * jarg1) {
 
   arg1 = (Dali::Matrix *)jarg1;
   {
+    CHECK_NULL(arg1, "Matrix object is null!");
     try {
       (arg1)->SetIdentity();
     } CALL_CATCH_EXCEPTION();
@@ -4553,6 +4558,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AngleAxis_angle_get(void * jarg1) {
   Dali::Radian *result = 0 ;
 
   arg1 = (Dali::AngleAxis *)jarg1;
+  CHECK_NULL_WITH_RETURN(arg1, "AngleAxis object is null!", 0);
   result = (Dali::Radian *)& ((arg1)->angle);
   jresult = (void *)result;
   return jresult;
@@ -15344,6 +15350,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetector_AddAngle__SWIG_0(void
   Dali::Radian *argp3 ;
 
   arg1 = (Dali::PanGestureDetector *)jarg1;
+  CHECK_NULL(arg1, "PanGestureDetector object is null!");
   argp2 = (Dali::Radian *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
@@ -15371,6 +15378,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetector_AddAngle__SWIG_1(void
   Dali::Radian *argp2 ;
 
   arg1 = (Dali::PanGestureDetector *)jarg1;
+  CHECK_NULL(arg1, "PanGestureDetector object is null!");
   argp2 = (Dali::Radian *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
@@ -15394,6 +15402,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetector_AddDirection__SWIG_0(
   Dali::Radian *argp3 ;
 
   arg1 = (Dali::PanGestureDetector *)jarg1;
+  CHECK_NULL(arg1, "PanGestureDetector object is null!");
   argp2 = (Dali::Radian *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
@@ -15421,6 +15430,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetector_AddDirection__SWIG_1(
   Dali::Radian *argp2 ;
 
   arg1 = (Dali::PanGestureDetector *)jarg1;
+  CHECK_NULL(arg1, "PanGestureDetector object is null!");
   argp2 = (Dali::Radian *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
@@ -15491,6 +15501,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetector_RemoveAngle(void * ja
   Dali::Radian *argp2 ;
 
   arg1 = (Dali::PanGestureDetector *)jarg1;
+  CHECK_NULL(arg1, "PanGestureDetector object is null!");
   argp2 = (Dali::Radian *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
@@ -15512,6 +15523,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetector_RemoveDirection(void 
   Dali::Radian *argp2 ;
 
   arg1 = (Dali::PanGestureDetector *)jarg1;
+  CHECK_NULL(arg1, "PanGestureDetector object is null!");
   argp2 = (Dali::Radian *)jarg2;
   if (!argp2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Radian", 0);
@@ -20796,6 +20808,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AngleThresholdPair_first_get(void * ja
   Dali::Radian *result = 0 ;
 
   arg1 = (std::pair< Dali::Radian,Dali::Radian > *)jarg1;
+  CHECK_NULL_WITH_RETURN(arg1, "Radian pair object is null!", 0);
   result = (Dali::Radian *)& ((arg1)->first);
   jresult = (void *)result;
   return jresult;
@@ -20818,6 +20831,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_AngleThresholdPair_second_get(void * j
   Dali::Radian *result = 0 ;
 
   arg1 = (std::pair< Dali::Radian,Dali::Radian > *)jarg1;
+  CHECK_NULL_WITH_RETURN(arg1, "Radian pair object is null!", 0);
   result = (Dali::Radian *)& ((arg1)->second);
   jresult = (void *)result;
   return jresult;

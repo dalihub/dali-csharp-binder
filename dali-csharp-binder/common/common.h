@@ -365,4 +365,16 @@ extern void internal_try_catch(const std::function<void(void)>& func, const char
   }
 #endif
 
+#define CHECK_NULL(ptr, errorMsg)                                                          \
+  if (!ptr) {                                                                              \
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, errorMsg, 0); \
+    return;                                                                                \
+  }
+
+#define CHECK_NULL_WITH_RETURN(ptr, errorMsg, ret)                                         \
+  if (!ptr) {                                                                              \
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, errorMsg, 0); \
+    return ret;                                                                            \
+  }
+
 #endif // CSHARP_COMMON_H
