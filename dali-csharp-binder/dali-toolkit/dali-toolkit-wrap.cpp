@@ -3321,24 +3321,25 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Builder_GetLinearConstrainer(void * ja
   return jresult;
 }
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Builder_QuitSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Builder *arg1 = (Dali::Toolkit::Builder *) 0 ;
-  Dali::Toolkit::Builder::BuilderSignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Builder *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::Builder::BuilderSignalType *) &(arg1)->QuitSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Builder_QuitSignal_Connect(void* jarg1, void* jarg2) {
+  GUARD_ON_NULL_RET(jarg1);
+  GUARD_ON_NULL_RET(jarg2);
+  try_catch(([&]() {
+    Dali::Toolkit::Builder *arg1 = (Dali::Toolkit::Builder *)jarg1;
+    void (*arg2)()               = (void (*)())jarg2;
+    arg1->QuitSignal().Connect(arg2);
+  }));
 }
 
-
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Builder_QuitSignal_Disconnect(void* jarg1, void* jarg2) {
+  GUARD_ON_NULL_RET(jarg1);
+  GUARD_ON_NULL_RET(jarg2);
+  try_catch(([&]() {
+    Dali::Toolkit::Builder *arg1 = (Dali::Toolkit::Builder *)jarg1;
+    void (*arg2)()               = (void (*)())jarg2;
+    arg1->QuitSignal().Disconnect(arg2);
+  }));
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TransitionData(void * jarg1) {
   Dali::Toolkit::TransitionData *arg1 = (Dali::Toolkit::TransitionData *) 0 ;

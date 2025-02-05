@@ -88,104 +88,114 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_DISPATCH_KEY_EVENTS_get()
   return (int)Dali::Toolkit::DevelControl::Property::DISPATCH_KEY_EVENTS;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityActivateSignal(void* arg1)
-{
-  Dali::Toolkit::DevelControl::AccessibilityActivateSignalType* result = nullptr;
-  GUARD_ON_NULL_RET0(arg1);
-  try_catch(([&]() {
-    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
-    result                          = &(AccessibilityActivateSignal(*control));
-  }));
-  return (void*)result;
+
+#define GENERATE_ACCESSIBILITY_SIGNAL_2_FUNCTIONS(HType, SignalType, SignalName)  \
+GENERATE_CONTROL_SIGNAL_1(Dali::Toolkit::Control*, HType, SignalType, SignalName)
+
+#define GENERATE_ACCESSIBILITY_SIGNAL_3_FUNCTIONS(HType, SignalType, SignalName)  \
+GENERATE_CONTROL_SIGNAL_1(Dali::Toolkit::Control*, HType, SignalType, SignalName) \
+GENERATE_CONTROL_SIGNAL_2(Dali::Toolkit::Control*, SignalType, SignalName)
+
+#define GENERATE_ACCESSIBILITY_SIGNAL_4_FUNCTIONS(HType, SignalType, SignalName)  \
+GENERATE_CONTROL_SIGNAL_1(Dali::Toolkit::Control*, HType, SignalType, SignalName) \
+GENERATE_CONTROL_SIGNAL_2(Dali::Toolkit::Control*, SignalType, SignalName)        \
+GENERATE_CONTROL_SIGNAL_3(Dali::Toolkit::Control*, SignalType, SignalName)
+
+#define GENERATE_CONTROL_SIGNAL_1(CType, HType, SignalType, SignalName)                                             \
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_##SignalName##_Connect(void* caller, void* handler)    \
+{                                                                                                                   \
+  GUARD_ON_NULL_RET(caller);                                                                                        \
+  GUARD_ON_NULL_RET(handler);                                                                                       \
+  try_catch(([&]() {                                                                                                \
+    CType control      = (CType)caller;                                                                             \
+    SignalType& signal = SignalName(*control);                                                                      \
+    signal.Connect((HType)handler);                                                                                 \
+  }));                                                                                                              \
+}                                                                                                                   \
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_##SignalName##_Disconnect(void* caller, void* handler) \
+{                                                                                                                   \
+  GUARD_ON_NULL_RET(caller);                                                                                        \
+  GUARD_ON_NULL_RET(handler);                                                                                       \
+  try_catch(([&]() {                                                                                                \
+    CType control      = (CType)caller;                                                                             \
+    SignalType& signal = SignalName(*control);                                                                      \
+    signal.Disconnect((HType)handler);                                                                              \
+  }));                                                                                                              \
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingSkippedSignal(void* arg1)
-{
-  Dali::Toolkit::DevelControl::AccessibilityReadingSkippedSignalType* result = nullptr;
-  GUARD_ON_NULL_RET0(arg1);
-  try_catch(([&]() {
-    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
-    result                          = &(AccessibilityReadingSkippedSignal(*control));
-  }));
-  return (void*)result;
+#define GENERATE_CONTROL_SIGNAL_2(CType, SignalType, SignalName)                                        \
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_##SignalName##_Empty(void* caller) \
+{                                                                                                       \
+  bool result = false;                                                                                  \
+  GUARD_ON_NULL_RET0(caller);                                                                           \
+  try_catch(([&]() {                                                                                    \
+    CType control      = (CType)caller;                                                                 \
+    SignalType& signal = SignalName(*control);                                                          \
+    result = signal.Empty();                                                                            \
+  }));                                                                                                  \
+  return result;                                                                                        \
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingPausedSignal(void* arg1)
-{
-  Dali::Toolkit::DevelControl::AccessibilityReadingPausedSignalType* result = nullptr;
-  GUARD_ON_NULL_RET0(arg1);
-  try_catch(([&]() {
-    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
-    result                          = &(AccessibilityReadingPausedSignal(*control));
-  }));
-  return (void*)result;
+#define GENERATE_CONTROL_SIGNAL_3(CType, SignalType, SignalName)                                        \
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_##SignalName##_Emit(void* caller)          \
+{                                                                                                       \
+  GUARD_ON_NULL_RET(caller);                                                                            \
+  try_catch(([&]() {                                                                                    \
+    CType control      = (CType)caller;                                                                 \
+    SignalType& signal = SignalName(*control);                                                          \
+    signal.Emit();                                                                                      \
+  }));                                                                                                  \
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingResumedSignal(void* arg1)
-{
-  Dali::Toolkit::DevelControl::AccessibilityReadingResumedSignalType* result = nullptr;
-  GUARD_ON_NULL_RET0(arg1);
-  try_catch(([&]() {
-    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
-    result                          = &(AccessibilityReadingResumedSignal(*control));
-  }));
-  return (void*)result;
-}
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingCancelledSignal(void* arg1)
-{
-  Dali::Toolkit::DevelControl::AccessibilityReadingCancelledSignalType* result = nullptr;
-  GUARD_ON_NULL_RET0(arg1);
-  try_catch(([&]() {
-    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
-    result                          = &(AccessibilityReadingCancelledSignal(*control));
-  }));
-  return (void*)result;
-}
+GENERATE_ACCESSIBILITY_SIGNAL_4_FUNCTIONS(void(*)(), Dali::Toolkit::DevelControl::AccessibilityActivateSignalType, AccessibilityActivateSignal)
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityActivateSignal_Connect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityActivateSignal_Disconnect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityActivateSignal_Empty
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityActivateSignal_Emit
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingStoppedSignal(void* arg1)
-{
-  Dali::Toolkit::DevelControl::AccessibilityReadingStoppedSignalType* result = nullptr;
-  GUARD_ON_NULL_RET0(arg1);
-  try_catch(([&]() {
-    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
-    result                          = &(AccessibilityReadingStoppedSignal(*control));
-  }));
-  return (void*)result;
-}
+GENERATE_ACCESSIBILITY_SIGNAL_4_FUNCTIONS(void(*)(), Dali::Toolkit::DevelControl::AccessibilityReadingSkippedSignalType, AccessibilityReadingSkippedSignal)
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingSkippedSignal_Connect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingSkippedSignal_Disconnect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingSkippedSignal_Empty
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingSkippedSignal_Emit
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityGetNameSignal(void* arg1)
-{
-  Dali::Toolkit::DevelControl::AccessibilityGetNameSignalType* result = nullptr;
-  GUARD_ON_NULL_RET0(arg1);
-  try_catch(([&]() {
-    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
-    result                          = &(AccessibilityGetNameSignal(*control));
-  }));
-  return (void*)result;
-}
+GENERATE_ACCESSIBILITY_SIGNAL_4_FUNCTIONS(void(*)(), Dali::Toolkit::DevelControl::AccessibilityReadingPausedSignalType, AccessibilityReadingPausedSignal)
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingPausedSignal_Connect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingPausedSignal_Disconnect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingPausedSignal_Empty
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingPausedSignal_Emit
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityGetDescriptionSignal(void* arg1)
-{
-  Dali::Toolkit::DevelControl::AccessibilityGetDescriptionSignalType* result = nullptr;
-  GUARD_ON_NULL_RET0(arg1);
-  try_catch(([&]() {
-    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
-    result                          = &(AccessibilityGetDescriptionSignal(*control));
-  }));
-  return (void*)result;
-}
+GENERATE_ACCESSIBILITY_SIGNAL_4_FUNCTIONS(void(*)(), Dali::Toolkit::DevelControl::AccessibilityReadingResumedSignalType, AccessibilityReadingResumedSignal)
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingResumedSignal_Connect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingResumedSignal_Disconnect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingResumedSignal_Empty
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingResumedSignal_Emit
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityDoGestureSignal(void* arg1)
-{
-  Dali::Toolkit::DevelControl::AccessibilityDoGestureSignalType* result = nullptr;
-  GUARD_ON_NULL_RET0(arg1);
-  try_catch(([&]() {
-    Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)arg1;
-    result                          = &(AccessibilityDoGestureSignal(*control));
-  }));
-  return (void*)result;
-}
+GENERATE_ACCESSIBILITY_SIGNAL_4_FUNCTIONS(void(*)(), Dali::Toolkit::DevelControl::AccessibilityReadingCancelledSignalType, AccessibilityReadingCancelledSignal)
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingCancelledSignal_Connect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingCancelledSignal_Disconnect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingCancelledSignal_Empty
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingCancelledSignal_Emit
+
+GENERATE_ACCESSIBILITY_SIGNAL_4_FUNCTIONS(void(*)(), Dali::Toolkit::DevelControl::AccessibilityReadingStoppedSignalType, AccessibilityReadingStoppedSignal)
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingStoppedSignal_Connect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingStoppedSignal_Disconnect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingStoppedSignal_Empty
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityReadingStoppedSignal_Emit
+
+GENERATE_ACCESSIBILITY_SIGNAL_3_FUNCTIONS(void(*)(std::string&), Dali::Toolkit::DevelControl::AccessibilityGetNameSignalType, AccessibilityGetNameSignal)
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityGetNameSignal_Connect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityGetNameSignal_Disconnect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityGetNameSignal_Empty
+
+GENERATE_ACCESSIBILITY_SIGNAL_2_FUNCTIONS(void(*)(std::string&), Dali::Toolkit::DevelControl::AccessibilityGetDescriptionSignalType, AccessibilityGetDescriptionSignal)
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityGetDescriptionSignal_Connect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityGetDescriptionSignal_Disconnect
+
+GENERATE_ACCESSIBILITY_SIGNAL_2_FUNCTIONS(void(*)(std::pair<Dali::Accessibility::GestureInfo, bool>&), Dali::Toolkit::DevelControl::AccessibilityDoGestureSignalType, AccessibilityDoGestureSignal)
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityDoGestureSignal_Connect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityDoGestureSignal_Disconnect
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityActionSignal(void* arg1)
 {
