@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@
 // EXTERNAL INCLUDES
 #include <dali/devel-api/adaptor-framework/application-devel.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
+#include <dali/integration-api/debug.h>
 #include <dali/public-api/adaptor-framework/application.h>
 #include <dali/public-api/adaptor-framework/window-enumerations.h>
 
@@ -54,6 +55,14 @@ void GenerationArgV(int argc, char* argv)
 {
   // TODO : What should we do if already generated argv exist?
   ReleaseArgVMemory();
+
+  // Avoid error case when argc is negative.
+  if(argc < 0)
+  {
+    DALI_LOG_ERROR("[ERROR!] Invalid argc value comes! argc : %d, argv : %p\n", argc, argv);
+    argc = 0;
+  }
+
   // generate argv data from the C# args
   int   index  = 0;
   int   length = 0;
@@ -62,16 +71,19 @@ void GenerationArgV(int argc, char* argv)
 
   gArgV = new char*[argc + 1];
 
-  for(retPtr = strtok_r(argv, " ", &nextPtr);
-      retPtr != NULL && index < argc;
-      retPtr = strtok_r(NULL, " ", &nextPtr))
+  if(argv != NULL)
   {
-    length       = 0;
-    length       = strlen(retPtr);
-    gArgV[index] = new char[length + 1];
-    strncpy(gArgV[index], retPtr, length);
-    gArgV[index][length] = '\0';
-    index++;
+    for(retPtr = strtok_r(argv, " ", &nextPtr);
+        retPtr != NULL && index < argc;
+        retPtr = strtok_r(NULL, " ", &nextPtr))
+    {
+      length       = 0;
+      length       = strlen(retPtr);
+      gArgV[index] = new char[length + 1];
+      memcpy(gArgV[index], retPtr, length);
+      gArgV[index][length] = '\0';
+      index++;
+    }
   }
 
   while(index < argc)
@@ -292,7 +304,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int jarg1, char* jarg2, char* jarg3, int jarg4)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int nuiArgc, char* nuiArgv, char* jarg3, int jarg4)
 {
   void*                          jresult;
   int*                           argc = nullptr;
@@ -300,42 +312,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int jarg1, ch
   Dali::Application::WINDOW_MODE arg4;
   Dali::Application              result;
 
-  {
-    // TODO : What should we do if already generated argv exist?
-    ReleaseArgVMemory();
-    // generate argv data from the C# args
-    int   index  = 0;
-    int   length = 0;
-    char* retPtr = NULL;
-    char* nextPtr;
+  GUARD_ON_NULL_RET0(jarg3);
 
-    gArgV = new char*[jarg1 + 1];
-
-    for(retPtr = strtok_r(jarg2, " ", &nextPtr);
-        retPtr != NULL && index < jarg1;
-        retPtr = strtok_r(NULL, " ", &nextPtr))
-    {
-      length       = 0;
-      length       = strlen(retPtr);
-      gArgV[index] = new char[length + 1];
-      strncpy(gArgV[index], retPtr, length);
-      gArgV[index][length] = '\0';
-      index++;
-    }
-
-    while(index < jarg1)
-    {
-      //if jarg1 - index >1, maybe cause error.
-      gArgV[index] = NULL;
-      index++;
-    }
-
-    gArgV[jarg1] = NULL;
-    gArgC        = jarg1;
-
-    argc = &gArgC;
-    argv = &gArgV;
-  }
+  GenerationArgV(nuiArgc, nuiArgv);
+  argc = &gArgC;
+  argv = &gArgV;
 
   std::string arg3(jarg3);
   arg4 = (Dali::Application::WINDOW_MODE)jarg4;
@@ -1697,7 +1678,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, ch
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(int jarg1, char* jarg2, char* jarg3, int jarg4, void* jarg5)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(int nuiArgc, char* nuiArgv, char* jarg3, int jarg4, void* jarg5)
 {
   void*                          jresult;
   int*                           argc = nullptr;
@@ -1707,42 +1688,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(
   Dali::PositionSize*            argp5;
   Dali::Application              result;
 
-  {
-    // TODO : What should we do if already generated argv exist?
-    ReleaseArgVMemory();
-    // generate argv data from the C# args
-    int   index  = 0;
-    int   length = 0;
-    char* retPtr = NULL;
-    char* nextPtr;
+  GUARD_ON_NULL_RET0(jarg3);
 
-    gArgV = new char*[jarg1 + 1];
-
-    for(retPtr = strtok_r(jarg2, " ", &nextPtr);
-        retPtr != NULL && index < jarg1;
-        retPtr = strtok_r(NULL, " ", &nextPtr))
-    {
-      length       = 0;
-      length       = strlen(retPtr);
-      gArgV[index] = new char[length + 1];
-      strncpy(gArgV[index], retPtr, length);
-      gArgV[index][length] = '\0';
-      index++;
-    }
-
-    while(index < jarg1)
-    {
-      //if jarg1 - index >1, maybe cause error.
-      gArgV[index] = NULL;
-      index++;
-    }
-
-    gArgV[jarg1] = NULL;
-    gArgC        = jarg1;
-
-    argc = &gArgC;
-    argv = &gArgV;
-  }
+  GenerationArgV(nuiArgc, nuiArgv);
+  argc = &gArgC;
+  argv = &gArgV;
 
   std::string arg3(jarg3);
   arg4  = (Dali::Application::WINDOW_MODE)jarg4;
@@ -1772,42 +1722,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowData(int nuiA
   Dali::WindowData* pWindowData;
   Dali::Application result;
 
-  {
-    // TODO : What should we do if already generated argv exist?
-    ReleaseArgVMemory();
-    // generate argv data from the C# args
-    int   index  = 0;
-    int   length = 0;
-    char* retPtr = NULL;
-    char* nextPtr;
-
-    gArgV = new char*[nuiArgc + 1];
-
-    for(retPtr = strtok_r(nuiArgv, " ", &nextPtr);
-        retPtr != NULL && index < nuiArgc;
-        retPtr = strtok_r(NULL, " ", &nextPtr))
-    {
-      length       = 0;
-      length       = strlen(retPtr);
-      gArgV[index] = new char[length + 1];
-      strncpy(gArgV[index], retPtr, length);
-      gArgV[index][length] = '\0';
-      index++;
-    }
-
-    while(index < nuiArgc)
-    {
-      // if nuiArgc - index >1, maybe cause error.
-      gArgV[index] = NULL;
-      index++;
-    }
-
-    gArgV[nuiArgc] = NULL;
-    gArgC          = nuiArgc;
-
-    argc = &gArgC;
-    argv = &gArgV;
-  }
+  GenerationArgV(nuiArgc, nuiArgv);
+  argc = &gArgC;
+  argv = &gArgV;
 
   std::string styleSheet(nuiStyleSheet);
   pWindowData = (Dali::WindowData*)nuiWindowData;

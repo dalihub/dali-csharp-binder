@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ComponentApplication(int jarg1, ch
     argV[index] = new char[length + 1];
     if( retPtr )
     {
-      strncpy(argV[index], retPtr, length);
+      memcpy(argV[index], retPtr, length);
     }
     argV[index][length] = '\0';
     index++;
@@ -75,7 +75,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_ComponentApplication(int jarg1, ch
       argV[index] = new char[length + 1];
       if( retPtr )
       {
-        strncpy(argV[index], retPtr, length);
+        memcpy(argV[index], retPtr, length);
       }
       argV[index][length] = '\0';
       index++;

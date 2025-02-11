@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -338,7 +338,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_1(int jarg1
     argWatchV[index] = new char[length + 1];
     if( retPtr )
     {
-      strncpy(argWatchV[index], retPtr, length);
+      memcpy(argWatchV[index], retPtr, length);
     }
     argWatchV[index][length] = '\0';
     index++;
@@ -354,7 +354,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_1(int jarg1
       argWatchV[index] = new char[length + 1];
       if( retPtr )
       {
-        strncpy(argWatchV[index], retPtr, length);
+        memcpy(argWatchV[index], retPtr, length);
       }
       argWatchV[index][length] = '\0';
       index++;
@@ -397,7 +397,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_2(int jarg1
     argWatchV[index] = new char[length + 1];
     if( retPtr )
     {
-      strncpy(argWatchV[index], retPtr, length);
+      memcpy(argWatchV[index], retPtr, length);
     }
     argWatchV[index][length] = '\0';
     index++;
@@ -413,7 +413,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_2(int jarg1
       argWatchV[index] = new char[length + 1];
       if( retPtr )
       {
-        strncpy(argWatchV[index], retPtr, length);
+        memcpy(argWatchV[index], retPtr, length);
       }
       argWatchV[index][length] = '\0';
       index++;
