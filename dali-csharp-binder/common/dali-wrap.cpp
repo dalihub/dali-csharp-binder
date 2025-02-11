@@ -21550,10 +21550,13 @@ SWIGEXPORT Dali::Gesture * SWIGSTDCALL CSharp_Dali_PanGesture_SWIGUpcast(Dali::P
     return (Dali::Gesture *)jarg1;
 }
 
-
 SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_GetEnvironmentVariable(char * jarg1) {
+  char * jresult = 0;
   const char * result = EnvironmentVariable::GetEnvironmentVariable(jarg1);
-  char * jresult = SWIG_csharp_string_callback((const char *)result);
+  if(result)
+  {
+    jresult = SWIG_csharp_string_callback((const char *)result);
+  }
   return jresult;
 }
 
