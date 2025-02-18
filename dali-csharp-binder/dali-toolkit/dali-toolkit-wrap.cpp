@@ -4365,6 +4365,33 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_NewCustom() {
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_NewWithBehaviour(int csBehaviour) {
+  void * jresult ;
+  Dali::Toolkit::Control result;
+
+  {
+    try {
+      result = Dali::Toolkit::Control::New(static_cast<Dali::Toolkit::Control::ControlBehaviour>(csBehaviour | Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_NewCustomWithBehaviour(int csBehaviour) {
+  void * jresult;
+  Dali::Toolkit::Control result;
+
+  {
+    try {
+      result = SlimCustomViewImpl::New(static_cast<Dali::Toolkit::Internal::Control::ControlBehaviour>(csBehaviour | Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS));
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control &)result);
+  return jresult;
+}
 
 
 
