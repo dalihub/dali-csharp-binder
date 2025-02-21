@@ -59,12 +59,7 @@ BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
 BuildRequires: pkgconfig(widget_viewer_dali)
 BuildRequires: pkgconfig(watch_viewer_dali)
 BuildRequires: pkgconfig(watch-holder-base)
-
-%if 0%{?tizen_version_major} >= 5
 BuildRequires: pkgconfig(ecore-wl2)
-%else
-BuildRequires:  pkgconfig(ecore-wayland)
-%endif
 
 # for multiprofile
 Requires:   %{name}-compat = %{version}-%{release}
