@@ -1614,6 +1614,14 @@ SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_OFFSCREEN_RENDERING_get() 
   return (int)Dali::Toolkit::DevelControl::Property::OFFSCREEN_RENDERING;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_CORNER_RADIUS_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::CORNER_RADIUS;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_CORNER_RADIUS_POLICY_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::CORNER_RADIUS_POLICY;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexContainer_Property_CONTENT_DIRECTION_get() {
   int jresult ;
   int result;
