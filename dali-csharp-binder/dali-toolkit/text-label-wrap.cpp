@@ -18,6 +18,7 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/public-api/controls/text-controls/text-label.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-label-devel.h>
+#include <dali/public-api/object/property.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -120,6 +121,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_MANUAL_RENDERED_get()
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ASYNC_LINE_COUNT_get()
 {
   return (int)Dali::Toolkit::DevelTextLabel::Property::ASYNC_LINE_COUNT;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_FONT_VARIATIONS_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::FONT_VARIATIONS;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextSize(void * pTextLabel, unsigned int start, unsigned int end)
@@ -285,6 +291,32 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncHeightForWidth(voi
       Dali::Toolkit::DevelTextLabel::RequestAsyncHeightForWidth(*textLabel, width);
     } CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_TextLabel_RegisterFontVariationProperty(void * pTextLabel, char * pTag)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+
+  if (!pTag)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "pTag is null string", 0);
+    return Dali::Property::INVALID_INDEX;
+  }
+
+  std::string tag_string = std::string(pTag);
+  Dali::Property::Index result = Dali::Property::INVALID_INDEX;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try
+    {
+      auto index = Dali::Toolkit::DevelTextLabel::RegisterFontVariationProperty(*textLabel, tag_string);
+      result = index;
+
+    } CALL_CATCH_EXCEPTION(Dali::Property::INVALID_INDEX);
+  }
+
+  return result;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_GetLineCount(void * pTextLabel, float width)
