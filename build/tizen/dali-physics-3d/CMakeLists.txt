@@ -2,7 +2,18 @@ SET(PHYSICS_3D_TARGET dali2-csharp-binder-physics-3d)
 
 SET( PHYSICS_3D_SOURCES ${dali_csharp_binder_physics_3d_src_files})
 
+INCLUDE(CheckCXXCompilerFlag)
 ADD_COMPILE_OPTIONS( -Wno-unused-variable -Wno-reorder -Wno-sign-compare )
+
+CHECK_CXX_COMPILER_FLAG( -Wno-maybe-uninitialized HAVE_NO_MAYBE_UNINITIALIZED )
+IF (HAVE_NO_MAYBE_UNINITIALIZED)
+  ADD_COMPILE_OPTIONS( -Wno-maybe-uninitialized )
+ENDIF()
+
+CHECK_CXX_COMPILER_FLAG( -Wno-uninitialized HAVE_NO_UNINITIALIZED )
+IF (HAVE_NO_UNINITIALIZED)
+  ADD_COMPILE_OPTIONS( -Wno-uninitialized )
+ENDIF()
 
 ADD_LIBRARY( ${PHYSICS_3D_TARGET} SHARED ${PHYSICS_3D_SOURCES} )
 
