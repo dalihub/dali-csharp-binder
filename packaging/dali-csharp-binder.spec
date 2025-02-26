@@ -21,7 +21,7 @@
 
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 2.4.6
+Version: 2.4.7
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -59,12 +59,7 @@ BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
 BuildRequires: pkgconfig(widget_viewer_dali)
 BuildRequires: pkgconfig(watch_viewer_dali)
 BuildRequires: pkgconfig(watch-holder-base)
-
-%if 0%{?tizen_version_major} >= 5
 BuildRequires: pkgconfig(ecore-wl2)
-%else
-BuildRequires:  pkgconfig(ecore-wayland)
-%endif
 
 # For ASAN test
 %if "%{vd_asan}" == "1" || "%{asan}" == "1"

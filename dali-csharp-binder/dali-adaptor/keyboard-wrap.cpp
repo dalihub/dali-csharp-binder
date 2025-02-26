@@ -25,11 +25,7 @@
 #include <dali-csharp-binder/common/common.h>
 
 #ifdef TIZEN_BUILD
-#ifdef ECORE_WL2
 #include <Ecore_Wl2.h>
-#else
-#include <Ecore_Wayland.h>
-#endif
 #endif
 
 #undef LOG
