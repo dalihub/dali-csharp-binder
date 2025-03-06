@@ -10971,6 +10971,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Renderer_New(void * jarg1, void * jarg
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Renderer_NewWithoutGeometryAndShader() {
+  void * jresult ;
+  Dali::Renderer result;
+  {
+    try {
+      result = Dali::Renderer::New();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Renderer((const Dali::Renderer &)result);
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Renderer(void * jarg1) {
   Dali::Renderer *arg1 = (Dali::Renderer *) 0 ;
