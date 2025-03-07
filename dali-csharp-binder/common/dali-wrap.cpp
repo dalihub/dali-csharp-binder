@@ -10692,6 +10692,39 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Shader_New__SWIG_1(char * jarg1, char 
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Shader_New__SWIG_2(char * csVertexShaderCode, char * csFragmentShaderCode, int csHints, char * csShaderName) {
+  void * jresult ;
+  Dali::Shader::Hint::Value hints;
+  Dali::Shader result;
+
+  if (!csVertexShaderCode) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  if (!csFragmentShaderCode) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  if (!csShaderName) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string vertexShaderCode(csVertexShaderCode);
+  std::string fragmentShaderCode(csFragmentShaderCode);
+  std::string shaderName(csShaderName);
+  hints = (Dali::Shader::Hint::Value)csHints;
+  {
+    try {
+      result = Dali::Shader::New((std::string const &)vertexShaderCode,(std::string const &)fragmentShaderCode, hints, (std::string const &)shaderName);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Shader((const Dali::Shader &)result);
+
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Shader(void * jarg1) {
   Dali::Shader *arg1 = (Dali::Shader *) 0 ;
 
