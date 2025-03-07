@@ -102,6 +102,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_RENDER_MODE_get()
   return (int)Dali::Toolkit::DevelTextLabel::Property::RENDER_MODE;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ELLIPSIS_MODE_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::ELLIPSIS_MODE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_IS_SCROLLING_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::IS_SCROLLING;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_MANUAL_RENDERED_get()
 {
   return (int)Dali::Toolkit::DevelTextLabel::Property::MANUAL_RENDERED;
