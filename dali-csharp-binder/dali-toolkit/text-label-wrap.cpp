@@ -287,6 +287,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncHeightForWidth(voi
   }
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_GetLineCount(void * pTextLabel, float width)
+{
+  int jresult;
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+  int result;
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelTextLabel::GetLineCount(*textLabel, width);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = result;
+  return jresult;
+}
+
 // Signals
 #ifndef GENERATE_DEVEL_TEXT_LABEL_SIGNAL
 #define GENERATE_DEVEL_TEXT_LABEL_SIGNAL(HType, SignalName) GENERATE_DEVEL_SIGNAL(Dali::Toolkit::TextLabel*, HType, Dali::Toolkit::DevelTextLabel, Dali_TextLabel, SignalName)
