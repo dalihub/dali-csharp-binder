@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyVector2(void *actor, int propertyType, void *vector2)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector2 *pVector2 = (Dali::Vector2 *)vector2;
 
     if (!pActor)
@@ -65,7 +65,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyVector3(void *actor, int propertyType, void *vector3)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector3 *pVector3 = (Dali::Vector3 *)vector3;
 
     if (!pActor)
@@ -90,7 +90,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyVector4(void *actor, int propertyType, void *vector4)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector4 *pVector4 = (Dali::Vector4 *)vector4;
 
     if (!pActor)
@@ -115,7 +115,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyVector2ActualVector3(void *actor, int propertyType, void *vector2)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector2 *pVector2 = (Dali::Vector2 *)vector2;
 
     if (!pActor)
@@ -140,7 +140,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyFloat(void *actor, int propertyType, float valFloat)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
 
     if (!pActor)
     {
@@ -159,7 +159,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyBool(void *actor, int propertyType, bool valBool)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
 
     if (!pActor)
     {
@@ -178,7 +178,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyString(void *actor, int propertyType, char *valString)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
 
     if (!pActor)
     {
@@ -202,7 +202,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyInt(void *actor, int propertyType, int valInt)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
 
     if (!pActor)
     {
@@ -221,7 +221,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyMap(void *actor, int propertyType, void* map)
   {
-    Dali::Actor* pActor = (Dali::Actor *)actor;
+    Dali::Handle* pActor = (Dali::Handle *)actor;
     Dali::Property::Map* pMap = (Dali::Property::Map*)map;
 
     if (!pActor)
@@ -246,7 +246,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyExtents(void *actor, int propertyType, void* extents)
   {
-    Dali::Actor* pActor = (Dali::Actor *)actor;
+    Dali::Handle* pActor = (Dali::Handle *)actor;
     Dali::Extents* pExtents = (Dali::Extents*)extents;
 
     if (!pActor)
@@ -271,7 +271,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyNone(void *actor, int propertyType)
   {
-    Dali::Actor* pActor = (Dali::Actor *)actor;
+    Dali::Handle* pActor = (Dali::Handle *)actor;
 
     if (!pActor)
     {
@@ -290,7 +290,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingPropertyVector2(void *actor, int propertyType, void *retrievingVector2)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector2 *pVector2 = (Dali::Vector2 *)retrievingVector2;
 
     if (!pActor)
@@ -307,7 +307,7 @@ extern "C"
     try
     {
       Dali::Vector2 result;
-      result = ((Dali::Actor const *)pActor)->GetProperty<Dali::Vector2>((Dali::Property::Index)propertyType);
+      result = ((Dali::Handle const *)pActor)->GetProperty<Dali::Vector2>((Dali::Property::Index)propertyType);
       pVector2->x = result.x;
       pVector2->y = result.y;
     }
@@ -318,7 +318,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingPropertyVector3(void *actor, int propertyType, void *retrievingVector3)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector3 *pVector3 = (Dali::Vector3 *)retrievingVector3;
 
     if (!pActor)
@@ -335,7 +335,7 @@ extern "C"
     try
     {
       Dali::Vector3 result;
-      result = ((Dali::Actor const *)pActor)->GetProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
+      result = ((Dali::Handle const *)pActor)->GetProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
       pVector3->x = result.x;
       pVector3->y = result.y;
       pVector3->z = result.z;
@@ -347,7 +347,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingPropertyVector4(void *actor, int propertyType, void *retrievingVector4)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector4 *pVector4 = (Dali::Vector4 *)retrievingVector4;
 
     if (!pActor)
@@ -364,7 +364,7 @@ extern "C"
     try
     {
       Dali::Vector4 result;
-      result = ((Dali::Actor const *)pActor)->GetProperty<Dali::Vector4>((Dali::Property::Index)propertyType);
+      result = ((Dali::Handle const *)pActor)->GetProperty<Dali::Vector4>((Dali::Property::Index)propertyType);
       pVector4->x = result.x;
       pVector4->y = result.y;
       pVector4->z = result.z;
@@ -377,7 +377,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingPropertyVector2ActualVector3(void *actor, int propertyType, void *retrievingVector2)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector2 *pVector2 = (Dali::Vector2 *)retrievingVector2;
 
     if (!pActor)
@@ -394,7 +394,7 @@ extern "C"
     try
     {
       Dali::Vector3 result;
-      result = ((Dali::Actor const *)pActor)->GetProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
+      result = ((Dali::Handle const *)pActor)->GetProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
       pVector2->x = result.x;
       pVector2->y = result.y;
     }
@@ -406,7 +406,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingPropertyFloat(void *actor, int propertyType, float *valFloat)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
 
     if (!pActor)
     {
@@ -421,7 +421,7 @@ extern "C"
 
     try
     {
-      *valFloat = ((Dali::Actor const *)pActor)->GetProperty<float>((Dali::Property::Index)propertyType);
+      *valFloat = ((Dali::Handle const *)pActor)->GetProperty<float>((Dali::Property::Index)propertyType);
     }
     CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
 
@@ -431,7 +431,7 @@ extern "C"
 
   SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyFloat(void *actor, int propertyType)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     float ret = 0;
 
     if (!pActor)
@@ -442,7 +442,7 @@ extern "C"
 
     try
     {
-      ret = ((Dali::Actor const *)pActor)->GetProperty<float>((Dali::Property::Index)propertyType);
+      ret = ((Dali::Handle const *)pActor)->GetProperty<float>((Dali::Property::Index)propertyType);
     }
     CALL_CATCH_EXCEPTION(ret);
 
@@ -451,7 +451,7 @@ extern "C"
 
   SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyBool(void *actor, int propertyType)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     bool ret = false;
 
     if (!pActor)
@@ -462,7 +462,7 @@ extern "C"
 
     try
     {
-      ret = ((Dali::Actor const *)pActor)->GetProperty<bool>((Dali::Property::Index)propertyType);
+      ret = ((Dali::Handle const *)pActor)->GetProperty<bool>((Dali::Property::Index)propertyType);
     }
     CALL_CATCH_EXCEPTION(ret);
 
@@ -471,7 +471,7 @@ extern "C"
 
   SWIGEXPORT char *SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyString(void *actor, int propertyType)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     std::string result = "";
     char *ret = nullptr;
 
@@ -483,7 +483,7 @@ extern "C"
 
     try
     {
-      result = ((Dali::Actor const *)pActor)->GetProperty<std::string>((Dali::Property::Index)propertyType);
+      result = ((Dali::Handle const *)pActor)->GetProperty<std::string>((Dali::Property::Index)propertyType);
       ret = SWIG_csharp_string_callback(result.c_str());
     }
     CALL_CATCH_EXCEPTION(ret);
@@ -493,7 +493,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyInt(void *actor, int propertyType)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     int ret = 0;
 
     if (!pActor)
@@ -504,7 +504,7 @@ extern "C"
 
     try
     {
-      ret = ((Dali::Actor const *)pActor)->GetProperty<int>((Dali::Property::Index)propertyType);
+      ret = ((Dali::Handle const *)pActor)->GetProperty<int>((Dali::Property::Index)propertyType);
     }
     CALL_CATCH_EXCEPTION(ret);
 
@@ -542,7 +542,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_RetrieveCurrentPropertyVector3(void *actor, int propertyType, void *retrievingVector3)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector3 *pVector3 = (Dali::Vector3 *)retrievingVector3;
 
     if (!pActor)
@@ -559,7 +559,7 @@ extern "C"
     try
     {
       Dali::Vector3 result;
-      result = ((Dali::Actor const *)pActor)->GetCurrentProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
+      result = ((Dali::Handle const *)pActor)->GetCurrentProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
       pVector3->x = result.x;
       pVector3->y = result.y;
       pVector3->z = result.z;
@@ -571,7 +571,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_RetrieveCurrentPropertyVector2ActualVector3(void *actor, int propertyType, void *retrievingVector2)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector2 *pVector2 = (Dali::Vector2 *)retrievingVector2;
 
     if (!pActor)
@@ -588,7 +588,7 @@ extern "C"
     try
     {
       Dali::Vector3 result;
-      result = ((Dali::Actor const *)pActor)->GetCurrentProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
+      result = ((Dali::Handle const *)pActor)->GetCurrentProperty<Dali::Vector3>((Dali::Property::Index)propertyType);
       pVector2->x = result.x;
       pVector2->y = result.y;
     }
@@ -628,7 +628,7 @@ extern "C"
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_RetrieveCurrentPropertyVector4(void *actor, int propertyType, void *retrievingVector4)
   {
-    Dali::Actor *pActor = (Dali::Actor *)actor;
+    Dali::Handle *pActor = (Dali::Handle *)actor;
     Dali::Vector4 *pVector4 = (Dali::Vector4 *)retrievingVector4;
 
     if (!pActor)
@@ -645,7 +645,7 @@ extern "C"
     try
     {
       Dali::Vector4 result;
-      result = ((Dali::Actor const *)pActor)->GetCurrentProperty<Dali::Vector4>((Dali::Property::Index)propertyType);
+      result = ((Dali::Handle const *)pActor)->GetCurrentProperty<Dali::Vector4>((Dali::Property::Index)propertyType);
       pVector4->x = result.x;
       pVector4->y = result.y;
       pVector4->z = result.z;
