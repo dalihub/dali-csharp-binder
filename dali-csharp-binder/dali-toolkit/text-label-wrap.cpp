@@ -102,6 +102,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_RENDER_MODE_get()
   return (int)Dali::Toolkit::DevelTextLabel::Property::RENDER_MODE;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ELLIPSIS_MODE_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::ELLIPSIS_MODE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_IS_SCROLLING_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::IS_SCROLLING;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_MANUAL_RENDERED_get()
 {
   return (int)Dali::Toolkit::DevelTextLabel::Property::MANUAL_RENDERED;
@@ -275,6 +285,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncHeightForWidth(voi
       Dali::Toolkit::DevelTextLabel::RequestAsyncHeightForWidth(*textLabel, width);
     } CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_GetLineCount(void * pTextLabel, float width)
+{
+  int jresult;
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+  int result;
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try
+    {
+      result = (int)Dali::Toolkit::DevelTextLabel::GetLineCount(*textLabel, width);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = result;
+  return jresult;
 }
 
 // Signals
