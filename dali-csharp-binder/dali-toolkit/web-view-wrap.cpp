@@ -549,27 +549,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_StopInspectorServer(void * jarg1
   return result;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_SetImePositionAndAlignment(void* jarg1, void* jarg2, int alignment) {
-  Dali::Toolkit::WebView* webView = (Dali::Toolkit::WebView*)jarg1;
-  Dali::Vector2* position = (Dali::Vector2*)jarg2;
-  bool result = false;
-  {
-    try {
-      result = (webView)->SetImePositionAndAlignment(*position, alignment);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return result;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_SetCursorThemeName(void * jarg1, const char* jarg2) {
-  Dali::Toolkit::WebView* webView = (Dali::Toolkit::WebView*)jarg1;
-  {
-    try {
-      (webView)->SetCursorThemeName(jarg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ScrollBy(void * jarg1, int32_t jarg2, int32_t jarg3) {
   Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
   arg1 = (Dali::Toolkit::WebView*)jarg1;
@@ -3992,26 +3971,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsExtraFeatureEnabled(void *
     } CALL_CATCH_EXCEPTION(0);
   }
   return ret;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_SetImeStyle(void *jarg1, int jarg2) {
-  Dali::Toolkit::WebSettings* settings = (Dali::Toolkit::WebSettings*)jarg1;
-  {
-    try {
-      settings->SetImeStyle(jarg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebSettings_GetImeStyle(void *jarg1) {
-  Dali::Toolkit::WebSettings* settings = (Dali::Toolkit::WebSettings*)jarg1;
-  int style;
-  {
-    try {
-      style = settings->GetImeStyle();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return style;
 }
 
 #ifdef __cplusplus
