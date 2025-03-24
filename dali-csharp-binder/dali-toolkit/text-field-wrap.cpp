@@ -18,6 +18,7 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/public-api/controls/text-controls/text-field.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-field-devel.h>
+#include <dali/public-api/object/property.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -1111,6 +1112,37 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_REMOVE_FRONT_INSET_get
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_REMOVE_BACK_INSET_get()
 {
   return (int)Dali::Toolkit::DevelTextField::Property::REMOVE_BACK_INSET;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_FONT_VARIATIONS_get()
+{
+  return (int)Dali::Toolkit::DevelTextField::Property::FONT_VARIATIONS;
+}
+
+SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_TextField_RegisterFontVariationProperty(void * pTextField, char * pTag)
+{
+  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0;
+
+  if (!pTag)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "pTag is null string", 0);
+    return Dali::Property::INVALID_INDEX;
+  }
+
+  std::string tag_string = std::string(pTag);
+  Dali::Property::Index result = Dali::Property::INVALID_INDEX;
+
+  textField = (Dali::Toolkit::TextField *)pTextField;
+  {
+    try
+    {
+      auto index = Dali::Toolkit::DevelTextField::RegisterFontVariationProperty(*textField, tag_string);
+      result = index;
+
+    } CALL_CATCH_EXCEPTION(Dali::Property::INVALID_INDEX);
+  }
+
+  return result;
 }
 
 #ifdef __cplusplus

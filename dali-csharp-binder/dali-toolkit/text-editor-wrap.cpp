@@ -18,6 +18,7 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/public-api/controls/text-controls/text-editor.h>
 #include <dali-toolkit/devel-api/controls/text-controls/text-editor-devel.h>
+#include <dali/public-api/object/property.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -1336,6 +1337,37 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_REMOVE_FRONT_INSET_ge
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_REMOVE_BACK_INSET_get()
 {
   return (int)Dali::Toolkit::DevelTextEditor::Property::REMOVE_BACK_INSET;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_FONT_VARIATIONS_get()
+{
+  return (int)Dali::Toolkit::DevelTextEditor::Property::FONT_VARIATIONS;
+}
+
+SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_TextEditor_RegisterFontVariationProperty(void * pTextEditor, char * pTag)
+{
+  Dali::Toolkit::TextEditor *textEditor = (Dali::Toolkit::TextEditor *) 0;
+
+  if (!pTag)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "pTag is null string", 0);
+    return Dali::Property::INVALID_INDEX;
+  }
+
+  std::string tag_string = std::string(pTag);
+  Dali::Property::Index result = Dali::Property::INVALID_INDEX;
+
+  textEditor = (Dali::Toolkit::TextEditor *)pTextEditor;
+  {
+    try
+    {
+      auto index = Dali::Toolkit::DevelTextEditor::RegisterFontVariationProperty(*textEditor, tag_string);
+      result = index;
+
+    } CALL_CATCH_EXCEPTION(Dali::Property::INVALID_INDEX);
+  }
+
+  return result;
 }
 
 #ifdef __cplusplus
