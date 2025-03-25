@@ -181,6 +181,7 @@
 #include <dali/devel-api/object/csharp-type-registry.h>
 #include <dali/devel-api/update/frame-callback-interface.h>
 #include <dali/devel-api/update/update-proxy.h>
+#include <dali/devel-api/rendering/renderer-devel.h>
 
 #include <dali/public-api/events/mouse-button.h>
 #include <dali/public-api/math/matrix.h>
@@ -10973,6 +10974,96 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_STENCIL_OPERATION_ON_Z_
   int result;
 
   result = (int)Dali::Renderer::Property::STENCIL_OPERATION_ON_Z_PASS;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_MIX_COLOR_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Renderer::Property::MIX_COLOR;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_MIX_COLOR_RED_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Renderer::Property::MIX_COLOR_RED;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_MIX_COLOR_GREEN_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Renderer::Property::MIX_COLOR_GREEN;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_MIX_COLOR_BLUE_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Renderer::Property::MIX_COLOR_BLUE;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_OPACITY_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::Renderer::Property::OPACITY;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_RENDERING_BEHAVIOR_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::DevelRenderer::Property::RENDERING_BEHAVIOR;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_BLEND_EQUATION_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::DevelRenderer::Property::BLEND_EQUATION;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_INSTANCE_COUNT_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::DevelRenderer::Property::INSTANCE_COUNT;
+  jresult = (int)result;
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_UPDATE_AREA_EXTENTS_get() {
+  int jresult ;
+  int result;
+
+  result = (int)Dali::DevelRenderer::Property::UPDATE_AREA_EXTENTS;
   jresult = (int)result;
   return jresult;
 }
