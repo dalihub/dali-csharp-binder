@@ -113,6 +113,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_IS_SCROLLING_get()
   return (int)Dali::Toolkit::DevelTextLabel::Property::IS_SCROLLING;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_RENDER_SCALE_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::RENDER_SCALE;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_PIXEL_SNAP_FACTOR_get()
+{
+  return (int)Dali::Toolkit::TextLabel::Property::PIXEL_SNAP_FACTOR;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_MANUAL_RENDERED_get()
 {
   return (int)Dali::Toolkit::DevelTextLabel::Property::MANUAL_RENDERED;
