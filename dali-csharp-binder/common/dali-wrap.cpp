@@ -8526,8 +8526,23 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Handle_IsPropertyAnimatable(void * jarg1
   return jresult;
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Handle_IsPropertyAConstraintInput(void * jarg1, int jarg2) {
+  bool jresult ;
+  Dali::Handle *arg1 = (Dali::Handle *) 0 ;
+  Dali::Property::Index arg2 ;
+  bool result;
 
+  arg1 = (Dali::Handle *)jarg1;
+  arg2 = (Dali::Property::Index)jarg2;
+  {
+    try {
+      result = (bool)((Dali::Handle const *)arg1)->IsPropertyAConstraintInput(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
 
+  jresult = result;
+  return jresult;
+}
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_GetPropertyType(void * jarg1, int jarg2) {
   int jresult ;
