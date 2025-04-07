@@ -51192,57 +51192,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_Backward(void * jarg1, int jar
 }
 
 
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetAutoRotationEnabled(void * view, bool enable) {
-  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
-
-  videoView = (Dali::Toolkit::VideoView *)view;
-  {
-    try {
-      Toolkit::DevelVideoView::SetAutoRotationEnabled(*videoView, enable);
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoView_IsAutoRotationEnabled(void * view) {
-  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
-  bool ret = false;
-
-  videoView = (Dali::Toolkit::VideoView *)view;
-  {
-    try {
-      ret = Toolkit::DevelVideoView::IsAutoRotationEnabled(*videoView);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return ret;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetLetterBoxEnabled(void * view, bool enable) {
-  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
-
-  videoView = (Dali::Toolkit::VideoView *)view;
-  {
-    try {
-      Toolkit::DevelVideoView::SetLetterBoxEnabled(*videoView, enable);
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoView_IsLetterBoxEnabled(void * view) {
-  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
-  bool ret = false;
-
-  videoView = (Dali::Toolkit::VideoView *)view;
-  {
-    try {
-      ret = Toolkit::DevelVideoView::IsLetterBoxEnabled(*videoView);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return ret;
-}
-
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_FinishedSignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
