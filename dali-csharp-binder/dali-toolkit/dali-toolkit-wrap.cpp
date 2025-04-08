@@ -1622,6 +1622,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_CORNER_RADIUS_POLICY_get() 
   return (int)Dali::Toolkit::DevelControl::Property::CORNER_RADIUS_POLICY;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_CORNER_SQUARENESS_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::CORNER_SQUARENESS;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexContainer_Property_CONTENT_DIRECTION_get() {
   int jresult ;
   int result;

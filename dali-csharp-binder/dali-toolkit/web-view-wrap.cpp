@@ -33,6 +33,7 @@
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-security-origin.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-back-forward-list-item.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-user-media-permission-request.h>
+#include <dali/devel-api/adaptor-framework/web-engine/web-engine-device-list-get.h>
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-back-forward-list.h>
 #include <dali-toolkit/devel-api/controls/web-view/web-settings.h>
@@ -547,6 +548,27 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_StopInspectorServer(void * jarg1
     } CALL_CATCH_EXCEPTION(0);
   }
   return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_SetImePositionAndAlignment(void* jarg1, void* jarg2, int alignment) {
+  Dali::Toolkit::WebView* webView = (Dali::Toolkit::WebView*)jarg1;
+  Dali::Vector2* position = (Dali::Vector2*)jarg2;
+  bool result = false;
+  {
+    try {
+      result = (webView)->SetImePositionAndAlignment(*position, alignment);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_SetCursorThemeName(void * jarg1, const char* jarg2) {
+  Dali::Toolkit::WebView* webView = (Dali::Toolkit::WebView*)jarg1;
+  {
+    try {
+      (webView)->SetCursorThemeName(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ScrollBy(void * jarg1, int32_t jarg2, int32_t jarg3) {
@@ -1443,14 +1465,32 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUserMediaPermissionReque
     try {
       if (handler)
       {
-        (arg1)->RegisterUserMediaPermissionRequestCallback([handler](std::unique_ptr<Dali::WebEngineUserMediaPermissionRequest> permission, const std::string &message) {
-            handler(permission.release(), message.c_str());
+        (arg1)->RegisterUserMediaPermissionRequestCallback([handler](Dali::WebEngineUserMediaPermissionRequest* permission, const std::string &message) {
+            handler(permission, message.c_str());
           });
       }
       else
       {
         (arg1)->RegisterUserMediaPermissionRequestCallback(nullptr);
       }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_FeedMouseWheel(void * objPtr, bool yDirec, int step, int x, int y) {
+  Dali::Toolkit::WebView *webView = (Dali::Toolkit::WebView *)objPtr;
+  {
+    try {
+      (webView)->FeedMouseWheel(yDirec, step, x, y);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_SetVideoHole(void *objPtr, bool enable, bool isWaylandWin) {
+  Dali::Toolkit::WebView *webView = (Dali::Toolkit::WebView *)objPtr;
+  {
+    try {
+      (webView)->SetVideoHole(enable, isWaylandWin);
     } CALL_CATCH_EXCEPTION();
   }
 }
@@ -1486,6 +1526,106 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UserMediaPermissionRequest_Suspend(void 
       ret = (arg1)->Suspend();
     } CALL_CATCH_EXCEPTION(0);
   }
+  return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterDeviceConnectionChangedCallback(void * view, void * callback) {
+  Dali::Toolkit::WebView *webView = (Dali::Toolkit::WebView *)view;
+  void (*eventHandler)(int32_t) = (void (*)(int32_t))callback;
+  {
+    try {
+      if (eventHandler)
+      {
+        (webView)->RegisterDeviceConnectionChangedCallback([eventHandler](int32_t deviceType) {
+            eventHandler(deviceType);
+          });
+      }
+      else
+      {
+        (webView)->RegisterDeviceConnectionChangedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterDeviceListGetCallback(void * view, void * callback) {
+  Dali::Toolkit::WebView *webView = (Dali::Toolkit::WebView *)view;
+  void (*eventHandler)(Dali::WebEngineDeviceListGet*, int32_t) = (void (*)(Dali::WebEngineDeviceListGet*, int32_t))callback;
+  {
+    try {
+      if (eventHandler)
+      {
+        (webView)->RegisterDeviceListGetCallback([eventHandler](Dali::WebEngineDeviceListGet* list, int32_t size) {
+            eventHandler(list, size);
+          });
+      }
+      else
+      {
+        (webView)->RegisterDeviceListGetCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_DeviceListGet(void * obj) {
+  if (!obj) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "DeviceListGet is null", 0);
+    return;
+  }
+
+  Dali::WebEngineDeviceListGet* me = (Dali::WebEngineDeviceListGet*)obj;
+  {
+    try {
+      delete me;
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_DeviceListGet_GetTypeAndConnect(void * obj, int * type, bool * connect, int idx) {
+  if (!obj) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "DeviceListGet is null", 0);
+    return;
+  }
+
+  Dali::WebEngineDeviceListGet* me = (Dali::WebEngineDeviceListGet*)obj;
+  {
+    try {
+      me->GetTypeAndConnect(type, connect, idx);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_DeviceListGet_GetDeviceId(void * obj, int idx) {
+  std::string result;
+  if (!obj) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "DeviceListGet is null", 0);
+    return "";
+  }
+
+  Dali::WebEngineDeviceListGet* me = (Dali::WebEngineDeviceListGet*)obj;
+  {
+    try {
+      result = me->GetDeviceId(idx);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char * ret = SWIG_csharp_string_callback(result.c_str());
+  return ret;
+}
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_DeviceListGet_GetDeviceLabel(void * obj, int idx) {
+  std::string result;
+  if (!obj) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "DeviceListGet is null", 0);
+    return "";
+  }
+
+  Dali::WebEngineDeviceListGet* me = (Dali::WebEngineDeviceListGet*)obj;
+  {
+    try {
+      result = me->GetDeviceLabel(idx);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  char * ret = SWIG_csharp_string_callback(result.c_str());
   return ret;
 }
 
@@ -3971,6 +4111,36 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebSettings_IsExtraFeatureEnabled(void *
     } CALL_CATCH_EXCEPTION(0);
   }
   return ret;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_SetImeStyle(void *jarg1, int jarg2) {
+  Dali::Toolkit::WebSettings* settings = (Dali::Toolkit::WebSettings*)jarg1;
+  {
+    try {
+      settings->SetImeStyle(jarg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebSettings_GetImeStyle(void *jarg1) {
+  Dali::Toolkit::WebSettings* settings = (Dali::Toolkit::WebSettings*)jarg1;
+  int style;
+  {
+    try {
+      style = settings->GetImeStyle();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return style;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_SetDefaultAudioInputDevice(void *setting, const char *id) {
+  Dali::Toolkit::WebSettings* settings = (Dali::Toolkit::WebSettings*)setting;
+  std::string deviceId(id);
+  {
+    try {
+      settings->SetDefaultAudioInputDevice(deviceId);
+    } CALL_CATCH_EXCEPTION();
+  }
 }
 
 #ifdef __cplusplus
