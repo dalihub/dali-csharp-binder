@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,6 +155,29 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Rotation_4(void* nuiVector4)
   }
 
   jresult = (void*)result;
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Rotation_Assign(void * jarg1, void * jarg2)
+{
+  void * jresult ;
+  Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
+  Dali::Quaternion *arg2 = 0 ;
+  Dali::Quaternion *result = 0 ;
+
+  arg1 = (Dali::Quaternion *)jarg1;
+  arg2 = (Dali::Quaternion *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Quaternion const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (Dali::Quaternion *) &(arg1)->operator =((Dali::Quaternion const &)*arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void *)result;
   return jresult;
 }
 

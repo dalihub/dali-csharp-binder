@@ -39,6 +39,36 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_New__SWIG_1(unsig
   return new Dali::Toolkit::BackgroundBlurEffect((const Dali::Toolkit::BackgroundBlurEffect&)blurEffect);
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MaskEffect_New__SWIG_0(Dali::BaseHandle* control) {
+
+  Dali::Toolkit::MaskEffect maskEffect;
+  {
+    try
+    {
+      Dali::Toolkit::Control maskControl = Dali::Toolkit::Control::DownCast(*control);
+      maskEffect = Dali::Toolkit::MaskEffect::New(maskControl);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Toolkit::MaskEffect((const Dali::Toolkit::MaskEffect&)maskEffect);
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MaskEffect_New__SWIG_1(Dali::BaseHandle* control, uint32_t maskMode, float positionX, float positionY, float scaleX, float scaleY) {
+
+  Dali::Toolkit::MaskEffect maskEffect;
+  {
+    try
+    {
+      Dali::Toolkit::Control maskControl = Dali::Toolkit::Control::DownCast(*control);
+      maskEffect = Dali::Toolkit::MaskEffect::New(maskControl, Dali::Toolkit::MaskEffect::MaskMode(maskMode), Dali::Vector2(positionX, positionY), Dali::Vector2(scaleX, scaleY));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Toolkit::MaskEffect((const Dali::Toolkit::MaskEffect&)maskEffect);
+}
+
 #ifdef __cplusplus
 }
 #endif
