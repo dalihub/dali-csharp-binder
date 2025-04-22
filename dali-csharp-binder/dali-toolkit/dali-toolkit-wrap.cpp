@@ -1614,6 +1614,14 @@ SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_OFFSCREEN_RENDERING_get() 
   return (int)Dali::Toolkit::DevelControl::Property::OFFSCREEN_RENDERING;
 }
 
+SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_INNER_SHADOW_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::INNER_SHADOW;
+}
+
+SWIGEXPORT int SWIGSTDCALL  CSharp_Dali_View_Property_BORDERLINE_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::BORDERLINE;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_CORNER_RADIUS_get() {
   return (int)Dali::Toolkit::DevelControl::Property::CORNER_RADIUS;
 }
@@ -1624,6 +1632,18 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_CORNER_RADIUS_POLICY_get() 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_CORNER_SQUARENESS_get() {
   return (int)Dali::Toolkit::DevelControl::Property::CORNER_SQUARENESS;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_BORDERLINE_WIDTH_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::BORDERLINE_WIDTH;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_BORDERLINE_COLOR_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::BORDERLINE_COLOR;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_BORDERLINE_OFFSET_get() {
+  return (int)Dali::Toolkit::DevelControl::Property::BORDERLINE_OFFSET;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_FlexContainer_Property_CONTENT_DIRECTION_get() {
