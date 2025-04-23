@@ -644,6 +644,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1,
   Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
   std::string *arg2;
 
+  GUARD_ON_NULL_RET(jarg1);
+
   arg1 = (Dali::Toolkit::WebView*)jarg1;
 
   GUARD_ON_NULL_RET(jarg2);
@@ -670,6 +672,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1,
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void * jarg1, char * jarg2, void * jarg3) {
 
+  GUARD_ON_NULL_RET(jarg1);
+
   GUARD_ON_NULL_RET(jarg2);
 
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
@@ -694,6 +698,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptEntireMessageHandler(void * jarg1, char * jarg2, void * jarg3) {
 
+  GUARD_ON_NULL_RET(jarg1);
+
   GUARD_ON_NULL_RET(jarg2);
 
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
@@ -717,6 +723,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptEntireMessageHandle
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptAlertCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
 
   try
@@ -746,6 +755,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptAlertReply(void * jarg
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptConfirmCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
 
   try
@@ -775,6 +787,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptConfirmReply(void * ja
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptPromptCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
 
   try
@@ -819,6 +834,9 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebView_CreateHitTest(void * jarg1, int
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CreateHitTestAsynchronously(void * jarg1, int32_t jarg2, int32_t jarg3, int jarg4, void * jarg5) {
+
+  GUARD_ON_NULL_RET0(jarg1);
+
   Dali::Toolkit::WebView *webview = (Dali::Toolkit::WebView *)jarg1;
   bool result = false;
 
@@ -969,6 +987,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_GetScreenshotAsynchronously(void
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CheckVideoPlayingAsynchronously(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET0(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   bool result = false;
 
@@ -986,6 +1007,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CheckVideoPlayingAsynchronously(
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterGeolocationPermissionCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1021,6 +1045,9 @@ SWIGEXPORT Dali::Toolkit::Control *SWIGSTDCALL CSharp_Dali_WebView_SWIGUpcast(Da
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadStartedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1041,6 +1068,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadStartedCallback(
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadInProgressCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1061,6 +1091,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadInProgressCallba
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadFinishedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1081,6 +1114,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadFinishedCallback
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadErrorCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1101,6 +1137,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadErrorCallback(vo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterScrollEdgeReachedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1121,6 +1160,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterScrollEdgeReachedCallbac
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUrlChangedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1141,6 +1183,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUrlChangedCallback(void 
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFormRepostDecidedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1161,6 +1206,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFormRepostDecidedCallbac
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFrameRenderedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1181,6 +1229,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFrameRenderedCallback(vo
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterConsoleMessageReceivedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1201,6 +1252,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterConsoleMessageReceivedCa
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterResponsePolicyDecidedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1221,6 +1275,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterResponsePolicyDecidedCal
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNavigationPolicyDecidedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1241,6 +1298,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNavigationPolicyDecidedC
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNewWindowPolicyDecidedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1261,6 +1321,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNewWindowPolicyDecidedCa
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNewWindowCreatedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1286,6 +1349,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNewWindowCreatedCallback
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterCertificateConfirmedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1306,6 +1372,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterCertificateConfirmedCall
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterSslCertificateChangedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1326,6 +1395,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterSslCertificateChangedCal
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterHttpAuthHandlerCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1346,6 +1418,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterHttpAuthHandlerCallback(
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterContextMenuShownCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1366,6 +1441,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterContextMenuShownCallback
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterContextMenuHiddenCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1386,6 +1464,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterContextMenuHiddenCallbac
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFullscreenEnteredCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1406,6 +1487,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFullscreenEnteredCallbac
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFullscreenExitedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1426,6 +1510,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFullscreenExitedCallback
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterTextFoundCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1446,6 +1533,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterTextFoundCallback(void *
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_GetPlainTextAsynchronously(void * nuiWebView, void * nuiCallback) {
+
+  GUARD_ON_NULL_RET(nuiWebView);
+
   Dali::Toolkit::WebView *webview = (Dali::Toolkit::WebView *)nuiWebView;
 
   try
@@ -1471,6 +1561,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_WebAuthenticationCancel(void * n
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthDisplayQRCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1491,6 +1584,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthDisplayQRCallback
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthResponseCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -1511,6 +1607,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthResponseCallback(
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUserMediaPermissionRequestCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
 
   try
@@ -2122,6 +2221,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebDatabase(void *ja
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebDatabaseOrigins(void *jarg1, void *jarg2) {
+
+  GUARD_ON_NULL_RET0(jarg1);
+
   Dali::WebEngineContext * arg1 = (Dali::WebEngineContext *)jarg1;
   bool result = false;
 
@@ -2155,6 +2257,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebDatabase(void *jarg1
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebStorageOrigins(void *jarg1, void *jarg2) {
+
+  GUARD_ON_NULL_RET0(jarg1);
+
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
   bool result = false;
 
@@ -2242,6 +2347,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteApplicationCache(void *
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_GetFormPasswordList(void *jarg1, void *jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
 
   try
@@ -2261,6 +2369,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_GetFormPasswordList(void *jar
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterDownloadStartedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
 
   try
@@ -2282,6 +2393,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterDownloadStartedCallba
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterMimeOverriddenCallback(void *jarg1, void *jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
 
   try
@@ -2305,6 +2419,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterMimeOverriddenCallbac
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterRequestInterceptedCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
 
   try
