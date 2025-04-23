@@ -25,22 +25,143 @@
 extern "C" {
 #endif
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_New__SWIG_1(unsigned int pixelRadius, bool blurOnce) {
-
-  Dali::Toolkit::BackgroundBlurEffect blurEffect;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderEffect_Activate(void* pRenderEffect)
+{
+  Dali::Toolkit::RenderEffect* renderEffect = (Dali::Toolkit::RenderEffect*) pRenderEffect;
   {
     try
     {
-      blurEffect = Dali::Toolkit::BackgroundBlurEffect::New(0.25f, pixelRadius, blurOnce);
+      renderEffect->Activate();
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderEffect_Deactivate(void* pRenderEffect)
+{
+  Dali::Toolkit::RenderEffect* renderEffect = (Dali::Toolkit::RenderEffect*) pRenderEffect;
+  {
+    try
+    {
+      renderEffect->Deactivate();
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_New__SWIG_1(unsigned int blurRadius)
+{
+  Dali::Toolkit::BackgroundBlurEffect backgroundBlurEffect;
+  {
+    try
+    {
+      backgroundBlurEffect = Dali::Toolkit::BackgroundBlurEffect::New(blurRadius);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  return new Dali::Toolkit::BackgroundBlurEffect((const Dali::Toolkit::BackgroundBlurEffect&)blurEffect);
+  return new Dali::Toolkit::BackgroundBlurEffect((const Dali::Toolkit::BackgroundBlurEffect&)backgroundBlurEffect);
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MaskEffect_New__SWIG_0(Dali::BaseHandle* control) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_SetBlurOnce(void* pBackgroundBlurEffect, bool blurOnce)
+{
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*) pBackgroundBlurEffect;
+  {
+    try
+    {
+      backgroundBlurEffect->SetBlurOnce(blurOnce);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_GetBlurOnce(void* pBackgroundBlurEffect)
+{
+  bool blurOnce = false;
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*) pBackgroundBlurEffect;
+  {
+    try
+    {
+      blurOnce = backgroundBlurEffect->GetBlurOnce();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return blurOnce;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_SetBlurRadius(void* pBackgroundBlurEffect, unsigned int blurRadius)
+{
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*) pBackgroundBlurEffect;
+  {
+    try
+    {
+      backgroundBlurEffect->SetBlurRadius(blurRadius);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_GetBlurRadius(void* pBackgroundBlurEffect)
+{
+  uint32_t blurRadius = 0.0f;
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*) pBackgroundBlurEffect;
+  {
+    try
+    {
+      blurRadius = (uint32_t)backgroundBlurEffect->GetBlurRadius();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return blurRadius;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_AddBlurStrengthAnimation(void* pBackgroundBlurEffect, void* pAnimation, void* pAlphaFunction, void* pTimePeriod, float fromValue, float toValue)
+{
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*) pBackgroundBlurEffect;
+  Dali::Animation* animation = (Dali::Animation*) pAnimation; // reference
+  if(!animation)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Animation & type is null", 0);
+    return;
+  }
+
+  Dali::AlphaFunction alphaFunction = pAlphaFunction? *((Dali::AlphaFunction*) pAlphaFunction) : animation->GetDefaultAlphaFunction();
+  Dali::TimePeriod timePeriod = pTimePeriod? *((Dali::TimePeriod*) pTimePeriod) : Dali::TimePeriod(animation->GetDuration());
+
+  {
+    try
+    {
+      backgroundBlurEffect->AddBlurStrengthAnimation((Dali::Animation&)(*animation), alphaFunction, timePeriod, fromValue, toValue);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_AddBlurOpacityAnimation(void* pBackgroundBlurEffect, void* pAnimation, void* pAlphaFunction, void* pTimePeriod, float fromValue, float toValue)
+{
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*) pBackgroundBlurEffect;
+  Dali::Animation* animation = (Dali::Animation*) pAnimation; // reference
+  if(!animation)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Animation & type is null", 0);
+    return;
+  }
+
+  Dali::AlphaFunction alphaFunction = pAlphaFunction? *((Dali::AlphaFunction*) pAlphaFunction) : animation->GetDefaultAlphaFunction();
+  Dali::TimePeriod timePeriod = pTimePeriod? *((Dali::TimePeriod*) pTimePeriod) : Dali::TimePeriod(animation->GetDuration());
+
+  {
+    try
+    {
+      backgroundBlurEffect->AddBlurOpacityAnimation((Dali::Animation&)(*animation), alphaFunction, timePeriod, fromValue, toValue);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MaskEffect_New__SWIG_0(Dali::BaseHandle* control)
+{
   Dali::Toolkit::MaskEffect maskEffect;
   {
     try
@@ -54,8 +175,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MaskEffect_New__SWIG_0(Dali::BaseHandl
   return new Dali::Toolkit::MaskEffect((const Dali::Toolkit::MaskEffect&)maskEffect);
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MaskEffect_New__SWIG_1(Dali::BaseHandle* control, uint32_t maskMode, float positionX, float positionY, float scaleX, float scaleY) {
-
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MaskEffect_New__SWIG_1(Dali::BaseHandle* control, uint32_t maskMode, float positionX, float positionY, float scaleX, float scaleY)
+{
   Dali::Toolkit::MaskEffect maskEffect;
   {
     try
