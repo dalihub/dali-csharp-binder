@@ -373,6 +373,65 @@ extern "C"
 
     return (int)InternalPropertyReturnType::NO_ERROR;
   }
+
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingVisualProperty4FloatValues(void *view, int visualIndex, int visualPropertyIndex, float* x, float* y, float* z, float* w)
+  {
+    Dali::Toolkit::Control *pControl  = (Dali::Toolkit::Control *)view;
+
+    if (!pControl)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "view is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    if (!x)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "x is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    if (!y)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "y is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    if (!z)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "z is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    if (!w)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "w is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    try
+    {
+      Dali::Toolkit::Internal::Control& internalControl = Dali::Toolkit::Internal::GetImplementation(*pControl);
+      Dali::Toolkit::Visual::Base       visualBase      = Dali::Toolkit::DevelControl::GetVisual(internalControl, visualIndex);
+      if(visualBase)
+      {
+        Dali::Property::Map tempMap;
+        visualBase.CreatePropertyMap(tempMap);
+        Dali::Property::Value* retValuePtr = tempMap.Find(visualPropertyIndex);
+        if(retValuePtr)
+        {
+            Dali::Vector4 result;
+            result = retValuePtr->Get<Dali::Vector4>();
+            *x = result.x;
+            *y = result.y;
+            *z = result.z;
+            *w = result.w;
+        }
+      }
+    }
+    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
+
+    return (int)InternalPropertyReturnType::NO_ERROR;
+  }
 #ifdef __cplusplus
 }
 #endif

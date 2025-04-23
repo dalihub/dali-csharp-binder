@@ -17008,6 +17008,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Path_AddPoint(void * jarg1, void * jarg2
 
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Path_AddPoint_3FloatValues(void * jarg1, float x, float y, float z) {
+  Dali::Path *arg1 = (Dali::Path *) 0 ;
+
+  arg1 = (Dali::Path *)jarg1;
+  {
+    try {
+      const Dali::Vector3 point(x, y, z);
+      (arg1)->AddPoint(point);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Path_AddControlPoint(void * jarg1, void * jarg2) {
   Dali::Path *arg1 = (Dali::Path *) 0 ;

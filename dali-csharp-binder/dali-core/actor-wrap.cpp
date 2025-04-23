@@ -1081,6 +1081,26 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetParentOrigin(void* jarg1, void*
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetParentOrigin_3FloatValues(void* jarg1, float x, float y, float z)
+{
+  Dali::Actor*   arg1 = (Dali::Actor*)0;
+
+  if(!jarg1)
+  {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return;
+  }
+
+  arg1 = (Dali::Actor*)jarg1;
+  {
+    try
+    {
+      const Dali::Vector3 vector3(x, y, z);
+      (arg1)->SetProperty(Actor::Property::PARENT_ORIGIN, vector3);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetAnchorPoint(void* jarg1, void* jarg2)
 {
@@ -1109,6 +1129,26 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetAnchorPoint(void* jarg1, void* 
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetAnchorPoint_3FloatValues(void* jarg1, float x, float y, float z)
+{
+  Dali::Actor*   arg1 = (Dali::Actor*)0;
+
+  if(!jarg1)
+  {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return;
+  }
+
+  arg1 = (Dali::Actor*)jarg1;
+  {
+    try
+    {
+      const Dali::Vector3 vector(x, y, z);
+      (arg1)->SetProperty(Actor::Property::ANCHOR_POINT, vector);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_0(void* jarg1, float jarg2, float jarg3)
 {
@@ -2212,6 +2252,27 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColor(void* jarg1, void* jarg2)
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColor_4FloatValues(void* jarg1, float r, float g, float b, float a)
+{
+  Dali::Actor*   arg1 = (Dali::Actor*)0;
+
+  if(!jarg1)
+  {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return;
+  }
+
+  arg1 = (Dali::Actor*)jarg1;
+
+  {
+    try
+    {
+      const Dali::Vector4 color(r, g, b, a);
+      (arg1)->SetProperty(Actor::Property::COLOR, color);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColorMode(void* jarg1, int jarg2)
 {
