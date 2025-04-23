@@ -959,7 +959,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_GetScreenshotAsynchronously(void
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   Dali::Rect<int32_t> *arg2 = (Dali::Rect<int32_t> *)jarg2;
   Dali::Toolkit::WebView::WebViewScreenshotCapturedCallback callback = OnWebViewScreenshotCapturedCallback;
-  bool result;
+  bool result = false;
   {
     try {
       result = (arg1)->GetScreenshotAsynchronously(*arg2, jarg3, callback);
@@ -970,7 +970,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_GetScreenshotAsynchronously(void
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CheckVideoPlayingAsynchronously(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  bool result;
+  bool result = false;
 
   try
   {
@@ -3020,7 +3020,7 @@ SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetScheme(void*
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Use(void* jarg1) {
   Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
-  bool result;
+  bool result = false;
   {
     try {
       result = arg1->Use();
@@ -3031,7 +3031,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Use(void* jarg1) {
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Ignore(void* jarg1) {
   Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
-  bool result;
+  bool result = false;
   {
     try {
       result = arg1->Ignore();
@@ -3042,7 +3042,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Ignore(void* jarg1) {
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Suspend(void* jarg1) {
   Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
-  bool result;
+  bool result = false;
   {
     try {
       result = arg1->Suspend();
