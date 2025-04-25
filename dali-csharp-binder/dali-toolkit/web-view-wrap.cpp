@@ -1159,6 +1159,29 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterScrollEdgeReachedCallbac
   CALL_CATCH_EXCEPTION();
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterOverScrolledCallback(void * jarg1, void * jarg2) {
+
+  GUARD_ON_NULL_RET(jarg1);
+
+  Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
+
+  try
+  {
+    if (jarg2 != nullptr)
+    {
+      void (*handler)(int) = (void (*)(int))jarg2;
+      (arg1)->RegisterOverScrolledCallback([handler](Dali::WebEnginePlugin::OverScrolled overScrolled) {
+          handler((int)overScrolled);
+        });
+    }
+    else
+    {
+      (arg1)->RegisterOverScrolledCallback(nullptr);
+    }
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUrlChangedCallback(void * jarg1, void * jarg2) {
 
   GUARD_ON_NULL_RET(jarg1);
