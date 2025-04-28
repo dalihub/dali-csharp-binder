@@ -194,6 +194,23 @@
 
 #include <dali-toolkit/devel-api/focus-manager/keyboard-focus-manager-devel.h>
 
+namespace
+{
+inline void LowerFirstLetter(std::string& str)
+{
+  if(str.size() > 0)
+  {
+    if(!(str[0] >= 'a' && str[0] <='z') &&
+        (str[0] < 'A' || str[0] > 'Z'))
+    {
+      // For debug. Some application input non-alphabet as name. We should defect and fix it.
+      DALI_LOG_ERROR("Input argument string not start with alphabet! : %s\n", str.c_str());
+    }
+    str[0] |= 0x20;
+  }
+}
+}
+
 
 SWIG_CSharpException_t SWIG_csharp_exceptions[] = {
   { SWIG_CSharpApplicationException, NULL },
@@ -4863,8 +4880,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Property__SWIG_2(void * jarg1, cha
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
+  std::string arg2String(jarg2);
+
+  // NUI role! We should use lowercaseString here!
+  LowerFirstLetter(arg2String);
+
+  arg2 = &arg2String;
   {
     try {
       result = (Dali::Property *)new Dali::Property(*arg1,(std::string const &)*arg2);
@@ -8473,8 +8494,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_GetPropertyIndex(void * jarg1, cha
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
+  std::string arg2String(jarg2);
+
+  // NUI role! We should use lowercaseString here!
+  LowerFirstLetter(arg2String);
+
+  arg2 = &arg2String;
   {
     try {
       result = (Dali::Property::Index)((Dali::Handle const *)arg1)->GetPropertyIndex((std::string const &)*arg2);
