@@ -645,95 +645,83 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1,
   std::string *arg2;
 
   arg1 = (Dali::Toolkit::WebView*)jarg1;
-
-  GUARD_ON_NULL_RET(jarg2);
-
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
   std::string jarg2_str = std::string(jarg2);
   arg2 = &jarg2_str;
 
-  try
   {
-    if (jarg3 != nullptr)
-    {
-      void (*handler)(const char *) = (void (*)(const char *))jarg3;
-      (arg1)->EvaluateJavaScript((std::string const &)*arg2, [handler](const std::string &result){
-            handler(result.c_str());
-          });
-    }
-    else
-    {
-      (arg1)->EvaluateJavaScript((std::string const &)*arg2);
-    }
+    try {
+      if (jarg3) {
+        void (*handler)(const char *) = (void (*)(const char *))jarg3;
+        (arg1)->EvaluateJavaScript((std::string const &)*arg2, [handler](const std::string &result) {
+              handler(result.c_str());
+            });
+      }
+      else {
+        (arg1)->EvaluateJavaScript((std::string const &)*arg2);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptMessageHandler(void * jarg1, char * jarg2, void * jarg3) {
-
-  GUARD_ON_NULL_RET(jarg2);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
 
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   std::string exposedObjectName = jarg2;
+  void (*handler)(const char*) = (void (*)(const char*))jarg3;
 
-  try
   {
-    if (jarg3 != nullptr)
-    {
-      void (*handler)(const char*) = (void (*)(const char*))jarg3;
+    try {
       webview->AddJavaScriptMessageHandler(exposedObjectName, [handler](const std::string &message) {
             handler(message.c_str());
           });
-    }
-    else
-    {
-      webview->AddJavaScriptMessageHandler(exposedObjectName, nullptr);
-    }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_AddJavaScriptEntireMessageHandler(void * jarg1, char * jarg2, void * jarg3) {
-
-  GUARD_ON_NULL_RET(jarg2);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return;
+  }
 
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
   std::string exposedObjectName = jarg2;
+  void (*handler)(char*, char*) = (void (*)(char*, char*))jarg3;
 
-  try
   {
-    if(jarg3 != nullptr)
-    {
-      void (*handler)(char*, char*) = (void (*)(char*, char*))jarg3;
+    try {
       webview->AddJavaScriptEntireMessageHandler(exposedObjectName, [handler](const std::string &messageName, const std::string &messageBody) {
             handler(SWIG_csharp_string_callback(messageName.c_str()), SWIG_csharp_string_callback(messageBody.c_str()));
           });
-    }
-    else
-    {
-      webview->AddJavaScriptEntireMessageHandler(exposedObjectName, nullptr);
-    }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptAlertCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
-
-  try
+  bool (*handler)(const char*) = (bool (*)(const char*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      bool (*handler)(const char*) = (bool (*)(const char*))jarg2;
-      webview->RegisterJavaScriptAlertCallback([handler](const std::string &message) -> bool {
-          return handler(message.c_str());
-        });
-    }
-    else
-    {
-      webview->RegisterJavaScriptAlertCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        webview->RegisterJavaScriptAlertCallback([handler](const std::string &message) -> bool {
+            return handler(message.c_str());
+          });
+      }
+      else
+      {
+        webview->RegisterJavaScriptAlertCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptAlertReply(void * jarg1) {
@@ -747,22 +735,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptAlertReply(void * jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptConfirmCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  bool (*handler)(const char*) = (bool (*)(const char*))jarg2;
 
-  try
   {
-    if (jarg2 != nullptr)
-    {
-      bool (*handler)(const char*) = (bool (*)(const char*))jarg2;
-      webview->RegisterJavaScriptConfirmCallback([handler](const std::string &message) -> bool {
-          return handler(message.c_str());
-        });
-    }
-    else
-    {
-      webview->RegisterJavaScriptConfirmCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        webview->RegisterJavaScriptConfirmCallback([handler](const std::string &message) -> bool {
+            return handler(message.c_str());
+          });
+      }
+      else
+      {
+        webview->RegisterJavaScriptConfirmCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptConfirmReply(void * jarg1, bool jarg2) {
@@ -776,24 +764,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptConfirmReply(void * ja
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterJavaScriptPromptCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView* webview = (Dali::Toolkit::WebView*)jarg1;
+  bool (*handler)(const char *, const char*) = (bool (*)(const char *, const char*))jarg2;
 
-  try
   {
-    if (jarg2 != nullptr)
-    {
-      bool (*handler)(const char *, const char*) = (bool (*)(const char *, const char*))jarg2;
-      webview->RegisterJavaScriptPromptCallback([handler](const std::string &message1,
-                  const std::string &message2) -> bool {
-          return handler(message1.c_str(),
-                          message2.c_str());
-        });
-    }
-    else
-    {
-      webview->RegisterJavaScriptPromptCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        webview->RegisterJavaScriptPromptCallback([handler](const std::string &message1,
+                    const std::string &message2) -> bool {
+            return handler(message1.c_str(),
+                           message2.c_str());
+          });
+      }
+      else
+      {
+        webview->RegisterJavaScriptPromptCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_JavaScriptPromptReply(void * jarg1, char * jarg2) {
@@ -820,20 +808,16 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_WebView_CreateHitTest(void * jarg1, int
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CreateHitTestAsynchronously(void * jarg1, int32_t jarg2, int32_t jarg3, int jarg4, void * jarg5) {
   Dali::Toolkit::WebView *webview = (Dali::Toolkit::WebView *)jarg1;
+  bool (*handler)(Dali::WebEngineHitTest*) = (bool (*)(Dali::WebEngineHitTest*))jarg5;
   bool result = false;
-
-  try
   {
-    if (jarg5 != nullptr)
-    {
-      bool (*handler)(Dali::WebEngineHitTest*) = (bool (*)(Dali::WebEngineHitTest*))jarg5;
+    try {
       result = webview->CreateHitTestAsynchronously(jarg2, jarg3, (Dali::WebEngineHitTest::HitTestMode)jarg4,
           [handler](std::unique_ptr<Dali::WebEngineHitTest> hitTest) -> bool {
             return handler(hitTest.release());
           });
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
-  CALL_CATCH_EXCEPTION(0);
   return result;
 }
 
@@ -959,7 +943,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_GetScreenshotAsynchronously(void
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
   Dali::Rect<int32_t> *arg2 = (Dali::Rect<int32_t> *)jarg2;
   Dali::Toolkit::WebView::WebViewScreenshotCapturedCallback callback = OnWebViewScreenshotCapturedCallback;
-  bool result = false;
+  bool result;
   {
     try {
       result = (arg1)->GetScreenshotAsynchronously(*arg2, jarg3, callback);
@@ -970,43 +954,34 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_GetScreenshotAsynchronously(void
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CheckVideoPlayingAsynchronously(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-  bool result = false;
-
-  try
+  void (*handler)(bool) = (void (*)(bool))jarg2;
+  bool result;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(bool) = (void (*)(bool))jarg2;
+    try {
       result = (arg1)->CheckVideoPlayingAsynchronously([handler](bool isPlaying) { handler(isPlaying); });
-    }
+    } CALL_CATCH_EXCEPTION(0);
   }
-  CALL_CATCH_EXCEPTION(0);
-
   return result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterGeolocationPermissionCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  bool (*handler)(const char *, const char *) = (bool (*)(const char *, const char *))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      bool (*handler)(const char *, const char *) = (bool (*)(const char *, const char *))jarg2;
+    try {
       if (handler)
       {
         (arg1)->RegisterGeolocationPermissionCallback([handler](const std::string &host, const std::string &protocol) -> bool {
             return handler(host.c_str(),
-                            protocol.c_str());
+                           protocol.c_str());
           });
       }
-    }
-    else
-    {
-      (arg1)->RegisterGeolocationPermissionCallback(nullptr);
-    }
+      else
+      {
+        (arg1)->RegisterGeolocationPermissionCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_SetTtsFocus(void* jarg1, bool jarg2) {
@@ -1022,443 +997,418 @@ SWIGEXPORT Dali::Toolkit::Control *SWIGSTDCALL CSharp_Dali_WebView_SWIGUpcast(Da
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadStartedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(const char*) = (void (*)(const char*))jarg2;
-      (arg1)->RegisterPageLoadStartedCallback([handler](const std::string& url) {
-          handler(url.c_str());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterPageLoadStartedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterPageLoadStartedCallback([handler](const std::string& url) {
+            handler(url.c_str());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterPageLoadStartedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadInProgressCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(const char*) = (void (*)(const char*))jarg2;
-      (arg1)->RegisterPageLoadInProgressCallback([handler](const std::string& url) {
-          handler(url.c_str());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterPageLoadInProgressCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterPageLoadInProgressCallback([handler](const std::string& url) {
+            handler(url.c_str());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterPageLoadInProgressCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadFinishedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(const char*) = (void (*)(const char*))jarg2;
-      (arg1)->RegisterPageLoadFinishedCallback([handler](const std::string& url) {
-          handler(url.c_str());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterPageLoadFinishedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterPageLoadFinishedCallback([handler](const std::string& url) {
+            handler(url.c_str());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterPageLoadFinishedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPageLoadErrorCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEngineLoadError*) = (void (*)(Dali::WebEngineLoadError*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEngineLoadError*) = (void (*)(Dali::WebEngineLoadError*))jarg2;
-      (arg1)->RegisterPageLoadErrorCallback([handler](std::unique_ptr<Dali::WebEngineLoadError> error) {
-          handler(error.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterPageLoadErrorCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterPageLoadErrorCallback([handler](std::unique_ptr<Dali::WebEngineLoadError> error) {
+            handler(error.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterPageLoadErrorCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterScrollEdgeReachedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(int) = (void (*)(int))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(int) = (void (*)(int))jarg2;
-      (arg1)->RegisterScrollEdgeReachedCallback([handler](Dali::WebEnginePlugin::ScrollEdge edge) {
-          handler((int)edge);
-        });
-    }
-    else
-    {
-      (arg1)->RegisterScrollEdgeReachedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterScrollEdgeReachedCallback([handler](Dali::WebEnginePlugin::ScrollEdge edge) {
+            handler((int)edge);
+          });
+      }
+      else
+      {
+        (arg1)->RegisterScrollEdgeReachedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUrlChangedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(const char*) = (void (*)(const char*))jarg2;
-      (arg1)->RegisterUrlChangedCallback([handler](const std::string& url) {
-          handler(url.c_str());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterUrlChangedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterUrlChangedCallback([handler](const std::string& url) {
+            handler(url.c_str());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterUrlChangedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFormRepostDecidedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEngineFormRepostDecision*) = (void (*)(Dali::WebEngineFormRepostDecision*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEngineFormRepostDecision*) = (void (*)(Dali::WebEngineFormRepostDecision*))jarg2;
-      (arg1)->RegisterFormRepostDecidedCallback([handler](std::unique_ptr<Dali::WebEngineFormRepostDecision> decision) {
-          handler(decision.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterFormRepostDecidedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterFormRepostDecidedCallback([handler](std::unique_ptr<Dali::WebEngineFormRepostDecision> decision) {
+            handler(decision.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterFormRepostDecidedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFrameRenderedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(void) = (void (*)(void))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(void) = (void (*)(void))jarg2;
-      (arg1)->RegisterFrameRenderedCallback([handler](void) {
-          handler();
-        });
-    }
-    else
-    {
-      (arg1)->RegisterFrameRenderedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterFrameRenderedCallback([handler](void) {
+            handler();
+          });
+      }
+      else
+      {
+        (arg1)->RegisterFrameRenderedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterConsoleMessageReceivedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEngineConsoleMessage*) = (void (*)(Dali::WebEngineConsoleMessage*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEngineConsoleMessage*) = (void (*)(Dali::WebEngineConsoleMessage*))jarg2;
-      (arg1)->RegisterConsoleMessageReceivedCallback([handler](std::unique_ptr<Dali::WebEngineConsoleMessage> message) {
-          handler(message.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterConsoleMessageReceivedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterConsoleMessageReceivedCallback([handler](std::unique_ptr<Dali::WebEngineConsoleMessage> message) {
+            handler(message.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterConsoleMessageReceivedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterResponsePolicyDecidedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEnginePolicyDecision*) = (void (*)(Dali::WebEnginePolicyDecision*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEnginePolicyDecision*) = (void (*)(Dali::WebEnginePolicyDecision*))jarg2;
-      (arg1)->RegisterResponsePolicyDecidedCallback([handler](std::unique_ptr<Dali::WebEnginePolicyDecision> decision) {
-          handler(decision.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterResponsePolicyDecidedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterResponsePolicyDecidedCallback([handler](std::unique_ptr<Dali::WebEnginePolicyDecision> decision) {
+            handler(decision.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterResponsePolicyDecidedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNavigationPolicyDecidedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEnginePolicyDecision*) = (void (*)(Dali::WebEnginePolicyDecision*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEnginePolicyDecision*) = (void (*)(Dali::WebEnginePolicyDecision*))jarg2;
-      (arg1)->RegisterNavigationPolicyDecidedCallback([handler](std::unique_ptr<Dali::WebEnginePolicyDecision> decision) {
-          handler(decision.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterNavigationPolicyDecidedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterNavigationPolicyDecidedCallback([handler](std::unique_ptr<Dali::WebEnginePolicyDecision> decision) {
+            handler(decision.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterNavigationPolicyDecidedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNewWindowPolicyDecidedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEnginePolicyDecision*) = (void (*)(Dali::WebEnginePolicyDecision*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEnginePolicyDecision*) = (void (*)(Dali::WebEnginePolicyDecision*))jarg2;
-      (arg1)->RegisterNewWindowPolicyDecidedCallback([handler](std::unique_ptr<Dali::WebEnginePolicyDecision> decision) {
-          handler(decision.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterNewWindowPolicyDecidedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterNewWindowPolicyDecidedCallback([handler](std::unique_ptr<Dali::WebEnginePolicyDecision> decision) {
+            handler(decision.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterNewWindowPolicyDecidedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterNewWindowCreatedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::Toolkit::WebView*&) = (void (*)(Dali::Toolkit::WebView*&))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::Toolkit::WebView*&) = (void (*)(Dali::Toolkit::WebView*&))jarg2;
-      (arg1)->RegisterNewWindowCreatedCallback([handler](Dali::WebEnginePlugin*& plugin) {
-          Dali::Toolkit::WebView* outView = nullptr;
-          handler(outView);
-          if (outView != nullptr)
-          {
-            plugin = outView->GetPlugin();
-          }
-        });
-    }
-    else
-    {
-      (arg1)->RegisterNewWindowCreatedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterNewWindowCreatedCallback([handler](Dali::WebEnginePlugin*& plugin) {
+            Dali::Toolkit::WebView* outView = nullptr;
+            handler(outView);
+            if (outView != nullptr)
+            {
+              plugin = outView->GetPlugin();
+            }
+          });
+      }
+      else
+      {
+        (arg1)->RegisterNewWindowCreatedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterCertificateConfirmedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEngineCertificate*) = (void (*)(Dali::WebEngineCertificate*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEngineCertificate*) = (void (*)(Dali::WebEngineCertificate*))jarg2;
-      (arg1)->RegisterCertificateConfirmedCallback([handler](std::unique_ptr<Dali::WebEngineCertificate> certificate) {
-          handler(certificate.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterCertificateConfirmedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterCertificateConfirmedCallback([handler](std::unique_ptr<Dali::WebEngineCertificate> certificate) {
+            handler(certificate.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterCertificateConfirmedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterSslCertificateChangedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEngineCertificate*) = (void (*)(Dali::WebEngineCertificate*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEngineCertificate*) = (void (*)(Dali::WebEngineCertificate*))jarg2;
-      (arg1)->RegisterSslCertificateChangedCallback([handler](std::unique_ptr<Dali::WebEngineCertificate> certificate) {
-          handler(certificate.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterSslCertificateChangedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterSslCertificateChangedCallback([handler](std::unique_ptr<Dali::WebEngineCertificate> certificate) {
+            handler(certificate.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterSslCertificateChangedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterHttpAuthHandlerCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEngineHttpAuthHandler*) = (void (*)(Dali::WebEngineHttpAuthHandler*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEngineHttpAuthHandler*) = (void (*)(Dali::WebEngineHttpAuthHandler*))jarg2;
-      (arg1)->RegisterHttpAuthHandlerCallback([handler](std::unique_ptr<Dali::WebEngineHttpAuthHandler> certificate) {
-          handler(certificate.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterHttpAuthHandlerCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterHttpAuthHandlerCallback([handler](std::unique_ptr<Dali::WebEngineHttpAuthHandler> certificate) {
+            handler(certificate.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterHttpAuthHandlerCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterContextMenuShownCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEngineContextMenu*) = (void (*)(Dali::WebEngineContextMenu*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEngineContextMenu*) = (void (*)(Dali::WebEngineContextMenu*))jarg2;
-      (arg1)->RegisterContextMenuShownCallback([handler](std::unique_ptr<Dali::WebEngineContextMenu> menu) {
-          handler(menu.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterContextMenuShownCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterContextMenuShownCallback([handler](std::unique_ptr<Dali::WebEngineContextMenu> menu) {
+            handler(menu.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterContextMenuShownCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterContextMenuHiddenCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEngineContextMenu*) = (void (*)(Dali::WebEngineContextMenu*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEngineContextMenu*) = (void (*)(Dali::WebEngineContextMenu*))jarg2;
-      (arg1)->RegisterContextMenuHiddenCallback([handler](std::unique_ptr<Dali::WebEngineContextMenu> menu) {
-          handler(menu.release());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterContextMenuHiddenCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterContextMenuHiddenCallback([handler](std::unique_ptr<Dali::WebEngineContextMenu> menu) {
+            handler(menu.release());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterContextMenuHiddenCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFullscreenEnteredCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(void) = (void (*)(void))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(void) = (void (*)(void))jarg2;
-      (arg1)->RegisterFullscreenEnteredCallback([handler](void) {
-          handler();
-        });
-    }
-    else
-    {
-      (arg1)->RegisterFullscreenEnteredCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterFullscreenEnteredCallback([handler](void) {
+            handler();
+          });
+      }
+      else
+      {
+        (arg1)->RegisterFullscreenEnteredCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFullscreenExitedCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(void) = (void (*)(void))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(void) = (void (*)(void))jarg2;
-      (arg1)->RegisterFullscreenExitedCallback([handler](void) {
-          handler();
-        });
-    }
-    else
-    {
-      (arg1)->RegisterFullscreenExitedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterFullscreenExitedCallback([handler](void) {
+            handler();
+          });
+      }
+      else
+      {
+        (arg1)->RegisterFullscreenExitedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterTextFoundCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(uint32_t) = (void (*)(uint32_t))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(uint32_t) = (void (*)(uint32_t))jarg2;
-      (arg1)->RegisterTextFoundCallback([handler](uint32_t count) {
-          handler(count);
-        });
-    }
-    else
-    {
-      (arg1)->RegisterTextFoundCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterTextFoundCallback([handler](uint32_t count) {
+            handler(count);
+          });
+      }
+      else
+      {
+        (arg1)->RegisterTextFoundCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_GetPlainTextAsynchronously(void * nuiWebView, void * nuiCallback) {
   Dali::Toolkit::WebView *webview = (Dali::Toolkit::WebView *)nuiWebView;
-
-  try
+  void (*handler)(const char*) = (void (*)(const char*))nuiCallback;
   {
-    if (nuiCallback != nullptr)
-    {
-      void (*handler)(const char*) = (void (*)(const char*))nuiCallback;
+    try {
       webview->GetPlainTextAsynchronously([handler](const std::string& url) {
             handler(url.c_str());
           });
-    }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_WebAuthenticationCancel(void * nuiWebView) {
@@ -1472,62 +1422,59 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_WebAuthenticationCancel(void * n
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthDisplayQRCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(const char*) = (void (*)(const char*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(const char*) = (void (*)(const char*))jarg2;
-      (arg1)->RegisterWebAuthDisplayQRCallback([handler](const std::string& url) {
-          handler(url.c_str());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterWebAuthDisplayQRCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterWebAuthDisplayQRCallback([handler](const std::string& url) {
+            handler(url.c_str());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterWebAuthDisplayQRCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthResponseCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(void) = (void (*)(void))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(void) = (void (*)(void))jarg2;
-      (arg1)->RegisterWebAuthResponseCallback([handler](void) {
-          handler();
-        });
-    }
-    else
-    {
-      (arg1)->RegisterWebAuthResponseCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterWebAuthResponseCallback([handler](void) {
+            handler();
+          });
+      }
+      else
+      {
+        (arg1)->RegisterWebAuthResponseCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUserMediaPermissionRequestCallback(void * jarg1, void * jarg2) {
   Dali::Toolkit::WebView *arg1 = (Dali::Toolkit::WebView *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEngineUserMediaPermissionRequest*, const char *) = (void (*)(Dali::WebEngineUserMediaPermissionRequest*, const char *))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEngineUserMediaPermissionRequest*, const char *) = (void (*)(Dali::WebEngineUserMediaPermissionRequest*, const char *))jarg2;
-      (arg1)->RegisterUserMediaPermissionRequestCallback([handler](Dali::WebEngineUserMediaPermissionRequest* permission, const std::string &message) {
-          handler(permission, message.c_str());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterUserMediaPermissionRequestCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterUserMediaPermissionRequestCallback([handler](Dali::WebEngineUserMediaPermissionRequest* permission, const std::string &message) {
+            handler(permission, message.c_str());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterUserMediaPermissionRequestCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_FeedMouseWheel(void * objPtr, bool yDirec, int step, int x, int y) {
@@ -2123,22 +2070,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_DeleteAllWebDatabase(void *ja
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebDatabaseOrigins(void *jarg1, void *jarg2) {
   Dali::WebEngineContext * arg1 = (Dali::WebEngineContext *)jarg1;
+  void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*))jarg2;
   bool result = false;
-
-  try
   {
-    if(jarg2 != nullptr)
-    {
-      void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*))jarg2;
+    try {
       result = (arg1)->GetWebDatabaseOrigins(
-                  [handler](std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>& originList) {
+                 [handler](std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>& originList) {
                     std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>* webOriginList = new std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>();
                     webOriginList->swap(originList);
                     handler(webOriginList);
-                  });
-    }
+                 });
+    } CALL_CATCH_EXCEPTION(0);
   }
-  CALL_CATCH_EXCEPTION(0);
   return result;
 }
 
@@ -2156,22 +2099,18 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteWebDatabase(void *jarg1
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_GetWebStorageOrigins(void *jarg1, void *jarg2) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
+  void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*))jarg2;
   bool result = false;
-
-  try
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>*))jarg2;
+    try {
       result = (arg1)->GetWebStorageOrigins(
-                  [handler](std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>& originList) {
+                 [handler](std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>& originList) {
                     std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>* contextOriginList = new std::vector<std::unique_ptr<Dali::WebEngineSecurityOrigin>>();
                     contextOriginList->swap(originList);
                     handler(contextOriginList);
-                  });
-    }
+                 });
+    } CALL_CATCH_EXCEPTION(0);
   }
-  CALL_CATCH_EXCEPTION(0);
   return result;
 }
 
@@ -2243,86 +2182,79 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebContext_DeleteApplicationCache(void *
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_GetFormPasswordList(void *jarg1, void *jarg2) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
-
-  try
+  void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*) = (void (*)(std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>*))jarg2;
+    try {
       (arg1)->GetFormPasswordList(
-                  [handler](std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>& passwordList) {
+                 [handler](std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>& passwordList) {
                     std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>* contextPasswordList = new std::vector<std::unique_ptr<Dali::WebEngineContext::PasswordData>>();
                     contextPasswordList->swap(passwordList);
                     handler(contextPasswordList);
-                  });
-    }
+                 });
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterDownloadStartedCallback(void * jarg1, void * jarg2) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
-
-  try
+  void (*handler)(const char *) = (void (*)(const char *))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(const char *) = (void (*)(const char *))jarg2;
-      (arg1)->RegisterDownloadStartedCallback(
-                [handler](const std::string& url) {
-                  handler(url.c_str());
-                });
-    }
-    else
-    {
-      (arg1)->RegisterDownloadStartedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterDownloadStartedCallback(
+                 [handler](const std::string& url) {
+                   handler(url.c_str());
+                 });
+      }
+      else
+      {
+        (arg1)->RegisterDownloadStartedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterMimeOverriddenCallback(void *jarg1, void *jarg2) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
-
-  try
+  bool (*handler)(const char *, const char *, const char *) = (bool (*)(const char *, const char *, const char *))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      bool (*handler)(const char *, const char *, const char *) = (bool (*)(const char *, const char *, const char *))jarg2;
-      (arg1)->RegisterMimeOverriddenCallback(
-        [handler](const std::string& url, const std::string& mime, std::string& newMime) -> bool {
-          return handler(url.c_str(),
-                          mime.c_str(),
-                          newMime.c_str());
-        });
-    }
-    else
-    {
-      (arg1)->RegisterMimeOverriddenCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterMimeOverriddenCallback(
+          [handler](const std::string& url, const std::string& mime, std::string& newMime) -> bool {
+            return handler(url.c_str(),
+                           mime.c_str(),
+                           newMime.c_str());
+          });
+      }
+      else
+      {
+        (arg1)->RegisterMimeOverriddenCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_RegisterRequestInterceptedCallback(void * jarg1, void * jarg2) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)jarg1;
-
-  try
+  void (*handler)(Dali::WebEngineRequestInterceptorPtr*) = (void (*)(Dali::WebEngineRequestInterceptorPtr*))jarg2;
   {
-    if (jarg2 != nullptr)
-    {
-      void (*handler)(Dali::WebEngineRequestInterceptorPtr*) = (void (*)(Dali::WebEngineRequestInterceptorPtr*))jarg2;
-      (arg1)->RegisterRequestInterceptedCallback([handler](Dali::WebEngineRequestInterceptorPtr interceptor) {
-          Dali::WebEngineRequestInterceptorPtr* interceptorPtr = new Dali::WebEngineRequestInterceptorPtr((const Dali::WebEngineRequestInterceptorPtr&)interceptor);
-          handler(interceptorPtr);
-        });
-    }
-    else
-    {
-      (arg1)->RegisterRequestInterceptedCallback(nullptr);
-    }
+    try {
+      if (handler)
+      {
+        (arg1)->RegisterRequestInterceptedCallback([handler](Dali::WebEngineRequestInterceptorPtr interceptor) {
+            Dali::WebEngineRequestInterceptorPtr* interceptorPtr = new Dali::WebEngineRequestInterceptorPtr((const Dali::WebEngineRequestInterceptorPtr&)interceptor);
+            handler(interceptorPtr);
+          });
+      }
+      else
+      {
+        (arg1)->RegisterRequestInterceptedCallback(nullptr);
+      }
+    } CALL_CATCH_EXCEPTION();
   }
-  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_EnableCache(void * jarg1, bool jarg2) {
@@ -3020,7 +2952,7 @@ SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetScheme(void*
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Use(void* jarg1) {
   Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
-  bool result = false;
+  bool result;
   {
     try {
       result = arg1->Use();
@@ -3031,7 +2963,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Use(void* jarg1) {
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Ignore(void* jarg1) {
   Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
-  bool result = false;
+  bool result;
   {
     try {
       result = arg1->Ignore();
@@ -3042,7 +2974,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Ignore(void* jarg1) {
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebPolicyDecision_Suspend(void* jarg1) {
   Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
-  bool result = false;
+  bool result;
   {
     try {
       result = arg1->Suspend();
