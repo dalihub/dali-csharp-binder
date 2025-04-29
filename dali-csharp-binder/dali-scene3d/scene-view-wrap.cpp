@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali-scene3d/public-api/controls/scene-view/scene-view.h>
+#include <dali-toolkit/devel-api/controls/control-devel.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -631,7 +632,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CornerRadius_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Scene3D::SceneView::Property::CORNER_RADIUS;
+  // TODO : Remove this API after TizenFX fixed.
+  result  = (int)Dali::Toolkit::DevelControl::Property::CORNER_RADIUS;
   jresult = (int)result;
   return jresult;
 }
@@ -641,7 +643,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CornerRadiusPolicy_get
   int jresult;
   int result;
 
-  result  = (int)Dali::Scene3D::SceneView::Property::CORNER_RADIUS_POLICY;
+  // TODO : Remove this API after TizenFX fixed.
+  result  = (int)Dali::Toolkit::DevelControl::Property::CORNER_RADIUS_POLICY;
   jresult = (int)result;
   return jresult;
 }
@@ -651,7 +654,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_BorderlineWidth_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Scene3D::SceneView::Property::BORDERLINE_WIDTH;
+  // TODO : Remove this API after TizenFX fixed.
+  result  = (int)Dali::Toolkit::DevelControl::Property::BORDERLINE_WIDTH;
   jresult = (int)result;
   return jresult;
 }
@@ -661,7 +665,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_BorderlineColor_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Scene3D::SceneView::Property::BORDERLINE_COLOR;
+  // TODO : Remove this API after TizenFX fixed.
+  result  = (int)Dali::Toolkit::DevelControl::Property::BORDERLINE_COLOR;
   jresult = (int)result;
   return jresult;
 }
@@ -671,7 +676,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_BorderlineOffset_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Scene3D::SceneView::Property::BORDERLINE_OFFSET;
+  // TODO : Remove this API after TizenFX fixed.
+  result  = (int)Dali::Toolkit::DevelControl::Property::BORDERLINE_OFFSET;
   jresult = (int)result;
   return jresult;
 }
@@ -681,7 +687,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_SceneView_Property_CornerSquareness_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Scene3D::SceneView::Property::CORNER_SQUARENESS;
+  // TODO : Remove this API after TizenFX fixed.
+  result  = (int)Dali::Toolkit::DevelControl::Property::CORNER_SQUARENESS;
   jresult = (int)result;
   return jresult;
 }
