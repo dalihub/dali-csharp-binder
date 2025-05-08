@@ -1880,7 +1880,7 @@ SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebConsoleMessage_GetSource(void*
 
 SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_WebConsoleMessage_GetLine(void* jarg1) {
   Dali::WebEngineConsoleMessage* arg1 = (Dali::WebEngineConsoleMessage*)jarg1;
-  uint32_t result;
+  uint32_t result = 0;
   {
     try {
       result = arg1->GetLine();
@@ -1891,7 +1891,7 @@ SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_WebConsoleMessage_GetLine(void* jarg
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebConsoleMessage_GetSeverityLevel(void* jarg1) {
   Dali::WebEngineConsoleMessage* arg1 = (Dali::WebEngineConsoleMessage*)jarg1;
-  int result;
+  int result = 0;
   {
     try {
       result = (int)arg1->GetSeverityLevel();
@@ -2952,7 +2952,7 @@ SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetCookie(void*
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetDecisionType(void* jarg1) {
   Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
-  int result;
+  int result = 0;
   {
     try {
       result = (int)arg1->GetDecisionType();
@@ -2975,7 +2975,7 @@ SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetResponseMime
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetResponseStatusCode(void* jarg1) {
   Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
-  int result;
+  int result = 0;
   {
     try {
       result = arg1->GetResponseStatusCode();
@@ -2986,7 +2986,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetResponseStatusCode(v
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebPolicyDecision_GetNavigationType(void* jarg1) {
   Dali::WebEnginePolicyDecision* arg1 = (Dali::WebEnginePolicyDecision*)jarg1;
-  int result;
+  int result = 0;
   {
     try {
       result = (int)arg1->GetNavigationType();
@@ -3336,7 +3336,7 @@ SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebLoadError_GetUrl(void* jarg1) 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebLoadError_GetCode(void* jarg1) {
   Dali::WebEngineLoadError* arg1 = (Dali::WebEngineLoadError*)jarg1;
-  int result;
+  int result = 0;
   {
     try {
       result = (int)arg1->GetCode();
@@ -3359,7 +3359,7 @@ SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_WebLoadError_GetDescription(void*
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebLoadError_GetType(void* jarg1) {
   Dali::WebEngineLoadError* arg1 = (Dali::WebEngineLoadError*)jarg1;
-  int result;
+  int result = 0;
   {
     try {
       result = (int)arg1->GetType();
