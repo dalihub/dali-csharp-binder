@@ -554,6 +554,21 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GRADIENT_VISUAL_START_OFFSET_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GRADIENT_VISUAL_START_ANGLE_get() {
+  int jresult ;
+  int result;
+
+  {
+    try {
+      result = (int)Dali::Toolkit::GradientVisual::Property::START_ANGLE;
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_URL_get() {
   int jresult ;
   int result;
