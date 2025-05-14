@@ -24,6 +24,8 @@ SET( dali_csharp_binder_common_src_files
 
   ${dali_csharp_binder_dir}/dali-core/dali-core-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/actor-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/alpha-function-spring-data-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/alpha-function-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/animation-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/capabilities-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/constraint-wrap.cpp
