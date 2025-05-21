@@ -11130,6 +11130,38 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VisualFactory_CreateVisual__SWIG_0(voi
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualFactory_SetDefaultCreationOptions(void* csVisualFactory, int csCreationOptions)
+{
+  Dali::Toolkit::VisualFactory* visualFactory = (Dali::Toolkit::VisualFactory*)csVisualFactory;
+  if(!visualFactory)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::VisualFactory const & type is null", 0);
+  }
+  try
+  {
+    (visualFactory)->SetDefaultCreationOptions((Dali::Toolkit::VisualFactory::CreationOptions)csCreationOptions);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VisualFactory_GetDefaultCreationOptions(void* csVisualFactory, int csCreationOptions)
+{
+  int result = 0;
+  Dali::Toolkit::VisualFactory* visualFactory = (Dali::Toolkit::VisualFactory*)csVisualFactory;
+  if(!visualFactory)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::VisualFactory const & type is null", 0);
+    return result;
+  }
+  try
+  {
+    result = (int)(((Dali::Toolkit::VisualFactory const *)visualFactory)->GetDefaultCreationOptions());
+  }
+  CALL_CATCH_EXCEPTION(0);
+
+  return result;
+}
+
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VisualFactory_AddPrecompileShader(void* csVisualFactory, void * csOptionPropertyMap)
 {
   bool result = false;
