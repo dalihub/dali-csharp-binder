@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2414,6 +2414,29 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector4_Dot4(void * jarg1, void * jarg2
 }
 
 
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector4_Dot3(void * jarg1, void * jarg2) {
+  float jresult ;
+  Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
+  Dali::Vector4 *arg2 = 0 ;
+  float result;
+
+  arg1 = (Dali::Vector4 *)jarg1;
+  arg2 = (Dali::Vector4 *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type is null", 0);
+    return 0;
+  }
+  {
+    try {
+      result = (float)((Dali::Vector4 const *)arg1)->Dot3((Dali::Vector4 const &)*arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_Cross(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
@@ -2454,6 +2477,23 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector4_Length(void * jarg1) {
 }
 
 
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector4_Length3(void * jarg1) {
+  float jresult ;
+  Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
+  float result;
+
+  arg1 = (Dali::Vector4 *)jarg1;
+  {
+    try {
+      result = (float)((Dali::Vector4 const *)arg1)->Length3();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector4_LengthSquared(void * jarg1) {
   float jresult ;
   Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
@@ -2471,6 +2511,23 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector4_LengthSquared(void * jarg1) {
 }
 
 
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector4_LengthSquared3(void * jarg1) {
+  float jresult ;
+  Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
+  float result;
+
+  arg1 = (Dali::Vector4 *)jarg1;
+  {
+    try {
+      result = (float)((Dali::Vector4 const *)arg1)->LengthSquared3();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Vector4_Normalize(void * jarg1) {
   Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
 
@@ -2480,7 +2537,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Vector4_Normalize(void * jarg1) {
       (arg1)->Normalize();
     } CALL_CATCH_EXCEPTION();
   }
+}
 
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Vector4_Normalize3(void * jarg1) {
+  Dali::Vector4 *arg1 = (Dali::Vector4 *) 0 ;
+
+  arg1 = (Dali::Vector4 *)jarg1;
+  {
+    try {
+      (arg1)->Normalize3();
+    } CALL_CATCH_EXCEPTION();
+  }
 }
 
 
