@@ -11279,6 +11279,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualFactory_SetDefaultCreationOptions(
   if(!visualFactory)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::VisualFactory const & type is null", 0);
+    return;
   }
   try
   {
