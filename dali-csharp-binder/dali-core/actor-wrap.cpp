@@ -2704,6 +2704,44 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetRelayoutSize(void* jarg1, int 
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetIgnored(void* csActor, bool ignored)
+{
+  Dali::Actor* actor = (Dali::Actor*)csActor;
+  if(!actor)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
+    return;
+  }
+  {
+    try
+    {
+      actor->SetIgnored(ignored);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsIgnored(void* csActor)
+{
+  Dali::Actor* actor = (Dali::Actor*)csActor;
+  if(!actor)
+  {
+    SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "jarg1 is null!");
+    return 0;
+  }
+
+  bool result = false;
+  {
+    try
+    {
+      result = actor->IsIgnored();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPadding(void* jarg1, void* jarg2)
 {
   Dali::Actor*   arg1 = (Dali::Actor*)0;

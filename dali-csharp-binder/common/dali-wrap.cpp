@@ -10371,6 +10371,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextureSet_SetTexture(void * jarg1, unsi
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextureSet_RemoveTexture(void * csTextureSet, unsigned long index) {
+  Dali::TextureSet* textureSet = (Dali::TextureSet*)csTextureSet;
+
+  if(!textureSet)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Texture", 0);
+    return;
+  }
+
+  {
+    try
+    {
+      Dali::Texture emptyTexture;
+      (textureSet)->SetTexture(index, emptyTexture);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextureSet_GetTexture(void * jarg1, unsigned long jarg2) {
   void * jresult ;
   Dali::TextureSet *arg1 = (Dali::TextureSet *) 0 ;
@@ -10410,6 +10429,26 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextureSet_SetSampler(void * jarg1, unsi
     } CALL_CATCH_EXCEPTION();
   }
 
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextureSet_RemoveSampler(void * csTextureSet, unsigned long index) {
+  Dali::TextureSet* textureSet = (Dali::TextureSet*)csTextureSet;
+
+  if(!textureSet)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Texture", 0);
+    return;
+  }
+
+  {
+    try
+    {
+      Dali::Sampler emptySampler;
+      (textureSet)->SetSampler(index, emptySampler);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
 }
 
 
