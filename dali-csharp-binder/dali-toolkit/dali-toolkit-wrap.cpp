@@ -4662,27 +4662,45 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_ClearBackground(void * jarg1) {
 
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_SetRenderEffect(void * handle, void * effectHandle) {
-  Dali::Toolkit::Control *control = (Dali::Toolkit::Control *)handle  ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_SetRenderEffect(void * handle, void * effectHandle)
+{
+  Dali::Toolkit::Control *control = (Dali::Toolkit::Control *)handle;
 
-  if (!effectHandle) {
+  if(!effectHandle)
+  {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null render effect", 0);
     return;
   }
 
   Dali::Toolkit::RenderEffect *effect = (Dali::Toolkit::RenderEffect *) effectHandle;
   {
-    try {
-      (control)->SetRenderEffect(*effect);
+    try
+    {
+      control->SetRenderEffect(*effect);
     } CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_ClearRenderEffect(void * handle) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_GetRenderEffect(void * handle)
+{
+  RenderEffect renderEffect;
   Dali::Toolkit::Control *control = (Dali::Toolkit::Control *) handle ;
   {
-    try {
-      (control)->ClearRenderEffect();
+    try
+    {
+      renderEffect = control->GetRenderEffect();
+    } CALL_CATCH_EXCEPTION(0);
+  }
+  return new Dali::Toolkit::RenderEffect((const Dali::Toolkit::RenderEffect&)renderEffect);
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_ClearRenderEffect(void * handle)
+{
+  Dali::Toolkit::Control *control = (Dali::Toolkit::Control *) handle ;
+  {
+    try
+    {
+      control->ClearRenderEffect();
     } CALL_CATCH_EXCEPTION();
   }
 }
