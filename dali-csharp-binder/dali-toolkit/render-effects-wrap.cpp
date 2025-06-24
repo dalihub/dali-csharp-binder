@@ -190,6 +190,58 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MaskEffect_New__SWIG_1(Dali::BaseHandl
   return new Dali::Toolkit::MaskEffect((const Dali::Toolkit::MaskEffect&)maskEffect);
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MaskEffect_SetTargetMaskOnce(void* pMaskEffect, bool targetMaskOnce)
+{
+  Dali::Toolkit::MaskEffect* maskEffect = (Dali::Toolkit::MaskEffect*) pMaskEffect;
+  {
+    try
+    {
+      maskEffect->SetTargetMaskOnce(targetMaskOnce);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_MaskEffect_GetTargetMaskOnce(void* pMaskEffect)
+{
+  bool targetMaskOnce = false;
+  Dali::Toolkit::MaskEffect* maskEffect = (Dali::Toolkit::MaskEffect*) pMaskEffect;
+  {
+    try
+    {
+      targetMaskOnce = maskEffect->GetTargetMaskOnce();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return targetMaskOnce;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MaskEffect_SetSourceMaskOnce(void* pMaskEffect, bool sourceMaskOnce)
+{
+  Dali::Toolkit::MaskEffect* maskEffect = (Dali::Toolkit::MaskEffect*) pMaskEffect;
+  {
+    try
+    {
+      maskEffect->SetSourceMaskOnce(sourceMaskOnce);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_MaskEffect_GetSourceMaskOnce(void* pMaskEffect)
+{
+  bool sourceMaskOnce = false;
+  Dali::Toolkit::MaskEffect* maskEffect = (Dali::Toolkit::MaskEffect*) pMaskEffect;
+  {
+    try
+    {
+      sourceMaskOnce = maskEffect->GetSourceMaskOnce();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return sourceMaskOnce;
+}
+
 #ifdef __cplusplus
 }
 #endif
