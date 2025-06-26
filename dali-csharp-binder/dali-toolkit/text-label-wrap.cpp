@@ -133,6 +133,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ASYNC_LINE_COUNT_get()
   return (int)Dali::Toolkit::DevelTextLabel::Property::ASYNC_LINE_COUNT;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_NEED_REQUEST_ASYNC_RENDER_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::NEED_REQUEST_ASYNC_RENDER;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_FONT_VARIATIONS_get()
 {
   return (int)Dali::Toolkit::DevelTextLabel::Property::FONT_VARIATIONS;
