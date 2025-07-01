@@ -116,6 +116,32 @@ SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_GetBlurRadius(v
   return blurRadius;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_SetBlurDownscaleFactor(void* pBackgroundBlurEffect, unsigned int blurDownscaleFactor)
+{
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*) pBackgroundBlurEffect;
+  {
+    try
+    {
+      backgroundBlurEffect->SetBlurDownscaleFactor(blurDownscaleFactor);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_GetBlurDownscaleFactor(void* pBackgroundBlurEffect)
+{
+  float blurDownscaleFactor = 0.0f;
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*) pBackgroundBlurEffect;
+  {
+    try
+    {
+      blurDownscaleFactor = (float)backgroundBlurEffect->GetBlurDownscaleFactor();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return blurDownscaleFactor;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_AddBlurStrengthAnimation(void* pBackgroundBlurEffect, void* pAnimation, void* pAlphaFunction, void* pTimePeriod, float fromValue, float toValue)
 {
   Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*) pBackgroundBlurEffect;
@@ -155,6 +181,141 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_AddBlurOpacityAnima
     try
     {
       backgroundBlurEffect->AddBlurOpacityAnimation((Dali::Animation&)(*animation), alphaFunction, timePeriod, fromValue, toValue);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_New__SWIG_1(unsigned int blurRadius)
+{
+  Dali::Toolkit::GaussianBlurEffect gaussianBlurEffect;
+  {
+    try
+    {
+      gaussianBlurEffect = Dali::Toolkit::GaussianBlurEffect::New(blurRadius);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Toolkit::GaussianBlurEffect((const Dali::Toolkit::GaussianBlurEffect&)gaussianBlurEffect);
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_SetBlurOnce(void* pGaussianBlurEffect, bool blurOnce)
+{
+  Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*) pGaussianBlurEffect;
+  {
+    try
+    {
+      gaussianBlurEffect->SetBlurOnce(blurOnce);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_GetBlurOnce(void* pGaussianBlurEffect)
+{
+  bool blurOnce = false;
+  Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*) pGaussianBlurEffect;
+  {
+    try
+    {
+      blurOnce = gaussianBlurEffect->GetBlurOnce();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return blurOnce;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_SetBlurRadius(void* pGaussianBlurEffect, unsigned int blurRadius)
+{
+  Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*) pGaussianBlurEffect;
+  {
+    try
+    {
+      gaussianBlurEffect->SetBlurRadius(blurRadius);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_GetBlurRadius(void* pGaussianBlurEffect)
+{
+  uint32_t blurRadius = 0.0f;
+  Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*) pGaussianBlurEffect;
+  {
+    try
+    {
+      blurRadius = (uint32_t)gaussianBlurEffect->GetBlurRadius();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return blurRadius;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_SetBlurDownscaleFactor(void* pGaussianBlurEffect, float blurDownscaleFactor)
+{
+  Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*) pGaussianBlurEffect;
+  {
+    try
+    {
+      gaussianBlurEffect->SetBlurDownscaleFactor(blurDownscaleFactor);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_GetBlurDownscaleFactor(void* pGaussianBlurEffect)
+{
+  float blurDownscaleFactor = 0.0f;
+  Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*) pGaussianBlurEffect;
+  {
+    try
+    {
+      blurDownscaleFactor = (float)gaussianBlurEffect->GetBlurDownscaleFactor();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return blurDownscaleFactor;
+}
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_AddBlurStrengthAnimation(void* pGaussianBlurEffect, void* pAnimation, void* pAlphaFunction, void* pTimePeriod, float fromValue, float toValue)
+{
+  Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*) pGaussianBlurEffect;
+  Dali::Animation* animation = (Dali::Animation*) pAnimation; // reference
+  if(!animation)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Animation & type is null", 0);
+    return;
+  }
+
+  Dali::AlphaFunction alphaFunction = pAlphaFunction? *((Dali::AlphaFunction*) pAlphaFunction) : animation->GetDefaultAlphaFunction();
+  Dali::TimePeriod timePeriod = pTimePeriod? *((Dali::TimePeriod*) pTimePeriod) : Dali::TimePeriod(animation->GetDuration());
+
+  {
+    try
+    {
+      gaussianBlurEffect->AddBlurStrengthAnimation((Dali::Animation&)(*animation), alphaFunction, timePeriod, fromValue, toValue);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_AddBlurOpacityAnimation(void* pGaussianBlurEffect, void* pAnimation, void* pAlphaFunction, void* pTimePeriod, float fromValue, float toValue)
+{
+  Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*) pGaussianBlurEffect;
+  Dali::Animation* animation = (Dali::Animation*) pAnimation; // reference
+  if(!animation)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Animation & type is null", 0);
+    return;
+  }
+
+  Dali::AlphaFunction alphaFunction = pAlphaFunction? *((Dali::AlphaFunction*) pAlphaFunction) : animation->GetDefaultAlphaFunction();
+  Dali::TimePeriod timePeriod = pTimePeriod? *((Dali::TimePeriod*) pTimePeriod) : Dali::TimePeriod(animation->GetDuration());
+
+  {
+    try
+    {
+      gaussianBlurEffect->AddBlurOpacityAnimation((Dali::Animation&)(*animation), alphaFunction, timePeriod, fromValue, toValue);
     }
     CALL_CATCH_EXCEPTION();
   }
