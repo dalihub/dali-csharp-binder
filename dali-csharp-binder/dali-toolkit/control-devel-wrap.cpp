@@ -201,6 +201,10 @@ GENERATE_ACCESSIBILITY_SIGNAL_2_FUNCTIONS(bool(*)(const Dali::Accessibility::Act
 // CSharp_Dali_Toolkit_DevelControl_AccessibilityActionSignal_Connect
 // CSharp_Dali_Toolkit_DevelControl_AccessibilityActionSignal_Disconnect
 
+GENERATE_ACCESSIBILITY_SIGNAL_2_FUNCTIONS(void(*)(bool), Dali::Toolkit::DevelControl::AccessibilityHighlightedSignalType, AccessibilityHighlightedSignal)
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityHighlightedSignal_Connect
+// CSharp_Dali_Toolkit_DevelControl_AccessibilityHighlightedSignal_Disconnect
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AccessibilityActionSignal(void* arg1)
 {
   Dali::Toolkit::DevelControl::AccessibilityActionSignalType* result = nullptr;
