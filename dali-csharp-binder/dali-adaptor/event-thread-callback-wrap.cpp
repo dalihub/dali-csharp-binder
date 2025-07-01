@@ -39,6 +39,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_EventThreadCallback(SWIG_CallbackM
   {
     try {
       result = (Dali::EventThreadCallback *)new Dali::EventThreadCallback(callbackBase);
+      DALI_LOG_DEBUG_INFO("New EventThreadCallback Trigger Id(%d)\n", result->GetId());
     } catch (std::out_of_range& e) {
       {
         delete result;

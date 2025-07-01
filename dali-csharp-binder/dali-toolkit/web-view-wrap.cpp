@@ -4351,6 +4351,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_SetDefaultAudioInputDevice(v
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebSettings_EnableDragAndDrop(void *setting, bool enable) {
+  Dali::Toolkit::WebSettings* settings = (Dali::Toolkit::WebSettings*)setting;
+
+  try {
+    settings->EnableDragAndDrop(enable);
+  } CALL_CATCH_EXCEPTION();
+}
+
 #ifdef __cplusplus
 } // end extern "C"
 #endif

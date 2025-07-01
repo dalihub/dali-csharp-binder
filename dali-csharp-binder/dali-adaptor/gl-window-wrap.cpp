@@ -901,6 +901,27 @@ extern "C"
     return;
   }
 
+  SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GlWindow_Visibility_Changed_Signal_Empty(void *jarg1)
+  {
+    bool result;
+    Dali::GlWindow::VisibilityChangedSignalType *arg1 = (Dali::GlWindow::VisibilityChangedSignalType *)jarg1;
+
+    if (arg1 == nullptr)
+    {
+      DALI_LOG_ERROR("[ERR] arg1 == nullptr");
+      return false;
+    }
+
+    {
+      try
+      {
+        result = arg1->Empty();
+      }
+      CALL_CATCH_EXCEPTION(false);
+    }
+    return result;
+  }
+
   SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_Visibility_Changed_Signal_Emit(void *jarg1, void *jarg2, bool jarg3)
   {
     Dali::GlWindow::VisibilityChangedSignalType *arg1 = (Dali::GlWindow::VisibilityChangedSignalType *)jarg1;

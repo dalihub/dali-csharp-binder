@@ -103,6 +103,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_RENDER_MODE_get()
   return (int)Dali::Toolkit::DevelTextLabel::Property::RENDER_MODE;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_LAYOUT_DIRECTION_POLICY_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::LAYOUT_DIRECTION_POLICY;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ELLIPSIS_MODE_get()
 {
   return (int)Dali::Toolkit::DevelTextLabel::Property::ELLIPSIS_MODE;
@@ -131,6 +136,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_MANUAL_RENDERED_get()
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ASYNC_LINE_COUNT_get()
 {
   return (int)Dali::Toolkit::DevelTextLabel::Property::ASYNC_LINE_COUNT;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_NEED_REQUEST_ASYNC_RENDER_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::NEED_REQUEST_ASYNC_RENDER;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_FONT_VARIATIONS_get()
