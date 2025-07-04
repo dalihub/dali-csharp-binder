@@ -355,6 +355,19 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_GetLineCount(void * pTextLabel,
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_SetMaskEffect(void * pTextLabel, Dali::BaseHandle* control)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try
+    {
+      Dali::Toolkit::Control maskControl = Dali::Toolkit::Control::DownCast(*control);
+      Dali::Toolkit::DevelTextLabel::SetMaskEffect(*textLabel, maskControl);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 // Signals
 #ifndef GENERATE_DEVEL_TEXT_LABEL_SIGNAL
 #define GENERATE_DEVEL_TEXT_LABEL_SIGNAL(HType, SignalName) GENERATE_DEVEL_SIGNAL(Dali::Toolkit::TextLabel*, HType, Dali::Toolkit::DevelTextLabel, Dali_TextLabel, SignalName)
