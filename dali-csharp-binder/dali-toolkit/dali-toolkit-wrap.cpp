@@ -4690,7 +4690,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_GetRenderEffect(void * handle)
       renderEffect = control->GetRenderEffect();
     } CALL_CATCH_EXCEPTION(0);
   }
-  return new Dali::Toolkit::RenderEffect((const Dali::Toolkit::RenderEffect&)renderEffect);
+  return renderEffect ? new Dali::Toolkit::RenderEffect((const Dali::Toolkit::RenderEffect&)renderEffect) : nullptr;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_ClearRenderEffect(void * handle)
