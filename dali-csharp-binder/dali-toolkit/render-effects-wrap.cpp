@@ -47,7 +47,32 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderEffect_Deactivate(void* pRenderEff
     }
     CALL_CATCH_EXCEPTION();
   }
+}
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderEffect_Refresh(void* pRenderEffect)
+{
+  Dali::Toolkit::RenderEffect* renderEffect = (Dali::Toolkit::RenderEffect*) pRenderEffect;
+  {
+    try
+    {
+      renderEffect->Refresh();
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderEffect_IsActivated(void* pRenderEffect)
+{
+  Dali::Toolkit::RenderEffect* renderEffect = (Dali::Toolkit::RenderEffect*) pRenderEffect;
+  bool isActivated = false;
+  {
+    try
+    {
+      isActivated = renderEffect->IsActivated();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return isActivated;
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_New__SWIG_1(unsigned int blurRadius)
@@ -116,7 +141,7 @@ SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_GetBlurRadius(v
   return blurRadius;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_SetBlurDownscaleFactor(void* pBackgroundBlurEffect, unsigned int blurDownscaleFactor)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_SetBlurDownscaleFactor(void* pBackgroundBlurEffect, float blurDownscaleFactor)
 {
   Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*) pBackgroundBlurEffect;
   {
@@ -184,6 +209,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_AddBlurOpacityAnima
     }
     CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_FinishedSignal_Connect(void* caller, void* handler)
+{
+  GUARD_ON_NULL_RET(caller);
+  GUARD_ON_NULL_RET(handler);
+  try_catch(([&]() {
+    Dali::Toolkit::BackgroundBlurEffect* effect = (Dali::Toolkit::BackgroundBlurEffect*)caller;
+    Dali::Toolkit::BackgroundBlurEffect::FinishedSignalType& signal = (*effect).FinishedSignal();
+    signal.Connect((void(*)())handler);
+  }));
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_FinishedSignal_Disconnect(void* caller, void* handler)
+{
+  GUARD_ON_NULL_RET(caller);
+  GUARD_ON_NULL_RET(handler);
+  try_catch(([&]() {
+    Dali::Toolkit::BackgroundBlurEffect* effect = (Dali::Toolkit::BackgroundBlurEffect*)caller;
+    Dali::Toolkit::BackgroundBlurEffect::FinishedSignalType& signal = (*effect).FinishedSignal();
+    signal.Disconnect((void(*)())handler);
+  }));
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_New__SWIG_1(unsigned int blurRadius)
@@ -319,6 +366,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_AddBlurOpacityAnimati
     }
     CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_FinishedSignal_Connect(void* caller, void* handler)
+{
+  GUARD_ON_NULL_RET(caller);
+  GUARD_ON_NULL_RET(handler);
+  try_catch(([&]() {
+    Dali::Toolkit::GaussianBlurEffect* effect = (Dali::Toolkit::GaussianBlurEffect*)caller;
+    Dali::Toolkit::GaussianBlurEffect::FinishedSignalType& signal = (*effect).FinishedSignal();
+    signal.Connect((void(*)())handler);
+  }));
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_FinishedSignal_Disconnect(void* caller, void* handler)
+{
+  GUARD_ON_NULL_RET(caller);
+  GUARD_ON_NULL_RET(handler);
+  try_catch(([&]() {
+    Dali::Toolkit::GaussianBlurEffect* effect = (Dali::Toolkit::GaussianBlurEffect*)caller;
+    Dali::Toolkit::GaussianBlurEffect::FinishedSignalType& signal = (*effect).FinishedSignal();
+    signal.Disconnect((void(*)())handler);
+  }));
 }
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MaskEffect_New__SWIG_0(Dali::BaseHandle* control)

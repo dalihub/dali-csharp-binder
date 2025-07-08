@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -698,6 +698,10 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_DISPATCH_HOVER_MOTION_get()
   return Dali::DevelActor::Property::DISPATCH_HOVER_MOTION;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_CHILDREN_DEPTH_INDEX_POLICY_get()
+{
+  return Dali::DevelActor::Property::CHILDREN_DEPTH_INDEX_POLICY;
+}
 
 // Creation
 

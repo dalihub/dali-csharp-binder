@@ -18,7 +18,6 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/dali-toolkit.h>
 
-#include <dali-toolkit/devel-api/accessibility-manager/accessibility-manager.h>
 #include <dali-toolkit/devel-api/builder/builder.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/devel-api/controls/control-depth-index-ranges.h>
