@@ -129,72 +129,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Vector2__SWIG_4(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_ONE_get() {
-  void * jresult ;
-  Dali::Vector2 *result = 0 ;
-
-  result = (Dali::Vector2 *)&Dali::Vector2::ONE;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_XAXIS_get() {
-  void * jresult ;
-  Dali::Vector2 *result = 0 ;
-
-  result = (Dali::Vector2 *)&Dali::Vector2::XAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_YAXIS_get() {
-  void * jresult ;
-  Dali::Vector2 *result = 0 ;
-
-  result = (Dali::Vector2 *)&Dali::Vector2::YAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_NEGATIVE_XAXIS_get() {
-  void * jresult ;
-  Dali::Vector2 *result = 0 ;
-
-  result = (Dali::Vector2 *)&Dali::Vector2::NEGATIVE_XAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_NEGATIVE_YAXIS_get() {
-  void * jresult ;
-  Dali::Vector2 *result = 0 ;
-
-  result = (Dali::Vector2 *)&Dali::Vector2::NEGATIVE_YAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_ZERO_get() {
-  void * jresult ;
-  Dali::Vector2 *result = 0 ;
-
-  result = (Dali::Vector2 *)&Dali::Vector2::ZERO;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-
-
-
-
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector2_Add(void * jarg1, void * jarg2) {
   void * jresult ;
   Dali::Vector2 *arg1 = (Dali::Vector2 *) 0 ;
@@ -713,17 +647,6 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector2_Height_get(void * jarg1) {
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Vector2_set_all(void * jarg1, float jarg2, float jarg3) {
-  Dali::Vector2 *arg1 = (Dali::Vector2 *) 0 ;
-
-  arg1 = (Dali::Vector2 *)jarg1;
-  if (arg1)
-  {
-    (arg1)->x = jarg2;
-    (arg1)->y = jarg3;
-  }
-}
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Vector2(void * jarg1) {
   Dali::Vector2 *arg1 = (Dali::Vector2 *) 0 ;
@@ -918,92 +841,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Vector3__SWIG_4(void * jarg1) {
   jresult = (void *)result;
   return jresult;
 }
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_ONE_get() {
-  void * jresult ;
-  Dali::Vector3 *result = 0 ;
-
-  result = (Dali::Vector3 *)&Dali::Vector3::ONE;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_XAXIS_get() {
-  void * jresult ;
-  Dali::Vector3 *result = 0 ;
-
-  result = (Dali::Vector3 *)&Dali::Vector3::XAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_YAXIS_get() {
-  void * jresult ;
-  Dali::Vector3 *result = 0 ;
-
-  result = (Dali::Vector3 *)&Dali::Vector3::YAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_ZAXIS_get() {
-  void * jresult ;
-  Dali::Vector3 *result = 0 ;
-
-  result = (Dali::Vector3 *)&Dali::Vector3::ZAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_NEGATIVE_XAXIS_get() {
-  void * jresult ;
-  Dali::Vector3 *result = 0 ;
-
-  result = (Dali::Vector3 *)&Dali::Vector3::NEGATIVE_XAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_NEGATIVE_YAXIS_get() {
-  void * jresult ;
-  Dali::Vector3 *result = 0 ;
-
-  result = (Dali::Vector3 *)&Dali::Vector3::NEGATIVE_YAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_NEGATIVE_ZAXIS_get() {
-  void * jresult ;
-  Dali::Vector3 *result = 0 ;
-
-  result = (Dali::Vector3 *)&Dali::Vector3::NEGATIVE_ZAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_ZERO_get() {
-  void * jresult ;
-  Dali::Vector3 *result = 0 ;
-
-  result = (Dali::Vector3 *)&Dali::Vector3::ZERO;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-
-
-
-
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector3_Add(void * jarg1, void * jarg2) {
@@ -1737,18 +1574,6 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector3_b_get(void * jarg1) {
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Vector3_set_all(void * jarg1, float jarg2, float jarg3, float jarg4) {
-  Dali::Vector3 *arg1 = (Dali::Vector3 *) 0 ;
-
-  arg1 = (Dali::Vector3 *)jarg1;
-  if (arg1)
-  {
-    (arg1)->x = jarg2;
-    (arg1)->y = jarg3;
-    (arg1)->z = jarg4;
-  }
-}
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Vector3(void * jarg1) {
   Dali::Vector3 *arg1 = (Dali::Vector3 *) 0 ;
@@ -1945,62 +1770,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_Vector4__SWIG_4(void * jarg1) {
   jresult = (void *)result;
   return jresult;
 }
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_ONE_get() {
-  void * jresult ;
-  Dali::Vector4 *result = 0 ;
-
-  result = (Dali::Vector4 *)&Dali::Vector4::ONE;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_XAXIS_get() {
-  void * jresult ;
-  Dali::Vector4 *result = 0 ;
-
-  result = (Dali::Vector4 *)&Dali::Vector4::XAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_YAXIS_get() {
-  void * jresult ;
-  Dali::Vector4 *result = 0 ;
-
-  result = (Dali::Vector4 *)&Dali::Vector4::YAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_ZAXIS_get() {
-  void * jresult ;
-  Dali::Vector4 *result = 0 ;
-
-  result = (Dali::Vector4 *)&Dali::Vector4::ZAXIS;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_ZERO_get() {
-  void * jresult ;
-  Dali::Vector4 *result = 0 ;
-
-  result = (Dali::Vector4 *)&Dali::Vector4::ZERO;
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-
-
-
-
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Vector4_Add(void * jarg1, void * jarg2) {

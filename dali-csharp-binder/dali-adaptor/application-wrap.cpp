@@ -1745,7 +1745,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowData(int nuiA
   return jresult;
 }
 
-
 SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Application_GetRenderThreadId(void* jarg1)
 {
   Dali::Application* arg1 = (Dali::Application*)jarg1;
@@ -1758,7 +1757,6 @@ SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Application_GetRenderThreadId(void* j
   CALL_CATCH_EXCEPTION(0);
   return result;
 }
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_FlushUpdateMessages(void* jarg1)
 {

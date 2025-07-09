@@ -851,23 +851,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextField_GetTextPosition(void * pText
   return sizeList;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TextGeometry_TextField_GetTextBoundingRectangle(void * pTextField, uint32_t startIndex, uint32_t endIndex)
-{
-  Dali::Toolkit::TextField *textField = (Dali::Toolkit::TextField *) 0;
-  void* boundingRect;
-
-  textField = (Dali::Toolkit::TextField *)pTextField;
-  {
-    try {
-      boundingRect = new Dali::Rect<>
-      ((const Dali::Rect<> &)(Dali::Toolkit::DevelTextField::GetTextBoundingRectangle( *textField,  startIndex, endIndex)));
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  return boundingRect;
-}
-
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TextField_CopyText(void *pTextField)
 {
   char *csCopiedText;
@@ -1112,11 +1095,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_REMOVE_FRONT_INSET_get
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_REMOVE_BACK_INSET_get()
 {
   return (int)Dali::Toolkit::DevelTextField::Property::REMOVE_BACK_INSET;
-}
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_FONT_VARIATIONS_get()
-{
-  return (int)Dali::Toolkit::DevelTextField::Property::FONT_VARIATIONS;
 }
 
 SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_TextField_RegisterFontVariationProperty(void * pTextField, char * pTag)

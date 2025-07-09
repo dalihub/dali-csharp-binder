@@ -119,17 +119,6 @@ Dali::Property VisualObject::GetPropertyObject(Dali::Property::Key visualPropert
 extern "C" {
 #endif
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_VisualObject__SWIG_0()
-{
-  Dali::VisualObject* result = 0;
-
-  try_catch(([&]() {
-    result = (Dali::VisualObject*)new Dali::VisualObject();
-  }));
-
-  return (void*)result;
-}
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VisualObject_New()
 {
   void*              jresult = 0;
@@ -141,16 +130,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VisualObject_New()
 
   jresult = new Dali::VisualObject((const Dali::VisualObject&)result);
   return jresult;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VisualObject(void* nuiVisualObject)
-{
-  Dali::VisualObject* visualObject = (Dali::VisualObject*)0;
-
-  visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
-    delete visualObject;
-  }));
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_DetachFromContainer(void* nuiVisualObject)
