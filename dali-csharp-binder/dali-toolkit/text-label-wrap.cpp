@@ -274,6 +274,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncRenderWithFixedWid
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncRenderWithFixedHeight(void * pTextLabel, float widthConstraint, float height)
+{
+  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
+
+  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
+  {
+    try
+    {
+      Dali::Toolkit::DevelTextLabel::RequestAsyncRenderWithFixedHeight(*textLabel, widthConstraint, height);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestAsyncRenderWithConstraint(void * pTextLabel, float widthConstraint, float heightConstraint)
 {
   Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
