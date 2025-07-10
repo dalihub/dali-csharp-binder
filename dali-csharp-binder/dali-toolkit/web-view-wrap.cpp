@@ -2919,43 +2919,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebContextMenuItem_GetParentMenu(void 
   return (void *)result;
 }
 
-//----------------------------------WebContextMenuItemList---------------------------------------------------
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebContextMenu_ItemList(void * jarg1) {
-  if (!jarg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebContextMenu ItemList is null", 0);
-    return;
-  }
-
-  std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>*)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_WebContextMenu_ItemList_GetItemCount(void* jarg1) {
-  std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>*)jarg1;
-  uint32_t result = 0;
-  {
-    try {
-      result = (arg1)->size();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return result;
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WebContextMenu_ItemList_ValueOfIndex(void* jarg1, unsigned int jarg2) {
-  std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>* arg1 = (std::vector<std::unique_ptr<Dali::WebEngineContextMenuItem>>*)jarg1;
-  Dali::WebEngineContextMenuItem* result = 0;
-  {
-    try {
-      result = ((arg1)->operator[](jarg2)).get();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return result;
-}
-
 //----------------------------------WebCookieManager---------------------------------------------------
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WebCookieManager_GetCookieAcceptPolicy(void * jarg1) {
   Dali::WebEngineCookieManager* arg1 = (Dali::WebEngineCookieManager*)0;

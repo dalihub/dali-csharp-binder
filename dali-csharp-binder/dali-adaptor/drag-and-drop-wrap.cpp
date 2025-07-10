@@ -28,7 +28,6 @@ using namespace Dali;
 typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
-static char mimeTypeEmptyMsg[] = "Mime Type is Empty!";
 static char dataEmptyMsg[] = "Data is Empty!";
 static const char * nullExceptMsg = "Attempt to dereference null Dali::Adaptor::DragAndDrop";
 
@@ -244,35 +243,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_DragEvent_GetPosition(void * jarg) {
   }
 
   jresult = new Dali::Vector2((const Dali::Vector2 &)result);
-  return jresult;
-}
-
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_DragEvent_GetMimeType(void * argDragEvent) {
-  char * jresult = nullptr;
-  Dali::DragAndDrop::DragEvent *dragEvent = (Dali::DragAndDrop::DragEvent *)argDragEvent;
-  std::string result;
-
-  if (!dragEvent) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
-    return 0;
-  }
-  {
-    try {
-
-      char** mimeTypes = (char**)((Dali::DragAndDrop::DragEvent &)*dragEvent).GetMimeTypes();
-      if (mimeTypes != nullptr)
-      {
-        result = mimeTypes[0];
-      }
-      else
-      {
-        result = mimeTypeEmptyMsg;
-      }
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
   return jresult;
 }
 

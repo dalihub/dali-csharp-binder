@@ -178,34 +178,6 @@ extern "C"
     return jresult;
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SlideTransitionDirectionTop_get()
-  {
-    Dali::Vector2 *result = (Dali::Vector2 *)&Dali::Toolkit::SlideTransitionDirection::TOP;
-
-    return (void *)result;
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SlideTransitionDirectionBottom_get()
-  {
-    Dali::Vector2 *result = (Dali::Vector2 *)&Dali::Toolkit::SlideTransitionDirection::BOTTOM;
-
-    return (void *)result;
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SlideTransitionDirectionRight_get()
-  {
-    Dali::Vector2 *result = (Dali::Vector2 *)&Dali::Toolkit::SlideTransitionDirection::RIGHT;
-
-    return (void *)result;
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_SlideTransitionDirectionLeft_get()
-  {
-    Dali::Vector2 *result = (Dali::Vector2 *)&Dali::Toolkit::SlideTransitionDirection::LEFT;
-
-    return (void *)result;
-  }
-
 #ifdef __cplusplus
 }
 #endif

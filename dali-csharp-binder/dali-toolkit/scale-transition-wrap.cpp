@@ -151,53 +151,6 @@ extern "C"
     return jresult;
   }
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ScaleTransition_SetScaleFactor(void *nuiScaleTransition, void *nuiScaleFactor)
-  {
-    Dali::Toolkit::ScaleTransition *scale = (Dali::Toolkit::ScaleTransition *)nuiScaleTransition;
-    Dali::Vector2 *scaleFactor = (Dali::Vector2 *)nuiScaleFactor;
-
-    if (!scale)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScaleTransition const & type is null", 0);
-      return;
-    }
-    if (!scaleFactor)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector2 const & type is null", 0);
-      return;
-    }
-    {
-      try
-      {
-        (scale)->SetScaleFactor((Dali::Vector2 const &)*scaleFactor);
-      }
-      CALL_CATCH_EXCEPTION();
-    }
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ScaleTransition_GetScaleFactor(void *nuiScaleTransition)
-  {
-    void *jresult;
-    Dali::Toolkit::ScaleTransition *scale = (Dali::Toolkit::ScaleTransition *)nuiScaleTransition;
-    Dali::Vector2 result;
-
-    if (!scale)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScaleTransition const & type is null", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = (scale)->GetScaleFactor();
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = new Dali::Vector2((const Dali::Vector2 &)result);
-    return jresult;
-  }
-
 #ifdef __cplusplus
 }
 #endif

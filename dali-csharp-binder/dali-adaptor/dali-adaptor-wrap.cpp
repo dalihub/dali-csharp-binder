@@ -1353,7 +1353,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageSource_ReleaseBuffer(void* ja
   return jresult;
 }
 
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_EnableBackBuffer(void* nativeImageHandle, bool enable)
 {
   NativeImageSource* nativeImage = static_cast<NativeImageSource*>(nativeImageHandle);
@@ -1371,12 +1370,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_EnableBackBuffer(void*
   }
 }
 
-
 /*
  * Widget binding
  */
-
-
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Widget_New__SWIG_1(void * jarg1) {

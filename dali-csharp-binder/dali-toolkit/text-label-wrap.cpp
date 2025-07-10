@@ -143,11 +143,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_NEED_REQUEST_ASYNC_REN
   return (int)Dali::Toolkit::DevelTextLabel::Property::NEED_REQUEST_ASYNC_RENDER;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_FONT_VARIATIONS_get()
-{
-  return (int)Dali::Toolkit::DevelTextLabel::Property::FONT_VARIATIONS;
-}
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextSize(void * pTextLabel, unsigned int start, unsigned int end)
 {
   Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
@@ -180,23 +175,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TextLabel_GetTextPosition(void * pText
   }
 
   return sizeList;
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TextGeometry_TextLabel_GetTextBoundingRectangle(void * pTextLabel, uint32_t startIndex, uint32_t endIndex)
-{
-  Dali::Toolkit::TextLabel *textLabel = (Dali::Toolkit::TextLabel *) 0;
-  void* boundingRect;
-
-  textLabel = (Dali::Toolkit::TextLabel *)pTextLabel;
-  {
-    try {
-      boundingRect = new Dali::Rect<>
-      ((const Dali::Rect<> &)(Dali::Toolkit::DevelTextLabel::GetTextBoundingRectangle( *textLabel,  startIndex, endIndex)));
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  return boundingRect;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_SetTextFitArray(void * argTextLabel, bool argEnable, uint32_t argArraySize, float * argPointSizeArray, float * argMinLineSizeArray)

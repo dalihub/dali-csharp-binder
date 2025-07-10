@@ -72,17 +72,9 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/dali-toolkit/scale-transition-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/slide-transition-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/style-manager-wrap.cpp
-  ${dali_csharp_binder_dir}/dali-toolkit/text-character-sequence-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/text-editor-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/text-field-wrap.cpp
-  ${dali_csharp_binder_dir}/dali-toolkit/text-geometry-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/text-label-wrap.cpp
-  ${dali_csharp_binder_dir}/dali-toolkit/text-range-wrap.cpp
-  ${dali_csharp_binder_dir}/dali-toolkit/text-spans-wrap.cpp
-  ${dali_csharp_binder_dir}/dali-toolkit/text-spanned-wrap.cpp
-  ${dali_csharp_binder_dir}/dali-toolkit/text-spannable-wrap.cpp
-  ${dali_csharp_binder_dir}/dali-toolkit/text-spannable-string-wrap.cpp
-  ${dali_csharp_binder_dir}/dali-toolkit/text-spannable-api-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/text-utils-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/transition-base-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/transition-set-wrap.cpp
