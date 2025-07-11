@@ -107,6 +107,39 @@ constexpr static int SWIG_MemoryError        = -12;
 constexpr static int SWIG_NullReferenceError = -13;
 constexpr static int SWIG_DaliError          = -14;
 
+namespace Swig {
+  /* Director base class - not currently used in C# directors */
+  class Director {
+  };
+
+  /* Base class for director exceptions */
+  class DirectorException : public std::exception {
+  protected:
+    std::string swig_msg;
+
+  public:
+    DirectorException(const char *msg) : swig_msg(msg) {
+    }
+
+    DirectorException(const std::string &msg) : swig_msg(msg) {
+    }
+
+    virtual ~DirectorException() throw() {
+    }
+
+    const char *what() const throw() {
+      return swig_msg.c_str();
+    }
+  };
+
+  /* Pure virtual method exception */
+  class DirectorPureVirtualException : public DirectorException {
+  public:
+    DirectorPureVirtualException(const char *msg) : DirectorException(std::string("Attempt to invoke pure virtual method ") + msg) {
+    }
+  };
+}
+
 /* Support for throwing C# exceptions from C/C++. There are two types:
  * Exceptions that take a message and ArgumentExceptions that take a message and a parameter name. */
 typedef enum
