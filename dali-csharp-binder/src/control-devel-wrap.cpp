@@ -242,13 +242,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilityRel
         // a relation with anything other than Control (View) using NUI API, so
         // there should not be any loss of information for typical NUI
         // applications.
-        auto targetControl = Dali::Toolkit::Control::DownCast(target->GetInternalActor());
-
-        if(targetControl)
+        auto actor = target->GetInternalActor();
+        if (!actor)
         {
-          arg2_callback(static_cast<int>(relation.mRelationType),
-                        static_cast<void*>(new Dali::Actor(targetControl)),
-                        arg3_userData);
+          DALI_LOG_ERROR("internal actor is null\n");
+        }
+        else {
+          auto targetControl = Dali::Toolkit::Control::DownCast(actor);
+          if(targetControl)
+          {
+            arg2_callback(static_cast<int>(relation.mRelationType),
+                          static_cast<void*>(new Dali::Actor(targetControl)),
+                          arg3_userData);
+          }
+
         }
       }
     }
