@@ -61,13 +61,6 @@ BuildRequires: pkgconfig(watch_viewer_dali)
 BuildRequires: pkgconfig(watch-holder-base)
 BuildRequires: pkgconfig(ecore-wl2)
 
-# For ASAN test
-%if "%{vd_asan}" == "1" || "%{asan}" == "1"
-BuildRequires: asan-force-options
-BuildRequires: asan-build-env
-BuildRequires: libasan
-%endif
-
 # for multiprofile
 Requires:   %{name}-compat = %{version}-%{release}
 Recommends: %{name}-profile_common = %{version}-%{release}
@@ -231,12 +224,6 @@ cmake_flags+=" -DENABLE_ECORE_WAYLAND2=ON"
 CXXFLAGS+=" -DOVER_TIZEN_VERSION_7"
 %endif
 
-%endif
-
-%if "%{vd_asan}" == "1" || "%{asan}" == "1"
-CFLAGS+=" -fsanitize=address"
-CXXFLAGS+=" -fsanitize=address"
-LDFLAGS+=" -fsanitize=address"
 %endif
 
 %if 0%{?enable_debug}
