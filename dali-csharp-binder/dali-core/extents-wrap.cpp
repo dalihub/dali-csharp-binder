@@ -252,19 +252,6 @@ SWIGEXPORT unsigned short SWIGSTDCALL CSharp_Dali_Extents_bottom_get(void * jarg
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_set_all(void * jarg1, unsigned short jarg2, unsigned short jarg3, unsigned short jarg4, unsigned short jarg5) {
-  Dali::Extents *arg1 = (Dali::Extents *) 0 ;
-
-  arg1 = (Dali::Extents *)jarg1;
-  if (arg1)
-  {
-    (arg1)->start = jarg2;
-    (arg1)->end = jarg3;
-    (arg1)->top = jarg4;
-    (arg1)->bottom = jarg5;
-  }
-}
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Extents(void * jarg1) {
   Dali::Extents *arg1 = (Dali::Extents *) 0 ;

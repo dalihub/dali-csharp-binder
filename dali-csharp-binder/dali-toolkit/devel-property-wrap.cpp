@@ -313,16 +313,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_MIN_LINE_SIZE_get() {
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL
-CSharp_Dali_TextLabel_Property_RENDERING_BACKEND_get() {
-  int jresult;
-  int result;
-
-  result = (int)Dali::Toolkit::DevelTextLabel::Property::RENDERING_BACKEND;
-  jresult = (int)result;
-  return jresult;
-}
-
 SWIGEXPORT int SWIGSTDCALL CSharp_TextLabel_Property_ELLIPSIS_POSITION_get() {
   int jresult;
   int result;

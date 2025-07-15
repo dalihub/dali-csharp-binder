@@ -135,11 +135,6 @@ SWIGEXPORT const Dali::Toolkit::Flex::Node* SWIGSTDCALL CSharp_Dali_FlexLayout_A
   return result;
 }
 
-SWIGEXPORT const Dali::Toolkit::Flex::Node* SWIGSTDCALL CSharp_Dali_FlexLayout_AddChild(void * jarg1, void *jarg2, Dali::Toolkit::Flex::MeasureCallback jarg3, int jarg4)
-{
-  return CSharp_Dali_FlexLayout_AddChildWithMargin(jarg1,jarg2,NULL,jarg3,jarg4);
-}
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_RemoveChild(void * jarg1, void * jarg2)
 {
   Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;

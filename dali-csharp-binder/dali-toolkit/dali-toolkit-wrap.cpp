@@ -877,20 +877,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_WRAP_MODE_V_get() {
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_IMAGE_VISUAL_ENABLE_FRAME_CACHE_get() {
-  int jresult ;
-  int result;
-
-  {
-    try {
-      result = (int)Dali::Toolkit::DevelImageVisual::Property::ENABLE_FRAME_CACHE;
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (int)result;
-  return jresult;
-}
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Image_Visual_BORDER_get() {
   int jresult ;
   int result;
@@ -3518,109 +3504,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_TransitionData_GetAnimatorAt(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_New() {
-  void * jresult ;
-  Dali::Toolkit::Control result;
-
-  {
-    try {
-      result = Dali::Toolkit::Internal::Control::New(Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetStyleName(void * jarg1, char * jarg2) {
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  std::string *arg2 = 0 ;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return ;
-  }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
-  {
-    try {
-      (arg1)->SetStyleName((std::string const &)*arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-
-  //argout typemap for const std::string&
-
-}
-
-
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_ViewImpl_GetStyleName(void * jarg1) {
-  char * jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  std::string *result = 0 ;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      result = (std::string *) &((Dali::Toolkit::Internal::Control const *)arg1)->GetStyleName();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = SWIG_csharp_string_callback(result->c_str());
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetBackgroundColor(void * jarg1, void * jarg2) {
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::Vector4 *arg2 = 0 ;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  arg2 = (Dali::Vector4 *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type is null", 0);
-    return ;
-  }
-  {
-    try {
-      (arg1)->SetBackgroundColor((Dali::Vector4 const &)*arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetBackgroundColor(void * jarg1) {
-  void * jresult ;
-  Dali::Handle *arg1 = (Dali::Handle *) 0 ;
-  Dali::Vector4 result;
-
-  arg1 = (Dali::Handle *)jarg1;
-  {
-    try {
-      Property::Map* resultMap = ((arg1)->GetProperty( Control::Property::BACKGROUND )).GetMap();
-      if (resultMap)
-      {
-        Dali::Property::Value* type = resultMap->Find( Toolkit::Visual::Property::TYPE );
-        if(type && type->Get<int>() == Visual::COLOR )
-        {
-          Dali::Property::Value* value = resultMap->Find( ColorVisual::Property::MIX_COLOR );
-          if (value)
-          {
-            result = value->Get<Vector4>();
-          }
-        }
-      }
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector4((const Dali::Vector4 &)result);
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetBackground(void * jarg1, void * jarg2) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
   Dali::Property::Map *arg2 = 0 ;
@@ -3639,18 +3522,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetBackground(void * jarg1, voi
 
 }
 
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_ClearBackground(void * jarg1) {
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      (arg1)->ClearBackground();
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_EnableGestureDetection(void * jarg1, int jarg2) {
   Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
@@ -3679,74 +3550,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_DisableGestureDetection(void * 
     } CALL_CATCH_EXCEPTION();
   }
 
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetPinchGestureDetector(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::PinchGestureDetector result;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      result = ((Dali::Toolkit::Internal::Control const *)arg1)->GetPinchGestureDetector();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::PinchGestureDetector((const Dali::PinchGestureDetector &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetPanGestureDetector(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::PanGestureDetector result;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      result = ((Dali::Toolkit::Internal::Control const *)arg1)->GetPanGestureDetector();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::PanGestureDetector((const Dali::PanGestureDetector &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetTapGestureDetector(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::TapGestureDetector result;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      result = ((Dali::Toolkit::Internal::Control const *)arg1)->GetTapGestureDetector();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::TapGestureDetector((const Dali::TapGestureDetector &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetLongPressGestureDetector(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::LongPressGestureDetector result;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      result = ((Dali::Toolkit::Internal::Control const *)arg1)->GetLongPressGestureDetector();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::LongPressGestureDetector((const Dali::LongPressGestureDetector &)result);
-  return jresult;
 }
 
 
@@ -3779,49 +3582,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_IsKeyboardNavigationSupported(v
 
   jresult = result;
   return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_SetKeyInputFocus(void * jarg1) {
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      (arg1)->SetKeyInputFocus();
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_HasKeyInputFocus(void * jarg1) {
-  bool jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  bool result;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      result = (bool)(arg1)->HasKeyInputFocus();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_ClearKeyInputFocus(void * jarg1) {
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  {
-    try {
-      (arg1)->ClearKeyInputFocus();
-    } CALL_CATCH_EXCEPTION();
-  }
-
 }
 
 
@@ -4012,64 +3772,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyInputFocusLostSwigExplicit
     } CALL_CATCH_EXCEPTION();
   }
 
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetNextKeyboardFocusableActor(void * jarg1, void * jarg2, int jarg3, bool jarg4) {
-  void * jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::Actor arg2 ;
-  Dali::Toolkit::Control::KeyboardFocus::Direction arg3 ;
-  bool arg4 ;
-  Dali::Actor *argp2 ;
-  Dali::Actor result;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  argp2 = (Dali::Actor *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
-    return 0;
-  }
-  arg2 = *argp2;
-  arg3 = (Dali::Toolkit::Control::KeyboardFocus::Direction)jarg3;
-  arg4 = jarg4 ? true : false;
-  {
-    try {
-      result = (arg1)->GetNextKeyboardFocusableActor(arg2,arg3,arg4);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Actor((const Dali::Actor &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ViewImpl_GetNextKeyboardFocusableActorSwigExplicitViewImpl(void * jarg1, void * jarg2, int jarg3, bool jarg4) {
-  void * jresult ;
-  Dali::Toolkit::Internal::Control *arg1 = (Dali::Toolkit::Internal::Control *) 0 ;
-  Dali::Actor arg2 ;
-  Dali::Toolkit::Control::KeyboardFocus::Direction arg3 ;
-  bool arg4 ;
-  Dali::Actor *argp2 ;
-  Dali::Actor result;
-
-  arg1 = (Dali::Toolkit::Internal::Control *)jarg1;
-  argp2 = (Dali::Actor *)jarg2;
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Actor", 0);
-    return 0;
-  }
-  arg2 = *argp2;
-  arg3 = (Dali::Toolkit::Control::KeyboardFocus::Direction)jarg3;
-  arg4 = jarg4 ? true : false;
-  {
-    try {
-      result = (arg1)->Dali::Toolkit::Internal::Control::GetNextKeyboardFocusableActor(arg2,arg3,arg4);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Actor((const Dali::Actor &)result);
-  return jresult;
 }
 
 
@@ -4690,7 +4392,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_View_GetRenderEffect(void * handle)
       renderEffect = control->GetRenderEffect();
     } CALL_CATCH_EXCEPTION(0);
   }
-  return new Dali::Toolkit::RenderEffect((const Dali::Toolkit::RenderEffect&)renderEffect);
+  return renderEffect ? new Dali::Toolkit::RenderEffect((const Dali::Toolkit::RenderEffect&)renderEffect) : nullptr;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_ClearRenderEffect(void * handle)
@@ -5381,17 +5083,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FlexContainer_New() {
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageView_Property(void * jarg1) {
-  Dali::Toolkit::ImageView::Property *arg1 = (Dali::Toolkit::ImageView::Property *) 0 ;
-
-  arg1 = (Dali::Toolkit::ImageView::Property *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_0() {
   void * jresult ;
@@ -9924,7 +9615,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_StyleManager() {
   return jresult;
 }
 
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_StyleManager(void * jarg1) {
   Dali::Toolkit::StyleManager *arg1 = (Dali::Toolkit::StyleManager *) 0 ;
 
@@ -9934,9 +9624,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_StyleManager(void * jarg1) {
       delete arg1;
     } CALL_CATCH_EXCEPTION();
   }
-
 }
-
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_StyleManager_Get() {
   void * jresult ;
@@ -11524,18 +11212,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeColor(void * 
   Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
   Dali::Vector4* vector4 = (Dali::Vector4 *)color;
   return proxy->BakeColor(id, *vector4);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetUpdateArea(void * updateProxy, unsigned int id, void* updateArea) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector4* vector4 = (Dali::Vector4 *)updateArea;
-  return proxy->SetUpdateArea(id, *vector4);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetUpdateArea(void * updateProxy, unsigned int id, void* updateArea) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector4* vector4 = (Dali::Vector4 *)updateArea;
-  return proxy->GetUpdateArea(id, *vector4);
 }
 
 /// UIVector2 and UIColor
