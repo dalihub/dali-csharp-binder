@@ -340,8 +340,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_CubeTransitionEffectSignal_Disconnect(vo
 }
 
 
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_CubeTransitionEffectSignal() {
   void * jresult;
   Dali::Signal< void(Dali::Toolkit::CubeTransitionEffect) > *result = 0;

@@ -188,6 +188,16 @@ Requires:   %{name} = %{version}-%{release}
 3D Physics for Dali
 
 ##############################
+# Dali Toolkit Demo
+##############################
+%package toolkitdemo
+Summary:    build dali csharp binder toolkit demo
+Group:      System/Libraries
+Requires:   %{name} = %{version}-%{release}
+%description toolkitdemo
+Toolkit Demo
+
+##############################
 # Preparation
 ##############################
 %prep
@@ -252,6 +262,7 @@ cmake_flags+=" -DENABLE_SCENE3D=ON"
 cmake_flags+=" -DENABLE_PHYSICS_2D=ON"
 cmake_flags+=" -DENABLE_PHYSICS_3D=ON"
 cmake_flags+=" -DENABLE_WIDGET_VIEWER_DALI=ON"
+cmake_flags+=" -DENABLE_TOOLKIT_DEMO=ON"
 
 
 # Set up the build via Cmake
@@ -563,6 +574,13 @@ exit 0
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libdali2-csharp-binder-physics-3d.so*
+
+#################################################
+
+%files toolkitdemo
+%manifest dali-csharp-binder.manifest
+%defattr(-,root,root,-)
+%{_libdir}/libdali2-csharp-binder-toolkit-demo.so*
 
 #################################################
 
