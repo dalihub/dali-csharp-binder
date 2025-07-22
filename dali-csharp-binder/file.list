@@ -89,7 +89,6 @@ SET( dali_csharp_binder_tizen_src_files
   ${dali_csharp_binder_dir}/dali-adaptor/component-application-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/keyboard-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/key-grab-wrap.cpp
-  ${dali_csharp_binder_dir}/dali-toolkit/transition-effects-wrap.cpp
   ${dali_csharp_binder_dir}/common/tizen-dependency-wrap.cpp
 )
 
@@ -110,6 +109,14 @@ SET( dali_csharp_binder_widget_viewer_dali_src_files
 SET( dali_csharp_binder_tizen_wearable_src_files
   ${dali_csharp_binder_dir}/dali-adaptor/watch-wrap.cpp
   ${dali_csharp_binder_dir}/widget-viewer-dali/watch-view-wrap.cpp
+)
+
+# added for dali-toolkit-demo for tizen
+# module: csharp-binder(toolkit-demo.so), backend: mobile,tv,ivi,watch
+SET( dali_csharp_binder_toolkit_demo_src_files
+  ${dali_csharp_binder_dir}/dali-toolkit-demo/cube-transition-effects-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit-demo/item-view-item-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit-demo/item-view-wrap.cpp
 )
 
 # module: scene3d

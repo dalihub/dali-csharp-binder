@@ -198,6 +198,31 @@ extern "C"
     return (int)InternalPropertyReturnType::NO_ERROR;
   }
 
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyExtents(void *actor, int propertyType, void *extents)
+  {
+    Dali::Handle *pActor = (Dali::Handle *)actor;
+    Dali::Extents *pExtents = (Dali::Extents *)extents;
+
+    if (!pActor)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+    if (!pExtents)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "extents is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    try
+    {
+      pActor->SetProperty((Dali::Property::Index)propertyType, *pExtents);
+    }
+    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
+
+    return (int)InternalPropertyReturnType::NO_ERROR;
+  }
+
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyFloat(void *actor, int propertyType, float valFloat)
   {
     Dali::Handle *pActor = (Dali::Handle *)actor;
@@ -542,6 +567,35 @@ extern "C"
     return (int)InternalPropertyReturnType::NO_ERROR;
   }
 
+  SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingPropertyExtents(void *actor, int propertyType, void *retrievingExtents)
+  {
+    Dali::Handle *pActor = (Dali::Handle *)actor;
+    Dali::Extents *pExtents = (Dali::Extents *)retrievingExtents;
+
+    if (!pActor)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "actor is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+    if (!pExtents)
+    {
+      SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "extents is null!");
+      return (int)InternalPropertyReturnType::ERROR_UNKNOWN;
+    }
+
+    try
+    {
+      Dali::Extents result;
+      result = ((Dali::Handle const *)pActor)->GetProperty<Dali::Extents>((Dali::Property::Index)propertyType);
+      pExtents->start = result.start;
+      pExtents->end = result.end;
+      pExtents->top = result.top;
+      pExtents->bottom = result.bottom;
+    }
+    CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
+
+    return (int)InternalPropertyReturnType::NO_ERROR;
+  }
 
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingPropertyFloat(void *actor, int propertyType, float *valFloat)
   {
