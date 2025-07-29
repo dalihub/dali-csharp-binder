@@ -9418,6 +9418,28 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* nuiHandle)
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl_With_PreMultiplied(void* nuiHandle, bool preMultiplied)
+{
+  Dali::PixelData *pixelData = (Dali::PixelData*)nuiHandle;
+  Dali::Toolkit::ImageUrl result;
+  void *jresult;
+
+  if (!pixelData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = Dali::Toolkit::Image::GenerateUrl(*pixelData, preMultiplied);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)result);
+  return jresult;
+}
+
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_POSITIVE_X_get() {
   unsigned int jresult ;
@@ -16534,6 +16556,24 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageInterface_GenerateUrl(void* 
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageInterface_GenerateUrl_With_PreMultiplied(void* nuiHandle, bool preMultiplied)
+{
+  Dali::Toolkit::ImageUrl result;
+  Dali::NativeImageInterface* nativeImage = (Dali::NativeImageInterface*)nuiHandle;
+  void *jresult;
+
+  {
+    try {
+      result = Dali::Toolkit::Image::GenerateUrl(nativeImage, preMultiplied);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
+
+
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_CameraActor_Property_TYPE_get() {
   int jresult ;
@@ -20504,6 +20544,48 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* han
     try
     {
       result = Dali::Toolkit::Image::GenerateUrl(nativeImageSource);
+    }
+    catch (std::out_of_range& e)
+    {
+      SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (std::exception& e)
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+      return 0;
+    }
+    catch (Dali::DaliException e)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, e.condition);
+      return 0;
+    }
+    catch (...)
+    {
+      SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+      return 0;
+    }
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl_With_PreMultiplied(void* handle, bool preMultiplied)
+{
+  Dali::Toolkit::ImageUrl result;
+  NativeImageSource* nativeImageSource = (NativeImageSource*)handle;
+  void *jresult;
+
+  if (!nativeImageSource)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = Dali::Toolkit::Image::GenerateUrl(nativeImageSource, preMultiplied);
     }
     catch (std::out_of_range& e)
     {

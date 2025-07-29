@@ -643,6 +643,17 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_FlexLayout_GetFlexGrow(void * jarg1)
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FlexLayout_MarkDirty(void * jarg1)
+{
+  Dali::Toolkit::Flex::Node *arg1 = (Dali::Toolkit::Flex::Node *) 0 ;
+
+  arg1 = (Dali::Toolkit::Flex::Node *)jarg1;
+  {
+    try {
+      arg1->Dali::Toolkit::Flex::Node::MarkDirty();
+    } CALL_CATCH_EXCEPTION();
+  }
+}
 
 #ifdef __cplusplus
 }

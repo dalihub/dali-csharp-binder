@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,6 +129,22 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_GenerateUrl(void* nuiq
   {
     try {
       result = Dali::Toolkit::Image::GenerateUrl(queue);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_GenerateUrl_With_PreMultiplied(void* nuiqueue, bool preMultiplied)
+{
+  Dali::Toolkit::ImageUrl result;
+  Dali::NativeImageSourceQueue* queue = (Dali::NativeImageSourceQueue*)nuiqueue;
+  void *jresult;
+  {
+    try {
+      result = Dali::Toolkit::Image::GenerateUrl(queue, preMultiplied);
     }
     CALL_CATCH_EXCEPTION(0);
   }
