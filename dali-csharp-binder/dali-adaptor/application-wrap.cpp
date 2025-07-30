@@ -214,6 +214,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_PreInitialize()
   ApplicationPreInitialize(nullptr, nullptr);
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Application_IsSupportPreInitializedCreation()
+{
+  // TODO : Return true if dali-adaptor prepared
+  return false;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_0()
 {
   void*             jresult;
