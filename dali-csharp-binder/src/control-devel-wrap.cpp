@@ -18,6 +18,7 @@
 // EXTERNAL INCLUDES
 #include <dali/devel-api/adaptor-framework/accessibility-bridge.h>
 #include <dali/devel-api/adaptor-framework/accessibility.h>
+#include <dali-toolkit/devel-api/controls/control-accessible.h>
 #include <vector>
 
 // INTERNAL INCLUDES
@@ -569,6 +570,52 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoActionExtension(void * control, i
   {
     DevelControl::DoActionExtension(*((Dali::Toolkit::Control *)control), (Dali::Property::Index)visualIndex, (Dali::Property::Index)actionId, Dali::Any(info));
   } CALL_CATCH_EXCEPTION();
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetCustomHighlightOverlay(void * actorPtr, void * positionPtr, void * sizePtr)
+{
+  GUARD_ON_NULL_RET(actorPtr);
+  try_catch(([&]() {
+    Dali::Actor* actor      = (Dali::Actor*)actorPtr;
+    auto         accessible = Dali::Accessibility::Accessible::Get(*actor);
+
+    if(accessible)
+    {
+      auto  accessibleControl = dynamic_cast<DevelControl::ControlAccessible*>(accessible);
+      if (accessibleControl)
+      {
+        auto positionVector = (Vector2*)positionPtr;
+        auto sizeVector = (Vector2*)sizePtr;
+        accessibleControl->SetCustomHighlightOverlay(*positionVector, *sizeVector);
+      }
+    }
+    else
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
+    }
+  }));
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_ResetCustomHighlightOverlay(void * actorPtr)
+{
+  GUARD_ON_NULL_RET(actorPtr);
+  try_catch(([&]() {
+    Dali::Actor* actor      = (Dali::Actor*)actorPtr;
+    auto         accessible = Dali::Accessibility::Accessible::Get(*actor);
+
+    if(accessible)
+    {
+      auto  accessibleControl = dynamic_cast<DevelControl::ControlAccessible*>(accessible);
+      if (accessibleControl)
+      {
+        accessibleControl->ResetCustomHighlightOverlay();
+      }
+    }
+    else
+    {
+      SWIG_CSharpException(SWIG_RuntimeError, "Actor does not have accessible object.");
+    }
+  }));
 }
 
 #ifdef __cplusplus
