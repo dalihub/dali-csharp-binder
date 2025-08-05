@@ -214,6 +214,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_PreInitialize()
   ApplicationPreInitialize(nullptr, nullptr);
 }
 
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Application_IsSupportPreInitializedCreation()
+{
+  // This function called at pre-initialize time, after ApplicationPreInitialize().
+  // If adaptor exist now, we could create view at pre-initialize time.
+  return Dali::Adaptor::IsAvailable();
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_0()
 {
   void*             jresult;

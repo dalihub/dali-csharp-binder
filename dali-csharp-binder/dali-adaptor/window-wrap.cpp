@@ -3905,6 +3905,42 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetBlur(void * winHandle) {
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetInsets__SWIG_0(void * winHandle) {
+  void * jresult ;
+  Dali::Extents result;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window)) {
+    return 0;
+  }
+
+  {
+    try {
+      result = Dali::DevelWindow::GetInsets(*window);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Extents((const Dali::Extents &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetInsets__SWIG_1(void * winHandle, int insetsFlags) {
+  void * jresult ;
+  Dali::Extents result;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window)) {
+    return 0;
+  }
+
+  {
+    try {
+      result = Dali::DevelWindow::GetInsets(*window, (Dali::WindowInsetsPartFlags)insetsFlags);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Extents((const Dali::Extents &)result);
+  return jresult;
+}
+
 /* pointer constraints event */
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_WindowPointerConstraintsEventSignal(void* winHandle)
 {
