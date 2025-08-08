@@ -221,6 +221,22 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Application_IsSupportPreInitializedCreat
   return Dali::Adaptor::IsAvailable();
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_GetPreInitializeWindow()
+{
+  void*        jresult;
+  Dali::Window result;
+
+  {
+    try
+    {
+      result = Dali::DevelApplication::GetPreInitializeWindow();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = new Dali::Window((const Dali::Window&)result);
+  return jresult;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_0()
 {
   void*             jresult;
