@@ -12865,10 +12865,42 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Hover_GetScreenPosition(void * jarg1, 
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Hover_GetDeviceClass(void * jarg1, unsigned long jarg2) {
+  int jresult ;
+  Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
+  std::size_t arg2 ;
+  Dali::Device::Class::Type result;
+
+  arg1 = (Dali::HoverEvent *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::HoverEvent const *)arg1)->GetDeviceClass(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Hover_GetDeviceSubclass(void * jarg1, unsigned long jarg2) {
+  int jresult ;
+  Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
+  std::size_t arg2 ;
+  Dali::Device::Subclass::Type result;
 
+  arg1 = (Dali::HoverEvent *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::HoverEvent const *)arg1)->GetDeviceSubclass(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
 
+  jresult = (int)result;
+  return jresult;
+}
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Key_New(char * jarg1, char * jarg2, int jarg3, int jarg4, unsigned long jarg5, int jarg6) {

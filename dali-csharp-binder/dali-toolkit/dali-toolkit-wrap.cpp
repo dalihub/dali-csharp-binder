@@ -32,6 +32,7 @@
 #include <dali-toolkit/devel-api/controls/tooltip/tooltip-properties.h>
 #include <dali-toolkit/devel-api/controls/video-view/video-view-devel.h>
 #include <dali-toolkit/devel-api/focus-manager/keyinput-focus-manager.h>
+#include <dali-toolkit/devel-api/property-bridge/property-bridge.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-factory.h>
 #include <dali-toolkit/devel-api/visual-factory/transition-data.h>
@@ -11586,8 +11587,9 @@ SWIGEXPORT Dali::Toolkit::PageTurnView * SWIGSTDCALL CSharp_Dali_PageTurnLandsca
 }
 
 
-
-
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PropertyBridge_RegisterStringGetter(StringGetterDelegate getter) {
+  Dali::Toolkit::PropertyBridgeRegisterStringGetter(getter);
+}
 
 #ifdef __cplusplus
 } // extern "C"
