@@ -12312,6 +12312,23 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Touch_GetMouseButton(void * jarg1, unsign
   return jresult;
 }
 
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Touch_GetDeviceName(void * jarg1, unsigned long jarg2) {
+  char * jresult ;
+  Dali::TouchEvent *arg1 = (Dali::TouchEvent *) 0 ;
+  std::size_t arg2 ;
+  std::string result;
+
+  arg1 = (Dali::TouchEvent *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::TouchEvent const *)arg1)->GetDeviceName(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_GestureDetector__SWIG_0() {
   void * jresult ;
@@ -12902,6 +12919,23 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Hover_GetDeviceSubclass(void * jarg1, uns
   return jresult;
 }
 
+SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Hover_GetDeviceName(void * jarg1, unsigned long jarg2) {
+  char * jresult ;
+  Dali::HoverEvent *arg1 = (Dali::HoverEvent *) 0 ;
+  std::size_t arg2 ;
+  std::string result;
+
+  arg1 = (Dali::HoverEvent *)jarg1;
+  arg2 = (std::size_t)jarg2;
+  {
+    try {
+      result = ((Dali::HoverEvent const *)arg1)->GetDeviceName(arg2);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  return jresult;
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Key_New(char * jarg1, char * jarg2, int jarg3, int jarg4, unsigned long jarg5, int jarg6) {
   void * jresult ;
