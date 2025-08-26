@@ -70,6 +70,21 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_SetRenderRefreshRate(void * jarg
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_SetMaximumRenderFrameRate(void * jarg1, float jarg2) {
+  Dali::Adaptor *arg1 = (Dali::Adaptor *) 0 ;
+  float arg2 ;
+
+  arg1 = (Dali::Adaptor *)jarg1;
+  arg2 = (float)jarg2;
+  {
+    try {
+      (arg1)->SetMaximumRenderFrameRate(arg2);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Adaptor_Get() {
   void * jresult ;
   Dali::Adaptor *result = 0 ;

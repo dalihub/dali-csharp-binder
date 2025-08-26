@@ -21,7 +21,7 @@
 
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 2.4.32
+Version: 2.4.33
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -60,6 +60,13 @@ BuildRequires: pkgconfig(widget_viewer_dali)
 BuildRequires: pkgconfig(watch_viewer_dali)
 BuildRequires: pkgconfig(watch-holder-base)
 BuildRequires: pkgconfig(ecore-wl2)
+
+# For ASAN test
+%if "%{vd_asan}" == "1" || "%{asan}" == "1"
+BuildRequires: asan-force-options
+BuildRequires: asan-build-env
+BuildRequires: libasan
+%endif
 
 # for multiprofile
 Requires:   %{name}-compat = %{version}-%{release}
@@ -234,6 +241,12 @@ cmake_flags+=" -DENABLE_ECORE_WAYLAND2=ON"
 CXXFLAGS+=" -DOVER_TIZEN_VERSION_7"
 %endif
 
+%endif
+
+%if "%{vd_asan}" == "1" || "%{asan}" == "1"
+CFLAGS+=" -fsanitize=address"
+CXXFLAGS+=" -fsanitize=address"
+LDFLAGS+=" -fsanitize=address"
 %endif
 
 %if 0%{?enable_debug}
