@@ -4295,6 +4295,34 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_ClearRenderEffect(void * handle)
   }
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_GetOffScreenRenderingOutput(void* nuiControl)
+{
+  Dali::Toolkit::ImageUrl imageUrl;
+  Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)nuiControl;
+
+  if(!control)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return 0;
+  }
+
+  {
+    try
+    {
+      Dali::Toolkit::Internal::Control& controlImpl = Dali::Toolkit::Internal::GetImplementation(*control);
+      Dali::Texture texture = controlImpl.GetOffScreenRenderingOutput();
+      if(!texture)
+      {
+        return 0;
+      }
+      imageUrl = Dali::Toolkit::ImageUrl::New(texture);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)imageUrl);
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View__SWIG_2(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::Internal::Control *arg1 = 0 ;
@@ -4924,6 +4952,10 @@ GENERATE_CONTROL_SIGNAL(void(*)(Dali::Toolkit::Control), ResourceReadySignal)
 // CSharp_Dali_View_ResourceReadySignal_Connect
 // CSharp_Dali_View_ResourceReadySignal_Disconnect
 
+GENERATE_CONTROL_SIGNAL(void(*)(), OffScreenRenderingFinishedSignal)
+// CSharp_Dali_View_OffScreenRenderingFinishedSignal_Connect
+// CSharp_Dali_View_OffScreenRenderingFinishedSignal_Disconnect
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::Control *arg1 = 0 ;
@@ -4943,7 +4975,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
   jresult = (void *)result;
   return jresult;
 }
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FlexContainer(void * jarg1) {
   Dali::Toolkit::FlexContainer *arg1 = (Dali::Toolkit::FlexContainer *) 0 ;
