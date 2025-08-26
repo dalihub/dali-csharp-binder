@@ -182,6 +182,7 @@
 #include <dali/devel-api/update/frame-callback-interface.h>
 #include <dali/devel-api/update/update-proxy.h>
 #include <dali/devel-api/rendering/renderer-devel.h>
+#include <dali/devel-api/rendering/frame-buffer-devel.h>
 
 #include <dali/public-api/events/mouse-button.h>
 #include <dali/public-api/math/matrix.h>
@@ -10791,9 +10792,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameBuffer_AttachColorTexture__SWIG_1(v
       (arg1)->AttachColorTexture(*arg2,arg3,arg4);
     } CALL_CATCH_EXCEPTION();
   }
-
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameBuffer_AttachDepthTexture(void * csFrameBuffer, void * csTexture, uint32_t mipmapLevel) {
+  Dali::FrameBuffer *arg1 = (Dali::FrameBuffer *) 0 ;
+  Dali::Texture *arg2 = 0 ;
+
+  arg1 = (Dali::FrameBuffer *)csFrameBuffer;
+  arg2 = (Dali::Texture *)csTexture;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Texture & type is null", 0);
+    return ;
+  }
+  {
+    try {
+      DevelFrameBuffer::AttachDepthTexture(*arg1, *arg2, mipmapLevel);
+    } CALL_CATCH_EXCEPTION();
+  }
+
+}
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FrameBuffer_GetColorTexture(void * jarg1) {
   void * jresult ;
@@ -10811,11 +10828,43 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FrameBuffer_GetColorTexture(void * jar
   return jresult;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FrameBuffer_GetColorTexture_Index(void * csFrameBuffer, uint32_t index) {
+  void * jresult ;
+  Dali::FrameBuffer *arg1 = (Dali::FrameBuffer *) 0 ;
+  Dali::Texture result;
+
+  arg1 = (Dali::FrameBuffer *)csFrameBuffer;
+  {
+    try {
+      result = DevelFrameBuffer::GetColorTexture(*arg1, index);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Texture((const Dali::Texture &)result);
+  return jresult;
+}
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_FrameBuffer_GetDepthTexture(void * csFrameBuffer) {
+  void * jresult ;
+  Dali::FrameBuffer *arg1 = (Dali::FrameBuffer *) 0 ;
+  Dali::Texture result;
+
+  arg1 = (Dali::FrameBuffer *)csFrameBuffer;
+  {
+    try {
+      result = DevelFrameBuffer::GetDepthTexture(*arg1);
+    } CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Texture((const Dali::Texture &)result);
+  return jresult;
+}
+
 SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_FrameBuffer_GenerateUrl(void *jFrameBuffer, int pixelFormat, int width, int height)
 {
   void *jresult;
   Dali::Toolkit::ImageUrl result;
-  Dali::FrameBuffer *frameBuffer = (Dali::FrameBuffer*)jFrameBuffer;;
+  Dali::FrameBuffer *frameBuffer = (Dali::FrameBuffer*)jFrameBuffer;
 
   if (!frameBuffer)
   {
@@ -10826,6 +10875,52 @@ SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_FrameBuffer_GenerateUrl(void *jFrameBuf
     try
     {
       result = Dali::Toolkit::Image::GenerateUrl((const Dali::FrameBuffer&)*frameBuffer, (Pixel::Format)pixelFormat, (uint32_t)width, (uint32_t)height);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_FrameBuffer_GenerateUrl_Index(void *jFrameBuffer, uint32_t index)
+{
+  void *jresult;
+  Dali::Toolkit::ImageUrl result;
+  Dali::FrameBuffer *frameBuffer = (Dali::FrameBuffer*)jFrameBuffer;
+
+  if (!frameBuffer)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::FrameBuffer is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = Dali::Toolkit::Image::GenerateUrl((const Dali::FrameBuffer&)*frameBuffer, index);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  return jresult;
+}
+
+SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_FrameBuffer_GenerateDepthUrl(void *jFrameBuffer)
+{
+  void *jresult;
+  Dali::Toolkit::ImageUrl result;
+  Dali::FrameBuffer *frameBuffer = (Dali::FrameBuffer*)jFrameBuffer;
+
+  if (!frameBuffer)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::FrameBuffer is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = Dali::Toolkit::Image::GenerateDepthUrl((const Dali::FrameBuffer&)*frameBuffer);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -20698,6 +20793,28 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ImageUrl_Copy(void* csImageUrl)
   }
 
   return (void*)result;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ImageUrl_New(void* csTexture, bool preMultiplied)
+{
+  Dali::Toolkit::ImageUrl result;
+
+  if(!csTexture)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Texture const & type is null", 0);
+    return 0;
+  }
+
+  Dali::Texture texture = *(Dali::Texture*)csTexture;
+  {
+    try
+    {
+      result = Dali::Toolkit::ImageUrl::New(texture, preMultiplied);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return (void*)new Dali::Toolkit::ImageUrl(result);
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageUrl(void* jarg1)
