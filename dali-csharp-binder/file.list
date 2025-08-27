@@ -79,6 +79,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/dali-toolkit/transition-base-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/transition-set-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/transition-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/video-view-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/visual-actions-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/web-view-wrap.cpp
 )
