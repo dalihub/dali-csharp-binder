@@ -30,6 +30,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/dali-core/capabilities-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/constraint-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/extents-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/frame-callback-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/gestures-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/input-options-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/internal-property-get-set-wrap.cpp
