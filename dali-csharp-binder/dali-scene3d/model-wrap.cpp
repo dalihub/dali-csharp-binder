@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -723,6 +723,26 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadFacialAnimation_2(void* csMod
 }
 
 GENERATE_SIGNAL(Dali::Scene3D::Model*, bool (*)(Dali::Scene3D::Model, Dali::Scene3D::ModelNode), Dali_Model, MeshHitSignal);
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Model_GetLoadingStatus(void* csModel)
+{
+  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
+  int result = -1;
+
+  if(!model)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::Model", 0);
+    return result;
+  }
+
+  try
+  {
+    result = static_cast<int>(model->GetModelResourceStatus());
+  }
+  CALL_CATCH_EXCEPTION(-1);
+
+  return result;
+}
 
 #ifdef __cplusplus
 }

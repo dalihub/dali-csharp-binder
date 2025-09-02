@@ -30,7 +30,6 @@
 #include <dali-toolkit/devel-api/controls/scroll-bar/scroll-bar.h>
 #include <dali-toolkit/devel-api/controls/table-view/table-view.h>
 #include <dali-toolkit/devel-api/controls/tooltip/tooltip-properties.h>
-#include <dali-toolkit/devel-api/controls/video-view/video-view-devel.h>
 #include <dali-toolkit/devel-api/focus-manager/keyinput-focus-manager.h>
 #include <dali-toolkit/devel-api/property-bridge/property-bridge.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
@@ -47,7 +46,6 @@
 #include <dali-toolkit/public-api/image-loader/image.h>
 #include <dali-toolkit/public-api/image-loader/image-url.h>
 
-#include <dali/devel-api/update/update-proxy.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -199,27 +197,6 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_Control_SP__Sg__Disconnect(D
   self->Disconnect( func );
 }
 SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_Control_SP__Sg__Emit(Dali::Signal< void (Dali::Toolkit::Control) > *self,Dali::Toolkit::Control arg)
-{
-          /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
-/*@SWIG@*/ self->Emit( arg );
-}
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Empty(Dali::Signal< void (Dali::Toolkit::VideoView &) > const *self)
-{
-  return self->Empty();
-}
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::Toolkit::VideoView &) > const *self)
-{
-  return self->GetConnectionCount();
-}
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Connect(Dali::Signal< void (Dali::Toolkit::VideoView &) > *self,void (*func)(Dali::Toolkit::VideoView &))
-{
-  self->Connect( func );
-}
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Disconnect(Dali::Signal< void (Dali::Toolkit::VideoView &) > *self,void (*func)(Dali::Toolkit::VideoView &))
-{
-  self->Disconnect( func );
-}
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Emit(Dali::Signal< void (Dali::Toolkit::VideoView &) > *self,Dali::Toolkit::VideoView &arg)
 {
           /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
 /*@SWIG@*/ self->Emit( arg );
@@ -2511,55 +2488,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_OUTLINE_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VideoView_Property_VIDEO_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::VideoView::Property::VIDEO;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VideoView_Property_LOOPING_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::VideoView::Property::LOOPING;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VideoView_Property_MUTED_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::VideoView::Property::MUTED;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VideoView_Property_VOLUME_get() {
-  int jresult ;
-  int result;
-
-  result = (int)Dali::Toolkit::VideoView::Property::VOLUME;
-  jresult = (int)result;
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VideoView_Property_UNDERLAY_get() {
-  int result;
-
-  result = (int)Dali::Toolkit::VideoView::Property::UNDERLAY;
-
-  return result;
-}
-
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PageTurnView_Property_VIEW_PAGE_SIZE_get() {
   int jresult ;
   int result;
@@ -4295,6 +4223,34 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_ClearRenderEffect(void * handle)
   }
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_GetOffScreenRenderingOutput(void* nuiControl)
+{
+  Dali::Toolkit::ImageUrl imageUrl;
+  Dali::Toolkit::Control* control = (Dali::Toolkit::Control*)nuiControl;
+
+  if(!control)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
+    return 0;
+  }
+
+  {
+    try
+    {
+      Dali::Toolkit::Internal::Control& controlImpl = Dali::Toolkit::Internal::GetImplementation(*control);
+      Dali::Texture texture = controlImpl.GetOffScreenRenderingOutput();
+      if(!texture)
+      {
+        return 0;
+      }
+      imageUrl = Dali::Toolkit::ImageUrl::New(texture);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)imageUrl);
+}
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_View__SWIG_2(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::Internal::Control *arg1 = 0 ;
@@ -4924,6 +4880,10 @@ GENERATE_CONTROL_SIGNAL(void(*)(Dali::Toolkit::Control), ResourceReadySignal)
 // CSharp_Dali_View_ResourceReadySignal_Connect
 // CSharp_Dali_View_ResourceReadySignal_Disconnect
 
+GENERATE_CONTROL_SIGNAL(void(*)(), OffScreenRenderingFinishedSignal)
+// CSharp_Dali_View_OffScreenRenderingFinishedSignal_Connect
+// CSharp_Dali_View_OffScreenRenderingFinishedSignal_Disconnect
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
   void * jresult ;
   Dali::Toolkit::Control *arg1 = 0 ;
@@ -4943,7 +4903,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_ResourceReadySignal(void * jarg1) {
   jresult = (void *)result;
   return jresult;
 }
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FlexContainer(void * jarg1) {
   Dali::Toolkit::FlexContainer *arg1 = (Dali::Toolkit::FlexContainer *) 0 ;
@@ -8413,259 +8372,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_StyleManager_StyleChangedSignal(void *
 }
 
 
-
-
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_0() {
-  void * jresult ;
-  Dali::Toolkit::VideoView result;
-
-  {
-    try {
-      result = Dali::Toolkit::VideoView::New();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView &)result);
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_1(char * jarg1) {
-  void * jresult ;
-  std::string *arg1 = 0 ;
-  Dali::Toolkit::VideoView result;
-
-  if (!jarg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
-  {
-    try {
-      result = Dali::Toolkit::VideoView::New((std::string const &)*arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView &)result);
-
-  //argout typemap for const std::string&
-
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_2(bool swCodec) {
-  void * jresult ;
-  Dali::Toolkit::VideoView result;
-  {
-    try {
-      result = Dali::Toolkit::VideoView::New(swCodec);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView &)result);
-
-  //argout typemap for const std::string&
-
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char * jarg1, bool swCodec) {
-  void * jresult ;
-  std::string *arg1 = 0 ;
-  Dali::Toolkit::VideoView result;
-
-  if (!jarg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
-  {
-    try {
-      result = Dali::Toolkit::VideoView::New((std::string const &)*arg1, swCodec);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView &)result);
-
-  //argout typemap for const std::string&
-
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VideoView(void * jarg1) {
-  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
-
-  arg1 = (Dali::Toolkit::VideoView *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_Play(void * jarg1) {
-  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
-
-  arg1 = (Dali::Toolkit::VideoView *)jarg1;
-  {
-    try {
-      (arg1)->Play();
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_Pause(void * jarg1) {
-  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
-
-  arg1 = (Dali::Toolkit::VideoView *)jarg1;
-  {
-    try {
-      (arg1)->Pause();
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_Stop(void * jarg1) {
-  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
-
-  arg1 = (Dali::Toolkit::VideoView *)jarg1;
-  {
-    try {
-      (arg1)->Stop();
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_Forward(void * jarg1, int jarg2) {
-  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
-  int arg2 ;
-
-  arg1 = (Dali::Toolkit::VideoView *)jarg1;
-  arg2 = (int)jarg2;
-  {
-    try {
-      (arg1)->Forward(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_Backward(void * jarg1, int jarg2) {
-  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
-  int arg2 ;
-
-  arg1 = (Dali::Toolkit::VideoView *)jarg1;
-  arg2 = (int)jarg2;
-  {
-    try {
-      (arg1)->Backward(arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetAutoRotationEnabled(void * view, bool enable) {
-  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
-
-  videoView = (Dali::Toolkit::VideoView *)view;
-  {
-    try {
-      Toolkit::DevelVideoView::SetAutoRotationEnabled(*videoView, enable);
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoView_IsAutoRotationEnabled(void * view) {
-  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
-  bool ret = false;
-
-  videoView = (Dali::Toolkit::VideoView *)view;
-  {
-    try {
-      ret = Toolkit::DevelVideoView::IsAutoRotationEnabled(*videoView);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return ret;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetLetterBoxEnabled(void * view, bool enable) {
-  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
-
-  videoView = (Dali::Toolkit::VideoView *)view;
-  {
-    try {
-      Toolkit::DevelVideoView::SetLetterBoxEnabled(*videoView, enable);
-    } CALL_CATCH_EXCEPTION();
-  }
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoView_IsLetterBoxEnabled(void * view) {
-  Dali::Toolkit::VideoView *videoView = (Dali::Toolkit::VideoView *) 0 ;
-  bool ret = false;
-
-  videoView = (Dali::Toolkit::VideoView *)view;
-  {
-    try {
-      ret = Toolkit::DevelVideoView::IsLetterBoxEnabled(*videoView);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return ret;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_FinishedSignal(void * jarg1) {
-  void * jresult ;
-  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *) 0 ;
-  Dali::Toolkit::VideoView::VideoViewSignalType *result = 0 ;
-
-  arg1 = (Dali::Toolkit::VideoView *)jarg1;
-  {
-    try {
-      result = (Dali::Toolkit::VideoView::VideoViewSignalType *) &(arg1)->FinishedSignal();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_VideoView_GetNativePlayerHandle(void * jarg1)
-{
-  Dali::Toolkit::VideoView *arg1 = (Dali::Toolkit::VideoView *)jarg1;
-  if( arg1 == nullptr )
-  {
-    DALI_LOG_ERROR("VideoView is nullptr!");
-    return nullptr;
-  }
-  void * ret = nullptr;
-  {
-    try{
-
-      Dali::Any result = Toolkit::DevelVideoView::GetMediaPlayer( *arg1 );
-      ret = Dali::AnyCast< void * >( result );
-
-    } CALL_CATCH_EXCEPTION(0);
-  }
-  return ret;
-}
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CameraView_New__SWIG_0(void * jarg1, int jarg2) {
   void * jresult ;
   Dali::Toolkit::CameraView result;
@@ -9715,180 +9421,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_CustomAlgorithmInterface_GetNextFocusa
   return jresult;
 }
 
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetPosition(void * updateProxy, unsigned int id,  void* position) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3 = (Dali::Vector3 *)position;
-  return proxy->GetPosition(id, *vector3);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetPosition(void * updateProxy, unsigned int id, void* position) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3 = (Dali::Vector3 *)position;
-  return proxy->SetPosition(id, *vector3);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakePosition(void * updateProxy, unsigned int id, void* position) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3 = (Dali::Vector3 *)position;
-  return proxy->BakePosition(id, *vector3);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetOrientation(void * updateProxy, unsigned int id,  void* orientation) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Quaternion* quaternion = (Dali::Quaternion *)orientation;
-  return proxy->GetOrientation(id, *quaternion);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetOrientation(void * updateProxy, unsigned int id, void* orientation) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Quaternion* quaternion = (Dali::Quaternion *)orientation;
-  return proxy->SetOrientation(id, *quaternion);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeOrientation(void * updateProxy, unsigned int id, void* orientation) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Quaternion* quaternion = (Dali::Quaternion *)orientation;
-  return proxy->BakeOrientation(id, *quaternion);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetSize(void * updateProxy, unsigned int id, void* size) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3 = (Dali::Vector3 *)size;
-  return proxy->GetSize(id, *vector3);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetSize(void * updateProxy, unsigned int id, void* size) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3 = (Dali::Vector3 *)size;
-  return proxy->SetSize(id, *vector3);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeSize(void * updateProxy, unsigned int id, void* size) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3 = (Dali::Vector3 *)size;
-  return proxy->BakeSize(id, *vector3);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetPositionAndSize(void * updateProxy, unsigned int id, void* position, void* size) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3_pos = (Dali::Vector3 *)position;
-  Dali::Vector3* vector3_size = (Dali::Vector3 *)size;
-  return proxy->GetPositionAndSize(id, *vector3_pos, *vector3_size);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetWorldPositionScaleAndSize(void * updateProxy, unsigned int id, void* position, void* scale, void* size) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3_pos = (Dali::Vector3 *)position;
-  Dali::Vector3* vector3_scale = (Dali::Vector3 *)scale;
-  Dali::Vector3* vector3_size = (Dali::Vector3 *)size;
-  return proxy->GetWorldPositionScaleAndSize(id, *vector3_pos, *vector3_scale, *vector3_size);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetWorldTransformAndSize(void * updateProxy, unsigned int id, void* position, void* scale, void* orientation, void* size) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3_pos = (Dali::Vector3 *)position;
-  Dali::Vector3* vector3_scale = (Dali::Vector3 *)scale;
-  Dali::Quaternion* quaternion_orientation = (Dali::Quaternion *)orientation;
-  Dali::Vector3* vector3_size = (Dali::Vector3 *)size;
-  return proxy->GetWorldTransformAndSize(id, *vector3_pos, *vector3_scale, *quaternion_orientation, *vector3_size);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetScale(void * updateProxy, unsigned int id, void* scale) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3 = (Dali::Vector3 *)scale;
-  return proxy->GetScale(id,* vector3);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetScale(void * updateProxy, unsigned int id, void* scale) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3 = (Dali::Vector3 *)scale;
-  return proxy->SetScale(id, *vector3);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeScale(void * updateProxy, unsigned int id, void* scale) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3* vector3 = (Dali::Vector3 *)scale;
-  return proxy->BakeScale(id, *vector3);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetColor(void * updateProxy, unsigned int id, void* color) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector4* vector4 = (Dali::Vector4 *)color;
-  return proxy->GetColor(id, *vector4);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetColor(void * updateProxy, unsigned int id, void* color) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector4* vector4 = (Dali::Vector4 *)color;
-  return proxy->SetColor(id, *vector4);
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeColor(void * updateProxy, unsigned int id, void* color) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector4* vector4 = (Dali::Vector4 *)color;
-  return proxy->BakeColor(id, *vector4);
-}
-
-/// UIVector2 and UIColor
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetPositionVector2Componentwise(void * updateProxy, unsigned int id,  float* x, float* y) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3 vector3;
-  bool ret = proxy->GetPosition(id, vector3);
-  *x = vector3.x;
-  *y = vector3.y;
-  return ret;
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakePositionVector2Componentwise(void * updateProxy, unsigned int id, float x, float y) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  return proxy->BakePosition(id, Vector3(x, y, 0.0f));
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetSizeVector2Componentwise(void * updateProxy, unsigned int id, float* x, float* y) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3 vector3;
-  bool ret = proxy->GetSize(id, vector3);
-  *x = vector3.x;
-  *y = vector3.y;
-  return ret;
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeSizeVector2Componentwise(void * updateProxy, unsigned int id, float x, float y) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  return proxy->BakeSize(id, Vector3(x, y, 0.0f));
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetScaleVector2Componentwise(void * updateProxy, unsigned int id, float* x, float* y) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector3 vector3;
-  bool ret = proxy->GetScale(id, vector3);
-  *x = vector3.x;
-  *y = vector3.y;
-  return ret;
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeScaleVector2Componentwise(void * updateProxy, unsigned int id, float x, float y) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  return proxy->BakeScale(id, Vector3(x, y, 1.0f));
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetColorVector4Componentwise(void * updateProxy, unsigned int id, float* r, float* g, float* b, float* a) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  Dali::Vector4 vector4;
-  bool ret = proxy->GetColor(id, vector4);
-  *r = vector4.r;
-  *g = vector4.g;
-  *b = vector4.b;
-  *a = vector4.a;
-  return ret;
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeColorVector4Componentwise(void * updateProxy, unsigned int id, float r, float g, float b, float a) {
-  Dali::UpdateProxy *proxy = (Dali::UpdateProxy*)updateProxy;
-  return proxy->BakeColor(id, Vector4(r, g, b, a));
-}
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetCustomAlgorithm(void * jarg1, void * jarg2) {
   KeyboardFocusManager arg1 ;
   Dali::Toolkit::DevelKeyboardFocusManager::CustomAlgorithmInterface *arg2 = 0 ;
@@ -10645,116 +10177,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScrollableSignal(void * jarg1) {
   Dali::Signal< void (Dali::Vector2 const &) > *arg1 = (Dali::Signal< void (Dali::Vector2 const &) > *) 0 ;
 
   arg1 = (Dali::Signal< void (Dali::Vector2 const &) > *)jarg1;
-  {
-    try {
-      delete arg1;
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoViewSignal_Empty(void * jarg1) {
-  bool jresult ;
-  Dali::Signal< void (Dali::Toolkit::VideoView &) > *arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *) 0 ;
-  bool result;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *)jarg1;
-  {
-    try {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Empty((Dali::Signal< void (Dali::Toolkit::VideoView &) > const *)arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_VideoViewSignal_GetConnectionCount(void * jarg1) {
-  unsigned long jresult ;
-  Dali::Signal< void (Dali::Toolkit::VideoView &) > *arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *) 0 ;
-  std::size_t result;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *)jarg1;
-  {
-    try {
-      result = Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__GetConnectionCount((Dali::Signal< void (Dali::Toolkit::VideoView &) > const *)arg1);
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (unsigned long)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoViewSignal_Connect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Toolkit::VideoView &) > *arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *) 0 ;
-  void (*arg2)(Dali::Toolkit::VideoView &) = (void (*)(Dali::Toolkit::VideoView &)) 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *)jarg1;
-  arg2 = (void (*)(Dali::Toolkit::VideoView &))jarg2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Connect(arg1,arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoViewSignal_Disconnect(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Toolkit::VideoView &) > *arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *) 0 ;
-  void (*arg2)(Dali::Toolkit::VideoView &) = (void (*)(Dali::Toolkit::VideoView &)) 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *)jarg1;
-  arg2 = (void (*)(Dali::Toolkit::VideoView &))jarg2;
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Disconnect(arg1,arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoViewSignal_Emit(void * jarg1, void * jarg2) {
-  Dali::Signal< void (Dali::Toolkit::VideoView &) > *arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *) 0 ;
-  Dali::Toolkit::VideoView *arg2 = 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *)jarg1;
-  arg2 = (Dali::Toolkit::VideoView *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::VideoView & type is null", 0);
-    return ;
-  }
-  {
-    try {
-      Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Emit(arg1,*arg2);
-    } CALL_CATCH_EXCEPTION();
-  }
-
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_VideoViewSignal() {
-  void * jresult ;
-  Dali::Signal< void (Dali::Toolkit::VideoView &) > *result = 0 ;
-
-  {
-    try {
-      result = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *)new Dali::Signal< void (Dali::Toolkit::VideoView &) >();
-    } CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void *)result;
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VideoViewSignal(void * jarg1) {
-  Dali::Signal< void (Dali::Toolkit::VideoView &) > *arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *) 0 ;
-
-  arg1 = (Dali::Signal< void (Dali::Toolkit::VideoView &) > *)jarg1;
   {
     try {
       delete arg1;
