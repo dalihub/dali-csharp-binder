@@ -112,8 +112,8 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetAvailableScreens() {
         Dali::Property::Map screenInformation;
 
         screenInformation.Add("name", info.GetScreenName());
-        screenInformation.Add("width", static_cast<int32_t>(info.screenWidth));
-        screenInformation.Add("height", static_cast<int32_t>(info.screenHeight));
+        screenInformation.Add("width", static_cast<int32_t>(info.GetScreenWidth()));
+        screenInformation.Add("height", static_cast<int32_t>(info.GetScreenHeight()));
         screenList.PushBack(screenInformation);
       }
       array = (Dali::Property::Array *)new Dali::Property::Array((Dali::Property::Array const &)screenList);
