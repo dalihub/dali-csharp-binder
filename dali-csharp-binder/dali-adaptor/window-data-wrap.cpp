@@ -240,6 +240,51 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WindowData_GetFrontBufferRendering(void*
   return result;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowData_SetScreen(void* nuiWindowData, void* screenName)
+{
+  Dali::WindowData* pWindowData;
+  std::string       daliScreenName((char*)screenName);
+  pWindowData = (Dali::WindowData*)nuiWindowData;
+  if(!pWindowData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowData", 0);
+    return;
+  }
+
+  {
+    try
+    {
+      pWindowData->SetScreen(daliScreenName);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_WindowData_GetScreen(void* nuiWindowData)
+{
+  Dali::WindowData* pWindowData;
+  char*             result;
+  std::string       screen;
+
+  pWindowData = (Dali::WindowData*)nuiWindowData;
+  if(!pWindowData)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowData", 0);
+    return 0;
+  }
+
+  {
+    try
+    {
+      screen = pWindowData->GetScreen();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  result = strdup(screen.c_str());
+
+  return result;
+}
+
 
 #ifdef __cplusplus
 }
