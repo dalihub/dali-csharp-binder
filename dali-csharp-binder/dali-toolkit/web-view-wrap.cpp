@@ -678,13 +678,13 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CanGoForward(void * webObj) {
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1, char * jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * webObj, char * jarg2, void * jarg3) {
   Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
   std::string *arg2;
 
-  GUARD_ON_NULL_RET(jarg1);
+  WEBOBJ_NULL_CHECK();
 
-  arg1 = (Dali::Toolkit::WebView*)jarg1;
+  arg1 = (Dali::Toolkit::WebView*)webObj;
 
   GUARD_ON_NULL_RET(jarg2);
 
