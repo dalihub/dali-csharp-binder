@@ -2233,7 +2233,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetProxyUri(void * webObj, co
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyUri(void *webObj) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
-  char *jresult;
+  char *jresult = nullptr;
   WEBOBJ_NULL_CHECK(nullptr);
   arg1 = (Dali::WebEngineContext *)webObj;
   {
@@ -2266,7 +2266,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetProxyBypassRule(void *webO
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyBypassRule(void *webObj) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
-  char *jresult;
+  char *jresult = nullptr;
   WEBOBJ_NULL_CHECK(nullptr);
   arg1 = (Dali::WebEngineContext *)webObj;
   {
@@ -2293,7 +2293,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetCertificateFilePath(void *
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetCertificateFilePath(void *webObj) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
-  char *jresult;
+  char *jresult = nullptr;
   WEBOBJ_NULL_CHECK(nullptr);
   arg1 = (Dali::WebEngineContext *)webObj;
   {
