@@ -48,7 +48,14 @@ template <typename T> T SwigValueInit()
 
 #include <stdexcept>
 
-#define SWIGSTDCALL
+/* calling conventions for Windows */
+#ifndef SWIGSTDCALL
+# if defined(_WIN32) || defined(__WIN32__) || defined(__CYGWIN__)
+#   define SWIGSTDCALL __stdcall
+# else
+#   define SWIGSTDCALL
+# endif
+#endif
 
 /* attribute recognised by some compilers to avoid 'unused' warnings */
 #ifndef SWIGUNUSED
@@ -68,6 +75,15 @@ template <typename T> T SwigValueInit()
 /* internal SWIG method */
 #ifndef SWIGINTERN
 # define SWIGINTERN static SWIGUNUSED
+#endif
+
+/* exporting methods */
+#if defined(__GNUC__)
+#  if (__GNUC__ >= 4) || (__GNUC__ == 3 && __GNUC_MINOR__ >= 4)
+#    ifndef GCC_HASCLASSVISIBILITY
+#      define GCC_HASCLASSVISIBILITY
+#    endif
+#  endif
 #endif
 
 #ifndef SWIGEXPORT
@@ -192,8 +208,6 @@ extern void SWIG_CSharpException(int code, const char *msg);
 
 
 #include <cxxabi.h>
-
-#define SWIGSTDCALL
 
 #include <dali/dali.h>
 #include <dali/integration-api/debug.h>

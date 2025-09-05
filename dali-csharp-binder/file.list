@@ -62,6 +62,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/dali-toolkit/async-image-loader-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/canvas-view-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/control-devel-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-toolkit/control-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/devel-property-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/fade-transition-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit/flex-layout-wrap.cpp

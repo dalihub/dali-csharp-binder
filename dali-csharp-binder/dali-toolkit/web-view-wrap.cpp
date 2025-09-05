@@ -678,13 +678,13 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_CanGoForward(void * webObj) {
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * jarg1, char * jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_EvaluateJavaScript(void * webObj, char * jarg2, void * jarg3) {
   Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)0;
   std::string *arg2;
 
-  GUARD_ON_NULL_RET(jarg1);
+  WEBOBJ_NULL_CHECK();
 
-  arg1 = (Dali::Toolkit::WebView*)jarg1;
+  arg1 = (Dali::Toolkit::WebView*)webObj;
 
   GUARD_ON_NULL_RET(jarg2);
 
@@ -2233,7 +2233,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetProxyUri(void * webObj, co
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyUri(void *webObj) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
-  char *jresult;
+  char *jresult = nullptr;
   WEBOBJ_NULL_CHECK(nullptr);
   arg1 = (Dali::WebEngineContext *)webObj;
   {
@@ -2266,7 +2266,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetProxyBypassRule(void *webO
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetProxyBypassRule(void *webObj) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
-  char *jresult;
+  char *jresult = nullptr;
   WEBOBJ_NULL_CHECK(nullptr);
   arg1 = (Dali::WebEngineContext *)webObj;
   {
@@ -2293,7 +2293,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebContext_SetCertificateFilePath(void *
 
 SWIGEXPORT const char * SWIGSTDCALL CSharp_Dali_WebContext_GetCertificateFilePath(void *webObj) {
   Dali::WebEngineContext *arg1 = (Dali::WebEngineContext *)0;
-  char *jresult;
+  char *jresult = nullptr;
   WEBOBJ_NULL_CHECK(nullptr);
   arg1 = (Dali::WebEngineContext *)webObj;
   {

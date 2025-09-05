@@ -95,6 +95,34 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsGeometryHittestEnabled() {
   return ret;
 }
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetAvailableScreens() {
+  std::vector<Dali::ScreenInformation> daliScreenList;
+  Dali::Property::Array screenList;
+  void* jresult;
+  Dali::Property::Array *array = 0;
+
+  try {
+    daliScreenList = Dali::DevelWindowSystem::GetAvailableScreens();
+  } CALL_CATCH_EXCEPTION(0);
+
+  try {
+      for(std::vector<Dali::ScreenInformation>::iterator It = daliScreenList.begin(); It != daliScreenList.end(); ++It)
+      {
+        Dali::ScreenInformation info = *It;
+        Dali::Property::Map screenInformation;
+
+        screenInformation.Add("name", info.GetScreenName());
+        screenInformation.Add("width", static_cast<int32_t>(info.GetScreenWidth()));
+        screenInformation.Add("height", static_cast<int32_t>(info.GetScreenHeight()));
+        screenList.PushBack(screenInformation);
+      }
+      array = (Dali::Property::Array *)new Dali::Property::Array((Dali::Property::Array const &)screenList);
+  } CALL_CATCH_EXCEPTION(0);
+
+  jresult = (void *)array;
+  return jresult;
+}
+
 
 // Timer
 

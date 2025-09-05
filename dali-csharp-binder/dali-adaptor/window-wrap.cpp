@@ -254,13 +254,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_New__SWIG_0(void * jarg1, char 
   return jresult;
 }
 
-
-
-
-
-
-
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_New__WithWindowData(char* nuiName, char* nuiClassName, void* nuiWindowData)
 {
   void*             jresult;
@@ -3939,6 +3932,49 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_Window_GetInsets__SWIG_1(void * winHan
 
   jresult = new Dali::Extents((const Dali::Extents &)result);
   return jresult;
+}
+
+/* supports multiple screens */
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Window_GetScreen(void* winHandle)
+{
+  char*         jresult;
+  std::string   result;
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window))
+  {
+    return nullptr;
+  }
+
+  {
+    try
+    {
+      result = Dali::DevelWindow::GetScreen(*window);
+    }
+    CALL_CATCH_EXCEPTION(nullptr);
+  }
+
+  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetScreen(void* winHandle, char* nuiScreenName)
+{
+  GUARD_ON_NULL_RET(nuiScreenName);
+  std::string screenName(nuiScreenName);
+
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window))
+  {
+    return;
+  }
+
+  {
+    try
+    {
+      Dali::DevelWindow::SetScreen(*window, screenName);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
 }
 
 /* pointer constraints event */

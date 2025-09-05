@@ -167,6 +167,23 @@ extern "C"
     }
   }
 
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlView_Terminate(void *nuiGlView)
+  {
+    Dali::Toolkit::GlView *glView = (Dali::Toolkit::GlView *)nuiGlView;
+    if (!glView)
+    {
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Toolkit::GlView", 0);
+      return;
+    }
+    {
+      try
+      {
+        glView->Terminate();
+      }
+      CALL_CATCH_EXCEPTION();
+    }
+  }
+
   SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GlView_GetRenderingMode(void *nuiGlView)
   {
     int jresult;
