@@ -69,6 +69,22 @@ public:
   };
 
   /**
+   * @brief Enumeration for the type of shadow visual.
+   *
+   * This enum is used to specify the type of shadow when adding a shadow visual object
+   * to the container. Different shadow types may require different rendering logic
+   * and property calculations.
+   *
+   * @SINCE_2_4.36
+   */
+  enum class ShadowType
+  {
+    BOX_SHADOW,   ///< Represents a standard box shadow (drop shadow) outside the visual.
+    INNER_SHADOW, ///< Represents an inner shadow, appearing inside the boundaries of the visual.
+    NONE,         ///< Represents the visual is not a shadow.
+  };
+
+  /**
    * @brief Creates a VisualObjectsContainer object.
    *
    * @SINCE_2_3.27
@@ -125,6 +141,25 @@ public: ///< Public API
    * @return True if the visual object is added successfully.
    */
   bool AddVisualObject(Dali::VisualObject visualObject);
+
+  /**
+   * @brief Adds a shadow visual object to the container.
+   *
+   * This method adds a visual object specifically intended to be rendered as a shadow.
+   * It configures the visual object based on the specified shadow type (e.g., BOX_SHADOW or INNER_SHADOW),
+   * applying appropriate internal flags and constraints for correct rendering.
+   * For instance, inner shadows require specialized corner radius calculations to account for borderline width.
+   * The added visual object will be placed on top of other visuals within the container.
+   *
+   * If the container cannot add more than the maximum count of objects, or if the visual object
+   * is already added to this or another container, the operation will be ignored.
+   *
+   * @SINCE_2_4.36
+   * @param[in] visualObject The visual object to be added as a shadow.
+   * @param[in] shadowType The type of shadow (e.g., BOX_SHADOW, INNER_SHADOW).
+   * @return True if the shadow visual object is added successfully, false otherwise.
+   */
+  bool AddShadowVisualObject(Dali::VisualObject visualObject, ShadowType shadowType);
 
   /**
    * @brief Removes a visual object from the container.

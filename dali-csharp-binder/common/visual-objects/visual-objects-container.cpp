@@ -71,6 +71,11 @@ bool VisualObjectsContainer::AddVisualObject(Dali::VisualObject visualObject)
   return GetImplementation(*this).AddVisualObject(visualObject);
 }
 
+bool VisualObjectsContainer::AddShadowVisualObject(Dali::VisualObject visualObject, ShadowType shadowType)
+{
+  return GetImplementation(*this).AddVisualObject(visualObject, shadowType);
+}
+
 void VisualObjectsContainer::RemoveVisualObject(Dali::VisualObject visualObject)
 {
   GetImplementation(*this).RemoveVisualObject(visualObject);
@@ -225,6 +230,23 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_AddVisualObject(v
   visualObject = (Dali::VisualObject*)nuiVisualObject;
   try_catch(([&]() {
     result = container->AddVisualObject(*visualObject);
+  }));
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_AddShadowVisualObject(void* nuiVisualObjectsContainer, void* nuiVisualObject, int shadowType)
+{
+  Dali::VisualObjectsContainer* container    = (Dali::VisualObjectsContainer*)0;
+  Dali::VisualObject*           visualObject = (Dali::VisualObject*)0;
+  bool                          result       = false;
+
+  GUARD_ON_NULL_RET0(nuiVisualObjectsContainer);
+  GUARD_ON_NULL_RET0(nuiVisualObject);
+
+  container    = (Dali::VisualObjectsContainer*)nuiVisualObjectsContainer;
+  visualObject = (Dali::VisualObject*)nuiVisualObject;
+  try_catch(([&]() {
+    result = container->AddShadowVisualObject(*visualObject, static_cast<Dali::VisualObjectsContainer::ShadowType>(shadowType));
   }));
   return result;
 }

@@ -75,7 +75,7 @@ public: ///< Public API
   /**
    * @copydoc Dali::VisualObjectsContainer::AddVisualObject()
    */
-  bool AddVisualObject(Dali::VisualObject visualObject);
+  bool AddVisualObject(Dali::VisualObject visualObject, Dali::VisualObjectsContainer::ShadowType shadowType = Dali::VisualObjectsContainer::ShadowType::NONE);
 
   /**
    * @copydoc Dali::VisualObjectsContainer::RemoveVisualObject()

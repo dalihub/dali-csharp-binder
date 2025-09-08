@@ -22,7 +22,6 @@
 #include <dali-toolkit/devel-api/controls/control-depth-index-ranges.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-factory.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
-#include <dali/integration-api/debug.h>
 
 // INTERNAL
 #include <dali-csharp-binder/common/visual-objects/visual-object.h>
