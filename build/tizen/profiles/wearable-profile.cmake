@@ -6,6 +6,10 @@ SET( SOURCES
   ${dali_csharp_binder_tizen_wearable_src_files}
 )
 
+IF( ENABLE_LEGACY_BINDER_BUILD )
+  SET( SOURCES ${SOURCES} ${dali_csharp_binder_legacy_src_files} )
+ENDIF()
+
 ADD_DEFINITIONS( "-DTIZEN_BUILD" )
 PKG_CHECK_MODULES(DALIWIDGET widget_viewer_dali)
 PKG_CHECK_MODULES(WAYLAND ecore-wl2)

@@ -241,6 +241,13 @@ cmake_flags+=" -DENABLE_ECORE_WAYLAND2=ON"
 CXXFLAGS+=" -DOVER_TIZEN_VERSION_7"
 %endif
 
+%if 0%{?tizen_version_major} >= 10
+CXXFLAGS+=" -DOVER_TIZEN_VERSION_10"
+cmake_flags+=" -DENABLE_LEGACY_BINDER_BUILD=OFF"
+%else
+cmake_flags+=" -DENABLE_LEGACY_BINDER_BUILD=ON"
+%endif
+
 %endif
 
 %if "%{vd_asan}" == "1" || "%{asan}" == "1"
