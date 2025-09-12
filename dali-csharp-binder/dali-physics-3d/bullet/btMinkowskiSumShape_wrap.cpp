@@ -15,6 +15,7 @@
 #include <BulletCollision/CollisionShapes/btMinkowskiSumShape.h>
 
 #include "conversion.h"
+
 #include "btMinkowskiSumShape_wrap.h"
 
 btMinkowskiSumShape* btMinkowskiSumShape_new(const btConvexShape* shapeA, const btConvexShape* shapeB)

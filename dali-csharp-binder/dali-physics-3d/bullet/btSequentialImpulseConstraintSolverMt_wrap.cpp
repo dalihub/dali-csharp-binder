@@ -18,5 +18,5 @@
 
 btSequentialImpulseConstraintSolverMt* btSequentialImpulseConstraintSolverMt_new()
 {
-  return ALIGNED_NEW(btSequentialImpulseConstraintSolverMt) ();
+  return ALIGNED_NEW(btSequentialImpulseConstraintSolverMt)();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,134 +22,133 @@
 #include <dali-csharp-binder/common/common.h>
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ScaleTransition_New_1(void *nuiControl, float scale, void *nuiTimePeriod)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ScaleTransition_New_1(void* nuiControl, float scale, void* nuiTimePeriod)
+{
+  void*                   jresult;
+  Dali::Toolkit::Control* control    = (Dali::Toolkit::Control*)nuiControl;
+  Dali::TimePeriod*       timePeriod = (Dali::TimePeriod*)nuiTimePeriod;
+
+  Dali::Toolkit::ScaleTransition result;
+
+  if(!control)
   {
-    void *jresult;
-    Dali::Toolkit::Control *control = (Dali::Toolkit::Control *)nuiControl;
-    Dali::TimePeriod *timePeriod = (Dali::TimePeriod *)nuiTimePeriod;
-
-    Dali::Toolkit::ScaleTransition result;
-
-    if (!control)
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control const & type is null", 0);
+    return 0;
+  }
+  {
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control const & type is null", 0);
-      return 0;
+      result = Dali::Toolkit::ScaleTransition::New(*control, scale, *timePeriod);
     }
-    {
-      try
-      {
-        result = Dali::Toolkit::ScaleTransition::New(*control, scale, *timePeriod);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = new Dali::Toolkit::ScaleTransition((const Dali::Toolkit::ScaleTransition &)result);
-    return jresult;
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ScaleTransition_New_2(void *nuiControl, void *nuiScale, void *nuiTimePeriod)
+  jresult = new Dali::Toolkit::ScaleTransition((const Dali::Toolkit::ScaleTransition&)result);
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ScaleTransition_New_2(void* nuiControl, void* nuiScale, void* nuiTimePeriod)
+{
+  void*                   jresult;
+  Dali::Toolkit::Control* control    = (Dali::Toolkit::Control*)nuiControl;
+  Dali::Vector2*          scale      = (Dali::Vector2*)nuiScale;
+  Dali::TimePeriod*       timePeriod = (Dali::TimePeriod*)nuiTimePeriod;
+
+  Dali::Toolkit::ScaleTransition result;
+
+  if(!control)
   {
-    void *jresult;
-    Dali::Toolkit::Control *control = (Dali::Toolkit::Control *)nuiControl;
-    Dali::Vector2 *scale = (Dali::Vector2 *)nuiScale;
-    Dali::TimePeriod *timePeriod = (Dali::TimePeriod *)nuiTimePeriod;
-
-    Dali::Toolkit::ScaleTransition result;
-
-    if (!control)
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control const & type is null", 0);
+    return 0;
+  }
+  if(!scale)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector2 const & type is null", 0);
+    return 0;
+  }
+  {
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control const & type is null", 0);
-      return 0;
+      result = Dali::Toolkit::ScaleTransition::New(*control, *scale, *timePeriod);
     }
-    if (!scale)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector2 const & type is null", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = Dali::Toolkit::ScaleTransition::New(*control, *scale, *timePeriod);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = new Dali::Toolkit::ScaleTransition((const Dali::Toolkit::ScaleTransition &)result);
-    return jresult;
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScaleTransition(void *nuiScaleTransition)
-  {
-    Dali::Toolkit::ScaleTransition *scale = (Dali::Toolkit::ScaleTransition *)nuiScaleTransition;
+  jresult = new Dali::Toolkit::ScaleTransition((const Dali::Toolkit::ScaleTransition&)result);
+  return jresult;
+}
 
-    if (!scale)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ScaleTransition(void* nuiScaleTransition)
+{
+  Dali::Toolkit::ScaleTransition* scale = (Dali::Toolkit::ScaleTransition*)nuiScaleTransition;
+
+  if(!scale)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control const & type is null", 0);
+    return;
+  }
+  {
+    try
     {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Control const & type is null", 0);
-      return;
+      delete scale;
     }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ScaleTransition_Set(void* nuiScaleTransition)
+{
+  Dali::Toolkit::ScaleTransition* newScaleTransition = 0;
+  Dali::Toolkit::ScaleTransition* scale              = (Dali::Toolkit::ScaleTransition*)nuiScaleTransition;
+
+  if(!scale)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScaleTransition const & type is null", 0);
+    return 0;
+  }
+  {
+    try
     {
-      try
-      {
-        delete scale;
-      }
-      CALL_CATCH_EXCEPTION();
+      newScaleTransition = (Dali::Toolkit::ScaleTransition*)new Dali::Toolkit::ScaleTransition((Dali::Toolkit::ScaleTransition const&)*scale);
     }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  void* result;
+  result = (void*)newScaleTransition;
+  return result;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ScaleTransition_Assign(void* nuiDestination, void* nuiSource)
+{
+  void*                           jresult;
+  Dali::Toolkit::ScaleTransition* destination = (Dali::Toolkit::ScaleTransition*)nuiDestination;
+  Dali::Toolkit::ScaleTransition* source      = (Dali::Toolkit::ScaleTransition*)nuiSource;
+  Dali::Toolkit::ScaleTransition* result      = 0;
+
+  if(!destination)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScaleTransition const & type is null", 0);
+    return 0;
+  }
+  if(!source)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScaleTransition const & type is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = (Dali::Toolkit::ScaleTransition*)&(destination)->operator=((Dali::Toolkit::ScaleTransition const&)*source);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_new_ScaleTransition_Set(void *nuiScaleTransition)
-  {
-    Dali::Toolkit::ScaleTransition *newScaleTransition = 0;
-    Dali::Toolkit::ScaleTransition *scale = (Dali::Toolkit::ScaleTransition *)nuiScaleTransition;
-
-    if (!scale)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScaleTransition const & type is null", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        newScaleTransition = (Dali::Toolkit::ScaleTransition *)new Dali::Toolkit::ScaleTransition((Dali::Toolkit::ScaleTransition const &)*scale);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-    void *result;
-    result = (void *)newScaleTransition;
-    return result;
-  }
-
-  SWIGEXPORT void *SWIGSTDCALL CSharp_Dali_ScaleTransition_Assign(void *nuiDestination, void *nuiSource)
-  {
-    void *jresult;
-    Dali::Toolkit::ScaleTransition *destination = (Dali::Toolkit::ScaleTransition *)nuiDestination;
-    Dali::Toolkit::ScaleTransition *source = (Dali::Toolkit::ScaleTransition *)nuiSource;
-    Dali::Toolkit::ScaleTransition *result = 0;
-
-    if (!destination)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScaleTransition const & type is null", 0);
-      return 0;
-    }
-    if (!source)
-    {
-      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ScaleTransition const & type is null", 0);
-      return 0;
-    }
-    {
-      try
-      {
-        result = (Dali::Toolkit::ScaleTransition *)&(destination)->operator=((Dali::Toolkit::ScaleTransition const &)*source);
-      }
-      CALL_CATCH_EXCEPTION(0);
-    }
-
-    jresult = (void *)result;
-    return jresult;
-  }
+  jresult = (void*)result;
+  return jresult;
+}
 
 #ifdef __cplusplus
 }

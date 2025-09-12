@@ -19,12 +19,12 @@
 
 #include "btSoftRigidDynamicsWorld_wrap.h"
 
-btSoftRigidDynamicsWorld* btSoftRigidDynamicsWorld_new(btDispatcher* dispatcher,
-  btBroadphaseInterface* pairCache, btConstraintSolver* constraintSolver, btCollisionConfiguration* collisionConfiguration,
-  btSoftBodySolver* softBodySolver)
+btSoftRigidDynamicsWorld* btSoftRigidDynamicsWorld_new(btDispatcher*          dispatcher,
+                                                       btBroadphaseInterface* pairCache, btConstraintSolver* constraintSolver, btCollisionConfiguration* collisionConfiguration,
+                                                       btSoftBodySolver* softBodySolver)
 {
   return new btSoftRigidDynamicsWorld(dispatcher, pairCache, constraintSolver,
-    collisionConfiguration, softBodySolver);
+                                      collisionConfiguration, softBodySolver);
 }
 
 void btSoftRigidDynamicsWorld_addSoftBody(btSoftRigidDynamicsWorld* obj, btSoftBody* body)
@@ -33,13 +33,13 @@ void btSoftRigidDynamicsWorld_addSoftBody(btSoftRigidDynamicsWorld* obj, btSoftB
 }
 
 void btSoftRigidDynamicsWorld_addSoftBody2(btSoftRigidDynamicsWorld* obj, btSoftBody* body,
-  int collisionFilterGroup)
+                                           int collisionFilterGroup)
 {
   obj->addSoftBody(body, collisionFilterGroup);
 }
 
 void btSoftRigidDynamicsWorld_addSoftBody3(btSoftRigidDynamicsWorld* obj, btSoftBody* body,
-  int collisionFilterGroup, int collisionFilterMask)
+                                           int collisionFilterGroup, int collisionFilterMask)
 {
   obj->addSoftBody(body, collisionFilterGroup, collisionFilterMask);
 }

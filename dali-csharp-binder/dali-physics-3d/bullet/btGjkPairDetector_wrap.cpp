@@ -18,20 +18,21 @@
 #include <LinearMath/btIDebugDraw.h>
 
 #include "conversion.h"
+
 #include "btGjkPairDetector_wrap.h"
 
 btGjkPairDetector* btGjkPairDetector_new(const btConvexShape* objectA, const btConvexShape* objectB,
-  btVoronoiSimplexSolver* simplexSolver, btConvexPenetrationDepthSolver* penetrationDepthSolver)
+                                         btVoronoiSimplexSolver* simplexSolver, btConvexPenetrationDepthSolver* penetrationDepthSolver)
 {
   return new btGjkPairDetector(objectA, objectB, simplexSolver, penetrationDepthSolver);
 }
 
 btGjkPairDetector* btGjkPairDetector_new2(const btConvexShape* objectA, const btConvexShape* objectB,
-  int shapeTypeA, int shapeTypeB, btScalar marginA, btScalar marginB, btVoronoiSimplexSolver* simplexSolver,
-  btConvexPenetrationDepthSolver* penetrationDepthSolver)
+                                          int shapeTypeA, int shapeTypeB, btScalar marginA, btScalar marginB, btVoronoiSimplexSolver* simplexSolver,
+                                          btConvexPenetrationDepthSolver* penetrationDepthSolver)
 {
   return new btGjkPairDetector(objectA, objectB, shapeTypeA, shapeTypeB, marginA,
-    marginB, simplexSolver, penetrationDepthSolver);
+                               marginB, simplexSolver, penetrationDepthSolver);
 }
 
 void btGjkPairDetector_getCachedSeparatingAxis(btGjkPairDetector* obj, btVector3* value)
@@ -50,7 +51,7 @@ int btGjkPairDetector_getCatchDegeneracies(btGjkPairDetector* obj)
 }
 
 void btGjkPairDetector_getClosestPointsNonVirtual(btGjkPairDetector* obj, const btDiscreteCollisionDetectorInterface_ClosestPointInput* input,
-  btDiscreteCollisionDetectorInterface_Result* output, btIDebugDraw* debugDraw)
+                                                  btDiscreteCollisionDetectorInterface_Result* output, btIDebugDraw* debugDraw)
 {
   obj->getClosestPointsNonVirtual(*input, *output, debugDraw);
 }

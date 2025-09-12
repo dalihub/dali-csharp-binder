@@ -46,7 +46,6 @@ void btElement_delete(btElement* obj)
   delete obj;
 }
 
-
 btUnionFind* btUnionFind_new()
 {
   return new btUnionFind();

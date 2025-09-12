@@ -30,7 +30,7 @@ private:
 
 public:
   btMotionStateWrapper(p_btMotionState_getWorldTransform getWorldTransformCallback,
-    p_btMotionState_setWorldTransform setWorldTransformCallback);
+                       p_btMotionState_setWorldTransform setWorldTransformCallback);
 
   virtual void getWorldTransform(btTransform& worldTrans) const;
   virtual void setWorldTransform(const btTransform& worldTrans);
@@ -40,12 +40,12 @@ public:
 #ifdef __cplusplus
 extern "C" {
 #endif
-  EXPORT btMotionStateWrapper* btMotionStateWrapper_new(p_btMotionState_getWorldTransform getWorldTransformCallback,
-    p_btMotionState_setWorldTransform setWorldTransformCallback);
+EXPORT btMotionStateWrapper* btMotionStateWrapper_new(p_btMotionState_getWorldTransform getWorldTransformCallback,
+                                                      p_btMotionState_setWorldTransform setWorldTransformCallback);
 
-  EXPORT void btMotionState_getWorldTransform(btMotionState* obj, btTransform* worldTrans);
-  EXPORT void btMotionState_setWorldTransform(btMotionState* obj, const btTransform* worldTrans);
-  EXPORT void btMotionState_delete(btMotionState* obj);
+EXPORT void btMotionState_getWorldTransform(btMotionState* obj, btTransform* worldTrans);
+EXPORT void btMotionState_setWorldTransform(btMotionState* obj, const btTransform* worldTrans);
+EXPORT void btMotionState_delete(btMotionState* obj);
 #ifdef __cplusplus
 }
 #endif

@@ -15,6 +15,7 @@
 #include <BulletCollision/Gimpact/btGImpactQuantizedBvh.h>
 
 #include "conversion.h"
+
 #include "btGImpactQuantizedBvh_wrap.h"
 
 BT_QUANTIZED_BVH_NODE* BT_QUANTIZED_BVH_NODE_new()
@@ -63,13 +64,13 @@ void BT_QUANTIZED_BVH_NODE_setEscapeIndex(BT_QUANTIZED_BVH_NODE* obj, int index)
 }
 
 void BT_QUANTIZED_BVH_NODE_setEscapeIndexOrDataIndex(BT_QUANTIZED_BVH_NODE* obj,
-  int value)
+                                                     int                    value)
 {
   obj->m_escapeIndexOrDataIndex = value;
 }
 
 bool BT_QUANTIZED_BVH_NODE_testQuantizedBoxOverlapp(BT_QUANTIZED_BVH_NODE* obj, unsigned short* quantizedMin,
-  unsigned short* quantizedMax)
+                                                    unsigned short* quantizedMax)
 {
   return obj->testQuantizedBoxOverlapp(quantizedMin, quantizedMax);
 }
@@ -78,7 +79,6 @@ void BT_QUANTIZED_BVH_NODE_delete(BT_QUANTIZED_BVH_NODE* obj)
 {
   delete obj;
 }
-
 
 GIM_QUANTIZED_BVH_NODE_ARRAY* GIM_QUANTIZED_BVH_NODE_ARRAY_new()
 {
@@ -89,7 +89,6 @@ void GIM_QUANTIZED_BVH_NODE_ARRAY_delete(GIM_QUANTIZED_BVH_NODE_ARRAY* obj)
 {
   delete obj;
 }
-
 
 btQuantizedBvhTree* btQuantizedBvhTree_new()
 {
@@ -107,7 +106,7 @@ void btQuantizedBvhTree_clearNodes(btQuantizedBvhTree* obj)
 }
 
 const BT_QUANTIZED_BVH_NODE* btQuantizedBvhTree_get_node_pointer(btQuantizedBvhTree* obj,
-  int index)
+                                                                 int                 index)
 {
   return obj->get_node_pointer(index);
 }
@@ -148,7 +147,7 @@ bool btQuantizedBvhTree_isLeafNode(btQuantizedBvhTree* obj, int nodeindex)
 }
 
 void btQuantizedBvhTree_quantizePoint(btQuantizedBvhTree* obj, unsigned short* quantizedpoint,
-  const btVector3* point)
+                                      const btVector3* point)
 {
   BTVECTOR3_IN(point);
   obj->quantizePoint(quantizedpoint, BTVECTOR3_USE(point));
@@ -160,7 +159,7 @@ void btQuantizedBvhTree_setNodeBound(btQuantizedBvhTree* obj, int nodeindex, con
 }
 
 bool btQuantizedBvhTree_testQuantizedBoxOverlapp(btQuantizedBvhTree* obj, int node_index,
-  unsigned short* quantizedMin, unsigned short* quantizedMax)
+                                                 unsigned short* quantizedMin, unsigned short* quantizedMax)
 {
   return obj->testQuantizedBoxOverlapp(node_index, quantizedMin, quantizedMax);
 }
@@ -169,7 +168,6 @@ void btQuantizedBvhTree_delete(btQuantizedBvhTree* obj)
 {
   delete obj;
 }
-
 
 btGImpactQuantizedBvh* btGImpactQuantizedBvh_new()
 {
@@ -182,13 +180,13 @@ btGImpactQuantizedBvh* btGImpactQuantizedBvh_new2(btPrimitiveManagerBase* primit
 }
 
 bool btGImpactQuantizedBvh_boxQuery(btGImpactQuantizedBvh* obj, const btAABB* box,
-  btAlignedObjectArray_int* collided_results)
+                                    btAlignedObjectArray_int* collided_results)
 {
   return obj->boxQuery(*box, *collided_results);
 }
 
 bool btGImpactQuantizedBvh_boxQueryTrans(btGImpactQuantizedBvh* obj, const btAABB* box,
-  const btTransform* transform, btAlignedObjectArray_int* collided_results)
+                                         const btTransform* transform, btAlignedObjectArray_int* collided_results)
 {
   BTTRANSFORM_IN(transform);
   return obj->boxQueryTrans(*box, BTTRANSFORM_USE(transform), *collided_results);
@@ -200,16 +198,16 @@ void btGImpactQuantizedBvh_buildSet(btGImpactQuantizedBvh* obj)
 }
 
 void btGImpactQuantizedBvh_find_collision(const btGImpactQuantizedBvh* boxset1, const btTransform* trans1,
-  const btGImpactQuantizedBvh* boxset2, const btTransform* trans2, btPairSet* collision_pairs)
+                                          const btGImpactQuantizedBvh* boxset2, const btTransform* trans2, btPairSet* collision_pairs)
 {
   BTTRANSFORM_IN(trans1);
   BTTRANSFORM_IN(trans2);
   btGImpactQuantizedBvh::find_collision(boxset1, BTTRANSFORM_USE(trans1), boxset2,
-    BTTRANSFORM_USE(trans2), *collision_pairs);
+                                        BTTRANSFORM_USE(trans2), *collision_pairs);
 }
 
 const BT_QUANTIZED_BVH_NODE* btGImpactQuantizedBvh_get_node_pointer(btGImpactQuantizedBvh* obj,
-  int index)
+                                                                    int                    index)
 {
   return obj->get_node_pointer(index);
 }
@@ -222,7 +220,7 @@ int btGImpactQuantizedBvh_getEscapeNodeIndex(btGImpactQuantizedBvh* obj, int nod
 btAABB* btGImpactQuantizedBvh_getGlobalBox(btGImpactQuantizedBvh* obj)
 {
   btAABB* box = new btAABB;
-  *box = obj->getGlobalBox();
+  *box        = obj->getGlobalBox();
   return box;
 }
 
@@ -232,7 +230,7 @@ int btGImpactQuantizedBvh_getLeftNode(btGImpactQuantizedBvh* obj, int nodeindex)
 }
 
 void btGImpactQuantizedBvh_getNodeBound(btGImpactQuantizedBvh* obj, int nodeindex,
-  btAABB* bound)
+                                        btAABB* bound)
 {
   obj->getNodeBound(nodeindex, *bound);
 }
@@ -248,7 +246,7 @@ int btGImpactQuantizedBvh_getNodeData(btGImpactQuantizedBvh* obj, int nodeindex)
 }
 
 void btGImpactQuantizedBvh_getNodeTriangle(btGImpactQuantizedBvh* obj, int nodeindex,
-  btPrimitiveTriangle* triangle)
+                                           btPrimitiveTriangle* triangle)
 {
   obj->getNodeTriangle(nodeindex, *triangle);
 }
@@ -279,7 +277,7 @@ bool btGImpactQuantizedBvh_isTrimesh(btGImpactQuantizedBvh* obj)
 }
 
 bool btGImpactQuantizedBvh_rayQuery(btGImpactQuantizedBvh* obj, const btVector3* ray_dir,
-  const btVector3* ray_origin, btAlignedObjectArray_int* collided_results)
+                                    const btVector3* ray_origin, btAlignedObjectArray_int* collided_results)
 {
   BTVECTOR3_IN(ray_dir);
   BTVECTOR3_IN(ray_origin);
@@ -287,7 +285,7 @@ bool btGImpactQuantizedBvh_rayQuery(btGImpactQuantizedBvh* obj, const btVector3*
 }
 
 void btGImpactQuantizedBvh_setNodeBound(btGImpactQuantizedBvh* obj, int nodeindex,
-  const btAABB* bound)
+                                        const btAABB* bound)
 {
   obj->setNodeBound(nodeindex, *bound);
 }

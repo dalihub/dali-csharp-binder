@@ -32,9 +32,8 @@
 class ProcessorController : public Dali::Integration::Processor
 {
 public:
-
   // Function pointer matching delegate in C# ProcessorController
-  using ProcessorControllerProcessCallback = void (SWIGSTDCALL*)();
+  using ProcessorControllerProcessCallback = void(SWIGSTDCALL*)();
 
 public:
   /**
@@ -53,35 +52,35 @@ public:
    */
   void RegisterProcess();
 
-   /**
-    * @brief Set the callback to be executed when dali-core calls the overriden Process() api.
-    * @param[in] callback, function to be called
-    */
-  void SetCallback( ProcessorControllerProcessCallback callback );
+  /**
+   * @brief Set the callback to be executed when dali-core calls the overriden Process() api.
+   * @param[in] callback, function to be called
+   */
+  void SetCallback(ProcessorControllerProcessCallback callback);
 
-   /**
-    * @brief Set the postcallback to be executed when dali-core calls the overriden Process(true) api.
-    * @param[in] postCallback, function to be called
-    */
-  void SetPostCallback( ProcessorControllerProcessCallback postCallback );
+  /**
+   * @brief Set the postcallback to be executed when dali-core calls the overriden Process(true) api.
+   * @param[in] postCallback, function to be called
+   */
+  void SetPostCallback(ProcessorControllerProcessCallback postCallback);
 
-   /**
-    * @brief Remove callback on this ProcessorController.
-    * The removed callback will not be called anymore.
-    * @param[in] callback, function will be removed
-    */
-  void RemoveCallback( ProcessorControllerProcessCallback callback );
+  /**
+   * @brief Remove callback on this ProcessorController.
+   * The removed callback will not be called anymore.
+   * @param[in] callback, function will be removed
+   */
+  void RemoveCallback(ProcessorControllerProcessCallback callback);
 
-   /**
-    * @brief Remove postcallback on this ProcessorController.
-    * The removed callback will not be called anymore.
-    * @param[in] postCallback, function will be removed
-    */
-  void RemovePostCallback( ProcessorControllerProcessCallback postCallback );
+  /**
+   * @brief Remove postcallback on this ProcessorController.
+   * The removed callback will not be called anymore.
+   * @param[in] postCallback, function will be removed
+   */
+  void RemovePostCallback(ProcessorControllerProcessCallback postCallback);
 
-   /**
-    * @brief Layout and awake update thread, or re-run registered processor.
-    */
+  /**
+   * @brief Layout and awake update thread, or re-run registered processor.
+   */
   void Awake();
 
 protected: // Implementation of Processor
@@ -99,9 +98,8 @@ protected: // Implementation of Processor
   }
 
 private:
-
-  ProcessorControllerProcessCallback mHandler;              ///< PreProcessHandler before Relayout
-  ProcessorControllerProcessCallback mPostHandler;          ///< PostProcessHandler after Relayout
+  ProcessorControllerProcessCallback mHandler;     ///< PreProcessHandler before Relayout
+  ProcessorControllerProcessCallback mPostHandler; ///< PostProcessHandler after Relayout
 
   bool mProcessRegistered : 1;    ///< True if we call RegisterProcess. False otherwise.
   bool mKeepRenderingApplied : 1; ///< True if we call Stage::KeepRendering(0.0f). It need to avoid duplicated keep rendering call

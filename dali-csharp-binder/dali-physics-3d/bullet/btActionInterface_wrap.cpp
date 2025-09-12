@@ -18,10 +18,10 @@
 
 #include "btActionInterface_wrap.h"
 
-btActionInterfaceWrapper::btActionInterfaceWrapper(p_btActionInterface_debugDraw debugDrawCallback,
-  p_btActionInterface_updateAction updateActionCallback)
+btActionInterfaceWrapper::btActionInterfaceWrapper(p_btActionInterface_debugDraw    debugDrawCallback,
+                                                   p_btActionInterface_updateAction updateActionCallback)
 {
-  _debugDrawCallback = debugDrawCallback;
+  _debugDrawCallback    = debugDrawCallback;
   _updateActionCallback = updateActionCallback;
 }
 
@@ -35,13 +35,11 @@ void btActionInterfaceWrapper::updateAction(btCollisionWorld* collisionWorld, bt
   _updateActionCallback(collisionWorld, deltaTimeStep);
 }
 
-
-btActionInterfaceWrapper* btActionInterfaceWrapper_new(p_btActionInterface_debugDraw debugDrawCallback,
-  p_btActionInterface_updateAction updateActionCallback)
+btActionInterfaceWrapper* btActionInterfaceWrapper_new(p_btActionInterface_debugDraw    debugDrawCallback,
+                                                       p_btActionInterface_updateAction updateActionCallback)
 {
   return new btActionInterfaceWrapper(debugDrawCallback, updateActionCallback);
 }
-
 
 void btActionInterface_debugDraw(btActionInterface* obj, btIDebugDraw* debugDrawer)
 {
@@ -49,7 +47,7 @@ void btActionInterface_debugDraw(btActionInterface* obj, btIDebugDraw* debugDraw
 }
 
 void btActionInterface_updateAction(btActionInterface* obj, btCollisionWorld* collisionWorld,
-  btScalar deltaTimeStep)
+                                    btScalar deltaTimeStep)
 {
   obj->updateAction(collisionWorld, deltaTimeStep);
 }

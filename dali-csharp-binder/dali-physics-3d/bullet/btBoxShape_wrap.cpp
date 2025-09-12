@@ -15,6 +15,7 @@
 #include <BulletCollision/CollisionShapes/btBoxShape.h>
 
 #include "conversion.h"
+
 #include "btBoxShape_wrap.h"
 
 btBoxShape* btBoxShape_new(const btVector3* boxHalfExtents)
@@ -35,7 +36,8 @@ btBoxShape* btBoxShape_new3(btScalar boxHalfExtentX, btScalar boxHalfExtentY, bt
 
 void btBoxShape_getHalfExtentsWithMargin(btBoxShape* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->getHalfExtentsWithMargin();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->getHalfExtentsWithMargin();
   BTVECTOR3_SET(value, temp);
 }
 

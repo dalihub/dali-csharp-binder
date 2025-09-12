@@ -15,6 +15,7 @@
 #include <BulletCollision/CollisionShapes/btConvexHullShape.h>
 
 #include "conversion.h"
+
 #include "btConvexHullShape_wrap.h"
 
 btConvexHullShape* btConvexHullShape_new()
@@ -33,13 +34,13 @@ btConvexHullShape* btConvexHullShape_new3(const btScalar* points, int numPoints)
 }
 
 btConvexHullShape* btConvexHullShape_new4(const btScalar* points, int numPoints,
-  int stride)
+                                          int stride)
 {
   return new btConvexHullShape(points, numPoints, stride);
 }
 
 void btConvexHullShape_addPoint(btConvexHullShape* obj, const btVector3* point,
-  bool recalculateLocalAabb)
+                                bool recalculateLocalAabb)
 {
   BTVECTOR3_IN(point);
   obj->addPoint(BTVECTOR3_USE(point), recalculateLocalAabb);
@@ -52,7 +53,8 @@ int btConvexHullShape_getNumPoints(btConvexHullShape* obj)
 
 void btConvexHullShape_getScaledPoint(btConvexHullShape* obj, int i, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->getScaledPoint(i);
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->getScaledPoint(i);
   BTVECTOR3_SET(value, temp);
 }
 

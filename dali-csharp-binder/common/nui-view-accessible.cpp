@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,8 @@
 #include "nui-view-accessible.h"
 
 // EXTERNAL INCLUDES
-#include <dali/integration-api/debug.h>
 #include <dali/devel-api/atspi-interfaces/accessible.h>
+#include <dali/integration-api/debug.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/dali-toolkit/control-devel-wrap.h>
@@ -322,7 +322,7 @@ double NUIViewAccessible::GetCurrent() const
 
 std::string NUIViewAccessible::GetValueText() const
 {
-  char *text = CallMethod<Interface::VALUE>(mTable->getValueText);
+  char* text = CallMethod<Interface::VALUE>(mTable->getValueText);
 
   return StealString(text);
 }
@@ -649,7 +649,7 @@ Accessibility::Table::RowColumnSpanType NUIViewAccessible::GetRowColumnSpan(std:
 
   std::tie(span.row, span.column) = GetPositionByChildIndex(childIndex);
   Accessibility::TableCell* cell  = GetCell(span.row, span.column);
-  if (!cell)
+  if(!cell)
   {
     return span;
   }
@@ -722,7 +722,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(c
   const auto* accessibilityDelegate     = static_cast<const NUIViewAccessible::AccessibilityDelegate*>(arg1_accessibilityDelegate);
   auto        accessibilityDelegateSize = static_cast<std::size_t>(arg2_accessibilityDelegateSize);
 
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     if(accessibilityDelegateSize != sizeof(*accessibilityDelegate))
     {
       DALI_LOG_ERROR("SetAccessibilityDelegate error: Marshal.SizeOf<AccessibilityDelegate>()[%zu] != sizeof(AccessibilityDelegate)[%zu]\n", accessibilityDelegateSize, sizeof(*accessibilityDelegate));
@@ -738,7 +739,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dal
 {
   GUARD_ON_NULL_RET(arg1_control);
 
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     Dali::Toolkit::Control control = Dali::Toolkit::Control::DownCast(*arg1_control);
     if(DALI_LIKELY(control))
     {

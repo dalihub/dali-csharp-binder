@@ -24,48 +24,61 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-class SwigDirector_ItemFactory : public Dali::Toolkit::ItemFactory, public Swig::Director {
+class SwigDirector_ItemFactory : public Dali::Toolkit::ItemFactory, public Swig::Director
+{
 public:
-  SwigDirector_ItemFactory() {
+  SwigDirector_ItemFactory()
+  {
     swig_init_callbacks();
   }
 
-  virtual ~SwigDirector_ItemFactory() {
+  virtual ~SwigDirector_ItemFactory()
+  {
   }
 
-  virtual unsigned int GetNumberOfItems() {
-    unsigned int c_result = SwigValueInit< unsigned int >() ;
-    unsigned int jresult = 0 ;
+  virtual unsigned int GetNumberOfItems()
+  {
+    unsigned int c_result = SwigValueInit<unsigned int>();
+    unsigned int jresult  = 0;
 
-    if (!swig_callbackGetNumberOfItems) {
+    if(!swig_callbackGetNumberOfItems)
+    {
       throw Swig::DirectorPureVirtualException("Dali::Toolkit::ItemFactory::GetNumberOfItems");
-    } else {
-      jresult = (unsigned int) swig_callbackGetNumberOfItems();
+    }
+    else
+    {
+      jresult  = (unsigned int)swig_callbackGetNumberOfItems();
       c_result = (unsigned int)jresult;
     }
     return c_result;
   }
 
-  virtual Dali::Actor NewItem(unsigned int itemId) {
-    Dali::Actor c_result ;
-    void * jresult = 0 ;
+  virtual Dali::Actor NewItem(unsigned int itemId)
+  {
+    Dali::Actor  c_result;
+    void*        jresult = 0;
     unsigned int jitemId;
 
-    if (!swig_callbackNewItem) {
+    if(!swig_callbackNewItem)
+    {
       throw Swig::DirectorPureVirtualException("Dali::Toolkit::ItemFactory::NewItem");
-    } else {
+    }
+    else
+    {
       jitemId = itemId;
-      jresult = (void *) swig_callbackNewItem(jitemId);
-      if (!jresult) {
+      jresult = (void*)swig_callbackNewItem(jitemId);
+      if(!jresult)
+      {
         SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Unexpected null return for type Dali::Actor", 0);
         return c_result;
       }
-      c_result = *(Dali::Actor *)jresult;
+      c_result = *(Dali::Actor*)jresult;
     }
     return c_result;
   }
 
-  virtual void ItemReleased(unsigned int itemId, Dali::Actor actor) {
+  virtual void ItemReleased(unsigned int itemId, Dali::Actor actor)
+  {
     if(!swig_callbackItemReleased)
     {
       Dali::Toolkit::ItemFactory::ItemReleased(itemId, actor);
@@ -77,18 +90,20 @@ public:
     }
   }
 
-  virtual Dali::Toolkit::ItemFactory::Extension *GetExtension() {
+  virtual Dali::Toolkit::ItemFactory::Extension* GetExtension()
+  {
     return Dali::Toolkit::ItemFactory::GetExtension();
   }
 
-  typedef unsigned int (SWIGSTDCALL* SWIG_Callback0_t)();
-  typedef void * (SWIGSTDCALL* SWIG_Callback1_t)(unsigned int);
-  typedef void (SWIGSTDCALL* SWIG_Callback2_t)(unsigned int, void *);
+  typedef unsigned int(SWIGSTDCALL* SWIG_Callback0_t)();
+  typedef void*(SWIGSTDCALL* SWIG_Callback1_t)(unsigned int);
+  typedef void(SWIGSTDCALL* SWIG_Callback2_t)(unsigned int, void*);
 
-  void swig_connect_director(SWIG_Callback0_t callbackGetNumberOfItems, SWIG_Callback1_t callbackNewItem, SWIG_Callback2_t callbackItemReleased) {
+  void swig_connect_director(SWIG_Callback0_t callbackGetNumberOfItems, SWIG_Callback1_t callbackNewItem, SWIG_Callback2_t callbackItemReleased)
+  {
     swig_callbackGetNumberOfItems = callbackGetNumberOfItems;
-    swig_callbackNewItem = callbackNewItem;
-    swig_callbackItemReleased = callbackItemReleased;
+    swig_callbackNewItem          = callbackNewItem;
+    swig_callbackItemReleased     = callbackItemReleased;
   }
 
 private:
@@ -96,10 +111,11 @@ private:
   SWIG_Callback1_t swig_callbackNewItem;
   SWIG_Callback2_t swig_callbackItemReleased;
 
-  void swig_init_callbacks() {
+  void swig_init_callbacks()
+  {
     swig_callbackGetNumberOfItems = 0;
-    swig_callbackNewItem = 0;
-    swig_callbackItemReleased = 0;
+    swig_callbackNewItem          = 0;
+    swig_callbackItemReleased     = 0;
   }
 };
 

@@ -16,6 +16,7 @@
 #include <BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h>
 
 #include "conversion.h"
+
 #include "btBroadphaseProxy_wrap.h"
 
 void btBroadphaseProxy_getAabbMax(btBroadphaseProxy* obj, btVector3* value)
@@ -127,7 +128,6 @@ void btBroadphaseProxy_delete(btBroadphaseProxy* obj)
 {
   delete obj;
 }
-
 
 btBroadphasePair* btBroadphasePair_new()
 {

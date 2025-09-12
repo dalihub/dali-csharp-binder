@@ -15,6 +15,7 @@
 #include <BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h>
 
 #include "conversion.h"
+
 #include "btPoint2PointConstraint_wrap.h"
 
 btConstraintSetting* btConstraintSetting_new()
@@ -57,9 +58,8 @@ void btConstraintSetting_delete(btConstraintSetting* obj)
   delete obj;
 }
 
-
 btPoint2PointConstraint* btPoint2PointConstraint_new(btRigidBody* rbA, btRigidBody* rbB,
-  const btVector3* pivotInA, const btVector3* pivotInB)
+                                                     const btVector3* pivotInA, const btVector3* pivotInB)
 {
   BTVECTOR3_IN(pivotInA);
   BTVECTOR3_IN(pivotInB);
@@ -83,7 +83,7 @@ void btPoint2PointConstraint_getInfo1NonVirtual(btPoint2PointConstraint* obj, bt
 }
 
 void btPoint2PointConstraint_getInfo2NonVirtual(btPoint2PointConstraint* obj, btTypedConstraint_btConstraintInfo2* info,
-  const btTransform* body0_trans, const btTransform* body1_trans)
+                                                const btTransform* body0_trans, const btTransform* body1_trans)
 {
   BTTRANSFORM_IN(body0_trans);
   BTTRANSFORM_IN(body1_trans);
@@ -123,7 +123,7 @@ void btPoint2PointConstraint_setPivotB(btPoint2PointConstraint* obj, const btVec
 }
 
 void btPoint2PointConstraint_setUseSolveConstraintObsolete(btPoint2PointConstraint* obj,
-  bool value)
+                                                           bool                     value)
 {
   obj->m_useSolveConstraintObsolete = value;
 }

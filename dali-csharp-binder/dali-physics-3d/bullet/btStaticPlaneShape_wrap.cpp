@@ -15,6 +15,7 @@
 #include <BulletCollision/CollisionShapes/btStaticPlaneShape.h>
 
 #include "conversion.h"
+
 #include "btStaticPlaneShape_wrap.h"
 
 btStaticPlaneShape* btStaticPlaneShape_new(const btVector3* planeNormal, btScalar planeConstant)

@@ -27,7 +27,7 @@ btCollisionAlgorithmConstructionInfo* btCollisionAlgorithmConstructionInfo_new()
 }
 
 btCollisionAlgorithmConstructionInfo* btCollisionAlgorithmConstructionInfo_new2(btDispatcher* dispatcher,
-  int temp)
+                                                                                int           temp)
 {
   return new btCollisionAlgorithmConstructionInfo(dispatcher, temp);
 }
@@ -43,13 +43,13 @@ btPersistentManifold* btCollisionAlgorithmConstructionInfo_getManifold(btCollisi
 }
 
 void btCollisionAlgorithmConstructionInfo_setDispatcher1(btCollisionAlgorithmConstructionInfo* obj,
-  btDispatcher* value)
+                                                         btDispatcher*                         value)
 {
   obj->m_dispatcher1 = value;
 }
 
 void btCollisionAlgorithmConstructionInfo_setManifold(btCollisionAlgorithmConstructionInfo* obj,
-  btPersistentManifold* value)
+                                                      btPersistentManifold*                 value)
 {
   obj->m_manifold = value;
 }
@@ -59,9 +59,8 @@ void btCollisionAlgorithmConstructionInfo_delete(btCollisionAlgorithmConstructio
   delete obj;
 }
 
-
 btScalar btCollisionAlgorithm_calculateTimeOfImpact(btCollisionAlgorithm* obj, btCollisionObject* body0,
-  btCollisionObject* body1, const btDispatcherInfo* dispatchInfo, btManifoldResult* resultOut)
+                                                    btCollisionObject* body1, const btDispatcherInfo* dispatchInfo, btManifoldResult* resultOut)
 {
   return obj->calculateTimeOfImpact(body0, body1, *dispatchInfo, resultOut);
 }
@@ -72,8 +71,8 @@ void btCollisionAlgorithm_getAllContactManifolds(btCollisionAlgorithm* obj, btAl
 }
 
 void btCollisionAlgorithm_processCollision(btCollisionAlgorithm* obj, const btCollisionObjectWrapper* body0Wrap,
-  const btCollisionObjectWrapper* body1Wrap, const btDispatcherInfo* dispatchInfo,
-  btManifoldResult* resultOut)
+                                           const btCollisionObjectWrapper* body1Wrap, const btDispatcherInfo* dispatchInfo,
+                                           btManifoldResult* resultOut)
 {
   obj->processCollision(body0Wrap, body1Wrap, *dispatchInfo, resultOut);
 }

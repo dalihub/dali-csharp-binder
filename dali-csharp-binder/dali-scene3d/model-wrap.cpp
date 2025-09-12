@@ -73,7 +73,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_New_SWIG_1()
   return new Dali::Scene3D::Model((const Dali::Scene3D::Model&)result);
 }
 
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Model_SWIG_1(void* csModel)
 {
   Dali::Scene3D::Model* model  = (Dali::Scene3D::Model*)csModel;
@@ -163,8 +162,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_RemoveModelNode(void* csModel, voi
   }
   CALL_CATCH_EXCEPTION();
 }
-
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_SetImageBasedLightSource(void* csModel, char* csDiffuseUrl, char* csSpecularUrl, float scaleFactor)
 {
@@ -443,7 +440,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_SetMotionData(void* csModel, void*
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_CastShadow(void* csModel, bool csCastShadow)
 {
-  Dali::Scene3D::Model*      model      = (Dali::Scene3D::Model*)csModel;
+  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
 
   if(!model)
   {
@@ -460,8 +457,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_CastShadow(void* csModel, bool csC
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Model_IsShadowCasting(void* csModel)
 {
-  Dali::Scene3D::Model*      model      = (Dali::Scene3D::Model*)csModel;
-  bool                       result;
+  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
+  bool                  result;
 
   if(!model)
   {
@@ -479,7 +476,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Model_IsShadowCasting(void* csModel)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_ReceiveShadow(void* csModel, bool csReceiveShadow)
 {
-  Dali::Scene3D::Model*      model      = (Dali::Scene3D::Model*)csModel;
+  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
 
   if(!model)
   {
@@ -496,8 +493,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_ReceiveShadow(void* csModel, bool 
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Model_IsShadowReceiving(void* csModel)
 {
-  Dali::Scene3D::Model*      model      = (Dali::Scene3D::Model*)csModel;
-  bool                       result;
+  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
+  bool                  result;
 
   if(!model)
   {
@@ -545,7 +542,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel,
       if(csUseRootNodeTranslate && animationDefinition.GetPropertyCount() > 0u)
       {
         // We can assume that 0's property is for root translate
-        auto& property = animationDefinition.GetPropertyAt(0u);
+        auto& property  = animationDefinition.GetPropertyAt(0u);
         auto& keyFrames = property.mKeyFrames;
 
         // Let we check that we can change animatable property
@@ -575,7 +572,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel,
         }
       }
 
-      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor
+      {
         return model->FindChildByName(property.mNodeName);
       };
       result = animationDefinition.ReAnimate(getActor);
@@ -618,7 +616,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_2(void* csModel,
       if(csUseRootNodeTranslate && animationDefinition.GetPropertyCount() > 0u)
       {
         // We can assume that 0's property is for root translate
-        auto& property = animationDefinition.GetPropertyAt(0u);
+        auto& property  = animationDefinition.GetPropertyAt(0u);
         auto& keyFrames = property.mKeyFrames;
 
         // Let we check that we can change animatable property
@@ -647,7 +645,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_2(void* csModel,
         }
       }
 
-      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor
+      {
         return model->FindChildByName(property.mNodeName);
       };
       result = animationDefinition.ReAnimate(getActor);
@@ -679,7 +678,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadFacialAnimation_1(void* csMod
     try
     {
       Dali::Scene3D::Loader::AnimationDefinition        animationDefinition = Dali::Scene3D::Loader::LoadFacialAnimation(filename);
-      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor            = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor            = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor
+      {
         return model->FindChildByName(property.mNodeName);
       };
       result = animationDefinition.ReAnimate(getActor);
@@ -711,7 +711,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadFacialAnimation_2(void* csMod
     try
     {
       Dali::Scene3D::Loader::AnimationDefinition        animationDefinition = Dali::Scene3D::Loader::LoadFacialAnimationFromBuffer(rawBuffer, csBufferLength);
-      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor            = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor            = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor
+      {
         return model->FindChildByName(property.mNodeName);
       };
       result = animationDefinition.ReAnimate(getActor);
@@ -726,8 +727,8 @@ GENERATE_SIGNAL(Dali::Scene3D::Model*, bool (*)(Dali::Scene3D::Model, Dali::Scen
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Model_GetLoadingStatus(void* csModel)
 {
-  Dali::Scene3D::Model* model = (Dali::Scene3D::Model*)csModel;
-  int result = -1;
+  Dali::Scene3D::Model* model  = (Dali::Scene3D::Model*)csModel;
+  int                   result = -1;
 
   if(!model)
   {

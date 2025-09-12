@@ -15,6 +15,7 @@
 #include <BulletCollision/Gimpact/btGImpactBvh.h>
 
 #include "conversion.h"
+
 #include "btGImpactBvh_wrap.h"
 
 GIM_PAIR* GIM_PAIR_new()
@@ -57,7 +58,6 @@ void GIM_PAIR_delete(GIM_PAIR* obj)
   delete obj;
 }
 
-
 btPairSet* btPairSet_new()
 {
   return new btPairSet();
@@ -77,7 +77,6 @@ void btPairSet_delete(btPairSet* obj)
 {
   delete obj;
 }
-
 
 GIM_BVH_DATA* GIM_BVH_DATA_new()
 {
@@ -108,7 +107,6 @@ void GIM_BVH_DATA_delete(GIM_BVH_DATA* obj)
 {
   delete obj;
 }
-
 
 GIM_BVH_TREE_NODE* GIM_BVH_TREE_NODE_new()
 {
@@ -155,7 +153,6 @@ void GIM_BVH_TREE_NODE_delete(GIM_BVH_TREE_NODE* obj)
   delete obj;
 }
 
-
 GIM_BVH_DATA_ARRAY* GIM_BVH_DATA_ARRAY_new()
 {
   return new GIM_BVH_DATA_ARRAY();
@@ -166,7 +163,6 @@ void GIM_BVH_DATA_ARRAY_delete(GIM_BVH_DATA_ARRAY* obj)
   delete obj;
 }
 
-
 GIM_BVH_TREE_NODE_ARRAY* GIM_BVH_TREE_NODE_ARRAY_new()
 {
   return new GIM_BVH_TREE_NODE_ARRAY();
@@ -176,7 +172,6 @@ void GIM_BVH_TREE_NODE_ARRAY_delete(GIM_BVH_TREE_NODE_ARRAY* obj)
 {
   delete obj;
 }
-
 
 btBvhTree* btBvhTree_new()
 {
@@ -248,9 +243,8 @@ void btBvhTree_delete(btBvhTree* obj)
   delete obj;
 }
 
-
 void btPrimitiveManagerBase_get_primitive_box(btPrimitiveManagerBase* obj, int prim_index,
-  btAABB* primbox)
+                                              btAABB* primbox)
 {
   obj->get_primitive_box(prim_index, *primbox);
 }
@@ -261,7 +255,7 @@ int btPrimitiveManagerBase_get_primitive_count(btPrimitiveManagerBase* obj)
 }
 
 void btPrimitiveManagerBase_get_primitive_triangle(btPrimitiveManagerBase* obj, int prim_index,
-  btPrimitiveTriangle* triangle)
+                                                   btPrimitiveTriangle* triangle)
 {
   obj->get_primitive_triangle(prim_index, *triangle);
 }
@@ -275,7 +269,6 @@ void btPrimitiveManagerBase_delete(btPrimitiveManagerBase* obj)
 {
   delete obj;
 }
-
 
 btGImpactBvh* btGImpactBvh_new()
 {
@@ -293,7 +286,7 @@ bool btGImpactBvh_boxQuery(btGImpactBvh* obj, const btAABB* box, btAlignedObject
 }
 
 bool btGImpactBvh_boxQueryTrans(btGImpactBvh* obj, const btAABB* box, const btTransform* transform,
-  btAlignedObjectArray_int* collided_results)
+                                btAlignedObjectArray_int* collided_results)
 {
   BTTRANSFORM_IN(transform);
   return obj->boxQueryTrans(*box, BTTRANSFORM_USE(transform), *collided_results);
@@ -305,12 +298,12 @@ void btGImpactBvh_buildSet(btGImpactBvh* obj)
 }
 
 void btGImpactBvh_find_collision(btGImpactBvh* boxset1, const btTransform* trans1,
-  btGImpactBvh* boxset2, const btTransform* trans2, btPairSet* collision_pairs)
+                                 btGImpactBvh* boxset2, const btTransform* trans2, btPairSet* collision_pairs)
 {
   BTTRANSFORM_IN(trans1);
   BTTRANSFORM_IN(trans2);
   btGImpactBvh::find_collision(boxset1, BTTRANSFORM_USE(trans1), boxset2, BTTRANSFORM_USE(trans2),
-    *collision_pairs);
+                               *collision_pairs);
 }
 
 const GIM_BVH_TREE_NODE* btGImpactBvh_get_node_pointer(btGImpactBvh* obj, int index)
@@ -326,7 +319,7 @@ int btGImpactBvh_getEscapeNodeIndex(btGImpactBvh* obj, int nodeindex)
 btAABB* btGImpactBvh_getGlobalBox(btGImpactBvh* obj)
 {
   btAABB* box = new btAABB;
-  *box = obj->getGlobalBox();
+  *box        = obj->getGlobalBox();
   return box;
 }
 
@@ -381,7 +374,7 @@ bool btGImpactBvh_isTrimesh(btGImpactBvh* obj)
 }
 
 bool btGImpactBvh_rayQuery(btGImpactBvh* obj, const btVector3* ray_dir, const btVector3* ray_origin,
-  btAlignedObjectArray_int* collided_results)
+                           btAlignedObjectArray_int* collided_results)
 {
   BTVECTOR3_IN(ray_dir);
   BTVECTOR3_IN(ray_origin);

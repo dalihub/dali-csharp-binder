@@ -15,15 +15,16 @@
 #include <BulletCollision/CollisionShapes/btMultiSphereShape.h>
 
 #include "conversion.h"
+
 #include "btMultiSphereShape_wrap.h"
 
 btMultiSphereShape* btMultiSphereShape_new(const btScalar* positions, const btScalar* radi,
-  int numSpheres)
+                                           int numSpheres)
 {
   btVector3* positionsTemp = new btVector3[numSpheres];
-  for (int i = 0; i < numSpheres; i++)
+  for(int i = 0; i < numSpheres; i++)
   {
-    Vector3TobtVector3(&positions[i*3], &positionsTemp[i]);
+    Vector3TobtVector3(&positions[i * 3], &positionsTemp[i]);
   }
   btMultiSphereShape* shape = new btMultiSphereShape(positionsTemp, radi, numSpheres);
   delete[] positionsTemp;

@@ -38,31 +38,30 @@ btConvexPenetrationDepthSolver* btConvexConvexAlgorithm_CreateFunc_getPdSolver(b
 }
 
 void btConvexConvexAlgorithm_CreateFunc_setMinimumPointsPerturbationThreshold(btConvexConvexAlgorithm_CreateFunc* obj,
-  int value)
+                                                                              int                                 value)
 {
   obj->m_minimumPointsPerturbationThreshold = value;
 }
 
 void btConvexConvexAlgorithm_CreateFunc_setNumPerturbationIterations(btConvexConvexAlgorithm_CreateFunc* obj,
-  int value)
+                                                                     int                                 value)
 {
   obj->m_numPerturbationIterations = value;
 }
 
 void btConvexConvexAlgorithm_CreateFunc_setPdSolver(btConvexConvexAlgorithm_CreateFunc* obj,
-  btConvexPenetrationDepthSolver* value)
+                                                    btConvexPenetrationDepthSolver*     value)
 {
   obj->m_pdSolver = value;
 }
 
-
 btConvexConvexAlgorithm* btConvexConvexAlgorithm_new(btPersistentManifold* mf, const btCollisionAlgorithmConstructionInfo* ci,
-  const btCollisionObjectWrapper* body0Wrap, const btCollisionObjectWrapper* body1Wrap,
-  btConvexPenetrationDepthSolver* pdSolver, int numPerturbationIterations,
-  int minimumPointsPerturbationThreshold)
+                                                     const btCollisionObjectWrapper* body0Wrap, const btCollisionObjectWrapper* body1Wrap,
+                                                     btConvexPenetrationDepthSolver* pdSolver, int numPerturbationIterations,
+                                                     int minimumPointsPerturbationThreshold)
 {
   return new btConvexConvexAlgorithm(mf, *ci, body0Wrap, body1Wrap, pdSolver,
-    numPerturbationIterations, minimumPointsPerturbationThreshold);
+                                     numPerturbationIterations, minimumPointsPerturbationThreshold);
 }
 
 const btPersistentManifold* btConvexConvexAlgorithm_getManifold(btConvexConvexAlgorithm* obj)

@@ -16,6 +16,7 @@
 #include <BulletCollision/NarrowPhaseCollision/btManifoldPoint.h>
 
 #include "conversion.h"
+
 #include "btManifoldPoint_wrap.h"
 
 btManifoldPoint* btManifoldPoint_new()
@@ -24,13 +25,13 @@ btManifoldPoint* btManifoldPoint_new()
 }
 
 btManifoldPoint* btManifoldPoint_new2(const btVector3* pointA, const btVector3* pointB,
-  const btVector3* normal, btScalar distance)
+                                      const btVector3* normal, btScalar distance)
 {
   BTVECTOR3_IN(pointA);
   BTVECTOR3_IN(pointB);
   BTVECTOR3_IN(normal);
   return new btManifoldPoint(BTVECTOR3_USE(pointA), BTVECTOR3_USE(pointB), BTVECTOR3_USE(normal),
-    distance);
+                             distance);
 }
 
 btScalar btManifoldPoint_getAppliedImpulse(btManifoldPoint* obj)
@@ -327,7 +328,6 @@ void btManifoldPoint_delete(btManifoldPoint* obj)
 {
   delete obj;
 }
-
 
 ContactAddedCallback getGContactAddedCallback()
 {

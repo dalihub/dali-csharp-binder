@@ -15,6 +15,7 @@
 #include <BulletCollision/Gimpact/btTriangleShapeEx.h>
 
 #include "conversion.h"
+
 #include "btTriangleShapeEx_wrap.h"
 
 GIM_TRIANGLE_CONTACT* GIM_TRIANGLE_CONTACT_new()
@@ -53,7 +54,7 @@ void GIM_TRIANGLE_CONTACT_getSeparating_normal(GIM_TRIANGLE_CONTACT* obj, btVect
 }
 
 void GIM_TRIANGLE_CONTACT_merge_points(GIM_TRIANGLE_CONTACT* obj, const btVector4* plane,
-  btScalar margin, const btVector3* points, int point_count)
+                                       btScalar margin, const btVector3* points, int point_count)
 {
   BTVECTOR4_IN(plane);
   obj->merge_points(BTVECTOR4_USE(plane), margin, points, point_count);
@@ -79,7 +80,6 @@ void GIM_TRIANGLE_CONTACT_delete(GIM_TRIANGLE_CONTACT* obj)
   delete obj;
 }
 
-
 btPrimitiveTriangle* btPrimitiveTriangle_new()
 {
   return new btPrimitiveTriangle();
@@ -97,19 +97,19 @@ void btPrimitiveTriangle_buildTriPlane(btPrimitiveTriangle* obj)
 }
 
 int btPrimitiveTriangle_clip_triangle(btPrimitiveTriangle* obj, btPrimitiveTriangle* other,
-  btVector3* clipped_points)
+                                      btVector3* clipped_points)
 {
   return obj->clip_triangle(*other, clipped_points);
 }
 
 bool btPrimitiveTriangle_find_triangle_collision_clip_method(btPrimitiveTriangle* obj,
-  btPrimitiveTriangle* other, GIM_TRIANGLE_CONTACT* contacts)
+                                                             btPrimitiveTriangle* other, GIM_TRIANGLE_CONTACT* contacts)
 {
   return obj->find_triangle_collision_clip_method(*other, *contacts);
 }
 
 void btPrimitiveTriangle_get_edge_plane(btPrimitiveTriangle* obj, int edge_index,
-  btVector4* plane)
+                                        btVector4* plane)
 {
   BTVECTOR4_DEF(plane);
   obj->get_edge_plane(edge_index, BTVECTOR4_USE(plane));
@@ -161,14 +161,13 @@ void btPrimitiveTriangle_delete(btPrimitiveTriangle* obj)
   delete obj;
 }
 
-
 btTriangleShapeEx* btTriangleShapeEx_new()
 {
   return new btTriangleShapeEx();
 }
 
 btTriangleShapeEx* btTriangleShapeEx_new2(const btVector3* p0, const btVector3* p1,
-  const btVector3* p2)
+                                          const btVector3* p2)
 {
   BTVECTOR3_IN(p0);
   BTVECTOR3_IN(p1);

@@ -16,30 +16,30 @@
 
 #include "btSerializer_wrap.h"
 
-btSerializerWrapper::btSerializerWrapper(p_btSerializer_allocate allocateCallback,
-  p_btSerializer_finalizeChunk finalizeChunkCallback, p_btSerializer_findNameForPointer findNameForPointerCallback,
-  p_btSerializer_findPointer findPointerCallback, p_btSerializer_finishSerialization finishSerializationCallback,
-  p_btSerializer_getBufferPointer getBufferPointerCallback, p_btSerializer_getChunk getChunkCallback,
-  p_btSerializer_getCurrentBufferSize getCurrentBufferSizeCallback, p_btSerializer_getNumChunks getNumChunksCallback,
-  p_btSerializer_getSerializationFlags getSerializationFlagsCallback, p_btSerializer_getUniquePointer getUniquePointerCallback,
-  p_btSerializer_registerNameForPointer registerNameForPointerCallback, p_btSerializer_serializeName serializeNameCallback,
-  p_btSerializer_setSerializationFlags setSerializationFlagsCallback, p_btSerializer_startSerialization startSerializationCallback)
+btSerializerWrapper::btSerializerWrapper(p_btSerializer_allocate      allocateCallback,
+                                         p_btSerializer_finalizeChunk finalizeChunkCallback, p_btSerializer_findNameForPointer findNameForPointerCallback,
+                                         p_btSerializer_findPointer findPointerCallback, p_btSerializer_finishSerialization finishSerializationCallback,
+                                         p_btSerializer_getBufferPointer getBufferPointerCallback, p_btSerializer_getChunk getChunkCallback,
+                                         p_btSerializer_getCurrentBufferSize getCurrentBufferSizeCallback, p_btSerializer_getNumChunks getNumChunksCallback,
+                                         p_btSerializer_getSerializationFlags getSerializationFlagsCallback, p_btSerializer_getUniquePointer getUniquePointerCallback,
+                                         p_btSerializer_registerNameForPointer registerNameForPointerCallback, p_btSerializer_serializeName serializeNameCallback,
+                                         p_btSerializer_setSerializationFlags setSerializationFlagsCallback, p_btSerializer_startSerialization startSerializationCallback)
 {
-  _allocateCallback = allocateCallback;
-  _finalizeChunkCallback = finalizeChunkCallback;
-  _findNameForPointerCallback = findNameForPointerCallback;
-  _findPointerCallback = findPointerCallback;
-  _finishSerializationCallback = finishSerializationCallback;
-  _getBufferPointerCallback = getBufferPointerCallback;
-  _getChunkCallback = getChunkCallback;
-  _getCurrentBufferSizeCallback = getCurrentBufferSizeCallback;
-  _getNumChunksCallback = getNumChunksCallback;
-  _getSerializationFlagsCallback = getSerializationFlagsCallback;
-  _getUniquePointerCallback = getUniquePointerCallback;
+  _allocateCallback               = allocateCallback;
+  _finalizeChunkCallback          = finalizeChunkCallback;
+  _findNameForPointerCallback     = findNameForPointerCallback;
+  _findPointerCallback            = findPointerCallback;
+  _finishSerializationCallback    = finishSerializationCallback;
+  _getBufferPointerCallback       = getBufferPointerCallback;
+  _getChunkCallback               = getChunkCallback;
+  _getCurrentBufferSizeCallback   = getCurrentBufferSizeCallback;
+  _getNumChunksCallback           = getNumChunksCallback;
+  _getSerializationFlagsCallback  = getSerializationFlagsCallback;
+  _getUniquePointerCallback       = getUniquePointerCallback;
   _registerNameForPointerCallback = registerNameForPointerCallback;
-  _serializeNameCallback = serializeNameCallback;
-  _setSerializationFlagsCallback = setSerializationFlagsCallback;
-  _startSerializationCallback = startSerializationCallback;
+  _serializeNameCallback          = serializeNameCallback;
+  _setSerializationFlagsCallback  = setSerializationFlagsCallback;
+  _startSerializationCallback     = startSerializationCallback;
 }
 
 btChunk* btSerializerWrapper::allocate(size_t size, int numElements)
@@ -48,7 +48,7 @@ btChunk* btSerializerWrapper::allocate(size_t size, int numElements)
 }
 
 void btSerializerWrapper::finalizeChunk(btChunk* chunk, const char* structType, int chunkCode,
-  void* oldPtr)
+                                        void* oldPtr)
 {
   _finalizeChunkCallback(chunk, structType, chunkCode, oldPtr);
 }
@@ -68,7 +68,7 @@ void btSerializerWrapper::finishSerialization()
   _finishSerializationCallback();
 }
 
-const unsigned char* btSerializerWrapper::getBufferPointer()  const
+const unsigned char* btSerializerWrapper::getBufferPointer() const
 {
   return _getBufferPointerCallback();
 }
@@ -117,7 +117,6 @@ void btSerializerWrapper::startSerialization()
 {
   _startSerializationCallback();
 }
-
 
 btChunk* btChunk_new()
 {
@@ -179,23 +178,21 @@ void btChunk_delete(btChunk* obj)
   delete obj;
 }
 
-
-btSerializerWrapper* btSerializerWrapper_new(p_btSerializer_allocate allocateCallback,
-  p_btSerializer_finalizeChunk finalizeChunkCallback, p_btSerializer_findNameForPointer findNameForPointerCallback,
-  p_btSerializer_findPointer findPointerCallback, p_btSerializer_finishSerialization finishSerializationCallback,
-  p_btSerializer_getBufferPointer getBufferPointerCallback, p_btSerializer_getChunk getChunkCallback,
-  p_btSerializer_getCurrentBufferSize getCurrentBufferSizeCallback, p_btSerializer_getNumChunks getNumChunksCallback,
-  p_btSerializer_getSerializationFlags getSerializationFlagsCallback, p_btSerializer_getUniquePointer getUniquePointerCallback,
-  p_btSerializer_registerNameForPointer registerNameForPointerCallback, p_btSerializer_serializeName serializeNameCallback,
-  p_btSerializer_setSerializationFlags setSerializationFlagsCallback, p_btSerializer_startSerialization startSerializationCallback)
+btSerializerWrapper* btSerializerWrapper_new(p_btSerializer_allocate      allocateCallback,
+                                             p_btSerializer_finalizeChunk finalizeChunkCallback, p_btSerializer_findNameForPointer findNameForPointerCallback,
+                                             p_btSerializer_findPointer findPointerCallback, p_btSerializer_finishSerialization finishSerializationCallback,
+                                             p_btSerializer_getBufferPointer getBufferPointerCallback, p_btSerializer_getChunk getChunkCallback,
+                                             p_btSerializer_getCurrentBufferSize getCurrentBufferSizeCallback, p_btSerializer_getNumChunks getNumChunksCallback,
+                                             p_btSerializer_getSerializationFlags getSerializationFlagsCallback, p_btSerializer_getUniquePointer getUniquePointerCallback,
+                                             p_btSerializer_registerNameForPointer registerNameForPointerCallback, p_btSerializer_serializeName serializeNameCallback,
+                                             p_btSerializer_setSerializationFlags setSerializationFlagsCallback, p_btSerializer_startSerialization startSerializationCallback)
 {
   return new btSerializerWrapper(allocateCallback, finalizeChunkCallback, findNameForPointerCallback,
-    findPointerCallback, finishSerializationCallback, getBufferPointerCallback,
-    getChunkCallback, getCurrentBufferSizeCallback, getNumChunksCallback, getSerializationFlagsCallback,
-    getUniquePointerCallback, registerNameForPointerCallback, serializeNameCallback,
-    setSerializationFlagsCallback, startSerializationCallback);
+                                 findPointerCallback, finishSerializationCallback, getBufferPointerCallback,
+                                 getChunkCallback, getCurrentBufferSizeCallback, getNumChunksCallback, getSerializationFlagsCallback,
+                                 getUniquePointerCallback, registerNameForPointerCallback, serializeNameCallback,
+                                 setSerializationFlagsCallback, startSerializationCallback);
 }
-
 
 btChunk* btSerializer_allocate(btSerializer* obj, int size, int numElements)
 {
@@ -203,7 +200,7 @@ btChunk* btSerializer_allocate(btSerializer* obj, int size, int numElements)
 }
 
 void btSerializer_finalizeChunk(btSerializer* obj, btChunk* chunk, const char* structType,
-  int chunkCode, void* oldPtr)
+                                int chunkCode, void* oldPtr)
 {
   obj->finalizeChunk(chunk, structType, chunkCode, oldPtr);
 }
@@ -278,7 +275,6 @@ void btSerializer_delete(btSerializer* obj)
   delete obj;
 }
 
-
 btDefaultSerializer* btDefaultSerializer_new()
 {
   return new btDefaultSerializer();
@@ -298,7 +294,6 @@ void btDefaultSerializer_writeHeader(btDefaultSerializer* obj, unsigned char* bu
 {
   obj->writeHeader(buffer);
 }
-
 
 char* getBulletDNAstr()
 {

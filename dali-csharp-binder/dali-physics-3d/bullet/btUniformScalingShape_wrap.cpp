@@ -17,7 +17,7 @@
 #include "btUniformScalingShape_wrap.h"
 
 btUniformScalingShape* btUniformScalingShape_new(btConvexShape* convexChildShape,
-  btScalar uniformScalingFactor)
+                                                 btScalar       uniformScalingFactor)
 {
   return new btUniformScalingShape(convexChildShape, uniformScalingFactor);
 }

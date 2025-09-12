@@ -22,20 +22,22 @@
 extern "C" {
 #endif
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MakeCallback(void * jarg1) {
-  void * jresult ;
-  void (*arg1)(void) = (void (*)(void)) 0 ;
-  Dali::CallbackBase *result = 0 ;
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MakeCallback(void* jarg1)
+{
+  void* jresult;
+  void (*arg1)(void)         = (void (*)(void))0;
+  Dali::CallbackBase* result = 0;
 
   arg1 = (void (*)(void))jarg1;
   {
-    try {
-      result = (Dali::CallbackBase *)Dali::MakeCallback(arg1);
-    } CALL_CATCH_EXCEPTION(0);
+    try
+    {
+      result = (Dali::CallbackBase*)Dali::MakeCallback(arg1);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
-
-  jresult = (void *)result;
+  jresult = (void*)result;
 
   return jresult;
 }
@@ -43,4 +45,3 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_MakeCallback(void * jarg1) {
 #ifdef __cplusplus
 }
 #endif
-

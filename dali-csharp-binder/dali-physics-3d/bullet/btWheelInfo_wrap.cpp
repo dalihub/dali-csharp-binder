@@ -32,7 +32,7 @@ bool btWheelInfoConstructionInfo_getBIsFrontWheel(btWheelInfoConstructionInfo* o
 }
 
 void btWheelInfoConstructionInfo_getChassisConnectionCS(btWheelInfoConstructionInfo* obj,
-  btVector3* value)
+                                                        btVector3*                   value)
 {
   BTVECTOR3_SET(value, obj->m_chassisConnectionCS);
 }
@@ -63,13 +63,13 @@ btScalar btWheelInfoConstructionInfo_getSuspensionStiffness(btWheelInfoConstruct
 }
 
 void btWheelInfoConstructionInfo_getWheelAxleCS(btWheelInfoConstructionInfo* obj,
-  btVector3* value)
+                                                btVector3*                   value)
 {
   BTVECTOR3_SET(value, obj->m_wheelAxleCS);
 }
 
 void btWheelInfoConstructionInfo_getWheelDirectionCS(btWheelInfoConstructionInfo* obj,
-  btVector3* value)
+                                                     btVector3*                   value)
 {
   BTVECTOR3_SET(value, obj->m_wheelDirectionCS);
 }
@@ -90,73 +90,73 @@ btScalar btWheelInfoConstructionInfo_getWheelsDampingRelaxation(btWheelInfoConst
 }
 
 void btWheelInfoConstructionInfo_setBIsFrontWheel(btWheelInfoConstructionInfo* obj,
-  bool value)
+                                                  bool                         value)
 {
   obj->m_bIsFrontWheel = value;
 }
 
 void btWheelInfoConstructionInfo_setChassisConnectionCS(btWheelInfoConstructionInfo* obj,
-  const btVector3* value)
+                                                        const btVector3*             value)
 {
   BTVECTOR3_COPY(&obj->m_chassisConnectionCS, value);
 }
 
 void btWheelInfoConstructionInfo_setFrictionSlip(btWheelInfoConstructionInfo* obj,
-  btScalar value)
+                                                 btScalar                     value)
 {
   obj->m_frictionSlip = value;
 }
 
 void btWheelInfoConstructionInfo_setMaxSuspensionForce(btWheelInfoConstructionInfo* obj,
-  btScalar value)
+                                                       btScalar                     value)
 {
   obj->m_maxSuspensionForce = value;
 }
 
 void btWheelInfoConstructionInfo_setMaxSuspensionTravelCm(btWheelInfoConstructionInfo* obj,
-  btScalar value)
+                                                          btScalar                     value)
 {
   obj->m_maxSuspensionTravelCm = value;
 }
 
 void btWheelInfoConstructionInfo_setSuspensionRestLength(btWheelInfoConstructionInfo* obj,
-  btScalar value)
+                                                         btScalar                     value)
 {
   obj->m_suspensionRestLength = value;
 }
 
 void btWheelInfoConstructionInfo_setSuspensionStiffness(btWheelInfoConstructionInfo* obj,
-  btScalar value)
+                                                        btScalar                     value)
 {
   obj->m_suspensionStiffness = value;
 }
 
 void btWheelInfoConstructionInfo_setWheelAxleCS(btWheelInfoConstructionInfo* obj,
-  const btVector3* value)
+                                                const btVector3*             value)
 {
   BTVECTOR3_COPY(&obj->m_wheelAxleCS, value);
 }
 
 void btWheelInfoConstructionInfo_setWheelDirectionCS(btWheelInfoConstructionInfo* obj,
-  const btVector3* value)
+                                                     const btVector3*             value)
 {
   BTVECTOR3_COPY(&obj->m_wheelDirectionCS, value);
 }
 
 void btWheelInfoConstructionInfo_setWheelRadius(btWheelInfoConstructionInfo* obj,
-  btScalar value)
+                                                btScalar                     value)
 {
   obj->m_wheelRadius = value;
 }
 
 void btWheelInfoConstructionInfo_setWheelsDampingCompression(btWheelInfoConstructionInfo* obj,
-  btScalar value)
+                                                             btScalar                     value)
 {
   obj->m_wheelsDampingCompression = value;
 }
 
 void btWheelInfoConstructionInfo_setWheelsDampingRelaxation(btWheelInfoConstructionInfo* obj,
-  btScalar value)
+                                                            btScalar                     value)
 {
   obj->m_wheelsDampingRelaxation = value;
 }
@@ -165,7 +165,6 @@ void btWheelInfoConstructionInfo_delete(btWheelInfoConstructionInfo* obj)
 {
   delete obj;
 }
-
 
 btWheelInfo_RaycastInfo* btWheelInfo_RaycastInfo_new()
 {
@@ -256,7 +255,6 @@ void btWheelInfo_RaycastInfo_delete(btWheelInfo_RaycastInfo* obj)
 {
   delete obj;
 }
-
 
 btWheelInfo* btWheelInfo_new(btWheelInfoConstructionInfo* ci)
 {

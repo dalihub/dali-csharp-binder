@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Light_New_SWIG_0()
   return new Dali::Scene3D::Light((const Dali::Scene3D::Light&)result);
 }
 
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Light_SWIG_1(void* csLight)
 {
   Dali::Scene3D::Light* light  = (Dali::Scene3D::Light*)csLight;
@@ -61,9 +60,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Light_SWIG_1(void* csLight)
 
   return (void*)result;
 }
-
-
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Light_Enable(void* csLight, bool enable)
 {

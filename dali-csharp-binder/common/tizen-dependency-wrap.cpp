@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,23 +31,27 @@
 extern "C" {
 #endif
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Texture_TbmSurface(tbm_surface_h tbm_surface) {
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Texture_TbmSurface(tbm_surface_h tbm_surface)
+{
   Dali::NativeImageSourcePtr mNativeImageSrc;
-  Dali::Texture mNativeTexture;
-  void * jresult ;
+  Dali::Texture              mNativeTexture;
+  void*                      jresult;
 
-  if (!tbm_surface) {
+  if(!tbm_surface)
+  {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "tbm surface is null", 0);
     return 0;
   }
 
-  try {
+  try
+  {
     Dali::Any source(tbm_surface);
     mNativeImageSrc = Dali::NativeImageSource::New(source);
-    mNativeTexture = Dali::Texture::New( *mNativeImageSrc );
-  } CALL_CATCH_EXCEPTION(0);
+    mNativeTexture  = Dali::Texture::New(*mNativeImageSrc);
+  }
+  CALL_CATCH_EXCEPTION(0);
 
-  jresult = new Dali::Texture((const Dali::Texture &)mNativeTexture);
+  jresult = new Dali::Texture((const Dali::Texture&)mNativeTexture);
   return (void*)jresult;
 }
 
@@ -58,26 +62,31 @@ struct NativeImageSourcePtrHandle
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New_Handle_With_TbmSurface(tbm_surface_h csTbmSurface)
 {
-  void* jresult;
-  NativeImageSourcePtrHandle* handle = new NativeImageSourcePtrHandle();
-  Dali::Any tbmSurface = (Dali::Any)csTbmSurface;
+  void*                       jresult;
+  NativeImageSourcePtrHandle* handle     = new NativeImageSourcePtrHandle();
+  Dali::Any                   tbmSurface = (Dali::Any)csTbmSurface;
   {
-    try {
+    try
+    {
       handle->Ptr = Dali::NativeImageSource::New(tbmSurface);
-    } CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourcePtrHandle* ptr){delete ptr;}, handle);
+    }
+    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourcePtrHandle* ptr)
+    { delete ptr; }, handle);
   }
-  jresult = (void *)handle;
+  jresult = (void*)handle;
   return jresult;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_SetSource(void* jarg1, tbm_surface_h csTbmSurface)
 {
-  Dali::NativeImageSource* pImage = (Dali::NativeImageSource*)jarg1;
-  Dali::Any tbmSurface = (Dali::Any)csTbmSurface;
+  Dali::NativeImageSource* pImage     = (Dali::NativeImageSource*)jarg1;
+  Dali::Any                tbmSurface = (Dali::Any)csTbmSurface;
 
-  try {
+  try
+  {
     pImage->SetSource(tbmSurface);
-  } CALL_CATCH_EXCEPTION();
+  }
+  CALL_CATCH_EXCEPTION();
 }
 
 struct NativeImageSourceQueuePtrHandle
@@ -87,20 +96,21 @@ struct NativeImageSourceQueuePtrHandle
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueuePtr_New_Handle_With_TbmQueue(tbm_surface_queue_h csTbmQueue)
 {
-  void* jresult;
-  NativeImageSourceQueuePtrHandle* queue = new NativeImageSourceQueuePtrHandle();
-  Dali::Any tbmQueue = (Dali::Any)csTbmQueue;
+  void*                            jresult;
+  NativeImageSourceQueuePtrHandle* queue    = new NativeImageSourceQueuePtrHandle();
+  Dali::Any                        tbmQueue = (Dali::Any)csTbmQueue;
   {
-    try {
+    try
+    {
       queue->Ptr = Dali::NativeImageSourceQueue::New(tbmQueue);
     }
-    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourceQueuePtrHandle* ptr){delete ptr;}, queue);
+    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourceQueuePtrHandle* ptr)
+    { delete ptr; }, queue);
   }
-  jresult = (void *)queue;
+  jresult = (void*)queue;
   return jresult;
 }
 
 #ifdef __cplusplus
 }
 #endif
-

@@ -647,105 +647,105 @@ SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_ParticleList_GetActiveParticleCount(
 
 SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_ParticleList_AddLocalStreamInt(void* csThis, int defaultValue)
 {
-    ParticleEmitter* emitter = (ParticleEmitter*)csThis;
-    uint32_t         result  = 0;
-    if(!emitter)
+  ParticleEmitter* emitter = (ParticleEmitter*)csThis;
+  uint32_t         result  = 0;
+  if(!emitter)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ParticleList", 0);
+    return 0;
+  }
+  auto list = emitter->GetParticleList();
+  {
+    try
     {
-        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ParticleList", 0);
-        return 0;
+      result = list.AddLocalStream<int>(defaultValue);
     }
-    auto list = emitter->GetParticleList();
-    {
-        try
-        {
-            result = list.AddLocalStream<int>(defaultValue);
-        }
-        CALL_CATCH_EXCEPTION(0);
-    }
-    return result;
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
 }
 
 SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_ParticleList_AddLocalStreamFloat(void* csThis, float defaultValue)
 {
-    ParticleEmitter* emitter = (ParticleEmitter*)csThis;
-    uint32_t         result  = 0;
-    if(!emitter)
+  ParticleEmitter* emitter = (ParticleEmitter*)csThis;
+  uint32_t         result  = 0;
+  if(!emitter)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ParticleList", 0);
+    return 0;
+  }
+  auto list = emitter->GetParticleList();
+  {
+    try
     {
-        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ParticleList", 0);
-        return 0;
+      result = list.AddLocalStream<float>(defaultValue);
     }
-    auto list = emitter->GetParticleList();
-    {
-        try
-        {
-            result = list.AddLocalStream<float>(defaultValue);
-        }
-        CALL_CATCH_EXCEPTION(0);
-    }
-    return result;
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
 }
 
 SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_ParticleList_AddLocalStreamVector2(void* csThis, void* defaultValue)
 {
-    ParticleEmitter* emitter = (ParticleEmitter*)csThis;
-    uint32_t         result  = 0;
-    if(!emitter)
+  ParticleEmitter* emitter = (ParticleEmitter*)csThis;
+  uint32_t         result  = 0;
+  if(!emitter)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ParticleList", 0);
+    return 0;
+  }
+  auto list = emitter->GetParticleList();
+  {
+    try
     {
-        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ParticleList", 0);
-        return 0;
+      void* ptr = (void*)defaultValue;
+      result    = list.AddLocalStream<Dali::Vector2>(*reinterpret_cast<Dali::Vector2*>((Dali::Vector2*)ptr));
     }
-    auto list = emitter->GetParticleList();
-    {
-        try
-        {
-            void* ptr = (void*)defaultValue;
-            result = list.AddLocalStream<Dali::Vector2>(*reinterpret_cast<Dali::Vector2*>((Dali::Vector2*)ptr));
-        }
-        CALL_CATCH_EXCEPTION(0);
-    }
-    return result;
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
 }
 
 SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_ParticleList_AddLocalStreamVector3(void* csThis, void* defaultValue)
 {
-    ParticleEmitter* emitter = (ParticleEmitter*)csThis;
-    uint32_t         result  = 0;
-    if(!emitter)
+  ParticleEmitter* emitter = (ParticleEmitter*)csThis;
+  uint32_t         result  = 0;
+  if(!emitter)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ParticleList", 0);
+    return 0;
+  }
+  auto list = emitter->GetParticleList();
+  {
+    try
     {
-        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ParticleList", 0);
-        return 0;
+      void* ptr = (void*)defaultValue;
+      result    = list.AddLocalStream<Dali::Vector3>(*reinterpret_cast<Dali::Vector3*>((Dali::Vector3*)ptr));
     }
-    auto list = emitter->GetParticleList();
-    {
-        try
-        {
-            void* ptr = (void*)defaultValue;
-            result = list.AddLocalStream<Dali::Vector3>(*reinterpret_cast<Dali::Vector3*>((Dali::Vector3*)ptr));
-        }
-        CALL_CATCH_EXCEPTION(0);
-    }
-    return result;
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
 }
 
 SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_ParticleList_AddLocalStreamVector4(void* csThis, void* defaultValue)
 {
-    ParticleEmitter* emitter = (ParticleEmitter*)csThis;
-    uint32_t         result  = 0;
-    if(!emitter)
+  ParticleEmitter* emitter = (ParticleEmitter*)csThis;
+  uint32_t         result  = 0;
+  if(!emitter)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ParticleList", 0);
+    return 0;
+  }
+  auto list = emitter->GetParticleList();
+  {
+    try
     {
-        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ParticleList", 0);
-        return 0;
+      void* ptr = (void*)defaultValue;
+      result    = list.AddLocalStream<Dali::Vector4>(*reinterpret_cast<Dali::Vector4*>((Dali::Vector4*)ptr));
     }
-    auto list = emitter->GetParticleList();
-    {
-        try
-        {
-            void* ptr = (void*)defaultValue;
-            result = list.AddLocalStream<Dali::Vector4>(*reinterpret_cast<Dali::Vector4*>((Dali::Vector4*)ptr));
-        }
-        CALL_CATCH_EXCEPTION(0);
-    }
-    return result;
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_ParticleList_GetDefaultStreamIndex(void* csThis, uint32_t defaultStream)
@@ -865,16 +865,20 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Particle_GetUnsafe(void* csThis, uint32
 
   switch(elementCount)
   {
-    case 1: {
+    case 1:
+    {
       return &particle->Get<float>(streamIndex);
     }
-    case 2: {
+    case 2:
+    {
       return &particle->Get<Dali::Vector2>(streamIndex);
     }
-    case 3: {
+    case 3:
+    {
       return &particle->Get<Dali::Vector3>(streamIndex);
     }
-    case 4: {
+    case 4:
+    {
       return &particle->Get<Dali::Vector4>(streamIndex);
     }
     default:

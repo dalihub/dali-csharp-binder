@@ -16,6 +16,7 @@
 #include <LinearMath/btSerializer.h>
 
 #include "conversion.h"
+
 #include "btTypedConstraint_wrap.h"
 
 btJointFeedback* btJointFeedback_new()
@@ -68,7 +69,6 @@ void btJointFeedback_delete(btJointFeedback* obj)
   delete obj;
 }
 
-
 btTypedConstraint_btConstraintInfo1* btTypedConstraint_btConstraintInfo1_new()
 {
   return new btTypedConstraint::btConstraintInfo1();
@@ -85,13 +85,13 @@ int btTypedConstraint_btConstraintInfo1_getNumConstraintRows(btTypedConstraint_b
 }
 
 void btTypedConstraint_btConstraintInfo1_setNub(btTypedConstraint_btConstraintInfo1* obj,
-  int value)
+                                                int                                  value)
 {
   obj->nub = value;
 }
 
 void btTypedConstraint_btConstraintInfo1_setNumConstraintRows(btTypedConstraint_btConstraintInfo1* obj,
-  int value)
+                                                              int                                  value)
 {
   obj->m_numConstraintRows = value;
 }
@@ -100,7 +100,6 @@ void btTypedConstraint_btConstraintInfo1_delete(btTypedConstraint_btConstraintIn
 {
   delete obj;
 }
-
 
 btTypedConstraint_btConstraintInfo2* btTypedConstraint_btConstraintInfo2_new()
 {
@@ -173,79 +172,79 @@ btScalar* btTypedConstraint_btConstraintInfo2_getUpperLimit(btTypedConstraint_bt
 }
 
 void btTypedConstraint_btConstraintInfo2_setCfm(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar* value)
+                                                btScalar*                            value)
 {
   obj->cfm = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setConstraintError(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar* value)
+                                                            btScalar*                            value)
 {
   obj->m_constraintError = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setDamping(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar value)
+                                                    btScalar                             value)
 {
   obj->m_damping = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setErp(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar value)
+                                                btScalar                             value)
 {
   obj->erp = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setFps(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar value)
+                                                btScalar                             value)
 {
   obj->fps = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setJ1angularAxis(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar* value)
+                                                          btScalar*                            value)
 {
   obj->m_J1angularAxis = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setJ1linearAxis(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar* value)
+                                                         btScalar*                            value)
 {
   obj->m_J1linearAxis = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setJ2angularAxis(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar* value)
+                                                          btScalar*                            value)
 {
   obj->m_J2angularAxis = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setJ2linearAxis(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar* value)
+                                                         btScalar*                            value)
 {
   obj->m_J2linearAxis = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setLowerLimit(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar* value)
+                                                       btScalar*                            value)
 {
   obj->m_lowerLimit = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setNumIterations(btTypedConstraint_btConstraintInfo2* obj,
-  int value)
+                                                          int                                  value)
 {
   obj->m_numIterations = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setRowskip(btTypedConstraint_btConstraintInfo2* obj,
-  int value)
+                                                    int                                  value)
 {
   obj->rowskip = value;
 }
 
 void btTypedConstraint_btConstraintInfo2_setUpperLimit(btTypedConstraint_btConstraintInfo2* obj,
-  btScalar* value)
+                                                       btScalar*                            value)
 {
   obj->m_upperLimit = value;
 }
@@ -254,7 +253,6 @@ void btTypedConstraint_btConstraintInfo2_delete(btTypedConstraint_btConstraintIn
 {
   delete obj;
 }
-
 
 void btTypedConstraint_buildJacobian(btTypedConstraint* obj)
 {
@@ -377,7 +375,7 @@ bool btTypedConstraint_needsFeedback(btTypedConstraint* obj)
 }
 
 const char* btTypedConstraint_serialize(btTypedConstraint* obj, void* dataBuffer,
-  btSerializer* serializer)
+                                        btSerializer* serializer)
 {
   return obj->serialize(dataBuffer, serializer);
 }
@@ -413,13 +411,13 @@ void btTypedConstraint_setParam(btTypedConstraint* obj, int num, btScalar value)
 }
 
 void btTypedConstraint_setParam2(btTypedConstraint* obj, int num, btScalar value,
-  int axis)
+                                 int axis)
 {
   obj->setParam(num, value, axis);
 }
 
 void btTypedConstraint_setupSolverConstraint(btTypedConstraint* obj, btAlignedObjectArray_btSolverConstraint* ca,
-  int solverBodyA, int solverBodyB, btScalar timeStep)
+                                             int solverBodyA, int solverBodyB, btScalar timeStep)
 {
   obj->setupSolverConstraint(*ca, solverBodyA, solverBodyB, timeStep);
 }
@@ -440,7 +438,7 @@ void btTypedConstraint_setUserConstraintType(btTypedConstraint* obj, int userCon
 }
 
 void btTypedConstraint_solveConstraintObsolete(btTypedConstraint* obj, btSolverBody* __unnamed0,
-  btSolverBody* __unnamed1, btScalar __unnamed2)
+                                               btSolverBody* __unnamed1, btScalar __unnamed2)
 {
   obj->solveConstraintObsolete(*__unnamed0, *__unnamed1, __unnamed2);
 }
@@ -449,7 +447,6 @@ void btTypedConstraint_delete(btTypedConstraint* obj)
 {
   delete obj;
 }
-
 
 btAngularLimit* btAngularLimit_new()
 {
@@ -512,7 +509,7 @@ bool btAngularLimit_isLimit(btAngularLimit* obj)
 }
 
 void btAngularLimit_set(btAngularLimit* obj, btScalar low, btScalar high, btScalar _softness,
-  btScalar _biasFactor, btScalar _relaxationFactor)
+                        btScalar _biasFactor, btScalar _relaxationFactor)
 {
   obj->set(low, high, _softness, _biasFactor, _relaxationFactor);
 }

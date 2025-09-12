@@ -16,10 +16,11 @@
 #include <LinearMath/btSerializer.h>
 
 #include "conversion.h"
+
 #include "btCollisionShape_wrap.h"
 
 void btCollisionShape_calculateLocalInertia(btCollisionShape* obj, btScalar mass,
-  btVector3* inertia)
+                                            btVector3* inertia)
 {
   BTVECTOR3_DEF(inertia);
   obj->calculateLocalInertia(mass, BTVECTOR3_USE(inertia));
@@ -32,8 +33,8 @@ int btCollisionShape_calculateSerializeBufferSize(btCollisionShape* obj)
 }
 
 void btCollisionShape_calculateTemporalAabb(btCollisionShape* obj, const btTransform* curTrans,
-  const btVector3* linvel, const btVector3* angvel, btScalar timeStep, btVector3* temporalAabbMin,
-  btVector3* temporalAabbMax)
+                                            const btVector3* linvel, const btVector3* angvel, btScalar timeStep, btVector3* temporalAabbMin,
+                                            btVector3* temporalAabbMax)
 {
   BTTRANSFORM_IN(curTrans);
   BTVECTOR3_IN(linvel);
@@ -41,13 +42,13 @@ void btCollisionShape_calculateTemporalAabb(btCollisionShape* obj, const btTrans
   BTVECTOR3_DEF(temporalAabbMin);
   BTVECTOR3_DEF(temporalAabbMax);
   obj->calculateTemporalAabb(BTTRANSFORM_USE(curTrans), BTVECTOR3_USE(linvel),
-    BTVECTOR3_USE(angvel), timeStep, BTVECTOR3_USE(temporalAabbMin), BTVECTOR3_USE(temporalAabbMax));
+                             BTVECTOR3_USE(angvel), timeStep, BTVECTOR3_USE(temporalAabbMin), BTVECTOR3_USE(temporalAabbMax));
   BTVECTOR3_DEF_OUT(temporalAabbMin);
   BTVECTOR3_DEF_OUT(temporalAabbMax);
 }
 
 void btCollisionShape_getAabb(btCollisionShape* obj, const btTransform* t, btVector3* aabbMin,
-  btVector3* aabbMax)
+                              btVector3* aabbMax)
 {
   BTTRANSFORM_IN(t);
   BTVECTOR3_DEF(aabbMin);
@@ -63,14 +64,15 @@ btScalar btCollisionShape_getAngularMotionDisc(btCollisionShape* obj)
 }
 
 void btCollisionShape_getAnisotropicRollingFrictionDirection(btCollisionShape* obj,
-  btVector3* value)
+                                                             btVector3*        value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->getAnisotropicRollingFrictionDirection();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->getAnisotropicRollingFrictionDirection();
   BTVECTOR3_SET(value, temp);
 }
 
 void btCollisionShape_getBoundingSphere(btCollisionShape* obj, btVector3* center,
-  btScalar* radius)
+                                        btScalar* radius)
 {
   BTVECTOR3_DEF(center);
   obj->getBoundingSphere(BTVECTOR3_USE(center), *radius);

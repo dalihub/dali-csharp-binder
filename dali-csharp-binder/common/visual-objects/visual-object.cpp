@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,7 +124,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VisualObject_New()
   void*              jresult = 0;
   Dali::VisualObject result;
 
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     result = Dali::VisualObject::New();
   }));
 
@@ -139,7 +140,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_DetachFromContainer(void* n
   GUARD_ON_NULL_RET(nuiVisualObject);
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->DetachFromContainer();
   }));
 }
@@ -153,7 +155,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VisualObject_GetContainer(void* nuiVisu
   GUARD_ON_NULL_RET0(nuiVisualObject);
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     result = visualObject->GetContainer();
   }));
 
@@ -172,7 +175,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_CreateVisual(void* nuiVisua
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
   propertyMap  = nuiPropertyMap ? *((const Dali::Property::Map*)nuiPropertyMap) : Dali::Property::Map();
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->CreateVisual(propertyMap);
   }));
 }
@@ -187,7 +191,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_RetrieveVisualPropertyMap(v
 
   visualObject = (const Dali::VisualObject*)nuiVisualObject;
   propertyMap  = (Dali::Property::Map*)nuiPropertyMap;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->RetrieveVisualPropertyMap(*propertyMap);
   }));
 }
@@ -202,7 +207,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_DoAction_UpdatePropertyMap(
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
   propertyMap  = (Dali::Property::Map*)nuiPropertyMap;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->DoAction(Dali::Toolkit::DevelVisual::Action::UPDATE_PROPERTY, *propertyMap);
   }));
 }
@@ -214,7 +220,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_DoActionWithEmptyAttributes
   GUARD_ON_NULL_RET(nuiVisualObject);
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->DoAction(actionId, Dali::Property::Value());
   }));
 }
@@ -226,7 +233,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_DoActionWithSingleIntAttrib
   GUARD_ON_NULL_RET(nuiVisualObject);
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->DoAction(actionId, Dali::Property::Value(actionValue));
   }));
 }
@@ -238,7 +246,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_SetSiblingOrder(void* nuiVi
   GUARD_ON_NULL_RET(nuiVisualObject);
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->SetSiblingOrder(index);
   }));
 }
@@ -251,7 +260,8 @@ SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_VisualObject_GetSiblingOrder(void* n
   GUARD_ON_NULL_RET0(nuiVisualObject);
 
   visualObject = (const Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     result = visualObject->GetSiblingOrder();
   }));
 
@@ -265,7 +275,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_Raise(void* nuiVisualObject
   GUARD_ON_NULL_RET(nuiVisualObject);
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->Raise();
   }));
 }
@@ -277,7 +288,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_Lower(void* nuiVisualObject
   GUARD_ON_NULL_RET(nuiVisualObject);
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->Lower();
   }));
 }
@@ -289,7 +301,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_RaiseToTop(void* nuiVisualO
   GUARD_ON_NULL_RET(nuiVisualObject);
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->RaiseToTop();
   }));
 }
@@ -301,7 +314,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_LowerToBottom(void* nuiVisu
   GUARD_ON_NULL_RET(nuiVisualObject);
 
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->LowerToBottom();
   }));
 }
@@ -316,7 +330,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_RaiseAbove(void* nuiVisualO
 
   visualObject       = (Dali::VisualObject*)nuiVisualObject;
   targetVisualObject = (Dali::VisualObject*)nuiTargetVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->RaiseAbove(*targetVisualObject);
   }));
 }
@@ -331,7 +346,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObject_LowerBelow(void* nuiVisualO
 
   visualObject       = (Dali::VisualObject*)nuiVisualObject;
   targetVisualObject = (Dali::VisualObject*)nuiTargetVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     visualObject->LowerBelow(*targetVisualObject);
   }));
 }
@@ -344,9 +360,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VisualObject_GetPropertyObject(void* nu
   visualObject = (Dali::VisualObject*)nuiVisualObject;
 
   void* result = 0;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     Dali::Property property = visualObject->GetPropertyObject((Dali::Property::Index)visualPropertyIndex);
-    result = new Dali::Property(property.object, property.propertyIndex, property.componentIndex);
+    result                  = new Dali::Property(property.object, property.propertyIndex, property.componentIndex);
   }));
 
   return result;

@@ -23,16 +23,14 @@ btSoftBodyConcaveCollisionAlgorithm::CreateFunc* btSoftBodyConcaveCollisionAlgor
   return new btSoftBodyConcaveCollisionAlgorithm::CreateFunc();
 }
 
-
 btSoftBodyConcaveCollisionAlgorithm_SwappedCreateFunc* btSoftBodyConcaveCollisionAlgorithm_SwappedCreateFunc_new()
 {
   return new btSoftBodyConcaveCollisionAlgorithm::SwappedCreateFunc();
 }
 
-
 btSoftBodyConcaveCollisionAlgorithm* btSoftBodyConcaveCollisionAlgorithm_new(const btCollisionAlgorithmConstructionInfo* ci,
-  const btCollisionObjectWrapper* body0Wrap, const btCollisionObjectWrapper* body1Wrap,
-  bool isSwapped)
+                                                                             const btCollisionObjectWrapper* body0Wrap, const btCollisionObjectWrapper* body1Wrap,
+                                                                             bool isSwapped)
 {
   return new btSoftBodyConcaveCollisionAlgorithm(*ci, body0Wrap, body1Wrap, isSwapped);
 }

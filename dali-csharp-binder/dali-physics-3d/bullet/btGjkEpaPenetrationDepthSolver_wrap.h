@@ -17,7 +17,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-  EXPORT btGjkEpaPenetrationDepthSolver* btGjkEpaPenetrationDepthSolver_new();
+EXPORT btGjkEpaPenetrationDepthSolver* btGjkEpaPenetrationDepthSolver_new();
 #ifdef __cplusplus
 }
 #endif

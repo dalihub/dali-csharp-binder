@@ -23,7 +23,7 @@
 #include "btDiscreteDynamicsWorld_wrap.h"
 
 btDiscreteDynamicsWorld* btDiscreteDynamicsWorld_new(btDispatcher* dispatcher, btBroadphaseInterface* pairCache,
-  btConstraintSolver* constraintSolver, btCollisionConfiguration* collisionConfiguration)
+                                                     btConstraintSolver* constraintSolver, btCollisionConfiguration* collisionConfiguration)
 {
   return new btDiscreteDynamicsWorld(dispatcher, pairCache, constraintSolver, collisionConfiguration);
 }
@@ -69,13 +69,13 @@ bool btDiscreteDynamicsWorld_getSynchronizeAllMotionStates(btDiscreteDynamicsWor
 }
 
 void btDiscreteDynamicsWorld_setApplySpeculativeContactRestitution(btDiscreteDynamicsWorld* obj,
-  bool enable)
+                                                                   bool                     enable)
 {
   obj->setApplySpeculativeContactRestitution(enable);
 }
 
 void btDiscreteDynamicsWorld_setLatencyMotionStateInterpolation(btDiscreteDynamicsWorld* obj,
-  bool latencyInterpolation)
+                                                                bool                     latencyInterpolation)
 {
   obj->setLatencyMotionStateInterpolation(latencyInterpolation);
 }
@@ -86,7 +86,7 @@ void btDiscreteDynamicsWorld_setNumTasks(btDiscreteDynamicsWorld* obj, int numTa
 }
 
 void btDiscreteDynamicsWorld_setSynchronizeAllMotionStates(btDiscreteDynamicsWorld* obj,
-  bool synchronizeAll)
+                                                           bool                     synchronizeAll)
 {
   obj->setSynchronizeAllMotionStates(synchronizeAll);
 }
@@ -97,7 +97,7 @@ void btDiscreteDynamicsWorld_solveConstraints(btDiscreteDynamicsWorld* obj, btCo
 }
 
 void btDiscreteDynamicsWorld_synchronizeSingleMotionState(btDiscreteDynamicsWorld* obj,
-  btRigidBody* body)
+                                                          btRigidBody*             body)
 {
   obj->synchronizeSingleMotionState(body);
 }

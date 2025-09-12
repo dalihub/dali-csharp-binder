@@ -19,14 +19,15 @@
 #include <BulletSoftBody/btSoftBodySolvers.h>
 
 #include "conversion.h"
+
 #include "btSoftBody_wrap.h"
 
 btSoftBody_AJoint_IControlWrapper::btSoftBody_AJoint_IControlWrapper(p_btSoftBody_AJoint_IControl_Prepare PrepareCallback,
-  p_btSoftBody_AJoint_IControl_Speed SpeedCallback)
+                                                                     p_btSoftBody_AJoint_IControl_Speed   SpeedCallback)
 {
   _PrepareCallback = PrepareCallback;
-  _SpeedCallback = SpeedCallback;
-  _wrapperData = 0;
+  _SpeedCallback   = SpeedCallback;
+  _wrapperData     = 0;
 }
 
 void btSoftBody_AJoint_IControlWrapper::Prepare(btSoftBody_AJoint* aJoint)
@@ -35,7 +36,7 @@ void btSoftBody_AJoint_IControlWrapper::Prepare(btSoftBody_AJoint* aJoint)
 }
 
 btScalar btSoftBody_AJoint_IControlWrapper::Speed(btSoftBody_AJoint* aJoint,
-  btScalar current)
+                                                  btScalar           current)
 {
   return _SpeedCallback(aJoint, current);
 }
@@ -50,7 +51,6 @@ void btSoftBody_AJoint_IControlWrapper::setWrapperData(void* data)
   _wrapperData = data;
 }
 
-
 btSoftBody_ImplicitFnWrapper::btSoftBody_ImplicitFnWrapper(p_btSoftBody_ImplicitFn_Eval EvalCallback)
 {
   _EvalCallback = EvalCallback;
@@ -60,7 +60,6 @@ btScalar btSoftBody_ImplicitFnWrapper::Eval(const btVector3& x)
 {
   return _EvalCallback(&x);
 }
-
 
 btSoftBodyWorldInfo* btSoftBodyWorldInfo_new()
 {
@@ -157,9 +156,8 @@ void btSoftBodyWorldInfo_delete(btSoftBodyWorldInfo* obj)
   delete obj;
 }
 
-
 btSoftBody_AJoint_IControlWrapper* btSoftBody_AJoint_IControlWrapper_new(p_btSoftBody_AJoint_IControl_Prepare PrepareCallback,
-  p_btSoftBody_AJoint_IControl_Speed SpeedCallback)
+                                                                         p_btSoftBody_AJoint_IControl_Speed   SpeedCallback)
 {
   return ALIGNED_NEW(btSoftBody_AJoint_IControlWrapper)(PrepareCallback, SpeedCallback);
 }
@@ -173,7 +171,6 @@ void btSoftBody_AJoint_IControlWrapper_setWrapperData(btSoftBody_AJoint_IControl
 {
   obj->setWrapperData(data);
 }
-
 
 btSoftBody_AJoint_IControl* btSoftBody_AJoint_IControl_new()
 {
@@ -191,7 +188,7 @@ void btSoftBody_AJoint_IControl_Prepare(btSoftBody_AJoint_IControl* obj, btSoftB
 }
 
 btScalar btSoftBody_AJoint_IControl_Speed(btSoftBody_AJoint_IControl* obj, btSoftBody_AJoint* __unnamed0,
-  btScalar current)
+                                          btScalar current)
 {
   return obj->Speed(__unnamed0, current);
 }
@@ -200,7 +197,6 @@ void btSoftBody_AJoint_IControl_delete(btSoftBody_AJoint_IControl* obj)
 {
   ALIGNED_FREE(obj);
 }
-
 
 btSoftBody_AJoint_Specs* btSoftBody_AJoint_Specs_new()
 {
@@ -227,7 +223,6 @@ void btSoftBody_AJoint_Specs_setIcontrol(btSoftBody_AJoint_Specs* obj, btSoftBod
   obj->icontrol = value;
 }
 
-
 btVector3* btSoftBody_AJoint_getAxis(btSoftBody_AJoint* obj)
 {
   return obj->m_axis;
@@ -242,7 +237,6 @@ void btSoftBody_AJoint_setIcontrol(btSoftBody_AJoint* obj, btSoftBody_AJoint_ICo
 {
   obj->m_icontrol = value;
 }
-
 
 btRigidBody* btSoftBody_Anchor_getBody(btSoftBody_Anchor* obj)
 {
@@ -314,7 +308,6 @@ void btSoftBody_Anchor_setNode(btSoftBody_Anchor* obj, btSoftBody_Node* value)
   obj->m_node = value;
 }
 
-
 btSoftBody_Body* btSoftBody_Body_new()
 {
   return new btSoftBody::Body();
@@ -336,16 +329,18 @@ void btSoftBody_Body_activate(btSoftBody_Body* obj)
 }
 
 void btSoftBody_Body_angularVelocity(btSoftBody_Body* obj, const btVector3* rpos,
-  btVector3* value)
+                                     btVector3* value)
 {
   BTVECTOR3_IN(rpos);
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->angularVelocity(BTVECTOR3_USE(rpos));
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->angularVelocity(BTVECTOR3_USE(rpos));
   BTVECTOR3_SET(value, temp);
 }
 
 void btSoftBody_Body_angularVelocity2(btSoftBody_Body* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->angularVelocity();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->angularVelocity();
   BTVECTOR3_SET(value, temp);
 }
 
@@ -367,7 +362,7 @@ void btSoftBody_Body_applyDCImpulse(btSoftBody_Body* obj, const btVector3* impul
 }
 
 void btSoftBody_Body_applyDImpulse(btSoftBody_Body* obj, const btVector3* impulse,
-  const btVector3* rpos)
+                                   const btVector3* rpos)
 {
   BTVECTOR3_IN(impulse);
   BTVECTOR3_IN(rpos);
@@ -375,7 +370,7 @@ void btSoftBody_Body_applyDImpulse(btSoftBody_Body* obj, const btVector3* impuls
 }
 
 void btSoftBody_Body_applyImpulse(btSoftBody_Body* obj, const btSoftBody_Impulse* impulse,
-  const btVector3* rpos)
+                                  const btVector3* rpos)
 {
   BTVECTOR3_IN(rpos);
   obj->applyImpulse(*impulse, BTVECTOR3_USE(rpos));
@@ -388,7 +383,7 @@ void btSoftBody_Body_applyVAImpulse(btSoftBody_Body* obj, const btVector3* impul
 }
 
 void btSoftBody_Body_applyVImpulse(btSoftBody_Body* obj, const btVector3* impulse,
-  const btVector3* rpos)
+                                   const btVector3* rpos)
 {
   BTVECTOR3_IN(impulse);
   BTVECTOR3_IN(rpos);
@@ -422,7 +417,8 @@ void btSoftBody_Body_invWorldInertia(btSoftBody_Body* obj, btMatrix3x3* value)
 
 void btSoftBody_Body_linearVelocity(btSoftBody_Body* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->linearVelocity();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->linearVelocity();
   BTVECTOR3_SET(value, temp);
 }
 
@@ -444,7 +440,8 @@ void btSoftBody_Body_setSoft(btSoftBody_Body* obj, btSoftBody_Cluster* value)
 void btSoftBody_Body_velocity(btSoftBody_Body* obj, const btVector3* rpos, btVector3* value)
 {
   BTVECTOR3_IN(rpos);
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->velocity(BTVECTOR3_USE(rpos));
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->velocity(BTVECTOR3_USE(rpos));
   BTVECTOR3_SET(value, temp);
 }
 
@@ -458,12 +455,10 @@ void btSoftBody_Body_delete(btSoftBody_Body* obj)
   delete obj;
 }
 
-
 btSoftBody_Body* btSoftBody_Body_array_at(btSoftBody_Body* obj, int index)
 {
   return &obj[index];
 }
-
 
 btScalar btSoftBody_CJoint_getFriction(btSoftBody_CJoint* obj)
 {
@@ -509,7 +504,6 @@ void btSoftBody_CJoint_setNormal(btSoftBody_CJoint* obj, const btVector3* value)
 {
   BTVECTOR3_COPY(&obj->m_normal, value);
 }
-
 
 btScalar btSoftBody_Cluster_getAdamping(btSoftBody_Cluster* obj)
 {
@@ -735,7 +729,6 @@ void btSoftBody_Cluster_setSelfCollisionImpulseFactor(btSoftBody_Cluster* obj, b
 {
   obj->m_selfCollisionImpulseFactor = value;
 }
-
 
 btSoftBody_eAeroModel btSoftBody_Config_getAeromodel(btSoftBody_Config* obj)
 {
@@ -1012,7 +1005,6 @@ void btSoftBody_Config_setViterations(btSoftBody_Config* obj, int value)
   obj->viterations = value;
 }
 
-
 void* btSoftBody_Element_getTag(btSoftBody_Element* obj)
 {
   return obj->m_tag;
@@ -1027,7 +1019,6 @@ void btSoftBody_Element_delete(btSoftBody_Element* obj)
 {
   delete obj;
 }
-
 
 btDbvtNode* btSoftBody_Face_getLeaf(btSoftBody_Face* obj)
 {
@@ -1064,7 +1055,6 @@ void btSoftBody_Face_setRa(btSoftBody_Face* obj, btScalar value)
   obj->m_ra = value;
 }
 
-
 btSoftBody_Material* btSoftBody_Feature_getMaterial(btSoftBody_Feature* obj)
 {
   return obj->m_material;
@@ -1075,12 +1065,10 @@ void btSoftBody_Feature_setMaterial(btSoftBody_Feature* obj, btSoftBody_Material
   obj->m_material = value;
 }
 
-
 btSoftBody_ImplicitFnWrapper* btSoftBody_ImplicitFnWrapper_new(p_btSoftBody_ImplicitFn_Eval EvalCallback)
 {
   return new btSoftBody_ImplicitFnWrapper(EvalCallback);
 }
-
 
 btScalar btSoftBody_ImplicitFn_Eval(btSoftBody_ImplicitFn* obj, const btVector3* x)
 {
@@ -1092,7 +1080,6 @@ void btSoftBody_ImplicitFn_delete(btSoftBody_ImplicitFn* obj)
 {
   delete obj;
 }
-
 
 btSoftBody_Impulse* btSoftBody_Impulse_new()
 {
@@ -1122,14 +1109,14 @@ void btSoftBody_Impulse_getVelocity(btSoftBody_Impulse* obj, btVector3* value)
 btSoftBody_Impulse* btSoftBody_Impulse_operator_n(btSoftBody_Impulse* obj)
 {
   btSoftBody_Impulse* ret = new btSoftBody_Impulse;
-  *ret = obj->operator-();
+  *ret                    = obj->operator-();
   return ret;
 }
 
 btSoftBody_Impulse* btSoftBody_Impulse_operator_m(btSoftBody_Impulse* obj, btScalar x)
 {
   btSoftBody_Impulse* ret = new btSoftBody_Impulse;
-  *ret = obj->operator*(x);
+  *ret                    = obj->operator*(x);
   return ret;
 }
 
@@ -1157,7 +1144,6 @@ void btSoftBody_Impulse_delete(btSoftBody_Impulse* obj)
 {
   delete obj;
 }
-
 
 btSoftBody::Joint::Specs* btSoftBody_Joint_Specs_new()
 {
@@ -1198,7 +1184,6 @@ void btSoftBody_Joint_Specs_delete(btSoftBody_Joint_Specs* obj)
 {
   delete obj;
 }
-
 
 btSoftBody_Body* btSoftBody_Joint_getBodies(btSoftBody_Joint* obj)
 {
@@ -1305,7 +1290,6 @@ void btSoftBody_Joint_delete(btSoftBody_Joint* obj)
   delete obj;
 }
 
-
 btSoftBody_Link* btSoftBody_Link_new()
 {
   return ALIGNED_NEW(btSoftBody::Link)();
@@ -1386,7 +1370,6 @@ void btSoftBody_Link_delete(btSoftBody_Link* obj)
   ALIGNED_FREE(obj);
 }
 
-
 btSoftBody_LJoint_Specs* btSoftBody_LJoint_Specs_new()
 {
   return new btSoftBody::LJoint::Specs();
@@ -1402,12 +1385,10 @@ void btSoftBody_LJoint_Specs_setPosition(btSoftBody_LJoint_Specs* obj, const btV
   BTVECTOR3_COPY(&obj->position, value);
 }
 
-
 btVector3* btSoftBody_LJoint_getRpos(btSoftBody_LJoint* obj)
 {
   return obj->m_rpos;
 }
-
 
 int btSoftBody_Material_getFlags(btSoftBody_Material* obj)
 {
@@ -1448,7 +1429,6 @@ void btSoftBody_Material_setKVST(btSoftBody_Material* obj, btScalar value)
 {
   obj->m_kVST = value;
 }
-
 
 btScalar btSoftBody_Node_getArea(btSoftBody_Node* obj)
 {
@@ -1560,7 +1540,6 @@ void btSoftBody_Node_setX(btSoftBody_Node* obj, const btVector3* value)
   BTVECTOR3_COPY(&obj->m_x, value);
 }
 
-
 btScalar* btSoftBody_Note_getCoords(btSoftBody_Note* obj)
 {
   return obj->m_coords;
@@ -1600,7 +1579,6 @@ void btSoftBody_Note_setText(btSoftBody_Note* obj, const char* value)
 {
   obj->m_text = value;
 }
-
 
 void btSoftBody_Pose_getAqq(btSoftBody_Pose* obj, btMatrix3x3* value)
 {
@@ -1682,14 +1660,13 @@ void btSoftBody_Pose_setVolume(btSoftBody_Pose* obj, btScalar value)
   obj->m_volume = value;
 }
 
-
 btSoftBody_RayFromToCaster* btSoftBody_RayFromToCaster_new(const btVector3* rayFrom,
-  const btVector3* rayTo, btScalar mxt)
+                                                           const btVector3* rayTo, btScalar mxt)
 {
   BTVECTOR3_IN(rayFrom);
   BTVECTOR3_IN(rayTo);
   return new btSoftBody::RayFromToCaster(BTVECTOR3_USE(rayFrom), BTVECTOR3_USE(rayTo),
-    mxt);
+                                         mxt);
 }
 
 btSoftBody_Face* btSoftBody_RayFromToCaster_getFace(btSoftBody_RayFromToCaster* obj)
@@ -1708,7 +1685,7 @@ void btSoftBody_RayFromToCaster_getRayFrom(btSoftBody_RayFromToCaster* obj, btVe
 }
 
 void btSoftBody_RayFromToCaster_getRayNormalizedDirection(btSoftBody_RayFromToCaster* obj,
-  btVector3* value)
+                                                          btVector3*                  value)
 {
   BTVECTOR3_SET(value, obj->m_rayNormalizedDirection);
 }
@@ -1724,8 +1701,8 @@ int btSoftBody_RayFromToCaster_getTests(btSoftBody_RayFromToCaster* obj)
 }
 
 btScalar btSoftBody_RayFromToCaster_rayFromToTriangle(const btVector3* rayFrom, const btVector3* rayTo,
-  const btVector3* rayNormalizedDirection, const btVector3* a, const btVector3* b,
-  const btVector3* c)
+                                                      const btVector3* rayNormalizedDirection, const btVector3* a, const btVector3* b,
+                                                      const btVector3* c)
 {
   BTVECTOR3_IN(rayFrom);
   BTVECTOR3_IN(rayTo);
@@ -1734,13 +1711,13 @@ btScalar btSoftBody_RayFromToCaster_rayFromToTriangle(const btVector3* rayFrom, 
   BTVECTOR3_IN(b);
   BTVECTOR3_IN(c);
   return btSoftBody::RayFromToCaster::rayFromToTriangle(BTVECTOR3_USE(rayFrom), BTVECTOR3_USE(rayTo),
-    BTVECTOR3_USE(rayNormalizedDirection), BTVECTOR3_USE(a), BTVECTOR3_USE(b),
-    BTVECTOR3_USE(c));
+                                                        BTVECTOR3_USE(rayNormalizedDirection), BTVECTOR3_USE(a), BTVECTOR3_USE(b),
+                                                        BTVECTOR3_USE(c));
 }
 
 btScalar btSoftBody_RayFromToCaster_rayFromToTriangle2(const btVector3* rayFrom,
-  const btVector3* rayTo, const btVector3* rayNormalizedDirection, const btVector3* a,
-  const btVector3* b, const btVector3* c, btScalar maxt)
+                                                       const btVector3* rayTo, const btVector3* rayNormalizedDirection, const btVector3* a,
+                                                       const btVector3* b, const btVector3* c, btScalar maxt)
 {
   BTVECTOR3_IN(rayFrom);
   BTVECTOR3_IN(rayTo);
@@ -1749,8 +1726,8 @@ btScalar btSoftBody_RayFromToCaster_rayFromToTriangle2(const btVector3* rayFrom,
   BTVECTOR3_IN(b);
   BTVECTOR3_IN(c);
   return btSoftBody::RayFromToCaster::rayFromToTriangle(BTVECTOR3_USE(rayFrom), BTVECTOR3_USE(rayTo),
-    BTVECTOR3_USE(rayNormalizedDirection), BTVECTOR3_USE(a), BTVECTOR3_USE(b),
-    BTVECTOR3_USE(c), maxt);
+                                                        BTVECTOR3_USE(rayNormalizedDirection), BTVECTOR3_USE(a), BTVECTOR3_USE(b),
+                                                        BTVECTOR3_USE(c), maxt);
 }
 
 void btSoftBody_RayFromToCaster_setFace(btSoftBody_RayFromToCaster* obj, btSoftBody_Face* value)
@@ -1769,7 +1746,7 @@ void btSoftBody_RayFromToCaster_setRayFrom(btSoftBody_RayFromToCaster* obj, cons
 }
 
 void btSoftBody_RayFromToCaster_setRayNormalizedDirection(btSoftBody_RayFromToCaster* obj,
-  const btVector3* value)
+                                                          const btVector3*            value)
 {
   BTVECTOR3_COPY(&obj->m_rayNormalizedDirection, value);
 }
@@ -1783,7 +1760,6 @@ void btSoftBody_RayFromToCaster_setTests(btSoftBody_RayFromToCaster* obj, int va
 {
   obj->m_tests = value;
 }
-
 
 btSoftBody_RContact* btSoftBody_RContact_new()
 {
@@ -1880,7 +1856,6 @@ void btSoftBody_RContact_delete(btSoftBody_RContact* obj)
   delete obj;
 }
 
-
 btSoftBody_SContact* btSoftBody_SContact_new()
 {
   return new btSoftBody::SContact();
@@ -1956,7 +1931,6 @@ void btSoftBody_SContact_delete(btSoftBody_SContact* obj)
   delete obj;
 }
 
-
 btSoftBody_sCti* btSoftBody_sCti_new()
 {
   return new btSoftBody::sCti();
@@ -1996,7 +1970,6 @@ void btSoftBody_sCti_delete(btSoftBody_sCti* obj)
 {
   delete obj;
 }
-
 
 btScalar btSoftBody_SolverState_getIsdt(btSoftBody_SolverState* obj)
 {
@@ -2048,7 +2021,6 @@ void btSoftBody_SolverState_setVelmrg(btSoftBody_SolverState* obj, btScalar valu
   obj->velmrg = value;
 }
 
-
 btSoftBody_sRayCast* btSoftBody_sRayCast_new()
 {
   return new btSoftBody::sRayCast();
@@ -2098,7 +2070,6 @@ void btSoftBody_sRayCast_delete(btSoftBody_sRayCast* obj)
 {
   delete obj;
 }
-
 
 btVector3* btSoftBody_Tetra_getC0(btSoftBody_Tetra* obj)
 {
@@ -2150,7 +2121,6 @@ void btSoftBody_Tetra_setRv(btSoftBody_Tetra* obj, btScalar value)
   obj->m_rv = value;
 }
 
-
 void btSoftBody_TetraScratch_getF(btSoftBody_TetraScratch* obj, btMatrix3x3* value)
 {
   BTMATRIX3X3_OUT(value, &obj->m_F);
@@ -2161,12 +2131,11 @@ void btSoftBody_TetraScratch_setF(btSoftBody_TetraScratch* obj, const btMatrix3x
   BTMATRIX3X3_SET(&obj->m_F, (btScalar*)value);
 }
 
-
 btSoftBody* btSoftBody_new(btSoftBodyWorldInfo* worldInfo, int node_count, const btScalar* x,
-  const btScalar* m)
+                           const btScalar* m)
 {
-  btVector3* xTemp = Vector3ArrayIn(x, node_count);
-  btSoftBody* ret = new btSoftBody(worldInfo, node_count, xTemp, m);
+  btVector3*  xTemp = Vector3ArrayIn(x, node_count);
+  btSoftBody* ret   = new btSoftBody(worldInfo, node_count, xTemp, m);
   delete[] xTemp;
   return ret;
 }
@@ -2177,14 +2146,14 @@ btSoftBody* btSoftBody_new2(btSoftBodyWorldInfo* worldInfo)
 }
 
 void btSoftBody_addAeroForceToFace(btSoftBody* obj, const btVector3* windVelocity,
-  int faceIndex)
+                                   int faceIndex)
 {
   BTVECTOR3_IN(windVelocity);
   obj->addAeroForceToFace(BTVECTOR3_USE(windVelocity), faceIndex);
 }
 
 void btSoftBody_addAeroForceToNode(btSoftBody* obj, const btVector3* windVelocity,
-  int nodeIndex)
+                                   int nodeIndex)
 {
   BTVECTOR3_IN(windVelocity);
   obj->addAeroForceToNode(BTVECTOR3_USE(windVelocity), nodeIndex);
@@ -2215,15 +2184,15 @@ void btSoftBody_addVelocity2(btSoftBody* obj, const btVector3* velocity, int nod
 }
 
 void btSoftBody_appendAnchor(btSoftBody* obj, int node, btRigidBody* body, const btVector3* localPivot,
-  bool disableCollisionBetweenLinkedBodies, btScalar influence)
+                             bool disableCollisionBetweenLinkedBodies, btScalar influence)
 {
   BTVECTOR3_IN(localPivot);
   obj->appendAnchor(node, body, BTVECTOR3_USE(localPivot), disableCollisionBetweenLinkedBodies,
-    influence);
+                    influence);
 }
 
 void btSoftBody_appendAnchor2(btSoftBody* obj, int node, btRigidBody* body, bool disableCollisionBetweenLinkedBodies,
-  btScalar influence)
+                              btScalar influence)
 {
   obj->appendAnchor(node, body, disableCollisionBetweenLinkedBodies, influence);
 }
@@ -2234,19 +2203,19 @@ void btSoftBody_appendAngularJoint(btSoftBody* obj, const btSoftBody_AJoint_Spec
 }
 
 void btSoftBody_appendAngularJoint2(btSoftBody* obj, const btSoftBody_AJoint_Specs* specs,
-  btSoftBody_Body* body)
+                                    btSoftBody_Body* body)
 {
   obj->appendAngularJoint(*specs, *body);
 }
 
 void btSoftBody_appendAngularJoint3(btSoftBody* obj, const btSoftBody_AJoint_Specs* specs,
-  btSoftBody* body)
+                                    btSoftBody* body)
 {
   obj->appendAngularJoint(*specs, body);
 }
 
 void btSoftBody_appendAngularJoint4(btSoftBody* obj, const btSoftBody_AJoint_Specs* specs,
-  btSoftBody_Cluster* body0, btSoftBody_Body* body1)
+                                    btSoftBody_Cluster* body0, btSoftBody_Body* body1)
 {
   obj->appendAngularJoint(*specs, body0, *body1);
 }
@@ -2262,7 +2231,7 @@ void btSoftBody_appendFace2(btSoftBody* obj, int node0, int node1, int node2, bt
 }
 
 void btSoftBody_appendLinearJoint(btSoftBody* obj, const btSoftBody_LJoint_Specs* specs,
-  btSoftBody* body)
+                                  btSoftBody* body)
 {
   obj->appendLinearJoint(*specs, body);
 }
@@ -2273,19 +2242,19 @@ void btSoftBody_appendLinearJoint2(btSoftBody* obj, const btSoftBody_LJoint_Spec
 }
 
 void btSoftBody_appendLinearJoint3(btSoftBody* obj, const btSoftBody_LJoint_Specs* specs,
-  btSoftBody_Body* body)
+                                   btSoftBody_Body* body)
 {
   obj->appendLinearJoint(*specs, *body);
 }
 
 void btSoftBody_appendLinearJoint4(btSoftBody* obj, const btSoftBody_LJoint_Specs* specs,
-  btSoftBody_Cluster* body0, btSoftBody_Body* body1)
+                                   btSoftBody_Cluster* body0, btSoftBody_Body* body1)
 {
   obj->appendLinearJoint(*specs, body0, *body1);
 }
 
 void btSoftBody_appendLink(btSoftBody* obj, int node0, int node1, btSoftBody_Material* mat,
-  bool bcheckexist)
+                           bool bcheckexist)
 {
   obj->appendLink(node0, node1, mat, bcheckexist);
 }
@@ -2296,7 +2265,7 @@ void btSoftBody_appendLink2(btSoftBody* obj, int model, btSoftBody_Material* mat
 }
 
 void btSoftBody_appendLink3(btSoftBody* obj, btSoftBody_Node* node0, btSoftBody_Node* node1,
-  btSoftBody_Material* mat, bool bcheckexist)
+                            btSoftBody_Material* mat, bool bcheckexist)
 {
   obj->appendLink(node0, node1, mat, bcheckexist);
 }
@@ -2313,21 +2282,21 @@ void btSoftBody_appendNode(btSoftBody* obj, const btVector3* x, btScalar m)
 }
 
 void btSoftBody_appendNote(btSoftBody* obj, const char* text, const btVector3* o,
-  btSoftBody_Face* feature)
+                           btSoftBody_Face* feature)
 {
   BTVECTOR3_IN(o);
   obj->appendNote(text, BTVECTOR3_USE(o), feature);
 }
 
 void btSoftBody_appendNote2(btSoftBody* obj, const char* text, const btVector3* o,
-  btSoftBody_Link* feature)
+                            btSoftBody_Link* feature)
 {
   BTVECTOR3_IN(o);
   obj->appendNote(text, BTVECTOR3_USE(o), feature);
 }
 
 void btSoftBody_appendNote3(btSoftBody* obj, const char* text, const btVector3* o,
-  btSoftBody_Node* feature)
+                            btSoftBody_Node* feature)
 {
   BTVECTOR3_IN(o);
   obj->appendNote(text, BTVECTOR3_USE(o), feature);
@@ -2340,8 +2309,8 @@ void btSoftBody_appendNote4(btSoftBody* obj, const char* text, const btVector3* 
 }
 
 void btSoftBody_appendNote5(btSoftBody* obj, const char* text, const btVector3* o,
-  const btVector4* c, btSoftBody_Node* n0, btSoftBody_Node* n1, btSoftBody_Node* n2,
-  btSoftBody_Node* n3)
+                            const btVector4* c, btSoftBody_Node* n0, btSoftBody_Node* n1, btSoftBody_Node* n2,
+                            btSoftBody_Node* n3)
 {
   BTVECTOR3_IN(o);
   BTVECTOR4_IN(c);
@@ -2354,7 +2323,7 @@ void btSoftBody_appendTetra(btSoftBody* obj, int model, btSoftBody_Material* mat
 }
 
 void btSoftBody_appendTetra2(btSoftBody* obj, int node0, int node1, int node2, int node3,
-  btSoftBody_Material* mat)
+                             btSoftBody_Material* mat)
 {
   obj->appendTetra(node0, node1, node2, node3, mat);
 }
@@ -2370,14 +2339,14 @@ void btSoftBody_applyForces(btSoftBody* obj)
 }
 
 bool btSoftBody_checkContact(btSoftBody* obj, const btCollisionObjectWrapper* colObjWrap,
-  const btVector3* x, btScalar margin, btSoftBody_sCti* cti)
+                             const btVector3* x, btScalar margin, btSoftBody_sCti* cti)
 {
   BTVECTOR3_IN(x);
   return obj->checkContact(colObjWrap, BTVECTOR3_USE(x), margin, *cti);
 }
 
 bool btSoftBody_checkDeformableContact(btSoftBody* obj, const btCollisionObjectWrapper* colObjWrap,
-  const btVector3* x, btScalar margin, btSoftBody_sCti* cti, bool predict)
+                                       const btVector3* x, btScalar margin, btSoftBody_sCti* cti, bool predict)
 {
   BTVECTOR3_IN(x);
   return obj->checkDeformableContact(colObjWrap, BTVECTOR3_USE(x), margin, *cti, predict);
@@ -2410,13 +2379,15 @@ void btSoftBody_clusterAImpulse(btSoftBody_Cluster* cluster, const btSoftBody_Im
 
 void btSoftBody_clusterCom(btSoftBody* obj, int cluster, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->clusterCom(cluster);
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->clusterCom(cluster);
   BTVECTOR3_SET(value, temp);
 }
 
 void btSoftBody_clusterCom2(const btSoftBody_Cluster* cluster, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = btSoftBody::clusterCom(cluster);
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = btSoftBody::clusterCom(cluster);
   BTVECTOR3_SET(value, temp);
 }
 
@@ -2438,7 +2409,7 @@ void btSoftBody_clusterDCImpulse(btSoftBody_Cluster* cluster, const btVector3* i
 }
 
 void btSoftBody_clusterDImpulse(btSoftBody_Cluster* cluster, const btVector3* rpos,
-  const btVector3* impulse)
+                                const btVector3* impulse)
 {
   BTVECTOR3_IN(rpos);
   BTVECTOR3_IN(impulse);
@@ -2446,7 +2417,7 @@ void btSoftBody_clusterDImpulse(btSoftBody_Cluster* cluster, const btVector3* rp
 }
 
 void btSoftBody_clusterImpulse(btSoftBody_Cluster* cluster, const btVector3* rpos,
-  const btSoftBody_Impulse* impulse)
+                               const btSoftBody_Impulse* impulse)
 {
   BTVECTOR3_IN(rpos);
   btSoftBody::clusterImpulse(cluster, BTVECTOR3_USE(rpos), *impulse);
@@ -2459,15 +2430,16 @@ void btSoftBody_clusterVAImpulse(btSoftBody_Cluster* cluster, const btVector3* i
 }
 
 void btSoftBody_clusterVelocity(const btSoftBody_Cluster* cluster, const btVector3* rpos,
-  btVector3* value)
+                                btVector3* value)
 {
   BTVECTOR3_IN(rpos);
-  ATTRIBUTE_ALIGNED16(btVector3) temp = btSoftBody::clusterVelocity(cluster, BTVECTOR3_USE(rpos));
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = btSoftBody::clusterVelocity(cluster, BTVECTOR3_USE(rpos));
   BTVECTOR3_SET(value, temp);
 }
 
 void btSoftBody_clusterVImpulse(btSoftBody_Cluster* cluster, const btVector3* rpos,
-  const btVector3* impulse)
+                                const btVector3* impulse)
 {
   BTVECTOR3_IN(rpos);
   BTVECTOR3_IN(impulse);
@@ -2475,7 +2447,7 @@ void btSoftBody_clusterVImpulse(btSoftBody_Cluster* cluster, const btVector3* rp
 }
 
 bool btSoftBody_cutLink(btSoftBody* obj, const btSoftBody_Node* node0, const btSoftBody_Node* node1,
-  btScalar position)
+                        btScalar position)
 {
   return obj->cutLink(node0, node1, position);
 }
@@ -2502,7 +2474,8 @@ void btSoftBody_defaultCollisionHandler2(btSoftBody* obj, btSoftBody* psb)
 
 void btSoftBody_evaluateCom(btSoftBody* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->evaluateCom();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->evaluateCom();
   BTVECTOR3_SET(value, temp);
 }
 
@@ -2777,7 +2750,7 @@ void btSoftBody_randomizeConstraints(btSoftBody* obj)
 }
 
 bool btSoftBody_rayTest(btSoftBody* obj, const btVector3* rayFrom, const btVector3* rayTo,
-  btSoftBody_sRayCast* results)
+                        btSoftBody_sRayCast* results)
 {
   BTVECTOR3_IN(rayFrom);
   BTVECTOR3_IN(rayTo);
@@ -2785,16 +2758,16 @@ bool btSoftBody_rayTest(btSoftBody* obj, const btVector3* rayFrom, const btVecto
 }
 
 int btSoftBody_rayTest2(btSoftBody* obj, const btVector3* rayFrom, const btVector3* rayTo,
-  btScalar* mint, btSoftBody_eFeature* feature, int* index, bool bcountonly)
+                        btScalar* mint, btSoftBody_eFeature* feature, int* index, bool bcountonly)
 {
   BTVECTOR3_IN(rayFrom);
   BTVECTOR3_IN(rayTo);
   return obj->rayTest(BTVECTOR3_USE(rayFrom), BTVECTOR3_USE(rayTo), *mint, *feature,
-    *index, bcountonly);
+                      *index, bcountonly);
 }
 
 void btSoftBody_refine(btSoftBody* obj, btSoftBody_ImplicitFn* ifn, btScalar accurary,
-  bool cut)
+                       bool cut)
 {
   obj->refine(ifn, accurary, cut);
 }
@@ -3003,16 +2976,19 @@ void btSoftBody_VSolve_Links(btSoftBody* psb, btScalar kst)
 int btSoftBody_getFaceVertexData(btSoftBody* obj, btScalar* vertices)
 {
   btAlignedObjectArray<btSoftBody_Face>* faceArray = &obj->m_faces;
-  int faceCount = faceArray->size();
-  if (faceCount == 0) {
+  int                                    faceCount = faceArray->size();
+  if(faceCount == 0)
+  {
     return 0;
   }
 
   int vertexCount = faceCount * 3;
 
   int i, j;
-  for (i = 0; i < faceCount; i++) {
-    for (j = 0; j < 3; j++) {
+  for(i = 0; i < faceCount; i++)
+  {
+    for(j = 0; j < 3; j++)
+    {
       btSoftBody_Node* n = faceArray->at(i).m_n[j];
       btVector3_copy((btVector3*)vertices, &n->m_x);
       vertices += 3;
@@ -3025,16 +3001,19 @@ int btSoftBody_getFaceVertexData(btSoftBody* obj, btScalar* vertices)
 int btSoftBody_getFaceVertexNormalData(btSoftBody* obj, btScalar* vertices)
 {
   btAlignedObjectArray<btSoftBody_Face>* faceArray = &obj->m_faces;
-  int faceCount = faceArray->size();
-  if (faceCount == 0) {
+  int                                    faceCount = faceArray->size();
+  if(faceCount == 0)
+  {
     return 0;
   }
 
   int vertexCount = faceCount * 3;
 
   int i, j;
-  for (i = 0; i < faceCount; i++) {
-    for (j = 0; j < 3; j++) {
+  for(i = 0; i < faceCount; i++)
+  {
+    for(j = 0; j < 3; j++)
+    {
       btSoftBody_Node* n = faceArray->at(i).m_n[j];
       btVector3_copy((btVector3*)vertices, &n->m_x);
       vertices += 3;
@@ -3049,16 +3028,19 @@ int btSoftBody_getFaceVertexNormalData(btSoftBody* obj, btScalar* vertices)
 int btSoftBody_getFaceVertexNormalData2(btSoftBody* obj, btScalar* vertices, btScalar* normals)
 {
   btAlignedObjectArray<btSoftBody_Face>* faceArray = &obj->m_faces;
-  int faceCount = faceArray->size();
-  if (faceCount == 0) {
+  int                                    faceCount = faceArray->size();
+  if(faceCount == 0)
+  {
     return 0;
   }
 
   int vertexCount = faceCount * 3;
 
   int i, j;
-  for (i = 0; i < faceCount; i++) {
-    for (j = 0; j < 3; j++) {
+  for(i = 0; i < faceCount; i++)
+  {
+    for(j = 0; j < 3; j++)
+    {
       btSoftBody_Node* n = faceArray->at(i).m_n[j];
       btVector3_copy((btVector3*)vertices, &n->m_x);
       btVector3_copy((btVector3*)normals, &n->m_n);
@@ -3073,15 +3055,17 @@ int btSoftBody_getFaceVertexNormalData2(btSoftBody* obj, btScalar* vertices, btS
 int btSoftBody_getLinkVertexData(btSoftBody* obj, btScalar* vertices)
 {
   btAlignedObjectArray<btSoftBody_Link>* linkArray = &obj->m_links;
-  int linkCount = linkArray->size();
-  if (linkCount == 0) {
+  int                                    linkCount = linkArray->size();
+  if(linkCount == 0)
+  {
     return 0;
   }
 
   int vertexCount = linkCount * 2;
 
   int i;
-  for (i = 0; i < linkCount; i++) {
+  for(i = 0; i < linkCount; i++)
+  {
     btSoftBody_Link* l = &linkArray->at(i);
     btVector3_copy((btVector3*)vertices, &l->m_n[0]->m_x);
     vertices += 3;
@@ -3095,15 +3079,17 @@ int btSoftBody_getLinkVertexData(btSoftBody* obj, btScalar* vertices)
 int btSoftBody_getLinkVertexNormalData(btSoftBody* obj, btScalar* vertices)
 {
   btAlignedObjectArray<btSoftBody_Link>* linkArray = &obj->m_links;
-  int linkCount = linkArray->size();
-  if (linkCount == 0) {
+  int                                    linkCount = linkArray->size();
+  if(linkCount == 0)
+  {
     return 0;
   }
 
   int vertexCount = linkCount * 2;
 
   int i;
-  for (i = 0; i < linkCount; i++) {
+  for(i = 0; i < linkCount; i++)
+  {
     btSoftBody_Link* l = &linkArray->at(i);
     btVector3_copy((btVector3*)vertices, &l->m_n[0]->m_x);
     vertices += 6;
@@ -3117,15 +3103,17 @@ int btSoftBody_getLinkVertexNormalData(btSoftBody* obj, btScalar* vertices)
 int btSoftBody_getTetraVertexData(btSoftBody* obj, btScalar* vertices)
 {
   btAlignedObjectArray<btSoftBody_Tetra>* tetraArray = &obj->m_tetras;
-  int tetraCount = tetraArray->size();
-  if (tetraCount == 0) {
+  int                                     tetraCount = tetraArray->size();
+  if(tetraCount == 0)
+  {
     return 0;
   }
 
   int vertexCount = tetraCount * 12;
 
   int i;
-  for (i = 0; i < tetraCount; i++) {
+  for(i = 0; i < tetraCount; i++)
+  {
     btSoftBody_Tetra* t = &tetraArray->at(i);
     btVector3_copy((btVector3*)&vertices[0], &t->m_n[0]->m_x);
     btVector3_copy((btVector3*)&vertices[3], &t->m_n[1]->m_x);
@@ -3152,19 +3140,21 @@ int btSoftBody_getTetraVertexData(btSoftBody* obj, btScalar* vertices)
 int btSoftBody_getTetraVertexNormalData(btSoftBody* obj, btScalar* vertices)
 {
   btAlignedObjectArray<btSoftBody_Tetra>* tetraArray = &obj->m_tetras;
-  int tetraCount = tetraArray->size();
-  if (tetraCount == 0) {
+  int                                     tetraCount = tetraArray->size();
+  if(tetraCount == 0)
+  {
     return 0;
   }
 
   int vertexCount = tetraCount * 12;
 
-  int i;
+  int       i;
   btVector3 c1, c2, c3, normal;
-  for (i = 0; i < tetraCount; i++) {
+  for(i = 0; i < tetraCount; i++)
+  {
     btSoftBody_Tetra* t = &tetraArray->at(i);
-    c1 = t->m_n[1]->m_x - t->m_n[0]->m_x;
-    c2 = t->m_n[0]->m_x - t->m_n[2]->m_x;
+    c1                  = t->m_n[1]->m_x - t->m_n[0]->m_x;
+    c2                  = t->m_n[0]->m_x - t->m_n[2]->m_x;
 
     normal = c1.cross(c2);
     btVector3_copy((btVector3*)&vertices[0], &t->m_n[0]->m_x);
@@ -3174,7 +3164,7 @@ int btSoftBody_getTetraVertexNormalData(btSoftBody* obj, btScalar* vertices)
     btVector3_copy((btVector3*)&vertices[12], &t->m_n[2]->m_x);
     btVector3_copy((btVector3*)&vertices[15], &normal);
 
-    c3 = t->m_n[3]->m_x - t->m_n[0]->m_x;
+    c3     = t->m_n[3]->m_x - t->m_n[0]->m_x;
     normal = c1.cross(c3);
     btVector3_copy((btVector3*)&vertices[18], &t->m_n[0]->m_x);
     btVector3_copy((btVector3*)&vertices[21], &normal);
@@ -3183,8 +3173,8 @@ int btSoftBody_getTetraVertexNormalData(btSoftBody* obj, btScalar* vertices)
     btVector3_copy((btVector3*)&vertices[30], &t->m_n[3]->m_x);
     btVector3_copy((btVector3*)&vertices[33], &normal);
 
-    c1 = t->m_n[2]->m_x - t->m_n[1]->m_x;
-    c3 = t->m_n[3]->m_x - t->m_n[1]->m_x;
+    c1     = t->m_n[2]->m_x - t->m_n[1]->m_x;
+    c3     = t->m_n[3]->m_x - t->m_n[1]->m_x;
     normal = c1.cross(c3);
     btVector3_copy((btVector3*)&vertices[36], &t->m_n[1]->m_x);
     btVector3_copy((btVector3*)&vertices[39], &normal);
@@ -3193,7 +3183,7 @@ int btSoftBody_getTetraVertexNormalData(btSoftBody* obj, btScalar* vertices)
     btVector3_copy((btVector3*)&vertices[48], &t->m_n[3]->m_x);
     btVector3_copy((btVector3*)&vertices[51], &normal);
 
-    c3 = t->m_n[3]->m_x - t->m_n[2]->m_x;
+    c3     = t->m_n[3]->m_x - t->m_n[2]->m_x;
     normal = c2.cross(c3);
     btVector3_copy((btVector3*)&vertices[54], &t->m_n[2]->m_x);
     btVector3_copy((btVector3*)&vertices[57], &normal);
@@ -3211,19 +3201,21 @@ int btSoftBody_getTetraVertexNormalData(btSoftBody* obj, btScalar* vertices)
 int btSoftBody_getTetraVertexNormalData2(btSoftBody* obj, btScalar* vertices, btScalar* normals)
 {
   btAlignedObjectArray<btSoftBody_Tetra>* tetraArray = &obj->m_tetras;
-  int tetraCount = tetraArray->size();
-  if (tetraCount == 0) {
+  int                                     tetraCount = tetraArray->size();
+  if(tetraCount == 0)
+  {
     return 0;
   }
 
   int vertexCount = tetraCount * 12;
 
-  int i;
+  int       i;
   btVector3 c1, c2, c3, normal;
-  for (i = 0; i < tetraCount; i++) {
+  for(i = 0; i < tetraCount; i++)
+  {
     btSoftBody_Tetra* t = &tetraArray->at(i);
-    c1 = t->m_n[1]->m_x - t->m_n[0]->m_x;
-    c2 = t->m_n[0]->m_x - t->m_n[2]->m_x;
+    c1                  = t->m_n[1]->m_x - t->m_n[0]->m_x;
+    c2                  = t->m_n[0]->m_x - t->m_n[2]->m_x;
 
     normal = c1.cross(c2);
     btVector3_copy((btVector3*)&vertices[0], &t->m_n[0]->m_x);
@@ -3233,7 +3225,7 @@ int btSoftBody_getTetraVertexNormalData2(btSoftBody* obj, btScalar* vertices, bt
     btVector3_copy((btVector3*)&vertices[6], &t->m_n[2]->m_x);
     btVector3_copy((btVector3*)&normals[6], &normal);
 
-    c3 = t->m_n[3]->m_x - t->m_n[0]->m_x;
+    c3     = t->m_n[3]->m_x - t->m_n[0]->m_x;
     normal = c1.cross(c3);
     btVector3_copy((btVector3*)&vertices[9], &t->m_n[0]->m_x);
     btVector3_copy((btVector3*)&normals[9], &normal);
@@ -3242,8 +3234,8 @@ int btSoftBody_getTetraVertexNormalData2(btSoftBody* obj, btScalar* vertices, bt
     btVector3_copy((btVector3*)&vertices[15], &t->m_n[3]->m_x);
     btVector3_copy((btVector3*)&normals[15], &normal);
 
-    c1 = t->m_n[2]->m_x - t->m_n[1]->m_x;
-    c3 = t->m_n[3]->m_x - t->m_n[1]->m_x;
+    c1     = t->m_n[2]->m_x - t->m_n[1]->m_x;
+    c3     = t->m_n[3]->m_x - t->m_n[1]->m_x;
     normal = c1.cross(c3);
     btVector3_copy((btVector3*)&vertices[18], &t->m_n[1]->m_x);
     btVector3_copy((btVector3*)&normals[18], &normal);
@@ -3252,7 +3244,7 @@ int btSoftBody_getTetraVertexNormalData2(btSoftBody* obj, btScalar* vertices, bt
     btVector3_copy((btVector3*)&vertices[24], &t->m_n[3]->m_x);
     btVector3_copy((btVector3*)&normals[24], &normal);
 
-    c3 = t->m_n[3]->m_x - t->m_n[2]->m_x;
+    c3     = t->m_n[3]->m_x - t->m_n[2]->m_x;
     normal = c2.cross(c3);
     btVector3_copy((btVector3*)&vertices[27], &t->m_n[2]->m_x);
     btVector3_copy((btVector3*)&normals[27], &normal);

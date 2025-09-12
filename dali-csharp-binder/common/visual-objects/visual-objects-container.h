@@ -2,7 +2,7 @@
 #define CSHARP_VISUAL_OBJECTS_CONTAINER_H
 
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,11 +171,11 @@ public: ///< Public API
   void RemoveVisualObject(Dali::VisualObject visualObject);
 
 public:
-  VisualObjectsContainer()                                     = default;
-  ~VisualObjectsContainer()                                    = default;
-  VisualObjectsContainer(const VisualObjectsContainer& handle) = default;
-  VisualObjectsContainer& operator=(const VisualObjectsContainer& rhs) = default;
-  VisualObjectsContainer(VisualObjectsContainer&& rhs) noexcept        = default;
+  VisualObjectsContainer()                                                 = default;
+  ~VisualObjectsContainer()                                                = default;
+  VisualObjectsContainer(const VisualObjectsContainer& handle)             = default;
+  VisualObjectsContainer& operator=(const VisualObjectsContainer& rhs)     = default;
+  VisualObjectsContainer(VisualObjectsContainer&& rhs) noexcept            = default;
   VisualObjectsContainer& operator=(VisualObjectsContainer&& rhs) noexcept = default;
 
   /**

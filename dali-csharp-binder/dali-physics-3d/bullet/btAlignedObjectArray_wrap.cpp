@@ -40,7 +40,6 @@ int btAlignedObjectArray_btBroadphasePair_size(btAlignedObjectArray_btBroadphase
   return obj->size();
 }
 
-
 btCollisionObject* btAlignedObjectArray_btCollisionObjectPtr_at(btAlignedObjectArray_btCollisionObjectPtr* obj, int n)
 {
   return obj->at(n);
@@ -66,7 +65,6 @@ int btAlignedObjectArray_btCollisionObjectPtr_size(btAlignedObjectArray_btCollis
   return obj->size();
 }
 
-
 btSoftBody* btAlignedObjectArray_btSoftBodyPtr_at(btAlignedObjectArray_btSoftBodyPtr* obj, int n)
 {
   return obj->at(n);
@@ -87,7 +85,6 @@ int btAlignedObjectArray_btSoftBodyPtr_size(btAlignedObjectArray_btSoftBodyPtr* 
   return obj->size();
 }
 
-
 btIndexedMesh* btAlignedObjectArray_btIndexedMesh_at(btAlignedObjectArray_btIndexedMesh* obj, int n)
 {
   return &obj->at(n);
@@ -107,7 +104,6 @@ int btAlignedObjectArray_btIndexedMesh_size(btAlignedObjectArray_btIndexedMesh* 
 {
   return obj->size();
 }
-
 
 EXPORT btAlignedObjectArray_btPersistentManifoldPtr* btAlignedObjectArray_btPersistentManifoldPtr_new()
 {
@@ -139,7 +135,6 @@ void btAlignedObjectArray_btPersistentManifoldPtr_delete(btAlignedObjectArray_bt
   delete obj;
 }
 
-
 btSoftBody::Anchor* btAlignedObjectArray_btSoftBody_Anchor_at(btAlignedObjectArray_btSoftBody_Anchor* obj, int n)
 {
   return &obj->at(n);
@@ -159,7 +154,6 @@ int btAlignedObjectArray_btSoftBody_Anchor_size(btAlignedObjectArray_btSoftBody_
 {
   return obj->size();
 }
-
 
 btSoftBody::Cluster* btAlignedObjectArray_btSoftBody_ClusterPtr_at(btAlignedObjectArray_btSoftBody_ClusterPtr* obj, int n)
 {
@@ -181,7 +175,6 @@ int btAlignedObjectArray_btSoftBody_ClusterPtr_size(btAlignedObjectArray_btSoftB
   return obj->size();
 }
 
-
 btSoftBody::Face* btAlignedObjectArray_btSoftBody_Face_at(btAlignedObjectArray_btSoftBody_Face* obj, int n)
 {
   return &obj->at(n);
@@ -202,7 +195,6 @@ int btAlignedObjectArray_btSoftBody_Face_size(btAlignedObjectArray_btSoftBody_Fa
   return obj->size();
 }
 
-
 btSoftBody::Joint* btAlignedObjectArray_btSoftBody_JointPtr_at(btSoftBody::tJointArray* obj, int n)
 {
   return obj->at(n);
@@ -222,7 +214,6 @@ int btAlignedObjectArray_btSoftBody_JointPtr_size(btAlignedObjectArray_btSoftBod
 {
   return obj->size();
 }
-
 
 btSoftBody::Link* btAlignedObjectArray_btSoftBody_Link_at(btAlignedObjectArray_btSoftBody_Link* obj, int n)
 {
@@ -249,7 +240,6 @@ int btAlignedObjectArray_btSoftBody_Link_size(btAlignedObjectArray_btSoftBody_Li
   return obj->size();
 }
 
-
 btSoftBody::Material* btAlignedObjectArray_btSoftBody_MaterialPtr_at(btAlignedObjectArray_btSoftBody_MaterialPtr* obj, int n)
 {
   return obj->at(n);
@@ -270,7 +260,6 @@ int btAlignedObjectArray_btSoftBody_MaterialPtr_size(btAlignedObjectArray_btSoft
   return obj->size();
 }
 
-
 btSoftBody::Node* btAlignedObjectArray_btSoftBody_Node_at(btAlignedObjectArray_btSoftBody_Node* obj, int n)
 {
   return &obj->at(n);
@@ -278,7 +267,8 @@ btSoftBody::Node* btAlignedObjectArray_btSoftBody_Node_at(btAlignedObjectArray_b
 
 int btAlignedObjectArray_btSoftBody_Node_index_of(btAlignedObjectArray_btSoftBody_Node* obj, btSoftBody::Node* val)
 {
-  if (val < &obj->at(0) || val > &obj->at(obj->size() - 1)) {
+  if(val < &obj->at(0) || val > &obj->at(obj->size() - 1))
+  {
     return -1;
   }
   return static_cast<int>(val - &obj->at(0));
@@ -299,7 +289,6 @@ int btAlignedObjectArray_btSoftBody_Node_size(btAlignedObjectArray_btSoftBody_No
   return obj->size();
 }
 
-
 btSoftBody::Note* btAlignedObjectArray_btSoftBody_Note_at(btAlignedObjectArray_btSoftBody_Note* obj, int n)
 {
   return &obj->at(n);
@@ -307,7 +296,8 @@ btSoftBody::Note* btAlignedObjectArray_btSoftBody_Note_at(btAlignedObjectArray_b
 
 int btAlignedObjectArray_btSoftBody_Note_index_of(btAlignedObjectArray_btSoftBody_Note* obj, btSoftBody::Note* val)
 {
-  if (val < &obj->at(0) || val > &obj->at(obj->size() - 1)) {
+  if(val < &obj->at(0) || val > &obj->at(obj->size() - 1))
+  {
     return -1;
   }
   return static_cast<int>(val - &obj->at(0));
@@ -328,7 +318,6 @@ int btAlignedObjectArray_btSoftBody_Note_size(btAlignedObjectArray_btSoftBody_No
   return obj->size();
 }
 
-
 btSoftBody::Tetra* btAlignedObjectArray_btSoftBody_Tetra_at(btAlignedObjectArray_btSoftBody_Tetra* obj, int n)
 {
   return &obj->at(n);
@@ -348,7 +337,6 @@ int btAlignedObjectArray_btSoftBody_Tetra_size(btAlignedObjectArray_btSoftBody_T
 {
   return obj->size();
 }
-
 
 btSoftBody::TetraScratch* btAlignedObjectArray_btSoftBody_TetraScratch_at(btAlignedObjectArray_btSoftBody_TetraScratch* obj, int n)
 {

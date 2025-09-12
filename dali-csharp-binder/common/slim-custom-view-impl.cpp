@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,15 @@
 #include "slim-custom-view-impl.h"
 
 // EXTERNAL INCLUDES
+#include <dali-toolkit/dali-toolkit.h>
 #include <dali/devel-api/object/handle-devel.h>
 #include <dali/public-api/object/type-registry.h>
-#include <dali-toolkit/dali-toolkit.h>
 
 // INTERNAL INCLUDES
 #include "nui-view-accessible.h"
 
-SlimCustomViewImpl::SlimCustomViewImpl(ControlBehaviour behaviourFlags) : Control(behaviourFlags)
+SlimCustomViewImpl::SlimCustomViewImpl(ControlBehaviour behaviourFlags)
+: Control(behaviourFlags)
 {
 }
 

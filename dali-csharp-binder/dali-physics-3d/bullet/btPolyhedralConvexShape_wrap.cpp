@@ -16,6 +16,7 @@
 #include <BulletCollision/CollisionShapes/btPolyhedralConvexShape.h>
 
 #include "conversion.h"
+
 #include "btPolyhedralConvexShape_wrap.h"
 
 const btConvexPolyhedron* btPolyhedralConvexShape_getConvexPolyhedron(btPolyhedralConvexShape* obj)
@@ -24,7 +25,7 @@ const btConvexPolyhedron* btPolyhedralConvexShape_getConvexPolyhedron(btPolyhedr
 }
 
 void btPolyhedralConvexShape_getEdge(btPolyhedralConvexShape* obj, int i, btVector3* pa,
-  btVector3* pb)
+                                     btVector3* pb)
 {
   BTVECTOR3_DEF(pa);
   BTVECTOR3_DEF(pb);
@@ -49,7 +50,7 @@ int btPolyhedralConvexShape_getNumVertices(btPolyhedralConvexShape* obj)
 }
 
 void btPolyhedralConvexShape_getPlane(btPolyhedralConvexShape* obj, btVector3* planeNormal,
-  btVector3* planeSupport, int i)
+                                      btVector3* planeSupport, int i)
 {
   BTVECTOR3_DEF(planeNormal);
   BTVECTOR3_DEF(planeSupport);
@@ -66,13 +67,13 @@ void btPolyhedralConvexShape_getVertex(btPolyhedralConvexShape* obj, int i, btVe
 }
 
 bool btPolyhedralConvexShape_initializePolyhedralFeatures(btPolyhedralConvexShape* obj,
-  int shiftVerticesByMargin)
+                                                          int                      shiftVerticesByMargin)
 {
   return obj->initializePolyhedralFeatures(shiftVerticesByMargin);
 }
 
 bool btPolyhedralConvexShape_isInside(btPolyhedralConvexShape* obj, const btVector3* pt,
-  btScalar tolerance)
+                                      btScalar tolerance)
 {
   BTVECTOR3_IN(pt);
   return obj->isInside(BTVECTOR3_USE(pt), tolerance);
@@ -83,15 +84,14 @@ void btPolyhedralConvexShape_setPolyhedralFeatures(btPolyhedralConvexShape* obj,
   obj->setPolyhedralFeatures(*polyhedron);
 }
 
-
 void btPolyhedralConvexAabbCachingShape_getNonvirtualAabb(btPolyhedralConvexAabbCachingShape* obj,
-  const btTransform* trans, btVector3* aabbMin, btVector3* aabbMax, btScalar margin)
+                                                          const btTransform* trans, btVector3* aabbMin, btVector3* aabbMax, btScalar margin)
 {
   BTTRANSFORM_IN(trans);
   BTVECTOR3_DEF(aabbMin);
   BTVECTOR3_DEF(aabbMax);
   obj->getNonvirtualAabb(BTTRANSFORM_USE(trans), BTVECTOR3_USE(aabbMin), BTVECTOR3_USE(aabbMax),
-    margin);
+                         margin);
   BTVECTOR3_DEF_OUT(aabbMin);
   BTVECTOR3_DEF_OUT(aabbMax);
 }

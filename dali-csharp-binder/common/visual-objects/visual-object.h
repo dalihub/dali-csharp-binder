@@ -2,7 +2,7 @@
 #define CSHARP_VISUAL_OBJECT_H
 
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,11 +219,11 @@ public: ///< Public API
   Dali::Property GetPropertyObject(Dali::Property::Key visualPropertyKey);
 
 public:
-  VisualObject()                           = default;
-  ~VisualObject()                          = default;
-  VisualObject(const VisualObject& handle) = default;
-  VisualObject& operator=(const VisualObject& rhs) = default;
-  VisualObject(VisualObject&& rhs) noexcept        = default;
+  VisualObject()                                       = default;
+  ~VisualObject()                                      = default;
+  VisualObject(const VisualObject& handle)             = default;
+  VisualObject& operator=(const VisualObject& rhs)     = default;
+  VisualObject(VisualObject&& rhs) noexcept            = default;
   VisualObject& operator=(VisualObject&& rhs) noexcept = default;
 
 public:

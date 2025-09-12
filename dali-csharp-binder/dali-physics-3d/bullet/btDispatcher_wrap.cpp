@@ -94,7 +94,7 @@ void btDispatcherInfo_setAllowedCcdPenetration(btDispatcherInfo* obj, btScalar v
 }
 
 void btDispatcherInfo_setConvexConservativeDistanceThreshold(btDispatcherInfo* obj,
-  btScalar value)
+                                                             btScalar          value)
 {
   obj->m_convexConservativeDistanceThreshold = value;
 }
@@ -145,7 +145,7 @@ void btDispatcherInfo_setUseContinuous(btDispatcherInfo* obj, bool value)
 }
 
 void btDispatcherInfo_setUseConvexConservativeDistanceUtil(btDispatcherInfo* obj,
-  bool value)
+                                                           bool              value)
 {
   obj->m_useConvexConservativeDistanceUtil = value;
 }
@@ -154,7 +154,6 @@ void btDispatcherInfo_setUseEpa(btDispatcherInfo* obj, bool value)
 {
   obj->m_useEpa = value;
 }
-
 
 void* btDispatcher_allocateCollisionAlgorithm(btDispatcher* obj, int size)
 {
@@ -167,14 +166,14 @@ void btDispatcher_clearManifold(btDispatcher* obj, btPersistentManifold* manifol
 }
 
 void btDispatcher_dispatchAllCollisionPairs(btDispatcher* obj, btOverlappingPairCache* pairCache,
-  const btDispatcherInfo* dispatchInfo, btDispatcher* dispatcher)
+                                            const btDispatcherInfo* dispatchInfo, btDispatcher* dispatcher)
 {
   obj->dispatchAllCollisionPairs(pairCache, *dispatchInfo, dispatcher);
 }
 
 btCollisionAlgorithm* btDispatcher_findAlgorithm(btDispatcher* obj, const btCollisionObjectWrapper* body0Wrap,
-  const btCollisionObjectWrapper* body1Wrap, btPersistentManifold* sharedManifold,
-  ebtDispatcherQueryType queryType)
+                                                 const btCollisionObjectWrapper* body1Wrap, btPersistentManifold* sharedManifold,
+                                                 ebtDispatcherQueryType queryType)
 {
   return obj->findAlgorithm(body0Wrap, body1Wrap, sharedManifold, queryType);
 }
@@ -195,13 +194,13 @@ btPoolAllocator* btDispatcher_getInternalManifoldPool(btDispatcher* obj)
 }
 
 btPersistentManifold* btDispatcher_getManifoldByIndexInternal(btDispatcher* obj,
-  int index)
+                                                              int           index)
 {
   return obj->getManifoldByIndexInternal(index);
 }
 
 btPersistentManifold* btDispatcher_getNewManifold(btDispatcher* obj, const btCollisionObject* b0,
-  const btCollisionObject* b1)
+                                                  const btCollisionObject* b1)
 {
   return obj->getNewManifold(b0, b1);
 }
@@ -212,13 +211,13 @@ int btDispatcher_getNumManifolds(btDispatcher* obj)
 }
 
 bool btDispatcher_needsCollision(btDispatcher* obj, const btCollisionObject* body0,
-  const btCollisionObject* body1)
+                                 const btCollisionObject* body1)
 {
   return obj->needsCollision(body0, body1);
 }
 
 bool btDispatcher_needsResponse(btDispatcher* obj, const btCollisionObject* body0,
-  const btCollisionObject* body1)
+                                const btCollisionObject* body1)
 {
   return obj->needsResponse(body0, body1);
 }

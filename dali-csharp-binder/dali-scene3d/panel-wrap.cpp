@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -144,7 +144,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Panel_GetContent(void* csPanel)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Panel_ClearPanel(void* csPanel)
 {
-  Dali::Scene3D::Panel* panel     = (Dali::Scene3D::Panel*)csPanel;
+  Dali::Scene3D::Panel* panel = (Dali::Scene3D::Panel*)csPanel;
 
   if(!panel)
   {
@@ -230,7 +230,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Panel_IsShadowReceiving(void* csPanel)
   CALL_CATCH_EXCEPTION(0);
   return result;
 }
-
 
 // For Property index
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Panel_property_TRANSPARENT_get()

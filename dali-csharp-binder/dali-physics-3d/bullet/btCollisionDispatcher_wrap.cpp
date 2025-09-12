@@ -23,7 +23,7 @@ btCollisionDispatcher* btCollisionDispatcher_new(btCollisionConfiguration* colli
 }
 
 void btCollisionDispatcher_defaultNearCallback(btBroadphasePair* collisionPair, btCollisionDispatcher* dispatcher,
-  const btDispatcherInfo* dispatchInfo)
+                                               const btDispatcherInfo* dispatchInfo)
 {
   btCollisionDispatcher::defaultNearCallback(*collisionPair, *dispatcher, *dispatchInfo);
 }
@@ -44,19 +44,19 @@ btNearCallback btCollisionDispatcher_getNearCallback(btCollisionDispatcher* obj)
 }
 
 void btCollisionDispatcher_registerCollisionCreateFunc(btCollisionDispatcher* obj,
-  int proxyType0, int proxyType1, btCollisionAlgorithmCreateFunc* createFunc)
+                                                       int proxyType0, int proxyType1, btCollisionAlgorithmCreateFunc* createFunc)
 {
   obj->registerCollisionCreateFunc(proxyType0, proxyType1, createFunc);
 }
 
-void btCollisionDispatcher_registerClosestPointsCreateFunc(btCollisionDispatcher * obj,
-  int proxyType0, int proxyType1, btCollisionAlgorithmCreateFunc * createFunc)
+void btCollisionDispatcher_registerClosestPointsCreateFunc(btCollisionDispatcher* obj,
+                                                           int proxyType0, int proxyType1, btCollisionAlgorithmCreateFunc* createFunc)
 {
   obj->registerCollisionCreateFunc(proxyType0, proxyType1, createFunc);
 }
 
-void btCollisionDispatcher_setCollisionConfiguration(btCollisionDispatcher* obj,
-  btCollisionConfiguration* config)
+void btCollisionDispatcher_setCollisionConfiguration(btCollisionDispatcher*    obj,
+                                                     btCollisionConfiguration* config)
 {
   obj->setCollisionConfiguration(config);
 }
@@ -68,7 +68,7 @@ void btCollisionDispatcher_setDispatcherFlags(btCollisionDispatcher* obj, int fl
 
 void btCollisionDispatcher_setNearCallback(btCollisionDispatcher* obj, btNearCallback nearCallback)
 {
-  if (nearCallback == 0)
+  if(nearCallback == 0)
   {
     obj->setNearCallback(btCollisionDispatcher::defaultNearCallback);
     return;

@@ -23,9 +23,9 @@ btCollisionAlgorithmCreateFunc* btCollisionAlgorithmCreateFunc_new()
   return new btCollisionAlgorithmCreateFunc();
 }
 
-btCollisionAlgorithm* btCollisionAlgorithmCreateFunc_CreateCollisionAlgorithm(btCollisionAlgorithmCreateFunc* obj,
-  btCollisionAlgorithmConstructionInfo* __unnamed0, const btCollisionObjectWrapper* body0Wrap,
-  const btCollisionObjectWrapper* body1Wrap)
+btCollisionAlgorithm* btCollisionAlgorithmCreateFunc_CreateCollisionAlgorithm(btCollisionAlgorithmCreateFunc*       obj,
+                                                                              btCollisionAlgorithmConstructionInfo* __unnamed0, const btCollisionObjectWrapper* body0Wrap,
+                                                                              const btCollisionObjectWrapper* body1Wrap)
 {
   return obj->CreateCollisionAlgorithm(*__unnamed0, body0Wrap, body1Wrap);
 }
@@ -36,7 +36,7 @@ bool btCollisionAlgorithmCreateFunc_getSwapped(btCollisionAlgorithmCreateFunc* o
 }
 
 void btCollisionAlgorithmCreateFunc_setSwapped(btCollisionAlgorithmCreateFunc* obj,
-  bool value)
+                                               bool                            value)
 {
   obj->m_swapped = value;
 }

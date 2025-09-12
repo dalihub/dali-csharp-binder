@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -380,7 +380,7 @@ struct NativeImageSourcePtrHandle
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg1)
 {
-  Dali::Capture*              arg1   = (Dali::Capture*)jarg1;
+  Dali::Capture* arg1 = (Dali::Capture*)jarg1;
 
   if(!arg1)
   {
@@ -393,7 +393,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg
     try
     {
       handle->Ptr = arg1->GetNativeImageSource();
-    } CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourcePtrHandle* ptr){delete ptr;}, handle);
+    }
+    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourcePtrHandle* ptr)
+    { delete ptr; }, handle);
   }
   return (void*)handle;
 }

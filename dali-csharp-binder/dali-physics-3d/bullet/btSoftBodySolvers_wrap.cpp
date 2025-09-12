@@ -12,8 +12,8 @@
  * 3. This notice may not be removed or altered from any source distribution.
  */
 
-#include <BulletSoftBody/btSoftBodySolvers.h>
 #include <BulletSoftBody/btSoftBody.h>
+#include <BulletSoftBody/btSoftBodySolvers.h>
 
 #include "btSoftBodySolvers_wrap.h"
 
@@ -48,7 +48,7 @@ float btSoftBodySolver_getTimeScale(btSoftBodySolver* obj)
 }
 
 void btSoftBodySolver_optimize(btSoftBodySolver* obj, btAlignedObjectArray_btSoftBodyPtr* softBodies,
-  bool forceUpdate)
+                               bool forceUpdate)
 {
   obj->optimize(*softBodies, forceUpdate);
 }

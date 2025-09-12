@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionData_New_SWIG_1(float durationSec
   return new Dali::Scene3D::MotionData((const Dali::Scene3D::MotionData&)result);
 }
 
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MotionData_SWIG_1(void* csMotionData)
 {
   Dali::Scene3D::MotionData* motionData = (Dali::Scene3D::MotionData*)csMotionData;
@@ -112,7 +111,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionData_Assign(void* csDestination, 
 
   return (void*)result;
 }
-
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_MotionData_GetMotionCount(void* csMotionData)
 {
@@ -383,7 +381,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionData_LoadFacialAnimationFromBuffer
 }
 
 // Signals
-GENERATE_SIGNAL(Dali::Scene3D::MotionData*, void(*)(Dali::Scene3D::MotionData), Dali_MotionData, LoadCompletedSignal);
+GENERATE_SIGNAL(Dali::Scene3D::MotionData*, void (*)(Dali::Scene3D::MotionData), Dali_MotionData, LoadCompletedSignal);
 // CSharp_Dali_MotionData_LoadCompletedSignal_Connect
 // CSharp_Dali_MotionData_LoadCompletedSignal_Disconnect
 

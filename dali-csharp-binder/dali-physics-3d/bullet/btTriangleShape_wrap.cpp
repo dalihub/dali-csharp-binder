@@ -15,6 +15,7 @@
 #include <BulletCollision/CollisionShapes/btTriangleShape.h>
 
 #include "conversion.h"
+
 #include "btTriangleShape_wrap.h"
 
 btTriangleShape* btTriangleShape_new()
@@ -38,7 +39,7 @@ void btTriangleShape_calcNormal(btTriangleShape* obj, btVector3* normal)
 }
 
 void btTriangleShape_getPlaneEquation(btTriangleShape* obj, int i, btVector3* planeNormal,
-  btVector3* planeSupport)
+                                      btVector3* planeSupport)
 {
   BTVECTOR3_DEF(planeNormal);
   BTVECTOR3_DEF(planeSupport);

@@ -16,6 +16,7 @@
 #include <BulletSoftBody/btSoftBody.h>
 
 #include "conversion.h"
+
 #include "collections.h"
 
 btCompoundShapeChild* btCompoundShapeChild_array_at(btCompoundShapeChild* a, int n)

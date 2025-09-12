@@ -138,8 +138,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Rotation_3(void* nuiPitchRadian, vo
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Rotation_4(void* nuiVector4)
 {
   void*             jresult;
-  Dali::Vector4*    vector4    = (Dali::Vector4*)nuiVector4;
-  Dali::Quaternion* result = 0;
+  Dali::Vector4*    vector4 = (Dali::Vector4*)nuiVector4;
+  Dali::Quaternion* result  = 0;
 
   if(!vector4)
   {
@@ -158,26 +158,29 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Rotation_4(void* nuiVector4)
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Rotation_Assign(void * jarg1, void * jarg2)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Rotation_Assign(void* jarg1, void* jarg2)
 {
-  void * jresult ;
-  Dali::Quaternion *arg1 = (Dali::Quaternion *) 0 ;
-  Dali::Quaternion *arg2 = 0 ;
-  Dali::Quaternion *result = 0 ;
+  void*             jresult;
+  Dali::Quaternion* arg1   = (Dali::Quaternion*)0;
+  Dali::Quaternion* arg2   = 0;
+  Dali::Quaternion* result = 0;
 
-  arg1 = (Dali::Quaternion *)jarg1;
-  arg2 = (Dali::Quaternion *)jarg2;
-  if (!arg2) {
+  arg1 = (Dali::Quaternion*)jarg1;
+  arg2 = (Dali::Quaternion*)jarg2;
+  if(!arg2)
+  {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Quaternion const & type is null", 0);
     return 0;
   }
   {
-    try {
-      result = (Dali::Quaternion *) &(arg1)->operator =((Dali::Quaternion const &)*arg2);
-    } CALL_CATCH_EXCEPTION(0);
+    try
+    {
+      result = (Dali::Quaternion*)&(arg1)->operator=((Dali::Quaternion const&)*arg2);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (void *)result;
+  jresult = (void*)result;
   return jresult;
 }
 

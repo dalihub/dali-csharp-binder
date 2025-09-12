@@ -435,7 +435,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_COLOR_BLUE_get()
   return jresult;
 }
 
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_WORLD_COLOR_get()
 {
   int jresult;
@@ -516,7 +515,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_INHERIT_SCALE_get()
   return jresult;
 }
 
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_DRAW_MODE_get()
 {
   int jresult;
@@ -586,7 +584,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_HEIGHT_FOR_WIDTH_get()
   jresult = (int)result;
   return jresult;
 }
-
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_MINIMUM_SIZE_get()
 {
@@ -705,12 +702,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_CHILDREN_DEPTH_INDEX_POLICY_get
 
 // Creation
 
-
-
-
-
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Actor(void* jarg1)
 {
   Dali::Actor* arg1 = (Dali::Actor*)0;
@@ -724,8 +715,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Actor(void* jarg1)
     CALL_CATCH_EXCEPTION();
   }
 }
-
-
 
 // Method
 
@@ -861,7 +850,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_OnStage(void* jarg1)
   return jresult;
 }
 
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetLayer(void* jarg1)
 {
   void*        jresult;
@@ -940,8 +928,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_Remove(void* jarg1, void* jarg2)
     CALL_CATCH_EXCEPTION();
   }
 }
-
-
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetChildAt(void* jarg1, unsigned int jarg2)
 {
@@ -1087,7 +1073,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetParentOrigin(void* jarg1, void*
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetParentOrigin_3FloatValues(void* jarg1, float x, float y, float z)
 {
-  Dali::Actor*   arg1 = (Dali::Actor*)0;
+  Dali::Actor* arg1 = (Dali::Actor*)0;
 
   if(!jarg1)
   {
@@ -1135,7 +1121,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetAnchorPoint(void* jarg1, void* 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetAnchorPoint_3FloatValues(void* jarg1, float x, float y, float z)
 {
-  Dali::Actor*   arg1 = (Dali::Actor*)0;
+  Dali::Actor* arg1 = (Dali::Actor*)0;
 
   if(!jarg1)
   {
@@ -1257,7 +1243,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSize__SWIG_3(void* jarg1, void*
     CALL_CATCH_EXCEPTION();
   }
 }
-
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetCurrentSize(void* jarg1)
 {
@@ -1478,8 +1463,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_TranslateBy(void* jarg1, void* jar
     CALL_CATCH_EXCEPTION();
   }
 }
-
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritPosition(void* jarg1, bool jarg2)
 {
@@ -1917,8 +1900,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_ScaleBy(void* jarg1, void* jarg2)
   }
 }
 
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetInheritScale(void* jarg1, bool jarg2)
 {
   Dali::Actor* arg1 = (Dali::Actor*)0;
@@ -2258,7 +2239,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColor(void* jarg1, void* jarg2)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColor_4FloatValues(void* jarg1, float r, float g, float b, float a)
 {
-  Dali::Actor*   arg1 = (Dali::Actor*)0;
+  Dali::Actor* arg1 = (Dali::Actor*)0;
 
   if(!jarg1)
   {
@@ -2325,7 +2306,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetColorMode(void* jarg1)
   return jresult;
 }
 
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetDrawMode(void* jarg1, int jarg2)
 {
   Dali::Actor*         arg1 = (Dali::Actor*)0;
@@ -2373,8 +2353,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetDrawMode(void* jarg1)
   return jresult;
 }
 
-
-
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_ScreenToLocal(void* jarg1, float* jarg2, float* jarg3, float jarg4, float jarg5)
 {
   bool         jresult;
@@ -2407,8 +2385,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_ScreenToLocal(void* jarg1, float* 
   jresult = result;
   return jresult;
 }
-
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusable(void* jarg1, bool jarg2)
 {
@@ -2597,8 +2573,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetResizePolicy(void* jarg1, int ja
   return jresult;
 }
 
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSizeModeFactor(void* jarg1, void* jarg2)
 {
   Dali::Actor*   arg1 = (Dali::Actor*)0;
@@ -2625,7 +2599,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSizeModeFactor(void* jarg1, voi
     CALL_CATCH_EXCEPTION();
   }
 }
-
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetHeightForWidth(void* jarg1, float jarg2)
 {
@@ -2827,7 +2800,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetMinimumSize(void* jarg1, void* 
   }
 }
 
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetMaximumSize(void* jarg1, void* jarg2)
 {
   Dali::Actor*   arg1 = (Dali::Actor*)0;
@@ -2854,7 +2826,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetMaximumSize(void* jarg1, void* 
     CALL_CATCH_EXCEPTION();
   }
 }
-
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetHierarchyDepth(void* jarg1)
 {
@@ -3212,28 +3183,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_GetTouchAreaOffset(void* 
   }
 }
 
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumWidth(void * jarg1) {
-  Dali::Actor *arg1 = (Dali::Actor *) 0;
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumWidth(void* jarg1)
+{
+  Dali::Actor*  arg1 = (Dali::Actor*)0;
   Dali::Vector2 maximumSize;
   Dali::Vector2 minimumSize;
   Dali::Vector3 naturalSize;
-  bool widthForHeight;
-  float result;
+  bool          widthForHeight;
+  float         result;
   {
-    try {
-      arg1 = (Dali::Actor *)jarg1;
-      maximumSize = arg1->GetProperty< Vector2 >( Actor::Property::MAXIMUM_SIZE );
-      minimumSize = arg1->GetProperty< Vector2 >( Actor::Property::MINIMUM_SIZE );
-      naturalSize = arg1->GetNaturalSize();
-      widthForHeight = arg1->GetProperty< bool >( Actor::Property::WIDTH_FOR_HEIGHT );
+    try
+    {
+      arg1           = (Dali::Actor*)jarg1;
+      maximumSize    = arg1->GetProperty<Vector2>(Actor::Property::MAXIMUM_SIZE);
+      minimumSize    = arg1->GetProperty<Vector2>(Actor::Property::MINIMUM_SIZE);
+      naturalSize    = arg1->GetNaturalSize();
+      widthForHeight = arg1->GetProperty<bool>(Actor::Property::WIDTH_FOR_HEIGHT);
 
       float baseWidth;
-      if (widthForHeight)
+      if(widthForHeight)
       {
         float baseHeight = maximumSize.height > 0 ? std::min(maximumSize.height, naturalSize.height) : naturalSize.height;
-        baseWidth = arg1->GetWidthForHeight(baseHeight);
+        baseWidth        = arg1->GetWidthForHeight(baseHeight);
       }
       else
       {
@@ -3242,32 +3213,35 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumWidth(void * j
 
       result = minimumSize.width > 0 ? std::max(baseWidth, minimumSize.width) : baseWidth;
       result = maximumSize.width > 0 ? std::min(result, maximumSize.width) : result;
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   return result;
 }
 
-SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumHeight(void * jarg1) {
-  Dali::Actor *arg1 = (Dali::Actor *) 0;
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumHeight(void* jarg1)
+{
+  Dali::Actor*  arg1 = (Dali::Actor*)0;
   Dali::Vector2 maximumSize;
   Dali::Vector2 minimumSize;
   Dali::Vector3 naturalSize;
-  bool heightForWidth;
-  float result;
+  bool          heightForWidth;
+  float         result;
   {
-    try {
-      arg1 = (Dali::Actor *)jarg1;
-      maximumSize = arg1->GetProperty< Vector2 >( Actor::Property::MAXIMUM_SIZE );
-      minimumSize = arg1->GetProperty< Vector2 >( Actor::Property::MINIMUM_SIZE );
-      naturalSize = arg1->GetNaturalSize();
-      heightForWidth = arg1->GetProperty< bool >( Actor::Property::HEIGHT_FOR_WIDTH );
+    try
+    {
+      arg1           = (Dali::Actor*)jarg1;
+      maximumSize    = arg1->GetProperty<Vector2>(Actor::Property::MAXIMUM_SIZE);
+      minimumSize    = arg1->GetProperty<Vector2>(Actor::Property::MINIMUM_SIZE);
+      naturalSize    = arg1->GetNaturalSize();
+      heightForWidth = arg1->GetProperty<bool>(Actor::Property::HEIGHT_FOR_WIDTH);
 
       float baseHeight;
-      if (heightForWidth)
+      if(heightForWidth)
       {
         float baseWidth = maximumSize.width > 0 ? std::min(maximumSize.width, naturalSize.width) : naturalSize.width;
-        baseHeight = arg1->GetHeightForWidth(baseWidth);
+        baseHeight      = arg1->GetHeightForWidth(baseWidth);
       }
       else
       {
@@ -3276,7 +3250,8 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumHeight(void * 
 
       result = minimumSize.height > 0 ? std::max(baseHeight, minimumSize.height) : baseHeight;
       result = maximumSize.height > 0 ? std::min(result, maximumSize.height) : result;
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   return result;
@@ -3307,51 +3282,51 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetVisiblityChangedActor()
 #define GENERATE_ACTOR_SIGNAL(HType, SignalName) GENERATE_SIGNAL(Dali::Actor*, HType, Dali_Actor, SignalName)
 #endif
 
-GENERATE_DEVEL_ACTOR_SIGNAL(bool(*)(Dali::Actor, Dali::TouchEvent const&), HitTestResultSignal)
+GENERATE_DEVEL_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::TouchEvent const&), HitTestResultSignal)
 // CSharp_Dali_Actor_HitTestResultSignal_Connect
 // CSharp_Dali_Actor_HitTestResultSignal_Disconnect
 
-GENERATE_DEVEL_ACTOR_SIGNAL(bool(*)(Dali::Actor, Dali::TouchEvent const&), InterceptTouchedSignal)
+GENERATE_DEVEL_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::TouchEvent const&), InterceptTouchedSignal)
 // CSharp_Dali_Actor_InterceptTouchedSignal_Connect
 // CSharp_Dali_Actor_InterceptTouchedSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(bool(*)(Dali::Actor, Dali::TouchEvent const&), TouchedSignal)
+GENERATE_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::TouchEvent const&), TouchedSignal)
 // CSharp_Dali_Actor_TouchedSignal_Connect
 // CSharp_Dali_Actor_TouchedSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(bool(*)(Dali::Actor, Dali::HoverEvent const&), HoveredSignal)
+GENERATE_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::HoverEvent const&), HoveredSignal)
 // CSharp_Dali_Actor_HoveredSignal_Connect
 // CSharp_Dali_Actor_HoveredSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(bool(*)(Dali::Actor, Dali::WheelEvent const&), WheelEventSignal)
+GENERATE_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::WheelEvent const&), WheelEventSignal)
 // CSharp_Dali_Actor_WheelEventSignal_Connect
 // CSharp_Dali_Actor_WheelEventSignal_Disconnect
 
-GENERATE_DEVEL_ACTOR_SIGNAL(bool(*)(Dali::Actor, Dali::WheelEvent const&), InterceptWheelSignal)
+GENERATE_DEVEL_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::WheelEvent const&), InterceptWheelSignal)
 // CSharp_Dali_Actor_InterceptWheelSignal_Connect
 // CSharp_Dali_Actor_InterceptWheelSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(void(*)(Dali::Actor), OnSceneSignal)
+GENERATE_ACTOR_SIGNAL(void (*)(Dali::Actor), OnSceneSignal)
 // CSharp_Dali_Actor_OnSceneSignal_Connect
 // CSharp_Dali_Actor_OnSceneSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(void(*)(Dali::Actor), OffSceneSignal)
+GENERATE_ACTOR_SIGNAL(void (*)(Dali::Actor), OffSceneSignal)
 // CSharp_Dali_Actor_OffSceneSignal_Connect
 // CSharp_Dali_Actor_OffSceneSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(void(*)(Dali::Actor), OnRelayoutSignal)
+GENERATE_ACTOR_SIGNAL(void (*)(Dali::Actor), OnRelayoutSignal)
 // CSharp_Dali_Actor_OnRelayoutSignal_Connect
 // CSharp_Dali_Actor_OnRelayoutSignal_Disconnect
 
-GENERATE_DEVEL_ACTOR_SIGNAL(void(*)(Dali::Actor, bool, Dali::DevelActor::VisibilityChange::Type), VisibilityChangedSignal)
+GENERATE_DEVEL_ACTOR_SIGNAL(void (*)(Dali::Actor, bool, Dali::DevelActor::VisibilityChange::Type), VisibilityChangedSignal)
 // CSharp_Dali_Actor_VisibilityChangedSignal_Connect
 // CSharp_Dali_Actor_VisibilityChangedSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(void(*)(Dali::Actor, bool), InheritedVisibilityChangedSignal)
+GENERATE_ACTOR_SIGNAL(void (*)(Dali::Actor, bool), InheritedVisibilityChangedSignal)
 // CSharp_Dali_Actor_InheritedVisibilityChangedSignal_Connect
 // CSharp_Dali_Actor_InheritedVisibilityChangedSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(void(*)(Dali::Actor, LayoutDirection::Type), LayoutDirectionChangedSignal)
+GENERATE_ACTOR_SIGNAL(void (*)(Dali::Actor, LayoutDirection::Type), LayoutDirectionChangedSignal)
 // CSharp_Dali_Actor_LayoutDirectionChangedSignal_Connect
 // CSharp_Dali_Actor_LayoutDirectionChangedSignal_Disconnect
 

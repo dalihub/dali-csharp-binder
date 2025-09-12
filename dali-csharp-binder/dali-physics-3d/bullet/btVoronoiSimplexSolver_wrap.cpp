@@ -15,6 +15,7 @@
 #include <BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h>
 
 #include "conversion.h"
+
 #include "btVoronoiSimplexSolver_wrap.h"
 
 bool btUsageBitfield_getUnused1(btUsageBitfield* obj)
@@ -102,7 +103,6 @@ void btUsageBitfield_setUsedVertexD(btUsageBitfield* obj, bool value)
   obj->usedVertexD = value;
 }
 
-
 btSubSimplexClosestResult* btSubSimplexClosestResult_new()
 {
   return new btSubSimplexClosestResult();
@@ -114,7 +114,7 @@ btScalar* btSubSimplexClosestResult_getBarycentricCoords(btSubSimplexClosestResu
 }
 
 void btSubSimplexClosestResult_getClosestPointOnSimplex(btSubSimplexClosestResult* obj,
-  btVector3* value)
+                                                        btVector3*                 value)
 {
   BTVECTOR3_SET(value, obj->m_closestPointOnSimplex);
 }
@@ -145,31 +145,31 @@ void btSubSimplexClosestResult_setBarycentricCoordinates(btSubSimplexClosestResu
 }
 
 void btSubSimplexClosestResult_setBarycentricCoordinates2(btSubSimplexClosestResult* obj,
-  btScalar a)
+                                                          btScalar                   a)
 {
   obj->setBarycentricCoordinates(a);
 }
 
 void btSubSimplexClosestResult_setBarycentricCoordinates3(btSubSimplexClosestResult* obj,
-  btScalar a, btScalar b)
+                                                          btScalar a, btScalar b)
 {
   obj->setBarycentricCoordinates(a, b);
 }
 
 void btSubSimplexClosestResult_setBarycentricCoordinates4(btSubSimplexClosestResult* obj,
-  btScalar a, btScalar b, btScalar c)
+                                                          btScalar a, btScalar b, btScalar c)
 {
   obj->setBarycentricCoordinates(a, b, c);
 }
 
 void btSubSimplexClosestResult_setBarycentricCoordinates5(btSubSimplexClosestResult* obj,
-  btScalar a, btScalar b, btScalar c, btScalar d)
+                                                          btScalar a, btScalar b, btScalar c, btScalar d)
 {
   obj->setBarycentricCoordinates(a, b, c, d);
 }
 
 void btSubSimplexClosestResult_setClosestPointOnSimplex(btSubSimplexClosestResult* obj,
-  const btVector3* value)
+                                                        const btVector3*           value)
 {
   BTVECTOR3_COPY(&obj->m_closestPointOnSimplex, value);
 }
@@ -189,14 +189,13 @@ void btSubSimplexClosestResult_delete(btSubSimplexClosestResult* obj)
   delete obj;
 }
 
-
 btVoronoiSimplexSolver* btVoronoiSimplexSolver_new()
 {
   return new btVoronoiSimplexSolver();
 }
 
 void btVoronoiSimplexSolver_addVertex(btVoronoiSimplexSolver* obj, const btVector3* w,
-  const btVector3* p, const btVector3* q)
+                                      const btVector3* p, const btVector3* q)
 {
   BTVECTOR3_IN(w);
   BTVECTOR3_IN(p);
@@ -220,8 +219,8 @@ bool btVoronoiSimplexSolver_closest(btVoronoiSimplexSolver* obj, btVector3* v)
 }
 
 bool btVoronoiSimplexSolver_closestPtPointTetrahedron(btVoronoiSimplexSolver* obj,
-  const btVector3* p, const btVector3* a, const btVector3* b, const btVector3* c,
-  const btVector3* d, btSubSimplexClosestResult* finalResult)
+                                                      const btVector3* p, const btVector3* a, const btVector3* b, const btVector3* c,
+                                                      const btVector3* d, btSubSimplexClosestResult* finalResult)
 {
   BTVECTOR3_IN(p);
   BTVECTOR3_IN(a);
@@ -229,22 +228,22 @@ bool btVoronoiSimplexSolver_closestPtPointTetrahedron(btVoronoiSimplexSolver* ob
   BTVECTOR3_IN(c);
   BTVECTOR3_IN(d);
   return obj->closestPtPointTetrahedron(BTVECTOR3_USE(p), BTVECTOR3_USE(a), BTVECTOR3_USE(b),
-    BTVECTOR3_USE(c), BTVECTOR3_USE(d), *finalResult);
+                                        BTVECTOR3_USE(c), BTVECTOR3_USE(d), *finalResult);
 }
 
 bool btVoronoiSimplexSolver_closestPtPointTriangle(btVoronoiSimplexSolver* obj, const btVector3* p,
-  const btVector3* a, const btVector3* b, const btVector3* c, btSubSimplexClosestResult* result)
+                                                   const btVector3* a, const btVector3* b, const btVector3* c, btSubSimplexClosestResult* result)
 {
   BTVECTOR3_IN(p);
   BTVECTOR3_IN(a);
   BTVECTOR3_IN(b);
   BTVECTOR3_IN(c);
   return obj->closestPtPointTriangle(BTVECTOR3_USE(p), BTVECTOR3_USE(a), BTVECTOR3_USE(b),
-    BTVECTOR3_USE(c), *result);
+                                     BTVECTOR3_USE(c), *result);
 }
 
 void btVoronoiSimplexSolver_compute_points(btVoronoiSimplexSolver* obj, btVector3* p1,
-  btVector3* p2)
+                                           btVector3* p2)
 {
   BTVECTOR3_DEF(p1);
   BTVECTOR3_DEF(p2);
@@ -309,7 +308,7 @@ int btVoronoiSimplexSolver_getNumVertices(btVoronoiSimplexSolver* obj)
 }
 
 int btVoronoiSimplexSolver_getSimplex(btVoronoiSimplexSolver* obj, btVector3* pBuf,
-  btVector3* qBuf, btVector3* yBuf)
+                                      btVector3* qBuf, btVector3* yBuf)
 {
   return obj->getSimplex(pBuf, qBuf, yBuf);
 }
@@ -346,7 +345,7 @@ int btVoronoiSimplexSolver_numVertices(btVoronoiSimplexSolver* obj)
 }
 
 int btVoronoiSimplexSolver_pointOutsideOfPlane(btVoronoiSimplexSolver* obj, const btVector3* p,
-  const btVector3* a, const btVector3* b, const btVector3* c, const btVector3* d)
+                                               const btVector3* a, const btVector3* b, const btVector3* c, const btVector3* d)
 {
   BTVECTOR3_IN(p);
   BTVECTOR3_IN(a);
@@ -354,7 +353,7 @@ int btVoronoiSimplexSolver_pointOutsideOfPlane(btVoronoiSimplexSolver* obj, cons
   BTVECTOR3_IN(c);
   BTVECTOR3_IN(d);
   return obj->pointOutsideOfPlane(BTVECTOR3_USE(p), BTVECTOR3_USE(a), BTVECTOR3_USE(b),
-    BTVECTOR3_USE(c), BTVECTOR3_USE(d));
+                                  BTVECTOR3_USE(c), BTVECTOR3_USE(d));
 }
 
 void btVoronoiSimplexSolver_reduceVertices(btVoronoiSimplexSolver* obj, const btUsageBitfield* usedVerts)
@@ -398,7 +397,7 @@ void btVoronoiSimplexSolver_setCachedValidClosest(btVoronoiSimplexSolver* obj, b
 }
 
 void btVoronoiSimplexSolver_setEqualVertexThreshold(btVoronoiSimplexSolver* obj,
-  btScalar threshold)
+                                                    btScalar                threshold)
 {
   obj->setEqualVertexThreshold(threshold);
 }

@@ -51,12 +51,10 @@ void btConeShape_setRadius(btConeShape* obj, btScalar radius)
   obj->setRadius(radius);
 }
 
-
 btConeShapeX* btConeShapeX_new(btScalar radius, btScalar height)
 {
   return new btConeShapeX(radius, height);
 }
-
 
 btConeShapeZ* btConeShapeZ_new(btScalar radius, btScalar height)
 {

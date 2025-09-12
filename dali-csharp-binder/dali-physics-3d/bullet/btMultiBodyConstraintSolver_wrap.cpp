@@ -25,18 +25,18 @@ btMultiBodyConstraintSolver* btMultiBodyConstraintSolver_new()
 }
 
 btScalar btMultiBodyConstraintSolver_solveGroupCacheFriendlyFinish(btMultiBodyConstraintSolver* obj,
-  btCollisionObject** bodies, int numBodies, const btContactSolverInfo* infoGlobal)
+                                                                   btCollisionObject** bodies, int numBodies, const btContactSolverInfo* infoGlobal)
 {
   return obj->solveGroupCacheFriendlyFinish(bodies, numBodies, *infoGlobal);
 }
 
 void btMultiBodyConstraintSolver_solveMultiBodyGroup(btMultiBodyConstraintSolver* obj,
-  btCollisionObject** bodies, int numBodies, btPersistentManifold** manifold, int numManifolds,
-  btTypedConstraint** constraints, int numConstraints, btMultiBodyConstraint** multiBodyConstraints,
-  int numMultiBodyConstraints, const btContactSolverInfo* info, btIDebugDraw* debugDrawer,
-  btDispatcher* dispatcher)
+                                                     btCollisionObject** bodies, int numBodies, btPersistentManifold** manifold, int numManifolds,
+                                                     btTypedConstraint** constraints, int numConstraints, btMultiBodyConstraint** multiBodyConstraints,
+                                                     int numMultiBodyConstraints, const btContactSolverInfo* info, btIDebugDraw* debugDrawer,
+                                                     btDispatcher* dispatcher)
 {
   obj->solveMultiBodyGroup(bodies, numBodies, manifold, numManifolds, constraints,
-    numConstraints, multiBodyConstraints, numMultiBodyConstraints, *info, debugDrawer,
-    dispatcher);
+                           numConstraints, multiBodyConstraints, numMultiBodyConstraints, *info, debugDrawer,
+                           dispatcher);
 }

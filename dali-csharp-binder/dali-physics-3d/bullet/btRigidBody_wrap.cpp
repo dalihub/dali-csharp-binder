@@ -17,12 +17,13 @@
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 
 #include "conversion.h"
+
 #include "btRigidBody_wrap.h"
 
 btRigidBody_btRigidBodyConstructionInfo* btRigidBody_btRigidBodyConstructionInfo_new(
   btScalar mass, btMotionState* motionState, btCollisionShape* collisionShape)
 {
-  return  ALIGNED_NEW(btRigidBody::btRigidBodyConstructionInfo)(mass, motionState, collisionShape);
+  return ALIGNED_NEW(btRigidBody::btRigidBodyConstructionInfo)(mass, motionState, collisionShape);
 }
 
 btRigidBody_btRigidBodyConstructionInfo* btRigidBody_btRigidBodyConstructionInfo_new2(
@@ -30,7 +31,7 @@ btRigidBody_btRigidBodyConstructionInfo* btRigidBody_btRigidBodyConstructionInfo
 {
   BTVECTOR3_IN(localInertia);
   return ALIGNED_NEW(btRigidBody::btRigidBodyConstructionInfo)(mass, motionState, collisionShape,
-    BTVECTOR3_USE(localInertia));
+                                                               BTVECTOR3_USE(localInertia));
 }
 
 btScalar btRigidBody_btRigidBodyConstructionInfo_getAdditionalAngularDampingFactor(
@@ -92,7 +93,7 @@ btScalar btRigidBody_btRigidBodyConstructionInfo_getLinearSleepingThreshold(btRi
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_getLocalInertia(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btVector3* value)
+                                                             btVector3*                               value)
 {
   BTVECTOR3_COPY(value, &obj->m_localInertia);
 }
@@ -118,13 +119,13 @@ btScalar btRigidBody_btRigidBodyConstructionInfo_getRollingFriction(btRigidBody_
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_getStartWorldTransform(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btTransform* value)
+                                                                    btTransform*                             value)
 {
   BTTRANSFORM_SET(value, obj->m_startWorldTransform);
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setAdditionalAngularDampingFactor(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btScalar value)
+                                                                               btScalar                                 value)
 {
   obj->m_additionalAngularDampingFactor = value;
 }
@@ -136,13 +137,13 @@ void btRigidBody_btRigidBodyConstructionInfo_setAdditionalAngularDampingThreshol
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setAdditionalDamping(btRigidBody_btRigidBodyConstructionInfo* obj,
-  bool value)
+                                                                  bool                                     value)
 {
   obj->m_additionalDamping = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setAdditionalDampingFactor(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btScalar value)
+                                                                        btScalar                                 value)
 {
   obj->m_additionalDampingFactor = value;
 }
@@ -154,73 +155,73 @@ void btRigidBody_btRigidBodyConstructionInfo_setAdditionalLinearDampingThreshold
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setAngularDamping(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btScalar value)
+                                                               btScalar                                 value)
 {
   obj->m_angularDamping = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setAngularSleepingThreshold(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btScalar value)
+                                                                         btScalar                                 value)
 {
   obj->m_angularSleepingThreshold = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setCollisionShape(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btCollisionShape* value)
+                                                               btCollisionShape*                        value)
 {
   obj->m_collisionShape = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setFriction(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btScalar value)
+                                                         btScalar                                 value)
 {
   obj->m_friction = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setLinearDamping(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btScalar value)
+                                                              btScalar                                 value)
 {
   obj->m_linearDamping = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setLinearSleepingThreshold(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btScalar value)
+                                                                        btScalar                                 value)
 {
   obj->m_linearSleepingThreshold = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setLocalInertia(btRigidBody_btRigidBodyConstructionInfo* obj,
-  const btVector3* value)
+                                                             const btVector3*                         value)
 {
   BTVECTOR3_COPY(&obj->m_localInertia, value);
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setMass(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btScalar value)
+                                                     btScalar                                 value)
 {
   obj->m_mass = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setMotionState(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btMotionState* value)
+                                                            btMotionState*                           value)
 {
   obj->m_motionState = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setRestitution(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btScalar value)
+                                                            btScalar                                 value)
 {
   obj->m_restitution = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setRollingFriction(btRigidBody_btRigidBodyConstructionInfo* obj,
-  btScalar value)
+                                                                btScalar                                 value)
 {
   obj->m_rollingFriction = value;
 }
 
 void btRigidBody_btRigidBodyConstructionInfo_setStartWorldTransform(btRigidBody_btRigidBodyConstructionInfo* obj,
-  const btTransform* value)
+                                                                    const btTransform*                       value)
 {
   BTTRANSFORM_COPY(&obj->m_startWorldTransform, value);
 }
@@ -229,7 +230,6 @@ void btRigidBody_btRigidBodyConstructionInfo_delete(btRigidBody_btRigidBodyConst
 {
   ALIGNED_FREE(obj);
 }
-
 
 btRigidBody* btRigidBody_new(const btRigidBody_btRigidBodyConstructionInfo* constructionInfo)
 {
@@ -306,28 +306,31 @@ btScalar btRigidBody_computeAngularImpulseDenominator(btRigidBody* obj, const bt
 }
 
 void btRigidBody_computeGyroscopicForceExplicit(btRigidBody* obj, btScalar maxGyroscopicForce,
-  btVector3* value)
+                                                btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->computeGyroscopicForceExplicit(maxGyroscopicForce);
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->computeGyroscopicForceExplicit(maxGyroscopicForce);
   BTVECTOR3_SET(value, temp);
 }
 
 void btRigidBody_computeGyroscopicImpulseImplicit_Body(btRigidBody* obj, btScalar step,
-  btVector3* value)
+                                                       btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->computeGyroscopicImpulseImplicit_Body(step);
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->computeGyroscopicImpulseImplicit_Body(step);
   BTVECTOR3_SET(value, temp);
 }
 
 void btRigidBody_computeGyroscopicImpulseImplicit_World(btRigidBody* obj, btScalar dt,
-  btVector3* value)
+                                                        btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->computeGyroscopicImpulseImplicit_World(dt);
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->computeGyroscopicImpulseImplicit_World(dt);
   BTVECTOR3_SET(value, temp);
 }
 
 btScalar btRigidBody_computeImpulseDenominator(btRigidBody* obj, const btVector3* pos,
-  const btVector3* normal)
+                                               const btVector3* normal)
 {
   BTVECTOR3_IN(pos);
   BTVECTOR3_IN(normal);
@@ -440,7 +443,8 @@ void btRigidBody_getLinearVelocity(btRigidBody* obj, btVector3* value)
 
 void btRigidBody_getLocalInertia(btRigidBody* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->getLocalInertia();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->getLocalInertia();
   BTVECTOR3_SET(value, temp);
 }
 
@@ -461,7 +465,8 @@ int btRigidBody_getNumConstraintRefs(btRigidBody* obj)
 
 void btRigidBody_getOrientation(btRigidBody* obj, btQuaternion* value)
 {
-  ATTRIBUTE_ALIGNED16(btQuaternion) temp = obj->getOrientation();
+  ATTRIBUTE_ALIGNED16(btQuaternion)
+  temp = obj->getOrientation();
   BTQUATERNION_SET(value, temp);
 }
 
@@ -476,10 +481,11 @@ void btRigidBody_getTotalTorque(btRigidBody* obj, btVector3* value)
 }
 
 void btRigidBody_getVelocityInLocalPoint(btRigidBody* obj, const btVector3* rel_pos,
-  btVector3* value)
+                                         btVector3* value)
 {
   BTVECTOR3_IN(rel_pos);
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->getVelocityInLocalPoint(BTVECTOR3_USE(rel_pos));
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->getVelocityInLocalPoint(BTVECTOR3_USE(rel_pos));
   BTVECTOR3_SET(value, temp);
 }
 

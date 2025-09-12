@@ -26,9 +26,9 @@
 #define EXPORT __declspec(dllexport)
 #else
 #if __GNUC__ >= 4
-  #define EXPORT __attribute__ ((visibility("default")))
+#define EXPORT __attribute__((visibility("default")))
 #else
-  #define EXPORT
+#define EXPORT
 #endif
 #endif
 
@@ -40,7 +40,7 @@
 #endif
 #endif
 
-#define ALIGNED_NEW_FORCE(targetClass) new (btAlignedAlloc(sizeof(targetClass), 16)) targetClass
+#define ALIGNED_NEW_FORCE(targetClass) new(btAlignedAlloc(sizeof(targetClass), 16)) targetClass
 #define ALIGNED_FREE_FORCE(target) btAlignedFree(target)
 
 //#if defined(BT_USE_SIMD_VECTOR3) && defined(BT_USE_SSE_IN_API) && defined(BT_USE_SSE)
@@ -1109,7 +1109,7 @@
 #ifndef BT_WIN32_THREAD_SUPPORT_H
 #define Win32ThreadSupport void
 #define Win32ThreadSupport_Win32ThreadConstructionInfo void
-typedef void (*Win32ThreadFunc)(void* userPtr,void* lsMemory);
+typedef void (*Win32ThreadFunc)(void* userPtr, void* lsMemory);
 typedef void* (*Win32lsMemorySetupFunc)();
 #else
 #define Win32ThreadSupport_Win32ThreadConstructionInfo Win32ThreadSupport::Win32ThreadConstructionInfo
@@ -1175,7 +1175,7 @@ typedef void* (*Win32lsMemorySetupFunc)();
 #define HACD_HACD void
 #define HACD_Vec3_long long
 #define HACD_Vec3_Real void
-typedef bool (*HACD_CallBackFunction)(const char *, double, double, size_t);
+typedef bool (*HACD_CallBackFunction)(const char*, double, double, size_t);
 #else
 #define HACD_HACD HACD::HACD
 #define HACD_Vec3_long HACD::Vec3<long>
@@ -1185,11 +1185,11 @@ typedef bool (*HACD_CallBackFunction)(const char *, double, double, size_t);
 
 #ifndef SPU_GATHERING_COLLISION_TASK_H
 #if defined(_WIN64)
-  typedef unsigned __int64 ppu_address_t;
+typedef unsigned __int64 ppu_address_t;
 #elif defined(__LP64__) || defined(__x86_64__)
-  typedef unsigned long int ppu_address_t;
+typedef unsigned long int ppu_address_t;
 #else
-  typedef unsigned int ppu_address_t;
+typedef unsigned int ppu_address_t;
 #endif
 #define CollisionTask_LocalStoreMemory void
 #define SpuGatherAndProcessPairsTaskDesc void
