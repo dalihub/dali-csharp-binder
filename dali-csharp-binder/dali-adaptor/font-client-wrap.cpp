@@ -96,9 +96,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_FontPreLoad(char ** fontPathA
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_EnableDesignCompatibility() {
-  Dali::TextAbstraction::EnableDesignCompatibility();
-}
+
+
+
+
 
 
 SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_FontDescription() {
