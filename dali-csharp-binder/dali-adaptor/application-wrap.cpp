@@ -1792,6 +1792,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_FlushUpdateMessages(void* ja
   CALL_CATCH_EXCEPTION();
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_SetApplicationLocale(void* pApplication, char * localeString) {
+  Dali::Application* application = (Dali::Application*)pApplication;
+  std::string locale = localeString ? localeString : "";
+  try
+  {
+    Dali::DevelApplication::SetApplicationLocale(*application, locale);
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
 #ifdef __cplusplus
 }
 #endif

@@ -312,6 +312,11 @@ SET( dali_csharp_binder_physics_3d_src_files
   ${dali_csharp_binder_dir}/dali-physics-3d/bullet/btWheelInfo_wrap.cpp
 )
 
+# Legacy codes what we try to build older verion of tizen
+SET( dali_csharp_binder_legacy_src_files
+  ${dali_csharp_binder_dir}/legacy/dali-legacy-wrap.cpp
+)
+
 SET( dali_csharp_binder_header_files
   ${dali_csharp_binder_dir}/common/common.h
 )

@@ -21,7 +21,7 @@
 
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 2.4.35
+Version: 2.4.36
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -239,6 +239,13 @@ cmake_flags+=" -DENABLE_ECORE_WAYLAND2=ON"
 # Use this conditional when Tizen version is 7.x or greater
 %if 0%{?tizen_version_major} >= 7
 CXXFLAGS+=" -DOVER_TIZEN_VERSION_7"
+%endif
+
+%if 0%{?tizen_version_major} >= 10
+CXXFLAGS+=" -DOVER_TIZEN_VERSION_10"
+cmake_flags+=" -DENABLE_LEGACY_BINDER_BUILD=OFF"
+%else
+cmake_flags+=" -DENABLE_LEGACY_BINDER_BUILD=ON"
 %endif
 
 %endif
