@@ -157,6 +157,39 @@ public: ///< Called from Internal::VisualObjectsContainer
   int32_t GetDepthIndex() const;
 
   /**
+   * @brief Sets the shadow type for this visual object.
+   *
+   * This method defines how the visual object should be treated in terms of shadow rendering
+   * and corner radius calculations. The shadow type influences the internal constraints
+   * and properties applied to the visual, especially when it's registered with a control
+   * that supports corner radius overrides.
+   *
+   * @param[in] shadowType The type of shadow to be applied to the visual object.
+   *                       Can be `NONE`, `BOX_SHADOW`, or `INNER_SHADOW`.
+   * @see GetShadowType(), Dali::VisualObjectsContainer::ShadowType
+   */
+  void SetShadowType(Dali::VisualObjectsContainer::ShadowType shadowType)
+  {
+    mShadowType = shadowType;
+  }
+
+  /**
+   * @brief Retrieves the currently configured shadow type for this visual object.
+   *
+   * This method returns the shadow type that was previously set via `SetShadowType`.
+   * It allows other parts of the system, particularly the VisualObjectsContainer during
+   * visual registration or property updates, to query the visual's shadow behavior
+   * and apply the corresponding rendering logic and constraints.
+   *
+   * @return The shadow type of the visual object.
+   * @see SetShadowType(), Dali::VisualObjectsContainer::ShadowType
+   */
+  Dali::VisualObjectsContainer::ShadowType GetShadowType() const
+  {
+    return mShadowType;
+  }
+
+  /**
    * @brief Get the Visual::Base object what this object hold.
    * @note It should be called only from Internal::VisualObject or Internal::VisualObjectsContainer.
    *
@@ -204,6 +237,8 @@ private:
   Dali::Toolkit::Visual::Base mVisual;
 
   Dali::VisualObjectsContainer::ContainerRangeType mRangeType{Dali::VisualObjectsContainer::ContainerRangeType::CONTENT};
+
+  Dali::VisualObjectsContainer::ShadowType mShadowType{Dali::VisualObjectsContainer::ShadowType::NONE};
 
   uint32_t mSiblingOrder{0u};
   uint32_t mVisualPropertyId{INVALID_VISUAL_PROPERTY_ID};
