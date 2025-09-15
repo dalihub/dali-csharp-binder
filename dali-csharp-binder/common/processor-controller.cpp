@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,8 +34,7 @@ ProcessorController::ProcessorController()
   mPostHandler(nullptr),
   mProcessRegistered(false),
   mKeepRenderingApplied(false),
-  mProcessingEvents(false),
-  mProcessEventsIdleRequested(false)
+  mProcessingEvents(false)
 {
 }
 
@@ -60,14 +59,14 @@ void ProcessorController::Process(bool postProcessor)
 {
   if(!postProcessor)
   {
-    // We will ignore Awake events during Process running
-    mKeepRenderingApplied = true;
-
     // Mark as we are processing now.
     mProcessingEvents = true;
 
     if(DALI_LIKELY(mHandler != nullptr))
     {
+      // Allow to call RequestProcessEventsOnIdle
+      mKeepRenderingApplied = false;
+
       DALI_TRACE_SCOPE(gTraceFilter, "NUI_PROCESS");
       mHandler();
     }
@@ -76,15 +75,17 @@ void ProcessorController::Process(bool postProcessor)
   {
     if(mPostHandler != nullptr)
     {
+      // Allow to call RequestProcessEventsOnIdle
+      mKeepRenderingApplied = false;
+
       DALI_TRACE_SCOPE(gTraceFilter, "NUI_POST_PROCESS");
       mPostHandler();
     }
     // Make awake events can be applied after PostProcess done.
     mKeepRenderingApplied = false;
 
-    // Clean up processing and events idle request flag.
-    mProcessingEvents           = false;
-    mProcessEventsIdleRequested = false;
+    // Clean up processing flag.
+    mProcessingEvents = false;
   }
 }
 
@@ -113,17 +114,14 @@ void ProcessorController::Awake()
   {
     DALI_ASSERT_ALWAYS(mProcessRegistered && "ProcessorController should be initialized before call Awake");
 
-    if(!mProcessingEvents && !mKeepRenderingApplied)
+    if(!mKeepRenderingApplied)
     {
       auto stage = Dali::Stage::GetCurrent();
       stage.KeepRendering(0.0f);
-      mKeepRenderingApplied = true;
-    }
-    else if(mProcessingEvents && !mProcessEventsIdleRequested)
-    {
-      // Request ProcessEvents on idle when we are processing now.
+
+      // Request ProcessEvents on idle to make ensure Processor executed.
       Dali::Adaptor::Get().RequestProcessEventsOnIdle();
-      mProcessEventsIdleRequested = true;
+      mKeepRenderingApplied = true;
     }
   }
   else
