@@ -1515,9 +1515,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_FontClient_IsScalable__SWIG_1(vo
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetFixedSizes__SWIG_0(void* jarg1, char* jarg2, void* jarg3)
 {
-  Dali::TextAbstraction::FontClient*                                                                                                       arg1 = (Dali::TextAbstraction::FontClient*)0;
-  Dali::TextAbstraction::FontPath*                                                                                                         arg2 = 0;
-  Dali::Vector<Dali::TextAbstraction::PointSize26Dot6, Dali::TypeTraits<Dali::TextAbstraction::PointSize26Dot6>::IS_TRIVIAL_TYPE == true>* arg3 = 0;
+  Dali::TextAbstraction::FontClient*                    arg1 = (Dali::TextAbstraction::FontClient*)0;
+  Dali::TextAbstraction::FontPath*                      arg2 = 0;
+  Dali::Vector<Dali::TextAbstraction::PointSize26Dot6>* arg3 = 0;
 
   arg1 = (Dali::TextAbstraction::FontClient*)jarg1;
   if(!jarg2)
@@ -1527,10 +1527,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetFixedSizes__SWIG_0(void* j
   }
   Dali::TextAbstraction::FontPath arg2_str(jarg2);
   arg2 = &arg2_str;
-  arg3 = (Dali::Vector<Dali::TextAbstraction::PointSize26Dot6, Dali::TypeTraits<Dali::TextAbstraction::PointSize26Dot6>::IS_TRIVIAL_TYPE == true>*)jarg3;
+  arg3 = (Dali::Vector<Dali::TextAbstraction::PointSize26Dot6>*)jarg3;
   if(!arg3)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector< Dali::TextAbstraction::PointSize26Dot6,Dali::TypeTraits< Dali::TextAbstraction::PointSize26Dot6 >::IS_TRIVIAL_TYPE==true > & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector<Dali::TextAbstraction::PointSize26Dot6> & type is null", 0);
     return;
   }
   {
@@ -1544,9 +1544,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetFixedSizes__SWIG_0(void* j
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetFixedSizes__SWIG_1(void* jarg1, void* jarg2, void* jarg3)
 {
-  Dali::TextAbstraction::FontClient*                                                                                                       arg1 = (Dali::TextAbstraction::FontClient*)0;
-  Dali::TextAbstraction::FontDescription*                                                                                                  arg2 = 0;
-  Dali::Vector<Dali::TextAbstraction::PointSize26Dot6, Dali::TypeTraits<Dali::TextAbstraction::PointSize26Dot6>::IS_TRIVIAL_TYPE == true>* arg3 = 0;
+  Dali::TextAbstraction::FontClient*                    arg1 = (Dali::TextAbstraction::FontClient*)0;
+  Dali::TextAbstraction::FontDescription*               arg2 = 0;
+  Dali::Vector<Dali::TextAbstraction::PointSize26Dot6>* arg3 = 0;
 
   arg1 = (Dali::TextAbstraction::FontClient*)jarg1;
   arg2 = (Dali::TextAbstraction::FontDescription*)jarg2;
@@ -1555,10 +1555,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FontClient_GetFixedSizes__SWIG_1(void* j
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::TextAbstraction::FontDescription const & type is null", 0);
     return;
   }
-  arg3 = (Dali::Vector<Dali::TextAbstraction::PointSize26Dot6, Dali::TypeTraits<Dali::TextAbstraction::PointSize26Dot6>::IS_TRIVIAL_TYPE == true>*)jarg3;
+  arg3 = (Dali::Vector<Dali::TextAbstraction::PointSize26Dot6>*)jarg3;
   if(!arg3)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector< Dali::TextAbstraction::PointSize26Dot6,Dali::TypeTraits< Dali::TextAbstraction::PointSize26Dot6 >::IS_TRIVIAL_TYPE==true > & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector<Dali::TextAbstraction::PointSize26Dot6> & type is null", 0);
     return;
   }
   {

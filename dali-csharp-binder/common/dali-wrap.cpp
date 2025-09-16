@@ -162,7 +162,8 @@ void SWIGUNUSED SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpExceptionArgum
 #ifdef __cplusplus
 extern "C"
 #endif
-  SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionCallbacks_NDalic(
+  SWIGEXPORT void SWIGSTDCALL
+  SWIGRegisterExceptionCallbacks_NDalic(
     SWIG_CSharpExceptionCallback_t applicationCallback,
     SWIG_CSharpExceptionCallback_t arithmeticCallback,
     SWIG_CSharpExceptionCallback_t divideByZeroCallback,
@@ -191,7 +192,8 @@ extern "C"
 #ifdef __cplusplus
 extern "C"
 #endif
-  SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionArgumentCallbacks_NDalic(
+  SWIGEXPORT void SWIGSTDCALL
+  SWIGRegisterExceptionArgumentCallbacks_NDalic(
     SWIG_CSharpExceptionArgumentCallback_t argumentCallback,
     SWIG_CSharpExceptionArgumentCallback_t argumentNullCallback,
     SWIG_CSharpExceptionArgumentCallback_t argumentOutOfRangeCallback)
@@ -208,7 +210,8 @@ SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = strdup; ///< Use s
 #ifdef __cplusplus
 extern "C"
 #endif
-  SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_NDalic(SWIG_CSharpStringHelperCallback callback)
+  SWIGEXPORT void SWIGSTDCALL
+  SWIGRegisterStringCallback_NDalic(SWIG_CSharpStringHelperCallback callback)
 {
   // Let we don't use registered string callback. Instead, use strdup. Since 2024-02-21.
 }

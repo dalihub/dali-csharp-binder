@@ -109,8 +109,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_DISPATCH_KEY_EVENTS_get()
     try_catch(([&]() {                                                                                                \
       CType       control = (CType)caller;                                                                            \
       SignalType& signal  = SignalName(*control);                                                                     \
-      signal.Connect((HType)handler);                                                                                 \
-    }));                                                                                                              \
+      signal.Connect((HType)handler); }));                                                                                           \
   }                                                                                                                   \
   SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_##SignalName##_Disconnect(void* caller, void* handler) \
   {                                                                                                                   \
@@ -119,8 +118,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_DISPATCH_KEY_EVENTS_get()
     try_catch(([&]() {                                                                                                \
       CType       control = (CType)caller;                                                                            \
       SignalType& signal  = SignalName(*control);                                                                     \
-      signal.Disconnect((HType)handler);                                                                              \
-    }));                                                                                                              \
+      signal.Disconnect((HType)handler); }));                                                                                           \
   }
 
 #define GENERATE_CONTROL_SIGNAL_2(CType, SignalType, SignalName)                                          \
@@ -131,8 +129,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_DISPATCH_KEY_EVENTS_get()
     try_catch(([&]() {                                                                                    \
       CType       control = (CType)caller;                                                                \
       SignalType& signal  = SignalName(*control);                                                         \
-      result              = signal.Empty();                                                               \
-    }));                                                                                                  \
+      result              = signal.Empty(); }));                                                                               \
     return result;                                                                                        \
   }
 
@@ -143,8 +140,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_DISPATCH_KEY_EVENTS_get()
     try_catch(([&]() {                                                                           \
       CType       control = (CType)caller;                                                       \
       SignalType& signal  = SignalName(*control);                                                \
-      signal.Emit();                                                                             \
-    }));                                                                                         \
+      signal.Emit(); }));                                                                      \
   }
 
 GENERATE_ACCESSIBILITY_SIGNAL_4_FUNCTIONS(void (*)(), Dali::Toolkit::DevelControl::AccessibilityActivateSignalType, AccessibilityActivateSignal)

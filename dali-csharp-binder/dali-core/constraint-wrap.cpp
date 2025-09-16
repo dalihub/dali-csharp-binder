@@ -655,34 +655,36 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Constraint_GetRemoveAction(void* nuiConst
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Constraint_SetApplyRate(void* nuiConstraint, uint32_t nuiApplyRate)
 {
-  Dali::Constraint *constraint = (Dali::Constraint *) 0;
-  uint32_t applyRate = Dali::Constraint::APPLY_ALWAYS;
+  Dali::Constraint* constraint = (Dali::Constraint*)0;
+  uint32_t          applyRate  = Dali::Constraint::APPLY_ALWAYS;
 
   GUARD_ON_NULL_RET(nuiConstraint);
-  constraint = (Dali::Constraint *)nuiConstraint;
-  applyRate = nuiApplyRate;
+  constraint = (Dali::Constraint*)nuiConstraint;
+  applyRate  = nuiApplyRate;
 
   {
     try
     {
       (*constraint).SetApplyRate(applyRate);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
 }
 
 SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_Constraint_GetApplyRate(void* nuiConstraint)
 {
-  Dali::Constraint *constraint = (Dali::Constraint *) 0;
-  uint32_t jresult = 0;
+  Dali::Constraint* constraint = (Dali::Constraint*)0;
+  uint32_t          jresult    = 0;
 
   GUARD_ON_NULL_RET0(nuiConstraint);
-  constraint = (Dali::Constraint *)nuiConstraint;
+  constraint = (Dali::Constraint*)nuiConstraint;
 
   {
     try
     {
       jresult = (*constraint).GetApplyRate();
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   return jresult;

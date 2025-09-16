@@ -253,7 +253,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_AddShadowVisualOb
 
   container    = (Dali::VisualObjectsContainer*)nuiVisualObjectsContainer;
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     result = container->AddShadowVisualObject(*visualObject, static_cast<Dali::VisualObjectsContainer::ShadowType>(shadowType));
   }));
   return result;

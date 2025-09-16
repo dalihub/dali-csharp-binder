@@ -97,7 +97,7 @@ void InnerShadowCornerRadiusConstraint(Vector4& current, const PropertyInputCont
 Dali::Constraint CreateVisualCornerConstraint(Dali::Toolkit::Control control, Dali::Internal::VisualObject& visualObjectImpl)
 {
   Dali::Constraint constraint;
-  auto visualBase = visualObjectImpl.GetVisual();
+  auto             visualBase                 = visualObjectImpl.GetVisual();
   auto             visualCornerRadiusProperty = visualBase.GetPropertyObject(Dali::Toolkit::DevelVisual::Property::CORNER_RADIUS);
   if(visualObjectImpl.GetShadowType() == Dali::VisualObjectsContainer::ShadowType::INNER_SHADOW)
   {

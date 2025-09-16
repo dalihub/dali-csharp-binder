@@ -913,7 +913,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextEditor_GetTextSize(void* pTextEdito
   {
     try
     {
-      sizeList = new Dali::Vector<Dali::Vector2, Dali::TypeTraits<Dali::Vector2>::IS_TRIVIAL_TYPE == true>((const Dali::Vector<Dali::Vector2, Dali::TypeTraits<Dali::Vector2>::IS_TRIVIAL_TYPE == true>&)(Dali::Toolkit::DevelTextEditor::GetTextSize(*textEditor, start, end)));
+      sizeList = new Dali::Vector<Dali::Vector2>((const Dali::Vector<Dali::Vector2>&)(Dali::Toolkit::DevelTextEditor::GetTextSize(*textEditor, start, end)));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -930,7 +930,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextEditor_GetTextPosition(void* pTextE
   {
     try
     {
-      sizeList = new Dali::Vector<Dali::Vector2, Dali::TypeTraits<Dali::Vector2>::IS_TRIVIAL_TYPE == true>((const Dali::Vector<Dali::Vector2, Dali::TypeTraits<Dali::Vector2>::IS_TRIVIAL_TYPE == true>&)(Dali::Toolkit::DevelTextEditor::GetTextPosition(*textEditor, start, end)));
+      sizeList = new Dali::Vector<Dali::Vector2>((const Dali::Vector<Dali::Vector2>&)(Dali::Toolkit::DevelTextEditor::GetTextPosition(*textEditor, start, end)));
     }
     CALL_CATCH_EXCEPTION(0);
   }
