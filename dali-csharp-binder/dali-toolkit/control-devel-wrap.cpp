@@ -562,9 +562,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_RegisterDefaultLabe
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]()
   {
-    Dali::Actor* actor  = (Dali::Actor*)arg1_actor;
-    auto         bridge = Dali::Accessibility::Bridge::GetCurrentBridge();
-    bridge->RegisterDefaultLabel(*actor);
+    Dali::Actor* actor = (Dali::Actor*)arg1_actor;
+    if(auto bridge = Dali::Accessibility::Bridge::GetCurrentBridge())
+    {
+      bridge->RegisterDefaultLabel(*actor);
+    }
   }));
 }
 
@@ -573,9 +575,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_UnregisterDefaultLa
   GUARD_ON_NULL_RET(arg1_actor);
   try_catch(([&]()
   {
-    Dali::Actor* actor  = (Dali::Actor*)arg1_actor;
-    auto         bridge = Dali::Accessibility::Bridge::GetCurrentBridge();
-    bridge->UnregisterDefaultLabel(*actor);
+    Dali::Actor* actor = (Dali::Actor*)arg1_actor;
+    if(auto bridge = Dali::Accessibility::Bridge::GetCurrentBridge())
+    {
+      bridge->UnregisterDefaultLabel(*actor);
+    }
   }));
 }
 

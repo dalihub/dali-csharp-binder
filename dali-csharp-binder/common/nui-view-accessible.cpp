@@ -731,7 +731,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(c
     }
 
     NUIViewAccessible::SetAccessibilityDelegate(accessibilityDelegate);
-    Accessibility::Bridge::GetCurrentBridge()->SetToolkitName("nui(dali)");
+    if(auto bridge = Accessibility::Bridge::GetCurrentBridge())
+    {
+      bridge->SetToolkitName("nui(dali)");
+    }
   }));
 }
 
@@ -757,10 +760,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dal
       }
 
       // In case someone forgot View.UnregisterDefaultLabel() before View.Dispose()...
-      Dali::Accessibility::Bridge::GetCurrentBridge()->UnregisterDefaultLabel(control);
+      if(auto bridge = Accessibility::Bridge::GetCurrentBridge())
+      {
+        bridge->UnregisterDefaultLabel(control);
 
-      // Make that we will not create new NUIViewAccessible anymore.
-      DevelControl::EnableCreateAccessible(control, false);
+        // Make that we will not create new NUIViewAccessible anymore.
+        DevelControl::EnableCreateAccessible(control, false);
+      }
     }
   }));
 }
