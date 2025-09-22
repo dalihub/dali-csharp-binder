@@ -8911,6 +8911,26 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Handle_SetProperty(void* jarg1, int jarg
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Handle_SetProperties(void* csHandle, void* csPropertyMap)
+{
+  Dali::Handle* handle = (Dali::Handle*)0;
+
+  handle = (Dali::Handle*)csHandle;
+
+  // Allow to null set
+  if(!csPropertyMap)
+  {
+    return;
+  }
+  {
+    try
+    {
+      (handle)->SetProperties((Dali::Property::Map const&)*((Dali::Property::Map const*)csPropertyMap));
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_RegisterProperty__SWIG_0(void* jarg1, char* jarg2, void* jarg3)
 {
   int                    jresult;
