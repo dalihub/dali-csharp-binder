@@ -15,6 +15,7 @@
 #include <BulletCollision/CollisionShapes/btCylinderShape.h>
 
 #include "conversion.h"
+
 #include "btCylinderShape_wrap.h"
 
 btCylinderShape* btCylinderShape_new(const btVector3* halfExtents)
@@ -30,7 +31,8 @@ btCylinderShape* btCylinderShape_new2(btScalar halfExtentX, btScalar halfExtentY
 
 void btCylinderShape_getHalfExtentsWithMargin(btCylinderShape* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->getHalfExtentsWithMargin();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->getHalfExtentsWithMargin();
   BTVECTOR3_SET(value, temp);
 }
 
@@ -49,7 +51,6 @@ int btCylinderShape_getUpAxis(btCylinderShape* obj)
   return obj->getUpAxis();
 }
 
-
 btCylinderShapeX* btCylinderShapeX_new(const btVector3* halfExtents)
 {
   BTVECTOR3_IN(halfExtents);
@@ -60,7 +61,6 @@ btCylinderShapeX* btCylinderShapeX_new2(btScalar halfExtentX, btScalar halfExten
 {
   return new btCylinderShapeX(btVector3(halfExtentX, halfExtentY, halfExtentZ));
 }
-
 
 btCylinderShapeZ* btCylinderShapeZ_new(const btVector3* halfExtents)
 {

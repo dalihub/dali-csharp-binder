@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,18 +28,21 @@ extern "C" {
  *     AccessibilityGetDescription
  */
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_GetResult(void *arg1) {
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_GetResult(void* arg1)
+{
   GUARD_ON_NULL_RET0(arg1);
-  std::string *data = (std::string*)arg1;
+  std::string* data = (std::string*)arg1;
   return SWIG_csharp_string_callback(data->c_str());
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_SetResult(void *arg1, char *arg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_SetResult(void* arg1, char* arg2)
+{
   GUARD_ON_NULL_RET(arg1);
   GUARD_ON_NULL_RET(arg2);
-  try_catch(([&]() {
-      auto result = (std::string*)arg1;
-      (*result) = arg2;
+  try_catch(([&]()
+  {
+    auto result = (std::string*)arg1;
+    (*result)   = arg2;
   }));
 }
 
@@ -50,51 +53,60 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_SetResult(void *arg1
 
 using GesturePair = std::pair<Dali::Accessibility::GestureInfo, bool>;
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_GetSizeOfGestureInfo(void) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_GetSizeOfGestureInfo(void)
+{
   return sizeof(Dali::Accessibility::GestureInfo);
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_GetResult(void *arg1) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_GetResult(void* arg1)
+{
   bool result = false;
   GUARD_ON_NULL_RET0(arg1);
-  try_catch(([&]() {
-      auto gesturePair = (GesturePair*)arg1;
-      result = (bool)gesturePair->second;
+  try_catch(([&]()
+  {
+    auto gesturePair = (GesturePair*)arg1;
+    result           = (bool)gesturePair->second;
   }));
   return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_SetResult(void *arg1, bool arg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_SetResult(void* arg1, bool arg2)
+{
   bool result = arg2;
   GUARD_ON_NULL_RET(arg1);
-  try_catch(([&]() {
-      auto gesturePair = (GesturePair*)arg1;
-      gesturePair->second = result;
+  try_catch(([&]()
+  {
+    auto gesturePair    = (GesturePair*)arg1;
+    gesturePair->second = result;
   }));
 }
 
 /*
  * AccessibilityActionSignalType
  */
-using ActionInfoFunc = bool (*)(const Dali::Accessibility::ActionInfo &);
+using ActionInfoFunc = bool (*)(const Dali::Accessibility::ActionInfo&);
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_AccessibilityActionSignal_Connect(void *arg1, void *arg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_AccessibilityActionSignal_Connect(void* arg1, void* arg2)
+{
   GUARD_ON_NULL_RET(arg1);
   GUARD_ON_NULL_RET(arg2);
-  try_catch(([&]() {
-      auto object = (Dali::Toolkit::DevelControl::AccessibilityActionSignalType*)arg1;
-      auto func = (ActionInfoFunc)arg2;
-      object->Connect(func);
+  try_catch(([&]()
+  {
+    auto object = (Dali::Toolkit::DevelControl::AccessibilityActionSignalType*)arg1;
+    auto func   = (ActionInfoFunc)arg2;
+    object->Connect(func);
   }));
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_AccessibilityActionSignal_Disconnect(void *arg1, void *arg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_AccessibilityActionSignal_Disconnect(void* arg1, void* arg2)
+{
   GUARD_ON_NULL_RET(arg1);
   GUARD_ON_NULL_RET(arg2);
-  try_catch(([&]() {
-      auto object = (Dali::Toolkit::DevelControl::AccessibilityActionSignalType*)arg1;
-      auto func = (ActionInfoFunc)arg2;
-      object->Disconnect(func);
+  try_catch(([&]()
+  {
+    auto object = (Dali::Toolkit::DevelControl::AccessibilityActionSignalType*)arg1;
+    auto func   = (ActionInfoFunc)arg2;
+    object->Disconnect(func);
   }));
 }
 

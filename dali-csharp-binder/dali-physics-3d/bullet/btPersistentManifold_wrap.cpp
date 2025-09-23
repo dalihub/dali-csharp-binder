@@ -16,6 +16,7 @@
 #include <BulletCollision/NarrowPhaseCollision/btPersistentManifold.h>
 
 #include "conversion.h"
+
 #include "btPersistentManifold_wrap.h"
 
 btPersistentManifold* btPersistentManifold_new()
@@ -24,14 +25,14 @@ btPersistentManifold* btPersistentManifold_new()
 }
 
 btPersistentManifold* btPersistentManifold_new2(const btCollisionObject* body0, const btCollisionObject* body1,
-  int __unnamed2, btScalar contactBreakingThreshold, btScalar contactProcessingThreshold)
+                                                int __unnamed2, btScalar contactBreakingThreshold, btScalar contactProcessingThreshold)
 {
   return new btPersistentManifold(body0, body1, __unnamed2, contactBreakingThreshold,
-    contactProcessingThreshold);
+                                  contactProcessingThreshold);
 }
 
 int btPersistentManifold_addManifoldPoint(btPersistentManifold* obj, const btManifoldPoint* newPoint,
-  bool isPredictive)
+                                          bool isPredictive)
 {
   return obj->addManifoldPoint(*newPoint, isPredictive);
 }
@@ -77,7 +78,7 @@ btScalar btPersistentManifold_getContactBreakingThreshold(btPersistentManifold* 
 }
 
 btManifoldPoint* btPersistentManifold_getContactPoint(btPersistentManifold* obj,
-  int index)
+                                                      int                   index)
 {
   return &obj->getContactPoint(index);
 }
@@ -98,7 +99,7 @@ int btPersistentManifold_getNumContacts(btPersistentManifold* obj)
 }
 
 void btPersistentManifold_refreshContactPoints(btPersistentManifold* obj, const btTransform* trA,
-  const btTransform* trB)
+                                               const btTransform* trB)
 {
   BTTRANSFORM_IN(trA);
   BTTRANSFORM_IN(trB);
@@ -111,13 +112,13 @@ void btPersistentManifold_removeContactPoint(btPersistentManifold* obj, int inde
 }
 
 void btPersistentManifold_replaceContactPoint(btPersistentManifold* obj, const btManifoldPoint* newPoint,
-  int insertIndex)
+                                              int insertIndex)
 {
   obj->replaceContactPoint(*newPoint, insertIndex);
 }
 
 void btPersistentManifold_setBodies(btPersistentManifold* obj, const btCollisionObject* body0,
-  const btCollisionObject* body1)
+                                    const btCollisionObject* body1)
 {
   obj->setBodies(body0, body1);
 }
@@ -133,13 +134,13 @@ void btPersistentManifold_setCompanionIdB(btPersistentManifold* obj, int value)
 }
 
 void btPersistentManifold_setContactBreakingThreshold(btPersistentManifold* obj,
-  btScalar contactBreakingThreshold)
+                                                      btScalar              contactBreakingThreshold)
 {
   obj->setContactBreakingThreshold(contactBreakingThreshold);
 }
 
 void btPersistentManifold_setContactProcessingThreshold(btPersistentManifold* obj,
-  btScalar contactProcessingThreshold)
+                                                        btScalar              contactProcessingThreshold)
 {
   obj->setContactProcessingThreshold(contactProcessingThreshold);
 }
@@ -163,7 +164,6 @@ void btPersistentManifold_delete(btPersistentManifold* obj)
 {
   delete obj;
 }
-
 
 ContactDestroyedCallback getGContactDestroyedCallback()
 {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,11 +30,10 @@ extern "C" {
 
 // MotionIndex
 
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MotionIndex_SWIG_1(void* csMotionIndex)
 {
   Dali::Scene3D::MotionIndex* motionIndex = (Dali::Scene3D::MotionIndex*)csMotionIndex;
-  Dali::Scene3D::MotionIndex* result     = 0;
+  Dali::Scene3D::MotionIndex* result      = 0;
 
   if(!motionIndex)
   {
@@ -86,7 +85,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionIndex_Assign(void* csDestination,
   return (void*)result;
 }
 
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionIndex_SetModelNodeId(void* csMotionIndex, void* csPropertyKey)
 {
   Dali::Scene3D::MotionIndex* motionIndex = (Dali::Scene3D::MotionIndex*)csMotionIndex;
@@ -129,7 +127,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionIndex_GetModelNodeId(void* csMoti
     CALL_CATCH_EXCEPTION(0);
   }
 
-  return new Dali::Property::Key((Dali::Property::Key const &)result);
+  return new Dali::Property::Key((Dali::Property::Key const&)result);
 }
 
 // BlendShapeIndex
@@ -197,11 +195,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_BlendShapeIndex_New_SWIG_2(void* csMode
   return new Dali::Scene3D::BlendShapeIndex((const Dali::Scene3D::BlendShapeIndex&)result);
 }
 
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_BlendShapeIndex_SWIG_1(void* csBlendShapeIndex)
 {
   Dali::Scene3D::BlendShapeIndex* blendShapeIndex = (Dali::Scene3D::BlendShapeIndex*)csBlendShapeIndex;
-  Dali::Scene3D::BlendShapeIndex* result     = 0;
+  Dali::Scene3D::BlendShapeIndex* result          = 0;
 
   if(!blendShapeIndex)
   {
@@ -253,6 +250,29 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_BlendShapeIndex_Assign(void* csDestinat
   return (void*)result;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_BlendShapeIndex_DownCast(void* csBaseHandle)
+{
+  void*                          jresult;
+  Dali::BaseHandle*              argp1;
+  Dali::Scene3D::BlendShapeIndex result;
+
+  argp1 = (Dali::BaseHandle*)csBaseHandle;
+  if(!argp1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = Dali::Scene3D::BlendShapeIndex::DownCast(*argp1);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Scene3D::BlendShapeIndex((const Dali::Scene3D::BlendShapeIndex&)result);
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BlendShapeIndex_SetBlendShapeId(void* csBlendShapeIndex, void* csBlendShapePropertyKey)
 {
@@ -296,7 +316,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_BlendShapeIndex_GetBlendShapeId(void* c
     CALL_CATCH_EXCEPTION(0);
   }
 
-  return new Dali::Property::Key((Dali::Property::Key const &)result);
+  return new Dali::Property::Key((Dali::Property::Key const&)result);
 }
 
 // MotionPropertyIndex
@@ -318,8 +338,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionPropertyIndex_New_SWIG_0()
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionPropertyIndex_New_SWIG_1(void* csModelNodePropertKey, void* csPropertyKey)
 {
-  Dali::Property::Key*               modelNodePropertyKey  = (Dali::Property::Key*)csModelNodePropertKey;
-  Dali::Property::Key*               propertyKey           = (Dali::Property::Key*)csPropertyKey;
+  Dali::Property::Key*               modelNodePropertyKey = (Dali::Property::Key*)csModelNodePropertKey;
+  Dali::Property::Key*               propertyKey          = (Dali::Property::Key*)csPropertyKey;
   Dali::Scene3D::MotionPropertyIndex result;
 
   if(!modelNodePropertyKey)
@@ -342,7 +362,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionPropertyIndex_New_SWIG_1(void* cs
 
   return new Dali::Scene3D::MotionPropertyIndex((const Dali::Scene3D::MotionPropertyIndex&)result);
 }
-
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MotionPropertyIndex_SWIG_1(void* csMotionPropertyIndex)
 {
@@ -399,6 +418,29 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionPropertyIndex_Assign(void* csDest
   return (void*)result;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionPropertyIndex_DownCast(void* csBaseHandle)
+{
+  void*                              jresult;
+  Dali::BaseHandle*                  argp1;
+  Dali::Scene3D::MotionPropertyIndex result;
+
+  argp1 = (Dali::BaseHandle*)csBaseHandle;
+  if(!argp1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = Dali::Scene3D::MotionPropertyIndex::DownCast(*argp1);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Scene3D::MotionPropertyIndex((const Dali::Scene3D::MotionPropertyIndex&)result);
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionPropertyIndex_SetPropertyId(void* csMotionPropertyIndex, void* csPropertyKey)
 {
@@ -442,7 +484,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionPropertyIndex_GetPropertyId(void*
     CALL_CATCH_EXCEPTION(0);
   }
 
-  return new Dali::Property::Key((Dali::Property::Key const &)result);
+  return new Dali::Property::Key((Dali::Property::Key const&)result);
 }
 
 // MotionTransformIndex
@@ -464,7 +506,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionTransformIndex_New_SWIG_0()
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionTransformIndex_New_SWIG_1(void* csModelNodePropertKey, int csTransformType)
 {
-  Dali::Property::Key*                modelNodePropertyKey  = (Dali::Property::Key*)csModelNodePropertKey;
+  Dali::Property::Key*                modelNodePropertyKey = (Dali::Property::Key*)csModelNodePropertKey;
   Dali::Scene3D::MotionTransformIndex result;
 
   if(!modelNodePropertyKey)
@@ -483,11 +525,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionTransformIndex_New_SWIG_1(void* c
   return new Dali::Scene3D::MotionTransformIndex((const Dali::Scene3D::MotionTransformIndex&)result);
 }
 
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MotionTransformIndex_SWIG_1(void* csMotionTransformIndex)
 {
   Dali::Scene3D::MotionTransformIndex* motionTransformIndex = (Dali::Scene3D::MotionTransformIndex*)csMotionTransformIndex;
-  Dali::Scene3D::MotionTransformIndex* result              = 0;
+  Dali::Scene3D::MotionTransformIndex* result               = 0;
 
   if(!motionTransformIndex)
   {
@@ -539,6 +580,29 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionTransformIndex_Assign(void* csDes
   return (void*)result;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionTransformIndex_DownCast(void* csBaseHandle)
+{
+  void*                               jresult;
+  Dali::BaseHandle*                   argp1;
+  Dali::Scene3D::MotionTransformIndex result;
+
+  argp1 = (Dali::BaseHandle*)csBaseHandle;
+  if(!argp1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BaseHandle", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = Dali::Scene3D::MotionTransformIndex::DownCast(*argp1);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Scene3D::MotionTransformIndex((const Dali::Scene3D::MotionTransformIndex&)result);
+  return jresult;
+}
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionTransformIndex_SetTransformType(void* csMotionTransformIndex, int csTransformType)
 {

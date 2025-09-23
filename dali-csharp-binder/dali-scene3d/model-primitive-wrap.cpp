@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Primitive_New_SWIG_0()
 
   return new Dali::Scene3D::ModelPrimitive((const Dali::Scene3D::ModelPrimitive&)result);
 }
-
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Model_Primitive_SWIG_1(void* csModel)
 {
@@ -96,11 +95,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Primitive_Assign(void* csDestinat
   return (void*)result;
 }
 
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_Primitive_SetGeometry(void* csModelPrimitive, void* csGeometry)
 {
   Dali::Scene3D::ModelPrimitive* modelPrimitive = (Dali::Scene3D::ModelPrimitive*)csModelPrimitive;
-  Dali::Geometry* geometry = (Dali::Geometry*)csGeometry;
+  Dali::Geometry*                geometry       = (Dali::Geometry*)csGeometry;
 
   if(!modelPrimitive)
   {
@@ -119,7 +117,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_Primitive_SetGeometry(void* csMode
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Primitive_GetGeometry(void* csModelPrimitive)
 {
   Dali::Scene3D::ModelPrimitive* modelPrimitive = (Dali::Scene3D::ModelPrimitive*)csModelPrimitive;
-  Dali::Geometry result;
+  Dali::Geometry                 result;
 
   if(!modelPrimitive)
   {
@@ -138,26 +136,26 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Primitive_GetGeometry(void* csMod
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_Primitive_SetMaterial(void* csModelPrimitive, void* csMaterial)
 {
-   Dali::Scene3D::ModelPrimitive* modelPrimitive = (Dali::Scene3D::ModelPrimitive*)csModelPrimitive;
-   Dali::Scene3D::Material* material = (Dali::Scene3D::Material*)csMaterial;
+  Dali::Scene3D::ModelPrimitive* modelPrimitive = (Dali::Scene3D::ModelPrimitive*)csModelPrimitive;
+  Dali::Scene3D::Material*       material       = (Dali::Scene3D::Material*)csMaterial;
 
-   if(!modelPrimitive)
-   {
-     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelNode", 0);
-     return;
-   }
+  if(!modelPrimitive)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Scene3D::ModelNode", 0);
+    return;
+  }
 
-   try
-   {
-     modelPrimitive->SetMaterial(*material);
-   }
-   CALL_CATCH_EXCEPTION();
+  try
+  {
+    modelPrimitive->SetMaterial(*material);
+  }
+  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Primitive_GetMaterial(void* csModelPrimitive)
 {
   Dali::Scene3D::ModelPrimitive* modelPrimitive = (Dali::Scene3D::ModelPrimitive*)csModelPrimitive;
-  Dali::Scene3D::Material result;
+  Dali::Scene3D::Material        result;
 
   if(!modelPrimitive)
   {
@@ -173,7 +171,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Primitive_GetMaterial(void* csMod
   }
   return new Dali::Scene3D::Material((const Dali::Scene3D::Material&)result);
 }
-
 
 #ifdef __cplusplus
 }

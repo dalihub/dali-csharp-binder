@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ extern "C" {
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WindowBlurInfo()
 {
-  void*             nuiResult;
+  void*                 nuiResult;
   Dali::WindowBlurInfo* result = 0;
 
   {
@@ -41,41 +41,45 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WindowBlurInfo()
   return nuiResult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WindowBlurInfo_SWIG_0(int nuiBlurType, int nuiBlurRadius, int nuiCornerRadius)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WindowBlurInfo_SWIG_0(int nuiBlurType, int nuiBlurRadius, int nuiCornerRadius)
 {
-  void * jresult ;
-  Dali::WindowBlurInfo *result = 0;
+  void*                 jresult;
+  Dali::WindowBlurInfo* result = 0;
 
-  Dali::WindowBlurType blurType = (Dali::WindowBlurType)nuiBlurType;
-  int blurRadius = nuiBlurRadius;
-  int cornerRadius = nuiCornerRadius;
+  Dali::WindowBlurType blurType     = (Dali::WindowBlurType)nuiBlurType;
+  int                  blurRadius   = nuiBlurRadius;
+  int                  cornerRadius = nuiCornerRadius;
 
   {
-    try {
-      result = (Dali::WindowBlurInfo *)new Dali::WindowBlurInfo(blurType, blurRadius, cornerRadius);
-    } CALL_CATCH_EXCEPTION(0);
+    try
+    {
+      result = (Dali::WindowBlurInfo*)new Dali::WindowBlurInfo(blurType, blurRadius, cornerRadius);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (void *)result;
+  jresult = (void*)result;
   return jresult;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_WindowBlurInfo_SWIG_1(int nuiBlurType, int nuiBlurRadius)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WindowBlurInfo_SWIG_1(int nuiBlurType, int nuiBlurRadius)
 {
-  void * jresult ;
-  Dali::WindowBlurInfo *result = 0;
+  void*                 jresult;
+  Dali::WindowBlurInfo* result = 0;
 
-  Dali::WindowBlurType blurType = (Dali::WindowBlurType)nuiBlurType;
-  int blurRadius = nuiBlurRadius;
-  int cornerRadius = 0;
+  Dali::WindowBlurType blurType     = (Dali::WindowBlurType)nuiBlurType;
+  int                  blurRadius   = nuiBlurRadius;
+  int                  cornerRadius = 0;
 
   {
-    try {
-      result = (Dali::WindowBlurInfo *)new Dali::WindowBlurInfo(blurType, blurRadius, cornerRadius);
-    } CALL_CATCH_EXCEPTION(0);
+    try
+    {
+      result = (Dali::WindowBlurInfo*)new Dali::WindowBlurInfo(blurType, blurRadius, cornerRadius);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (void *)result;
+  jresult = (void*)result;
   return jresult;
 }
 
@@ -92,27 +96,31 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowBlurInfo(void* nuiWindowBlu
   }
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WindowBlurInfo_EqualTo(void * nuiWindowBlurInfo1, void * nuiWindowBlurInfo2)
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WindowBlurInfo_EqualTo(void* nuiWindowBlurInfo1, void* nuiWindowBlurInfo2)
 {
-  bool jresult;
-  bool result;
-  Dali::WindowBlurInfo *windowBlurInfo1 = (Dali::WindowBlurInfo *)nuiWindowBlurInfo1;
-  Dali::WindowBlurInfo *windowBlurInfo2 = (Dali::WindowBlurInfo *)nuiWindowBlurInfo2;
+  bool                  jresult;
+  bool                  result;
+  Dali::WindowBlurInfo* windowBlurInfo1 = (Dali::WindowBlurInfo*)nuiWindowBlurInfo1;
+  Dali::WindowBlurInfo* windowBlurInfo2 = (Dali::WindowBlurInfo*)nuiWindowBlurInfo2;
 
-  if (!windowBlurInfo1) {
+  if(!windowBlurInfo1)
+  {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::WindowBlurInfo const & type is null in nuiWindowBlurInfo1", 0);
     return 0;
   }
 
-  if (!windowBlurInfo2) {
+  if(!windowBlurInfo2)
+  {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::WindowBlurInfo const & type is null in nuiWindowBlurInfo2", 0);
     return 0;
   }
 
   {
-    try {
-      result = (bool)((Dali::WindowBlurInfo const *)windowBlurInfo1)->operator ==((Dali::WindowBlurInfo const &)*windowBlurInfo2);
-    } CALL_CATCH_EXCEPTION(0);
+    try
+    {
+      result = (bool)((Dali::WindowBlurInfo const*)windowBlurInfo1)->operator==((Dali::WindowBlurInfo const&)*windowBlurInfo2);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
@@ -142,7 +150,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowBlurInfo_SetBlurType(void* nuiWind
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WindowBlurInfo_GetBlurType(void* nuiWindowBlurInfo)
 {
-  int               nuiResult;
+  int                   nuiResult;
   Dali::WindowBlurType  windowBlurType = Dali::WindowBlurType::NONE;
   Dali::WindowBlurInfo* windowBlurInfo = (Dali::WindowBlurInfo*)nuiWindowBlurInfo;
 
@@ -167,7 +175,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WindowBlurInfo_GetBlurType(void* nuiWindo
 // --
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowBlurInfo_SetBlurRadius(void* nuiWindowBlurInfo, int nuiWindowBlurRadius)
 {
-  int blurRadius = nuiWindowBlurRadius;
+  int                   blurRadius     = nuiWindowBlurRadius;
   Dali::WindowBlurInfo* windowBlurInfo = (Dali::WindowBlurInfo*)nuiWindowBlurInfo;
 
   if(!windowBlurInfo)
@@ -187,8 +195,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowBlurInfo_SetBlurRadius(void* nuiWi
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WindowBlurInfo_GetBlurRadius(void* nuiWindowBlurInfo)
 {
-  int               nuiResult;
-  int blurRadius = 0;
+  int                   nuiResult;
+  int                   blurRadius     = 0;
   Dali::WindowBlurInfo* windowBlurInfo = (Dali::WindowBlurInfo*)nuiWindowBlurInfo;
 
   if(!windowBlurInfo)
@@ -212,7 +220,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WindowBlurInfo_GetBlurRadius(void* nuiWin
 // --
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowBlurInfo_SetBackgroundCornerRadius(void* nuiWindowBlurInfo, int nuiCornerRadius)
 {
-  int cornerRadius = nuiCornerRadius;
+  int                   cornerRadius   = nuiCornerRadius;
   Dali::WindowBlurInfo* windowBlurInfo = (Dali::WindowBlurInfo*)nuiWindowBlurInfo;
 
   if(!windowBlurInfo)
@@ -232,8 +240,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowBlurInfo_SetBackgroundCornerRadius
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WindowBlurInfo_GetBackgroundCornerRadius(void* nuiWindowBlurInfo)
 {
-  int               nuiResult;
-  int cornerRadius = 0;
+  int                   nuiResult;
+  int                   cornerRadius   = 0;
   Dali::WindowBlurInfo* windowBlurInfo = (Dali::WindowBlurInfo*)nuiWindowBlurInfo;
 
   if(!windowBlurInfo)
@@ -253,7 +261,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WindowBlurInfo_GetBackgroundCornerRadius(
   nuiResult = (int)cornerRadius;
   return nuiResult;
 }
-
 
 #ifdef __cplusplus
 }

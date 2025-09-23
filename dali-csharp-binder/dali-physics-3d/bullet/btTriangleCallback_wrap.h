@@ -21,7 +21,7 @@
 #define btTriangleCallbackWrapper void
 #else
 typedef void (*p_btInternalTriangleIndexCallback_internalProcessTriangleIndex)(btVector3* triangle,
-  int partId, int triangleIndex);
+                                                                               int partId, int triangleIndex);
 
 class btInternalTriangleIndexCallbackWrapper : public btInternalTriangleIndexCallback
 {
@@ -35,7 +35,7 @@ public:
 };
 
 typedef void (*p_btTriangleCallback_processTriangle)(btVector3* triangle, int partId,
-  int triangleIndex);
+                                                     int triangleIndex);
 
 class btTriangleCallbackWrapper : public btTriangleCallback
 {
@@ -52,14 +52,14 @@ public:
 #ifdef __cplusplus
 extern "C" {
 #endif
-  EXPORT btTriangleCallbackWrapper* btTriangleCallbackWrapper_new(p_btTriangleCallback_processTriangle processTriangleCallback);
+EXPORT btTriangleCallbackWrapper* btTriangleCallbackWrapper_new(p_btTriangleCallback_processTriangle processTriangleCallback);
 
-  EXPORT void btTriangleCallback_delete(btTriangleCallback* obj);
+EXPORT void btTriangleCallback_delete(btTriangleCallback* obj);
 
-  EXPORT btInternalTriangleIndexCallbackWrapper* btInternalTriangleIndexCallbackWrapper_new(
-    p_btInternalTriangleIndexCallback_internalProcessTriangleIndex internalProcessTriangleIndexCallback);
+EXPORT btInternalTriangleIndexCallbackWrapper* btInternalTriangleIndexCallbackWrapper_new(
+  p_btInternalTriangleIndexCallback_internalProcessTriangleIndex internalProcessTriangleIndexCallback);
 
-  EXPORT void btInternalTriangleIndexCallback_delete(btInternalTriangleIndexCallback* obj);
+EXPORT void btInternalTriangleIndexCallback_delete(btInternalTriangleIndexCallback* obj);
 #ifdef __cplusplus
 }
 #endif

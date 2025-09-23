@@ -17,6 +17,7 @@
 #include <BulletDynamics/Featherstone/btMultiBodyLinkCollider.h>
 
 #include "conversion.h"
+
 #include "btMultiBodyLink_wrap.h"
 
 btSpatialMotionVector* btMultibodyLink_getAbsFrameLocVelocity(btMultibodyLink* obj)
@@ -220,7 +221,7 @@ void btMultibodyLink_setAppliedTorque(btMultibodyLink* obj, const btVector3* val
 }
 
 void btMultibodyLink_setAxisBottom(btMultibodyLink* obj, int dof, btScalar x, btScalar y,
-  btScalar z)
+                                   btScalar z)
 {
   obj->setAxisBottom(dof, x, y, z);
 }
@@ -232,7 +233,7 @@ void btMultibodyLink_setAxisBottom2(btMultibodyLink* obj, int dof, const btVecto
 }
 
 void btMultibodyLink_setAxisTop(btMultibodyLink* obj, int dof, btScalar x, btScalar y,
-  btScalar z)
+                                btScalar z)
 {
   obj->setAxisTop(dof, x, y, z);
 }

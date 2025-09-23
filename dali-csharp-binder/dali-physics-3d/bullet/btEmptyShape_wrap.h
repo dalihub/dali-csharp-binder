@@ -17,7 +17,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-  EXPORT btEmptyShape* btEmptyShape_new();
+EXPORT btEmptyShape* btEmptyShape_new();
 #ifdef __cplusplus
 }
 #endif

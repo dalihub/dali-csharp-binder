@@ -20,13 +20,13 @@
 #include "btContinuousConvexCollision_wrap.h"
 
 btContinuousConvexCollision* btContinuousConvexCollision_new(const btConvexShape* shapeA,
-  const btConvexShape* shapeB, btVoronoiSimplexSolver* simplexSolver, btConvexPenetrationDepthSolver* penetrationDepthSolver)
+                                                             const btConvexShape* shapeB, btVoronoiSimplexSolver* simplexSolver, btConvexPenetrationDepthSolver* penetrationDepthSolver)
 {
   return new btContinuousConvexCollision(shapeA, shapeB, simplexSolver, penetrationDepthSolver);
 }
 
-btContinuousConvexCollision* btContinuousConvexCollision_new2(const btConvexShape* shapeA,
-  const btStaticPlaneShape* plane)
+btContinuousConvexCollision* btContinuousConvexCollision_new2(const btConvexShape*      shapeA,
+                                                              const btStaticPlaneShape* plane)
 {
   return new btContinuousConvexCollision(shapeA, plane);
 }

@@ -15,6 +15,7 @@
 #include <BulletCollision/CollisionShapes/btTriangleBuffer.h>
 
 #include "conversion.h"
+
 #include "btTriangleBuffer_wrap.h"
 
 btTriangle* btTriangle_new()
@@ -76,7 +77,6 @@ void btTriangle_delete(btTriangle* obj)
 {
   delete obj;
 }
-
 
 btTriangleBuffer* btTriangleBuffer_new()
 {

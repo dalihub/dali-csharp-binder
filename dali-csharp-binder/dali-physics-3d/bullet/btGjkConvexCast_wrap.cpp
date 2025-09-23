@@ -18,7 +18,7 @@
 #include "btGjkConvexCast_wrap.h"
 
 btGjkConvexCast* btGjkConvexCast_new(const btConvexShape* convexA, const btConvexShape* convexB,
-  btVoronoiSimplexSolver* simplexSolver)
+                                     btVoronoiSimplexSolver* simplexSolver)
 {
   return new btGjkConvexCast(convexA, convexB, simplexSolver);
 }

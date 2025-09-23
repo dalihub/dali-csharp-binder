@@ -16,8 +16,8 @@
  */
 
 // EXTERNAL INCLUDES
-#include <dali/devel-api/adaptor-framework/native-image-source-queue.h>
 #include <dali-toolkit/public-api/image-loader/image.h>
+#include <dali/devel-api/adaptor-framework/native-image-source-queue.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -31,26 +31,27 @@ struct NativeImageSourceQueuePtrHandle
   Dali::NativeImageSourceQueuePtr Ptr;
 };
 
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_NativeImageQueuePtr_2(unsigned int queueCount, unsigned int width, unsigned int height, int colorFormat)
 {
-  void* jresult;
+  void*                            jresult;
   NativeImageSourceQueuePtrHandle* queue = new NativeImageSourceQueuePtrHandle();
   {
-    try {
+    try
+    {
       queue->Ptr = Dali::NativeImageSourceQueue::New(queueCount, width, height, (Dali::NativeImageSourceQueue::ColorFormat)colorFormat);
     }
-    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourceQueuePtrHandle* ptr){delete ptr;}, queue);
+    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourceQueuePtrHandle* ptr)
+    { delete ptr; }, queue);
   }
-  jresult = (void *)queue;
+  jresult = (void*)queue;
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_GetPtr(void* nuiqueue)
 {
-  void* jresult;
+  void*                            jresult;
   NativeImageSourceQueuePtrHandle* queue = (NativeImageSourceQueuePtrHandle*)nuiqueue;
-  jresult = (void*)(queue->Ptr.Get());
+  jresult                                = (void*)(queue->Ptr.Get());
   return jresult;
 }
 
@@ -58,7 +59,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_NativeImageQueuePtr(void* nuiqueu
 {
   NativeImageSourceQueuePtrHandle* queue = (NativeImageSourceQueuePtrHandle*)nuiqueue;
   {
-    try {
+    try
+    {
       delete queue;
     }
     CALL_CATCH_EXCEPTION();
@@ -67,10 +69,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_NativeImageQueuePtr(void* nuiqueu
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageQueue_CanDequeueBuffer(void* nuiqueue)
 {
-  bool jresult;
+  bool                          jresult;
   Dali::NativeImageSourceQueue* queue = (Dali::NativeImageSourceQueue*)nuiqueue;
   {
-    try {
+    try
+    {
       jresult = queue->CanDequeueBuffer();
     }
     CALL_CATCH_EXCEPTION(0);
@@ -80,14 +83,15 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageQueue_CanDequeueBuffer(void* 
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_DequeueBuffer(void* nuiqueue, int* jwidth, int* jheight, int* jstride)
 {
-  void* jresult;
-  Dali::NativeImageSourceQueue* queue = (Dali::NativeImageSourceQueue*)nuiqueue;
-  uint32_t* width = (uint32_t*)(jwidth);
-  uint32_t* height = (uint32_t*)(jheight);
-  uint32_t* stride = (uint32_t*)(jstride);
+  void*                         jresult;
+  Dali::NativeImageSourceQueue* queue  = (Dali::NativeImageSourceQueue*)nuiqueue;
+  uint32_t*                     width  = (uint32_t*)(jwidth);
+  uint32_t*                     height = (uint32_t*)(jheight);
+  uint32_t*                     stride = (uint32_t*)(jstride);
   {
-    try {
-      jresult = (void *)queue->DequeueBuffer( *width, *height, *stride );
+    try
+    {
+      jresult = (void*)queue->DequeueBuffer(*width, *height, *stride);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -96,11 +100,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_DequeueBuffer(void* nu
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageQueue_EnqueueBuffer(void* nuiqueue, void* jbuffer)
 {
-  bool jresult;
-  Dali::NativeImageSourceQueue* queue = (Dali::NativeImageSourceQueue*)nuiqueue;
-  uint8_t* buffer = (uint8_t*)jbuffer;
+  bool                          jresult;
+  Dali::NativeImageSourceQueue* queue  = (Dali::NativeImageSourceQueue*)nuiqueue;
+  uint8_t*                      buffer = (uint8_t*)jbuffer;
   {
-    try {
+    try
+    {
       jresult = queue->EnqueueBuffer(buffer);
     }
     CALL_CATCH_EXCEPTION(0);
@@ -110,10 +115,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageQueue_EnqueueBuffer(void* nui
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageQueue_GetQueueCount(void* nuiqueue)
 {
-  unsigned int jresult;
+  unsigned int                  jresult;
   Dali::NativeImageSourceQueue* queue = (Dali::NativeImageSourceQueue*)nuiqueue;
   {
-    try {
+    try
+    {
       jresult = static_cast<unsigned int>(queue->GetQueueCount());
     }
     CALL_CATCH_EXCEPTION(0);
@@ -123,37 +129,38 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageQueue_GetQueueCount(v
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_GenerateUrl(void* nuiqueue)
 {
-  Dali::Toolkit::ImageUrl result;
+  Dali::Toolkit::ImageUrl       result;
   Dali::NativeImageSourceQueue* queue = (Dali::NativeImageSourceQueue*)nuiqueue;
-  void *jresult;
+  void*                         jresult;
   {
-    try {
+    try
+    {
       result = Dali::Toolkit::Image::GenerateUrl(queue);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_GenerateUrl_With_PreMultiplied(void* nuiqueue, bool preMultiplied)
 {
-  Dali::Toolkit::ImageUrl result;
+  Dali::Toolkit::ImageUrl       result;
   Dali::NativeImageSourceQueue* queue = (Dali::NativeImageSourceQueue*)nuiqueue;
-  void *jresult;
+  void*                         jresult;
   {
-    try {
+    try
+    {
       result = Dali::Toolkit::Image::GenerateUrl(queue, preMultiplied);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl &)result);
+  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)result);
   return jresult;
 }
 
 #ifdef __cplusplus
 }
 #endif
-

@@ -16,11 +16,12 @@
 #include <BulletDynamics/Featherstone/btMultiBodySliderConstraint.h>
 
 #include "conversion.h"
+
 #include "btMultiBodySliderConstraint_wrap.h"
 
 btMultiBodySliderConstraint* btMultiBodySliderConstraint_new(btMultiBody* body, int link,
-  btRigidBody* bodyB, const btVector3* pivotInA, const btVector3* pivotInB, const btMatrix3x3* frameInA,
-  const btMatrix3x3* frameInB, const btVector3* jointAxis)
+                                                             btRigidBody* bodyB, const btVector3* pivotInA, const btVector3* pivotInB, const btMatrix3x3* frameInA,
+                                                             const btMatrix3x3* frameInB, const btVector3* jointAxis)
 {
   BTVECTOR3_IN(pivotInA);
   BTVECTOR3_IN(pivotInB);
@@ -28,13 +29,13 @@ btMultiBodySliderConstraint* btMultiBodySliderConstraint_new(btMultiBody* body, 
   BTMATRIX3X3_IN(frameInB);
   BTVECTOR3_IN(jointAxis);
   return new btMultiBodySliderConstraint(body, link, bodyB, BTVECTOR3_USE(pivotInA),
-    BTVECTOR3_USE(pivotInB), BTMATRIX3X3_USE(frameInA), BTMATRIX3X3_USE(frameInB),
-    BTVECTOR3_USE(jointAxis));
+                                         BTVECTOR3_USE(pivotInB), BTMATRIX3X3_USE(frameInA), BTMATRIX3X3_USE(frameInB),
+                                         BTVECTOR3_USE(jointAxis));
 }
 
 btMultiBodySliderConstraint* btMultiBodySliderConstraint_new2(btMultiBody* bodyA,
-  int linkA, btMultiBody* bodyB, int linkB, const btVector3* pivotInA, const btVector3* pivotInB,
-  const btMatrix3x3* frameInA, const btMatrix3x3* frameInB, const btVector3* jointAxis)
+                                                              int linkA, btMultiBody* bodyB, int linkB, const btVector3* pivotInA, const btVector3* pivotInB,
+                                                              const btMatrix3x3* frameInA, const btMatrix3x3* frameInB, const btVector3* jointAxis)
 {
   BTVECTOR3_IN(pivotInA);
   BTVECTOR3_IN(pivotInB);
@@ -42,8 +43,8 @@ btMultiBodySliderConstraint* btMultiBodySliderConstraint_new2(btMultiBody* bodyA
   BTMATRIX3X3_IN(frameInB);
   BTVECTOR3_IN(jointAxis);
   return new btMultiBodySliderConstraint(bodyA, linkA, bodyB, linkB, BTVECTOR3_USE(pivotInA),
-    BTVECTOR3_USE(pivotInB), BTMATRIX3X3_USE(frameInA), BTMATRIX3X3_USE(frameInB),
-    BTVECTOR3_USE(jointAxis));
+                                         BTVECTOR3_USE(pivotInB), BTMATRIX3X3_USE(frameInA), BTMATRIX3X3_USE(frameInB),
+                                         BTVECTOR3_USE(jointAxis));
 }
 
 void btMultiBodySliderConstraint_getFrameInA(btMultiBodySliderConstraint* obj, btMatrix3x3* value)

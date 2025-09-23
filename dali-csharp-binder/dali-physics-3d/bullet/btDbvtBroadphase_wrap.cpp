@@ -16,6 +16,7 @@
 #include <BulletCollision/BroadphaseCollision/btDispatcher.h>
 
 #include "conversion.h"
+
 #include "btDbvtBroadphase_wrap.h"
 
 btDbvtNode* btDbvtProxy_getLeaf(btDbvtProxy* obj)
@@ -42,7 +43,6 @@ void btDbvtProxy_setStage(btDbvtProxy* obj, int value)
 {
   obj->stage = value;
 }
-
 
 btDbvtBroadphase* btDbvtBroadphase_new(btOverlappingPairCache* paircache)
 {
@@ -170,12 +170,12 @@ void btDbvtBroadphase_performDeferredRemoval(btDbvtBroadphase* obj, btDispatcher
 }
 
 void btDbvtBroadphase_setAabbForceUpdate(btDbvtBroadphase* obj, btBroadphaseProxy* absproxy,
-  const btVector3* aabbMin, const btVector3* aabbMax, btDispatcher* __unnamed3)
+                                         const btVector3* aabbMin, const btVector3* aabbMax, btDispatcher* __unnamed3)
 {
   BTVECTOR3_IN(aabbMin);
   BTVECTOR3_IN(aabbMax);
   obj->setAabbForceUpdate(absproxy, BTVECTOR3_USE(aabbMin), BTVECTOR3_USE(aabbMax),
-    __unnamed3);
+                          __unnamed3);
 }
 
 void btDbvtBroadphase_setCid(btDbvtBroadphase* obj, int value)

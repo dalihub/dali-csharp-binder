@@ -21,12 +21,12 @@
 #else
 typedef void (*p_btActionInterface_debugDraw)(btIDebugDraw* debugDrawer);
 typedef void (*p_btActionInterface_updateAction)(btCollisionWorld* collisionWorld,
-  btScalar deltaTimeStep);
+                                                 btScalar          deltaTimeStep);
 
 class btActionInterfaceWrapper : public btActionInterface
 {
 private:
-  p_btActionInterface_debugDraw _debugDrawCallback;
+  p_btActionInterface_debugDraw    _debugDrawCallback;
   p_btActionInterface_updateAction _updateActionCallback;
 
 public:
@@ -40,12 +40,12 @@ public:
 #ifdef __cplusplus
 extern "C" {
 #endif
-  EXPORT btActionInterfaceWrapper* btActionInterfaceWrapper_new(p_btActionInterface_debugDraw debugDrawCallback,
-    p_btActionInterface_updateAction updateActionCallback);
+EXPORT btActionInterfaceWrapper* btActionInterfaceWrapper_new(p_btActionInterface_debugDraw    debugDrawCallback,
+                                                              p_btActionInterface_updateAction updateActionCallback);
 
-  EXPORT void btActionInterface_debugDraw(btActionInterface* obj, btIDebugDraw* debugDrawer);
-  EXPORT void btActionInterface_updateAction(btActionInterface* obj, btCollisionWorld* collisionWorld, btScalar deltaTimeStep);
-  EXPORT void btActionInterface_delete(btActionInterface* obj);
+EXPORT void btActionInterface_debugDraw(btActionInterface* obj, btIDebugDraw* debugDrawer);
+EXPORT void btActionInterface_updateAction(btActionInterface* obj, btCollisionWorld* collisionWorld, btScalar deltaTimeStep);
+EXPORT void btActionInterface_delete(btActionInterface* obj);
 #ifdef __cplusplus
 }
 #endif

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,242 +22,319 @@
 #include <dali-csharp-binder/common/common.h>
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 using namespace Dali;
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGesturePredictionMode(int mode) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGesturePredictionMode(int mode)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGesturePredictionMode(mode);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGesturePredictionAmount(unsigned int amount) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGesturePredictionAmount(unsigned int amount)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGesturePredictionAmount(amount);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureMaximumPredictionAmount(unsigned int amount) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureMaximumPredictionAmount(unsigned int amount)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureMaximumPredictionAmount(amount);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureMinimumPredictionAmount(unsigned int amount) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureMinimumPredictionAmount(unsigned int amount)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureMinimumPredictionAmount(amount);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGesturePredictionAmountAdjustment(unsigned int amount) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGesturePredictionAmountAdjustment(unsigned int amount)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGesturePredictionAmountAdjustment(amount);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureSmoothingMode(int mode) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureSmoothingMode(int mode)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureSmoothingMode(mode);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureSmoothingAmount(float amount) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureSmoothingAmount(float amount)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureSmoothingAmount(amount);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureUseActualTimes(bool enable) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureUseActualTimes(bool enable)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureUseActualTimes(enable);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureInterpolationTimeRange(int range) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureInterpolationTimeRange(int range)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureInterpolationTimeRange(range);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureScalarOnlyPredictionEnabled(bool enable) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureScalarOnlyPredictionEnabled(bool enable)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureScalarOnlyPredictionEnabled(enable);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureTwoPointPredictionEnabled(bool enable) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureTwoPointPredictionEnabled(bool enable)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureTwoPointPredictionEnabled(enable);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureTwoPointInterpolatePastTime(int time) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureTwoPointInterpolatePastTime(int time)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureTwoPointInterpolatePastTime(time);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureTwoPointVelocityBias(float velocity) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureTwoPointVelocityBias(float velocity)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureTwoPointVelocityBias(velocity);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureTwoPointAccelerationBias(float acceleration) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureTwoPointAccelerationBias(float acceleration)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureTwoPointAccelerationBias(acceleration);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureMultitapSmoothingRange(int range) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureMultitapSmoothingRange(int range)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureMultitapSmoothingRange(range);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureMinimumDistance(int distance) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureMinimumDistance(int distance)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureMinimumDistance(distance);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureMinimumPanEvents(int number) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPanGestureMinimumPanEvents(int number)
+{
   {
-    try {
+    try
+    {
       Integration::SetPanGestureMinimumPanEvents(number);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPinchGestureMinimumDistance(float distance) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPinchGestureMinimumDistance(float distance)
+{
   {
-    try {
+    try
+    {
       Integration::SetPinchGestureMinimumDistance(distance);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPinchGestureMinimumTouchEvents(unsigned int number) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPinchGestureMinimumTouchEvents(unsigned int number)
+{
   {
-    try {
+    try
+    {
       Integration::SetPinchGestureMinimumTouchEvents(number);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPinchGestureMinimumTouchEventsAfterStart(unsigned int number) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetPinchGestureMinimumTouchEventsAfterStart(unsigned int number)
+{
   {
-    try {
+    try
+    {
       Integration::SetPinchGestureMinimumTouchEventsAfterStart(number);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetRotationGestureMinimumTouchEvents(unsigned int number) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetRotationGestureMinimumTouchEvents(unsigned int number)
+{
   {
-    try {
+    try
+    {
       Integration::SetRotationGestureMinimumTouchEvents(number);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetRotationGestureMinimumTouchEventsAfterStart(unsigned int number) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetRotationGestureMinimumTouchEventsAfterStart(unsigned int number)
+{
   {
-    try {
+    try
+    {
       Integration::SetRotationGestureMinimumTouchEventsAfterStart(number);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetLongPressMinimumHoldingTime(unsigned int time) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetLongPressMinimumHoldingTime(unsigned int time)
+{
   {
-    try {
+    try
+    {
       Integration::SetLongPressMinimumHoldingTime(time);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapMaximumAllowedTime(uint32_t time) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapMaximumAllowedTime(uint32_t time)
+{
   {
-    try {
+    try
+    {
       Integration::SetTapMaximumAllowedTime(time);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapRecognizerTime(uint32_t time) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapRecognizerTime(uint32_t time)
+{
   {
-    try {
+    try
+    {
       Integration::SetTapRecognizerTime(time);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapMaximumMotionAllowedDistance(float distance) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GestureOptions_SetTapMaximumMotionAllowedDistance(float distance)
+{
   {
-    try {
+    try
+    {
       Integration::SetTapMaximumMotionAllowedDistance(distance);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }

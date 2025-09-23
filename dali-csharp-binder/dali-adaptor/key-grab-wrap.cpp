@@ -16,15 +16,14 @@
  */
 
 // EXTERNAL INCLUDES
+#include <dali-toolkit/dali-toolkit.h>
 #include <dali/dali.h>
-#include <dali/public-api/common/dali-common.h>
 #include <dali/public-api/adaptor-framework/key-grab.h>
 #include <dali/public-api/adaptor-framework/window.h>
-#include <dali-toolkit/dali-toolkit.h>
+#include <dali/public-api/common/dali-common.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
-
 
 #ifdef TIZEN_BUILD
 #include <Ecore_Wl2.h>
@@ -34,104 +33,108 @@
 //#define LOG DALI_LOG_ERROR
 #define LOG(a...)
 
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKeyTopmost(void * window, int daliKey)
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKeyTopmost(void* window, int daliKey)
 {
-  Dali::Window *_win = (Dali::Window *)window;
-  bool ret;
+  Dali::Window* _win = (Dali::Window*)window;
+  bool          ret;
 
   LOG("CSharp_Dali_GrabKeyTopmost() [DP1] window=%d, dalikey=%d", window, daliKey);
 
   {
-    try {
+    try
+    {
       ret = Dali::KeyGrab::GrabKeyTopmost(*_win, (Dali::KEY)daliKey);
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
-
 
   LOG("CSharp_Dali_GrabKeyTopmost() [DP2] ret=%d", ret);
 
   return ret;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKeyTopmost(void * window, int daliKey)
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKeyTopmost(void* window, int daliKey)
 {
-  Dali::Window *_win = (Dali::Window *)window;
-  bool ret;
+  Dali::Window* _win = (Dali::Window*)window;
+  bool          ret;
 
   LOG("CSharp_Dali_UngrabKeyTopmost() [DP1] window=%d, dalikey=%d", window, daliKey);
 
   {
-    try {
+    try
+    {
       ret = Dali::KeyGrab::UngrabKeyTopmost(*_win, (Dali::KEY)daliKey);
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
-
 
   LOG("CSharp_Dali_UngrabKeyTopmost() [DP2] ret=%d", ret);
 
   return ret;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKey(void * window, int daliKey, int grabMode)
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKey(void* window, int daliKey, int grabMode)
 {
-  Dali::Window *_win = (Dali::Window *)window;
-  bool ret;
+  Dali::Window* _win = (Dali::Window*)window;
+  bool          ret;
 
   LOG("CSharp_Dali_GrabKey() [DP1] window=%d, dalikey=%d, grabmode=%d", window, daliKey, grabMode);
 
   {
-    try {
+    try
+    {
       ret = Dali::KeyGrab::GrabKey(*_win, (Dali::KEY)daliKey, (Dali::KeyGrab::KeyGrabMode)grabMode);
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
-
 
   DALI_LOG_ERROR("CSharp_Dali_GrabKey() [DP2] ret=%d", ret);
 
   return ret;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKey(void * window, int daliKey)
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKey(void* window, int daliKey)
 {
-  Dali::Window *_win = (Dali::Window *)window;
-  bool ret;
+  Dali::Window* _win = (Dali::Window*)window;
+  bool          ret;
 
   LOG("CSharp_Dali_UngrabKey() [DP1] window=%d, dalikey=%d", window, daliKey);
 
   {
-    try {
+    try
+    {
       ret = Dali::KeyGrab::UngrabKey(*_win, (Dali::KEY)daliKey);
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
-
 
   LOG("CSharp_Dali_UngrabKey() [DP2] ret=%d", ret);
 
   return ret;
 }
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetNativeWindowHandler( void* window )
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetNativeWindowHandler(void* window)
 {
-  Dali::Window *_win = (Dali::Window *)window;
-  void * ret = NULL;
+  Dali::Window* _win = (Dali::Window*)window;
+  void*         ret  = NULL;
 
   LOG("CSharp_Dali_GetNativeWindowHandler() [DP1] window=%d", window);
 
   {
     Dali::Any result;
-    try {
+    try
+    {
       result = _win->GetNativeHandle();
 #ifdef TIZEN_BUILD
-      Ecore_Wl2_Window * ecore_win = Dali::AnyCast<Ecore_Wl2_Window*>(result);
+      Ecore_Wl2_Window* ecore_win = Dali::AnyCast<Ecore_Wl2_Window*>(result);
 #endif
       ret = (void*)ecore_win;
-
-    } CALL_CATCH_EXCEPTION(NULL);
+    }
+    CALL_CATCH_EXCEPTION(NULL);
   }
 
   if(ret != NULL)
@@ -142,8 +145,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_GetNativeWindowHandler( void* window )
   return ret;
 }
 
-
 #ifdef __cplusplus
 }
 #endif
-

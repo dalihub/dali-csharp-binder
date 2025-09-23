@@ -15,9 +15,9 @@
 #pragma once
 
 #include <LinearMath/btAlignedAllocator.h>
-#include <LinearMath/btVector3.h>
 #include <LinearMath/btMatrix3x3.h>
 #include <LinearMath/btQuickprof.h>
+#include <LinearMath/btVector3.h>
 #include "LinearMath/btTransform.h"
 
 #include <cstring>
@@ -63,7 +63,8 @@ inline void Vector3TobtVector3(const btScalar* s, btVector3* v)
 inline btVector3* Vector3ArrayIn(const btScalar* va, int n)
 {
   btVector3* vertices = new btVector3[n];
-  for (int i = 0; i < n; i++) {
+  for(int i = 0; i < n; i++)
+  {
     Vector3TobtVector3(&va[i * 3], &vertices[i]);
   }
   return vertices;
@@ -149,19 +150,18 @@ inline void btQuaternion_copy(btQuaternion* destination, const btQuaternion& sou
   (*destination)[3] = source[3];
 }
 
-
 inline void btTransformToMatrix(const btTransform* t, btScalar* m)
 {
 #ifdef BTTRANSFORM_TO4X4
 #ifdef BTTRANSFORM_TRANSPOSE
-  m[0] = t->getBasis().getRow(0).getX();
-  m[4] = t->getBasis().getRow(0).getY();
-  m[8] = t->getBasis().getRow(0).getZ();
-  m[1] = t->getBasis().getRow(1).getX();
-  m[5] = t->getBasis().getRow(1).getY();
-  m[9] = t->getBasis().getRow(1).getZ();
-  m[2] = t->getBasis().getRow(2).getX();
-  m[6] = t->getBasis().getRow(2).getY();
+  m[0]  = t->getBasis().getRow(0).getX();
+  m[4]  = t->getBasis().getRow(0).getY();
+  m[8]  = t->getBasis().getRow(0).getZ();
+  m[1]  = t->getBasis().getRow(1).getX();
+  m[5]  = t->getBasis().getRow(1).getY();
+  m[9]  = t->getBasis().getRow(1).getZ();
+  m[2]  = t->getBasis().getRow(2).getX();
+  m[6]  = t->getBasis().getRow(2).getY();
   m[10] = t->getBasis().getRow(2).getZ();
   m[12] = t->getOrigin().getX();
   m[13] = t->getOrigin().getY();
@@ -173,8 +173,8 @@ inline void btTransformToMatrix(const btTransform* t, btScalar* m)
 #endif
   // Bullet leaves the following members uninitialized and only uses them for alignment,
   // but graphics APIs that support scaling and shearing will consider these.
-  m[3] = 0;
-  m[7] = 0;
+  m[3]  = 0;
+  m[7]  = 0;
   m[11] = 0;
   m[15] = 1;
 #else
@@ -199,7 +199,7 @@ inline void btTransformToMatrix(const btTransform* t, btScalar* m)
   m[7] = t->getBasis().getRow(2).getY();
   m[8] = t->getBasis().getRow(2).getZ();
 #endif
-  m[9] = t->getOrigin().getX();
+  m[9]  = t->getOrigin().getX();
   m[10] = t->getOrigin().getY();
   m[11] = t->getOrigin().getZ();
 #endif
@@ -214,7 +214,7 @@ inline void MatrixTobtTransform(const btScalar* m, btTransform* t)
 {
 #ifdef BTTRANSFORM_TO4X4
 #ifdef BTTRANSFORM_TRANSPOSE
-  t->getBasis().setValue(m[0],m[4],m[8],m[1],m[5],m[9],m[2],m[6],m[10]);
+  t->getBasis().setValue(m[0], m[4], m[8], m[1], m[5], m[9], m[2], m[6], m[10]);
   t->getOrigin().setX(m[12]);
   t->getOrigin().setY(m[13]);
   t->getOrigin().setZ(m[14]);
@@ -223,9 +223,9 @@ inline void MatrixTobtTransform(const btScalar* m, btTransform* t)
 #endif
 #else
 #ifdef BTTRANSFORM_TRANSPOSE
-  t->getBasis().setValue(m[0],m[3],m[6],m[1],m[4],m[7],m[2],m[5],m[8]);
+  t->getBasis().setValue(m[0], m[3], m[6], m[1], m[4], m[7], m[2], m[5], m[8]);
 #else
-  t->getBasis().setValue(m[0],m[1],m[2],m[3],m[4],m[5],m[6],m[7],m[8]);
+  t->getBasis().setValue(m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7], m[8]);
 #endif
   t->getOrigin().setX(m[9]);
   t->getOrigin().setY(m[10]);
@@ -239,29 +239,28 @@ inline void btTransform_copy(btTransform* destination, const btTransform* source
   MatrixTobtTransform(reinterpret_cast<const btScalar*>(source), destination);
 }
 
-
 inline void btMatrix3x3ToMatrix(const btMatrix3x3* t, btScalar* m)
 {
 #ifdef BTTRANSFORM_TO4X4
 #ifdef BTTRANSFORM_TRANSPOSE
-  m[0] = t->getRow(0).getX();
-  m[4] = t->getRow(0).getY();
-  m[8] = t->getRow(0).getZ();
-  m[1] = t->getRow(1).getX();
-  m[5] = t->getRow(1).getY();
-  m[9] = t->getRow(1).getZ();
-  m[2] = t->getRow(2).getX();
-  m[6] = t->getRow(2).getY();
+  m[0]  = t->getRow(0).getX();
+  m[4]  = t->getRow(0).getY();
+  m[8]  = t->getRow(0).getZ();
+  m[1]  = t->getRow(1).getX();
+  m[5]  = t->getRow(1).getY();
+  m[9]  = t->getRow(1).getZ();
+  m[2]  = t->getRow(2).getX();
+  m[6]  = t->getRow(2).getY();
   m[10] = t->getRow(2).getZ();
 #else
-  m[0] = t->getRow(0).getX();
-  m[1] = t->getRow(0).getY();
-  m[2] = t->getRow(0).getZ();
-  m[4] = t->getRow(1).getX();
-  m[5] = t->getRow(1).getY();
-  m[6] = t->getRow(1).getZ();
-  m[8] = t->getRow(2).getX();
-  m[9] = t->getRow(2).getY();
+  m[0]  = t->getRow(0).getX();
+  m[1]  = t->getRow(0).getY();
+  m[2]  = t->getRow(0).getZ();
+  m[4]  = t->getRow(1).getX();
+  m[5]  = t->getRow(1).getY();
+  m[6]  = t->getRow(1).getZ();
+  m[8]  = t->getRow(2).getX();
+  m[9]  = t->getRow(2).getY();
   m[10] = t->getRow(2).getZ();
 #endif
   m[12] = 0;
@@ -290,7 +289,7 @@ inline void btMatrix3x3ToMatrix(const btMatrix3x3* t, btScalar* m)
   m[7] = t->getRow(2).getY();
   m[8] = t->getRow(2).getZ();
 #endif
-  m[9] = 0;
+  m[9]  = 0;
   m[10] = 0;
   m[11] = 0;
 #endif
@@ -305,53 +304,62 @@ inline void MatrixTobtMatrix3x3(const btScalar* m, btMatrix3x3* t)
 {
 #ifdef BTTRANSFORM_TO4X4
 #ifdef BTTRANSFORM_TRANSPOSE
-  t->setValue(m[0],m[4],m[8],m[1],m[5],m[9],m[2],m[6],m[10]);
+  t->setValue(m[0], m[4], m[8], m[1], m[5], m[9], m[2], m[6], m[10]);
 #else
-  t->setValue(m[0],m[1],m[2],m[4],m[5],m[6],m[8],m[9],m[10]);
+  t->setValue(m[0], m[1], m[2], m[4], m[5], m[6], m[8], m[9], m[10]);
 #endif
 #else
 #ifdef BTTRANSFORM_TRANSPOSE
-  t->.setValue(m[0],m[3],m[6],m[1],m[4],m[7],m[2],m[5],m[8]);
+  t->.setValue(m[0], m[3], m[6], m[1], m[4], m[7], m[2], m[5], m[8]);
 #else
-  t->setValue(m[0],m[1],m[2],m[3],m[4],m[5],m[6],m[7],m[8]);
+  t->setValue(m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7], m[8]);
 #endif
 #endif
 }
 
-
 // SSE requires math structs to be aligned to 16-byte boundaries.
 // Alignment cannot be guaranteed in .NET, so aligned temporary intermediate variables
 // must be used to exchange vectors and transforms with Bullet (if SSE is enabled).
-#define TEMP(var) var ## Temp
+#define TEMP(var) var##Temp
 #if defined(BT_USE_SSE) //&& defined(BT_USE_SSE_IN_API) && defined(BT_USE_SIMD_VECTOR3)
 #define BTVECTOR3_DEF(v) ATTRIBUTE_ALIGNED16(btVector3) TEMP(v)
 #define BTVECTOR3_USE(v) TEMP(v)
 #define BTVECTOR3_SET(to, from) btVector3_copy(to, &from)
 #define BTVECTOR3_COPY(to, from) btVector3_copy(to, from)
-#define BTVECTOR3_IN(v) BTVECTOR3_DEF(v); BTVECTOR3_COPY(&BTVECTOR3_USE(v), v)
+#define BTVECTOR3_IN(v) \
+  BTVECTOR3_DEF(v);     \
+  BTVECTOR3_COPY(&BTVECTOR3_USE(v), v)
 #define BTVECTOR3_DEF_OUT(v) BTVECTOR3_SET(v, BTVECTOR3_USE(v))
 
 #define BTVECTOR4_DEF(v) ATTRIBUTE_ALIGNED16(btVector4) TEMP(v)
 #define BTVECTOR4_USE(v) TEMP(v)
 #define BTVECTOR4_SET(to, from) btVector4_copy(to, &from)
 #define BTVECTOR4_COPY(to, from) btVector4_copy(to, from)
-#define BTVECTOR4_IN(v) BTVECTOR4_DEF(v); BTVECTOR4_COPY(&BTVECTOR3_USE(v), v)
+#define BTVECTOR4_IN(v) \
+  BTVECTOR4_DEF(v);     \
+  BTVECTOR4_COPY(&BTVECTOR3_USE(v), v)
 #define BTVECTOR4_DEF_OUT(v) BTVECTOR4_SET(v, BTVECTOR4_USE(v))
 
 #define BTQUATERNION_DEF(v) ATTRIBUTE_ALIGNED16(btQuaternion) TEMP(v)
 #define BTQUATERNION_USE(v) TEMP(v)
 #define BTQUATERNION_SET(to, from) btQuaternion_copy(to, &from)
 #define BTQUATERNION_COPY(to, from) btQuaternion_copy(to, from)
-#define BTQUATERNION_IN(v) BTQUATERNION_DEF(v); BTQUATERNION_COPY(&BTQUATERNION_USE(v), v)
+#define BTQUATERNION_IN(v) \
+  BTQUATERNION_DEF(v);     \
+  BTQUATERNION_COPY(&BTQUATERNION_USE(v), v)
 #define BTQUATERNION_DEF_OUT(v) BTQUATERNION_SET(v, BTQUATERNION_USE(v))
 
 #define BTTRANSFORM_DEF(v) ATTRIBUTE_ALIGNED16(btTransform) TEMP(v)
 #define BTTRANSFORM_USE(v) TEMP(v)
 #define BTTRANSFORM_SET(to, from) btTransform_copy(to, &from)
 #define BTTRANSFORM_COPY(to, from) btTransform_copy(to, from)
-#define BTTRANSFORM_IN(v) BTTRANSFORM_DEF(v); BTTRANSFORM_COPY(&BTTRANSFORM_USE(v), v)
+#define BTTRANSFORM_IN(v) \
+  BTTRANSFORM_DEF(v);     \
+  BTTRANSFORM_COPY(&BTTRANSFORM_USE(v), v)
 #define BTTRANSFORM_DEF_OUT(v) BTTRANSFORM_SET(v, BTTRANSFORM_USE(v))
-#define BTTRANSFORM_IN_REF(v) BTTRANSFORM_DEF(v); BTTRANSFORM_SET(&BTTRANSFORM_USE(v), v)
+#define BTTRANSFORM_IN_REF(v) \
+  BTTRANSFORM_DEF(v);         \
+  BTTRANSFORM_SET(&BTTRANSFORM_USE(v), v)
 #define BTTRANSFORM_USE_REF(v) TEMP(v)
 #define BTTRANSFORM_DEF_OUT_REF(v) BTTRANSFORM_SET(&v, BTTRANSFORM_USE_REF(v))
 
@@ -370,7 +378,9 @@ inline void MatrixTobtMatrix3x3(const btScalar* m, btMatrix3x3* t)
 #define BTVECTOR3_USE(v) TEMP(v)
 #define BTVECTOR3_SET(to, from) btVector3_copy(to, &from)
 #define BTVECTOR3_COPY(to, from) btVector3_copy(to, from)
-#define BTVECTOR3_IN(v) BTVECTOR3_DEF(v); BTVECTOR3_COPY(&BTVECTOR3_USE(v), v)
+#define BTVECTOR3_IN(v) \
+  BTVECTOR3_DEF(v);     \
+  BTVECTOR3_COPY(&BTVECTOR3_USE(v), v)
 #define BTVECTOR3_DEF_OUT(v) BTVECTOR3_SET(v, BTVECTOR3_USE(v))
 #endif
 
@@ -393,9 +403,13 @@ inline void MatrixTobtMatrix3x3(const btScalar* m, btMatrix3x3* t)
 #define BTTRANSFORM_USE(v) TEMP(v)
 #define BTTRANSFORM_SET(to, from) btTransform_copy(to, &from)
 #define BTTRANSFORM_COPY(to, from) btTransform_copy(to, from)
-#define BTTRANSFORM_IN(v) BTTRANSFORM_DEF(v); BTTRANSFORM_COPY(&BTTRANSFORM_USE(v), v)
+#define BTTRANSFORM_IN(v) \
+  BTTRANSFORM_DEF(v);     \
+  BTTRANSFORM_COPY(&BTTRANSFORM_USE(v), v)
 #define BTTRANSFORM_DEF_OUT(v) BTTRANSFORM_SET(v, BTTRANSFORM_USE(v))
-#define BTTRANSFORM_IN_REF(v) BTTRANSFORM_DEF(v); BTTRANSFORM_SET(&BTTRANSFORM_USE(v), v)
+#define BTTRANSFORM_IN_REF(v) \
+  BTTRANSFORM_DEF(v);         \
+  BTTRANSFORM_SET(&BTTRANSFORM_USE(v), v)
 #define BTTRANSFORM_USE_REF(v) TEMP(v)
 #define BTTRANSFORM_DEF_OUT_REF(v) BTTRANSFORM_SET(&v, BTTRANSFORM_USE_REF(v))
 #else
@@ -415,6 +429,8 @@ inline void MatrixTobtMatrix3x3(const btScalar* m, btMatrix3x3* t)
 
 #define BTMATRIX3X3_USE(tr) TEMP(tr)
 #define BTMATRIX3X3_SET(to, from) MatrixTobtMatrix3x3(from, to)
-#define BTMATRIX3X3_IN(v) BTMATRIX3X3_DEF(v); MatrixTobtMatrix3x3((btScalar*)v, &BTMATRIX3X3_USE(v))
+#define BTMATRIX3X3_IN(v) \
+  BTMATRIX3X3_DEF(v);     \
+  MatrixTobtMatrix3x3((btScalar*)v, &BTMATRIX3X3_USE(v))
 #define BTMATRIX3X3_OUT(to, from) btMatrix3x3ToMatrix(from, (btScalar*)to)
 #define BTMATRIX3X3_DEF_OUT(tr) BTMATRIX3X3_OUT(tr, &TEMP(tr))

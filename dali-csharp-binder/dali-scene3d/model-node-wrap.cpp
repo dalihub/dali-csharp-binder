@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
  */
 
 // EXTERNAL INCLUDES
-#include <dali-scene3d/public-api/model-components/model-node.h>
 #include <dali-scene3d/public-api/algorithm/navigation-mesh.h>
 #include <dali-scene3d/public-api/loader/navigation-mesh-factory.h>
+#include <dali-scene3d/public-api/model-components/model-node.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -40,7 +40,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_New_SWIG_0()
 
   return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
 }
-
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Model_Node_SWIG_1(void* csModel)
 {
@@ -97,7 +96,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_Assign(void* csDestination, 
   return (void*)result;
 }
 
-
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Model_Node_GetModelPrimitiveCount(void* csModelNode)
 {
   Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
@@ -118,7 +116,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Model_Node_GetModelPrimitiveCoun
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_Node_AddModelPrimitive(void* csModelNode, void* csModelPrimitive)
 {
-  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
+  Dali::Scene3D::ModelNode*      modelNode      = (Dali::Scene3D::ModelNode*)csModelNode;
   Dali::Scene3D::ModelPrimitive* modelPrimitive = (Dali::Scene3D::ModelPrimitive*)csModelPrimitive;
 
   if(!modelNode)
@@ -142,7 +140,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_Node_AddModelPrimitive(void* csMod
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_Node_RemoveModelPrimitive1(void* csModelNode, void* csModelPrimitive)
 {
-  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
+  Dali::Scene3D::ModelNode*      modelNode      = (Dali::Scene3D::ModelNode*)csModelNode;
   Dali::Scene3D::ModelPrimitive* modelPrimitive = (Dali::Scene3D::ModelPrimitive*)csModelPrimitive;
 
   if(!modelNode)
@@ -184,8 +182,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_Node_RemoveModelPrimitive2(void* c
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_GetModelPrimitive(void* csModelNode, unsigned int index)
 {
-  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
-  Dali::Scene3D::ModelPrimitive       result;
+  Dali::Scene3D::ModelNode*     modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
+  Dali::Scene3D::ModelPrimitive result;
 
   if(!modelNode)
   {
@@ -205,7 +203,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_GetModelPrimitive(void* csMo
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_FindChildModelNodeByName(void* csModelNode, char* nodeName)
 {
   Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
-  Dali::Scene3D::ModelNode result;
+  Dali::Scene3D::ModelNode  result;
 
   if(!modelNode)
   {
@@ -243,7 +241,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Model_Node_GetChildModelNodeCoun
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_GetChildModelNodeAt(void* csModelNode, uint32_t index)
 {
   Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)csModelNode;
-  Dali::Scene3D::ModelNode result;
+  Dali::Scene3D::ModelNode  result;
 
   if(!modelNode)
   {
@@ -254,28 +252,31 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_Node_GetChildModelNodeAt(void* cs
     try
     {
       Dali::Actor actor = modelNode->GetChildAt(index);
-      result = Dali::Scene3D::ModelNode::DownCast(actor);
+      result            = Dali::Scene3D::ModelNode::DownCast(actor);
     }
     CALL_CATCH_EXCEPTION(nullptr);
   }
   return new Dali::Scene3D::ModelNode((const Dali::Scene3D::ModelNode&)result);
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_SetColliderMesh(void *modelNodePtr, void* vertexPtr, void* normalPtr, unsigned long vertexCount, void* indexPtr, unsigned long indexCount) {
-  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
-  auto vertices = reinterpret_cast<Dali::Vector3*>(vertexPtr);
-  auto normals = reinterpret_cast<Dali::Vector3*>(normalPtr);
-  auto indices = reinterpret_cast<uint32_t*>(indexPtr);
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_SetColliderMesh(void* modelNodePtr, void* vertexPtr, void* normalPtr, unsigned long vertexCount, void* indexPtr, unsigned long indexCount)
+{
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)modelNodePtr;
+  auto                      vertices  = reinterpret_cast<Dali::Vector3*>(vertexPtr);
+  auto                      normals   = reinterpret_cast<Dali::Vector3*>(normalPtr);
+  auto                      indices   = reinterpret_cast<uint32_t*>(indexPtr);
 
-  try {
+  try
+  {
     auto colliderMesh = Dali::Scene3D::Loader::NavigationMeshFactory::CreateFromVertexFaceList(vertices, normals, vertexCount, indices, indexCount);
     modelNode->SetColliderMesh(std::move(colliderMesh));
-  } CALL_CATCH_EXCEPTION();
+  }
+  CALL_CATCH_EXCEPTION();
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_CastShadow(void* modelNodePtr, bool csCastShadow)
 {
-  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)modelNodePtr;
 
   if(!modelNode)
   {
@@ -292,7 +293,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_CastShadow(void* modelNodePtr,
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ModelNode_IsShadowCasting(void* modelNodePtr)
 {
-  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)modelNodePtr;
   bool                      result;
 
   if(!modelNode)
@@ -311,7 +312,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ModelNode_IsShadowCasting(void* modelNod
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_ReceiveShadow(void* modelNodePtr, bool csReceiveShadow)
 {
-  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)modelNodePtr;
 
   if(!modelNode)
   {
@@ -328,7 +329,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ModelNode_ReceiveShadow(void* modelNodeP
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ModelNode_IsShadowReceiving(void* modelNodePtr)
 {
-  Dali::Scene3D::ModelNode *modelNode = (Dali::Scene3D::ModelNode *) modelNodePtr;
+  Dali::Scene3D::ModelNode* modelNode = (Dali::Scene3D::ModelNode*)modelNodePtr;
   bool                      result;
 
   if(!modelNode)

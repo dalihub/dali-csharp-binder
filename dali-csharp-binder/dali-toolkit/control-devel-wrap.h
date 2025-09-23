@@ -2,7 +2,7 @@
 #define CONTROL_DEVEL_WRAP_H
 
 /*
- * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,7 @@
 #include <dali-csharp-binder/common/common.h>
 
 /* Callback for returning strings to C# without leaking memory */
-typedef char * (SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char *);
+typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
 #endif // CONTROL_DEVEL_WRAP_H
-

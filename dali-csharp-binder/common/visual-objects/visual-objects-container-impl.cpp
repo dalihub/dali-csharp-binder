@@ -21,10 +21,15 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/devel-api/controls/control-depth-index-ranges.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
+#include <dali-toolkit/devel-api/visuals/visual-properties-devel.h>
 #include <dali-toolkit/public-api/controls/control-impl.h>
 #include <dali-toolkit/public-api/controls/control.h>
+#include <dali-toolkit/public-api/toolkit-constraint-tag-ranges.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
+#include <dali/integration-api/constraint-integ.h>
 #include <dali/integration-api/debug.h>
+#include <dali/public-api/animation/constraints.h>
+#include <dali/public-api/rendering/decorated-visual-renderer.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/visual-objects/visual-object-impl.h>
@@ -37,7 +42,89 @@ namespace
 constexpr std::string_view VISUAL_OBJECT_PROPERTY_NAME_PREFIX("VisualObject");
 
 constexpr uint32_t MAXIMUM_VISUAL_OBJECTS_COUNT = (Dali::Toolkit::DepthIndex::Ranges::CONTENT - Dali::Toolkit::DepthIndex::Ranges::BACKGROUND - 1u - 3u /* Placeholder + Transition + RenderEffect */);
+
+static constexpr uint32_t INNER_SHADOW_CORNER_RADIUS_CONSTRAINT_TAG(Dali::Toolkit::ConstraintTagRanges::TOOLKIT_CONSTRAINT_TAG_START + 10);
+
+/**
+ * @brief Constraint function for InnerShadow's CornerRadius
+ * inputs[0] : View CornerRadius, [1] : View CornerRadiusPolicy, [2] : View size, [3] : ExtraSize, [4] : Borderline Width
+ * @param[out] current InnerShadow's corner radius value.
+ * @param[in] inputs Input properties.
+ */
+void InnerShadowCornerRadiusConstraint(Vector4& current, const PropertyInputContainer& inputs)
+{
+  // We just assume below state are applied.
+  // - Transform::ORIGIN is CENTER
+  // - Transform::ANCHOR_POINT is CENTER
+  // - Transform::OFFSET_POLICY are ABSOLUTE
+  // - Transform::SIZE_POLICY are RELATIVE
+  // - Transform::SIZE is Vector2::ONE
+  // - Visual::BORDERLINE_OFFSET is -1.0f
+
+  Vector4 viewCornerRadius = inputs[0]->GetVector4();
+
+  const int     viewCornerRadiusPolicy = inputs[1]->GetInteger();
+  const Vector3 visualSize             = inputs[2]->GetVector3(); // We use VisualSize as ViewSize.
+
+  Vector2 extraSize = inputs[3]->GetVector2();
+
+  if(viewCornerRadiusPolicy == Toolkit::Visual::Transform::Policy::RELATIVE)
+  {
+    const float minViewSize = std::min(visualSize.x, visualSize.y);
+    viewCornerRadius *= minViewSize;
+  }
+
+  float borderlineWidth = inputs[4]->GetFloat();
+
+  // Corner Radius for Innershadow is expand about borderlineWidth.
+
+  // Calculate on pixel scale.
+  current.x = viewCornerRadius.x + borderlineWidth;
+  current.y = viewCornerRadius.y + borderlineWidth;
+  current.z = viewCornerRadius.z + borderlineWidth;
+  current.w = viewCornerRadius.w + borderlineWidth;
+
+  if(viewCornerRadiusPolicy == Toolkit::Visual::Transform::Policy::RELATIVE)
+  {
+    const float minInnerShadowSize = std::min(visualSize.x + extraSize.x, visualSize.y + extraSize.y);
+    if(DALI_LIKELY(minInnerShadowSize > Math::MACHINE_EPSILON_100))
+    {
+      current /= minInnerShadowSize;
+    }
+  }
+}
+
+Dali::Constraint CreateVisualCornerConstraint(Dali::Toolkit::Control control, Dali::Internal::VisualObject& visualObjectImpl)
+{
+  Dali::Constraint constraint;
+  auto             visualBase                 = visualObjectImpl.GetVisual();
+  auto             visualCornerRadiusProperty = visualBase.GetPropertyObject(Dali::Toolkit::DevelVisual::Property::CORNER_RADIUS);
+  if(visualObjectImpl.GetShadowType() == Dali::VisualObjectsContainer::ShadowType::INNER_SHADOW)
+  {
+    auto visualBorderlineProperty = visualBase.GetPropertyObject(Dali::Toolkit::DevelVisual::Property::BORDERLINE_WIDTH);
+
+    if(DALI_LIKELY(visualCornerRadiusProperty.propertyIndex != Property::INVALID_INDEX && visualCornerRadiusProperty.object) &&
+       DALI_LIKELY(visualBorderlineProperty.propertyIndex != Property::INVALID_INDEX && visualBorderlineProperty.object))
+    {
+      constraint = Constraint::New<Vector4>(visualCornerRadiusProperty.object, visualCornerRadiusProperty.propertyIndex, InnerShadowCornerRadiusConstraint);
+      constraint.AddSource(Source(control, Dali::Toolkit::DevelControl::Property::CORNER_RADIUS));
+      constraint.AddSource(Source(control, Dali::Toolkit::DevelControl::Property::CORNER_RADIUS_POLICY));
+      constraint.AddSource(Source(control, Dali::Actor::Property::SIZE));
+      constraint.AddSource(LocalSource(Dali::VisualRenderer::Property::EXTRA_SIZE));
+      constraint.AddSource(LocalSource(Dali::DecoratedVisualRenderer::Property::BORDERLINE_WIDTH));
+      Dali::Integration::ConstraintSetInternalTag(constraint, INNER_SHADOW_CORNER_RADIUS_CONSTRAINT_TAG);
+    }
+  }
+  else if(visualObjectImpl.GetShadowType() == Dali::VisualObjectsContainer::ShadowType::BOX_SHADOW)
+  {
+    constraint = Constraint::New<Vector4>(visualCornerRadiusProperty.object, visualCornerRadiusProperty.propertyIndex, EqualToConstraint());
+    constraint.AddSource(Source(control, Dali::Toolkit::DevelControl::Property::CORNER_RADIUS));
+  }
+  return constraint;
+}
+
 } // namespace
+
 VisualObjectsContainerPtr VisualObjectsContainer::New(Dali::Toolkit::Control control, Dali::VisualObjectsContainer::ContainerRangeType rangeType)
 {
   VisualObjectsContainerPtr container(new VisualObjectsContainer(control, rangeType));
@@ -67,7 +154,7 @@ Dali::VisualObject VisualObjectsContainer::GetVisualObjectAt(uint32_t index) con
   return mVisualObjects[index];
 }
 
-bool VisualObjectsContainer::AddVisualObject(Dali::VisualObject visualObject)
+bool VisualObjectsContainer::AddVisualObject(Dali::VisualObject visualObject, Dali::VisualObjectsContainer::ShadowType shadowType)
 {
   if(visualObject)
   {
@@ -99,6 +186,7 @@ bool VisualObjectsContainer::AddVisualObject(Dali::VisualObject visualObject)
       auto& visualObjectImpl = GetImplementation(visualObject);
       visualObjectImpl.AttachToContainerInternal(self);
       visualObjectImpl.SetSiblingOrderInternal(mVisualObjects.size());
+      visualObjectImpl.SetShadowType(shadowType);
 
       ReplaceVisualObject(visualObjectImpl);
 
@@ -211,6 +299,14 @@ void VisualObjectsContainer::ReplaceVisualObject(Dali::Internal::VisualObject& v
         {
           // Register the visual to the control.
           Dali::Toolkit::DevelControl::RegisterVisual(Dali::Toolkit::Internal::GetImplementation(control), index, visualBase, static_cast<int>(visualObjectImpl.GetDepthIndex()));
+
+          if(visualObjectImpl.GetShadowType() != Dali::VisualObjectsContainer::ShadowType::NONE)
+          {
+            Dali::Constraint constraint = CreateVisualCornerConstraint(control, visualObjectImpl);
+            // Apply Once
+            // constraint.Apply();
+            Dali::Toolkit::DevelControl::EnableCornerPropertiesOverridden(Dali::Toolkit::Internal::GetImplementation(control), visualBase, true, constraint);
+          }
         }
         else
         {

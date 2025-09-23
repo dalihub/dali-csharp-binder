@@ -43,13 +43,13 @@ bool btCharacterControllerInterface_onGround(btCharacterControllerInterface* obj
 }
 
 void btCharacterControllerInterface_playerStep(btCharacterControllerInterface* obj,
-  btCollisionWorld* collisionWorld, btScalar dt)
+                                               btCollisionWorld* collisionWorld, btScalar dt)
 {
   obj->playerStep(collisionWorld, dt);
 }
 
 void btCharacterControllerInterface_preStep(btCharacterControllerInterface* obj,
-  btCollisionWorld* collisionWorld)
+                                            btCollisionWorld*               collisionWorld)
 {
   obj->preStep(collisionWorld);
 }
@@ -60,20 +60,20 @@ void btCharacterControllerInterface_reset(btCharacterControllerInterface* obj, b
 }
 
 void btCharacterControllerInterface_setUpInterpolate(btCharacterControllerInterface* obj,
-  bool value)
+                                                     bool                            value)
 {
   obj->setUpInterpolate(value);
 }
 
 void btCharacterControllerInterface_setWalkDirection(btCharacterControllerInterface* obj,
-  const btVector3* walkDirection)
+                                                     const btVector3*                walkDirection)
 {
   BTVECTOR3_IN(walkDirection);
   obj->setWalkDirection(BTVECTOR3_USE(walkDirection));
 }
 
 void btCharacterControllerInterface_setVelocityForTimeInterval(btCharacterControllerInterface* obj,
-  const btVector3* velocity, btScalar timeInterval)
+                                                               const btVector3* velocity, btScalar timeInterval)
 {
   BTVECTOR3_IN(velocity);
   obj->setVelocityForTimeInterval(BTVECTOR3_USE(velocity), timeInterval);

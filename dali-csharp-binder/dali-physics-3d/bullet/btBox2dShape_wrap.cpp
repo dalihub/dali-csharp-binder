@@ -15,6 +15,7 @@
 #include <BulletCollision/CollisionShapes/btBox2dShape.h>
 
 #include "conversion.h"
+
 #include "btBox2dShape_wrap.h"
 
 btBox2dShape* btBox2dShape_new(const btVector3* boxHalfExtents)
@@ -40,7 +41,8 @@ void btBox2dShape_getCentroid(btBox2dShape* obj, btVector3* value)
 
 void btBox2dShape_getHalfExtentsWithMargin(btBox2dShape* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->getHalfExtentsWithMargin();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->getHalfExtentsWithMargin();
   BTVECTOR3_SET(value, temp);
 }
 

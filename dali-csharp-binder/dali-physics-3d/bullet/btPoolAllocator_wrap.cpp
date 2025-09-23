@@ -15,6 +15,7 @@
 #include <LinearMath/btPoolAllocator.h>
 
 #include "conversion.h"
+
 #include "btPoolAllocator_wrap.h"
 
 btPoolAllocator* btPoolAllocator_new(int elemSize, int maxElements)

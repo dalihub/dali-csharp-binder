@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,11 @@ bool VisualObjectsContainer::AddVisualObject(Dali::VisualObject visualObject)
   return GetImplementation(*this).AddVisualObject(visualObject);
 }
 
+bool VisualObjectsContainer::AddShadowVisualObject(Dali::VisualObject visualObject, ShadowType shadowType)
+{
+  return GetImplementation(*this).AddVisualObject(visualObject, shadowType);
+}
+
 void VisualObjectsContainer::RemoveVisualObject(Dali::VisualObject visualObject)
 {
   GetImplementation(*this).RemoveVisualObject(visualObject);
@@ -111,7 +116,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_VisualObjectsContainer__SWIG_0()
 {
   Dali::VisualObjectsContainer* result = 0;
 
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     result = (Dali::VisualObjectsContainer*)new Dali::VisualObjectsContainer();
   }));
 
@@ -125,7 +131,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_New(void* nuiVie
 
   GUARD_ON_NULL_RET0(nuiView);
 
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     auto handle  = (Dali::BaseHandle*)nuiView;
     auto control = Dali::Toolkit::Control::DownCast(*handle);
     if(control)
@@ -143,7 +150,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VisualObjectsContainer(void* nuiV
   Dali::VisualObjectsContainer* arg1 = (Dali::VisualObjectsContainer*)0;
 
   arg1 = (Dali::VisualObjectsContainer*)nuiVisualObjectsContainer;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     delete arg1;
   }));
 }
@@ -157,7 +165,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_GetOwner(void* n
   GUARD_ON_NULL_RET0(nuiVisualObjectsContainer);
 
   container = (const Dali::VisualObjectsContainer*)nuiVisualObjectsContainer;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     result = container->GetOwner();
   }));
 
@@ -173,7 +182,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_GetContainerRangeT
   GUARD_ON_NULL_RET0(nuiVisualObjectsContainer);
 
   container = (const Dali::VisualObjectsContainer*)nuiVisualObjectsContainer;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     result = container->GetContainerRangeType();
   }));
 
@@ -188,7 +198,8 @@ SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_GetVisualObje
   GUARD_ON_NULL_RET0(nuiVisualObjectsContainer);
 
   container = (const Dali::VisualObjectsContainer*)nuiVisualObjectsContainer;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     result = container->GetVisualObjectsCount();
   }));
 
@@ -204,7 +215,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_GetVisualObjectA
   GUARD_ON_NULL_RET0(nuiVisualObjectsContainer);
 
   container = (const Dali::VisualObjectsContainer*)nuiVisualObjectsContainer;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     result = container->GetVisualObjectAt(index);
   }));
 
@@ -223,8 +235,27 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_AddVisualObject(v
 
   container    = (Dali::VisualObjectsContainer*)nuiVisualObjectsContainer;
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     result = container->AddVisualObject(*visualObject);
+  }));
+  return result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_AddShadowVisualObject(void* nuiVisualObjectsContainer, void* nuiVisualObject, int shadowType)
+{
+  Dali::VisualObjectsContainer* container    = (Dali::VisualObjectsContainer*)0;
+  Dali::VisualObject*           visualObject = (Dali::VisualObject*)0;
+  bool                          result       = false;
+
+  GUARD_ON_NULL_RET0(nuiVisualObjectsContainer);
+  GUARD_ON_NULL_RET0(nuiVisualObject);
+
+  container    = (Dali::VisualObjectsContainer*)nuiVisualObjectsContainer;
+  visualObject = (Dali::VisualObject*)nuiVisualObject;
+  try_catch(([&]()
+  {
+    result = container->AddShadowVisualObject(*visualObject, static_cast<Dali::VisualObjectsContainer::ShadowType>(shadowType));
   }));
   return result;
 }
@@ -239,7 +270,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VisualObjectsContainer_RemoveVisualObjec
 
   container    = (Dali::VisualObjectsContainer*)nuiVisualObjectsContainer;
   visualObject = (Dali::VisualObject*)nuiVisualObject;
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     container->RemoveVisualObject(*visualObject);
   }));
 }

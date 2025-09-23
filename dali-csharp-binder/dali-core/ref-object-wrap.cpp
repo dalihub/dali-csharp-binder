@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,26 +25,26 @@ extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
 // SWIGINTERN - the relevant parts of the generated code can be seen the below.
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__Empty(Dali::Signal< void (Dali::RefObject const *) > const *self)
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__Empty(Dali::Signal<void(Dali::RefObject const*)> const* self)
 {
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__GetConnectionCount(Dali::Signal< void (Dali::RefObject const *) > const *self)
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::RefObject const*)> const* self)
 {
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__Connect(Dali::Signal< void (Dali::RefObject const *) > *self,void (*func)(Dali::RefObject const *))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__Connect(Dali::Signal<void(Dali::RefObject const*)>* self, void (*func)(Dali::RefObject const*))
 {
   self->Connect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__Disconnect(Dali::Signal< void (Dali::RefObject const *) > *self,void (*func)(Dali::RefObject const *))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__Disconnect(Dali::Signal<void(Dali::RefObject const*)>* self, void (*func)(Dali::RefObject const*))
 {
   self->Disconnect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__Emit(Dali::Signal< void (Dali::RefObject const *) > *self,Dali::RefObject const *arg)
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__Emit(Dali::Signal<void(Dali::RefObject const*)>* self, Dali::RefObject const* arg)
 {
-          /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
-/*@SWIG@*/ self->Emit(arg);
+  /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
+  /*@SWIG@*/ self->Emit(arg);
 }
 
 using namespace Dali;
@@ -53,66 +53,67 @@ using namespace Dali;
 extern "C" {
 #endif
 
-
 // Creation
 
+SWIGEXPORT Dali::RefObject* SWIGSTDCALL CSharp_Dali_GetRefObjectPtr(Dali::BaseHandle* arg1)
+{
+  Dali::RefObject* result = NULL;
 
-
-SWIGEXPORT Dali::RefObject * SWIGSTDCALL CSharp_Dali_GetRefObjectPtr(Dali::BaseHandle *arg1) {
-  Dali::RefObject *result = NULL;
-
-  if (arg1)
+  if(arg1)
   {
-    result = (Dali::RefObject *)((Dali::BaseHandle const *)arg1)->GetObjectPtr();
+    result = (Dali::RefObject*)((Dali::BaseHandle const*)arg1)->GetObjectPtr();
   }
   return result;
 }
 
-
 // Method
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RefObject_Reference(void * jarg1) {
-  Dali::RefObject *arg1 = (Dali::RefObject *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RefObject_Reference(void* jarg1)
+{
+  Dali::RefObject* arg1 = (Dali::RefObject*)0;
 
-  arg1 = (Dali::RefObject *)jarg1;
+  arg1 = (Dali::RefObject*)jarg1;
   {
-    try {
+    try
+    {
       (arg1)->Reference();
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
-
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RefObject_Unreference(void* jarg1)
+{
+  Dali::RefObject* arg1 = (Dali::RefObject*)0;
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RefObject_Unreference(void * jarg1) {
-  Dali::RefObject *arg1 = (Dali::RefObject *) 0 ;
-
-  arg1 = (Dali::RefObject *)jarg1;
+  arg1 = (Dali::RefObject*)jarg1;
   {
-    try {
+    try
+    {
       (arg1)->Unreference();
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
-
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RefObject_ReferenceCount(void* jarg1)
+{
+  int              jresult;
+  Dali::RefObject* arg1 = (Dali::RefObject*)0;
+  int              result;
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_RefObject_ReferenceCount(void * jarg1) {
-  int jresult ;
-  Dali::RefObject *arg1 = (Dali::RefObject *) 0 ;
-  int result;
-
-  arg1 = (Dali::RefObject *)jarg1;
+  arg1 = (Dali::RefObject*)jarg1;
   {
-    try {
+    try
+    {
       result = (int)(arg1)->ReferenceCount();
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
   return jresult;
 }
-
 
 #ifdef __cplusplus
 }

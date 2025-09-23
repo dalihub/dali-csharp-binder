@@ -15,6 +15,7 @@
 #include <LinearMath/btPolarDecomposition.h>
 
 #include "conversion.h"
+
 #include "btPolarDecomposition_wrap.h"
 
 btPolarDecomposition* btPolarDecomposition_new(btScalar tolerance, unsigned int maxIterations)
@@ -23,7 +24,7 @@ btPolarDecomposition* btPolarDecomposition_new(btScalar tolerance, unsigned int 
 }
 
 unsigned int btPolarDecomposition_decompose(btPolarDecomposition* obj, const btMatrix3x3* a,
-  btMatrix3x3* u, btMatrix3x3* h)
+                                            btMatrix3x3* u, btMatrix3x3* h)
 {
   BTMATRIX3X3_IN(a);
   BTMATRIX3X3_DEF(u);

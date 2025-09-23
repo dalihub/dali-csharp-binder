@@ -17,6 +17,7 @@
 #include <BulletCollision/CollisionShapes/btCollisionShape.h>
 
 #include "conversion.h"
+
 #include "btCollisionObjectWrapper_wrap.h"
 
 const btCollisionObject* btCollisionObjectWrapper_getCollisionObject(btCollisionObjectWrapper* obj)

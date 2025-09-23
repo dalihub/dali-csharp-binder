@@ -26,7 +26,6 @@
 extern "C" {
 #endif
 
-
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_AlphaFunctionSpringData_GetDuration(float stiffness, float damping, float mass)
 {
   float duration = 0.0f;

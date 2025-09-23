@@ -15,26 +15,27 @@
 #include <BulletDynamics/ConstraintSolver/btSliderConstraint.h>
 
 #include "conversion.h"
+
 #include "btSliderConstraint_wrap.h"
 
 btSliderConstraint* btSliderConstraint_new(btRigidBody* rbA, btRigidBody* rbB, const btTransform* frameInA,
-  const btTransform* frameInB, bool useLinearReferenceFrameA)
+                                           const btTransform* frameInB, bool useLinearReferenceFrameA)
 {
   BTTRANSFORM_IN(frameInA);
   BTTRANSFORM_IN(frameInB);
   return new btSliderConstraint(*rbA, *rbB, BTTRANSFORM_USE(frameInA), BTTRANSFORM_USE(frameInB),
-    useLinearReferenceFrameA);
+                                useLinearReferenceFrameA);
 }
 
 btSliderConstraint* btSliderConstraint_new2(btRigidBody* rbB, const btTransform* frameInB,
-  bool useLinearReferenceFrameA)
+                                            bool useLinearReferenceFrameA)
 {
   BTTRANSFORM_IN(frameInB);
   return new btSliderConstraint(*rbB, BTTRANSFORM_USE(frameInB), useLinearReferenceFrameA);
 }
 
 void btSliderConstraint_calculateTransforms(btSliderConstraint* obj, const btTransform* transA,
-  const btTransform* transB)
+                                            const btTransform* transB)
 {
   BTTRANSFORM_IN(transA);
   BTTRANSFORM_IN(transB);
@@ -43,13 +44,15 @@ void btSliderConstraint_calculateTransforms(btSliderConstraint* obj, const btTra
 
 void btSliderConstraint_getAncorInA(btSliderConstraint* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->getAncorInA();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->getAncorInA();
   BTVECTOR3_SET(value, temp);
 }
 
 void btSliderConstraint_getAncorInB(btSliderConstraint* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->getAncorInB();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->getAncorInB();
   BTVECTOR3_SET(value, temp);
 }
 
@@ -124,15 +127,15 @@ void btSliderConstraint_getInfo1NonVirtual(btSliderConstraint* obj, btTypedConst
 }
 
 void btSliderConstraint_getInfo2NonVirtual(btSliderConstraint* obj, btTypedConstraint_btConstraintInfo2* info,
-  const btTransform* transA, const btTransform* transB, const btVector3* linVelA,
-  const btVector3* linVelB, btScalar rbAinvMass, btScalar rbBinvMass)
+                                           const btTransform* transA, const btTransform* transB, const btVector3* linVelA,
+                                           const btVector3* linVelB, btScalar rbAinvMass, btScalar rbBinvMass)
 {
   BTTRANSFORM_IN(transA);
   BTTRANSFORM_IN(transB);
   BTVECTOR3_IN(linVelA);
   BTVECTOR3_IN(linVelB);
   obj->getInfo2NonVirtual(info, BTTRANSFORM_USE(transA), BTTRANSFORM_USE(transB),
-    BTVECTOR3_USE(linVelA), BTVECTOR3_USE(linVelB), rbAinvMass, rbBinvMass);
+                          BTVECTOR3_USE(linVelA), BTVECTOR3_USE(linVelB), rbAinvMass, rbBinvMass);
 }
 
 btScalar btSliderConstraint_getLinDepth(btSliderConstraint* obj)
@@ -306,7 +309,7 @@ void btSliderConstraint_setDampingOrthoLin(btSliderConstraint* obj, btScalar dam
 }
 
 void btSliderConstraint_setFrames(btSliderConstraint* obj, const btTransform* frameA,
-  const btTransform* frameB)
+                                  const btTransform* frameB)
 {
   BTTRANSFORM_IN(frameA);
   BTTRANSFORM_IN(frameB);

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,42 +22,49 @@
 #include <dali-csharp-binder/common/common.h>
 
 /* Callback for returning strings to C# without leaking memory */
-typedef char *(SWIGSTDCALL *SWIG_CSharpStringHelperCallback)(const char*);
+typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
 extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_SetBrokenImageUrl(void * nuiStyleManager, unsigned int brokenType, char * nuiUrl) {
-  Dali::Toolkit::StyleManager *styleManager = (Dali::Toolkit::StyleManager *) 0 ;
-  std::string *url = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_SetBrokenImageUrl(void* nuiStyleManager, unsigned int brokenType, char* nuiUrl)
+{
+  Dali::Toolkit::StyleManager* styleManager = (Dali::Toolkit::StyleManager*)0;
+  std::string*                 url          = 0;
 
-  if(!nuiUrl) {
+  if(!nuiUrl)
+  {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
 
   std::string url_str(nuiUrl);
-  url = &url_str;
-  styleManager = (Dali::Toolkit::StyleManager *)nuiStyleManager;
+  url          = &url_str;
+  styleManager = (Dali::Toolkit::StyleManager*)nuiStyleManager;
   {
-    try {
-      Dali::Toolkit::DevelStyleManager::SetBrokenImageUrl(*styleManager,Dali::Toolkit::DevelStyleManager::BrokenImageType(brokenType),(std::string const &)*url);
-    } CALL_CATCH_EXCEPTION();
+    try
+    {
+      Dali::Toolkit::DevelStyleManager::SetBrokenImageUrl(*styleManager, Dali::Toolkit::DevelStyleManager::BrokenImageType(brokenType), (std::string const&)*url);
+    }
+    CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_Dali_StyleManager_GetBrokenImageUrl(void * nuiStyleManager, unsigned int brokenType) {
-  char * jresult ;
-  Dali::Toolkit::StyleManager *styleManager = (Dali::Toolkit::StyleManager *) 0 ;
-  std::string result;
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_StyleManager_GetBrokenImageUrl(void* nuiStyleManager, unsigned int brokenType)
+{
+  char*                        jresult;
+  Dali::Toolkit::StyleManager* styleManager = (Dali::Toolkit::StyleManager*)0;
+  std::string                  result;
 
-  styleManager = (Dali::Toolkit::StyleManager *)nuiStyleManager;
+  styleManager = (Dali::Toolkit::StyleManager*)nuiStyleManager;
   {
-    try {
-      result = Dali::Toolkit::DevelStyleManager::GetBrokenImageUrl(*styleManager,Dali::Toolkit::DevelStyleManager::BrokenImageType(brokenType));
-    } CALL_CATCH_EXCEPTION(0);
+    try
+    {
+      result = Dali::Toolkit::DevelStyleManager::GetBrokenImageUrl(*styleManager, Dali::Toolkit::DevelStyleManager::BrokenImageType(brokenType));
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = SWIG_csharp_string_callback((&result)->c_str());

@@ -207,13 +207,13 @@ void btContactSolverInfoData_setMaxErrorReduction(btContactSolverInfoData* obj, 
 }
 
 void btContactSolverInfoData_setMaxGyroscopicForce(btContactSolverInfoData* obj,
-  btScalar value)
+                                                   btScalar                 value)
 {
   obj->m_maxGyroscopicForce = value;
 }
 
 void btContactSolverInfoData_setMinimumSolverBatchSize(btContactSolverInfoData* obj,
-  int value)
+                                                       int                      value)
 {
   obj->m_minimumSolverBatchSize = value;
 }
@@ -224,7 +224,7 @@ void btContactSolverInfoData_setNumIterations(btContactSolverInfoData* obj, int 
 }
 
 void btContactSolverInfoData_setRestingContactRestitutionThreshold(btContactSolverInfoData* obj,
-  int value)
+                                                                   int                      value)
 {
   obj->m_restingContactRestitutionThreshold = value;
 }
@@ -240,7 +240,7 @@ void btContactSolverInfoData_setRestitutionVelocityThreshold(btContactSolverInfo
 }
 
 void btContactSolverInfoData_setSingleAxisRollingFrictionThreshold(btContactSolverInfoData* obj,
-  btScalar value)
+                                                                   btScalar                 value)
 {
   obj->m_singleAxisRollingFrictionThreshold = value;
 }
@@ -261,13 +261,13 @@ void btContactSolverInfoData_setSplitImpulse(btContactSolverInfoData* obj, int v
 }
 
 void btContactSolverInfoData_setSplitImpulsePenetrationThreshold(btContactSolverInfoData* obj,
-  btScalar value)
+                                                                 btScalar                 value)
 {
   obj->m_splitImpulsePenetrationThreshold = value;
 }
 
 void btContactSolverInfoData_setSplitImpulseTurnErp(btContactSolverInfoData* obj,
-  btScalar value)
+                                                    btScalar                 value)
 {
   obj->m_splitImpulseTurnErp = value;
 }
@@ -283,7 +283,7 @@ void btContactSolverInfoData_setTimeStep(btContactSolverInfoData* obj, btScalar 
 }
 
 void btContactSolverInfoData_setWarmstartingFactor(btContactSolverInfoData* obj,
-  btScalar value)
+                                                   btScalar                 value)
 {
   obj->m_warmstartingFactor = value;
 }
@@ -292,7 +292,6 @@ void btContactSolverInfoData_delete(btContactSolverInfoData* obj)
 {
   delete obj;
 }
-
 
 btContactSolverInfo* btContactSolverInfo_new()
 {

@@ -16,6 +16,7 @@
 #include <LinearMath/btIDebugDraw.h>
 
 #include "conversion.h"
+
 #include "btDiscreteCollisionDetectorInterface_wrap.h"
 
 btDiscreteCollisionDetectorInterface_ClosestPointInput* btDiscreteCollisionDetectorInterface_ClosestPointInput_new()
@@ -30,13 +31,13 @@ btScalar btDiscreteCollisionDetectorInterface_ClosestPointInput_getMaximumDistan
 }
 
 void btDiscreteCollisionDetectorInterface_ClosestPointInput_getTransformA(btDiscreteCollisionDetectorInterface_ClosestPointInput* obj,
-  btTransform* value)
+                                                                          btTransform*                                            value)
 {
   BTTRANSFORM_SET(value, obj->m_transformA);
 }
 
 void btDiscreteCollisionDetectorInterface_ClosestPointInput_getTransformB(btDiscreteCollisionDetectorInterface_ClosestPointInput* obj,
-  btTransform* value)
+                                                                          btTransform*                                            value)
 {
   BTTRANSFORM_SET(value, obj->m_transformB);
 }
@@ -48,13 +49,13 @@ void btDiscreteCollisionDetectorInterface_ClosestPointInput_setMaximumDistanceSq
 }
 
 void btDiscreteCollisionDetectorInterface_ClosestPointInput_setTransformA(btDiscreteCollisionDetectorInterface_ClosestPointInput* obj,
-  const btTransform* value)
+                                                                          const btTransform*                                      value)
 {
   BTTRANSFORM_COPY(&obj->m_transformA, value);
 }
 
 void btDiscreteCollisionDetectorInterface_ClosestPointInput_setTransformB(btDiscreteCollisionDetectorInterface_ClosestPointInput* obj,
-  const btTransform* value)
+                                                                          const btTransform*                                      value)
 {
   BTTRANSFORM_COPY(&obj->m_transformB, value);
 }
@@ -64,24 +65,23 @@ void btDiscreteCollisionDetectorInterface_ClosestPointInput_delete(btDiscreteCol
   delete obj;
 }
 
-
 void btDiscreteCollisionDetectorInterface_Result_addContactPoint(btDiscreteCollisionDetectorInterface_Result* obj,
-  const btVector3* normalOnBInWorld, const btVector3* pointInWorld, btScalar depth)
+                                                                 const btVector3* normalOnBInWorld, const btVector3* pointInWorld, btScalar depth)
 {
   BTVECTOR3_IN(normalOnBInWorld);
   BTVECTOR3_IN(pointInWorld);
   obj->addContactPoint(BTVECTOR3_USE(normalOnBInWorld), BTVECTOR3_USE(pointInWorld),
-    depth);
+                       depth);
 }
 
 void btDiscreteCollisionDetectorInterface_Result_setShapeIdentifiersA(btDiscreteCollisionDetectorInterface_Result* obj,
-  int partId0, int index0)
+                                                                      int partId0, int index0)
 {
   obj->setShapeIdentifiersA(partId0, index0);
 }
 
 void btDiscreteCollisionDetectorInterface_Result_setShapeIdentifiersB(btDiscreteCollisionDetectorInterface_Result* obj,
-  int partId1, int index1)
+                                                                      int partId1, int index1)
 {
   obj->setShapeIdentifiersB(partId1, index1);
 }
@@ -91,10 +91,9 @@ void btDiscreteCollisionDetectorInterface_Result_delete(btDiscreteCollisionDetec
   delete obj;
 }
 
-
-void btDiscreteCollisionDetectorInterface_getClosestPoints(btDiscreteCollisionDetectorInterface* obj,
-  const btDiscreteCollisionDetectorInterface_ClosestPointInput* input, btDiscreteCollisionDetectorInterface_Result* output,
-  btIDebugDraw* debugDraw, bool swapResults)
+void btDiscreteCollisionDetectorInterface_getClosestPoints(btDiscreteCollisionDetectorInterface*                         obj,
+                                                           const btDiscreteCollisionDetectorInterface_ClosestPointInput* input, btDiscreteCollisionDetectorInterface_Result* output,
+                                                           btIDebugDraw* debugDraw, bool swapResults)
 {
   obj->getClosestPoints(*input, *output, debugDraw, swapResults);
 }
@@ -103,7 +102,6 @@ void btDiscreteCollisionDetectorInterface_delete(btDiscreteCollisionDetectorInte
 {
   delete obj;
 }
-
 
 void btStorageResult_getClosestPointInB(btStorageResult* obj, btVector3* value)
 {

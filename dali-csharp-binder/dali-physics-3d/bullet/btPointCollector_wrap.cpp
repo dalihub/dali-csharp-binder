@@ -15,6 +15,7 @@
 #include <BulletCollision/NarrowPhaseCollision/btPointCollector.h>
 
 #include "conversion.h"
+
 #include "btPointCollector_wrap.h"
 
 btPointCollector* btPointCollector_new()

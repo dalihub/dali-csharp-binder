@@ -15,6 +15,7 @@
 #include <BulletCollision/BroadphaseCollision/btDbvt.h>
 
 #include "conversion.h"
+
 #include "btDbvt_wrap.h"
 
 btDbvtAabbMm* btDbvtAabbMm_new()
@@ -24,7 +25,8 @@ btDbvtAabbMm* btDbvtAabbMm_new()
 
 void btDbvtAabbMm_Center(btDbvtAabbMm* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->Center();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->Center();
   BTVECTOR3_SET(value, temp);
 }
 
@@ -47,7 +49,8 @@ void btDbvtAabbMm_Expand(btDbvtAabbMm* obj, const btVector3* e)
 
 void btDbvtAabbMm_Extents(btDbvtAabbMm* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->Extents();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->Extents();
   BTVECTOR3_SET(value, temp);
 }
 
@@ -80,20 +83,21 @@ btDbvtAabbMm* btDbvtAabbMm_FromMM(const btVector3* mi, const btVector3* mx)
 btDbvtAabbMm* btDbvtAabbMm_FromPoints(const btVector3** ppts, int n)
 {
   btDbvtAabbMm* ret = new btDbvtAabbMm;
-  *ret = btDbvtAabbMm::FromPoints(ppts, n);
+  *ret              = btDbvtAabbMm::FromPoints(ppts, n);
   return ret;
 }
 
 btDbvtAabbMm* btDbvtAabbMm_FromPoints2(const btVector3* pts, int n)
 {
   btDbvtAabbMm* ret = new btDbvtAabbMm;
-  *ret = btDbvtAabbMm::FromPoints(pts, n);
+  *ret              = btDbvtAabbMm::FromPoints(pts, n);
   return ret;
 }
 
 void btDbvtAabbMm_Lengths(btDbvtAabbMm* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->Lengths();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->Lengths();
   BTVECTOR3_SET(value, temp);
 }
 
@@ -133,7 +137,6 @@ void btDbvtAabbMm_delete(btDbvtAabbMm* obj)
 {
   delete obj;
 }
-
 
 btDbvtNode* btDbvtNode_new()
 {
@@ -195,7 +198,6 @@ void btDbvtNode_delete(btDbvtNode* obj)
   delete obj;
 }
 
-
 btDbvt_IClone* btDbvt_IClone_new()
 {
   return new btDbvt::IClone();
@@ -210,7 +212,6 @@ void btDbvt_IClone_delete(btDbvt_IClone* obj)
 {
   delete obj;
 }
-
 
 btDbvt_ICollide* btDbvt_ICollide_new()
 {
@@ -228,7 +229,7 @@ bool btDbvt_ICollide_Descent(btDbvt_ICollide* obj, const btDbvtNode* __unnamed0)
 }
 
 void btDbvt_ICollide_Process(btDbvt_ICollide* obj, const btDbvtNode* __unnamed0,
-  const btDbvtNode* __unnamed1)
+                             const btDbvtNode* __unnamed1)
 {
   obj->Process(__unnamed0, __unnamed1);
 }
@@ -248,20 +249,19 @@ void btDbvt_ICollide_delete(btDbvt_ICollide* obj)
   delete obj;
 }
 
-
 void btDbvt_IWriter_Prepare(btDbvt_IWriter* obj, const btDbvtNode* root, int numnodes)
 {
   obj->Prepare(root, numnodes);
 }
 
 void btDbvt_IWriter_WriteLeaf(btDbvt_IWriter* obj, const btDbvtNode* __unnamed0,
-  int index, int parent)
+                              int index, int parent)
 {
   obj->WriteLeaf(__unnamed0, index, parent);
 }
 
 void btDbvt_IWriter_WriteNode(btDbvt_IWriter* obj, const btDbvtNode* __unnamed0,
-  int index, int parent, int child0, int child1)
+                              int index, int parent, int child0, int child1)
 {
   obj->WriteNode(__unnamed0, index, parent, child0, child1);
 }
@@ -270,7 +270,6 @@ void btDbvt_IWriter_delete(btDbvt_IWriter* obj)
 {
   delete obj;
 }
-
 
 btDbvt_sStkCLN* btDbvt_sStkCLN_new(const btDbvtNode* n, btDbvtNode* p)
 {
@@ -301,7 +300,6 @@ void btDbvt_sStkCLN_delete(btDbvt_sStkCLN* obj)
 {
   delete obj;
 }
-
 
 btDbvt_sStkNN* btDbvt_sStkNN_new()
 {
@@ -338,7 +336,6 @@ void btDbvt_sStkNN_delete(btDbvt_sStkNN* obj)
   delete obj;
 }
 
-
 btDbvt_sStkNP* btDbvt_sStkNP_new(const btDbvtNode* n, unsigned int m)
 {
   return new btDbvt::sStkNP(n, m);
@@ -368,7 +365,6 @@ void btDbvt_sStkNP_delete(btDbvt_sStkNP* obj)
 {
   delete obj;
 }
-
 
 btDbvt_sStkNPS* btDbvt_sStkNPS_new()
 {
@@ -415,9 +411,8 @@ void btDbvt_sStkNPS_delete(btDbvt_sStkNPS* obj)
   delete obj;
 }
 
-
 int btDbvt_allocate(btAlignedObjectArray_int* ifree, btAlignedObjectArray_btDbvt_sStkNPS* stock,
-  const btDbvt_sStkNPS* value)
+                    const btDbvt_sStkNPS* value)
 {
   return btDbvt::allocate(*ifree, *stock, *value);
 }
@@ -654,7 +649,7 @@ bool btDbvt_update5(btDbvt* obj, btDbvtNode* leaf, btDbvtVolume* volume, const b
 }
 
 bool btDbvt_update6(btDbvt* obj, btDbvtNode* leaf, btDbvtVolume* volume, const btVector3* velocity,
-  btScalar margin)
+                    btScalar margin)
 {
   BTVECTOR3_IN(velocity);
   return obj->update(leaf, *volume, BTVECTOR3_USE(velocity), margin);
@@ -665,7 +660,6 @@ void btDbvt_write(btDbvt* obj, btDbvt_IWriter* iwriter)
   obj->write(iwriter);
 }
 
-
 btDbvt* btDbvt_array_at(btDbvt* obj, int index)
 {
   return &obj[index];
@@ -673,16 +667,15 @@ btDbvt* btDbvt_array_at(btDbvt* obj, int index)
 
 int btDbvt_array_index_of(btDbvt* obj, btDbvt* value, int length)
 {
-  for (int i = 0; i < length; i++)
+  for(int i = 0; i < length; i++)
   {
-    if (&obj[i] == value)
+    if(&obj[i] == value)
     {
       return i;
     }
   }
   return -1;
 }
-
 
 btDbvtNode* btDbvtNodePtr_array_at(btDbvtNode** obj, int index)
 {
@@ -691,9 +684,9 @@ btDbvtNode* btDbvtNodePtr_array_at(btDbvtNode** obj, int index)
 
 int btDbvtNodePtr_array_index_of(btDbvtNode** obj, btDbvtNode* value, int length)
 {
-  for (int i = 0; i < length; i++)
+  for(int i = 0; i < length; i++)
   {
-    if (obj[i] == value)
+    if(obj[i] == value)
     {
       return i;
     }

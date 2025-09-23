@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,12 +25,14 @@
 extern "C" {
 #endif
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsBlendEquationSupported( int blendEquation ) {
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsBlendEquationSupported(int blendEquation)
+{
   bool jresult;
 
   {
-    try {
-      jresult = Dali::Capabilities::IsBlendEquationSupported( static_cast<Dali::DevelBlendEquation::Type>(blendEquation) );
+    try
+    {
+      jresult = Dali::Capabilities::IsBlendEquationSupported(static_cast<Dali::DevelBlendEquation::Type>(blendEquation));
     }
     CALL_CATCH_EXCEPTION(0);
   }

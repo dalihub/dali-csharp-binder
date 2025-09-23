@@ -3334,7 +3334,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Builder_QuitSignal_Connect(void* jarg1, 
 {
   GUARD_ON_NULL_RET(jarg1);
   GUARD_ON_NULL_RET(jarg2);
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     Dali::Toolkit::Builder* arg1 = (Dali::Toolkit::Builder*)jarg1;
     void (*arg2)()               = (void (*)())jarg2;
     arg1->QuitSignal().Connect(arg2);
@@ -3345,7 +3346,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Builder_QuitSignal_Disconnect(void* jarg
 {
   GUARD_ON_NULL_RET(jarg1);
   GUARD_ON_NULL_RET(jarg2);
-  try_catch(([&]() {
+  try_catch(([&]()
+  {
     Dali::Toolkit::Builder* arg1 = (Dali::Toolkit::Builder*)jarg1;
     void (*arg2)()               = (void (*)())jarg2;
     arg1->QuitSignal().Disconnect(arg2);

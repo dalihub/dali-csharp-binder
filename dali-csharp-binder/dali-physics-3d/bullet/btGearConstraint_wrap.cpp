@@ -15,15 +15,16 @@
 #include <BulletDynamics/ConstraintSolver/btGearConstraint.h>
 
 #include "conversion.h"
+
 #include "btGearConstraint_wrap.h"
 
 btGearConstraint* btGearConstraint_new(btRigidBody* rbA, btRigidBody* rbB, const btVector3* axisInA,
-  const btVector3* axisInB, btScalar ratio)
+                                       const btVector3* axisInB, btScalar ratio)
 {
   BTVECTOR3_IN(axisInA);
   BTVECTOR3_IN(axisInB);
   return new btGearConstraint(*rbA, *rbB, BTVECTOR3_USE(axisInA), BTVECTOR3_USE(axisInB),
-    ratio);
+                              ratio);
 }
 
 void btGearConstraint_getAxisA(btGearConstraint* obj, btVector3* value)

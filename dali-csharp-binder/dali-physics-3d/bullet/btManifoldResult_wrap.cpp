@@ -22,42 +22,42 @@ btManifoldResult* btManifoldResult_new()
 }
 
 btManifoldResult* btManifoldResult_new2(const btCollisionObjectWrapper* body0Wrap,
-  const btCollisionObjectWrapper* body1Wrap)
+                                        const btCollisionObjectWrapper* body1Wrap)
 {
   return new btManifoldResult(body0Wrap, body1Wrap);
 }
 
 btScalar btManifoldResult_calculateCombinedContactDamping(const btCollisionObject* body0,
-  const btCollisionObject* body1)
+                                                          const btCollisionObject* body1)
 {
   return btManifoldResult::calculateCombinedContactDamping(body0, body1);
 }
 
 btScalar btManifoldResult_calculateCombinedContactStiffness(const btCollisionObject* body0,
-  const btCollisionObject* body1)
+                                                            const btCollisionObject* body1)
 {
   return btManifoldResult::calculateCombinedContactStiffness(body0, body1);
 }
 
 btScalar btManifoldResult_calculateCombinedFriction(const btCollisionObject* body0,
-  const btCollisionObject* body1)
+                                                    const btCollisionObject* body1)
 {
   return btManifoldResult::calculateCombinedFriction(body0, body1);
 }
 
 btScalar btManifoldResult_calculateCombinedRestitution(const btCollisionObject* body0,
-  const btCollisionObject* body1)
+                                                       const btCollisionObject* body1)
 {
   return btManifoldResult::calculateCombinedRestitution(body0, body1);
 }
 
 btScalar btManifoldResult_calculateCombinedRollingFriction(const btCollisionObject* body0,
-  const btCollisionObject* body1)
+                                                           const btCollisionObject* body1)
 {
   return btManifoldResult::calculateCombinedRollingFriction(body0, body1);
 }
 
-btScalar btManifoldResult_getClosestPointDistanceThreshold(btManifoldResult * obj)
+btScalar btManifoldResult_getClosestPointDistanceThreshold(btManifoldResult* obj)
 {
   return obj->m_closestPointDistanceThreshold;
 }
@@ -102,7 +102,7 @@ void btManifoldResult_setBody1Wrap(btManifoldResult* obj, const btCollisionObjec
   obj->setBody1Wrap(obj1Wrap);
 }
 
-void btManifoldResult_setClosestPointDistanceThreshold(btManifoldResult * obj, btScalar value)
+void btManifoldResult_setClosestPointDistanceThreshold(btManifoldResult* obj, btScalar value)
 {
   obj->m_closestPointDistanceThreshold = value;
 }

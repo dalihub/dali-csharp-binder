@@ -106,44 +106,43 @@ void btMaterialProperties_delete(btMaterialProperties* obj)
   delete obj;
 }
 
-
 btTriangleIndexVertexMaterialArray* btTriangleIndexVertexMaterialArray_new()
 {
   return new btTriangleIndexVertexMaterialArray();
 }
 
-btTriangleIndexVertexMaterialArray* btTriangleIndexVertexMaterialArray_new2(int numTriangles,
-  int* triangleIndexBase, int triangleIndexStride, int numVertices, btScalar* vertexBase,
-  int vertexStride, int numMaterials, unsigned char* materialBase, int materialStride,
-  int* triangleMaterialsBase, int materialIndexStride)
+btTriangleIndexVertexMaterialArray* btTriangleIndexVertexMaterialArray_new2(int  numTriangles,
+                                                                            int* triangleIndexBase, int triangleIndexStride, int numVertices, btScalar* vertexBase,
+                                                                            int vertexStride, int numMaterials, unsigned char* materialBase, int materialStride,
+                                                                            int* triangleMaterialsBase, int materialIndexStride)
 {
   return new btTriangleIndexVertexMaterialArray(numTriangles, triangleIndexBase,
-    triangleIndexStride, numVertices, vertexBase, vertexStride, numMaterials, materialBase,
-    materialStride, triangleMaterialsBase, materialIndexStride);
+                                                triangleIndexStride, numVertices, vertexBase, vertexStride, numMaterials, materialBase,
+                                                materialStride, triangleMaterialsBase, materialIndexStride);
 }
 
 void btTriangleIndexVertexMaterialArray_addMaterialProperties(btTriangleIndexVertexMaterialArray* obj,
-  const btMaterialProperties* mat, PHY_ScalarType triangleType)
+                                                              const btMaterialProperties* mat, PHY_ScalarType triangleType)
 {
   obj->addMaterialProperties(*mat, triangleType);
 }
 
 void btTriangleIndexVertexMaterialArray_getLockedMaterialBase(btTriangleIndexVertexMaterialArray* obj,
-  unsigned char** materialBase, int* numMaterials, PHY_ScalarType* materialType,
-  int* materialStride, unsigned char** triangleMaterialBase, int* numTriangles, int* triangleMaterialStride,
-  PHY_ScalarType* triangleType, int subpart)
+                                                              unsigned char** materialBase, int* numMaterials, PHY_ScalarType* materialType,
+                                                              int* materialStride, unsigned char** triangleMaterialBase, int* numTriangles, int* triangleMaterialStride,
+                                                              PHY_ScalarType* triangleType, int subpart)
 {
   obj->getLockedMaterialBase(materialBase, *numMaterials, *materialType, *materialStride,
-    triangleMaterialBase, *numTriangles, *triangleMaterialStride, *triangleType,
-    subpart);
+                             triangleMaterialBase, *numTriangles, *triangleMaterialStride, *triangleType,
+                             subpart);
 }
 
 void btTriangleIndexVertexMaterialArray_getLockedReadOnlyMaterialBase(btTriangleIndexVertexMaterialArray* obj,
-  const unsigned char** materialBase, int* numMaterials, PHY_ScalarType* materialType,
-  int* materialStride, const unsigned char** triangleMaterialBase, int* numTriangles,
-  int* triangleMaterialStride, PHY_ScalarType* triangleType, int subpart)
+                                                                      const unsigned char** materialBase, int* numMaterials, PHY_ScalarType* materialType,
+                                                                      int* materialStride, const unsigned char** triangleMaterialBase, int* numTriangles,
+                                                                      int* triangleMaterialStride, PHY_ScalarType* triangleType, int subpart)
 {
   obj->getLockedReadOnlyMaterialBase(materialBase, *numMaterials, *materialType,
-    *materialStride, triangleMaterialBase, *numTriangles, *triangleMaterialStride,
-    *triangleType, subpart);
+                                     *materialStride, triangleMaterialBase, *numTriangles, *triangleMaterialStride,
+                                     *triangleType, subpart);
 }

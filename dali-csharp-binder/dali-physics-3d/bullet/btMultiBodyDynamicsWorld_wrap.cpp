@@ -20,22 +20,22 @@
 
 #include "btMultiBodyDynamicsWorld_wrap.h"
 
-btMultiBodyDynamicsWorld* btMultiBodyDynamicsWorld_new(btDispatcher* dispatcher,
-  btBroadphaseInterface* pairCache, btMultiBodyConstraintSolver* constraintSolver,
-  btCollisionConfiguration* collisionConfiguration)
+btMultiBodyDynamicsWorld* btMultiBodyDynamicsWorld_new(btDispatcher*          dispatcher,
+                                                       btBroadphaseInterface* pairCache, btMultiBodyConstraintSolver* constraintSolver,
+                                                       btCollisionConfiguration* collisionConfiguration)
 {
   return new btMultiBodyDynamicsWorld(dispatcher, pairCache, constraintSolver,
-    collisionConfiguration);
+                                      collisionConfiguration);
 }
 
 void btMultiBodyDynamicsWorld_addMultiBody(btMultiBodyDynamicsWorld* obj, btMultiBody* body,
-  int group, int mask)
+                                           int group, int mask)
 {
   obj->addMultiBody(body, group, mask);
 }
 
 void btMultiBodyDynamicsWorld_addMultiBodyConstraint(btMultiBodyDynamicsWorld* obj,
-  btMultiBodyConstraint* constraint)
+                                                     btMultiBodyConstraint*    constraint)
 {
   obj->addMultiBodyConstraint(constraint);
 }
@@ -56,7 +56,7 @@ void btMultiBodyDynamicsWorld_clearMultiBodyForces(btMultiBodyDynamicsWorld* obj
 }
 
 void btMultiBodyDynamicsWorld_debugDrawMultiBodyConstraint(btMultiBodyDynamicsWorld* obj,
-  btMultiBodyConstraint* constraint)
+                                                           btMultiBodyConstraint*    constraint)
 {
   obj->debugDrawMultiBodyConstraint(constraint);
 }
@@ -67,13 +67,13 @@ void btMultiBodyDynamicsWorld_forwardKinematics(btMultiBodyDynamicsWorld* obj)
 }
 
 btMultiBody* btMultiBodyDynamicsWorld_getMultiBody(btMultiBodyDynamicsWorld* obj,
-  int mbIndex)
+                                                   int                       mbIndex)
 {
   return obj->getMultiBody(mbIndex);
 }
 
 btMultiBodyConstraint* btMultiBodyDynamicsWorld_getMultiBodyConstraint(btMultiBodyDynamicsWorld* obj,
-  int constraintIndex)
+                                                                       int                       constraintIndex)
 {
   return obj->getMultiBodyConstraint(constraintIndex);
 }
@@ -94,7 +94,7 @@ void btMultiBodyDynamicsWorld_integrateMultiBodyTransforms(btMultiBodyDynamicsWo
 }
 
 void btMultiBodyDynamicsWorld_integrateTransforms(btMultiBodyDynamicsWorld* obj,
-  btScalar timeStep)
+                                                  btScalar                  timeStep)
 {
   obj->integrateTransforms(timeStep);
 }
@@ -115,7 +115,7 @@ void btMultiBodyDynamicsWorld_removeMultiBody(btMultiBodyDynamicsWorld* obj, btM
 }
 
 void btMultiBodyDynamicsWorld_removeMultiBodyConstraint(btMultiBodyDynamicsWorld* obj,
-  btMultiBodyConstraint* constraint)
+                                                        btMultiBodyConstraint*    constraint)
 {
   obj->removeMultiBodyConstraint(constraint);
 }

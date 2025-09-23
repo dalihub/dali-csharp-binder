@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@
 #include <dali/devel-api/adaptor-framework/accessibility.h>
 #include <dali/devel-api/atspi-interfaces/editable-text.h>
 #include <dali/devel-api/atspi-interfaces/selection.h>
-#include <dali/devel-api/atspi-interfaces/table.h>
 #include <dali/devel-api/atspi-interfaces/table-cell.h>
+#include <dali/devel-api/atspi-interfaces/table.h>
 #include <dali/devel-api/atspi-interfaces/text.h>
 #include <dali/devel-api/atspi-interfaces/value.h>
 
@@ -47,7 +47,7 @@ public:
   NUIViewAccessible(NUIViewAccessible&&)      = delete;
 
   NUIViewAccessible& operator=(const NUIViewAccessible&) = delete;
-  NUIViewAccessible& operator=(NUIViewAccessible&&) = delete;
+  NUIViewAccessible& operator=(NUIViewAccessible&&)      = delete;
 
   NUIViewAccessible(Dali::Actor actor);
 

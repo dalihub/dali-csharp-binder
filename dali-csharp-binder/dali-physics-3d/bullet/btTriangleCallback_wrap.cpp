@@ -15,6 +15,7 @@
 #include <BulletCollision/CollisionShapes/btTriangleCallback.h>
 
 #include "conversion.h"
+
 #include "btTriangleCallback_wrap.h"
 
 btInternalTriangleIndexCallbackWrapper::btInternalTriangleIndexCallbackWrapper(p_btInternalTriangleIndexCallback_internalProcessTriangleIndex internalProcessTriangleIndexCallback)
@@ -23,11 +24,10 @@ btInternalTriangleIndexCallbackWrapper::btInternalTriangleIndexCallbackWrapper(p
 }
 
 void btInternalTriangleIndexCallbackWrapper::internalProcessTriangleIndex(btVector3* triangle,
-  int partId, int triangleIndex)
+                                                                          int partId, int triangleIndex)
 {
   _internalProcessTriangleIndexCallback(triangle, partId, triangleIndex);
 }
-
 
 btTriangleCallbackWrapper::btTriangleCallbackWrapper(p_btTriangleCallback_processTriangle processTriangleCallback)
 {
@@ -35,11 +35,10 @@ btTriangleCallbackWrapper::btTriangleCallbackWrapper(p_btTriangleCallback_proces
 }
 
 void btTriangleCallbackWrapper::processTriangle(btVector3* triangle, int partId,
-  int triangleIndex)
+                                                int triangleIndex)
 {
   _processTriangleCallback(triangle, partId, triangleIndex);
 }
-
 
 btTriangleCallbackWrapper* btTriangleCallbackWrapper_new(p_btTriangleCallback_processTriangle processTriangleCallback)
 {
@@ -50,7 +49,6 @@ void btTriangleCallback_delete(btTriangleCallback* obj)
 {
   delete obj;
 }
-
 
 btInternalTriangleIndexCallbackWrapper* btInternalTriangleIndexCallbackWrapper_new(
   p_btInternalTriangleIndexCallback_internalProcessTriangleIndex internalProcessTriangleIndexCallback)

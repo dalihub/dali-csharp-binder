@@ -20,8 +20,8 @@
 #include "btSimulationIslandManager_wrap.h"
 
 void btSimulationIslandManager_IslandCallback_processIsland(btSimulationIslandManager_IslandCallback* obj,
-  btCollisionObject** bodies, int numBodies, btPersistentManifold** manifolds, int numManifolds,
-  int islandId)
+                                                            btCollisionObject** bodies, int numBodies, btPersistentManifold** manifolds, int numManifolds,
+                                                            int islandId)
 {
   obj->processIsland(bodies, numBodies, manifolds, numManifolds, islandId);
 }
@@ -31,26 +31,25 @@ void btSimulationIslandManager_IslandCallback_delete(btSimulationIslandManager_I
   delete obj;
 }
 
-
 btSimulationIslandManager* btSimulationIslandManager_new()
 {
   return new btSimulationIslandManager();
 }
 
 void btSimulationIslandManager_buildAndProcessIslands(btSimulationIslandManager* obj,
-  btDispatcher* dispatcher, btCollisionWorld* collisionWorld, btSimulationIslandManager_IslandCallback* callback)
+                                                      btDispatcher* dispatcher, btCollisionWorld* collisionWorld, btSimulationIslandManager_IslandCallback* callback)
 {
   obj->buildAndProcessIslands(dispatcher, collisionWorld, callback);
 }
 
 void btSimulationIslandManager_buildIslands(btSimulationIslandManager* obj, btDispatcher* dispatcher,
-  btCollisionWorld* colWorld)
+                                            btCollisionWorld* colWorld)
 {
   obj->buildIslands(dispatcher, colWorld);
 }
 
 void btSimulationIslandManager_findUnions(btSimulationIslandManager* obj, btDispatcher* dispatcher,
-  btCollisionWorld* colWorld)
+                                          btCollisionWorld* colWorld)
 {
   obj->findUnions(dispatcher, colWorld);
 }
@@ -76,13 +75,13 @@ void btSimulationIslandManager_setSplitIslands(btSimulationIslandManager* obj, b
 }
 
 void btSimulationIslandManager_storeIslandActivationState(btSimulationIslandManager* obj,
-  btCollisionWorld* world)
+                                                          btCollisionWorld*          world)
 {
   obj->storeIslandActivationState(world);
 }
 
 void btSimulationIslandManager_updateActivationState(btSimulationIslandManager* obj,
-  btCollisionWorld* colWorld, btDispatcher* dispatcher)
+                                                     btCollisionWorld* colWorld, btDispatcher* dispatcher)
 {
   obj->updateActivationState(colWorld, dispatcher);
 }

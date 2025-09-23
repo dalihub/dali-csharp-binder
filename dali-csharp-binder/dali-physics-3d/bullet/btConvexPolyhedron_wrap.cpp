@@ -15,6 +15,7 @@
 #include <BulletCollision/CollisionShapes/btConvexPolyhedron.h>
 
 #include "conversion.h"
+
 #include "btConvexPolyhedron_wrap.h"
 
 btFace* btFace_new()
@@ -36,7 +37,6 @@ void btFace_delete(btFace* obj)
 {
   delete obj;
 }
-
 
 btConvexPolyhedron* btConvexPolyhedron_new()
 {
@@ -94,15 +94,15 @@ void btConvexPolyhedron_initialize2(btConvexPolyhedron* obj)
 }
 
 void btConvexPolyhedron_project(btConvexPolyhedron* obj, const btTransform* trans,
-  const btVector3* dir, btScalar* minProj, btScalar* maxProj, btVector3* witnesPtMin,
-  btVector3* witnesPtMax)
+                                const btVector3* dir, btScalar* minProj, btScalar* maxProj, btVector3* witnesPtMin,
+                                btVector3* witnesPtMax)
 {
   BTTRANSFORM_IN(trans);
   BTVECTOR3_IN(dir);
   BTVECTOR3_DEF(witnesPtMin);
   BTVECTOR3_DEF(witnesPtMax);
   obj->project(BTTRANSFORM_USE(trans), BTVECTOR3_USE(dir), *minProj, *maxProj,
-    BTVECTOR3_USE(witnesPtMin), BTVECTOR3_USE(witnesPtMax));
+               BTVECTOR3_USE(witnesPtMin), BTVECTOR3_USE(witnesPtMax));
   BTVECTOR3_DEF_OUT(witnesPtMin);
   BTVECTOR3_DEF_OUT(witnesPtMax);
 }

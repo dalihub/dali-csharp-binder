@@ -25,90 +25,98 @@
 extern "C" {
 #endif
 
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_InputMethodOptions() {
-  void * jresult ;
-  Dali::InputMethodOptions *result = 0 ;
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_InputMethodOptions()
+{
+  void*                     jresult;
+  Dali::InputMethodOptions* result = 0;
 
   {
-    try {
-      result = (Dali::InputMethodOptions *)new Dali::InputMethodOptions();
-    } CALL_CATCH_EXCEPTION(0);
+    try
+    {
+      result = (Dali::InputMethodOptions*)new Dali::InputMethodOptions();
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (void *)result;
+  jresult = (void*)result;
   return jresult;
 }
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodOptions_IsPassword(void* jarg1)
+{
+  unsigned int              jresult;
+  Dali::InputMethodOptions* arg1 = (Dali::InputMethodOptions*)0;
+  bool                      result;
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_InputMethodOptions_IsPassword(void * jarg1) {
-  unsigned int jresult ;
-  Dali::InputMethodOptions *arg1 = (Dali::InputMethodOptions *) 0 ;
-  bool result;
-
-  arg1 = (Dali::InputMethodOptions *)jarg1;
+  arg1 = (Dali::InputMethodOptions*)jarg1;
   {
-    try {
+    try
+    {
       result = (bool)(arg1)->IsPassword();
-    } CALL_CATCH_EXCEPTION(0);
+    }
+    CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodOptions_ApplyProperty(void* jarg1, void* jarg2)
+{
+  Dali::InputMethodOptions* arg1 = (Dali::InputMethodOptions*)0;
+  Dali::Property::Map*      arg2 = 0;
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodOptions_ApplyProperty(void * jarg1, void * jarg2) {
-  Dali::InputMethodOptions *arg1 = (Dali::InputMethodOptions *) 0 ;
-  Dali::Property::Map *arg2 = 0 ;
-
-  arg1 = (Dali::InputMethodOptions *)jarg1;
-  arg2 = (Dali::Property::Map *)jarg2;
-  if (!arg2) {
+  arg1 = (Dali::InputMethodOptions*)jarg1;
+  arg2 = (Dali::Property::Map*)jarg2;
+  if(!arg2)
+  {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Property::Map const & type is null", 0);
-    return ;
+    return;
   }
   {
-    try {
-      (arg1)->ApplyProperty((Dali::Property::Map const &)*arg2);
-    } CALL_CATCH_EXCEPTION();
+    try
+    {
+      (arg1)->ApplyProperty((Dali::Property::Map const&)*arg2);
+    }
+    CALL_CATCH_EXCEPTION();
   }
-
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodOptions_RetrieveProperty(void* jarg1, void* jarg2)
+{
+  Dali::InputMethodOptions* arg1 = (Dali::InputMethodOptions*)0;
+  Dali::Property::Map*      arg2 = 0;
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_InputMethodOptions_RetrieveProperty(void * jarg1, void * jarg2) {
-  Dali::InputMethodOptions *arg1 = (Dali::InputMethodOptions *) 0 ;
-  Dali::Property::Map *arg2 = 0 ;
-
-  arg1 = (Dali::InputMethodOptions *)jarg1;
-  arg2 = (Dali::Property::Map *)jarg2;
-  if (!arg2) {
+  arg1 = (Dali::InputMethodOptions*)jarg1;
+  arg2 = (Dali::Property::Map*)jarg2;
+  if(!arg2)
+  {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Property::Map & type is null", 0);
-    return ;
+    return;
   }
   {
-    try {
+    try
+    {
       (arg1)->RetrieveProperty(*arg2);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
-
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodOptions(void* jarg1)
+{
+  Dali::InputMethodOptions* arg1 = (Dali::InputMethodOptions*)0;
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_InputMethodOptions(void * jarg1) {
-  Dali::InputMethodOptions *arg1 = (Dali::InputMethodOptions *) 0 ;
-
-  arg1 = (Dali::InputMethodOptions *)jarg1;
+  arg1 = (Dali::InputMethodOptions*)jarg1;
   {
-    try {
+    try
+    {
       delete arg1;
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
-
 }
 
 #ifdef __cplusplus
 }
 #endif
-

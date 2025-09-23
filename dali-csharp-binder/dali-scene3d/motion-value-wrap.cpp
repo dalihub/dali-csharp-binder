@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
  */
 
 // EXTERNAL INCLUDES
+#include <dali-scene3d/public-api/model-motion/motion-value.h>
 #include <dali/public-api/animation/key-frames.h>
 #include <dali/public-api/object/property-value.h>
-#include <dali-scene3d/public-api/model-motion/motion-value.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -84,11 +84,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionValue_New_SWIG_2(void* csKeyFrame
   return new Dali::Scene3D::MotionValue((const Dali::Scene3D::MotionValue&)result);
 }
 
-
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MotionValue_SWIG_1(void* csMotionValue)
 {
   Dali::Scene3D::MotionValue* motionValue = (Dali::Scene3D::MotionValue*)csMotionValue;
-  Dali::Scene3D::MotionValue* result     = 0;
+  Dali::Scene3D::MotionValue* result      = 0;
 
   if(!motionValue)
   {
@@ -139,7 +138,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionValue_Assign(void* csDestination,
 
   return (void*)result;
 }
-
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MotionValue_GetValueType(void* csMotionValue)
 {
@@ -246,7 +244,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionValue_GetPropertyValue(void* csMo
     CALL_CATCH_EXCEPTION(0);
   }
 
-  return new Dali::Property::Value((Dali::Property::Value const &)result);
+  return new Dali::Property::Value((Dali::Property::Value const&)result);
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionValue_GetKeyFrames(void* csMotionValue)
@@ -267,7 +265,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MotionValue_GetKeyFrames(void* csMotion
     CALL_CATCH_EXCEPTION(0);
   }
 
-  return new Dali::KeyFrames((Dali::KeyFrames const &)result);
+  return new Dali::KeyFrames((Dali::KeyFrames const&)result);
 }
 
 #ifdef __cplusplus

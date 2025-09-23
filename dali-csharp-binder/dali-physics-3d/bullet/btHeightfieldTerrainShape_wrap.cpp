@@ -15,22 +15,23 @@
 #include <BulletCollision/CollisionShapes/btHeightfieldTerrainShape.h>
 
 #include "conversion.h"
+
 #include "btHeightfieldTerrainShape_wrap.h"
 
 btHeightfieldTerrainShape* btHeightfieldTerrainShape_new(int heightStickWidth, int heightStickLength,
-  const void* heightfieldData, btScalar heightScale, btScalar minHeight, btScalar maxHeight,
-  int upAxis, PHY_ScalarType heightDataType, bool flipQuadEdges)
+                                                         const void* heightfieldData, btScalar heightScale, btScalar minHeight, btScalar maxHeight,
+                                                         int upAxis, PHY_ScalarType heightDataType, bool flipQuadEdges)
 {
   return new btHeightfieldTerrainShape(heightStickWidth, heightStickLength, heightfieldData,
-    heightScale, minHeight, maxHeight, upAxis, heightDataType, flipQuadEdges);
+                                       heightScale, minHeight, maxHeight, upAxis, heightDataType, flipQuadEdges);
 }
 
 btHeightfieldTerrainShape* btHeightfieldTerrainShape_new2(int heightStickWidth, int heightStickLength,
-  const void* heightfieldData, btScalar maxHeight, int upAxis, bool useFloatData,
-  bool flipQuadEdges)
+                                                          const void* heightfieldData, btScalar maxHeight, int upAxis, bool useFloatData,
+                                                          bool flipQuadEdges)
 {
   return new btHeightfieldTerrainShape(heightStickWidth, heightStickLength, heightfieldData,
-    maxHeight, upAxis, useFloatData, flipQuadEdges);
+                                       maxHeight, upAxis, useFloatData, flipQuadEdges);
 }
 
 void btHeightfieldTerrainShape_performRaycast(btHeightfieldTerrainShape* obj, btTriangleCallback* callback, const btVector3* raySource, const btVector3* rayTarget)
@@ -66,7 +67,7 @@ void btHeightfieldTerrainShape_setUseDiamondSubdivision(btHeightfieldTerrainShap
 }
 
 void btHeightfieldTerrainShape_setUseDiamondSubdivision2(btHeightfieldTerrainShape* obj,
-  bool useDiamondSubdivision)
+                                                         bool                       useDiamondSubdivision)
 {
   obj->setUseDiamondSubdivision(useDiamondSubdivision);
 }
@@ -77,7 +78,7 @@ void btHeightfieldTerrainShape_setUseZigzagSubdivision(btHeightfieldTerrainShape
 }
 
 void btHeightfieldTerrainShape_setUseZigzagSubdivision2(btHeightfieldTerrainShape* obj,
-  bool useZigzagSubdivision)
+                                                        bool                       useZigzagSubdivision)
 {
   obj->setUseZigzagSubdivision(useZigzagSubdivision);
 }

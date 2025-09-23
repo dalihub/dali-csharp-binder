@@ -66,7 +66,6 @@ void btTriangleInfo_delete(btTriangleInfo* obj)
   delete obj;
 }
 
-
 btTriangleInfoMap* btTriangleInfoMap_new()
 {
   return new btTriangleInfoMap();
@@ -113,7 +112,7 @@ btScalar btTriangleInfoMap_getZeroAreaThreshold(btTriangleInfoMap* obj)
 }
 
 const char* btTriangleInfoMap_serialize(btTriangleInfoMap* obj, void* dataBuffer,
-  btSerializer* serializer)
+                                        btSerializer* serializer)
 {
   return obj->serialize(dataBuffer, serializer);
 }

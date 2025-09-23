@@ -12,14 +12,15 @@
  * 3. This notice may not be removed or altered from any source distribution.
  */
 
-#include <new>
 #include <LinearMath/btMotionState.h>
+#include <new>
 
 #include "conversion.h"
+
 #include "btMotionState_wrap.h"
 
 btMotionStateWrapper::btMotionStateWrapper(p_btMotionState_getWorldTransform getWorldTransformCallback,
-  p_btMotionState_setWorldTransform setWorldTransformCallback)
+                                           p_btMotionState_setWorldTransform setWorldTransformCallback)
 {
   _getWorldTransformCallback = getWorldTransformCallback;
   _setWorldTransformCallback = setWorldTransformCallback;
@@ -38,13 +39,11 @@ void btMotionStateWrapper::setWorldTransform(const btTransform& worldTrans)
   _setWorldTransformCallback(&BTTRANSFORM_USE_REF(worldTrans));
 }
 
-
 btMotionStateWrapper* btMotionStateWrapper_new(p_btMotionState_getWorldTransform getWorldTransformCallback,
-  p_btMotionState_setWorldTransform setWorldTransformCallback)
+                                               p_btMotionState_setWorldTransform setWorldTransformCallback)
 {
   return ALIGNED_NEW(btMotionStateWrapper)(getWorldTransformCallback, setWorldTransformCallback);
 }
-
 
 void btMotionState_getWorldTransform(btMotionState* obj, btTransform* worldTrans)
 {

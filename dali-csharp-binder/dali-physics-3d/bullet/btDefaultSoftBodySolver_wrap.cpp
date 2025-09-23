@@ -23,7 +23,7 @@ btDefaultSoftBodySolver* btDefaultSoftBodySolver_new()
 }
 
 void btDefaultSoftBodySolver_copySoftBodyToVertexBuffer(btDefaultSoftBodySolver* obj,
-  const btSoftBody* softBody, btVertexBufferDescriptor* vertexBuffer)
+                                                        const btSoftBody* softBody, btVertexBufferDescriptor* vertexBuffer)
 {
   obj->copySoftBodyToVertexBuffer(softBody, vertexBuffer);
 }

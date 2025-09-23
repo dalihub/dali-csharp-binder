@@ -16,6 +16,7 @@
 #include <BulletCollision/CollisionShapes/btCompoundShape.h>
 
 #include "conversion.h"
+
 #include "btCompoundShape_wrap.h"
 
 btScalar btCompoundShapeChild_getChildMargin(btCompoundShapeChild* obj)
@@ -73,21 +74,20 @@ void btCompoundShapeChild_delete(btCompoundShapeChild* obj)
   delete obj;
 }
 
-
 btCompoundShape* btCompoundShape_new(bool enableDynamicAabbTree, int initialChildCapacity)
 {
   return new btCompoundShape(enableDynamicAabbTree, initialChildCapacity);
 }
 
 void btCompoundShape_addChildShape(btCompoundShape* obj, const btTransform* localTransform,
-  btCollisionShape* shape)
+                                   btCollisionShape* shape)
 {
   BTTRANSFORM_IN(localTransform);
   obj->addChildShape(BTTRANSFORM_USE(localTransform), shape);
 }
 
 void btCompoundShape_calculatePrincipalAxisTransform(btCompoundShape* obj, btScalar* masses,
-  btTransform* principal, btVector3* inertia)
+                                                     btTransform* principal, btVector3* inertia)
 {
   BTTRANSFORM_IN(principal);
   BTVECTOR3_DEF(inertia);
@@ -147,7 +147,7 @@ void btCompoundShape_removeChildShapeByIndex(btCompoundShape* obj, int childShap
 }
 
 void btCompoundShape_updateChildTransform(btCompoundShape* obj, int childIndex,
-  const btTransform* newChildTransform, bool shouldRecalculateLocalAabb)
+                                          const btTransform* newChildTransform, bool shouldRecalculateLocalAabb)
 {
   BTTRANSFORM_IN(newChildTransform);
   obj->updateChildTransform(childIndex, BTTRANSFORM_USE(newChildTransform), shouldRecalculateLocalAabb);

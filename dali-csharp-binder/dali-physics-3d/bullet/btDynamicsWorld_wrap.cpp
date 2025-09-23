@@ -19,6 +19,7 @@
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 
 #include "conversion.h"
+
 #include "btDynamicsWorld_wrap.h"
 
 void btDynamicsWorld_addAction(btDynamicsWorld* obj, btActionInterface* action)
@@ -27,7 +28,7 @@ void btDynamicsWorld_addAction(btDynamicsWorld* obj, btActionInterface* action)
 }
 
 void btDynamicsWorld_addConstraint(btDynamicsWorld* obj, btTypedConstraint* constraint,
-  bool disableCollisionsBetweenLinkedBodies)
+                                   bool disableCollisionsBetweenLinkedBodies)
 {
   obj->addConstraint(constraint, disableCollisionsBetweenLinkedBodies);
 }
@@ -38,7 +39,7 @@ void btDynamicsWorld_addRigidBody(btDynamicsWorld* obj, btRigidBody* body)
 }
 
 void btDynamicsWorld_addRigidBody2(btDynamicsWorld* obj, btRigidBody* body, int group,
-  int mask)
+                                   int mask)
 {
   obj->addRigidBody(body, group, mask);
 }
@@ -60,7 +61,8 @@ btConstraintSolver* btDynamicsWorld_getConstraintSolver(btDynamicsWorld* obj)
 
 void btDynamicsWorld_getGravity(btDynamicsWorld* obj, btVector3* value)
 {
-  ATTRIBUTE_ALIGNED16(btVector3) temp = obj->getGravity();
+  ATTRIBUTE_ALIGNED16(btVector3)
+  temp = obj->getGravity();
   BTVECTOR3_SET(value, temp);
 }
 
@@ -111,7 +113,7 @@ void btDynamicsWorld_setGravity(btDynamicsWorld* obj, const btVector3* gravity)
 }
 
 void btDynamicsWorld_setInternalTickCallback(btDynamicsWorld* obj, btInternalTickCallback cb,
-  void* worldUserInfo, bool isPreTick)
+                                             void* worldUserInfo, bool isPreTick)
 {
   obj->setInternalTickCallback(cb, worldUserInfo, isPreTick);
 }
@@ -122,7 +124,7 @@ void btDynamicsWorld_setWorldUserInfo(btDynamicsWorld* obj, void* worldUserInfo)
 }
 
 int btDynamicsWorld_stepSimulation(btDynamicsWorld* obj, btScalar timeStep, int maxSubSteps,
-  btScalar fixedTimeStep)
+                                   btScalar fixedTimeStep)
 {
   return obj->stepSimulation(timeStep, maxSubSteps, fixedTimeStep);
 }

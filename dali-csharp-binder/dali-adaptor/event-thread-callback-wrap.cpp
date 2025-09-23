@@ -25,78 +25,93 @@
 extern "C" {
 #endif
 
-typedef void (SWIGSTDCALL* SWIG_CallbackMakeCallback)(void);
+typedef void(SWIGSTDCALL* SWIG_CallbackMakeCallback)(void);
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Dali_new_EventThreadCallback(SWIG_CallbackMakeCallback callbackOnMakeCallback) {
-  void * jresult ;
-  void (*arg1)(void) = (void (*)(void)) 0 ;
-  Dali::EventThreadCallback *result = 0 ;
-  Dali::CallbackBase * callbackBase = 0 ;
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_EventThreadCallback(SWIG_CallbackMakeCallback callbackOnMakeCallback)
+{
+  void* jresult;
+  void (*arg1)(void)                      = (void (*)(void))0;
+  Dali::EventThreadCallback* result       = 0;
+  Dali::CallbackBase*        callbackBase = 0;
 
-  arg1 = (void (*)(void))callbackOnMakeCallback;
-  callbackBase = (Dali::CallbackBase *)Dali::MakeCallback(arg1);
+  arg1         = (void (*)(void))callbackOnMakeCallback;
+  callbackBase = (Dali::CallbackBase*)Dali::MakeCallback(arg1);
 
   {
-    try {
-      result = (Dali::EventThreadCallback *)new Dali::EventThreadCallback(callbackBase);
+    try
+    {
+      result = (Dali::EventThreadCallback*)new Dali::EventThreadCallback(callbackBase);
       DALI_LOG_DEBUG_INFO("New EventThreadCallback Trigger Id(%d)\n", result->GetId());
-    } catch (std::out_of_range& e) {
+    }
+    catch(std::out_of_range& e)
+    {
       {
         delete result;
         delete callbackBase;
-        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what())); return 0;
+        SWIG_CSharpException(SWIG_IndexError, const_cast<char*>(e.what()));
+        return 0;
       };
-    } catch (std::exception& e) {
+    }
+    catch(std::exception& e)
+    {
       {
         delete result;
         delete callbackBase;
-        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what())); return 0;
+        SWIG_CSharpException(SWIG_RuntimeError, const_cast<char*>(e.what()));
+        return 0;
       };
-    } catch (Dali::DaliException e) {
+    }
+    catch(Dali::DaliException e)
+    {
       {
         delete result;
         delete callbackBase;
-        SWIG_CSharpException(SWIG_UnknownError, e.condition); return 0;
+        SWIG_CSharpException(SWIG_UnknownError, e.condition);
+        return 0;
       };
-    } catch (...) {
+    }
+    catch(...)
+    {
       {
         delete result;
         delete callbackBase;
-        SWIG_CSharpException(SWIG_UnknownError, "unknown error"); return 0;
+        SWIG_CSharpException(SWIG_UnknownError, "unknown error");
+        return 0;
       };
     }
   }
-  jresult = (void *)result;
+  jresult = (void*)result;
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_EventThreadCallback(void* csEventThreadCallback)
+{
+  Dali::EventThreadCallback* eventThreadCallback = (Dali::EventThreadCallback*)0;
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_EventThreadCallback(void * csEventThreadCallback) {
-  Dali::EventThreadCallback *eventThreadCallback = (Dali::EventThreadCallback *) 0 ;
-
-  eventThreadCallback = (Dali::EventThreadCallback *)csEventThreadCallback;
+  eventThreadCallback = (Dali::EventThreadCallback*)csEventThreadCallback;
   {
-    try {
+    try
+    {
       delete eventThreadCallback;
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
-
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_EventThreadCallback_Trigger(void* jarg1)
+{
+  Dali::EventThreadCallback* arg1 = (Dali::EventThreadCallback*)0;
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_EventThreadCallback_Trigger(void * jarg1) {
-  Dali::EventThreadCallback *arg1 = (Dali::EventThreadCallback *) 0 ;
-
-  arg1 = (Dali::EventThreadCallback *)jarg1;
+  arg1 = (Dali::EventThreadCallback*)jarg1;
   {
-    try {
+    try
+    {
       (arg1)->Trigger();
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
-
 }
 
 #ifdef __cplusplus
 }
 #endif //CSHARP_EVENT_THREAD_CALLBACK
-

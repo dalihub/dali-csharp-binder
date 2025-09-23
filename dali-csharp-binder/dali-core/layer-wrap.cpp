@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,8 +31,6 @@ extern "C" {
 
 // Property
 
-
-
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Layer_Property_BEHAVIOR_get()
 {
   int jresult;
@@ -44,10 +42,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Layer_Property_BEHAVIOR_get()
 }
 
 // Creation
-
-
-
-
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_New()
 {
@@ -66,7 +60,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_New()
   return jresult;
 }
 
-
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Layer(void* jarg1)
 {
   Dali::Layer* arg1 = (Dali::Layer*)0;
@@ -81,14 +74,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Layer(void* jarg1)
   }
 }
 
-
-
 // Method
-
-
-
-
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_RaiseToTop(void* jarg1)
 {
@@ -297,8 +283,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_GetClippingBox(void* jarg1)
   jresult = new Dali::ClippingBox((const Dali::ClippingBox&)result);
   return jresult;
 }
-
-
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetSortFunction(void* jarg1, void* jarg2)
 {

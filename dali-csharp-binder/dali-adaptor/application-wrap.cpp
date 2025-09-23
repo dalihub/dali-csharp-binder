@@ -94,7 +94,7 @@ void GenerationArgV(int argc, char* argv)
   }
 
   gArgV[argc] = NULL;
-  gArgC        = argc;
+  gArgC       = argc;
 }
 
 } // unnamed namespace
@@ -796,8 +796,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_LowMemorySignal(void* jarg1
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationChangedSignal(void* jarg1)
 {
-  void*                                   jresult;
-  Dali::Application*                      arg1   = (Dali::Application*)0;
+  void*                                                  jresult;
+  Dali::Application*                                     arg1   = (Dali::Application*)0;
   Dali::Application::DeviceOrientationChangedSignalType* result = 0;
 
   arg1 = (Dali::Application*)jarg1;
@@ -946,8 +946,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_TaskLowMemorySignal(void* a
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_TaskDeviceOrientationChangedSignal(void* app)
 {
-  void*                                   jresult;
-  Dali::Application*                      application = (Dali::Application*)0;
+  void*                                                  jresult;
+  Dali::Application*                                     application = (Dali::Application*)0;
   Dali::Application::DeviceOrientationChangedSignalType* result      = 0;
 
   application = (Dali::Application*)app;
@@ -1208,9 +1208,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_delete_LowMemorySignalType(v
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationChangedSignalType_Empty(void* jarg1)
 {
-  unsigned int                                            jresult;
+  unsigned int                                                 jresult;
   Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)0;
-  bool                                                    result;
+  bool                                                         result;
 
   arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)jarg1;
   {
@@ -1226,9 +1226,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationCha
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationChangedSignalType_GetConnectionCount(void* jarg1)
 {
-  unsigned long                                           jresult;
+  unsigned long                                                jresult;
   Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)0;
-  std::size_t                                             result;
+  std::size_t                                                  result;
 
   arg1 = (Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>*)jarg1;
   {
@@ -1299,7 +1299,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_DeviceOrientationChangedSign
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_new_DeviceOrientationChangedSignalType()
 {
-  void*                                                   jresult;
+  void*                                                        jresult;
   Dali::Signal<void(Dali::DeviceStatus::Orientation::Status)>* result = 0;
 
   {
@@ -1633,9 +1633,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int nuiArgc, ch
     return 0;
   }
   std::string styleSheet(nuiStyleSheet);
-  windowMode  = (Dali::Application::WINDOW_MODE)nuiWindowMode;
-  rectp = (Dali::PositionSize*)initRectangle;
-  windowType  = (Dali::WindowType)nuiWindowType;
+  windowMode = (Dali::Application::WINDOW_MODE)nuiWindowMode;
+  rectp      = (Dali::PositionSize*)initRectangle;
+  windowType = (Dali::WindowType)nuiWindowType;
 
   if(!rectp)
   {
@@ -1792,9 +1792,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_FlushUpdateMessages(void* ja
   CALL_CATCH_EXCEPTION();
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_SetApplicationLocale(void* pApplication, char * localeString) {
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_SetApplicationLocale(void* pApplication, char* localeString)
+{
   Dali::Application* application = (Dali::Application*)pApplication;
-  std::string locale = localeString ? localeString : "";
+  std::string        locale      = localeString ? localeString : "";
   try
   {
     Dali::DevelApplication::SetApplicationLocale(*application, locale);

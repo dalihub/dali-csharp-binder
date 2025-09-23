@@ -21,10 +21,9 @@ btSphereSphereCollisionAlgorithm_CreateFunc* btSphereSphereCollisionAlgorithm_Cr
   return new btSphereSphereCollisionAlgorithm::CreateFunc();
 }
 
-
-btSphereSphereCollisionAlgorithm* btSphereSphereCollisionAlgorithm_new(btPersistentManifold* mf,
-  const btCollisionAlgorithmConstructionInfo* ci, const btCollisionObjectWrapper* col0Wrap,
-  const btCollisionObjectWrapper* col1Wrap)
+btSphereSphereCollisionAlgorithm* btSphereSphereCollisionAlgorithm_new(btPersistentManifold*                       mf,
+                                                                       const btCollisionAlgorithmConstructionInfo* ci, const btCollisionObjectWrapper* col0Wrap,
+                                                                       const btCollisionObjectWrapper* col1Wrap)
 {
   return new btSphereSphereCollisionAlgorithm(mf, *ci, col0Wrap, col1Wrap);
 }

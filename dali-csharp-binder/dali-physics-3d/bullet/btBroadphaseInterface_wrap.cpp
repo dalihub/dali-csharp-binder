@@ -17,6 +17,7 @@
 #include <BulletCollision/BroadphaseCollision/btOverlappingPairCache.h>
 
 #include "conversion.h"
+
 #include "btBroadphaseInterface_wrap.h"
 
 btBroadphaseAabbCallbackWrapper::btBroadphaseAabbCallbackWrapper(p_btBroadphaseAabbCallback_process processCallback)
@@ -29,7 +30,6 @@ bool btBroadphaseAabbCallbackWrapper::process(const btBroadphaseProxy* proxy)
   return _processCallback(proxy);
 }
 
-
 btBroadphaseRayCallbackWrapper::btBroadphaseRayCallbackWrapper(p_btBroadphaseAabbCallback_process processCallback)
 {
   _processCallback = processCallback;
@@ -40,12 +40,10 @@ bool btBroadphaseRayCallbackWrapper::process(const btBroadphaseProxy* proxy)
   return _processCallback(proxy);
 }
 
-
 btBroadphaseAabbCallbackWrapper* btBroadphaseAabbCallbackWrapper_new(p_btBroadphaseAabbCallback_process processCallback)
 {
   return new btBroadphaseAabbCallbackWrapper(processCallback);
 }
-
 
 bool btBroadphaseAabbCallback_process(btBroadphaseAabbCallback* obj, const btBroadphaseProxy* proxy)
 {
@@ -57,12 +55,10 @@ void btBroadphaseAabbCallback_delete(btBroadphaseAabbCallback* obj)
   delete obj;
 }
 
-
 btBroadphaseRayCallbackWrapper* btBroadphaseRayCallbackWrapper_new(p_btBroadphaseAabbCallback_process processCallback)
 {
   return new btBroadphaseRayCallbackWrapper(processCallback);
 }
-
 
 btScalar btBroadphaseRayCallback_getLambda_max(btBroadphaseRayCallback* obj)
 {
@@ -70,7 +66,7 @@ btScalar btBroadphaseRayCallback_getLambda_max(btBroadphaseRayCallback* obj)
 }
 
 void btBroadphaseRayCallback_getRayDirectionInverse(btBroadphaseRayCallback* obj,
-  btVector3* value)
+                                                    btVector3*               value)
 {
   BTVECTOR3_SET(value, obj->m_rayDirectionInverse);
 }
@@ -86,14 +82,13 @@ void btBroadphaseRayCallback_setLambda_max(btBroadphaseRayCallback* obj, btScala
 }
 
 void btBroadphaseRayCallback_setRayDirectionInverse(btBroadphaseRayCallback* obj,
-  const btVector3* value)
+                                                    const btVector3*         value)
 {
   BTVECTOR3_COPY(&obj->m_rayDirectionInverse, value);
 }
 
-
 void btBroadphaseInterface_aabbTest(btBroadphaseInterface* obj, const btVector3* aabbMin,
-  const btVector3* aabbMax, btBroadphaseAabbCallback* callback)
+                                    const btVector3* aabbMax, btBroadphaseAabbCallback* callback)
 {
   BTVECTOR3_IN(aabbMin);
   BTVECTOR3_IN(aabbMax);
@@ -101,29 +96,29 @@ void btBroadphaseInterface_aabbTest(btBroadphaseInterface* obj, const btVector3*
 }
 
 void btBroadphaseInterface_calculateOverlappingPairs(btBroadphaseInterface* obj,
-  btDispatcher* dispatcher)
+                                                     btDispatcher*          dispatcher)
 {
   obj->calculateOverlappingPairs(dispatcher);
 }
 
 btBroadphaseProxy* btBroadphaseInterface_createProxy(btBroadphaseInterface* obj,
-  const btVector3* aabbMin, const btVector3* aabbMax, int shapeType, void* userPtr,
-  int collisionFilterGroup, int collisionFilterMask, btDispatcher* dispatcher)
+                                                     const btVector3* aabbMin, const btVector3* aabbMax, int shapeType, void* userPtr,
+                                                     int collisionFilterGroup, int collisionFilterMask, btDispatcher* dispatcher)
 {
   BTVECTOR3_IN(aabbMin);
   BTVECTOR3_IN(aabbMax);
   return obj->createProxy(BTVECTOR3_USE(aabbMin), BTVECTOR3_USE(aabbMax), shapeType,
-    userPtr, collisionFilterGroup, collisionFilterMask, dispatcher);
+                          userPtr, collisionFilterGroup, collisionFilterMask, dispatcher);
 }
 
 void btBroadphaseInterface_destroyProxy(btBroadphaseInterface* obj, btBroadphaseProxy* proxy,
-  btDispatcher* dispatcher)
+                                        btDispatcher* dispatcher)
 {
   obj->destroyProxy(proxy, dispatcher);
 }
 
 void btBroadphaseInterface_getAabb(btBroadphaseInterface* obj, btBroadphaseProxy* proxy,
-  btVector3* aabbMin, btVector3* aabbMax)
+                                   btVector3* aabbMin, btVector3* aabbMax)
 {
   BTVECTOR3_DEF(aabbMin);
   BTVECTOR3_DEF(aabbMax);
@@ -133,7 +128,7 @@ void btBroadphaseInterface_getAabb(btBroadphaseInterface* obj, btBroadphaseProxy
 }
 
 void btBroadphaseInterface_getBroadphaseAabb(btBroadphaseInterface* obj, btVector3* aabbMin,
-  btVector3* aabbMax)
+                                             btVector3* aabbMax)
 {
   BTVECTOR3_DEF(aabbMin);
   BTVECTOR3_DEF(aabbMax);
@@ -153,7 +148,7 @@ void btBroadphaseInterface_printStats(btBroadphaseInterface* obj)
 }
 
 void btBroadphaseInterface_rayTest(btBroadphaseInterface* obj, const btVector3* rayFrom,
-  const btVector3* rayTo, btBroadphaseRayCallback* rayCallback)
+                                   const btVector3* rayTo, btBroadphaseRayCallback* rayCallback)
 {
   BTVECTOR3_IN(rayFrom);
   BTVECTOR3_IN(rayTo);
@@ -161,7 +156,7 @@ void btBroadphaseInterface_rayTest(btBroadphaseInterface* obj, const btVector3* 
 }
 
 void btBroadphaseInterface_rayTest2(btBroadphaseInterface* obj, const btVector3* rayFrom,
-  const btVector3* rayTo, btBroadphaseRayCallback* rayCallback, const btVector3* aabbMin)
+                                    const btVector3* rayTo, btBroadphaseRayCallback* rayCallback, const btVector3* aabbMin)
 {
   BTVECTOR3_IN(rayFrom);
   BTVECTOR3_IN(rayTo);
@@ -170,15 +165,15 @@ void btBroadphaseInterface_rayTest2(btBroadphaseInterface* obj, const btVector3*
 }
 
 void btBroadphaseInterface_rayTest3(btBroadphaseInterface* obj, const btVector3* rayFrom,
-  const btVector3* rayTo, btBroadphaseRayCallback* rayCallback, const btVector3* aabbMin,
-  const btVector3* aabbMax)
+                                    const btVector3* rayTo, btBroadphaseRayCallback* rayCallback, const btVector3* aabbMin,
+                                    const btVector3* aabbMax)
 {
   BTVECTOR3_IN(rayFrom);
   BTVECTOR3_IN(rayTo);
   BTVECTOR3_IN(aabbMin);
   BTVECTOR3_IN(aabbMax);
   obj->rayTest(BTVECTOR3_USE(rayFrom), BTVECTOR3_USE(rayTo), *rayCallback, BTVECTOR3_USE(aabbMin),
-    BTVECTOR3_USE(aabbMax));
+               BTVECTOR3_USE(aabbMax));
 }
 
 void btBroadphaseInterface_resetPool(btBroadphaseInterface* obj, btDispatcher* dispatcher)
@@ -187,7 +182,7 @@ void btBroadphaseInterface_resetPool(btBroadphaseInterface* obj, btDispatcher* d
 }
 
 void btBroadphaseInterface_setAabb(btBroadphaseInterface* obj, btBroadphaseProxy* proxy,
-  const btVector3* aabbMin, const btVector3* aabbMax, btDispatcher* dispatcher)
+                                   const btVector3* aabbMin, const btVector3* aabbMax, btDispatcher* dispatcher)
 {
   BTVECTOR3_IN(aabbMin);
   BTVECTOR3_IN(aabbMax);

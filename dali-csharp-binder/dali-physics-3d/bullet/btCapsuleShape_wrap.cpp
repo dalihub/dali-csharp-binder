@@ -41,12 +41,10 @@ int btCapsuleShape_getUpAxis(btCapsuleShape* obj)
   return obj->getUpAxis();
 }
 
-
 btCapsuleShapeX* btCapsuleShapeX_new(btScalar radius, btScalar height)
 {
   return new btCapsuleShapeX(radius, height);
 }
-
 
 btCapsuleShapeZ* btCapsuleShapeZ_new(btScalar radius, btScalar height)
 {

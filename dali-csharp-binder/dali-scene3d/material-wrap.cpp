@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2025 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Material_New_SWIG_0()
 
   return new Dali::Scene3D::Material((const Dali::Scene3D::Material&)result);
 }
-
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Material_SWIG_1(void* csModel)
 {
@@ -97,7 +96,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Material_Assign(void* csDestination, vo
 
   return (void*)result;
 }
-
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Material_property_NAME_get()
 {

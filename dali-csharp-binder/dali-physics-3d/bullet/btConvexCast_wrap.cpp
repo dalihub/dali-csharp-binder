@@ -15,6 +15,7 @@
 #include <BulletCollision/NarrowPhaseCollision/btConvexCast.h>
 
 #include "conversion.h"
+
 #include "btConvexCast_wrap.h"
 
 btConvexCast_CastResult* btConvexCast_CastResult_new()
@@ -69,13 +70,13 @@ void btConvexCast_CastResult_getNormal(btConvexCast_CastResult* obj, btVector3* 
 }
 
 void btConvexCast_CastResult_reportFailure(btConvexCast_CastResult* obj, int errNo,
-  int numIterations)
+                                           int numIterations)
 {
   obj->reportFailure(errNo, numIterations);
 }
 
 void btConvexCast_CastResult_setAllowedPenetration(btConvexCast_CastResult* obj,
-  btScalar value)
+                                                   btScalar                 value)
 {
   obj->m_allowedPenetration = value;
 }
@@ -115,16 +116,15 @@ void btConvexCast_CastResult_delete(btConvexCast_CastResult* obj)
   delete obj;
 }
 
-
 bool btConvexCast_calcTimeOfImpact(btConvexCast* obj, const btTransform* fromA, const btTransform* toA,
-  const btTransform* fromB, const btTransform* toB, btConvexCast_CastResult* result)
+                                   const btTransform* fromB, const btTransform* toB, btConvexCast_CastResult* result)
 {
   BTTRANSFORM_IN(fromA);
   BTTRANSFORM_IN(toA);
   BTTRANSFORM_IN(fromB);
   BTTRANSFORM_IN(toB);
   return obj->calcTimeOfImpact(BTTRANSFORM_USE(fromA), BTTRANSFORM_USE(toA), BTTRANSFORM_USE(fromB),
-    BTTRANSFORM_USE(toB), *result);
+                               BTTRANSFORM_USE(toB), *result);
 }
 
 void btConvexCast_delete(btConvexCast* obj)

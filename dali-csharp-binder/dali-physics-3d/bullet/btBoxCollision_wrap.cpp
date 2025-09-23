@@ -15,6 +15,7 @@
 #include <BulletCollision/Gimpact/btBoxCollision.h>
 
 #include "conversion.h"
+
 #include "btBoxCollision_wrap.h"
 
 BT_BOX_BOX_TRANSFORM_CACHE* BT_BOX_BOX_TRANSFORM_CACHE_new()
@@ -84,7 +85,6 @@ void BT_BOX_BOX_TRANSFORM_CACHE_delete(BT_BOX_BOX_TRANSFORM_CACHE* obj)
   delete obj;
 }
 
-
 btAABB* btAABB_new()
 {
   return new btAABB();
@@ -99,7 +99,7 @@ btAABB* btAABB_new2(const btVector3* V1, const btVector3* V2, const btVector3* V
 }
 
 btAABB* btAABB_new3(const btVector3* V1, const btVector3* V2, const btVector3* V3,
-  btScalar margin)
+                    btScalar margin)
 {
   BTVECTOR3_IN(V1);
   BTVECTOR3_IN(V2);
@@ -142,14 +142,14 @@ bool btAABB_collide_ray(btAABB* obj, const btVector3* vorigin, const btVector3* 
 }
 
 bool btAABB_collide_triangle_exact(btAABB* obj, const btVector3* p1, const btVector3* p2,
-  const btVector3* p3, const btVector4* triangle_plane)
+                                   const btVector3* p3, const btVector4* triangle_plane)
 {
   BTVECTOR3_IN(p1);
   BTVECTOR3_IN(p2);
   BTVECTOR3_IN(p3);
   BTVECTOR4_IN(triangle_plane);
   return obj->collide_triangle_exact(BTVECTOR3_USE(p1), BTVECTOR3_USE(p2), BTVECTOR3_USE(p3),
-    BTVECTOR4_USE(triangle_plane));
+                                     BTVECTOR4_USE(triangle_plane));
 }
 
 void btAABB_copy_with_margin(btAABB* obj, const btAABB* other, btScalar margin)
@@ -202,7 +202,7 @@ void btAABB_merge(btAABB* obj, const btAABB* box)
 }
 
 bool btAABB_overlapping_trans_cache(btAABB* obj, const btAABB* box, const BT_BOX_BOX_TRANSFORM_CACHE* transcache,
-  bool fulltest)
+                                    bool fulltest)
 {
   return obj->overlapping_trans_cache(*box, *transcache, fulltest);
 }
@@ -225,7 +225,7 @@ eBT_PLANE_INTERSECTION_TYPE btAABB_plane_classify(btAABB* obj, const btVector4* 
 }
 
 void btAABB_projection_interval(btAABB* obj, const btVector3* direction, btScalar* vmin,
-  btScalar* vmax)
+                                btScalar* vmax)
 {
   BTVECTOR3_IN(direction);
   obj->projection_interval(BTVECTOR3_USE(direction), *vmin, *vmax);

@@ -28,11 +28,12 @@
 extern "C" {
 #endif
 
-using SayCallbackType = void(*)(const char*);
+using SayCallbackType = void (*)(const char*);
 
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_say(const char* arg1_text, bool arg2_discardable, SayCallbackType arg3_callback)
 {
-  Dali::AtspiAccessibility::Say(std::string{arg1_text}, arg2_discardable, [arg3_callback](std::string status) {
+  Dali::AtspiAccessibility::Say(std::string{arg1_text}, arg2_discardable, [arg3_callback](std::string status)
+  {
     arg3_callback(status.c_str());
   });
 }
@@ -83,13 +84,13 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterEnabledDisabledSig
 {
   using Dali::Accessibility::Bridge;
 
-  if (!enabledSignalHandler)
+  if(!enabledSignalHandler)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Signal handler is null", NAMEOF(enabledSignalHandler));
     return;
   }
 
-  if (!disabledSignalHandler)
+  if(!disabledSignalHandler)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Signal handler is null", NAMEOF(disabledSignalHandler));
     return;
@@ -103,13 +104,13 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterScreenReaderEnable
 {
   using Dali::Accessibility::Bridge;
 
-  if (!screenReaderEnabledSignalHandler)
+  if(!screenReaderEnabledSignalHandler)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Signal handler is null", NAMEOF(screenReaderEnabledSignalHandler));
     return;
   }
 
-  if (!screenReaderDisabledSignalHandler)
+  if(!screenReaderDisabledSignalHandler)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Signal handler is null", NAMEOF(screenReaderDisabledSignalHandler));
     return;

@@ -31,11 +31,9 @@
 // This class is exported from the DaliWrapper.dll
 class DALIWRAPPER_API CDaliWrapper
 {
-
 public:
   CDaliWrapper(void);
   // TODO: add your methods here.
-
 };
 
 extern DALIWRAPPER_API int nDaliWrapper;

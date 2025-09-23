@@ -18,6 +18,7 @@
 #include <LinearMath/btSerializer.h>
 
 #include "conversion.h"
+
 #include "btCollisionObject_wrap.h"
 
 btCollisionObject* btCollisionObject_new()
@@ -170,7 +171,7 @@ btScalar btCollisionObject_getSpinningFriction(btCollisionObject* obj)
   return obj->getSpinningFriction();
 }
 
-int btCollisionObject_getWorldArrayIndex(btCollisionObject * obj)
+int btCollisionObject_getWorldArrayIndex(btCollisionObject* obj)
 {
   return obj->getWorldArrayIndex();
 }
@@ -240,13 +241,13 @@ bool btCollisionObject_mergesSimulationIslands(btCollisionObject* obj)
   return obj->mergesSimulationIslands();
 }
 
-void btCollisionObject_removeCustomDebugColor(btCollisionObject * obj)
+void btCollisionObject_removeCustomDebugColor(btCollisionObject* obj)
 {
   obj->removeCustomDebugColor();
 }
 
 const char* btCollisionObject_serialize(btCollisionObject* obj, void* dataBuffer,
-  btSerializer* serializer)
+                                        btSerializer* serializer)
 {
   return obj->serialize(dataBuffer, serializer);
 }
@@ -262,7 +263,7 @@ void btCollisionObject_setActivationState(btCollisionObject* obj, int newState)
 }
 
 void btCollisionObject_setAnisotropicFriction(btCollisionObject* obj, const btVector3* anisotropicFriction,
-  int frictionMode)
+                                              int frictionMode)
 {
   BTVECTOR3_IN(anisotropicFriction);
   obj->setAnisotropicFriction(BTVECTOR3_USE(anisotropicFriction), frictionMode);
@@ -304,7 +305,7 @@ void btCollisionObject_setContactProcessingThreshold(btCollisionObject* obj, btS
 }
 
 void btCollisionObject_setContactStiffnessAndDamping(btCollisionObject* obj, btScalar stiffness,
-  btScalar damping)
+                                                     btScalar damping)
 {
   obj->setContactStiffnessAndDamping(stiffness, damping);
 }
@@ -330,7 +331,7 @@ void btCollisionObject_setHitFraction(btCollisionObject* obj, btScalar hitFracti
 }
 
 void btCollisionObject_setIgnoreCollisionCheck(btCollisionObject* obj, const btCollisionObject* co,
-  bool ignoreCollisionCheck)
+                                               bool ignoreCollisionCheck)
 {
   obj->setIgnoreCollisionCheck(co, ignoreCollisionCheck);
 }
@@ -373,7 +374,7 @@ void btCollisionObject_setSpinningFriction(btCollisionObject* obj, btScalar fric
   obj->setSpinningFriction(frict);
 }
 
-void btCollisionObject_setWorldArrayIndex(btCollisionObject * obj, int ix)
+void btCollisionObject_setWorldArrayIndex(btCollisionObject* obj, int ix)
 {
   obj->setWorldArrayIndex(ix);
 }
