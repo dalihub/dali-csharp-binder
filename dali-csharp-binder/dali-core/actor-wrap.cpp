@@ -700,6 +700,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_CHILDREN_DEPTH_INDEX_POLICY_get
   return Dali::DevelActor::Property::CHILDREN_DEPTH_INDEX_POLICY;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_IGNORED_get()
+{
+  return Dali::DevelActor::Property::IGNORED;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_WORLD_IGNORED_get()
+{
+  return Dali::DevelActor::Property::WORLD_IGNORED;
+}
+
 // Creation
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Actor(void* jarg1)
