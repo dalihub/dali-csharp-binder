@@ -17866,36 +17866,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyFrames_Add__SWIG_0(void* jarg1, float
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyFrames_Add__SWIG_1(void* jarg1, float jarg2, void* jarg3, void* jarg4)
 {
-  Dali::KeyFrames*       arg1 = (Dali::KeyFrames*)0;
-  float                  arg2;
-  Dali::Property::Value  arg3;
-  Dali::AlphaFunction    arg4;
-  Dali::Property::Value* argp3;
-  Dali::AlphaFunction*   argp4;
-
-  arg1  = (Dali::KeyFrames*)jarg1;
-  arg2  = (float)jarg2;
-  argp3 = (Dali::Property::Value*)jarg3;
-  if(!argp3)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Property::Value", 0);
-    return;
-  }
-  arg3  = *argp3;
-  argp4 = (Dali::AlphaFunction*)jarg4;
-  if(!argp4)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::AlphaFunction", 0);
-    return;
-  }
-  arg4 = *argp4;
-  {
-    try
-    {
-      (arg1)->Add(arg2, arg3, arg4);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
+  DALI_LOG_ERROR("Deprecated! do not use KeyFrames.Add with alpha function!\n");
+  CSharp_Dali_KeyFrames_Add__SWIG_0(jarg1, jarg2, jarg3);
 }
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyFrames_GetKeyFrameCount(void* keyFrames)
