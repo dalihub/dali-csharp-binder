@@ -211,6 +211,32 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_AddBlurOpacityAnima
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_SetSourceActor(void* pBackgroundBlurEffect, void* pSourceActor)
+{
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*)pBackgroundBlurEffect;
+  Dali::Actor                          sourceActor          = pSourceActor ? *(static_cast<Dali::Actor*>(pSourceActor)) : Dali::Actor();
+  {
+    try
+    {
+      backgroundBlurEffect->SetSourceActor(sourceActor);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_SetStopperActor(void* pBackgroundBlurEffect, void* pStopperActor)
+{
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*)pBackgroundBlurEffect;
+  Dali::Actor                          stopperActor         = pStopperActor ? *(static_cast<Dali::Actor*>(pStopperActor)) : Dali::Actor();
+  {
+    try
+    {
+      backgroundBlurEffect->SetStopperActor(stopperActor);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_FinishedSignal_Connect(void* caller, void* handler)
 {
   GUARD_ON_NULL_RET(caller);
