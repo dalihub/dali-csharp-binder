@@ -10404,6 +10404,25 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelData_GetPixelFormat(void* nuiHandle)
   return jresult;
 }
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelData_GetStrideBytes(void* nuiHandle)
+{
+  unsigned int     jresult;
+  Dali::PixelData* pixelData = (Dali::PixelData*)0;
+  unsigned int     result;
+
+  pixelData = (Dali::PixelData*)nuiHandle;
+  {
+    try
+    {
+      result = (unsigned int)((Dali::PixelData const*)pixelData)->GetStrideBytes();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* nuiHandle)
 {
   Dali::PixelData*        pixelData = (Dali::PixelData*)nuiHandle;
