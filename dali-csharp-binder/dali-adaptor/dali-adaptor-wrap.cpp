@@ -611,6 +611,24 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetPixelFormat(void* jarg1)
   return jresult;
 }
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetStrideBytes(void* jarg1)
+{
+  unsigned int              jresult;
+  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
+  unsigned int              result;
+
+  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  {
+    try
+    {
+      result = (unsigned int)((Dali::Devel::PixelBuffer const*)arg1)->GetStrideBytes();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  jresult = result;
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_0(void* jarg1, void* jarg2, float jarg3, bool jarg4)
 {
   Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;

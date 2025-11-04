@@ -8,46 +8,6 @@
  * interface file instead.
  * ----------------------------------------------------------------------------- */
 
-#ifndef SWIGCSHARP
-#define SWIGCSHARP
-#endif
-
-/* -----------------------------------------------------------------------------
- *  This section contains generic SWIG labels for method/variable
- *  declarations/attributes, and other compiler dependent labels.
- * ----------------------------------------------------------------------------- */
-
-/* attribute recognised by some compilers to avoid 'unused' warnings */
-#ifndef SWIG_MSC_UNSUPPRESS_4505
-#if defined(_MSC_VER)
-#pragma warning(disable : 4505) /* unreferenced local function has been removed */
-#endif
-#endif
-
-/* Deal with Microsoft's attempt at deprecating C standard runtime functions */
-#if !defined(SWIG_NO_CRT_SECURE_NO_DEPRECATE) && defined(_MSC_VER) && !defined(_CRT_SECURE_NO_DEPRECATE)
-#define _CRT_SECURE_NO_DEPRECATE
-#endif
-
-/* Deal with Microsoft's attempt at deprecating methods in the standard C++ library */
-#if !defined(SWIG_NO_SCL_SECURE_NO_DEPRECATE) && defined(_MSC_VER) && !defined(_SCL_SECURE_NO_DEPRECATE)
-#define _SCL_SECURE_NO_DEPRECATE
-#endif
-
-/* Deal with Apple's deprecated 'AssertMacros.h' from Carbon-framework */
-#if defined(__APPLE__) && !defined(__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES)
-#define __ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES 0
-#endif
-
-/* Intel's compiler complains if a variable which was never initialised is
- * cast to void, which is a common idiom which we use to indicate that we
- * are aware a variable isn't used.  So we just silence that warning.
- * See: https://github.com/swig/swig/issues/192 for more discussion.
- */
-#ifdef __INTEL_COMPILER
-#pragma warning disable 592
-#endif
-
 // EXTERNAL INCLUDES
 #include <stdio.h>
 #include <stdlib.h>
@@ -10444,6 +10404,25 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelData_GetPixelFormat(void* nuiHandle)
   return jresult;
 }
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelData_GetStrideBytes(void* nuiHandle)
+{
+  unsigned int     jresult;
+  Dali::PixelData* pixelData = (Dali::PixelData*)0;
+  unsigned int     result;
+
+  pixelData = (Dali::PixelData*)nuiHandle;
+  {
+    try
+    {
+      result = (unsigned int)((Dali::PixelData const*)pixelData)->GetStrideBytes();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+  return jresult;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelData_GenerateUrl(void* nuiHandle)
 {
   Dali::PixelData*        pixelData = (Dali::PixelData*)nuiHandle;
@@ -17866,36 +17845,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyFrames_Add__SWIG_0(void* jarg1, float
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyFrames_Add__SWIG_1(void* jarg1, float jarg2, void* jarg3, void* jarg4)
 {
-  Dali::KeyFrames*       arg1 = (Dali::KeyFrames*)0;
-  float                  arg2;
-  Dali::Property::Value  arg3;
-  Dali::AlphaFunction    arg4;
-  Dali::Property::Value* argp3;
-  Dali::AlphaFunction*   argp4;
-
-  arg1  = (Dali::KeyFrames*)jarg1;
-  arg2  = (float)jarg2;
-  argp3 = (Dali::Property::Value*)jarg3;
-  if(!argp3)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Property::Value", 0);
-    return;
-  }
-  arg3  = *argp3;
-  argp4 = (Dali::AlphaFunction*)jarg4;
-  if(!argp4)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::AlphaFunction", 0);
-    return;
-  }
-  arg4 = *argp4;
-  {
-    try
-    {
-      (arg1)->Add(arg2, arg3, arg4);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
+  DALI_LOG_ERROR("Deprecated! do not use KeyFrames.Add with alpha function!\n");
+  CSharp_Dali_KeyFrames_Add__SWIG_0(jarg1, jarg2, jarg3);
 }
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyFrames_GetKeyFrameCount(void* keyFrames)

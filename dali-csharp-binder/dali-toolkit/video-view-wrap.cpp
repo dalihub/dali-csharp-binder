@@ -381,7 +381,25 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_VideoView_GetFrameInterpolationInterval
   return ret;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetNativeImageSourceForCurrentFrame(void* view, void* csNativeImageSource)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_EnableOffscreenFrameRendering(void* view, bool useOffScreenFrame)
+{
+  Dali::Toolkit::VideoView* videoView = (Dali::Toolkit::VideoView*)0;
+  videoView = (Dali::Toolkit::VideoView*)view;
+  if(videoView == nullptr)
+  {
+    DALI_LOG_ERROR("VideoView is nullptr!");
+    return;
+  }
+  {
+    try
+    {
+      Toolkit::DevelVideoView::EnableOffscreenFrameRendering(*videoView, useOffScreenFrame);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetVideoFrameBuffer(void* view, void* csNativeImageSource)
 {
   Dali::Toolkit::VideoView*  videoView         = (Dali::Toolkit::VideoView*)0;
   Dali::NativeImageSourcePtr nativeImageSource = (Dali::NativeImageSource*)csNativeImageSource;
@@ -403,7 +421,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetNativeImageSourceForCurrent
     {
       // The nativeImageSource is a handle (e.g., tbm_surface_h or Dali::NativeImageSource*)
       // We wrap it in Dali::Any to pass to the C++ API.
-      Toolkit::DevelVideoView::SetNativeImageSourceForCurrentFrame(*videoView, nativeImageSource);
+      Toolkit::DevelVideoView::SetVideoFrameBuffer(*videoView, nativeImageSource);
     }
     CALL_CATCH_EXCEPTION();
   }
