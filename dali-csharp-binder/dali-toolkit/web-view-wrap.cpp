@@ -28,6 +28,7 @@
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-context.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-cookie-manager.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-device-list-get.h>
+#include <dali/devel-api/adaptor-framework/web-engine/web-engine-file-chooser-request.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-form-repost-decision.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-frame.h>
 #include <dali/devel-api/adaptor-framework/web-engine/web-engine-hit-test.h>
@@ -1905,6 +1906,30 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebAuthResponseCallback(
   CALL_CATCH_EXCEPTION();
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFileChooserRequestedCallback(void* jarg1, void* jarg2)
+{
+  GUARD_ON_NULL_RET(jarg1);
+
+  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)jarg1;
+
+  try
+  {
+    if(jarg2 != nullptr)
+    {
+      void (*handler)(Dali::WebEngineFileChooserRequest*) = (void (*)(Dali::WebEngineFileChooserRequest*))jarg2;
+      (arg1)->RegisterFileChooserRequestedCallback([handler](std::unique_ptr<Dali::WebEngineFileChooserRequest> request)
+      {
+        handler(request.release());
+      });
+    }
+    else
+    {
+      (arg1)->RegisterFileChooserRequestedCallback(nullptr);
+    }
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUserMediaPermissionRequestCallback(void* jarg1, void* jarg2)
 {
   GUARD_ON_NULL_RET(jarg1);
@@ -2125,6 +2150,185 @@ SWIGEXPORT const char* SWIGSTDCALL CSharp_Dali_DeviceListGet_GetDeviceLabel(void
   }
   char* ret = SWIG_csharp_string_callback(result.c_str());
   return ret;
+}
+
+//----------------------------------WebFileChooserRequest---------------------------------------------------
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WebFileChooserRequest(void* jarg1)
+{
+  if(!jarg1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "WebFileChooserRequest is null", 0);
+    return;
+  }
+
+  Dali::WebEngineFileChooserRequest* arg1 = (Dali::WebEngineFileChooserRequest*)jarg1;
+  {
+    try
+    {
+      delete arg1;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebFileChooserRequest_MultipleFilesAllowed(void* webObj)
+{
+  WEBOBJ_NULL_CHECK(false);
+  Dali::WebEngineFileChooserRequest* arg1      = (Dali::WebEngineFileChooserRequest*)webObj;
+  bool                               isAllowed = false;
+  {
+    try
+    {
+      isAllowed = (arg1)->MultipleFilesAllowed();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return isAllowed;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebFileChooserRequest_AcceptedMimetypes(void* webObj)
+{
+  WEBOBJ_NULL_CHECK(nullptr);
+  Dali::WebEngineFileChooserRequest*     arg1   = (Dali::WebEngineFileChooserRequest*)webObj;
+  std::vector<std::string>*              result = nullptr;
+  {
+    try
+    {
+      std::vector<std::string> mimetypes = (arg1)->AcceptedMimetypes();
+      result                             = new std::vector<std::string>();
+      result->swap(mimetypes);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return (void*)result;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebFileChooserRequest_Cancel(void* webObj)
+{
+  WEBOBJ_NULL_CHECK(false);
+  Dali::WebEngineFileChooserRequest* arg1       = (Dali::WebEngineFileChooserRequest*)webObj;
+  bool                               isCanceled = false;
+  {
+    try
+    {
+      isCanceled = (arg1)->Cancel();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return isCanceled;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebFileChooserRequest_ChooseFiles(void* webObj, char** jarg2, unsigned int jarg3)
+{
+  WEBOBJ_NULL_CHECK(false);
+  if(!jarg2)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return false;
+  }
+
+  Dali::WebEngineFileChooserRequest* arg1      = (Dali::WebEngineFileChooserRequest*)webObj;
+  bool                               isChoosed = false;
+  {
+    try
+    {
+      std::vector<std::string> files;
+      for(unsigned int i = 0; i < jarg3; i++)
+      {
+        if(!jarg2[i])
+        {
+          SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+          return false;
+        }
+        std::string str(jarg2[i]);
+        files.push_back(str);
+      }
+      isChoosed = (arg1)->ChooseFiles(files);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return isChoosed;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebFileChooserRequest_ChooseFile(void* webObj, void* jarg2)
+{
+  WEBOBJ_NULL_CHECK(false);
+  if(!jarg2)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return false;
+  }
+
+  Dali::WebEngineFileChooserRequest* arg1      = (Dali::WebEngineFileChooserRequest*)webObj;
+  bool                               isChoosed = false;
+  {
+    try
+    {
+      std::string file((const char*)jarg2);
+      isChoosed = (arg1)->ChooseFile(file);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return isChoosed;
+}
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AcceptedMimetypes_Count(void* jarg1)
+{
+  if(!jarg1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "AcceptedMimetypes is null", 0);
+    return 0;
+  }
+
+  std::vector<std::string>* arg1  = (std::vector<std::string>*)jarg1;
+  unsigned int              count = 0;
+  {
+    try
+    {
+      count = arg1->size();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return count;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AcceptedMimetypes_GetItem(void* jarg1, unsigned int index)
+{
+  if(!jarg1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "AcceptedMimetypes is null", 0);
+    return nullptr;
+  }
+
+  std::vector<std::string>* arg1     = (std::vector<std::string>*)jarg1;
+  std::string               mimetype;
+  {
+    try
+    {
+      mimetype = arg1->at(index);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  char* jresult = SWIG_csharp_string_callback(mimetype.c_str());
+  return jresult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AcceptedMimetypes(void* jarg1)
+{
+  if(!jarg1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "AcceptedMimetypes is null", 0);
+    return;
+  }
+
+  std::vector<std::string>* arg1 = (std::vector<std::string>*)jarg1;
+  {
+    try
+    {
+      delete arg1;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
 }
 
 //----------------------------------WebBackForwardListItem-----------------------------------------------------
