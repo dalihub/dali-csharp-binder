@@ -4462,6 +4462,40 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetBlur(void* winHandle)
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetFrontBufferRendering(void* winHandle, bool enable)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+
+  if(!CheckingWindowHandle(window)) {
+    return;
+  }
+
+  {
+    try
+    {
+      Dali::DevelWindow::SetFrontBufferRendering(*window, enable);
+    } CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_GetFrontBufferRendering(void* winHandle)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  bool          result = false;
+
+  if(!CheckingWindowHandle(window)) {
+    return false;
+  }
+
+  {
+    try
+    {
+      result = Dali::DevelWindow::GetFrontBufferRendering(*window);
+    } CALL_CATCH_EXCEPTION(false);
+  }
+  return result;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetInsets__SWIG_0(void* winHandle)
 {
   void*         jresult;
