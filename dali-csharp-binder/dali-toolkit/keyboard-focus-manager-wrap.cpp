@@ -23,6 +23,10 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
+/* Callback for returning strings to C# without leaking memory */
+typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
+extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
+
 SWIGINTERN bool Dali_Signal_Sl_Dali_Actor_Sp_Dali_Actor_Sc_Dali_Actor_Sc_Dali_Toolkit_Control_KeyboardFocus_Direction_SP__Sg__Empty(Dali::Signal<Dali::Actor(Dali::Actor, Dali::Actor, Dali::Toolkit::Control::KeyboardFocus::Direction)> const* self)
 {
   return self->Empty();
@@ -630,6 +634,44 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_KeyboardPreFocusChangeSignal(void* jar
     }
     CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_KeyboardFocusManager_GetLastFocusChangeDevice(void* jarg1)
+{
+  int                                         jresult;
+  Dali::Toolkit::KeyboardFocusManager*        arg1 = (Dali::Toolkit::KeyboardFocusManager*)0;
+  Dali::Toolkit::Control::KeyboardFocus::Device result;
+
+  arg1 = (Dali::Toolkit::KeyboardFocusManager*)jarg1;
+  {
+    try
+    {
+      result = (Dali::Toolkit::Control::KeyboardFocus::Device)((Dali::Toolkit::KeyboardFocusManager const*)arg1)->GetLastFocusChangeDevice();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT char* SWIGSTDCALL CSharp_KeyboardFocusManager_GetLastFocusChangeDeviceName(void* jarg1)
+{
+  char*                                jresult;
+  Dali::Toolkit::KeyboardFocusManager* arg1 = (Dali::Toolkit::KeyboardFocusManager*)0;
+  std::string                          result;
+
+  arg1 = (Dali::Toolkit::KeyboardFocusManager*)jarg1;
+  {
+    try
+    {
+      result = ((Dali::Toolkit::KeyboardFocusManager const*)arg1)->GetLastFocusChangeDeviceName();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  return jresult;
 }
 
 #ifdef __cplusplus
