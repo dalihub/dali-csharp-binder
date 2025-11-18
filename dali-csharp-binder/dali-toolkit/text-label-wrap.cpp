@@ -113,6 +113,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_LAYOUT_DIRECTION_POLIC
   return (int)Dali::Toolkit::DevelTextLabel::Property::LAYOUT_DIRECTION_POLICY;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_AUTO_SCROLL_DIRECTION_get()
+{
+  return (int)Dali::Toolkit::DevelTextLabel::Property::AUTO_SCROLL_DIRECTION;
+}
+
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextLabel_Property_ELLIPSIS_MODE_get()
 {
   return (int)Dali::Toolkit::DevelTextLabel::Property::ELLIPSIS_MODE;
