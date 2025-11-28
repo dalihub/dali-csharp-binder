@@ -193,11 +193,11 @@ R NUIViewAccessible::CallMethod(R (*method)(RefObject*, Args...), Args... args) 
 // Standard interfaces (Accessible, Action, Component)
 //
 
-std::string NUIViewAccessible::GetNameRaw() const
+std::pair<std::string, bool> NUIViewAccessible::GetNameRaw() const
 {
   char* name = CallMethod<Interface::ACCESSIBLE>(mTable->getName);
 
-  return StealString(name);
+  return {StealString(name), false};
 }
 
 std::string NUIViewAccessible::GetDescriptionRaw() const
