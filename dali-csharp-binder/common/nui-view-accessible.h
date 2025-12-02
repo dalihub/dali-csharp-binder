@@ -57,7 +57,7 @@ public:
 
   // Standard interfaces (Accessible, Action, Component)
 
-  std::string GetNameRaw() const override;
+  std::pair<std::string, bool> GetNameRaw() const override;
 
   std::string GetDescriptionRaw() const override;
 
