@@ -227,6 +227,8 @@ typedef void(SWIGSTDCALL* SWIG_CSharpExceptionCallback_t)(const char*);
 typedef void(SWIGSTDCALL* SWIG_CSharpExceptionArgumentCallback_t)(const char*, const char*);
 typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
 
+extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
+
 typedef struct
 {
   SWIG_CSharpExceptionCodes      code;

@@ -31,9 +31,6 @@
 extern "C" {
 #endif
 
-typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
-
 enum InternalPropertyReturnType
 {
   NO_ERROR             = 0,

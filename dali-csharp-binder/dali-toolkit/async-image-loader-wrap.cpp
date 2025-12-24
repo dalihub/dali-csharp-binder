@@ -29,8 +29,6 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
-
 using namespace Dali;
 using namespace Dali::Toolkit;
 

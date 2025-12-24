@@ -27,10 +27,6 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-/* Callback for returning strings to C# without leaking memory */
-typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
-
 typedef std::string                                         FontPath;
 typedef std::string                                         FontFamily;
 typedef std::string                                         FontStyle;

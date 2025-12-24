@@ -27,8 +27,6 @@
 #include <dali-csharp-binder/common/common.h>
 #include <dali-csharp-binder/common/slim-custom-view-impl.h>
 
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
-
 SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent const&)> const* self)
 {
   return self->Empty();

@@ -24,8 +24,4 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-/* Callback for returning strings to C# without leaking memory */
-typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
-
 #endif // CONTROL_DEVEL_WRAP_H

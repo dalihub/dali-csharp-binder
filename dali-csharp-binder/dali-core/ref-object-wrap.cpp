@@ -21,8 +21,6 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
-
 // SWIGINTERN - the relevant parts of the generated code can be seen the below.
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_RefObject_SS_const_Sm__SP__Sg__Empty(Dali::Signal<void(Dali::RefObject const*)> const* self)

@@ -43,10 +43,6 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-/* Callback for returning strings to C# without leaking memory */
-using SWIG_CSharpStringHelperCallback = char*(SWIGSTDCALL*)(const char*);
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
-
 #ifdef __cplusplus
 extern "C" {
 #endif

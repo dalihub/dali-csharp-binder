@@ -23,10 +23,6 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-/* Callback for returning strings to C# without leaking memory */
-typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
-
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Toolkit_TextField_SP__Sg__Empty(Dali::Signal<void(Dali::Toolkit::TextField)> const* self)
 {
   return self->Empty();
