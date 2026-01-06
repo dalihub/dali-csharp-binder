@@ -23,10 +23,6 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-/* Callback for returning strings to C# without leaking memory */
-typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
-
 // Since we only support communicate C#-C++ by pointer,
 // We should connect new signal here, who use reference, and emit signal to C# by pointer.
 typedef Dali::InputMethodContext::CallbackData*(SWIGSTDCALL* SWIG_CallbackEventReceived)(Dali::InputMethodContext*, Dali::InputMethodContext::EventData*);

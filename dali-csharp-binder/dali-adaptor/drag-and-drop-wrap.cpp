@@ -24,10 +24,6 @@
 
 using namespace Dali;
 
-/* Callback for returning strings to C# without leaking memory */
-typedef char*(SWIGSTDCALL* SWIG_CSharpStringHelperCallback)(const char*);
-extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
-
 static char        dataEmptyMsg[] = "Data is Empty!";
 static const char* nullExceptMsg  = "Attempt to dereference null Dali::Adaptor::DragAndDrop";
 
