@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,13 +28,7 @@
 #include <dali/devel-api/atspi-interfaces/text.h>
 #include <dali/devel-api/atspi-interfaces/value.h>
 
-class NUIViewAccessible : public Dali::Toolkit::DevelControl::ControlAccessible,
-                          public virtual Dali::Accessibility::EditableText, // includes Text
-                          public virtual Dali::Accessibility::Selection,
-                          public virtual Dali::Accessibility::Value,
-                          public virtual Dali::Accessibility::Table,
-                          public virtual Dali::Accessibility::TableCell
-
+class NUIViewAccessible : public Dali::Toolkit::DevelControl::ControlAccessible
 {
 public:
   struct AccessibilityDelegate; // Forward declaration
@@ -83,8 +77,6 @@ public:
 
   bool ScrollToChild(Dali::Actor child) override;
 
-  Dali::Accessibility::AtspiInterfaces DoGetInterfaces() const override;
-
   // Value interface
 
   double GetMinimum() const override;
@@ -117,7 +109,7 @@ public:
 
   bool SetRangeOfSelection(std::size_t selectionIndex, std::size_t startOffset, std::size_t endOffset) override;
 
-  Dali::Rect<> GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Dali::Accessibility::CoordinateType type) override;
+  Dali::Rect<float> GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Dali::Accessibility::CoordinateType type) override;
 
   // EditableText interface
 
@@ -217,6 +209,9 @@ public:
   int GetCellColumnSpan() const override;
 
   Dali::Accessibility::TableCell::RowColumnSpanType GetCellRowColumnSpan() const override;
+
+protected:
+  Dali::Accessibility::AtspiInterfaces DoGetInterfaces() const override;
 
 private:
   // Points to memory managed from the C# side
