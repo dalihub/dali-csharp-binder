@@ -83,6 +83,28 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WindowBlurInfo_SWIG_1(int nuiBlurTy
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WindowBlurInfo_SWIG_2(int nuiBlurType, int nuiBlurRadius, int nuiCornerRadius, void* nuiDimInfo)
+{
+  void*                 jresult;
+  Dali::WindowBlurInfo* result = 0;
+
+  Dali::WindowBlurType blurType     = (Dali::WindowBlurType)nuiBlurType;
+  int                  blurRadius   = nuiBlurRadius;
+  int                  cornerRadius = nuiCornerRadius;
+  Dali::WindowDimInfo* dimInfo      = (Dali::WindowDimInfo*)nuiDimInfo;
+
+  {
+    try
+    {
+      result = (Dali::WindowBlurInfo*)new Dali::WindowBlurInfo(blurType, blurRadius, cornerRadius, *dimInfo);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void*)result;
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowBlurInfo(void* nuiWindowBlurInfo)
 {
   Dali::WindowBlurInfo* blurInfo = (Dali::WindowBlurInfo*)nuiWindowBlurInfo;
@@ -259,6 +281,135 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WindowBlurInfo_GetBackgroundCornerRadius(
   }
 
   nuiResult = (int)cornerRadius;
+  return nuiResult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowBlurInfo_SetBehindBlurDimInfo(void* nuiWindowBlurInfo, void* nuiDimInfo)
+{
+  Dali::WindowBlurInfo* windowBlurInfo = (Dali::WindowBlurInfo*)nuiWindowBlurInfo;
+  Dali::WindowDimInfo*  dimInfo        = (Dali::WindowDimInfo*)nuiDimInfo;
+
+  if(!windowBlurInfo)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowBlurInfo", 0);
+    return;
+  }
+  if(!dimInfo)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowDimInfo", 0);
+    return;
+  }
+
+  {
+    try
+    {
+      windowBlurInfo->SetBehindBlurDimInfo(*dimInfo);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WindowBlurInfo_GetBehindBlurDimInfo(void* nuiWindowBlurInfo)
+{
+  void*                 nuiResult;
+  Dali::WindowDimInfo*  result         = 0;
+  Dali::WindowBlurInfo* windowBlurInfo = (Dali::WindowBlurInfo*)nuiWindowBlurInfo;
+
+  if(!windowBlurInfo)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowBlurInfo", 0);
+    return 0;
+  }
+
+  {
+    try
+    {
+      result = (Dali::WindowDimInfo*)new Dali::WindowDimInfo(windowBlurInfo->GetBehindBlurDimInfo());
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  nuiResult = (void*)result;
+  return nuiResult;
+}
+
+// WindowDimInfo functions
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WindowDimInfo(int enable, void* dimColor)
+{
+  void*                nuiResult;
+  Dali::WindowDimInfo* result = 0;
+  Dali::Vector4*       color  = (Dali::Vector4*)dimColor;
+
+  {
+    try
+    {
+      result = (Dali::WindowDimInfo*)new Dali::WindowDimInfo(enable != 0, *color);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  nuiResult = (void*)result;
+  return nuiResult;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowDimInfo(void* nuiWindowDimInfo)
+{
+  Dali::WindowDimInfo* dimInfo = (Dali::WindowDimInfo*)nuiWindowDimInfo;
+
+  {
+    try
+    {
+      delete dimInfo;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_WindowDimInfo_GetIsEnabled(void* nuiWindowDimInfo)
+{
+  int                  nuiResult;
+  bool                 result  = false;
+  Dali::WindowDimInfo* dimInfo = (Dali::WindowDimInfo*)nuiWindowDimInfo;
+
+  if(!dimInfo)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowDimInfo", 0);
+    return 0;
+  }
+
+  {
+    try
+    {
+      result = dimInfo->isEnabled;
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  nuiResult = result ? 1 : 0;
+  return nuiResult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WindowDimInfo_GetDimColor(void* nuiWindowDimInfo)
+{
+  void*                nuiResult;
+  Dali::Vector4*       result  = 0;
+  Dali::WindowDimInfo* dimInfo = (Dali::WindowDimInfo*)nuiWindowDimInfo;
+
+  if(!dimInfo)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowDimInfo", 0);
+    return 0;
+  }
+
+  {
+    try
+    {
+      result = (Dali::Vector4*)new Dali::Vector4(dimInfo->dimColor);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  nuiResult = (void*)result;
   return nuiResult;
 }
 
