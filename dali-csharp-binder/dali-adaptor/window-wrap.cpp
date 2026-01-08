@@ -587,6 +587,34 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Minimum_Size(void* winHandle,
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Maximize_With_RestoreSize(void* winHandle, bool maximize, void* size)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window))
+  {
+    return;
+  }
+
+  Dali::Window::WindowSize* winSize;
+  Dali::Window::WindowSize  restoreSize;
+
+  winSize = (Dali::Window::WindowSize*)size;
+  if(!winSize)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
+    return;
+  }
+  restoreSize = *winSize;
+
+  {
+    try
+    {
+      Dali::DevelWindow::MaximizeWithRestoreSize(*window, maximize, restoreSize);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddAvailableOrientation(void* winHandle, int orientation)
 {
   Dali::Window* window = (Dali::Window*)winHandle;
