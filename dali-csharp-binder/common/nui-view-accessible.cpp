@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -289,14 +289,16 @@ Accessibility::AtspiInterfaces NUIViewAccessible::DoGetInterfaces() const
 {
   using Interfaces = Accessibility::AtspiInterfaces;
 
-  Interfaces baseInterfaces;
+  Interfaces baseInterfaces = ControlAccessible::DoGetInterfaces();
   Interfaces extraInterfaces;
 
-  // These are always implemented
-  baseInterfaces[Interface::ACCESSIBLE] = true;
-  baseInterfaces[Interface::ACTION]     = true;
-  baseInterfaces[Interface::COLLECTION] = true;
-  baseInterfaces[Interface::COMPONENT]  = true;
+  // These will be selected at extra Interfaces in C# codes
+  baseInterfaces[Interface::TEXT]          = false;
+  baseInterfaces[Interface::EDITABLE_TEXT] = false;
+  baseInterfaces[Interface::SELECTION]     = false;
+  baseInterfaces[Interface::VALUE]         = false;
+  baseInterfaces[Interface::TABLE]         = false;
+  baseInterfaces[Interface::TABLE_CELL]    = false;
 
   // We cannot use CallMethod() here as that would cause recursion.
   // Note that the result will be cached and subsequent calls to GetInterfaces()
@@ -396,7 +398,7 @@ bool NUIViewAccessible::SetRangeOfSelection(std::size_t selectionIndex, std::siz
   return CallMethod<Interface::TEXT>(mTable->setRangeOfSelection, static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
 }
 
-Rect<> NUIViewAccessible::GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Accessibility::CoordinateType type)
+Rect<float> NUIViewAccessible::GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Accessibility::CoordinateType type)
 {
   auto      rectPtr = CallMethod<Interface::TEXT>(mTable->getRangeExtents, static_cast<int>(startOffset), static_cast<int>(endOffset), static_cast<int>(type));
   Rect<int> rect    = StealObject(rectPtr);
@@ -521,7 +523,7 @@ Accessibility::TableCell* NUIViewAccessible::GetCell(int row, int column) const
 {
   Actor* cell = CallMethod<Interface::TABLE>(mTable->getCell, row, column);
 
-  return cell ? Accessibility::TableCell::DownCast(Accessibility::Accessible::Get(*cell)) : nullptr;
+  return cell ? Accessibility::Accessible::DownCast<Accessibility::AtspiInterface::TABLE_CELL>(Accessibility::Accessible::Get(*cell)) : nullptr;
 }
 
 std::size_t NUIViewAccessible::GetChildIndex(int row, int column) const
@@ -670,7 +672,7 @@ Accessibility::Table* NUIViewAccessible::GetTable() const
 {
   Actor* table = CallMethod<Interface::TABLE_CELL>(mTable->getTable);
 
-  return table ? Accessibility::Table::DownCast(Accessibility::Accessible::Get(*table)) : nullptr;
+  return table ? Accessibility::Accessible::DownCast<Accessibility::AtspiInterface::TABLE>(Accessibility::Accessible::Get(*table)) : nullptr;
 }
 
 IntPairType NUIViewAccessible::GetCellPosition() const
