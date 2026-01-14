@@ -674,6 +674,38 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_KeyboardFocusManager_GetLastFocusChangeDevic
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardFocusManager_SetClearFocusOnWindowFocusLost(void* jarg1, bool jarg2)
+{
+  Dali::Toolkit::KeyboardFocusManager* arg1 = (Dali::Toolkit::KeyboardFocusManager*)0;
+
+  arg1 = (Dali::Toolkit::KeyboardFocusManager*)jarg1;
+  {
+    try
+    {
+      (arg1)->SetClearFocusOnWindowFocusLost(jarg2);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_KeyboardFocusManager_GetClearFocusOnWindowFocusLost(void* jarg1)
+{
+  Dali::Toolkit::KeyboardFocusManager* arg1 = (Dali::Toolkit::KeyboardFocusManager*)0;
+  bool                                 result;
+
+  arg1  = (Dali::Toolkit::KeyboardFocusManager*)jarg1;
+  {
+    try
+    {
+      result = (bool)((Dali::Toolkit::KeyboardFocusManager const*)arg1)->GetClearFocusOnWindowFocusLost();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
+}
+
+
 #ifdef __cplusplus
 }
 #endif
