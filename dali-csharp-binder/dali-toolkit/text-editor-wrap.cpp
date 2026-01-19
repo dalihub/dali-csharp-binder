@@ -1408,6 +1408,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_REMOVE_BACK_INSET_get
   return (int)Dali::Toolkit::DevelTextEditor::Property::REMOVE_BACK_INSET;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_ENABLE_CURSOR_INSET_get()
+{
+  return (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_CURSOR_INSET;
+}
+
 SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_TextEditor_RegisterFontVariationProperty(void* pTextEditor, char* pTag)
 {
   Dali::Toolkit::TextEditor* textEditor = (Dali::Toolkit::TextEditor*)0;
