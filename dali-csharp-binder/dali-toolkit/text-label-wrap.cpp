@@ -392,6 +392,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RemoveMaskEffect(void* pTextLa
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextLabel_RequestUpdateManually(void* pTextLabel)
+{
+  Dali::Toolkit::TextLabel* textLabel = (Dali::Toolkit::TextLabel*)0;
+  textLabel                           = (Dali::Toolkit::TextLabel*)pTextLabel;
+  {
+    try
+    {
+      Dali::Toolkit::DevelTextLabel::RequestUpdateManually(*textLabel);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 // Signals
 #ifndef GENERATE_DEVEL_TEXT_LABEL_SIGNAL
 #define GENERATE_DEVEL_TEXT_LABEL_SIGNAL(HType, SignalName) GENERATE_DEVEL_SIGNAL(Dali::Toolkit::TextLabel*, HType, Dali::Toolkit::DevelTextLabel, Dali_TextLabel, SignalName)
