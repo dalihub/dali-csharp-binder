@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,24 @@
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
 
+#include <dali/public-api/object/type-registry-helper.h>
+#include <dali/public-api/object/type-registry.h>
+
 // INTERNAL INCLUDES
 #include "nui-view-accessible.h"
+namespace
+{
+Dali::BaseHandle Create()
+{
+  // Empty handle since their is no actual SwigDirector_ViewWrapperImpl handle exist.
+  return Dali::BaseHandle();
+}
+
+// Setup type-registry. This will make sure that CustomViewWrapper also could use Toolkit::Control property
+DALI_TYPE_REGISTRATION_BEGIN(SwigDirector_ViewWrapperImpl, Dali::Toolkit::ControlWrapper, Create)
+DALI_TYPE_REGISTRATION_END()
+
+} // namespace
 
 #ifdef __cplusplus
 extern "C" {
