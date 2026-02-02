@@ -9221,32 +9221,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeInfo__SWIG_0(void* 
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeInfo__SWIG_1(void* jarg1, void* jarg2)
-{
-  void*               jresult;
-  Dali::TypeRegistry* arg1 = (Dali::TypeRegistry*)0;
-  std::type_info*     arg2 = 0;
-  Dali::TypeInfo      result;
-
-  arg1 = (Dali::TypeRegistry*)jarg1;
-  arg2 = (std::type_info*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = (arg1)->GetTypeInfo((std::type_info const&)*arg2);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::TypeInfo((const Dali::TypeInfo&)result);
-  return jresult;
-}
-
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeNameCount(void* jarg1)
 {
   unsigned long       jresult;
@@ -9284,111 +9258,6 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeName(void* jarg1, u
   }
 
   jresult = SWIG_csharp_string_callback((&result)->c_str());
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_0(void* jarg1, void* jarg2, void* jarg3)
-{
-  void*                          jresult;
-  std::type_info*                arg1   = 0;
-  std::type_info*                arg2   = 0;
-  Dali::TypeInfo::CreateFunction arg3   = (Dali::TypeInfo::CreateFunction)0;
-  Dali::TypeRegistration*        result = 0;
-
-  arg1 = (std::type_info*)jarg1;
-  if(!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg2 = (std::type_info*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg3 = (Dali::TypeInfo::CreateFunction)jarg3;
-  {
-    try
-    {
-      result = (Dali::TypeRegistration*)new Dali::TypeRegistration((std::type_info const&)*arg1, (std::type_info const&)*arg2, arg3);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_1(void* jarg1, void* jarg2, void* jarg3, bool jarg4)
-{
-  void*                          jresult;
-  std::type_info*                arg1 = 0;
-  std::type_info*                arg2 = 0;
-  Dali::TypeInfo::CreateFunction arg3 = (Dali::TypeInfo::CreateFunction)0;
-  bool                           arg4;
-  Dali::TypeRegistration*        result = 0;
-
-  arg1 = (std::type_info*)jarg1;
-  if(!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg2 = (std::type_info*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg3 = (Dali::TypeInfo::CreateFunction)jarg3;
-  arg4 = jarg4 ? true : false;
-  {
-    try
-    {
-      result = (Dali::TypeRegistration*)new Dali::TypeRegistration((std::type_info const&)*arg1, (std::type_info const&)*arg2, arg3, arg4);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_2(char* jarg1, void* jarg2, void* jarg3)
-{
-  void*                          jresult;
-  std::string*                   arg1   = 0;
-  std::type_info*                arg2   = 0;
-  Dali::TypeInfo::CreateFunction arg3   = (Dali::TypeInfo::CreateFunction)0;
-  Dali::TypeRegistration*        result = 0;
-
-  if(!jarg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
-  arg2 = (std::type_info*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg3 = (Dali::TypeInfo::CreateFunction)jarg3;
-  {
-    try
-    {
-      result = (Dali::TypeRegistration*)new Dali::TypeRegistration((std::string const&)*arg1, (std::type_info const&)*arg2, arg3);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-
-  //argout typemap for const std::string&
-
   return jresult;
 }
 
@@ -9851,43 +9720,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ChildPropertyRegistration(void* j
     }
     CALL_CATCH_EXCEPTION();
   }
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RegisterType(char* jarg1, void* jarg2, void* jarg3)
-{
-  bool                                 jresult;
-  std::string*                         arg1 = 0;
-  std::type_info*                      arg2 = 0;
-  Dali::CSharpTypeInfo::CreateFunction arg3 = (Dali::CSharpTypeInfo::CreateFunction)0;
-  bool                                 result;
-
-  if(!jarg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
-  arg2 = (std::type_info*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg3 = (Dali::CSharpTypeInfo::CreateFunction)jarg3;
-  {
-    try
-    {
-      result = (bool)Dali::CSharpTypeRegistry::RegisterType((std::string const&)*arg1, (std::type_info const&)*arg2, arg3);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-
-  //argout typemap for const std::string&
-
-  return jresult;
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RegisterProperty(char* jarg1, char* jarg2, int jarg3, int jarg4, void* jarg5, void* jarg6)
