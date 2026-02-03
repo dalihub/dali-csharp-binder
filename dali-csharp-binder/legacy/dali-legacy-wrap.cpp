@@ -1,5 +1,6 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/dali-toolkit.h>
+#include <typeinfo>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -403,6 +404,196 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_director_connect(void* objarg, 
     director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback9, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback24, callback25, callback30, callback31, callback32, callback33, callback34, callback35, callback36, callback37, callback38, callback39, callback40);
   }
 }
+
+// std::type_info
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeInfo__SWIG_1(void* jarg1, void* jarg2)
+{
+  void*               jresult;
+  Dali::TypeRegistry* arg1 = (Dali::TypeRegistry*)0;
+  std::type_info*     arg2 = 0;
+  Dali::TypeInfo      result;
+
+  arg1 = (Dali::TypeRegistry*)jarg1;
+  arg2 = (std::type_info*)jarg2;
+  if(!arg2)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = (arg1)->GetTypeInfo((std::type_info const&)*arg2);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::TypeInfo((const Dali::TypeInfo&)result);
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_0(void* jarg1, void* jarg2, void* jarg3)
+{
+  void*                          jresult;
+  std::type_info*                arg1   = 0;
+  std::type_info*                arg2   = 0;
+  Dali::TypeInfo::CreateFunction arg3   = (Dali::TypeInfo::CreateFunction)0;
+  Dali::TypeRegistration*        result = 0;
+
+  arg1 = (std::type_info*)jarg1;
+  if(!arg1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
+    return 0;
+  }
+  arg2 = (std::type_info*)jarg2;
+  if(!arg2)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
+    return 0;
+  }
+  arg3 = (Dali::TypeInfo::CreateFunction)jarg3;
+  {
+    try
+    {
+      result = (Dali::TypeRegistration*)new Dali::TypeRegistration((std::type_info const&)*arg1, (std::type_info const&)*arg2, arg3);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void*)result;
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_1(void* jarg1, void* jarg2, void* jarg3, bool jarg4)
+{
+  void*                          jresult;
+  std::type_info*                arg1 = 0;
+  std::type_info*                arg2 = 0;
+  Dali::TypeInfo::CreateFunction arg3 = (Dali::TypeInfo::CreateFunction)0;
+  bool                           arg4;
+  Dali::TypeRegistration*        result = 0;
+
+  arg1 = (std::type_info*)jarg1;
+  if(!arg1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
+    return 0;
+  }
+  arg2 = (std::type_info*)jarg2;
+  if(!arg2)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
+    return 0;
+  }
+  arg3 = (Dali::TypeInfo::CreateFunction)jarg3;
+  arg4 = jarg4 ? true : false;
+  {
+    try
+    {
+      result = (Dali::TypeRegistration*)new Dali::TypeRegistration((std::type_info const&)*arg1, (std::type_info const&)*arg2, arg3, arg4);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void*)result;
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_2(char* jarg1, void* jarg2, void* jarg3)
+{
+  void*                          jresult;
+  std::string*                   arg1   = 0;
+  std::type_info*                arg2   = 0;
+  Dali::TypeInfo::CreateFunction arg3   = (Dali::TypeInfo::CreateFunction)0;
+  Dali::TypeRegistration*        result = 0;
+
+  if(!jarg1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  arg2 = (std::type_info*)jarg2;
+  if(!arg2)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
+    return 0;
+  }
+  arg3 = (Dali::TypeInfo::CreateFunction)jarg3;
+  {
+    try
+    {
+      result = (Dali::TypeRegistration*)new Dali::TypeRegistration((std::string const&)*arg1, (std::type_info const&)*arg2, arg3);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void*)result;
+
+  //argout typemap for const std::string&
+
+  return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RegisterType(char* jarg1, void* jarg2, void* jarg3)
+{
+  bool                                 jresult;
+  std::string*                         arg1 = 0;
+  std::type_info*                      arg2 = 0;
+  Dali::CSharpTypeInfo::CreateFunction arg3 = (Dali::CSharpTypeInfo::CreateFunction)0;
+  bool                                 result;
+
+  if(!jarg1)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str;
+  arg2 = (std::type_info*)jarg2;
+  if(!arg2)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
+    return 0;
+  }
+  arg3 = (Dali::CSharpTypeInfo::CreateFunction)jarg3;
+  {
+    try
+    {
+      result = (bool)Dali::CSharpTypeRegistry::RegisterType((std::string const&)*arg1, (std::type_info const&)*arg2, arg3);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = result;
+
+  //argout typemap for const std::string&
+
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Any_GetType(void* jarg1)
+{
+  void*           jresult;
+  Dali::Any*      arg1   = (Dali::Any*)0;
+  std::type_info* result = 0;
+
+  arg1 = (Dali::Any*)jarg1;
+  {
+    try
+    {
+      result = (std::type_info*)&((Dali::Any const*)arg1)->GetType();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (void*)result;
+  return jresult;
+}
+
 #ifdef __cplusplus
 }
 #endif

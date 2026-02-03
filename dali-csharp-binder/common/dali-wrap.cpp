@@ -9221,32 +9221,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeInfo__SWIG_0(void* 
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeInfo__SWIG_1(void* jarg1, void* jarg2)
-{
-  void*               jresult;
-  Dali::TypeRegistry* arg1 = (Dali::TypeRegistry*)0;
-  std::type_info*     arg2 = 0;
-  Dali::TypeInfo      result;
-
-  arg1 = (Dali::TypeRegistry*)jarg1;
-  arg2 = (std::type_info*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = (arg1)->GetTypeInfo((std::type_info const&)*arg2);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::TypeInfo((const Dali::TypeInfo&)result);
-  return jresult;
-}
-
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeNameCount(void* jarg1)
 {
   unsigned long       jresult;
@@ -9284,111 +9258,6 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeName(void* jarg1, u
   }
 
   jresult = SWIG_csharp_string_callback((&result)->c_str());
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_0(void* jarg1, void* jarg2, void* jarg3)
-{
-  void*                          jresult;
-  std::type_info*                arg1   = 0;
-  std::type_info*                arg2   = 0;
-  Dali::TypeInfo::CreateFunction arg3   = (Dali::TypeInfo::CreateFunction)0;
-  Dali::TypeRegistration*        result = 0;
-
-  arg1 = (std::type_info*)jarg1;
-  if(!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg2 = (std::type_info*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg3 = (Dali::TypeInfo::CreateFunction)jarg3;
-  {
-    try
-    {
-      result = (Dali::TypeRegistration*)new Dali::TypeRegistration((std::type_info const&)*arg1, (std::type_info const&)*arg2, arg3);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_1(void* jarg1, void* jarg2, void* jarg3, bool jarg4)
-{
-  void*                          jresult;
-  std::type_info*                arg1 = 0;
-  std::type_info*                arg2 = 0;
-  Dali::TypeInfo::CreateFunction arg3 = (Dali::TypeInfo::CreateFunction)0;
-  bool                           arg4;
-  Dali::TypeRegistration*        result = 0;
-
-  arg1 = (std::type_info*)jarg1;
-  if(!arg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg2 = (std::type_info*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg3 = (Dali::TypeInfo::CreateFunction)jarg3;
-  arg4 = jarg4 ? true : false;
-  {
-    try
-    {
-      result = (Dali::TypeRegistration*)new Dali::TypeRegistration((std::type_info const&)*arg1, (std::type_info const&)*arg2, arg3, arg4);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeRegistration__SWIG_2(char* jarg1, void* jarg2, void* jarg3)
-{
-  void*                          jresult;
-  std::string*                   arg1   = 0;
-  std::type_info*                arg2   = 0;
-  Dali::TypeInfo::CreateFunction arg3   = (Dali::TypeInfo::CreateFunction)0;
-  Dali::TypeRegistration*        result = 0;
-
-  if(!jarg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
-  arg2 = (std::type_info*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg3 = (Dali::TypeInfo::CreateFunction)jarg3;
-  {
-    try
-    {
-      result = (Dali::TypeRegistration*)new Dali::TypeRegistration((std::string const&)*arg1, (std::type_info const&)*arg2, arg3);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-
-  //argout typemap for const std::string&
-
   return jresult;
 }
 
@@ -9851,43 +9720,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ChildPropertyRegistration(void* j
     }
     CALL_CATCH_EXCEPTION();
   }
-}
-
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RegisterType(char* jarg1, void* jarg2, void* jarg3)
-{
-  bool                                 jresult;
-  std::string*                         arg1 = 0;
-  std::type_info*                      arg2 = 0;
-  Dali::CSharpTypeInfo::CreateFunction arg3 = (Dali::CSharpTypeInfo::CreateFunction)0;
-  bool                                 result;
-
-  if(!jarg1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
-  arg2 = (std::type_info*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::type_info const & type is null", 0);
-    return 0;
-  }
-  arg3 = (Dali::CSharpTypeInfo::CreateFunction)jarg3;
-  {
-    try
-    {
-      result = (bool)Dali::CSharpTypeRegistry::RegisterType((std::string const&)*arg1, (std::type_info const&)*arg2, arg3);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-
-  //argout typemap for const std::string&
-
-  return jresult;
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RegisterProperty(char* jarg1, char* jarg2, int jarg3, int jarg4, void* jarg5, void* jarg6)
@@ -21858,13 +21690,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_StageWheelSignal(void* jarg1)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AngleThresholdPair__SWIG_0()
 {
-  void*                                  jresult;
-  std::pair<Dali::Radian, Dali::Radian>* result = 0;
+  void*                                         jresult;
+  Dali::PanGestureDetector::AngleThresholdPair* result = 0;
 
   {
     try
     {
-      result = (std::pair<Dali::Radian, Dali::Radian>*)new std::pair<Dali::Radian, Dali::Radian>();
+      result = (Dali::PanGestureDetector::AngleThresholdPair*)new Dali::PanGestureDetector::AngleThresholdPair();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -21875,12 +21707,13 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AngleThresholdPair__SWIG_0()
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AngleThresholdPair__SWIG_1(void* jarg1, void* jarg2)
 {
-  void*                                  jresult;
-  Dali::Radian                           arg1;
-  Dali::Radian                           arg2;
-  Dali::Radian*                          argp1;
-  Dali::Radian*                          argp2;
-  std::pair<Dali::Radian, Dali::Radian>* result = 0;
+  void*         jresult;
+  Dali::Radian  arg1;
+  Dali::Radian  arg2;
+  Dali::Radian* argp1;
+  Dali::Radian* argp2;
+
+  Dali::PanGestureDetector::AngleThresholdPair* result = 0;
 
   argp1 = (Dali::Radian*)jarg1;
   if(!argp1)
@@ -21899,7 +21732,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AngleThresholdPair__SWIG_1(void* ja
   {
     try
     {
-      result = (std::pair<Dali::Radian, Dali::Radian>*)new std::pair<Dali::Radian, Dali::Radian>(arg1, arg2);
+      result = (Dali::PanGestureDetector::AngleThresholdPair*)new Dali::PanGestureDetector::AngleThresholdPair(arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -21910,20 +21743,20 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AngleThresholdPair__SWIG_1(void* ja
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AngleThresholdPair__SWIG_2(void* jarg1)
 {
-  void*                                  jresult;
-  std::pair<Dali::Radian, Dali::Radian>* arg1   = 0;
-  std::pair<Dali::Radian, Dali::Radian>* result = 0;
+  void*                                         jresult;
+  Dali::PanGestureDetector::AngleThresholdPair* arg1   = 0;
+  Dali::PanGestureDetector::AngleThresholdPair* result = 0;
 
-  arg1 = (std::pair<Dali::Radian, Dali::Radian>*)jarg1;
+  arg1 = (Dali::PanGestureDetector::AngleThresholdPair*)jarg1;
   if(!arg1)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::pair< Dali::Radian,Dali::Radian > const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::PanGestureDetector::AngleThresholdPair const & type is null", 0);
     return 0;
   }
   {
     try
     {
-      result = (std::pair<Dali::Radian, Dali::Radian>*)new std::pair<Dali::Radian, Dali::Radian>((std::pair<Dali::Radian, Dali::Radian> const&)*arg1);
+      result = (Dali::PanGestureDetector::AngleThresholdPair*)new Dali::PanGestureDetector::AngleThresholdPair((Dali::PanGestureDetector::AngleThresholdPair const&)*arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -21934,53 +21767,53 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AngleThresholdPair__SWIG_2(void* ja
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AngleThresholdPair_first_set(void* jarg1, void* jarg2)
 {
-  std::pair<Dali::Radian, Dali::Radian>* arg1 = (std::pair<Dali::Radian, Dali::Radian>*)0;
-  Dali::Radian*                          arg2 = (Dali::Radian*)0;
+  Dali::PanGestureDetector::AngleThresholdPair* arg1 = (Dali::PanGestureDetector::AngleThresholdPair*)0;
+  Dali::Radian*                                 arg2 = (Dali::Radian*)0;
 
-  arg1 = (std::pair<Dali::Radian, Dali::Radian>*)jarg1;
+  arg1 = (Dali::PanGestureDetector::AngleThresholdPair*)jarg1;
   arg2 = (Dali::Radian*)jarg2;
-  if(arg1) (arg1)->first = *arg2;
+  if(arg1) (arg1)->angle = *arg2;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AngleThresholdPair_first_get(void* jarg1)
 {
-  void*                                  jresult;
-  std::pair<Dali::Radian, Dali::Radian>* arg1   = (std::pair<Dali::Radian, Dali::Radian>*)0;
-  Dali::Radian*                          result = 0;
+  void*                                         jresult;
+  Dali::PanGestureDetector::AngleThresholdPair* arg1   = (Dali::PanGestureDetector::AngleThresholdPair*)0;
+  Dali::Radian*                                 result = 0;
 
-  arg1    = (std::pair<Dali::Radian, Dali::Radian>*)jarg1;
-  result  = (Dali::Radian*)&((arg1)->first);
+  arg1    = (Dali::PanGestureDetector::AngleThresholdPair*)jarg1;
+  result  = (Dali::Radian*)&((arg1)->angle);
   jresult = (void*)result;
   return jresult;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AngleThresholdPair_second_set(void* jarg1, void* jarg2)
 {
-  std::pair<Dali::Radian, Dali::Radian>* arg1 = (std::pair<Dali::Radian, Dali::Radian>*)0;
-  Dali::Radian*                          arg2 = (Dali::Radian*)0;
+  Dali::PanGestureDetector::AngleThresholdPair* arg1 = (Dali::PanGestureDetector::AngleThresholdPair*)0;
+  Dali::Radian*                                 arg2 = (Dali::Radian*)0;
 
-  arg1 = (std::pair<Dali::Radian, Dali::Radian>*)jarg1;
+  arg1 = (Dali::PanGestureDetector::AngleThresholdPair*)jarg1;
   arg2 = (Dali::Radian*)jarg2;
-  if(arg1) (arg1)->second = *arg2;
+  if(arg1) (arg1)->threshold = *arg2;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AngleThresholdPair_second_get(void* jarg1)
 {
-  void*                                  jresult;
-  std::pair<Dali::Radian, Dali::Radian>* arg1   = (std::pair<Dali::Radian, Dali::Radian>*)0;
-  Dali::Radian*                          result = 0;
+  void*                                         jresult;
+  Dali::PanGestureDetector::AngleThresholdPair* arg1   = (Dali::PanGestureDetector::AngleThresholdPair*)0;
+  Dali::Radian*                                 result = 0;
 
-  arg1    = (std::pair<Dali::Radian, Dali::Radian>*)jarg1;
-  result  = (Dali::Radian*)&((arg1)->second);
+  arg1    = (Dali::PanGestureDetector::AngleThresholdPair*)jarg1;
+  result  = (Dali::Radian*)&((arg1)->threshold);
   jresult = (void*)result;
   return jresult;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AngleThresholdPair(void* jarg1)
 {
-  std::pair<Dali::Radian, Dali::Radian>* arg1 = (std::pair<Dali::Radian, Dali::Radian>*)0;
+  Dali::PanGestureDetector::AngleThresholdPair* arg1 = (Dali::PanGestureDetector::AngleThresholdPair*)0;
 
-  arg1 = (std::pair<Dali::Radian, Dali::Radian>*)jarg1;
+  arg1 = (Dali::PanGestureDetector::AngleThresholdPair*)jarg1;
   {
     try
     {
