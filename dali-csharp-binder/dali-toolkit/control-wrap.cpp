@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,8 @@
 #include <dali-toolkit/devel-api/visual-factory/transition-data.h>
 #include <dali-toolkit/public-api/controls/control-impl.h>
 #include <dali-toolkit/public-api/controls/control.h>
-#include <dali-toolkit/public-api/controls/render-effects/render-effect.h>
 #include <dali-toolkit/public-api/image-loader/image-url.h>
+#include <dali-toolkit/public-api/render-effects/render-effect.h>
 #include <iostream>
 
 // INTERNAL INCLUDES
