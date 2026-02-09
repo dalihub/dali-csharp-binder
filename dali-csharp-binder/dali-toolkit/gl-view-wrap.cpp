@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,11 +149,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlView_BindTextureResources(void* nuiGlV
     try
     {
       // Convert array to vector
-      std::vector<Dali::Texture> vTex;
+      Dali::Vector<Dali::Texture> vTex;
       for(int i = 0; i < size; i++)
       {
         Dali::Texture texture = *texPtr[i];
-        vTex.push_back(texture);
+        vTex.PushBack(texture);
       }
       glView->BindTextureResources(vTex);
     }
@@ -260,7 +260,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderCallbackInput_Projection_get(void
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderCallbackInput_ClippingBox_get(void* input)
 {
   void*                      jresult;
-  Dali::Rect<int>*           result      = 0;
+  Dali::Rect<int32_t>*       result      = 0;
   Dali::RenderCallbackInput* renderInput = (Dali::RenderCallbackInput*)input;
 
   result  = &(renderInput->clippingBox);
@@ -271,11 +271,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderCallbackInput_ClippingBox_get(voi
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderCallbackInput_TextureBindings_get(void* input, int* size)
 {
   void*                      jresult;
-  uint*                      result      = 0;
+  uint32_t*                  result      = 0;
   Dali::RenderCallbackInput* renderInput = (Dali::RenderCallbackInput*)input;
 
-  result  = renderInput->textureBindings.data();
-  *size   = renderInput->textureBindings.size();
+  result  = static_cast<uint32_t*>(renderInput->textureBindings.Begin());
+  *size   = static_cast<int>(renderInput->textureBindings.Count());
   jresult = (void*)result;
   return jresult;
 }
