@@ -19,6 +19,8 @@
 
 using namespace Dali;
 
+extern SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
