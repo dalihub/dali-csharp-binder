@@ -35,6 +35,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/dali-core/input-options-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/internal-property-get-set-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/layer-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-core/property-value-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/ref-object-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/rotation-wrap.cpp
   ${dali_csharp_binder_dir}/dali-core/vector-wrap.cpp
