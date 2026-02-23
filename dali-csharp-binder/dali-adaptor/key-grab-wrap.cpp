@@ -124,18 +124,18 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetNativeWindowHandler(void* window)
 
   LOG("CSharp_Dali_GetNativeWindowHandler() [DP1] window=%d", window);
 
+#ifdef TIZEN_BUILD
   {
     Dali::Any result;
     try
     {
-      result = _win->GetNativeHandle();
-#ifdef TIZEN_BUILD
+      result                      = _win->GetNativeHandle();
       Ecore_Wl2_Window* ecore_win = Dali::AnyCast<Ecore_Wl2_Window*>(result);
-#endif
-      ret = (void*)ecore_win;
+      ret                         = (void*)ecore_win;
     }
     CALL_CATCH_EXCEPTION(NULL);
   }
+#endif
 
   if(ret != NULL)
   {

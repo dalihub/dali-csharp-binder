@@ -24,10 +24,6 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-#ifdef TIZEN_BUILD
-#include <Ecore_Wl2.h>
-#endif
-
 #undef LOG
 //#define LOG DALI_LOG_ERROR
 #define LOG(a...)
