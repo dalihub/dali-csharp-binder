@@ -68,16 +68,39 @@ namespace
 {
 inline void LowerFirstLetter(std::string& str)
 {
-  if(str.size() > 0)
+  const size_t len = str.size();
+  if(len == 0)
   {
-    if(!(str[0] >= 'a' && str[0] <= 'z') &&
-       (str[0] < 'A' || str[0] > 'Z'))
-    {
-      // For debug. Some application input non-alphabet as name. We should defect and fix it.
-      DALI_LOG_ERROR("Input argument string not start with alphabet! : %s\n", str.c_str());
-    }
-    str[0] |= 0x20;
+    return;
   }
+
+  if(len == 4)
+  {
+    bool allUpper = true;
+    for(size_t i = 0; i < 4; ++i)
+    {
+      if(str[i] < 'A' || str[i] > 'Z')
+      {
+        allUpper = false;
+        break;
+      }
+    }
+
+    if(allUpper)
+    {
+      // Font variation custom axis tags are defined as 4-letter all-uppercase identifiers.
+      // Do not modify such names.
+      return;
+    }
+  }
+
+  if(!(str[0] >= 'a' && str[0] <= 'z') &&
+      (str[0] < 'A' || str[0] > 'Z'))
+  {
+    // For debug. Some application input non-alphabet as name. We should defect and fix it.
+    DALI_LOG_ERROR("Input argument string not start with alphabet! : %s\n", str.c_str());
+  }
+  str[0] |= 0x20;
 }
 } //namespace
 
