@@ -7638,7 +7638,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextLabel_New__SWIG_0()
   {
     try
     {
-      result = Dali::Toolkit::TextLabel::New();
+      result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -7655,14 +7655,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextLabel_New_With_Style(bool hasStyle)
   {
     try
     {
-      if(hasStyle)
-      {
-        result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
-      }
-      else
-      {
-        result = Dali::Toolkit::TextLabel::New();
-      }
+      result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -7687,14 +7680,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextLabel_New_With_String_Style(char* t
   {
     try
     {
-      if(hasStyle)
-      {
-        result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const&)*arg1);
-      }
-      else
-      {
-        result = Dali::Toolkit::TextLabel::New((std::string const&)*arg1);
-      }
+      result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const&)*arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
