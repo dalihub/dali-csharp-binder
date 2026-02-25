@@ -52,6 +52,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_New()
     try
     {
       result = Dali::Layer::New();
+
+      // NUI specific logic.
+
+      // We use Layer.Viewport feature base as top-left. Let we follow it.
+      result.SetProperty(Actor::Property::PARENT_ORIGIN, Dali::ParentOrigin::TOP_LEFT);
+      result.SetProperty(Actor::Property::ANCHOR_POINT, Dali::AnchorPoint::TOP_LEFT);
+
+      // NUI Created Layer always be under some root-layer. Keep it as fill-to-parent
+      result.SetResizePolicy(ResizePolicy::FILL_TO_PARENT, Dimension::ALL_DIMENSIONS);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -185,22 +194,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Layer_GetBehavior(void* jarg1)
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClipping(void* jarg1, bool jarg2)
-{
-  Dali::Layer* arg1 = (Dali::Layer*)0;
-  bool         arg2;
-
-  arg1 = (Dali::Layer*)jarg1;
-  arg2 = jarg2 ? true : false;
-  {
-    try
-    {
-      (arg1)->SetProperty(Dali::Layer::Property::CLIPPING_ENABLE, arg2);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
-}
-
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Layer_IsClipping(void* jarg1)
 {
   bool         jresult;
@@ -211,7 +204,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Layer_IsClipping(void* jarg1)
   {
     try
     {
-      result = (bool)((Dali::Layer const*)arg1)->GetProperty<bool>(Dali::Layer::Property::CLIPPING_ENABLE);
+      // NUI specific logic.
+      result = (((Dali::Layer const*)arg1)->GetProperty<int32_t>(Dali::Actor::Property::CLIPPING_MODE) != static_cast<int32_t>(Dali::ClippingMode::DISABLED));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -220,23 +214,45 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Layer_IsClipping(void* jarg1)
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_0(void* jarg1, int jarg2, int jarg3, int jarg4, int jarg5)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClipping(void* jarg1, bool clipping)
 {
-  Dali::Layer* arg1 = (Dali::Layer*)0;
-  int          arg2;
-  int          arg3;
-  int          arg4;
-  int          arg5;
-
-  arg1 = (Dali::Layer*)jarg1;
-  arg2 = (int)jarg2;
-  arg3 = (int)jarg3;
-  arg4 = (int)jarg4;
-  arg5 = (int)jarg5;
   {
     try
     {
-      (arg1)->SetProperty(Dali::Layer::Property::CLIPPING_BOX, Rect<int32_t>(arg2, arg3, arg4, arg5));
+      if(clipping != CSharp_Dali_Layer_IsClipping(jarg1))
+      {
+        Dali::Layer layer = *(Dali::Layer*)jarg1;
+
+        // NUI specific logic.
+        if(clipping)
+        {
+          // Prepare to clipping
+          layer.SetProperty(Dali::Actor::Property::CLIPPING_MODE, Dali::ClippingMode::CLIP_TO_BOUNDING_BOX);
+        }
+        else
+        {
+          layer.SetProperty(Dali::Actor::Property::CLIPPING_MODE, Dali::ClippingMode::DISABLED);
+
+          // Tizen.UI Change the size of layer when SetClipping(true) called. We should reset position and resize policy here.
+          layer.SetProperty(Dali::Actor::Property::POSITION, Vector3::ZERO);
+          layer.SetResizePolicy(ResizePolicy::FILL_TO_PARENT, Dimension::ALL_DIMENSIONS);
+        }
+      }
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_0(void* jarg1, int x, int y, int width, int height)
+{
+  {
+    try
+    {
+      Dali::Layer layer = *(Dali::Layer*)jarg1;
+
+      // NUI specific logic.
+      layer.SetProperty(Dali::Actor::Property::POSITION, Vector2(x, y));
+      layer.SetProperty(Dali::Actor::Property::SIZE, Vector2(width, height));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -244,38 +260,35 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_0(void* jarg1
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_1(void* jarg1, void* jarg2)
 {
-  Dali::Layer*       arg1 = (Dali::Layer*)0;
-  Dali::ClippingBox  arg2;
-  Dali::ClippingBox* argp2;
+  Dali::Rect<int32_t>  arg2;
+  Dali::Rect<int32_t>* argp2;
 
-  arg1  = (Dali::Layer*)jarg1;
-  argp2 = (Dali::ClippingBox*)jarg2;
+  argp2 = (Dali::Rect<int32_t>*)jarg2;
   if(!argp2)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ClippingBox", 0);
     return;
   }
   arg2 = *argp2;
-  {
-    try
-    {
-      (arg1)->SetProperty(Dali::Layer::Property::CLIPPING_BOX, arg2);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
+
+  CSharp_Dali_Layer_SetClippingBox__SWIG_0(jarg1, arg2.x, arg2.y, arg2.width, arg2.height);
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_GetClippingBox(void* jarg1)
 {
-  void*             jresult;
-  Dali::Layer*      arg1 = (Dali::Layer*)0;
-  Dali::ClippingBox result;
+  void*               jresult;
+  Dali::Rect<int32_t> result;
 
-  arg1 = (Dali::Layer*)jarg1;
   {
     try
     {
-      result = ((Dali::Layer const*)arg1)->GetProperty<Rect<int32_t> >(Layer::Property::CLIPPING_BOX);
+      Dali::Layer layer = *(Dali::Layer*)jarg1;
+
+      // NUI specific logic.
+      Dali::Vector3 position = layer.GetProperty<Dali::Vector3>(Dali::Actor::Property::POSITION);
+      Dali::Vector3 size     = layer.GetProperty<Dali::Vector3>(Dali::Actor::Property::SIZE);
+
+      result = Dali::Rect<int32_t>(static_cast<int32_t>(position.x), static_cast<int32_t>(position.y), static_cast<int32_t>(size.width), static_cast<int32_t>(size.height));
     }
     CALL_CATCH_EXCEPTION(0);
   }
