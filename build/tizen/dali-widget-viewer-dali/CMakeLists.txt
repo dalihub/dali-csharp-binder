@@ -1,6 +1,10 @@
 SET(WIDGET_VIEWER_DALI_TARGET dali2-csharp-binder-widget-viewer-dali)
 
-SET( WIDGET_VIEWER_DALI_SOURCES ${dali_csharp_binder_widget_viewer_dali_src_files})
+IF( UBUNTU_PROFILE )
+  SET( WIDGET_VIEWER_DALI_SOURCES ${dali_csharp_binder_widget_viewer_dali_ubuntu_src_files})
+ELSE()
+  SET( WIDGET_VIEWER_DALI_SOURCES ${dali_csharp_binder_widget_viewer_dali_src_files})
+ENDIF()
 
 ADD_LIBRARY( ${WIDGET_VIEWER_DALI_TARGET} SHARED ${WIDGET_VIEWER_DALI_SOURCES} )
 
