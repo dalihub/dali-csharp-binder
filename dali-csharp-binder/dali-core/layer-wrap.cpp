@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -242,15 +242,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_0(void* jarg1
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_1(void* jarg1, void* jarg2)
 {
-  Dali::Layer*       arg1 = (Dali::Layer*)0;
-  Dali::ClippingBox  arg2;
-  Dali::ClippingBox* argp2;
+  Dali::Layer*         arg1 = (Dali::Layer*)0;
+  Dali::Rect<int32_t>  arg2;
+  Dali::Rect<int32_t>* argp2;
 
   arg1  = (Dali::Layer*)jarg1;
-  argp2 = (Dali::ClippingBox*)jarg2;
+  argp2 = (Dali::Rect<int32_t>*)jarg2;
   if(!argp2)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::ClippingBox", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Rect<int32_t>", 0);
     return;
   }
   arg2 = *argp2;
@@ -265,9 +265,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_1(void* jarg1
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_GetClippingBox(void* jarg1)
 {
-  void*             jresult;
-  Dali::Layer*      arg1 = (Dali::Layer*)0;
-  Dali::ClippingBox result;
+  void*               jresult;
+  Dali::Layer*        arg1 = (Dali::Layer*)0;
+  Dali::Rect<int32_t> result;
 
   arg1 = (Dali::Layer*)jarg1;
   {
@@ -278,7 +278,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_GetClippingBox(void* jarg1)
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::ClippingBox((const Dali::ClippingBox&)result);
+  jresult = new Dali::Rect<int32_t>((const Dali::Rect<int32_t>&)result);
   return jresult;
 }
 
