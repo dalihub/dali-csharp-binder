@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2764,7 +2764,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFrameRenderedCallback(void* wi
 
   try
   {
-    Dali::DevelWindow::AddFrameRenderedCallback(*window, std::unique_ptr<Dali::CallbackBase>(Dali::MakeCallback(callback)), nuiFrameId);
+    Dali::DevelWindow::AddFrameRenderedCallback(*window, Dali::MakeCallback(callback), nuiFrameId);
   }
   CALL_CATCH_EXCEPTION();
 }
@@ -2786,7 +2786,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFramePresentedCallback(void* w
 
   try
   {
-    Dali::DevelWindow::AddFramePresentedCallback(*window, std::unique_ptr<Dali::CallbackBase>(Dali::MakeCallback(callback)), nuiFrameId);
+    Dali::DevelWindow::AddFramePresentedCallback(*window, Dali::MakeCallback(callback), nuiFrameId);
   }
   CALL_CATCH_EXCEPTION();
 }
@@ -4490,7 +4490,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetFrontBufferRendering(void* win
 {
   Dali::Window* window = (Dali::Window*)winHandle;
 
-  if(!CheckingWindowHandle(window)) {
+  if(!CheckingWindowHandle(window))
+  {
     return;
   }
 
@@ -4498,7 +4499,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetFrontBufferRendering(void* win
     try
     {
       Dali::DevelWindow::SetFrontBufferRendering(*window, enable);
-    } CALL_CATCH_EXCEPTION();
+    }
+    CALL_CATCH_EXCEPTION();
   }
 }
 
@@ -4507,7 +4509,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_GetFrontBufferRendering(void* win
   Dali::Window* window = (Dali::Window*)winHandle;
   bool          result = false;
 
-  if(!CheckingWindowHandle(window)) {
+  if(!CheckingWindowHandle(window))
+  {
     return false;
   }
 
@@ -4515,7 +4518,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_GetFrontBufferRendering(void* win
     try
     {
       result = Dali::DevelWindow::GetFrontBufferRendering(*window);
-    } CALL_CATCH_EXCEPTION(false);
+    }
+    CALL_CATCH_EXCEPTION(false);
   }
   return result;
 }
