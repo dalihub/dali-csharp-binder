@@ -1930,6 +1930,30 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterFileChooserRequestedCall
   CALL_CATCH_EXCEPTION();
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterWebProcessCrashedCallback(void* jarg1, void* jarg2)
+{
+  GUARD_ON_NULL_RET(jarg1);
+
+  Dali::Toolkit::WebView* arg1 = (Dali::Toolkit::WebView*)jarg1;
+
+  try
+  {
+    if(jarg2 != nullptr)
+    {
+      void (*handler)(void) = (void (*)(void))jarg2;
+      (arg1)->RegisterWebProcessCrashedCallback([handler](void)
+      {
+        handler();
+      });
+    }
+    else
+    {
+      (arg1)->RegisterWebProcessCrashedCallback(nullptr);
+    }
+  }
+  CALL_CATCH_EXCEPTION();
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterUserMediaPermissionRequestCallback(void* jarg1, void* jarg2)
 {
   GUARD_ON_NULL_RET(jarg1);
