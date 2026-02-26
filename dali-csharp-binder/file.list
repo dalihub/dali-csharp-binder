@@ -109,6 +109,13 @@ SET( dali_csharp_binder_widget_viewer_dali_src_files
   ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-manager-wrap.cpp
 )
 
+# added for widget-viewer-dali for ubuntu (dummy implementation)
+# module: csharp-binder(widget-viewer-dali.so), backend: ubuntu
+SET( dali_csharp_binder_widget_viewer_dali_ubuntu_src_files
+  ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-ubuntu-wrap.cpp
+  ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-manager-ubuntu-wrap.cpp
+)
+
 # module: csharp-binder, backend: tizen-wearable
 SET( dali_csharp_binder_tizen_wearable_src_files
   ${dali_csharp_binder_dir}/dali-adaptor/watch-wrap.cpp
