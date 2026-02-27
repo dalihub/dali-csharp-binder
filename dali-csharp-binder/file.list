@@ -15,10 +15,8 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/common/common.cpp
   ${dali_csharp_binder_dir}/common/dali-wrap.cpp
   ${dali_csharp_binder_dir}/common/callbackbase-wrap.cpp
-  ${dali_csharp_binder_dir}/common/nui-view-accessible.cpp
   ${dali_csharp_binder_dir}/common/processor-controller.cpp
   ${dali_csharp_binder_dir}/common/signal-wrap.cpp
-  ${dali_csharp_binder_dir}/common/slim-custom-view-impl.cpp
   ${dali_csharp_binder_dir}/common/version-check.cpp
   ${dali_csharp_binder_dir}/common/view-wrapper-impl-wrap.cpp
 
@@ -316,6 +314,8 @@ SET( dali_csharp_binder_physics_3d_src_files
 # Legacy codes what we try to build older verion of tizen
 SET( dali_csharp_binder_legacy_src_files
   ${dali_csharp_binder_dir}/legacy/dali-legacy-wrap.cpp
+  ${dali_csharp_binder_dir}/legacy/slim-custom-view-impl.cpp
+  ${dali_csharp_binder_dir}/legacy/nui-view-accessible.cpp
 )
 
 SET( dali_csharp_binder_header_files
