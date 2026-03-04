@@ -26,6 +26,8 @@
 #include <dali/public-api/object/type-registry-helper.h>
 #include <dali/public-api/object/type-registry.h>
 
+// INTERNAL INCLUDES
+#include "nui-view-accessible.h"
 namespace
 {
 Dali::BaseHandle Create()
@@ -349,6 +351,11 @@ bool SwigDirector_ViewWrapperImpl::OnAccessibilityActivated()
     c_result = jresult ? true : false;
   }
   return c_result;
+}
+
+Dali::Toolkit::DevelControl::ControlAccessible* SwigDirector_ViewWrapperImpl::CreateAccessibleObject()
+{
+  return new NUIViewAccessible(Self());
 }
 
 void SwigDirector_ViewWrapperImpl::OnKeyInputFocusGained()

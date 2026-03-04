@@ -8,7 +8,6 @@
 #include <dali/devel-api/update/frame-callback-interface.h>
 
 #include <dali-csharp-binder/common/dali-wrap.h> ///< Must include after common.h
-#include <dali-csharp-binder/legacy/slim-custom-view-impl.h>
 
 using namespace Dali;
 using namespace Dali::Toolkit;
@@ -592,42 +591,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Any_GetType(void* jarg1)
   }
 
   jresult = (void*)result;
-  return jresult;
-}
-
-// control-wrap.cpp
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_NewCustom()
-{
-  void*                  jresult;
-  Dali::Toolkit::Control result;
-
-  {
-    try
-    {
-      result = SlimCustomViewImpl::New(Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control&)result);
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_NewCustomWithBehaviour(int csBehaviour)
-{
-  void*                  jresult;
-  Dali::Toolkit::Control result;
-
-  {
-    try
-    {
-      result = SlimCustomViewImpl::New(static_cast<Dali::Toolkit::Internal::Control::ControlBehaviour>(csBehaviour | Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS));
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control&)result);
   return jresult;
 }
 

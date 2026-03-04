@@ -17,7 +17,6 @@
 
 // EXTERNAL INCLUDES
 #include <dali-toolkit/devel-api/visual-factory/transition-data.h>
-#include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/public-api/controls/control-impl.h>
 #include <dali-toolkit/public-api/controls/control.h>
 #include <dali-toolkit/public-api/image-loader/image-url.h>
@@ -26,6 +25,7 @@
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
+#include <dali-csharp-binder/common/slim-custom-view-impl.h>
 
 SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent const&)> const* self)
 {
@@ -167,6 +167,23 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_New()
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_NewCustom()
+{
+  void*                  jresult;
+  Dali::Toolkit::Control result;
+
+  {
+    try
+    {
+      result = SlimCustomViewImpl::New(Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control&)result);
+  return jresult;
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_NewWithBehaviour(int csBehaviour)
 {
   void*                  jresult;
@@ -176,6 +193,23 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_NewWithBehaviour(int csBehaviour)
     try
     {
       result = Dali::Toolkit::Control::New(static_cast<Dali::Toolkit::Control::ControlBehaviour>(csBehaviour | Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS));
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::Control((const Dali::Toolkit::Control&)result);
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_NewCustomWithBehaviour(int csBehaviour)
+{
+  void*                  jresult;
+  Dali::Toolkit::Control result;
+
+  {
+    try
+    {
+      result = SlimCustomViewImpl::New(static_cast<Dali::Toolkit::Internal::Control::ControlBehaviour>(csBehaviour | Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS));
     }
     CALL_CATCH_EXCEPTION(0);
   }
