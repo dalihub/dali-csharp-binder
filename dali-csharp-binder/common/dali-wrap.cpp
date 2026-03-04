@@ -4764,10 +4764,22 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property__SWIG_2(void* jarg1, char*
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2String(jarg2);
 
-  // NUI role! We should use lowercaseString here!
-  LowerFirstLetter(arg2String);
+  Dali::Property::Index index = Dali::Property::INVALID_INDEX;
+  std::string           arg2String(jarg2);
+  {
+    try
+    {
+      index = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(arg2String);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  if(Dali::Property::INVALID_INDEX == index)
+  {
+    // NUI role! We should use lowercaseString here!
+    LowerFirstLetter(arg2String);
+  }
 
   arg2 = &arg2String;
   {
@@ -7547,9 +7559,8 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Handle_GetPropertyName(void* jarg1, int
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_GetPropertyIndex(void* jarg1, char* jarg2)
 {
   int                   jresult;
-  Dali::Handle*         arg1 = (Dali::Handle*)0;
-  std::string*          arg2 = 0;
-  Dali::Property::Index result;
+  Dali::Handle*         arg1   = (Dali::Handle*)0;
+  Dali::Property::Index result = Dali::Property::INVALID_INDEX;
 
   arg1 = (Dali::Handle*)jarg1;
   if(!jarg2)
@@ -7557,18 +7568,27 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_GetPropertyIndex(void* jarg1, char
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
+
   std::string arg2String(jarg2);
-
-  // NUI role! We should use lowercaseString here!
-  LowerFirstLetter(arg2String);
-
-  arg2 = &arg2String;
   {
     try
     {
-      result = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex((std::string const&)*arg2);
+      result = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(arg2String);
     }
     CALL_CATCH_EXCEPTION(0);
+  }
+
+  if(Dali::Property::INVALID_INDEX == result)
+  {
+    // NUI role! We should use lowercaseString here!
+    LowerFirstLetter(arg2String);
+    {
+      try
+      {
+        result = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(arg2String);
+      }
+      CALL_CATCH_EXCEPTION(0);
+    }
   }
 
   jresult = result;

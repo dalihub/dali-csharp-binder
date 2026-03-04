@@ -15,10 +15,8 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/common/common.cpp
   ${dali_csharp_binder_dir}/common/dali-wrap.cpp
   ${dali_csharp_binder_dir}/common/callbackbase-wrap.cpp
-  ${dali_csharp_binder_dir}/common/nui-view-accessible.cpp
   ${dali_csharp_binder_dir}/common/processor-controller.cpp
   ${dali_csharp_binder_dir}/common/signal-wrap.cpp
-  ${dali_csharp_binder_dir}/common/slim-custom-view-impl.cpp
   ${dali_csharp_binder_dir}/common/version-check.cpp
   ${dali_csharp_binder_dir}/common/view-wrapper-impl-wrap.cpp
 
@@ -107,6 +105,13 @@ SET( dali_csharp_binder_rive_animation_src_files
 SET( dali_csharp_binder_widget_viewer_dali_src_files
   ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-wrap.cpp
   ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-manager-wrap.cpp
+)
+
+# added for widget-viewer-dali for ubuntu (dummy implementation)
+# module: csharp-binder(widget-viewer-dali.so), backend: ubuntu
+SET( dali_csharp_binder_widget_viewer_dali_ubuntu_src_files
+  ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-ubuntu-wrap.cpp
+  ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-manager-ubuntu-wrap.cpp
 )
 
 # module: csharp-binder, backend: tizen-wearable
@@ -316,6 +321,8 @@ SET( dali_csharp_binder_physics_3d_src_files
 # Legacy codes what we try to build older verion of tizen
 SET( dali_csharp_binder_legacy_src_files
   ${dali_csharp_binder_dir}/legacy/dali-legacy-wrap.cpp
+  ${dali_csharp_binder_dir}/legacy/slim-custom-view-impl.cpp
+  ${dali_csharp_binder_dir}/legacy/nui-view-accessible.cpp
 )
 
 SET( dali_csharp_binder_header_files

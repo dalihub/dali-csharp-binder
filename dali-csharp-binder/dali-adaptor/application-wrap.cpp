@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -297,8 +297,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, char
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char* jarg3, int jarg4)
 {
-  void*                          jresult;
-  Dali::Application::WINDOW_MODE arg4;
+  void*                            jresult;
+  Dali::Application::WindowOpacity arg4;
 
   Dali::Application result;
   if(!jarg3)
@@ -307,7 +307,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char
     return 0;
   }
   std::string arg3(jarg3);
-  arg4 = (Dali::Application::WINDOW_MODE)jarg4;
+  arg4 = (Dali::Application::WindowOpacity)jarg4;
   {
     try
     {
@@ -325,11 +325,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int nuiArgc, char* nuiArgv, char* jarg3, int jarg4)
 {
-  void*                          jresult;
-  int*                           argc = nullptr;
-  char***                        argv = nullptr;
-  Dali::Application::WINDOW_MODE arg4;
-  Dali::Application              result;
+  void*                            jresult;
+  int*                             argc = nullptr;
+  char***                          argv = nullptr;
+  Dali::Application::WindowOpacity arg4;
+  Dali::Application                result;
 
   GUARD_ON_NULL_RET0(jarg3);
 
@@ -338,7 +338,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int nuiArgc, 
   argv = &gArgV;
 
   std::string arg3(jarg3);
-  arg4 = (Dali::Application::WINDOW_MODE)jarg4;
+  arg4 = (Dali::Application::WindowOpacity)jarg4;
   {
     try
     {
@@ -1573,13 +1573,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ApplicationControlSignal(void* ja
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char* jarg3, int jarg4, void* jarg5)
 {
-  void*                          jresult;
-  int*                           argc = nullptr;
-  char***                        argv = nullptr;
-  Dali::Application::WINDOW_MODE arg4;
-  Dali::PositionSize             arg5;
-  Dali::PositionSize*            argp5;
-  Dali::Application              result;
+  void*                            jresult;
+  int*                             argc = nullptr;
+  char***                          argv = nullptr;
+  Dali::Application::WindowOpacity windowOpacity;
+  Dali::PositionSize               arg5;
+  Dali::PositionSize*              argp5;
+  Dali::Application                result;
 
   if(!jarg3)
   {
@@ -1587,8 +1587,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char
     return 0;
   }
   std::string arg3(jarg3);
-  arg4  = (Dali::Application::WINDOW_MODE)jarg4;
-  argp5 = (Dali::PositionSize*)jarg5;
+  windowOpacity = (Dali::Application::WindowOpacity)jarg4;
+  argp5         = (Dali::PositionSize*)jarg5;
   if(!argp5)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
@@ -1598,7 +1598,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char
   {
     try
     {
-      result = Dali::Application::New(argc, argv, arg3, arg4, arg5);
+      result = Dali::Application::New(argc, argv, arg3, windowOpacity, arg5);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1610,14 +1610,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int nuiArgc, char* nuiArgv, char* nuiStyleSheet, int nuiWindowMode, void* initRectangle, int nuiWindowType)
 {
-  void*                          jresult;
-  int*                           argc = nullptr;
-  char***                        argv = nullptr;
-  Dali::Application::WINDOW_MODE windowMode;
-  Dali::PositionSize             rect;
-  Dali::PositionSize*            rectp;
-  Dali::WindowType               windowType;
-  Dali::Application              result;
+  void*             jresult;
+  int*              argc = nullptr;
+  char***           argv = nullptr;
+  Dali::Application result;
 
   GenerationArgV(nuiArgc, nuiArgv);
   argc = &gArgC;
@@ -1628,21 +1624,24 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int nuiArgc, ch
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string styleSheet(nuiStyleSheet);
-  windowMode = (Dali::Application::WINDOW_MODE)nuiWindowMode;
-  rectp      = (Dali::PositionSize*)initRectangle;
-  windowType = (Dali::WindowType)nuiWindowType;
 
-  if(!rectp)
+  if(!initRectangle)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
     return 0;
   }
-  rect = *rectp;
+
+  std::string styleSheet(nuiStyleSheet);
+
+  Dali::WindowData windowData;
+  windowData.SetPositionSize(*static_cast<Dali::PositionSize*>(initRectangle));
+  windowData.SetWindowType(static_cast<Dali::WindowType>(nuiWindowType));
+  windowData.SetTransparency(static_cast<Dali::Application::WindowOpacity>(nuiWindowMode) == Dali::Application::WindowOpacity::TRANSPARENT);
+
   {
     try
     {
-      result = Dali::DevelApplication::New(argc, argv, styleSheet, windowMode, rect, windowType);
+      result = Dali::Application::New(argc, argv, styleSheet, false, windowData);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1654,14 +1653,14 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int nuiArgc, ch
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, char* nuiArgv, char* nuiStyleSheet, int nuiWindowMode, void* nuiPositionSize, bool nuiUseUiThread)
 {
-  void*                          jresult;
-  int*                           argc = nullptr;
-  char***                        argv = nullptr;
-  Dali::Application::WINDOW_MODE windowMode;
-  Dali::PositionSize             positionSize;
-  Dali::PositionSize*            positionSizeP;
-  bool                           useUiThread;
-  Dali::Application              result;
+  void*                            jresult;
+  int*                             argc = nullptr;
+  char***                          argv = nullptr;
+  Dali::Application::WindowOpacity windowOpacity;
+  Dali::PositionSize               positionSize;
+  Dali::PositionSize*              positionSizeP;
+  bool                             useUiThread;
+  Dali::Application                result;
 
   if(!nuiStyleSheet)
   {
@@ -1669,7 +1668,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, ch
     return 0;
   }
   std::string styleSheet(nuiStyleSheet);
-  windowMode    = (Dali::Application::WINDOW_MODE)nuiWindowMode;
+  windowOpacity = (Dali::Application::WindowOpacity)nuiWindowMode;
   positionSizeP = (Dali::PositionSize*)nuiPositionSize;
   useUiThread   = nuiUseUiThread;
 
@@ -1687,7 +1686,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, ch
   {
     try
     {
-      result = Dali::Application::New(argc, argv, styleSheet, windowMode, positionSize, useUiThread);
+      result = Dali::Application::New(argc, argv, styleSheet, windowOpacity, positionSize, useUiThread);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1699,13 +1698,13 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, ch
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(int nuiArgc, char* nuiArgv, char* jarg3, int jarg4, void* jarg5)
 {
-  void*                          jresult;
-  int*                           argc = nullptr;
-  char***                        argv = nullptr;
-  Dali::Application::WINDOW_MODE arg4;
-  Dali::PositionSize             arg5;
-  Dali::PositionSize*            argp5;
-  Dali::Application              result;
+  void*                            jresult;
+  int*                             argc = nullptr;
+  char***                          argv = nullptr;
+  Dali::Application::WindowOpacity windowOpacity;
+  Dali::PositionSize               arg5;
+  Dali::PositionSize*              argp5;
+  Dali::Application                result;
 
   GUARD_ON_NULL_RET0(jarg3);
 
@@ -1714,8 +1713,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(
   argv = &gArgV;
 
   std::string arg3(jarg3);
-  arg4  = (Dali::Application::WINDOW_MODE)jarg4;
-  argp5 = (Dali::PositionSize*)jarg5;
+  windowOpacity = (Dali::Application::WindowOpacity)jarg4;
+  argp5         = (Dali::PositionSize*)jarg5;
   if(!argp5)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
@@ -1725,7 +1724,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(
   {
     try
     {
-      result = Dali::Application::New(argc, argv, arg3, arg4, arg5);
+      result = Dali::Application::New(argc, argv, arg3, windowOpacity, arg5);
     }
     CALL_CATCH_EXCEPTION(0);
   }

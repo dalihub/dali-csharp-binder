@@ -115,8 +115,6 @@ public:
   virtual void OnStyleChange(Dali::Toolkit::StyleManager styleManager, Dali::StyleChange::Type change);
   virtual bool OnAccessibilityActivated();
 
-  Dali::Toolkit::DevelControl::ControlAccessible* CreateAccessibleObject() override;
-
   virtual void                                         OnKeyInputFocusGained();
   virtual void                                         OnKeyInputFocusLost();
   virtual Dali::Actor                                  GetNextKeyboardFocusableActor(Dali::Actor currentFocusedActor, Dali::Toolkit::Control::KeyboardFocus::Direction direction, bool loopEnabled);

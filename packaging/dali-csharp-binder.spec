@@ -21,7 +21,7 @@
 
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 2.5.11
+Version: 2.5.12
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and BSD-3-Clause and MIT
@@ -50,6 +50,10 @@ BuildRequires: pkgconfig(dali2-toolkit)
 BuildRequires: pkgconfig(dali2-scene3d)
 BuildRequires: pkgconfig(dali2-physics-2d)
 BuildRequires: pkgconfig(dali2-physics-3d)
+BuildRequires: dali2-integration-devel
+BuildRequires: dali2-adaptor-integration-devel
+BuildRequires: dali2-toolkit-integration-devel
+
 %if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
 %define rive_animation_view 1
 BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
