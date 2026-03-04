@@ -68,39 +68,16 @@ namespace
 {
 inline void LowerFirstLetter(std::string& str)
 {
-  const size_t len = str.size();
-  if(len == 0)
+  if(str.size() > 0)
   {
-    return;
-  }
-
-  if(len == 4)
-  {
-    bool allUpper = true;
-    for(size_t i = 0; i < 4; ++i)
+    if(!(str[0] >= 'a' && str[0] <= 'z') &&
+       (str[0] < 'A' || str[0] > 'Z'))
     {
-      if(str[i] < 'A' || str[i] > 'Z')
-      {
-        allUpper = false;
-        break;
-      }
+      // For debug. Some application input non-alphabet as name. We should defect and fix it.
+      DALI_LOG_ERROR("Input argument string not start with alphabet! : %s\n", str.c_str());
     }
-
-    if(allUpper)
-    {
-      // Font variation custom axis tags are defined as 4-letter all-uppercase identifiers.
-      // Do not modify such names.
-      return;
-    }
+    str[0] |= 0x20;
   }
-
-  if(!(str[0] >= 'a' && str[0] <= 'z') &&
-      (str[0] < 'A' || str[0] > 'Z'))
-  {
-    // For debug. Some application input non-alphabet as name. We should defect and fix it.
-    DALI_LOG_ERROR("Input argument string not start with alphabet! : %s\n", str.c_str());
-  }
-  str[0] |= 0x20;
 }
 } //namespace
 
@@ -4980,10 +4957,22 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property__SWIG_2(void* jarg1, char*
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2String(jarg2);
 
-  // NUI role! We should use lowercaseString here!
-  LowerFirstLetter(arg2String);
+  Dali::Property::Index index = Dali::Property::INVALID_INDEX;
+  std::string           arg2String(jarg2);
+  {
+    try
+    {
+      index = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(arg2String);
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  if(Dali::Property::INVALID_INDEX == index)
+  {
+    // NUI role! We should use lowercaseString here!
+    LowerFirstLetter(arg2String);
+  }
 
   arg2 = &arg2String;
   {
@@ -7763,9 +7752,8 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Handle_GetPropertyName(void* jarg1, int
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_GetPropertyIndex(void* jarg1, char* jarg2)
 {
   int                   jresult;
-  Dali::Handle*         arg1 = (Dali::Handle*)0;
-  std::string*          arg2 = 0;
-  Dali::Property::Index result;
+  Dali::Handle*         arg1   = (Dali::Handle*)0;
+  Dali::Property::Index result = Dali::Property::INVALID_INDEX;
 
   arg1 = (Dali::Handle*)jarg1;
   if(!jarg2)
@@ -7773,18 +7761,27 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_GetPropertyIndex(void* jarg1, char
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
+
   std::string arg2String(jarg2);
-
-  // NUI role! We should use lowercaseString here!
-  LowerFirstLetter(arg2String);
-
-  arg2 = &arg2String;
   {
     try
     {
-      result = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex((std::string const&)*arg2);
+      result = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(arg2String);
     }
     CALL_CATCH_EXCEPTION(0);
+  }
+
+  if(Dali::Property::INVALID_INDEX == result)
+  {
+    // NUI role! We should use lowercaseString here!
+    LowerFirstLetter(arg2String);
+    {
+      try
+      {
+        result = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(arg2String);
+      }
+      CALL_CATCH_EXCEPTION(0);
+    }
   }
 
   jresult = result;
