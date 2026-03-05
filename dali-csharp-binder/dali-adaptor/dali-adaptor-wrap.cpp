@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 // EXTERNAL INCLUDES
 #include <dali/dali.h>
 #include <dali/devel-api/adaptor-framework/image-loading.h>
-#include <dali/devel-api/adaptor-framework/native-image-source-devel.h>
+#include <dali/devel-api/adaptor-framework/native-image-devel.h>
 #include <dali/devel-api/adaptor-framework/pixel-buffer.h>
 #include <dali/devel-api/adaptor-framework/window-system-devel.h>
 
@@ -1486,23 +1486,23 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_4(char* jarg1
   return jresult;
 }
 
-// NativeImageSource
+// NativeImage
 
-struct NativeImageSourcePtrHandle
+struct NativeImagePtrHandle
 {
-  NativeImageSourcePtr Ptr;
+  NativeImagePtr Ptr;
 };
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New_Handle(unsigned int jarg1, unsigned int jarg2, int jarg3)
 {
-  void*                       jresult;
-  NativeImageSourcePtrHandle* handle = new NativeImageSourcePtrHandle();
+  void*                 jresult;
+  NativeImagePtrHandle* handle = new NativeImagePtrHandle();
   {
     try
     {
-      handle->Ptr = (NativeImageSource::New(jarg1, jarg2, (NativeImageSource::ColorDepth)jarg3));
+      handle->Ptr = (NativeImage::New(jarg1, jarg2, (NativeImage::ColorDepth)jarg3));
     }
-    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourcePtrHandle* ptr)
+    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImagePtrHandle* ptr)
     { delete ptr; }, handle);
   }
   jresult = (void*)handle;
@@ -1511,8 +1511,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New_Handle(unsigned i
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New(void* jarg1)
 {
-  void*                       jresult;
-  NativeImageSourcePtrHandle* handle = (NativeImageSourcePtrHandle*)jarg1;
+  void*                 jresult;
+  NativeImagePtrHandle* handle = (NativeImagePtrHandle*)jarg1;
   {
     try
     {
@@ -1525,7 +1525,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New(void* jarg1)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_Delete(void* jarg1)
 {
-  NativeImageSourcePtrHandle* arg1 = (NativeImageSourcePtrHandle*)jarg1;
+  NativeImagePtrHandle* arg1 = (NativeImagePtrHandle*)jarg1;
   {
     try
     {
@@ -1537,15 +1537,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_Delete(void* jarg1)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_AcquireBuffer(void* jarg1, int* jarg2, int* jarg3, int* jarg4)
 {
-  void*              jresult;
-  NativeImageSource* arg1 = (NativeImageSource*)jarg1;
-  uint32_t*          arg2 = (uint32_t*)(jarg2);
-  uint32_t*          arg3 = (uint32_t*)(jarg3);
-  uint32_t*          arg4 = (uint32_t*)(jarg4);
+  void*        jresult;
+  NativeImage* arg1 = (NativeImage*)jarg1;
+  uint32_t*    arg2 = (uint32_t*)(jarg2);
+  uint32_t*    arg3 = (uint32_t*)(jarg3);
+  uint32_t*    arg4 = (uint32_t*)(jarg4);
   {
     try
     {
-      jresult = (void*)Dali::DevelNativeImageSource::AcquireBuffer(*arg1, *arg2, *arg3, *arg4);
+      jresult = (void*)Dali::DevelNativeImage::AcquireBuffer(*arg1, *arg2, *arg3, *arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1554,13 +1554,13 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_AcquireBuffer(void* j
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageSource_ReleaseBuffer(void* jarg1)
 {
-  bool               jresult;
-  NativeImageSource* arg1 = (NativeImageSource*)jarg1;
+  bool         jresult;
+  NativeImage* arg1 = (NativeImage*)jarg1;
 
   {
     try
     {
-      jresult = Dali::DevelNativeImageSource::ReleaseBuffer(*arg1, Rect<uint32_t>{});
+      jresult = Dali::DevelNativeImage::ReleaseBuffer(*arg1, Rect<uint32_t>{});
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1569,7 +1569,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_NativeImageSource_ReleaseBuffer(void* ja
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_EnableBackBuffer(void* nativeImageHandle, bool enable)
 {
-  NativeImageSource* nativeImage = static_cast<NativeImageSource*>(nativeImageHandle);
+  NativeImage* nativeImage = static_cast<NativeImage*>(nativeImageHandle);
 
   if(!nativeImage)
   {
@@ -1579,7 +1579,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_EnableBackBuffer(void*
   {
     try
     {
-      Dali::DevelNativeImageSource::EnableBackBuffer(*nativeImage, enable);
+      Dali::DevelNativeImage::EnableBackBuffer(*nativeImage, enable);
     }
     CALL_CATCH_EXCEPTION();
   }

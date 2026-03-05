@@ -21668,10 +21668,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FocusGroupChangedSignal(void* jar
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* handle)
 {
   Dali::Toolkit::ImageUrl result;
-  NativeImageSource*      nativeImageSource = (NativeImageSource*)handle;
+  NativeImage*            nativeImage = (NativeImage*)handle;
   void*                   jresult;
 
-  if(!nativeImageSource)
+  if(!nativeImage)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return 0;
@@ -21679,7 +21679,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* han
   {
     try
     {
-      result = Dali::Toolkit::Image::GenerateUrl(nativeImageSource);
+      result = Dali::Toolkit::Image::GenerateUrl(nativeImage);
     }
     catch(std::out_of_range& e)
     {
@@ -21710,10 +21710,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* han
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl_With_PreMultiplied(void* handle, bool preMultiplied)
 {
   Dali::Toolkit::ImageUrl result;
-  NativeImageSource*      nativeImageSource = (NativeImageSource*)handle;
+  NativeImage*            nativeImage = (NativeImage*)handle;
   void*                   jresult;
 
-  if(!nativeImageSource)
+  if(!nativeImage)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return 0;
@@ -21721,7 +21721,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl_With_PreM
   {
     try
     {
-      result = Dali::Toolkit::Image::GenerateUrl(nativeImageSource, preMultiplied);
+      result = Dali::Toolkit::Image::GenerateUrl(nativeImage, preMultiplied);
     }
     catch(std::out_of_range& e)
     {
