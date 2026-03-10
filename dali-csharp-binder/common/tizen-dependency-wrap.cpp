@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 
 // EXTERNAL INCLUDES
 #include <dali/dali.h>
-#include <dali/devel-api/adaptor-framework/native-image-source-devel.h>
-#include <dali/devel-api/adaptor-framework/native-image-source-queue.h>
+#include <dali/devel-api/adaptor-framework/native-image-devel.h>
+#include <dali/devel-api/adaptor-framework/native-image-queue.h>
 
 // Tizen dependency header
 #include <tbm_surface.h>
@@ -33,9 +33,9 @@ extern "C" {
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Texture_TbmSurface(tbm_surface_h tbm_surface)
 {
-  Dali::NativeImageSourcePtr mNativeImageSrc;
-  Dali::Texture              mNativeTexture;
-  void*                      jresult;
+  Dali::NativeImagePtr mNativeImageSrc;
+  Dali::Texture        mNativeTexture;
+  void*                jresult;
 
   if(!tbm_surface)
   {
@@ -46,7 +46,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Texture_TbmSurface(tbm_surface_h tb
   try
   {
     Dali::Any source(tbm_surface);
-    mNativeImageSrc = Dali::NativeImageSource::New(source);
+    mNativeImageSrc = Dali::NativeImage::New(source);
     mNativeTexture  = Dali::Texture::New(*mNativeImageSrc);
   }
   CALL_CATCH_EXCEPTION(0);
@@ -55,22 +55,22 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Texture_TbmSurface(tbm_surface_h tb
   return (void*)jresult;
 }
 
-struct NativeImageSourcePtrHandle
+struct NativeImagePtrHandle
 {
-  Dali::NativeImageSourcePtr Ptr;
+  Dali::NativeImagePtr Ptr;
 };
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New_Handle_With_TbmSurface(tbm_surface_h csTbmSurface)
 {
-  void*                       jresult;
-  NativeImageSourcePtrHandle* handle     = new NativeImageSourcePtrHandle();
-  Dali::Any                   tbmSurface = (Dali::Any)csTbmSurface;
+  void*                 jresult;
+  NativeImagePtrHandle* handle     = new NativeImagePtrHandle();
+  Dali::Any             tbmSurface = (Dali::Any)csTbmSurface;
   {
     try
     {
-      handle->Ptr = Dali::NativeImageSource::New(tbmSurface);
+      handle->Ptr = Dali::NativeImage::New(tbmSurface);
     }
-    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourcePtrHandle* ptr)
+    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImagePtrHandle* ptr)
     { delete ptr; }, handle);
   }
   jresult = (void*)handle;
@@ -79,8 +79,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_New_Handle_With_TbmSu
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_SetSource(void* jarg1, tbm_surface_h csTbmSurface)
 {
-  Dali::NativeImageSource* pImage     = (Dali::NativeImageSource*)jarg1;
-  Dali::Any                tbmSurface = (Dali::Any)csTbmSurface;
+  Dali::NativeImage* pImage     = (Dali::NativeImage*)jarg1;
+  Dali::Any          tbmSurface = (Dali::Any)csTbmSurface;
 
   try
   {
@@ -89,22 +89,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_NativeImageSource_SetSource(void* jarg1,
   CALL_CATCH_EXCEPTION();
 }
 
-struct NativeImageSourceQueuePtrHandle
+struct NativeImageQueuePtrHandle
 {
-  Dali::NativeImageSourceQueuePtr Ptr;
+  Dali::NativeImageQueuePtr Ptr;
 };
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueuePtr_New_Handle_With_TbmQueue(tbm_surface_queue_h csTbmQueue)
 {
-  void*                            jresult;
-  NativeImageSourceQueuePtrHandle* queue    = new NativeImageSourceQueuePtrHandle();
-  Dali::Any                        tbmQueue = (Dali::Any)csTbmQueue;
+  void*                      jresult;
+  NativeImageQueuePtrHandle* queue    = new NativeImageQueuePtrHandle();
+  Dali::Any                  tbmQueue = (Dali::Any)csTbmQueue;
   {
     try
     {
-      queue->Ptr = Dali::NativeImageSourceQueue::New(tbmQueue);
+      queue->Ptr = Dali::NativeImageQueue::New(tbmQueue);
     }
-    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageSourceQueuePtrHandle* ptr)
+    CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImageQueuePtrHandle* ptr)
     { delete ptr; }, queue);
   }
   jresult = (void*)queue;

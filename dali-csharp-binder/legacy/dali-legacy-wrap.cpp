@@ -5,6 +5,8 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 #include <dali-toolkit/devel-api/focus-manager/keyboard-focus-manager-devel.h>
+#include <dali/devel-api/object/csharp-type-info.h>
+#include <dali/devel-api/object/csharp-type-registry.h>
 #include <dali/devel-api/update/frame-callback-interface.h>
 
 #include <dali-csharp-binder/common/dali-wrap.h> ///< Must include after common.h

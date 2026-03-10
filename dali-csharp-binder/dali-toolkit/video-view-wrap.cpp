@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -384,7 +384,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_VideoView_GetFrameInterpolationInterval
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_EnableOffscreenFrameRendering(void* view, bool useOffScreenFrame)
 {
   Dali::Toolkit::VideoView* videoView = (Dali::Toolkit::VideoView*)0;
-  videoView = (Dali::Toolkit::VideoView*)view;
+  videoView                           = (Dali::Toolkit::VideoView*)view;
   if(videoView == nullptr)
   {
     DALI_LOG_ERROR("VideoView is nullptr!");
@@ -399,10 +399,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_EnableOffscreenFrameRendering(
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetVideoFrameBuffer(void* view, void* csNativeImageSource)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetVideoFrameBuffer(void* view, void* csNativeImage)
 {
-  Dali::Toolkit::VideoView*  videoView         = (Dali::Toolkit::VideoView*)0;
-  Dali::NativeImageSourcePtr nativeImageSource = (Dali::NativeImageSource*)csNativeImageSource;
+  Dali::Toolkit::VideoView* videoView   = (Dali::Toolkit::VideoView*)0;
+  Dali::NativeImagePtr      nativeImage = (Dali::NativeImage*)csNativeImage;
 
   videoView = (Dali::Toolkit::VideoView*)view;
 
@@ -411,17 +411,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoView_SetVideoFrameBuffer(void* view
     DALI_LOG_ERROR("VideoView is nullptr!");
     return;
   }
-  if(nativeImageSource == nullptr)
+  if(nativeImage == nullptr)
   {
-    DALI_LOG_ERROR("nativeImageSource is nullptr!");
+    DALI_LOG_ERROR("nativeImageis nullptr!");
     return;
   }
   {
     try
     {
-      // The nativeImageSource is a handle (e.g., tbm_surface_h or Dali::NativeImageSource*)
+      // The nativeImageis a handle (e.g., tbm_surface_h or Dali::NativeImage*)
       // We wrap it in Dali::Any to pass to the C++ API.
-      Toolkit::DevelVideoView::SetVideoFrameBuffer(*videoView, nativeImageSource);
+      Toolkit::DevelVideoView::SetVideoFrameBuffer(*videoView, nativeImage);
     }
     CALL_CATCH_EXCEPTION();
   }

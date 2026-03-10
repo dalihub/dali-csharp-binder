@@ -21302,20 +21302,36 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_AddFrameCallback(
 {
   Dali::FrameCallbackInterface*        obj  = (Dali::FrameCallbackInterface*)jarg2;
   SwigDirector_FrameCallbackInterface* arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface*>(obj);
+  if(arg2 == nullptr)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::FrameCallbackInterface", 0);
+    return;
+  }
 
   Dali::Stage* arg1 = (Dali::Stage*)0;
   Dali::Actor* arg3 = 0;
 
   arg1 = (Dali::Stage*)jarg1;
   arg3 = (Dali::Actor*)jarg3;
-
-  if(arg3 == nullptr)
+  if(arg1 == nullptr)
   {
-    DevelStage::AddFrameCallback(*arg1, *arg2, Dali::Actor());
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Stage", 0);
+    return;
   }
-  else
+
   {
-    DevelStage::AddFrameCallback(*arg1, *arg2, *arg3);
+    try
+    {
+      if(arg3 == nullptr)
+      {
+        DevelStage::AddFrameCallback(*arg1, *arg2, Dali::Actor());
+      }
+      else
+      {
+        DevelStage::AddFrameCallback(*arg1, *arg2, *arg3);
+      }
+    }
+    CALL_CATCH_EXCEPTION();
   }
   return;
 }
@@ -21324,12 +21340,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_RemoveFrameCallba
 {
   Dali::FrameCallbackInterface*        obj  = (Dali::FrameCallbackInterface*)jarg2;
   SwigDirector_FrameCallbackInterface* arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface*>(obj);
+  if(arg2 == nullptr)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::FrameCallbackInterface", 0);
+    return;
+  }
 
   Dali::Stage* arg1 = (Dali::Stage*)0;
 
   arg1 = (Dali::Stage*)jarg1;
+  if(arg1 == nullptr)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Stage", 0);
+    return;
+  }
 
-  DevelStage::RemoveFrameCallback(*arg1, *arg2);
+  {
+    try
+    {
+      DevelStage::RemoveFrameCallback(*arg1, *arg2);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
   return;
 }
 
@@ -21668,10 +21700,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FocusGroupChangedSignal(void* jar
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* handle)
 {
   Dali::Toolkit::ImageUrl result;
-  NativeImageSource*      nativeImageSource = (NativeImageSource*)handle;
+  NativeImage*            nativeImage = (NativeImage*)handle;
   void*                   jresult;
 
-  if(!nativeImageSource)
+  if(!nativeImage)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return 0;
@@ -21679,7 +21711,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* han
   {
     try
     {
-      result = Dali::Toolkit::Image::GenerateUrl(nativeImageSource);
+      result = Dali::Toolkit::Image::GenerateUrl(nativeImage);
     }
     catch(std::out_of_range& e)
     {
@@ -21710,10 +21742,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl(void* han
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl_With_PreMultiplied(void* handle, bool preMultiplied)
 {
   Dali::Toolkit::ImageUrl result;
-  NativeImageSource*      nativeImageSource = (NativeImageSource*)handle;
+  NativeImage*            nativeImage = (NativeImage*)handle;
   void*                   jresult;
 
-  if(!nativeImageSource)
+  if(!nativeImage)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "some argument is null", 0);
     return 0;
@@ -21721,7 +21753,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageSource_GenerateUrl_With_PreM
   {
     try
     {
-      result = Dali::Toolkit::Image::GenerateUrl(nativeImageSource, preMultiplied);
+      result = Dali::Toolkit::Image::GenerateUrl(nativeImage, preMultiplied);
     }
     catch(std::out_of_range& e)
     {
