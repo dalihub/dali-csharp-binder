@@ -22,10 +22,14 @@
 #include <dali/devel-api/adaptor-framework/pointer-constraints-event.h>
 #include <dali/devel-api/adaptor-framework/window-devel.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
+#include <dali/integration-api/string-utils.h>
 #include <dali/public-api/adaptor-framework/window.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
+
+using Dali::Integration::ToDaliString;
+using Dali::Integration::ToStdString;
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_bool_SP__Sg__Empty(Dali::Signal<void(Dali::Window, bool)> const* self)
 {
@@ -266,7 +270,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_New__SWIG_0(void* jarg1, char* j
 {
   void*               jresult;
   Dali::PositionSize  arg1;
-  std::string*        arg2 = 0;
   bool                arg3;
   Dali::PositionSize* argp1;
   Dali::Window        result;
@@ -285,20 +288,16 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_New__SWIG_0(void* jarg1, char* j
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = jarg3 ? true : false;
   {
     try
     {
-      result = Dali::Window::New(arg1, (std::string const&)*arg2, arg3);
+      result = Dali::Window::New(arg1, Dali::String(jarg2), arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Window((const Dali::Window&)result);
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -337,7 +336,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_New__WithWindowData(char* nuiNam
   {
     try
     {
-      result = Dali::Window::New((std::string const&)*name, (std::string const&)*className, *pWindowData);
+      result = Dali::Window::New(ToDaliString(*name), ToDaliString(*className), *pWindowData);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -397,7 +396,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetClass(void* winHandle, char* p
   {
     try
     {
-      (window)->SetClass(name, className);
+      (window)->SetClass(ToDaliString(name), ToDaliString(className));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -924,7 +923,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_GetSupportedAuxiliaryHint(void* jarg1, 
   Dali::Window  arg1;
   unsigned int  arg2;
   Dali::Window* argp1;
-  std::string   result;
+  Dali::String  result;
 
   argp1 = (Dali::Window*)jarg1;
   if(!argp1)
@@ -941,8 +940,8 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_GetSupportedAuxiliaryHint(void* jarg1, 
     }
     CALL_CATCH_EXCEPTION(0);
   }
+  jresult = SWIG_csharp_string_callback(result.CStr());
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
   return jresult;
 }
 
@@ -950,8 +949,6 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AddAuxiliaryHint(void* jarg1, ch
 {
   unsigned int  jresult;
   Dali::Window  arg1;
-  std::string*  arg2 = 0;
-  std::string*  arg3 = 0;
   Dali::Window* argp1;
   unsigned int  result;
 
@@ -967,19 +964,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AddAuxiliaryHint(void* jarg1, ch
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   if(!jarg3)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg3_str(jarg3);
-  arg3 = &arg3_str;
   {
     try
     {
-      result = (unsigned int)arg1.AddAuxiliaryHint((std::string const&)*arg2, (std::string const&)*arg3);
+      result = (unsigned int)arg1.AddAuxiliaryHint(Dali::String(jarg2), Dali::String(jarg3));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1022,7 +1015,6 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetAuxiliaryHintValue(void* jarg
   unsigned int  jresult;
   Dali::Window  arg1;
   unsigned int  arg2;
-  std::string*  arg3 = 0;
   Dali::Window* argp1;
   bool          result;
 
@@ -1039,19 +1031,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_SetAuxiliaryHintValue(void* jarg
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg3_str(jarg3);
-  arg3 = &arg3_str;
   {
     try
     {
-      result = (bool)arg1.SetAuxiliaryHintValue(arg2, (std::string const&)*arg3);
+      result = (bool)arg1.SetAuxiliaryHintValue(arg2, Dali::String(jarg3));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -1062,7 +1050,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_GetAuxiliaryHintValue(void* jarg1, unsi
   Dali::Window  arg1;
   unsigned int  arg2;
   Dali::Window* argp1;
-  std::string   result;
+  Dali::String  result;
 
   argp1 = (Dali::Window*)jarg1;
   if(!argp1)
@@ -1079,8 +1067,8 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_GetAuxiliaryHintValue(void* jarg1, unsi
     }
     CALL_CATCH_EXCEPTION(0);
   }
+  jresult = SWIG_csharp_string_callback(result.CStr());
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
   return jresult;
 }
 
@@ -1088,7 +1076,6 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GetAuxiliaryHintId(void* jarg1, 
 {
   unsigned int  jresult;
   Dali::Window  arg1;
-  std::string*  arg2 = 0;
   Dali::Window* argp1;
   unsigned int  result;
 
@@ -1104,19 +1091,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GetAuxiliaryHintId(void* jarg1, 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   {
     try
     {
-      result = (unsigned int)arg1.GetAuxiliaryHintId((std::string const&)*arg2);
+      result = (unsigned int)arg1.GetAuxiliaryHintId(Dali::String(jarg2));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }

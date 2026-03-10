@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,14 +38,14 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_New_SWIG_0(char* csModelPath, cha
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string modelPath(csModelPath);
+  Dali::String modelPath(csModelPath);
 
   if(!csResourcePath)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string resourcePath(csResourcePath);
+  Dali::String resourcePath(csResourcePath);
 
   {
     try
@@ -177,13 +177,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Model_SetImageBasedLightSource(void* csM
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string diffuseUrl(csDiffuseUrl);
+  Dali::String diffuseUrl(csDiffuseUrl);
   if(!csSpecularUrl)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string specularUrl(csSpecularUrl);
+  Dali::String specularUrl(csSpecularUrl);
   {
     try
     {
@@ -288,7 +288,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_GetAnimation_2(void* csModel, cha
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string name(csName);
+  Dali::String name(csName);
   {
     try
     {
@@ -382,7 +382,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_FindChildModelNodeByName(void* cs
 
   try
   {
-    result = model->FindChildModelNodeByName(std::string_view(nodeName));
+    result = model->FindChildModelNodeByName(Dali::StringView(nodeName));
   }
   CALL_CATCH_EXCEPTION(nullptr);
 
@@ -533,7 +533,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel,
     scale = Dali::Vector3(*static_cast<const Dali::Vector3*>(csScale));
   }
 
-  std::string filename(csFileName);
+  Dali::String filename(csFileName);
   {
     try
     {
@@ -673,7 +673,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadFacialAnimation_1(void* csMod
     return 0;
   }
 
-  std::string filename(csFileName);
+  Dali::String filename(csFileName);
   {
     try
     {

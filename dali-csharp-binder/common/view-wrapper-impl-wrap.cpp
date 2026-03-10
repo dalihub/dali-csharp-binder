@@ -23,8 +23,12 @@
 #include <dali-toolkit/devel-api/controls/control-devel.h>
 #include <dali-toolkit/devel-api/visual-factory/visual-base.h>
 
+#include <dali/integration-api/string-utils.h>
 #include <dali/public-api/object/type-registry-helper.h>
 #include <dali/public-api/object/type-registry.h>
+
+using Dali::Integration::ToDaliString;
+using Dali::Integration::ToStdString;
 
 namespace
 {
@@ -591,7 +595,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ViewWrapperImpl_New(char* jarg1, void* 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  (&arg1)->assign(jarg1);
+  arg1 = (const char*)jarg1;
   arg2 = (Dali::Toolkit::Internal::ControlWrapper*)jarg2;
   {
     try
@@ -637,7 +641,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ViewWrapper_New(char* jarg1, void* jarg
   {
     try
     {
-      result = Dali::Toolkit::ControlWrapper::New(arg1, *arg2);
+      result = Dali::Toolkit::ControlWrapper::New(ToDaliString(arg1), *arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }

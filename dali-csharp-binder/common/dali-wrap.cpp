@@ -62,7 +62,14 @@
 #include <dali/devel-api/adaptor-framework/environment-variable.h>
 #include <dali/public-api/adaptor-framework/style-change.h>
 
+#include <dali/integration-api/string-utils.h>
+
 #include <dali-toolkit/devel-api/focus-manager/keyboard-focus-manager-devel.h>
+
+using Dali::Integration::ToDaliString;
+using Dali::Integration::ToDaliStringView;
+using Dali::Integration::ToStdString;
+using Dali::Integration::ToStdStringView;
 
 namespace
 {
@@ -696,7 +703,7 @@ SwigDirector_WidgetImpl::~SwigDirector_WidgetImpl()
 {
 }
 
-void SwigDirector_WidgetImpl::OnCreate(std::string const& contentInfo, Dali::Window window)
+void SwigDirector_WidgetImpl::OnCreate(Dali::String const& contentInfo, Dali::Window window)
 {
   void* jwindow;
 
@@ -708,11 +715,11 @@ void SwigDirector_WidgetImpl::OnCreate(std::string const& contentInfo, Dali::Win
   else
   {
     jwindow = (void*)new Dali::Window((const Dali::Window&)window);
-    swig_callbackOnCreate(contentInfo.c_str(), jwindow);
+    swig_callbackOnCreate(contentInfo.CStr(), jwindow);
   }
 }
 
-void SwigDirector_WidgetImpl::OnTerminate(std::string const& contentInfo, Dali::Widget::Termination type)
+void SwigDirector_WidgetImpl::OnTerminate(Dali::String const& contentInfo, Dali::Widget::Termination type)
 {
   int jtype;
 
@@ -724,7 +731,7 @@ void SwigDirector_WidgetImpl::OnTerminate(std::string const& contentInfo, Dali::
   else
   {
     jtype = (int)type;
-    swig_callbackOnTerminate(contentInfo.c_str(), jtype);
+    swig_callbackOnTerminate(contentInfo.CStr(), jtype);
   }
 }
 
@@ -770,7 +777,7 @@ void SwigDirector_WidgetImpl::OnResize(Dali::Window window)
   }
 }
 
-void SwigDirector_WidgetImpl::OnUpdate(std::string const& contentInfo, int force)
+void SwigDirector_WidgetImpl::OnUpdate(Dali::String const& contentInfo, int force)
 {
   int jforce;
 
@@ -782,7 +789,7 @@ void SwigDirector_WidgetImpl::OnUpdate(std::string const& contentInfo, int force
   else
   {
     jforce = force;
-    swig_callbackOnUpdate(contentInfo.c_str(), jforce);
+    swig_callbackOnUpdate(contentInfo.CStr(), jforce);
   }
 }
 
@@ -4770,7 +4777,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property__SWIG_2(void* jarg1, char*
   {
     try
     {
-      index = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(arg2String);
+      index = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(ToDaliStringView(arg2String));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -4785,7 +4792,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property__SWIG_2(void* jarg1, char*
   {
     try
     {
-      result = (Dali::Property*)new Dali::Property(*arg1, (std::string const&)*arg2);
+      result = (Dali::Property*)new Dali::Property(*arg1, ToDaliStringView(*arg2));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -5173,7 +5180,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Property_Key_indexKey_get(void* jarg1)
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Key_stringKey_set(void* jarg1, char* jarg2)
 {
   Dali::Property::Key* arg1 = (Dali::Property::Key*)0;
-  std::string*         arg2 = 0;
 
   arg1 = (Dali::Property::Key*)jarg1;
   if(!jarg2)
@@ -5181,29 +5187,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Key_stringKey_set(void* jarg1, 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
-  if(arg1) (arg1)->stringKey = *arg2;
-
-  //argout typemap for const std::string&
+  if(arg1) (arg1)->stringKey = Dali::String(jarg2);
 }
 
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Property_Key_stringKey_get(void* jarg1)
 {
   char*                jresult;
-  Dali::Property::Key* arg1   = (Dali::Property::Key*)0;
-  std::string*         result = 0;
+  Dali::Property::Key* arg1 = (Dali::Property::Key*)0;
 
   arg1    = (Dali::Property::Key*)jarg1;
-  result  = (std::string*)&((arg1)->stringKey);
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  jresult = SWIG_csharp_string_callback((arg1)->stringKey.CStr());
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property_Key__SWIG_0(char* jarg1)
 {
   void*                jresult;
-  std::string*         arg1   = 0;
   Dali::Property::Key* result = 0;
 
   if(!jarg1)
@@ -5211,19 +5210,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property_Key__SWIG_0(char* jarg1)
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
   {
     try
     {
-      result = (Dali::Property::Key*)new Dali::Property::Key((std::string const&)*arg1);
+      result = (Dali::Property::Key*)new Dali::Property::Key(Dali::StringView(jarg1));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -5251,7 +5246,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_0(void* jarg1
 {
   bool                 jresult;
   Dali::Property::Key* arg1 = (Dali::Property::Key*)0;
-  std::string*         arg2 = 0;
   bool                 result;
 
   arg1 = (Dali::Property::Key*)jarg1;
@@ -5260,19 +5254,15 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Key_EqualTo__SWIG_0(void* jarg1
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   {
     try
     {
-      result = (bool)(arg1)->operator==((std::string const&)*arg2);
+      result = (bool)(arg1)->operator==(Dali::StringView(jarg2));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -5328,7 +5318,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Key_NotEqualTo__SWIG_0(void* ja
 {
   bool                 jresult;
   Dali::Property::Key* arg1 = (Dali::Property::Key*)0;
-  std::string*         arg2 = 0;
   bool                 result;
 
   arg1 = (Dali::Property::Key*)jarg1;
@@ -5337,19 +5326,15 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Key_NotEqualTo__SWIG_0(void* ja
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   {
     try
     {
-      result = (bool)(arg1)->operator!=((std::string const&)*arg2);
+      result = (bool)(arg1)->operator!=(Dali::StringView(jarg2));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -5848,7 +5833,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Property_Map_Add__SWIG_2(void* jarg1, i
     Dali::Property::Map* arg1 = (Dali::Property::Map*)jarg1;                                                     \
     try                                                                                                          \
     {                                                                                                            \
-      arg1->operator[](std::string_view(jarg2)) = Dali::Property::Value(PassingArgs);                            \
+      arg1->operator[](Dali::StringView(jarg2)) = Dali::Property::Value(PassingArgs);                            \
     }                                                                                                            \
     CALL_CATCH_EXCEPTION();                                                                                      \
   }                                                                                                              \
@@ -5988,19 +5973,19 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Property_Map_GetKey(void* jarg1, unsign
   char*                         jresult;
   Dali::Property::Map*          arg1 = (Dali::Property::Map*)0;
   Dali::Property::Map::SizeType arg2;
-  std::string*                  result = 0;
+  Dali::String                  result;
 
   arg1 = (Dali::Property::Map*)jarg1;
   arg2 = (Dali::Property::Map::SizeType)jarg2;
   {
     try
     {
-      result = (std::string*)&((Dali::Property::Map const*)arg1)->GetKey(arg2);
+      result = ((Dali::Property::Map const*)arg1)->GetKey(arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -6072,7 +6057,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Property_Map_Find__SWIG_3(void* jarg1, 
   void*                  jresult;
   Dali::Property::Map*   arg1 = (Dali::Property::Map*)0;
   Dali::Property::Index  arg2;
-  std::string*           arg3   = 0;
   Dali::Property::Value* result = 0;
 
   arg1 = (Dali::Property::Map*)jarg1;
@@ -6082,19 +6066,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Property_Map_Find__SWIG_3(void* jarg1, 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg3_str(jarg3);
-  arg3 = &arg3_str;
   {
     try
     {
-      result = (Dali::Property::Value*)((Dali::Property::Map const*)arg1)->Find(arg2, (std::string const&)*arg3);
+      result = (Dali::Property::Value*)((Dali::Property::Map const*)arg1)->Find(arg2, Dali::StringView(jarg3));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -6136,7 +6116,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Map_Remove__SWIG_1(void* map, c
   {
     try
     {
-      isRemoved = propertyMap->Remove(strKey);
+      isRemoved = propertyMap->Remove(ToDaliStringView(strKey));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -6168,7 +6148,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Property_Map_ValueOfIndex__SWIG_0(void*
 {
   void*                  jresult;
   Dali::Property::Map*   arg1   = (Dali::Property::Map*)0;
-  std::string*           arg2   = 0;
   Dali::Property::Value* result = 0;
 
   arg1 = (Dali::Property::Map*)jarg1;
@@ -6177,19 +6156,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Property_Map_ValueOfIndex__SWIG_0(void*
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   {
     try
     {
-      result = (Dali::Property::Value*)&((Dali::Property::Map const*)arg1)->operator[]((std::string const&)*arg2);
+      result = (Dali::Property::Value*)&((Dali::Property::Map const*)arg1)->operator[](Dali::StringView(jarg2));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -6224,15 +6199,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey(void* ja
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string  arg2_str(jarg2);
-  std::string* arg2 = &arg2_str;
 
   Dali::Property::Value* arg3 = (Dali::Property::Value*)jarg3;
 
   {
     try
     {
-      arg1->operator[]((std::string const&)*arg2) = *arg3;
+      arg1->operator[](Dali::StringView(jarg2)) = *arg3;
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -6251,7 +6224,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_IntValue
   {
     try
     {
-      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const&)((int32_t)jarg3);
+      arg1->operator[](Dali::StringView(jarg2)) = (Dali::Property::Value const&)((int32_t)jarg3);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -6270,7 +6243,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_BoolValu
   {
     try
     {
-      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const&)(jarg3);
+      arg1->operator[](Dali::StringView(jarg2)) = (Dali::Property::Value const&)(jarg3);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -6289,7 +6262,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_FloatVal
   {
     try
     {
-      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const&)(jarg3);
+      arg1->operator[](Dali::StringView(jarg2)) = (Dali::Property::Value const&)(jarg3);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -6308,7 +6281,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_StringVa
   {
     try
     {
-      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const&)(jarg3);
+      arg1->operator[](Dali::StringView(jarg2)) = (Dali::Property::Value const&)(jarg3);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -6327,7 +6300,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_Vector2(
   {
     try
     {
-      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const&)(Dali::Vector2(jarg3, jarg4));
+      arg1->operator[](Dali::StringView(jarg2)) = (Dali::Property::Value const&)(Dali::Vector2(jarg3, jarg4));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -6346,7 +6319,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_Vector4(
   {
     try
     {
-      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const&)(Dali::Vector4(jarg3, jarg4, jarg5, jarg6));
+      arg1->operator[](Dali::StringView(jarg2)) = (Dali::Property::Value const&)(Dali::Vector4(jarg3, jarg4, jarg5, jarg6));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -6365,7 +6338,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Map_SetValue_StringKey_Rect(voi
   {
     try
     {
-      arg1->operator[](std::string_view(jarg2)) = (Dali::Property::Value const&)(Dali::Rect<int>(jarg3, jarg4, jarg5, jarg6));
+      arg1->operator[](Dali::StringView(jarg2)) = (Dali::Property::Value const&)(Dali::Rect<int>(jarg3, jarg4, jarg5, jarg6));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -6500,7 +6473,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseObject_DoAction(void* jarg1, char* j
 {
   bool                 jresult;
   Dali::BaseObject*    arg1 = (Dali::BaseObject*)0;
-  std::string*         arg2 = 0;
   Dali::Property::Map* arg3 = 0;
   bool                 result;
 
@@ -6510,8 +6482,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseObject_DoAction(void* jarg1, char* j
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Map*)jarg3;
   if(!arg3)
   {
@@ -6521,14 +6491,12 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseObject_DoAction(void* jarg1, char* j
   {
     try
     {
-      result = (bool)(arg1)->DoAction((std::string const&)*arg2, (Dali::Property::Map const&)*arg3);
+      result = (bool)(arg1)->DoAction(Dali::StringView(jarg2), (Dali::Property::Map const&)*arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -6536,19 +6504,19 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseObject_DoAction(void* jarg1, char* j
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_BaseObject_GetTypeName(void* jarg1)
 {
   char*             jresult;
-  Dali::BaseObject* arg1   = (Dali::BaseObject*)0;
-  std::string*      result = 0;
+  Dali::BaseObject* arg1 = (Dali::BaseObject*)0;
+  Dali::String      result;
 
   arg1 = (Dali::BaseObject*)jarg1;
   {
     try
     {
-      result = (std::string*)&((Dali::BaseObject const*)arg1)->GetTypeName();
+      result = ((Dali::BaseObject const*)arg1)->GetTypeName();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -6583,7 +6551,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseObject_DoConnectSignal(void* jarg1, 
   bool                        jresult;
   Dali::BaseObject*           arg1 = (Dali::BaseObject*)0;
   ConnectionTrackerInterface* arg2 = (ConnectionTrackerInterface*)0;
-  std::string*                arg3 = 0;
   FunctorDelegate*            arg4 = (FunctorDelegate*)0;
   bool                        result;
 
@@ -6594,20 +6561,16 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseObject_DoConnectSignal(void* jarg1, 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg3_str(jarg3);
-  arg3 = &arg3_str;
   arg4 = (FunctorDelegate*)jarg4;
   {
     try
     {
-      result = (bool)(arg1)->DoConnectSignal(arg2, (std::string const&)*arg3, arg4);
+      result = (bool)(arg1)->DoConnectSignal(arg2, Dali::StringView(jarg3), arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -6695,7 +6658,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseHandle_DoAction(void* jarg1, char* j
 {
   bool                 jresult;
   Dali::BaseHandle*    arg1 = (Dali::BaseHandle*)0;
-  std::string*         arg2 = 0;
   Dali::Property::Map* arg3 = 0;
   bool                 result;
 
@@ -6705,8 +6667,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseHandle_DoAction(void* jarg1, char* j
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Map*)jarg3;
   if(!arg3)
   {
@@ -6716,14 +6676,12 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseHandle_DoAction(void* jarg1, char* j
   {
     try
     {
-      result = (bool)(arg1)->DoAction((std::string const&)*arg2, (Dali::Property::Map const&)*arg3);
+      result = (bool)(arg1)->DoAction(Dali::StringView(jarg2), (Dali::Property::Map const&)*arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -6731,19 +6689,19 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_BaseHandle_DoAction(void* jarg1, char* j
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_BaseHandle_GetTypeName(void* jarg1)
 {
   char*             jresult;
-  Dali::BaseHandle* arg1   = (Dali::BaseHandle*)0;
-  std::string*      result = 0;
+  Dali::BaseHandle* arg1 = (Dali::BaseHandle*)0;
+  Dali::String      result;
 
   arg1 = (Dali::BaseHandle*)jarg1;
   {
     try
     {
-      result = (std::string*)&((Dali::BaseHandle const*)arg1)->GetTypeName();
+      result = ((Dali::BaseHandle const*)arg1)->GetTypeName();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -7540,7 +7498,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Handle_GetPropertyName(void* jarg1, int
   char*                 jresult;
   Dali::Handle*         arg1 = (Dali::Handle*)0;
   Dali::Property::Index arg2;
-  std::string           result;
+  Dali::String          result;
 
   arg1 = (Dali::Handle*)jarg1;
   arg2 = (Dali::Property::Index)jarg2;
@@ -7552,7 +7510,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Handle_GetPropertyName(void* jarg1, int
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -7573,7 +7531,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_GetPropertyIndex(void* jarg1, char
   {
     try
     {
-      result = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(arg2String);
+      result = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(ToDaliStringView(arg2String));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -7585,7 +7543,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_GetPropertyIndex(void* jarg1, char
     {
       try
       {
-        result = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(arg2String);
+        result = (Dali::Property::Index)((Dali::Handle const*)arg1)->GetPropertyIndex(ToDaliStringView(arg2String));
       }
       CALL_CATCH_EXCEPTION(0);
     }
@@ -7729,7 +7687,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_RegisterProperty__SWIG_0(void* jar
 {
   int                    jresult;
   Dali::Handle*          arg1 = (Dali::Handle*)0;
-  std::string*           arg2 = 0;
   Dali::Property::Value* arg3 = 0;
   Dali::Property::Index  result;
 
@@ -7739,8 +7696,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_RegisterProperty__SWIG_0(void* jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Value*)jarg3;
   if(!arg3)
   {
@@ -7750,14 +7705,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_RegisterProperty__SWIG_0(void* jar
   {
     try
     {
-      result = (Dali::Property::Index)(arg1)->RegisterProperty((std::string const&)*arg2, (Dali::Property::Value const&)*arg3);
+      result = (Dali::Property::Index)(arg1)->RegisterProperty(Dali::StringView(jarg2), (Dali::Property::Value const&)*arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -7766,7 +7719,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_RegisterProperty__SWIG_1(void* jar
 {
   int                        jresult;
   Dali::Handle*              arg1 = (Dali::Handle*)0;
-  std::string*               arg2 = 0;
   Dali::Property::Value*     arg3 = 0;
   Dali::Property::AccessMode arg4;
   Dali::Property::Index      result;
@@ -7777,8 +7729,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_RegisterProperty__SWIG_1(void* jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Value*)jarg3;
   if(!arg3)
   {
@@ -7789,14 +7739,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Handle_RegisterProperty__SWIG_1(void* jar
   {
     try
     {
-      result = (Dali::Property::Index)(arg1)->RegisterProperty((std::string const&)*arg2, (Dali::Property::Value const&)*arg3, arg4);
+      result = (Dali::Property::Index)(arg1)->RegisterProperty(Dali::StringView(jarg2), (Dali::Property::Value const&)*arg3, arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -8026,38 +7974,38 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeInfo__SWIG_1(void* jarg1)
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TypeInfo_GetName(void* jarg1)
 {
   char*           jresult;
-  Dali::TypeInfo* arg1   = (Dali::TypeInfo*)0;
-  std::string*    result = 0;
+  Dali::TypeInfo* arg1 = (Dali::TypeInfo*)0;
+  Dali::String    result;
 
   arg1 = (Dali::TypeInfo*)jarg1;
   {
     try
     {
-      result = (std::string*)&((Dali::TypeInfo const*)arg1)->GetName();
+      result = ((Dali::TypeInfo const*)arg1)->GetName();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TypeInfo_GetBaseName(void* jarg1)
 {
   char*           jresult;
-  Dali::TypeInfo* arg1   = (Dali::TypeInfo*)0;
-  std::string*    result = 0;
+  Dali::TypeInfo* arg1 = (Dali::TypeInfo*)0;
+  Dali::String    result;
 
   arg1 = (Dali::TypeInfo*)jarg1;
   {
     try
     {
-      result = (std::string*)&((Dali::TypeInfo const*)arg1)->GetBaseName();
+      result = ((Dali::TypeInfo const*)arg1)->GetBaseName();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback(result->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -8104,19 +8052,19 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TypeInfo_GetPropertyName(void* jarg1, i
   char*                 jresult;
   Dali::TypeInfo*       arg1 = (Dali::TypeInfo*)0;
   Dali::Property::Index arg2;
-  std::string_view      result;
+  std::string           result;
 
   arg1 = (Dali::TypeInfo*)jarg1;
   arg2 = (Dali::Property::Index)jarg2;
   {
     try
     {
-      result = ((Dali::TypeInfo const*)arg1)->GetPropertyName(arg2);
+      result = ToStdString(((Dali::TypeInfo const*)arg1)->GetPropertyName(arg2));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback(result.data());
+  jresult = SWIG_csharp_string_callback(result.c_str());
   return jresult;
 }
 
@@ -8222,7 +8170,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeInfo__SWIG_0(void* 
 {
   void*               jresult;
   Dali::TypeRegistry* arg1 = (Dali::TypeRegistry*)0;
-  std::string*        arg2 = 0;
   Dali::TypeInfo      result;
 
   arg1 = (Dali::TypeRegistry*)jarg1;
@@ -8231,19 +8178,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeInfo__SWIG_0(void* 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   {
     try
     {
-      result = (arg1)->GetTypeInfo((std::string const&)*arg2);
+      result = (arg1)->GetTypeInfo(Dali::StringView(jarg2));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::TypeInfo((const Dali::TypeInfo&)result);
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -8272,7 +8215,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeName(void* jarg1, u
   char*               jresult;
   Dali::TypeRegistry* arg1 = (Dali::TypeRegistry*)0;
   size_t              arg2;
-  std::string         result;
+  Dali::String        result;
 
   arg1 = (Dali::TypeRegistry*)jarg1;
   arg2 = (size_t)jarg2;
@@ -8284,7 +8227,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TypeRegistry_GetTypeName(void* jarg1, u
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -8292,7 +8235,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TypeRegistration_RegisteredName(void* j
 {
   char*                   jresult;
   Dali::TypeRegistration* arg1 = (Dali::TypeRegistration*)0;
-  std::string             result;
+  Dali::String            result;
 
   arg1 = (Dali::TypeRegistration*)jarg1;
   {
@@ -8303,7 +8246,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_TypeRegistration_RegisteredName(void* j
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -8389,7 +8332,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_SignalConnectorType(void* jarg1, ch
 {
   void*                                   jresult;
   Dali::TypeRegistration*                 arg1   = 0;
-  std::string*                            arg2   = 0;
   Dali::TypeInfo::SignalConnectorFunction arg3   = (Dali::TypeInfo::SignalConnectorFunction)0;
   Dali::SignalConnectorType*              result = 0;
 
@@ -8404,20 +8346,16 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_SignalConnectorType(void* jarg1, ch
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::TypeInfo::SignalConnectorFunction)jarg3;
   {
     try
     {
-      result = (Dali::SignalConnectorType*)new Dali::SignalConnectorType(*arg1, (std::string const&)*arg2, arg3);
+      result = (Dali::SignalConnectorType*)new Dali::SignalConnectorType(*arg1, Dali::StringView(jarg2), arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -8440,7 +8378,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeAction(void* jarg1, char* jarg2
 {
   void*                          jresult;
   Dali::TypeRegistration*        arg1   = 0;
-  std::string*                   arg2   = 0;
   Dali::TypeInfo::ActionFunction arg3   = (Dali::TypeInfo::ActionFunction)0;
   Dali::TypeAction*              result = 0;
 
@@ -8455,20 +8392,16 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TypeAction(void* jarg1, char* jarg2
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::TypeInfo::ActionFunction)jarg3;
   {
     try
     {
-      result = (Dali::TypeAction*)new Dali::TypeAction(*arg1, (std::string const&)*arg2, arg3);
+      result = (Dali::TypeAction*)new Dali::TypeAction(*arg1, Dali::StringView(jarg2), arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -8491,7 +8424,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_PropertyRegistration(void* jarg1, c
 {
   void*                               jresult;
   Dali::TypeRegistration*             arg1 = 0;
-  std::string*                        arg2 = 0;
   Dali::Property::Index               arg3;
   Dali::Property::Type                arg4;
   Dali::TypeInfo::SetPropertyFunction arg5   = (Dali::TypeInfo::SetPropertyFunction)0;
@@ -8509,8 +8441,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_PropertyRegistration(void* jarg1, c
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Index)jarg3;
   arg4 = (Dali::Property::Type)jarg4;
   arg5 = (Dali::TypeInfo::SetPropertyFunction)jarg5;
@@ -8518,14 +8448,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_PropertyRegistration(void* jarg1, c
   {
     try
     {
-      result = (Dali::PropertyRegistration*)new Dali::PropertyRegistration(*arg1, (std::string const&)*arg2, arg3, arg4, arg5, arg6);
+      result = (Dali::PropertyRegistration*)new Dali::PropertyRegistration(*arg1, Dali::StringView(jarg2), arg3, arg4, arg5, arg6);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -8548,7 +8476,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AnimatablePropertyRegistration__SWI
 {
   void*                                 jresult;
   Dali::TypeRegistration*               arg1 = 0;
-  std::string*                          arg2 = 0;
   Dali::Property::Index                 arg3;
   Dali::Property::Type                  arg4;
   Dali::AnimatablePropertyRegistration* result = 0;
@@ -8564,21 +8491,17 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AnimatablePropertyRegistration__SWI
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Index)jarg3;
   arg4 = (Dali::Property::Type)jarg4;
   {
     try
     {
-      result = (Dali::AnimatablePropertyRegistration*)new Dali::AnimatablePropertyRegistration(*arg1, (std::string const&)*arg2, arg3, arg4);
+      result = (Dali::AnimatablePropertyRegistration*)new Dali::AnimatablePropertyRegistration(*arg1, Dali::StringView(jarg2), arg3, arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -8587,7 +8510,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AnimatablePropertyRegistration__SWI
 {
   void*                                 jresult;
   Dali::TypeRegistration*               arg1 = 0;
-  std::string*                          arg2 = 0;
   Dali::Property::Index                 arg3;
   Dali::Property::Value*                arg4   = 0;
   Dali::AnimatablePropertyRegistration* result = 0;
@@ -8603,8 +8525,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AnimatablePropertyRegistration__SWI
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Index)jarg3;
   arg4 = (Dali::Property::Value*)jarg4;
   if(!arg4)
@@ -8615,14 +8535,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AnimatablePropertyRegistration__SWI
   {
     try
     {
-      result = (Dali::AnimatablePropertyRegistration*)new Dali::AnimatablePropertyRegistration(*arg1, (std::string const&)*arg2, arg3, (Dali::Property::Value const&)*arg4);
+      result = (Dali::AnimatablePropertyRegistration*)new Dali::AnimatablePropertyRegistration(*arg1, Dali::StringView(jarg2), arg3, (Dali::Property::Value const&)*arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -8645,7 +8563,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AnimatablePropertyComponentRegistra
 {
   void*                                          jresult;
   Dali::TypeRegistration*                        arg1 = 0;
-  std::string*                                   arg2 = 0;
   Dali::Property::Index                          arg3;
   Dali::Property::Index                          arg4;
   unsigned int                                   arg5;
@@ -8662,22 +8579,18 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AnimatablePropertyComponentRegistra
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Index)jarg3;
   arg4 = (Dali::Property::Index)jarg4;
   arg5 = (unsigned int)jarg5;
   {
     try
     {
-      result = (Dali::AnimatablePropertyComponentRegistration*)new Dali::AnimatablePropertyComponentRegistration(*arg1, (std::string const&)*arg2, arg3, arg4, arg5);
+      result = (Dali::AnimatablePropertyComponentRegistration*)new Dali::AnimatablePropertyComponentRegistration(*arg1, Dali::StringView(jarg2), arg3, arg4, arg5);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -8700,7 +8613,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ChildPropertyRegistration(void* jar
 {
   void*                            jresult;
   Dali::TypeRegistration*          arg1 = 0;
-  std::string*                     arg2 = 0;
   Dali::Property::Index            arg3;
   Dali::Property::Type             arg4;
   Dali::ChildPropertyRegistration* result = 0;
@@ -8716,21 +8628,17 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ChildPropertyRegistration(void* jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Index)jarg3;
   arg4 = (Dali::Property::Type)jarg4;
   {
     try
     {
-      result = (Dali::ChildPropertyRegistration*)new Dali::ChildPropertyRegistration(*arg1, (std::string const&)*arg2, arg3, arg4);
+      result = (Dali::ChildPropertyRegistration*)new Dali::ChildPropertyRegistration(*arg1, Dali::StringView(jarg2), arg3, arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -9880,8 +9788,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Shader_Property_PROGRAM_get()
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Shader_New__SWIG_0(char* jarg1, char* jarg2, int jarg3)
 {
   void*                     jresult;
-  std::string*              arg1 = 0;
-  std::string*              arg2 = 0;
   Dali::Shader::Hint::Value arg3;
   Dali::Shader              result;
 
@@ -9890,29 +9796,21 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Shader_New__SWIG_0(char* jarg1, char* j
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
   if(!jarg2)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Shader::Hint::Value)jarg3;
   {
     try
     {
-      result = Dali::Shader::New((std::string const&)*arg1, (std::string const&)*arg2, arg3);
+      result = Dali::Shader::New(Dali::StringView(jarg1), Dali::StringView(jarg2), arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Shader((const Dali::Shader&)result);
-
-  //argout typemap for const std::string&
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -9920,8 +9818,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Shader_New__SWIG_0(char* jarg1, char* j
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Shader_New__SWIG_1(char* jarg1, char* jarg2)
 {
   void*        jresult;
-  std::string* arg1 = 0;
-  std::string* arg2 = 0;
   Dali::Shader result;
 
   if(!jarg1)
@@ -9929,28 +9825,20 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Shader_New__SWIG_1(char* jarg1, char* j
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
   if(!jarg2)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   {
     try
     {
-      result = Dali::Shader::New((std::string const&)*arg1, (std::string const&)*arg2);
+      result = Dali::Shader::New(Dali::StringView(jarg1), Dali::StringView(jarg2));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Shader((const Dali::Shader&)result);
-
-  //argout typemap for const std::string&
-
-  //argout typemap for const std::string&
 
   return jresult;
 }
@@ -9983,7 +9871,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Shader_New__SWIG_2(char* csVertexShader
   {
     try
     {
-      result = Dali::Shader::New((std::string const&)vertexShaderCode, (std::string const&)fragmentShaderCode, hints, (std::string const&)shaderName);
+      result = Dali::Shader::New(ToDaliStringView(vertexShaderCode), ToDaliStringView(fragmentShaderCode), hints, ToDaliStringView(shaderName));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -12347,7 +12235,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Touch_GetDeviceName(void* jarg1, unsign
   char*             jresult;
   Dali::TouchEvent* arg1 = (Dali::TouchEvent*)0;
   std::size_t       arg2;
-  std::string       result;
+  Dali::String      result;
 
   arg1 = (Dali::TouchEvent*)jarg1;
   arg2 = (std::size_t)jarg2;
@@ -12359,7 +12247,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Touch_GetDeviceName(void* jarg1, unsign
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -13063,7 +12951,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Hover_GetDeviceName(void* jarg1, unsign
   char*             jresult;
   Dali::HoverEvent* arg1 = (Dali::HoverEvent*)0;
   std::size_t       arg2;
-  std::string       result;
+  Dali::String      result;
 
   arg1 = (Dali::HoverEvent*)jarg1;
   arg2 = (std::size_t)jarg2;
@@ -13075,7 +12963,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Hover_GetDeviceName(void* jarg1, unsign
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -13283,17 +13171,14 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Key_keyPressedName_get(void* jarg1)
   }
   else
   {
-    Dali::KeyEvent* arg1   = (Dali::KeyEvent*)0;
-    std::string*    result = 0;
-    std::string     str    = "";
+    Dali::KeyEvent* arg1 = (Dali::KeyEvent*)0;
 
     arg1 = (Dali::KeyEvent*)jarg1;
     {
       try
       {
-        str     = ((Dali::KeyEvent const*)arg1)->GetKeyName();
-        result  = (std::string*)&str;
-        jresult = SWIG_csharp_string_callback(result->c_str());
+        Dali::String daliStr = ((Dali::KeyEvent const*)arg1)->GetKeyName();
+        jresult              = SWIG_csharp_string_callback(daliStr.CStr());
       }
       catch(std::out_of_range& e)
       {
@@ -13390,16 +13275,13 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Key_keyPressed_get(void* jarg1)
 {
   char* jresult;
 
-  Dali::KeyEvent* arg1   = (Dali::KeyEvent*)0;
-  std::string*    result = 0;
-  std::string     str    = "";
-  arg1                   = (Dali::KeyEvent*)jarg1;
+  Dali::KeyEvent* arg1 = (Dali::KeyEvent*)0;
+  arg1                 = (Dali::KeyEvent*)jarg1;
   {
     try
     {
-      str     = ((Dali::KeyEvent const*)arg1)->GetKeyString();
-      result  = (std::string*)&str;
-      jresult = SWIG_csharp_string_callback(result->c_str());
+      Dali::String daliStr = ((Dali::KeyEvent const*)arg1)->GetKeyString();
+      jresult              = SWIG_csharp_string_callback(daliStr.CStr());
     }
     catch(std::out_of_range& e)
     {
@@ -13820,23 +13702,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Key_state_get(void* jarg1)
 
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Key_logicalKey_get(void* jarg1)
 {
-  char* jresult;
-
-  Dali::KeyEvent* arg1   = (Dali::KeyEvent*)0;
-  std::string*    result = 0;
-  std::string     str    = "";
+  char*           jresult;
+  Dali::KeyEvent* arg1 = (Dali::KeyEvent*)0;
+  Dali::String    result;
 
   arg1 = (Dali::KeyEvent*)jarg1;
   {
     try
     {
-      str     = ((Dali::KeyEvent const*)arg1)->GetLogicalKey();
-      result  = (std::string*)&str;
-      jresult = SWIG_csharp_string_callback(result->c_str());
+      result = ((Dali::KeyEvent const*)arg1)->GetLogicalKey();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -14574,7 +14453,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_GetDeviceName(void* jarg1)
 {
   char*           jresult;
   Dali::KeyEvent* arg1 = 0;
-  std::string     result;
+  Dali::String    result;
 
   arg1 = (Dali::KeyEvent*)jarg1;
   if(!arg1)
@@ -14590,7 +14469,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_GetDeviceName(void* jarg1)
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
@@ -21860,14 +21739,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageUrl(void* jarg1)
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_ImageUrl_Get(void* jarg1)
 {
   char*                    jresult;
+  const char*              result;
   Dali::Toolkit::ImageUrl* imageUrl = (Dali::Toolkit::ImageUrl*)0;
-  std::string              result;
 
   imageUrl = (Dali::Toolkit::ImageUrl*)jarg1;
   {
     try
     {
-      result = imageUrl->GetUrl();
+      result = imageUrl->GetUrl().CStr();
     }
     catch(std::out_of_range& e)
     {
@@ -21890,8 +21769,8 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_ImageUrl_Get(void* jarg1)
       return 0;
     }
   }
+  jresult = SWIG_csharp_string_callback(result);
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
   return jresult;
 }
 

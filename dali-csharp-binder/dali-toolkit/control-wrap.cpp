@@ -350,7 +350,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_GetLongPressGestureDetector(void* 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_SetStyleName(void* jarg1, char* jarg2)
 {
   Dali::Toolkit::Control* arg1 = (Dali::Toolkit::Control*)0;
-  std::string*            arg2 = 0;
+  Dali::String*           arg2 = 0;
 
   arg1 = (Dali::Toolkit::Control*)jarg1;
   if(!jarg2)
@@ -358,12 +358,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_SetStyleName(void* jarg1, char* jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
+  Dali::String arg2_str(jarg2);
   arg2 = &arg2_str;
   {
     try
     {
-      (arg1)->SetStyleName((std::string const&)*arg2);
+      (arg1)->SetStyleName((Dali::String const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }

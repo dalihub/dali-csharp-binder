@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -288,7 +288,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionData_LoadBvh(void* csMotionData, c
     scale = Dali::Vector3(*static_cast<const Dali::Vector3*>(csScale));
   }
 
-  std::string filename(csFileName);
+  Dali::String filename(csFileName);
   {
     try
     {
@@ -345,7 +345,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_MotionData_LoadFacialAnimation(void* csM
     return;
   }
 
-  std::string filename(csFileName);
+  Dali::String filename(csFileName);
   {
     try
     {

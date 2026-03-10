@@ -44,6 +44,11 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
+#include <dali/integration-api/string-utils.h>
+
+using Dali::Integration::ToDaliString;
+using Dali::Integration::ToDaliStringView;
+
 // SWIGINTERN - the relevant parts of the generated code can be seen the below.
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Toolkit_StyleManager_Sc_Dali_StyleChange_Type_SP__Sg__Empty(Dali::Signal<void(Dali::Toolkit::StyleManager, Dali::StyleChange::Type)> const* self)
@@ -4203,7 +4208,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_0()
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_2(char* jarg1)
 {
   void*                    jresult;
-  std::string*             arg1 = 0;
   Dali::Toolkit::ImageView result;
 
   if(!jarg1)
@@ -4211,19 +4215,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_2(char* jarg1)
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
   {
     try
     {
-      result = Dali::Toolkit::ImageView::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const&)*arg1);
+      result = Dali::Toolkit::ImageView::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, Dali::StringView(jarg1));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView&)result);
-
-  // argout typemap for const std::string&
 
   return jresult;
 }
@@ -4231,7 +4231,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_2(char* jarg1)
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_3(char* jarg1, void* jarg2)
 {
   void*                    jresult;
-  std::string*             arg1 = 0;
   Dali::ImageDimensions    arg2;
   Dali::ImageDimensions*   argp2;
   Dali::Toolkit::ImageView result;
@@ -4241,8 +4240,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_3(char* jarg1, void
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(jarg1);
-  arg1  = &arg1_str;
   argp2 = (Dali::ImageDimensions*)jarg2;
   if(!argp2)
   {
@@ -4253,14 +4250,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ImageView_New__SWIG_3(char* jarg1, void
   {
     try
     {
-      result = Dali::Toolkit::ImageView::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const&)*arg1, arg2);
+      result = Dali::Toolkit::ImageView::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, Dali::StringView(jarg1), arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Toolkit::ImageView((const Dali::Toolkit::ImageView&)result);
-
-  // argout typemap for const std::string&
 
   return jresult;
 }
@@ -4282,7 +4277,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ImageView(void* jarg1)
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImageView_SetImage__SWIG_1(void* jarg1, char* jarg2)
 {
   Dali::Toolkit::ImageView* arg1 = (Dali::Toolkit::ImageView*)0;
-  std::string*              arg2 = 0;
 
   arg1 = (Dali::Toolkit::ImageView*)jarg1;
   if(!jarg2)
@@ -4290,23 +4284,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImageView_SetImage__SWIG_1(void* jarg1, 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   {
     try
     {
-      (arg1)->SetImage((std::string const&)*arg2);
+      (arg1)->SetImage(Dali::StringView(jarg2));
     }
     CALL_CATCH_EXCEPTION();
   }
-
-  // argout typemap for const std::string&
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImageView_SetImage__SWIG_2(void* jarg1, char* jarg2, void* jarg3)
 {
   Dali::Toolkit::ImageView* arg1 = (Dali::Toolkit::ImageView*)0;
-  std::string*              arg2 = 0;
   Dali::ImageDimensions     arg3;
   Dali::ImageDimensions*    argp3;
 
@@ -4316,8 +4305,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImageView_SetImage__SWIG_2(void* jarg1, 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
-  arg2  = &arg2_str;
   argp3 = (Dali::ImageDimensions*)jarg3;
   if(!argp3)
   {
@@ -4328,12 +4315,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ImageView_SetImage__SWIG_2(void* jarg1, 
   {
     try
     {
-      (arg1)->SetImage((std::string const&)*arg2, arg3);
+      (arg1)->SetImage(Dali::StringView(jarg2), arg3);
     }
     CALL_CATCH_EXCEPTION();
   }
-
-  // argout typemap for const std::string&
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Scrollable__SWIG_0()
@@ -7667,7 +7652,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextLabel_New_With_Style(bool hasStyle)
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextLabel_New_With_String_Style(char* text, bool hasStyle)
 {
   void*                    jresult;
-  std::string*             arg1 = 0;
   Dali::Toolkit::TextLabel result;
 
   if(!text)
@@ -7675,19 +7659,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextLabel_New_With_String_Style(char* t
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(text);
-  arg1 = &arg1_str;
   {
     try
     {
-      result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, (std::string const&)*arg1);
+      result = Dali::Toolkit::TextLabel::New(Dali::Toolkit::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS, Dali::String((const char*)text));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Toolkit::TextLabel((const Dali::Toolkit::TextLabel&)result);
-
-  // argout typemap for const std::string&
 
   return jresult;
 }
@@ -7757,7 +7737,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_StyleManager_Get()
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_ApplyTheme(void* jarg1, char* jarg2)
 {
   Dali::Toolkit::StyleManager* arg1 = (Dali::Toolkit::StyleManager*)0;
-  std::string*                 arg2 = 0;
 
   arg1 = (Dali::Toolkit::StyleManager*)jarg1;
   if(!jarg2)
@@ -7765,17 +7744,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_ApplyTheme(void* jarg1, cha
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   {
     try
     {
-      (arg1)->ApplyTheme((std::string const&)*arg2);
+      (arg1)->ApplyTheme(Dali::String(jarg2));
     }
     CALL_CATCH_EXCEPTION();
   }
-
-  // argout typemap for const std::string&
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_ApplyDefaultTheme(void* jarg1)
@@ -7795,7 +7770,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_ApplyDefaultTheme(void* jar
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_SetStyleConstant(void* jarg1, char* jarg2, void* jarg3)
 {
   Dali::Toolkit::StyleManager* arg1 = (Dali::Toolkit::StyleManager*)0;
-  std::string*                 arg2 = 0;
   Dali::Property::Value*       arg3 = 0;
 
   arg1 = (Dali::Toolkit::StyleManager*)jarg1;
@@ -7804,8 +7778,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_SetStyleConstant(void* jarg
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Value*)jarg3;
   if(!arg3)
   {
@@ -7815,19 +7787,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_SetStyleConstant(void* jarg
   {
     try
     {
-      (arg1)->SetStyleConstant((std::string const&)*arg2, (Dali::Property::Value const&)*arg3);
+      (arg1)->SetStyleConstant(Dali::String(jarg2), (Dali::Property::Value const&)*arg3);
     }
     CALL_CATCH_EXCEPTION();
   }
-
-  // argout typemap for const std::string&
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_StyleManager_GetStyleConstant(void* jarg1, char* jarg2, void* jarg3)
 {
   bool                         jresult;
   Dali::Toolkit::StyleManager* arg1 = (Dali::Toolkit::StyleManager*)0;
-  std::string*                 arg2 = 0;
   Dali::Property::Value*       arg3 = 0;
   bool                         result;
 
@@ -7837,8 +7806,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_StyleManager_GetStyleConstant(void* jarg
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
   arg3 = (Dali::Property::Value*)jarg3;
   if(!arg3)
   {
@@ -7848,14 +7815,12 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_StyleManager_GetStyleConstant(void* jarg
   {
     try
     {
-      result = (bool)(arg1)->GetStyleConstant((std::string const&)*arg2, *arg3);
+      result = (bool)(arg1)->GetStyleConstant(Dali::String(jarg2), *arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
-
-  // argout typemap for const std::string&
 
   return jresult;
 }
@@ -7864,8 +7829,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_ApplyStyle(void* jarg1, voi
 {
   Dali::Toolkit::StyleManager* arg1 = (Dali::Toolkit::StyleManager*)0;
   Dali::Toolkit::Control       arg2;
-  std::string*                 arg3 = 0;
-  std::string*                 arg4 = 0;
   Dali::Toolkit::Control*      argp2;
 
   arg1  = (Dali::Toolkit::StyleManager*)jarg1;
@@ -7881,26 +7844,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StyleManager_ApplyStyle(void* jarg1, voi
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg3_str(jarg3);
-  arg3 = &arg3_str;
   if(!jarg4)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg4_str(jarg4);
-  arg4 = &arg4_str;
   {
     try
     {
-      (arg1)->ApplyStyle(arg2, (std::string const&)*arg3, (std::string const&)*arg4);
+      (arg1)->ApplyStyle(arg2, Dali::String(jarg3), Dali::String(jarg4));
     }
     CALL_CATCH_EXCEPTION();
   }
-
-  // argout typemap for const std::string&
-
-  // argout typemap for const std::string&
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_StyleManager_StyleChangedSignal(void* jarg1)

@@ -269,8 +269,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_1(int jarg1)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, char* jarg3)
 {
-  void*        jresult;
-  std::string* arg3 = 0;
+  void*             jresult;
+  Dali::StringView* arg3 = 0;
 
   Dali::Application result;
   if(!jarg3)
@@ -278,12 +278,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, char
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg3_str(jarg3);
+  Dali::StringView arg3_str(jarg3);
   arg3 = &arg3_str;
   {
     try
     {
-      result = Dali::Application::New(nullptr, nullptr, (std::string const&)*arg3);
+      result = Dali::Application::New(nullptr, nullptr, (Dali::StringView const&)*arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -306,7 +306,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg3(jarg3);
+  Dali::String arg3(jarg3);
   arg4 = (Dali::Application::WindowOpacity)jarg4;
   {
     try
@@ -318,7 +318,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char
 
   jresult = new Dali::Application((const Dali::Application&)result);
 
-  //argout typemap for const std::string&
+  //argout typemap for const Dali::String&
 
   return jresult;
 }
@@ -337,7 +337,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int nuiArgc, 
   argc = &gArgC;
   argv = &gArgV;
 
-  std::string arg3(jarg3);
+  Dali::String arg3(jarg3);
   arg4 = (Dali::Application::WindowOpacity)jarg4;
   {
     try
@@ -550,8 +550,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_GetWindowsFromList(unsigned
 
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Application_GetResourcePath()
 {
-  char*       jresult;
-  std::string result;
+  char*        jresult;
+  Dali::String result;
 
   {
     try
@@ -561,7 +561,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Application_GetResourcePath()
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback((&result)->CStr());
   return jresult;
 }
 
@@ -569,7 +569,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Application_GetRegion(void* jarg1)
 {
   char*              jresult;
   Dali::Application* arg1 = (Dali::Application*)0;
-  std::string        result;
+  Dali::String       result;
 
   arg1 = (Dali::Application*)jarg1;
   {
@@ -579,7 +579,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Application_GetRegion(void* jarg1)
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback((&result)->CStr());
   return jresult;
 }
 
@@ -587,7 +587,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Application_GetLanguage(void* jarg1)
 {
   char*              jresult;
   Dali::Application* arg1 = (Dali::Application*)0;
-  std::string        result;
+  Dali::String       result;
 
   arg1 = (Dali::Application*)jarg1;
   {
@@ -597,7 +597,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Application_GetLanguage(void* jarg1)
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback((&result)->CStr());
   return jresult;
 }
 
@@ -1586,7 +1586,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg3(jarg3);
+  Dali::String arg3(jarg3);
   windowOpacity = (Dali::Application::WindowOpacity)jarg4;
   argp5         = (Dali::PositionSize*)jarg5;
   if(!argp5)
@@ -1631,7 +1631,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int nuiArgc, ch
     return 0;
   }
 
-  std::string styleSheet(nuiStyleSheet);
+  Dali::String styleSheet(nuiStyleSheet);
 
   Dali::WindowData windowData;
   windowData.SetPositionSize(*static_cast<Dali::PositionSize*>(initRectangle));
@@ -1667,7 +1667,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, ch
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string styleSheet(nuiStyleSheet);
+  Dali::String styleSheet(nuiStyleSheet);
   windowOpacity = (Dali::Application::WindowOpacity)nuiWindowMode;
   positionSizeP = (Dali::PositionSize*)nuiPositionSize;
   useUiThread   = nuiUseUiThread;
@@ -1712,7 +1712,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(
   argc = &gArgC;
   argv = &gArgV;
 
-  std::string arg3(jarg3);
+  Dali::String arg3(jarg3);
   windowOpacity = (Dali::Application::WindowOpacity)jarg4;
   argp5         = (Dali::PositionSize*)jarg5;
   if(!argp5)
@@ -1744,7 +1744,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowData(int nuiA
   argc = &gArgC;
   argv = &gArgV;
 
-  std::string styleSheet(nuiStyleSheet);
+  Dali::String styleSheet(nuiStyleSheet);
   pWindowData = (Dali::WindowData*)nuiWindowData;
   if(!pWindowData)
   {

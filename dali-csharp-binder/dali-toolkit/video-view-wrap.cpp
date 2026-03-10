@@ -120,7 +120,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_0()
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_1(char* jarg1)
 {
   void*                    jresult;
-  std::string*             arg1 = 0;
+  Dali::String*            arg1 = 0;
   Dali::Toolkit::VideoView result;
 
   if(!jarg1)
@@ -128,19 +128,19 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_1(char* jarg1)
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(jarg1);
+  Dali::String arg1_str(jarg1);
   arg1 = &arg1_str;
   {
     try
     {
-      result = Dali::Toolkit::VideoView::New((std::string const&)*arg1);
+      result = Dali::Toolkit::VideoView::New((Dali::String const&)*arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView&)result);
 
-  // argout typemap for const std::string&
+  // argout typemap for const Dali::String&
 
   return jresult;
 }
@@ -159,7 +159,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_2(bool swCodec)
 
   jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView&)result);
 
-  // argout typemap for const std::string&
+  // argout typemap for const Dali::String&
 
   return jresult;
 }
@@ -167,7 +167,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_2(bool swCodec)
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char* jarg1, bool swCodec)
 {
   void*                    jresult;
-  std::string*             arg1 = 0;
+  Dali::String*            arg1 = 0;
   Dali::Toolkit::VideoView result;
 
   if(!jarg1)
@@ -175,19 +175,19 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char* jarg1, bool
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(jarg1);
+  Dali::String arg1_str(jarg1);
   arg1 = &arg1_str;
   {
     try
     {
-      result = Dali::Toolkit::VideoView::New((std::string const&)*arg1, swCodec);
+      result = Dali::Toolkit::VideoView::New((Dali::String const&)*arg1, swCodec);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView&)result);
 
-  // argout typemap for const std::string&
+  // argout typemap for const Dali::String&
 
   return jresult;
 }
