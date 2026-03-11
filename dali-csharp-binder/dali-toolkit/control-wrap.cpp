@@ -16,8 +16,8 @@
  */
 
 // EXTERNAL INCLUDES
-#include <dali-toolkit/devel-api/visual-factory/transition-data.h>
 #include <dali-toolkit/devel-api/controls/control-devel.h>
+#include <dali-toolkit/devel-api/visual-factory/transition-data.h>
 #include <dali-toolkit/public-api/controls/control-impl.h>
 #include <dali-toolkit/public-api/controls/control.h>
 #include <dali-toolkit/public-api/image-loader/image-url.h>
@@ -652,7 +652,7 @@ GENERATE_CONTROL_SIGNAL(void (*)(Dali::Toolkit::Control), ResourceReadySignal)
 // CSharp_Dali_View_ResourceReadySignal_Connect
 // CSharp_Dali_View_ResourceReadySignal_Disconnect
 
-GENERATE_CONTROL_SIGNAL(void (*)(), OffScreenRenderingFinishedSignal)
+GENERATE_CONTROL_SIGNAL(void (*)(Dali::Toolkit::Control), OffScreenRenderingFinishedSignal)
 // CSharp_Dali_View_OffScreenRenderingFinishedSignal_Connect
 // CSharp_Dali_View_OffScreenRenderingFinishedSignal_Disconnect
 
