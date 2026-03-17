@@ -19,7 +19,7 @@
 #include <dali-toolkit/public-api/image-loader/image-url.h>
 #include <dali-toolkit/public-api/image-loader/image.h>
 #include <dali/devel-api/adaptor-framework/capture-devel.h>
-#include <dali/public-api/capture/capture.h>
+#include <dali/public-api/adaptor-framework/capture.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
