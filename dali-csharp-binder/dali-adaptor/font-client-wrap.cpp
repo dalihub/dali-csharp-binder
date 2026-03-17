@@ -22,10 +22,14 @@
 #include <dali/devel-api/text-abstraction/glyph-buffer-data.h>
 #include <dali/devel-api/text-abstraction/glyph-info.h>
 #include <dali/devel-api/text-abstraction/text-abstraction-definitions.h>
+#include <dali/integration-api/string-utils.h>
 #include <dali/public-api/common/type-traits.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
+
+using Dali::Integration::ToDaliString;
+using Dali::Integration::ToPropertyValue;
 
 typedef std::string                                         FontPath;
 typedef std::string                                         FontFamily;
@@ -1059,8 +1063,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_FontClient_GetSystemFonts(void* fontCli
       for(size_t i = 0; i < fontList.size(); i++)
       {
         Dali::Property::Map font;
-        font.Add("family", fontList[i].family);
-        font.Add("path", fontList[i].path);
+        font.Add("family", ToPropertyValue(fontList[i].family));
+        font.Add("path", ToPropertyValue(fontList[i].path));
         font.Add("width", fontList[i].width);
         font.Add("weight", fontList[i].weight);
         font.Add("slant", fontList[i].slant);

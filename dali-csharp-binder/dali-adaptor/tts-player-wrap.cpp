@@ -152,7 +152,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TtsPlayer_Assign(void* jarg1, void* jar
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TtsPlayer_Play(void* jarg1, char* jarg2)
 {
   Dali::TtsPlayer* arg1 = (Dali::TtsPlayer*)0;
-  std::string*     arg2 = 0;
+  Dali::String*    arg2 = 0;
 
   arg1 = (Dali::TtsPlayer*)jarg1;
   if(!jarg2)
@@ -160,12 +160,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TtsPlayer_Play(void* jarg1, char* jarg2)
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
+  Dali::String arg2_str(jarg2);
   arg2 = &arg2_str;
   {
     try
     {
-      (arg1)->Play((std::string const&)*arg2);
+      (arg1)->Play((Dali::String const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }

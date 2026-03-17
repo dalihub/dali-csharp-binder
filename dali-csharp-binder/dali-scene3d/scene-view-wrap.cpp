@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -217,7 +217,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_SceneView_GetCamera_1(void* csSceneView
   {
     try
     {
-      cameraActor = sceneView->GetCamera(std::string(name));
+      cameraActor = sceneView->GetCamera(name);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -255,7 +255,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SelectCamera_1(void* csSceneVi
   {
     try
     {
-      sceneView->SelectCamera(std::string(name));
+      sceneView->SelectCamera(name);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -273,7 +273,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetImageBasedLightSource(void*
   {
     try
     {
-      sceneView->SetImageBasedLightSource(std::string(diffuseUrl), std::string(specularUrl), scaleFactor);
+      sceneView->SetImageBasedLightSource(diffuseUrl, specularUrl, scaleFactor);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -486,7 +486,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_SetSkybox(void* csSceneView, c
   {
     try
     {
-      sceneView->SetSkybox(std::string(skyboxUrl));
+      sceneView->SetSkybox(skyboxUrl);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -737,7 +737,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SceneView_StartCameraTransition_Name(voi
   {
     try
     {
-      sceneView->StartCameraTransition(std::string(name), durationSeconds, *alphaFunction);
+      sceneView->StartCameraTransition(name, durationSeconds, *alphaFunction);
     }
     CALL_CATCH_EXCEPTION();
   }

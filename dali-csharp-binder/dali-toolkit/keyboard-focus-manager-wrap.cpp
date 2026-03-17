@@ -638,8 +638,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_KeyboardPreFocusChangeSignal(void* jar
 
 SWIGEXPORT int SWIGSTDCALL CSharp_KeyboardFocusManager_GetLastFocusChangeDevice(void* jarg1)
 {
-  int                                         jresult;
-  Dali::Toolkit::KeyboardFocusManager*        arg1 = (Dali::Toolkit::KeyboardFocusManager*)0;
+  int                                           jresult;
+  Dali::Toolkit::KeyboardFocusManager*          arg1 = (Dali::Toolkit::KeyboardFocusManager*)0;
   Dali::Toolkit::Control::KeyboardFocus::Device result;
 
   arg1 = (Dali::Toolkit::KeyboardFocusManager*)jarg1;
@@ -659,7 +659,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_KeyboardFocusManager_GetLastFocusChangeDevic
 {
   char*                                jresult;
   Dali::Toolkit::KeyboardFocusManager* arg1 = (Dali::Toolkit::KeyboardFocusManager*)0;
-  std::string                          result;
+  Dali::String                         result;
 
   arg1 = (Dali::Toolkit::KeyboardFocusManager*)jarg1;
   {
@@ -670,7 +670,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_KeyboardFocusManager_GetLastFocusChangeDevic
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback((&result)->CStr());
   return jresult;
 }
 
@@ -693,7 +693,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_KeyboardFocusManager_GetClearFocusOnWindowFoc
   Dali::Toolkit::KeyboardFocusManager* arg1 = (Dali::Toolkit::KeyboardFocusManager*)0;
   bool                                 result;
 
-  arg1  = (Dali::Toolkit::KeyboardFocusManager*)jarg1;
+  arg1 = (Dali::Toolkit::KeyboardFocusManager*)jarg1;
   {
     try
     {
@@ -704,7 +704,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_KeyboardFocusManager_GetClearFocusOnWindowFoc
 
   return result;
 }
-
 
 #ifdef __cplusplus
 }

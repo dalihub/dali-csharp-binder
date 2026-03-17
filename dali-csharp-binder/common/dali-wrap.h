@@ -16,12 +16,12 @@ class SwigDirector_WidgetImpl : public Dali::Internal::Adaptor::Widget, public S
 public:
   SwigDirector_WidgetImpl();
   virtual ~SwigDirector_WidgetImpl();
-  virtual void OnCreate(std::string const& contentInfo, Dali::Window window);
-  virtual void OnTerminate(std::string const& contentInfo, Dali::Widget::Termination type);
+  virtual void OnCreate(Dali::String const& contentInfo, Dali::Window window);
+  virtual void OnTerminate(Dali::String const& contentInfo, Dali::Widget::Termination type);
   virtual void OnPause();
   virtual void OnResume();
   virtual void OnResize(Dali::Window window);
-  virtual void OnUpdate(std::string const& contentInfo, int force);
+  virtual void OnUpdate(Dali::String const& contentInfo, int force);
   virtual void SignalConnected(Dali::SlotObserver* slotObserver, Dali::CallbackBase* callback);
   virtual void SignalDisconnected(Dali::SlotObserver* slotObserver, Dali::CallbackBase* callback);
 

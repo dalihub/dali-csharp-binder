@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -243,7 +243,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WindowData_GetFrontBufferRendering(void*
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowData_SetScreen(void* nuiWindowData, void* screenName)
 {
   Dali::WindowData* pWindowData;
-  std::string       daliScreenName((char*)screenName);
+  Dali::String      daliScreenName((char*)screenName);
   pWindowData = (Dali::WindowData*)nuiWindowData;
   if(!pWindowData)
   {
@@ -264,7 +264,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_WindowData_GetScreen(void* nuiWindowDat
 {
   Dali::WindowData* pWindowData;
   char*             result;
-  std::string       screen;
+  Dali::String      screen;
 
   pWindowData = (Dali::WindowData*)nuiWindowData;
   if(!pWindowData)
@@ -280,7 +280,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_WindowData_GetScreen(void* nuiWindowDat
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  result = strdup(screen.c_str());
+  result = strdup(screen.CStr());
 
   return result;
 }

@@ -292,7 +292,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_11(void* jarg1
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_12(char* jarg1)
 {
   void*                  jresult;
-  std::string*           arg1   = 0;
+  Dali::String*          arg1   = 0;
   Dali::Property::Value* result = 0;
 
   if(!jarg1)
@@ -300,19 +300,19 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Property_Value__SWIG_12(char* jarg1
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(jarg1);
+  Dali::String arg1_str(jarg1);
   arg1 = &arg1_str;
   {
     try
     {
-      result = (Dali::Property::Value*)new Dali::Property::Value((std::string const&)*arg1);
+      result = (Dali::Property::Value*)new Dali::Property::Value((Dali::String const&)*arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
 
-  //argout typemap for const std::string&
+  //argout typemap for const Dali::String&
 
   return jresult;
 }
@@ -792,19 +792,16 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_12(void* jarg1,
 {
   bool                   jresult;
   Dali::Property::Value* arg1 = (Dali::Property::Value*)0;
-  std::string*           arg2 = 0;
   bool                   result;
 
   arg1 = (Dali::Property::Value*)jarg1;
 
   //typemap in
-  std::string temp;
-  arg2 = &temp;
-
+  Dali::String temp;
   {
     try
     {
-      result = (bool)((Dali::Property::Value const*)arg1)->Get(*arg2);
+      result = (bool)((Dali::Property::Value const*)arg1)->Get(temp);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -813,7 +810,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_12(void* jarg1,
 
   //Typemap argout in c++ file.
   //This will convert c++ string to c# string
-  *jarg2 = SWIG_csharp_string_callback(arg2->c_str());
+  *jarg2 = SWIG_csharp_string_callback(temp.CStr());
 
   return jresult;
 }
@@ -1235,7 +1232,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Value_Set__SWIG_12(void* jarg1,
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Value_Set__SWIG_13(void* jarg1, char* jarg2)
 {
   Dali::Property::Value* arg1 = (Dali::Property::Value*)0;
-  std::string*           arg2 = 0;
+  Dali::String*          arg2 = 0;
 
   arg1 = (Dali::Property::Value*)jarg1;
   if(!jarg2)
@@ -1243,12 +1240,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Property_Value_Set__SWIG_13(void* jarg1,
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
+  Dali::String arg2_str(jarg2);
   arg2 = &arg2_str;
   {
     try
     {
-      *((Dali::Property::Value*)arg1) = (std::string const&)*arg2;
+      *((Dali::Property::Value*)arg1) = (Dali::String const&)*arg2;
     }
     CALL_CATCH_EXCEPTION();
   }

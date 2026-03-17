@@ -28,6 +28,7 @@
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali/integration-api/constraint-integ.h>
 #include <dali/integration-api/debug.h>
+#include <dali/integration-api/string-utils.h>
 #include <dali/public-api/animation/constraints.h>
 #include <dali/public-api/rendering/decorated-visual-renderer.h>
 
@@ -36,6 +37,9 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/visual-objects/visual-object-impl.h>
 #include <dali-csharp-binder/common/visual-objects/visual-object.h>
+
+using Dali::Integration::ToDaliString;
+using Dali::Integration::ToPropertyValue;
 
 namespace Dali::Internal
 {
@@ -280,7 +284,7 @@ void VisualObjectsContainer::ReplaceVisualObject(Dali::Internal::VisualObject& v
         {
           std::ostringstream oss;
           oss << VISUAL_OBJECT_PROPERTY_NAME_PREFIX << "_" << static_cast<int>(mRangeType) << "_" << propertyId;
-          index = control.RegisterProperty(oss.str(), Property::Value(oss.str()), Property::AccessMode::READ_WRITE);
+          index = control.RegisterProperty(ToDaliString(oss.str()), ToPropertyValue(oss.str()), Property::AccessMode::READ_WRITE);
         }
 
         // Change as valid index now.
