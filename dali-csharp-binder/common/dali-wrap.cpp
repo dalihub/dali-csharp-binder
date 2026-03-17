@@ -853,8 +853,8 @@ void SwigDirector_WidgetImpl::swig_init_callbacks()
   swig_callbackSignalDisconnected = 0;
 }
 
-SwigDirector_ViewImpl::SwigDirector_ViewImpl(Dali::Toolkit::Internal::Control::ControlBehaviour behaviourFlags)
-: Dali::Toolkit::Internal::Control(behaviourFlags),
+SwigDirector_ViewImpl::SwigDirector_ViewImpl(Dali::Toolkit::ControlImpl::ControlBehaviour behaviourFlags)
+: Dali::Toolkit::ControlImpl(behaviourFlags),
   Swig::Director()
 {
   swig_init_callbacks();
@@ -870,7 +870,7 @@ void SwigDirector_ViewImpl::OnSceneConnection(int depth)
 
   if(!swig_callbackOnSceneConnection)
   {
-    Dali::Toolkit::Internal::Control::OnSceneConnection(depth);
+    Dali::Toolkit::ControlImpl::OnSceneConnection(depth);
     return;
   }
   else
@@ -884,7 +884,7 @@ void SwigDirector_ViewImpl::OnSceneDisconnection()
 {
   if(!swig_callbackOnSceneDisconnection)
   {
-    Dali::Toolkit::Internal::Control::OnSceneDisconnection();
+    Dali::Toolkit::ControlImpl::OnSceneDisconnection();
     return;
   }
   else
@@ -899,7 +899,7 @@ void SwigDirector_ViewImpl::OnChildAdd(Dali::Actor& child)
 
   if(!swig_callbackOnChildAdd)
   {
-    Dali::Toolkit::Internal::Control::OnChildAdd(child);
+    Dali::Toolkit::ControlImpl::OnChildAdd(child);
     return;
   }
   else
@@ -915,7 +915,7 @@ void SwigDirector_ViewImpl::OnChildRemove(Dali::Actor& child)
 
   if(!swig_callbackOnChildRemove)
   {
-    Dali::Toolkit::Internal::Control::OnChildRemove(child);
+    Dali::Toolkit::ControlImpl::OnChildRemove(child);
     return;
   }
   else
@@ -931,7 +931,7 @@ void SwigDirector_ViewImpl::OnPropertySet(Dali::Property::Index index, const Dal
 
   if(!swig_callbackOnPropertySet)
   {
-    Dali::Toolkit::Internal::Control::OnPropertySet(index, propertyValue);
+    Dali::Toolkit::ControlImpl::OnPropertySet(index, propertyValue);
     return;
   }
   else
@@ -947,7 +947,7 @@ void SwigDirector_ViewImpl::OnSizeSet(Dali::Vector3 const& targetSize)
 
   if(!swig_callbackOnSizeSet)
   {
-    Dali::Toolkit::Internal::Control::OnSizeSet(targetSize);
+    Dali::Toolkit::ControlImpl::OnSizeSet(targetSize);
     return;
   }
   else
@@ -964,7 +964,7 @@ void SwigDirector_ViewImpl::OnSizeAnimation(Dali::Animation& animation, Dali::Ve
 
   if(!swig_callbackOnSizeAnimation)
   {
-    Dali::Toolkit::Internal::Control::OnSizeAnimation(animation, targetSize);
+    Dali::Toolkit::ControlImpl::OnSizeAnimation(animation, targetSize);
     return;
   }
   else
@@ -983,7 +983,7 @@ bool SwigDirector_ViewImpl::OnKeyEvent(Dali::KeyEvent const& event)
 
   if(!swig_callbackOnKeyEvent)
   {
-    return Dali::Toolkit::Internal::Control::OnKeyEvent(event);
+    return Dali::Toolkit::ControlImpl::OnKeyEvent(event);
   }
   else
   {
@@ -1001,7 +1001,7 @@ void SwigDirector_ViewImpl::OnRelayout(Dali::Vector2 const& size, Dali::Relayout
 
   if(!swig_callbackOnRelayout)
   {
-    Dali::Toolkit::Internal::Control::OnRelayout(size, container);
+    Dali::Toolkit::ControlImpl::OnRelayout(size, container);
     return;
   }
   else
@@ -1019,7 +1019,7 @@ void SwigDirector_ViewImpl::OnSetResizePolicy(Dali::ResizePolicy::Type policy, D
 
   if(!swig_callbackOnSetResizePolicy)
   {
-    Dali::Toolkit::Internal::Control::OnSetResizePolicy(policy, dimension);
+    Dali::Toolkit::ControlImpl::OnSetResizePolicy(policy, dimension);
     return;
   }
   else
@@ -1037,7 +1037,7 @@ Dali::Vector3 SwigDirector_ViewImpl::GetNaturalSize()
 
   if(!swig_callbackGetNaturalSize)
   {
-    return Dali::Toolkit::Internal::Control::GetNaturalSize();
+    return Dali::Toolkit::ControlImpl::GetNaturalSize();
   }
   else
   {
@@ -1061,7 +1061,7 @@ float SwigDirector_ViewImpl::CalculateChildSize(Dali::Actor const& child, Dali::
 
   if(!swig_callbackCalculateChildSize)
   {
-    return Dali::Toolkit::Internal::Control::CalculateChildSize(child, dimension);
+    return Dali::Toolkit::ControlImpl::CalculateChildSize(child, dimension);
   }
   else
   {
@@ -1081,7 +1081,7 @@ float SwigDirector_ViewImpl::GetHeightForWidth(float width)
 
   if(!swig_callbackGetHeightForWidth)
   {
-    return Dali::Toolkit::Internal::Control::GetHeightForWidth(width);
+    return Dali::Toolkit::ControlImpl::GetHeightForWidth(width);
   }
   else
   {
@@ -1100,7 +1100,7 @@ float SwigDirector_ViewImpl::GetWidthForHeight(float height)
 
   if(!swig_callbackGetWidthForHeight)
   {
-    return Dali::Toolkit::Internal::Control::GetWidthForHeight(height);
+    return Dali::Toolkit::ControlImpl::GetWidthForHeight(height);
   }
   else
   {
@@ -1119,7 +1119,7 @@ bool SwigDirector_ViewImpl::RelayoutDependentOnChildren(Dali::Dimension::Type di
 
   if(!swig_callbackRelayoutDependentOnChildren__SWIG_0)
   {
-    return Dali::Toolkit::Internal::Control::RelayoutDependentOnChildren(dimension);
+    return Dali::Toolkit::ControlImpl::RelayoutDependentOnChildren(dimension);
   }
   else
   {
@@ -1136,7 +1136,7 @@ void SwigDirector_ViewImpl::OnCalculateRelayoutSize(Dali::Dimension::Type dimens
 
   if(!swig_callbackOnCalculateRelayoutSize)
   {
-    Dali::Toolkit::Internal::Control::OnCalculateRelayoutSize(dimension);
+    Dali::Toolkit::ControlImpl::OnCalculateRelayoutSize(dimension);
     return;
   }
   else
@@ -1153,7 +1153,7 @@ void SwigDirector_ViewImpl::OnLayoutNegotiated(float size, Dali::Dimension::Type
 
   if(!swig_callbackOnLayoutNegotiated)
   {
-    Dali::Toolkit::Internal::Control::OnLayoutNegotiated(size, dimension);
+    Dali::Toolkit::ControlImpl::OnLayoutNegotiated(size, dimension);
     return;
   }
   else
@@ -1173,7 +1173,7 @@ void SwigDirector_ViewImpl::OnInitialize()
 {
   if(!swig_callbackOnInitialize)
   {
-    Dali::Toolkit::Internal::Control::OnInitialize();
+    Dali::Toolkit::ControlImpl::OnInitialize();
     return;
   }
   else
@@ -1188,7 +1188,7 @@ void SwigDirector_ViewImpl::OnStyleChange(Dali::Toolkit::StyleManager styleManag
 
   if(!swig_callbackOnStyleChange)
   {
-    Dali::Toolkit::Internal::Control::OnStyleChange(styleManager, change);
+    Dali::Toolkit::ControlImpl::OnStyleChange(styleManager, change);
     return;
   }
   else
@@ -1205,7 +1205,7 @@ bool SwigDirector_ViewImpl::OnAccessibilityActivated()
 
   if(!swig_callbackOnAccessibilityActivated)
   {
-    return Dali::Toolkit::Internal::Control::OnAccessibilityActivated();
+    return Dali::Toolkit::ControlImpl::OnAccessibilityActivated();
   }
   else
   {
@@ -1219,7 +1219,7 @@ void SwigDirector_ViewImpl::OnKeyInputFocusGained()
 {
   if(!swig_callbackOnKeyInputFocusGained)
   {
-    Dali::Toolkit::Internal::Control::OnKeyInputFocusGained();
+    Dali::Toolkit::ControlImpl::OnKeyInputFocusGained();
     return;
   }
   else
@@ -1232,7 +1232,7 @@ void SwigDirector_ViewImpl::OnKeyInputFocusLost()
 {
   if(!swig_callbackOnKeyInputFocusLost)
   {
-    Dali::Toolkit::Internal::Control::OnKeyInputFocusLost();
+    Dali::Toolkit::ControlImpl::OnKeyInputFocusLost();
     return;
   }
   else
@@ -1248,7 +1248,7 @@ Dali::Actor SwigDirector_ViewImpl::GetNextKeyboardFocusableActor(Dali::Actor cur
 
   if(!swig_callbackGetNextKeyboardFocusableActor)
   {
-    return Dali::Toolkit::Internal::Control::GetNextKeyboardFocusableActor(currentFocusedActor, direction, loopEnabled);
+    return Dali::Toolkit::ControlImpl::GetNextKeyboardFocusableActor(currentFocusedActor, direction, loopEnabled);
   }
   else
   {
@@ -1268,7 +1268,7 @@ void SwigDirector_ViewImpl::OnKeyboardFocusChangeCommitted(Dali::Actor commitedF
 {
   if(!swig_callbackOnKeyboardFocusChangeCommitted)
   {
-    Dali::Toolkit::Internal::Control::OnKeyboardFocusChangeCommitted(commitedFocusableActor);
+    Dali::Toolkit::ControlImpl::OnKeyboardFocusChangeCommitted(commitedFocusableActor);
     return;
   }
   else
@@ -1284,7 +1284,7 @@ bool SwigDirector_ViewImpl::OnKeyboardEnter()
 
   if(!swig_callbackOnKeyboardEnter)
   {
-    return Dali::Toolkit::Internal::Control::OnKeyboardEnter();
+    return Dali::Toolkit::ControlImpl::OnKeyboardEnter();
   }
   else
   {
@@ -1300,7 +1300,7 @@ void SwigDirector_ViewImpl::OnPinch(Dali::PinchGesture const& pinch)
 
   if(!swig_callbackOnPinch)
   {
-    Dali::Toolkit::Internal::Control::OnPinch(pinch);
+    Dali::Toolkit::ControlImpl::OnPinch(pinch);
     return;
   }
   else
@@ -1316,7 +1316,7 @@ void SwigDirector_ViewImpl::OnPan(Dali::PanGesture const& pan)
 
   if(!swig_callbackOnPan)
   {
-    Dali::Toolkit::Internal::Control::OnPan(pan);
+    Dali::Toolkit::ControlImpl::OnPan(pan);
     return;
   }
   else
@@ -1332,7 +1332,7 @@ void SwigDirector_ViewImpl::OnTap(Dali::TapGesture const& tap)
 
   if(!swig_callbackOnTap)
   {
-    Dali::Toolkit::Internal::Control::OnTap(tap);
+    Dali::Toolkit::ControlImpl::OnTap(tap);
     return;
   }
   else
@@ -1348,7 +1348,7 @@ void SwigDirector_ViewImpl::OnLongPress(Dali::LongPressGesture const& longPress)
 
   if(!swig_callbackOnLongPress)
   {
-    Dali::Toolkit::Internal::Control::OnLongPress(longPress);
+    Dali::Toolkit::ControlImpl::OnLongPress(longPress);
     return;
   }
   else
@@ -1365,7 +1365,7 @@ void SwigDirector_ViewImpl::SignalConnected(Dali::SlotObserver* slotObserver, Da
 
   if(!swig_callbackSignalConnected)
   {
-    Dali::Toolkit::Internal::Control::SignalConnected(slotObserver, callback);
+    Dali::Toolkit::ControlImpl::SignalConnected(slotObserver, callback);
     return;
   }
   else
@@ -1383,7 +1383,7 @@ void SwigDirector_ViewImpl::SignalDisconnected(Dali::SlotObserver* slotObserver,
 
   if(!swig_callbackSignalDisconnected)
   {
-    Dali::Toolkit::Internal::Control::SignalDisconnected(slotObserver, callback);
+    Dali::Toolkit::ControlImpl::SignalDisconnected(slotObserver, callback);
     return;
   }
   else
@@ -1394,9 +1394,9 @@ void SwigDirector_ViewImpl::SignalDisconnected(Dali::SlotObserver* slotObserver,
   }
 }
 
-Dali::Toolkit::Internal::Control::Extension* SwigDirector_ViewImpl::GetControlExtension()
+Dali::Toolkit::ControlImpl::Extension* SwigDirector_ViewImpl::GetControlExtension()
 {
-  return Dali::Toolkit::Internal::Control::GetControlExtension();
+  return Dali::Toolkit::ControlImpl::GetControlExtension();
 }
 
 void SwigDirector_ViewImpl::swig_connect_director(SWIG_Callback0_t callbackOnSceneConnection, SWIG_Callback1_t callbackOnSceneDisconnection, SWIG_Callback2_t callbackOnChildAdd, SWIG_Callback3_t callbackOnChildRemove, SWIG_Callback4_t callbackOnPropertySet, SWIG_Callback5_t callbackOnSizeSet, SWIG_Callback6_t callbackOnSizeAnimation, SWIG_Callback9_t callbackOnKeyEvent, SWIG_Callback11_t callbackOnRelayout, SWIG_Callback12_t callbackOnSetResizePolicy, SWIG_Callback13_t callbackGetNaturalSize, SWIG_Callback14_t callbackCalculateChildSize, SWIG_Callback15_t callbackGetHeightForWidth, SWIG_Callback16_t callbackGetWidthForHeight, SWIG_Callback17_t callbackRelayoutDependentOnChildren__SWIG_0, SWIG_Callback18_t callbackRelayoutDependentOnChildren__SWIG_1, SWIG_Callback19_t callbackOnCalculateRelayoutSize, SWIG_Callback20_t callbackOnLayoutNegotiated, SWIG_Callback21_t callbackOnInitialize, SWIG_Callback24_t callbackOnStyleChange, SWIG_Callback25_t callbackOnAccessibilityActivated, SWIG_Callback30_t callbackOnKeyInputFocusGained, SWIG_Callback31_t callbackOnKeyInputFocusLost, SWIG_Callback32_t callbackGetNextKeyboardFocusableActor, SWIG_Callback33_t callbackOnKeyboardFocusChangeCommitted, SWIG_Callback34_t callbackOnKeyboardEnter, SWIG_Callback35_t callbackOnPinch, SWIG_Callback36_t callbackOnPan, SWIG_Callback37_t callbackOnTap, SWIG_Callback38_t callbackOnLongPress, SWIG_Callback39_t callbackSignalConnected, SWIG_Callback40_t callbackSignalDisconnected)
@@ -21778,11 +21778,11 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_ImageUrl_Get(void* jarg1)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneConnection(void* jarg1, int jarg2)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  int                               arg2;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  int                         arg2;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (int)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl*>(arg1);
   if(!darg)
@@ -21804,11 +21804,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneConnection(void* jarg1, 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneConnectionSwigExplicitViewImpl(void* jarg1, int jarg2)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  int                               arg2;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  int                         arg2;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (int)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl*>(arg1);
   if(!darg)
@@ -21830,10 +21830,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneConnectionSwigExplicitVi
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneDisconnection(void* jarg1)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   darg = dynamic_cast<SwigDirector_ViewImpl*>(arg1);
   if(!darg)
   {
@@ -21854,10 +21854,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneDisconnection(void* jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneDisconnectionSwigExplicitViewImpl(void* jarg1)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   darg = dynamic_cast<SwigDirector_ViewImpl*>(arg1);
   if(!darg)
   {
@@ -21878,11 +21878,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSceneDisconnectionSwigExplici
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildAdd(void* jarg1, void* jarg2)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Actor*                      arg2 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Actor*                arg2 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Actor*)jarg2;
   if(!arg2)
   {
@@ -21909,11 +21909,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildAdd(void* jarg1, void* j
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildAddSwigExplicitViewImpl(void* jarg1, void* jarg2)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Actor*                      arg2 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Actor*                arg2 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Actor*)jarg2;
   if(!arg2)
   {
@@ -21940,11 +21940,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildAddSwigExplicitViewImpl(
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildRemove(void* jarg1, void* jarg2)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Actor*                      arg2 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Actor*                arg2 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Actor*)jarg2;
   if(!arg2)
   {
@@ -21971,11 +21971,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildRemove(void* jarg1, void
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildRemoveSwigExplicitViewImpl(void* jarg1, void* jarg2)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Actor*                      arg2 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Actor*                arg2 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Actor*)jarg2;
   if(!arg2)
   {
@@ -22002,13 +22002,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnChildRemoveSwigExplicitViewIm
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnPropertySet(void* jarg1, int jarg2, void* jarg3)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Property::Index             arg2;
-  Dali::Property::Value             arg3;
-  Dali::Property::Value*            argp3;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Property::Index       arg2;
+  Dali::Property::Value       arg3;
+  Dali::Property::Value*      argp3;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1  = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1  = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2  = (Dali::Property::Index)jarg2;
   argp3 = (Dali::Property::Value*)jarg3;
   if(!argp3)
@@ -22034,13 +22034,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnPropertySet(void* jarg1, int 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnPropertySetSwigExplicitViewImpl(void* jarg1, int jarg2, void* jarg3)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Property::Index             arg2;
-  Dali::Property::Value             arg3;
-  Dali::Property::Value*            argp3;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Property::Index       arg2;
+  Dali::Property::Value       arg3;
+  Dali::Property::Value*      argp3;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1  = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1  = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2  = (Dali::Property::Index)jarg2;
   argp3 = (Dali::Property::Value*)jarg3;
   if(!argp3)
@@ -22066,11 +22066,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnPropertySetSwigExplicitViewIm
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeSet(void* jarg1, void* jarg2)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Vector3*                    arg2 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Vector3*              arg2 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Vector3*)jarg2;
   if(!arg2)
   {
@@ -22094,11 +22094,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeSet(void* jarg1, void* ja
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeSetSwigExplicitViewImpl(void* jarg1, void* jarg2)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Vector3*                    arg2 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Vector3*              arg2 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Vector3*)jarg2;
   if(!arg2)
   {
@@ -22122,12 +22122,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeSetSwigExplicitViewImpl(v
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeAnimation(void* jarg1, void* jarg2, void* jarg3)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Animation*                  arg2 = 0;
-  Dali::Vector3*                    arg3 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Animation*            arg2 = 0;
+  Dali::Vector3*              arg3 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Animation*)jarg2;
   if(!arg2)
   {
@@ -22157,12 +22157,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeAnimation(void* jarg1, vo
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeAnimationSwigExplicitViewImpl(void* jarg1, void* jarg2, void* jarg3)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Animation*                  arg2 = 0;
-  Dali::Vector3*                    arg3 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Animation*            arg2 = 0;
+  Dali::Vector3*              arg3 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Animation*)jarg2;
   if(!arg2)
   {
@@ -22192,13 +22192,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSizeAnimationSwigExplicitView
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEvent(void* jarg1, void* jarg2)
 {
-  bool                              jresult;
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::KeyEvent*                   arg2 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
-  bool                              result;
+  bool                        jresult;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::KeyEvent*             arg2 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
+  bool                        result;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::KeyEvent*)jarg2;
   if(!arg2)
   {
@@ -22225,13 +22225,13 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEvent(void* jarg1, void* j
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEventSwigExplicitViewImpl(void* jarg1, void* jarg2)
 {
-  bool                              jresult;
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::KeyEvent*                   arg2 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
-  bool                              result;
+  bool                        jresult;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::KeyEvent*             arg2 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
+  bool                        result;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::KeyEvent*)jarg2;
   if(!arg2)
   {
@@ -22258,12 +22258,12 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_ViewImpl_OnKeyEventSwigExplicitViewImpl(
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnRelayout(void* jarg1, void* jarg2, void* jarg3)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Vector2*                    arg2 = 0;
-  Dali::RelayoutContainer*          arg3 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Vector2*              arg2 = 0;
+  Dali::RelayoutContainer*    arg3 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Vector2*)jarg2;
   if(!arg2)
   {
@@ -22293,12 +22293,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnRelayout(void* jarg1, void* j
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnRelayoutSwigExplicitViewImpl(void* jarg1, void* jarg2, void* jarg3)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Vector2*                    arg2 = 0;
-  Dali::RelayoutContainer*          arg3 = 0;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Vector2*              arg2 = 0;
+  Dali::RelayoutContainer*    arg3 = 0;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Vector2*)jarg2;
   if(!arg2)
   {
@@ -22328,12 +22328,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnRelayoutSwigExplicitViewImpl(
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSetResizePolicy(void* jarg1, int jarg2, int jarg3)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::ResizePolicy::Type          arg2;
-  Dali::Dimension::Type             arg3;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::ResizePolicy::Type    arg2;
+  Dali::Dimension::Type       arg3;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::ResizePolicy::Type)jarg2;
   arg3 = (Dali::Dimension::Type)jarg3;
   darg = dynamic_cast<SwigDirector_ViewImpl*>(arg1);
@@ -22353,12 +22353,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSetResizePolicy(void* jarg1, 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSetResizePolicySwigExplicitViewImpl(void* jarg1, int jarg2, int jarg3)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::ResizePolicy::Type          arg2;
-  Dali::Dimension::Type             arg3;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::ResizePolicy::Type    arg2;
+  Dali::Dimension::Type       arg3;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::ResizePolicy::Type)jarg2;
   arg3 = (Dali::Dimension::Type)jarg3;
   darg = dynamic_cast<SwigDirector_ViewImpl*>(arg1);
@@ -22378,11 +22378,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnSetResizePolicySwigExplicitVi
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnCalculateRelayoutSize(void* jarg1, int jarg2)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Dimension::Type             arg2;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Dimension::Type       arg2;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Dimension::Type)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl*>(arg1);
   if(!darg)
@@ -22401,11 +22401,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnCalculateRelayoutSize(void* j
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnCalculateRelayoutSizeSwigExplicitViewImpl(void* jarg1, int jarg2)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  Dali::Dimension::Type             arg2;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  Dali::Dimension::Type       arg2;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (Dali::Dimension::Type)jarg2;
   darg = dynamic_cast<SwigDirector_ViewImpl*>(arg1);
   if(!darg)
@@ -22424,12 +22424,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnCalculateRelayoutSizeSwigExpl
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnLayoutNegotiated(void* jarg1, float jarg2, int jarg3)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  float                             arg2;
-  Dali::Dimension::Type             arg3;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  float                       arg2;
+  Dali::Dimension::Type       arg3;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (float)jarg2;
   arg3 = (Dali::Dimension::Type)jarg3;
   darg = dynamic_cast<SwigDirector_ViewImpl*>(arg1);
@@ -22449,12 +22449,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnLayoutNegotiated(void* jarg1,
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_OnLayoutNegotiatedSwigExplicitViewImpl(void* jarg1, float jarg2, int jarg3)
 {
-  Dali::Toolkit::Internal::Control* arg1 = (Dali::Toolkit::Internal::Control*)0;
-  float                             arg2;
-  Dali::Dimension::Type             arg3;
-  SwigDirector_ViewImpl*            darg = 0;
+  Dali::Toolkit::ControlImpl* arg1 = (Dali::Toolkit::ControlImpl*)0;
+  float                       arg2;
+  Dali::Dimension::Type       arg3;
+  SwigDirector_ViewImpl*      darg = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   arg2 = (float)jarg2;
   arg3 = (Dali::Dimension::Type)jarg3;
   darg = dynamic_cast<SwigDirector_ViewImpl*>(arg1);

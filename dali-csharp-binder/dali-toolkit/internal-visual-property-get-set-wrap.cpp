@@ -276,8 +276,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingVisualPropertyInt
 
   try
   {
-    Dali::Toolkit::Internal::Control& internalControl = Dali::Toolkit::Internal::GetImplementation(*pControl);
-    Dali::Toolkit::Visual::Base       visualBase      = Dali::Toolkit::DevelControl::GetVisual(internalControl, visualIndex);
+    Dali::Toolkit::ControlImpl& internalControl = Dali::Toolkit::GetImplementation(*pControl);
+    Dali::Toolkit::Visual::Base visualBase      = Dali::Toolkit::DevelControl::GetVisual(internalControl, visualIndex);
     if(visualBase)
     {
       Dali::Property::Map tempMap;
@@ -317,8 +317,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingVisualPropertyStr
     // We should re-convert by SWIG_csharp_string_callback.
     Dali::String temp = (*valString == nullptr) ? "" : *valString;
 
-    Dali::Toolkit::Internal::Control& internalControl = Dali::Toolkit::Internal::GetImplementation(*pControl);
-    Dali::Toolkit::Visual::Base       visualBase      = Dali::Toolkit::DevelControl::GetVisual(internalControl, visualIndex);
+    Dali::Toolkit::ControlImpl& internalControl = Dali::Toolkit::GetImplementation(*pControl);
+    Dali::Toolkit::Visual::Base visualBase      = Dali::Toolkit::DevelControl::GetVisual(internalControl, visualIndex);
     if(visualBase)
     {
       Dali::Property::Map tempMap;
@@ -358,8 +358,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingVisualPropertyVec
 
   try
   {
-    Dali::Toolkit::Internal::Control& internalControl = Dali::Toolkit::Internal::GetImplementation(*pControl);
-    Dali::Toolkit::Visual::Base       visualBase      = Dali::Toolkit::DevelControl::GetVisual(internalControl, visualIndex);
+    Dali::Toolkit::ControlImpl& internalControl = Dali::Toolkit::GetImplementation(*pControl);
+    Dali::Toolkit::Visual::Base visualBase      = Dali::Toolkit::DevelControl::GetVisual(internalControl, visualIndex);
     if(visualBase)
     {
       Dali::Property::Map tempMap;
@@ -412,8 +412,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingVisualProperty4Fl
 
   try
   {
-    Dali::Toolkit::Internal::Control& internalControl = Dali::Toolkit::Internal::GetImplementation(*pControl);
-    Dali::Toolkit::Visual::Base       visualBase      = Dali::Toolkit::DevelControl::GetVisual(internalControl, visualIndex);
+    Dali::Toolkit::ControlImpl& internalControl = Dali::Toolkit::GetImplementation(*pControl);
+    Dali::Toolkit::Visual::Base visualBase      = Dali::Toolkit::DevelControl::GetVisual(internalControl, visualIndex);
     if(visualBase)
     {
       Dali::Property::Map tempMap;

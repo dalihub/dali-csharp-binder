@@ -65,7 +65,7 @@ void SwigDirector_ViewWrapperImpl::OnSceneConnection(int depth)
     swig_callbackOnSceneConnection(depth);
   }
 
-  Dali::Toolkit::Internal::Control::OnSceneConnection(depth);
+  Dali::Toolkit::ControlImpl::OnSceneConnection(depth);
 }
 
 void SwigDirector_ViewWrapperImpl::OnSceneDisconnection()
@@ -75,7 +75,7 @@ void SwigDirector_ViewWrapperImpl::OnSceneDisconnection()
     swig_callbackOnSceneDisconnection();
   }
 
-  Dali::Toolkit::Internal::Control::OnSceneDisconnection();
+  Dali::Toolkit::ControlImpl::OnSceneDisconnection();
 }
 
 void SwigDirector_ViewWrapperImpl::OnChildAdd(Dali::Actor& child)
@@ -86,7 +86,7 @@ void SwigDirector_ViewWrapperImpl::OnChildAdd(Dali::Actor& child)
     swig_callbackOnChildAdd(jchild);
   }
 
-  Dali::Toolkit::Internal::Control::OnChildAdd(child);
+  Dali::Toolkit::ControlImpl::OnChildAdd(child);
 }
 
 void SwigDirector_ViewWrapperImpl::OnChildRemove(Dali::Actor& child)
@@ -97,7 +97,7 @@ void SwigDirector_ViewWrapperImpl::OnChildRemove(Dali::Actor& child)
     swig_callbackOnChildRemove(jchild);
   }
 
-  Dali::Toolkit::Internal::Control::OnChildRemove(child);
+  Dali::Toolkit::ControlImpl::OnChildRemove(child);
 }
 
 void SwigDirector_ViewWrapperImpl::OnPropertySet(Dali::Property::Index index, const Dali::Property::Value& propertyValue)
@@ -120,7 +120,7 @@ void SwigDirector_ViewWrapperImpl::OnSizeSet(Dali::Vector3 const& targetSize)
     swig_callbackOnSizeSet((Dali::Vector3*)&targetSize);
   }
 
-  Dali::Toolkit::Internal::Control::OnSizeSet(targetSize);
+  Dali::Toolkit::ControlImpl::OnSizeSet(targetSize);
 }
 
 void SwigDirector_ViewWrapperImpl::OnSizeAnimation(Dali::Animation& animation, Dali::Vector3 const& targetSize)
@@ -130,7 +130,7 @@ void SwigDirector_ViewWrapperImpl::OnSizeAnimation(Dali::Animation& animation, D
     swig_callbackOnSizeAnimation((Dali::Animation*)&animation, (Dali::Vector3*)&targetSize);
   }
 
-  Dali::Toolkit::Internal::Control::OnSizeAnimation(animation, targetSize);
+  Dali::Toolkit::ControlImpl::OnSizeAnimation(animation, targetSize);
 }
 
 bool SwigDirector_ViewWrapperImpl::OnKeyEvent(Dali::KeyEvent const& event)
@@ -141,7 +141,7 @@ bool SwigDirector_ViewWrapperImpl::OnKeyEvent(Dali::KeyEvent const& event)
 
   if(!swig_callbackOnKeyEvent)
   {
-    return Dali::Toolkit::Internal::Control::OnKeyEvent(event);
+    return Dali::Toolkit::ControlImpl::OnKeyEvent(event);
   }
   else
   {
@@ -164,7 +164,7 @@ void SwigDirector_ViewWrapperImpl::OnRelayout(Dali::Vector2 const& size, Dali::R
     swig_callbackOnRelayout(jsize, jcontainer);
   }
 
-  Dali::Toolkit::Internal::Control::OnRelayout(size, container);
+  Dali::Toolkit::ControlImpl::OnRelayout(size, container);
 }
 
 void SwigDirector_ViewWrapperImpl::OnSetResizePolicy(Dali::ResizePolicy::Type policy, Dali::Dimension::Type dimension)
@@ -179,7 +179,7 @@ void SwigDirector_ViewWrapperImpl::OnSetResizePolicy(Dali::ResizePolicy::Type po
     swig_callbackOnSetResizePolicy(jpolicy, jdimension);
   }
 
-  Dali::Toolkit::Internal::Control::OnSetResizePolicy(policy, dimension);
+  Dali::Toolkit::ControlImpl::OnSetResizePolicy(policy, dimension);
 }
 
 Dali::Vector3 SwigDirector_ViewWrapperImpl::GetNaturalSize()
@@ -189,7 +189,7 @@ Dali::Vector3 SwigDirector_ViewWrapperImpl::GetNaturalSize()
 
   if(!swig_callbackGetNaturalSize)
   {
-    return Dali::Toolkit::Internal::Control::GetNaturalSize();
+    return Dali::Toolkit::ControlImpl::GetNaturalSize();
   }
   else
   {
@@ -218,7 +218,7 @@ float SwigDirector_ViewWrapperImpl::CalculateChildSize(Dali::Actor const& child,
 
   if(!swig_callbackCalculateChildSize)
   {
-    return Dali::Toolkit::Internal::Control::CalculateChildSize(child, dimension);
+    return Dali::Toolkit::ControlImpl::CalculateChildSize(child, dimension);
   }
   else
   {
@@ -238,7 +238,7 @@ float SwigDirector_ViewWrapperImpl::GetHeightForWidth(float width)
 
   if(!swig_callbackGetHeightForWidth)
   {
-    return Dali::Toolkit::Internal::Control::GetHeightForWidth(width);
+    return Dali::Toolkit::ControlImpl::GetHeightForWidth(width);
   }
   else
   {
@@ -257,7 +257,7 @@ float SwigDirector_ViewWrapperImpl::GetWidthForHeight(float height)
 
   if(!swig_callbackGetWidthForHeight)
   {
-    return Dali::Toolkit::Internal::Control::GetWidthForHeight(height);
+    return Dali::Toolkit::ControlImpl::GetWidthForHeight(height);
   }
   else
   {
@@ -276,7 +276,7 @@ bool SwigDirector_ViewWrapperImpl::RelayoutDependentOnChildren(Dali::Dimension::
 
   if(!swig_callbackRelayoutDependentOnChildren__SWIG_0)
   {
-    return Dali::Toolkit::Internal::Control::RelayoutDependentOnChildren(dimension);
+    return Dali::Toolkit::ControlImpl::RelayoutDependentOnChildren(dimension);
   }
   else
   {
@@ -297,7 +297,7 @@ void SwigDirector_ViewWrapperImpl::OnCalculateRelayoutSize(Dali::Dimension::Type
     swig_callbackOnCalculateRelayoutSize(jdimension);
   }
 
-  Dali::Toolkit::Internal::Control::OnCalculateRelayoutSize(dimension);
+  Dali::Toolkit::ControlImpl::OnCalculateRelayoutSize(dimension);
 }
 
 void SwigDirector_ViewWrapperImpl::OnLayoutNegotiated(float size, Dali::Dimension::Type dimension)
@@ -312,7 +312,7 @@ void SwigDirector_ViewWrapperImpl::OnLayoutNegotiated(float size, Dali::Dimensio
     swig_callbackOnLayoutNegotiated(jsize, jdimension);
   }
 
-  Dali::Toolkit::Internal::Control::OnLayoutNegotiated(size, dimension);
+  Dali::Toolkit::ControlImpl::OnLayoutNegotiated(size, dimension);
 }
 
 void SwigDirector_ViewWrapperImpl::OnInitialize()
@@ -322,7 +322,7 @@ void SwigDirector_ViewWrapperImpl::OnInitialize()
     swig_callbackOnInitialize();
   }
 
-  Dali::Toolkit::Internal::Control::OnInitialize();
+  Dali::Toolkit::ControlImpl::OnInitialize();
 }
 
 void SwigDirector_ViewWrapperImpl::OnStyleChange(Dali::Toolkit::StyleManager styleManager, Dali::StyleChange::Type change)
@@ -335,7 +335,7 @@ void SwigDirector_ViewWrapperImpl::OnStyleChange(Dali::Toolkit::StyleManager sty
     swig_callbackOnStyleChange((Dali::Toolkit::StyleManager*)&styleManager, jchange);
   }
 
-  Dali::Toolkit::Internal::Control::OnStyleChange(styleManager, change);
+  Dali::Toolkit::ControlImpl::OnStyleChange(styleManager, change);
 }
 
 bool SwigDirector_ViewWrapperImpl::OnAccessibilityActivated()
@@ -345,7 +345,7 @@ bool SwigDirector_ViewWrapperImpl::OnAccessibilityActivated()
 
   if(!swig_callbackOnAccessibilityActivated)
   {
-    return Dali::Toolkit::Internal::Control::OnAccessibilityActivated();
+    return Dali::Toolkit::ControlImpl::OnAccessibilityActivated();
   }
   else
   {
@@ -362,7 +362,7 @@ void SwigDirector_ViewWrapperImpl::OnKeyInputFocusGained()
     swig_callbackOnKeyInputFocusGained();
   }
 
-  Dali::Toolkit::Internal::Control::OnKeyInputFocusGained();
+  Dali::Toolkit::ControlImpl::OnKeyInputFocusGained();
 }
 
 void SwigDirector_ViewWrapperImpl::OnKeyInputFocusLost()
@@ -372,7 +372,7 @@ void SwigDirector_ViewWrapperImpl::OnKeyInputFocusLost()
     swig_callbackOnKeyInputFocusLost();
   }
 
-  Dali::Toolkit::Internal::Control::OnKeyInputFocusLost();
+  Dali::Toolkit::ControlImpl::OnKeyInputFocusLost();
 }
 
 Dali::Actor SwigDirector_ViewWrapperImpl::GetNextKeyboardFocusableActor(Dali::Actor currentFocusedActor, Dali::Toolkit::Control::KeyboardFocus::Direction direction, bool loopEnabled)
@@ -384,7 +384,7 @@ Dali::Actor SwigDirector_ViewWrapperImpl::GetNextKeyboardFocusableActor(Dali::Ac
 
   if(!swig_callbackGetNextKeyboardFocusableActor)
   {
-    return Dali::Toolkit::Internal::Control::GetNextKeyboardFocusableActor(currentFocusedActor, direction, loopEnabled);
+    return Dali::Toolkit::ControlImpl::GetNextKeyboardFocusableActor(currentFocusedActor, direction, loopEnabled);
   }
   else
   {
@@ -408,7 +408,7 @@ void SwigDirector_ViewWrapperImpl::OnKeyboardFocusChangeCommitted(Dali::Actor co
     swig_callbackOnKeyboardFocusChangeCommitted((void*)((Dali::Actor*)&commitedFocusableActor));
   }
 
-  Dali::Toolkit::Internal::Control::OnKeyboardFocusChangeCommitted(commitedFocusableActor);
+  Dali::Toolkit::ControlImpl::OnKeyboardFocusChangeCommitted(commitedFocusableActor);
 }
 
 bool SwigDirector_ViewWrapperImpl::OnKeyboardEnter()
@@ -418,7 +418,7 @@ bool SwigDirector_ViewWrapperImpl::OnKeyboardEnter()
 
   if(!swig_callbackOnKeyboardEnter)
   {
-    return Dali::Toolkit::Internal::Control::OnKeyboardEnter();
+    return Dali::Toolkit::ControlImpl::OnKeyboardEnter();
   }
   else
   {
@@ -437,7 +437,7 @@ void SwigDirector_ViewWrapperImpl::OnPinch(Dali::PinchGesture const& pinch)
     swig_callbackOnPinch(jpinch);
   }
 
-  Dali::Toolkit::Internal::Control::OnPinch(pinch);
+  Dali::Toolkit::ControlImpl::OnPinch(pinch);
 }
 
 void SwigDirector_ViewWrapperImpl::OnPan(Dali::PanGesture const& pan)
@@ -449,7 +449,7 @@ void SwigDirector_ViewWrapperImpl::OnPan(Dali::PanGesture const& pan)
     swig_callbackOnPan(jpan);
   }
 
-  Dali::Toolkit::Internal::Control::OnPan(pan);
+  Dali::Toolkit::ControlImpl::OnPan(pan);
 }
 
 void SwigDirector_ViewWrapperImpl::OnTap(Dali::TapGesture const& tap)
@@ -461,7 +461,7 @@ void SwigDirector_ViewWrapperImpl::OnTap(Dali::TapGesture const& tap)
     swig_callbackOnTap(jtap);
   }
 
-  Dali::Toolkit::Internal::Control::OnTap(tap);
+  Dali::Toolkit::ControlImpl::OnTap(tap);
 }
 
 void SwigDirector_ViewWrapperImpl::OnLongPress(Dali::LongPressGesture const& longPress)
@@ -474,12 +474,12 @@ void SwigDirector_ViewWrapperImpl::OnLongPress(Dali::LongPressGesture const& lon
     swig_callbackOnLongPress(jlongPress);
   }
 
-  Dali::Toolkit::Internal::Control::OnLongPress(longPress);
+  Dali::Toolkit::ControlImpl::OnLongPress(longPress);
 }
 
-Dali::Toolkit::Internal::Control::Extension* SwigDirector_ViewWrapperImpl::GetControlExtension()
+Dali::Toolkit::ControlImpl::Extension* SwigDirector_ViewWrapperImpl::GetControlExtension()
 {
-  return Dali::Toolkit::Internal::Control::GetControlExtension();
+  return Dali::Toolkit::ControlImpl::GetControlExtension();
 }
 
 void SwigDirector_ViewWrapperImpl::swig_connect_director(SWIG_Callback0_t callbackOnSceneConnection, SWIG_Callback1_t callbackOnSceneDisconnection, SWIG_Callback2_t callbackOnChildAdd, SWIG_Callback3_t callbackOnChildRemove, SWIG_Callback4_t callbackOnPropertySet, SWIG_Callback5_t callbackOnSizeSet, SWIG_Callback6_t callbackOnSizeAnimation, SWIG_Callback9_t callbackOnKeyEvent, SWIG_Callback11_t callbackOnRelayout, SWIG_Callback12_t callbackOnSetResizePolicy, SWIG_Callback13_t callbackGetNaturalSize, SWIG_Callback14_t callbackCalculateChildSize, SWIG_Callback15_t callbackGetHeightForWidth, SWIG_Callback16_t callbackGetWidthForHeight, SWIG_Callback17_t callbackRelayoutDependentOnChildren__SWIG_0, SWIG_Callback18_t callbackRelayoutDependentOnChildren__SWIG_1, SWIG_Callback19_t callbackOnCalculateRelayoutSize, SWIG_Callback20_t callbackOnLayoutNegotiated, SWIG_Callback21_t callbackOnInitialize, SWIG_Callback24_t callbackOnStyleChange, SWIG_Callback25_t callbackOnAccessibilityActivated, SWIG_Callback30_t callbackOnKeyInputFocusGained, SWIG_Callback31_t callbackOnKeyInputFocusLost, SWIG_Callback32_t callbackGetNextKeyboardFocusableActor, SWIG_Callback33_t callbackOnKeyboardFocusChangeCommitted, SWIG_Callback34_t callbackOnKeyboardEnter, SWIG_Callback35_t callbackOnPinch, SWIG_Callback36_t callbackOnPan, SWIG_Callback37_t callbackOnTap, SWIG_Callback38_t callbackOnLongPress, SWIG_Callback39_t callbackSignalConnected, SWIG_Callback40_t callbackSignalDisconnected)

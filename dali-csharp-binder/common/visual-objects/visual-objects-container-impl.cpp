@@ -304,20 +304,20 @@ void VisualObjectsContainer::ReplaceVisualObject(Dali::Internal::VisualObject& v
         if(visualBase)
         {
           // Register the visual to the control.
-          Dali::Toolkit::DevelControl::RegisterVisual(Dali::Toolkit::Internal::GetImplementation(control), index, visualBase, static_cast<int>(visualObjectImpl.GetDepthIndex()));
+          Dali::Toolkit::DevelControl::RegisterVisual(Dali::Toolkit::GetImplementation(control), index, visualBase, static_cast<int>(visualObjectImpl.GetDepthIndex()));
 
           if(visualObjectImpl.GetShadowType() != Dali::VisualObjectsContainer::ShadowType::NONE)
           {
             Dali::Constraint constraint = CreateVisualCornerConstraint(control, visualObjectImpl);
             // Apply Once
             // constraint.Apply();
-            Dali::Toolkit::DevelControl::EnableCornerPropertiesOverridden(Dali::Toolkit::Internal::GetImplementation(control), visualBase, true, constraint);
+            Dali::Toolkit::DevelControl::EnableCornerPropertiesOverridden(Dali::Toolkit::GetImplementation(control), visualBase, true, constraint);
           }
         }
         else
         {
           // Unregister the visual from the control.
-          Dali::Toolkit::DevelControl::UnregisterVisual(Dali::Toolkit::Internal::GetImplementation(control), index);
+          Dali::Toolkit::DevelControl::UnregisterVisual(Dali::Toolkit::GetImplementation(control), index);
         }
       }
     }
@@ -338,7 +338,7 @@ void VisualObjectsContainer::UnregisterVisualObject(Dali::Internal::VisualObject
       Property::Index index = static_cast<Property::Index>(mVisualIndexConverter[propertyId]);
       if(index != Property::INVALID_INDEX)
       {
-        Dali::Toolkit::DevelControl::UnregisterVisual(Dali::Toolkit::Internal::GetImplementation(control), index);
+        Dali::Toolkit::DevelControl::UnregisterVisual(Dali::Toolkit::GetImplementation(control), index);
       }
       mVisualIndexConverter.Remove(propertyId);
 
