@@ -18,9 +18,12 @@
 // EXTERNAL INCLUDES
 #include <dali/devel-api/watch/watch-application.h>
 #include <dali/devel-api/watch/watch-time.h>
+#include <dali/integration-api/string-utils.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
+
+using Dali::Integration::ToDaliString;
 
 // keep argcs and argv so they're always available to DALi
 int    argWatchC = 1;
@@ -419,7 +422,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_2(int jarg1,
   void*                  jresult;
   int*                   arg1 = (int*)0;
   char***                arg2;
-  std::string*           arg3 = 0;
+  Dali::String           arg3;
   Dali::WatchApplication result;
   {
     int   index  = 0;
@@ -470,11 +473,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WatchApplication_New__SWIG_2(int jarg1,
     return 0;
   }
   std::string arg3_str(jarg3);
-  arg3 = &arg3_str;
+  arg3 = ToDaliString(arg3_str);
   {
     try
     {
-      result = Dali::WatchApplication::New(arg1, arg2, (std::string const&)*arg3);
+      result = Dali::WatchApplication::New(arg1, arg2, arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
