@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -729,9 +729,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Actor(void* jarg1)
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Actor_GetName(void* jarg1)
 {
   char*        jresult;
-  Dali::Actor* arg1   = (Dali::Actor*)0;
-  std::string* result = 0;
-  std::string  name   = "";
+  Dali::Actor* arg1 = (Dali::Actor*)0;
+  Dali::String name = "";
 
   if(!jarg1)
   {
@@ -743,9 +742,8 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Actor_GetName(void* jarg1)
   {
     try
     {
-      name    = ((Dali::Actor const*)arg1)->GetProperty<std::string>(Dali::Actor::Property::NAME);
-      result  = (std::string*)&name;
-      jresult = SWIG_csharp_string_callback(result->c_str());
+      name    = ((Dali::Actor const*)arg1)->GetProperty<Dali::String>(Dali::Actor::Property::NAME);
+      jresult = SWIG_csharp_string_callback(name.CStr());
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -754,8 +752,8 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Actor_GetName(void* jarg1)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetName(void* jarg1, char* jarg2)
 {
-  Dali::Actor* arg1 = (Dali::Actor*)0;
-  std::string* arg2 = 0;
+  Dali::Actor*  arg1 = (Dali::Actor*)0;
+  Dali::String* arg2 = 0;
 
   if(!jarg1)
   {
@@ -769,17 +767,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetName(void* jarg1, char* jarg2)
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
+  Dali::String arg2_str(jarg2);
   arg2 = &arg2_str;
   {
     try
     {
-      (arg1)->SetProperty(Dali::Actor::Property::NAME, (std::string const&)*arg2);
+      (arg1)->SetProperty(Dali::Actor::Property::NAME, (Dali::String const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
 
-  //argout typemap for const std::string&
+  //argout typemap for const Dali::String&
 }
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Actor_GetId(void* jarg1)
@@ -966,10 +964,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetChildAt(void* jarg1, unsigned 
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_FindChildByName(void* jarg1, char* jarg2)
 {
-  void*        jresult;
-  Dali::Actor* arg1 = (Dali::Actor*)0;
-  std::string* arg2 = 0;
-  Dali::Actor  result;
+  void*         jresult;
+  Dali::Actor*  arg1 = (Dali::Actor*)0;
+  Dali::String* arg2 = 0;
+  Dali::Actor   result;
 
   if(!jarg1)
   {
@@ -983,19 +981,19 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_FindChildByName(void* jarg1, char
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
+  Dali::String arg2_str(jarg2);
   arg2 = &arg2_str;
   {
     try
     {
-      result = (arg1)->FindChildByName((std::string const&)*arg2);
+      result = (arg1)->FindChildByName((Dali::String const&)*arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = new Dali::Actor((const Dali::Actor&)result);
 
-  //argout typemap for const std::string&
+  //argout typemap for const Dali::String&
 
   return jresult;
 }

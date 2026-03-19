@@ -26,12 +26,12 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-// SlimCustomViewImpl behaves almost identically to Toolkit::Internal::Control,
+// SlimCustomViewImpl behaves almost identically to Toolkit::ControlImpl,
 // but is associated with a NUIViewAccessible, therefore opening the possibility
 // of providing Accessibility support in C#.
-class SlimCustomViewImpl : public Dali::Toolkit::Internal::Control
+class SlimCustomViewImpl : public Dali::Toolkit::ControlImpl
 {
-  using Dali::Toolkit::Internal::Control::ControlBehaviour;
+  using Dali::Toolkit::ControlImpl::ControlBehaviour;
 
   SlimCustomViewImpl(ControlBehaviour behaviourFlags);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -274,7 +274,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalSetPropertyString(void* act
 
   try
   {
-    pActor->SetProperty((Dali::Property::Index)propertyType, (std::string const&)std::string(valString));
+    pActor->SetProperty((Dali::Property::Index)propertyType, (Dali::String const&)Dali::String(valString));
   }
   CALL_CATCH_EXCEPTION((int)InternalPropertyReturnType::ERROR_UNKNOWN);
 
@@ -660,7 +660,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyBool(void* acto
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyString(void* actor, int propertyType)
 {
   Dali::Handle* pActor = (Dali::Handle*)actor;
-  std::string   result = "";
+  Dali::String  result = "";
   char*         ret    = nullptr;
 
   if(!pActor)
@@ -671,8 +671,8 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Actor_InternalGetPropertyString(void* a
 
   try
   {
-    result = ((Dali::Handle const*)pActor)->GetProperty<std::string>((Dali::Property::Index)propertyType);
-    ret    = SWIG_csharp_string_callback(result.c_str());
+    result = ((Dali::Handle const*)pActor)->GetProperty<Dali::String>((Dali::Property::Index)propertyType);
+    ret    = SWIG_csharp_string_callback(result.CStr());
   }
   CALL_CATCH_EXCEPTION(ret);
 

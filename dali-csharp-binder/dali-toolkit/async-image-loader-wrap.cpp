@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -142,11 +142,11 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_0(vo
   GUARD_ON_NULL_RET0(jarg2);
 
   arg1 = (Dali::Toolkit::AsyncImageLoader*)jarg1;
-  std::string arg2(jarg2);
+  Dali::String arg2(jarg2);
   {
     try
     {
-      result = (arg1)->Load((std::string const&)arg2);
+      result = (arg1)->Load((Dali::String const&)arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -168,12 +168,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_1(vo
   GUARD_ON_NULL_RET0(jarg3);
 
   arg1 = (Dali::Toolkit::AsyncImageLoader*)jarg1;
-  std::string arg2(jarg2);
+  Dali::String arg2(jarg2);
   arg3 = *(Dali::ImageDimensions*)jarg3;
   {
     try
     {
-      result = (arg1)->Load((std::string const&)arg2, arg3);
+      result = (arg1)->Load((Dali::String const&)arg2, arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -198,7 +198,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_2(vo
   GUARD_ON_NULL_RET0(jarg3);
 
   arg1 = (Dali::Toolkit::AsyncImageLoader*)jarg1;
-  std::string arg2(jarg2);
+  Dali::String arg2(jarg2);
   arg3 = *(Dali::ImageDimensions*)jarg3;
   arg4 = (Dali::FittingMode::Type)jarg4;
   arg5 = (Dali::SamplingMode::Type)jarg5;
@@ -206,14 +206,14 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_2(vo
   {
     try
     {
-      result = (arg1)->Load((std::string const&)arg2, arg3, arg4, arg5, arg6);
+      result = (arg1)->Load((Dali::String const&)arg2, arg3, arg4, arg5, arg6);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = result;
 
-  //argout typemap for const std::string&
+  //argout typemap for const Dali::String&
 
   return jresult;
 }

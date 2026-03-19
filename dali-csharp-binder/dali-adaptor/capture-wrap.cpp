@@ -89,8 +89,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_1(void* nuiCapture, void* 
   Dali::Capture* capture = (Dali::Capture*)0;
   Dali::Actor*   source  = (Dali::Actor*)0;
   Dali::Vector2* size    = (Dali::Vector2*)0;
-  std::string*   path;
-  std::string    path_str(nuiPath);
+  Dali::String*  path;
+  Dali::String   path_str(nuiPath);
   Dali::Vector4* clearColor = (Dali::Vector4*)0;
 
   capture    = (Dali::Capture*)nuiCapture;
@@ -108,7 +108,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_1(void* nuiCapture, void* 
   {
     try
     {
-      (capture)->Start(*source, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&)*clearColor);
+      (capture)->Start(*source, (const Dali::Vector2&)*size, (const Dali::String&)*path, (const Dali::Vector4&)*clearColor);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -119,8 +119,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_2(void* nuiCapture, void* 
   Dali::Capture* capture = (Dali::Capture*)0;
   Dali::Actor*   source  = (Dali::Actor*)0;
   Dali::Vector2* size    = (Dali::Vector2*)0;
-  std::string*   path;
-  std::string    path_str(nuiPath);
+  Dali::String*  path;
+  Dali::String   path_str(nuiPath);
 
   capture = (Dali::Capture*)nuiCapture;
   source  = (Dali::Actor*)nuiSource;
@@ -136,7 +136,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_2(void* nuiCapture, void* 
   {
     try
     {
-      (capture)->Start(*source, (const Dali::Vector2&)*size, (const std::string&)*path);
+      (capture)->Start(*source, (const Dali::Vector2&)*size, (const Dali::String&)*path);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -147,8 +147,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_3(void* nuiCapture, void* 
   Dali::Capture* capture = (Dali::Capture*)0;
   Dali::Actor*   source  = (Dali::Actor*)0;
   Dali::Vector2* size    = (Dali::Vector2*)0;
-  std::string*   path;
-  std::string    path_str(nuiPath);
+  Dali::String*  path;
+  Dali::String   path_str(nuiPath);
   Dali::Vector4* clearColor = (Dali::Vector4*)0;
   uint32_t       quality;
 
@@ -168,7 +168,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_3(void* nuiCapture, void* 
   {
     try
     {
-      (capture)->Start(*source, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&)*clearColor, quality);
+      (capture)->Start(*source, (const Dali::Vector2&)*size, (const Dali::String&)*path, (const Dali::Vector4&)*clearColor, quality);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -180,8 +180,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_4(void* nuiCapture, void* 
   Dali::Actor*   source   = (Dali::Actor*)0;
   Dali::Vector2* position = (Dali::Vector2*)0;
   Dali::Vector2* size     = (Dali::Vector2*)0;
-  std::string*   path;
-  std::string    path_str(nuiPath);
+  Dali::String*  path;
+  Dali::String   path_str(nuiPath);
   Dali::Vector4* clearColor = (Dali::Vector4*)0;
 
   capture    = (Dali::Capture*)nuiCapture;
@@ -200,7 +200,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Capture_Start_4(void* nuiCapture, void* 
   {
     try
     {
-      (capture)->Start(*source, (const Dali::Vector2&)*position, (const Dali::Vector2&)*size, (const std::string&)*path, (const Dali::Vector4&)*clearColor);
+      (capture)->Start(*source, (const Dali::Vector2&)*position, (const Dali::Vector2&)*size, (const Dali::String&)*path, (const Dali::Vector4&)*clearColor);
     }
     CALL_CATCH_EXCEPTION();
   }

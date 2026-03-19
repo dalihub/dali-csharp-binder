@@ -128,9 +128,9 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_PADDING_get()
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetImplementation__SWIG_0(void* jarg1)
 {
-  void*                             jresult;
-  Dali::Toolkit::Control*           arg1   = 0;
-  Dali::Toolkit::Internal::Control* result = 0;
+  void*                       jresult;
+  Dali::Toolkit::Control*     arg1   = 0;
+  Dali::Toolkit::ControlImpl* result = 0;
 
   arg1 = (Dali::Toolkit::Control*)jarg1;
   if(!arg1)
@@ -141,7 +141,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetImplementation__SWIG_0(void* jarg1)
   {
     try
     {
-      result = (Dali::Toolkit::Internal::Control*)&Dali::Toolkit::Internal::GetImplementation(*arg1);
+      result = (Dali::Toolkit::ControlImpl*)&Dali::Toolkit::GetImplementation(*arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -350,7 +350,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_GetLongPressGestureDetector(void* 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_SetStyleName(void* jarg1, char* jarg2)
 {
   Dali::Toolkit::Control* arg1 = (Dali::Toolkit::Control*)0;
-  std::string*            arg2 = 0;
+  Dali::String*           arg2 = 0;
 
   arg1 = (Dali::Toolkit::Control*)jarg1;
   if(!jarg2)
@@ -358,12 +358,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_SetStyleName(void* jarg1, char* jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
+  Dali::String arg2_str(jarg2);
   arg2 = &arg2_str;
   {
     try
     {
-      (arg1)->SetStyleName((std::string const&)*arg2);
+      (arg1)->SetStyleName((Dali::String const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -464,8 +464,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_GetOffScreenRenderingOutput(void* 
   {
     try
     {
-      Dali::Toolkit::Internal::Control& controlImpl = Dali::Toolkit::Internal::GetImplementation(*control);
-      Dali::Texture                     texture     = controlImpl.GetOffScreenRenderingOutput();
+      Dali::Toolkit::ControlImpl& controlImpl = Dali::Toolkit::GetImplementation(*control);
+      Dali::Texture               texture     = controlImpl.GetOffScreenRenderingOutput();
       if(!texture)
       {
         return 0;
@@ -480,14 +480,14 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_GetOffScreenRenderingOutput(void* 
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_View__SWIG_2(void* jarg1)
 {
-  void*                             jresult;
-  Dali::Toolkit::Internal::Control* arg1   = 0;
-  Dali::Toolkit::Control*           result = 0;
+  void*                       jresult;
+  Dali::Toolkit::ControlImpl* arg1   = 0;
+  Dali::Toolkit::Control*     result = 0;
 
-  arg1 = (Dali::Toolkit::Internal::Control*)jarg1;
+  arg1 = (Dali::Toolkit::ControlImpl*)jarg1;
   if(!arg1)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::Internal::Control & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Toolkit::ControlImpl & type is null", 0);
     return 0;
   }
   {
@@ -536,7 +536,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_CreateTransition(void* jarg1, void
   Dali::Toolkit::Control* arg1 = (Dali::Toolkit::Control*)0;
   arg1                         = (Dali::Toolkit::Control*)jarg1;
 
-  Dali::Toolkit::Internal::Control& controlImpl = Dali::Toolkit::Internal::GetImplementation(*arg1);
+  Dali::Toolkit::ControlImpl& controlImpl = Dali::Toolkit::GetImplementation(*arg1);
 
   Dali::Toolkit::TransitionData* arg2 = 0;
   Dali::Animation                result;

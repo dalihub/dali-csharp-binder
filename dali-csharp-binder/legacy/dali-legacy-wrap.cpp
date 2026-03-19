@@ -400,8 +400,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Vector4_ZERO_get()
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ViewImpl_director_connect(void* objarg, SwigDirector_ViewImpl::SWIG_Callback0_t callback0, SwigDirector_ViewImpl::SWIG_Callback1_t callback1, SwigDirector_ViewImpl::SWIG_Callback2_t callback2, SwigDirector_ViewImpl::SWIG_Callback3_t callback3, SwigDirector_ViewImpl::SWIG_Callback4_t callback4, SwigDirector_ViewImpl::SWIG_Callback5_t callback5, SwigDirector_ViewImpl::SWIG_Callback6_t callback6, SwigDirector_ViewImpl::SWIG_Callback9_t callback9, SwigDirector_ViewImpl::SWIG_Callback11_t callback11, SwigDirector_ViewImpl::SWIG_Callback12_t callback12, SwigDirector_ViewImpl::SWIG_Callback13_t callback13, SwigDirector_ViewImpl::SWIG_Callback14_t callback14, SwigDirector_ViewImpl::SWIG_Callback15_t callback15, SwigDirector_ViewImpl::SWIG_Callback16_t callback16, SwigDirector_ViewImpl::SWIG_Callback17_t callback17, SwigDirector_ViewImpl::SWIG_Callback18_t callback18, SwigDirector_ViewImpl::SWIG_Callback19_t callback19, SwigDirector_ViewImpl::SWIG_Callback20_t callback20, SwigDirector_ViewImpl::SWIG_Callback21_t callback21, SwigDirector_ViewImpl::SWIG_Callback24_t callback24, SwigDirector_ViewImpl::SWIG_Callback25_t callback25, SwigDirector_ViewImpl::SWIG_Callback30_t callback30, SwigDirector_ViewImpl::SWIG_Callback31_t callback31, SwigDirector_ViewImpl::SWIG_Callback32_t callback32, SwigDirector_ViewImpl::SWIG_Callback33_t callback33, SwigDirector_ViewImpl::SWIG_Callback34_t callback34, SwigDirector_ViewImpl::SWIG_Callback35_t callback35, SwigDirector_ViewImpl::SWIG_Callback36_t callback36, SwigDirector_ViewImpl::SWIG_Callback37_t callback37, SwigDirector_ViewImpl::SWIG_Callback38_t callback38, SwigDirector_ViewImpl::SWIG_Callback39_t callback39, SwigDirector_ViewImpl::SWIG_Callback40_t callback40)
 {
-  Dali::Toolkit::Internal::Control* obj      = (Dali::Toolkit::Internal::Control*)objarg;
-  SwigDirector_ViewImpl*            director = dynamic_cast<SwigDirector_ViewImpl*>(obj);
+  Dali::Toolkit::ControlImpl* obj      = (Dali::Toolkit::ControlImpl*)objarg;
+  SwigDirector_ViewImpl*      director = dynamic_cast<SwigDirector_ViewImpl*>(obj);
   if(director)
   {
     director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback9, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback24, callback25, callback30, callback31, callback32, callback33, callback34, callback35, callback36, callback37, callback38, callback39, callback40);
@@ -607,7 +607,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_NewCustom()
   {
     try
     {
-      result = SlimCustomViewImpl::New(Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
+      result = SlimCustomViewImpl::New(Dali::Toolkit::ControlImpl::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -624,7 +624,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_NewCustomWithBehaviour(int csBehav
   {
     try
     {
-      result = SlimCustomViewImpl::New(static_cast<Dali::Toolkit::Internal::Control::ControlBehaviour>(csBehaviour | Dali::Toolkit::Internal::Control::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS));
+      result = SlimCustomViewImpl::New(static_cast<Dali::Toolkit::ControlImpl::ControlBehaviour>(csBehaviour | Dali::Toolkit::ControlImpl::ControlBehaviour::DISABLE_STYLE_CHANGE_SIGNALS));
     }
     CALL_CATCH_EXCEPTION(0);
   }

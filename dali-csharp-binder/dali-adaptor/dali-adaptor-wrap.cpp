@@ -21,9 +21,12 @@
 #include <dali/devel-api/adaptor-framework/native-image-devel.h>
 #include <dali/devel-api/adaptor-framework/pixel-buffer.h>
 #include <dali/devel-api/adaptor-framework/window-system-devel.h>
+#include <dali/integration-api/string-utils.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
+
+using Dali::Integration::ToPropertyValue;
 
 // SWIGINTERN - the relevant parts of the generated code can be seen the below.
 
@@ -117,7 +120,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetAvailableScreens()
       Dali::ScreenInformation info = *It;
       Dali::Property::Map     screenInformation;
 
-      screenInformation.Add("name", info.GetScreenName());
+      screenInformation.Add("name", ToPropertyValue(info.GetScreenName()));
       screenInformation.Add("width", static_cast<int32_t>(info.GetScreenWidth()));
       screenInformation.Add("height", static_cast<int32_t>(info.GetScreenHeight()));
       screenList.PushBack(screenInformation);
@@ -1654,7 +1657,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Widget(void* jarg1)
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetImpl_SetContentInfo(void* jarg1, char* jarg2)
 {
   Dali::Internal::Adaptor::Widget* arg1 = (Dali::Internal::Adaptor::Widget*)0;
-  std::string*                     arg2 = 0;
+  Dali::String*                    arg2 = 0;
 
   arg1 = (Dali::Internal::Adaptor::Widget*)jarg1;
   if(!jarg2)
@@ -1662,12 +1665,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetImpl_SetContentInfo(void* jarg1, c
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
+  Dali::String arg2_str(jarg2);
   arg2 = &arg2_str;
   {
     try
     {
-      (arg1)->SetContentInfo((std::string const&)*arg2);
+      (arg1)->SetContentInfo((Dali::String const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1710,7 +1713,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WidgetApplication_New(int jarg1, char* 
   void*                   jresult;
   int*                    arg1 = (int*)0;
   char***                 arg2;
-  std::string*            arg3 = 0;
+  Dali::String*           arg3 = 0;
   Dali::WidgetApplication result;
   {
     int   index  = 0;
@@ -1762,12 +1765,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WidgetApplication_New(int jarg1, char* 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg3_str(jarg3);
+  Dali::String arg3_str(jarg3);
   arg3 = &arg3_str;
   {
     try
     {
-      result = Dali::WidgetApplication::New(arg1, arg2, (std::string const&)*arg3);
+      result = Dali::WidgetApplication::New(arg1, arg2, (Dali::String const&)*arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1846,19 +1849,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WidgetApplication(void* jarg1)
   }
 }
 
-typedef Dali::Widget*(SWIGSTDCALL* CSharpCreateWidgetFunction)(const std::string&);
+typedef Dali::Widget*(SWIGSTDCALL* CSharpCreateWidgetFunction)(const Dali::String&);
 CSharpCreateWidgetFunction _CSharpCreateWidgetFunction = NULL;
 
-static Dali::Widget SWIGSTDCALL WidgetFactoryFunction(const std::string& widgetName)
+static Dali::Widget SWIGSTDCALL WidgetFactoryFunction(const Dali::String& widgetName)
 {
-  Widget* widget = _CSharpCreateWidgetFunction(widgetName.c_str());
+  Widget* widget = _CSharpCreateWidgetFunction(widgetName.CStr());
   return *widget;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_RegisterWidgetCreatingFunction(void* jarg1, char** jarg2, void* jarg3)
 {
   Dali::WidgetApplication* arg1 = (Dali::WidgetApplication*)0;
-  std::string*             arg2 = 0;
+  Dali::String*            arg2 = 0;
 
   arg1 = (Dali::WidgetApplication*)jarg1;
   if(!jarg2)
@@ -1866,22 +1869,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WidgetApplication_RegisterWidgetCreating
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(*jarg2);
+  Dali::String arg2_str(*jarg2);
   arg2 = &arg2_str;
 
   if(!_CSharpCreateWidgetFunction)
   {
-    _CSharpCreateWidgetFunction = (Dali::Widget * (*)(const std::string&)) jarg3;
+    _CSharpCreateWidgetFunction = (Dali::Widget * (*)(const Dali::String&)) jarg3;
   }
 
   {
     try
     {
-      (arg1)->RegisterWidgetCreatingFunction((std::string const&)*arg2, WidgetFactoryFunction);
+      (arg1)->RegisterWidgetCreatingFunction((Dali::String const&)*arg2, WidgetFactoryFunction);
     }
     CALL_CATCH_EXCEPTION();
   }
-  *jarg2 = SWIG_csharp_string_callback(arg2->c_str());
+  *jarg2 = SWIG_csharp_string_callback(arg2->CStr());
 }
 
 #ifdef __cplusplus
