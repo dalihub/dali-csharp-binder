@@ -12970,8 +12970,6 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Hover_GetDeviceName(void* jarg1, unsign
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Key_New(char* jarg1, char* jarg2, int jarg3, int jarg4, unsigned long jarg5, int jarg6)
 {
   void*                  jresult;
-  std::string*           arg1 = 0;
-  std::string*           arg2 = 0;
   int                    arg3;
   int                    arg4;
   unsigned long          arg5;
@@ -12984,15 +12982,13 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Key_New(char* jarg1, char* jarg2, int j
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str;
+  Dali::String arg1DaliString(jarg1);
   if(!jarg2)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  std::string arg2_str(jarg2);
-  arg2  = &arg2_str;
+  Dali::String arg2DaliString(jarg2);
   arg3  = (int)jarg3;
   arg4  = (int)jarg4;
   arg5  = (unsigned long)jarg5;
@@ -13001,7 +12997,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Key_New(char* jarg1, char* jarg2, int j
   {
     try
     {
-      result = DevelKeyEvent::New((std::string const&)*arg1, "", (std::string const&)*arg2, arg3, arg4, arg5, (Dali::KeyEvent::State const&)*arg6, "", "", Device::Class::NONE, Device::Subclass::NONE);
+      result = DevelKeyEvent::New(arg1DaliString, "", arg2DaliString, arg3, arg4, arg5, (Dali::KeyEvent::State const&)*arg6, "", "", Device::Class::NONE, Device::Subclass::NONE);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -13107,7 +13103,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Key_IsAltModifier(void* jarg1)
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressedName_set(void* jarg1, char* jarg2)
 {
   Dali::KeyEvent* argp1 = (Dali::KeyEvent*)0;
-  std::string*    arg2  = 0;
 
   argp1 = (Dali::KeyEvent*)jarg1;
   if(!argp1)
@@ -13122,13 +13117,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressedName_set(void* jarg1, char
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
+  Dali::String arg2DaliString(jarg2);
 
   {
     try
     {
-      Dali::DevelKeyEvent::SetKeyName(arg1, (std::string const&)*arg2);
+      Dali::DevelKeyEvent::SetKeyName(arg1, arg2DaliString);
     }
     catch(std::out_of_range& e)
     {
@@ -13217,7 +13211,6 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Key_keyPressedName_get(void* jarg1)
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressed_set(void* jarg1, char* jarg2)
 {
   Dali::KeyEvent* argp1 = (Dali::KeyEvent*)0;
-  std::string*    arg2  = 0;
 
   argp1 = (Dali::KeyEvent*)jarg1;
   if(!argp1)
@@ -13232,13 +13225,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressed_set(void* jarg1, char* ja
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return;
   }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str;
+  Dali::String arg2DaliString(jarg2);
 
   {
     try
     {
-      Dali::DevelKeyEvent::SetKeyString(arg1, (std::string const&)*arg2);
+      Dali::DevelKeyEvent::SetKeyString(arg1, arg2DaliString);
     }
     catch(std::out_of_range& e)
     {
