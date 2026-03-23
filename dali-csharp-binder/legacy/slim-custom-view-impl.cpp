@@ -21,20 +21,35 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali/devel-api/object/handle-devel.h>
+#include <dali/devel-api/object/type-registry-helper.h>
 #include <dali/devel-api/object/type-registry.h>
 
 // INTERNAL INCLUDES
 #include "nui-view-accessible.h"
 
+namespace
+{
+Dali::BaseHandle Create()
+{
+  // Empty handle since their is no actual SlimCustomViewImpl handle exist.
+  return Dali::BaseHandle();
+}
+
+// Setup type-registry. This will make sure that SlimCustomViewImpl also could use Toolkit::Control property
+DALI_TYPE_REGISTRATION_BEGIN(SlimCustomViewImpl, Dali::Toolkit::Control, Create)
+DALI_TYPE_REGISTRATION_END()
+
+} // namespace
+
 SlimCustomViewImpl::SlimCustomViewImpl(ControlBehaviour behaviourFlags)
-: Control(behaviourFlags)
+: ControlImpl(behaviourFlags)
 {
 }
 
 Dali::Toolkit::Control SlimCustomViewImpl::New(ControlBehaviour additionalBehaviour)
 {
   // Create the implementation, temporarily owned on stack
-  Dali::IntrusivePtr<SlimCustomViewImpl> controlImpl = new SlimCustomViewImpl(Control::ControlBehaviour(CONTROL_BEHAVIOUR_DEFAULT | additionalBehaviour));
+  Dali::IntrusivePtr<SlimCustomViewImpl> controlImpl = new SlimCustomViewImpl(ControlBehaviour(CONTROL_BEHAVIOUR_DEFAULT | additionalBehaviour));
 
   // Pass ownership to handle
   Dali::Toolkit::Control handle(*controlImpl);
@@ -42,13 +57,6 @@ Dali::Toolkit::Control SlimCustomViewImpl::New(ControlBehaviour additionalBehavi
   // Second-phase init of the implementation
   // This can only be done after the CustomActor connection has been made...
   controlImpl->Initialize();
-
-  // Impersonate Control by adopting its TypeInfo. Without this, many things don't work.
-  Dali::TypeInfo typeInfo = Dali::TypeRegistry::Get().GetTypeInfo(typeid(Control));
-  if(typeInfo)
-  {
-    Dali::DevelHandle::SetTypeInfo(handle, typeInfo);
-  }
 
   return handle;
 }
