@@ -192,6 +192,40 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char* jarg1, bool
   return jresult;
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_4(void* handle, int playerType, int syncMode)
+{
+  void*                    jresult;
+  void*                    arg1 = 0;
+  int                      arg2;  // playerType
+  int                      arg3;  // syncMode
+  Dali::Toolkit::VideoView result;
+
+  arg1 = handle;
+  arg2 = playerType;
+  arg3 = syncMode;
+  {
+    try
+    {
+      // Create PlayerHandle structure
+      Dali::VideoPlayerPlugin::PlayerHandle playerHandle;
+      // Store void* in Any - will be cast to appropriate type in plugin
+      playerHandle.handle = Dali::Any(arg1);
+      playerHandle.playerType = static_cast<Dali::VideoPlayerPlugin::PlayerHandleType>(arg2);
+
+      // Call the new overload that accepts PlayerHandle
+      result = Dali::Toolkit::DevelVideoView::New(
+        playerHandle,
+        static_cast<Dali::VideoSyncMode>(arg3)
+      );
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView&)result);
+
+  return jresult;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VideoView(void* jarg1)
 {
   Dali::Toolkit::VideoView* arg1 = (Dali::Toolkit::VideoView*)0;
