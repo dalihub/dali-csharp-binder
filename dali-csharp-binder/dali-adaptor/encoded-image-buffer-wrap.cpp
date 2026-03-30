@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
  */
 
 // EXTERNAL INCLUDES
+#include <dali-toolkit/public-api/image-loader/image-url-utils.h>
 #include <dali-toolkit/public-api/image-loader/image-url.h>
-#include <dali-toolkit/public-api/image-loader/image.h>
 #include <dali/public-api/adaptor-framework/encoded-image-buffer.h>
 
 // INTERNAL INCLUDES
@@ -128,30 +128,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_EncodedImageBuffer_GetRawBuffer(void* n
   }
 
   jresult = (void*)result;
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_EncodedImageBuffer_GenerateUrl(void* nuiEncodedImageBuffer)
-{
-  void*                     jresult;
-  Dali::Toolkit::ImageUrl   result;
-  Dali::EncodedImageBuffer* encodedImageBuffer = (Dali::EncodedImageBuffer*)nuiEncodedImageBuffer;
-  ;
-
-  if(!encodedImageBuffer)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::EncodedImageBuffer const & type is null", 0);
-    return 0;
-  }
-  {
-    try
-    {
-      result = Dali::Toolkit::Image::GenerateUrl((const Dali::EncodedImageBuffer&)*encodedImageBuffer);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)result);
   return jresult;
 }
 
