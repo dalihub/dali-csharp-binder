@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -141,7 +141,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_New_4(uint32_t argc, char** arg
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext(bool isIncognito)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContextWithIncognito(bool isIncognito)
 {
   void*                   jresult;
   Dali::WebEngineContext* result = 0;
@@ -158,7 +158,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext(bool isIncognito)
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager(bool isIncognito)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManagerWithIncognito(bool isIncognito)
 {
   void*                         jresult;
   Dali::WebEngineCookieManager* result = 0;
@@ -173,6 +173,16 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager(bool isIncogni
 
   jresult = (void*)result;
   return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext()
+{
+  return CSharp_Dali_WebView_GetContextWithIncognito(false);
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager()
+{
+  return CSharp_Dali_WebView_GetCookieManagerWithIncognito(false);
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebView__SWIG_1(void* jarg1)
@@ -2229,8 +2239,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebFileChooserRequest_MultipleFilesAllow
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebFileChooserRequest_AcceptedMimetypes(void* webObj)
 {
   WEBOBJ_NULL_CHECK(nullptr);
-  Dali::WebEngineFileChooserRequest*     arg1   = (Dali::WebEngineFileChooserRequest*)webObj;
-  std::vector<std::string>*              result = nullptr;
+  Dali::WebEngineFileChooserRequest* arg1   = (Dali::WebEngineFileChooserRequest*)webObj;
+  std::vector<std::string>*          result = nullptr;
   {
     try
     {
@@ -2340,7 +2350,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AcceptedMimetypes_GetItem(void* jarg1, 
     return nullptr;
   }
 
-  std::vector<std::string>* arg1     = (std::vector<std::string>*)jarg1;
+  std::vector<std::string>* arg1 = (std::vector<std::string>*)jarg1;
   std::string               mimetype;
   {
     try
