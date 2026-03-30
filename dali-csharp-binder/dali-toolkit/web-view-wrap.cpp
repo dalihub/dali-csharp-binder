@@ -297,7 +297,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetBackForwardList(void* webObj
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_IsIncognito(void* webObj)
 {
-  void*                   jresult;
   Dali::Toolkit::WebView* arg1   = (Dali::Toolkit::WebView*)0;
   bool                    result = false;
 
