@@ -141,7 +141,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_New_4(uint32_t argc, char** arg
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext()
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext(bool isIncognito)
 {
   void*                   jresult;
   Dali::WebEngineContext* result = 0;
@@ -149,7 +149,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext()
   {
     try
     {
-      result = Dali::Toolkit::WebView::GetContext();
+      result = Dali::Toolkit::WebView::GetContext(isIncognito);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -158,7 +158,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext()
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager()
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager(bool isIncognito)
 {
   void*                         jresult;
   Dali::WebEngineCookieManager* result = 0;
@@ -166,7 +166,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager()
   {
     try
     {
-      result = Dali::Toolkit::WebView::GetCookieManager();
+      result = Dali::Toolkit::WebView::GetCookieManager(isIncognito);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -283,6 +283,26 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetBackForwardList(void* webObj
 
   jresult = (void*)result;
   return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_IsIncognito(void* webObj)
+{
+  void*                   jresult;
+  Dali::Toolkit::WebView* arg1   = (Dali::Toolkit::WebView*)0;
+  bool                    result = false;
+
+  WEBOBJ_NULL_CHECK(false);
+
+  arg1 = (Dali::Toolkit::WebView*)webObj;
+  {
+    try
+    {
+      result = arg1->IsIncognito();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ChangeOrientation(void* webObj, int orientation)
