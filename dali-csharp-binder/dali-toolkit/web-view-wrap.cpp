@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -145,7 +145,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_New_4(uint32_t argc, char** arg
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext()
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContextWithIncognito(bool isIncognito)
 {
   void*                   jresult;
   Dali::WebEngineContext* result = 0;
@@ -153,7 +153,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext()
   {
     try
     {
-      result = Dali::Toolkit::WebView::GetContext();
+      result = Dali::Toolkit::WebView::GetContext(isIncognito);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -162,7 +162,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext()
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager()
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManagerWithIncognito(bool isIncognito)
 {
   void*                         jresult;
   Dali::WebEngineCookieManager* result = 0;
@@ -170,13 +170,23 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager()
   {
     try
     {
-      result = Dali::Toolkit::WebView::GetCookieManager();
+      result = Dali::Toolkit::WebView::GetCookieManager(isIncognito);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
   jresult = (void*)result;
   return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetContext()
+{
+  return CSharp_Dali_WebView_GetContextWithIncognito(false);
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetCookieManager()
+{
+  return CSharp_Dali_WebView_GetCookieManagerWithIncognito(false);
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WebView__SWIG_1(void* jarg1)
@@ -287,6 +297,25 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetBackForwardList(void* webObj
 
   jresult = (void*)result;
   return jresult;
+}
+
+SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_IsIncognito(void* webObj)
+{
+  Dali::Toolkit::WebView* arg1   = (Dali::Toolkit::WebView*)0;
+  bool                    result = false;
+
+  WEBOBJ_NULL_CHECK(false);
+
+  arg1 = (Dali::Toolkit::WebView*)webObj;
+  {
+    try
+    {
+      result = arg1->IsIncognito();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  return result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_ChangeOrientation(void* webObj, int orientation)
@@ -2213,8 +2242,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebFileChooserRequest_MultipleFilesAllow
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebFileChooserRequest_AcceptedMimetypes(void* webObj)
 {
   WEBOBJ_NULL_CHECK(nullptr);
-  Dali::WebEngineFileChooserRequest*     arg1   = (Dali::WebEngineFileChooserRequest*)webObj;
-  std::vector<std::string>*              result = nullptr;
+  Dali::WebEngineFileChooserRequest* arg1   = (Dali::WebEngineFileChooserRequest*)webObj;
+  std::vector<std::string>*          result = nullptr;
   {
     try
     {
@@ -2324,7 +2353,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AcceptedMimetypes_GetItem(void* jarg1, 
     return nullptr;
   }
 
-  std::vector<std::string>* arg1     = (std::vector<std::string>*)jarg1;
+  std::vector<std::string>* arg1 = (std::vector<std::string>*)jarg1;
   std::string               mimetype;
   {
     try
