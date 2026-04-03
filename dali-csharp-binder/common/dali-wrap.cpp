@@ -1482,7 +1482,7 @@ SwigDirector_CustomAlgorithmInterface::~SwigDirector_CustomAlgorithmInterface()
 {
 }
 
-Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction, const std::string& deviceName)
+Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction, const Dali::String& deviceName)
 {
   Dali::Actor c_result;
   void*       jresult = 0;
@@ -1493,7 +1493,7 @@ Dali::Actor SwigDirector_CustomAlgorithmInterface::GetNextFocusableActor(Dali::A
   }
   else
   {
-    jresult = (void*)swig_callbackGetNextFocusableActor((void*)(&current), (void*)(&proposed), direction, deviceName.c_str());
+    jresult = (void*)swig_callbackGetNextFocusableActor((void*)(&current), (void*)(&proposed), direction, deviceName.CStr());
     if(!jresult)
     {
       DALI_LOG_ERROR("[ERROR][%s line:%d] Unexpected null return for type Dali::Actor! Next focus will be NULL, please be cautious to handle the keyboard foucs!", __FILE__, __LINE__);

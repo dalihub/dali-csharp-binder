@@ -8580,7 +8580,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_CustomAlgorithmInterface_GetNextFocusab
   Dali::Actor                                                         arg2;
   Dali::Actor                                                         arg3;
   Dali::Toolkit::Control::KeyboardFocus::Direction                    arg4;
-  std::string*                                                        arg5 = 0;
   Dali::Actor*                                                        argp2;
   Dali::Actor*                                                        argp3;
   Dali::Actor                                                         result;
@@ -8602,13 +8601,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_CustomAlgorithmInterface_GetNextFocusab
   arg3 = *argp3;
   arg4 = (Dali::Toolkit::Control::KeyboardFocus::Direction)direction;
 
-  std::string arg5_str(deviceName);
-  arg5 = &arg5_str;
-
+  Dali::String deviceNameString(deviceName);
   {
     try
     {
-      result = (arg1)->GetNextFocusableActor(arg2, arg3, arg4, (std::string const&)*arg5);
+      result = (arg1)->GetNextFocusableActor(arg2, arg3, arg4, deviceNameString);
     }
     CALL_CATCH_EXCEPTION(0);
   }
