@@ -61,7 +61,7 @@ void InnerShadowCornerRadiusConstraint(Vector4& current, const PropertyInputCont
 {
   // We just assume below state are applied.
   // - Transform::ORIGIN is CENTER
-  // - Transform::ANCHOR_POINT is CENTER
+  // - Transform::PIVOT is CENTER
   // - Transform::OFFSET_POLICY are ABSOLUTE
   // - Transform::SIZE_POLICY are RELATIVE
   // - Transform::SIZE is Vector2::ONE
