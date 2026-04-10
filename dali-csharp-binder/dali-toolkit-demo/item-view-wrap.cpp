@@ -1474,7 +1474,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ItemView_SetItemsAnchorPoint(void* jarg1
   {
     try
     {
-      (arg1)->SetItemsAnchorPoint((Dali::Vector3 const&)*arg2);
+      (arg1)->SetItemsPivot((Dali::Vector3 const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1490,7 +1490,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ItemView_GetItemsAnchorPoint(void* jarg
   {
     try
     {
-      result = ((Dali::Toolkit::ItemView const*)arg1)->GetItemsAnchorPoint();
+      result = ((Dali::Toolkit::ItemView const*)arg1)->GetItemsPivot();
     }
     CALL_CATCH_EXCEPTION(0);
   }
