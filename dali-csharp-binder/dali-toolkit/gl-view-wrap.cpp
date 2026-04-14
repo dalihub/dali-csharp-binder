@@ -20,7 +20,7 @@
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
-#include <dali/public-api/signals/render-callback.h>
+#include <dali/devel-api/signals/render-callback.h>
 
 #ifdef __cplusplus
 extern "C" {

@@ -158,7 +158,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_ANCHOR_POINT_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::ANCHOR_POINT;
+  result  = (int)Dali::Actor::Property::PIVOT;
   jresult = (int)result;
   return jresult;
 }
@@ -168,7 +168,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_ANCHOR_POINT_X_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::ANCHOR_POINT_X;
+  result  = (int)Dali::Actor::Property::PIVOT_X;
   jresult = (int)result;
   return jresult;
 }
@@ -178,7 +178,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_ANCHOR_POINT_Y_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::ANCHOR_POINT_Y;
+  result  = (int)Dali::Actor::Property::PIVOT_Y;
   jresult = (int)result;
   return jresult;
 }
@@ -188,7 +188,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_ANCHOR_POINT_Z_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::ANCHOR_POINT_Z;
+  result  = (int)Dali::Actor::Property::PIVOT_Z;
   jresult = (int)result;
   return jresult;
 }
@@ -645,7 +645,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_SCREEN_POSITION_get()
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_POSITION_USES_ANCHOR_POINT_get()
 {
-  return Dali::Actor::Property::POSITION_USES_ANCHOR_POINT;
+  return Dali::Actor::Property::POSITION_USES_PIVOT;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_INHERIT_LAYOUT_DIRECTION_get()
@@ -1119,7 +1119,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetAnchorPoint(void* jarg1, void* 
   {
     try
     {
-      (arg1)->SetProperty(Actor::Property::ANCHOR_POINT, (Dali::Vector3 const&)*arg2);
+      (arg1)->SetProperty(Actor::Property::PIVOT, (Dali::Vector3 const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1140,7 +1140,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetAnchorPoint_3FloatValues(void* 
     try
     {
       const Dali::Vector3 vector(x, y, z);
-      (arg1)->SetProperty(Actor::Property::ANCHOR_POINT, vector);
+      (arg1)->SetProperty(Actor::Property::PIVOT, vector);
     }
     CALL_CATCH_EXCEPTION();
   }

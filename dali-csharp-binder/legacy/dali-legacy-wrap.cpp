@@ -137,7 +137,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_AnchorPointTop_get()
 {
   float jresult;
   float result;
-  result  = (float)(float)Dali::AnchorPoint::TOP;
+  result  = (float)(float)Dali::Pivot::TOP;
   jresult = result;
   return jresult;
 }
@@ -145,7 +145,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_AnchorPointBottom_get()
 {
   float jresult;
   float result;
-  result  = (float)(float)Dali::AnchorPoint::BOTTOM;
+  result  = (float)(float)Dali::Pivot::BOTTOM;
   jresult = result;
   return jresult;
 }
@@ -153,7 +153,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_AnchorPointLeft_get()
 {
   float jresult;
   float result;
-  result  = (float)(float)Dali::AnchorPoint::LEFT;
+  result  = (float)(float)Dali::Pivot::LEFT;
   jresult = result;
   return jresult;
 }
@@ -161,7 +161,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_AnchorPointRight_get()
 {
   float jresult;
   float result;
-  result  = (float)(float)Dali::AnchorPoint::RIGHT;
+  result  = (float)(float)Dali::Pivot::RIGHT;
   jresult = result;
   return jresult;
 }
@@ -169,7 +169,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_AnchorPointMiddle_get()
 {
   float jresult;
   float result;
-  result  = (float)(float)Dali::AnchorPoint::MIDDLE;
+  result  = (float)(float)Dali::Pivot::MIDDLE;
   jresult = result;
   return jresult;
 }
@@ -178,7 +178,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AnchorPointTopCenter_get()
 {
   void*          jresult;
   Dali::Vector3* result = 0;
-  result                = (Dali::Vector3*)&Dali::AnchorPoint::TOP_CENTER;
+  result                = (Dali::Vector3*)&Dali::Pivot::TOP_CENTER;
   jresult               = (void*)result;
   return jresult;
 }
@@ -186,7 +186,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AnchorPointTopRight_get()
 {
   void*          jresult;
   Dali::Vector3* result = 0;
-  result                = (Dali::Vector3*)&Dali::AnchorPoint::TOP_RIGHT;
+  result                = (Dali::Vector3*)&Dali::Pivot::TOP_RIGHT;
   jresult               = (void*)result;
   return jresult;
 }
@@ -194,7 +194,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AnchorPointCenterLeft_get()
 {
   void*          jresult;
   Dali::Vector3* result = 0;
-  result                = (Dali::Vector3*)&Dali::AnchorPoint::CENTER_LEFT;
+  result                = (Dali::Vector3*)&Dali::Pivot::CENTER_LEFT;
   jresult               = (void*)result;
   return jresult;
 }
@@ -202,7 +202,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AnchorPointCenter_get()
 {
   void*          jresult;
   Dali::Vector3* result = 0;
-  result                = (Dali::Vector3*)&Dali::AnchorPoint::CENTER;
+  result                = (Dali::Vector3*)&Dali::Pivot::CENTER;
   jresult               = (void*)result;
   return jresult;
 }
@@ -210,7 +210,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AnchorPointCenterRight_get()
 {
   void*          jresult;
   Dali::Vector3* result = 0;
-  result                = (Dali::Vector3*)&Dali::AnchorPoint::CENTER_RIGHT;
+  result                = (Dali::Vector3*)&Dali::Pivot::CENTER_RIGHT;
   jresult               = (void*)result;
   return jresult;
 }
@@ -218,7 +218,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AnchorPointBottomLeft_get()
 {
   void*          jresult;
   Dali::Vector3* result = 0;
-  result                = (Dali::Vector3*)&Dali::AnchorPoint::BOTTOM_LEFT;
+  result                = (Dali::Vector3*)&Dali::Pivot::BOTTOM_LEFT;
   jresult               = (void*)result;
   return jresult;
 }
@@ -226,7 +226,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AnchorPointBottomCenter_get()
 {
   void*          jresult;
   Dali::Vector3* result = 0;
-  result                = (Dali::Vector3*)&Dali::AnchorPoint::BOTTOM_CENTER;
+  result                = (Dali::Vector3*)&Dali::Pivot::BOTTOM_CENTER;
   jresult               = (void*)result;
   return jresult;
 }
@@ -234,7 +234,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AnchorPointBottomRight_get()
 {
   void*          jresult;
   Dali::Vector3* result = 0;
-  result                = (Dali::Vector3*)&Dali::AnchorPoint::BOTTOM_RIGHT;
+  result                = (Dali::Vector3*)&Dali::Pivot::BOTTOM_RIGHT;
   jresult               = (void*)result;
   return jresult;
 }

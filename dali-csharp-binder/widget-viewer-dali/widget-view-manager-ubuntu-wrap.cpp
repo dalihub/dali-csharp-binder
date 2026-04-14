@@ -150,7 +150,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WidgetViewManager_AddWidget(void* jarg1
       result.SetBackgroundColor(Dali::Vector4(0.7f, 0.7f, 0.7f, 1.0f));
 
       Dali::Toolkit::TextLabel textLabel = Dali::Toolkit::TextLabel::New("Widget(Not Support)");
-      textLabel.SetProperty(Dali::Actor::Property::ANCHOR_POINT, Dali::AnchorPoint::TOP_LEFT);
+      textLabel.SetProperty(Dali::Actor::Property::PIVOT, Dali::Pivot::TOP_LEFT);
       textLabel.SetProperty(Dali::Actor::Property::NAME, "helloWorldLabel");
       result.Add(textLabel);
       DALI_LOG_RELEASE_INFO("Add Widget, but Ubutu backend can't support Widget Feature. So we just show dummy Widget(%fx%f)",static_cast<float>(jarg4), static_cast<float>(jarg5));

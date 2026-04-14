@@ -77,7 +77,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_AnchorPointTopLeft_get()
   void*          jresult;
   Dali::Vector3* result = 0;
 
-  result  = (Dali::Vector3*)&Dali::AnchorPoint::TOP_LEFT;
+  result  = (Dali::Vector3*)&Dali::Pivot::TOP_LEFT;
   jresult = (void*)result;
   return jresult;
 }

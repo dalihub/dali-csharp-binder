@@ -22,6 +22,8 @@
 #include <dali/public-api/adaptor-framework/application.h>
 #include <dali/public-api/adaptor-framework/window-enumerations.h>
 
+#include <dali-toolkit/devel-api/toolkit-pre-initialize.h>
+
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
@@ -207,7 +209,7 @@ extern "C" {
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_PreInitialize()
 {
-  ApplicationPreInitialize(nullptr, nullptr);
+  DaliToolkitPreInitialize(nullptr, nullptr, nullptr);
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Application_IsSupportPreInitializedCreation()

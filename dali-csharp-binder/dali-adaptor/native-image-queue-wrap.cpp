@@ -16,7 +16,7 @@
  */
 
 // EXTERNAL INCLUDES
-#include <dali-toolkit/public-api/image-loader/image.h>
+#include <dali-toolkit/public-api/image-loader/image-url-utils.h>
 #include <dali/devel-api/adaptor-framework/native-image-queue.h>
 
 // INTERNAL INCLUDES
@@ -124,40 +124,6 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_NativeImageQueue_GetQueueCount(v
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_GenerateUrl(void* nuiqueue)
-{
-  Dali::Toolkit::ImageUrl result;
-  Dali::NativeImageQueue* queue = (Dali::NativeImageQueue*)nuiqueue;
-  void*                   jresult;
-  {
-    try
-    {
-      result = Dali::Toolkit::Image::GenerateUrl(queue);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)result);
-  return jresult;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_NativeImageQueue_GenerateUrl_With_PreMultiplied(void* nuiqueue, bool preMultiplied)
-{
-  Dali::Toolkit::ImageUrl result;
-  Dali::NativeImageQueue* queue = (Dali::NativeImageQueue*)nuiqueue;
-  void*                   jresult;
-  {
-    try
-    {
-      result = Dali::Toolkit::Image::GenerateUrl(queue, preMultiplied);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Toolkit::ImageUrl((const Dali::Toolkit::ImageUrl&)result);
   return jresult;
 }
 

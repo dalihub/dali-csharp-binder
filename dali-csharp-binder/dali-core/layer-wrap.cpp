@@ -55,7 +55,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_New()
 
       // We use Layer.Viewport feature base as top-left. Let we follow it.
       result.SetProperty(Actor::Property::PARENT_ORIGIN, Dali::ParentOrigin::TOP_LEFT);
-      result.SetProperty(Actor::Property::ANCHOR_POINT, Dali::AnchorPoint::TOP_LEFT);
+      result.SetProperty(Actor::Property::PIVOT, Dali::Pivot::TOP_LEFT);
 
       // NUI Created Layer always be under some root-layer. Keep it as fill-to-parent
       result.SetResizePolicy(ResizePolicy::FILL_TO_PARENT, Dimension::ALL_DIMENSIONS);

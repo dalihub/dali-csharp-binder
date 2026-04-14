@@ -4551,6 +4551,23 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetInsets__SWIG_1(void* winHandl
   return jresult;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetForceRendering(void* winHandle, uint32_t frameCount)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  if(!CheckingWindowHandle(window))
+  {
+    return;
+  }
+
+  {
+    try
+    {
+      Dali::DevelWindow::SetForceRendering(*window, frameCount);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 /* supports multiple screens */
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Window_GetScreen(void* winHandle)
 {
