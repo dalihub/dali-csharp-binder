@@ -229,7 +229,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_GetPreInitializeWindow()
   {
     try
     {
-      result = Dali::DevelApplication::GetPreInitializeWindow();
+      result = Dali::DevelApplication::GetPreInitializedWindow();
     }
     CALL_CATCH_EXCEPTION(0);
   }
