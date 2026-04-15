@@ -17,6 +17,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali/devel-api/actors/actor-devel.h>
+#include <limits>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -2728,7 +2729,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsIgnored(void* csActor)
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPadding(void* jarg1, void* jarg2)
 {
   Dali::Actor*   arg1 = (Dali::Actor*)0;
-  Dali::Padding* arg2 = 0;
+  Dali::Vector4* arg2 = 0;
 
   if(!jarg1)
   {
@@ -2737,16 +2738,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPadding(void* jarg1, void* jarg
   }
 
   arg1 = (Dali::Actor*)jarg1;
-  arg2 = (Dali::Padding*)jarg2;
+  arg2 = (Dali::Vector4*)jarg2;
   if(!arg2)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Padding const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 const & type is null", 0);
     return;
   }
   {
     try
     {
-      (arg1)->SetProperty(Actor::Property::PADDING, (Dali::Padding const&)*arg2);
+      (arg1)->SetProperty(Actor::Property::PADDING, (Dali::Vector4 const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2755,7 +2756,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPadding(void* jarg1, void* jarg
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_GetPadding(void* jarg1, void* jarg2)
 {
   Dali::Actor*   arg1 = (Dali::Actor*)0;
-  Dali::Padding* arg2 = 0;
+  Dali::Vector4* arg2 = 0;
 
   if(!jarg1)
   {
@@ -2764,10 +2765,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_GetPadding(void* jarg1, void* jarg
   }
 
   arg1 = (Dali::Actor*)jarg1;
-  arg2 = (Dali::Padding*)jarg2;
+  arg2 = (Dali::Vector4*)jarg2;
   if(!arg2)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Padding & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Vector4 & type is null", 0);
     return;
   }
   {
@@ -3146,11 +3147,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_LookAt(void* csActor, void* csTarg
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_SetTouchAreaOffset(void* jarg1, int jarg2, int jarg3, int jarg4, int jarg5)
+SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_SetTouchAreaOffset(void* jarg1, int32_t left, int32_t right, int32_t bottom, int32_t top)
 {
   Dali::Actor* arg1 = (Dali::Actor*)0;
   arg1              = (Dali::Actor*)jarg1;
-  Rect<int> arg2    = Rect(jarg2, jarg3, jarg4, jarg5);
+
+  // Meaning of TouchAreaOffset and TOUCH_AREA_MARGIN changed at dali_2.5.18. Let we synchronize it.
+  // TouchAreaOffset(left, right, bottom top) ---> Extents(-left, right, -top, bottom);
+
+  // Clamp if input value is over the int16_t type.
+  // For safer logic, let we ignore -32768.
+  Dali::ClampInPlace(left, static_cast<int32_t>(-std::numeric_limits<int16_t>::max()), static_cast<int32_t>(std::numeric_limits<int16_t>::max()));
+  Dali::ClampInPlace(right, static_cast<int32_t>(-std::numeric_limits<int16_t>::max()), static_cast<int32_t>(std::numeric_limits<int16_t>::max()));
+  Dali::ClampInPlace(bottom, static_cast<int32_t>(-std::numeric_limits<int16_t>::max()), static_cast<int32_t>(std::numeric_limits<int16_t>::max()));
+  Dali::ClampInPlace(top, static_cast<int32_t>(-std::numeric_limits<int16_t>::max()), static_cast<int32_t>(std::numeric_limits<int16_t>::max()));
+
+  Extents arg2 = Extents(-left, right, -top, bottom);
   {
     if(!arg1)
     {
@@ -3159,18 +3171,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_SetTouchAreaOffset(void* 
     }
     try
     {
-      (arg1)->SetProperty(Dali::DevelActor::Property::TOUCH_AREA_OFFSET, arg2);
+      (arg1)->SetProperty(Dali::DevelActor::Property::TOUCH_AREA_MARGIN, arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_GetTouchAreaOffset(void* jarg1, int* jarg2, int* jarg3, int* jarg4, int* jarg5)
+SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_GetTouchAreaOffset(void* jarg1, int32_t* left, int32_t* right, int32_t* bottom, int32_t* top)
 {
   Dali::Actor* arg1 = (Dali::Actor*)0;
   arg1              = (Dali::Actor*)jarg1;
 
-  Rect<int32_t> result;
+  Extents result;
   if(!arg1)
   {
     SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "Dali::Actor & type is null");
@@ -3179,11 +3191,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_GetTouchAreaOffset(void* 
   {
     try
     {
-      result = (arg1)->GetProperty<Rect<int32_t>>(Dali::DevelActor::Property::TOUCH_AREA_OFFSET);
-      *jarg2 = result.left;
-      *jarg3 = result.right;
-      *jarg4 = result.bottom;
-      *jarg5 = result.top;
+      result = (arg1)->GetProperty<Extents>(Dali::DevelActor::Property::TOUCH_AREA_MARGIN);
+
+      // Meaning of TouchAreaOffset and TOUCH_AREA_MARGIN changed at dali_2.5.18. Let we synchronize it.
+      // Extents(start, end, top, bottom) --> TouchAreaOffset(-start, end, bottom -top);
+      *left   = static_cast<int32_t>(-result.start);
+      *right  = static_cast<int32_t>(result.end);
+      *bottom = static_cast<int32_t>(result.bottom);
+      *top    = static_cast<int32_t>(-result.top);
     }
     CALL_CATCH_EXCEPTION();
   }

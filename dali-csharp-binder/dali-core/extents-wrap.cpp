@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,23 +64,14 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Extents__SWIG_1(void* jarg1)
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Extents__SWIG_2(unsigned short jarg1, unsigned short jarg2, unsigned short jarg3, unsigned short jarg4)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_Extents__SWIG_2(uint16_t start, uint16_t end, uint16_t top, uint16_t bottom)
 {
   void*          jresult;
-  uint16_t       arg1;
-  uint16_t       arg2;
-  uint16_t       arg3;
-  uint16_t       arg4;
   Dali::Extents* result = 0;
-
-  arg1 = (uint16_t)jarg1;
-  arg2 = (uint16_t)jarg2;
-  arg3 = (uint16_t)jarg3;
-  arg4 = (uint16_t)jarg4;
   {
     try
     {
-      result = (Dali::Extents*)new Dali::Extents(arg1, arg2, arg3, arg4);
+      result = (Dali::Extents*)new Dali::Extents(static_cast<int16_t>(start), static_cast<int16_t>(end), static_cast<int16_t>(top), static_cast<int16_t>(bottom));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -117,15 +108,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Extents_Assign__SWIG_1(void* jarg1, voi
 {
   void*          jresult;
   Dali::Extents* arg1   = (Dali::Extents*)0;
-  uint16_t*      arg2   = (uint16_t*)0;
+  int16_t*       arg2   = (int16_t*)0;
   Dali::Extents* result = 0;
 
   arg1 = (Dali::Extents*)jarg1;
-  arg2 = (uint16_t*)jarg2;
+  arg2 = (int16_t*)jarg2;
   {
     try
     {
-      result = (Dali::Extents*)&(arg1)->operator=((uint16_t const*)arg2);
+      result = (Dali::Extents*)&(arg1)->operator=((int16_t const*)arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -183,106 +174,94 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Extents_NotEqualTo(void* jarg1, 
   return jresult;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_set_all(void* jarg1, unsigned short jarg2, unsigned short jarg3, unsigned short jarg4, unsigned short jarg5)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_set_all(void* jarg1, uint16_t start, uint16_t end, uint16_t top, uint16_t bottom)
 {
   Dali::Extents* arg1 = (Dali::Extents*)0;
 
   arg1 = (Dali::Extents*)jarg1;
   if(arg1)
   {
-    (arg1)->start  = (uint16_t)jarg2;
-    (arg1)->end    = (uint16_t)jarg3;
-    (arg1)->top    = (uint16_t)jarg4;
-    (arg1)->bottom = (uint16_t)jarg5;
+    (arg1)->start  = static_cast<int16_t>(start);
+    (arg1)->end    = static_cast<int16_t>(end);
+    (arg1)->top    = static_cast<int16_t>(top);
+    (arg1)->bottom = static_cast<int16_t>(bottom);
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_start_set(void* jarg1, unsigned short jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_start_set(void* jarg1, uint16_t start)
 {
   Dali::Extents* arg1 = (Dali::Extents*)0;
-  uint16_t       arg2;
 
   arg1 = (Dali::Extents*)jarg1;
-  arg2 = (uint16_t)jarg2;
-  if(arg1) (arg1)->start = arg2;
+  if(arg1)
+  {
+    (arg1)->start = static_cast<int16_t>(start);
+  }
 }
 
-SWIGEXPORT unsigned short SWIGSTDCALL CSharp_Dali_Extents_start_get(void* jarg1)
-{
-  unsigned short jresult;
-  Dali::Extents* arg1 = (Dali::Extents*)0;
-  uint16_t       result;
-
-  arg1    = (Dali::Extents*)jarg1;
-  result  = ((arg1)->start);
-  jresult = result;
-  return jresult;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_end_set(void* jarg1, unsigned short jarg2)
+SWIGEXPORT uint16_t SWIGSTDCALL CSharp_Dali_Extents_start_get(void* jarg1)
 {
   Dali::Extents* arg1 = (Dali::Extents*)0;
-  uint16_t       arg2;
 
   arg1 = (Dali::Extents*)jarg1;
-  arg2 = (uint16_t)jarg2;
-  if(arg1) (arg1)->end = arg2;
+  return static_cast<uint16_t>((arg1)->start);
 }
 
-SWIGEXPORT unsigned short SWIGSTDCALL CSharp_Dali_Extents_end_get(void* jarg1)
-{
-  unsigned short jresult;
-  Dali::Extents* arg1 = (Dali::Extents*)0;
-  uint16_t       result;
-
-  arg1    = (Dali::Extents*)jarg1;
-  result  = ((arg1)->end);
-  jresult = result;
-  return jresult;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_top_set(void* jarg1, unsigned short jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_end_set(void* jarg1, uint16_t end)
 {
   Dali::Extents* arg1 = (Dali::Extents*)0;
-  uint16_t       arg2;
 
   arg1 = (Dali::Extents*)jarg1;
-  arg2 = (uint16_t)jarg2;
-  if(arg1) (arg1)->top = arg2;
+  if(arg1)
+  {
+    (arg1)->end = static_cast<int16_t>(end);
+  }
 }
 
-SWIGEXPORT unsigned short SWIGSTDCALL CSharp_Dali_Extents_top_get(void* jarg1)
-{
-  unsigned short jresult;
-  Dali::Extents* arg1 = (Dali::Extents*)0;
-  uint16_t       result;
-
-  arg1    = (Dali::Extents*)jarg1;
-  result  = ((arg1)->top);
-  jresult = result;
-  return jresult;
-}
-
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_bottom_set(void* jarg1, unsigned short jarg2)
+SWIGEXPORT uint16_t SWIGSTDCALL CSharp_Dali_Extents_end_get(void* jarg1)
 {
   Dali::Extents* arg1 = (Dali::Extents*)0;
-  uint16_t       arg2;
 
   arg1 = (Dali::Extents*)jarg1;
-  arg2 = (uint16_t)jarg2;
-  if(arg1) (arg1)->bottom = arg2;
+  return static_cast<uint16_t>((arg1)->end);
 }
 
-SWIGEXPORT unsigned short SWIGSTDCALL CSharp_Dali_Extents_bottom_get(void* jarg1)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_top_set(void* jarg1, uint16_t top)
 {
-  unsigned short jresult;
   Dali::Extents* arg1 = (Dali::Extents*)0;
-  uint16_t       result;
 
-  arg1    = (Dali::Extents*)jarg1;
-  result  = ((arg1)->bottom);
-  jresult = result;
-  return jresult;
+  arg1 = (Dali::Extents*)jarg1;
+  if(arg1)
+  {
+    (arg1)->top = static_cast<int16_t>(top);
+  }
+}
+
+SWIGEXPORT uint16_t SWIGSTDCALL CSharp_Dali_Extents_top_get(void* jarg1)
+{
+  Dali::Extents* arg1 = (Dali::Extents*)0;
+
+  arg1 = (Dali::Extents*)jarg1;
+  return static_cast<uint16_t>((arg1)->top);
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Extents_bottom_set(void* jarg1, uint16_t bottom)
+{
+  Dali::Extents* arg1 = (Dali::Extents*)0;
+
+  arg1 = (Dali::Extents*)jarg1;
+  if(arg1)
+  {
+    (arg1)->bottom = static_cast<int16_t>(bottom);
+  }
+}
+
+SWIGEXPORT uint16_t SWIGSTDCALL CSharp_Dali_Extents_bottom_get(void* jarg1)
+{
+  Dali::Extents* arg1 = (Dali::Extents*)0;
+
+  arg1 = (Dali::Extents*)jarg1;
+  return static_cast<uint16_t>((arg1)->bottom);
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Extents(void* jarg1)
