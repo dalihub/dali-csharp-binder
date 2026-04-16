@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 3.8.2)
+CMAKE_POLICY(SET CMP0012 NEW) # Prevent dereferencing of OFF/ON as variables
+IF(POLICY CMP0177)
+  CMAKE_POLICY(SET CMP0177 NEW) # install() DESTINATION paths are normalized.
+ENDIF()
 
-SET(CMAKE_CXX_STANDARD 17)
 SET(CMAKE_C_STANDARD 99)
+SET(CMAKE_CXX_STANDARD 17)
 
 SET(name "dali2-csharp-binder")
 
