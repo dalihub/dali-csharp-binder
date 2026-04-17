@@ -243,7 +243,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_0()
   {
     try
     {
-      result = Dali::Application::New();
+      result = Dali::Application::New(nullptr, nullptr);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -299,8 +299,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, char
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char* jarg3, int jarg4)
 {
-  void*                            jresult;
-  Dali::Application::WindowOpacity arg4;
+  void* jresult;
 
   Dali::Application result;
   if(!jarg3)
@@ -308,12 +307,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  Dali::String arg3(jarg3);
-  arg4 = (Dali::Application::WindowOpacity)jarg4;
+
+  Dali::String     arg3(jarg3);
+  Dali::WindowData windowData;
+  windowData.SetTransparency(jarg4);
+
   {
     try
     {
-      result = Dali::Application::New(nullptr, nullptr, arg3, arg4);
+      result = Dali::Application::New(nullptr, nullptr, arg3, false, windowData);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -327,11 +329,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int nuiArgc, char* nuiArgv, char* jarg3, int jarg4)
 {
-  void*                            jresult;
-  int*                             argc = nullptr;
-  char***                          argv = nullptr;
-  Dali::Application::WindowOpacity arg4;
-  Dali::Application                result;
+  void*             jresult;
+  int*              argc = nullptr;
+  char***           argv = nullptr;
+  Dali::Application result;
 
   GUARD_ON_NULL_RET0(jarg3);
 
@@ -339,12 +340,14 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int nuiArgc, 
   argc = &gArgC;
   argv = &gArgV;
 
-  Dali::String arg3(jarg3);
-  arg4 = (Dali::Application::WindowOpacity)jarg4;
+  Dali::String     arg3(jarg3);
+  Dali::WindowData windowData;
+  windowData.SetTransparency(jarg4);
+
   {
     try
     {
-      result = Dali::Application::New(argc, argv, arg3, arg4);
+      result = Dali::Application::New(argc, argv, arg3, false, windowData);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1575,32 +1578,35 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ApplicationControlSignal(void* ja
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char* jarg3, int jarg4, void* jarg5)
 {
-  void*                            jresult;
-  int*                             argc = nullptr;
-  char***                          argv = nullptr;
-  Dali::Application::WindowOpacity windowOpacity;
-  Dali::PositionSize               arg5;
-  Dali::PositionSize*              argp5;
-  Dali::Application                result;
+  void*               jresult;
+  int*                argc = nullptr;
+  char***             argv = nullptr;
+  Dali::PositionSize  arg5;
+  Dali::PositionSize* argp5;
+  Dali::Application   result;
 
   if(!jarg3)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  Dali::String arg3(jarg3);
-  windowOpacity = (Dali::Application::WindowOpacity)jarg4;
-  argp5         = (Dali::PositionSize*)jarg5;
+
+  Dali::String     arg3(jarg3);
+  Dali::WindowData windowData;
+  windowData.SetTransparency(jarg4);
+
+  argp5 = (Dali::PositionSize*)jarg5;
   if(!argp5)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
     return 0;
   }
-  arg5 = *argp5;
+  windowData.SetPositionSize(*argp5);
+
   {
     try
     {
-      result = Dali::Application::New(argc, argv, arg3, windowOpacity, arg5);
+      result = Dali::Application::New(argc, argv, arg3, false, windowData);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1638,7 +1644,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int nuiArgc, ch
   Dali::WindowData windowData;
   windowData.SetPositionSize(*static_cast<Dali::PositionSize*>(initRectangle));
   windowData.SetWindowType(static_cast<Dali::WindowType>(nuiWindowType));
-  windowData.SetTransparency(static_cast<Dali::Application::WindowOpacity>(nuiWindowMode) == Dali::Application::WindowOpacity::TRANSPARENT);
+  windowData.SetTransparency(nuiWindowMode); // if nuiWindowMode == 0, it means opaque.
 
   {
     try
@@ -1655,14 +1661,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int nuiArgc, ch
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, char* nuiArgv, char* nuiStyleSheet, int nuiWindowMode, void* nuiPositionSize, bool nuiUseUiThread)
 {
-  void*                            jresult;
-  int*                             argc = nullptr;
-  char***                          argv = nullptr;
-  Dali::Application::WindowOpacity windowOpacity;
-  Dali::PositionSize               positionSize;
-  Dali::PositionSize*              positionSizeP;
-  bool                             useUiThread;
-  Dali::Application                result;
+  void*               jresult;
+  int*                argc = nullptr;
+  char***             argv = nullptr;
+  Dali::PositionSize* positionSizeP;
+  bool                useUiThread;
+  Dali::Application   result;
 
   if(!nuiStyleSheet)
   {
@@ -1670,7 +1674,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, ch
     return 0;
   }
   Dali::String styleSheet(nuiStyleSheet);
-  windowOpacity = (Dali::Application::WindowOpacity)nuiWindowMode;
   positionSizeP = (Dali::PositionSize*)nuiPositionSize;
   useUiThread   = nuiUseUiThread;
 
@@ -1684,11 +1687,14 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, ch
   argc = &gArgC;
   argv = &gArgV;
 
-  positionSize = *positionSizeP;
+  Dali::WindowData windowData;
+  windowData.SetPositionSize(*positionSizeP);
+  windowData.SetTransparency(nuiWindowMode); // if nuiWindowMode == 0, it means opaque.
+
   {
     try
     {
-      result = Dali::Application::New(argc, argv, styleSheet, windowOpacity, positionSize, useUiThread);
+      result = Dali::Application::New(argc, argv, styleSheet, useUiThread, windowData);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1698,15 +1704,13 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, ch
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(int nuiArgc, char* nuiArgv, char* jarg3, int jarg4, void* jarg5)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(int nuiArgc, char* nuiArgv, char* jarg3, int nuiWindowMode, void* jarg5)
 {
-  void*                            jresult;
-  int*                             argc = nullptr;
-  char***                          argv = nullptr;
-  Dali::Application::WindowOpacity windowOpacity;
-  Dali::PositionSize               arg5;
-  Dali::PositionSize*              argp5;
-  Dali::Application                result;
+  void*               jresult;
+  int*                argc = nullptr;
+  char***             argv = nullptr;
+  Dali::PositionSize* argp5;
+  Dali::Application   result;
 
   GUARD_ON_NULL_RET0(jarg3);
 
@@ -1715,18 +1719,21 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(
   argv = &gArgV;
 
   Dali::String arg3(jarg3);
-  windowOpacity = (Dali::Application::WindowOpacity)jarg4;
-  argp5         = (Dali::PositionSize*)jarg5;
+  argp5 = (Dali::PositionSize*)jarg5;
   if(!argp5)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PositionSize", 0);
     return 0;
   }
-  arg5 = *argp5;
+
+  Dali::WindowData windowData;
+  windowData.SetPositionSize(*argp5);
+  windowData.SetTransparency(nuiWindowMode); // if nuiWindowMode == 0, it means opaque.
+
   {
     try
     {
-      result = Dali::Application::New(argc, argv, arg3, windowOpacity, arg5);
+      result = Dali::Application::New(argc, argv, arg3, false, windowData);
     }
     CALL_CATCH_EXCEPTION(0);
   }
