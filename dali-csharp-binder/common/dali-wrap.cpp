@@ -10174,7 +10174,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_UPDATE_AREA_EXTENTS_get
   int jresult;
   int result;
 
-  result  = (int)Dali::DevelRenderer::Property::UPDATE_AREA_EXTENTS;
+  result  = (int)Dali::DevelRenderer::Property::UPDATE_AREA_MARGIN;
   jresult = (int)result;
   return jresult;
 }
@@ -18676,24 +18676,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_x_get(void* jarg1)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_left_set(void* jarg1, int jarg2)
 {
-  Dali::Rect<int>* arg1 = (Dali::Rect<int>*)0;
-  int              arg2;
-
-  arg1 = (Dali::Rect<int>*)jarg1;
-  arg2 = (int)jarg2;
-  if(arg1) (arg1)->left = arg2;
+  CSharp_Dali_Rectangle_x_set(jarg1, jarg2);
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_left_get(void* jarg1)
 {
-  int              jresult;
-  Dali::Rect<int>* arg1 = (Dali::Rect<int>*)0;
-  int              result;
-
-  arg1    = (Dali::Rect<int>*)jarg1;
-  result  = (int)((arg1)->left);
-  jresult = result;
-  return jresult;
+  return CSharp_Dali_Rectangle_x_get(jarg1);
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_y_set(void* jarg1, int jarg2)
@@ -18720,24 +18708,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_y_get(void* jarg1)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_right_set(void* jarg1, int jarg2)
 {
-  Dali::Rect<int>* arg1 = (Dali::Rect<int>*)0;
-  int              arg2;
-
-  arg1 = (Dali::Rect<int>*)jarg1;
-  arg2 = (int)jarg2;
-  if(arg1) (arg1)->right = arg2;
+  CSharp_Dali_Rectangle_y_set(jarg1, jarg2);
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_right_get(void* jarg1)
 {
-  int              jresult;
-  Dali::Rect<int>* arg1 = (Dali::Rect<int>*)0;
-  int              result;
-
-  arg1    = (Dali::Rect<int>*)jarg1;
-  result  = (int)((arg1)->right);
-  jresult = result;
-  return jresult;
+  return CSharp_Dali_Rectangle_y_get(jarg1);
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_width_set(void* jarg1, int jarg2)
@@ -18764,24 +18740,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_width_get(void* jarg1)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_bottom_set(void* jarg1, int jarg2)
 {
-  Dali::Rect<int>* arg1 = (Dali::Rect<int>*)0;
-  int              arg2;
-
-  arg1 = (Dali::Rect<int>*)jarg1;
-  arg2 = (int)jarg2;
-  if(arg1) (arg1)->bottom = arg2;
+  CSharp_Dali_Rectangle_width_set(jarg1, jarg2);
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_bottom_get(void* jarg1)
 {
-  int              jresult;
-  Dali::Rect<int>* arg1 = (Dali::Rect<int>*)0;
-  int              result;
-
-  arg1    = (Dali::Rect<int>*)jarg1;
-  result  = (int)((arg1)->bottom);
-  jresult = result;
-  return jresult;
+  return CSharp_Dali_Rectangle_width_get(jarg1);
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_height_set(void* jarg1, int jarg2)
@@ -18808,24 +18772,12 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_height_get(void* jarg1)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Rectangle_top_set(void* jarg1, int jarg2)
 {
-  Dali::Rect<int>* arg1 = (Dali::Rect<int>*)0;
-  int              arg2;
-
-  arg1 = (Dali::Rect<int>*)jarg1;
-  arg2 = (int)jarg2;
-  if(arg1) (arg1)->top = arg2;
+  CSharp_Dali_Rectangle_height_set(jarg1, jarg2);
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Rectangle_top_get(void* jarg1)
 {
-  int              jresult;
-  Dali::Rect<int>* arg1 = (Dali::Rect<int>*)0;
-  int              result;
-
-  arg1    = (Dali::Rect<int>*)jarg1;
-  result  = (int)((arg1)->top);
-  jresult = result;
-  return jresult;
+  return CSharp_Dali_Rectangle_height_get(jarg1);
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Rectangle(void* jarg1)
@@ -18913,7 +18865,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_left_set(void* jarg1, float 
 
   arg1 = (Dali::Rect<float>*)jarg1;
   arg2 = (float)jarg2;
-  if(arg1) (arg1)->left = arg2;
+
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
+  if(arg1) (arg1)->x = arg2;
 }
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_left_get(void* jarg1)
@@ -18922,8 +18877,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_left_get(void* jarg1)
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              result;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1    = (Dali::Rect<float>*)jarg1;
-  result  = (float)((arg1)->left);
+  result  = (float)((arg1)->x);
   jresult = result;
   return jresult;
 }
@@ -18933,9 +18890,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_start_set(void* jarg1, float
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              arg2;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1 = (Dali::Rect<float>*)jarg1;
   arg2 = (float)jarg2;
-  if(arg1) (arg1)->left = arg2;
+  if(arg1) (arg1)->x = arg2;
 }
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_start_get(void* jarg1)
@@ -18944,8 +18903,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_start_get(void* jarg1)
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              result;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1    = (Dali::Rect<float>*)jarg1;
-  result  = (float)((arg1)->left);
+  result  = (float)((arg1)->x);
   jresult = result;
   return jresult;
 }
@@ -18955,9 +18916,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_right_set(void* jarg1, float
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              arg2;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1 = (Dali::Rect<float>*)jarg1;
   arg2 = (float)jarg2;
-  if(arg1) (arg1)->right = arg2;
+  if(arg1) (arg1)->y = arg2;
 }
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_right_get(void* jarg1)
@@ -18966,8 +18929,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_right_get(void* jarg1)
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              result;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1    = (Dali::Rect<float>*)jarg1;
-  result  = (float)((arg1)->right);
+  result  = (float)((arg1)->y);
   jresult = result;
   return jresult;
 }
@@ -18977,9 +18942,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_end_set(void* jarg1, float j
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              arg2;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1 = (Dali::Rect<float>*)jarg1;
   arg2 = (float)jarg2;
-  if(arg1) (arg1)->right = arg2;
+  if(arg1) (arg1)->y = arg2;
 }
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_end_get(void* jarg1)
@@ -18988,8 +18955,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_end_get(void* jarg1)
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              result;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1    = (Dali::Rect<float>*)jarg1;
-  result  = (float)((arg1)->right);
+  result  = (float)((arg1)->y);
   jresult = result;
   return jresult;
 }
@@ -18999,9 +18968,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_bottom_set(void* jarg1, floa
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              arg2;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1 = (Dali::Rect<float>*)jarg1;
   arg2 = (float)jarg2;
-  if(arg1) (arg1)->bottom = arg2;
+  if(arg1) (arg1)->width = arg2;
 }
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_bottom_get(void* jarg1)
@@ -19010,8 +18981,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_bottom_get(void* jarg1)
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              result;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1    = (Dali::Rect<float>*)jarg1;
-  result  = (float)((arg1)->bottom);
+  result  = (float)((arg1)->width);
   jresult = result;
   return jresult;
 }
@@ -19021,9 +18994,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PaddingType_top_set(void* jarg1, float j
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              arg2;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1 = (Dali::Rect<float>*)jarg1;
   arg2 = (float)jarg2;
-  if(arg1) (arg1)->top = arg2;
+  if(arg1) (arg1)->height = arg2;
 }
 
 SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_top_get(void* jarg1)
@@ -19032,8 +19007,10 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_PaddingType_top_get(void* jarg1)
   Dali::Rect<float>* arg1 = (Dali::Rect<float>*)0;
   float              result;
 
+  // Dali don't support Dali::Rect<float> to padding anymore.
+  // Just keep the data for (x, y, width, height) as (start, end, bottom, top) for legacy behavior.
   arg1    = (Dali::Rect<float>*)jarg1;
-  result  = (float)((arg1)->top);
+  result  = (float)((arg1)->height);
   jresult = result;
   return jresult;
 }
