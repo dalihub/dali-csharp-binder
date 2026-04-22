@@ -1707,7 +1707,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPosition(void* winHandle, void
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetPosition(void* winHandle)
 {
   Dali::Window::WindowPosition windowPosition;
-  Dali::Window::WindowPosition result;
   void*                        jresult;
   Dali::Window*                window = (Dali::Window*)winHandle;
   if(!CheckingWindowHandle(window))

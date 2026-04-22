@@ -48,6 +48,38 @@ SWIGINTERN Dali::Actor Dali_Signal_Sl_Dali_Actor_Sp_Dali_Actor_Sc_Dali_Actor_Sc_
   return self->Emit(arg1, arg2, arg3);
 }
 
+namespace
+{
+typedef Dali::Actor*(SWIGSTDCALL* SWIG_CallbackKbPreFocusChange)(Dali::Actor*, Dali::Actor*, int);
+SWIG_CallbackKbPreFocusChange swig_callbackOnKbPreFocusChange;
+
+Dali::Actor OnKbPreFocusChangeCallback(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction)
+{
+  Dali::Actor* actorp;
+  Dali::Actor  actor;
+  Dali::Actor* CurrentP  = NULL;
+  Dali::Actor* ProposedP = NULL;
+
+  if(current)
+  {
+    CurrentP = (Dali::Actor*)&current;
+  }
+
+  if(proposed)
+  {
+    ProposedP = (Dali::Actor*)&proposed;
+  }
+
+  actorp = (Dali::Actor*)swig_callbackOnKbPreFocusChange(CurrentP, ProposedP, direction);
+  if(actorp)
+  {
+    actor = *actorp;
+  }
+
+  return actor;
+}
+} //namespace
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -471,35 +503,6 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_GetConn
 
   jresult = (unsigned long)result;
   return jresult;
-}
-
-typedef Dali::Actor*(SWIGSTDCALL* SWIG_CallbackKbPreFocusChange)(Dali::Actor*, Dali::Actor*, int);
-SWIG_CallbackKbPreFocusChange swig_callbackOnKbPreFocusChange;
-
-Dali::Actor OnKbPreFocusChangeCallback(Dali::Actor current, Dali::Actor proposed, Dali::Toolkit::Control::KeyboardFocus::Direction direction)
-{
-  Dali::Actor* actorp;
-  Dali::Actor  actor;
-  Dali::Actor* CurrentP  = NULL;
-  Dali::Actor* ProposedP = NULL;
-
-  if(current)
-  {
-    CurrentP = (Dali::Actor*)&current;
-  }
-
-  if(proposed)
-  {
-    ProposedP = (Dali::Actor*)&proposed;
-  }
-
-  actorp = (Dali::Actor*)swig_callbackOnKbPreFocusChange(CurrentP, ProposedP, direction);
-  if(actorp)
-  {
-    actor = *actorp;
-  }
-
-  return actor;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_KeyboardPreFocusChangeSignal_Connect(void* jarg1, SWIG_CallbackKbPreFocusChange callbackOnKbPreFocusChange)
