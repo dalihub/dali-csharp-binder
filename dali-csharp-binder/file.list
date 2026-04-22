@@ -1,11 +1,10 @@
 #
 # Add source files here
-# backend: common - ubuntu,mobile,tv,ivi,tizen-wearable,common
-# backend: tizen - mobile,tv,ivi,tizen-wearable
-# backend: tizen-wearable - tizen-wearable
+# backend: common - ubuntu,mobile,tv,ivi,common
+# backend: tizen - mobile,tv,ivi
 SET( dali_csharp_binder_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../dali-csharp-binder )
 
-# module: csharp-binder, backend: common - ubuntu,mobile,tv,ivi,tizen-wearable,common
+# module: csharp-binder, backend: common - ubuntu,mobile,tv,ivi,common
 SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/common/visual-objects/visual-object-impl.cpp
   ${dali_csharp_binder_dir}/common/visual-objects/visual-object.cpp
@@ -87,7 +86,7 @@ SET( dali_csharp_binder_common_src_files
 )
 
 # added for key grab binding only for tizen
-# module: csharp-binder, backend: mobile,tv,ivi,watch,common
+# module: csharp-binder, backend: mobile,tv,ivi,common
 SET( dali_csharp_binder_tizen_src_files
   ${dali_csharp_binder_dir}/dali-adaptor/component-application-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/keyboard-wrap.cpp
@@ -96,13 +95,13 @@ SET( dali_csharp_binder_tizen_src_files
 )
 
 # added for rive animation view for tizen
-# module: csharp-binder(rive-animation.so), backend: mobile,tv,ivi,watch
+# module: csharp-binder(rive-animation.so), backend: mobile,tv,ivi
 SET( dali_csharp_binder_rive_animation_src_files
   ${dali_csharp_binder_dir}/dali-extension/rive-animation-view-wrap.cpp
 )
 
 # added for widget-viewer-dali for tizen
-# module: csharp-binder(widget-viewer-dali.so), backend: mobile,tv,ivi,watch
+# module: csharp-binder(widget-viewer-dali.so), backend: mobile,tv,ivi
 SET( dali_csharp_binder_widget_viewer_dali_src_files
   ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-wrap.cpp
   ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-manager-wrap.cpp
@@ -115,14 +114,8 @@ SET( dali_csharp_binder_widget_viewer_dali_ubuntu_src_files
   ${dali_csharp_binder_dir}/widget-viewer-dali/widget-view-manager-ubuntu-wrap.cpp
 )
 
-# module: csharp-binder, backend: tizen-wearable
-SET( dali_csharp_binder_tizen_wearable_src_files
-  ${dali_csharp_binder_dir}/dali-adaptor/watch-wrap.cpp
-  ${dali_csharp_binder_dir}/widget-viewer-dali/watch-view-wrap.cpp
-)
-
 # added for dali-toolkit-demo for tizen
-# module: csharp-binder(toolkit-demo.so), backend: mobile,tv,ivi,watch
+# module: csharp-binder(toolkit-demo.so), backend: mobile,tv,ivi
 SET( dali_csharp_binder_toolkit_demo_src_files
   ${dali_csharp_binder_dir}/dali-toolkit-demo/item-view-item-wrap.cpp
   ${dali_csharp_binder_dir}/dali-toolkit-demo/item-view-wrap.cpp

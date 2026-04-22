@@ -33,14 +33,6 @@ Requires(postun): /sbin/ldconfig
 %define tizen_platform_config_supported 1
 BuildRequires:  pkgconfig(libtzplatform-config)
 
-# If the profile is selected, the line below is repquired.
-# if wearable || "undefined"
-%if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-BuildRequires:  pkgconfig(capi-appfw-watch-application)
-BuildRequires:  pkgconfig(appcore-watch)
-BuildRequires:  pkgconfig(screen_connector_provider)
-%endif
-
 BuildRequires: pkgconfig
 BuildRequires: cmake
 BuildRequires: gawk
@@ -61,8 +53,6 @@ BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
 
 
 BuildRequires: pkgconfig(widget_viewer_dali)
-BuildRequires: pkgconfig(watch_viewer_dali)
-BuildRequires: pkgconfig(watch-holder-base)
 BuildRequires: pkgconfig(ecore-wl2)
 
 # For ASAN test
@@ -109,20 +99,6 @@ Conflicts:      %{name}-profile_ivi
 Conflicts:      %{name}-profile_common
 %description profile_tv
 The DALi Tizen csharp binder for tv.
-%endif
-
-# If the profile is selected, the line below is repquired.
-# if wearable || "undefined"
-%if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-%package profile_wearable
-Summary:        The DALi Tizen csharp binder for wearable
-Provides:       %{name}-compat = %{version}-%{release}
-Conflicts:      %{name}-profile_mobile
-Conflicts:      %{name}-profile_tv
-Conflicts:      %{name}-profile_ivi
-Conflicts:      %{name}-profile_common
-%description profile_wearable
-The DALi Tizen csharp binder for wearable.
 %endif
 
 # If the profile is selected, the line below is repquired.
@@ -324,22 +300,6 @@ popd
 
 #######################################################################
 # This is for backward-compatibility. This does not deteriorate 4.0 Configurability
-# if wearable || "undefined"
-%if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-
-mkdir -p wearable
-pushd wearable
-
-cmake -DENABLE_PROFILE=WEARABLE $cmake_flags ..
-
-# Build.
-make %{?jobs:-j%jobs}
-popd
-
-%endif
-
-#######################################################################
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 
@@ -405,19 +365,6 @@ make clean # So that we can gather symbol/size information for only one profile 
 popd
 %endif
 
-# if wearable || "undefined"
-%if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-pushd wearable
-%make_install
-%if "%{?profile}" != "wearable"
-pushd  %{buildroot}%{_libdir}
-cp libdali2-csharp-binder.so.*.*.* libdali2-csharp-binder.so.wearable # If we're only building this profile, then there's no need to copy the lib
-popd
-make clean # So that we can gather symbol/size information for only one profile if we're building all profiles
-%endif
-popd
-%endif
-
 # if ivi ||"undefined"
 %if "%{?profile}" != "wearable" && "%{?profile}" != "tv" && "%{?profile}" != "common" && "%{?profile}" != "mobile"
 pushd ivi
@@ -457,7 +404,7 @@ exit 0
 ##############################
 %post
 pushd %{_libdir}
-for i in mobile tv wearable ivi; do [[ -f libdali2-csharp-binder.so.$i ]] && ln -sf libdali2-csharp-binder.so.$i libdali2-csharp-binder.so.2.0.0; done
+for i in mobile tv ivi; do [[ -f libdali2-csharp-binder.so.$i ]] && ln -sf libdali2-csharp-binder.so.$i libdali2-csharp-binder.so.2.0.0; done
 popd
 /sbin/ldconfig
 exit 0
@@ -509,25 +456,6 @@ popd
 exit 0
 
 %postun profile_tv
-/sbin/ldconfig
-exit 0
-%endif
-
-##############################
-# Wearable Profile Commands
-# No need to create a symbolic link on install required if only building this profile
-# if wearable || "undefined"
-%if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-%post profile_wearable
-%if "%{?profile}" != "wearable"
-pushd %{_libdir}
-ln -sf libdali2-csharp-binder.so.wearable libdali2-csharp-binder.so.2.0.0
-popd
-%endif
-/sbin/ldconfig
-exit 0
-
-%postun profile_wearable
 /sbin/ldconfig
 exit 0
 %endif
@@ -635,17 +563,6 @@ exit 0
 %defattr(-,root,root,-)
 %if "%{?profile}" != "tv"
 %{_libdir}/libdali2-csharp-binder.so.*tv
-%endif
-%endif
-
-# If the profile is selected, the line below is repquired.
-# if wearable || "undefined"
-%if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "ivi" && "%{?profile}" != "common"
-%files profile_wearable
-%manifest dali-csharp-binder.manifest
-%defattr(-,root,root,-)
-%if "%{?profile}" != "wearable"
-%{_libdir}/libdali2-csharp-binder.so.*wearable
 %endif
 %endif
 
