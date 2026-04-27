@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,47 +46,34 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Adaptor_SA__SP__Sg__Emit(Dali::Signa
 extern "C" {
 #endif
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Adaptor(void* jarg1)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Adaptor(void* adaptor)
 {
-  Dali::Adaptor* arg1 = (Dali::Adaptor*)0;
-
-  arg1 = (Dali::Adaptor*)jarg1;
   {
     try
     {
-      delete arg1;
+      delete static_cast<Dali::Adaptor*>(adaptor);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_SetRenderRefreshRate(void* jarg1, unsigned int jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_SetRenderRefreshRate(void* adaptor, unsigned int refreshRate)
 {
-  Dali::Adaptor* arg1 = (Dali::Adaptor*)0;
-  unsigned int   arg2;
-
-  arg1 = (Dali::Adaptor*)jarg1;
-  arg2 = (unsigned int)jarg2;
   {
     try
     {
-      (arg1)->SetRenderRefreshRate(arg2);
+      static_cast<Dali::Adaptor*>(adaptor)->SetRenderRefreshRate(refreshRate);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_SetMaximumRenderFrameRate(void* jarg1, float jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_SetMaximumRenderFrameRate(void* adaptor, float frameRate)
 {
-  Dali::Adaptor* arg1 = (Dali::Adaptor*)0;
-  float          arg2;
-
-  arg1 = (Dali::Adaptor*)jarg1;
-  arg2 = (float)jarg2;
   {
     try
     {
-      (arg1)->SetMaximumRenderFrameRate(arg2);
+      static_cast<Dali::Adaptor*>(adaptor)->SetMaximumRenderFrameRate(frameRate);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -94,29 +81,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_SetMaximumRenderFrameRate(void* 
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Adaptor_Get()
 {
-  void*          jresult;
-  Dali::Adaptor* result = 0;
+  Dali::Adaptor* result = nullptr;
 
   {
     try
     {
-      result = (Dali::Adaptor*)&Dali::Adaptor::Get();
+      result = &Dali::Adaptor::Get();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (void*)result;
-  return jresult;
+  return result;
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedWheelEvent(void* jarg1, void* jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedWheelEvent(void* adaptor, void* wheelEvent)
 {
-  Dali::Adaptor*    arg1 = (Dali::Adaptor*)0;
-  Dali::WheelEvent* arg2 = 0;
+  Dali::WheelEvent* event = static_cast<Dali::WheelEvent*>(wheelEvent);
 
-  arg1 = (Dali::Adaptor*)jarg1;
-  arg2 = (Dali::WheelEvent*)jarg2;
-  if(!arg2)
+  if(!event)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::WheelEvent & type is null", 0);
     return;
@@ -124,20 +106,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedWheelEvent(void* jarg1, void
   {
     try
     {
-      (arg1)->FeedWheelEvent(*arg2);
+      static_cast<Dali::Adaptor*>(adaptor)->FeedWheelEvent(*event);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedKeyEvent(void* jarg1, void* jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedKeyEvent(void* adaptor, void* keyEvent)
 {
-  Dali::Adaptor*  arg1 = (Dali::Adaptor*)0;
-  Dali::KeyEvent* arg2 = 0;
+  Dali::KeyEvent* event = static_cast<Dali::KeyEvent*>(keyEvent);
 
-  arg1 = (Dali::Adaptor*)jarg1;
-  arg2 = (Dali::KeyEvent*)jarg2;
-  if(!arg2)
+  if(!event)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::KeyEvent & type is null", 0);
     return;
@@ -145,10 +124,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedKeyEvent(void* jarg1, void* 
   {
     try
     {
-      (arg1)->FeedKeyEvent(*arg2);
+      static_cast<Dali::Adaptor*>(adaptor)->FeedKeyEvent(*event);
     }
     CALL_CATCH_EXCEPTION();
   }
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Adaptor_GetRenderThreadId(void* adaptor)
+{
+  int32_t result = 0;
+
+  {
+    try
+    {
+      result = static_cast<Dali::Adaptor*>(adaptor)->GetRenderThreadId();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
 }
 
 #ifdef __cplusplus
