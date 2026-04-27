@@ -125,18 +125,32 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_UiContext_GetDefaultWindow(void* uiCont
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_UiContext_AddIdle(void* uiContext, void* callback)
 {
-  Dali::UiContext*    context = static_cast<Dali::UiContext*>(uiContext);
-  Dali::CallbackBase* idleCb  = static_cast<Dali::CallbackBase*>(callback);
-  bool                result  = false;
+  Dali::UiContext*    context      = static_cast<Dali::UiContext*>(uiContext);
+  Dali::CallbackBase* idleCallback = static_cast<Dali::CallbackBase*>(callback);
+  bool                result       = false;
 
   {
     try
     {
-      result = context->AddIdle(idleCb);
+      result = context->AddIdle(idleCallback);
     }
     CALL_CATCH_EXCEPTION(0);
   }
   return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_UiContext_RemoveIdle(void* uiContext, void* callback)
+{
+  Dali::UiContext*    context      = static_cast<Dali::UiContext*>(uiContext);
+  Dali::CallbackBase* idleCallback = static_cast<Dali::CallbackBase*>(callback);
+
+  {
+    try
+    {
+      context->RemoveIdle(idleCallback);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_UiContext_FlushUpdateMessages(void* uiContext)
