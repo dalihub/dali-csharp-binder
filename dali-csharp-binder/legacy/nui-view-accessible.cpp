@@ -39,13 +39,8 @@ void GetAttributesCallback(const char* key, const char* value, Accessibility::At
   attributes->insert_or_assign(key, value);
 }
 
-void GetSelectedRowsColumnsCallback(int index, IntVectorType* vector)
-{
-  vector->push_back(index);
-}
-
 using GetAttributesCallbackType          = decltype(&GetAttributesCallback);
-using GetSelectedRowsColumnsCallbackType = decltype(&GetSelectedRowsColumnsCallback);
+using GetSelectedRowsColumnsCallbackType = void (*)(int, IntVectorType*);
 
 } // unnamed namespace
 
@@ -149,7 +144,7 @@ std::string NUIViewAccessible::StealString(char* str)
 
   if(str)
   {
-    ret = {str};
+    ret = std::string(str);
     free(str);
   }
 
