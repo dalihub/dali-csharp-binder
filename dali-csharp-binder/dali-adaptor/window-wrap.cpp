@@ -69,10 +69,6 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Disconnect
 {
   self->Disconnect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Emit(Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>* self, Dali::Window arg, Dali::Window::WindowSize size)
-{
-  self->Emit(arg, size);
-}
 
 //Transition effect
 SWIGINTERN bool Dali_Signal_Window_Transition_Effect_Event_Signal_Empty(Dali::Signal<void(Dali::Window, Dali::WindowEffectState, Dali::WindowEffectType)> const* self)
@@ -491,22 +487,22 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMaximized(void* winHandle)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Maximum_Size(void* winHandle, void* size)
 {
-  Dali::Window* window = (Dali::Window*)winHandle;
+  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
   if(!CheckingWindowHandle(window))
   {
     return;
   }
 
-  Dali::Window::WindowSize* winSize;
-  Dali::Window::WindowSize  maximumSize;
-
-  winSize = (Dali::Window::WindowSize*)size;
-  if(!winSize)
+  // C# passes Uint16Pair* (4 bytes), but WindowSize is now Int32Pair (8 bytes).
+  // Read via Uint16Pair to avoid memory layout mismatch.
+  Dali::Uint16Pair* winSizePtr = static_cast<Dali::Uint16Pair*>(size);
+  if(!winSizePtr)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
     return;
   }
-  maximumSize = *winSize;
+  Dali::Window::WindowSize maximumSize(static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetWidth())),
+                                       static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetHeight())));
 
   {
     try
@@ -556,22 +552,22 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMinimized(void* winHandle)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Minimum_Size(void* winHandle, void* size)
 {
-  Dali::Window* window = (Dali::Window*)winHandle;
+  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
   if(!CheckingWindowHandle(window))
   {
     return;
   }
 
-  Dali::Window::WindowSize* winSize;
-  Dali::Window::WindowSize  minimumSize;
-
-  winSize = (Dali::Window::WindowSize*)size;
-  if(!winSize)
+  // C# passes Uint16Pair* (4 bytes), but WindowSize is now Int32Pair (8 bytes).
+  // Read via Uint16Pair to avoid memory layout mismatch.
+  Dali::Uint16Pair* winSizePtr = static_cast<Dali::Uint16Pair*>(size);
+  if(!winSizePtr)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
     return;
   }
-  minimumSize = *winSize;
+  Dali::Window::WindowSize minimumSize(static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetWidth())),
+                                       static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetHeight())));
 
   {
     try
@@ -584,22 +580,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Minimum_Size(void* winHandle,
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Maximize_With_RestoreSize(void* winHandle, bool maximize, void* size)
 {
-  Dali::Window* window = (Dali::Window*)winHandle;
+  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
   if(!CheckingWindowHandle(window))
   {
     return;
   }
 
-  Dali::Window::WindowSize* winSize;
-  Dali::Window::WindowSize  restoreSize;
-
-  winSize = (Dali::Window::WindowSize*)size;
-  if(!winSize)
+  // C# passes Uint16Pair* (4 bytes), but WindowSize is now Int32Pair (8 bytes).
+  // Read via Uint16Pair to avoid memory layout mismatch.
+  Dali::Uint16Pair* winSizePtr = static_cast<Dali::Uint16Pair*>(size);
+  if(!winSizePtr)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
     return;
   }
-  restoreSize = *winSize;
+  Dali::Window::WindowSize restoreSize(static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetWidth())),
+                                       static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetHeight())));
 
   {
     try
@@ -1570,32 +1566,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizeSignal_Disconnect(void* jarg1, voi
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ResizeSignal_Emit(void* jarg1, void* jarg2, void* jarg3)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>* arg1 = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)0;
-  Dali::Window*                                               arg2 = (Dali::Window*)jarg2;
-  Dali::Window::WindowSize                                    arg3;
-  Dali::Window::WindowSize*                                   argp3;
-
-  arg1 = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)jarg1;
-  if(arg1 == nullptr || arg2 == nullptr)
-  {
-    DALI_LOG_ERROR("[ERR] arg1 == nullptr or arg2 == nullptr");
-    return;
-  }
-
-  argp3 = (Dali::Window::WindowSize*)jarg3;
-  if(!argp3)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
-    return;
-  }
-  arg3 = *argp3;
-  {
-    try
-    {
-      Dali_Signal_Sl_void_Sp_Dali_Window_WindowSize_SP__Sg__Emit(arg1, *arg2, arg3);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ResizeSignal()
@@ -1629,27 +1599,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ResizeSignal(void* jarg1)
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetSize(void* winHandle, void* jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetSize(void* winHandle, void* size)
 {
-  Dali::Window::WindowSize  arg2;
-  Dali::Window::WindowSize* argp2;
-  Dali::Window*             window = (Dali::Window*)winHandle;
+  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
   if(!CheckingWindowHandle(window))
   {
     return;
   }
 
-  argp2 = (Dali::Window::WindowSize*)jarg2;
-  if(!argp2)
+  // C# passes Uint16Pair* (4 bytes), but WindowSize is now Int32Pair (8 bytes).
+  // Read via Uint16Pair to avoid memory layout mismatch.
+  Dali::Uint16Pair* winSizePtr = static_cast<Dali::Uint16Pair*>(size);
+  if(!winSizePtr)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
     return;
   }
-  arg2 = *argp2;
+  Dali::Window::WindowSize windowSize(static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetWidth())),
+                                      static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetHeight())));
   {
     try
     {
-      window->SetSize(arg2);
+      window->SetSize(windowSize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1657,24 +1628,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetSize(void* winHandle, void* ja
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetSize(void* winHandle)
 {
-  void*                    jresult;
-  Dali::Window::WindowSize result;
-  Dali::Window*            window = (Dali::Window*)winHandle;
+  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
   if(!CheckingWindowHandle(window))
   {
-    return 0;
+    return nullptr;
   }
 
+  Dali::Window::WindowSize windowSize;
   {
     try
     {
-      result = window->GetSize();
+      windowSize = window->GetSize();
     }
-    CALL_CATCH_EXCEPTION(0);
+    CALL_CATCH_EXCEPTION(nullptr);
   }
 
-  jresult = new Dali::Window::WindowSize((const Dali::Window::WindowSize&)result);
-  return jresult;
+  // C# reads the returned pointer as Uint16Pair (4 bytes: uint16_t width, uint16_t height).
+  // Return a heap-allocated Uint16Pair so the memory layout matches what C# expects.
+  return new Dali::Uint16Pair(static_cast<uint32_t>(static_cast<uint32_t>(windowSize.GetWidth())),
+                              static_cast<uint32_t>(static_cast<uint32_t>(windowSize.GetHeight())));
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPosition(void* winHandle, void* position)
