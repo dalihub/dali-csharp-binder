@@ -801,11 +801,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char* jarg1, 
   void*                    jresult;
   std::string*             arg1 = 0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::SamplingMode::Type arg4;
   bool                     arg5;
   Dali::ImageDimensions*   argp2;
   Dali::Devel::PixelBuffer result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -821,13 +822,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char* jarg1, 
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   arg4 = (Dali::SamplingMode::Type)jarg4;
   arg5 = jarg5 ? true : false;
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2, arg3, arg4, arg5);
+      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2, arg4, arg5);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -840,10 +840,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_1(char* jarg1, 
   void*                    jresult;
   std::string*             arg1 = 0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::SamplingMode::Type arg4;
   Dali::ImageDimensions*   argp2;
   Dali::Devel::PixelBuffer result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -859,12 +860,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_1(char* jarg1, 
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   arg4 = (Dali::SamplingMode::Type)jarg4;
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2, arg3, arg4);
+      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2, arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -877,9 +877,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_2(char* jarg1, 
   void*                    jresult;
   std::string*             arg1 = 0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::ImageDimensions*   argp2;
   Dali::Devel::PixelBuffer result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -895,11 +896,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_2(char* jarg1, 
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2, arg3);
+      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -969,11 +969,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_0(void* jarg1
   void*                    jresult;
   Dali::Vector<uint8_t>*   arg1 = (Dali::Vector<uint8_t>*)0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::SamplingMode::Type arg4;
   bool                     arg5;
   Dali::ImageDimensions*   argp2;
   Dali::Devel::PixelBuffer result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -988,13 +989,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_0(void* jarg1
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   arg4 = (Dali::SamplingMode::Type)jarg4;
   arg5 = jarg5 ? true : false;
   {
     try
     {
-      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1, arg2, arg3, arg4, arg5);
+      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1, arg2, arg4, arg5);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1007,10 +1007,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_1(void* jarg1
   void*                    jresult;
   Dali::Vector<uint8_t>*   arg1 = (Dali::Vector<uint8_t>*)0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::SamplingMode::Type arg4;
   Dali::ImageDimensions*   argp2;
   Dali::Devel::PixelBuffer result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -1025,12 +1026,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_1(void* jarg1
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   arg4 = (Dali::SamplingMode::Type)jarg4;
   {
     try
     {
-      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1, arg2, arg3, arg4);
+      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1, arg2, arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1043,9 +1043,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_2(void* jarg1
   void*                    jresult;
   Dali::Vector<uint8_t>*   arg1 = (Dali::Vector<uint8_t>*)0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::ImageDimensions*   argp2;
   Dali::Devel::PixelBuffer result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -1060,11 +1061,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_2(void* jarg1
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   {
     try
     {
-      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1, arg2, arg3);
+      result = Dali::LoadImageFromBuffer((const Dali::Vector<uint8_t>&)*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1132,11 +1132,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_0(char
   void*                    jresult;
   std::string*             arg1 = 0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::SamplingMode::Type arg4;
   bool                     arg5;
   Dali::ImageDimensions*   argp2;
   Dali::Devel::PixelBuffer result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -1152,13 +1153,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_0(char
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   arg4 = (Dali::SamplingMode::Type)jarg4;
   arg5 = jarg5 ? true : false;
   {
     try
     {
-      result = Dali::DownloadImageSynchronously((std::string const&)*arg1, arg2, arg3, arg4, arg5);
+      result = Dali::DownloadImageSynchronously((std::string const&)*arg1, arg2, arg4, arg5);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1171,10 +1171,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_1(char
   void*                    jresult;
   std::string*             arg1 = 0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::SamplingMode::Type arg4;
   Dali::ImageDimensions*   argp2;
   Dali::Devel::PixelBuffer result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -1190,12 +1191,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_1(char
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   arg4 = (Dali::SamplingMode::Type)jarg4;
   {
     try
     {
-      result = Dali::DownloadImageSynchronously((std::string const&)*arg1, arg2, arg3, arg4);
+      result = Dali::DownloadImageSynchronously((std::string const&)*arg1, arg2, arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1208,9 +1208,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_2(char
   void*                    jresult;
   std::string*             arg1 = 0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::ImageDimensions*   argp2;
   Dali::Devel::PixelBuffer result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -1226,11 +1227,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_2(char
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   {
     try
     {
-      result = Dali::DownloadImageSynchronously((std::string const&)*arg1, arg2, arg3);
+      result = Dali::DownloadImageSynchronously((std::string const&)*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1326,11 +1326,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_0(char* jarg1
   void*                    jresult;
   std::string*             arg1 = 0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::SamplingMode::Type arg4;
   bool                     arg5;
   Dali::ImageDimensions*   argp2;
   Dali::ImageDimensions    result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -1346,13 +1347,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_0(char* jarg1
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   arg4 = (Dali::SamplingMode::Type)jarg4;
   arg5 = jarg5 ? true : false;
   {
     try
     {
-      result = Dali::GetClosestImageSize((std::string const&)*arg1, arg2, arg3, arg4, arg5);
+      result = Dali::GetClosestImageSize((std::string const&)*arg1, arg2, arg4, arg5);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1365,10 +1365,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_1(char* jarg1
   void*                    jresult;
   std::string*             arg1 = 0;
   Dali::ImageDimensions    arg2;
-  Dali::FittingMode::Type  arg3;
   Dali::SamplingMode::Type arg4;
   Dali::ImageDimensions*   argp2;
   Dali::ImageDimensions    result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -1384,12 +1385,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_1(char* jarg1
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   arg4 = (Dali::SamplingMode::Type)jarg4;
   {
     try
     {
-      result = Dali::GetClosestImageSize((std::string const&)*arg1, arg2, arg3, arg4);
+      result = Dali::GetClosestImageSize((std::string const&)*arg1, arg2, arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1402,9 +1402,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_2(char* jarg1
   void*                   jresult;
   std::string*            arg1 = 0;
   Dali::ImageDimensions   arg2;
-  Dali::FittingMode::Type arg3;
   Dali::ImageDimensions*  argp2;
   Dali::ImageDimensions   result;
+
+  (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
   if(!jarg1)
   {
@@ -1420,11 +1421,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_2(char* jarg1
     return 0;
   }
   arg2 = *argp2;
-  arg3 = (Dali::FittingMode::Type)jarg3;
   {
     try
     {
-      result = Dali::GetClosestImageSize((std::string const&)*arg1, arg2, arg3);
+      result = Dali::GetClosestImageSize((std::string const&)*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
