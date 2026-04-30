@@ -11568,6 +11568,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetCameraActor(void* jarg1, v
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetBuiltinCameraActor(void* nuiRenderTask, int32_t builtinCameraType, float screenSizeWidth, float screenSizeHeight, bool invertY, void* nuiCameraPropertyMap)
+{
+  Dali::RenderTask*   renderTask        = (Dali::RenderTask*)nuiRenderTask;
+  Dali::Property::Map cameraPropertyMap = nuiCameraPropertyMap ? *((Dali::Property::Map*)nuiCameraPropertyMap) : Dali::Property::Map();
+  if(invertY)
+  {
+    cameraPropertyMap[Dali::CameraActor::Property::INVERT_Y_AXIS] = true;
+  }
+  {
+    try
+    {
+      (renderTask)->SetBuiltinCameraActor(static_cast<Dali::RenderTask::BuiltinCameraType>(builtinCameraType), Dali::Vector2(screenSizeWidth, screenSizeHeight), cameraPropertyMap);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCameraActor(void* jarg1)
 {
   void*             jresult;
