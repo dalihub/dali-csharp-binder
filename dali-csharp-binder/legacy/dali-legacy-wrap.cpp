@@ -578,15 +578,15 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RegisterType(char* jarg1, void* jarg2, v
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Any_GetType(void* jarg1)
 {
-  void*           jresult;
-  Dali::Any*      arg1   = (Dali::Any*)0;
-  std::type_info* result = 0;
+  void*                jresult;
+  Dali::Any*           arg1   = (Dali::Any*)0;
+  Dali::TypeInfoId*    result = 0;
 
   arg1 = (Dali::Any*)jarg1;
   {
     try
     {
-      result = (std::type_info*)&((Dali::Any const*)arg1)->GetType();
+      result = new Dali::TypeInfoId(((Dali::Any const*)arg1)->GetType());
     }
     CALL_CATCH_EXCEPTION(0);
   }
