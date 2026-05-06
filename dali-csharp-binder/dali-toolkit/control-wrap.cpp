@@ -27,23 +27,23 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent const&)> const* self)
+SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent)> const* self)
 {
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent const&)> const* self)
+SWIGINTERN std::size_t Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent)> const* self)
 {
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent const&)>* self, bool (*func)(Dali::Toolkit::Control, Dali::KeyEvent const&))
+SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent)>* self, bool (*func)(Dali::Toolkit::Control, Dali::KeyEvent))
 {
   self->Connect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent const&)>* self, bool (*func)(Dali::Toolkit::Control, Dali::KeyEvent const&))
+SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent)>* self, bool (*func)(Dali::Toolkit::Control, Dali::KeyEvent))
 {
   self->Disconnect(func);
 }
-SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent const&)>* self, Dali::Toolkit::Control arg1, Dali::KeyEvent const& arg2)
+SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Toolkit_Control_Sc_Dali_KeyEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal<bool(Dali::Toolkit::Control, Dali::KeyEvent)>* self, Dali::Toolkit::Control arg1, Dali::KeyEvent arg2)
 {
   return self->Emit(arg1, arg2);
 }
@@ -555,7 +555,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_View_CreateTransition(void* jarg1, void
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Animation((const Dali::Animation&)result);
+  jresult = new Dali::Animation((const Dali::Animation)result);
   return jresult;
 }
 
@@ -636,7 +636,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_IsResourceReady(void* jarg1)
 #define GENERATE_CONTROL_SIGNAL(HType, SignalName) GENERATE_SIGNAL(Dali::Toolkit::Control*, HType, Dali_View, SignalName)
 #endif
 
-GENERATE_CONTROL_SIGNAL(bool (*)(Dali::Toolkit::Control, Dali::KeyEvent const&), KeyEventSignal)
+GENERATE_CONTROL_SIGNAL(bool (*)(Dali::Toolkit::Control, Dali::KeyEvent), KeyEventSignal)
 // CSharp_Dali_View_KeyEventSignal_Connect
 // CSharp_Dali_View_KeyEventSignal_Disconnect
 

@@ -784,7 +784,7 @@ GENERATE_SCENE_VIEW_SIGNAL(void (*)(Dali::Scene3D::SceneView), CameraTransitionF
 // CSharp_Dali_SceneView_CameraTransitionFinishedSignal_Connect
 // CSharp_Dali_SceneView_CameraTransitionFinishedSignal_Disconnect
 
-GENERATE_SCENE_VIEW_SIGNAL(void (*)(Dali::Scene3D::SceneView, int32_t, Dali::Toolkit::ImageUrl const&), CaptureFinishedSignal)
+GENERATE_SCENE_VIEW_SIGNAL(void (*)(Dali::Scene3D::SceneView, int32_t, Dali::Toolkit::ImageUrl), CaptureFinishedSignal)
 // CSharp_Dali_SceneView_CaptureFinishedSignal_Connect
 // CSharp_Dali_SceneView_CaptureFinishedSignal_Disconnect
 

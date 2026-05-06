@@ -779,7 +779,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GlWindow_FocusChangedSignal(void* jarg1
 }
 
 /* Touch Event Binding */
-GENERATE_SIGNAL(Dali::GlWindow*, void (*)(Dali::TouchEvent const&), Dali_GlWindow, TouchedSignal)
+GENERATE_SIGNAL(Dali::GlWindow*, void (*)(Dali::TouchEvent), Dali_GlWindow, TouchedSignal)
 // CSharp_Dali_GLWindow_TouchedSignal_Connect
 // CSharp_Dali_GLWindow_TouchedSignal_Disconnect
 
