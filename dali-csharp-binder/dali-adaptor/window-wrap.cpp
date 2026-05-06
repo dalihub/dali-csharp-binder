@@ -28,8 +28,68 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
+// STANDARD INCLUDES
+#include <map>
+
 using Dali::Integration::ToDaliString;
 using Dali::Integration::ToStdString;
+
+// WindowEventProxy: C# side still expects Signal<void(const KeyEvent&)> (legacy signature).
+// This proxy subscribes to the new Signal<void(Window, const KeyEvent&)> and re-emits
+// without the Window argument so that existing C# delegates remain compatible.
+struct WindowEventProxy : public Dali::ConnectionTracker
+{
+  Dali::Signal<void(Dali::KeyEvent)> keyEventSignal;
+  Dali::Signal<bool(Dali::KeyEvent)> interceptKeyEventSignal;
+
+  void OnKeyEvent(Dali::Window /*window*/, Dali::KeyEvent event)
+  {
+    keyEventSignal.Emit(event);
+  }
+
+  bool OnInterceptKeyEvent(Dali::Window /*window*/, Dali::KeyEvent event)
+  {
+    bool consumed = false;
+    if(!interceptKeyEventSignal.Empty())
+    {
+      consumed = interceptKeyEventSignal.Emit(event);
+    }
+    return consumed;
+  }
+};
+
+// Key: internal RefObject* of the Window (stable across handle copies).
+// The proxy is created on first signal access and deleted when the last C#
+// handle wrapper for that Window is deleted via CSharp_Dali_delete_Window.
+static std::map<Dali::RefObject*, WindowEventProxy*> gWindowEventProxies;
+
+static WindowEventProxy* GetOrCreateWindowEventProxy(Dali::Window& window)
+{
+  Dali::RefObject* key = window.GetObjectPtr();
+  auto             it  = gWindowEventProxies.find(key);
+  if(it != gWindowEventProxies.end())
+  {
+    return it->second;
+  }
+
+  WindowEventProxy* proxy = new WindowEventProxy();
+  window.KeyEventSignal().Connect(proxy, &WindowEventProxy::OnKeyEvent);
+  Dali::DevelWindow::InterceptKeyEventSignal(window).Connect(proxy, &WindowEventProxy::OnInterceptKeyEvent);
+  gWindowEventProxies[key] = proxy;
+  return proxy;
+}
+
+static void DestroyWindowEventProxy(Dali::Window& window)
+{
+  Dali::RefObject* key = window.GetObjectPtr();
+  auto             it  = gWindowEventProxies.find(key);
+  if(it != gWindowEventProxies.end())
+  {
+    auto* proxyPtr = it->second;
+    gWindowEventProxies.erase(it);
+    delete proxyPtr;
+  }
+}
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_bool_SP__Sg__Empty(Dali::Signal<void(Dali::Window, bool)> const* self)
 {
@@ -349,6 +409,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Window(void* winHandle)
   if(!CheckingWindowHandle(window))
   {
     return;
+  }
+
+  if(window && *window)
+  {
+    DestroyWindowEventProxy(*window);
   }
 
   {
@@ -2031,30 +2096,31 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetOverlayLayer(void* winHandle)
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_KeyEventSignal(void* jarg1)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_KeyEventSignal(void* winHandle)
 {
-  void*                             jresult;
-  Dali::Window*                     arg1   = (Dali::Window*)0;
-  Dali::Window::KeyEventSignalType* result = 0;
+  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
+  if(!CheckingWindowHandle(window) || !*window)
+  {
+    return nullptr;
+  }
 
-  arg1 = (Dali::Window*)jarg1;
+  Dali::Signal<void(Dali::KeyEvent)>* signal = nullptr;
   {
     try
     {
-      result = (Dali::Window::KeyEventSignalType*)&(arg1->KeyEventSignal());
+      signal = &(GetOrCreateWindowEventProxy(*window)->keyEventSignal);
     }
-    CALL_CATCH_EXCEPTION(0);
+    CALL_CATCH_EXCEPTION(nullptr);
   }
 
-  jresult = (void*)result;
-  return jresult;
+  return static_cast<void*>(signal);
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_InterceptKeyEventSignal(void* winHandle)
 {
-  void*                                           jresult;
-  Dali::Window*                                   window = (Dali::Window*)0;
-  Dali::DevelWindow::InterceptKeyEventSignalType* result = 0;
+  void*                               jresult;
+  Dali::Window*                       window = (Dali::Window*)0;
+  Dali::Signal<bool(Dali::KeyEvent)>* signal = 0;
 
   window = (Dali::Window*)winHandle;
   if(!window)
@@ -2065,12 +2131,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_InterceptKeyEventSignal(void* wi
   {
     try
     {
-      result = (Dali::DevelWindow::InterceptKeyEventSignalType*)&(Dali::DevelWindow::InterceptKeyEventSignal(*window));
+      signal = &(GetOrCreateWindowEventProxy(*window)->interceptKeyEventSignal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (void*)result;
+  jresult = (void*)signal;
   return jresult;
 }
 
