@@ -151,6 +151,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Adaptor_FeedKeyEvent(void* jarg1, void* 
   }
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Adaptor_GetRenderThreadId(void* adaptor)
+{
+  int32_t result = 0;
+
+  {
+    try
+    {
+      result = static_cast<Dali::Adaptor*>(adaptor)->GetRenderThreadId();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return result;
+}
+
 #ifdef __cplusplus
 }
 #endif
