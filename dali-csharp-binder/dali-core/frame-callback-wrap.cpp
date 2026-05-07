@@ -160,6 +160,25 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeColor(void* u
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetIgnored(void* updateProxy, unsigned int id, bool ignored)
 {
+  // NOTE : Temporal duration checker for issue tracking. Should be removed after issue resolved.
+  struct ScopeLogPrinter
+  {
+    ScopeLogPrinter(uint32_t id, bool ignored)
+    : mId(id),
+      mIgnored(ignored)
+    {
+      DALI_LOG_DEBUG_INFO("CSharp_Dali_FrameCallbackInterface_SetIgnored(%u, %d)\n", mId, mIgnored);
+    }
+
+    ~ScopeLogPrinter()
+    {
+      DALI_LOG_DEBUG_INFO("CSharp_Dali_FrameCallbackInterface_SetIgnored(%u, %d) done\n", mId, mIgnored);
+    }
+
+    uint32_t mId;
+    bool mIgnored;
+  };
+  ScopeLogPrinter scopedLogPrinter(id, ignored);
   Dali::UpdateProxy* proxy = (Dali::UpdateProxy*)updateProxy;
   return proxy->SetIgnored(id, ignored);
 }
