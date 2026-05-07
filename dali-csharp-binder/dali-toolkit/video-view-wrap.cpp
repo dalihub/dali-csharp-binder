@@ -22,23 +22,23 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Empty(Dali::Signal<void(Dali::Toolkit::VideoView&)> const* self)
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Empty(Dali::Signal<void(Dali::Toolkit::VideoView)> const* self)
 {
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::Toolkit::VideoView&)> const* self)
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::Toolkit::VideoView)> const* self)
 {
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Connect(Dali::Signal<void(Dali::Toolkit::VideoView&)>* self, void (*func)(Dali::Toolkit::VideoView&))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Connect(Dali::Signal<void(Dali::Toolkit::VideoView)>* self, void (*func)(Dali::Toolkit::VideoView))
 {
   self->Connect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Disconnect(Dali::Signal<void(Dali::Toolkit::VideoView&)>* self, void (*func)(Dali::Toolkit::VideoView&))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Disconnect(Dali::Signal<void(Dali::Toolkit::VideoView)>* self, void (*func)(Dali::Toolkit::VideoView))
 {
   self->Disconnect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Emit(Dali::Signal<void(Dali::Toolkit::VideoView&)>* self, Dali::Toolkit::VideoView& arg)
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Emit(Dali::Signal<void(Dali::Toolkit::VideoView)>* self, Dali::Toolkit::VideoView arg)
 {
   /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
   /*@SWIG@*/ self->Emit(arg);
@@ -113,7 +113,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_0()
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView&)result);
+  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView)result);
   return jresult;
 }
 
@@ -138,7 +138,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_1(char* jarg1)
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView&)result);
+  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView)result);
 
   // argout typemap for const Dali::String&
 
@@ -157,7 +157,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_2(bool swCodec)
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView&)result);
+  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView)result);
 
   // argout typemap for const Dali::String&
 
@@ -185,7 +185,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char* jarg1, bool
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView&)result);
+  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView)result);
 
   // argout typemap for const Dali::String&
 
@@ -221,7 +221,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_4(void* handle, int
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView&)result);
+  jresult = new Dali::Toolkit::VideoView((const Dali::Toolkit::VideoView)result);
 
   return jresult;
 }
@@ -503,14 +503,14 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_GetNativePlayerHandle(void* j
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoViewSignal_Empty(void* jarg1)
 {
   bool                                           jresult;
-  Dali::Signal<void(Dali::Toolkit::VideoView&)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)0;
+  Dali::Signal<void(Dali::Toolkit::VideoView)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)0;
   bool                                           result;
 
-  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)jarg1;
   {
     try
     {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Empty((Dali::Signal<void(Dali::Toolkit::VideoView&)> const*)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__Empty((Dali::Signal<void(Dali::Toolkit::VideoView)> const*)arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -522,14 +522,14 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_VideoViewSignal_Empty(void* jarg1)
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_VideoViewSignal_GetConnectionCount(void* jarg1)
 {
   unsigned long                                  jresult;
-  Dali::Signal<void(Dali::Toolkit::VideoView&)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)0;
+  Dali::Signal<void(Dali::Toolkit::VideoView)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)0;
   std::size_t                                    result;
 
-  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)jarg1;
   {
     try
     {
-      result = Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::Toolkit::VideoView&)> const*)arg1);
+      result = Dali_Signal_Sl_void_Sp_Dali_Toolkit_VideoView_SA__SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::Toolkit::VideoView)> const*)arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -540,11 +540,11 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_VideoViewSignal_GetConnectionCo
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoViewSignal_Connect(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::Toolkit::VideoView&)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)0;
-  void (*arg2)(Dali::Toolkit::VideoView&)             = (void (*)(Dali::Toolkit::VideoView&))0;
+  Dali::Signal<void(Dali::Toolkit::VideoView)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)0;
+  void (*arg2)(Dali::Toolkit::VideoView)             = (void (*)(Dali::Toolkit::VideoView))0;
 
-  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)jarg1;
-  arg2 = (void (*)(Dali::Toolkit::VideoView&))jarg2;
+  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)jarg1;
+  arg2 = (void (*)(Dali::Toolkit::VideoView))jarg2;
   {
     try
     {
@@ -556,11 +556,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoViewSignal_Connect(void* jarg1, voi
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoViewSignal_Disconnect(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::Toolkit::VideoView&)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)0;
-  void (*arg2)(Dali::Toolkit::VideoView&)             = (void (*)(Dali::Toolkit::VideoView&))0;
+  Dali::Signal<void(Dali::Toolkit::VideoView)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)0;
+  void (*arg2)(Dali::Toolkit::VideoView)             = (void (*)(Dali::Toolkit::VideoView))0;
 
-  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)jarg1;
-  arg2 = (void (*)(Dali::Toolkit::VideoView&))jarg2;
+  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)jarg1;
+  arg2 = (void (*)(Dali::Toolkit::VideoView))jarg2;
   {
     try
     {
@@ -572,10 +572,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoViewSignal_Disconnect(void* jarg1, 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoViewSignal_Emit(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::Toolkit::VideoView&)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)0;
+  Dali::Signal<void(Dali::Toolkit::VideoView)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)0;
   Dali::Toolkit::VideoView*                      arg2 = 0;
 
-  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)jarg1;
   arg2 = (Dali::Toolkit::VideoView*)jarg2;
   if(!arg2)
   {
@@ -594,12 +594,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VideoViewSignal_Emit(void* jarg1, void* 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_VideoViewSignal()
 {
   void*                                          jresult;
-  Dali::Signal<void(Dali::Toolkit::VideoView&)>* result = 0;
+  Dali::Signal<void(Dali::Toolkit::VideoView)>* result = 0;
 
   {
     try
     {
-      result = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)new Dali::Signal<void(Dali::Toolkit::VideoView&)>();
+      result = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)new Dali::Signal<void(Dali::Toolkit::VideoView)>();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -610,9 +610,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_VideoViewSignal()
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_VideoViewSignal(void* jarg1)
 {
-  Dali::Signal<void(Dali::Toolkit::VideoView&)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)0;
+  Dali::Signal<void(Dali::Toolkit::VideoView)>* arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)0;
 
-  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Toolkit::VideoView)>*)jarg1;
   {
     try
     {

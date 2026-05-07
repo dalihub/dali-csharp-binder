@@ -159,44 +159,44 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_DeviceStatus_Orientation_Status_SP__
   self->Emit(arg);
 }
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Empty(Dali::Signal<void(Dali::Application&)> const* self)
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Empty(Dali::Signal<void(Dali::Application)> const* self)
 {
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::Application&)> const* self)
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::Application)> const* self)
 {
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Connect(Dali::Signal<void(Dali::Application&)>* self, void (*func)(Dali::Application&))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Connect(Dali::Signal<void(Dali::Application)>* self, void (*func)(Dali::Application))
 {
   self->Connect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Disconnect(Dali::Signal<void(Dali::Application&)>* self, void (*func)(Dali::Application&))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Disconnect(Dali::Signal<void(Dali::Application)>* self, void (*func)(Dali::Application))
 {
   self->Disconnect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Emit(Dali::Signal<void(Dali::Application&)>* self, Dali::Application& arg)
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Emit(Dali::Signal<void(Dali::Application)>* self, Dali::Application arg)
 {
   self->Emit(arg);
 }
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__Empty(Dali::Signal<void(Dali::Application&, void*)> const* self)
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__Empty(Dali::Signal<void(Dali::Application, void*)> const* self)
 {
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::Application&, void*)> const* self)
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::Application, void*)> const* self)
 {
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__Connect(Dali::Signal<void(Dali::Application&, void*)>* self, void (*func)(Dali::Application&, void*))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__Connect(Dali::Signal<void(Dali::Application, void*)>* self, void (*func)(Dali::Application, void*))
 {
   self->Connect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__Disconnect(Dali::Signal<void(Dali::Application&, void*)>* self, void (*func)(Dali::Application&, void*))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__Disconnect(Dali::Signal<void(Dali::Application, void*)>* self, void (*func)(Dali::Application, void*))
 {
   self->Disconnect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__Emit(Dali::Signal<void(Dali::Application&, void*)>* self, Dali::Application& arg1, void* arg2)
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__Emit(Dali::Signal<void(Dali::Application, void*)>* self, Dali::Application arg1, void* arg2)
 {
   self->Emit(arg1, arg2);
 }
@@ -248,7 +248,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_0()
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Application((const Dali::Application&)result);
+  jresult = new Dali::Application((const Dali::Application)result);
   return jresult;
 }
 
@@ -265,7 +265,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_1(int jarg1)
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Application((const Dali::Application&)result);
+  jresult = new Dali::Application((const Dali::Application)result);
   return jresult;
 }
 
@@ -290,7 +290,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_2(int jarg1, char
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Application((const Dali::Application&)result);
+  jresult = new Dali::Application((const Dali::Application)result);
 
   //argout typemap for const std::string&
 
@@ -320,7 +320,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_3(int jarg1, char
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Application((const Dali::Application&)result);
+  jresult = new Dali::Application((const Dali::Application)result);
 
   //argout typemap for const Dali::String&
 
@@ -351,7 +351,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__MANUAL_4(int nuiArgc, 
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Application((const Dali::Application&)result);
+  jresult = new Dali::Application((const Dali::Application)result);
   return jresult;
 }
 
@@ -1331,14 +1331,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_delete_DeviceOrientationChan
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ApplicationSignal_Empty(void* jarg1)
 {
   unsigned int                            jresult;
-  Dali::Signal<void(Dali::Application&)>* arg1 = (Dali::Signal<void(Dali::Application&)>*)0;
+  Dali::Signal<void(Dali::Application)>* arg1 = (Dali::Signal<void(Dali::Application)>*)0;
   bool                                    result;
 
-  arg1 = (Dali::Signal<void(Dali::Application&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Application)>*)jarg1;
   {
     try
     {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Empty((Dali::Signal<void(Dali::Application&)> const*)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__Empty((Dali::Signal<void(Dali::Application)> const*)arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1350,14 +1350,14 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ApplicationSignal_Empty(void* ja
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ApplicationSignal_GetConnectionCount(void* jarg1)
 {
   unsigned long                           jresult;
-  Dali::Signal<void(Dali::Application&)>* arg1 = (Dali::Signal<void(Dali::Application&)>*)0;
+  Dali::Signal<void(Dali::Application)>* arg1 = (Dali::Signal<void(Dali::Application)>*)0;
   std::size_t                             result;
 
-  arg1 = (Dali::Signal<void(Dali::Application&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Application)>*)jarg1;
   {
     try
     {
-      result = Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::Application&)> const*)arg1);
+      result = Dali_Signal_Sl_void_Sp_Dali_Application_SA__SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::Application)> const*)arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1368,11 +1368,11 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ApplicationSignal_GetConnection
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationSignal_Connect(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::Application&)>* arg1 = (Dali::Signal<void(Dali::Application&)>*)0;
-  void (*arg2)(Dali::Application&)             = (void (*)(Dali::Application&))0;
+  Dali::Signal<void(Dali::Application)>* arg1 = (Dali::Signal<void(Dali::Application)>*)0;
+  void (*arg2)(Dali::Application)             = (void (*)(Dali::Application))0;
 
-  arg1 = (Dali::Signal<void(Dali::Application&)>*)jarg1;
-  arg2 = (void (*)(Dali::Application&))jarg2;
+  arg1 = (Dali::Signal<void(Dali::Application)>*)jarg1;
+  arg2 = (void (*)(Dali::Application))jarg2;
   {
     try
     {
@@ -1384,11 +1384,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationSignal_Connect(void* jarg1, v
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationSignal_Disconnect(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::Application&)>* arg1 = (Dali::Signal<void(Dali::Application&)>*)0;
-  void (*arg2)(Dali::Application&)             = (void (*)(Dali::Application&))0;
+  Dali::Signal<void(Dali::Application)>* arg1 = (Dali::Signal<void(Dali::Application)>*)0;
+  void (*arg2)(Dali::Application)             = (void (*)(Dali::Application))0;
 
-  arg1 = (Dali::Signal<void(Dali::Application&)>*)jarg1;
-  arg2 = (void (*)(Dali::Application&))jarg2;
+  arg1 = (Dali::Signal<void(Dali::Application)>*)jarg1;
+  arg2 = (void (*)(Dali::Application))jarg2;
   {
     try
     {
@@ -1400,10 +1400,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationSignal_Disconnect(void* jarg1
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationSignal_Emit(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::Application&)>* arg1 = (Dali::Signal<void(Dali::Application&)>*)0;
+  Dali::Signal<void(Dali::Application)>* arg1 = (Dali::Signal<void(Dali::Application)>*)0;
   Dali::Application*                      arg2 = 0;
 
-  arg1 = (Dali::Signal<void(Dali::Application&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Application)>*)jarg1;
   arg2 = (Dali::Application*)jarg2;
   if(!arg2)
   {
@@ -1422,12 +1422,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationSignal_Emit(void* jarg1, void
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ApplicationSignal()
 {
   void*                                   jresult;
-  Dali::Signal<void(Dali::Application&)>* result = 0;
+  Dali::Signal<void(Dali::Application)>* result = 0;
 
   {
     try
     {
-      result = (Dali::Signal<void(Dali::Application&)>*)new Dali::Signal<void(Dali::Application&)>();
+      result = (Dali::Signal<void(Dali::Application)>*)new Dali::Signal<void(Dali::Application)>();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1438,9 +1438,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ApplicationSignal()
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ApplicationSignal(void* jarg1)
 {
-  Dali::Signal<void(Dali::Application&)>* arg1 = (Dali::Signal<void(Dali::Application&)>*)0;
+  Dali::Signal<void(Dali::Application)>* arg1 = (Dali::Signal<void(Dali::Application)>*)0;
 
-  arg1 = (Dali::Signal<void(Dali::Application&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Application)>*)jarg1;
   {
     try
     {
@@ -1453,14 +1453,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ApplicationSignal(void* jarg1)
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Empty(void* jarg1)
 {
   unsigned int                                   jresult;
-  Dali::Signal<void(Dali::Application&, void*)>* arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)0;
+  Dali::Signal<void(Dali::Application, void*)>* arg1 = (Dali::Signal<void(Dali::Application, void*)>*)0;
   bool                                           result;
 
-  arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Application, void*)>*)jarg1;
   {
     try
     {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__Empty((Dali::Signal<void(Dali::Application&, void*)> const*)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__Empty((Dali::Signal<void(Dali::Application, void*)> const*)arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1472,14 +1472,14 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Empty(v
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_GetConnectionCount(void* jarg1)
 {
   unsigned long                                  jresult;
-  Dali::Signal<void(Dali::Application&, void*)>* arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)0;
+  Dali::Signal<void(Dali::Application, void*)>* arg1 = (Dali::Signal<void(Dali::Application, void*)>*)0;
   std::size_t                                    result;
 
-  arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Application, void*)>*)jarg1;
   {
     try
     {
-      result = Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::Application&, void*)> const*)arg1);
+      result = Dali_Signal_Sl_void_Sp_Dali_Application_SA__Sc_void_Sm__SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::Application, void*)> const*)arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1490,11 +1490,11 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_GetCon
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Connect(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::Application&, void*)>* arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)0;
-  void (*arg2)(Dali::Application&, void*)             = (void (*)(Dali::Application&, void*))0;
+  Dali::Signal<void(Dali::Application, void*)>* arg1 = (Dali::Signal<void(Dali::Application, void*)>*)0;
+  void (*arg2)(Dali::Application, void*)             = (void (*)(Dali::Application, void*))0;
 
-  arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)jarg1;
-  arg2 = (void (*)(Dali::Application&, void*))jarg2;
+  arg1 = (Dali::Signal<void(Dali::Application, void*)>*)jarg1;
+  arg2 = (void (*)(Dali::Application, void*))jarg2;
   {
     try
     {
@@ -1506,11 +1506,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Connect(void* j
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Disconnect(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::Application&, void*)>* arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)0;
-  void (*arg2)(Dali::Application&, void*)             = (void (*)(Dali::Application&, void*))0;
+  Dali::Signal<void(Dali::Application, void*)>* arg1 = (Dali::Signal<void(Dali::Application, void*)>*)0;
+  void (*arg2)(Dali::Application, void*)             = (void (*)(Dali::Application, void*))0;
 
-  arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)jarg1;
-  arg2 = (void (*)(Dali::Application&, void*))jarg2;
+  arg1 = (Dali::Signal<void(Dali::Application, void*)>*)jarg1;
+  arg2 = (void (*)(Dali::Application, void*))jarg2;
   {
     try
     {
@@ -1522,11 +1522,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Disconnect(void
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Emit(void* jarg1, void* jarg2, void* jarg3)
 {
-  Dali::Signal<void(Dali::Application&, void*)>* arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)0;
+  Dali::Signal<void(Dali::Application, void*)>* arg1 = (Dali::Signal<void(Dali::Application, void*)>*)0;
   Dali::Application*                             arg2 = 0;
   void*                                          arg3 = (void*)0;
 
-  arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Application, void*)>*)jarg1;
   arg2 = (Dali::Application*)jarg2;
   if(!arg2)
   {
@@ -1546,12 +1546,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Emit(void* jarg
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ApplicationControlSignal()
 {
   void*                                          jresult;
-  Dali::Signal<void(Dali::Application&, void*)>* result = 0;
+  Dali::Signal<void(Dali::Application, void*)>* result = 0;
 
   {
     try
     {
-      result = (Dali::Signal<void(Dali::Application&, void*)>*)new Dali::Signal<void(Dali::Application&, void*)>();
+      result = (Dali::Signal<void(Dali::Application, void*)>*)new Dali::Signal<void(Dali::Application, void*)>();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1562,9 +1562,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ApplicationControlSignal()
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ApplicationControlSignal(void* jarg1)
 {
-  Dali::Signal<void(Dali::Application&, void*)>* arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)0;
+  Dali::Signal<void(Dali::Application, void*)>* arg1 = (Dali::Signal<void(Dali::Application, void*)>*)0;
 
-  arg1 = (Dali::Signal<void(Dali::Application&, void*)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Application, void*)>*)jarg1;
   {
     try
     {
@@ -1611,7 +1611,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Application((const Dali::Application&)result);
+  jresult = new Dali::Application((const Dali::Application)result);
 
   return jresult;
 }
@@ -1654,7 +1654,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_5(int nuiArgc, ch
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Application((const Dali::Application&)result);
+  jresult = new Dali::Application((const Dali::Application)result);
 
   return jresult;
 }
@@ -1699,7 +1699,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_6(int nuiArgc, ch
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Application((const Dali::Application&)result);
+  jresult = new Dali::Application((const Dali::Application)result);
 
   return jresult;
 }
@@ -1737,7 +1737,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowSizePosition(
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Application((const Dali::Application&)result);
+  jresult = new Dali::Application((const Dali::Application)result);
   return jresult;
 }
 
@@ -1768,7 +1768,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New_WithWindowData(int nuiA
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Application((const Dali::Application&)result);
+  jresult = new Dali::Application((const Dali::Application)result);
   return jresult;
 }
 

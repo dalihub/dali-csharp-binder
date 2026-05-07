@@ -29,27 +29,27 @@ extern "C" {
 
 using namespace Dali;
 
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Empty(Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)> const* self)
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Empty(Dali::Signal<void(Dali::Actor, Dali::RotationGesture)> const* self)
 {
   return self->Empty();
 }
 
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)> const* self)
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::Actor, Dali::RotationGesture)> const* self)
 {
   return self->GetConnectionCount();
 }
 
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Connect(Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>* self, void (*func)(Dali::Actor, Dali::RotationGesture const&))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Connect(Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>* self, void (*func)(Dali::Actor, Dali::RotationGesture))
 {
   self->Connect(func);
 }
 
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>* self, void (*func)(Dali::Actor, Dali::RotationGesture const&))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>* self, void (*func)(Dali::Actor, Dali::RotationGesture))
 {
   self->Disconnect(func);
 }
 
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Emit(Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>* self, Dali::Actor arg1, Dali::RotationGesture const& arg2)
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Emit(Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>* self, Dali::Actor arg1, Dali::RotationGesture arg2)
 {
   self->Emit(arg1, arg2);
 }
@@ -238,14 +238,14 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RotationGesture_localCenterPoint_get(vo
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Empty(void* jarg1)
 {
   unsigned int                                                   jresult;
-  Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)0;
+  Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)0;
   bool                                                           result;
 
-  arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)jarg1;
   {
     try
     {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Empty((Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)> const*)arg1);
+      result = (bool)Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Empty((Dali::Signal<void(Dali::Actor, Dali::RotationGesture)> const*)arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -257,14 +257,14 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Em
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_GetConnectionCount(void* jarg1)
 {
   unsigned long                                                  jresult;
-  Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)0;
+  Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)0;
   std::size_t                                                    result;
 
-  arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)jarg1;
   {
     try
     {
-      result = Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)> const*)arg1);
+      result = Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::Actor, Dali::RotationGesture)> const*)arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -275,11 +275,11 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_G
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Connect(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)0;
-  void (*arg2)(Dali::Actor, Dali::RotationGesture const&)             = (void (*)(Dali::Actor, Dali::RotationGesture const&))0;
+  Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)0;
+  void (*arg2)(Dali::Actor, Dali::RotationGesture)             = (void (*)(Dali::Actor, Dali::RotationGesture))0;
 
-  arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)jarg1;
-  arg2 = (void (*)(Dali::Actor, Dali::RotationGesture const&))jarg2;
+  arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)jarg1;
+  arg2 = (void (*)(Dali::Actor, Dali::RotationGesture))jarg2;
   {
     try
     {
@@ -291,11 +291,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Connect(vo
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Disconnect(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)0;
-  void (*arg2)(Dali::Actor, Dali::RotationGesture const&)             = (void (*)(Dali::Actor, Dali::RotationGesture const&))0;
+  Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)0;
+  void (*arg2)(Dali::Actor, Dali::RotationGesture)             = (void (*)(Dali::Actor, Dali::RotationGesture))0;
 
-  arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)jarg1;
-  arg2 = (void (*)(Dali::Actor, Dali::RotationGesture const&))jarg2;
+  arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)jarg1;
+  arg2 = (void (*)(Dali::Actor, Dali::RotationGesture))jarg2;
   {
     try
     {
@@ -307,12 +307,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Disconnect
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Emit(void* jarg1, void* jarg2, void* jarg3)
 {
-  Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)0;
+  Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)0;
   Dali::Actor                                                    arg2;
   Dali::RotationGesture*                                         arg3 = 0;
   Dali::Actor*                                                   argp2;
 
-  arg1  = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)jarg1;
+  arg1  = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)jarg1;
   argp2 = (Dali::Actor*)jarg2;
   if(!argp2)
   {
@@ -329,7 +329,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Emit(void*
   {
     try
     {
-      Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Emit(arg1, arg2, (Dali::RotationGesture const&)*arg3);
+      Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_Dali_RotationGesture_SS_const_SA__SP__Sg__Emit(arg1, arg2, (Dali::RotationGesture)*arg3);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -338,12 +338,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RotationGestureDetectedSignal_Emit(void*
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_RotationGestureDetectedSignal()
 {
   void*                                                          jresult;
-  Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>* result = 0;
+  Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>* result = 0;
 
   {
     try
     {
-      result = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)new Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>();
+      result = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)new Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -354,9 +354,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_RotationGestureDetectedSignal()
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_RotationGestureDetectedSignal(void* jarg1)
 {
-  Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)0;
+  Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)0;
 
-  arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture const&)>*)jarg1;
+  arg1 = (Dali::Signal<void(Dali::Actor, Dali::RotationGesture)>*)jarg1;
   {
     try
     {
