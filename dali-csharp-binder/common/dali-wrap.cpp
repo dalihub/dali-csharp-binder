@@ -10980,6 +10980,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetCameraActor(void* jarg1, v
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetBuiltinCameraActor(void* nuiRenderTask, int32_t builtinCameraType, float screenSizeWidth, float screenSizeHeight, bool invertY, void* nuiCameraPropertyMap)
+{
+  Dali::RenderTask*   renderTask        = (Dali::RenderTask*)nuiRenderTask;
+  Dali::Property::Map cameraPropertyMap = nuiCameraPropertyMap ? *((Dali::Property::Map*)nuiCameraPropertyMap) : Dali::Property::Map();
+  if(invertY)
+  {
+    cameraPropertyMap[Dali::CameraActor::Property::INVERT_Y_AXIS] = true;
+  }
+  {
+    try
+    {
+      (renderTask)->SetBuiltinCameraActor(static_cast<Dali::RenderTask::BuiltinCameraType>(builtinCameraType), Dali::Vector2(screenSizeWidth, screenSizeHeight), cameraPropertyMap);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCameraActor(void* jarg1)
 {
   void*             jresult;
@@ -19917,9 +19934,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_VoidSignal_Emit(void* jarg1)
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PropertyNotifySignal_Empty(void* jarg1)
 {
-  bool                                             jresult;
+  bool                                            jresult;
   Dali::Signal<void(Dali::PropertyNotification)>* arg1 = (Dali::Signal<void(Dali::PropertyNotification)>*)0;
-  bool                                             result;
+  bool                                            result;
 
   arg1 = (Dali::Signal<void(Dali::PropertyNotification)>*)jarg1;
   {
@@ -19936,9 +19953,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PropertyNotifySignal_Empty(void* jarg1)
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_PropertyNotifySignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                                    jresult;
+  unsigned long                                   jresult;
   Dali::Signal<void(Dali::PropertyNotification)>* arg1 = (Dali::Signal<void(Dali::PropertyNotification)>*)0;
-  std::size_t                                      result;
+  std::size_t                                     result;
 
   arg1 = (Dali::Signal<void(Dali::PropertyNotification)>*)jarg1;
   {
@@ -19988,7 +20005,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PropertyNotifySignal_Disconnect(void* ja
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PropertyNotifySignal_Emit(void* jarg1, void* jarg2)
 {
   Dali::Signal<void(Dali::PropertyNotification)>* arg1 = (Dali::Signal<void(Dali::PropertyNotification)>*)0;
-  Dali::PropertyNotification*                      arg2 = 0;
+  Dali::PropertyNotification*                     arg2 = 0;
 
   arg1 = (Dali::Signal<void(Dali::PropertyNotification)>*)jarg1;
   arg2 = (Dali::PropertyNotification*)jarg2;
@@ -20008,7 +20025,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PropertyNotifySignal_Emit(void* jarg1, v
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_PropertyNotifySignal()
 {
-  void*                                            jresult;
+  void*                                           jresult;
   Dali::Signal<void(Dali::PropertyNotification)>* result = 0;
 
   {
@@ -20039,9 +20056,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PropertyNotifySignal(void* jarg1)
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LongPressGestureDetectedSignal_Empty(void* jarg1)
 {
-  bool                                                            jresult;
+  bool                                                     jresult;
   Dali::Signal<void(Dali::Actor, Dali::LongPressGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::LongPressGesture)>*)0;
-  bool                                                            result;
+  bool                                                     result;
 
   arg1 = (Dali::Signal<void(Dali::Actor, Dali::LongPressGesture)>*)jarg1;
   {
@@ -20058,9 +20075,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_LongPressGestureDetectedSignal_Empty(voi
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_LongPressGestureDetectedSignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                                                   jresult;
+  unsigned long                                            jresult;
   Dali::Signal<void(Dali::Actor, Dali::LongPressGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::LongPressGesture)>*)0;
-  std::size_t                                                     result;
+  std::size_t                                              result;
 
   arg1 = (Dali::Signal<void(Dali::Actor, Dali::LongPressGesture)>*)jarg1;
   {
@@ -20110,9 +20127,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LongPressGestureDetectedSignal_Disconnec
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LongPressGestureDetectedSignal_Emit(void* jarg1, void* jarg2, void* jarg3)
 {
   Dali::Signal<void(Dali::Actor, Dali::LongPressGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::LongPressGesture)>*)0;
-  Dali::Actor                                                     arg2;
-  Dali::LongPressGesture*                                         arg3 = 0;
-  Dali::Actor*                                                    argp2;
+  Dali::Actor                                              arg2;
+  Dali::LongPressGesture*                                  arg3 = 0;
+  Dali::Actor*                                             argp2;
 
   arg1  = (Dali::Signal<void(Dali::Actor, Dali::LongPressGesture)>*)jarg1;
   argp2 = (Dali::Actor*)jarg2;
@@ -20139,7 +20156,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_LongPressGestureDetectedSignal_Emit(void
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_LongPressGestureDetectedSignal()
 {
-  void*                                                           jresult;
+  void*                                                    jresult;
   Dali::Signal<void(Dali::Actor, Dali::LongPressGesture)>* result = 0;
 
   {
@@ -20170,9 +20187,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_LongPressGestureDetectedSignal(vo
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_KeyEventSignal_Empty(void* jarg1)
 {
-  bool                                       jresult;
+  bool                                jresult;
   Dali::Signal<void(Dali::KeyEvent)>* arg1 = (Dali::Signal<void(Dali::KeyEvent)>*)0;
-  bool                                       result;
+  bool                                result;
 
   arg1 = (Dali::Signal<void(Dali::KeyEvent)>*)jarg1;
   {
@@ -20189,9 +20206,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_KeyEventSignal_Empty(void* jarg1)
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyEventSignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                              jresult;
+  unsigned long                       jresult;
   Dali::Signal<void(Dali::KeyEvent)>* arg1 = (Dali::Signal<void(Dali::KeyEvent)>*)0;
-  std::size_t                                result;
+  std::size_t                         result;
 
   arg1 = (Dali::Signal<void(Dali::KeyEvent)>*)jarg1;
   {
@@ -20241,7 +20258,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyEventSignal_Disconnect(void* jarg1, v
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyEventSignal_Emit(void* jarg1, void* jarg2)
 {
   Dali::Signal<void(Dali::KeyEvent)>* arg1 = (Dali::Signal<void(Dali::KeyEvent)>*)0;
-  Dali::KeyEvent*                            arg2 = 0;
+  Dali::KeyEvent*                     arg2 = 0;
 
   arg1 = (Dali::Signal<void(Dali::KeyEvent)>*)jarg1;
   arg2 = (Dali::KeyEvent*)jarg2;
@@ -20261,7 +20278,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyEventSignal_Emit(void* jarg1, void* j
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_KeyEventSignal()
 {
-  void*                                      jresult;
+  void*                               jresult;
   Dali::Signal<void(Dali::KeyEvent)>* result = 0;
 
   {
@@ -20292,9 +20309,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyEventSignal(void* jarg1)
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_StageWheelSignal_Empty(void* jarg1)
 {
-  bool                                         jresult;
+  bool                                  jresult;
   Dali::Signal<void(Dali::WheelEvent)>* arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)0;
-  bool                                         result;
+  bool                                  result;
 
   arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)jarg1;
   {
@@ -20311,9 +20328,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_StageWheelSignal_Empty(void* jarg1)
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_StageWheelSignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                                jresult;
+  unsigned long                         jresult;
   Dali::Signal<void(Dali::WheelEvent)>* arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)0;
-  std::size_t                                  result;
+  std::size_t                           result;
 
   arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)jarg1;
   {
@@ -20363,7 +20380,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StageWheelSignal_Disconnect(void* jarg1,
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StageWheelSignal_Emit(void* jarg1, void* jarg2)
 {
   Dali::Signal<void(Dali::WheelEvent)>* arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)0;
-  Dali::WheelEvent*                            arg2 = 0;
+  Dali::WheelEvent*                     arg2 = 0;
 
   arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)jarg1;
   arg2 = (Dali::WheelEvent*)jarg2;
@@ -20383,7 +20400,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StageWheelSignal_Emit(void* jarg1, void*
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_StageWheelSignal()
 {
-  void*                                        jresult;
+  void*                                 jresult;
   Dali::Signal<void(Dali::WheelEvent)>* result = 0;
 
   {
@@ -20549,9 +20566,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_AngleThresholdPair(void* jarg1)
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PanGestureDetectedSignal_Empty(void* jarg1)
 {
-  bool                                                      jresult;
+  bool                                               jresult;
   Dali::Signal<void(Dali::Actor, Dali::PanGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::PanGesture)>*)0;
-  bool                                                      result;
+  bool                                               result;
 
   arg1 = (Dali::Signal<void(Dali::Actor, Dali::PanGesture)>*)jarg1;
   {
@@ -20568,9 +20585,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PanGestureDetectedSignal_Empty(void* jar
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_PanGestureDetectedSignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                                             jresult;
+  unsigned long                                      jresult;
   Dali::Signal<void(Dali::Actor, Dali::PanGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::PanGesture)>*)0;
-  std::size_t                                               result;
+  std::size_t                                        result;
 
   arg1 = (Dali::Signal<void(Dali::Actor, Dali::PanGesture)>*)jarg1;
   {
@@ -20620,9 +20637,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetectedSignal_Disconnect(void
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetectedSignal_Emit(void* jarg1, void* jarg2, void* jarg3)
 {
   Dali::Signal<void(Dali::Actor, Dali::PanGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::PanGesture)>*)0;
-  Dali::Actor                                               arg2;
-  Dali::PanGesture*                                         arg3 = 0;
-  Dali::Actor*                                              argp2;
+  Dali::Actor                                        arg2;
+  Dali::PanGesture*                                  arg3 = 0;
+  Dali::Actor*                                       argp2;
 
   arg1  = (Dali::Signal<void(Dali::Actor, Dali::PanGesture)>*)jarg1;
   argp2 = (Dali::Actor*)jarg2;
@@ -20649,7 +20666,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PanGestureDetectedSignal_Emit(void* jarg
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_PanGestureDetectedSignal()
 {
-  void*                                                     jresult;
+  void*                                              jresult;
   Dali::Signal<void(Dali::Actor, Dali::PanGesture)>* result = 0;
 
   {
@@ -20680,9 +20697,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PanGestureDetectedSignal(void* ja
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PinchGestureDetectedSignal_Empty(void* jarg1)
 {
-  bool                                                        jresult;
+  bool                                                 jresult;
   Dali::Signal<void(Dali::Actor, Dali::PinchGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::PinchGesture)>*)0;
-  bool                                                        result;
+  bool                                                 result;
 
   arg1 = (Dali::Signal<void(Dali::Actor, Dali::PinchGesture)>*)jarg1;
   {
@@ -20699,9 +20716,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PinchGestureDetectedSignal_Empty(void* j
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_PinchGestureDetectedSignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                                               jresult;
+  unsigned long                                        jresult;
   Dali::Signal<void(Dali::Actor, Dali::PinchGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::PinchGesture)>*)0;
-  std::size_t                                                 result;
+  std::size_t                                          result;
 
   arg1 = (Dali::Signal<void(Dali::Actor, Dali::PinchGesture)>*)jarg1;
   {
@@ -20751,9 +20768,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PinchGestureDetectedSignal_Disconnect(vo
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PinchGestureDetectedSignal_Emit(void* jarg1, void* jarg2, void* jarg3)
 {
   Dali::Signal<void(Dali::Actor, Dali::PinchGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::PinchGesture)>*)0;
-  Dali::Actor                                                 arg2;
-  Dali::PinchGesture*                                         arg3 = 0;
-  Dali::Actor*                                                argp2;
+  Dali::Actor                                          arg2;
+  Dali::PinchGesture*                                  arg3 = 0;
+  Dali::Actor*                                         argp2;
 
   arg1  = (Dali::Signal<void(Dali::Actor, Dali::PinchGesture)>*)jarg1;
   argp2 = (Dali::Actor*)jarg2;
@@ -20780,7 +20797,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PinchGestureDetectedSignal_Emit(void* ja
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_PinchGestureDetectedSignal()
 {
-  void*                                                       jresult;
+  void*                                                jresult;
   Dali::Signal<void(Dali::Actor, Dali::PinchGesture)>* result = 0;
 
   {
@@ -20811,9 +20828,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PinchGestureDetectedSignal(void* 
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TapGestureDetectedSignal_Empty(void* jarg1)
 {
-  bool                                                      jresult;
+  bool                                               jresult;
   Dali::Signal<void(Dali::Actor, Dali::TapGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::TapGesture)>*)0;
-  bool                                                      result;
+  bool                                               result;
 
   arg1 = (Dali::Signal<void(Dali::Actor, Dali::TapGesture)>*)jarg1;
   {
@@ -20830,9 +20847,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_TapGestureDetectedSignal_Empty(void* jar
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_TapGestureDetectedSignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                                             jresult;
+  unsigned long                                      jresult;
   Dali::Signal<void(Dali::Actor, Dali::TapGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::TapGesture)>*)0;
-  std::size_t                                               result;
+  std::size_t                                        result;
 
   arg1 = (Dali::Signal<void(Dali::Actor, Dali::TapGesture)>*)jarg1;
   {
@@ -20882,9 +20899,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TapGestureDetectedSignal_Disconnect(void
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TapGestureDetectedSignal_Emit(void* jarg1, void* jarg2, void* jarg3)
 {
   Dali::Signal<void(Dali::Actor, Dali::TapGesture)>* arg1 = (Dali::Signal<void(Dali::Actor, Dali::TapGesture)>*)0;
-  Dali::Actor                                               arg2;
-  Dali::TapGesture*                                         arg3 = 0;
-  Dali::Actor*                                              argp2;
+  Dali::Actor                                        arg2;
+  Dali::TapGesture*                                  arg3 = 0;
+  Dali::Actor*                                       argp2;
 
   arg1  = (Dali::Signal<void(Dali::Actor, Dali::TapGesture)>*)jarg1;
   argp2 = (Dali::Actor*)jarg2;
@@ -20911,7 +20928,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TapGestureDetectedSignal_Emit(void* jarg
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_TapGestureDetectedSignal()
 {
-  void*                                                     jresult;
+  void*                                              jresult;
   Dali::Signal<void(Dali::Actor, Dali::TapGesture)>* result = 0;
 
   {
