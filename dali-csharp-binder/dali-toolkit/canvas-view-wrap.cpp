@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -397,7 +397,7 @@ SWIGEXPORT void* SWIGSTDCALL
 CSharp_Dali_Drawable_GetBoundingBox(char* pDrawable)
 {
   Dali::CanvasRenderer::Drawable drawable;
-  Dali::Rect<float>              result;
+  Dali::Bounds                   result;
 
   if(!pDrawable)
   {
@@ -647,7 +647,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddRect(char* pShape, float x,
   {
     try
     {
-      result = shape.AddRect(Rect<float>(x, y, width, height),
+      result = shape.AddRect(Bounds(x, y, width, height),
                              Vector2(roundX, roundY));
     }
     CALL_CATCH_EXCEPTION(0);

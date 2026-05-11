@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -858,7 +858,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputMethodArea(v
 {
   void*                     jresult;
   Dali::InputMethodContext* inputMethodContext = (Dali::InputMethodContext*)0;
-  Dali::Rect<int>           area;
+  Dali::BoundsInteger       area;
 
   inputMethodContext = (Dali::InputMethodContext*)csInputMethodContext;
   {
@@ -868,7 +868,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_InputMethodContext_GetInputMethodArea(v
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Rect<int>((const Dali::Rect<int>&)area);
+  jresult = new Dali::BoundsInteger((const Dali::BoundsInteger&)area);
   return jresult;
 }
 
@@ -1369,9 +1369,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_InputMethodContext_ContentReceivedSigna
 // ActivatedSignalType
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Empty(void* csSignal)
 {
-  unsigned int                                   jresult;
+  unsigned int                                  jresult;
   Dali::Signal<void(Dali::InputMethodContext)>* signal = (Dali::Signal<void(Dali::InputMethodContext)>*)0;
-  bool                                           result;
+  bool                                          result;
 
   signal = (Dali::Signal<void(Dali::InputMethodContext)>*)csSignal;
   {
@@ -1387,9 +1387,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Empty(void* 
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ActivatedSignalType_GetConnectionCount(void* csSignal)
 {
-  unsigned long                                  jresult;
+  unsigned long                                 jresult;
   Dali::Signal<void(Dali::InputMethodContext)>* signal = (Dali::Signal<void(Dali::InputMethodContext)>*)0;
-  std::size_t                                    result;
+  std::size_t                                   result;
 
   signal = (Dali::Signal<void(Dali::InputMethodContext)>*)csSignal;
   {
@@ -1438,7 +1438,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Disconnect(void* csS
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Emit(void* csSignal, void* csInputMethodContext)
 {
   Dali::Signal<void(Dali::InputMethodContext)>* signal             = (Dali::Signal<void(Dali::InputMethodContext)>*)0;
-  Dali::InputMethodContext*                      inputMethodContext = 0;
+  Dali::InputMethodContext*                     inputMethodContext = 0;
 
   signal             = (Dali::Signal<void(Dali::InputMethodContext)>*)csSignal;
   inputMethodContext = (Dali::InputMethodContext*)csInputMethodContext;
@@ -1458,7 +1458,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ActivatedSignalType_Emit(void* csSignal,
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ActivatedSignalType()
 {
-  void*                                          jresult;
+  void*                                         jresult;
   Dali::Signal<void(Dali::InputMethodContext)>* result = 0;
 
   {
@@ -1489,9 +1489,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ActivatedSignalType(void* csSigna
 // KeyboardEventSignalType
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Empty(void* csKeyboardEventSignal)
 {
-  unsigned int                                                                                                                 jresult;
+  unsigned int                                                                                                                jresult;
   Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>* arg1 = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)0;
-  bool                                                                                                                         result;
+  bool                                                                                                                        result;
 
   arg1 = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)csKeyboardEventSignal;
   {
@@ -1507,9 +1507,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Empty(vo
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_GetConnectionCount(void* csKeyboardEventSignal)
 {
-  unsigned long                                                                                                                jresult;
+  unsigned long                                                                                                               jresult;
   Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>* arg1 = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)0;
-  std::size_t                                                                                                                  result;
+  std::size_t                                                                                                                 result;
 
   arg1 = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)csKeyboardEventSignal;
   {
@@ -1526,7 +1526,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_GetConn
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Connect(void* csKeyboardEventSignal, SWIG_CallbackEventReceived callbackOnEventReceived)
 {
   Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>* arg1 = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)0;
-  arg1                                                                                                                              = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)csKeyboardEventSignal;
+  arg1                                                                                                                             = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)csKeyboardEventSignal;
 
   auto iter = swig_callbackOnEventReceivedMapper.find(arg1);
   if(iter == swig_callbackOnEventReceivedMapper.end())
@@ -1554,7 +1554,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Connect(void* cs
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Disconnect(void* csKeyboardEventSignal, SWIG_CallbackEventReceived callbackOnEventReceived)
 {
   Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>* arg1 = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)0;
-  arg1                                                                                                                              = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)csKeyboardEventSignal;
+  arg1                                                                                                                             = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)csKeyboardEventSignal;
 
   auto iter = swig_callbackOnEventReceivedMapper.find(arg1);
   if(iter != swig_callbackOnEventReceivedMapper.end())
@@ -1575,11 +1575,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Disconnect(void*
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Emit(void* csKeyboardEventSignal, void* csInputMethodContext, void* csEventData)
 {
-  void*                                                                                                                        jresult;
+  void*                                                                                                                       jresult;
   Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>* arg1 = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)0;
-  Dali::InputMethodContext*                                                                                                    arg2 = 0;
-  Dali::InputMethodContext::EventData*                                                                                         arg3 = 0;
-  Dali::InputMethodContext::CallbackData                                                                                       result;
+  Dali::InputMethodContext*                                                                                                   arg2 = 0;
+  Dali::InputMethodContext::EventData*                                                                                        arg3 = 0;
+  Dali::InputMethodContext::CallbackData                                                                                      result;
 
   arg1 = (Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>*)csKeyboardEventSignal;
   arg2 = (Dali::InputMethodContext*)csInputMethodContext;
@@ -1607,7 +1607,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_KeyboardEventSignalType_Emit(void* csKe
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_KeyboardEventSignalType()
 {
-  void*                                                                                                                        jresult;
+  void*                                                                                                                       jresult;
   Dali::Signal<Dali::InputMethodContext::CallbackData(Dali::InputMethodContext, Dali::InputMethodContext::EventData const&)>* result = 0;
 
   {

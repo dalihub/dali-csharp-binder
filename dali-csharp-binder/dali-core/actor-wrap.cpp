@@ -3045,9 +3045,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenPosition(void* act
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenExtents(void* actor)
 {
-  Dali::Actor       arg1;
-  Dali::Actor*      argp1 = (Dali::Actor*)0;
-  Dali::Rect<float> result;
+  Dali::Actor  arg1;
+  Dali::Actor* argp1 = (Dali::Actor*)0;
+  Dali::Bounds result;
 
   argp1 = (Dali::Actor*)actor;
   if(!argp1)
@@ -3072,9 +3072,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenExtents(void* acto
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CurrentScreenExtents(void* actor)
 {
-  Dali::Actor       arg1;
-  Dali::Actor*      argp1 = (Dali::Actor*)0;
-  Dali::Rect<float> result;
+  Dali::Actor  arg1;
+  Dali::Actor* argp1 = (Dali::Actor*)0;
+  Dali::Bounds result;
 
   argp1 = (Dali::Actor*)actor;
   if(!argp1)

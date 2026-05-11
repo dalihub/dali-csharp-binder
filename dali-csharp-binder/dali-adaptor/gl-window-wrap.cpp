@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -249,8 +249,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetPositionSize(void* jarg1, vo
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::GlWindow", 0);
     return;
   }
-  arg1                          = *argp1;
-  Dali::Rect<int>* positionSize = (Dali::Rect<int>*)jarg2;
+  arg1                              = *argp1;
+  Dali::BoundsInteger* positionSize = (Dali::BoundsInteger*)jarg2;
   if(!positionSize)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< int > const & type is null", 0);
@@ -522,9 +522,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GlWindow_GetAuxiliaryHintId(void
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetInputRegion(void* jarg1, void* jarg2)
 {
-  Dali::GlWindow   arg1;
-  Dali::Rect<int>* arg2 = 0;
-  Dali::GlWindow*  argp1;
+  Dali::GlWindow       arg1;
+  Dali::BoundsInteger* arg2 = 0;
+  Dali::GlWindow*      argp1;
 
   argp1 = (Dali::GlWindow*)jarg1;
   if(!argp1)
@@ -533,7 +533,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetInputRegion(void* jarg1, voi
     return;
   }
   arg1 = *argp1;
-  arg2 = (Dali::Rect<int>*)jarg2;
+  arg2 = (Dali::BoundsInteger*)jarg2;
   if(!arg2)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< int > const & type is null", 0);
@@ -542,7 +542,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetInputRegion(void* jarg1, voi
   {
     try
     {
-      arg1.SetInputRegion((Dali::Rect<int> const&)*arg2);
+      arg1.SetInputRegion((Dali::BoundsInteger const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }

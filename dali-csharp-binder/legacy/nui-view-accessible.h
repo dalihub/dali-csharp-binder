@@ -111,7 +111,7 @@ public:
 
   bool SetRangeOfSelection(std::size_t selectionIndex, std::size_t startOffset, std::size_t endOffset) override;
 
-  Dali::Rect<float> GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Dali::Accessibility::CoordinateType type) override;
+  Dali::Bounds GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Dali::Accessibility::CoordinateType type) override;
 
   // EditableText interface
 

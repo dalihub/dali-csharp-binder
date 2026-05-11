@@ -1167,14 +1167,14 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_GetAuxiliaryHintId(void* jarg1, 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetInputRegion(void* winHandle, void* jarg2)
 {
-  Dali::Rect<int>* arg2   = 0;
-  Dali::Window*    window = (Dali::Window*)winHandle;
+  Dali::BoundsInteger* arg2   = 0;
+  Dali::Window*        window = (Dali::Window*)winHandle;
   if(!CheckingWindowHandle(window))
   {
     return;
   }
 
-  arg2 = (Dali::Rect<int>*)jarg2;
+  arg2 = (Dali::BoundsInteger*)jarg2;
   if(!arg2)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< int > const & type is null", 0);
@@ -1183,7 +1183,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_SetInputRegion(void* winHandle, void* ja
   {
     try
     {
-      window->SetInputRegion((Dali::Rect<int> const&)*arg2);
+      window->SetInputRegion((Dali::BoundsInteger const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1771,7 +1771,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSize(void* winHandle, 
     return;
   }
 
-  Dali::Rect<int>* positionSize = (Dali::Rect<int>*)jarg2;
+  Dali::BoundsInteger* positionSize = (Dali::BoundsInteger*)jarg2;
   if(!positionSize)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< int > const & type is null", 0);
@@ -2888,8 +2888,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsFloatingModeEnabled(void* winHa
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_IncludeInputRegion(void* winHandle, void* region)
 {
-  Dali::Rect<int>* addedRegion = (Dali::Rect<int>*)region;
-  Dali::Window*    window      = (Dali::Window*)winHandle;
+  Dali::BoundsInteger* addedRegion = (Dali::BoundsInteger*)region;
+  Dali::Window*        window      = (Dali::Window*)winHandle;
   if(!CheckingWindowHandle(window))
   {
     return;
@@ -2906,8 +2906,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_IncludeInputRegion(void* winHandl
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_ExcludeInputRegion(void* winHandle, void* region)
 {
-  Dali::Rect<int>* subtractedRegion = (Dali::Rect<int>*)region;
-  Dali::Window*    window           = (Dali::Window*)winHandle;
+  Dali::BoundsInteger* subtractedRegion = (Dali::BoundsInteger*)region;
+  Dali::Window*        window           = (Dali::Window*)winHandle;
   if(!CheckingWindowHandle(window))
   {
     return;
