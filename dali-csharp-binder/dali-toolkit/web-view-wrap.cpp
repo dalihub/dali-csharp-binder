@@ -1206,7 +1206,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WebView_GetScreenshot(void* webObj, voi
 {
   WEBOBJ_NULL_CHECK(nullptr);
   Dali::Toolkit::WebView*   arg1   = (Dali::Toolkit::WebView*)webObj;
-  Dali::Rect<int32_t>*      arg    = (Dali::Rect<int32_t>*)jarg2;
+  Dali::BoundsInteger*      arg    = (Dali::BoundsInteger*)jarg2;
   Dali::Toolkit::ImageView* result = 0;
   {
     try
@@ -1239,7 +1239,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WebView_GetScreenshotAsynchronously(void
   swig_callbackOnWebViewScreenshotCaptured = (SWIG_CallbackWebViewScreenshotCaptured)jarg4;
   WEBOBJ_NULL_CHECK(false);
   Dali::Toolkit::WebView*                                   arg1     = (Dali::Toolkit::WebView*)webObj;
-  Dali::Rect<int32_t>*                                      arg2     = (Dali::Rect<int32_t>*)jarg2;
+  Dali::BoundsInteger*                                      arg2     = (Dali::BoundsInteger*)jarg2;
   Dali::Toolkit::WebView::WebViewScreenshotCapturedCallback callback = OnWebViewScreenshotCapturedCallback;
   bool                                                      result   = false;
   {

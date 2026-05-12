@@ -85,7 +85,7 @@ struct NUIViewAccessible::AccessibilityDelegate
   bool                  (*selectAll)               (RefObject*);                   // 33
   bool                  (*clearSelection)          (RefObject*);                   // 34
   bool                  (*deselectChild)           (RefObject*, int);              // 35
-  Rect<int>*            (*getRangeExtents)         (RefObject*, int, int, int);    // 36
+  BoundsInteger*            (*getRangeExtents)         (RefObject*, int, int, int);    // 36
   void                  (*getAttributes)           (RefObject*, GetAttributesCallbackType, Accessibility::Attributes*); // 37
   char*                 (*getValueText)            (RefObject*);                   // 38
   int                   (*getRowCount)             (RefObject*);                   // 39
@@ -393,10 +393,10 @@ bool NUIViewAccessible::SetRangeOfSelection(std::size_t selectionIndex, std::siz
   return CallMethod<Interface::TEXT>(mTable->setRangeOfSelection, static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
 }
 
-Rect<float> NUIViewAccessible::GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Accessibility::CoordinateType type)
+Dali::Bounds NUIViewAccessible::GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Accessibility::CoordinateType type)
 {
-  auto      rectPtr = CallMethod<Interface::TEXT>(mTable->getRangeExtents, static_cast<int>(startOffset), static_cast<int>(endOffset), static_cast<int>(type));
-  Rect<int> rect    = StealObject(rectPtr);
+  auto          rectPtr = CallMethod<Interface::TEXT>(mTable->getRangeExtents, static_cast<int>(startOffset), static_cast<int>(endOffset), static_cast<int>(type));
+  BoundsInteger rect    = StealObject(rectPtr);
 
   return {(float)rect.x, (float)rect.y, (float)rect.width, (float)rect.height};
 }

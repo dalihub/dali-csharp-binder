@@ -24,63 +24,63 @@
 
 // SWIGINTERN - the relevant parts of the generated code can be seen the below.
 
-SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal<bool(Dali::Actor, Dali::TouchEvent const&)> const* self)
+SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal<bool(Dali::Actor, Dali::TouchEvent)> const* self)
 {
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<bool(Dali::Actor, Dali::TouchEvent const&)> const* self)
+SWIGINTERN std::size_t Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<bool(Dali::Actor, Dali::TouchEvent)> const* self)
 {
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal<bool(Dali::Actor, Dali::TouchEvent const&)>* self, bool (*func)(Dali::Actor, Dali::TouchEvent const&))
+SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal<bool(Dali::Actor, Dali::TouchEvent)>* self, bool (*func)(Dali::Actor, Dali::TouchEvent))
 {
   self->Connect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<bool(Dali::Actor, Dali::TouchEvent const&)>* self, bool (*func)(Dali::Actor, Dali::TouchEvent const&))
+SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<bool(Dali::Actor, Dali::TouchEvent)>* self, bool (*func)(Dali::Actor, Dali::TouchEvent))
 {
   self->Disconnect(func);
 }
-SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal<bool(Dali::Actor, Dali::TouchEvent const&)>* self, Dali::Actor arg1, Dali::TouchEvent const& arg2)
+SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_TouchEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal<bool(Dali::Actor, Dali::TouchEvent)>* self, Dali::Actor arg1, Dali::TouchEvent arg2)
 {
   return self->Emit(arg1, arg2);
 }
-SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal<bool(Dali::Actor, Dali::HoverEvent const&)> const* self)
+SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal<bool(Dali::Actor, Dali::HoverEvent)> const* self)
 {
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<bool(Dali::Actor, Dali::HoverEvent const&)> const* self)
+SWIGINTERN std::size_t Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<bool(Dali::Actor, Dali::HoverEvent)> const* self)
 {
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal<bool(Dali::Actor, Dali::HoverEvent const&)>* self, bool (*func)(Dali::Actor, Dali::HoverEvent const&))
+SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal<bool(Dali::Actor, Dali::HoverEvent)>* self, bool (*func)(Dali::Actor, Dali::HoverEvent))
 {
   self->Connect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<bool(Dali::Actor, Dali::HoverEvent const&)>* self, bool (*func)(Dali::Actor, Dali::HoverEvent const&))
+SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<bool(Dali::Actor, Dali::HoverEvent)>* self, bool (*func)(Dali::Actor, Dali::HoverEvent))
 {
   self->Disconnect(func);
 }
-SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal<bool(Dali::Actor, Dali::HoverEvent const&)>* self, Dali::Actor arg1, Dali::HoverEvent const& arg2)
+SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_HoverEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal<bool(Dali::Actor, Dali::HoverEvent)>* self, Dali::Actor arg1, Dali::HoverEvent arg2)
 {
   return self->Emit(arg1, arg2);
 }
-SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_WheelEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal<bool(Dali::Actor, Dali::WheelEvent const&)> const* self)
+SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_WheelEvent_SS_const_SA__SP__Sg__Empty(Dali::Signal<bool(Dali::Actor, Dali::WheelEvent)> const* self)
 {
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_WheelEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<bool(Dali::Actor, Dali::WheelEvent const&)> const* self)
+SWIGINTERN std::size_t Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_WheelEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<bool(Dali::Actor, Dali::WheelEvent)> const* self)
 {
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_WheelEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal<bool(Dali::Actor, Dali::WheelEvent const&)>* self, bool (*func)(Dali::Actor, Dali::WheelEvent const&))
+SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_WheelEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal<bool(Dali::Actor, Dali::WheelEvent)>* self, bool (*func)(Dali::Actor, Dali::WheelEvent))
 {
   self->Connect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_WheelEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<bool(Dali::Actor, Dali::WheelEvent const&)>* self, bool (*func)(Dali::Actor, Dali::WheelEvent const&))
+SWIGINTERN void Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_WheelEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<bool(Dali::Actor, Dali::WheelEvent)>* self, bool (*func)(Dali::Actor, Dali::WheelEvent))
 {
   self->Disconnect(func);
 }
-SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_WheelEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal<bool(Dali::Actor, Dali::WheelEvent const&)>* self, Dali::Actor arg1, Dali::WheelEvent const& arg2)
+SWIGINTERN bool Dali_Signal_Sl_bool_Sp_Dali_Actor_Sc_Dali_WheelEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal<bool(Dali::Actor, Dali::WheelEvent)>* self, Dali::Actor arg1, Dali::WheelEvent arg2)
 {
   return self->Emit(arg1, arg2);
 }
@@ -3045,9 +3045,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenPosition(void* act
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenExtents(void* actor)
 {
-  Dali::Actor       arg1;
-  Dali::Actor*      argp1 = (Dali::Actor*)0;
-  Dali::Rect<float> result;
+  Dali::Actor  arg1;
+  Dali::Actor* argp1 = (Dali::Actor*)0;
+  Dali::Bounds result;
 
   argp1 = (Dali::Actor*)actor;
   if(!argp1)
@@ -3072,9 +3072,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenExtents(void* acto
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CurrentScreenExtents(void* actor)
 {
-  Dali::Actor       arg1;
-  Dali::Actor*      argp1 = (Dali::Actor*)0;
-  Dali::Rect<float> result;
+  Dali::Actor  arg1;
+  Dali::Actor* argp1 = (Dali::Actor*)0;
+  Dali::Bounds result;
 
   argp1 = (Dali::Actor*)actor;
   if(!argp1)
@@ -3303,27 +3303,27 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetVisiblityChangedActor()
 #define GENERATE_ACTOR_SIGNAL(HType, SignalName) GENERATE_SIGNAL(Dali::Actor*, HType, Dali_Actor, SignalName)
 #endif
 
-GENERATE_DEVEL_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::TouchEvent const&), HitTestResultSignal)
+GENERATE_DEVEL_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::TouchEvent), HitTestResultSignal)
 // CSharp_Dali_Actor_HitTestResultSignal_Connect
 // CSharp_Dali_Actor_HitTestResultSignal_Disconnect
 
-GENERATE_DEVEL_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::TouchEvent const&), InterceptTouchedSignal)
+GENERATE_DEVEL_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::TouchEvent), InterceptTouchedSignal)
 // CSharp_Dali_Actor_InterceptTouchedSignal_Connect
 // CSharp_Dali_Actor_InterceptTouchedSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::TouchEvent const&), TouchedSignal)
+GENERATE_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::TouchEvent), TouchedSignal)
 // CSharp_Dali_Actor_TouchedSignal_Connect
 // CSharp_Dali_Actor_TouchedSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::HoverEvent const&), HoveredSignal)
+GENERATE_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::HoverEvent), HoveredSignal)
 // CSharp_Dali_Actor_HoveredSignal_Connect
 // CSharp_Dali_Actor_HoveredSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::WheelEvent const&), WheelEventSignal)
+GENERATE_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::WheelEvent), WheelEventSignal)
 // CSharp_Dali_Actor_WheelEventSignal_Connect
 // CSharp_Dali_Actor_WheelEventSignal_Disconnect
 
-GENERATE_DEVEL_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::WheelEvent const&), InterceptWheelSignal)
+GENERATE_DEVEL_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::WheelEvent), InterceptWheelSignal)
 // CSharp_Dali_Actor_InterceptWheelSignal_Connect
 // CSharp_Dali_Actor_InterceptWheelSignal_Disconnect
 

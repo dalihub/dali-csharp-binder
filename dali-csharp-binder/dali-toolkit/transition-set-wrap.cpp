@@ -31,12 +31,12 @@ SWIGINTERN std::size_t Dali_TransitionSet_Signal_GetConnectionCount(Dali::Toolki
   return self->GetConnectionCount();
 }
 
-SWIGINTERN void Dali_TransitionSet_Signal_Connect(Dali::Toolkit::TransitionSet::TransitionSetSignalType* self, void (*func)(Dali::Toolkit::TransitionSet&))
+SWIGINTERN void Dali_TransitionSet_Signal_Connect(Dali::Toolkit::TransitionSet::TransitionSetSignalType* self, void (*func)(Dali::Toolkit::TransitionSet))
 {
   self->Connect(func);
 }
 
-SWIGINTERN void Dali_TransitionSet_Signal_Disconnect(Dali::Toolkit::TransitionSet::TransitionSetSignalType* self, void (*func)(Dali::Toolkit::TransitionSet&))
+SWIGINTERN void Dali_TransitionSet_Signal_Disconnect(Dali::Toolkit::TransitionSet::TransitionSetSignalType* self, void (*func)(Dali::Toolkit::TransitionSet))
 {
   self->Disconnect(func);
 }
@@ -235,7 +235,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_TransitionSet_Signal_GetConnecti
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TransitionSet_Signal_Connect(void* nuiTransitionSet, void* nuiFunc)
 {
   Dali::Toolkit::TransitionSet* transitionSet = (Dali::Toolkit::TransitionSet*)nuiTransitionSet;
-  void (*func)(Dali::Toolkit::TransitionSet&) = (void (*)(Dali::Toolkit::TransitionSet&))nuiFunc;
+  void (*func)(Dali::Toolkit::TransitionSet) = (void (*)(Dali::Toolkit::TransitionSet))nuiFunc;
   {
     try
     {
@@ -248,7 +248,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TransitionSet_Signal_Connect(void* nuiTr
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TransitionSet_Signal_Disconnect(void* nuiTransitionSet, void* nuiFunc)
 {
   Dali::Toolkit::TransitionSet* transitionSet = (Dali::Toolkit::TransitionSet*)nuiTransitionSet;
-  void (*func)(Dali::Toolkit::TransitionSet&) = (void (*)(Dali::Toolkit::TransitionSet&))nuiFunc;
+  void (*func)(Dali::Toolkit::TransitionSet) = (void (*)(Dali::Toolkit::TransitionSet))nuiFunc;
   {
     try
     {

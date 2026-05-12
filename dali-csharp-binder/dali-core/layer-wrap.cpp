@@ -258,13 +258,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_0(void* jarg1
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_1(void* jarg1, void* jarg2)
 {
-  Dali::Rect<int32_t>  arg2;
-  Dali::Rect<int32_t>* argp2;
+  Dali::BoundsInteger  arg2;
+  Dali::BoundsInteger* argp2;
 
-  argp2 = (Dali::Rect<int32_t>*)jarg2;
+  argp2 = (Dali::BoundsInteger*)jarg2;
   if(!argp2)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Rect<int32_t>", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BoundsInteger", 0);
     return;
   }
   arg2 = *argp2;
@@ -275,7 +275,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClippingBox__SWIG_1(void* jarg1
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_GetClippingBox(void* jarg1)
 {
   void*               jresult;
-  Dali::Rect<int32_t> result;
+  Dali::BoundsInteger result;
 
   {
     try
@@ -286,12 +286,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_GetClippingBox(void* jarg1)
       Dali::Vector3 position = layer.GetProperty<Dali::Vector3>(Dali::Actor::Property::POSITION);
       Dali::Vector3 size     = layer.GetProperty<Dali::Vector3>(Dali::Actor::Property::SIZE);
 
-      result = Dali::Rect<int32_t>(static_cast<int32_t>(position.x), static_cast<int32_t>(position.y), static_cast<int32_t>(size.width), static_cast<int32_t>(size.height));
+      result = Dali::BoundsInteger(static_cast<int32_t>(position.x), static_cast<int32_t>(position.y), static_cast<int32_t>(size.width), static_cast<int32_t>(size.height));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Rect<int32_t>((const Dali::Rect<int32_t>&)result);
+  jresult = new Dali::BoundsInteger((const Dali::BoundsInteger&)result);
   return jresult;
 }
 

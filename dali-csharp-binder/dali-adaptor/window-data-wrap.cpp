@@ -56,8 +56,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowData(void* nuiWindowData)
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowData_SetPositionSize(void* nuiWindowData, void* nuiPositionSize)
 {
-  Dali::WindowData* pWindowData;
-  Dali::Rect<int>*  rect = 0;
+  Dali::WindowData*    pWindowData;
+  Dali::BoundsInteger* rect = 0;
 
   pWindowData = (Dali::WindowData*)nuiWindowData;
   if(!pWindowData)
@@ -66,7 +66,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowData_SetPositionSize(void* nuiWind
     return;
   }
 
-  rect = (Dali::Rect<int>*)nuiPositionSize;
+  rect = (Dali::BoundsInteger*)nuiPositionSize;
   if(!rect)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Rect< int > const & type is null", 0);
@@ -83,9 +83,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowData_SetPositionSize(void* nuiWind
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WindowData_GetPositionSize(void* nuiWindowData)
 {
-  void*             nuiResult;
-  Dali::WindowData* pWindowData;
-  Dali::Rect<int>   result;
+  void*               nuiResult;
+  Dali::WindowData*   pWindowData;
+  Dali::BoundsInteger result;
 
   pWindowData = (Dali::WindowData*)nuiWindowData;
   if(!pWindowData)
@@ -102,7 +102,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WindowData_GetPositionSize(void* nuiWin
     CALL_CATCH_EXCEPTION(0);
   }
 
-  nuiResult = new Dali::Rect<int>((const Dali::Rect<int>&)result);
+  nuiResult = new Dali::BoundsInteger((const Dali::BoundsInteger&)result);
   return nuiResult;
 }
 

@@ -187,10 +187,11 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_2(vo
   unsigned int                     jresult;
   Dali::Toolkit::AsyncImageLoader* arg1 = (Dali::Toolkit::AsyncImageLoader*)0;
   Dali::ImageDimensions            arg3;
-  Dali::FittingMode::Type          arg4;
   Dali::SamplingMode::Type         arg5;
   bool                             arg6;
   uint32_t                         result;
+
+  (void)jarg4; // FittingMode is no longer used; kept for ABI compatibility.
 
   GUARD_ON_NULL_RET0(jarg1);
   GUARD_ON_NULL_RET0(jarg2);
@@ -199,13 +200,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AsyncImageLoader_Load__SWIG_2(vo
   arg1 = (Dali::Toolkit::AsyncImageLoader*)jarg1;
   Dali::String arg2(jarg2);
   arg3 = *(Dali::ImageDimensions*)jarg3;
-  arg4 = (Dali::FittingMode::Type)jarg4;
   arg5 = (Dali::SamplingMode::Type)jarg5;
   arg6 = jarg6 ? true : false;
   {
     try
     {
-      result = (arg1)->Load((Dali::String const&)arg2, arg3, arg4, arg5, arg6);
+      result = (arg1)->Load((Dali::String const&)arg2, arg3, arg5, arg6);
     }
     CALL_CATCH_EXCEPTION(0);
   }

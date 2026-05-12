@@ -260,7 +260,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderCallbackInput_Projection_get(void
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderCallbackInput_ClippingBox_get(void* input)
 {
   void*                      jresult;
-  Dali::Rect<int32_t>*       result      = 0;
+  Dali::BoundsInteger*       result      = 0;
   Dali::RenderCallbackInput* renderInput = (Dali::RenderCallbackInput*)input;
 
   result  = &(renderInput->clippingBox);
