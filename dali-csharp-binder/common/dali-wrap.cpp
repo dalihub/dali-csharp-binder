@@ -50,8 +50,8 @@
 #include <dali/devel-api/object/csharp-type-registry.h>
 #include <dali/devel-api/rendering/frame-buffer-devel.h>
 #include <dali/devel-api/rendering/renderer-devel.h>
-#include <dali/devel-api/update/frame-callback-interface.h>
-#include <dali/devel-api/update/update-proxy.h>
+#include <dali/public-api/update/frame-callback-interface.h>
+#include <dali/public-api/update/update-proxy.h>
 
 #include <dali/public-api/events/mouse-button.h>
 #include <dali/public-api/math/matrix.h>

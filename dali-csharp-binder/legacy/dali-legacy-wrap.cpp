@@ -7,7 +7,7 @@
 #include <dali-toolkit/devel-api/focus-manager/keyboard-focus-manager-devel.h>
 #include <dali/devel-api/object/csharp-type-info.h>
 #include <dali/devel-api/object/csharp-type-registry.h>
-#include <dali/devel-api/update/frame-callback-interface.h>
+#include <dali/public-api/update/frame-callback-interface.h>
 
 #include <dali-csharp-binder/common/dali-wrap.h> ///< Must include after common.h
 #include <dali-csharp-binder/legacy/slim-custom-view-impl.h>
@@ -578,9 +578,9 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RegisterType(char* jarg1, void* jarg2, v
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Any_GetType(void* jarg1)
 {
-  void*                jresult;
-  Dali::Any*           arg1   = (Dali::Any*)0;
-  Dali::TypeInfoId*    result = 0;
+  void*             jresult;
+  Dali::Any*        arg1   = (Dali::Any*)0;
+  Dali::TypeInfoId* result = 0;
 
   arg1 = (Dali::Any*)jarg1;
   {
