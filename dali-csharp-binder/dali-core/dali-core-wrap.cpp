@@ -17,7 +17,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali/dali.h>
-#include <dali/devel-api/update/frame-callback-interface.h>
+#include <dali/public-api/update/frame-callback-interface.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>

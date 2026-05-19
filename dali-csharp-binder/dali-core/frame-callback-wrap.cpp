@@ -17,7 +17,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali/dali.h>
-#include <dali/devel-api/update/update-proxy.h>
+#include <dali/public-api/update/update-proxy.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
