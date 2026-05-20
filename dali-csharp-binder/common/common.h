@@ -2,7 +2,7 @@
 #define CSHARP_COMMON_H
 
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -137,6 +137,7 @@ T SwigValueInit()
 #include <stdlib.h>
 #include <string.h>
 #include <functional>
+#include <locale>
 
 /*  Errors in SWIG */
 constexpr static int SWIG_UnknownError       = -1;
@@ -355,6 +356,7 @@ extern void SWIG_ExceptionMessageWithFileAndLine(const int& code, const char* wh
   if(!(arg_name))                                                                                              \
   {                                                                                                            \
     std::stringstream output;                                                                                  \
+    output.imbue(std::locale::classic());                                                                      \
     output << __FUNCTION__ << " is not allowed to take nullptr as " << #arg_name;                              \
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, output.str().c_str(), #arg_name); \
     return;                                                                                                    \
@@ -364,6 +366,7 @@ extern void SWIG_ExceptionMessageWithFileAndLine(const int& code, const char* wh
   if(!(arg_name))                                                                                              \
   {                                                                                                            \
     std::stringstream output;                                                                                  \
+    output.imbue(std::locale::classic());                                                                      \
     output << __FUNCTION__ << " is not allowed to take nullptr as " << #arg_name;                              \
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, output.str().c_str(), #arg_name); \
     return 0;                                                                                                  \

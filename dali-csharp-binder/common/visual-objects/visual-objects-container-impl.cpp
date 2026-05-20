@@ -33,6 +33,7 @@
 #include <dali/public-api/animation/constraints.h>
 
 #include <algorithm>
+#include <locale>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/visual-objects/visual-object-impl.h>
@@ -283,6 +284,7 @@ void VisualObjectsContainer::ReplaceVisualObject(Dali::Internal::VisualObject& v
         // Register new property to control using propertyId
         {
           std::ostringstream oss;
+          oss.imbue(std::locale::classic());
           oss << VISUAL_OBJECT_PROPERTY_NAME_PREFIX << "_" << static_cast<int>(mRangeType) << "_" << propertyId;
           index = control.RegisterProperty(ToDaliString(oss.str()), ToPropertyValue(oss.str()), Property::AccessMode::READ_WRITE);
         }
