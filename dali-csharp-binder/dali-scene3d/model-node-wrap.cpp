@@ -16,8 +16,8 @@
  */
 
 // EXTERNAL INCLUDES
+#include <dali-scene3d/integration-api/loader/navigation-mesh-factory.h>
 #include <dali-scene3d/public-api/algorithm/navigation-mesh.h>
-#include <dali-scene3d/public-api/loader/navigation-mesh-factory.h>
 #include <dali-scene3d/public-api/model-components/model-node.h>
 
 // INTERNAL INCLUDES
