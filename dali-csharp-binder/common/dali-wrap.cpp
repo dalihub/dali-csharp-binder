@@ -60,6 +60,7 @@
 #include <dali/public-api/object/property-key.h>
 
 #include <dali/devel-api/adaptor-framework/environment-variable.h>
+#include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali/public-api/adaptor-framework/style-change.h>
 
 #include <dali/integration-api/string-utils.h>
@@ -14440,7 +14441,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Stage_IsInstalled()
   {
     try
     {
-      result = (bool)Dali::Stage::IsInstalled();
+      result = Dali::Adaptor::IsAvailable();
     }
     CALL_CATCH_EXCEPTION(0);
   }
