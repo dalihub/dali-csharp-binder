@@ -53,6 +53,8 @@ SWIGINTERN bool Dali_Signal_Sl_bool_Sp__SP__Sg__Emit(Dali::Signal<bool()>* self)
 
 using namespace Dali;
 
+namespace
+{
 // keep argWidgetCs and argWidgetV so they're always available to DALi
 int    argWidgetC = 1;
 char** argWidgetV = NULL;
@@ -61,6 +63,8 @@ enum class LoadingFittingModeType : int
 {
   SHRINK_TO_FIT = 0,
   SCALE_TO_FILL = 1,
+  FIT_WIDTH     = 2,
+  FIT_HEIGHT    = 3,
 };
 
 static void ApplyCropModeToPixelBuffer(Dali::Devel::PixelBuffer& pixelBuffer, int cropMode, Dali::ImageDimensions desiredSize)
@@ -78,16 +82,54 @@ static void ApplyCropModeToPixelBuffer(Dali::Devel::PixelBuffer& pixelBuffer, in
   switch(static_cast<LoadingFittingModeType>(cropMode))
   {
     case LoadingFittingModeType::SHRINK_TO_FIT:
+    {
       pixelBuffer.ApplyLetterbox(desiredWidth, desiredHeight);
       break;
+    }
     case LoadingFittingModeType::SCALE_TO_FILL:
+    {
       pixelBuffer.ApplyCenterCrop(desiredWidth, desiredHeight);
       break;
+    }
+    case LoadingFittingModeType::FIT_WIDTH:
+    case LoadingFittingModeType::FIT_HEIGHT:
+    {
+      const uint16_t originalWidth  = pixelBuffer.GetWidth();
+      const uint16_t originalHeight = pixelBuffer.GetHeight();
+
+      if(static_cast<uint32_t>(originalHeight) * static_cast<uint32_t>(desiredWidth) <= static_cast<uint32_t>(desiredHeight) * static_cast<uint32_t>(originalWidth))
+      {
+        // h / w <= dh / dw --> desired height is bigger than original
+        if(static_cast<LoadingFittingModeType>(cropMode) == LoadingFittingModeType::FIT_WIDTH)
+        {
+          pixelBuffer.ApplyLetterbox(desiredWidth, desiredHeight);
+        }
+        else
+        {
+          pixelBuffer.ApplyCenterCrop(desiredWidth, desiredHeight);
+        }
+      }
+      else
+      {
+        // h / w > dh / dw --> desired width is bigger than height
+        if(static_cast<LoadingFittingModeType>(cropMode) == LoadingFittingModeType::FIT_WIDTH)
+        {
+          pixelBuffer.ApplyCenterCrop(desiredWidth, desiredHeight);
+        }
+        else
+        {
+          pixelBuffer.ApplyLetterbox(desiredWidth, desiredHeight);
+        }
+      }
+    }
     default:
+    {
       DALI_LOG_WARNING("ApplyCropModeToPixelBuffer: unknown cropMode %d, no crop applied\n", cropMode);
       break;
+    }
   }
 }
+} // namespace
 
 #ifdef __cplusplus
 extern "C" {
@@ -1425,11 +1467,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_1(char* jarg1
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetClosestImageSize__SWIG_2(char* jarg1, void* jarg2, int jarg3)
 {
-  void*                   jresult;
-  std::string*            arg1 = 0;
-  Dali::ImageDimensions   arg2;
-  Dali::ImageDimensions*  argp2;
-  Dali::ImageDimensions   result;
+  void*                  jresult;
+  std::string*           arg1 = 0;
+  Dali::ImageDimensions  arg2;
+  Dali::ImageDimensions* argp2;
+  Dali::ImageDimensions  result;
 
   (void)jarg3; // FittingMode is no longer used; kept for ABI compatibility.
 
