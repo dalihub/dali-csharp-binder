@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@
 #include <dali-csharp-binder/common/processor-controller.h>
 
 // EXTERNAL INCLUDES
-#include <dali/devel-api/common/stage-devel.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali/integration-api/debug.h>
 #include <dali/integration-api/trace.h>
@@ -116,11 +115,7 @@ void ProcessorController::Awake()
 
     if(!mKeepRenderingApplied)
     {
-      auto stage = Dali::Stage::GetCurrent();
-      stage.KeepRendering(0.0f);
-
-      // Request ProcessEvents on idle to make ensure Processor executed.
-      Dali::Adaptor::Get().RequestProcessEventsOnIdle();
+      Dali::Adaptor::Get().RequestProcessEventsAndUpdate();
       mKeepRenderingApplied = true;
     }
   }
