@@ -16,9 +16,9 @@
  */
 
 // EXTERNAL INCLUDES
+#include <dali-scene3d/integration-api/loader/bvh-loader.h>
+#include <dali-scene3d/integration-api/loader/facial-animation-loader.h>
 #include <dali-scene3d/public-api/controls/model/model.h>
-#include <dali-scene3d/public-api/loader/bvh-loader.h>
-#include <dali-scene3d/public-api/loader/facial-animation-loader.h>
 #include <dali-scene3d/public-api/model-motion/motion-data.h>
 #include <dali/devel-api/animation/key-frames-devel.h>
 
@@ -572,8 +572,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_1(void* csModel,
         }
       }
 
-      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor
-      {
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
         return model->FindChildByName(property.mNodeName);
       };
       result = animationDefinition.ReAnimate(getActor);
@@ -645,8 +644,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadBvhAnimation_2(void* csModel,
         }
       }
 
-      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor
-      {
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
         return model->FindChildByName(property.mNodeName);
       };
       result = animationDefinition.ReAnimate(getActor);
@@ -678,8 +676,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadFacialAnimation_1(void* csMod
     try
     {
       Dali::Scene3D::Loader::AnimationDefinition        animationDefinition = Dali::Scene3D::Loader::LoadFacialAnimation(filename);
-      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor            = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor
-      {
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor            = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
         return model->FindChildByName(property.mNodeName);
       };
       result = animationDefinition.ReAnimate(getActor);
@@ -711,8 +708,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Model_LoadFacialAnimation_2(void* csMod
     try
     {
       Dali::Scene3D::Loader::AnimationDefinition        animationDefinition = Dali::Scene3D::Loader::LoadFacialAnimationFromBuffer(rawBuffer, csBufferLength);
-      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor            = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor
-      {
+      Dali::Scene3D::Loader::AnimatedProperty::GetActor getActor            = [&model](const Dali::Scene3D::Loader::AnimatedProperty& property) -> Dali::Actor {
         return model->FindChildByName(property.mNodeName);
       };
       result = animationDefinition.ReAnimate(getActor);

@@ -2,7 +2,7 @@
 #define CSHARP_PROCESSOR_CONTROLLER_H
 
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,7 @@ private:
   ProcessorControllerProcessCallback mPostHandler; ///< PostProcessHandler after Relayout
 
   bool mProcessRegistered : 1;    ///< True if we call RegisterProcess. False otherwise.
-  bool mKeepRenderingApplied : 1; ///< True if we call Stage::KeepRendering(0.0f). It need to avoid duplicated keep rendering call
+  bool mKeepRenderingApplied : 1; ///< True if we call Adaptor::RequestProcessEventsAndUpdate(). It needs to avoid duplicated call
   bool mProcessingEvents : 1;     ///< True if we are running Process now.
 };
 
