@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
 #include <dali/devel-api/actors/actor-devel.h>
 #include <dali/devel-api/rendering/renderer-devel.h>
+#include <dali/public-api/object/property.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -76,7 +77,9 @@ SWIGEXPORT int SWIGSTDCALL CSharp_View_Property_TOOLTIP_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Toolkit::DevelControl::Property::TOOLTIP;
+  // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
+  result  = (int)Dali::Property::INVALID_INDEX;
+
   jresult = (int)result;
   return jresult;
 }
