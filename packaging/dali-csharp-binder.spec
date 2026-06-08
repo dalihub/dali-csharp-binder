@@ -54,7 +54,10 @@ BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
 
 
 BuildRequires: pkgconfig(widget_viewer_dali)
+BuildRequires: pkgconfig(libtbm)
+%if 0%{?tizen_version_major} < 11
 BuildRequires: pkgconfig(ecore-wl2)
+%endif
 
 # For ASAN test
 %if "%{vd_asan}" == "1" || "%{asan}" == "1"
@@ -191,10 +194,12 @@ cmake_flags=" -DENABLE_WAYLAND=ON"
 %if 0%{?tizen_version_major} >= 5
 CXXFLAGS+=" -DOVER_TIZEN_VERSION_5"
 
-# Need Ecore-Wayland2 when Tizen version is 5.x or greater
+# Need Ecore-Wayland2 when Tizen version is 5.x or greater, and less than 11.x
+%if 0%{?tizen_version_major} < 11
 CFLAGS+=" -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
 CXXFLAGS+=" -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
 cmake_flags+=" -DENABLE_ECORE_WAYLAND2=ON"
+%endif
 %endif
 
 # Use this conditional when Tizen version is 7.x or greater
