@@ -13022,9 +13022,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Gesture_time_get(void* jarg1)
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceType_get(void* gesture)
 {
-  int                     jresult;
-  Dali::Gesture*          jGesture = (Dali::Gesture*)gesture;
-  Dali::GestureSourceType result;
+  int                       jresult;
+  Dali::Gesture*            jGesture = (Dali::Gesture*)gesture;
+  Dali::Device::Class::Type result;
 
   if(!jGesture)
   {
@@ -13034,7 +13034,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceType_get(void* gesture)
   {
     try
     {
-      result = (Dali::GestureSourceType)jGesture->GetSourceType();
+      result = jGesture->GetDeviceClass();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -13047,7 +13047,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceData_get(void* gesture)
 {
   int                     jresult;
   Dali::Gesture*          jGesture = (Dali::Gesture*)gesture;
-  Dali::GestureSourceData result;
+  Dali::MouseButton::Type result;
 
   if(!jGesture)
   {
@@ -13057,7 +13057,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceData_get(void* gesture)
   {
     try
     {
-      result = (Dali::GestureSourceData)jGesture->GetSourceData();
+      result = jGesture->GetMouseButton();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceSubType_get(void* gesture)
+{
+  int                          jresult;
+  Dali::Gesture*               jGesture = (Dali::Gesture*)gesture;
+  Dali::Device::Subclass::Type result;
+
+  if(!jGesture)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Gesture const & type is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = jGesture->GetDeviceSubclass();
     }
     CALL_CATCH_EXCEPTION(0);
   }
