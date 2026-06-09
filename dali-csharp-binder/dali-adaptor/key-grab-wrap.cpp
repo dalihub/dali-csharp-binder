@@ -25,10 +25,6 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-#ifdef TIZEN_BUILD
-#include <Ecore_Wl2.h>
-#endif
-
 #undef LOG
 //#define LOG DALI_LOG_ERROR
 #define LOG(a...)
@@ -113,34 +109,6 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKey(void* window, int daliKey)
   }
 
   LOG("CSharp_Dali_UngrabKey() [DP2] ret=%d", ret);
-
-  return ret;
-}
-
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetNativeWindowHandler(void* window)
-{
-  Dali::Window* _win = (Dali::Window*)window;
-  void*         ret  = NULL;
-
-  LOG("CSharp_Dali_GetNativeWindowHandler() [DP1] window=%d", window);
-
-#ifdef TIZEN_BUILD
-  {
-    Dali::Any result;
-    try
-    {
-      result                      = _win->GetNativeHandle();
-      Ecore_Wl2_Window* ecore_win = Dali::AnyCast<Ecore_Wl2_Window*>(result);
-      ret                         = (void*)ecore_win;
-    }
-    CALL_CATCH_EXCEPTION(NULL);
-  }
-#endif
-
-  if(ret != NULL)
-  {
-    LOG("CSharp_Dali_GetNativeWindowHandler() [DP2] ret=%d", ret);
-  }
 
   return ret;
 }

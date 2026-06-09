@@ -121,6 +121,7 @@ static void ApplyCropModeToPixelBuffer(Dali::Devel::PixelBuffer& pixelBuffer, in
           pixelBuffer.ApplyLetterbox(desiredWidth, desiredHeight);
         }
       }
+      break;
     }
     default:
     {

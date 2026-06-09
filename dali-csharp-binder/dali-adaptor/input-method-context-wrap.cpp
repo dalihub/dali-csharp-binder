@@ -17,7 +17,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali/devel-api/adaptor-framework/input-method-context.h>
-#include <dali/devel-api/common/stage.h>
+#include <dali/public-api/adaptor-framework/ui-context.h>
 #include <unordered_map>
 
 // INTERNAL INCLUDES
@@ -573,7 +573,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_InputMethodContext_New()
   {
     try
     {
-      inputMethodContext = Dali::InputMethodContext::New(Dali::Stage::GetCurrent().GetRootLayer());
+      inputMethodContext = Dali::InputMethodContext::New(Dali::UiContext::Get().GetDefaultWindow().GetRootLayer());
     }
     CALL_CATCH_EXCEPTION(0);
   }

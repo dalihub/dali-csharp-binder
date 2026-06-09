@@ -22,6 +22,7 @@
 #include <dali/devel-api/adaptor-framework/pointer-constraints-event.h>
 #include <dali/devel-api/adaptor-framework/window-devel.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
+#include <dali/integration-api/adaptor-framework/scene-holder.h>
 #include <dali/integration-api/string-utils.h>
 #include <dali/public-api/adaptor-framework/window.h>
 
@@ -824,6 +825,29 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetNativeHandle(void* winHandle)
 
   jresult = new Dali::Any((const Dali::Any&)nativeHandle);
   return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetNativeWindowHandler(void* winHandle)
+{
+  Dali::Window* window = (Dali::Window*)winHandle;
+  void*         ret    = NULL;
+
+  if(!CheckingWindowHandle(window))
+  {
+    return NULL;
+  }
+
+  {
+    try
+    {
+      Dali::Integration::SceneHolder sceneHolder = Dali::Integration::SceneHolder::DownCast(*window);
+      Dali::Any                      result      = sceneHolder.GetNativeRawHandle();
+      ret                                        = Dali::AnyCast<void*>(result);
+    }
+    CALL_CATCH_EXCEPTION(NULL);
+  }
+
+  return ret;
 }
 
 /*window-devel binding*/
