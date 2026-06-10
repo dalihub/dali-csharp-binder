@@ -24,7 +24,7 @@ Summary: The DALI Csharp Binder
 Version: 2.4.46
 Release: 1
 Group: uifw/graphic
-License: Apache-2.0 and BSD-3-Clause and MIT
+License: Apache-2.0 and Zlib
 Source: %{name}-%{version}.tar.xz
 
 Requires(post): /sbin/ldconfig
@@ -565,6 +565,7 @@ exit 0
 %files
 %manifest dali-csharp-binder.manifest
 %license LICENSE
+%license LICENSE.Zlib
 %defattr(-,root,root,-)
 %{_libdir}/libdali2-csharp-binder.so
 %{_libdir}/libdali2-csharp-binder.so.2
