@@ -17,6 +17,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali-toolkit/devel-api/controls/control-devel.h>
+#include <dali/devel-api/adaptor-framework/keyboard.h>
 #include <dali/devel-api/adaptor-framework/mouse-in-out-event.h>
 #include <dali/devel-api/adaptor-framework/mouse-relative-event.h>
 #include <dali/devel-api/adaptor-framework/pointer-constraints-event.h>
@@ -2544,15 +2545,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Auxiliary_Message_Signal_Disconne
 // Keyboard Repeat Settings Changed
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_ChangedSignal(void* jarg1)
 {
-  void*                                                       jresult;
-  Dali::Window*                                               arg1   = (Dali::Window*)0;
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* result = 0;
+  void*                                            jresult;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* result = 0;
 
-  arg1 = (Dali::Window*)jarg1;
   {
     try
     {
-      result = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)&(Dali::DevelWindow::KeyboardRepeatSettingsChangedSignal(*arg1));
+      result = &Dali::Keyboard::RepeatSettingsChangedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2563,8 +2562,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_Empty(void* jarg1)
 {
-  unsigned int                                                jresult;
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
+  unsigned int                                     jresult;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
   if(arg1 == nullptr)
   {
     DALI_LOG_ERROR("[ERR] arg1 == nullptr");
@@ -2575,7 +2574,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_
   {
     try
     {
-      result = (bool)((Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType const*)arg1)->Empty();
+      result = (bool)((Dali::Keyboard::RepeatSettingsChangedSignalType const*)arg1)->Empty();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2586,8 +2585,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                                               jresult;
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
+  unsigned long                                    jresult;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
   if(arg1 == nullptr)
   {
     DALI_LOG_ERROR("[ERR] arg1 == nullptr");
@@ -2598,7 +2597,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings
   {
     try
     {
-      result = ((Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType const*)arg1)->GetConnectionCount();
+      result = ((Dali::Keyboard::RepeatSettingsChangedSignalType const*)arg1)->GetConnectionCount();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2609,8 +2608,8 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_Connect(void* jarg1, void* jarg2)
 {
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
-  void (*arg2)()                                                   = (void (*)())jarg2;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
+  void (*arg2)()                                        = (void (*)())jarg2;
 
   if(arg1 == nullptr)
   {
@@ -2629,8 +2628,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_Disconnect(void* jarg1, void* jarg2)
 {
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
-  void (*arg2)()                                                   = (void (*)())jarg2;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
+  void (*arg2)()                                        = (void (*)())jarg2;
 
   if(arg1 == nullptr)
   {
@@ -2649,7 +2648,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_Emit(void* jarg1)
 {
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
 
   if(arg1 == nullptr)
   {
@@ -2668,9 +2667,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_delete(void* jarg1)
 {
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)0;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)0;
 
-  arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
+  arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
   {
     try
     {
