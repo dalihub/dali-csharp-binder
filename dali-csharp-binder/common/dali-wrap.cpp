@@ -36,7 +36,6 @@
 #include <dali/devel-api/actors/camera-actor-devel.h>
 #include <dali/devel-api/animation/key-frames-devel.h>
 #include <dali/devel-api/animation/path-constrainer.h>
-#include <dali/devel-api/common/stage-devel.h>
 #include <dali/devel-api/events/hover-event-devel.h>
 #include <dali/devel-api/events/key-event-devel.h>
 #include <dali/devel-api/events/long-press-gesture-devel.h>
@@ -523,14 +522,6 @@ SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_WheelEvent_SS_const_SA__SP__Sg__Empt
 SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_WheelEvent_SS_const_SA__SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::WheelEvent)> const* self)
 {
   return self->GetConnectionCount();
-}
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WheelEvent_SS_const_SA__SP__Sg__Connect(Dali::Signal<void(Dali::WheelEvent)>* self, void (*func)(Dali::WheelEvent))
-{
-  self->Connect(func);
-}
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WheelEvent_SS_const_SA__SP__Sg__Disconnect(Dali::Signal<void(Dali::WheelEvent)>* self, void (*func)(Dali::WheelEvent))
-{
-  self->Disconnect(func);
 }
 SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_WheelEvent_SS_const_SA__SP__Sg__Emit(Dali::Signal<void(Dali::WheelEvent)>* self, Dali::WheelEvent arg)
 {
@@ -12452,9 +12443,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Gesture_time_get(void* jarg1)
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceType_get(void* gesture)
 {
-  int                     jresult;
-  Dali::Gesture*          jGesture = (Dali::Gesture*)gesture;
-  Dali::GestureSourceType result;
+  int                       jresult;
+  Dali::Gesture*            jGesture = (Dali::Gesture*)gesture;
+  Dali::Device::Class::Type result;
 
   if(!jGesture)
   {
@@ -12464,7 +12455,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceType_get(void* gesture)
   {
     try
     {
-      result = (Dali::GestureSourceType)jGesture->GetSourceType();
+      result = jGesture->GetDeviceClass();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -12477,7 +12468,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceData_get(void* gesture)
 {
   int                     jresult;
   Dali::Gesture*          jGesture = (Dali::Gesture*)gesture;
-  Dali::GestureSourceData result;
+  Dali::MouseButton::Type result;
 
   if(!jGesture)
   {
@@ -12487,7 +12478,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceData_get(void* gesture)
   {
     try
     {
-      result = (Dali::GestureSourceData)jGesture->GetSourceData();
+      result = jGesture->GetMouseButton();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = (int)result;
+  return jresult;
+}
+
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Gesture_sourceSubType_get(void* gesture)
+{
+  int                          jresult;
+  Dali::Gesture*               jGesture = (Dali::Gesture*)gesture;
+  Dali::Device::Subclass::Type result;
+
+  if(!jGesture)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Gesture const & type is null", 0);
+    return 0;
+  }
+  {
+    try
+    {
+      result = jGesture->GetDeviceSubclass();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -14418,19 +14432,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_GetDeviceSubClass(void* jarg1)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Stage_GetCurrent()
 {
-  void*       jresult;
-  Dali::Stage result;
-
-  {
-    try
-    {
-      result = Dali::Stage::GetCurrent();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Stage((const Dali::Stage&)result);
-  return jresult;
+  return nullptr;
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Stage_IsInstalled()
@@ -14452,148 +14454,47 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Stage_IsInstalled()
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Stage_GetRenderTaskList(void* jarg1)
 {
-  void*                jresult;
-  Dali::Stage*         arg1 = (Dali::Stage*)0;
-  Dali::RenderTaskList result;
-
-  arg1 = (Dali::Stage*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Stage const*)arg1)->GetRenderTaskList();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::RenderTaskList((const Dali::RenderTaskList&)result);
-  return jresult;
+  return nullptr;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Stage_GetDpi(void* jarg1)
 {
-  void*         jresult;
-  Dali::Stage*  arg1 = (Dali::Stage*)0;
-  Dali::Vector2 result;
-
-  arg1 = (Dali::Stage*)jarg1;
-  {
-    try
-    {
-      result = ((Dali::Stage const*)arg1)->GetDpi();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = new Dali::Vector2((const Dali::Vector2&)result);
+  void* jresult;
+  jresult = new Dali::Vector2(0.0f, 0.0f);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Stage_EventProcessingFinishedSignal(void* jarg1)
 {
-  void*                                           jresult;
-  Dali::Stage*                                    arg1   = (Dali::Stage*)0;
-  Dali::Stage::EventProcessingFinishedSignalType* result = 0;
-
-  arg1 = (Dali::Stage*)jarg1;
-  {
-    try
-    {
-      result = (Dali::Stage::EventProcessingFinishedSignalType*)&(arg1)->EventProcessingFinishedSignal();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
+  return nullptr;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Stage_WheelEventSignal(void* jarg1)
 {
-  void*                              jresult;
-  Dali::Stage*                       arg1   = (Dali::Stage*)0;
-  Dali::Stage::WheelEventSignalType* result = 0;
-
-  arg1 = (Dali::Stage*)jarg1;
-  {
-    try
-    {
-      result = (Dali::Stage::WheelEventSignalType*)&(arg1)->WheelEventSignal();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
+  return nullptr;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Stage_ContextLostSignal(void* jarg1)
 {
-  void*                             jresult;
-  Dali::Stage*                      arg1   = (Dali::Stage*)0;
-  Dali::Stage::ContextStatusSignal* result = 0;
-
-  arg1 = (Dali::Stage*)jarg1;
-  {
-    try
-    {
-      result = (Dali::Stage::ContextStatusSignal*)&(arg1)->ContextLostSignal();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
+  return nullptr;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Stage_ContextRegainedSignal(void* jarg1)
 {
-  void*                             jresult;
-  Dali::Stage*                      arg1   = (Dali::Stage*)0;
-  Dali::Stage::ContextStatusSignal* result = 0;
-
-  arg1 = (Dali::Stage*)jarg1;
-  {
-    try
-    {
-      result = (Dali::Stage::ContextStatusSignal*)&(arg1)->ContextRegainedSignal();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
+  return nullptr;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Stage_SceneCreatedSignal(void* jarg1)
 {
-  void*                                jresult;
-  Dali::Stage*                         arg1   = (Dali::Stage*)0;
-  Dali::Stage::SceneCreatedSignalType* result = 0;
-
-  arg1 = (Dali::Stage*)jarg1;
-  {
-    try
-    {
-      result = (Dali::Stage::SceneCreatedSignalType*)&(arg1)->SceneCreatedSignal();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
+  return nullptr;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Stage_SetRenderingBehavior(void* jarg1, int jarg2)
 {
-  Dali::Stage*                arg1 = (Dali::Stage*)0;
-  Dali::DevelStage::Rendering arg2;
-
-  arg1 = (Dali::Stage*)jarg1;
-  arg2 = (Dali::DevelStage::Rendering)jarg2;
   {
     try
     {
-      DevelStage::SetRenderingBehavior(*arg1, arg2);
+      Dali::Adaptor::Get().SetRenderingBehavior(static_cast<Dali::Integration::RenderingBehavior>(jarg2));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -14601,20 +14502,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Stage_SetRenderingBehavior(void* jarg1, 
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Stage_GetRenderingBehavior(void* jarg1)
 {
-  int          jresult;
-  int          result;
-  Dali::Stage* arg1 = (Dali::Stage*)0;
-
-  arg1 = (Dali::Stage*)jarg1;
+  int jresult = 0;
   {
     try
     {
-      result = (int)(DevelStage::GetRenderingBehavior(*arg1));
+      jresult = static_cast<int>(Dali::Adaptor::Get().GetRenderingBehavior());
     }
     CALL_CATCH_EXCEPTION(0);
   }
-
-  jresult = result;
   return jresult;
 }
 
@@ -20310,124 +20205,33 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_KeyEventSignal(void* jarg1)
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_StageWheelSignal_Empty(void* jarg1)
 {
-  bool                                  jresult;
-  Dali::Signal<void(Dali::WheelEvent)>* arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)0;
-  bool                                  result;
-
-  arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)jarg1;
-  {
-    try
-    {
-      result = (bool)Dali_Signal_Sl_void_Sp_Dali_WheelEvent_SS_const_SA__SP__Sg__Empty((Dali::Signal<void(Dali::WheelEvent)> const*)arg1);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = result;
-  return jresult;
+  return true;
 }
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_StageWheelSignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                         jresult;
-  Dali::Signal<void(Dali::WheelEvent)>* arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)0;
-  std::size_t                           result;
-
-  arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)jarg1;
-  {
-    try
-    {
-      result = Dali_Signal_Sl_void_Sp_Dali_WheelEvent_SS_const_SA__SP__Sg__GetConnectionCount((Dali::Signal<void(Dali::WheelEvent)> const*)arg1);
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (unsigned long)result;
-  return jresult;
+  return 0;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StageWheelSignal_Connect(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::WheelEvent)>* arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)0;
-  void (*arg2)(Dali::WheelEvent)             = (void (*)(Dali::WheelEvent))0;
-
-  arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)jarg1;
-  arg2 = (void (*)(Dali::WheelEvent))jarg2;
-  {
-    try
-    {
-      Dali_Signal_Sl_void_Sp_Dali_WheelEvent_SS_const_SA__SP__Sg__Connect(arg1, arg2);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StageWheelSignal_Disconnect(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::WheelEvent)>* arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)0;
-  void (*arg2)(Dali::WheelEvent)             = (void (*)(Dali::WheelEvent))0;
-
-  arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)jarg1;
-  arg2 = (void (*)(Dali::WheelEvent))jarg2;
-  {
-    try
-    {
-      Dali_Signal_Sl_void_Sp_Dali_WheelEvent_SS_const_SA__SP__Sg__Disconnect(arg1, arg2);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_StageWheelSignal_Emit(void* jarg1, void* jarg2)
 {
-  Dali::Signal<void(Dali::WheelEvent)>* arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)0;
-  Dali::WheelEvent*                     arg2 = 0;
-
-  arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)jarg1;
-  arg2 = (Dali::WheelEvent*)jarg2;
-  if(!arg2)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::WheelEvent const & type is null", 0);
-    return;
-  }
-  {
-    try
-    {
-      Dali_Signal_Sl_void_Sp_Dali_WheelEvent_SS_const_SA__SP__Sg__Emit(arg1, (Dali::WheelEvent)*arg2);
-    }
-    CALL_CATCH_EXCEPTION();
-  }
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_StageWheelSignal()
 {
-  void*                                 jresult;
-  Dali::Signal<void(Dali::WheelEvent)>* result = 0;
-
-  {
-    try
-    {
-      result = (Dali::Signal<void(Dali::WheelEvent)>*)new Dali::Signal<void(Dali::WheelEvent)>();
-    }
-    CALL_CATCH_EXCEPTION(0);
-  }
-
-  jresult = (void*)result;
-  return jresult;
+  return nullptr;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_StageWheelSignal(void* jarg1)
 {
-  Dali::Signal<void(Dali::WheelEvent)>* arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)0;
-
-  arg1 = (Dali::Signal<void(Dali::WheelEvent)>*)jarg1;
-  {
-    try
-    {
-      delete arg1;
-    }
-    CALL_CATCH_EXCEPTION();
-  }
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AngleThresholdPair__SWIG_0()
@@ -21015,36 +20819,21 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FrameCallbackInterface(void* csFr
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_AddFrameCallback(void* jarg1, void* jarg2, void* jarg3)
 {
-  Dali::FrameCallbackInterface*        obj  = (Dali::FrameCallbackInterface*)jarg2;
-  SwigDirector_FrameCallbackInterface* arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface*>(obj);
-  if(arg2 == nullptr)
+  Dali::FrameCallbackInterface*        obj           = static_cast<Dali::FrameCallbackInterface*>(jarg2);
+  SwigDirector_FrameCallbackInterface* frameCallback = dynamic_cast<SwigDirector_FrameCallbackInterface*>(obj);
+  if(frameCallback == nullptr)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::FrameCallbackInterface", 0);
     return;
   }
 
-  Dali::Stage* arg1 = (Dali::Stage*)0;
-  Dali::Actor* arg3 = 0;
-
-  arg1 = (Dali::Stage*)jarg1;
-  arg3 = (Dali::Actor*)jarg3;
-  if(arg1 == nullptr)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Stage", 0);
-    return;
-  }
+  Dali::Actor* rootActorPtr = static_cast<Dali::Actor*>(jarg3);
+  Dali::Actor  rootActor    = rootActorPtr ? *rootActorPtr : Dali::Actor();
 
   {
     try
     {
-      if(arg3 == nullptr)
-      {
-        DevelStage::AddFrameCallback(*arg1, *arg2, Dali::Actor());
-      }
-      else
-      {
-        DevelStage::AddFrameCallback(*arg1, *arg2, *arg3);
-      }
+      Dali::UiContext::Get().AddFrameCallback(*frameCallback, rootActor);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -21053,27 +20842,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_AddFrameCallback(
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_RemoveFrameCallback(void* jarg1, void* jarg2)
 {
-  Dali::FrameCallbackInterface*        obj  = (Dali::FrameCallbackInterface*)jarg2;
-  SwigDirector_FrameCallbackInterface* arg2 = dynamic_cast<SwigDirector_FrameCallbackInterface*>(obj);
-  if(arg2 == nullptr)
+  Dali::FrameCallbackInterface*        obj           = static_cast<Dali::FrameCallbackInterface*>(jarg2);
+  SwigDirector_FrameCallbackInterface* frameCallback = dynamic_cast<SwigDirector_FrameCallbackInterface*>(obj);
+  if(frameCallback == nullptr)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::FrameCallbackInterface", 0);
-    return;
-  }
-
-  Dali::Stage* arg1 = (Dali::Stage*)0;
-
-  arg1 = (Dali::Stage*)jarg1;
-  if(arg1 == nullptr)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Stage", 0);
     return;
   }
 
   {
     try
     {
-      DevelStage::RemoveFrameCallback(*arg1, *arg2);
+      Dali::UiContext::Get().RemoveFrameCallback(*frameCallback);
     }
     CALL_CATCH_EXCEPTION();
   }

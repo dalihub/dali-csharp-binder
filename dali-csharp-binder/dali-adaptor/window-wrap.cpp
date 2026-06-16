@@ -1738,6 +1738,27 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetSize(void* winHandle)
                               static_cast<uint32_t>(static_cast<uint32_t>(windowSize.GetHeight())));
 }
 
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetDpi(void* winHandle)
+{
+  Dali::Window* window = static_cast<Dali::Window*>(winHandle);
+  if(!CheckingWindowHandle(window))
+  {
+    return nullptr;
+  }
+
+  Dali::Uint16Pair dpi;
+  {
+    try
+    {
+      dpi = window->GetDpi();
+    }
+    CALL_CATCH_EXCEPTION(nullptr);
+  }
+
+  // C# reads the returned pointer as Uint16Pair (4 bytes: uint16_t width, uint16_t height).
+  return new Dali::Uint16Pair(dpi.GetWidth(), dpi.GetHeight());
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPosition(void* winHandle, void* position)
 {
   Dali::Window::WindowPosition* pPosition;
@@ -2117,6 +2138,28 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetOverlayLayer(void* winHandle)
   }
 
   jresult = new Dali::Layer((const Dali::Layer&)result);
+  return jresult;
+}
+
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetRenderTaskList(void* winHandle)
+{
+  void*                jresult;
+  Dali::RenderTaskList result;
+  Dali::Window*        window = static_cast<Dali::Window*>(winHandle);
+  if(!CheckingWindowHandle(window))
+  {
+    return 0;
+  }
+
+  {
+    try
+    {
+      result = window->GetRenderTaskList();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+
+  jresult = new Dali::RenderTaskList(static_cast<const Dali::RenderTaskList&>(result));
   return jresult;
 }
 
