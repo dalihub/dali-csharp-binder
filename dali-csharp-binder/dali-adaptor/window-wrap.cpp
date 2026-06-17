@@ -527,7 +527,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Maximize(void* winHandle, bool ma
   {
     try
     {
-      Dali::DevelWindow::Maximize(*window, maximize);
+      window->Maximize(maximize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -545,7 +545,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMaximized(void* winHandle)
   {
     try
     {
-      isMaximized = Dali::DevelWindow::IsMaximized(*window);
+      isMaximized = window->IsMaximized();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -574,7 +574,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Maximum_Size(void* winHandle,
   {
     try
     {
-      Dali::DevelWindow::SetMaximumSize(*window, maximumSize);
+      window->SetMaximumSize(maximumSize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -591,7 +591,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Minimize(void* winHandle, bool mi
   {
     try
     {
-      Dali::DevelWindow::Minimize(*window, minimize);
+      window->Minimize(minimize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -610,7 +610,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMinimized(void* winHandle)
   {
     try
     {
-      isMinimized = Dali::DevelWindow::IsMinimized(*window);
+      isMinimized = window->IsMinimized();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -639,7 +639,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Minimum_Size(void* winHandle,
   {
     try
     {
-      Dali::DevelWindow::SetMimimumSize(*window, minimumSize);
+      window->SetMinimumSize(minimumSize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -768,7 +768,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetCurrentOrientation(void* winHan
   {
     try
     {
-      windowOrientation = Dali::DevelWindow::GetCurrentOrientation(*window);
+      windowOrientation = window->GetCurrentOrientation();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -798,7 +798,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAvailableOrientations(void* wi
   {
     try
     {
-      Dali::DevelWindow::SetAvailableOrientations(*window, orientations);
+      window->SetAvailableOrientations(orientations);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1909,7 +1909,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedKey(void* window, void* event
   {
     try
     {
-      Dali::DevelWindow::FeedKeyEvent(*win, *keyEvent);
+      win->FeedKeyEvent(*keyEvent);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1934,7 +1934,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedTouch(void* window, void* eve
   {
     try
     {
-      Dali::DevelWindow::FeedTouchPoint(*win, *touchPoint, timeStamp);
+      Dali::Integration::SceneHolder::DownCast(*win).FeedTouchPoint(*touchPoint, timeStamp);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1959,7 +1959,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedWheel(void* window, void* eve
   {
     try
     {
-      Dali::DevelWindow::FeedWheelEvent(*win, *wheelEvent);
+      win->FeedWheelEvent(*wheelEvent);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1984,7 +1984,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedHover(void* window, void* tou
   {
     try
     {
-      Dali::DevelWindow::FeedHoverEvent(*win, *aTouchPoint);
+      Dali::Integration::SceneHolder::DownCast(*win).FeedHoverEvent(*aTouchPoint);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2225,7 +2225,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent(void* childWinHandle, v
   {
     try
     {
-      Dali::DevelWindow::SetParent(*childWindow, *parentWindow);
+      childWindow->SetParent(*parentWindow);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2248,7 +2248,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent_With_Stack(void* childW
   {
     try
     {
-      Dali::DevelWindow::SetParent(*childWindow, *parentWindow, belowParent);
+      childWindow->SetParent(*parentWindow, belowParent);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2265,7 +2265,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Unparent(void* winHandle)
   {
     try
     {
-      Dali::DevelWindow::Unparent(*window);
+      window->Unparent();
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2284,7 +2284,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetParent(void* winHandle)
   {
     try
     {
-      parentWindow = Dali::DevelWindow::GetParent(*window);
+      parentWindow = window->GetParent();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2826,7 +2826,7 @@ SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Window_GetNativeId(void* winHandle)
   {
     try
     {
-      ret = Dali::DevelWindow::GetNativeId(*window);
+      ret = window->GetNativeId();
     }
     CALL_CATCH_EXCEPTION(ret);
   }
@@ -2850,7 +2850,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFrameRenderedCallback(void* wi
 
   try
   {
-    Dali::DevelWindow::AddFrameRenderedCallback(*window, Dali::MakeCallback(callback), nuiFrameId);
+    window->AddFrameRenderedCallback(Dali::MakeCallback(callback), nuiFrameId);
   }
   CALL_CATCH_EXCEPTION();
 }
@@ -2872,7 +2872,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFramePresentedCallback(void* w
 
   try
   {
-    Dali::DevelWindow::AddFramePresentedCallback(*window, Dali::MakeCallback(callback), nuiFrameId);
+    window->AddFramePresentedCallback(Dali::MakeCallback(callback), nuiFrameId);
   }
   CALL_CATCH_EXCEPTION();
 }
@@ -2890,7 +2890,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RequestMoveToServer(void* winHand
   {
     try
     {
-      Dali::DevelWindow::RequestMoveToServer(*window);
+      window->RequestMoveToServer();
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2927,7 +2927,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_EnableFloatingMode(void* winHandl
   {
     try
     {
-      Dali::DevelWindow::EnableFloatingMode(*window, enable);
+      window->EnableFloatingMode(enable);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2945,7 +2945,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsFloatingModeEnabled(void* winHa
   {
     try
     {
-      result = Dali::DevelWindow::IsFloatingModeEnabled(*window);
+      result = window->IsFloatingModeEnabled();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2964,7 +2964,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_IncludeInputRegion(void* winHandl
   {
     try
     {
-      Dali::DevelWindow::IncludeInputRegion(*window, *addedRegion);
+      window->IncludeInputRegion(*addedRegion);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2982,7 +2982,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_ExcludeInputRegion(void* winHandl
   {
     try
     {
-      Dali::DevelWindow::ExcludeInputRegion(*window, *subtractedRegion);
+      window->ExcludeInputRegion(*subtractedRegion);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -3166,7 +3166,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsWindowRotating(void* winHandle)
   {
     try
     {
-      result = Dali::DevelWindow::IsWindowRotating(*window);
+      result = window->IsOrientationChanging();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -3193,7 +3193,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastKeyEvent(vo
     try
     {
       // TODO : To make ensure that inputed handle have body, let we retrieving last event only if it exist.
-      Dali::KeyEvent lastKeyEvent = Dali::DevelWindow::GetLastKeyEvent(*window);
+      Dali::KeyEvent lastKeyEvent = window->GetLastKeyEvent();
       if(lastKeyEvent)
       {
         (*keyEvent) = lastKeyEvent;
@@ -3222,7 +3222,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastTouchEvent(
     try
     {
       // TODO : To make ensure that key handle have body, let we retrieving last event only if it exist.
-      Dali::TouchEvent lastTouchEvent = Dali::DevelWindow::GetLastTouchEvent(*window);
+      Dali::TouchEvent lastTouchEvent = window->GetLastTouchEvent();
       if(lastTouchEvent)
       {
         (*touchEvent) = lastTouchEvent;
@@ -3251,7 +3251,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastHoverEvent(
     try
     {
       // TODO : To make ensure that key handle have body, let we retrieving last event only if it exist.
-      Dali::HoverEvent lastHoverEvent = Dali::DevelWindow::GetLastHoverEvent(*window);
+      Dali::HoverEvent lastHoverEvent = window->GetLastHoverEvent();
       if(lastHoverEvent)
       {
         (*hoverEvent) = lastHoverEvent;
@@ -3274,7 +3274,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastPanGestureSt
   {
     try
     {
-      result = Dali::DevelWindow::GetLastPanGestureState(*window);
+      result = window->GetLastPanGestureState();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -4441,7 +4441,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAlwaysOnTop(void* winHandle, b
   {
     try
     {
-      Dali::DevelWindow::SetAlwaysOnTop(*window, alwaysOnTop);
+      window->SetAlwaysOnTop(alwaysOnTop);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -4456,7 +4456,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsAlwaysOnTop(void* winHandle)
   {
     try
     {
-      result = Dali::DevelWindow::IsAlwaysOnTop(*window);
+      result = window->IsAlwaysOnTop();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -4584,7 +4584,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetFrontBufferRendering(void* win
   {
     try
     {
-      Dali::DevelWindow::SetFrontBufferRendering(*window, enable);
+      window->SetFrontBufferRenderingEnabled(enable);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -4603,7 +4603,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_GetFrontBufferRendering(void* win
   {
     try
     {
-      result = Dali::DevelWindow::GetFrontBufferRendering(*window);
+      result = window->IsFrontBufferRenderingEnabled();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -4675,7 +4675,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetForceRendering(void* winHandle
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Window_GetScreen(void* winHandle)
 {
   char*         jresult;
-  std::string   result;
+  Dali::String  result;
   Dali::Window* window = (Dali::Window*)winHandle;
   if(!CheckingWindowHandle(window))
   {
@@ -4685,20 +4685,18 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Window_GetScreen(void* winHandle)
   {
     try
     {
-      result = Dali::DevelWindow::GetScreen(*window);
+      result = window->GetScreen();
     }
     CALL_CATCH_EXCEPTION(nullptr);
   }
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetScreen(void* winHandle, char* nuiScreenName)
 {
   GUARD_ON_NULL_RET(nuiScreenName);
-  std::string screenName(nuiScreenName);
-
   Dali::Window* window = (Dali::Window*)winHandle;
   if(!CheckingWindowHandle(window))
   {
@@ -4708,7 +4706,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetScreen(void* winHandle, char* 
   {
     try
     {
-      Dali::DevelWindow::SetScreen(*window, screenName);
+      window->SetScreen(Dali::String(nuiScreenName));
     }
     CALL_CATCH_EXCEPTION();
   }

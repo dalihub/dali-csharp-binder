@@ -211,7 +211,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowData_SetFrontBufferRendering(void*
   {
     try
     {
-      pWindowData->SetFrontBufferRendering(nuiEnable);
+      pWindowData->SetFrontBufferRenderingEnabled(nuiEnable);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -232,7 +232,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_WindowData_GetFrontBufferRendering(void*
   {
     try
     {
-      result = (bool)pWindowData->GetFrontBufferRendering();
+      result = (bool)pWindowData->IsFrontBufferRenderingEnabled();
     }
     CALL_CATCH_EXCEPTION(0);
   }
