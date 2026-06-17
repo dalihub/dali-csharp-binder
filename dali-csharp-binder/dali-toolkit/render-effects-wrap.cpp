@@ -167,6 +167,32 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_GetBlurDownscaleFa
   return blurDownscaleFactor;
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_SetDitherNoiseStrength(void* pBackgroundBlurEffect, float noiseStrength)
+{
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*)pBackgroundBlurEffect;
+  {
+    try
+    {
+      backgroundBlurEffect->SetDitherNoiseStrength(noiseStrength);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_GetDitherNoiseStrength(void* pBackgroundBlurEffect)
+{
+  float                                noiseStrength        = 0.0f;
+  Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*)pBackgroundBlurEffect;
+  {
+    try
+    {
+      noiseStrength = (float)backgroundBlurEffect->GetDitherNoiseStrength();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return noiseStrength;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_BackgroundBlurEffect_AddBlurStrengthAnimation(void* pBackgroundBlurEffect, void* pAnimation, void* pAlphaFunction, void* pTimePeriod, float fromValue, float toValue)
 {
   Dali::Toolkit::BackgroundBlurEffect* backgroundBlurEffect = (Dali::Toolkit::BackgroundBlurEffect*)pBackgroundBlurEffect;
@@ -352,6 +378,33 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_GetBlurDownscaleFact
   }
   return blurDownscaleFactor;
 }
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_SetDitherNoiseStrength(void* pGaussianBlurEffect, float noiseStrength)
+{
+  Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*)pGaussianBlurEffect;
+  {
+    try
+    {
+      gaussianBlurEffect->SetDitherNoiseStrength(noiseStrength);
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT float SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_GetDitherNoiseStrength(void* pGaussianBlurEffect)
+{
+  float                              noiseStrength      = 0.0f;
+  Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*)pGaussianBlurEffect;
+  {
+    try
+    {
+      noiseStrength = (float)gaussianBlurEffect->GetDitherNoiseStrength();
+    }
+    CALL_CATCH_EXCEPTION(0);
+  }
+  return noiseStrength;
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GaussianBlurEffect_AddBlurStrengthAnimation(void* pGaussianBlurEffect, void* pAnimation, void* pAlphaFunction, void* pTimePeriod, float fromValue, float toValue)
 {
   Dali::Toolkit::GaussianBlurEffect* gaussianBlurEffect = (Dali::Toolkit::GaussianBlurEffect*)pGaussianBlurEffect;
