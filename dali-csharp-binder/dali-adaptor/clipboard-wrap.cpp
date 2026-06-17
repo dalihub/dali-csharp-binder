@@ -18,7 +18,9 @@
 #define SWIGSTDCALL
 
 // INCLUDES
-#include <dali/devel-api/adaptor-framework/clipboard.h>
+#include <dali/public-api/adaptor-framework/clipboard.h>
+#include <dali/public-api/adaptor-framework/clipboard-data.h>
+#include <dali/integration-api/adaptor-framework/clipboard-integ.h>
 #include <dali/integration-api/debug.h>
 
 // INTERNAL INCLUDES
@@ -76,10 +78,10 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Clipboard_SetData(void* argClipboard, ch
 
   clipboard = (Dali::Clipboard*)argClipboard;
   {
-    Dali::Clipboard::ClipData clipData(argMimeType, argData);
+    Dali::ClipboardData clipboardData(argMimeType ? argMimeType : "", argData ? argData : "");
     try
     {
-      result = clipboard->SetData(clipData);
+      result = clipboard->SetData(clipboardData);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -95,7 +97,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Clipboard_GetData(void* argClipb
   {
     try
     {
-      id = clipboard->GetData(argMimeType);
+      id = Dali::Integration::Clipboard::GetData(*clipboard, Dali::String(argMimeType ? argMimeType : ""));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -105,14 +107,14 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Clipboard_GetData(void* argClipb
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Clipboard_DataReceivedSignal(void* argClipboard)
 {
-  Dali::Clipboard*                         clipboard = (Dali::Clipboard*)0;
-  Dali::Clipboard::DataReceivedSignalType* signal    = 0;
+  Dali::Clipboard*                                clipboard = (Dali::Clipboard*)0;
+  Dali::Integration::Clipboard::DataReceivedSignalType* signal = nullptr;
 
   clipboard = (Dali::Clipboard*)argClipboard;
   {
     try
     {
-      signal = (Dali::Clipboard::DataReceivedSignalType*)&(clipboard)->DataReceivedSignal();
+      signal = &Dali::Integration::Clipboard::DataReceivedSignal(*clipboard);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -122,14 +124,14 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Clipboard_DataReceivedSignal(void* argC
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Clipboard_DataSelectedSignal(void* argClipboard)
 {
-  Dali::Clipboard*                         clipboard = (Dali::Clipboard*)0;
-  Dali::Clipboard::DataSelectedSignalType* signal    = 0;
+  Dali::Clipboard*                                      clipboard = (Dali::Clipboard*)0;
+  Dali::Integration::Clipboard::DataSelectedSignalType* signal    = nullptr;
 
   clipboard = (Dali::Clipboard*)argClipboard;
   {
     try
     {
-      signal = (Dali::Clipboard::DataSelectedSignalType*)&(clipboard)->DataSelectedSignal();
+      signal = &Dali::Integration::Clipboard::DataSelectedSignal(*clipboard);
     }
     CALL_CATCH_EXCEPTION(0);
   }
