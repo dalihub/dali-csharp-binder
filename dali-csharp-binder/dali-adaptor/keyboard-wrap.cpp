@@ -18,7 +18,7 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali/dali.h>
-#include <dali/devel-api/adaptor-framework/keyboard.h>
+#include <dali/public-api/adaptor-framework/keyboard.h>
 #include <dali/public-api/common/dali-common.h>
 
 // INTERNAL INCLUDES
