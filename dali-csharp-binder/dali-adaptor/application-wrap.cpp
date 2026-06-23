@@ -20,7 +20,7 @@
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali/integration-api/debug.h>
 #include <dali/public-api/adaptor-framework/application.h>
-#include <dali/public-api/adaptor-framework/window-enumerations.h>
+#include <dali/public-api/adaptor-framework/window-definitions.h>
 
 #include <dali-toolkit/devel-api/toolkit-pre-initialize.h>
 
@@ -1330,9 +1330,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Application_delete_DeviceOrientationChan
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ApplicationSignal_Empty(void* jarg1)
 {
-  unsigned int                            jresult;
+  unsigned int                           jresult;
   Dali::Signal<void(Dali::Application)>* arg1 = (Dali::Signal<void(Dali::Application)>*)0;
-  bool                                    result;
+  bool                                   result;
 
   arg1 = (Dali::Signal<void(Dali::Application)>*)jarg1;
   {
@@ -1349,9 +1349,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ApplicationSignal_Empty(void* ja
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ApplicationSignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                           jresult;
+  unsigned long                          jresult;
   Dali::Signal<void(Dali::Application)>* arg1 = (Dali::Signal<void(Dali::Application)>*)0;
-  std::size_t                             result;
+  std::size_t                            result;
 
   arg1 = (Dali::Signal<void(Dali::Application)>*)jarg1;
   {
@@ -1401,7 +1401,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationSignal_Disconnect(void* jarg1
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationSignal_Emit(void* jarg1, void* jarg2)
 {
   Dali::Signal<void(Dali::Application)>* arg1 = (Dali::Signal<void(Dali::Application)>*)0;
-  Dali::Application*                      arg2 = 0;
+  Dali::Application*                     arg2 = 0;
 
   arg1 = (Dali::Signal<void(Dali::Application)>*)jarg1;
   arg2 = (Dali::Application*)jarg2;
@@ -1421,7 +1421,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationSignal_Emit(void* jarg1, void
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ApplicationSignal()
 {
-  void*                                   jresult;
+  void*                                  jresult;
   Dali::Signal<void(Dali::Application)>* result = 0;
 
   {
@@ -1452,9 +1452,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ApplicationSignal(void* jarg1)
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Empty(void* jarg1)
 {
-  unsigned int                                   jresult;
+  unsigned int                                  jresult;
   Dali::Signal<void(Dali::Application, void*)>* arg1 = (Dali::Signal<void(Dali::Application, void*)>*)0;
-  bool                                           result;
+  bool                                          result;
 
   arg1 = (Dali::Signal<void(Dali::Application, void*)>*)jarg1;
   {
@@ -1471,9 +1471,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Empty(v
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                                  jresult;
+  unsigned long                                 jresult;
   Dali::Signal<void(Dali::Application, void*)>* arg1 = (Dali::Signal<void(Dali::Application, void*)>*)0;
-  std::size_t                                    result;
+  std::size_t                                   result;
 
   arg1 = (Dali::Signal<void(Dali::Application, void*)>*)jarg1;
   {
@@ -1523,8 +1523,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Disconnect(void
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Emit(void* jarg1, void* jarg2, void* jarg3)
 {
   Dali::Signal<void(Dali::Application, void*)>* arg1 = (Dali::Signal<void(Dali::Application, void*)>*)0;
-  Dali::Application*                             arg2 = 0;
-  void*                                          arg3 = (void*)0;
+  Dali::Application*                            arg2 = 0;
+  void*                                         arg3 = (void*)0;
 
   arg1 = (Dali::Signal<void(Dali::Application, void*)>*)jarg1;
   arg2 = (Dali::Application*)jarg2;
@@ -1545,7 +1545,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ApplicationControlSignal_Emit(void* jarg
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ApplicationControlSignal()
 {
-  void*                                          jresult;
+  void*                                         jresult;
   Dali::Signal<void(Dali::Application, void*)>* result = 0;
 
   {
