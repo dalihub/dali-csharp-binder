@@ -17,7 +17,6 @@
 
 // EXTERNAL INCLUDES
 #include <dali-toolkit/devel-api/controls/control-devel.h>
-#include <dali/devel-api/adaptor-framework/keyboard.h>
 #include <dali/devel-api/adaptor-framework/mouse-in-out-event.h>
 #include <dali/devel-api/adaptor-framework/mouse-relative-event.h>
 #include <dali/devel-api/adaptor-framework/pointer-constraints-event.h>
@@ -25,6 +24,7 @@
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali/integration-api/adaptor-framework/scene-holder.h>
 #include <dali/integration-api/string-utils.h>
+#include <dali/public-api/adaptor-framework/keyboard.h>
 #include <dali/public-api/adaptor-framework/window.h>
 
 // INTERNAL INCLUDES
