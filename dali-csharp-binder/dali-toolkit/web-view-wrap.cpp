@@ -2123,6 +2123,126 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterDeviceListGetCallback(vo
   }
 }
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPlaybackVideoReadyCallback(void* webObj, void* callback)
+{
+  WEBOBJ_NULL_CHECK();
+  Dali::Toolkit::WebView* webView = (Dali::Toolkit::WebView*)webObj;
+  void (*eventHandler)()          = (void (*)())callback;
+  {
+    try
+    {
+      if(eventHandler)
+      {
+        (webView)->RegisterPlaybackVideoReadyCallback([eventHandler]()
+        {
+          eventHandler();
+        });
+      }
+      else
+      {
+        (webView)->RegisterPlaybackVideoReadyCallback(nullptr);
+      }
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPlaybackVideoStartedCallback(void* webObj, void* callback)
+{
+  WEBOBJ_NULL_CHECK();
+  Dali::Toolkit::WebView* webView = (Dali::Toolkit::WebView*)webObj;
+  void (*eventHandler)()          = (void (*)())callback;
+  {
+    try
+    {
+      if(eventHandler)
+      {
+        (webView)->RegisterPlaybackVideoStartedCallback([eventHandler]()
+        {
+          eventHandler();
+        });
+      }
+      else
+      {
+        (webView)->RegisterPlaybackVideoStartedCallback(nullptr);
+      }
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPlaybackVideoFinishedCallback(void* webObj, void* callback)
+{
+  WEBOBJ_NULL_CHECK();
+  Dali::Toolkit::WebView* webView = (Dali::Toolkit::WebView*)webObj;
+  void (*eventHandler)()          = (void (*)())callback;
+  {
+    try
+    {
+      if(eventHandler)
+      {
+        (webView)->RegisterPlaybackVideoFinishedCallback([eventHandler]()
+        {
+          eventHandler();
+        });
+      }
+      else
+      {
+        (webView)->RegisterPlaybackVideoFinishedCallback(nullptr);
+      }
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPlaybackVideoStoppedCallback(void* webObj, void* callback)
+{
+  WEBOBJ_NULL_CHECK();
+  Dali::Toolkit::WebView* webView = (Dali::Toolkit::WebView*)webObj;
+  void (*eventHandler)()          = (void (*)())callback;
+  {
+    try
+    {
+      if(eventHandler)
+      {
+        (webView)->RegisterPlaybackVideoStoppedCallback([eventHandler]()
+        {
+          eventHandler();
+        });
+      }
+      else
+      {
+        (webView)->RegisterPlaybackVideoStoppedCallback(nullptr);
+      }
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WebView_RegisterPlaybackVideoPausedCallback(void* webObj, void* callback)
+{
+  WEBOBJ_NULL_CHECK();
+  Dali::Toolkit::WebView* webView = (Dali::Toolkit::WebView*)webObj;
+  void (*eventHandler)()          = (void (*)())callback;
+  {
+    try
+    {
+      if(eventHandler)
+      {
+        (webView)->RegisterPlaybackVideoPausedCallback([eventHandler]()
+        {
+          eventHandler();
+        });
+      }
+      else
+      {
+        (webView)->RegisterPlaybackVideoPausedCallback(nullptr);
+      }
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_DeviceListGet(void* obj)
 {
   if(!obj)
