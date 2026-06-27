@@ -20,7 +20,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali-toolkit/devel-api/controls/control-accessible.h>
-#include <dali/devel-api/adaptor-framework/accessibility.h>
+#include <dali/integration-api/adaptor-framework/accessibility/accessibility-integ.h>
 #include <dali/devel-api/atspi-interfaces/editable-text.h>
 #include <dali/devel-api/atspi-interfaces/selection.h>
 #include <dali/devel-api/atspi-interfaces/text.h>
@@ -67,9 +67,9 @@ public:
 
   bool DoAction(const std::string& name) override;
 
-  Dali::Accessibility::States CalculateStates() override;
+  Dali::Integration::Accessibility::States CalculateStates() override;
 
-  Dali::Accessibility::Attributes GetAttributes() const override;
+  Dali::Devel::Accessibility::Attributes GetAttributes() const override;
 
   Dali::Property::Index GetNamePropertyIndex() override;
 
@@ -103,15 +103,15 @@ public:
 
   bool SetCursorOffset(std::size_t offset) override;
 
-  Dali::Accessibility::Range GetTextAtOffset(std::size_t offset, Dali::Accessibility::TextBoundary boundary) const override;
+  Dali::Devel::Accessibility::Range GetTextAtOffset(std::size_t offset, Dali::Devel::Accessibility::TextBoundary boundary) const override;
 
-  Dali::Accessibility::Range GetRangeOfSelection(std::size_t selectionIndex) const override;
+  Dali::Devel::Accessibility::Range GetRangeOfSelection(std::size_t selectionIndex) const override;
 
   bool RemoveSelection(std::size_t selectionIndex) override;
 
   bool SetRangeOfSelection(std::size_t selectionIndex, std::size_t startOffset, std::size_t endOffset) override;
 
-  Dali::Bounds GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Dali::Accessibility::CoordinateType type) override;
+  Dali::Bounds GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Dali::Devel::Accessibility::CoordinateType type) override;
 
   // EditableText interface
 
@@ -144,7 +144,7 @@ public:
   bool DeselectChild(int childIndex) override;
 
 protected:
-  Dali::Accessibility::AtspiInterfaces DoGetInterfaces() const override;
+  Dali::Integration::Accessibility::AccessibilityInterfaces DoGetInterfaces() const override;
 
 private:
   // Points to memory managed from the C# side
@@ -164,7 +164,7 @@ private:
    * the specified interface is implemented by the target object. This is due
    * to the fact that dynamic_cast can see more interfaces than this object
    * is meant to represent (dynamic_cast cannot be used to examine C# objects,
-   * so we have to rely on a set of AtspiInterfaces returned by GetInterfaces).
+   * so we have to rely on a set of AccessibilityInterfaces returned by GetInterfaces).
    *
    * @tparam I The interface that the method belongs to
    * @tparam R The return type of the method (deduced automatically)
@@ -175,7 +175,7 @@ private:
    *
    * @return Value returned by the chosen method
    */
-  template<Dali::Accessibility::AtspiInterface I, typename R, typename... Args>
+  template<Dali::Integration::Accessibility::AccessibilityInterface I, typename R, typename... Args>
   R CallMethod(R (*method)(Dali::RefObject*, Args...), Args... args) const;
 
   // Prevents calling C# methods if the View has been disposed

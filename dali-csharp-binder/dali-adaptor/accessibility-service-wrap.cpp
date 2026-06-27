@@ -16,8 +16,8 @@
  */
 
 // EXTERNAL INCLUDES
-#include <dali/devel-api/adaptor-framework/accessibility-bridge.h>
-#include <dali/devel-api/adaptor-framework/atspi-accessibility.h>
+#include <dali/integration-api/adaptor-framework/accessibility/accessibility-bridge.h>
+#include <dali/integration-api/adaptor-framework/accessibility/accessibility-service.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -32,7 +32,7 @@ using SayCallbackType = void (*)(const char*);
 
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_say(const char* arg1_text, bool arg2_discardable, SayCallbackType arg3_callback)
 {
-  Dali::AtspiAccessibility::Say(std::string{arg1_text}, arg2_discardable, [arg3_callback](std::string status)
+  Dali::Integration::Accessibility::Say(std::string{arg1_text}, arg2_discardable, [arg3_callback](std::string status)
   {
     arg3_callback(status.c_str());
   });
@@ -42,47 +42,47 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_pause_resume(bool arg1_pau
 {
   if(arg1_pause)
   {
-    Dali::AtspiAccessibility::Pause();
+    Dali::Integration::Accessibility::Pause();
   }
   else
   {
-    Dali::AtspiAccessibility::Resume();
+    Dali::Integration::Accessibility::Resume();
   }
 }
 
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_stop_reading(bool arg1_alsoNonDiscardable)
 {
-  Dali::AtspiAccessibility::StopReading(arg1_alsoNonDiscardable);
+  Dali::Integration::Accessibility::StopReading(arg1_alsoNonDiscardable);
 }
 
 SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_suppress_screen_reader(bool arg1_suppress)
 {
-  return Dali::AtspiAccessibility::SuppressScreenReader(arg1_suppress);
+  return Dali::Integration::Accessibility::SuppressScreenReader(arg1_suppress);
 }
 
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_BridgeEnableAutoInit()
 {
-  Dali::Accessibility::Bridge::EnableAutoInit();
+  Dali::Integration::Accessibility::Bridge::EnableAutoInit();
 }
 
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_BridgeDisableAutoInit()
 {
-  Dali::Accessibility::Bridge::DisableAutoInit();
+  Dali::Integration::Accessibility::Bridge::DisableAutoInit();
 }
 
 SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_IsEnabled()
 {
-  return Dali::AtspiAccessibility::IsEnabled();
+  return Dali::Integration::Accessibility::IsEnabled();
 }
 
 SWIGEXPORT bool SWIGSTDCALL csharp_dali_accessibility_IsScreenReaderEnabled()
 {
-  return Dali::AtspiAccessibility::IsScreenReaderEnabled();
+  return Dali::Integration::Accessibility::IsScreenReaderEnabled();
 }
 
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterEnabledDisabledSignalHandler(void (*enabledSignalHandler)(), void (*disabledSignalHandler)())
 {
-  using Dali::Accessibility::Bridge;
+  using Dali::Integration::Accessibility::Bridge;
 
   if(!enabledSignalHandler)
   {
@@ -102,7 +102,7 @@ SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterEnabledDisabledSig
 
 SWIGEXPORT void SWIGSTDCALL csharp_dali_accessibility_RegisterScreenReaderEnabledDisabledSignalHandler(void (*screenReaderEnabledSignalHandler)(), void (*screenReaderDisabledSignalHandler)())
 {
-  using Dali::Accessibility::Bridge;
+  using Dali::Integration::Accessibility::Bridge;
 
   if(!screenReaderEnabledSignalHandler)
   {
