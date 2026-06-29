@@ -2303,20 +2303,20 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetParent(void* winHandle)
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetWindow(void* jarg1)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetWindow(void* actor)
 {
-  void*        jresult;
-  Dali::Window result;
+  void*        returnValue;
+  Dali::Window window;
 
   {
     try
     {
-      result = Dali::DevelWindow::Get(*(Dali::Actor*)jarg1);
+      window = Dali::Window::Get(*static_cast<Dali::Actor*>(actor));
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Window((const Dali::Window&)result);
-  return jresult;
+  returnValue = new Dali::Window(static_cast<const Dali::Window&>(window));
+  return returnValue;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_EventSignal(void* jarg1)
