@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
  */
 
 #include <dali/devel-api/adaptor-framework/window-blur-info.h>
-#include <dali/public-api/adaptor-framework/window-enumerations.h>
+#include <dali/public-api/adaptor-framework/window-definitions.h>
 
 #include <dali-csharp-binder/common/common.h>
 

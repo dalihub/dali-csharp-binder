@@ -17,13 +17,14 @@
 
 // EXTERNAL INCLUDES
 #include <dali-toolkit/devel-api/controls/control-devel.h>
-#include <dali/devel-api/adaptor-framework/mouse-in-out-event.h>
 #include <dali/devel-api/adaptor-framework/mouse-relative-event.h>
 #include <dali/devel-api/adaptor-framework/pointer-constraints-event.h>
 #include <dali/devel-api/adaptor-framework/window-devel.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali/integration-api/adaptor-framework/scene-holder.h>
 #include <dali/integration-api/string-utils.h>
+#include <dali/public-api/adaptor-framework/keyboard.h>
+#include <dali/public-api/adaptor-framework/mouse-in-out-event.h>
 #include <dali/public-api/adaptor-framework/window.h>
 
 // INTERNAL INCLUDES
@@ -35,13 +36,14 @@
 using Dali::Integration::ToDaliString;
 using Dali::Integration::ToStdString;
 
-// WindowEventProxy: C# side still expects Signal<void(const KeyEvent&)> (legacy signature).
-// This proxy subscribes to the new Signal<void(Window, const KeyEvent&)> and re-emits
-// without the Window argument so that existing C# delegates remain compatible.
+// WindowEventProxy: bridges the new dali-adaptor signal signatures to the legacy C# delegate types.
+// - KeyEvent: new Signal<void(Window, KeyEvent)> → C# expects void(KeyEvent)
+// - InsetsChanged: new Signal<void(Window, const WindowInsetsInfo&)> → C# expects void(partType, partState, extents)
 struct WindowEventProxy : public Dali::ConnectionTracker
 {
-  Dali::Signal<void(Dali::KeyEvent)> keyEventSignal;
-  Dali::Signal<bool(Dali::KeyEvent)> interceptKeyEventSignal;
+  Dali::Signal<void(Dali::KeyEvent)>                                                                keyEventSignal;
+  Dali::Signal<bool(Dali::KeyEvent)>                                                                interceptKeyEventSignal;
+  Dali::Signal<void(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&)> insetsChangedSignal;
 
   void OnKeyEvent(Dali::Window /*window*/, Dali::KeyEvent event)
   {
@@ -56,6 +58,11 @@ struct WindowEventProxy : public Dali::ConnectionTracker
       consumed = interceptKeyEventSignal.Emit(event);
     }
     return consumed;
+  }
+
+  void OnInsetsChanged(Dali::Window /*window*/, const Dali::WindowInsetsInfo& insetsInfo)
+  {
+    insetsChangedSignal.Emit(insetsInfo.GetPartType(), insetsInfo.GetPartState(), insetsInfo.GetExtents());
   }
 };
 
@@ -76,6 +83,7 @@ static WindowEventProxy* GetOrCreateWindowEventProxy(Dali::Window& window)
   WindowEventProxy* proxy = new WindowEventProxy();
   window.KeyEventSignal().Connect(proxy, &WindowEventProxy::OnKeyEvent);
   Dali::DevelWindow::InterceptKeyEventSignal(window).Connect(proxy, &WindowEventProxy::OnInterceptKeyEvent);
+  window.InsetsChangedSignal().Connect(proxy, &WindowEventProxy::OnInsetsChanged);
   gWindowEventProxies[key] = proxy;
   return proxy;
 }
@@ -198,23 +206,23 @@ SWIGINTERN void Dali_Signal_Window_Orientation_Changed_Signal_Emit(Dali::Signal<
 }
 
 //input
-SWIGINTERN bool Dali_Signal_Window_MouseInOutEvent_Signal_Empty(Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)> const* self)
+SWIGINTERN bool Dali_Signal_Window_MouseInOutEvent_Signal_Empty(Dali::Window::MouseInOutEventSignalType const* self)
 {
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Window_MouseInOutEvent_Signal_GetConnectionCount(Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)> const* self)
+SWIGINTERN std::size_t Dali_Signal_Window_MouseInOutEvent_Signal_GetConnectionCount(Dali::Window::MouseInOutEventSignalType const* self)
 {
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Window_MouseInOutEvent_Signal_Connect(Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>* self, void (*func)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&))
+SWIGINTERN void Dali_Signal_Window_MouseInOutEvent_Signal_Connect(Dali::Window::MouseInOutEventSignalType* self, void (*func)(Dali::Window, const Dali::MouseInOutEvent&))
 {
   self->Connect(func);
 }
-SWIGINTERN void Dali_Signal_Window_MouseInOutEvent_Signal_Disconnect(Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>* self, void (*func)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&))
+SWIGINTERN void Dali_Signal_Window_MouseInOutEvent_Signal_Disconnect(Dali::Window::MouseInOutEventSignalType* self, void (*func)(Dali::Window, const Dali::MouseInOutEvent&))
 {
   self->Disconnect(func);
 }
-SWIGINTERN void Dali_Signal_Window_MouseInOutEvent_Signal_Emit(Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>* self, Dali::Window arg, Dali::DevelWindow::MouseInOutEvent const& mouseInOutEvent)
+SWIGINTERN void Dali_Signal_Window_MouseInOutEvent_Signal_Emit(Dali::Window::MouseInOutEventSignalType* self, Dali::Window arg, const Dali::MouseInOutEvent& mouseInOutEvent)
 {
   self->Emit(arg, mouseInOutEvent);
 }
@@ -526,7 +534,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Maximize(void* winHandle, bool ma
   {
     try
     {
-      Dali::DevelWindow::Maximize(*window, maximize);
+      window->Maximize(maximize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -544,7 +552,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMaximized(void* winHandle)
   {
     try
     {
-      isMaximized = Dali::DevelWindow::IsMaximized(*window);
+      isMaximized = window->IsMaximized();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -573,7 +581,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Maximum_Size(void* winHandle,
   {
     try
     {
-      Dali::DevelWindow::SetMaximumSize(*window, maximumSize);
+      window->SetMaximumSize(maximumSize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -590,7 +598,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Minimize(void* winHandle, bool mi
   {
     try
     {
-      Dali::DevelWindow::Minimize(*window, minimize);
+      window->Minimize(minimize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -609,7 +617,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsMinimized(void* winHandle)
   {
     try
     {
-      isMinimized = Dali::DevelWindow::IsMinimized(*window);
+      isMinimized = window->IsMinimized();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -638,7 +646,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Set_Minimum_Size(void* winHandle,
   {
     try
     {
-      Dali::DevelWindow::SetMimimumSize(*window, minimumSize);
+      window->SetMinimumSize(minimumSize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -767,7 +775,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_GetCurrentOrientation(void* winHan
   {
     try
     {
-      windowOrientation = Dali::DevelWindow::GetCurrentOrientation(*window);
+      windowOrientation = window->GetCurrentOrientation();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -797,7 +805,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAvailableOrientations(void* wi
   {
     try
     {
-      Dali::DevelWindow::SetAvailableOrientations(*window, orientations);
+      window->SetAvailableOrientations(orientations);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -854,10 +862,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetNativeWindowHandler(void* winHandle)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_FocusChangedSignal(void* jarg1)
 {
-  void*                                jresult;
-  Dali::Window                         arg1;
-  Dali::Window*                        argp1;
-  Dali::Window::FocusChangeSignalType* result = 0;
+  void*                                 jresult;
+  Dali::Window                          arg1;
+  Dali::Window*                         argp1;
+  Dali::Window::FocusChangedSignalType* result = 0;
 
   argp1 = (Dali::Window*)jarg1;
   if(!argp1)
@@ -869,7 +877,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_FocusChangedSignal(void* jarg1)
   {
     try
     {
-      result = (Dali::Window::FocusChangeSignalType*)&arg1.FocusChangeSignal();
+      result = (Dali::Window::FocusChangedSignalType*)&arg1.FocusChangedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1558,10 +1566,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowFocusSignalType(void* jarg1
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_ResizeSignal(void* jarg1)
 {
-  void*                           jresult;
-  Dali::Window                    arg1;
-  Dali::Window*                   argp1;
-  Dali::Window::ResizeSignalType* result = 0;
+  void*                            jresult;
+  Dali::Window                     arg1;
+  Dali::Window*                    argp1;
+  Dali::Window::ResizedSignalType* result = 0;
 
   argp1 = (Dali::Window*)jarg1;
   if(!argp1)
@@ -1573,7 +1581,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_ResizeSignal(void* jarg1)
   {
     try
     {
-      result = (Dali::Window::ResizeSignalType*)&arg1.ResizeSignal();
+      result = (Dali::Window::ResizedSignalType*)&arg1.ResizedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1704,12 +1712,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetSize(void* winHandle, void* si
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window::WindowSize", 0);
     return;
   }
-  Dali::Window::WindowSize windowSize(static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetWidth())),
-                                      static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetHeight())));
+  auto               positionSize = window->GetPositionSize();
+  Dali::PositionSize newPositionSize(positionSize.x, positionSize.y,
+                                     static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetWidth())),
+                                     static_cast<int32_t>(static_cast<uint32_t>(winSizePtr->GetHeight())));
   {
     try
     {
-      window->SetSize(windowSize);
+      window->SetPositionSize(newPositionSize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1723,19 +1733,19 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetSize(void* winHandle)
     return nullptr;
   }
 
-  Dali::Window::WindowSize windowSize;
+  Dali::PositionSize positionSize;
   {
     try
     {
-      windowSize = window->GetSize();
+      positionSize = window->GetPositionSize();
     }
     CALL_CATCH_EXCEPTION(nullptr);
   }
 
   // C# reads the returned pointer as Uint16Pair (4 bytes: uint16_t width, uint16_t height).
   // Return a heap-allocated Uint16Pair so the memory layout matches what C# expects.
-  return new Dali::Uint16Pair(static_cast<uint32_t>(static_cast<uint32_t>(windowSize.GetWidth())),
-                              static_cast<uint32_t>(static_cast<uint32_t>(windowSize.GetHeight())));
+  return new Dali::Uint16Pair(static_cast<uint32_t>(static_cast<uint32_t>(positionSize.width)),
+                              static_cast<uint32_t>(static_cast<uint32_t>(positionSize.height)));
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetDpi(void* winHandle)
@@ -1780,7 +1790,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPosition(void* winHandle, void
   {
     try
     {
-      window->SetPosition(windowPosition);
+      auto positionSize = window->GetPositionSize();
+      window->SetPositionSize(Dali::PositionSize(windowPosition.GetX(), windowPosition.GetY(), positionSize.width, positionSize.height));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1799,7 +1810,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetPosition(void* winHandle)
   {
     try
     {
-      windowPosition = window->GetPosition();
+      auto positionSize = window->GetPositionSize();
+      windowPosition    = Dali::Window::WindowPosition(positionSize.x, positionSize.y);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1825,7 +1837,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetPositionSize(void* winHandle, 
   {
     try
     {
-      Dali::DevelWindow::SetPositionSize(*window, *positionSize);
+      window->SetPositionSize(*positionSize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1908,7 +1920,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedKey(void* window, void* event
   {
     try
     {
-      Dali::DevelWindow::FeedKeyEvent(*win, *keyEvent);
+      win->FeedKeyEvent(*keyEvent);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1933,7 +1945,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedTouch(void* window, void* eve
   {
     try
     {
-      Dali::DevelWindow::FeedTouchPoint(*win, *touchPoint, timeStamp);
+      Dali::Integration::SceneHolder::DownCast(*win).FeedTouchPoint(*touchPoint, timeStamp);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1958,7 +1970,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedWheel(void* window, void* eve
   {
     try
     {
-      Dali::DevelWindow::FeedWheelEvent(*win, *wheelEvent);
+      win->FeedWheelEvent(*wheelEvent);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1983,7 +1995,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_FeedHover(void* window, void* tou
   {
     try
     {
-      Dali::DevelWindow::FeedHoverEvent(*win, *aTouchPoint);
+      Dali::Integration::SceneHolder::DownCast(*win).FeedHoverEvent(*aTouchPoint);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2224,7 +2236,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent(void* childWinHandle, v
   {
     try
     {
-      Dali::DevelWindow::SetParent(*childWindow, *parentWindow);
+      childWindow->SetParent(*parentWindow);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2247,7 +2259,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetParent_With_Stack(void* childW
   {
     try
     {
-      Dali::DevelWindow::SetParent(*childWindow, *parentWindow, belowParent);
+      childWindow->SetParent(*parentWindow, belowParent);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2264,7 +2276,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Unparent(void* winHandle)
   {
     try
     {
-      Dali::DevelWindow::Unparent(*window);
+      window->Unparent();
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2283,7 +2295,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetParent(void* winHandle)
   {
     try
     {
-      parentWindow = Dali::DevelWindow::GetParent(*window);
+      parentWindow = window->GetParent();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2291,20 +2303,20 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetParent(void* winHandle)
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetWindow(void* jarg1)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetWindow(void* actor)
 {
-  void*        jresult;
-  Dali::Window result;
+  void*        returnValue;
+  Dali::Window window;
 
   {
     try
     {
-      result = Dali::DevelWindow::Get(*(Dali::Actor*)jarg1);
+      window = Dali::Window::Get(*static_cast<Dali::Actor*>(actor));
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Window((const Dali::Window&)result);
-  return jresult;
+  returnValue = new Dali::Window(static_cast<const Dali::Window&>(window));
+  return returnValue;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Transition_Effect_EventSignal(void* jarg1)
@@ -2544,15 +2556,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Auxiliary_Message_Signal_Disconne
 // Keyboard Repeat Settings Changed
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_ChangedSignal(void* jarg1)
 {
-  void*                                                       jresult;
-  Dali::Window*                                               arg1   = (Dali::Window*)0;
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* result = 0;
+  void*                                            jresult;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* result = 0;
 
-  arg1 = (Dali::Window*)jarg1;
   {
     try
     {
-      result = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)&(Dali::DevelWindow::KeyboardRepeatSettingsChangedSignal(*arg1));
+      result = &Dali::Keyboard::RepeatSettingsChangedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2563,8 +2573,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_Empty(void* jarg1)
 {
-  unsigned int                                                jresult;
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
+  unsigned int                                     jresult;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
   if(arg1 == nullptr)
   {
     DALI_LOG_ERROR("[ERR] arg1 == nullptr");
@@ -2575,7 +2585,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_
   {
     try
     {
-      result = (bool)((Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType const*)arg1)->Empty();
+      result = (bool)((Dali::Keyboard::RepeatSettingsChangedSignalType const*)arg1)->Empty();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2586,8 +2596,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                                               jresult;
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
+  unsigned long                                    jresult;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
   if(arg1 == nullptr)
   {
     DALI_LOG_ERROR("[ERR] arg1 == nullptr");
@@ -2598,7 +2608,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings
   {
     try
     {
-      result = ((Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType const*)arg1)->GetConnectionCount();
+      result = ((Dali::Keyboard::RepeatSettingsChangedSignalType const*)arg1)->GetConnectionCount();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2609,8 +2619,8 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_Connect(void* jarg1, void* jarg2)
 {
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
-  void (*arg2)()                                                   = (void (*)())jarg2;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
+  void (*arg2)()                                        = (void (*)())jarg2;
 
   if(arg1 == nullptr)
   {
@@ -2629,8 +2639,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_Disconnect(void* jarg1, void* jarg2)
 {
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
-  void (*arg2)()                                                   = (void (*)())jarg2;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
+  void (*arg2)()                                        = (void (*)())jarg2;
 
   if(arg1 == nullptr)
   {
@@ -2649,7 +2659,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_Emit(void* jarg1)
 {
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
 
   if(arg1 == nullptr)
   {
@@ -2668,9 +2678,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_Signal_delete(void* jarg1)
 {
-  Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType* arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)0;
+  Dali::Keyboard::RepeatSettingsChangedSignalType* arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)0;
 
-  arg1 = (Dali::DevelWindow::KeyboardRepeatSettingsChangedSignalType*)jarg1;
+  arg1 = (Dali::Keyboard::RepeatSettingsChangedSignalType*)jarg1;
   {
     try
     {
@@ -2682,25 +2692,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Keyboard_Repeat_Settings_Changed_
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal(void* jarg1)
 {
-  Dali::Window*                                   arg1   = (Dali::Window*)jarg1;
-  Dali::DevelWindow::VisibilityChangedSignalType* result = 0;
+  Dali::Window*                              window = static_cast<Dali::Window*>(jarg1);
+  Dali::Window::VisibilityChangedSignalType* signal = nullptr;
 
   {
     try
     {
-      result = (Dali::DevelWindow::VisibilityChangedSignalType*)&(Dali::DevelWindow::VisibilityChangedSignal(*arg1));
+      signal = &(window->VisibilityChangedSignal());
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  return (void*)result;
+  return static_cast<void*>(signal);
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Empty(void* jarg1)
 {
-  bool                                            result;
-  Dali::DevelWindow::VisibilityChangedSignalType* arg1 = (Dali::DevelWindow::VisibilityChangedSignalType*)jarg1;
+  bool                                       result;
+  Dali::Window::VisibilityChangedSignalType* signal = static_cast<Dali::Window::VisibilityChangedSignalType*>(jarg1);
 
-  if(arg1 == nullptr)
+  if(signal == nullptr)
   {
     DALI_LOG_ERROR("[ERR] arg1 == nullptr");
     return false;
@@ -2709,7 +2719,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Empty(v
   {
     try
     {
-      result = arg1->Empty();
+      result = signal->Empty();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -2718,10 +2728,10 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Empty(v
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_GetConnectionCount(void* jarg1)
 {
-  unsigned int                                    result;
-  Dali::DevelWindow::VisibilityChangedSignalType* arg1 = (Dali::DevelWindow::VisibilityChangedSignalType*)jarg1;
+  unsigned int                               result;
+  Dali::Window::VisibilityChangedSignalType* signal = static_cast<Dali::Window::VisibilityChangedSignalType*>(jarg1);
 
-  if(arg1 == nullptr)
+  if(signal == nullptr)
   {
     DALI_LOG_ERROR("[ERR] arg1 == nullptr");
     return 0;
@@ -2730,7 +2740,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal
   {
     try
     {
-      result = arg1->GetConnectionCount();
+      result = signal->GetConnectionCount();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2739,10 +2749,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Connect(void* jarg1, void* jarg2)
 {
-  Dali::DevelWindow::VisibilityChangedSignalType* arg1 = (Dali::DevelWindow::VisibilityChangedSignalType*)jarg1;
-  void (*arg2)(Dali::Window, bool)                     = (void (*)(Dali::Window, bool))jarg2;
+  Dali::Window::VisibilityChangedSignalType* signal = static_cast<Dali::Window::VisibilityChangedSignalType*>(jarg1);
+  void (*func)(Dali::Window, bool)                  = reinterpret_cast<void (*)(Dali::Window, bool)>(jarg2);
 
-  if(arg1 == nullptr)
+  if(signal == nullptr)
   {
     DALI_LOG_ERROR("[ERR] arg1 == nullptr");
     return;
@@ -2751,7 +2761,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Connect
   {
     try
     {
-      arg1->Connect(arg2);
+      signal->Connect(func);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2760,10 +2770,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Connect
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Disconnect(void* jarg1, void* jarg2)
 {
-  Dali::DevelWindow::VisibilityChangedSignalType* arg1 = (Dali::DevelWindow::VisibilityChangedSignalType*)jarg1;
-  void (*arg2)(Dali::Window, bool)                     = (void (*)(Dali::Window, bool))jarg2;
+  Dali::Window::VisibilityChangedSignalType* signal = static_cast<Dali::Window::VisibilityChangedSignalType*>(jarg1);
+  void (*func)(Dali::Window, bool)                  = reinterpret_cast<void (*)(Dali::Window, bool)>(jarg2);
 
-  if(arg1 == nullptr)
+  if(signal == nullptr)
   {
     DALI_LOG_ERROR("[ERR] arg1 == nullptr");
     return;
@@ -2772,7 +2782,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Disconn
   {
     try
     {
-      arg1->Disconnect(arg2);
+      signal->Disconnect(func);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2781,11 +2791,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Disconn
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Emit(void* jarg1, void* jarg2, bool jarg3)
 {
-  Dali::DevelWindow::VisibilityChangedSignalType* arg1 = (Dali::DevelWindow::VisibilityChangedSignalType*)jarg1;
-  Dali::Window*                                   arg2 = (Dali::Window*)jarg2;
-  bool                                            arg3 = jarg3;
+  Dali::Window::VisibilityChangedSignalType* signal  = static_cast<Dali::Window::VisibilityChangedSignalType*>(jarg1);
+  Dali::Window*                              window  = static_cast<Dali::Window*>(jarg2);
+  bool                                       visible = jarg3;
 
-  if(arg1 == nullptr || arg2 == nullptr)
+  if(signal == nullptr || window == nullptr)
   {
     DALI_LOG_ERROR("[ERR] arg1 == nullptr or arg2 == nullptr");
     return;
@@ -2794,7 +2804,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Emit(vo
   {
     try
     {
-      arg1->Emit(*arg2, arg3);
+      signal->Emit(*window, visible);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2803,12 +2813,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_Emit(vo
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_Visibility_Changed_Signal_delete(void* jarg1)
 {
-  Dali::DevelWindow::VisibilityChangedSignalType* arg1 = (Dali::DevelWindow::VisibilityChangedSignalType*)jarg1;
+  Dali::Window::VisibilityChangedSignalType* signal = static_cast<Dali::Window::VisibilityChangedSignalType*>(jarg1);
 
   {
     try
     {
-      delete arg1;
+      delete signal;
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2827,7 +2837,7 @@ SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_Window_GetNativeId(void* winHandle)
   {
     try
     {
-      ret = Dali::DevelWindow::GetNativeId(*window);
+      ret = window->GetNativeId();
     }
     CALL_CATCH_EXCEPTION(ret);
   }
@@ -2851,7 +2861,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFrameRenderedCallback(void* wi
 
   try
   {
-    Dali::DevelWindow::AddFrameRenderedCallback(*window, Dali::MakeCallback(callback), nuiFrameId);
+    window->AddFrameRenderedCallback(Dali::MakeCallback(callback), nuiFrameId);
   }
   CALL_CATCH_EXCEPTION();
 }
@@ -2873,7 +2883,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFramePresentedCallback(void* w
 
   try
   {
-    Dali::DevelWindow::AddFramePresentedCallback(*window, Dali::MakeCallback(callback), nuiFrameId);
+    window->AddFramePresentedCallback(Dali::MakeCallback(callback), nuiFrameId);
   }
   CALL_CATCH_EXCEPTION();
 }
@@ -2891,7 +2901,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_RequestMoveToServer(void* winHand
   {
     try
     {
-      Dali::DevelWindow::RequestMoveToServer(*window);
+      window->RequestMoveToServer();
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2928,7 +2938,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_EnableFloatingMode(void* winHandl
   {
     try
     {
-      Dali::DevelWindow::EnableFloatingMode(*window, enable);
+      window->EnableFloatingMode(enable);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2946,7 +2956,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsFloatingModeEnabled(void* winHa
   {
     try
     {
-      result = Dali::DevelWindow::IsFloatingModeEnabled(*window);
+      result = window->IsFloatingModeEnabled();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2965,7 +2975,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_IncludeInputRegion(void* winHandl
   {
     try
     {
-      Dali::DevelWindow::IncludeInputRegion(*window, *addedRegion);
+      window->IncludeInputRegion(*addedRegion);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2983,7 +2993,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_ExcludeInputRegion(void* winHandl
   {
     try
     {
-      Dali::DevelWindow::ExcludeInputRegion(*window, *subtractedRegion);
+      window->ExcludeInputRegion(*subtractedRegion);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -3167,7 +3177,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsWindowRotating(void* winHandle)
   {
     try
     {
-      result = Dali::DevelWindow::IsWindowRotating(*window);
+      result = window->IsOrientationChanging();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -3194,7 +3204,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastKeyEvent(vo
     try
     {
       // TODO : To make ensure that inputed handle have body, let we retrieving last event only if it exist.
-      Dali::KeyEvent lastKeyEvent = Dali::DevelWindow::GetLastKeyEvent(*window);
+      Dali::KeyEvent lastKeyEvent = window->GetLastKeyEvent();
       if(lastKeyEvent)
       {
         (*keyEvent) = lastKeyEvent;
@@ -3223,7 +3233,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastTouchEvent(
     try
     {
       // TODO : To make ensure that key handle have body, let we retrieving last event only if it exist.
-      Dali::TouchEvent lastTouchEvent = Dali::DevelWindow::GetLastTouchEvent(*window);
+      Dali::TouchEvent lastTouchEvent = window->GetLastTouchEvent();
       if(lastTouchEvent)
       {
         (*touchEvent) = lastTouchEvent;
@@ -3252,7 +3262,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastHoverEvent(
     try
     {
       // TODO : To make ensure that key handle have body, let we retrieving last event only if it exist.
-      Dali::HoverEvent lastHoverEvent = Dali::DevelWindow::GetLastHoverEvent(*window);
+      Dali::HoverEvent lastHoverEvent = window->GetLastHoverEvent();
       if(lastHoverEvent)
       {
         (*hoverEvent) = lastHoverEvent;
@@ -3275,7 +3285,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Window_InternalRetrievingLastPanGestureSt
   {
     try
     {
-      result = Dali::DevelWindow::GetLastPanGestureState(*window);
+      result = window->GetLastPanGestureState();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -3319,75 +3329,67 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SendRotationCompletedAcknowledgem
 /* Moved signal binding */
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Moved_Signal(void* winHandle)
 {
-  void*                               result;
-  Dali::Window                        window;
-  Dali::Window*                       win;
-  Dali::DevelWindow::MovedSignalType* movedSignal;
+  Dali::Window*                  win         = static_cast<Dali::Window*>(winHandle);
+  Dali::Window::MovedSignalType* movedSignal = nullptr;
 
-  win = (Dali::Window*)winHandle;
   if(!win)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return 0;
   }
-  window = *win;
+  Dali::Window window = *win;
   {
     try
     {
-      movedSignal = (Dali::DevelWindow::MovedSignalType*)&Dali::DevelWindow::MovedSignal(window);
+      movedSignal = &window.MovedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (void*)movedSignal;
-  return result;
+  return static_cast<void*>(movedSignal);
 }
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Moved_Signal_Empty(void* signal)
 {
-  unsigned int                                                    result;
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
-  bool                                                            flag;
+  unsigned int                   result;
+  Dali::Window::MovedSignalType* movedSignal = static_cast<Dali::Window::MovedSignalType*>(signal);
+  bool                           flag;
 
-  movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
   {
     try
     {
-      flag = (bool)Dali_Signal_Window_Moved_Signal_Empty((Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)> const*)movedSignal);
+      flag = Dali_Signal_Window_Moved_Signal_Empty(movedSignal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (unsigned int)flag;
+  result = static_cast<unsigned int>(flag);
   return result;
 }
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Moved_Signal_GetConnectionCount(void* signal)
 {
-  unsigned long                                                   result;
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
-  std::size_t                                                     count;
+  unsigned long                  result;
+  Dali::Window::MovedSignalType* movedSignal = static_cast<Dali::Window::MovedSignalType*>(signal);
+  std::size_t                    count;
 
-  movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
   {
     try
     {
-      count = Dali_Signal_Window_Moved_Signal_GetConnectionCount((Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)> const*)movedSignal);
+      count = Dali_Signal_Window_Moved_Signal_GetConnectionCount(movedSignal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (unsigned long)count;
+  result = static_cast<unsigned long>(count);
   return result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Moved_Signal_Connect(void* signal, void* func)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
-  void (*functionPtr)(Dali::Window, Dali::Window::WindowPosition)             = (void (*)(Dali::Window, Dali::Window::WindowPosition))0;
+  Dali::Window::MovedSignalType* movedSignal                      = static_cast<Dali::Window::MovedSignalType*>(signal);
+  void (*functionPtr)(Dali::Window, Dali::Window::WindowPosition) = reinterpret_cast<void (*)(Dali::Window, Dali::Window::WindowPosition)>(func);
 
-  movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
-  functionPtr = (void (*)(Dali::Window, Dali::Window::WindowPosition))func;
   {
     try
     {
@@ -3399,11 +3401,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Moved_Signal_Connect(void* signal, void*
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Moved_Signal_Disconnect(void* signal, void* func)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
-  void (*functionPtr)(Dali::Window, Dali::Window::WindowPosition)             = (void (*)(Dali::Window, Dali::Window::WindowPosition))0;
+  Dali::Window::MovedSignalType* movedSignal                      = static_cast<Dali::Window::MovedSignalType*>(signal);
+  void (*functionPtr)(Dali::Window, Dali::Window::WindowPosition) = reinterpret_cast<void (*)(Dali::Window, Dali::Window::WindowPosition)>(func);
 
-  movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
-  functionPtr = (void (*)(Dali::Window, Dali::Window::WindowPosition))func;
   {
     try
     {
@@ -3415,31 +3415,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Moved_Signal_Disconnect(void* signal, void* f
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Moved_Signal_Emit(void* signal, void* winHandle, void* position)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
-  Dali::Window*                                                   win         = (Dali::Window*)winHandle;
-  Dali::Window                                                    window;
-  Dali::Window::WindowPosition                                    windowPosition;
-  Dali::Window::WindowPosition*                                   pPosition;
+  Dali::Window::MovedSignalType* movedSignal = static_cast<Dali::Window::MovedSignalType*>(signal);
+  Dali::Window*                  win         = static_cast<Dali::Window*>(winHandle);
+  Dali::Window::WindowPosition*  pPosition   = static_cast<Dali::Window::WindowPosition*>(position);
 
-  movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
-  if(movedSignal == nullptr || window == nullptr)
+  if(movedSignal == nullptr || win == nullptr)
   {
     DALI_LOG_ERROR("[ERR] movedSignal == nullptr or window == nullptr");
     return;
   }
 
-  pPosition = (Dali::Window::WindowPosition*)position;
   if(!pPosition)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Vector2", 0);
     return;
   }
-  window         = *win;
-  windowPosition = *pPosition;
   {
     try
     {
-      Dali_Signal_Window_Moved_Signal_Emit(movedSignal, window, windowPosition);
+      Dali_Signal_Window_Moved_Signal_Emit(movedSignal, *win, *pPosition);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -3447,9 +3441,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Moved_Signal_Emit(void* signal, void* wi
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Moved_Signal(void* signal)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
+  Dali::Window::MovedSignalType* movedSignal = static_cast<Dali::Window::MovedSignalType*>(signal);
 
-  movedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
   {
     try
     {
@@ -3462,75 +3455,67 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Moved_Signal(void* signal)
 /* Orientation Changed signal binding */
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Orientation_Changed_Signal(void* winHandle)
 {
-  void*                                            result;
-  Dali::Window                                     window;
-  Dali::Window*                                    win;
-  Dali::DevelWindow::OrientationChangedSignalType* orientationChangedSignal;
+  Dali::Window*                               win                      = static_cast<Dali::Window*>(winHandle);
+  Dali::Window::OrientationChangedSignalType* orientationChangedSignal = nullptr;
 
-  win = (Dali::Window*)winHandle;
   if(!win)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return 0;
   }
-  window = *win;
+  Dali::Window window = *win;
   {
     try
     {
-      orientationChangedSignal = (Dali::DevelWindow::OrientationChangedSignalType*)&Dali::DevelWindow::OrientationChangedSignal(window);
+      orientationChangedSignal = &window.OrientationChangedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (void*)orientationChangedSignal;
-  return result;
+  return static_cast<void*>(orientationChangedSignal);
 }
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Orientation_Changed_Signal_Empty(void* signal)
 {
-  unsigned int                                               result;
-  Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>* orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)0;
-  bool                                                       flag;
+  unsigned int                                result;
+  Dali::Window::OrientationChangedSignalType* orientationChangedSignal = static_cast<Dali::Window::OrientationChangedSignalType*>(signal);
+  bool                                        flag;
 
-  orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)signal;
   {
     try
     {
-      flag = (bool)Dali_Signal_Window_Orientation_Changed_Signal_Empty((Dali::Signal<void(Dali::Window, Dali::WindowOrientation)> const*)orientationChangedSignal);
+      flag = Dali_Signal_Window_Orientation_Changed_Signal_Empty(orientationChangedSignal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (unsigned int)flag;
+  result = static_cast<unsigned int>(flag);
   return result;
 }
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Orientation_Changed_Signal_GetConnectionCount(void* signal)
 {
-  unsigned long                                              result;
-  Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>* orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)0;
-  std::size_t                                                count;
+  unsigned long                               result;
+  Dali::Window::OrientationChangedSignalType* orientationChangedSignal = static_cast<Dali::Window::OrientationChangedSignalType*>(signal);
+  std::size_t                                 count;
 
-  orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)signal;
   {
     try
     {
-      count = Dali_Signal_Window_Orientation_Changed_Signal_GetConnectionCount((Dali::Signal<void(Dali::Window, Dali::WindowOrientation)> const*)orientationChangedSignal);
+      count = Dali_Signal_Window_Orientation_Changed_Signal_GetConnectionCount(orientationChangedSignal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (unsigned long)count;
+  result = static_cast<unsigned long>(count);
   return result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Orientation_Changed_Signal_Connect(void* signal, void* func)
 {
-  Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>* orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)0;
-  void (*functionPtr)(Dali::Window, Dali::WindowOrientation)                          = (void (*)(Dali::Window, Dali::WindowOrientation))0;
+  Dali::Window::OrientationChangedSignalType* orientationChangedSignal = static_cast<Dali::Window::OrientationChangedSignalType*>(signal);
+  void (*functionPtr)(Dali::Window, Dali::WindowOrientation)           = reinterpret_cast<void (*)(Dali::Window, Dali::WindowOrientation)>(func);
 
-  orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)signal;
-  functionPtr              = (void (*)(Dali::Window, Dali::WindowOrientation))func;
   {
     try
     {
@@ -3542,11 +3527,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Orientation_Changed_Signal_Connect(void*
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Orientation_Changed_Signal_Disconnect(void* signal, void* func)
 {
-  Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>* orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)0;
-  void (*functionPtr)(Dali::Window, Dali::WindowOrientation)                          = (void (*)(Dali::Window, Dali::WindowOrientation))0;
+  Dali::Window::OrientationChangedSignalType* orientationChangedSignal = static_cast<Dali::Window::OrientationChangedSignalType*>(signal);
+  void (*functionPtr)(Dali::Window, Dali::WindowOrientation)           = reinterpret_cast<void (*)(Dali::Window, Dali::WindowOrientation)>(func);
 
-  orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)signal;
-  functionPtr              = (void (*)(Dali::Window, Dali::WindowOrientation))func;
   {
     try
     {
@@ -3558,24 +3541,19 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Orientation_Changed_Signal_Disconnect(void* s
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Orientation_Changed_Signal_Emit(void* signal, void* winHandle, int orientation)
 {
-  Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>* orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)0;
-  Dali::Window*                                              win                      = (Dali::Window*)winHandle;
-  Dali::Window                                               window;
-  Dali::WindowOrientation                                    windowOrientation;
+  Dali::Window::OrientationChangedSignalType* orientationChangedSignal = static_cast<Dali::Window::OrientationChangedSignalType*>(signal);
+  Dali::Window*                               win                      = static_cast<Dali::Window*>(winHandle);
 
-  orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)signal;
-  if(orientationChangedSignal == nullptr || window == nullptr)
+  if(orientationChangedSignal == nullptr || win == nullptr)
   {
     DALI_LOG_ERROR("[ERR] orientationChangedSignal == nullptr or window == nullptr");
     return;
   }
 
-  window            = *win;
-  windowOrientation = static_cast<Dali::WindowOrientation>(orientation);
   {
     try
     {
-      Dali_Signal_Window_Orientation_Changed_Signal_Emit(orientationChangedSignal, window, windowOrientation);
+      Dali_Signal_Window_Orientation_Changed_Signal_Emit(orientationChangedSignal, *win, static_cast<Dali::WindowOrientation>(orientation));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -3583,9 +3561,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Orientation_Changed_Signal_Emit(void* si
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Orientation_Changed_Signal(void* signal)
 {
-  Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>* orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)0;
+  Dali::Window::OrientationChangedSignalType* orientationChangedSignal = static_cast<Dali::Window::OrientationChangedSignalType*>(signal);
 
-  orientationChangedSignal = (Dali::Signal<void(Dali::Window, Dali::WindowOrientation)>*)signal;
   {
     try
     {
@@ -3598,317 +3575,274 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Orientation_Changed_Signal(void* 
 //
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal(void* winHandle)
 {
-  void*                                         result;
-  Dali::Window                                  window;
-  Dali::Window*                                 win;
-  Dali::DevelWindow::MouseInOutEventSignalType* mouseInOutSignal;
+  auto* win = static_cast<Dali::Window*>(winHandle);
 
-  win = (Dali::Window*)winHandle;
   if(!win)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return 0;
   }
-  window = *win;
+  Dali::Window                             window = *win;
+  Dali::Window::MouseInOutEventSignalType* signal = nullptr;
   {
     try
     {
-      mouseInOutSignal = (Dali::DevelWindow::MouseInOutEventSignalType*)&Dali::DevelWindow::MouseInOutEventSignal(window);
+      signal = &window.MouseInOutEventSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (void*)mouseInOutSignal;
-  return result;
+  return static_cast<void*>(signal);
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Empty(void* jarg1)
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Empty(void* signalHandle)
 {
-  unsigned int                                                                 jresult;
-  Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>* arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)0;
-  bool                                                                         result;
+  auto* signal = static_cast<Dali::Window::MouseInOutEventSignalType*>(signalHandle);
+  bool  empty;
 
-  arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)jarg1;
   {
     try
     {
-      result = (bool)Dali_Signal_Window_MouseInOutEvent_Signal_Empty((Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)> const*)arg1);
+      empty = Dali_Signal_Window_MouseInOutEvent_Signal_Empty(signal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = result;
-  return jresult;
+  return static_cast<unsigned int>(empty);
 }
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_GetConnectionCount(void* jarg1)
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_GetConnectionCount(void* signalHandle)
 {
-  unsigned long                                                                jresult;
-  Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>* arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)0;
-  std::size_t                                                                  result;
+  auto*       signal = static_cast<Dali::Window::MouseInOutEventSignalType*>(signalHandle);
+  std::size_t count;
 
-  arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)jarg1;
   {
     try
     {
-      result = Dali_Signal_Window_MouseInOutEvent_Signal_GetConnectionCount((Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)> const*)arg1);
+      count = Dali_Signal_Window_MouseInOutEvent_Signal_GetConnectionCount(signal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (unsigned long)result;
-  return jresult;
+  return static_cast<unsigned long>(count);
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Connect(void* jarg1, void* jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Connect(void* signalHandle, void* callback)
 {
-  Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>* arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)0;
-  void (*arg2)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)             = (void (*)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&))0;
+  auto* signal = static_cast<Dali::Window::MouseInOutEventSignalType*>(signalHandle);
+  auto  func   = reinterpret_cast<void (*)(Dali::Window, const Dali::MouseInOutEvent&)>(callback);
 
-  arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)jarg1;
-  arg2 = (void (*)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&))jarg2;
   {
     try
     {
-      Dali_Signal_Window_MouseInOutEvent_Signal_Connect(arg1, arg2);
+      Dali_Signal_Window_MouseInOutEvent_Signal_Connect(signal, func);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Disconnect(void* jarg1, void* jarg2)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Disconnect(void* signalHandle, void* callback)
 {
-  Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>* arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)0;
-  void (*arg2)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)             = (void (*)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&))0;
+  auto* signal = static_cast<Dali::Window::MouseInOutEventSignalType*>(signalHandle);
+  auto  func   = reinterpret_cast<void (*)(Dali::Window, const Dali::MouseInOutEvent&)>(callback);
 
-  arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)jarg1;
-  arg2 = (void (*)(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&))jarg2;
   {
     try
     {
-      Dali_Signal_Window_MouseInOutEvent_Signal_Disconnect(arg1, arg2);
+      Dali_Signal_Window_MouseInOutEvent_Signal_Disconnect(signal, func);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Emit(void* jarg1, void* jarg2, void* jarg3)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_WindowMouseInOutEventSignal_Emit(void* signalHandle, void* windowHandle, void* eventHandle)
 {
-  Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>* arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)jarg1;
-  Dali::Window*                                                                arg2 = (Dali::Window*)jarg2;
-  Dali::DevelWindow::MouseInOutEvent*                                          arg3 = (Dali::DevelWindow::MouseInOutEvent*)jarg3;
+  auto* signal = static_cast<Dali::Window::MouseInOutEventSignalType*>(signalHandle);
+  auto* window = static_cast<Dali::Window*>(windowHandle);
+  auto* event  = static_cast<Dali::MouseInOutEvent*>(eventHandle);
 
-  if(!arg1)
+  if(!signal)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Signal", 0);
     return;
   }
 
-  if(!arg2)
+  if(!window)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return;
   }
 
-  if(!arg3)
+  if(!event)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::DevelWindow::MouseInOutEvent", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::MouseInOutEvent", 0);
     return;
   }
 
   {
     try
     {
-      Dali_Signal_Window_MouseInOutEvent_Signal_Emit(arg1, *arg2, *arg3);
+      Dali_Signal_Window_MouseInOutEvent_Signal_Emit(signal, *window, *event);
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowMouseInOutEventSignal(void* jarg1)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_WindowMouseInOutEventSignal(void* signalHandle)
 {
-  Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>* arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)0;
+  auto* signal = static_cast<Dali::Window::MouseInOutEventSignalType*>(signalHandle);
 
-  arg1 = (Dali::Signal<void(Dali::Window, Dali::DevelWindow::MouseInOutEvent const&)>*)jarg1;
   {
     try
     {
-      delete arg1;
+      delete signal;
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MouseInOutEvent__SWIG_0(int jarg1, unsigned int jarg2, void* jarg3, unsigned int jarg4)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MouseInOutEvent__SWIG_0(int typeHandle, unsigned int modifiers, void* pointHandle, unsigned int timeStamp)
 {
-  void*                                    jresult;
-  Dali::DevelWindow::MouseInOutEvent::Type arg1;
-  unsigned int                             arg2;
-  Dali::Vector2                            arg3;
-  unsigned int                             arg4;
+  auto  type     = static_cast<Dali::MouseInOutEvent::Type>(typeHandle);
+  auto* pointPtr = static_cast<Dali::Vector2*>(pointHandle);
 
-  Dali::Vector2* argp3;
-
-  Dali::DevelWindow::MouseInOutEvent* result = 0;
-
-  arg1  = static_cast<Dali::DevelWindow::MouseInOutEvent::Type>(jarg1);
-  arg2  = (unsigned int)jarg2;
-  argp3 = (Dali::Vector2*)jarg3;
-  if(!argp3)
+  if(!pointPtr)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Vector2", 0);
     return 0;
   }
-  arg3 = *argp3;
-  arg4 = (unsigned int)jarg4;
+
+  Dali::MouseInOutEvent* event = nullptr;
   {
     try
     {
-      result = (Dali::DevelWindow::MouseInOutEvent*)new Dali::DevelWindow::MouseInOutEvent(arg1, arg2, arg3, arg4, Dali::Device::Class::NONE, Dali::Device::Subclass::NONE);
+      event = new Dali::MouseInOutEvent(type, modifiers, *pointPtr, timeStamp, Dali::Device::Class::NONE, Dali::Device::Subclass::NONE);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (void*)result;
-  return jresult;
+  return static_cast<void*>(event);
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_MouseInOutEvent(void* jarg1)
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_MouseInOutEvent(void* eventHandle)
 {
-  Dali::DevelWindow::MouseInOutEvent* arg1 = (Dali::DevelWindow::MouseInOutEvent*)0;
+  auto* event = static_cast<Dali::MouseInOutEvent*>(eventHandle);
 
-  arg1 = (Dali::DevelWindow::MouseInOutEvent*)jarg1;
   {
     try
     {
-      delete arg1;
+      delete event;
     }
     CALL_CATCH_EXCEPTION();
   }
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_type_get(void* jarg1)
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_type_get(void* eventHandle)
 {
-  int                                      jresult;
-  Dali::DevelWindow::MouseInOutEvent*      arg1 = (Dali::DevelWindow::MouseInOutEvent*)0;
-  Dali::DevelWindow::MouseInOutEvent::Type result;
+  auto*                       event = static_cast<const Dali::MouseInOutEvent*>(eventHandle);
+  Dali::MouseInOutEvent::Type type;
 
-  arg1 = (Dali::DevelWindow::MouseInOutEvent*)jarg1;
   {
     try
     {
-      result = ((Dali::DevelWindow::MouseInOutEvent const*)arg1)->type;
+      type = event->GetType();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (int)result;
-  return jresult;
+  return static_cast<int>(type);
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_modifiers_get(void* jarg1)
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_modifiers_get(void* eventHandle)
 {
-  unsigned int                        jresult;
-  Dali::DevelWindow::MouseInOutEvent* arg1 = (Dali::DevelWindow::MouseInOutEvent*)0;
-  unsigned int                        result;
+  auto*        event = static_cast<const Dali::MouseInOutEvent*>(eventHandle);
+  unsigned int modifiers;
 
-  arg1 = (Dali::DevelWindow::MouseInOutEvent*)jarg1;
   {
     try
     {
-      result = ((Dali::DevelWindow::MouseInOutEvent const*)arg1)->modifiers;
+      modifiers = event->GetModifiers();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = result;
-  return jresult;
+  return modifiers;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MouseInOutEvent_point_get(void* jarg1)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_MouseInOutEvent_point_get(void* eventHandle)
 {
-  void*                               jresult;
-  Dali::DevelWindow::MouseInOutEvent* arg1   = (Dali::DevelWindow::MouseInOutEvent*)0;
-  Dali::Vector2*                      result = 0;
+  auto*          event = static_cast<const Dali::MouseInOutEvent*>(eventHandle);
+  Dali::Vector2* point = nullptr;
 
-  arg1 = (Dali::DevelWindow::MouseInOutEvent*)jarg1;
   {
     try
     {
-      result = (Dali::Vector2*)&((Dali::DevelWindow::MouseInOutEvent const*)arg1)->point;
+      point = const_cast<Dali::Vector2*>(&event->GetPoint());
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (void*)result;
-  return jresult;
+  return static_cast<void*>(point);
 }
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_timeStamp_get(void* jarg1)
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_timeStamp_get(void* eventHandle)
 {
-  unsigned int                        jresult;
-  Dali::DevelWindow::MouseInOutEvent* arg1 = (Dali::DevelWindow::MouseInOutEvent*)0;
-  unsigned int                        result;
+  auto*        event = static_cast<const Dali::MouseInOutEvent*>(eventHandle);
+  unsigned int timeStamp;
 
-  arg1 = (Dali::DevelWindow::MouseInOutEvent*)jarg1;
   {
     try
     {
-      result = ((Dali::DevelWindow::MouseInOutEvent const*)arg1)->timeStamp;
+      timeStamp = event->GetTimeStamp();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = result;
-  return jresult;
+  return timeStamp;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_GetDeviceClass(void* jarg1)
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_GetDeviceClass(void* eventHandle)
 {
-  int                                 jresult;
-  Dali::DevelWindow::MouseInOutEvent* arg1 = 0;
-  Dali::Device::Class::Type           result;
+  auto* event = static_cast<Dali::MouseInOutEvent*>(eventHandle);
 
-  arg1 = (Dali::DevelWindow::MouseInOutEvent*)jarg1;
-  if(!arg1)
+  if(!event)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::DevelWindow::MouseInOutEvent const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::MouseInOutEvent const & type is null", 0);
     return 0;
   }
+
+  Dali::Device::Class::Type deviceClass;
   {
     try
     {
-      result = (Dali::Device::Class::Type)arg1->deviceClass;
+      deviceClass = event->GetDeviceClass();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (int)result;
-  return jresult;
+  return static_cast<int>(deviceClass);
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_GetDeviceSubClass(void* jarg1)
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_MouseInOutEvent_GetDeviceSubClass(void* eventHandle)
 {
-  int                                 jresult;
-  Dali::DevelWindow::MouseInOutEvent* arg1 = 0;
-  Dali::Device::Subclass::Type        result;
+  auto* event = static_cast<Dali::MouseInOutEvent*>(eventHandle);
 
-  arg1 = (Dali::DevelWindow::MouseInOutEvent*)jarg1;
-  if(!arg1)
+  if(!event)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::DevelWindow::MouseInOutEvent const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::MouseInOutEvent const & type is null", 0);
     return 0;
   }
+
+  Dali::Device::Subclass::Type deviceSubclass;
   {
     try
     {
-      result = (Dali::Device::Subclass::Type)arg1->deviceSubclass;
+      deviceSubclass = event->GetDeviceSubclass();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = (int)result;
-  return jresult;
+  return static_cast<int>(deviceSubclass);
 }
 
 // mouse pointer grab event
@@ -4442,7 +4376,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetAlwaysOnTop(void* winHandle, b
   {
     try
     {
-      Dali::DevelWindow::SetAlwaysOnTop(*window, alwaysOnTop);
+      window->SetAlwaysOnTop(alwaysOnTop);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -4457,7 +4391,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_IsAlwaysOnTop(void* winHandle)
   {
     try
     {
-      result = Dali::DevelWindow::IsAlwaysOnTop(*window);
+      result = window->IsAlwaysOnTop();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -4585,7 +4519,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetFrontBufferRendering(void* win
   {
     try
     {
-      Dali::DevelWindow::SetFrontBufferRendering(*window, enable);
+      window->SetFrontBufferRenderingEnabled(enable);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -4604,7 +4538,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_GetFrontBufferRendering(void* win
   {
     try
     {
-      result = Dali::DevelWindow::GetFrontBufferRendering(*window);
+      result = window->IsFrontBufferRenderingEnabled();
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -4676,7 +4610,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetForceRendering(void* winHandle
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Window_GetScreen(void* winHandle)
 {
   char*         jresult;
-  std::string   result;
+  Dali::String  result;
   Dali::Window* window = (Dali::Window*)winHandle;
   if(!CheckingWindowHandle(window))
   {
@@ -4686,20 +4620,18 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Window_GetScreen(void* winHandle)
   {
     try
     {
-      result = Dali::DevelWindow::GetScreen(*window);
+      result = window->GetScreen();
     }
     CALL_CATCH_EXCEPTION(nullptr);
   }
 
-  jresult = SWIG_csharp_string_callback((&result)->c_str());
+  jresult = SWIG_csharp_string_callback(result.CStr());
   return jresult;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetScreen(void* winHandle, char* nuiScreenName)
 {
   GUARD_ON_NULL_RET(nuiScreenName);
-  std::string screenName(nuiScreenName);
-
   Dali::Window* window = (Dali::Window*)winHandle;
   if(!CheckingWindowHandle(window))
   {
@@ -4709,7 +4641,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_SetScreen(void* winHandle, char* 
   {
     try
     {
-      Dali::DevelWindow::SetScreen(*window, screenName);
+      window->SetScreen(Dali::String(nuiScreenName));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -4970,75 +4902,67 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PointerConstraintsEvent_confined_get(voi
 /* Move Completed signal binding */
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Move_Completed_Signal(void* winHandle)
 {
-  void*                                       result;
-  Dali::Window                                window;
-  Dali::Window*                               win;
-  Dali::DevelWindow::MoveCompletedSignalType* moveCompletedSignal;
+  Dali::Window*                  win                 = static_cast<Dali::Window*>(winHandle);
+  Dali::Window::MovedSignalType* moveCompletedSignal = nullptr;
 
-  win = (Dali::Window*)winHandle;
   if(!win)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return 0;
   }
-  window = *win;
+  Dali::Window window = *win;
   {
     try
     {
-      moveCompletedSignal = (Dali::DevelWindow::MoveCompletedSignalType*)&Dali::DevelWindow::MoveCompletedSignal(window);
+      moveCompletedSignal = &window.MoveCompletedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (void*)moveCompletedSignal;
-  return result;
+  return static_cast<void*>(moveCompletedSignal);
 }
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Move_Completed_Signal_Empty(void* signal)
 {
-  unsigned int                                                    result;
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
-  bool                                                            flag;
+  unsigned int                   result;
+  Dali::Window::MovedSignalType* moveCompletedSignal = static_cast<Dali::Window::MovedSignalType*>(signal);
+  bool                           flag;
 
-  moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
   {
     try
     {
-      flag = (bool)Dali_Signal_Window_Move_Completed_Signal_Empty((Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)> const*)moveCompletedSignal);
+      flag = Dali_Signal_Window_Move_Completed_Signal_Empty(moveCompletedSignal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (unsigned int)flag;
+  result = static_cast<unsigned int>(flag);
   return result;
 }
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Move_Completed_Signal_GetConnectionCount(void* signal)
 {
-  unsigned long                                                   result;
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
-  std::size_t                                                     count;
+  unsigned long                  result;
+  Dali::Window::MovedSignalType* moveCompletedSignal = static_cast<Dali::Window::MovedSignalType*>(signal);
+  std::size_t                    count;
 
-  moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
   {
     try
     {
-      count = Dali_Signal_Window_Move_Completed_Signal_GetConnectionCount((Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)> const*)moveCompletedSignal);
+      count = Dali_Signal_Window_Move_Completed_Signal_GetConnectionCount(moveCompletedSignal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (unsigned long)count;
+  result = static_cast<unsigned long>(count);
   return result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Move_Completed_Signal_Connect(void* signal, void* func)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
-  void (*functionPtr)(Dali::Window, Dali::Window::WindowPosition)                     = (void (*)(Dali::Window, Dali::Window::WindowPosition))0;
+  Dali::Window::MovedSignalType* moveCompletedSignal              = static_cast<Dali::Window::MovedSignalType*>(signal);
+  void (*functionPtr)(Dali::Window, Dali::Window::WindowPosition) = reinterpret_cast<void (*)(Dali::Window, Dali::Window::WindowPosition)>(func);
 
-  moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
-  functionPtr         = (void (*)(Dali::Window, Dali::Window::WindowPosition))func;
   {
     try
     {
@@ -5050,11 +4974,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Move_Completed_Signal_Connect(void* sign
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Move_Completed_Signal_Disconnect(void* signal, void* func)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
-  void (*functionPtr)(Dali::Window, Dali::Window::WindowPosition)                     = (void (*)(Dali::Window, Dali::Window::WindowPosition))0;
+  Dali::Window::MovedSignalType* moveCompletedSignal              = static_cast<Dali::Window::MovedSignalType*>(signal);
+  void (*functionPtr)(Dali::Window, Dali::Window::WindowPosition) = reinterpret_cast<void (*)(Dali::Window, Dali::Window::WindowPosition)>(func);
 
-  moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
-  functionPtr         = (void (*)(Dali::Window, Dali::Window::WindowPosition))func;
   {
     try
     {
@@ -5066,31 +4988,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Move_Completed_Signal_Disconnect(void* signal
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Move_Completed_Signal_Emit(void* signal, void* winHandle, void* position)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
-  Dali::Window*                                                   win                 = (Dali::Window*)winHandle;
-  Dali::Window                                                    window;
-  Dali::Window::WindowPosition                                    windowPosition;
-  Dali::Window::WindowPosition*                                   pPosition;
+  Dali::Window::MovedSignalType* moveCompletedSignal = static_cast<Dali::Window::MovedSignalType*>(signal);
+  Dali::Window*                  win                 = static_cast<Dali::Window*>(winHandle);
+  Dali::Window::WindowPosition*  pPosition           = static_cast<Dali::Window::WindowPosition*>(position);
 
-  moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
-  if(moveCompletedSignal == nullptr || window == nullptr)
+  if(moveCompletedSignal == nullptr || win == nullptr)
   {
     DALI_LOG_ERROR("[ERR] moveCompletedSignal == nullptr or window == nullptr");
     return;
   }
 
-  pPosition = (Dali::Window::WindowPosition*)position;
   if(!pPosition)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Vector2", 0);
     return;
   }
-  window         = *win;
-  windowPosition = *pPosition;
   {
     try
     {
-      Dali_Signal_Window_Move_Completed_Signal_Emit(moveCompletedSignal, window, windowPosition);
+      Dali_Signal_Window_Move_Completed_Signal_Emit(moveCompletedSignal, *win, *pPosition);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -5098,9 +5014,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Move_Completed_Signal_Emit(void* signal,
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Move_Completed_Signal(void* signal)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>* moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)0;
+  Dali::Window::MovedSignalType* moveCompletedSignal = static_cast<Dali::Window::MovedSignalType*>(signal);
 
-  moveCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowPosition)>*)signal;
   {
     try
     {
@@ -5113,75 +5028,67 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Move_Completed_Signal(void* signa
 /* Resized Completed signal binding */
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_Resize_Completed_Signal(void* winHandle)
 {
-  void*                                         result;
-  Dali::Window                                  window;
-  Dali::Window*                                 win;
-  Dali::DevelWindow::ResizeCompletedSignalType* resizeCompletedSignal;
+  Dali::Window*                    win                   = static_cast<Dali::Window*>(winHandle);
+  Dali::Window::ResizedSignalType* resizeCompletedSignal = nullptr;
 
-  win = (Dali::Window*)winHandle;
   if(!win)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Window", 0);
     return 0;
   }
-  window = *win;
+  Dali::Window window = *win;
   {
     try
     {
-      resizeCompletedSignal = (Dali::DevelWindow::ResizeCompletedSignalType*)&Dali::DevelWindow::ResizeCompletedSignal(window);
+      resizeCompletedSignal = &window.ResizeCompletedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (void*)resizeCompletedSignal;
-  return result;
+  return static_cast<void*>(resizeCompletedSignal);
 }
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Resize_Completed_Signal_Empty(void* signal)
 {
-  unsigned int                                                result;
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>* resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)0;
-  bool                                                        flag;
+  unsigned int                     result;
+  Dali::Window::ResizedSignalType* resizeCompletedSignal = static_cast<Dali::Window::ResizedSignalType*>(signal);
+  bool                             flag;
 
-  resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)signal;
   {
     try
     {
-      flag = (bool)Dali_Signal_Window_Resize_Completed_Signal_Empty((Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)> const*)resizeCompletedSignal);
+      flag = Dali_Signal_Window_Resize_Completed_Signal_Empty(resizeCompletedSignal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (unsigned int)flag;
+  result = static_cast<unsigned int>(flag);
   return result;
 }
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Resize_Completed_Signal_GetConnectionCount(void* signal)
 {
-  unsigned long                                               result;
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>* resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)0;
-  std::size_t                                                 count;
+  unsigned long                    result;
+  Dali::Window::ResizedSignalType* resizeCompletedSignal = static_cast<Dali::Window::ResizedSignalType*>(signal);
+  std::size_t                      count;
 
-  resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)signal;
   {
     try
     {
-      count = Dali_Signal_Window_Resize_Completed_Signal_GetConnectionCount((Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)> const*)resizeCompletedSignal);
+      count = Dali_Signal_Window_Resize_Completed_Signal_GetConnectionCount(resizeCompletedSignal);
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  result = (unsigned long)count;
+  result = static_cast<unsigned long>(count);
   return result;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Resize_Completed_Signal_Connect(void* signal, void* func)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>* resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)0;
-  void (*functionPtr)(Dali::Window, Dali::Window::WindowSize)                       = (void (*)(Dali::Window, Dali::Window::WindowSize))0;
+  Dali::Window::ResizedSignalType* resizeCompletedSignal      = static_cast<Dali::Window::ResizedSignalType*>(signal);
+  void (*functionPtr)(Dali::Window, Dali::Window::WindowSize) = reinterpret_cast<void (*)(Dali::Window, Dali::Window::WindowSize)>(func);
 
-  resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)signal;
-  functionPtr           = (void (*)(Dali::Window, Dali::Window::WindowSize))func;
   {
     try
     {
@@ -5193,11 +5100,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Resize_Completed_Signal_Connect(void* si
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Resize_Completed_Signal_Disconnect(void* signal, void* func)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>* resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)0;
-  void (*functionPtr)(Dali::Window, Dali::Window::WindowSize)                       = (void (*)(Dali::Window, Dali::Window::WindowSize))0;
+  Dali::Window::ResizedSignalType* resizeCompletedSignal      = static_cast<Dali::Window::ResizedSignalType*>(signal);
+  void (*functionPtr)(Dali::Window, Dali::Window::WindowSize) = reinterpret_cast<void (*)(Dali::Window, Dali::Window::WindowSize)>(func);
 
-  resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)signal;
-  functionPtr           = (void (*)(Dali::Window, Dali::Window::WindowSize))func;
   {
     try
     {
@@ -5209,31 +5114,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Resize_Completed_Signal_Disconnect(void* sign
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Resize_Completed_Signal_Emit(void* signal, void* winHandle, void* size)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>* resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)0;
-  Dali::Window*                                               win                   = (Dali::Window*)winHandle;
-  Dali::Window                                                window;
-  Dali::Window::WindowSize                                    windowSize;
-  Dali::Window::WindowSize*                                   pSize;
+  Dali::Window::ResizedSignalType* resizeCompletedSignal = static_cast<Dali::Window::ResizedSignalType*>(signal);
+  Dali::Window*                    win                   = static_cast<Dali::Window*>(winHandle);
+  Dali::Window::WindowSize*        pSize                 = static_cast<Dali::Window::WindowSize*>(size);
 
-  resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)signal;
-  if(resizeCompletedSignal == nullptr || window == nullptr)
+  if(resizeCompletedSignal == nullptr || win == nullptr)
   {
     DALI_LOG_ERROR("[ERR] resizeCompletedSignal == nullptr or window == nullptr");
     return;
   }
 
-  pSize = (Dali::Window::WindowSize*)size;
   if(!pSize)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Vector2", 0);
     return;
   }
-  window     = *win;
-  windowSize = *pSize;
   {
     try
     {
-      Dali_Signal_Window_Resize_Completed_Signal_Emit(resizeCompletedSignal, window, windowSize);
+      Dali_Signal_Window_Resize_Completed_Signal_Emit(resizeCompletedSignal, *win, *pSize);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -5241,9 +5140,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Resize_Completed_Signal_Emit(void* signa
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Resize_Completed_Signal(void* signal)
 {
-  Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>* resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)0;
+  Dali::Window::ResizedSignalType* resizeCompletedSignal = static_cast<Dali::Window::ResizedSignalType*>(signal);
 
-  resizeCompletedSignal = (Dali::Signal<void(Dali::Window, Dali::Window::WindowSize)>*)signal;
   {
     try
     {
@@ -5253,31 +5151,33 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_Resize_Completed_Signal(void* sig
   }
 }
 
+using InsetsChangedProxySignalType = Dali::Signal<void(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&)>;
+
 ////////////////////////////////////////////////////////////////////
 /// InsetsChanged event
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal(void* windowHandle)
 {
-  void*                                       jresult;
-  Dali::Window*                               window = (Dali::Window*)0;
-  Dali::DevelWindow::InsetsChangedSignalType* result = 0;
+  Dali::Window* window = static_cast<Dali::Window*>(windowHandle);
+  if(!CheckingWindowHandle(window))
+  {
+    return nullptr;
+  }
 
-  window = (Dali::Window*)windowHandle;
+  WindowEventProxy* proxy = nullptr;
   {
     try
     {
-      result = (Dali::DevelWindow::InsetsChangedSignalType*)&(Dali::DevelWindow::InsetsChangedSignal(*window));
+      proxy = GetOrCreateWindowEventProxy(*window);
     }
-    CALL_CATCH_EXCEPTION(0);
+    CALL_CATCH_EXCEPTION(nullptr);
   }
-
-  jresult = (void*)result;
-  return jresult;
+  return static_cast<void*>(&proxy->insetsChangedSignal);
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_Empty(void* signal)
 {
-  bool                                        result;
-  Dali::DevelWindow::InsetsChangedSignalType* arg1 = (Dali::DevelWindow::InsetsChangedSignalType*)signal;
+  bool                          result;
+  InsetsChangedProxySignalType* arg1 = static_cast<InsetsChangedProxySignalType*>(signal);
 
   if(arg1 == nullptr)
   {
@@ -5297,8 +5197,8 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_Empty(void* 
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_GetConnectionCount(void* signal)
 {
-  unsigned int                                result;
-  Dali::DevelWindow::InsetsChangedSignalType* arg1 = (Dali::DevelWindow::InsetsChangedSignalType*)signal;
+  unsigned int                  result;
+  InsetsChangedProxySignalType* arg1 = static_cast<InsetsChangedProxySignalType*>(signal);
 
   if(arg1 == nullptr)
   {
@@ -5318,8 +5218,9 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_Get
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_Connect(void* signal, void* func)
 {
-  Dali::DevelWindow::InsetsChangedSignalType* arg1                                            = (Dali::DevelWindow::InsetsChangedSignalType*)signal;
-  void (*arg2)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&) = (void (*)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&))func;
+  InsetsChangedProxySignalType* arg1 = static_cast<InsetsChangedProxySignalType*>(signal);
+  void (*arg2)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&) =
+    reinterpret_cast<void (*)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&)>(func);
 
   if(arg1 == nullptr)
   {
@@ -5339,8 +5240,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_Connect(void
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_InsetsChanged_Signal_Disconnect(void* signal, void* func)
 {
-  Dali::DevelWindow::InsetsChangedSignalType* arg1                                            = (Dali::DevelWindow::InsetsChangedSignalType*)signal;
-  void (*arg2)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&) = (void (*)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&))func;
+  InsetsChangedProxySignalType* arg1 = static_cast<InsetsChangedProxySignalType*>(signal);
+  void (*arg2)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&) =
+    reinterpret_cast<void (*)(Dali::WindowInsetsPartType, Dali::WindowInsetsPartState, const Dali::Extents&)>(func);
 
   if(arg1 == nullptr)
   {

@@ -754,10 +754,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_SetRenderingMode(void* jarg1, i
 /* Focus change binding */
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GlWindow_FocusChangedSignal(void* jarg1)
 {
-  void*                                  jresult;
-  Dali::GlWindow                         arg1;
-  Dali::GlWindow*                        argp1;
-  Dali::GlWindow::FocusChangeSignalType* result = 0;
+  void*                                   jresult;
+  Dali::GlWindow                          arg1;
+  Dali::GlWindow*                         argp1;
+  Dali::GlWindow::FocusChangedSignalType* result = 0;
 
   argp1 = (Dali::GlWindow*)jarg1;
   if(!argp1)
@@ -769,7 +769,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GlWindow_FocusChangedSignal(void* jarg1
   {
     try
     {
-      result = (Dali::GlWindow::FocusChangeSignalType*)&arg1.FocusChangeSignal();
+      result = (Dali::GlWindow::FocusChangedSignalType*)&arg1.FocusChangedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -779,7 +779,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GlWindow_FocusChangedSignal(void* jarg1
 }
 
 /* Touch Event Binding */
-GENERATE_SIGNAL(Dali::GlWindow*, void (*)(Dali::TouchEvent), Dali_GlWindow, TouchedSignal)
+GENERATE_SIGNAL(Dali::GlWindow*, void (*)(Dali::TouchEvent), Dali_GlWindow, TouchEventSignal)
 // CSharp_Dali_GLWindow_TouchedSignal_Connect
 // CSharp_Dali_GLWindow_TouchedSignal_Disconnect
 
@@ -944,10 +944,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_GlWindow_Visibility_Changed_Signal_delet
 /*ResizeSignal binding*/
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GlWindow_ResizedSignal(void* jarg1)
 {
-  void*                             jresult;
-  Dali::GlWindow                    arg1;
-  Dali::GlWindow*                   argp1;
-  Dali::GlWindow::ResizeSignalType* result = 0;
+  void*                              jresult;
+  Dali::GlWindow                     arg1;
+  Dali::GlWindow*                    argp1;
+  Dali::GlWindow::ResizedSignalType* result = 0;
 
   argp1 = (Dali::GlWindow*)jarg1;
   if(!argp1)
@@ -959,7 +959,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GlWindow_ResizedSignal(void* jarg1)
   {
     try
     {
-      result = (Dali::GlWindow::ResizeSignalType*)&arg1.ResizeSignal();
+      result = (Dali::GlWindow::ResizedSignalType*)&arg1.ResizedSignal();
     }
     CALL_CATCH_EXCEPTION(0);
   }

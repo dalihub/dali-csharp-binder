@@ -24,6 +24,7 @@
 #include <dali-toolkit/devel-api/controls/gaussian-blur-view/gaussian-blur-view.h>
 #include <dali-toolkit/devel-api/controls/scroll-bar/scroll-bar.h>
 #include <dali-toolkit/devel-api/controls/table-view/table-view.h>
+#include <dali-toolkit/devel-api/controls/tooltip/tooltip-properties.h>
 #include <dali-toolkit/devel-api/focus-manager/keyinput-focus-manager.h>
 #include <dali-toolkit/devel-api/property-bridge/property-bridge.h>
 #include <dali-toolkit/devel-api/text/rendering-backend.h>
@@ -39,8 +40,6 @@
 #include <dali-toolkit/public-api/visuals/image-visual-properties.h>
 #include <dali-toolkit/public-api/visuals/text-visual-properties.h>
 #include <dali-toolkit/public-api/visuals/visual-properties.h>
-
-#include <dali/public-api/object/property.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -1356,8 +1355,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_CONTENT_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Property::CONTENT;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1374,8 +1372,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_LAYOUT_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Property::LAYOUT;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1392,8 +1389,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_WAIT_TIME_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Property::WAIT_TIME;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1410,8 +1406,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_BACKGROUND_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Property::BACKGROUND;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1428,8 +1423,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_TAIL_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Property::TAIL;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1446,8 +1440,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_POSITION_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Property::POSITION;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1464,8 +1457,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_HOVER_POINT_OFFSET_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Property::HOVER_POINT_OFFSET;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1482,8 +1474,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_MOVEMENT_THRESHOLD_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Property::MOVEMENT_THRESHOLD;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1500,8 +1491,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_DISAPPEAR_ON_MOVEMENT_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Property::DISAPPEAR_ON_MOVEMENT;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1518,8 +1508,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_BACKGROUND_VISUAL_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Background::Property::VISUAL;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1536,8 +1525,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_BACKGROUND_BORDER_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Background::Property::BORDER;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1554,8 +1542,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_TAIL_VISIBILITY_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Tail::Property::VISIBILITY;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1572,8 +1559,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_TAIL_ABOVE_VISUAL_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Tail::Property::ABOVE_VISUAL;
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1590,8 +1576,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TOOLTIP_TAIL_BELOW_VISUAL_get()
   {
     try
     {
-      // Tooltip functionality removed. Returns INVALID_INDEX for C# API compatibility.
-      result = (int)Dali::Property::INVALID_INDEX;
+      result = (int)Dali::Toolkit::Tooltip::Tail::Property::BELOW_VISUAL;
     }
     CALL_CATCH_EXCEPTION(0);
   }
