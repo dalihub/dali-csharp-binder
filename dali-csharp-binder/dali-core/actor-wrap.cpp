@@ -676,22 +676,22 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_CAPTURE_ALL_TOUCH_AFTER_START_g
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_ALLOW_ONLY_OWN_TOUCH_get()
 {
-  return Dali::DevelActor::Property::ALLOW_ONLY_OWN_TOUCH;
+  return Dali::Actor::Property::ALLOW_SELF_INITIATED_TOUCH_ONLY;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_BLEND_EQUATION_get()
 {
-  return Dali::DevelActor::Property::BLEND_EQUATION;
+  return Dali::Actor::Property::BLEND_EQUATION;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_DISPATCH_TOUCH_MOTION_get()
 {
-  return Dali::DevelActor::Property::DISPATCH_TOUCH_MOTION;
+  return Dali::Actor::Property::DISPATCH_TOUCH_MOTION;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_DISPATCH_HOVER_MOTION_get()
 {
-  return Dali::DevelActor::Property::DISPATCH_HOVER_MOTION;
+  return Dali::Actor::Property::DISPATCH_HOVER_MOTION;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_CHILDREN_DEPTH_INDEX_POLICY_get()
@@ -701,7 +701,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_CHILDREN_DEPTH_INDEX_POLICY_get
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_IGNORED_get()
 {
-  return Dali::DevelActor::Property::IGNORED;
+  return Dali::Actor::Property::IGNORED;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_WORLD_IGNORED_get()
@@ -3034,7 +3034,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenPosition(void* act
   {
     try
     {
-      result = Dali::DevelActor::CalculateScreenPosition(arg1);
+      result = arg1.CalculateScreenPosition();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -3059,7 +3059,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenExtents(void* acto
   {
     try
     {
-      result = Dali::DevelActor::CalculateScreenExtents(arg1);
+      result = arg1.CalculateScreenExtents();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -3171,7 +3171,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_SetTouchAreaOffset(void* 
     }
     try
     {
-      (arg1)->SetProperty(Dali::DevelActor::Property::TOUCH_AREA_MARGIN, arg2);
+      (arg1)->SetProperty(Dali::Actor::Property::TOUCH_HIT_AREA_MARGIN, arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -3191,7 +3191,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_GetTouchAreaOffset(void* 
   {
     try
     {
-      result = (arg1)->GetProperty<Extents>(Dali::DevelActor::Property::TOUCH_AREA_MARGIN);
+      result = (arg1)->GetProperty<Extents>(Dali::Actor::Property::TOUCH_HIT_AREA_MARGIN);
 
       // Meaning of TouchAreaOffset and TOUCH_AREA_MARGIN changed at dali_2.5.18. Let we synchronize it.
       // Extents(start, end, top, bottom) --> TouchAreaOffset(-start, end, bottom -top);
