@@ -42,7 +42,7 @@
 #include <dali/devel-api/events/pan-gesture-devel.h>
 #include <dali/devel-api/events/pinch-gesture-devel.h>
 #include <dali/devel-api/events/tap-gesture-devel.h>
-#include <dali/devel-api/events/touch-event-devel.h>
+#include <dali/integration-api/events/touch-integ.h>
 #include <dali/devel-api/events/touch-point.h>
 #include <dali/devel-api/events/wheel-event-devel.h>
 #include <dali/devel-api/object/csharp-type-info.h>
@@ -11847,7 +11847,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Touch_SetTime(void* touchEvent, unsigned
   {
     try
     {
-      Dali::DevelTouchEvent::SetTime(*arg1, arg2);
+      Dali::Integration::SetTouchEventTime(*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
