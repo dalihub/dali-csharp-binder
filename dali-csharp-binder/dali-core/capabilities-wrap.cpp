@@ -16,7 +16,7 @@
  */
 
 // EXTERNAL INCLUDES
-#include <dali/devel-api/common/capabilities.h>
+#include <dali/public-api/common/capabilities.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
