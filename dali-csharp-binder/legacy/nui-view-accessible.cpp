@@ -28,13 +28,13 @@
 using namespace Dali;
 using namespace Dali::Toolkit;
 
-using Interface     = Accessibility::AtspiInterface;
+using Interface     = Dali::Integration::Accessibility::AccessibilityInterface;
 using IntPairType   = NUIViewAccessible::IntPairType;
 using IntVectorType = NUIViewAccessible::IntVectorType;
 
 namespace
 {
-void GetAttributesCallback(const char* key, const char* value, Accessibility::Attributes* attributes)
+void GetAttributesCallback(const char* key, const char* value, Dali::Devel::Accessibility::Attributes* attributes)
 {
   attributes->insert_or_assign(key, value);
 }
@@ -67,8 +67,8 @@ struct NUIViewAccessible::AccessibilityDelegate
   int                   (*getCharacterCount)       (RefObject*);                   // 15
   int                   (*getCursorOffset)         (RefObject*);                   // 16
   bool                  (*setCursorOffset)         (RefObject*, int);              // 17
-  Accessibility::Range* (*getTextAtOffset)         (RefObject*, int, int);         // 18
-  Accessibility::Range* (*getRangeOfSelection)     (RefObject*, int);              // 19
+  Dali::Devel::Accessibility::Range* (*getTextAtOffset)         (RefObject*, int, int);         // 18
+  Dali::Devel::Accessibility::Range* (*getRangeOfSelection)     (RefObject*, int);              // 19
   bool                  (*removeSelection)         (RefObject*, int);              // 20
   bool                  (*setRangeOfSelection)     (RefObject*, int, int, int);    // 21
   bool                  (*copyText)                (RefObject*, int, int);         // 22
@@ -86,7 +86,7 @@ struct NUIViewAccessible::AccessibilityDelegate
   bool                  (*clearSelection)          (RefObject*);                   // 34
   bool                  (*deselectChild)           (RefObject*, int);              // 35
   BoundsInteger*            (*getRangeExtents)         (RefObject*, int, int, int);    // 36
-  void                  (*getAttributes)           (RefObject*, GetAttributesCallbackType, Accessibility::Attributes*); // 37
+  void                  (*getAttributes)           (RefObject*, GetAttributesCallbackType, Dali::Devel::Accessibility::Attributes*); // 37
   char*                 (*getValueText)            (RefObject*);                   // 38
   int                   (*getRowCount)             (RefObject*);                   // 39
   int                   (*getColumnCount)          (RefObject*);                   // 40
@@ -242,16 +242,16 @@ bool NUIViewAccessible::DoAction(const std::string& name)
   return CallMethod<Interface::ACTION>(mTable->doAction, name.c_str());
 }
 
-Accessibility::States NUIViewAccessible::CalculateStates()
+Dali::Integration::Accessibility::States NUIViewAccessible::CalculateStates()
 {
   std::uint64_t states = ControlAccessible::CalculateStates().GetRawData64();
 
   states = CallMethod<Interface::ACCESSIBLE>(mTable->calculateStates, states);
 
-  return Accessibility::States{states};
+  return Dali::Integration::Accessibility::States{states};
 }
 
-Accessibility::Attributes NUIViewAccessible::GetAttributes() const
+Dali::Devel::Accessibility::Attributes NUIViewAccessible::GetAttributes() const
 {
   auto attributes = ControlAccessible::GetAttributes();
 
@@ -280,9 +280,9 @@ bool NUIViewAccessible::ScrollToChild(Actor child)
   return CallMethod<Interface::ACCESSIBLE>(mTable->scrollToChild, new Actor(child));
 }
 
-Accessibility::AtspiInterfaces NUIViewAccessible::DoGetInterfaces() const
+Dali::Integration::Accessibility::AccessibilityInterfaces NUIViewAccessible::DoGetInterfaces() const
 {
-  using Interfaces = Accessibility::AtspiInterfaces;
+  using Interfaces = Dali::Integration::Accessibility::AccessibilityInterfaces;
 
   Interfaces baseInterfaces = ControlAccessible::DoGetInterfaces();
   Interfaces extraInterfaces;
@@ -369,16 +369,16 @@ bool NUIViewAccessible::SetCursorOffset(std::size_t offset)
   return CallMethod<Interface::TEXT>(mTable->setCursorOffset, static_cast<int>(offset));
 }
 
-Accessibility::Range NUIViewAccessible::GetTextAtOffset(std::size_t offset, Accessibility::TextBoundary boundary) const
+Dali::Devel::Accessibility::Range NUIViewAccessible::GetTextAtOffset(std::size_t offset, Dali::Devel::Accessibility::TextBoundary boundary) const
 {
-  Accessibility::Range* range = CallMethod<Interface::TEXT>(mTable->getTextAtOffset, static_cast<int>(offset), static_cast<int>(boundary));
+  Dali::Devel::Accessibility::Range* range = CallMethod<Interface::TEXT>(mTable->getTextAtOffset, static_cast<int>(offset), static_cast<int>(boundary));
 
   return StealObject(range);
 }
 
-Accessibility::Range NUIViewAccessible::GetRangeOfSelection(std::size_t selectionIndex) const
+Dali::Devel::Accessibility::Range NUIViewAccessible::GetRangeOfSelection(std::size_t selectionIndex) const
 {
-  Accessibility::Range* range = CallMethod<Interface::TEXT>(mTable->getRangeOfSelection, static_cast<int>(selectionIndex));
+  Dali::Devel::Accessibility::Range* range = CallMethod<Interface::TEXT>(mTable->getRangeOfSelection, static_cast<int>(selectionIndex));
 
   return StealObject(range);
 }
@@ -393,7 +393,7 @@ bool NUIViewAccessible::SetRangeOfSelection(std::size_t selectionIndex, std::siz
   return CallMethod<Interface::TEXT>(mTable->setRangeOfSelection, static_cast<int>(selectionIndex), static_cast<int>(startOffset), static_cast<int>(endOffset));
 }
 
-Dali::Bounds NUIViewAccessible::GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Accessibility::CoordinateType type)
+Dali::Bounds NUIViewAccessible::GetRangeExtents(std::size_t startOffset, std::size_t endOffset, Dali::Devel::Accessibility::CoordinateType type)
 {
   auto          rectPtr = CallMethod<Interface::TEXT>(mTable->getRangeExtents, static_cast<int>(startOffset), static_cast<int>(endOffset), static_cast<int>(type));
   BoundsInteger rect    = StealObject(rectPtr);
@@ -506,7 +506,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(c
     }
 
     NUIViewAccessible::SetAccessibilityDelegate(accessibilityDelegate);
-    if(auto bridge = Accessibility::Bridge::GetCurrentBridge())
+    if(auto bridge = Integration::Accessibility::Bridge::GetCurrentBridge())
     {
       bridge->SetToolkitName("nui(dali)");
     }
@@ -535,7 +535,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dal
       }
 
       // In case someone forgot View.UnregisterDefaultLabel() before View.Dispose()...
-      if(auto bridge = Accessibility::Bridge::GetCurrentBridge())
+      if(auto bridge = Integration::Accessibility::Bridge::GetCurrentBridge())
       {
         bridge->UnregisterDefaultLabel(control);
 

@@ -40,7 +40,7 @@ SET( dali_csharp_binder_common_src_files
   ${dali_csharp_binder_dir}/dali-adaptor/dali-adaptor-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/adaptor-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/application-wrap.cpp
-  ${dali_csharp_binder_dir}/dali-adaptor/atspi-wrap.cpp
+  ${dali_csharp_binder_dir}/dali-adaptor/accessibility-service-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/capture-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/clipboard-wrap.cpp
   ${dali_csharp_binder_dir}/dali-adaptor/drag-and-drop-wrap.cpp

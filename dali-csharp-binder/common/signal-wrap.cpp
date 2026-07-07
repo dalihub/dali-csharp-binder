@@ -15,6 +15,9 @@
  *
  */
 
+// EXTERNAL INCLUDES
+#include <dali/devel-api/adaptor-framework/accessibility-devel.h>
+
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/dali-toolkit/control-devel-wrap.h>
 
@@ -47,15 +50,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_StringToVoid_SetResult(void* arg1
 }
 
 /*
- * Implementation Signal <void(std::pair<Dali::Accessibility::GestureInfo, bool>&)> is used in signals:
+ * Implementation Signal <void(std::pair<Dali::Devel::Accessibility::GestureInfo, bool>&)> is used in signals:
  *     AccessibilityDoGestureSignalType
  */
 
-using GesturePair = std::pair<Dali::Accessibility::GestureInfo, bool>;
+using GesturePair = std::pair<Dali::Devel::Accessibility::GestureInfo, bool>;
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_GetSizeOfGestureInfo(void)
 {
-  return sizeof(Dali::Accessibility::GestureInfo);
+  return sizeof(Dali::Devel::Accessibility::GestureInfo);
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_GetResult(void* arg1)
@@ -84,7 +87,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_GesturePairToVoid_SetResult(void*
 /*
  * AccessibilityActionSignalType
  */
-using ActionInfoFunc = bool (*)(const Dali::Accessibility::ActionInfo&);
+using ActionInfoFunc = bool (*)(const Dali::Devel::Accessibility::ActionInfo&);
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Signal_AccessibilityActionSignal_Connect(void* arg1, void* arg2)
 {
