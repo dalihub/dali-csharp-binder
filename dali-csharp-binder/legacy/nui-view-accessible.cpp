@@ -20,6 +20,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali/devel-api/atspi-interfaces/accessible.h>
+#include <dali/integration-api/adaptor-framework/accessibility/accessibility-bridge.h>
 #include <dali/integration-api/debug.h>
 
 // INTERNAL INCLUDES
@@ -439,11 +440,11 @@ int NUIViewAccessible::GetSelectedChildrenCount() const
   return CallMethod<Interface::SELECTION>(mTable->getSelectedChildrenCount);
 }
 
-Accessibility::Accessible* NUIViewAccessible::GetSelectedChild(int selectedChildIndex)
+Dali::Accessibility::Accessible* NUIViewAccessible::GetSelectedChild(int selectedChildIndex)
 {
   Actor* actor = CallMethod<Interface::SELECTION>(mTable->getSelectedChild, selectedChildIndex);
 
-  return actor ? Accessibility::Accessible::Get(*actor) : nullptr;
+  return actor ? Dali::Accessibility::Accessible::Get(*actor) : nullptr;
 }
 
 bool NUIViewAccessible::SelectChild(int childIndex)
@@ -506,7 +507,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetAccessibilityDelegate(c
     }
 
     NUIViewAccessible::SetAccessibilityDelegate(accessibilityDelegate);
-    if(auto bridge = Integration::Accessibility::Bridge::GetCurrentBridge())
+    if(auto bridge = Dali::Integration::Accessibility::Bridge::GetCurrentBridge())
     {
       bridge->SetToolkitName("nui(dali)");
     }
@@ -535,7 +536,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_DetachAccessibleObject(Dal
       }
 
       // In case someone forgot View.UnregisterDefaultLabel() before View.Dispose()...
-      if(auto bridge = Integration::Accessibility::Bridge::GetCurrentBridge())
+      if(auto bridge = Dali::Integration::Accessibility::Bridge::GetCurrentBridge())
       {
         bridge->UnregisterDefaultLabel(control);
 
