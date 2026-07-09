@@ -17,8 +17,8 @@
 
 // EXTERNAL INCLUDES
 #include <dali-toolkit/devel-api/controls/control-accessible.h>
-#include <dali/devel-api/adaptor-framework/accessibility-bridge.h>
-#include <dali/devel-api/adaptor-framework/accessibility.h>
+#include <dali/integration-api/adaptor-framework/accessibility/accessibility-integ.h>
+#include <dali/integration-api/adaptor-framework/accessibility/accessibility-bridge.h>
 #include <vector>
 
 // INTERNAL INCLUDES
@@ -188,11 +188,11 @@ GENERATE_ACCESSIBILITY_SIGNAL_2_FUNCTIONS(void (*)(std::string&), Dali::Toolkit:
 // CSharp_Dali_Toolkit_DevelControl_AccessibilityGetDescriptionSignal_Connect
 // CSharp_Dali_Toolkit_DevelControl_AccessibilityGetDescriptionSignal_Disconnect
 
-GENERATE_ACCESSIBILITY_SIGNAL_2_FUNCTIONS(void (*)(std::pair<Dali::Accessibility::GestureInfo, bool>&), Dali::Toolkit::DevelControl::AccessibilityDoGestureSignalType, AccessibilityDoGestureSignal)
+GENERATE_ACCESSIBILITY_SIGNAL_2_FUNCTIONS(void (*)(std::pair<Dali::Devel::Accessibility::GestureInfo, bool>&), Dali::Toolkit::DevelControl::AccessibilityDoGestureSignalType, AccessibilityDoGestureSignal)
 // CSharp_Dali_Toolkit_DevelControl_AccessibilityDoGestureSignal_Connect
 // CSharp_Dali_Toolkit_DevelControl_AccessibilityDoGestureSignal_Disconnect
 
-GENERATE_ACCESSIBILITY_SIGNAL_2_FUNCTIONS(bool (*)(const Dali::Accessibility::ActionInfo&), Dali::Toolkit::DevelControl::AccessibilityActionSignalType, AccessibilityActionSignal)
+GENERATE_ACCESSIBILITY_SIGNAL_2_FUNCTIONS(bool (*)(const Dali::Devel::Accessibility::ActionInfo&), Dali::Toolkit::DevelControl::AccessibilityActionSignalType, AccessibilityActionSignal)
 // CSharp_Dali_Toolkit_DevelControl_AccessibilityActionSignal_Connect
 // CSharp_Dali_Toolkit_DevelControl_AccessibilityActionSignal_Disconnect
 
@@ -220,7 +220,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_AppendAccessibility
   {
     auto* control     = (Dali::Toolkit::Control*)arg1;
     auto* destination = (Dali::Actor*)arg2;
-    auto  relation    = (Dali::Accessibility::RelationType)arg3;
+    auto  relation    = (Dali::Toolkit::Accessibility::RelationType)arg3;
     AppendAccessibilityRelation(*control, *destination, relation);
   }));
 }
@@ -233,7 +233,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_RemoveAccessibility
   {
     auto* control     = (Dali::Toolkit::Control*)arg1;
     auto* destination = (Dali::Actor*)arg2;
-    auto  relation    = (Dali::Accessibility::RelationType)arg3;
+    auto  relation    = (Dali::Toolkit::Accessibility::RelationType)arg3;
     RemoveAccessibilityRelation(*control, *destination, relation);
   }));
 }
@@ -242,7 +242,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilityRel
                                                                                        void (*arg2_callback)(int, void*, void*),
                                                                                        void* arg3_userData)
 {
-  using namespace Dali::Accessibility;
+  using Dali::Accessibility::Accessible;
+  using Dali::Devel::Accessibility::Relation;
 
   GUARD_ON_NULL_RET(arg1_control);
   GUARD_ON_NULL_RET(arg2_callback);
@@ -312,18 +313,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_RemoveAccessibility
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_SetAccessibilityReadingInfoType2(void* arg1, int arg2)
 {
-  using namespace Dali::Accessibility;
-  static_assert(static_cast<int>(ReadingInfoType::NAME) == 0 &&
-                  static_cast<int>(ReadingInfoType::ROLE) == 1 &&
-                  static_cast<int>(ReadingInfoType::DESCRIPTION) == 2 &&
-                  static_cast<int>(ReadingInfoType::STATE) == 3,
+  static_assert(static_cast<int>(Dali::Integration::Accessibility::ReadingInfoType::NAME) == 0 &&
+                  static_cast<int>(Dali::Integration::Accessibility::ReadingInfoType::ROLE) == 1 &&
+                  static_cast<int>(Dali::Integration::Accessibility::ReadingInfoType::DESCRIPTION) == 2 &&
+                  static_cast<int>(Dali::Integration::Accessibility::ReadingInfoType::STATE) == 3,
                 "C++ and C# bindings does not match");
 
   GUARD_ON_NULL_RET(arg1);
   try_catch(([&]()
   {
     auto* control = (Dali::Toolkit::Control*)arg1;
-    SetAccessibilityReadingInfoType(*control, ReadingInfoTypes{static_cast<std::uint32_t>(arg2)});
+    SetAccessibilityReadingInfoTypeRaw(*control, static_cast<std::uint32_t>(arg2));
   }));
 }
 
@@ -333,9 +333,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilityRead
   GUARD_ON_NULL_RET0(arg1);
   try_catch(([&]()
   {
-    auto* control     = (Dali::Toolkit::Control*)arg1;
-    auto  readingInfo = GetAccessibilityReadingInfoType(*control);
-    result            = readingInfo.GetRawData()[0];
+    auto* control = (Dali::Toolkit::Control*)arg1;
+    result        = static_cast<int>(GetAccessibilityReadingInfoTypeRaw(*control));
   }));
   return result;
 }
@@ -371,10 +370,46 @@ SWIGEXPORT uint64_t SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_GetAccessibilit
   try_catch(([&]()
   {
     auto* control = (Dali::Toolkit::Control*)arg1;
-    auto  states  = GetAccessibilityStates(*control);
-    result        = states.GetRawData64();
+    result        = GetAccessibilityStatesRaw(*control);
   }));
   return result;
+}
+
+SWIGEXPORT uint32_t SWIGSTDCALL CSharp_Dali_Toolkit_Control_GetAccessibilityStates(void* arg1)
+{
+  uint32_t result = 0;
+  GUARD_ON_NULL_RET0(arg1);
+  try_catch(([&]()
+  {
+    auto* control = (Dali::Toolkit::Control*)arg1;
+    for(uint32_t stateIndex = 0u; stateIndex < static_cast<uint32_t>(Dali::Toolkit::Accessibility::State::MAX_COUNT); ++stateIndex)
+    {
+      const auto state = static_cast<Dali::Toolkit::Accessibility::State>(stateIndex);
+      if(control->HasAccessibilityState(state))
+      {
+        result |= (1u << stateIndex);
+      }
+    }
+  }));
+  return result;
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_Control_SetAccessibilityStates(void* arg1, uint32_t arg2)
+{
+  GUARD_ON_NULL_RET(arg1);
+  try_catch(([&]()
+  {
+    auto* control = (Dali::Toolkit::Control*)arg1;
+    control->ClearAccessibilityStates();
+
+    for(uint32_t stateIndex = 0u; stateIndex < static_cast<uint32_t>(Dali::Toolkit::Accessibility::State::MAX_COUNT); ++stateIndex)
+    {
+      if((arg2 & (1u << stateIndex)) != 0u)
+      {
+        control->AddAccessibilityState(static_cast<Dali::Toolkit::Accessibility::State>(stateIndex));
+      }
+    }
+  }));
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibilityStateChange(void* arg1, uint64_t arg2, int arg3)
@@ -382,9 +417,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Toolkit_DevelControl_NotifyAccessibility
   GUARD_ON_NULL_RET(arg1);
   try_catch(([&]()
   {
-    Dali::Accessibility::States states(arg2);
-    auto*                       control = (Dali::Toolkit::Control*)arg1;
-    NotifyAccessibilityStateChange(*control, states, static_cast<bool>(arg3));
+    auto* control = (Dali::Toolkit::Control*)arg1;
+    NotifyAccessibilityStateChangeRaw(*control, arg2, static_cast<bool>(arg3));
   }));
 }
 
@@ -401,7 +435,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityEvent(voi
     auto         accessible = dynamic_cast<Dali::Accessibility::ActorAccessible*>(Dali::Accessibility::Accessible::Get(*control));
     if(accessible)
     {
-      accessible->Emit((Dali::Accessibility::ObjectPropertyChangeEvent)arg2_event);
+      accessible->Emit((Dali::Devel::Accessibility::ObjectPropertyChangeEvent)arg2_event);
     }
     else
     {
@@ -416,8 +450,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_EmitAccessibilityStateChan
   try_catch(([&]()
   {
     auto* actor = (Dali::Actor*)arg1;
-    auto  state = static_cast<Dali::Accessibility::State>(arg2_state);
+    auto  state = static_cast<Dali::Integration::Accessibility::State>(arg2_state);
     EmitAccessibilityStateChanged(*actor, state, arg3);
+  }));
+}
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_NotifyAccessibilityPresentationChanged(void* arg1, int arg2_presented)
+{
+  GUARD_ON_NULL_RET(arg1);
+  try_catch(([&]()
+  {
+    auto* actor = (Dali::Actor*)arg1;
+    NotifyAccessibilityPresentationChanged(*actor, arg2_presented != 0);
   }));
 }
 
@@ -526,7 +570,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Accessibility_IsSuppressedEvent(void* ar
     auto         accessible = Dali::Accessibility::Accessible::Get(*control);
     if(accessible)
     {
-      result = accessible->GetSuppressedEvents()[static_cast<Dali::Accessibility::AtspiEvent>(atspiEvent)];
+      result = accessible->GetSuppressedEvents()[static_cast<Dali::Integration::Accessibility::AccessibilityEvent>(atspiEvent)];
     }
   }));
   return result;
@@ -541,7 +585,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetSuppressedEvent(void* a
     auto         accessible = Dali::Accessibility::Accessible::Get(*control);
     if(accessible)
     {
-      accessible->GetSuppressedEvents()[static_cast<Dali::Accessibility::AtspiEvent>(atspiEvent)] = isSuppressed;
+      accessible->GetSuppressedEvents()[static_cast<Dali::Integration::Accessibility::AccessibilityEvent>(atspiEvent)] = isSuppressed;
     }
   }));
 }
@@ -549,10 +593,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_SetSuppressedEvent(void* a
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Accessibility_new_Range(
   int arg1_start, int arg2_end, char* arg3_content)
 {
-  Dali::Accessibility::Range* result = nullptr;
+  Dali::Devel::Accessibility::Range* result = nullptr;
   try_catch(([&]()
   {
-    result = new Dali::Accessibility::Range(arg1_start, arg2_end, arg3_content);
+    result = new Dali::Devel::Accessibility::Range(arg1_start, arg2_end, arg3_content);
   }));
   return (void*)result;
 }
@@ -563,7 +607,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_RegisterDefaultLabe
   try_catch(([&]()
   {
     Dali::Actor* actor = (Dali::Actor*)arg1_actor;
-    if(auto bridge = Dali::Accessibility::Bridge::GetCurrentBridge())
+    if(auto bridge = Dali::Integration::Accessibility::Bridge::GetCurrentBridge())
     {
       bridge->RegisterDefaultLabel(*actor);
     }
@@ -576,7 +620,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Accessibility_Bridge_UnregisterDefaultLa
   try_catch(([&]()
   {
     Dali::Actor* actor = (Dali::Actor*)arg1_actor;
-    if(auto bridge = Dali::Accessibility::Bridge::GetCurrentBridge())
+    if(auto bridge = Dali::Integration::Accessibility::Bridge::GetCurrentBridge())
     {
       bridge->UnregisterDefaultLabel(*actor);
     }

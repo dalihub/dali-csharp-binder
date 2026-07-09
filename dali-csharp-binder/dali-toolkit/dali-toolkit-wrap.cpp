@@ -45,6 +45,7 @@
 #include <dali-csharp-binder/common/common.h>
 
 #include <dali/integration-api/string-utils.h>
+#include <dali/integration-api/debug.h>
 
 using Dali::Integration::ToDaliString;
 using Dali::Integration::ToDaliStringView;
@@ -1647,7 +1648,8 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_SCROLLABLE_ge
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_STATES_get()
 {
-  return (int)Dali::Toolkit::DevelControl::Property::ACCESSIBILITY_STATES;
+  DALI_LOG_ERROR("CSharp_Dali_View_Property_ACCESSIBILITY_STATES_get is deprecated and returns INVALID_INDEX. Use Control accessibility state methods instead.\n");
+  return (int)Dali::Property::INVALID_INDEX;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_View_Property_ACCESSIBILITY_IS_MODAL_get()

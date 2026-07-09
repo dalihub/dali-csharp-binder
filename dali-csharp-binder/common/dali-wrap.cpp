@@ -42,7 +42,7 @@
 #include <dali/devel-api/events/pan-gesture-devel.h>
 #include <dali/devel-api/events/pinch-gesture-devel.h>
 #include <dali/devel-api/events/tap-gesture-devel.h>
-#include <dali/devel-api/events/touch-event-devel.h>
+#include <dali/integration-api/events/touch-integ.h>
 #include <dali/devel-api/events/touch-point.h>
 #include <dali/devel-api/events/wheel-event-devel.h>
 #include <dali/devel-api/object/csharp-type-info.h>
@@ -611,23 +611,23 @@ SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_Lay
 {
   self->Emit(arg1, arg3);
 }
-SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Empty(Dali::Signal<void(Dali::Actor, bool, Dali::DevelActor::VisibilityChange::Type)> const* self)
+SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Empty(Dali::Signal<void(Dali::Actor, bool, Dali::VisibilityChangeType)> const* self)
 {
   return self->Empty();
 }
-SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::Actor, bool, Dali::DevelActor::VisibilityChange::Type)> const* self)
+SWIGINTERN std::size_t Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__GetConnectionCount(Dali::Signal<void(Dali::Actor, bool, Dali::VisibilityChangeType)> const* self)
 {
   return self->GetConnectionCount();
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Connect(Dali::Signal<void(Dali::Actor, bool, Dali::DevelActor::VisibilityChange::Type)>* self, void (*func)(Dali::Actor, bool, Dali::DevelActor::VisibilityChange::Type))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Connect(Dali::Signal<void(Dali::Actor, bool, Dali::VisibilityChangeType)>* self, void (*func)(Dali::Actor, bool, Dali::VisibilityChangeType))
 {
   return self->Connect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Disconnect(Dali::Signal<void(Dali::Actor, bool, Dali::DevelActor::VisibilityChange::Type)>* self, void (*func)(Dali::Actor, bool, Dali::DevelActor::VisibilityChange::Type))
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Disconnect(Dali::Signal<void(Dali::Actor, bool, Dali::VisibilityChangeType)>* self, void (*func)(Dali::Actor, bool, Dali::VisibilityChangeType))
 {
   self->Disconnect(func);
 }
-SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Emit(Dali::Signal<void(Dali::Actor, bool, Dali::DevelActor::VisibilityChange::Type)>* self, Dali::Actor arg1, bool arg2, Dali::DevelActor::VisibilityChange::Type arg3)
+SWIGINTERN void Dali_Signal_Sl_void_Sp_Dali_Actor_Sc_bool_Sc_Dali_DevelActor_VisibilityChange_Type_SP__Sg__Emit(Dali::Signal<void(Dali::Actor, bool, Dali::VisibilityChangeType)>* self, Dali::Actor arg1, bool arg2, Dali::VisibilityChangeType arg3)
 {
   /*@SWIG:SWIG/signals.i,185,NO_RETURN_FUNC@*/;
   /*@SWIG@*/ self->Emit(arg1, arg2, arg3);
@@ -11847,7 +11847,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Touch_SetTime(void* touchEvent, unsigned
   {
     try
     {
-      Dali::DevelTouchEvent::SetTime(*arg1, arg2);
+      Dali::Integration::SetTouchEventTime(*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
