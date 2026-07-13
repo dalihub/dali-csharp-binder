@@ -479,7 +479,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_USER_INTERACTION_ENABLED_g
   int jresult;
   int result;
 
-  result  = (int)Dali::DevelActor::Property::USER_INTERACTION_ENABLED;
+  result  = (int)Dali::Actor::Property::ENABLED;
   jresult = (int)result;
   return jresult;
 }
@@ -2409,7 +2409,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusable(void* jarg1, 
   {
     try
     {
-      (arg1)->SetProperty(Actor::Property::KEYBOARD_FOCUSABLE, arg2);
+      (arg1)->SetProperty(Actor::Property::FOCUSABLE, arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2431,7 +2431,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsKeyboardFocusable(void* jarg1)
   {
     try
     {
-      result = (bool)((Dali::Actor const*)arg1)->GetProperty<bool>(Actor::Property::KEYBOARD_FOCUSABLE);
+      result = (bool)((Dali::Actor const*)arg1)->GetProperty<bool>(Actor::Property::FOCUSABLE);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2454,7 +2454,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetKeyboardFocusableChildren(void*
   {
     try
     {
-      (arg1)->SetProperty(DevelActor::Property::KEYBOARD_FOCUSABLE_CHILDREN, keyboardFocusableChildren);
+      (arg1)->SetProperty(Actor::Property::ALLOW_DESCENDANT_FOCUS, keyboardFocusableChildren);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2475,7 +2475,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_AreChildrenKeyBoardFocusable(void*
   {
     try
     {
-      result = (bool)((Dali::Actor const*)arg1)->GetProperty<bool>(DevelActor::Property::KEYBOARD_FOCUSABLE_CHILDREN);
+      result = (bool)((Dali::Actor const*)arg1)->GetProperty<bool>(Actor::Property::ALLOW_DESCENDANT_FOCUS);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2498,7 +2498,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetTouchFocusable(void* jarg1, boo
   {
     try
     {
-      (arg1)->SetProperty(DevelActor::Property::TOUCH_FOCUSABLE, arg2);
+      (arg1)->SetProperty(Actor::Property::FOCUS_ON_TOUCH, arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2520,7 +2520,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Actor_IsTouchFocusable(void* jarg1)
   {
     try
     {
-      result = (bool)((Dali::Actor const*)arg1)->GetProperty<bool>(DevelActor::Property::TOUCH_FOCUSABLE);
+      result = (bool)((Dali::Actor const*)arg1)->GetProperty<bool>(Actor::Property::FOCUS_ON_TOUCH);
     }
     CALL_CATCH_EXCEPTION(0);
   }
