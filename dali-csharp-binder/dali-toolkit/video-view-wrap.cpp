@@ -192,31 +192,25 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char* jarg1, bool
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_4(void* handle, int playerType, int syncMode)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_4(void* nativeSession, char* providerId, int ownership, int controlPolicy, unsigned int capabilities, int syncMode)
 {
   void*                    jresult;
-  void*                    arg1 = 0;
-  int                      arg2;  // playerType
-  int                      arg3;  // syncMode
   Dali::Toolkit::VideoView result;
 
-  arg1 = handle;
-  arg2 = playerType;
-  arg3 = syncMode;
   {
     try
     {
-      // Create PlayerHandle structure
-      Dali::VideoPlayerPlugin::PlayerHandle playerHandle;
-      // Store void* in Any - will be cast to appropriate type in plugin
-      playerHandle.handle = Dali::Any(arg1);
-      playerHandle.playerType = static_cast<Dali::VideoPlayerPlugin::PlayerHandleType>(arg2);
+      // Build a video source descriptor from the externally created native session.
+      Dali::VideoPlayerPlugin::VideoSourceDescriptor source;
+      source.providerId        = providerId; // Interpreted by the video plugin during the synchronous New() call.
+      source.nativeSession      = Dali::Any(nativeSession);
+      source.ownership          = static_cast<Dali::VideoPlayerPlugin::VideoSourceOwnership>(ownership);
+      source.controlPolicy      = static_cast<Dali::VideoPlayerPlugin::VideoControlPolicy>(controlPolicy);
+      source.capabilities.flags = capabilities;
 
-      // Call the new overload that accepts PlayerHandle
       result = Dali::Toolkit::DevelVideoView::New(
-        playerHandle,
-        static_cast<Dali::VideoSyncMode>(arg3)
-      );
+        source,
+        static_cast<Dali::VideoSyncMode>(syncMode));
     }
     CALL_CATCH_EXCEPTION(0);
   }
