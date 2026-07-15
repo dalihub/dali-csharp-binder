@@ -106,6 +106,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_AnimatedVectorImageVisual_Actions_FLUSH_get()
 {
   return (int)Dali::Toolkit::DevelAnimatedVectorImageVisual::Action::FLUSH;
 }
+
+SWIGEXPORT int SWIGSTDCALL CSharp_AnimatedVectorImageVisual_Actions_REFRESH_DYNAMIC_PROPERTY_get()
+{
+  return (int)Dali::Toolkit::DevelAnimatedVectorImageVisual::Action::REFRESH_DYNAMIC_PROPERTY;
+}
 #ifdef __cplusplus
 }
 #endif
