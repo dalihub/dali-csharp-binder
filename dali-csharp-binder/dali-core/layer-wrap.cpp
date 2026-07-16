@@ -16,6 +16,7 @@
  */
 
 // EXTERNAL INCLUDES
+#include <dali/devel-api/actors/actor-devel.h>
 #include <dali/public-api/actors/layer.h>
 
 // INTERNAL INCLUDES
@@ -58,7 +59,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Layer_New()
       result.SetProperty(Actor::Property::PIVOT, Dali::Pivot::TOP_LEFT);
 
       // NUI Created Layer always be under some root-layer. Keep it as fill-to-parent
-      result.SetResizePolicy(ResizePolicy::FILL_TO_PARENT, Dimension::ALL_DIMENSIONS);
+      DevelActor::SetResizePolicy(result, ResizePolicy::FILL_TO_PARENT, Dimension::ALL_DIMENSIONS);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -233,7 +234,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Layer_SetClipping(void* jarg1, bool clip
 
           // Tizen.UI Change the size of layer when SetClipping(true) called. We should reset position and resize policy here.
           layer.SetProperty(Dali::Actor::Property::POSITION, Vector3::ZERO);
-          layer.SetResizePolicy(ResizePolicy::FILL_TO_PARENT, Dimension::ALL_DIMENSIONS);
+          DevelActor::SetResizePolicy(layer, ResizePolicy::FILL_TO_PARENT, Dimension::ALL_DIMENSIONS);
         }
       }
     }
