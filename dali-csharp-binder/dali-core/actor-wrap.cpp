@@ -2547,7 +2547,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetResizePolicy(void* jarg1, int j
   {
     try
     {
-      (arg1)->SetResizePolicy(arg2, arg3);
+      DevelActor::SetResizePolicy(*arg1, arg2, arg3);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2571,7 +2571,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetResizePolicy(void* jarg1, int ja
   {
     try
     {
-      result = (Dali::ResizePolicy::Type)((Dali::Actor const*)arg1)->GetResizePolicy(arg2);
+      result = (Dali::ResizePolicy::Type)DevelActor::GetResizePolicy((Dali::Actor const)*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2625,7 +2625,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetHeightForWidth(void* jarg1, fl
   {
     try
     {
-      result = (float)(arg1)->GetHeightForWidth(arg2);
+      result = (float)DevelActor::GetHeightForWidth(*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2652,7 +2652,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetWidthForHeight(void* jarg1, fl
   {
     try
     {
-      result = (float)(arg1)->GetWidthForHeight(arg2);
+      result = (float)DevelActor::GetWidthForHeight(*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2679,7 +2679,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetRelayoutSize(void* jarg1, int 
   {
     try
     {
-      result = (float)((Dali::Actor const*)arg1)->GetRelayoutSize(arg2);
+      result = (float)DevelActor::GetRelayoutSize((Dali::Actor const)*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -3225,7 +3225,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumWidth(void* ja
       if(widthForHeight)
       {
         float baseHeight = maximumSize.height > 0 ? std::min(maximumSize.height, naturalSize.height) : naturalSize.height;
-        baseWidth        = arg1->GetWidthForHeight(baseHeight);
+        baseWidth        = DevelActor::GetWidthForHeight(*arg1, baseHeight);
       }
       else
       {
@@ -3262,7 +3262,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumHeight(void* j
       if(heightForWidth)
       {
         float baseWidth = maximumSize.width > 0 ? std::min(maximumSize.width, naturalSize.width) : naturalSize.width;
-        baseHeight      = arg1->GetHeightForWidth(baseWidth);
+        baseHeight      = DevelActor::GetHeightForWidth(*arg1, baseWidth);
       }
       else
       {
