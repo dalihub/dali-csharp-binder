@@ -165,24 +165,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_UiContext_FlushUpdateMessages(void* uiCo
   }
 }
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Dali_UiContext_SetApplicationLocale(void* uiContext, char* locale)
-{
-  Dali::UiContext* context = static_cast<Dali::UiContext*>(uiContext);
-
-  if(!locale)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return;
-  }
-  {
-    try
-    {
-      context->SetApplicationLocale(Dali::String(locale));
-    }
-    CALL_CATCH_EXCEPTION();
-  }
-}
-
 #ifdef __cplusplus
 }
 #endif

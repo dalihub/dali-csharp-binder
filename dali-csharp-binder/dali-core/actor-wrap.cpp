@@ -529,7 +529,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_SIZE_MODE_FACTOR_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::SIZE_MODE_FACTOR;
+  result  = (int)Dali::DevelActor::Property::SIZE_MODE_FACTOR;
   jresult = (int)result;
   return jresult;
 }
@@ -539,7 +539,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_WIDTH_RESIZE_POLICY_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::WIDTH_RESIZE_POLICY;
+  result  = (int)Dali::DevelActor::Property::WIDTH_RESIZE_POLICY;
   jresult = (int)result;
   return jresult;
 }
@@ -549,7 +549,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_HEIGHT_RESIZE_POLICY_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::HEIGHT_RESIZE_POLICY;
+  result  = (int)Dali::DevelActor::Property::HEIGHT_RESIZE_POLICY;
   jresult = (int)result;
   return jresult;
 }
@@ -559,7 +559,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_SIZE_SCALE_POLICY_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::SIZE_SCALE_POLICY;
+  result  = (int)Dali::DevelActor::Property::SIZE_SCALE_POLICY;
   jresult = (int)result;
   return jresult;
 }
@@ -569,7 +569,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_WIDTH_FOR_HEIGHT_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::WIDTH_FOR_HEIGHT;
+  result  = (int)Dali::DevelActor::Property::WIDTH_FOR_HEIGHT;
   jresult = (int)result;
   return jresult;
 }
@@ -579,7 +579,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_HEIGHT_FOR_WIDTH_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::HEIGHT_FOR_WIDTH;
+  result  = (int)Dali::DevelActor::Property::HEIGHT_FOR_WIDTH;
   jresult = (int)result;
   return jresult;
 }
@@ -589,7 +589,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_MINIMUM_SIZE_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::MINIMUM_SIZE;
+  result  = (int)Dali::DevelActor::Property::MINIMUM_SIZE;
   jresult = (int)result;
   return jresult;
 }
@@ -599,7 +599,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_MAXIMUM_SIZE_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::MAXIMUM_SIZE;
+  result  = (int)Dali::DevelActor::Property::MAXIMUM_SIZE;
   jresult = (int)result;
   return jresult;
 }
@@ -2547,7 +2547,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetResizePolicy(void* jarg1, int j
   {
     try
     {
-      (arg1)->SetResizePolicy(arg2, arg3);
+      DevelActor::SetResizePolicy(*arg1, arg2, arg3);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2571,7 +2571,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_GetResizePolicy(void* jarg1, int ja
   {
     try
     {
-      result = (Dali::ResizePolicy::Type)((Dali::Actor const*)arg1)->GetResizePolicy(arg2);
+      result = (Dali::ResizePolicy::Type)DevelActor::GetResizePolicy((Dali::Actor const)*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2601,7 +2601,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetSizeModeFactor(void* jarg1, voi
   {
     try
     {
-      (arg1)->SetProperty(Actor::Property::SIZE_MODE_FACTOR, (Dali::Vector3 const&)*arg2);
+      (arg1)->SetProperty(DevelActor::Property::SIZE_MODE_FACTOR, (Dali::Vector3 const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2625,7 +2625,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetHeightForWidth(void* jarg1, fl
   {
     try
     {
-      result = (float)(arg1)->GetHeightForWidth(arg2);
+      result = (float)DevelActor::GetHeightForWidth(*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2652,7 +2652,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetWidthForHeight(void* jarg1, fl
   {
     try
     {
-      result = (float)(arg1)->GetWidthForHeight(arg2);
+      result = (float)DevelActor::GetWidthForHeight(*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2679,7 +2679,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetRelayoutSize(void* jarg1, int 
   {
     try
     {
-      result = (float)((Dali::Actor const*)arg1)->GetRelayoutSize(arg2);
+      result = (float)DevelActor::GetRelayoutSize((Dali::Actor const)*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -2747,7 +2747,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetPadding(void* jarg1, void* jarg
   {
     try
     {
-      (arg1)->SetProperty(Actor::Property::PADDING, (Dali::Vector4 const&)*arg2);
+      (arg1)->SetProperty(DevelActor::Property::PADDING, (Dali::Vector4 const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2774,7 +2774,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_GetPadding(void* jarg1, void* jarg
   {
     try
     {
-      *arg2 = ((Dali::Actor const*)arg1)->GetProperty<Vector4>(Actor::Property::PADDING);
+      *arg2 = ((Dali::Actor const*)arg1)->GetProperty<Vector4>(DevelActor::Property::PADDING);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2801,7 +2801,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetMinimumSize(void* jarg1, void* 
   {
     try
     {
-      (arg1)->SetProperty(Actor::Property::MINIMUM_SIZE, (Dali::Vector2 const&)*arg2);
+      (arg1)->SetProperty(DevelActor::Property::MINIMUM_SIZE, (Dali::Vector2 const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2828,7 +2828,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetMaximumSize(void* jarg1, void* 
   {
     try
     {
-      (arg1)->SetProperty(Actor::Property::MAXIMUM_SIZE, (Dali::Vector2 const&)*arg2);
+      (arg1)->SetProperty(DevelActor::Property::MAXIMUM_SIZE, (Dali::Vector2 const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -3216,16 +3216,16 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumWidth(void* ja
     try
     {
       arg1           = (Dali::Actor*)jarg1;
-      maximumSize    = arg1->GetProperty<Vector2>(Actor::Property::MAXIMUM_SIZE);
-      minimumSize    = arg1->GetProperty<Vector2>(Actor::Property::MINIMUM_SIZE);
+      maximumSize    = arg1->GetProperty<Vector2>(DevelActor::Property::MAXIMUM_SIZE);
+      minimumSize    = arg1->GetProperty<Vector2>(DevelActor::Property::MINIMUM_SIZE);
       naturalSize    = arg1->GetNaturalSize();
-      widthForHeight = arg1->GetProperty<bool>(Actor::Property::WIDTH_FOR_HEIGHT);
+      widthForHeight = arg1->GetProperty<bool>(DevelActor::Property::WIDTH_FOR_HEIGHT);
 
       float baseWidth;
       if(widthForHeight)
       {
         float baseHeight = maximumSize.height > 0 ? std::min(maximumSize.height, naturalSize.height) : naturalSize.height;
-        baseWidth        = arg1->GetWidthForHeight(baseHeight);
+        baseWidth        = DevelActor::GetWidthForHeight(*arg1, baseHeight);
       }
       else
       {
@@ -3253,16 +3253,16 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Actor_GetSuggestedMinimumHeight(void* j
     try
     {
       arg1           = (Dali::Actor*)jarg1;
-      maximumSize    = arg1->GetProperty<Vector2>(Actor::Property::MAXIMUM_SIZE);
-      minimumSize    = arg1->GetProperty<Vector2>(Actor::Property::MINIMUM_SIZE);
+      maximumSize    = arg1->GetProperty<Vector2>(DevelActor::Property::MAXIMUM_SIZE);
+      minimumSize    = arg1->GetProperty<Vector2>(DevelActor::Property::MINIMUM_SIZE);
       naturalSize    = arg1->GetNaturalSize();
-      heightForWidth = arg1->GetProperty<bool>(Actor::Property::HEIGHT_FOR_WIDTH);
+      heightForWidth = arg1->GetProperty<bool>(DevelActor::Property::HEIGHT_FOR_WIDTH);
 
       float baseHeight;
       if(heightForWidth)
       {
         float baseWidth = maximumSize.width > 0 ? std::min(maximumSize.width, naturalSize.width) : naturalSize.width;
-        baseHeight      = arg1->GetHeightForWidth(baseWidth);
+        baseHeight      = DevelActor::GetHeightForWidth(*arg1, baseWidth);
       }
       else
       {
