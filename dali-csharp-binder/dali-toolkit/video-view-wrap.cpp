@@ -192,7 +192,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_3(char* jarg1, bool
   return jresult;
 }
 
-SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_4(void* nativeSession, char* providerId, int ownership, int controlPolicy, unsigned int capabilities, int syncMode)
+SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_4(void* nativeSession, char* providerId, int ownership, int renderingMode, int syncMode)
 {
   void*                    jresult;
   Dali::Toolkit::VideoView result;
@@ -202,11 +202,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_VideoView_New__SWIG_4(void* nativeSessi
     {
       // Build a video source descriptor from the externally created native session.
       Dali::VideoPlayerPlugin::VideoSourceDescriptor source;
-      source.providerId        = providerId; // Interpreted by the video plugin during the synchronous New() call.
-      source.nativeSession      = Dali::Any(nativeSession);
-      source.ownership          = static_cast<Dali::VideoPlayerPlugin::VideoSourceOwnership>(ownership);
-      source.controlPolicy      = static_cast<Dali::VideoPlayerPlugin::VideoControlPolicy>(controlPolicy);
-      source.capabilities.flags = capabilities;
+      source.SetProviderId(providerId); // Interpreted by the video plugin during the synchronous New() call.
+      source.SetNativeSession(Dali::Any(nativeSession));
+      source.SetOwnership(static_cast<Dali::VideoPlayerPlugin::VideoSourceOwnership>(ownership));
+      source.SetRenderingMode(static_cast<Dali::VideoPlayerPlugin::VideoRenderingMode>(renderingMode));
 
       result = Dali::Toolkit::DevelVideoView::New(
         source,
