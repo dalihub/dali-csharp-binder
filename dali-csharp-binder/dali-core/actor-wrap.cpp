@@ -3334,6 +3334,38 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_GetVisiblityChangedActor()
     CALL_CATCH_EXCEPTION();                                                                                               \
   }
 #endif
+// Like GENERATE_DEVEL_ACTOR_SIGNAL but the C entry point name (CEntryName) differs from the C++ devel
+// function name (CppMethodName). Use when a C++ API was renamed/moved to devel-api but the binary-compatible
+// C entry point must be preserved.
+#ifndef GENERATE_DEVEL_ACTOR_SIGNAL_RENAMED
+#define GENERATE_DEVEL_ACTOR_SIGNAL_RENAMED(HType, CEntryName, CppMethodName)                                             \
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_##CEntryName##_Connect(void* caller, void* handler)                       \
+  {                                                                                                                       \
+    if(!caller)                                                                                                           \
+    {                                                                                                                     \
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Caller (Type :Dali::Actor*) is null", 0); \
+      return;                                                                                                             \
+    }                                                                                                                     \
+    try                                                                                                                   \
+    {                                                                                                                     \
+      Dali::DevelActor::CppMethodName(*((Dali::Actor*)caller)).Connect((HType)handler);                                   \
+    }                                                                                                                     \
+    CALL_CATCH_EXCEPTION();                                                                                               \
+  }                                                                                                                       \
+  SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_##CEntryName##_Disconnect(void* caller, void* handler)                    \
+  {                                                                                                                       \
+    if(!caller)                                                                                                           \
+    {                                                                                                                     \
+      SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Caller (Type :Dali::Actor*) is null", 0); \
+      return;                                                                                                             \
+    }                                                                                                                     \
+    try                                                                                                                   \
+    {                                                                                                                     \
+      Dali::DevelActor::CppMethodName(*((Dali::Actor*)caller)).Disconnect((HType)handler);                                \
+    }                                                                                                                     \
+    CALL_CATCH_EXCEPTION();                                                                                               \
+  }
+#endif
 
 GENERATE_DEVEL_ACTOR_SIGNAL(bool (*)(Dali::Actor, Dali::TouchEvent), HitTestResultSignal)
 // CSharp_Dali_Actor_HitTestResultSignal_Connect
@@ -3375,7 +3407,10 @@ GENERATE_ACTOR_SIGNAL(void (*)(Dali::Actor, bool, Dali::VisibilityChangeType), V
 // CSharp_Dali_Actor_VisibilityChangedSignal_Connect
 // CSharp_Dali_Actor_VisibilityChangedSignal_Disconnect
 
-GENERATE_ACTOR_SIGNAL_RENAMED(void (*)(Dali::Actor, bool), InheritedVisibilityChangedSignal, EffectiveVisibilityChangedSignal)
+// C# "InheritedVisibilityChanged" keeps the scene-aware behavior, now provided by the devel-api
+// DevelActor::OnSceneVisibilityChangedSignal. The public C++ Actor::EffectiveVisibilityChangedSignal
+// was redefined to a pure VISIBLE-property-chain semantic and is intentionally NOT bound here.
+GENERATE_DEVEL_ACTOR_SIGNAL_RENAMED(void (*)(Dali::Actor, bool), InheritedVisibilityChangedSignal, OnSceneVisibilityChangedSignal)
 // CSharp_Dali_Actor_InheritedVisibilityChangedSignal_Connect  (C entry point kept for binary compatibility)
 // CSharp_Dali_Actor_InheritedVisibilityChangedSignal_Disconnect
 
