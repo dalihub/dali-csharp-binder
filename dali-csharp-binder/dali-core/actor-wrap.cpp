@@ -649,14 +649,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_POSITION_USES_ANCHOR_POINT_get(
   return Dali::Actor::Property::POSITION_USES_PIVOT;
 }
 
+// Redirected to the legacy properties so the NUI(TizenFX) binding keeps its original 2-value int + bool
+// behaviour, while the new public Dali::Actor::Property::LAYOUT_DIRECTION carries the 3-value (incl. INHERIT) API.
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_INHERIT_LAYOUT_DIRECTION_get()
 {
-  return Dali::Actor::Property::INHERIT_LAYOUT_DIRECTION;
+  return Dali::DevelActor::Property::INHERIT_LAYOUT_DIRECTION_LEGACY;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_LAYOUT_DIRECTION_get()
 {
-  return Dali::Actor::Property::LAYOUT_DIRECTION;
+  return Dali::DevelActor::Property::LAYOUT_DIRECTION_LEGACY;
 }
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_CULLED_get()
