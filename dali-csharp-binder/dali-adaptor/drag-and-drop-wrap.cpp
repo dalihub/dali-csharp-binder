@@ -19,19 +19,95 @@
 
 // INCLUDES
 #include <dali-csharp-binder/common/common.h>
-#include <dali/devel-api/adaptor-framework/drag-and-drop.h>
+#include <dali/public-api/adaptor-framework/drag-data.h>
+#include <dali/public-api/adaptor-framework/drag-and-drop.h>
+#include <dali/public-api/adaptor-framework/drag-event.h>
 #include <dali/integration-api/debug.h>
+#include <unordered_map>
 
 using namespace Dali;
 
-static char        dataEmptyMsg[] = "Data is Empty!";
 static const char* nullExceptMsg  = "Attempt to dereference null Dali::Adaptor::DragAndDrop";
 
 using DnDCallback = void(SWIGSTDCALL*)(const Dali::DragAndDrop::DragEvent&);
-DnDCallback dndCallback;
-
 using SourceCallback = void(SWIGSTDCALL*)(enum Dali::DragAndDrop::SourceEventType);
-SourceCallback sourceCallback;
+
+namespace
+{
+/**
+ * Stores the managed delegates associated with one native DragAndDrop object.
+ *
+ * The public API emits typed Signals. This registry is deliberately confined to
+ * the binder so that the managed compatibility surface can keep its existing
+ * callback API without exposing function pointers or std::function in DALi's
+ * public C++ header.
+ */
+struct CallbackRegistry
+{
+  SourceCallback                              sourceCallback{nullptr};
+  std::unordered_map<Dali::RefObject*, DnDCallback> actorCallbacks;
+  std::unordered_map<Dali::RefObject*, DnDCallback> windowCallbacks;
+  bool                                        signalsConnected{false};
+};
+
+std::unordered_map<Dali::RefObject*, CallbackRegistry> gCallbackRegistries;
+
+CallbackRegistry& GetCallbackRegistry(const Dali::DragAndDrop& dnd)
+{
+  return gCallbackRegistries[dnd.GetObjectPtr()];
+}
+
+void OnSourceEvent(Dali::DragAndDrop dnd, Dali::Actor /*source*/, Dali::DragAndDrop::SourceEventType type)
+{
+  auto registry = gCallbackRegistries.find(dnd.GetObjectPtr());
+  if(registry != gCallbackRegistries.end() && registry->second.sourceCallback)
+  {
+    registry->second.sourceCallback(type);
+  }
+}
+
+void OnActorDragEvent(Dali::DragAndDrop dnd, Dali::Actor target, const Dali::DragAndDrop::DragEvent& event)
+{
+  auto registry = gCallbackRegistries.find(dnd.GetObjectPtr());
+  if(registry == gCallbackRegistries.end())
+  {
+    return;
+  }
+
+  auto callback = registry->second.actorCallbacks.find(target.GetObjectPtr());
+  if(callback != registry->second.actorCallbacks.end() && callback->second)
+  {
+    callback->second(event);
+  }
+}
+
+void OnWindowDragEvent(Dali::DragAndDrop dnd, Dali::Window target, const Dali::DragAndDrop::DragEvent& event)
+{
+  auto registry = gCallbackRegistries.find(dnd.GetObjectPtr());
+  if(registry == gCallbackRegistries.end())
+  {
+    return;
+  }
+
+  auto callback = registry->second.windowCallbacks.find(target.GetObjectPtr());
+  if(callback != registry->second.windowCallbacks.end() && callback->second)
+  {
+    callback->second(event);
+  }
+}
+
+void EnsureSignalConnections(Dali::DragAndDrop& dnd)
+{
+  CallbackRegistry& registry = GetCallbackRegistry(dnd);
+  if(!registry.signalsConnected)
+  {
+    dnd.SourceEventSignal().Connect(OnSourceEvent);
+    dnd.ActorDragEventSignal().Connect(OnActorDragEvent);
+    dnd.WindowDragEventSignal().Connect(OnWindowDragEvent);
+    registry.signalsConnected = true;
+  }
+}
+} // unnamed namespace
 
 #ifdef __cplusplus
 extern "C" {
@@ -83,16 +159,28 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_StartDragAndDrop(void* argDn
   source = *pSource;
   shadow = *pShadow;
 
+  if(argMimeTypesSize <= 0 || argMimeTypesSize != argDataSetSize || !argMimeTypes || !argDataSet)
+  {
+    return false;
+  }
+
   Dali::DragAndDrop::DragData dragData;
-  dragData.SetMimeTypes((const char**)argMimeTypes, argMimeTypesSize);
-  dragData.SetDataSet((const char**)argDataSet, argDataSetSize);
+  for(int index = 0; index < argMimeTypesSize; ++index)
+  {
+    if(!argMimeTypes[index] || !argDataSet[index])
+    {
+      return false;
+    }
+    dragData.AddData(Dali::String(argMimeTypes[index]), Dali::String(argDataSet[index]));
+  }
 
   bool result = false;
   {
     try
     {
-      sourceCallback = (SourceCallback)argSourceCallback;
-      result         = dnd->StartDragAndDrop(source, shadow, dragData, sourceCallback);
+      EnsureSignalConnections(*dnd);
+      GetCallbackRegistry(*dnd).sourceCallback = reinterpret_cast<SourceCallback>(argSourceCallback);
+      result                                   = dnd->StartDragAndDrop(source, shadow, dragData);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -123,8 +211,16 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_AddListener(void* argDnD, vo
   {
     try
     {
-      dndCallback = (DnDCallback)argCallback;
-      result      = dnd->AddListener(target, argMimeType, dndCallback);
+      if(!argMimeType || !argCallback)
+      {
+        return false;
+      }
+      EnsureSignalConnections(*dnd);
+      result = dnd->AddListener(target, Dali::String(argMimeType));
+      if(result)
+      {
+        GetCallbackRegistry(*dnd).actorCallbacks[target.GetObjectPtr()] = reinterpret_cast<DnDCallback>(argCallback);
+      }
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -155,8 +251,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_RemoveListener(void* argDnD,
   {
     try
     {
-      //TODO: use argCallback to remove target listener
       result = dnd->RemoveListener(target);
+      if(result)
+      {
+        GetCallbackRegistry(*dnd).actorCallbacks.erase(target.GetObjectPtr());
+      }
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -187,8 +286,16 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_Window_AddListener(void* arg
   {
     try
     {
-      dndCallback = (DnDCallback)argCallback;
-      result      = dnd->AddListener(target, argMimeType, dndCallback);
+      if(!argMimeType || !argCallback)
+      {
+        return false;
+      }
+      EnsureSignalConnections(*dnd);
+      result = dnd->AddListener(target, Dali::String(argMimeType));
+      if(result)
+      {
+        GetCallbackRegistry(*dnd).windowCallbacks[target.GetObjectPtr()] = reinterpret_cast<DnDCallback>(argCallback);
+      }
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -219,8 +326,11 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragAndDrop_Window_RemoveListener(void* 
   {
     try
     {
-      //TODO: use argCallback to remove target listener
       result = dnd->RemoveListener(target);
+      if(result)
+      {
+        GetCallbackRegistry(*dnd).windowCallbacks.erase(target.GetObjectPtr());
+      }
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -240,7 +350,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_DragEvent_GetAction(void* jarg)
   {
     try
     {
-      jresult = (int)((Dali::DragAndDrop::DragEvent&)*dragEvent).GetAction();
+      jresult = (int)((Dali::DragAndDrop::DragEvent&)*dragEvent).GetDragType();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -271,24 +381,40 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DragEvent_GetPosition(void* jarg)
   return jresult;
 }
 
-SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_DragEvent_GetMimeTypes(void* argDragEvent, char*** argMimeTypes, int* argMimeTypesSize)
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_DragEvent_GetMimeTypeCount(void* argDragEvent)
 {
   Dali::DragAndDrop::DragEvent* dragEvent = (Dali::DragAndDrop::DragEvent*)argDragEvent;
 
   if(!dragEvent)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, nullExceptMsg, 0);
-    return false;
+    return 0;
   }
   {
     try
     {
-      *argMimeTypes     = (char**)((Dali::DragAndDrop::DragEvent&)*dragEvent).GetMimeTypes();
-      *argMimeTypesSize = ((Dali::DragAndDrop::DragEvent&)*dragEvent).GetMimeTypesSize();
+      return static_cast<int>(dragEvent->GetMimeTypeCount());
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  return true;
+  return 0;
+}
+
+SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_DragEvent_GetMimeType(void* argDragEvent, int index)
+{
+  Dali::DragAndDrop::DragEvent* dragEvent = (Dali::DragAndDrop::DragEvent*)argDragEvent;
+  if(!dragEvent || index < 0)
+  {
+    return SWIG_csharp_string_callback("");
+  }
+
+  Dali::String mimeType;
+  try
+  {
+    mimeType = dragEvent->GetMimeType(static_cast<uint32_t>(index));
+  }
+  CALL_CATCH_EXCEPTION(0);
+  return SWIG_csharp_string_callback(mimeType.CStr());
 }
 
 SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_DragEvent_GetData(void* argDragEvent)
@@ -305,15 +431,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_DragEvent_GetData(void* argDragEvent)
   {
     try
     {
-      const char* data = ((Dali::DragAndDrop::DragEvent&)*dragEvent).GetData();
-      if(data != nullptr)
-      {
-        result = data;
-      }
-      else
-      {
-        result = dataEmptyMsg;
-      }
+      result = dragEvent->GetData().CStr();
     }
     CALL_CATCH_EXCEPTION(0);
   }
