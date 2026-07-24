@@ -42,13 +42,14 @@
 #include <dali/devel-api/events/pan-gesture-devel.h>
 #include <dali/devel-api/events/pinch-gesture-devel.h>
 #include <dali/devel-api/events/tap-gesture-devel.h>
-#include <dali/integration-api/events/touch-integ.h>
 #include <dali/devel-api/events/touch-point.h>
 #include <dali/devel-api/events/wheel-event-devel.h>
 #include <dali/devel-api/object/csharp-type-info.h>
 #include <dali/devel-api/object/csharp-type-registry.h>
 #include <dali/devel-api/rendering/frame-buffer-devel.h>
 #include <dali/devel-api/rendering/renderer-devel.h>
+#include <dali/devel-api/size-negotiation/relayout-container.h>
+#include <dali/integration-api/events/touch-integ.h>
 #include <dali/public-api/update/frame-callback-interface.h>
 #include <dali/public-api/update/update-proxy.h>
 
