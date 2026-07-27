@@ -44,8 +44,9 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
 
-#include <dali/integration-api/string-utils.h>
+#include <dali/devel-api/actors/actor-enumerations-devel.h>
 #include <dali/integration-api/debug.h>
+#include <dali/integration-api/string-utils.h>
 
 using Dali::Integration::ToDaliString;
 using Dali::Integration::ToDaliStringView;

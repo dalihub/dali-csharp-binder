@@ -33,6 +33,7 @@
 #include <dali/integration-api/debug.h>
 
 #include <dali/devel-api/actors/actor-devel.h>
+#include <dali/devel-api/actors/actor-enumerations-devel.h>
 #include <dali/devel-api/actors/camera-actor-devel.h>
 #include <dali/devel-api/animation/key-frames-devel.h>
 #include <dali/devel-api/animation/path-constrainer.h>
