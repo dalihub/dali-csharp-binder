@@ -12937,7 +12937,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Key_New__SWIG_1()
   {
     try
     {
-      result = DevelKeyEvent::New();
+      result = Dali::KeyEvent::New();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -13040,7 +13040,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressedName_set(void* jarg1, char
   {
     try
     {
-      Dali::DevelKeyEvent::SetKeyName(arg1, arg2DaliString);
+      arg1.SetKeyName(arg2DaliString);
     }
     catch(std::out_of_range& e)
     {
@@ -13148,7 +13148,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressed_set(void* jarg1, char* ja
   {
     try
     {
-      Dali::DevelKeyEvent::SetKeyString(arg1, arg2DaliString);
+      arg1.SetKeyString(arg2DaliString);
     }
     catch(std::out_of_range& e)
     {
@@ -13243,7 +13243,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyCode_set(void* jarg1, int jarg2)
   {
     try
     {
-      Dali::DevelKeyEvent::SetKeyCode(arg1, arg2);
+      arg1.SetKeyCode(arg2);
     }
     catch(std::out_of_range& e)
     {
@@ -13339,7 +13339,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyModifier_set(void* jarg1, int jar
   {
     try
     {
-      Dali::DevelKeyEvent::SetKeyModifier(arg1, arg2);
+      arg1.SetKeyModifier(arg2);
     }
     catch(std::out_of_range& e)
     {
@@ -13435,7 +13435,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_time_set(void* jarg1, unsigned long 
   {
     try
     {
-      Dali::DevelKeyEvent::SetTime(arg1, arg2);
+      arg1.SetTime(arg2);
     }
     catch(std::out_of_range& e)
     {
@@ -13531,7 +13531,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_state_set(void* jarg1, int jarg2)
   {
     try
     {
-      Dali::DevelKeyEvent::SetState(arg1, arg2);
+      arg1.SetState(arg2);
     }
     catch(std::out_of_range& e)
     {
