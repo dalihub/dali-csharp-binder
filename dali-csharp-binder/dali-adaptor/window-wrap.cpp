@@ -82,7 +82,7 @@ static WindowEventProxy* GetOrCreateWindowEventProxy(Dali::Window& window)
 
   WindowEventProxy* proxy = new WindowEventProxy();
   window.KeyEventSignal().Connect(proxy, &WindowEventProxy::OnKeyEvent);
-  Dali::DevelWindow::InterceptKeyEventSignal(window).Connect(proxy, &WindowEventProxy::OnInterceptKeyEvent);
+  window.InterceptKeyEventSignal().Connect(proxy, &WindowEventProxy::OnInterceptKeyEvent);
   window.InsetsChangedSignal().Connect(proxy, &WindowEventProxy::OnInsetsChanged);
   gWindowEventProxies[key] = proxy;
   return proxy;

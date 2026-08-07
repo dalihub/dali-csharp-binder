@@ -36,14 +36,12 @@
 #include <dali/devel-api/actors/camera-actor-devel.h>
 #include <dali/devel-api/animation/key-frames-devel.h>
 #include <dali/devel-api/animation/path-constrainer.h>
-#include <dali/devel-api/events/hover-event-devel.h>
 #include <dali/devel-api/events/key-event-devel.h>
 #include <dali/devel-api/events/long-press-gesture-devel.h>
 #include <dali/devel-api/events/pan-gesture-devel.h>
 #include <dali/devel-api/events/pinch-gesture-devel.h>
 #include <dali/devel-api/events/tap-gesture-devel.h>
 #include <dali/devel-api/events/touch-point.h>
-#include <dali/devel-api/events/wheel-event-devel.h>
 #include <dali/devel-api/object/csharp-type-info.h>
 #include <dali/devel-api/object/csharp-type-registry.h>
 #include <dali/devel-api/rendering/frame-buffer-devel.h>
@@ -11848,7 +11846,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Touch_SetTime(void* touchEvent, unsigned
   {
     try
     {
-      Dali::Integration::SetTouchEventTime(*arg1, arg2);
+      arg1->SetTime(static_cast<uint32_t>(arg2));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -12535,7 +12533,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Hover_New(unsigned int jarg1)
   {
     try
     {
-      result = DevelHoverEvent::New(arg1);
+      result = Dali::HoverEvent::New(arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -12937,7 +12935,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Key_New__SWIG_1()
   {
     try
     {
-      result = DevelKeyEvent::New();
+      result = Dali::KeyEvent::New();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -13040,7 +13038,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressedName_set(void* jarg1, char
   {
     try
     {
-      Dali::DevelKeyEvent::SetKeyName(arg1, arg2DaliString);
+      arg1.SetKeyName(arg2DaliString);
     }
     catch(std::out_of_range& e)
     {
@@ -13148,7 +13146,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyPressed_set(void* jarg1, char* ja
   {
     try
     {
-      Dali::DevelKeyEvent::SetKeyString(arg1, arg2DaliString);
+      arg1.SetKeyString(arg2DaliString);
     }
     catch(std::out_of_range& e)
     {
@@ -13243,7 +13241,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyCode_set(void* jarg1, int jarg2)
   {
     try
     {
-      Dali::DevelKeyEvent::SetKeyCode(arg1, arg2);
+      arg1.SetKeyCode(arg2);
     }
     catch(std::out_of_range& e)
     {
@@ -13339,7 +13337,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_keyModifier_set(void* jarg1, int jar
   {
     try
     {
-      Dali::DevelKeyEvent::SetKeyModifier(arg1, arg2);
+      arg1.SetKeyModifier(arg2);
     }
     catch(std::out_of_range& e)
     {
@@ -13435,7 +13433,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_time_set(void* jarg1, unsigned long 
   {
     try
     {
-      Dali::DevelKeyEvent::SetTime(arg1, arg2);
+      arg1.SetTime(arg2);
     }
     catch(std::out_of_range& e)
     {
@@ -13531,7 +13529,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Key_state_set(void* jarg1, int jarg2)
   {
     try
     {
-      Dali::DevelKeyEvent::SetState(arg1, arg2);
+      arg1.SetState(arg2);
     }
     catch(std::out_of_range& e)
     {
@@ -14003,7 +14001,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Wheel_New(int jarg1, int jarg2, unsigne
   {
     try
     {
-      result = DevelWheelEvent::New(arg1, arg2, arg3, arg4, arg5, arg6);
+      result = Dali::WheelEvent::New(arg1, arg2, arg3, arg4, arg5, arg6);
     }
     CALL_CATCH_EXCEPTION(0);
   }
