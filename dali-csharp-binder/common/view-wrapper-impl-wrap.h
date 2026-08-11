@@ -21,6 +21,7 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/devel-api/controls/control-wrapper-impl.h>
 #include <dali-toolkit/devel-api/controls/control-wrapper.h>
+#include <dali/devel-api/actors/actor-enumerations-devel.h>
 
 // INTERNAL INCLUDES
 #include "common.h"

@@ -18,11 +18,11 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/controls/canvas-view/canvas-view.h>
-#include <dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h>
-#include <dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h>
-#include <dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-linear-gradient.h>
-#include <dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-picture.h>
-#include <dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-radial-gradient.h>
+#include <dali/public-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h>
+#include <dali/public-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h>
+#include <dali/public-api/adaptor-framework/canvas-renderer/canvas-renderer-linear-gradient.h>
+#include <dali/public-api/adaptor-framework/canvas-renderer/canvas-renderer-picture.h>
+#include <dali/public-api/adaptor-framework/canvas-renderer/canvas-renderer-radial-gradient.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -536,12 +536,10 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Picture_Load(char* pPicture,
                                            0);
     return false;
   }
-  std::string url(pUrl);
-
   {
     try
     {
-      result = picture.Load(url);
+      result = picture.Load(pUrl);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -827,14 +825,34 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Shape_AddPath(char*        pShape,
     return false;
   }
 
+  // pointCount is the number of floats supplied by the managed side, and each point
+  // is an (x, y) pair, so an odd count cannot describe a whole set of points.
+  if(pointCount % 2u != 0u)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException,
+                                           "Points length must be even",
+                                           0);
+    return false;
+  }
+
   {
     try
     {
-      Dali::CanvasRenderer::Shape::PathCommands pathCommands = {
-        (Dali::CanvasRenderer::Shape::PathCommandType*)pCommands,
-        commandCount, pPoints, pointCount};
+      Dali::Vector<Dali::CanvasRenderer::Shape::PathCommandType> commands;
+      commands.Reserve(commandCount);
+      for(unsigned int i = 0u; i < commandCount; ++i)
+      {
+        commands.PushBack(static_cast<Dali::CanvasRenderer::Shape::PathCommandType>(pCommands[i]));
+      }
 
-      result = shape.AddPath(pathCommands);
+      Dali::Vector<Dali::Vector2> points;
+      points.Reserve(pointCount / 2u);
+      for(unsigned int i = 0u; i < pointCount; i += 2u)
+      {
+        points.PushBack(Dali::Vector2(pPoints[i], pPoints[i + 1u]));
+      }
+
+      result = shape.AddPath(commands, points);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1556,16 +1574,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Gradient_SetColorStops(
   {
     try
     {
-      Dali::CanvasRenderer::Gradient::ColorStops stops;
+      // The managed side replaces the whole list, so drop any existing stops first.
+      gradient.ClearColorStops();
       for(unsigned int count = 0; count < stopsLength; count++)
       {
-        Dali::CanvasRenderer::Gradient::ColorStop stop;
-        stop.offset = pStops[count * 5];
-        stop.color  = Vector4(pStops[(count * 5) + 1], pStops[(count * 5) + 2],
-                              pStops[(count * 5) + 3], pStops[(count * 5) + 4]);
-        stops.PushBack(stop);
+        gradient.AddColorStop(pStops[count * 5],
+                              Vector4(pStops[(count * 5) + 1], pStops[(count * 5) + 2],
+                                      pStops[(count * 5) + 3], pStops[(count * 5) + 4]));
       }
-      gradient.SetColorStops(stops);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -1589,9 +1605,7 @@ CSharp_Dali_Gradient_GetColorStopsCount(char* pGradient)
   {
     try
     {
-      Dali::CanvasRenderer::Gradient::ColorStops colorStops =
-        gradient.GetColorStops();
-      result = colorStops.Size();
+      result = gradient.GetColorStopCount();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1617,13 +1631,11 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Gradient_GetColorStopsOffsetIndexOf(
   {
     try
     {
-      Dali::CanvasRenderer::Gradient::ColorStops colorStops =
-        gradient.GetColorStops();
-      if(index >= colorStops.Size())
+      if(index >= gradient.GetColorStopCount())
       {
         throw std::invalid_argument("invalid index");
       }
-      result = colorStops[index].offset;
+      result = gradient.GetColorStopOffset(index);
     }
     CALL_CATCH_EXCEPTION(0.0f);
   }
@@ -1649,13 +1661,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Gradient_GetColorStopsColorIndexOf(
   {
     try
     {
-      Dali::CanvasRenderer::Gradient::ColorStops colorStops =
-        gradient.GetColorStops();
-      if(index >= colorStops.Size())
+      if(index >= gradient.GetColorStopCount())
       {
         throw std::invalid_argument("invalid index");
       }
-      result = colorStops[index].color;
+      result = gradient.GetColorStopColor(index);
     }
     CALL_CATCH_EXCEPTION(nullptr);
   }
