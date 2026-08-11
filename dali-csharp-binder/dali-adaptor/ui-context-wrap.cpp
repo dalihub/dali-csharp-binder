@@ -159,7 +159,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_UiContext_FlushUpdateMessages(void* uiCo
   {
     try
     {
-      context->FlushUpdateMessages();
+      context->FlushPendingChanges();
     }
     CALL_CATCH_EXCEPTION();
   }
