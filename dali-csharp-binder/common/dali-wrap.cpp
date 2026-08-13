@@ -5972,7 +5972,14 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Property_Map_GetKey(void* jarg1, unsign
   {
     try
     {
-      result = ((Dali::Property::Map const*)arg1)->GetKey(arg2);
+      // Dali::Property::Map::GetKey() has been removed from dali-core, so reproduce its
+      // behaviour here to keep this C# interface unchanged. A Map stores its string keys
+      // before its index keys, so GetKeyAt() returns the same key as GetKey() did for any
+      // string-key position. GetKey(), however, only accepted string-key positions and
+      // asserted for anything beyond them, hence the explicit key type check.
+      Dali::Property::Key key = ((Dali::Property::Map const*)arg1)->GetKeyAt(arg2);
+      DALI_ASSERT_ALWAYS(key.type == Dali::Property::Key::STRING && "position out-of-bounds");
+      result = key.stringKey;
     }
     CALL_CATCH_EXCEPTION(0);
   }
