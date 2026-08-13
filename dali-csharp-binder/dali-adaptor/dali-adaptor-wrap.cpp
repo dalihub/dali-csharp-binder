@@ -17,7 +17,7 @@
 
 // EXTERNAL INCLUDES
 #include <dali/dali.h>
-#include <dali/devel-api/adaptor-framework/image-loading.h>
+#include <dali/devel-api/adaptor-framework/image-loading-devel.h>
 #include <dali/devel-api/adaptor-framework/native-image-devel.h>
 #include <dali/devel-api/adaptor-framework/pixel-buffer-devel.h>
 #include <dali/devel-api/adaptor-framework/window-system-devel.h>
@@ -900,7 +900,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char* jarg1, 
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2, arg4, arg5);
+      result = Dali::LoadImageFromFile(Dali::Integration::ToDaliStringView(*arg1), arg2, arg4, arg5);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -936,7 +936,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_1(char* jarg1, 
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2, arg4);
+      result = Dali::LoadImageFromFile(Dali::Integration::ToDaliStringView(*arg1), arg2, arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -970,7 +970,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_2(char* jarg1, 
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2);
+      result = Dali::LoadImageFromFile(Dali::Integration::ToDaliStringView(*arg1), arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1004,7 +1004,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_3(char* jarg1, 
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2);
+      result = Dali::LoadImageFromFile(Dali::Integration::ToDaliStringView(*arg1), arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1029,7 +1029,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_4(char* jarg1)
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1);
+      result = Dali::LoadImageFromFile(Dali::Integration::ToDaliStringView(*arg1));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1382,7 +1382,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char* jarg1, bool 
   {
     try
     {
-      result = Dali::GetOriginalImageSize((std::string const&)*arg1, arg2);
+      result = Dali::GetOriginalImageSize(Dali::Integration::ToDaliStringView(*arg1), arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
