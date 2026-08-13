@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2421,7 +2421,7 @@ SWIGEXPORT float SWIGSTDCALL CSharp_Dali_Vector4_Dot4(void* jarg1, void* jarg2)
   {
     try
     {
-      result = (float)((Dali::Vector4 const*)arg1)->Dot4((Dali::Vector4 const&)*arg2);
+      result = (float)((Dali::Vector4 const*)arg1)->Dot((Dali::Vector4 const&)*arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
