@@ -20,6 +20,9 @@
 #include <dali/devel-api/adaptor-framework/image-loading-devel.h>
 #include <dali/devel-api/adaptor-framework/native-image-devel.h>
 #include <dali/devel-api/adaptor-framework/pixel-buffer-devel.h>
+#include <dali/devel-api/adaptor-framework/widget-application.h>
+#include <dali/devel-api/adaptor-framework/widget-impl.h>
+#include <dali/devel-api/adaptor-framework/widget.h>
 #include <dali/devel-api/adaptor-framework/window-system-devel.h>
 #include <dali/integration-api/string-utils.h>
 
