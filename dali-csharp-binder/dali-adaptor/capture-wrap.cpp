@@ -425,8 +425,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetImageUrl(void* nuiCapture)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetCapturedBuffer(void* nuiCapture)
 {
-  Dali::Capture*           capture = (Dali::Capture*)nuiCapture;
-  Dali::Devel::PixelBuffer pixelBuffer;
+  Dali::Capture*    capture = (Dali::Capture*)nuiCapture;
+  Dali::PixelBuffer pixelBuffer;
 
   if(!capture)
   {
@@ -440,7 +440,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetCapturedBuffer(void* nuiCapt
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  Dali::Devel::PixelBuffer* result = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)pixelBuffer);
+  Dali::PixelBuffer* result = new Dali::PixelBuffer((const Dali::PixelBuffer&)pixelBuffer);
   return result;
 }
 

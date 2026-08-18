@@ -16,7 +16,7 @@
  */
 
 // EXTERNAL INCLUDES
-#include <dali/devel-api/adaptor-framework/pixel-buffer.h>
+#include <dali/public-api/adaptor-framework/pixel-buffer.h>
 
 #include <dali-toolkit/dali-toolkit.h>
 #include <dali-toolkit/devel-api/image-loader/async-image-loader-devel.h>
@@ -36,8 +36,8 @@ namespace
 
 // Since we only support communicate C#-C++ by pointer,
 // We should connect new signal here, who use reference, and emit signal to C# by pointer.
-// Note : Since Devel::PixelBuffer* didn't works well, (IntrusivePtr<> copy operation not be called) we should make BaseHandle as parameters
-typedef void(SWIGSTDCALL* SWIG_PixelBufferLoadedSignal)(uint32_t, uint32_t, Devel::PixelBuffer, Devel::PixelBuffer, Devel::PixelBuffer);
+// Note : Since PixelBuffer* didn't works well, (IntrusivePtr<> copy operation not be called) we should make BaseHandle as parameters
+typedef void(SWIGSTDCALL* SWIG_PixelBufferLoadedSignal)(uint32_t, uint32_t, PixelBuffer, PixelBuffer, PixelBuffer);
 
 class AsyncImageLoaderCallbackConverter : public Dali::ConnectionTracker
 {
@@ -56,11 +56,11 @@ public:
   }
 
 public: /// Callbacks from AsyncImageLoader
-  void OnPixelBufferLoadedSignal(uint32_t id, std::vector<Devel::PixelBuffer>& pixelBuffers)
+  void OnPixelBufferLoadedSignal(uint32_t id, std::vector<PixelBuffer>& pixelBuffers)
   {
     if(mHandler)
     {
-      static Devel::PixelBuffer sEmptyPixelBuffer;
+      static PixelBuffer sEmptyPixelBuffer;
       mHandler(id, static_cast<uint32_t>(pixelBuffers.size()), 0u < pixelBuffers.size() ? pixelBuffers[0] : sEmptyPixelBuffer, 1u < pixelBuffers.size() ? pixelBuffers[1] : sEmptyPixelBuffer, 2u < pixelBuffers.size() ? pixelBuffers[2] : sEmptyPixelBuffer);
     }
   }

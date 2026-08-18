@@ -17,9 +17,12 @@
 
 // EXTERNAL INCLUDES
 #include <dali/dali.h>
-#include <dali/devel-api/adaptor-framework/image-loading.h>
+#include <dali/devel-api/adaptor-framework/image-loading-devel.h>
 #include <dali/devel-api/adaptor-framework/native-image-devel.h>
-#include <dali/devel-api/adaptor-framework/pixel-buffer.h>
+#include <dali/devel-api/adaptor-framework/pixel-buffer-devel.h>
+#include <dali/devel-api/adaptor-framework/widget-application.h>
+#include <dali/devel-api/adaptor-framework/widget-impl.h>
+#include <dali/devel-api/adaptor-framework/widget.h>
 #include <dali/devel-api/adaptor-framework/window-system-devel.h>
 #include <dali/integration-api/string-utils.h>
 
@@ -67,7 +70,7 @@ enum class LoadingFittingModeType : int
   FIT_HEIGHT    = 3,
 };
 
-static void ApplyCropModeToPixelBuffer(Dali::Devel::PixelBuffer& pixelBuffer, int cropMode, Dali::ImageDimensions desiredSize)
+static void ApplyCropModeToPixelBuffer(Dali::PixelBuffer& pixelBuffer, int cropMode, Dali::ImageDimensions desiredSize)
 {
   if(!pixelBuffer)
   {
@@ -83,12 +86,12 @@ static void ApplyCropModeToPixelBuffer(Dali::Devel::PixelBuffer& pixelBuffer, in
   {
     case LoadingFittingModeType::SHRINK_TO_FIT:
     {
-      pixelBuffer.ApplyLetterbox(desiredWidth, desiredHeight);
+      DevelPixelBuffer::ApplyLetterbox(pixelBuffer, desiredWidth, desiredHeight);
       break;
     }
     case LoadingFittingModeType::SCALE_TO_FILL:
     {
-      pixelBuffer.ApplyCenterCrop(desiredWidth, desiredHeight);
+      DevelPixelBuffer::ApplyCenterCrop(pixelBuffer, desiredWidth, desiredHeight);
       break;
     }
     case LoadingFittingModeType::FIT_WIDTH:
@@ -102,11 +105,11 @@ static void ApplyCropModeToPixelBuffer(Dali::Devel::PixelBuffer& pixelBuffer, in
         // h / w <= dh / dw --> desired height is bigger than original
         if(static_cast<LoadingFittingModeType>(cropMode) == LoadingFittingModeType::FIT_WIDTH)
         {
-          pixelBuffer.ApplyLetterbox(desiredWidth, desiredHeight);
+          DevelPixelBuffer::ApplyLetterbox(pixelBuffer, desiredWidth, desiredHeight);
         }
         else
         {
-          pixelBuffer.ApplyCenterCrop(desiredWidth, desiredHeight);
+          DevelPixelBuffer::ApplyCenterCrop(pixelBuffer, desiredWidth, desiredHeight);
         }
       }
       else
@@ -114,11 +117,11 @@ static void ApplyCropModeToPixelBuffer(Dali::Devel::PixelBuffer& pixelBuffer, in
         // h / w > dh / dw --> desired width is bigger than height
         if(static_cast<LoadingFittingModeType>(cropMode) == LoadingFittingModeType::FIT_WIDTH)
         {
-          pixelBuffer.ApplyCenterCrop(desiredWidth, desiredHeight);
+          DevelPixelBuffer::ApplyCenterCrop(pixelBuffer, desiredWidth, desiredHeight);
         }
         else
         {
-          pixelBuffer.ApplyLetterbox(desiredWidth, desiredHeight);
+          DevelPixelBuffer::ApplyLetterbox(pixelBuffer, desiredWidth, desiredHeight);
         }
       }
       break;
@@ -492,11 +495,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_TimerSignalType(void* jarg1)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelBuffer_New(unsigned int jarg1, unsigned int jarg2, int jarg3)
 {
-  void*                    jresult;
-  unsigned int             arg1;
-  unsigned int             arg2;
-  Dali::Pixel::Format      arg3;
-  Dali::Devel::PixelBuffer result;
+  void*               jresult;
+  unsigned int        arg1;
+  unsigned int        arg2;
+  Dali::Pixel::Format arg3;
+  Dali::PixelBuffer   result;
 
   arg1 = (unsigned int)jarg1;
   arg2 = (unsigned int)jarg2;
@@ -504,19 +507,19 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelBuffer_New(unsigned int jarg1, uns
   {
     try
     {
-      result = Dali::Devel::PixelBuffer::New(arg1, arg2, arg3);
+      result = Dali::PixelBuffer::New(arg1, arg2, arg3);
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PixelBuffer(void* jarg1)
 {
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   {
     try
     {
@@ -528,20 +531,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_PixelBuffer(void* jarg1)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_PixelBuffer__SWIG_1(void* jarg1)
 {
-  void*                     jresult;
-  Dali::Devel::PixelBuffer* arg1   = 0;
-  Dali::Devel::PixelBuffer* result = 0;
+  void*              jresult;
+  Dali::PixelBuffer* arg1   = 0;
+  Dali::PixelBuffer* result = 0;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   if(!arg1)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Devel::PixelBuffer const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::PixelBuffer const & type is null", 0);
     return 0;
   }
   {
     try
     {
-      result = (Dali::Devel::PixelBuffer*)new Dali::Devel::PixelBuffer((Dali::Devel::PixelBuffer const&)*arg1);
+      result = (Dali::PixelBuffer*)new Dali::PixelBuffer((Dali::PixelBuffer const&)*arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -551,22 +554,22 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_PixelBuffer__SWIG_1(void* jarg1)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelBuffer_Assign(void* jarg1, void* jarg2)
 {
-  void*                     jresult;
-  Dali::Devel::PixelBuffer* arg1   = (Dali::Devel::PixelBuffer*)0;
-  Dali::Devel::PixelBuffer* arg2   = 0;
-  Dali::Devel::PixelBuffer* result = 0;
+  void*              jresult;
+  Dali::PixelBuffer* arg1   = (Dali::PixelBuffer*)0;
+  Dali::PixelBuffer* arg2   = 0;
+  Dali::PixelBuffer* result = 0;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
-  arg2 = (Dali::Devel::PixelBuffer*)jarg2;
+  arg1 = (Dali::PixelBuffer*)jarg1;
+  arg2 = (Dali::PixelBuffer*)jarg2;
   if(!arg2)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Devel::PixelBuffer const & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::PixelBuffer const & type is null", 0);
     return 0;
   }
   {
     try
     {
-      result = (Dali::Devel::PixelBuffer*)&(arg1)->operator=((Dali::Devel::PixelBuffer const&)*arg2);
+      result = (Dali::PixelBuffer*)&(arg1)->operator=((Dali::PixelBuffer const&)*arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -576,20 +579,20 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelBuffer_Assign(void* jarg1, void* j
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelBuffer_Convert(void* jarg1)
 {
-  void*                     jresult;
-  Dali::Devel::PixelBuffer* arg1 = 0;
-  Dali::PixelData           result;
+  void*              jresult;
+  Dali::PixelBuffer* arg1 = 0;
+  Dali::PixelData    result;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   if(!arg1)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Devel::PixelBuffer & type is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::PixelBuffer & type is null", 0);
     return 0;
   }
   {
     try
     {
-      result = Dali::Devel::PixelBuffer::Convert(*arg1);
+      result = Dali::PixelBuffer::Convert(*arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -599,15 +602,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelBuffer_Convert(void* jarg1)
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelBuffer_CreatePixelData(void* jarg1)
 {
-  void*                     jresult;
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  Dali::PixelData           result;
+  void*              jresult;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  Dali::PixelData    result;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   {
     try
     {
-      result = ((Dali::Devel::PixelBuffer const*)arg1)->CreatePixelData();
+      result = Dali::DevelPixelBuffer::CreatePixelData(*arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -617,11 +620,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelBuffer_CreatePixelData(void* jarg1
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelBuffer_GetBuffer(void* jarg1)
 {
-  void*                     jresult;
-  Dali::Devel::PixelBuffer* arg1   = (Dali::Devel::PixelBuffer*)0;
-  unsigned char*            result = 0;
+  void*              jresult;
+  Dali::PixelBuffer* arg1   = (Dali::PixelBuffer*)0;
+  unsigned char*     result = 0;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   {
     try
     {
@@ -635,15 +638,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_PixelBuffer_GetBuffer(void* jarg1)
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetWidth(void* jarg1)
 {
-  unsigned int              jresult;
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  unsigned int              result;
+  unsigned int       jresult;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  unsigned int       result;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   {
     try
     {
-      result = (unsigned int)((Dali::Devel::PixelBuffer const*)arg1)->GetWidth();
+      result = (unsigned int)((Dali::PixelBuffer const*)arg1)->GetWidth();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -653,15 +656,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetWidth(void* jarg1
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetHeight(void* jarg1)
 {
-  unsigned int              jresult;
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  unsigned int              result;
+  unsigned int       jresult;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  unsigned int       result;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   {
     try
     {
-      result = (unsigned int)((Dali::Devel::PixelBuffer const*)arg1)->GetHeight();
+      result = (unsigned int)((Dali::PixelBuffer const*)arg1)->GetHeight();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -671,15 +674,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetHeight(void* jarg
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetPixelFormat(void* jarg1)
 {
-  int                       jresult;
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  Dali::Pixel::Format       result;
+  int                 jresult;
+  Dali::PixelBuffer*  arg1 = (Dali::PixelBuffer*)0;
+  Dali::Pixel::Format result;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   {
     try
     {
-      result = (Dali::Pixel::Format)((Dali::Devel::PixelBuffer const*)arg1)->GetPixelFormat();
+      result = (Dali::Pixel::Format)((Dali::PixelBuffer const*)arg1)->GetPixelFormat();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -689,15 +692,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetPixelFormat(void* jarg1)
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetStrideBytes(void* jarg1)
 {
-  unsigned int              jresult;
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  unsigned int              result;
+  unsigned int       jresult;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  unsigned int       result;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   {
     try
     {
-      result = (unsigned int)((Dali::Devel::PixelBuffer const*)arg1)->GetStrideBytes();
+      result = (unsigned int)((Dali::PixelBuffer const*)arg1)->GetStrideBytes();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -707,17 +710,17 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetStrideBytes(void*
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_0(void* jarg1, void* jarg2, float jarg3, bool jarg4)
 {
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  Dali::Devel::PixelBuffer  arg2;
-  float                     arg3;
-  bool                      arg4;
-  Dali::Devel::PixelBuffer* argp2;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  Dali::PixelBuffer  arg2;
+  float              arg3;
+  bool               arg4;
+  Dali::PixelBuffer* argp2;
 
-  arg1  = (Dali::Devel::PixelBuffer*)jarg1;
-  argp2 = (Dali::Devel::PixelBuffer*)jarg2;
+  arg1  = (Dali::PixelBuffer*)jarg1;
+  argp2 = (Dali::PixelBuffer*)jarg2;
   if(!argp2)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Devel::PixelBuffer", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PixelBuffer", 0);
     return;
   }
   arg2 = *argp2;
@@ -726,7 +729,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_0(void* jarg
   {
     try
     {
-      (arg1)->ApplyMask(arg2, arg3, arg4);
+      Dali::DevelPixelBuffer::ApplyMask(*arg1, arg2, arg3, arg4);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -734,16 +737,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_0(void* jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_1(void* jarg1, void* jarg2, float jarg3)
 {
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  Dali::Devel::PixelBuffer  arg2;
-  float                     arg3;
-  Dali::Devel::PixelBuffer* argp2;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  Dali::PixelBuffer  arg2;
+  float              arg3;
+  Dali::PixelBuffer* argp2;
 
-  arg1  = (Dali::Devel::PixelBuffer*)jarg1;
-  argp2 = (Dali::Devel::PixelBuffer*)jarg2;
+  arg1  = (Dali::PixelBuffer*)jarg1;
+  argp2 = (Dali::PixelBuffer*)jarg2;
   if(!argp2)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Devel::PixelBuffer", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PixelBuffer", 0);
     return;
   }
   arg2 = *argp2;
@@ -751,7 +754,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_1(void* jarg
   {
     try
     {
-      (arg1)->ApplyMask(arg2, arg3);
+      Dali::DevelPixelBuffer::ApplyMask(*arg1, arg2, arg3);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -759,22 +762,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_1(void* jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_2(void* jarg1, void* jarg2)
 {
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  Dali::Devel::PixelBuffer  arg2;
-  Dali::Devel::PixelBuffer* argp2;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  Dali::PixelBuffer  arg2;
+  Dali::PixelBuffer* argp2;
 
-  arg1  = (Dali::Devel::PixelBuffer*)jarg1;
-  argp2 = (Dali::Devel::PixelBuffer*)jarg2;
+  arg1  = (Dali::PixelBuffer*)jarg1;
+  argp2 = (Dali::PixelBuffer*)jarg2;
   if(!argp2)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Devel::PixelBuffer", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::PixelBuffer", 0);
     return;
   }
   arg2 = *argp2;
   {
     try
     {
-      (arg1)->ApplyMask(arg2);
+      Dali::DevelPixelBuffer::ApplyMask(*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -782,10 +785,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_2(void* jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyGaussianBlur(void* jarg1, float jarg2)
 {
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  float                     arg2;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  float              arg2;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   arg2 = (float)jarg2;
   {
     try
@@ -798,13 +801,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyGaussianBlur(void* jarg
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Crop(void* jarg1, unsigned short jarg2, unsigned short jarg3, unsigned short jarg4, unsigned short jarg5)
 {
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  uint16_t                  arg2;
-  uint16_t                  arg3;
-  uint16_t                  arg4;
-  uint16_t                  arg5;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  uint16_t           arg2;
+  uint16_t           arg3;
+  uint16_t           arg4;
+  uint16_t           arg5;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   arg2 = (uint16_t)jarg2;
   arg3 = (uint16_t)jarg3;
   arg4 = (uint16_t)jarg4;
@@ -812,7 +815,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Crop(void* jarg1, unsigned s
   {
     try
     {
-      (arg1)->Crop(arg2, arg3, arg4, arg5);
+      Dali::DevelPixelBuffer::Crop(*arg1, arg2, arg3, arg4, arg5);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -820,11 +823,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Crop(void* jarg1, unsigned s
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Resize(void* jarg1, unsigned short jarg2, unsigned short jarg3)
 {
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  uint16_t                  arg2;
-  uint16_t                  arg3;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  uint16_t           arg2;
+  uint16_t           arg3;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   arg2 = (uint16_t)jarg2;
   arg3 = (uint16_t)jarg3;
   {
@@ -838,17 +841,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Resize(void* jarg1, unsigned
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PixelBuffer_Rotate(void* jarg1, void* jarg2)
 {
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)0;
-  Dali::Degree*             arg2;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)0;
+  Dali::Degree*      arg2;
 
   bool result = false;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   arg2 = (Dali::Degree*)jarg2;
   {
     try
     {
-      result = (arg1)->Rotate(*arg2);
+      result = Dali::DevelPixelBuffer::Rotate(*arg1, *arg2);
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -857,14 +860,14 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PixelBuffer_Rotate(void* jarg1, void* ja
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetBrightness(void* jarg1)
 {
-  Dali::Devel::PixelBuffer* arg1   = (Dali::Devel::PixelBuffer*)0;
-  uint32_t                  result = 0;
+  Dali::PixelBuffer* arg1   = (Dali::PixelBuffer*)0;
+  uint32_t           result = 0;
 
-  arg1 = (Dali::Devel::PixelBuffer*)jarg1;
+  arg1 = (Dali::PixelBuffer*)jarg1;
   {
     try
     {
-      result = (arg1)->GetBrightness();
+      result = Dali::DevelPixelBuffer::GetBrightness(*arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -879,7 +882,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char* jarg1, 
   Dali::SamplingMode::Type arg4;
   bool                     arg5;
   Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  Dali::PixelBuffer        result;
 
   if(!jarg1)
   {
@@ -900,12 +903,12 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_0(char* jarg1, 
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2, arg4, arg5);
+      result = Dali::LoadImageFromFile(Dali::Integration::ToDaliStringView(*arg1), arg2, arg4, arg5);
     }
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, jarg3, arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
@@ -916,7 +919,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_1(char* jarg1, 
   Dali::ImageDimensions    arg2;
   Dali::SamplingMode::Type arg4;
   Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  Dali::PixelBuffer        result;
 
   if(!jarg1)
   {
@@ -936,22 +939,22 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_1(char* jarg1, 
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2, arg4);
+      result = Dali::LoadImageFromFile(Dali::Integration::ToDaliStringView(*arg1), arg2, arg4);
     }
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, jarg3, arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_2(char* jarg1, void* jarg2, int jarg3)
 {
-  void*                    jresult;
-  std::string*             arg1 = 0;
-  Dali::ImageDimensions    arg2;
-  Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  void*                  jresult;
+  std::string*           arg1 = 0;
+  Dali::ImageDimensions  arg2;
+  Dali::ImageDimensions* argp2;
+  Dali::PixelBuffer      result;
 
   if(!jarg1)
   {
@@ -970,22 +973,22 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_2(char* jarg1, 
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2);
+      result = Dali::LoadImageFromFile(Dali::Integration::ToDaliStringView(*arg1), arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, jarg3, arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_3(char* jarg1, void* jarg2)
 {
-  void*                    jresult;
-  std::string*             arg1 = 0;
-  Dali::ImageDimensions    arg2;
-  Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  void*                  jresult;
+  std::string*           arg1 = 0;
+  Dali::ImageDimensions  arg2;
+  Dali::ImageDimensions* argp2;
+  Dali::PixelBuffer      result;
 
   if(!jarg1)
   {
@@ -1004,20 +1007,20 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_3(char* jarg1, 
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1, arg2);
+      result = Dali::LoadImageFromFile(Dali::Integration::ToDaliStringView(*arg1), arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, static_cast<int>(LoadingFittingModeType::SHRINK_TO_FIT), arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_4(char* jarg1)
 {
-  void*                    jresult;
-  std::string*             arg1 = 0;
-  Dali::Devel::PixelBuffer result;
+  void*             jresult;
+  std::string*      arg1 = 0;
+  Dali::PixelBuffer result;
 
   if(!jarg1)
   {
@@ -1029,11 +1032,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromFile__SWIG_4(char* jarg1)
   {
     try
     {
-      result = Dali::LoadImageFromFile((std::string const&)*arg1);
+      result = Dali::LoadImageFromFile(Dali::Integration::ToDaliStringView(*arg1));
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
@@ -1045,7 +1048,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_0(void* jarg1
   Dali::SamplingMode::Type arg4;
   bool                     arg5;
   Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  Dali::PixelBuffer        result;
 
   if(!jarg1)
   {
@@ -1070,7 +1073,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_0(void* jarg1
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, jarg3, arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
@@ -1081,7 +1084,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_1(void* jarg1
   Dali::ImageDimensions    arg2;
   Dali::SamplingMode::Type arg4;
   Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  Dali::PixelBuffer        result;
 
   if(!jarg1)
   {
@@ -1105,17 +1108,17 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_1(void* jarg1
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, jarg3, arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_2(void* jarg1, void* jarg2, int jarg3)
 {
-  void*                    jresult;
-  Dali::Vector<uint8_t>*   arg1 = (Dali::Vector<uint8_t>*)0;
-  Dali::ImageDimensions    arg2;
-  Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  void*                  jresult;
+  Dali::Vector<uint8_t>* arg1 = (Dali::Vector<uint8_t>*)0;
+  Dali::ImageDimensions  arg2;
+  Dali::ImageDimensions* argp2;
+  Dali::PixelBuffer      result;
 
   if(!jarg1)
   {
@@ -1138,17 +1141,17 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_2(void* jarg1
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, jarg3, arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_3(void* jarg1, void* jarg2)
 {
-  void*                    jresult;
-  Dali::Vector<uint8_t>*   arg1 = (Dali::Vector<uint8_t>*)0;
-  Dali::ImageDimensions    arg2;
-  Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  void*                  jresult;
+  Dali::Vector<uint8_t>* arg1 = (Dali::Vector<uint8_t>*)0;
+  Dali::ImageDimensions  arg2;
+  Dali::ImageDimensions* argp2;
+  Dali::PixelBuffer      result;
 
   if(!jarg1)
   {
@@ -1171,15 +1174,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_3(void* jarg1
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, static_cast<int>(LoadingFittingModeType::SHRINK_TO_FIT), arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_4(void* jarg1)
 {
-  void*                    jresult;
-  Dali::Vector<uint8_t>*   arg1 = (Dali::Vector<uint8_t>*)0;
-  Dali::Devel::PixelBuffer result;
+  void*                  jresult;
+  Dali::Vector<uint8_t>* arg1 = (Dali::Vector<uint8_t>*)0;
+  Dali::PixelBuffer      result;
 
   if(!jarg1)
   {
@@ -1194,7 +1197,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_LoadImageFromBuffer__SWIG_4(void* jarg1
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
@@ -1206,7 +1209,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_0(char
   Dali::SamplingMode::Type arg4;
   bool                     arg5;
   Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  Dali::PixelBuffer        result;
 
   if(!jarg1)
   {
@@ -1232,7 +1235,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_0(char
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, jarg3, arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
@@ -1243,7 +1246,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_1(char
   Dali::ImageDimensions    arg2;
   Dali::SamplingMode::Type arg4;
   Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  Dali::PixelBuffer        result;
 
   if(!jarg1)
   {
@@ -1268,17 +1271,17 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_1(char
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, jarg3, arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_2(char* jarg1, void* jarg2, int jarg3)
 {
-  void*                    jresult;
-  std::string*             arg1 = 0;
-  Dali::ImageDimensions    arg2;
-  Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  void*                  jresult;
+  std::string*           arg1 = 0;
+  Dali::ImageDimensions  arg2;
+  Dali::ImageDimensions* argp2;
+  Dali::PixelBuffer      result;
 
   if(!jarg1)
   {
@@ -1302,17 +1305,17 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_2(char
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, jarg3, arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_3(char* jarg1, void* jarg2)
 {
-  void*                    jresult;
-  std::string*             arg1 = 0;
-  Dali::ImageDimensions    arg2;
-  Dali::ImageDimensions*   argp2;
-  Dali::Devel::PixelBuffer result;
+  void*                  jresult;
+  std::string*           arg1 = 0;
+  Dali::ImageDimensions  arg2;
+  Dali::ImageDimensions* argp2;
+  Dali::PixelBuffer      result;
 
   if(!jarg1)
   {
@@ -1336,15 +1339,15 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_3(char
     CALL_CATCH_EXCEPTION(0);
   }
   ApplyCropModeToPixelBuffer(result, static_cast<int>(LoadingFittingModeType::SHRINK_TO_FIT), arg2);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_4(char* jarg1)
 {
-  void*                    jresult;
-  std::string*             arg1 = 0;
-  Dali::Devel::PixelBuffer result;
+  void*             jresult;
+  std::string*      arg1 = 0;
+  Dali::PixelBuffer result;
 
   if(!jarg1)
   {
@@ -1360,7 +1363,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_DownloadImageSynchronously__SWIG_4(char
     }
     CALL_CATCH_EXCEPTION(0);
   }
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
@@ -1382,7 +1385,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetOriginalImageSize(char* jarg1, bool 
   {
     try
     {
-      result = Dali::GetOriginalImageSize((std::string const&)*arg1, arg2);
+      result = Dali::GetOriginalImageSize(Dali::Integration::ToDaliStringView(*arg1), arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }

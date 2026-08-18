@@ -12,6 +12,9 @@
 #define SWIG_NDalic_WRAP_H
 
 #include <dali/devel-api/actors/actor-enumerations-devel.h>
+#include <dali/devel-api/adaptor-framework/widget-application.h>
+#include <dali/devel-api/adaptor-framework/widget-impl.h>
+#include <dali/devel-api/adaptor-framework/widget.h>
 
 class SwigDirector_WidgetImpl : public Dali::Internal::Adaptor::Widget, public Swig::Director
 {

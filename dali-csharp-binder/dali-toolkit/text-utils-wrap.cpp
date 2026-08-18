@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -781,10 +781,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ShadowParameters(void* jarg1)
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_ShadowParameters_input_set(void* jarg1, void* jarg2)
 {
   Dali::Toolkit::DevelText::ShadowParameters* arg1 = (Dali::Toolkit::DevelText::ShadowParameters*)0;
-  Dali::Devel::PixelBuffer*                   arg2;
+  Dali::PixelBuffer*                          arg2;
 
   arg1 = (Dali::Toolkit::DevelText::ShadowParameters*)jarg1;
-  arg2 = (Dali::Devel::PixelBuffer*)jarg2;
+  arg2 = (Dali::PixelBuffer*)jarg2;
   if(arg1) (arg1)->input = *arg2;
 }
 
@@ -792,11 +792,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_ShadowParameters_input_get(void* jarg1)
 {
   void*                                       jresult;
   Dali::Toolkit::DevelText::ShadowParameters* arg1 = (Dali::Toolkit::DevelText::ShadowParameters*)0;
-  Dali::Devel::PixelBuffer                    result;
+  Dali::PixelBuffer                           result;
 
   arg1    = (Dali::Toolkit::DevelText::ShadowParameters*)jarg1;
-  result  = (Dali::Devel::PixelBuffer)((arg1)->input);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  result  = (Dali::PixelBuffer)((arg1)->input);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
@@ -895,10 +895,10 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextUtils_Render(void* jarg1, void** ja
 
   Dali::Vector<Dali::Toolkit::DevelText::EmbeddedItemInfo> embeddedItemLayout;
 
-  Dali::Devel::PixelBuffer result = Dali::Toolkit::DevelText::Render(*arg1, embeddedItemLayout);
-  void**                   arg2   = jarg2;
-  uint16_t*                arg3   = (uint16_t*)(jarg3);
-  uint16_t*                arg4   = (uint16_t*)(jarg4);
+  Dali::PixelBuffer result = Dali::Toolkit::DevelText::Render(*arg1, embeddedItemLayout);
+  void**            arg2   = jarg2;
+  uint16_t*         arg3   = (uint16_t*)(jarg3);
+  uint16_t*         arg4   = (uint16_t*)(jarg4);
 
   Dali::Toolkit::DevelText::EmbeddedItemInfo* array = new Dali::Toolkit::DevelText::EmbeddedItemInfo[embeddedItemLayout.Count()];
   int                                         count = 0;
@@ -909,7 +909,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextUtils_Render(void* jarg1, void** ja
   *arg2   = (void*)array;
   *arg3   = count;
   *arg4   = sizeof(struct Dali::Toolkit::DevelText::EmbeddedItemInfo);
-  jresult = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  jresult = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
@@ -918,30 +918,30 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextUtils_CreateShadow(void* jarg1)
   void*                                       jresult;
   Dali::Toolkit::DevelText::ShadowParameters* arg1 = (Dali::Toolkit::DevelText::ShadowParameters*)(jarg1);
 
-  Dali::Devel::PixelBuffer result = Dali::Toolkit::DevelText::CreateShadow(*arg1);
-  jresult                         = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  Dali::PixelBuffer result = Dali::Toolkit::DevelText::CreateShadow(*arg1);
+  jresult                  = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_TextUtils_ConvertToRgba8888(void* jarg1, void* jarg2, bool jarg3)
 {
-  void*                     jresult;
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)jarg1;
-  Dali::Vector4*            arg2 = (Dali::Vector4*)jarg2;
-  bool                      arg3 = (bool)jarg3;
+  void*              jresult;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)jarg1;
+  Dali::Vector4*     arg2 = (Dali::Vector4*)jarg2;
+  bool               arg3 = (bool)jarg3;
 
-  Dali::Devel::PixelBuffer result = Dali::Toolkit::DevelText::ConvertToRgba8888(*arg1, *arg2, arg3);
-  jresult                         = new Dali::Devel::PixelBuffer((const Dali::Devel::PixelBuffer&)result);
+  Dali::PixelBuffer result = Dali::Toolkit::DevelText::ConvertToRgba8888(*arg1, *arg2, arg3);
+  jresult                  = new Dali::PixelBuffer((const Dali::PixelBuffer&)result);
   return jresult;
 }
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_TextUtils_UpdateBuffer(void* jarg1, void* jarg2, unsigned int jarg3, unsigned int jarg4, bool jarg5)
 {
-  Dali::Devel::PixelBuffer* arg1 = (Dali::Devel::PixelBuffer*)jarg1;
-  Dali::Devel::PixelBuffer* arg2 = (Dali::Devel::PixelBuffer*)jarg2;
-  unsigned int              arg3 = (unsigned int)jarg3;
-  unsigned int              arg4 = (unsigned int)jarg4;
-  bool                      arg5 = (bool)jarg5;
+  Dali::PixelBuffer* arg1 = (Dali::PixelBuffer*)jarg1;
+  Dali::PixelBuffer* arg2 = (Dali::PixelBuffer*)jarg2;
+  unsigned int       arg3 = (unsigned int)jarg3;
+  unsigned int       arg4 = (unsigned int)jarg4;
+  bool               arg5 = (bool)jarg5;
 
   Dali::Toolkit::DevelText::UpdateBuffer(*arg1, *arg2, arg3, arg4, arg5);
 }
