@@ -718,7 +718,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_RetrieveTargetSize(void* actor, voi
   try
   {
     Dali::Vector3 result;
-    result      = ((Dali::Actor const*)pActor)->GetTargetSize();
+    result      = Dali::DevelActor::GetTargetSize(*(Dali::Actor const*)pActor);
     pVector3->x = result.x;
     pVector3->y = result.y;
     pVector3->z = result.z;
