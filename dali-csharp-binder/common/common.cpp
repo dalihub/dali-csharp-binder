@@ -15,8 +15,34 @@
  *
  */
 
+// EXTERNAL INCLUDES
+#include <dali/devel-api/adaptor-framework/key-devel.h>
+
 // INTERNAL INCLUDES
 #include "common.h"
+
+namespace
+{
+/**
+ * Behaviour that dali-adaptor has moved on from, but that applications running on this binder were
+ * written against. Applied when the binder is loaded, so it is in place before any application type
+ * creates its first window, and so that it reaches only processes that go through the binder.
+ * A native application gets the current dali-adaptor behaviour.
+ */
+struct LegacyCompatibility
+{
+  LegacyCompatibility()
+  {
+    // The Tizen backends used to resolve a key code from the window system first and consult the
+    // dali key look up table only as a fallback. dali-adaptor now looks the table up first on every
+    // backend, so that a named key such as XF86Back arrives as DALI_KEY_BACK regardless of what the
+    // device keymap carries for it. Applications here were written against the old key codes.
+    Dali::DevelKey::SetSystemKeyCodePriority(true);
+  }
+};
+
+LegacyCompatibility gLegacyCompatibility;
+} // namespace
 
 SWIG_CSharpException_t SWIG_csharp_exceptions[] = {
   {SWIG_CSharpApplicationException, NULL},
