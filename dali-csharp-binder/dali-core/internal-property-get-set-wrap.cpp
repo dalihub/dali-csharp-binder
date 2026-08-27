@@ -845,7 +845,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_RetrieveNaturalSize(void* actor, vo
   try
   {
     Dali::Vector3 result;
-    result      = ((Dali::Actor const*)pActor)->GetNaturalSize();
+    result      = Dali::DevelActor::GetNaturalSize((Dali::Actor const&)*pActor);
     pVector3->x = result.x;
     pVector3->y = result.y;
     pVector3->z = result.z;
