@@ -79,7 +79,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WidgetView_New(char* jarg1, char* jarg2
     {
       result = Dali::Toolkit::Control::New();
       result.SetProperty(Dali::Actor::Property::SIZE, Dali::Vector2(static_cast<float>(jarg3), static_cast<float>(jarg4)));
-      result.SetProperty(Dali::Actor::Property::COLOR, Dali::Vector4(0.7f, 0.7f, 0.7f, 1.0f));
+      result.SetProperty(Dali::Actor::Property::COLOR_MULTIPLIER, Dali::Vector4(0.7f, 0.7f, 0.7f, 1.0f));
     }
     CALL_CATCH_EXCEPTION(0);
   }
