@@ -172,7 +172,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_SetLooping(void* jarg1, unsign
   {
     try
     {
-      (arg1)->SetLooping(arg2);
+      // Dali::Animation::SetLooping() was removed; SetLoopCount() is the canonical API.
+      (arg1)->SetLoopCount(arg2 ? Dali::Animation::INFINITE_LOOP : 1);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -240,7 +241,8 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_Animation_IsLooping(void* jarg1)
   {
     try
     {
-      result = (bool)((Dali::Animation const*)arg1)->IsLooping();
+      // Dali::Animation::IsLooping() was removed; preserve its semantics of "loops more than once".
+      result = (bool)((arg1)->GetLoopCount() != 1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -1619,9 +1621,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Animation_Hide(void* jarg1, void* jarg2,
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AnimationSignal_Empty(void* jarg1)
 {
-  unsigned int                          jresult;
+  unsigned int                         jresult;
   Dali::Signal<void(Dali::Animation)>* arg1 = (Dali::Signal<void(Dali::Animation)>*)0;
-  bool                                  result;
+  bool                                 result;
 
   arg1 = (Dali::Signal<void(Dali::Animation)>*)jarg1;
   {
@@ -1637,9 +1639,9 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_AnimationSignal_Empty(void* jarg
 
 SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Dali_AnimationSignal_GetConnectionCount(void* jarg1)
 {
-  unsigned long                         jresult;
+  unsigned long                        jresult;
   Dali::Signal<void(Dali::Animation)>* arg1 = (Dali::Signal<void(Dali::Animation)>*)0;
-  std::size_t                           result;
+  std::size_t                          result;
 
   arg1 = (Dali::Signal<void(Dali::Animation)>*)jarg1;
   {
@@ -1688,7 +1690,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AnimationSignal_Disconnect(void* jarg1, 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AnimationSignal_Emit(void* jarg1, void* jarg2)
 {
   Dali::Signal<void(Dali::Animation)>* arg1 = (Dali::Signal<void(Dali::Animation)>*)0;
-  Dali::Animation*                      arg2 = 0;
+  Dali::Animation*                     arg2 = 0;
 
   arg1 = (Dali::Signal<void(Dali::Animation)>*)jarg1;
   arg2 = (Dali::Animation*)jarg2;
@@ -1708,7 +1710,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_AnimationSignal_Emit(void* jarg1, void* 
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_AnimationSignal()
 {
-  void*                                 jresult;
+  void*                                jresult;
   Dali::Signal<void(Dali::Animation)>* result = 0;
 
   {
