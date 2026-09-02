@@ -141,21 +141,21 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetColor(void* up
 {
   Dali::UpdateProxy* proxy   = (Dali::UpdateProxy*)updateProxy;
   Dali::Vector4*     vector4 = (Dali::Vector4*)color;
-  return proxy->GetColor(id, *vector4);
+  return proxy->GetColorMultiplier(id, *vector4);
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetColor(void* updateProxy, unsigned int id, void* color)
 {
   Dali::UpdateProxy* proxy   = (Dali::UpdateProxy*)updateProxy;
   Dali::Vector4*     vector4 = (Dali::Vector4*)color;
-  return proxy->SetColor(id, *vector4);
+  return proxy->SetColorMultiplier(id, *vector4);
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeColor(void* updateProxy, unsigned int id, void* color)
 {
   Dali::UpdateProxy* proxy   = (Dali::UpdateProxy*)updateProxy;
   Dali::Vector4*     vector4 = (Dali::Vector4*)color;
-  return proxy->BakeColor(id, *vector4);
+  return proxy->BakeColorMultiplier(id, *vector4);
 }
 
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_SetIgnored(void* updateProxy, unsigned int id, bool ignored)
@@ -237,7 +237,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetColorVector4Co
 {
   Dali::UpdateProxy* proxy = (Dali::UpdateProxy*)updateProxy;
   Dali::Vector4      vector4;
-  bool               ret = proxy->GetColor(id, vector4);
+  bool               ret = proxy->GetColorMultiplier(id, vector4);
   *r                     = vector4.r;
   *g                     = vector4.g;
   *b                     = vector4.b;
@@ -248,7 +248,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_GetColorVector4Co
 SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_FrameCallbackInterface_BakeColorVector4Componentwise(void* updateProxy, unsigned int id, float r, float g, float b, float a)
 {
   Dali::UpdateProxy* proxy = (Dali::UpdateProxy*)updateProxy;
-  return proxy->BakeColor(id, Dali::Vector4(r, g, b, a));
+  return proxy->BakeColorMultiplier(id, Dali::Vector4(r, g, b, a));
 }
 
 #ifdef __cplusplus

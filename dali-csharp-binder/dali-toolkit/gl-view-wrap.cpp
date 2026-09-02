@@ -286,7 +286,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderCallbackInput_WorldColor_get(void
   Dali::Vector4*             result      = 0;
   Dali::RenderCallbackInput* renderInput = (Dali::RenderCallbackInput*)input;
 
-  result  = &(renderInput->worldColor);
+  result  = &(renderInput->worldColorMultiplier);
   jresult = (void*)result;
   return jresult;
 }

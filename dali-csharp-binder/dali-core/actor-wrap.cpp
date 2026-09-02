@@ -400,7 +400,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_COLOR_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::COLOR;
+  result  = (int)Dali::Actor::Property::COLOR_MULTIPLIER;
   jresult = (int)result;
   return jresult;
 }
@@ -410,7 +410,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_COLOR_RED_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::COLOR_RED;
+  result  = (int)Dali::Actor::Property::COLOR_MULTIPLIER_RED;
   jresult = (int)result;
   return jresult;
 }
@@ -420,7 +420,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_COLOR_GREEN_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::COLOR_GREEN;
+  result  = (int)Dali::Actor::Property::COLOR_MULTIPLIER_GREEN;
   jresult = (int)result;
   return jresult;
 }
@@ -430,7 +430,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_COLOR_BLUE_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::COLOR_BLUE;
+  result  = (int)Dali::Actor::Property::COLOR_MULTIPLIER_BLUE;
   jresult = (int)result;
   return jresult;
 }
@@ -440,7 +440,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_Property_WORLD_COLOR_get()
   int jresult;
   int result;
 
-  result  = (int)Dali::Actor::Property::WORLD_COLOR;
+  result  = (int)Dali::Actor::Property::WORLD_COLOR_MULTIPLIER;
   jresult = (int)result;
   return jresult;
 }
@@ -2241,7 +2241,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColor(void* jarg1, void* jarg2)
   {
     try
     {
-      (arg1)->SetProperty(Actor::Property::COLOR, (Dali::Vector4 const&)*arg2);
+      (arg1)->SetColorMultiplier((Dali::Vector4 const&)*arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -2263,7 +2263,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Actor_SetColor_4FloatValues(void* jarg1,
     try
     {
       const Dali::Vector4 color(r, g, b, a);
-      (arg1)->SetProperty(Actor::Property::COLOR, color);
+      (arg1)->SetColorMultiplier(color);
     }
     CALL_CATCH_EXCEPTION();
   }
