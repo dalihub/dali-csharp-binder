@@ -42,7 +42,7 @@
 using Dali::Integration::ToDaliString;
 using Dali::Integration::ToPropertyValue;
 
-namespace Dali::Internal
+namespace DALI_NAMESPACE::Internal
 {
 namespace
 {
@@ -374,4 +374,4 @@ VisualObjectsContainer::~VisualObjectsContainer()
   }
 }
 
-} // namespace Dali::Internal
+} //namespace DALI_NAMESPACE::Internal

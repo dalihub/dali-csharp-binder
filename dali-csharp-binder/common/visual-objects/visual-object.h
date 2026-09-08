@@ -2,7 +2,7 @@
 #define CSHARP_VISUAL_OBJECT_H
 
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/visual-objects/visual-objects-container.h>
 
-namespace Dali
+namespace DALI_NAMESPACE
 {
 namespace Internal
 {
@@ -234,6 +234,6 @@ public:
    */
   VisualObject(Dali::Internal::VisualObject* object);
 };
-} // namespace Dali
+} //namespace DALI_NAMESPACE
 
 #endif // CSHARP_VISUAL_OBJECT_H
