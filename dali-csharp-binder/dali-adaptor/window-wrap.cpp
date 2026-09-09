@@ -357,7 +357,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_New__SWIG_0(void* jarg1, char* j
   {
     try
     {
-      result = Dali::Window::New(arg1, Dali::String(jarg2), arg3);
+      // See CSharp_Dali_Window_New__WithWindowData below: a C# secondary window shows itself
+      // once the adaptor is set on it, and a preloaded window is left hidden regardless.
+      result = Dali::DevelWindow::New(arg1, Dali::String(jarg2), arg3, true);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -401,7 +403,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_New__WithWindowData(char* nuiNam
   {
     try
     {
-      result = Dali::Window::New(ToDaliString(*name), ToDaliString(*className), *pWindowData);
+      // A C# secondary window shows itself once the adaptor is set on it, unlike a native one
+      // which the application shows explicitly. DevelWindow::New() leaves a preloaded window
+      // hidden regardless, because its properties are decided later and it is shown from
+      // ApplicationController::UpdatePreInitializedWindowInfo() instead.
+      result = Dali::DevelWindow::New(ToDaliString(*name), ToDaliString(*className), *pWindowData, true);
     }
     CALL_CATCH_EXCEPTION(0);
   }
