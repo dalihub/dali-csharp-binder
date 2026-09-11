@@ -145,16 +145,16 @@ extern "C" {
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_GetScreenSize()
 {
-  void* jresult;
-  int   width, height;
+  void*           jresult;
+  Dali::Int32Pair screenSize;
 
   try
   {
-    Dali::DevelWindowSystem::GetScreenSize(width, height);
+    screenSize = Dali::WindowSystem::GetMainScreenSize();
   }
   CALL_CATCH_EXCEPTION(0);
 
-  jresult = new Dali::Size(width, height);
+  jresult = new Dali::Size(screenSize.GetWidth(), screenSize.GetHeight());
   return jresult;
 }
 
