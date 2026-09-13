@@ -31,7 +31,7 @@
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/visual-objects/visual-object.h>
 
-namespace Dali
+namespace DALI_NAMESPACE
 {
 namespace Internal
 {
@@ -149,6 +149,6 @@ inline static const Internal::VisualObjectsContainer& GetImplementation(const Da
   return static_cast<const Internal::VisualObjectsContainer&>(object);
 }
 
-} // namespace Dali
+} //namespace DALI_NAMESPACE
 
 #endif // CSHARP_VISUAL_OBJECTS_CONTAINER_IMPL_H

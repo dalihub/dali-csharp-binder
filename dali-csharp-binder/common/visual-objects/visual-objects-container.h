@@ -2,7 +2,7 @@
 #define CSHARP_VISUAL_OBJECTS_CONTAINER_H
 
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
 #include <dali-toolkit/public-api/controls/control.h>
 #include <dali/public-api/object/base-handle.h>
 
-namespace Dali
+namespace DALI_NAMESPACE
 {
 namespace Internal
 {
@@ -194,6 +194,6 @@ public:
    */
   VisualObjectsContainer(Dali::Internal::VisualObjectsContainer* object);
 };
-} // namespace Dali
+} //namespace DALI_NAMESPACE
 
 #endif // CSHARP_VISUAL_OBJECTS_CONTAINER_H

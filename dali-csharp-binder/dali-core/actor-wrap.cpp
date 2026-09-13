@@ -18,7 +18,7 @@
 // EXTERNAL INCLUDES
 #include <dali/devel-api/actors/actor-devel.h>
 #include <dali/devel-api/actors/actor-enumerations-devel.h>
-#include <limits>
+#include <cmath>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -3156,16 +3156,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_SetTouchAreaOffset(void* 
   arg1              = (Dali::Actor*)jarg1;
 
   // Meaning of TouchAreaOffset and TOUCH_AREA_MARGIN changed at dali_2.5.18. Let we synchronize it.
-  // TouchAreaOffset(left, right, bottom top) ---> Extents(-left, right, -top, bottom);
-
-  // Clamp if input value is over the int16_t type.
-  // For safer logic, let we ignore -32768.
-  Dali::ClampInPlace(left, static_cast<int32_t>(-std::numeric_limits<int16_t>::max()), static_cast<int32_t>(std::numeric_limits<int16_t>::max()));
-  Dali::ClampInPlace(right, static_cast<int32_t>(-std::numeric_limits<int16_t>::max()), static_cast<int32_t>(std::numeric_limits<int16_t>::max()));
-  Dali::ClampInPlace(bottom, static_cast<int32_t>(-std::numeric_limits<int16_t>::max()), static_cast<int32_t>(std::numeric_limits<int16_t>::max()));
-  Dali::ClampInPlace(top, static_cast<int32_t>(-std::numeric_limits<int16_t>::max()), static_cast<int32_t>(std::numeric_limits<int16_t>::max()));
-
-  Extents arg2 = Extents(-left, right, -top, bottom);
+  // TouchAreaOffset(left, right, bottom top) ---> Insets(-left, right, -top, bottom);
+  // Negate after converting to float, so that INT32_MIN cannot overflow.
+  Insets arg2 = Insets(-static_cast<float>(left), static_cast<float>(right), -static_cast<float>(top), static_cast<float>(bottom));
   {
     if(!arg1)
     {
@@ -3185,7 +3178,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_GetTouchAreaOffset(void* 
   Dali::Actor* arg1 = (Dali::Actor*)0;
   arg1              = (Dali::Actor*)jarg1;
 
-  Extents result;
+  Insets result;
   if(!arg1)
   {
     SWIG_EXCEPTION_WITH_FILE_AND_LINE(SWIG_CSharpArgumentNullException, "Dali::Actor & type is null");
@@ -3194,14 +3187,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DevelActor_Property_GetTouchAreaOffset(void* 
   {
     try
     {
-      result = (arg1)->GetProperty<Extents>(Dali::Actor::Property::TOUCH_HIT_AREA_MARGIN);
+      result = (arg1)->GetProperty<Insets>(Dali::Actor::Property::TOUCH_HIT_AREA_MARGIN);
 
       // Meaning of TouchAreaOffset and TOUCH_AREA_MARGIN changed at dali_2.5.18. Let we synchronize it.
-      // Extents(start, end, top, bottom) --> TouchAreaOffset(-start, end, bottom -top);
-      *left   = static_cast<int32_t>(-result.start);
-      *right  = static_cast<int32_t>(result.end);
-      *bottom = static_cast<int32_t>(result.bottom);
-      *top    = static_cast<int32_t>(-result.top);
+      // Insets(start, end, top, bottom) --> TouchAreaOffset(-start, end, bottom -top);
+      *left   = static_cast<int32_t>(std::round(-result.start));
+      *right  = static_cast<int32_t>(std::round(result.end));
+      *bottom = static_cast<int32_t>(std::round(result.bottom));
+      *top    = static_cast<int32_t>(std::round(-result.top));
     }
     CALL_CATCH_EXCEPTION();
   }

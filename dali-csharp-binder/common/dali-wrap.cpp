@@ -10168,14 +10168,43 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_INSTANCE_COUNT_get()
   return jresult;
 }
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Renderer_Property_UPDATE_AREA_EXTENTS_get()
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Renderer_SetUpdateAreaMargin(void* csRenderer, float start, float end, float top, float bottom)
 {
-  int jresult;
-  int result;
+  Dali::Renderer* renderer = (Dali::Renderer*)csRenderer;
+  if(!renderer)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Renderer & type is null", 0);
+    return;
+  }
+  {
+    try
+    {
+      renderer->SetProperty(Dali::DevelRenderer::Property::UPDATE_AREA_MARGIN, Dali::Insets(start, end, top, bottom));
+    }
+    CALL_CATCH_EXCEPTION();
+  }
+}
 
-  result  = (int)Dali::DevelRenderer::Property::UPDATE_AREA_MARGIN;
-  jresult = (int)result;
-  return jresult;
+SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Renderer_GetUpdateAreaMargin(void* csRenderer, float* start, float* end, float* top, float* bottom)
+{
+  Dali::Renderer* renderer = (Dali::Renderer*)csRenderer;
+  if(!renderer)
+  {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Dali::Renderer & type is null", 0);
+    return;
+  }
+  {
+    try
+    {
+      const Dali::Insets margin = renderer->GetProperty<Dali::Insets>(Dali::DevelRenderer::Property::UPDATE_AREA_MARGIN);
+
+      *start  = margin.start;
+      *end    = margin.end;
+      *top    = margin.top;
+      *bottom = margin.bottom;
+    }
+    CALL_CATCH_EXCEPTION();
+  }
 }
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Renderer_New(void* jarg1, void* jarg2)

@@ -26,7 +26,7 @@
 #include <dali-csharp-binder/common/common.h>
 #include <dali-csharp-binder/common/visual-objects/visual-object-impl.h>
 
-namespace Dali
+namespace DALI_NAMESPACE
 {
 VisualObject::VisualObject(Dali::Internal::VisualObject* object)
 : BaseHandle(object)
@@ -113,7 +113,7 @@ Dali::Property VisualObject::GetPropertyObject(Dali::Property::Key visualPropert
   return GetImplementation(*this).GetPropertyObject(std::move(visualPropertyKey));
 }
 
-} // namespace Dali
+} //namespace DALI_NAMESPACE
 
 #ifdef __cplusplus
 extern "C" {

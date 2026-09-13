@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@
 #include <dali-csharp-binder/common/visual-objects/visual-object.h>
 #include <dali-csharp-binder/common/visual-objects/visual-objects-container-impl.h>
 
-namespace Dali
+namespace DALI_NAMESPACE
 {
 VisualObjectsContainer::VisualObjectsContainer(Dali::Internal::VisualObjectsContainer* object)
 : BaseHandle(object)
@@ -81,7 +81,7 @@ void VisualObjectsContainer::RemoveVisualObject(Dali::VisualObject visualObject)
   GetImplementation(*this).RemoveVisualObject(visualObject);
 }
 
-} // namespace Dali
+} //namespace DALI_NAMESPACE
 
 #ifdef __cplusplus
 extern "C" {

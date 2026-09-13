@@ -36,6 +36,12 @@
 using Dali::Integration::ToDaliString;
 using Dali::Integration::ToStdString;
 
+// C# still receives window insets as Extents. The adaptor reports them in whole pixels, so narrowing loses nothing.
+static Dali::Extents ToExtents(const Dali::Insets& insets)
+{
+  return Dali::Extents(static_cast<int16_t>(insets.start), static_cast<int16_t>(insets.end), static_cast<int16_t>(insets.top), static_cast<int16_t>(insets.bottom));
+}
+
 // WindowEventProxy: bridges the new dali-adaptor signal signatures to the legacy C# delegate types.
 // - KeyEvent: new Signal<void(Window, KeyEvent)> → C# expects void(KeyEvent)
 // - InsetsChanged: new Signal<void(Window, const WindowInsetsInfo&)> → C# expects void(partType, partState, extents)
@@ -62,7 +68,7 @@ struct WindowEventProxy : public Dali::ConnectionTracker
 
   void OnInsetsChanged(Dali::Window /*window*/, const Dali::WindowInsetsInfo& insetsInfo)
   {
-    insetsChangedSignal.Emit(insetsInfo.GetPartType(), insetsInfo.GetPartState(), insetsInfo.GetExtents());
+    insetsChangedSignal.Emit(insetsInfo.GetPartType(), insetsInfo.GetPartState(), ToExtents(insetsInfo.GetInsets()));
   }
 };
 
@@ -357,7 +363,9 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_New__SWIG_0(void* jarg1, char* j
   {
     try
     {
-      result = Dali::Window::New(arg1, Dali::String(jarg2), arg3);
+      // See CSharp_Dali_Window_New__WithWindowData below: a C# secondary window shows itself
+      // once the adaptor is set on it, and a preloaded window is left hidden regardless.
+      result = Dali::DevelWindow::New(arg1, Dali::String(jarg2), arg3, true);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -401,7 +409,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_New__WithWindowData(char* nuiNam
   {
     try
     {
-      result = Dali::Window::New(ToDaliString(*name), ToDaliString(*className), *pWindowData);
+      // A C# secondary window shows itself once the adaptor is set on it, unlike a native one
+      // which the application shows explicitly. DevelWindow::New() leaves a preloaded window
+      // hidden regardless, because its properties are decided later and it is shown from
+      // ApplicationController::UpdatePreInitializedWindowInfo() instead.
+      result = Dali::DevelWindow::New(ToDaliString(*name), ToDaliString(*className), *pWindowData, true);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -4558,7 +4570,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetInsets__SWIG_0(void* winHandl
   {
     try
     {
-      result = Dali::DevelWindow::GetInsets(*window);
+      result = ToExtents(Dali::DevelWindow::GetInsets(*window));
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -4580,7 +4592,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Window_GetInsets__SWIG_1(void* winHandl
   {
     try
     {
-      result = Dali::DevelWindow::GetInsets(*window, (Dali::WindowInsetsPartFlags)insetsFlags);
+      result = ToExtents(Dali::DevelWindow::GetInsets(*window, (Dali::WindowInsetsPartFlags)insetsFlags));
     }
     CALL_CATCH_EXCEPTION(0);
   }
