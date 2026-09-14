@@ -20,6 +20,7 @@
 #include <dali/devel-api/adaptor-framework/mouse-relative-event.h>
 #include <dali/devel-api/adaptor-framework/pointer-constraints-event.h>
 #include <dali/devel-api/adaptor-framework/window-devel.h>
+#include <dali/devel-api/common/extents.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali/integration-api/adaptor-framework/scene-holder.h>
 #include <dali/integration-api/string-utils.h>
