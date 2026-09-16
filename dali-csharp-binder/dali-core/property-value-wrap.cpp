@@ -14,6 +14,8 @@
 #include <dali-csharp-binder/common/common.h>
 
 #include <dali/dali.h>
+#include <dali/devel-api/common/extents.h>
+#include <dali/devel-api/object/property-value-devel.h>
 
 #include <dali/integration-api/debug.h>
 
@@ -884,7 +886,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Property_Value_Get__SWIG_15(void* jarg1,
   {
     try
     {
-      result = (bool)((Dali::Property::Value const*)arg1)->Get(*arg2);
+      result = Dali::GetExtents(*arg1, *arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
