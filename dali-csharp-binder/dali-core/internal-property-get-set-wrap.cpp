@@ -18,6 +18,7 @@
 // EXTERNAL INCLUDES
 #include <dali/dali.h>
 #include <dali/devel-api/actors/actor-devel.h>
+#include <dali/devel-api/object/property-value-devel.h>
 #include <dali/integration-api/debug.h>
 
 // INTERNAL INCLUDES
@@ -582,7 +583,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_Actor_InternalRetrievingPropertyExtents(v
   try
   {
     Dali::Extents result;
-    result           = ((Dali::Handle const*)pActor)->GetProperty<Dali::Extents>((Dali::Property::Index)propertyType);
+    Dali::GetExtents(((Dali::Handle const*)pActor)->GetProperty((Dali::Property::Index)propertyType), result);
     pExtents->start  = result.start;
     pExtents->end    = result.end;
     pExtents->top    = result.top;

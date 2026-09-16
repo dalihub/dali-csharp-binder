@@ -17,9 +17,9 @@
 
 // EXTERNAL INCLUDES
 #include <dali/devel-api/adaptor-framework/application-devel.h>
+#include <dali/devel-api/adaptor-framework/application.h>
 #include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali/integration-api/debug.h>
-#include <dali/public-api/adaptor-framework/application.h>
 #include <dali/public-api/adaptor-framework/window-definitions.h>
 
 #include <dali-toolkit/devel-api/toolkit-pre-initialize.h>

@@ -34,18 +34,11 @@ SWIGEXPORT Dali::BaseHandle* SWIGSTDCALL CSharp_Dali_WidgetViewManager_SWIGUpcas
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WidgetViewManager_New(void* jarg1, char* jarg2)
 {
   void*                               jresult;
-  Dali::Application                   arg1;
   std::string*                        arg2 = 0;
-  Dali::Application*                  argp1;
   Dali::WidgetView::WidgetViewManager result;
 
-  argp1 = (Dali::Application*)jarg1;
-  if(!argp1)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Application", 0);
-    return 0;
-  }
-  arg1 = *argp1;
+  (void)jarg1; // Application is no longer used; kept for ABI compatibility.
+
   if(!jarg2)
   {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
@@ -56,7 +49,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WidgetViewManager_New(void* jarg1, char
   {
     try
     {
-      result = Dali::WidgetView::WidgetViewManager::New(arg1, (std::string const&)*arg2);
+      result = Dali::WidgetView::WidgetViewManager::New((std::string const&)*arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
