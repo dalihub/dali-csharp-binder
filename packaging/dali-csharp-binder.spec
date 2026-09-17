@@ -22,7 +22,7 @@
 Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
 Version: 2.5.39
-Release: 2
+Release: 3
 Group: uifw/graphic
 License: Apache-2.0 and Zlib
 Source: %{name}-%{version}.tar.xz
