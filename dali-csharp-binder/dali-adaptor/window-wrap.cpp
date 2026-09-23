@@ -4314,7 +4314,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_KeyboardUnGrab(void* winHandle)
   {
     try
     {
-      result = Dali::DevelWindow::KeyboardUnGrab(*window);
+      result = Dali::DevelWindow::KeyboardUngrab(*window);
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -4466,7 +4466,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_Window_RelativeMotionUnGrab(void* winHan
   {
     try
     {
-      result = Dali::DevelWindow::RelativeMotionUnGrab(*window);
+      result = Dali::DevelWindow::RelativeMotionUngrab(*window);
     }
     CALL_CATCH_EXCEPTION(false);
   }
