@@ -130,35 +130,35 @@ Toolkit Demo
 # Build
 ##############################
 %build
-PREFIX+="/usr"
-CXXFLAGS+=" -Wall -g -Os -fPIC"
-LDFLAGS+=" -Wl,--rpath=%{_libdir} "
+PREFIX="${PREFIX}/usr"
+CXXFLAGS="$CXXFLAGS  -Wall -g -Os -fPIC"
+LDFLAGS="$LDFLAGS  -Wl,--rpath=%{_libdir} "
 
 %if %{with wayland}
-CFLAGS+=" -DWAYLAND"
-CXXFLAGS+=" -DWAYLAND"
+CFLAGS="$CFLAGS  -DWAYLAND"
+CXXFLAGS="$CXXFLAGS  -DWAYLAND"
 cmake_flags=" -DENABLE_WAYLAND=ON"
 
 # Use this conditional when Tizen version is 5.x or greater
 %if 0%{?tizen_version_major} >= 5
-CXXFLAGS+=" -DOVER_TIZEN_VERSION_5"
+CXXFLAGS="$CXXFLAGS  -DOVER_TIZEN_VERSION_5"
 
 # Need Ecore-Wayland2 when Tizen version is 5.x or greater, and less than 11.x
 %if 0%{?tizen_version_major} < 11
-CFLAGS+=" -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
-CXXFLAGS+=" -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
-cmake_flags+=" -DENABLE_ECORE_WAYLAND2=ON"
+CFLAGS="$CFLAGS  -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
+CXXFLAGS="$CXXFLAGS  -DECORE_WL2 -DEFL_BETA_API_SUPPORT"
+cmake_flags="$cmake_flags  -DENABLE_ECORE_WAYLAND2=ON"
 %endif
 %endif
 
 # Use this conditional when Tizen version is 7.x or greater
 %if 0%{?tizen_version_major} >= 7
-CXXFLAGS+=" -DOVER_TIZEN_VERSION_7"
+CXXFLAGS="$CXXFLAGS  -DOVER_TIZEN_VERSION_7"
 %endif
 
 %if 0%{?tizen_version_major} >= 11
-CXXFLAGS+=" -DOVER_TIZEN_VERSION_11"
-cmake_flags+=" -DENABLE_LEGACY_BINDER_BUILD=OFF"
+CXXFLAGS="$CXXFLAGS  -DOVER_TIZEN_VERSION_11"
+cmake_flags="$cmake_flags  -DENABLE_LEGACY_BINDER_BUILD=OFF"
 %else
 cmake_flags+=" -DENABLE_LEGACY_BINDER_BUILD=ON"
 %endif
@@ -172,11 +172,11 @@ LDFLAGS+=" -fsanitize=address"
 %endif
 
 %if 0%{?enable_debug}
-cmake_flags+=" -DCMAKE_BUILD_TYPE=Debug"
+cmake_flags="$cmake_flags  -DCMAKE_BUILD_TYPE=Debug"
 %endif
 
 %if 0%{?rive_animation_view}
-cmake_flags+=" -DENABLE_RIVE_ANIMATION=ON"
+cmake_flags="$cmake_flags  -DENABLE_RIVE_ANIMATION=ON"
 %endif
 
 # autogen
@@ -189,28 +189,28 @@ cd %{_builddir}/%{name}-%{version}/build/tizen
 TIZEN_PLATFORM_CONFIG_SUPPORTED="%{tizen_platform_config_supported}" ; export TIZEN_PLATFORM_CONFIG_SUPPORTED
 %endif
 
-cmake_flags+=" -DCMAKE_INSTALL_PREFIX=$PREFIX"
-cmake_flags+=" -DCMAKE_INSTALL_LIBDIR=%{_libdir}"
-cmake_flags+=" -DCMAKE_INSTALL_INCLUDEDIR=%{_includedir}"
-cmake_flags+=" -DENABLE_TIZEN_MAJOR_VERSION=%{tizen_version_major}"
-cmake_flags+=" -DENABLE_SCENE3D=ON"
-cmake_flags+=" -DENABLE_PHYSICS_2D=ON"
-cmake_flags+=" -DENABLE_PHYSICS_3D=ON"
-cmake_flags+=" -DENABLE_WIDGET_VIEWER_DALI=ON"
-cmake_flags+=" -DENABLE_TOOLKIT_DEMO=ON"
+cmake_flags="$cmake_flags  -DCMAKE_INSTALL_PREFIX=$PREFIX"
+cmake_flags="$cmake_flags  -DCMAKE_INSTALL_LIBDIR=%{_libdir}"
+cmake_flags="$cmake_flags  -DCMAKE_INSTALL_INCLUDEDIR=%{_includedir}"
+cmake_flags="$cmake_flags  -DENABLE_TIZEN_MAJOR_VERSION=%{tizen_version_major}"
+cmake_flags="$cmake_flags  -DENABLE_SCENE3D=ON"
+cmake_flags="$cmake_flags  -DENABLE_PHYSICS_2D=ON"
+cmake_flags="$cmake_flags  -DENABLE_PHYSICS_3D=ON"
+cmake_flags="$cmake_flags  -DENABLE_WIDGET_VIEWER_DALI=ON"
+cmake_flags="$cmake_flags  -DENABLE_TOOLKIT_DEMO=ON"
 
 
 # Set up the build via Cmake
 #######################################################################
 
 mkdir -p build
-pushd build
+(cd build || exit
 
 cmake -DENABLE_PROFILE=TIZEN $cmake_flags ..
 
 # Build.
 make %{?jobs:-j%jobs}
-popd
+)
 
 ##############################
 # Installation
@@ -218,11 +218,11 @@ popd
 %install
 rm -rf %{buildroot}
 
-pushd %{_builddir}/%{name}-%{version}/build/tizen
+cd %{_builddir}/%{name}-%{version}/build/tizen
 
-pushd build
+(cd build || exit
 %make_install
-popd
+)
 
 ##############################
 # Upgrade order:
