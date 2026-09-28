@@ -43,7 +43,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKeyTopmost(void* window, int daliKey
   {
     try
     {
-      ret = Dali::KeyGrab::GrabKeyTopmost(*_win, (Dali::KEY)daliKey);
+      ret = Dali::KeyGrab::GrabKeyTopmost(*_win, (Dali::Key)daliKey);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -63,7 +63,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKeyTopmost(void* window, int daliK
   {
     try
     {
-      ret = Dali::KeyGrab::UngrabKeyTopmost(*_win, (Dali::KEY)daliKey);
+      ret = Dali::KeyGrab::UngrabKeyTopmost(*_win, (Dali::Key)daliKey);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -83,7 +83,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_GrabKey(void* window, int daliKey, int g
   {
     try
     {
-      ret = Dali::KeyGrab::GrabKey(*_win, (Dali::KEY)daliKey, (Dali::KeyGrab::KeyGrabMode)grabMode);
+      ret = Dali::KeyGrab::GrabKey(*_win, (Dali::Key)daliKey, (Dali::KeyGrab::KeyGrabMode)grabMode);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -103,7 +103,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_UngrabKey(void* window, int daliKey)
   {
     try
     {
-      ret = Dali::KeyGrab::UngrabKey(*_win, (Dali::KEY)daliKey);
+      ret = Dali::KeyGrab::UngrabKey(*_win, (Dali::Key)daliKey);
     }
     CALL_CATCH_EXCEPTION(0);
   }
