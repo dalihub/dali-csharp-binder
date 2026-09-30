@@ -1,18 +1,5 @@
 # NOTES
-# This spec file is used to build DALi C# binder for different Tizen Profiles
-# Current profiles are:  Mobile, TV, Common
-#
-# The profile variable is defined outside of the spec file in a build.conf file.
-# It will contain the profile and whether or not to build with X11 or Wayland
-#
-# gbs will try to download the build.conf for the platform automatically from the repo location when
-# performing a gbs build ( use gbs build -v to see it download location) E.g.
-# http://download.tizen.org/snapshots/tizen/tv/tizen-tv/repos/arm-wayland/packages/repodata/xxxx-build.conf.gz
-
-# This if statement is for backward compatibility with GBM/Obsolete build systems
-%if "%{?profile}" != "mobile" && "%{?profile}" != "tv" && "%{?profile}" != "common"
-%global __provides_exclude_from ^.*\\.(mobile|tv|common)$
-%endif
+# This spec file builds one DALi C# binder, used by every Tizen profile.
 
 %bcond_with wayland
 
@@ -66,55 +53,17 @@ BuildRequires: asan-build-env
 BuildRequires: libasan
 %endif
 
-# for multiprofile
-Requires:   %{name}-compat = %{version}-%{release}
-Recommends: %{name}-profile_common = %{version}-%{release}
+# Absorbs the profile_mobile, profile_tv and profile_common packages an image
+# may still have installed. The library they carried is in this package.
+Provides:   %{name}-profile_common = %{version}-%{release}
+Provides:   %{name}-profile_mobile = %{version}-%{release}
+Provides:   %{name}-profile_tv = %{version}-%{release}
+Obsoletes:  %{name}-profile_common < %{version}-%{release}
+Obsoletes:  %{name}-profile_mobile < %{version}-%{release}
+Obsoletes:  %{name}-profile_tv < %{version}-%{release}
 
 %description
 dali-csharp-binder
-
-###########################################
-# Dali csharp binder for profiles
-###########################################
-
-# If the profile is selected, the line below is repquired.
-# if mobile || "undefined"
-%if "%{?profile}" != "tv" && "%{?profile}" != "common"
-%package profile_mobile
-Summary:        The DALi Tizen csharp binder for mobile
-Provides:       %{name}-compat = %{version}-%{release}
-Conflicts:      %{name}-profile_tv
-Conflicts:      %{name}-profile_common
-%description profile_mobile
-The DALi Tizen csharp binder for mobile.
-%endif
-
-# If the profile is selected, the line below is repquired.
-# if tv ||"undefined"
-%if "%{?profile}" != "common" && "%{?profile}" != "mobile"
-%package profile_tv
-Summary:        The DALi Tizen csharp binder for tv
-Provides:       %{name}-compat = %{version}-%{release}
-Conflicts:      %{name}-profile_mobile
-Conflicts:      %{name}-profile_common
-%description profile_tv
-The DALi Tizen csharp binder for tv.
-%endif
-
-# If the profile is selected, the line below is repquired.
-# if common ||"undefined"
-%if "%{?profile}" != "tv" && "%{?profile}" != "mobile"
-# Currently Tizen Common we use does not have wayland extensions like xdg-shell
-%package profile_common
-%define tizen_2_2_compatibility 0
-Summary:        The DALi Tizen csharp binder for common
-Provides:       %{name}-compat = %{version}-%{release}
-Conflicts:      %{name}-profile_mobile
-Conflicts:      %{name}-profile_tv
-%description profile_common
-The DALi Tizen csharp binder for common.
-%endif
-
 
 ##############################
 # devel
@@ -253,53 +202,15 @@ cmake_flags+=" -DENABLE_TOOLKIT_DEMO=ON"
 
 # Set up the build via Cmake
 #######################################################################
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
-# if mobile || "undefined"
-%if "%{?profile}" != "tv" && "%{?profile}" != "common"
 
-mkdir -p mobile
-pushd mobile
+mkdir -p build
+pushd build
 
-cmake -DENABLE_PROFILE=MOBILE $cmake_flags ..
+cmake -DENABLE_PROFILE=TIZEN $cmake_flags ..
 
 # Build.
 make %{?jobs:-j%jobs}
 popd
-
-%endif
-
-#######################################################################
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
-# if tv ||"undefined"
-%if "%{?profile}" != "common" && "%{?profile}" != "mobile"
-
-mkdir -p tv
-pushd tv
-
-cmake -DENABLE_PROFILE=TV $cmake_flags ..
-
-# Build.
-make %{?jobs:-j%jobs}
-popd
-
-%endif
-
-#######################################################################
-# common
-# This is for backward-compatibility. This does not deteriorate 4.0 Configurability
-# if common ||"undefined"
-%if "%{?profile}" != "tv" && "%{?profile}" != "mobile"
-
-mkdir -p common
-pushd common
-
-cmake -DENABLE_PROFILE=COMMON $cmake_flags ..
-
-# Build.
-make %{?jobs:-j%jobs}
-popd
-
-%endif
 
 ##############################
 # Installation
@@ -309,39 +220,9 @@ rm -rf %{buildroot}
 
 pushd %{_builddir}/%{name}-%{version}/build/tizen
 
-# if mobile || "undefined"
-%if "%{?profile}" != "tv" && "%{?profile}" != "common"
-pushd mobile
+pushd build
 %make_install
-%if "%{?profile}" != "mobile"
-pushd  %{buildroot}%{_libdir}
-cp libdali2-csharp-binder.so.*.*.* libdali2-csharp-binder.so.mobile # If we're only building this profile, then there's no need to copy the lib
 popd
-make clean # So that we can gather symbol/size information for only one profile if we're building all profiles
-%endif
-popd
-%endif
-
-# if tv ||"undefined"
-%if "%{?profile}" != "common" && "%{?profile}" != "mobile"
-pushd tv
-%make_install
-%if "%{?profile}" != "tv"
-pushd  %{buildroot}%{_libdir}
-cp libdali2-csharp-binder.so.*.*.* libdali2-csharp-binder.so.tv # If we're only building this profile, then there's no need to copy the lib
-popd
-make clean # So that we can gather symbol/size information for only one profile if we're building all profiles
-%endif
-popd
-%endif
-
-# if common ||"undefined"
-%if "%{?profile}" != "tv" && "%{?profile}" != "mobile"
-pushd common
-%make_install
-# No clean so we can gather symbol/size information for the common profile
-popd
-%endif
 
 ##############################
 # Upgrade order:
@@ -360,9 +241,6 @@ exit 0
 #  Post Install new package
 ##############################
 %post
-pushd %{_libdir}
-for i in mobile tv; do [[ -f libdali2-csharp-binder.so.$i ]] && ln -sf libdali2-csharp-binder.so.$i libdali2-csharp-binder.so.2.0.0; done
-popd
 /sbin/ldconfig
 exit 0
 
@@ -378,56 +256,6 @@ exit 0
 %postun
 /sbin/ldconfig
 exit 0
-
-##############################
-# Mobile Profile Commands
-# No need to create a symbolic link on install required if only building this profile
-# if mobile || "undefined"
-%if "%{?profile}" != "tv" && "%{?profile}" != "common"
-%post profile_mobile
-%if "%{?profile}" != "mobile"
-pushd %{_libdir}
-ln -sf libdali2-csharp-binder.so.mobile libdali2-csharp-binder.so.2.0.0
-popd
-%endif
-/sbin/ldconfig
-exit 0
-
-%postun profile_mobile
-/sbin/ldconfig
-exit 0
-%endif
-
-##############################
-# TV Profile Commands
-# No need to create a symbolic link on install required if only building this profile
-# if tv ||"undefined"
-%if "%{?profile}" != "common" && "%{?profile}" != "mobile"
-%post profile_tv
-%if "%{?profile}" != "tv"
-pushd %{_libdir}
-ln -sf libdali2-csharp-binder.so.tv libdali2-csharp-binder.so.2.0.0
-popd
-%endif
-/sbin/ldconfig
-exit 0
-
-%postun profile_tv
-/sbin/ldconfig
-exit 0
-%endif
-
-##############################
-# Common Profile Commands
-%if "%{?profile}" != "tv" && "%{?profile}" != "mobile"
-%post profile_common
-/sbin/ldconfig
-exit 0
-
-%postun profile_common
-/sbin/ldconfig
-exit 0
-%endif
 
 ##############################
 # Files in Binary Packages
@@ -474,36 +302,6 @@ exit 0
 %{_libdir}/libdali2-csharp-binder-toolkit-demo.so*
 
 #################################################
-
-# If the profile is selected, the line below is repquired.
-# if common ||"undefined"
-%if "%{?profile}" != "tv" && "%{?profile}" != "mobile"
-%files profile_common
-%manifest dali-csharp-binder.manifest
-# default .so files are housed in the main pkg.
-%endif
-
-# If the profile is selected, the line below is repquired.
-# if mobile || "undefined"
-%if "%{?profile}" != "tv" && "%{?profile}" != "common"
-%files profile_mobile
-%manifest dali-csharp-binder.manifest
-%defattr(-,root,root,-)
-%if "%{?profile}" != "mobile"
-%{_libdir}/libdali2-csharp-binder.so.*mobile
-%endif
-%endif
-
-# If the profile is selected, the line below is repquired.
-# if tv ||"undefined"
-%if "%{?profile}" != "common" && "%{?profile}" != "mobile"
-%files profile_tv
-%manifest dali-csharp-binder.manifest
-%defattr(-,root,root,-)
-%if "%{?profile}" != "tv"
-%{_libdir}/libdali2-csharp-binder.so.*tv
-%endif
-%endif
 
 %files devel
 %defattr(-,root,root,-)

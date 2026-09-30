@@ -468,11 +468,11 @@ static const std::string WEBVIEW_NULL_ERROR_MSG =
     or that an object created with new on a worker thread is being posted and used on the main thread. \
     This is because the WebView(WebContext, WebSettings) is a native DALi-bound object, so the user must be cautious.";
 
-#define WEBOBJ_NULL_CHECK(ret)                      \
-  if(!webObj)                                       \
-  {                                                 \
-    DALI_LOG_ERROR(WEBVIEW_NULL_ERROR_MSG.c_str()); \
-    return ret;                                     \
+#define WEBOBJ_NULL_CHECK(ret)                            \
+  if(!webObj)                                             \
+  {                                                       \
+    DALI_LOG_ERROR("%s", WEBVIEW_NULL_ERROR_MSG.c_str()); \
+    return ret;                                           \
   }
 
 #endif // CSHARP_COMMON_H
