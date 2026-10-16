@@ -93,12 +93,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WindowBlurInfo_SWIG_2(int nuiBlurTy
   int                  cornerRadius = nuiCornerRadius;
   Dali::WindowDimInfo* dimInfo      = (Dali::WindowDimInfo*)nuiDimInfo;
 
-  if(!dimInfo)
-  {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::WindowDimInfo", 0);
-    return 0;
-  }
-
   {
     try
     {
@@ -349,9 +343,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_WindowDimInfo(int enable, void* dim
   {
     try
     {
-      // Use the documented default (fully transparent) color when null is passed,
-      // to keep backward compatibility with the behavior before dimming was added.
-      result = (Dali::WindowDimInfo*)new Dali::WindowDimInfo(enable != 0, color ? *color : Dali::Vector4::ZERO);
+      result = (Dali::WindowDimInfo*)new Dali::WindowDimInfo(enable != 0, *color);
     }
     CALL_CATCH_EXCEPTION(0);
   }
