@@ -29,6 +29,7 @@
 #include <dali-toolkit/devel-api/visuals/image-visual-properties-devel.h>
 #include <dali/devel-api/adaptor-framework/vector-animation-renderer.h>
 #include <dali/devel-api/atspi-interfaces/accessible.h>
+#include <dali/public-api/signals/callback.h>
 #include <string>
 #include "control-devel-wrap.h"
 
@@ -36,32 +37,36 @@ using namespace Dali;
 using namespace Dali::Toolkit;
 using namespace Dali::Toolkit::DevelControl;
 
+// Retain the previously exported template instantiation for binary compatibility.
+template Dali::CallbackBase* Dali::MakeCallback<Dali::Property::Value, int32_t, int32_t, uint32_t>(Dali::Property::Value (*)(int32_t, int32_t, uint32_t));
+
 namespace
 {
-typedef void (*SavedCallbackType)(int32_t, int32_t, uint32_t, float* val1, float* val2, float* val3);
-SavedCallbackType gSavedRootCallback = nullptr;
+using ManagedCallbackType = void (*)(int32_t, int32_t, uint32_t, float* val1, float* val2, float* val3);
 
-Dali::Property::Value RootCallback(int32_t id, VectorAnimationRenderer::VectorProperty property, uint32_t frameNumber)
+Dali::Property::Value RootCallback(ManagedCallbackType managedCallback, int32_t id, VectorAnimationRenderer::VectorProperty property, uint32_t frameNumber)
 {
   float val1 = 0.0f, val2 = 0.0f, val3 = 0.0f;
-  if(gSavedRootCallback != nullptr)
+  if(managedCallback != nullptr)
   {
-    gSavedRootCallback(id, (int)property, frameNumber, &val1, &val2, &val3);
+    managedCallback(id, static_cast<int32_t>(property), frameNumber, &val1, &val2, &val3);
   }
 
   switch(property)
   {
     case VectorAnimationRenderer::VectorProperty::FILL_COLOR:
     case VectorAnimationRenderer::VectorProperty::STROKE_COLOR:
+    {
       return Dali::Vector3(val1, val2, val3);
-      break;
+    }
 
     case VectorAnimationRenderer::VectorProperty::TRANSFORM_ANCHOR:
     case VectorAnimationRenderer::VectorProperty::TRANSFORM_POSITION:
     case VectorAnimationRenderer::VectorProperty::TRANSFORM_SCALE:
     case VectorAnimationRenderer::VectorProperty::TRIM_END:
+    {
       return Dali::Vector2(val1, val2);
-      break;
+    }
 
     case VectorAnimationRenderer::VectorProperty::FILL_OPACITY:
     case VectorAnimationRenderer::VectorProperty::STROKE_OPACITY:
@@ -69,12 +74,14 @@ Dali::Property::Value RootCallback(int32_t id, VectorAnimationRenderer::VectorPr
     case VectorAnimationRenderer::VectorProperty::TRANSFORM_ROTATION:
     case VectorAnimationRenderer::VectorProperty::TRANSFORM_OPACITY:
     case VectorAnimationRenderer::VectorProperty::TRIM_START:
+    {
       return val1;
-      break;
+    }
 
     default:
+    {
       return 0;
-      break;
+    }
   }
 }
 } //unnamed namespace
@@ -672,14 +679,21 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_View_DoActionExtension(void* control, in
   DevelAnimatedVectorImageVisual::DynamicPropertyInfo info;
   info.id = callbackId;
   std::string path(keyPath);
-  info.keyPath       = path;
-  info.property      = property;
-  gSavedRootCallback = (void (*)(int32_t, int32_t, uint32_t, float* val1, float* val2, float* val3))callback;
-  info.callback      = Dali::MakeCallback((Dali::Property::Value (*)(int32_t, int32_t, uint32_t))RootCallback);
+  info.keyPath  = path;
+  info.property = property;
+
+  // The interop ABI passes the managed function pointer as void*.
+  const auto managedCallback  = reinterpret_cast<ManagedCallbackType>(callback);
+  auto       propertyCallback = [managedCallback](int32_t id, VectorAnimationRenderer::VectorProperty vectorProperty, uint32_t frameNumber)
+  {
+    return RootCallback(managedCallback, id, vectorProperty, frameNumber);
+  };
+  // The visual owns the wrapper and its copy of the dispatcher pointer.
+  info.callback = new Dali::CallbackFunctorReturn3<decltype(propertyCallback), int32_t, VectorAnimationRenderer::VectorProperty, uint32_t, Dali::Property::Value>(propertyCallback);
 
   try
   {
-    DevelControl::DoActionExtension(*((Dali::Toolkit::Control*)control), (Dali::Property::Index)visualIndex, (Dali::Property::Index)actionId, Dali::Any(info));
+    DevelControl::DoActionExtension(*static_cast<Dali::Toolkit::Control*>(control), static_cast<Dali::Property::Index>(visualIndex), static_cast<Dali::Property::Index>(actionId), Dali::Any(info));
   }
   CALL_CATCH_EXCEPTION();
 }
