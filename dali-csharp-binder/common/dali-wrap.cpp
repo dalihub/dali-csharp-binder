@@ -55,7 +55,6 @@
 #include <dali/public-api/events/mouse-button.h>
 #include <dali/public-api/math/matrix.h>
 #include <dali/public-api/math/matrix3.h>
-#include <dali/public-api/math/viewport.h>
 #include <dali/public-api/object/property-key.h>
 
 #include <dali/devel-api/adaptor-framework/environment-variable.h>
@@ -11196,7 +11195,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCurrentViewportPosition(v
   {
     try
     {
-      result = ((Dali::RenderTask const*)arg1)->GetCurrentViewportPosition();
+      result = ((Dali::RenderTask const*)arg1)->GetViewportPosition();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -11238,7 +11237,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCurrentViewportSize(void*
   {
     try
     {
-      result = ((Dali::RenderTask const*)arg1)->GetCurrentViewportSize();
+      result = ((Dali::RenderTask const*)arg1)->GetViewportSize();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -11249,22 +11248,23 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCurrentViewportSize(void*
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetViewport(void* jarg1, void* jarg2)
 {
-  Dali::RenderTask* arg1 = (Dali::RenderTask*)0;
-  Dali::Viewport    arg2;
-  Dali::Viewport*   argp2;
+  Dali::RenderTask*    arg1 = (Dali::RenderTask*)0;
+  Dali::BoundsInteger  arg2;
+  Dali::BoundsInteger* argp2;
 
   arg1  = (Dali::RenderTask*)jarg1;
-  argp2 = (Dali::Viewport*)jarg2;
+  argp2 = (Dali::BoundsInteger*)jarg2;
   if(!argp2)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Viewport", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BoundsInteger", 0);
     return;
   }
   arg2 = *argp2;
   {
     try
     {
-      (arg1)->SetViewport(arg2);
+      (arg1)->SetViewportPosition(Vector2(arg2.x, arg2.y));
+      (arg1)->SetViewportSize(Vector2(arg2.width, arg2.height));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -11272,20 +11272,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetViewport(void* jarg1, void
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetViewport(void* jarg1)
 {
-  void*             jresult;
-  Dali::RenderTask* arg1 = (Dali::RenderTask*)0;
-  Dali::Viewport    result;
+  void*               jresult;
+  Dali::RenderTask*   arg1 = (Dali::RenderTask*)0;
+  Dali::BoundsInteger result;
 
   arg1 = (Dali::RenderTask*)jarg1;
   {
     try
     {
-      result = ((Dali::RenderTask const*)arg1)->GetViewport();
+      Vector2 position = ((Dali::RenderTask const*)arg1)->GetViewportPosition();
+      Vector2 size     = ((Dali::RenderTask const*)arg1)->GetViewportSize();
+      result           = BoundsInteger(static_cast<int32_t>(std::roundf(position.x)),
+                                       static_cast<int32_t>(std::roundf(position.y)),
+                                       static_cast<int32_t>(std::roundf(size.x)),
+                                       static_cast<int32_t>(std::roundf(size.y)));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Viewport((const Dali::Viewport&)result);
+  jresult = new Dali::BoundsInteger((const Dali::BoundsInteger&)result);
   return jresult;
 }
 
