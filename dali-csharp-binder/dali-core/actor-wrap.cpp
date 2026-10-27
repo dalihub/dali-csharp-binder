@@ -709,7 +709,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_IGNORED_get()
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Actor_Property_WORLD_IGNORED_get()
 {
-  return Dali::DevelActor::Property::WORLD_IGNORED;
+  return Dali::Actor::Property::WORLD_IGNORED;
 }
 
 // Creation
@@ -3062,7 +3062,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CalculateScreenExtents(void* acto
   {
     try
     {
-      result = arg1.CalculateScreenExtents();
+      result = arg1.CalculateScreenBounds();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -3089,7 +3089,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Actor_CurrentScreenExtents(void* actor)
   {
     try
     {
-      result = Dali::DevelActor::CalculateCurrentScreenExtents(arg1);
+      result = arg1.CalculateCurrentScreenBounds();
     }
     CALL_CATCH_EXCEPTION(0);
   }
