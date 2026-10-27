@@ -11195,7 +11195,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCurrentViewportPosition(v
   {
     try
     {
-      result = ((Dali::RenderTask const*)arg1)->GetViewportPosition();
+      result = ((Dali::RenderTask const*)arg1)->GetCurrentProperty<Dali::Vector2>(Dali::RenderTask::Property::VIEWPORT_POSITION);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -11237,7 +11237,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCurrentViewportSize(void*
   {
     try
     {
-      result = ((Dali::RenderTask const*)arg1)->GetViewportSize();
+      result = ((Dali::RenderTask const*)arg1)->GetCurrentProperty<Dali::Vector2>(Dali::RenderTask::Property::VIEWPORT_SIZE);
     }
     CALL_CATCH_EXCEPTION(0);
   }
