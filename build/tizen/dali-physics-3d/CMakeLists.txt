@@ -1,4 +1,4 @@
-SET(PHYSICS_3D_TARGET dali2-csharp-binder-physics-3d)
+SET(PHYSICS_3D_TARGET ${name}-physics-3d)
 
 SET( PHYSICS_3D_SOURCES ${dali_csharp_binder_physics_3d_src_files})
 
@@ -32,7 +32,7 @@ TARGET_LINK_LIBRARIES( ${PHYSICS_3D_TARGET} PUBLIC
   ${DALICORE_LDFLAGS}
   ${DALIADAPTOR_LDFLAGS}
   ${DALITOOLKIT_LDFLAGS}
-  dali2-csharp-binder
+  ${name}
   ${DALIPHYSICS3D_LDFLAGS})
 
 TARGET_COMPILE_OPTIONS( ${PHYSICS_3D_TARGET} PUBLIC
