@@ -9,6 +9,6 @@ includedir=@DEV_INCLUDE_PATH@
 Name: DALi C# binder
 Description: DALi C# binder Library for widget-viewer
 Version: ${apiversion}
-Requires: dali2-csharp-binder
-Libs: -L${libdir} -ldali2-csharp-binder-widget-viewer-dali
+Requires: @name@
+Libs: -L${libdir} -l@name@-widget-viewer-dali
 Cflags: -I${includedir}/dali-csharp-binder

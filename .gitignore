@@ -68,10 +68,10 @@ autom4te.cache/
 config.h
 config.log
 config.status
-dali2-csharp-binder.pc
-dali2-csharp-binder/.deps/
-dali2-csharp-binder/.libs/
-dali2-csharp-binder/Makefile
+dali*-csharp-binder.pc
+dali*-csharp-binder/.deps/
+dali*-csharp-binder/.libs/
+dali*-csharp-binder/Makefile
 libtool
 stamp-h1
 build/tizen/m4/
@@ -81,5 +81,5 @@ build/tizen/build/
 build/tizen/cmake_install.cmake
 build/tizen/dali-scene3d/cmake_install.cmake
 build/tizen/install_manifest.txt
-build/tizen/libdali2-csharp-binder.so*
-build/tizen/dali-scene3d/libdali2-csharp-binder-scene3d.so*
+build/tizen/libdali*-csharp-binder.so*
+build/tizen/dali-scene3d/libdali*-csharp-binder-scene3d.so*

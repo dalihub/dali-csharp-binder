@@ -1,4 +1,4 @@
-SET(TOOLKIT_DEMO_TARGET dali2-csharp-binder-toolkit-demo)
+SET(TOOLKIT_DEMO_TARGET ${name}-toolkit-demo)
 
 SET(TOOLKIT_DEMO_SOURCES ${dali_csharp_binder_toolkit_demo_src_files})
 
