@@ -1,7 +1,3 @@
-# dali2 is the same code built a second time under the dali2 name, for
-# applications that still use it. To drop it, remove the "with dali2" blocks.
-%bcond_without dali2
-
 # NOTES
 # This spec file builds one DALi C# binder, used by every Tizen profile.
 
@@ -10,7 +6,7 @@
 #please update nui_internal_version below, if you changed version-check.cpp
 %define nui_internal_version nui550
 
-Name: dali3-csharp-binder
+Name: dali2-csharp-binder
 Summary: The DALI Csharp Binder
 Version: 2.5.45
 Release: 1
@@ -27,30 +23,6 @@ BuildRequires:  pkgconfig(libtzplatform-config)
 BuildRequires: pkgconfig
 BuildRequires: cmake
 BuildRequires: gawk
-BuildRequires: pkgconfig(dali3-core)
-BuildRequires: pkgconfig(dali3-adaptor)
-BuildRequires: pkgconfig(dali3-toolkit)
-BuildRequires: pkgconfig(dali3-scene3d)
-BuildRequires: pkgconfig(dali3-physics-2d)
-BuildRequires: pkgconfig(dali3-physics-3d)
-BuildRequires: dali3-integration-devel
-BuildRequires: dali3-adaptor-integration-devel
-BuildRequires: dali3-toolkit-integration-devel
-BuildRequires: dali3-scene3d-integration-devel
-
-%if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
-%define rive_animation_view 1
-BuildRequires: pkgconfig(dali3-extension-rive-animation-view)
-%endif
-
-
-BuildRequires: pkgconfig(dali3-widget-viewer)
-BuildRequires: pkgconfig(libtbm)
-%if 0%{?tizen_version_major} < 11
-BuildRequires: pkgconfig(ecore-wl2)
-%endif
-
-%if %{with dali2}
 BuildRequires: pkgconfig(dali2-core)
 BuildRequires: pkgconfig(dali2-adaptor)
 BuildRequires: pkgconfig(dali2-toolkit)
@@ -61,10 +33,17 @@ BuildRequires: dali2-integration-devel
 BuildRequires: dali2-adaptor-integration-devel
 BuildRequires: dali2-toolkit-integration-devel
 BuildRequires: dali2-scene3d-integration-devel
-%if 0%{?rive_animation_view}
+
+%if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
+%define rive_animation_view 1
 BuildRequires: pkgconfig(dali2-extension-rive-animation-view)
 %endif
+
+
 BuildRequires: pkgconfig(widget_viewer_dali)
+BuildRequires: pkgconfig(libtbm)
+%if 0%{?tizen_version_major} < 11
+BuildRequires: pkgconfig(ecore-wl2)
 %endif
 
 # For ASAN test
@@ -73,6 +52,15 @@ BuildRequires: asan-force-options
 BuildRequires: asan-build-env
 BuildRequires: libasan
 %endif
+
+# Absorbs the profile_mobile, profile_tv and profile_common packages an image
+# may still have installed. The library they carried is in this package.
+Provides:   %{name}-profile_common = %{version}-%{release}
+Provides:   %{name}-profile_mobile = %{version}-%{release}
+Provides:   %{name}-profile_tv = %{version}-%{release}
+Obsoletes:  %{name}-profile_common < %{version}-%{release}
+Obsoletes:  %{name}-profile_mobile < %{version}-%{release}
+Obsoletes:  %{name}-profile_tv < %{version}-%{release}
 
 %description
 dali-csharp-binder
@@ -128,64 +116,6 @@ Group:      System/Libraries
 Requires:   %{name} = %{version}-%{release}
 %description toolkitdemo
 Toolkit Demo
-
-%if %{with dali2}
-##############################
-# dali2
-##############################
-%package -n dali2-csharp-binder
-Summary: The DALI Csharp Binder
-Group: uifw/graphic
-Requires(post): /sbin/ldconfig
-Requires(postun): /sbin/ldconfig
-# Absorbs the profile_mobile, profile_tv and profile_common packages an image
-# may still have installed. The library they carried is in this package.
-Provides:   dali2-csharp-binder-profile_common = %{version}-%{release}
-Provides:   dali2-csharp-binder-profile_mobile = %{version}-%{release}
-Provides:   dali2-csharp-binder-profile_tv = %{version}-%{release}
-Obsoletes:  dali2-csharp-binder-profile_common < %{version}-%{release}
-Obsoletes:  dali2-csharp-binder-profile_mobile < %{version}-%{release}
-Obsoletes:  dali2-csharp-binder-profile_tv < %{version}-%{release}
-
-%description -n dali2-csharp-binder
-dali-csharp-binder - the same code as %{name}, under the dali2 name
-
-%package -n dali2-csharp-binder-devel
-Summary: build dali csharp binder
-Group: Development/Building
-Requires: dali2-csharp-binder = %{version}-%{release}
-
-%description -n dali2-csharp-binder-devel
-This package includes developer files common to all packages.
-
-%package -n dali2-csharp-binder-scene3d
-Summary:    build dali csharp binder scene3d
-Group:      System/Libraries
-Requires:   dali2-csharp-binder = %{version}-%{release}
-%description -n dali2-csharp-binder-scene3d
-Scene 3D for Dali
-
-%package -n dali2-csharp-binder-physics2d
-Summary:    build dali csharp binder physics2d
-Group:      System/Libraries
-Requires:   dali2-csharp-binder = %{version}-%{release}
-%description -n dali2-csharp-binder-physics2d
-2D Physics for Dali
-
-%package -n dali2-csharp-binder-physics3d
-Summary:    build dali csharp binder physics3d
-Group:      System/Libraries
-Requires:   dali2-csharp-binder = %{version}-%{release}
-%description -n dali2-csharp-binder-physics3d
-3D Physics for Dali
-
-%package -n dali2-csharp-binder-toolkitdemo
-Summary:    build dali csharp binder toolkit demo
-Group:      System/Libraries
-Requires:   dali2-csharp-binder = %{version}-%{release}
-%description -n dali2-csharp-binder-toolkitdemo
-Toolkit Demo
-%endif
 
 ##############################
 # Preparation
@@ -282,17 +212,6 @@ cmake -DENABLE_PROFILE=TIZEN $cmake_flags ..
 make %{?jobs:-j%jobs}
 )
 
-%if %{with dali2}
-# The same options as dali3 above; only the dali2 names differ.
-mkdir -p build-dali2
-(cd build-dali2 || exit
-
-cmake -DENABLE_PROFILE=TIZEN $cmake_flags -DDALI_API_MAJOR=2 -DWIDGET_VIEWER_DALI_PKG=widget_viewer_dali ..
-
-make %{?jobs:-j%jobs}
-)
-%endif
-
 ##############################
 # Installation
 ##############################
@@ -304,12 +223,6 @@ cd %{_builddir}/%{name}-%{version}/build/tizen
 (cd build || exit
 %make_install
 )
-
-%if %{with dali2}
-(cd build-dali2 || exit
-%make_install
-)
-%endif
 
 ##############################
 # Upgrade order:
@@ -344,75 +257,10 @@ exit 0
 /sbin/ldconfig
 exit 0
 
-%if %{with dali2}
-%post -n dali2-csharp-binder
-/sbin/ldconfig
-exit 0
-
-%postun -n dali2-csharp-binder
-/sbin/ldconfig
-exit 0
-%endif
-
 ##############################
 # Files in Binary Packages
 ##############################
 %files
-%manifest dali-csharp-binder.manifest
-%license LICENSE
-%license LICENSE.Zlib
-%defattr(-,root,root,-)
-%{_libdir}/libdali3-csharp-binder.so
-%{_libdir}/libdali3-csharp-binder.so.3
-%{_libdir}/libdali3-csharp-binder.so.3.0.0
-%if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
-%{_libdir}/libdali3-csharp-binder-rive-animation.so*
-%endif
-%{_libdir}/libdali3-csharp-binder-widget-viewer-dali.so*
-
-#################################################
-
-%files scene3d
-%manifest dali-csharp-binder.manifest
-%defattr(-,root,root,-)
-%{_libdir}/libdali3-csharp-binder-scene3d.so*
-
-#################################################
-
-%files physics2d
-%manifest dali-csharp-binder.manifest
-%defattr(-,root,root,-)
-%{_libdir}/libdali3-csharp-binder-physics-2d.so*
-
-#################################################
-
-%files physics3d
-%manifest dali-csharp-binder.manifest
-%defattr(-,root,root,-)
-%{_libdir}/libdali3-csharp-binder-physics-3d.so*
-
-#################################################
-
-%files toolkitdemo
-%manifest dali-csharp-binder.manifest
-%defattr(-,root,root,-)
-%{_libdir}/libdali3-csharp-binder-toolkit-demo.so*
-
-#################################################
-
-%files devel
-%defattr(-,root,root,-)
-%dir %{_includedir}/dali-csharp-binder/
-%{_includedir}/dali-csharp-binder/*
-%{_libdir}/pkgconfig/%{name}.pc
-%{_libdir}/pkgconfig/%{name}-physics-2d.pc
-%{_libdir}/pkgconfig/%{name}-physics-3d.pc
-
-%if %{with dali2}
-#################################################
-# Both builds install the same headers, so dali2 shares them with dali3.
-
-%files -n dali2-csharp-binder
 %manifest dali-csharp-binder.manifest
 %license LICENSE
 %license LICENSE.Zlib
@@ -425,31 +273,40 @@ exit 0
 %endif
 %{_libdir}/libdali2-csharp-binder-widget-viewer-dali.so*
 
-%files -n dali2-csharp-binder-scene3d
+#################################################
+
+%files scene3d
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libdali2-csharp-binder-scene3d.so*
 
-%files -n dali2-csharp-binder-physics2d
+#################################################
+
+%files physics2d
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libdali2-csharp-binder-physics-2d.so*
 
-%files -n dali2-csharp-binder-physics3d
+#################################################
+
+%files physics3d
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libdali2-csharp-binder-physics-3d.so*
 
-%files -n dali2-csharp-binder-toolkitdemo
+#################################################
+
+%files toolkitdemo
 %manifest dali-csharp-binder.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libdali2-csharp-binder-toolkit-demo.so*
 
-%files -n dali2-csharp-binder-devel
+#################################################
+
+%files devel
 %defattr(-,root,root,-)
 %dir %{_includedir}/dali-csharp-binder/
 %{_includedir}/dali-csharp-binder/*
-%{_libdir}/pkgconfig/dali2-csharp-binder.pc
-%{_libdir}/pkgconfig/dali2-csharp-binder-physics-2d.pc
-%{_libdir}/pkgconfig/dali2-csharp-binder-physics-3d.pc
-%endif
+%{_libdir}/pkgconfig/%{name}.pc
+%{_libdir}/pkgconfig/%{name}-physics-2d.pc
+%{_libdir}/pkgconfig/%{name}-physics-3d.pc
