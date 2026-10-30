@@ -204,6 +204,8 @@ libdali2-csharp-binder-toolkit-demo.so as a link to the dali3 library.
 # Build
 ##############################
 %build
+# TODO: temporary fix => will remove after included in gcc_warning_sr_pkgs list in build.conf
+%{?gcc_unforce_options:%gcc_unforce_options}
 # Keep shadow diagnostics enabled independently of the build server policy.
 export CFLAGS="${CFLAGS:-%optflags} -Werror=shadow"
 export CXXFLAGS="${CXXFLAGS:-%optflags} -Werror=shadow"
