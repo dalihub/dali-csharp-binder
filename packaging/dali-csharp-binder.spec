@@ -200,6 +200,8 @@ Toolkit Demo
 # Build
 ##############################
 %build
+# TODO: temporary fix => will remove after included in gcc_warning_sr_pkgs list in build.conf
+%{?gcc_unforce_options:%gcc_unforce_options}
 PREFIX="${PREFIX}/usr"
 CXXFLAGS="$CXXFLAGS  -Wall -g -Os -fPIC"
 LDFLAGS="$LDFLAGS  -Wl,--rpath=%{_libdir} "
