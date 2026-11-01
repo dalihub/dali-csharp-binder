@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -619,7 +619,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Constraint_Remove(void* nuiConstraint)
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Constraint_SetRemoveAction(void* nuiConstraint, int nuiRemoveAction)
 {
   Dali::Constraint*              constraint   = (Dali::Constraint*)0;
-  Dali::Constraint::RemoveAction removeAction = Dali::Constraint::DEFAULT_REMOVE_ACTION;
+  Dali::Constraint::RemoveAction removeAction = Dali::Constraint::BAKE;
 
   GUARD_ON_NULL_RET(nuiConstraint);
   constraint   = (Dali::Constraint*)nuiConstraint;
