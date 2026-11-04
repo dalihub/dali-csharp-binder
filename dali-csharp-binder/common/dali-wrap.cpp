@@ -10736,7 +10736,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_EXCLUSIVE_get()
   bool jresult;
   bool result;
 
-  result  = (bool)Dali::RenderTask::DEFAULT_EXCLUSIVE;
+  result  = (bool)false;
   jresult = result;
   return jresult;
 }
@@ -10746,7 +10746,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_INPUT_ENABLED_get()
   bool jresult;
   bool result;
 
-  result  = (bool)Dali::RenderTask::DEFAULT_INPUT_ENABLED;
+  result  = (bool)true;
   jresult = result;
   return jresult;
 }
@@ -10756,7 +10756,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CLEAR_COLOR_get()
   void*          jresult;
   Dali::Vector4* result = 0;
 
-  result  = (Dali::Vector4*)&Dali::RenderTask::DEFAULT_CLEAR_COLOR;
+  static Dali::Vector4 defaultClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+  result  = &defaultClearColor;
   jresult = (void*)result;
   return jresult;
 }
@@ -10766,7 +10767,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CLEAR_ENABLED_get()
   bool jresult;
   bool result;
 
-  result  = (bool)Dali::RenderTask::DEFAULT_CLEAR_ENABLED;
+  result  = (bool)false;
   jresult = result;
   return jresult;
 }
@@ -10776,7 +10777,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CULL_MODE_get()
   bool jresult;
   bool result;
 
-  result  = (bool)Dali::RenderTask::DEFAULT_CULL_MODE;
+  result  = (bool)true;
   jresult = result;
   return jresult;
 }
@@ -10786,7 +10787,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_REFRESH_RATE_
   unsigned int jresult;
   unsigned int result;
 
-  result  = (unsigned int)(unsigned int)Dali::RenderTask::DEFAULT_REFRESH_RATE;
+  result  = (unsigned int)(unsigned int)Dali::RenderTask::REFRESH_ALWAYS;
   jresult = result;
   return jresult;
 }
@@ -11195,7 +11196,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCurrentViewportPosition(v
   {
     try
     {
-      result = ((Dali::RenderTask const*)arg1)->GetViewportPosition();
+      result = ((Dali::RenderTask const*)arg1)->GetCurrentProperty<Dali::Vector2>(Dali::RenderTask::Property::VIEWPORT_POSITION);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -11237,7 +11238,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCurrentViewportSize(void*
   {
     try
     {
-      result = ((Dali::RenderTask const*)arg1)->GetViewportSize();
+      result = ((Dali::RenderTask const*)arg1)->GetCurrentProperty<Dali::Vector2>(Dali::RenderTask::Property::VIEWPORT_SIZE);
     }
     CALL_CATCH_EXCEPTION(0);
   }

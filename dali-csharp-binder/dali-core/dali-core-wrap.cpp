@@ -1665,7 +1665,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Any_AssertAlways(char* jarg1)
   {
     try
     {
-      Dali::Any::AssertAlways((char const*)arg1);
+      DALI_ABORT((char const*)arg1);
     }
     CALL_CATCH_EXCEPTION();
   }

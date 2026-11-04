@@ -19,11 +19,12 @@
 #include <dali/dali.h>
 #include <dali/devel-api/adaptor-framework/image-loading-devel.h>
 #include <dali/devel-api/adaptor-framework/native-image-devel.h>
-#include <dali/devel-api/adaptor-framework/pixel-buffer-devel.h>
+#include <dali/devel-api/adaptor-framework/pixel-buffer-operations-devel.h>
 #include <dali/devel-api/adaptor-framework/widget-application.h>
 #include <dali/devel-api/adaptor-framework/widget-impl.h>
 #include <dali/devel-api/adaptor-framework/widget.h>
 #include <dali/devel-api/adaptor-framework/window-system-devel.h>
+#include <dali/devel-api/images/pixel-buffer-devel.h>
 #include <dali/integration-api/string-utils.h>
 
 // INTERNAL INCLUDES
@@ -86,12 +87,12 @@ static void ApplyCropModeToPixelBuffer(Dali::PixelBuffer& pixelBuffer, int cropM
   {
     case LoadingFittingModeType::SHRINK_TO_FIT:
     {
-      DevelPixelBuffer::ApplyLetterbox(pixelBuffer, desiredWidth, desiredHeight);
+      DevelPixelBufferOperations::ApplyLetterbox(pixelBuffer, desiredWidth, desiredHeight);
       break;
     }
     case LoadingFittingModeType::SCALE_TO_FILL:
     {
-      DevelPixelBuffer::ApplyCenterCrop(pixelBuffer, desiredWidth, desiredHeight);
+      DevelPixelBufferOperations::ApplyCenterCrop(pixelBuffer, desiredWidth, desiredHeight);
       break;
     }
     case LoadingFittingModeType::FIT_WIDTH:
@@ -105,11 +106,11 @@ static void ApplyCropModeToPixelBuffer(Dali::PixelBuffer& pixelBuffer, int cropM
         // h / w <= dh / dw --> desired height is bigger than original
         if(static_cast<LoadingFittingModeType>(cropMode) == LoadingFittingModeType::FIT_WIDTH)
         {
-          DevelPixelBuffer::ApplyLetterbox(pixelBuffer, desiredWidth, desiredHeight);
+          DevelPixelBufferOperations::ApplyLetterbox(pixelBuffer, desiredWidth, desiredHeight);
         }
         else
         {
-          DevelPixelBuffer::ApplyCenterCrop(pixelBuffer, desiredWidth, desiredHeight);
+          DevelPixelBufferOperations::ApplyCenterCrop(pixelBuffer, desiredWidth, desiredHeight);
         }
       }
       else
@@ -117,11 +118,11 @@ static void ApplyCropModeToPixelBuffer(Dali::PixelBuffer& pixelBuffer, int cropM
         // h / w > dh / dw --> desired width is bigger than height
         if(static_cast<LoadingFittingModeType>(cropMode) == LoadingFittingModeType::FIT_WIDTH)
         {
-          DevelPixelBuffer::ApplyCenterCrop(pixelBuffer, desiredWidth, desiredHeight);
+          DevelPixelBufferOperations::ApplyCenterCrop(pixelBuffer, desiredWidth, desiredHeight);
         }
         else
         {
-          DevelPixelBuffer::ApplyLetterbox(pixelBuffer, desiredWidth, desiredHeight);
+          DevelPixelBufferOperations::ApplyLetterbox(pixelBuffer, desiredWidth, desiredHeight);
         }
       }
       break;
@@ -729,7 +730,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_0(void* jarg
   {
     try
     {
-      Dali::DevelPixelBuffer::ApplyMask(*arg1, arg2, arg3, arg4);
+      Dali::DevelPixelBufferOperations::ApplyMask(*arg1, arg2, arg3, arg4);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -754,7 +755,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_1(void* jarg
   {
     try
     {
-      Dali::DevelPixelBuffer::ApplyMask(*arg1, arg2, arg3);
+      Dali::DevelPixelBufferOperations::ApplyMask(*arg1, arg2, arg3);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -777,7 +778,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyMask__SWIG_2(void* jarg
   {
     try
     {
-      Dali::DevelPixelBuffer::ApplyMask(*arg1, arg2);
+      Dali::DevelPixelBufferOperations::ApplyMask(*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -793,7 +794,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_ApplyGaussianBlur(void* jarg
   {
     try
     {
-      (arg1)->ApplyGaussianBlur(arg2);
+      Dali::PixelBufferOperations::ApplyGaussianBlur(*arg1, arg2);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -815,7 +816,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Crop(void* jarg1, unsigned s
   {
     try
     {
-      Dali::DevelPixelBuffer::Crop(*arg1, arg2, arg3, arg4, arg5);
+      Dali::DevelPixelBufferOperations::Crop(*arg1, arg2, arg3, arg4, arg5);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -833,7 +834,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_PixelBuffer_Resize(void* jarg1, unsigned
   {
     try
     {
-      (arg1)->Resize(arg2, arg3);
+      Dali::PixelBufferOperations::Resize(*arg1, arg2, arg3);
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -851,7 +852,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_PixelBuffer_Rotate(void* jarg1, void* ja
   {
     try
     {
-      result = Dali::DevelPixelBuffer::Rotate(*arg1, *arg2);
+      result = Dali::DevelPixelBufferOperations::Rotate(*arg1, *arg2);
     }
     CALL_CATCH_EXCEPTION(false);
   }
@@ -867,7 +868,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_PixelBuffer_GetBrightness(void* 
   {
     try
     {
-      result = Dali::DevelPixelBuffer::GetBrightness(*arg1);
+      result = Dali::DevelPixelBufferOperations::GetBrightness(*arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
