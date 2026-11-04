@@ -413,7 +413,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetImageUrl(void* nuiCapture)
   {
     try
     {
-      Dali::Texture texture = capture->GetTexture();
+      Dali::Texture texture = Dali::DevelCapture::GetTexture(*capture);
       result                = Dali::Toolkit::ImageUrl::New(texture);
     }
     CALL_CATCH_EXCEPTION(0);
@@ -436,7 +436,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetCapturedBuffer(void* nuiCapt
   {
     try
     {
-      pixelBuffer = Dali::DevelCapture::GetCapturedBuffer(*capture);
+      pixelBuffer = capture->GetCapturedBuffer();
     }
     CALL_CATCH_EXCEPTION(0);
   }

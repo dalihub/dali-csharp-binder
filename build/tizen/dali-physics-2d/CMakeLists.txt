@@ -1,4 +1,4 @@
-SET(PHYSICS_2D_TARGET dali2-csharp-binder-physics-2d)
+SET(PHYSICS_2D_TARGET ${name}-physics-2d)
 
 SET( PHYSICS_2D_SOURCES ${dali_csharp_binder_physics_2d_src_files})
 

@@ -55,7 +55,6 @@
 #include <dali/public-api/events/mouse-button.h>
 #include <dali/public-api/math/matrix.h>
 #include <dali/public-api/math/matrix3.h>
-#include <dali/public-api/math/viewport.h>
 #include <dali/public-api/object/property-key.h>
 
 #include <dali/devel-api/adaptor-framework/environment-variable.h>
@@ -10737,7 +10736,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_EXCLUSIVE_get()
   bool jresult;
   bool result;
 
-  result  = (bool)Dali::RenderTask::DEFAULT_EXCLUSIVE;
+  result  = (bool)false;
   jresult = result;
   return jresult;
 }
@@ -10747,7 +10746,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_INPUT_ENABLED_get()
   bool jresult;
   bool result;
 
-  result  = (bool)Dali::RenderTask::DEFAULT_INPUT_ENABLED;
+  result  = (bool)true;
   jresult = result;
   return jresult;
 }
@@ -10757,7 +10756,8 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CLEAR_COLOR_get()
   void*          jresult;
   Dali::Vector4* result = 0;
 
-  result  = (Dali::Vector4*)&Dali::RenderTask::DEFAULT_CLEAR_COLOR;
+  static Dali::Vector4 defaultClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+  result  = &defaultClearColor;
   jresult = (void*)result;
   return jresult;
 }
@@ -10767,7 +10767,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CLEAR_ENABLED_get()
   bool jresult;
   bool result;
 
-  result  = (bool)Dali::RenderTask::DEFAULT_CLEAR_ENABLED;
+  result  = (bool)false;
   jresult = result;
   return jresult;
 }
@@ -10777,7 +10777,7 @@ SWIGEXPORT bool SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_CULL_MODE_get()
   bool jresult;
   bool result;
 
-  result  = (bool)Dali::RenderTask::DEFAULT_CULL_MODE;
+  result  = (bool)true;
   jresult = result;
   return jresult;
 }
@@ -10787,7 +10787,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_RenderTask_DEFAULT_REFRESH_RATE_
   unsigned int jresult;
   unsigned int result;
 
-  result  = (unsigned int)(unsigned int)Dali::RenderTask::DEFAULT_REFRESH_RATE;
+  result  = (unsigned int)(unsigned int)Dali::RenderTask::REFRESH_ALWAYS;
   jresult = result;
   return jresult;
 }
@@ -11196,7 +11196,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCurrentViewportPosition(v
   {
     try
     {
-      result = ((Dali::RenderTask const*)arg1)->GetCurrentViewportPosition();
+      result = ((Dali::RenderTask const*)arg1)->GetCurrentProperty<Dali::Vector2>(Dali::RenderTask::Property::VIEWPORT_POSITION);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -11238,7 +11238,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCurrentViewportSize(void*
   {
     try
     {
-      result = ((Dali::RenderTask const*)arg1)->GetCurrentViewportSize();
+      result = ((Dali::RenderTask const*)arg1)->GetCurrentProperty<Dali::Vector2>(Dali::RenderTask::Property::VIEWPORT_SIZE);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -11249,22 +11249,23 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetCurrentViewportSize(void*
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetViewport(void* jarg1, void* jarg2)
 {
-  Dali::RenderTask* arg1 = (Dali::RenderTask*)0;
-  Dali::Viewport    arg2;
-  Dali::Viewport*   argp2;
+  Dali::RenderTask*    arg1 = (Dali::RenderTask*)0;
+  Dali::BoundsInteger  arg2;
+  Dali::BoundsInteger* argp2;
 
   arg1  = (Dali::RenderTask*)jarg1;
-  argp2 = (Dali::Viewport*)jarg2;
+  argp2 = (Dali::BoundsInteger*)jarg2;
   if(!argp2)
   {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::Viewport", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Dali::BoundsInteger", 0);
     return;
   }
   arg2 = *argp2;
   {
     try
     {
-      (arg1)->SetViewport(arg2);
+      (arg1)->SetViewportPosition(Vector2(arg2.x, arg2.y));
+      (arg1)->SetViewportSize(Vector2(arg2.width, arg2.height));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -11272,20 +11273,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_RenderTask_SetViewport(void* jarg1, void
 
 SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_RenderTask_GetViewport(void* jarg1)
 {
-  void*             jresult;
-  Dali::RenderTask* arg1 = (Dali::RenderTask*)0;
-  Dali::Viewport    result;
+  void*               jresult;
+  Dali::RenderTask*   arg1 = (Dali::RenderTask*)0;
+  Dali::BoundsInteger result;
 
   arg1 = (Dali::RenderTask*)jarg1;
   {
     try
     {
-      result = ((Dali::RenderTask const*)arg1)->GetViewport();
+      Vector2 position = ((Dali::RenderTask const*)arg1)->GetViewportPosition();
+      Vector2 size     = ((Dali::RenderTask const*)arg1)->GetViewportSize();
+      result           = BoundsInteger(static_cast<int32_t>(std::roundf(position.x)),
+                                       static_cast<int32_t>(std::roundf(position.y)),
+                                       static_cast<int32_t>(std::roundf(size.x)),
+                                       static_cast<int32_t>(std::roundf(size.y)));
     }
     CALL_CATCH_EXCEPTION(0);
   }
 
-  jresult = new Dali::Viewport((const Dali::Viewport&)result);
+  jresult = new Dali::BoundsInteger((const Dali::BoundsInteger&)result);
   return jresult;
 }
 

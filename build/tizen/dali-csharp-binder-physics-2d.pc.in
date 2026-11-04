@@ -7,8 +7,8 @@ libdir=@LIB_DIR@
 includedir=@DEV_INCLUDE_PATH@
 
 Name: DALi C# binder
-Description: DALi C# binder Library for scene3D
+Description: DALi C# binder Library for 2D Physics
 Version: ${apiversion}
-Requires: dali2-csharp-binder
-Libs: -L${libdir} -ldali2-csharp-binder-scene3d
+Requires: chipmunk2d dali@DALI_API_MAJOR@-physics-2d
+Libs: -L${libdir} -l@name@-physics-2d
 Cflags: -I${includedir}/dali-csharp-binder
