@@ -16,6 +16,7 @@
  */
 
 // EXTERNAL INCLUDES
+#include <dali/integration-api/adaptor-framework/adaptor.h>
 #include <dali/public-api/adaptor-framework/ui-context.h>
 
 // INTERNAL INCLUDES
@@ -125,14 +126,13 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_UiContext_GetDefaultWindow(void* uiCont
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_UiContext_AddIdle(void* uiContext, void* callback)
 {
-  Dali::UiContext*    context      = static_cast<Dali::UiContext*>(uiContext);
   Dali::CallbackBase* idleCallback = static_cast<Dali::CallbackBase*>(callback);
   bool                result       = false;
 
   {
     try
     {
-      result = context->AddIdle(idleCallback);
+      result = Dali::Adaptor::Get().AddIdle(idleCallback, true);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -141,13 +141,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Dali_UiContext_AddIdle(void* uiContex
 
 SWIGEXPORT void SWIGSTDCALL CSharp_Dali_UiContext_RemoveIdle(void* uiContext, void* callback)
 {
-  Dali::UiContext*    context      = static_cast<Dali::UiContext*>(uiContext);
   Dali::CallbackBase* idleCallback = static_cast<Dali::CallbackBase*>(callback);
 
   {
     try
     {
-      context->RemoveIdle(idleCallback);
+      Dali::Adaptor::Get().RemoveIdle(idleCallback);
     }
     CALL_CATCH_EXCEPTION();
   }
