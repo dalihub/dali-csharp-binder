@@ -1,4 +1,4 @@
-SET(WIDGET_VIEWER_DALI_TARGET ${name}-widget-viewer-dali)
+SET(WIDGET_VIEWER_DALI_TARGET dali2-csharp-binder-widget-viewer-dali)
 
 IF( UBUNTU_PROFILE )
   SET( WIDGET_VIEWER_DALI_SOURCES ${dali_csharp_binder_widget_viewer_dali_ubuntu_src_files})
@@ -12,14 +12,10 @@ OPTION(ENABLE_PKG_CONFIGURE "Use pkgconfig" ON)
 
 IF (ENABLE_PKG_CONFIGURE)
   FIND_PACKAGE(PkgConfig REQUIRED)
-  # pkg-config name of widget-viewer-dali
-  IF(NOT WIDGET_VIEWER_DALI_PKG)
-    SET(WIDGET_VIEWER_DALI_PKG "dali${DALI_API_MAJOR}-widget-viewer")
-  ENDIF()
-  PKG_CHECK_MODULES(EXTWIDGETVIEWER ${WIDGET_VIEWER_DALI_PKG})
+  PKG_CHECK_MODULES(EXTWIDGETVIEWER widget_viewer_dali)
 
-  SET(CORE_PKG_CFG_FILE ${name}-widget-viewer-dali.pc)
-  CONFIGURE_FILE(${CMAKE_CURRENT_LIST_DIR}/dali-csharp-binder-widget-viewer-dali.pc.in ${CORE_PKG_CFG_FILE} @ONLY)
+  SET(CORE_PKG_CFG_FILE dali2-csharp-binder-widget-viewer-dali.pc)
+  CONFIGURE_FILE(${CMAKE_CURRENT_LIST_DIR}/${CORE_PKG_CFG_FILE}.in ${CORE_PKG_CFG_FILE} @ONLY)
 ENDIF()
 
 
@@ -29,7 +25,7 @@ TARGET_LINK_LIBRARIES( ${WIDGET_VIEWER_DALI_TARGET} PUBLIC
   ${DALIADAPTOR_LDFLAGS}
   ${DALITOOLKIT_LDFLAGS}
   ${EXTWIDGETVIEWER_LDFLAGS}
-  ${name}
+  dali2-csharp-binder
 )
 
 TARGET_COMPILE_OPTIONS( ${WIDGET_VIEWER_DALI_TARGET} PUBLIC
