@@ -19,8 +19,6 @@
 class SwigDirector_WidgetImpl : public Dali::Internal::Adaptor::Widget, public Swig::Director
 {
 public:
-  SwigDirector_WidgetImpl();
-  virtual ~SwigDirector_WidgetImpl();
   virtual void OnCreate(Dali::String const& contentInfo, Dali::Window window);
   virtual void OnTerminate(Dali::String const& contentInfo, Dali::Widget::Termination type);
   virtual void OnPause();
@@ -38,7 +36,22 @@ public:
   typedef void(SWIGSTDCALL* SWIG_Callback5_t)(const char*, int);
   typedef void(SWIGSTDCALL* SWIG_Callback6_t)(void*, void*);
   typedef void(SWIGSTDCALL* SWIG_Callback7_t)(void*, void*);
+
+  // The binding transfers a refcount-0 implementation to its managed owner.
+  static SwigDirector_WidgetImpl* CreateForBinding()
+  {
+    return new SwigDirector_WidgetImpl();
+  }
+
+  static Dali::IntrusivePtr<SwigDirector_WidgetImpl> New()
+  {
+    return Dali::IntrusivePtr<SwigDirector_WidgetImpl>(new SwigDirector_WidgetImpl());
+  }
   void swig_connect_director(SWIG_Callback0_t callbackOnCreate, SWIG_Callback1_t callbackOnTerminate, SWIG_Callback2_t callbackOnPause, SWIG_Callback3_t callbackOnResume, SWIG_Callback4_t callbackOnResize, SWIG_Callback5_t callbackOnUpdate, SWIG_Callback6_t callbackSignalConnected, SWIG_Callback7_t callbackSignalDisconnected);
+
+protected:
+  SwigDirector_WidgetImpl();
+  ~SwigDirector_WidgetImpl() override;
 
 private:
   SWIG_Callback0_t swig_callbackOnCreate;
@@ -55,8 +68,6 @@ private:
 class SwigDirector_ViewImpl : public Dali::Toolkit::ControlImpl, public Swig::Director
 {
 public:
-  SwigDirector_ViewImpl(Dali::Toolkit::ControlImpl::ControlBehaviour behaviourFlags);
-  virtual ~SwigDirector_ViewImpl();
   virtual void OnSceneConnection(int depth);
   virtual void OnSceneConnectionSwigPublic(int depth)
   {
@@ -193,7 +204,22 @@ public:
   typedef void(SWIGSTDCALL* SWIG_Callback38_t)(void*);
   typedef void(SWIGSTDCALL* SWIG_Callback39_t)(void*, void*);
   typedef void(SWIGSTDCALL* SWIG_Callback40_t)(void*, void*);
+
+  // The binding transfers a refcount-0 implementation to its managed owner.
+  static SwigDirector_ViewImpl* CreateForBinding(Dali::Toolkit::ControlImpl::ControlBehaviour behaviourFlags)
+  {
+    return new SwigDirector_ViewImpl(behaviourFlags);
+  }
+
+  static Dali::IntrusivePtr<SwigDirector_ViewImpl> New(Dali::Toolkit::ControlImpl::ControlBehaviour behaviourFlags)
+  {
+    return Dali::IntrusivePtr<SwigDirector_ViewImpl>(new SwigDirector_ViewImpl(behaviourFlags));
+  }
   void swig_connect_director(SWIG_Callback0_t callbackOnSceneConnection, SWIG_Callback1_t callbackOnSceneDisconnection, SWIG_Callback2_t callbackOnChildAdd, SWIG_Callback3_t callbackOnChildRemove, SWIG_Callback4_t callbackOnPropertySet, SWIG_Callback5_t callbackOnSizeSet, SWIG_Callback6_t callbackOnSizeAnimation, SWIG_Callback9_t callbackOnKeyEvent, SWIG_Callback11_t callbackOnRelayout, SWIG_Callback12_t callbackOnSetResizePolicy, SWIG_Callback13_t callbackGetNaturalSize, SWIG_Callback14_t callbackCalculateChildSize, SWIG_Callback15_t callbackGetHeightForWidth, SWIG_Callback16_t callbackGetWidthForHeight, SWIG_Callback17_t callbackRelayoutDependentOnChildren__SWIG_0, SWIG_Callback18_t callbackRelayoutDependentOnChildren__SWIG_1, SWIG_Callback19_t callbackOnCalculateRelayoutSize, SWIG_Callback20_t callbackOnLayoutNegotiated, SWIG_Callback21_t callbackOnInitialize, SWIG_Callback24_t callbackOnStyleChange, SWIG_Callback25_t callbackOnAccessibilityActivated, SWIG_Callback30_t callbackOnKeyInputFocusGained, SWIG_Callback31_t callbackOnKeyInputFocusLost, SWIG_Callback32_t callbackGetNextKeyboardFocusableActor, SWIG_Callback33_t callbackOnKeyboardFocusChangeCommitted, SWIG_Callback34_t callbackOnKeyboardEnter, SWIG_Callback35_t callbackOnPinch, SWIG_Callback36_t callbackOnPan, SWIG_Callback37_t callbackOnTap, SWIG_Callback38_t callbackOnLongPress, SWIG_Callback39_t callbackSignalConnected, SWIG_Callback40_t callbackSignalDisconnected);
+
+protected:
+  SwigDirector_ViewImpl(Dali::Toolkit::ControlImpl::ControlBehaviour behaviourFlags);
+  ~SwigDirector_ViewImpl() override;
 
 private:
   SWIG_Callback0_t  swig_callbackOnSceneConnection;

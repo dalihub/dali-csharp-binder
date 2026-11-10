@@ -58,21 +58,43 @@ namespace
 class LegacyDefaultRuler : public Dali::Toolkit::DefaultRuler
 {
 public:
-  LegacyDefaultRuler() = default;
+  static Dali::IntrusivePtr<LegacyDefaultRuler> New()
+  {
+    return Dali::IntrusivePtr<LegacyDefaultRuler>(new LegacyDefaultRuler());
+  }
+
+  // The legacy binding transfers a refcount-0 implementation to its managed owner.
+  static LegacyDefaultRuler* CreateForBinding()
+  {
+    return new LegacyDefaultRuler();
+  }
 
 protected:
+  LegacyDefaultRuler() = default;
+
   ~LegacyDefaultRuler() override = default;
 };
 
 class LegacyFixedRuler : public Dali::Toolkit::FixedRuler
 {
 public:
+  static Dali::IntrusivePtr<LegacyFixedRuler> New(float spacing = 1.0f)
+  {
+    return Dali::IntrusivePtr<LegacyFixedRuler>(new LegacyFixedRuler(spacing));
+  }
+
+  // The legacy binding transfers a refcount-0 implementation to its managed owner.
+  static LegacyFixedRuler* CreateForBinding(float spacing = 1.0f)
+  {
+    return new LegacyFixedRuler(spacing);
+  }
+
+protected:
   explicit LegacyFixedRuler(float spacing = 1.0f)
   : Dali::Toolkit::FixedRuler(spacing)
   {
   }
 
-protected:
   ~LegacyFixedRuler() override = default;
 };
 } // namespace
@@ -5378,7 +5400,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_DefaultRuler()
   {
     try
     {
-      result = new LegacyDefaultRuler();
+      result = LegacyDefaultRuler::CreateForBinding();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -5502,7 +5524,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_FixedRuler__SWIG_0(float jarg1)
   {
     try
     {
-      result = new LegacyFixedRuler(arg1);
+      result = LegacyFixedRuler::CreateForBinding(arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -5519,7 +5541,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_FixedRuler__SWIG_1()
   {
     try
     {
-      result = new LegacyFixedRuler();
+      result = LegacyFixedRuler::CreateForBinding();
     }
     CALL_CATCH_EXCEPTION(0);
   }
