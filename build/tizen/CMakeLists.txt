@@ -11,13 +11,7 @@ SET(CMAKE_CXX_STANDARD 17)
 # the pkg-config files and the CMake package (dali<major>-csharp-binder), and
 # selects the dali<major>-* libraries to bind.
 IF(NOT DALI_API_MAJOR)
-  # Select the native Windows default before PROJECT initializes WIN32.
-  IF(CMAKE_SYSTEM_NAME STREQUAL "Windows" OR
-     (CMAKE_HOST_WIN32 AND NOT CMAKE_SYSTEM_NAME))
-    SET(DALI_API_MAJOR 2)
-  ELSE()
-    SET(DALI_API_MAJOR 3)
-  ENDIF()
+  SET(DALI_API_MAJOR 3)
 ENDIF()
 SET(name "dali${DALI_API_MAJOR}-csharp-binder")
 
