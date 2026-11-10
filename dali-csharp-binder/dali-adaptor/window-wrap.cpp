@@ -2874,7 +2874,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFrameRenderedCallback(void* wi
 
   try
   {
-    window->AddFrameRenderedCallback(Dali::MakeCallback(callback), nuiFrameId);
+    window->AddFrameRenderedCallback(Dali::Callback<void(int32_t)>::New(callback), nuiFrameId);
   }
   CALL_CATCH_EXCEPTION();
 }
@@ -2896,7 +2896,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_Window_AddFramePresentedCallback(void* w
 
   try
   {
-    window->AddFramePresentedCallback(Dali::MakeCallback(callback), nuiFrameId);
+    window->AddFramePresentedCallback(Dali::Callback<void(int32_t)>::New(callback), nuiFrameId);
   }
   CALL_CATCH_EXCEPTION();
 }

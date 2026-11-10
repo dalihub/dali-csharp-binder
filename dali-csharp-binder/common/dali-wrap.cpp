@@ -5950,7 +5950,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Property_Map_GetValue(void* jarg1, unsi
   {
     try
     {
-      result = (Dali::Property::Value*)&((Dali::Property::Map const*)arg1)->GetValue(arg2);
+      result = (Dali::Property::Value*)&((Dali::Property::Map*)arg1)->GetValue(arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -6020,7 +6020,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Property_Map_Find__SWIG_0(void* jarg1, 
   {
     try
     {
-      result = (Dali::Property::Value*)((Dali::Property::Map const*)arg1)->Find((char const*)arg2);
+      result = (Dali::Property::Value*)((Dali::Property::Map*)arg1)->Find((char const*)arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -6041,7 +6041,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Property_Map_Find__SWIG_2(void* jarg1, 
   {
     try
     {
-      result = (Dali::Property::Value*)((Dali::Property::Map const*)arg1)->Find(arg2);
+      result = (Dali::Property::Value*)((Dali::Property::Map*)arg1)->Find(arg2);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -6067,7 +6067,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Property_Map_Find__SWIG_3(void* jarg1, 
   {
     try
     {
-      result = (Dali::Property::Value*)((Dali::Property::Map const*)arg1)->Find(arg2, Dali::StringView(jarg3));
+      result = (Dali::Property::Value*)((Dali::Property::Map*)arg1)->Find(arg2, Dali::StringView(jarg3));
     }
     CALL_CATCH_EXCEPTION(0);
   }
