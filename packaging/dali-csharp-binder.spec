@@ -200,6 +200,10 @@ Toolkit Demo
 # Build
 ##############################
 %build
+# Keep shadow diagnostics enabled independently of the build server policy.
+export CFLAGS="${CFLAGS:-%optflags} -Werror=shadow"
+export CXXFLAGS="${CXXFLAGS:-%optflags} -Werror=shadow"
+
 PREFIX="${PREFIX}/usr"
 CXXFLAGS="$CXXFLAGS  -Wall -g -Os -fPIC"
 LDFLAGS="$LDFLAGS  -Wl,--rpath=%{_libdir} "
