@@ -1418,6 +1418,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_ENABLE_DEFERRED_RELAY
   return (int)Dali::Toolkit::DevelTextEditor::Property::ENABLE_DEFERRED_RELAYOUT;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextEditor_Property_TEXT_LANGUAGE_get()
+{
+  return (int)Dali::Toolkit::DevelTextEditor::Property::TEXT_LANGUAGE;
+}
+
 SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_TextEditor_RegisterFontVariationProperty(void* pTextEditor, char* pTag)
 {
   Dali::Toolkit::TextEditor* textEditor = (Dali::Toolkit::TextEditor*)0;
