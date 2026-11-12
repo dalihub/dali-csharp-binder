@@ -42,7 +42,7 @@ OPTION(ENABLE_PHYSICS_2D          "Enable 2d physics" ON)
 OPTION(ENABLE_PHYSICS_3D          "Enable 3d physics" ON)
 OPTION(ENABLE_RIVE_ANIMATION      "Enable rive animation" OFF)
 OPTION(ENABLE_WIDGET_VIEWER_DALI  "Enable widget viewer dali" OFF)
-OPTION(ENABLE_TOOLKIET_DEMO       "Enable toolkit demo" OFF)
+OPTION(ENABLE_TOOLKIT_DEMO        "Enable toolkit demo" OFF)
 OPTION(ENABLE_ECORE_WAYLAND2      "Enable ecore wayland2" OFF)
 OPTION(ENABLE_LEGACY_BINDER_BUILD "Enable Legacy codes build" OFF)
 
