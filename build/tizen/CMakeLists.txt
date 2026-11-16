@@ -7,15 +7,23 @@ ENDIF()
 SET(CMAKE_C_STANDARD 99)
 SET(CMAKE_CXX_STANDARD 17)
 
-# API major version (Not DALi release version). It also names the libraries,
-# the pkg-config files and the CMake package (dali<major>-csharp-binder), and
-# selects the dali<major>-* libraries to bind.
-IF(NOT DALI_API_MAJOR)
-  SET(DALI_API_MAJOR 3)
-ENDIF()
+# API major version (Not DALi release version). It names the libraries, the
+# pkg-config files and the CMake package (dali<major>-csharp-binder), selects
+# the dali<major>-* libraries to bind, and puts the headers under
+# include/dali<major>. The 2.x names are available as links through
+# DALI_LEGACY_ALIASES (see dali-legacy-aliases.cmake).
+SET(DALI_API_MAJOR 3)
 SET(name "dali${DALI_API_MAJOR}-csharp-binder")
 
 project(${name} CXX)
+
+# Enable shadow errors for GNU builds; validate other compilers separately.
+IF(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  ADD_COMPILE_OPTIONS(-Werror=shadow)
+ENDIF()
+
+SET(DALI_INCLUDE_SUBDIR "dali${DALI_API_MAJOR}")
+INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/dali-legacy-aliases.cmake)
 
 SET(GCC_COMPILER_VERSION_REQUIRED "6")
 IF(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
@@ -42,7 +50,7 @@ OPTION(ENABLE_PHYSICS_2D          "Enable 2d physics" ON)
 OPTION(ENABLE_PHYSICS_3D          "Enable 3d physics" ON)
 OPTION(ENABLE_RIVE_ANIMATION      "Enable rive animation" OFF)
 OPTION(ENABLE_WIDGET_VIEWER_DALI  "Enable widget viewer dali" OFF)
-OPTION(ENABLE_TOOLKIET_DEMO       "Enable toolkit demo" OFF)
+OPTION(ENABLE_TOOLKIT_DEMO        "Enable toolkit demo" OFF)
 OPTION(ENABLE_ECORE_WAYLAND2      "Enable ecore wayland2" OFF)
 OPTION(ENABLE_LEGACY_BINDER_BUILD "Enable Legacy codes build" OFF)
 
@@ -143,6 +151,7 @@ ENDIF()
 IF( NOT INCLUDE_DIR )
   SET( INCLUDE_DIR ${PREFIX}/include )
 ENDIF()
+SET( INCLUDE_DIR ${INCLUDE_DIR}/${DALI_INCLUDE_SUBDIR} )
 
 # Set up the lib dir
 SET( LIB_DIR $ENV{libdir} )
@@ -269,6 +278,20 @@ ENDIF()
 # Install headers
 INSTALL( FILES ${dali_csharp_binder_header_files} DESTINATION ${INCLUDE_DIR}/dali-csharp-binder )
 
+# DALi 2.x names as links to the files above (DALI_LEGACY_ALIASES=ON only).
+# NUI loads the binder by the unversioned 2.x file name, so that link is
+# part of the runtime, not the development, files.
+dali_legacy_library_alias(${name} dali2-csharp-binder 2)
+dali_legacy_include_alias(dali-csharp-binder)
+IF( ENABLE_PKG_CONFIGURE )
+  dali_legacy_pkgconfig_alias(${CORE_PKG_CFG_FILE} dali2-csharp-binder)
+  dali_legacy_pkgconfig_alias(${PHYS2D_PKG_CFG_FILE} dali2-csharp-binder-physics-2d)
+  dali_legacy_pkgconfig_alias(${PHYS3D_PKG_CFG_FILE} dali2-csharp-binder-physics-3d)
+ENDIF()
+IF( INSTALL_CMAKE_MODULES )
+  dali_legacy_cmake_package_alias(${name} dali2-csharp-binder)
+ENDIF()
+
 # Configuration Messages
 MESSAGE( STATUS "Configuration:\n" )
 MESSAGE( STATUS "Prefix:                        " ${PREFIX} )
@@ -285,6 +308,7 @@ MESSAGE( STATUS "Use scene 3d:                  " ${ENABLE_SCENE3D} )
 MESSAGE( STATUS "Use rive animation   :         " ${ENABLE_RIVE_ANIMATION} )
 MESSAGE( STATUS "Use widget viewer dali:        " ${ENABLE_WIDGET_VIEWER_DALI} )
 MESSAGE( STATUS "Use toolkit demo:              " ${ENABLE_TOOLKIT_DEMO} )
+MESSAGE( STATUS "Legacy (dali2) aliases:        " ${DALI_LEGACY_ALIASES} )
 MESSAGE( STATUS "Use legacy binder build:       " ${ENABLE_LEGACY_BINDER_BUILD} )
 MESSAGE( STATUS "CXXFLAGS:                      " ${CMAKE_CXX_FLAGS} )
 MESSAGE( STATUS "LDFLAGS:                       " ${CMAKE_SHARED_LINKER_FLAGS_INIT}${CMAKE_SHARED_LINKER_FLAGS} )

@@ -51,6 +51,54 @@
 using Dali::Integration::ToDaliString;
 using Dali::Integration::ToDaliStringView;
 
+namespace
+{
+// Legacy bindings return unreferenced objects and expose matching delete functions.
+// Derived bridges retain that ownership contract with protected ruler constructors.
+class LegacyDefaultRuler : public Dali::Toolkit::DefaultRuler
+{
+public:
+  static Dali::IntrusivePtr<LegacyDefaultRuler> New()
+  {
+    return Dali::IntrusivePtr<LegacyDefaultRuler>(new LegacyDefaultRuler());
+  }
+
+  // The legacy binding transfers a refcount-0 implementation to its managed owner.
+  static LegacyDefaultRuler* CreateForBinding()
+  {
+    return new LegacyDefaultRuler();
+  }
+
+protected:
+  LegacyDefaultRuler() = default;
+
+  ~LegacyDefaultRuler() override = default;
+};
+
+class LegacyFixedRuler : public Dali::Toolkit::FixedRuler
+{
+public:
+  static Dali::IntrusivePtr<LegacyFixedRuler> New(float spacing = 1.0f)
+  {
+    return Dali::IntrusivePtr<LegacyFixedRuler>(new LegacyFixedRuler(spacing));
+  }
+
+  // The legacy binding transfers a refcount-0 implementation to its managed owner.
+  static LegacyFixedRuler* CreateForBinding(float spacing = 1.0f)
+  {
+    return new LegacyFixedRuler(spacing);
+  }
+
+protected:
+  explicit LegacyFixedRuler(float spacing = 1.0f)
+  : Dali::Toolkit::FixedRuler(spacing)
+  {
+  }
+
+  ~LegacyFixedRuler() override = default;
+};
+} // namespace
+
 // SWIGINTERN - the relevant parts of the generated code can be seen the below.
 
 SWIGINTERN bool Dali_Signal_Sl_void_Sp_Dali_Toolkit_StyleManager_Sc_Dali_StyleChange_Type_SP__Sg__Empty(Dali::Signal<void(Dali::Toolkit::StyleManager, Dali::StyleChange::Type)> const* self)
@@ -5352,7 +5400,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_DefaultRuler()
   {
     try
     {
-      result = (Dali::Toolkit::DefaultRuler*)new Dali::Toolkit::DefaultRuler();
+      result = LegacyDefaultRuler::CreateForBinding();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -5459,7 +5507,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_DefaultRuler(void* jarg1)
   {
     try
     {
-      delete arg1;
+      // Factory objects start at refcount 0; IntrusivePtr takes them 0 -> 1 -> 0, calling OnDestroy() and the virtual destructor.
+      Dali::IntrusivePtr<LegacyDefaultRuler> ruler(static_cast<LegacyDefaultRuler*>(arg1));
     }
     CALL_CATCH_EXCEPTION();
   }
@@ -5475,7 +5524,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_FixedRuler__SWIG_0(float jarg1)
   {
     try
     {
-      result = (Dali::Toolkit::FixedRuler*)new Dali::Toolkit::FixedRuler(arg1);
+      result = LegacyFixedRuler::CreateForBinding(arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -5492,7 +5541,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_FixedRuler__SWIG_1()
   {
     try
     {
-      result = (Dali::Toolkit::FixedRuler*)new Dali::Toolkit::FixedRuler();
+      result = LegacyFixedRuler::CreateForBinding();
     }
     CALL_CATCH_EXCEPTION(0);
   }
@@ -5599,7 +5648,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_FixedRuler(void* jarg1)
   {
     try
     {
-      delete arg1;
+      // Factory objects start at refcount 0; IntrusivePtr takes them 0 -> 1 -> 0, calling OnDestroy() and the virtual destructor.
+      Dali::IntrusivePtr<LegacyFixedRuler> ruler(static_cast<LegacyFixedRuler*>(arg1));
     }
     CALL_CATCH_EXCEPTION();
   }

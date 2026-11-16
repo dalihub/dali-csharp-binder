@@ -1581,7 +1581,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Application_New__SWIG_4(int jarg1, char
   void*               jresult;
   int*                argc = nullptr;
   char***             argv = nullptr;
-  Dali::PositionSize  arg5;
   Dali::PositionSize* argp5;
   Dali::Application   result;
 

@@ -1157,6 +1157,11 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_ENABLE_CURSOR_INSET_ge
   return (int)Dali::Toolkit::DevelTextField::Property::ENABLE_CURSOR_INSET;
 }
 
+SWIGEXPORT int SWIGSTDCALL CSharp_Dali_TextField_Property_TEXT_LANGUAGE_get()
+{
+  return (int)Dali::Toolkit::DevelTextField::Property::TEXT_LANGUAGE;
+}
+
 SWIGEXPORT int32_t SWIGSTDCALL CSharp_Dali_TextField_RegisterFontVariationProperty(void* pTextField, char* pTag)
 {
   Dali::Toolkit::TextField* textField = (Dali::Toolkit::TextField*)0;

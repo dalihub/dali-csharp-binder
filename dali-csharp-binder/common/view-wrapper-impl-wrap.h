@@ -29,103 +29,112 @@
 class SwigDirector_ViewWrapperImpl : public Dali::Toolkit::Internal::ControlWrapper
 {
 public:
-  SwigDirector_ViewWrapperImpl(Dali::Toolkit::Internal::ControlWrapper::CustomControlBehaviour behaviourFlags);
-  virtual ~SwigDirector_ViewWrapperImpl();
-  virtual void OnSceneConnection(int depth);
+  // The binding transfers a refcount-0 implementation to its managed owner.
+  static SwigDirector_ViewWrapperImpl* CreateForBinding(Dali::Toolkit::Internal::ControlWrapper::CustomControlBehaviour behaviourFlags)
+  {
+    return new SwigDirector_ViewWrapperImpl(behaviourFlags);
+  }
+
+  static Dali::IntrusivePtr<SwigDirector_ViewWrapperImpl> New(Dali::Toolkit::Internal::ControlWrapper::CustomControlBehaviour behaviourFlags)
+  {
+    return Dali::IntrusivePtr<SwigDirector_ViewWrapperImpl>(new SwigDirector_ViewWrapperImpl(behaviourFlags));
+  }
+
+  virtual void OnSceneConnection(int depth) override;
   virtual void OnSceneConnectionSwigPublic(int depth)
   {
     Dali::Toolkit::ControlImpl::OnSceneConnection(depth);
   }
-  virtual void OnSceneDisconnection();
+  virtual void OnSceneDisconnection() override;
   virtual void OnSceneDisconnectionSwigPublic()
   {
     Dali::Toolkit::ControlImpl::OnSceneDisconnection();
   }
-  virtual void OnChildAdd(Dali::Actor& child);
+  virtual void OnChildAdd(Dali::Actor& child) override;
   virtual void OnChildAddSwigPublic(Dali::Actor& child)
   {
     Dali::Toolkit::ControlImpl::OnChildAdd(child);
   }
-  virtual void OnChildRemove(Dali::Actor& child);
+  virtual void OnChildRemove(Dali::Actor& child) override;
   virtual void OnChildRemoveSwigPublic(Dali::Actor& child)
   {
     Dali::Toolkit::ControlImpl::OnChildRemove(child);
   }
-  virtual void OnPropertySet(Dali::Property::Index index, const Dali::Property::Value& propertyValue);
-  virtual void OnSizeSet(Dali::Vector3 const& targetSize);
+  virtual void OnPropertySet(Dali::Property::Index index, const Dali::Property::Value& propertyValue) override;
+  virtual void OnSizeSet(Dali::Vector3 const& targetSize) override;
   virtual void OnSizeSetSwigPublic(Dali::Vector3 const& targetSize)
   {
     Dali::Toolkit::ControlImpl::OnSizeSet(targetSize);
   }
-  virtual void OnSizeAnimation(Dali::Animation& animation, Dali::Vector3 const& targetSize);
+  virtual void OnSizeAnimation(Dali::Animation& animation, Dali::Vector3 const& targetSize) override;
   virtual void OnSizeAnimationSwigPublic(Dali::Animation& animation, Dali::Vector3 const& targetSize)
   {
     Dali::Toolkit::ControlImpl::OnSizeAnimation(animation, targetSize);
   }
-  virtual bool OnKeyEvent(Dali::KeyEvent const& event);
+  virtual bool OnKeyEvent(Dali::KeyEvent const& event) override;
   virtual bool OnKeyEventSwigPublic(Dali::KeyEvent const& event)
   {
     return Dali::Toolkit::ControlImpl::OnKeyEvent(event);
   }
-  virtual void OnRelayout(Dali::Vector2 const& size, Dali::RelayoutContainer& container);
+  virtual void OnRelayout(Dali::Vector2 const& size, Dali::RelayoutContainer& container) override;
   virtual void OnRelayoutSwigPublic(Dali::Vector2 const& size, Dali::RelayoutContainer& container)
   {
     Dali::Toolkit::ControlImpl::OnRelayout(size, container);
   }
-  virtual void OnSetResizePolicy(Dali::ResizePolicy::Type policy, Dali::Dimension::Type dimension);
+  virtual void OnSetResizePolicy(Dali::ResizePolicy::Type policy, Dali::Dimension::Type dimension) override;
   virtual void OnSetResizePolicySwigPublic(Dali::ResizePolicy::Type policy, Dali::Dimension::Type dimension)
   {
     Dali::Toolkit::ControlImpl::OnSetResizePolicy(policy, dimension);
   }
-  virtual Dali::Vector3 GetNaturalSize();
+  virtual Dali::Vector3 GetNaturalSize() override;
   virtual Dali::Vector3 GetNaturalSizeSwigPublic()
   {
     return Dali::Toolkit::ControlImpl::GetNaturalSize();
   }
-  virtual float CalculateChildSize(Dali::Actor const& child, Dali::Dimension::Type dimension);
+  virtual float CalculateChildSize(Dali::Actor const& child, Dali::Dimension::Type dimension) override;
   virtual float CalculateChildSizeSwigPublic(Dali::Actor const& child, Dali::Dimension::Type dimension)
   {
     return Dali::Toolkit::ControlImpl::CalculateChildSize(child, dimension);
   }
-  virtual float GetHeightForWidth(float width);
+  virtual float GetHeightForWidth(float width) override;
   virtual float GetHeightForWidthSwigPublic(float width)
   {
     return Dali::Toolkit::ControlImpl::GetHeightForWidth(width);
   }
-  virtual float GetWidthForHeight(float height);
+  virtual float GetWidthForHeight(float height) override;
   virtual float GetWidthForHeightSwigPublic(float height)
   {
     return Dali::Toolkit::ControlImpl::GetWidthForHeight(height);
   }
-  virtual bool RelayoutDependentOnChildren(Dali::Dimension::Type dimension = Dali::Dimension::ALL_DIMENSIONS);
+  virtual bool RelayoutDependentOnChildren(Dali::Dimension::Type dimension = Dali::Dimension::ALL_DIMENSIONS) override;
   virtual bool RelayoutDependentOnChildrenSwigPublic(Dali::Dimension::Type dimension = Dali::Dimension::ALL_DIMENSIONS)
   {
     return Dali::Toolkit::ControlImpl::RelayoutDependentOnChildren(dimension);
   }
-  virtual void OnCalculateRelayoutSize(Dali::Dimension::Type dimension);
+  virtual void OnCalculateRelayoutSize(Dali::Dimension::Type dimension) override;
   virtual void OnCalculateRelayoutSizeSwigPublic(Dali::Dimension::Type dimension)
   {
     Dali::Toolkit::ControlImpl::OnCalculateRelayoutSize(dimension);
   }
-  virtual void OnLayoutNegotiated(float size, Dali::Dimension::Type dimension);
+  virtual void OnLayoutNegotiated(float size, Dali::Dimension::Type dimension) override;
   virtual void OnLayoutNegotiatedSwigPublic(float size, Dali::Dimension::Type dimension)
   {
     Dali::Toolkit::ControlImpl::OnLayoutNegotiated(size, dimension);
   }
-  virtual void OnInitialize();
-  virtual void OnStyleChange(Dali::Toolkit::StyleManager styleManager, Dali::StyleChange::Type change);
-  virtual bool OnAccessibilityActivated();
+  virtual void OnInitialize() override;
+  virtual void OnStyleChange(Dali::Toolkit::StyleManager styleManager, Dali::StyleChange::Type change) override;
+  virtual bool OnAccessibilityActivated() override;
 
-  virtual void                                   OnKeyInputFocusGained();
-  virtual void                                   OnKeyInputFocusLost();
-  virtual Dali::Actor                            GetNextKeyboardFocusableActor(Dali::Actor currentFocusedActor, Dali::Toolkit::Control::KeyboardFocus::Direction direction, bool loopEnabled);
-  virtual void                                   OnKeyboardFocusChangeCommitted(Dali::Actor commitedFocusableActor);
-  virtual bool                                   OnKeyboardEnter();
-  virtual void                                   OnPinch(Dali::PinchGesture const& pinch);
-  virtual void                                   OnPan(Dali::PanGesture const& pan);
-  virtual void                                   OnTap(Dali::TapGesture const& tap);
-  virtual void                                   OnLongPress(Dali::LongPressGesture const& longPress);
-  virtual Dali::Toolkit::ControlImpl::Extension* GetControlExtension();
+  virtual void                                   OnKeyInputFocusGained() override;
+  virtual void                                   OnKeyInputFocusLost() override;
+  virtual Dali::Actor                            GetNextKeyboardFocusableActor(Dali::Actor currentFocusedActor, Dali::Toolkit::Control::KeyboardFocus::Direction direction, bool loopEnabled) override;
+  virtual void                                   OnKeyboardFocusChangeCommitted(Dali::Actor commitedFocusableActor) override;
+  virtual bool                                   OnKeyboardEnter() override;
+  virtual void                                   OnPinch(Dali::PinchGesture const& pinch) override;
+  virtual void                                   OnPan(Dali::PanGesture const& pan) override;
+  virtual void                                   OnTap(Dali::TapGesture const& tap) override;
+  virtual void                                   OnLongPress(Dali::LongPressGesture const& longPress) override;
+  virtual Dali::Toolkit::ControlImpl::Extension* GetControlExtension() override;
 
   typedef void(SWIGSTDCALL* SWIG_Callback0_t)(int);
   typedef void(SWIGSTDCALL* SWIG_Callback1_t)();
@@ -161,7 +170,15 @@ public:
   typedef void(SWIGSTDCALL* SWIG_Callback38_t)(void*);
   typedef void(SWIGSTDCALL* SWIG_Callback39_t)(void*, void*);
   typedef void(SWIGSTDCALL* SWIG_Callback40_t)(void*, void*);
+
+protected:
+  SwigDirector_ViewWrapperImpl(Dali::Toolkit::Internal::ControlWrapper::CustomControlBehaviour behaviourFlags);
+
+public:
   void swig_connect_director(SWIG_Callback0_t callbackOnSceneConnection, SWIG_Callback1_t callbackOnSceneDisconnection, SWIG_Callback2_t callbackOnChildAdd, SWIG_Callback3_t callbackOnChildRemove, SWIG_Callback4_t callbackOnPropertySet, SWIG_Callback5_t callbackOnSizeSet, SWIG_Callback6_t callbackOnSizeAnimation, SWIG_Callback9_t callbackOnKeyEvent, SWIG_Callback11_t callbackOnRelayout, SWIG_Callback12_t callbackOnSetResizePolicy, SWIG_Callback13_t callbackGetNaturalSize, SWIG_Callback14_t callbackCalculateChildSize, SWIG_Callback15_t callbackGetHeightForWidth, SWIG_Callback16_t callbackGetWidthForHeight, SWIG_Callback17_t callbackRelayoutDependentOnChildren__SWIG_0, SWIG_Callback18_t callbackRelayoutDependentOnChildren__SWIG_1, SWIG_Callback19_t callbackOnCalculateRelayoutSize, SWIG_Callback20_t callbackOnLayoutNegotiated, SWIG_Callback21_t callbackOnInitialize, SWIG_Callback24_t callbackOnStyleChange, SWIG_Callback25_t callbackOnAccessibilityActivated, SWIG_Callback30_t callbackOnKeyInputFocusGained, SWIG_Callback31_t callbackOnKeyInputFocusLost, SWIG_Callback32_t callbackGetNextKeyboardFocusableActor, SWIG_Callback33_t callbackOnKeyboardFocusChangeCommitted, SWIG_Callback34_t callbackOnKeyboardEnter, SWIG_Callback35_t callbackOnPinch, SWIG_Callback36_t callbackOnPan, SWIG_Callback37_t callbackOnTap, SWIG_Callback38_t callbackOnLongPress, SWIG_Callback39_t callbackSignalConnected, SWIG_Callback40_t callbackSignalDisconnected);
+
+protected:
+  ~SwigDirector_ViewWrapperImpl() override;
 
 private:
   SWIG_Callback0_t  swig_callbackOnSceneConnection;
