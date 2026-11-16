@@ -17,6 +17,11 @@ SET(name "dali${DALI_API_MAJOR}-csharp-binder")
 
 project(${name} CXX)
 
+# Enable shadow errors for GNU builds; validate other compilers separately.
+IF(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  ADD_COMPILE_OPTIONS(-Werror=shadow)
+ENDIF()
+
 SET(GCC_COMPILER_VERSION_REQUIRED "6")
 IF(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   IF(CMAKE_CXX_COMPILER_VERSION VERSION_LESS GCC_COMPILER_VERSION_REQUIRED)
