@@ -149,6 +149,14 @@ Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 Provides: libdali2-csharp-binder.so.2%{elf_suffix}
 
+# Keep the legacy profile names for existing image configurations and upgrades.
+Provides:   dali2-csharp-binder-profile_common = %{version}-%{release}
+Provides:   dali2-csharp-binder-profile_mobile = %{version}-%{release}
+Provides:   dali2-csharp-binder-profile_tv = %{version}-%{release}
+Obsoletes:  dali2-csharp-binder-profile_common < %{version}-%{release}
+Obsoletes:  dali2-csharp-binder-profile_mobile < %{version}-%{release}
+Obsoletes:  dali2-csharp-binder-profile_tv < %{version}-%{release}
+
 %description -n dali2-csharp-binder
 libdali2-csharp-binder.so, which NUI loads by name, and the rive-animation and widget-viewer binders as links to the dali3 libraries. Goes away once NUI has moved to the dali3 names.
 
