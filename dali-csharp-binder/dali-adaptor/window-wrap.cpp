@@ -4010,7 +4010,6 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MouseRelativeEvent__SWIG_0(int jarg
   unsigned int                                arg3;
   Dali::Vector2                               arg4;
   Dali::Vector2                               arg5;
-  Dali::Vector2                               arg6;
 
   Dali::Vector2* argp4;
   Dali::Vector2* argp5;
@@ -4028,7 +4027,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_MouseRelativeEvent__SWIG_0(int jarg
     return 0;
   }
   arg4 = *argp4;
-  arg5 = *argp4;
+  arg5 = *argp5;
   {
     try
     {

@@ -153,9 +153,9 @@ btNullPairCache* btNullPairCache_new()
   return new btNullPairCache();
 }
 
-btOverlapFilterCallbackWrapper::btOverlapFilterCallbackWrapper(p_btOverlapFilterCallback_needBroadphaseCollision needBroadphaseCollision)
+btOverlapFilterCallbackWrapper::btOverlapFilterCallbackWrapper(p_btOverlapFilterCallback_needBroadphaseCollision inputNeedBroadphaseCollision)
 {
-  _needBroadphaseCollision = needBroadphaseCollision;
+  _needBroadphaseCollision = inputNeedBroadphaseCollision;
 }
 
 bool btOverlapFilterCallbackWrapper::needBroadphaseCollision(btBroadphaseProxy* proxy0, btBroadphaseProxy* proxy1) const

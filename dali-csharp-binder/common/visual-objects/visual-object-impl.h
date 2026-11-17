@@ -220,7 +220,7 @@ public: ///< Called from Internal::VisualObjectsContainer
     return mVisualPropertyId;
   }
 
-public:
+protected:
   /**
    * @brief Constructor - creates a VisualObject.
    */

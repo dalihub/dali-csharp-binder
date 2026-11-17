@@ -105,7 +105,7 @@ private:
    */
   void UnregisterVisualObject(Dali::Internal::VisualObject& visualObjectImpl);
 
-public:
+protected:
   /**
    * @brief Constructor - creates a VisualObjectsContainer.
    *

@@ -40,6 +40,7 @@ public:
 
 protected:
   Dali::Toolkit::DevelControl::ControlAccessible* CreateAccessibleObject() override;
+  ~SlimCustomViewImpl() override = default;
 };
 
 #endif // CSHARP_SLIM_CUSTOM_VIEW_IMPL_H

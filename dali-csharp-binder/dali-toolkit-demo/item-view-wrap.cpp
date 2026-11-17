@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2026 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Dali_delete_ItemLayout(void* jarg1)
   {
     try
     {
-      delete arg1;
+      // ItemLayout is reference counted (RefObject) and its destructor is
+      // protected: give up this reference instead of deleting the object.
+      (arg1)->Unreference();
     }
     CALL_CATCH_EXCEPTION();
   }

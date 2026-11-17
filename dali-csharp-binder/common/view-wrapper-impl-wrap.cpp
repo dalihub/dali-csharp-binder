@@ -575,7 +575,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_new_ViewWrapperImpl(int jarg1)
   {
     try
     {
-      result = (Dali::Toolkit::Internal::ControlWrapper*)new SwigDirector_ViewWrapperImpl(arg1);
+      result = (Dali::Toolkit::Internal::ControlWrapper*)SwigDirector_ViewWrapperImpl::CreateForBinding(arg1);
     }
     CALL_CATCH_EXCEPTION(0);
   }

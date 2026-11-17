@@ -20945,7 +20945,7 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_WidgetImpl_New()
   {
     try
     {
-      result = new SwigDirector_WidgetImpl();
+      result = SwigDirector_WidgetImpl::CreateForBinding();
     }
     CALL_CATCH_EXCEPTION(0);
   }
