@@ -36,7 +36,7 @@
 
 Name: dali3-csharp-binder
 Summary: The DALI Csharp Binder
-Version: 3.0.0
+Version: 3.0.1
 Release: 1
 Group: uifw/graphic
 License: Apache-2.0 and Zlib
@@ -366,7 +366,7 @@ end
 %defattr(-,root,root,-)
 %{_libdir}/libdali3-csharp-binder.so
 %{_libdir}/libdali3-csharp-binder.so.3
-%{_libdir}/libdali3-csharp-binder.so.3.0.0
+%{_libdir}/libdali3-csharp-binder.so.3.0.1
 %if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
 %{_libdir}/libdali3-csharp-binder-rive-animation.so*
 %endif
