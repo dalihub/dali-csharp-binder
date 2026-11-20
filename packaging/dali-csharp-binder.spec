@@ -366,7 +366,7 @@ end
 %defattr(-,root,root,-)
 %{_libdir}/libdali3-csharp-binder.so
 %{_libdir}/libdali3-csharp-binder.so.3
-%{_libdir}/libdali3-csharp-binder.so.3.0.1
+%{_libdir}/libdali3-csharp-binder.so.3.0.0
 %if "%{_vd_cfg_product_type}" != "AUDIO" && "%{_vd_cfg_product_type}" !="AV"
 %{_libdir}/libdali3-csharp-binder-rive-animation.so*
 %endif
