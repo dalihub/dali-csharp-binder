@@ -5977,7 +5977,7 @@ SWIGEXPORT char* SWIGSTDCALL CSharp_Dali_Property_Map_GetKey(void* jarg1, unsign
       // string-key position. GetKey(), however, only accepted string-key positions and
       // asserted for anything beyond them, hence the explicit key type check.
       Dali::Property::Key key = ((Dali::Property::Map const*)arg1)->GetKeyAt(arg2);
-      DALI_ASSERT_ALWAYS(key.type == Dali::Property::Key::STRING && "position out-of-bounds");
+      DALI_ASSERT_ALWAYS(key.type == Dali::Property::Key::Type::STRING && "position out-of-bounds");
       result = key.stringKey;
     }
     CALL_CATCH_EXCEPTION(0);
