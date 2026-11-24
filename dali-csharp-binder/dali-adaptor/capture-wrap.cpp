@@ -18,7 +18,9 @@
 // EXTERNAL INCLUDES
 #include <dali-toolkit/public-api/image-loader/image-url.h>
 #include <dali/devel-api/adaptor-framework/capture-devel.h>
+#include <dali/devel-api/adaptor-framework/native-image-devel.h>
 #include <dali/public-api/adaptor-framework/capture.h>
+#include <dali/public-api/adaptor-framework/native-image.h>
 
 // INTERNAL INCLUDES
 #include <dali-csharp-binder/common/common.h>
@@ -391,7 +393,18 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg
   {
     try
     {
-      handle->Ptr = arg1->GetNativeImage();
+      // Build the NativeImage from the captured pixels here, so that NUI's
+      // Capture.GetNativeImageSource() keeps returning a pixel copy.
+      Dali::PixelBuffer capturedBuffer = arg1->GetCapturedBuffer();
+      if(capturedBuffer)
+      {
+        // The capture is rendered as RGBA8888.
+        Dali::NativeImagePtr nativeImage = Dali::NativeImage::New(capturedBuffer.GetWidth(), capturedBuffer.GetHeight(), Dali::NativeImage::COLOR_DEPTH_32);
+        if(Dali::DevelNativeImage::SetPixels(*nativeImage, capturedBuffer.GetBuffer(), capturedBuffer.GetPixelFormat()))
+        {
+          handle->Ptr = nativeImage;
+        }
+      }
     }
     CALL_CATCH_EXCEPTION_WITH_FUNCTION(0, [](NativeImagePtrHandle* ptr)
     { delete ptr; }, handle);
