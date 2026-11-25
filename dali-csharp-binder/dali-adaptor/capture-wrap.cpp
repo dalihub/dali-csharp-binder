@@ -400,7 +400,11 @@ SWIGEXPORT void* SWIGSTDCALL CSharp_Dali_Capture_GetNativeImageSource(void* jarg
       {
         // The capture is rendered as RGBA8888.
         Dali::NativeImagePtr nativeImage = Dali::NativeImage::New(capturedBuffer.GetWidth(), capturedBuffer.GetHeight(), Dali::NativeImage::COLOR_DEPTH_32);
-        if(Dali::DevelNativeImage::SetPixels(*nativeImage, capturedBuffer.GetBuffer(), capturedBuffer.GetPixelFormat()))
+        if(!nativeImage)
+        {
+          DALI_LOG_ERROR("Failed to create NativeImage (%ux%u) for the captured buffer.\n", capturedBuffer.GetWidth(), capturedBuffer.GetHeight());
+        }
+        else if(Dali::DevelNativeImage::SetPixels(*nativeImage, capturedBuffer.GetBuffer(), capturedBuffer.GetPixelFormat()))
         {
           handle->Ptr = nativeImage;
         }
